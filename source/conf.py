@@ -119,7 +119,6 @@ html_theme_options = {
     'display_version': True,
     # 'prev_next_buttons_location': 'bottom',
     # 'style_external_links': False,
-    # 'vcs_pageview_mode': '',
     'style_nav_header_background': 'black',
     # # Toc options
     # 'collapse_navigation': False,
@@ -127,6 +126,14 @@ html_theme_options = {
     'navigation_depth': 2,
     # 'includehidden': False,s
     # 'titles_only': False
+}
+
+html_context = {
+    "display_github": True,
+    "github_user": "Concordium",
+    "github_repo": "docs",
+    "github_version": "main",
+    "conf_py_path": "/source/",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
