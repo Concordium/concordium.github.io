@@ -1,0 +1,12 @@
+
+{% extends meta.template|default('!layout.html') if meta is defined else "!layout.html" %}
+
+{% block extrahead %}
+    <link href="{{ pathto("_static/style.css", True) }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block extrabody %}
+    <nav class="topbar">
+        <a href="{{ pathto('smart-contracts/index') }}" class="{{ 'active' if entry is defined and entry == 'smart-contracts/index' }}"> <i class="icon fa fa-file-o"></i> Smart contract </a>
+        <a href="{{ pathto('testnet/index') }}" class="{{ 'active' if entry is defined and entry == 'testnet/index' else '' }}" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+{% endblock %}

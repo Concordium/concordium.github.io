@@ -1,0 +1,99 @@
+<!doctype html>
+  <html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Concordium Documentation</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css">
+    <meta name="theme-color" content="#000000">
+    {% block extrahead %} {% endblock %}
+ </head>
+
+  <body>
+    <div class="logo-container">
+        <img class="logo" src="{{pathto('_static/concordium-logo.svg', 1)}}"/>
+        <h1>Documentation</h1>
+    </div>
+
+    <div class="features-container">
+        <a href="{{ pathto('smart-contracts/index') }}">
+            <div class="feature">
+                <i class="icon fa fa-file-o"></i>
+                <h4>Smart Contracts</h4>
+                <p>Learn what about smart contracts and how to develop your own right here!</p>
+            </div>
+        </a>
+        <a href="{{ pathto('testnet/index') }}">
+            <div class="feature">
+                <i class="icon fa fa-connectdevelop"></i>
+                <h4>Testnet</h4>
+                <p>Learn how to run your own node and take part of the Concordium blockchain.</p>
+            </div>
+        </a>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: RobotoSlab;
+        }
+        .logo-container {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 0;
+        }
+        .logo-container h1 {
+            color: white;
+            font-weight: normal;
+        }
+        .logo {
+            max-width: 900px;
+        }
+        .features-container {
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        .features-container a {
+            color: black;
+            text-decoration: none;
+        }
+        .feature {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 5px;
+            margin: 1em;
+            padding: 1em;
+            width: 310px;
+            text-align: justify;
+            word-spacing:-2px;
+            border: 1px solid rgb(200,200,200);
+            box-shadow: 0 0 1px rgba(0,0,0,0.3);
+        }
+        .feature:hover {
+            background-color: rgba(240,240,240);
+        }
+        .feature h4 {
+            text-align: center;
+        }
+        .feature p {
+            margin: 0;
+        }
+        .feature .icon {
+            align-self: center;
+            padding: 10px;
+            font-size: 50px;
+        }
+    </style>
+  </body>
+
+  </html>
