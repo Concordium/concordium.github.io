@@ -7,5 +7,5 @@ Contents
 .. toctree::
    :hidden:
 
-   Smart contract <smart-contracts/index>
-   Testnet <testnet/index>
+   smart-contracts/index
+   testnet/index
