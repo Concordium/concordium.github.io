@@ -1,0 +1,4 @@
+{
+  "root": "build/html",
+  "clean_urls": true
+}

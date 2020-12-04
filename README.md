@@ -31,6 +31,9 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Installation
 
+
+### Linux
+
 Install `python3` and the python package manager `pip`.
 
 To install the python dependencies run:
@@ -40,11 +43,20 @@ pip install -r requirements.txt
 
 Install `graphviz`:
 
-- MacOS: `brew install graphviz`
 - Ubuntu: `sudo apt install graphviz`
 
+### macOS
+
+On macOS
+```
+brew install python3 graphviz
+pip3 install -r requirements.txt
+```
+
 ## Development
+
 To watch the doc files and automate the build run:
+
 ```
 make dev
 ```
@@ -59,8 +71,10 @@ make lint
 > inconsistencies. If the build time becomes too slow, it might be worth
 > enabling again by removing `-E`.
 
+
 ## Building the docs
 Run the following command:
+
 ```
 make html
 ```
@@ -71,12 +85,18 @@ To check for dead links (also done by the CI), run:
 make linkcheck
 ```
 
+
+## Deployment
+
+Merges to `main` are auto-deployed to Heroku.
+
+
 ## Style guide
 
 ### Headers
 In reST the various levels of headers can be written in multiple ways, but they
 need to be used consistently in our documentation because the theme we use
-interprets them in a specific way, namely: 
+interprets them in a specific way, namely:
 
 ``` restructuredtext
 ========
@@ -98,7 +118,7 @@ Header 5
 
 ### Terminal commands
 Code snippets with terminal commands should use `.. code-block:: console`
-and any command should be prefixed with `$` without extra whitespace. 
+and any command should be prefixed with `$` without extra whitespace.
 A space will be added through CSS and only the command itself will be
 copyable, which improves the user-experience.
 
@@ -117,5 +137,5 @@ See the example below.
 
 ``` restructuredtext
 .. note::
-   This line has three spaces in front and aligns with the note directive. 
+   This line has three spaces in front and aligns with the note directive.
 ```
