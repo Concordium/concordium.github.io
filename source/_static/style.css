@@ -23,11 +23,6 @@
     color: white;
 }
 
-.topbar ul {
-    display: flex;
-    flex-direction: row;
-}
-
 .topbar a {
     color: white;
     text-decoration: none;
@@ -41,4 +36,13 @@
 
 .topbar a:hover:not(.active) {
     background-color: #444444;
+}
+
+@media only screen and (max-width: 770px) {
+    .topbar {
+        left: 0;
+    }
+    .wy-nav-top {
+        margin-top: 3em;
+    }
 }
