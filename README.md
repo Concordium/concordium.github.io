@@ -94,7 +94,8 @@ Merges to `main` are auto-deployed to Heroku.
 ## Style guide
 
 ### Headers
-Use *sentence-style capitalization*, i.e., only capitalize the first letter. In general: [when in doubt, don't capitalize](https://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice#when-in-doubt-dont-capitalize).
+Use *sentence-style capitalization*, i.e., only capitalize the first letter of a
+header.
 
 Be consistent in the use of characters for creating headers; use the following
 for each level of header:
