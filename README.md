@@ -94,9 +94,10 @@ Merges to `main` are auto-deployed to Heroku.
 ## Style guide
 
 ### Headers
-In reST the various levels of headers can be written in multiple ways, but they
-need to be used consistently in our documentation because the theme we use
-interprets them in a specific way, namely:
+Use *sentence-style capitalization*, i.e., only capitalize the first letter. In general: [when in doubt, don't capitalize](https://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice#when-in-doubt-dont-capitalize).
+
+Be consistent in the use of characters for creating headers; use the following
+for each level of header:
 
 ``` restructuredtext
 ========
@@ -117,25 +118,32 @@ Header 5
 ```
 
 ### Terminal commands
-Code snippets with terminal commands should use `.. code-block:: console`
-and any command should be prefixed with `$` without extra whitespace.
-A space will be added through CSS and only the command itself will be
-copyable, which improves the user-experience.
+
+Use `code-block:: console` to show content from a terminal and prepend commands
+with `$` without a space in between.
+
+A space is added between `$` and the command through CSS.
+This solution makes only the command itself copyable, thereby improving the user-experience.
 
 Example:
 
 ``` restructuredtext
 .. code-block:: console
+
    $echo Hello, world!
    Hello, world!
 ```
 
 ### Indentation
-In reST it is common to indent block by three spaces because it aligns the
-content of directives to the directive name itself.
-See the example below.
+Use three spaces for indentation.
+This aligns the directive name (`note::`) with the content of the directive (`This line...`).
+
+Add an empty line between a directive and its content.
+
+Example that follows both rules:
 
 ``` restructuredtext
 .. note::
-   This line has three spaces in front and aligns with the note directive.
+
+   This line has three spaces in front of it and it has an empty line above it.
 ```
