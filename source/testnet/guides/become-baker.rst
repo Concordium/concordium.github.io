@@ -92,11 +92,9 @@ The node-dashboard will ask for a password to decrypt the exported file
 and import all accounts. The same password will be used for encrypting
 the transaction signing keys and the encrypted transfers key.
 
-.. raw:: html
-
-   <p align="center">
-       <img width="460" src="/assets/images/account-management-node-dashboard2.png">
-   </p>
+.. image :: account-management-node-dashboard2.png
+   :align: center
+   :width: 460px
 
 The baker keys
 --------------
