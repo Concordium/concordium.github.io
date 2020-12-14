@@ -2,29 +2,8 @@
 Becoming a baker (creating blocks)
 ==================================
 
--  `Definitions`_
--  `Managing accounts`_
--  `The baker keys`_
--  `Registering a baker and associating a reward account`_
--  `Checking the status of the baker and its lottery power`_
--  `Delegating to a baker`_
-
-   -  `Requesting delegation from the Concordium accounts`_
-   -  `Delegating manually to a chosen baker`_
-
--  `Finalization`_
--  `Detailed description on the time constraints`_
-
-.. _Definitions: #definitions
-.. _Managing accounts: #managing-accounts
-.. _The baker keys: #the-baker-keys
-.. _Registering a baker and associating a reward account: #registering-a-baker-and-associating-a-reward-account
-.. _Checking the status of the baker and its lottery power: #checking-the-status-of-the-baker-and-its-lottery-power
-.. _Delegating to a baker: #delegating-to-a-baker
-.. _Requesting delegation from the Concordium accounts: #requesting-delegation-from-the-concordium-accounts
-.. _Delegating manually to a chosen baker: #delegating-manually-to-a-chosen-baker
-.. _Finalization: #finalization
-.. _Detailed description on the time constraints: #detailed-description-on-the-time-constraints
+.. contents::
+   :local:
 
 This section explains why and how to become a baker as well as what a
 baker is and its role in the network.
@@ -373,4 +352,3 @@ If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com. 
 
 .. _Discord: https://discord.com/invite/xWmQ5tp
-
