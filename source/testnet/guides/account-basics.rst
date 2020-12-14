@@ -68,10 +68,11 @@ ready.
 .. image :: ca1_wireframe.png
    :align: center
 .. image :: ca2_wireframe.png
-   :align: center
+    :align: center
 .. image :: ca4_wireframe.png
    :align: center
 
+=======
 
 .. _Identities and accounts: #identities-and-accounts
 .. _Before you start: #before-you-start
@@ -96,7 +97,6 @@ little plus sign in the upper right corner, to get started.
 .. image :: ca6_wireframe.png
    :align: center
 
-
 Now give your account a name to continue the creation process. On the
 following screen you have to choose which identity to add your account
 to. In case you have more than one, you can decide which to use. Else
@@ -106,7 +106,6 @@ just pick the one you just created.
    :align: center
 .. image :: ca8_wireframe.png
    :align: center
-
 
 Having chosen your desired identity, you can now choose what identity
 data you want to be publically visible on your account. You can choose
@@ -133,6 +132,7 @@ creating your account, go to the *Accounts* screen and do the following:
    :align: center
 .. image :: ca13_wireframe.png
    :align: center
+
   
 
 2. To request 100 GTU, press **Request 100 GTU**.
@@ -156,7 +156,6 @@ will be met by the next screen.
    :align: center
 .. image :: ca15_wireframe.png
    :align: center
-
 
 On the *Send Funds* screen, you decide on the amount of GTU you want to
 send, and you have the option to pick a recipient. Start by entering 10
@@ -186,6 +185,7 @@ process by pressing **Send funds**.
 .. image :: ca20_wireframe.png
    :align: center
 
+
 .. _this: #receive-gtu-from-someone-else
 
 Receive GTU from someone else
@@ -198,7 +198,6 @@ see:
 
 .. image :: ca21_wireframe.png
    :align: center
-  
 
 Here, you see the address displayed both as text and as a QR code. Give this information to the person you expect to send you GTU.
 
