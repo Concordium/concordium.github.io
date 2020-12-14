@@ -160,6 +160,8 @@ different degrees of precision.
 In the """ , networkDashboardLink , """, the user's node will show its
 baker ID in the ``Baker`` column.
 
+.. _networkDashboardLink: https://dashboard.testnet.concordium.com/
+
 However, there is still some information that is not shown in the
 node-dashboard neither in the network dashboard which is the lottery
 power of the bakers. The lottery power will determine how likely it is
