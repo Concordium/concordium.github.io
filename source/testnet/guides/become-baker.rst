@@ -131,11 +131,10 @@ follows:
 #. Wait for the transaction to be finalized, and then 2 epochs to become
    active.
 
-.. raw:: html
+.. image :: baking-node-dashboard4.png
+   :align: center
+   :width: 460px
 
-   <p align="center">
-       <img width="460" src="/assets/images/baking-node-dashboard4.png">
-   </p>
 
 In every moment the node-dashboard informs of the status of the process.
 From this point on, the user can click on the ``Stop Baking`` button to
@@ -186,12 +185,10 @@ registered in the chain and their relative lottery power.
 Also if the user's baker has been delegated enough stake, it should
 start producing blocks and the user can see in their wallet that they
 are receiving baking rewards in the account associated with the baker.
-
-.. raw:: html
-
-   <p align="center">
-       <img width="460" src="/assets/images/baking-rewards.png">
-   </p>
+   
+.. image :: baking-rewards.png
+   :align: center
+   :width: 460px
 
 .. _``concordium-client``: /testnet/docs/client
 
@@ -220,11 +217,9 @@ In order to do this, the user must once more access the
 node-dashboard shows a new button to request delegation from the
 Concordium accounts.
 
-.. raw:: html
-
-   <p align="center">
-       <img width="460" src="/assets/images/delegating-node-dashboard1.png">
-   </p>
+.. image :: delegating-node-dashboard1.png
+   :align: center
+   :width: 460px
 
 When requested, the delegation process will begin and the node-dashboard
 will report the different steps at which the delegation is in each
@@ -302,11 +297,10 @@ the state of the node in each moment.
 This explanation might be too detailed for the reader and it is not
 required for getting a general understanding of the flow.
 
-.. raw:: html
+.. image :: timeline.png
+   :align: center
+   :width: 460px
 
-   <p align="center">
-       <img width="800" src="/assets/images/timeline.png">
-   </p>
 
 In the diagram we are showing a node that will become a baker and get
 some stake delegated. We are assuming an `epoch`_ duration of 100.
