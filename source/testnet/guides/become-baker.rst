@@ -29,7 +29,7 @@ that follows explains this steps and guides the user through the
 process.
 
 Definitions
------------
+===========
 
 A *baker* is a node that actively participates in the network by
 creating (or *baking*) new blocks that are added to the chain. A baker
