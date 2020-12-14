@@ -65,13 +65,13 @@ either of the Notabene processes, you will end up with the *Identity
 submitted!* screen, which tells you that your identity will soon be
 ready.
 
-.. raw:: html
+.. image :: ca1_wireframe.png
+   :align: center
+.. image :: ca2_wireframe.png
+   :align: center
+.. image :: ca4_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca1_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca2_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca4_wireframe.png">
-   </p>    
 
 .. _Identities and accounts: #identities-and-accounts
 .. _Before you start: #before-you-start
@@ -93,35 +93,31 @@ well. If you have not created an account yet, the *Accounts* screen will
 display a button called **Create account**. Press this button or the
 little plus sign in the upper right corner, to get started.
 
-.. raw:: html
+.. image :: ca6_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca6_wireframe.png">
-   </p>
 
 Now give your account a name to continue the creation process. On the
 following screen you have to choose which identity to add your account
 to. In case you have more than one, you can decide which to use. Else
 just pick the one you just created.
 
-.. raw:: html
+.. image :: ca7_wireframe.png
+   :align: center
+.. image :: ca8_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca7_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca8_wireframe.png">
-   </p>
 
 Having chosen your desired identity, you can now choose what identity
 data you want to be publically visible on your account. You can choose
 however many you want, including none at all. The last step is to press
 **Create account**, which will submit your account to the chain.
 
-.. raw:: html
+.. image :: ca9_wireframe.png
+   :align: center
+.. image :: ca10_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca9_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca10_wireframe.png">
-   </p>
 
 Request 100 GTU
 ---------------
@@ -133,12 +129,11 @@ creating your account, go to the *Accounts* screen and do the following:
 1. Click on the **Balance** of your account. We will come back to the
    **Shielded Balance** in a later `quickstart`_.
 
-   .. raw:: html
-
-       <p align="center">
-           <img src="/assets/images/screenshots/create-account/ca12_wireframe.png">
-           <img src="/assets/images/screenshots/create-account/ca13_wireframe.png">
-       </p>
+.. image :: ca12_wireframe.png
+   :align: center
+.. image :: ca13_wireframe.png
+   :align: center
+  
 
 2. To request 100 GTU, press **Request 100 GTU**.
 
@@ -157,12 +152,11 @@ want to send 10 GTU from. Click the **Balance** part of the account.
 After entering the balance, press the **Send Funds** button, and you
 will be met by the next screen.
 
-.. raw:: html
+.. image :: ca22_wireframe.png
+   :align: center
+.. image :: ca15_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca22_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca15_wireframe.png">
-   </p>
 
 On the *Send Funds* screen, you decide on the amount of GTU you want to
 send, and you have the option to pick a recipient. Start by entering 10
@@ -171,11 +165,9 @@ if you do not have more than one account yet, or have not added any
 recipients in the address book, the screen will look something like
 this:
 
-.. raw:: html
+.. image :: ca16_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca16_wireframe.png">
-   </p>
 
 As you can see, their is a button called **Shield amount**, which we
 will not get into yet. Instead, to add a recipient, you can either press
@@ -187,13 +179,12 @@ their information with you. You can now choose your newly added entry in
 the address book, as the recipient for your transaction. Finish the
 process by pressing **Send funds**.
 
-.. raw:: html
-
-   <p align="center">
-       <img src="/assets/images/screenshots/create-account/ca18_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca19_wireframe.png">
-       <img src="/assets/images/screenshots/create-account/ca20_wireframe.png">
-   </p>
+.. image :: ca18_wireframe.png
+   :align: center
+.. image :: ca19_wireframe.png
+   :align: center
+.. image :: ca20_wireframe.png
+   :align: center
 
 .. _this: #receive-gtu-from-someone-else
 
@@ -205,12 +196,11 @@ of the account you want them to send GTU to. To do this, you go to
 *Accounts* and choose an account. If you click on **ADDRESS**, you will
 see:
 
-.. raw:: html
+.. image :: ca21_wireframe.png
+   :align: center
+  
 
-   <p align="center">
-           <img src="/assets/images/screenshots/create-account/ca21_wireframe.png">
-   </p>    
-   Here, you see the address displayed both as text and as a QR code. Give this information to the person you expect to send you GTU.
+Here, you see the address displayed both as text and as a QR code. Give this information to the person you expect to send you GTU.
 
 The shielded balance and transfers
 ----------------------------------
