@@ -22,11 +22,9 @@ When we think of a regular bank account, we know that it only has one
 balance. On the Concordium blockchain an account is slightly different,
 as it has two balances: A **balance** and a **shielded balance**.
 
-.. raw:: html
+.. image :: st1_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/shielded/st1_wireframe.png">
-   </p>
 
 As you can see on the screenshot, the new *Accounts* screen might look
 something like this: A handful of accounts, which each have two separate
@@ -69,12 +67,11 @@ Example Account. If more shielded balances have a padlock beside their
 amounts, the process can be done for those as well, to reveal the total
 balance of all accounts.
 
-.. raw:: html
+.. image :: st2_wireframe.png
+   :align: center
+.. image :: st3_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/shielded/st2_wireframe.png">
-       <img src="/assets/images/screenshots/shielded/st3_wireframe.png">
-   </p>
    
    Moving an amount between the two balances
 -----------------------------------------
@@ -97,25 +94,24 @@ which you want to make a shielding. Let’s make a shielding from the
 balance of the Example Account. After entering the balance, you have to
 press the **Send** button, which will take us to the next screen.
 
-.. raw:: html
+.. image :: st4_wireframe.png
+   :align: center
+.. image :: st5_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/shielded/st4_wireframe.png">
-       <img src="/assets/images/screenshots/shielded/st5_wireframe.png">
-   </p>
 
 On the next screen you can enter the desired amount, and you have the
 ability to **Select recipient or shield amount**. When deciding on a
 recipient, press the **Shield amount** option. If everything looks
 correct, you can press **Shield amount** to finish the process.
 
-.. raw:: html
+.. image :: st6_wireframe.png
+   :align: center
+.. image :: st7_wireframe.png
+   :align: center
+.. image :: st8_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/shielded/st6_wireframe.png">
-       <img src="/assets/images/screenshots/shielded/st7_wireframe.png">
-       <img src="/assets/images/screenshots/shielded/st8_wireframe.png">
-   </p>
    
    Submitting a unshielding
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,13 +129,13 @@ press the **Send** button again. On the next screen, we decide on an
 amount, and press the **Select recipient or unshield amount** button,
 just as you did for the shielding and unshielding processes.
 
-.. raw:: html
+.. image :: st9_wireframe.png
+   :align: center
+.. image :: st10_wireframe.png
+   :align: center
+.. image :: st11_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/shielded/st9_wireframe.png">
-       <img src="/assets/images/screenshots/shielded/st10_wireframe.png">
-       <img src="/assets/images/screenshots/shielded/st11_wireframe.png">
-   </p>
 
 At this time, instead of choosing unshield amount, you decide on a
 **recipient**. Let’s say you want to make a shielded transfer to your
