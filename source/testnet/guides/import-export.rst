@@ -21,12 +21,11 @@ three options **Address Book**, **Export** and **Import**, while you
 will only see **Address Book** and **Export** on iOS. This will be
 explained in the `Import`_ section of this guide.
 
-.. raw:: html
+.. image :: ei1_wireframe.png
+   :align: center
+.. image :: ei12_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/export-import/ei1_wireframe.png">
-       <img src="/assets/images/screenshots/export-import/ei2_wireframe.png">
-   </p>
 
 To export your data, you of course just press the **export** option on
 either platform, taking you to the next page, which will explain that
@@ -37,18 +36,17 @@ re-enter your password. When that is done, you will be taken to your
 phone's export interface, allowing you to choose what to do with the
 exported file.
 
-.. raw:: html
+.. raw :: html
 
    <span class="note">
    The password you choose on export, will also be the password used to import and make transactions with the [CLI](/testnet/docs/client).
    </span>
 
-.. raw:: html
+.. image :: ei3_wireframe.png
+   :align: center
+.. image :: ei4_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/export-import/ei3_wireframe.png">
-       <img src="/assets/images/screenshots/export-import/ei4_wireframe.png">
-   </p>
 
 .. _Export: #export
 .. _Import: #import
@@ -75,12 +73,11 @@ authenticate yourself, using your biometrics, passcode or password. If
 succesful, you will be shown a screen with information about what has
 been imported.
 
-.. raw:: html
+.. image :: ei5_wireframe.png
+   :align: center
+.. image :: ei6_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/export-import/ei5_wireframe.png">
-       <img src="/assets/images/screenshots/export-import/ei6_wireframe.png">
-   </p>
    
    Android
 ~~~~~~~
@@ -93,14 +90,15 @@ correct, you will be prompted to authenticate with biometrics, passcode
 or password, which will then lead you to a screen showing the import
 result.
 
-.. raw:: html
+.. image :: ei7_wireframe.png
+   :align: center
+.. image :: ei8_wireframe.png
+   :align: center
+.. image :: ei9_wireframe.png
+   :align: center
+.. image :: ei10_wireframe.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/export-import/ei7_wireframe.png">
-       <img src="/assets/images/screenshots/export-import/ei8_wireframe.png">
-       <img src="/assets/images/screenshots/export-import/ei9_wireframe.png">
-       <img src="/assets/images/screenshots/export-import/ei10_wireframe.png">
-   </p>
 
 Concordium Client
 -----------------
