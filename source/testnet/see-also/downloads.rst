@@ -32,11 +32,9 @@ Concordium ID using TestFlight.
 
 The page you will be taken to, should look something like this:
 
-.. raw:: html
+.. image :: TestFlight.png
+   :align: center
 
-   <p align="center">
-       <img src="/assets/images/screenshots/TestFlight.png">
-   </p>
 
 Installing the TestFlight app will be necessary to get Concordium ID, as
 that is Apple's way of distributing apps not yet released to the actual
