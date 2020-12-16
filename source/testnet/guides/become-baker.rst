@@ -2,7 +2,7 @@
 Becoming a baker (creating blocks)
 ==================================
 
-.. contents::
+.. contents ::
    :local:
 
 This section explains why and how to become a baker as well as what a
@@ -331,6 +331,8 @@ is instantly updated and if the user has enough stake, they will become
 a finalizer. This way, the ``Delegated stake`` timeline shows that the
 accounted stake for being part of the finalization committee changes in
 the exact moment when the transaction is finalized.
+
+.. :ref :'Delegated stake'
 
 Note that when delegating stake to a baker, it is important to wait for
 the transaction that registers a baker to be in a finalized block. The
