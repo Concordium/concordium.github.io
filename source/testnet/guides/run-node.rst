@@ -2,11 +2,9 @@
 Run a Node
 ==========
 
--  `Before you begin`_
--  `Running a node`_
--  `Seeing your node on the dashboards`_
--  `Enabling inbound connections`_
--  `Stopping the node`_
+.. contents::
+   :local:
+   :backlinks: none
 
 In this guide, you learn how to run a node on your computer that
 participates in the Concordium network. This means that you receive
@@ -28,7 +26,7 @@ You do not need an account to run a node.
 .. _Stopping the node: #stopping-the-node
 
 Before you begin
-----------------
+================
 
 Before running a Concordium node you will need to
 
@@ -44,7 +42,7 @@ Before running a Concordium node you will need to
    ``$HOME/Documents/concordium-software/<executables>``.
 
 Upgrade from an earlier version of Open Testnet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================
 
 To upgrade to the current Concordium software for Open Testnet 3:
 
@@ -76,7 +74,7 @@ To upgrade to the current Concordium software for Open Testnet 3:
 .. _download: /testnet/docs/downloads#concordium-node-and-client
 
 Running a node
---------------
+==============
 
 To start running a client that will join the Open Testnet follow these
 steps:
@@ -111,7 +109,7 @@ Docker. The client will launch and start outputting logging information
 about the operation of the node.
 
 Seeing your node on the dashboards
-----------------------------------
+==================================
 
 After running ``concordium-node`` you can
 
@@ -121,7 +119,7 @@ After running ``concordium-node`` you can
 -  `query`_ information about blocks, transactions, and accounts
 
 Network dashboard
-~~~~~~~~~~~~~~~~~
+-----------------
 
 It will take the client a while to catch up with the state of the
 Concordium blockchain. This involves, for example, downloading
@@ -138,7 +136,7 @@ top of the dashboard.
 .. _query: /testnet/docs/queries
 
 Node dashboard
-~~~~~~~~~~~~~~
+--------------
 
 You can also access the *node dashboard* at http://localhost:8099/.
 
@@ -164,7 +162,7 @@ You can also access the *node dashboard* at http://localhost:8099/.
    messages will disappear.
 
 Enabling inbound connections
-----------------------------
+============================
 
 If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
@@ -210,7 +208,7 @@ access to the node dashboard is not supported, but `see here`_ for a
 workaround.
 
 Stopping the node
------------------
+=================
 
 To stop the node, press **CTRL+c**, and wait for the node to do a clean
 shutdown.
@@ -226,7 +224,7 @@ the ``concordium-node`` executable.
 .. _support--feedback:
 
 Support & Feedback
-------------------
+==================
 
 Logging information for your node can be retrieved using the
 ``concordium-node-retrieve-logs`` tool. This will save logs from the

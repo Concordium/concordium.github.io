@@ -4,10 +4,9 @@
 One Account, Two Balances and Shielded Transfers
 ================================================
 
--  `Accounts have two balances`_
--  `Decrypting shielded transfers`_
--  `Making a shielded transfer`_
--  `Fees`_
+.. contents::
+   :local:
+   :backlinks: none
 
 With the release of Open Testnet 3, it is now possible to make shielded
 transfers. A shielded transfer is a `GTU`_ transfer in which the amount
@@ -16,15 +15,14 @@ Concordium ID app looks slightly different, to accommodate the new
 functionality. The new design and functionality will be explained below.
 
 Accounts have two balances
---------------------------
+==========================
 
 When we think of a regular bank account, we know that it only has one
 balance. On the Concordium blockchain an account is slightly different,
 as it has two balances: A **balance** and a **shielded balance**.
 
-.. image :: st1_wireframe.png
+.. image:: images/st1_wireframe.png
    :align: center
-
 
 As you can see on the screenshot, the new *Accounts* screen might look
 something like this: A handful of accounts, which each have two separate
@@ -48,7 +46,7 @@ complete amount of GTU on the shielded balance(s) of all accounts yet.
 .. _GTU: glossary#global-transaction-unit-gtu-
 
 Decrypting shielded transfers
------------------------------
+=============================
 
 To decrypt the received shielded transfers in the shielded balance, you
 simply have to press the shielded balance. At this point you will be
@@ -67,14 +65,13 @@ Example Account. If more shielded balances have a padlock beside their
 amounts, the process can be done for those as well, to reveal the total
 balance of all accounts.
 
-.. image :: st2_wireframe.png
+.. image:: images/st2_wireframe.png
    :align: center
-.. image :: st3_wireframe.png
+.. image:: images/st3_wireframe.png
    :align: center
 
-   
-   Moving an amount between the two balances
------------------------------------------
+Moving an amount between the two balances
+=========================================
 
 To make a shielded transfer, you need to have the funds to do so. A
 shielded transfer can only be done from the shielded balance of an
@@ -87,16 +84,16 @@ moving GTU from the regular balance to the shielded balance a
 balance to the regular an **Unshielding**.
 
 Submitting a shielding
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 To shield an amount you have to enter the balance of the account, on
 which you want to make a shielding. Let’s make a shielding from the
 balance of the Example Account. After entering the balance, you have to
 press the **Send** button, which will take us to the next screen.
 
-.. image :: st4_wireframe.png
+.. image:: images/st4_wireframe.png
    :align: center
-.. image :: st5_wireframe.png
+.. image:: images/st5_wireframe.png
    :align: center
 
 
@@ -105,16 +102,16 @@ ability to **Select recipient or shield amount**. When deciding on a
 recipient, press the **Shield amount** option. If everything looks
 correct, you can press **Shield amount** to finish the process.
 
-.. image :: st6_wireframe.png
+.. image:: images/st6_wireframe.png
    :align: center
-.. image :: st7_wireframe.png
+.. image:: images/st7_wireframe.png
    :align: center
-.. image :: st8_wireframe.png
+.. image:: images/st8_wireframe.png
    :align: center
 
-   
-   Submitting a unshielding
-~~~~~~~~~~~~~~~~~~~~~~~~
+
+Submitting a unshielding
+------------------------
 
 To conduct an unshielding, you just have to follow the same process as
 for a shielding, except you start from the **shielded balance**, and
@@ -129,11 +126,11 @@ press the **Send** button again. On the next screen, we decide on an
 amount, and press the **Select recipient or unshield amount** button,
 just as you did for the shielding and unshielding processes.
 
-.. image :: st9_wireframe.png
+.. image:: images/st9_wireframe.png
    :align: center
-.. image :: st10_wireframe.png
+.. image:: images/st10_wireframe.png
    :align: center
-.. image :: st11_wireframe.png
+.. image:: images/st11_wireframe.png
    :align: center
 
 
@@ -145,7 +142,7 @@ the shielded balance of your Savings account. Of course shielded
 transfers can also be done to external accounts not owned by yourself.
 
 Fees
-----
+====
 
 Making shieldings, unshieldings and shielded transfers will cost a
 **fee**, just like the regular transfers. This fee will differ between
@@ -158,7 +155,7 @@ take a look at the transaction details from the shielded balance.
 .. _support--feedback:
 
 Support & Feedback
-------------------
+==================
 
 If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com.

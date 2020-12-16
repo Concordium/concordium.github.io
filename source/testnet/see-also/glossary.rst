@@ -1,7 +1,46 @@
-========
-Glossary
-========
+.. _whitepaper: https://concordium.com/wp-content/uploads/2020/04/Concordium-White-Paper-Vol.-1.0-April-2020-1.pdf
+.. _encryption key: #encryption-key
+.. _identity: #identity
+.. _identity provider: #identity-provider
+.. _blocks: #block
+.. _best chain: #best-chain
+.. _baker: #baker
+.. _finalized: #finalization
+.. _transactions: #transaction
+.. _genesis block: #genesis-block
+.. _slot time: #slot
+.. _blocks: #block
+.. _consensus: #consensus
+.. _baking: #baker
+.. _finalization: #finalization
+.. _encryption-key: #encryption-key
+.. _GTU: #global-transaction-unit-gtu-
+.. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
+.. _encrypted amounts: #encrypted-amount
+.. _slots: #slot
+.. _leadership election nonce: #leader-election
+.. _chain: #chain
+.. _delegated stake: #stake-delegation
+.. _block: #block
+.. _baking: #baker
+.. _finalizing: #finalization
+.. _account: #account
+.. _encryption key: #encryption-key
+.. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
+.. _shielding: #shielding
+.. _unshielding: #unshielding
+.. _shielded balance: #shielded-balance
+.. _accounts: #account
+.. _bakers: #baker
+.. _consensus mechanisms: #consensus
+.. _mainnet: #mainnet
+.. _transaction sequence number: #transaction-sequence-number
+.. _transactions: #transaction
+.. _account: #account
+.. _shielded balance: #shielded-balance
+.. _lottery power: #lottery-power
 
+============================
 Glossary of Concordium Terms
 ============================
 
@@ -37,13 +76,6 @@ Best block
 ~~~~~~~~~~
 
 Last block on the `best chain`_.
-
-.. _whitepaper: https://concordium.com/wp-content/uploads/2020/04/Concordium-White-Paper-Vol.-1.0-April-2020-1.pdf
-.. _encryption key: #encryption-key
-.. _identity: #identity
-.. _identity provider: #identity-provider
-.. _blocks: #block
-.. _best chain: #best-chain
 
 Best chain
 ~~~~~~~~~~
@@ -90,17 +122,6 @@ Decryption key
 
 Dual to `encryption-key`_. In contrast to the encryption key, which is
 public, this key is only known to the account holder.
-
-.. _baker: #baker
-.. _finalized: #finalization
-.. _transactions: #transaction
-.. _genesis block: #genesis-block
-.. _slot time: #slot
-.. _blocks: #block
-.. _consensus: #consensus
-.. _baking: #baker
-.. _finalization: #finalization
-.. _encryption-key: #encryption-key
 
 Encrypted amount
 ~~~~~~~~~~~~~~~~
@@ -155,17 +176,6 @@ purposes:
 The smallest subdivision of GTU is the µGTU (micro GTU), with 1 GTU =
 1,000,000 µGTU. This means that GTU amounts are given with up to six
 decimal places of precision.
-
-.. _GTU: #global-transaction-unit-gtu-
-.. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
-.. _encrypted amounts: #encrypted-amount
-.. _slots: #slot
-.. _leadership election nonce: #leader-election
-.. _chain: #chain
-.. _delegated stake: #stake-delegation
-.. _block: #block
-.. _baking: #baker
-.. _finalizing: #finalization
 
 Identity
 ~~~~~~~~
@@ -302,12 +312,6 @@ account receives an encrypted transfer. When the account makes an
 encrypted transfer it can use a number of encrypted amounts from this
 list as inputs to the transfer.
 
-.. _account: #account
-.. _encryption key: #encryption-key
-.. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
-.. _shielding: #shielding
-.. _unshielding: #unshielding
-
 Shielding
 ~~~~~~~~~
 
@@ -346,11 +350,7 @@ There can be several test networks in existence at the same time. All
 the features are tested on the testnet before they are released on the
 `mainnet`_.
 
-.. _shielded balance: #shielded-balance
-.. _accounts: #account
-.. _bakers: #baker
-.. _consensus mechanisms: #consensus
-.. _mainnet: #mainnet
+
 
 Transaction
 ~~~~~~~~~~~
@@ -385,8 +385,3 @@ The winning probability is the probability that a baker wins in a given
 slot. The probability is *1-(1-f)α*, where *f* is the difficulty
 parameter and *α* is the `lottery power`_.
 
-.. _transaction sequence number: #transaction-sequence-number
-.. _transactions: #transaction
-.. _account: #account
-.. _shielded balance: #shielded-balance
-.. _lottery power: #lottery-power

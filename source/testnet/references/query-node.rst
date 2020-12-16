@@ -1,37 +1,4 @@
 
-===============
-Querying a node
-===============
-
--  `Account state`_
-
-   -  `List accounts`_
-   -  `Inspect specific account`_
-
--  `Transaction status`_
--  `Block state`_
-
-   -  `Inspect specific block`_
-
--  `Consensus state`_
-
-   -  `Inspect consensus parameters`_
-   -  `Inspect consensus status`_
-
--  `ID layer`_
-
-The ```concordium-client```_ tool supports queries of multiple kinds of
-state against a backend node:
-
--  Account state: List all accounts and display all publicly available
-   data of a specific account.
--  Transaction status: Show the status of the transaction identified by
-   the given transaction hash.
--  Block state: Display a summary of the contents of a specific block
-   and its relation to other blocks on the chain.
--  Consensus state: Show the parameters of the consensus protocol and
-   statistics related to baking and finalization of blocks.
-
 .. _Account state: #account-state
 .. _List accounts: #list-accounts
 .. _Inspect specific account: #inspect-specific-account
@@ -42,15 +9,49 @@ state against a backend node:
 .. _Inspect consensus parameters: #inspect-consensus-parameters
 .. _Inspect consensus status: #inspect-consensus-status
 .. _ID layer: #id-layer
-.. _``concordium-client``: /testnet/docs/client
+.. _concordium-client: /testnet/docs/client
+.. _best block: /testnet/docs/glossary#best-block
+.. _shielded balance: /testnet/docs/glossary#shielded-balance
+.. _sequence number: /testnet/docs/glossary#transaction-sequence-number
+.. _incoming encrypted amounts: /testnet/docs/glossary#incoming-encrypted-amount
+.. _self balance: /testnet/docs/glossary#self-balance
+.. _identity: /testnet/docs/identities-and-accounts
+.. _transaction: /testnet/docs/glossary#transaction
+.. _best block: /testnet/docs/glossary#best-block
+.. _glossary: /testnet/docs/glossary
+.. _best block: /testnet/docs/glossary#best-block
+.. _Discord: https://discord.com/invite/xWmQ5tp
+
+===============
+Querying a node
+===============
+
+.. contents::
+   :local:
+   :backlinks: none
+
+The concordium-client_ tool supports queries of multiple kinds of state against
+a backend node:
+
+-  Account state: List all accounts and display all publicly available
+   data of a specific account.
+-  Transaction status: Show the status of the transaction identified by
+   the given transaction hash.
+-  Block state: Display a summary of the contents of a specific block
+   and its relation to other blocks on the chain.
+-  Consensus state: Show the parameters of the consensus protocol and
+   statistics related to baking and finalization of blocks.
+
 
 Account state
--------------
+=============
 
 List accounts
-~~~~~~~~~~~~~
+-------------
 
-``concordium-client account list [--block BLOCK-HASH]``
+.. code-block:: console
+
+   $concordium-client account list [--block BLOCK-HASH]
 
 List the addresses of all accounts on the chain as of a specific block:
 
@@ -58,24 +59,26 @@ List the addresses of all accounts on the chain as of a specific block:
    block`_.
 
 Example
-^^^^^^^
+~~~~~~~
 
-::
+.. code-block:: console
 
-   $ concordium-client account list
+   $concordium-client account list
    2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    33MT5V7LAzbjfRS537nqq9AqHb4ALymQWwYhriE3kcYr8qsDoS
    3GqF3FQPxyxUChnBcwsC5jmY4kqWyi6R8dNXHk88GYqCPKaLGP
    ...
 
 Inspect specific account
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-``concordium-client account show [ACCOUNT] [--block BLOCK] [--encrypted] [--decrypt-encrypted]``
+.. code-block:: console
+
+   $concordium-client account show [ACCOUNT] [--block BLOCK] [--encrypted] [--decrypt-encrypted]
 
 Display all publicly available information of a specific account as of a
-specific block. For accounts for which secret keys are available this
-command can also decrypt the shielded balance.
+specific block. For accounts for which secret keys are available this command
+can also decrypt the shielded balance.
 
 -  ``ACCOUNT``: Address or local name of the account (if not provided,
    will show the account with the local alias ``"default"``).
@@ -85,15 +88,12 @@ command can also decrypt the shielded balance.
 -  ``--decrypt-encrypted``: Show the shielded balance and decrypt it
    (explained below).
 
-.. _best block: /testnet/docs/glossary#best-block
-.. _shielded balance: /testnet/docs/glossary#shielded-balance
-
 Example
-^^^^^^^
+~~~~~~~
 
-::
+.. code-block:: console
 
-   $ concordium-client account show my-account --encrypted
+   $concordium-client account show my-account --encrypted
    Local name:            my-account
    Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    Amount:                1026.000000 GTU
@@ -122,64 +122,59 @@ The output shows that the account with the local name ``my-account``
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
 
-Furthermore, the account's credential reveals no attributes from the
-`identity`_ that the account is derived from, and expires at the end of
-September 2021.
+Furthermore, the account's credential reveals no attributes from the `identity`_
+that the account is derived from, and expires at the end of September 2021.
 
-If the flag ``--decrypt-encrypted`` is provided, each of the encrypted
-amounts will be decrypted and the decryption shown. Note that for this
-operation to succeed, the private decryption key of the account must be
-available in the ``concordium-client`` configuration. The user is asked
-for the password for accessing the decryption key.
-
-.. _sequence number: /testnet/docs/glossary#transaction-sequence-number
-.. _incoming encrypted amounts: /testnet/docs/glossary#incoming-encrypted-amount
-.. _self balance: /testnet/docs/glossary#self-balance
-.. _identity: /testnet/docs/identities-and-accounts
+If the flag ``--decrypt-encrypted`` is provided, each of the encrypted amounts
+will be decrypted and the decryption shown. Note that for this operation to
+succeed, the private decryption key of the account must be available in the
+``concordium-client`` configuration. The user is asked for the password for
+accessing the decryption key.
 
 Transaction status
-------------------
+==================
 
-``concordium-client transaction status TX-HASH``
+.. code-block:: console
 
-Display the lifecycle state of a `transaction`_ (pending, committed,
-finalized, or absent).
+   $concordium-client transaction status TX-HASH
 
-If the transaction is commited or finalized, the status (success or
-rejected) and execution cost is included as well.
+Display the lifecycle state of a `transaction`_ (pending, committed, finalized,
+or absent).
+
+If the transaction is commited or finalized, the status (success or rejected)
+and execution cost is included as well.
 
 Example
-^^^^^^^
+-------
 
-::
+.. code-block:: console
 
-   concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
+   $concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
    Transaction is finalized into block e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2 with status "success" and cost 0.011200 GTU (112 NRG).
 
 Block state
------------
-
-.. _transaction: /testnet/docs/glossary#transaction
+===========
 
 Inspect specific block
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
-``concordium-client block show [BLOCK-HASH]``
+.. code-block:: console
 
-Display information about a specific block. Note that some fields (e.g.
-slot time) are objective (i.e. all nodes participating in the Concordium
-network will agree on these) while others (e.g. arrival time) are
-specific to the local node:
+   $concordium-client block show [BLOCK-HASH]
+
+Display information about a specific block. Note that some fields (e.g. slot
+time) are objective (i.e. all nodes participating in the Concordium network will
+agree on these) while others (e.g. arrival time) are specific to the local node:
 
 -  ``BLOCK-HASH``: Full hash of the block. Defaults to the current `best
    block`_.
 
 Example
-^^^^^^^
+~~~~~~~
 
-::
+.. code-block:: console
 
-   $ concordium-client block show e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
+   $concordium-client block show e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
    Hash:                       e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
    Parent block:               01aea0ec91fe37cb956aafcd6d0ab7f86cfd0207e5fffc2a87d40657e2c4fa40
    Last finalized block:       dbf61032a23e020dc6793cbf242c8eadcd91586d84873dee4ae92856b29e2b3f
@@ -196,15 +191,14 @@ Example
 See the `glossary`_ for detailed descriptions of the individual fields.
 
 Consensus state
----------------
-
-.. _best block: /testnet/docs/glossary#best-block
-.. _glossary: /testnet/docs/glossary
+===============
 
 Inspect consensus parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
-``concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]``
+.. code-block:: console
+
+   $concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
 
 Show `election parameters`_ for a specific block, optionally including
 bakers and their `lottery power`_:
@@ -212,17 +206,17 @@ bakers and their `lottery power`_:
 -  ``BLOCK-HASH``: Full hash of the block. Defaults to the current `best
    block`_.
 -  ``--include-bakers``: If set, include table of bakers and their
-   lottery power. The lottery power is recomputed periodically, so
-   operations that affect them do not take effect immediately. For more
-   information about what information will be shown here, see the
-   `detailed description on the time constraints`_.
+   lottery power. The lottery power is recomputed periodically, so operations
+   that affect them do not take effect immediately. For more information about
+   what information will be shown here, see the `detailed description on the
+   time constraints`_.
 
 Example
-^^^^^^^
+~~~~~~~
 
-::
+.. code-block:: console
 
-   $ concordium-client consensus show-parameters --include-bakers
+   $concordium-client consensus show-parameters --include-bakers
    Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66
    Bakers:
                                 Account                       Lottery power
@@ -240,12 +234,14 @@ Example
 .. _detailed description on the time constraints: /testnet/docs/quickstart-baker#detailed-description-on-the-epoch-constraints
 
 Inspect consensus status
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-``concordium-client consensus status``
+.. code-block:: console
 
-Display key blocks along with various statistics related to block
-production and finalization.
+   $concordium-client consensus status
+
+Display key blocks along with various statistics related to block production and
+finalization.
 
 -  Key blocks: Genesis, "best", and most recently finalized (and their
    heights).
@@ -253,11 +249,11 @@ production and finalization.
    arrived/validated, and finalized.
 
 Example
-^^^^^^^
+~~~~~~~
 
-::
+.. code-block:: console
 
-   $ concordium-client consensus status
+   $concordium-client consensus status
    Best block:                  7f9641fd4dfc1ffca2ef187fdddff375bb975764d66d68744574b893b61a8338
    Genesis block:               1c647ab5e7ff63b28926f5eed88a9d49b130942a54d791abfa79b4cc0c98acd0
    Genesis time:                Wed, 18 Mar 2020 14:57:45 UTC
@@ -285,18 +281,18 @@ Standard Deviation, respectively.
 ID layer
 --------
 
-``concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]``
+.. code-block:: console
 
-Display the list of identity providers or anonymity revokers at a given
-block, defaulting to `best block`_.
+   $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
+
+Display the list of identity providers or anonymity revokers at a given block,
+defaulting to `best block`_.
 
 .. _support--feedback:
 
 Support & Feedback
 ==================
 
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
+If you run into any issues or have suggestions, post your question or feedback
+on `Discord`_, or contact us at testnet@concordium.com.
 
-.. _best block: /testnet/docs/glossary#best-block
-.. _Discord: https://discord.com/invite/xWmQ5tp

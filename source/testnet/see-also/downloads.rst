@@ -1,3 +1,9 @@
+.. _link: https://testflight.apple.com/join/X9MJhsPC
+.. _Open Testnet v3: /testnet/docs/release-notes
+.. _Concordium client: /testnet/docs/client
+.. _node: /testnet/docs/quickstart-node
+.. _client: /testnet/docs/client
+
 =========
 Downloads
 =========
@@ -32,15 +38,13 @@ Concordium ID using TestFlight.
 
 The page you will be taken to, should look something like this:
 
-.. image :: TestFlight.png
+.. image:: images/TestFlight.png
    :align: center
-
 
 Installing the TestFlight app will be necessary to get Concordium ID, as
 that is Apple's way of distributing apps not yet released to the actual
 App Store.
 
-.. _link: https://testflight.apple.com/join/X9MJhsPC
 
 Requirements
 ^^^^^^^^^^^^
@@ -100,7 +104,3 @@ can cause problems with the docker container used to run the node. Refer
 to our known problems list at
 https://developer.concordium.com/testnet/docs/troubleshooting
 
-.. _Open Testnet v3: /testnet/docs/release-notes
-.. _Concordium client: /testnet/docs/client
-.. _node: /testnet/docs/quickstart-node
-.. _client: /testnet/docs/client

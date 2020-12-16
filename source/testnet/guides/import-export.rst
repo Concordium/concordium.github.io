@@ -2,17 +2,15 @@
 Exporting and importing IDs and accounts using the mobile wallet
 ================================================================
 
-Quickstart: Exporting and importing IDs and accounts using the mobile wallet
-============================================================================
-
--  `Export`_
--  `Import`_
+.. contents::
+   :local:
+   :backlinks: none
 
 Using the mobile wallet it is possible to export your IDs, accounts and
 address book. This brief guide will show you how it works.
 
 Export
-------
+======
 
 The first step of exporting your IDs, accounts and address book, is to
 go the **More** menu. The **More** menu will look slightly different,
@@ -21,9 +19,9 @@ three options **Address Book**, **Export** and **Import**, while you
 will only see **Address Book** and **Export** on iOS. This will be
 explained in the `Import`_ section of this guide.
 
-.. image :: ei1_wireframe.png
+.. image:: images/ei1_wireframe.png
    :align: center
-.. image :: ei12_wireframe.png
+.. image:: images/ei12_wireframe.png
    :align: center
 
 
@@ -36,15 +34,14 @@ re-enter your password. When that is done, you will be taken to your
 phone's export interface, allowing you to choose what to do with the
 exported file.
 
-.. raw :: html
+.. note::
 
-   <span class="note">
-   The password you choose on export, will also be the password used to import and make transactions with the [CLI](/testnet/docs/client).
-   </span>
+   The password you choose on export, will also be the password used to import
+   and make transactions with the [CLI](/testnet/docs/client).
 
-.. image :: ei3_wireframe.png
+.. image:: images/ei3_wireframe.png
    :align: center
-.. image :: ei4_wireframe.png
+.. image:: images/ei4_wireframe.png
    :align: center
 
 
@@ -52,13 +49,13 @@ exported file.
 .. _Import: #import
 
 Import
-------
+======
 
 The process of importing is slightly different on iOS and Android,
 because of the way the two systems handle files.
 
 iOS
-~~~
+---
 
 As we saw on one of the first screenshots, iOS did not have an import
 option in the **More** menu. Instead, you just open the file you
@@ -73,14 +70,13 @@ authenticate yourself, using your biometrics, passcode or password. If
 succesful, you will be shown a screen with information about what has
 been imported.
 
-.. image :: ei5_wireframe.png
+.. image:: images/ei5_wireframe.png
    :align: center
-.. image :: ei6_wireframe.png
+.. image:: images/ei6_wireframe.png
    :align: center
 
-   
-   Android
-~~~~~~~
+Android
+-------
 
 On Android you have the option of choosing **Import** in the **More**
 menu. By clicking that, you can browse to the location, where you keep
@@ -90,13 +86,13 @@ correct, you will be prompted to authenticate with biometrics, passcode
 or password, which will then lead you to a screen showing the import
 result.
 
-.. image :: ei7_wireframe.png
+.. image:: images/ei7_wireframe.png
    :align: center
-.. image :: ei8_wireframe.png
+.. image:: images/ei8_wireframe.png
    :align: center
-.. image :: ei9_wireframe.png
+.. image:: images/ei9_wireframe.png
    :align: center
-.. image :: ei10_wireframe.png
+.. image:: images/ei10_wireframe.png
    :align: center
 
 
@@ -109,7 +105,7 @@ CLI, `Concordium Client`_.
 .. _support--feedback:
 
 Support & Feedback
-------------------
+==================
 
 If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com.

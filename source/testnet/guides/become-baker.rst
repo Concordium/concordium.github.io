@@ -1,9 +1,18 @@
+
+.. _networkDashboardLink: https://dashboard.testnet.concordium.com/
+.. _concordium-client: /testnet/docs/client
+.. _node-dashboard: http://localhost:8099
+.. _querying the node: /testnet/docs/queries#account-state
+.. _Discord: https://discord.com/invite/xWmQ5tp
+.. _epoch: /testnet/docs/glossary#epoch
+
 ==================================
 Becoming a baker (creating blocks)
 ==================================
 
-.. contents ::
+.. contents::
    :local:
+   :backlinks: none
 
 This section explains why and how to become a baker as well as what a
 baker is and its role in the network.
@@ -74,7 +83,7 @@ stake at the beginning of the chain, that the users can request a
 delegation from. This will be discussed more in detail `below`_.
 
 Managing accounts
------------------
+=================
 
 This section provides a brief recap of the relevant steps for importing
 an account. For a complete description, see `Managing accounts`_.
@@ -92,12 +101,12 @@ The node-dashboard will ask for a password to decrypt the exported file
 and import all accounts. The same password will be used for encrypting
 the transaction signing keys and the encrypted transfers key.
 
-.. image :: account-management-node-dashboard2.png
+.. image:: images/account-management-node-dashboard2.png
    :align: center
    :width: 460px
 
 The baker keys
---------------
+==============
 
 When the node is started with baker credentials it is ready to start
 baking once it is registered as a baker on the chain. Hence, to support
@@ -115,7 +124,7 @@ make a copy of the file in case they ever wanted to use it in multiple
 running nodes or more advanced setups.
 
 Registering a baker and associating a reward account
-----------------------------------------------------
+====================================================
 
 The first step towards becoming a baker is registering the baker keys in
 the chain in association with the reward account.
@@ -131,7 +140,7 @@ follows:
 #. Wait for the transaction to be finalized, and then 2 epochs to become
    active.
 
-.. image :: baking-node-dashboard4.png
+.. image:: images/baking-node-dashboard4.png
    :align: center
    :width: 460px
 
@@ -148,7 +157,7 @@ selected account. Rewards will be paid to that account and the node
 automatically starts trying to bake.
 
 Checking the status of the baker and its lottery power
-------------------------------------------------------
+======================================================
 
 The user can see in the node dashboard that the node is baking and its
 status. However, this is also reflected in other components with
@@ -157,7 +166,6 @@ different degrees of precision.
 In the """ , networkDashboardLink , """, the user's node will show its
 baker ID in the ``Baker`` column.
 
-.. _networkDashboardLink: https://dashboard.testnet.concordium.com/
 
 However, there is still some information that is not shown in the
 node-dashboard neither in the network dashboard which is the lottery
@@ -165,11 +173,11 @@ power of the bakers. The lottery power will determine how likely it is
 that a given baker will win the lottery and bake a block. As said, this
 is the percentage of the total delegated stake that is delegated to a
 given baker. The only current way for a user to check the stake that is
-delegated to a baker is using ```concordium-client```_:
+delegated to a baker is using concordium-client_:
 
-::
+.. code-block:: console
 
-   $ concordium-client consensus show-parameters --include-bakers
+   $concordium-client consensus show-parameters --include-bakers
    Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0
    Election difficulty: 4.0e-2
    Bakers:
@@ -185,12 +193,11 @@ registered in the chain and their relative lottery power.
 Also if the user's baker has been delegated enough stake, it should
 start producing blocks and the user can see in their wallet that they
 are receiving baking rewards in the account associated with the baker.
-   
-.. image :: baking-rewards.png
+
+.. image:: images/baking-rewards.png
    :align: center
    :width: 460px
 
-.. _``concordium-client``: /testnet/docs/client
 
 Delegating to a baker
 ---------------------
@@ -217,7 +224,7 @@ In order to do this, the user must once more access the
 node-dashboard shows a new button to request delegation from the
 Concordium accounts.
 
-.. image :: delegating-node-dashboard1.png
+.. image:: images/delegating-node-dashboard1.png
    :align: center
    :width: 460px
 
@@ -229,7 +236,6 @@ instant. The user is allowed to have the stake delegated **for at least
 Using the same command as before for checking the baker list, the user
 can check the delegated stake it has in each instant.
 
-.. _node-dashboard: http://localhost:8099
 
 Delegating manually to a chosen baker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -268,7 +274,6 @@ In order to check if an account is currently delegating to a baker and
 its baker ID, the user can check the information of the account by
 `querying the node`_.
 
-.. _querying the node: /testnet/docs/queries#account-state
 
 Finalization
 ------------
@@ -297,7 +302,7 @@ the state of the node in each moment.
 This explanation might be too detailed for the reader and it is not
 required for getting a general understanding of the flow.
 
-.. image :: timeline.png
+.. image:: images/timeline.png
    :align: center
    :width: 460px
 
@@ -317,7 +322,6 @@ the block containing the transaction was baked at a slot time which
 happens in the epoch ``E``, the change will be effective when starting
 the epoch ``E + 2``.
 
-.. _epoch: /testnet/docs/glossary#epoch
 
 In practice, the user can expect the changes to take more than one and
 at most two epochs to become active under normal finalization
@@ -332,7 +336,7 @@ a finalizer. This way, the ``Delegated stake`` timeline shows that the
 accounted stake for being part of the finalization committee changes in
 the exact moment when the transaction is finalized.
 
-.. :ref :'Delegated stake'
+.. :ref:'Delegated stake'
 
 Note that when delegating stake to a baker, it is important to wait for
 the transaction that registers a baker to be in a finalized block. The
@@ -345,6 +349,5 @@ Support & Feedback
 ==================
 
 If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com. 
+feedback on `Discord`_, or contact us at testnet@concordium.com.
 
-.. _Discord: https://discord.com/invite/xWmQ5tp
