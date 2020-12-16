@@ -68,10 +68,11 @@ ready.
 .. image :: ca1_wireframe.png
    :align: center
 .. image :: ca2_wireframe.png
-   :align: center   
+    :align: center
 .. image :: ca4_wireframe.png
    :align: center
-  
+
+=======
 
 .. _Identities and accounts: #identities-and-accounts
 .. _Before you start: #before-you-start
@@ -130,7 +131,8 @@ creating your account, go to the *Accounts* screen and do the following:
 .. image :: ca12_wireframe.png
    :align: center
 .. image :: ca13_wireframe.png
-   :align: center   
+   :align: center
+
   
 
 2. To request 100 GTU, press **Request 100 GTU**.
@@ -196,8 +198,7 @@ see:
 
 .. image :: ca21_wireframe.png
    :align: center
-  
-   
+
 Here, you see the address displayed both as text and as a QR code. Give this information to the person you expect to send you GTU.
 
 The shielded balance and transfers
