@@ -187,8 +187,8 @@ to transfer 25 GTU is:
 
    $concordium-client transaction send-gtu --amount 25 --sender A --receiver B
 
-The output will look similar to the following (in the example we assume
-that the sender account A has three transaction signing keys 0, 1, 3).
+The output will look similar to the following (in the example we assume that the
+sender account A has three transaction signing keys 0, 1, 3).
 
 .. code-block:: console
 
@@ -212,9 +212,8 @@ that the sender account A has three transaction signing keys 0, 1, 3).
 Encrypted transfer
 ------------------
 
-An encrypted transfer is a transfer from a shielded balance to a
-shielded balance of another account. The command is very similar to a
-plain transfer
+An encrypted transfer is a transfer from a shielded balance to a shielded
+balance of another account. The command is very similar to a plain transfer
 
 .. code-block:: console
 
@@ -252,12 +251,11 @@ The interaction looks as follows.
    [13:20:46] Waiting for the transaction to be finalized...
    [13:20:46] Transaction finalized.
 
-   This command has all of the additional options of ``send-gtu``, as well
-as an additional flag ``--index.`` This flag, if given, is used to
-select which `incoming encrypted amounts`_ that will be used as input to
-the transaction. This is best illustrated on an example. `Querying an
-account`_ can display the list of incoming amounts on account. An output
-could look as follows
+This command has all of the additional options of ``send-gtu``, as well as an
+additional flag ``--index.`` This flag, if given, is used to select which
+`incoming encrypted amounts`_ that will be used as input to the transaction.
+This is best illustrated on an example. `Querying an account`_ can display the
+list of incoming amounts on account. An output could look as follows
 
 .. code-block:: console
 
@@ -270,19 +268,19 @@ could look as follows
      Self balance: c0000000000000000000...
    ...
 
-If we were to ``send-gtu-encrypted`` from the account while supplying
-index 8, only the encrypted amount ``8c0faff6739bffc531c5...`` and the
-`self balance`_ would be used as input of the encrypted transfer.
+If we were to ``send-gtu-encrypted`` from the account while supplying index 8,
+only the encrypted amount ``8c0faff6739bffc531c5...`` and the `self balance`_
+would be used as input of the encrypted transfer.
 
-If the supplied index is out of range ``concordium-client`` will refuse
-to send the transaction.
+If the supplied index is out of range ``concordium-client`` will refuse to send
+the transaction.
 
 Shield an amount
 ----------------
 
-The command to shield an amount with ``concordium-client`` is
-``account encrypt``. For example, an interaction to shield 10 GTU on
-account A looks as follows.
+The command to shield an amount with ``concordium-client`` is ``account
+encrypt``. For example, an interaction to shield 10 GTU on account A looks as
+follows.
 
 The command is
 
@@ -290,10 +288,9 @@ The command is
 
    $concordium-client account encrypt --amount 10 --sender A
 
-It supports all of the same additional flags as the transfer
-transaction, apart from the ``--receiver`` since transfer from public to
-encrypted balance is always on the same account. The output looks as
-follows
+It supports all of the same additional flags as the transfer transaction, apart
+from the ``--receiver`` since transfer from public to encrypted balance is
+always on the same account. The output looks as follows
 
 .. code-block:: console
 
@@ -357,8 +354,6 @@ of ``--index`` which has the same meaning as in the
    Transaction is finalized into block e71a495c47734968214ac22e918f508949b02351b9f188d9b657b648927cf1ab with status "success" and cost 1.611800 GTU (16118 NRG).
    [13:34:18] Waiting for the transaction to be finalized...
    [13:34:18] Transaction finalized.
-
-.. _support--feedback:
 
 Support & Feedback
 ==================

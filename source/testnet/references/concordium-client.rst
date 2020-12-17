@@ -291,9 +291,6 @@ Replace ``--bash-completion-script`` by ``--zsh-completion-script`` or
 See the documentation of the `framework`_ used to implement the command
 structure of ``concordium-client`` for more details.
 
-
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

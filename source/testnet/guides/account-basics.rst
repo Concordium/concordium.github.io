@@ -201,8 +201,6 @@ second **Shielded Balance**. To learn more about the shielded balance
 and the shielded transfers that can be done with it, continue to this
 next `Quickstart: Two balances and shielded transfers.`_
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

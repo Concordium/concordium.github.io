@@ -266,8 +266,6 @@ to ports other than 8888 (peer-to-peer networking) is not possible from the
 public internet. Someone with access to the `other ports`_ may be able to take
 control of your node or accounts you have saved on the node.
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

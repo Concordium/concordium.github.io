@@ -152,8 +152,6 @@ account used to make the transaction. These fees will of course be shown
 in the log of your regular balance, but it will also be shown if you
 take a look at the transaction details from the shielded balance.
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

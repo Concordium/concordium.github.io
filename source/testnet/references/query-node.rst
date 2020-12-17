@@ -288,8 +288,6 @@ ID layer
 Display the list of identity providers or anonymity revokers at a given block,
 defaulting to `best block`_.
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

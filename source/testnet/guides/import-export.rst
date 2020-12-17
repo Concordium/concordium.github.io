@@ -1,3 +1,8 @@
+.. _Export: #export
+.. _Import: #import
+.. _Concordium Client: /testnet/docs/client
+.. _Discord: https://discord.gg/xWmQ5tp
+
 ================================================================
 Exporting and importing IDs and accounts using the mobile wallet
 ================================================================
@@ -21,7 +26,7 @@ explained in the `Import`_ section of this guide.
 
 .. image:: images/ei1_wireframe.png
    :align: center
-.. image:: images/ei12_wireframe.png
+.. image:: images/ei2_wireframe.png
    :align: center
 
 
@@ -44,9 +49,6 @@ exported file.
 .. image:: images/ei4_wireframe.png
    :align: center
 
-
-.. _Export: #export
-.. _Import: #import
 
 Import
 ======
@@ -102,13 +104,9 @@ Concordium Client
 Exported files from both iOS and Android can also be imported with our
 CLI, `Concordium Client`_.
 
-.. _support--feedback:
 
 Support & Feedback
 ==================
 
 If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com.
-
-.. _Concordium Client: /testnet/docs/client
-.. _Discord: https://discord.gg/xWmQ5tp

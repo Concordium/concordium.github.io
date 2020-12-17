@@ -221,8 +221,6 @@ the ``concordium-node`` executable.
 .. _stopped: #stopping-the-node
 .. _see here: /testnet/docs/troubleshooting#node-dashboard-does-not-load
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

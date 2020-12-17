@@ -101,8 +101,6 @@ sequence number and assign the correct one when sending transactions.
 ``concordium-client`` also tracks the sequence number automatically, but it can
 also be set manually via the option ``--nonce``.
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 

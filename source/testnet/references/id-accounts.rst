@@ -134,8 +134,6 @@ All of these actions are subject to rules and processes, and only the relevant
 entities learn any information about the account owner. No information is
 publicly revealed.
 
-.. _support--feedback:
-
 Support & Feedback
 ==================
 
