@@ -14,336 +14,400 @@ Becoming a baker (creating blocks)
    :local:
    :backlinks: none
 
-This section explains why and how to become a baker as well as what a
-baker is and its role in the network.
+This section explains what a baker is, what is its role in the network and how
+to become one.
 
 By reading this section you will learn:
 
 -  What is a baker and the concepts related to it.
 -  How to upgrade your node for becoming a baker.
--  How to request delegation from the testnet delegation accounts.
 
-The process of becoming a baker can be summarized in the following
-steps:
+The process of becoming a baker can be summarized in the following steps:
 
-#. Get an account.
+#. Get an account and some GTUs.
 #. Get a set of baker keys.
-#. Start the node with the baker keys.
 #. Register the baker keys with the account.
-#. Get some stake delegated.
+#. Start the node with the baker keys.
 
-After completing those steps, the node will bake blocks that will
-produce rewards for the account that registered it. The documentation
-that follows explains this steps and guides the user through the
-process.
+After completing those steps, the node will bake blocks that will produce
+rewards for the associated account that registered it. The documentation that
+follows explains this steps and guides the user through the process.
+
+.. note::
+
+   During this section we will use the name ``bakerAccount`` as the name of the
+   account that will be used to register and manage the baker. This name of the
+   account will be set when importing the account into the toolchain.
 
 Definitions
 ===========
 
-A *baker* is a node that actively participates in the network by
-creating (or *baking*) new blocks that are added to the chain. A baker
-collects, orders and validates the transactions that are included in a
-block to ensure that the integrity of the blockchain is maintained. It
-signs each block it bakes so that it can be checked and executed by the
-rest of the participants of the network.
+Baker
+-----
 
-Each baker has a set of cryptographic keys called *baker credentials*.
-The baker uses these keys to sign the blocks that it bakes. Each
-registered baker is associated with a baker ID that is used when
-referring to that baker.
+A node is said to be a *baker* (or *is baking*) when it actively participates in
+the network by creating (or *baking*) new blocks that are added to the chain. A
+baker collects, orders and validates the transactions that are included in a
+block to ensure that the integrity of the blockchain is maintained. It signs
+each block it bakes so that it can be checked and executed by the rest of the
+participants of the network. 
 
-Whenever a baker bakes a valid block that gets included in the chain,
-after some time a reward is paid to the *reward account* that is
-registered for the baker.
+Baker keys
+----------
 
-When considering the rewards and other baking-related concepts, we use
-the concept of an *epoch* as a unit of time that defines a period in
-which the set of current bakers and delegations are fixed.
+Each baker has a set of cryptographic keys to which we will refer as *baker
+keys*. The node uses these keys to sign the blocks that it bakes. In order to
+bake blocks signed by a specific baker the node has to be running with its set
+of baker keys loaded.
 
-In order to be eligible to craft a block, the baker must participate in
-a *lottery* in which the probability of getting a winning ticket is
-roughly proportional to the stake that is `delegated`_ to the baker.
+Baker account
+-------------
 
-An account may choose to delegate to a baker and then the baker can use
-the stake of the account as lottery power. This process is called
-*delegation*. This way, a newcomer could go through the process of
-becoming a baker and if some stake is delegated to their baker then the
-baker would be able to win the lottery and have the opportunity of
-crafting some blocks (and earning the reward associated with those).
-When an account delegates its stake, up to two epochs have to pass
-before the delegated stake contributes to the baker's lottery power.
-When an account stops delegating (sends an undelegation order) the same
-principle applies; up two epochs have to pass before the account's stake
-stops contributing to the baker's lottery power. For more information,
-check the last section of this quickstart.
+Each account in the network can register one and only one new set of baker
+keys that effectively registers a baker in the network, so this means
+that every account can choose whether to be a baker or not.
 
-In order to simplify the process of becoming a baker, on the Testnet,
-Concordium deploys 4 *delegation* accounts, each with 5% of the total
-stake at the beginning of the chain, that the users can request a
-delegation from. This will be discussed more in detail `below`_.
+During this guide we will refer to the account that opted to be a baker simply
+as *the account*, *the baker account* or *the associated account*.
+
+Each registered baker is given a baker ID in the network. The baker ID is unique
+for each account so if an account removes its baker and then registers a new
+baker, it will have the same baker ID as the original baker. This ID merely tags
+the baker and is not needed to be provided for any operation, as the sender
+account already identifies in which baker should the operation be performed.
+
+Whenever a baker bakes a valid block that gets included in the chain, after some
+time a reward is paid to the associated account.
+
+Stake and lottery
+-----------------
+
+A baker holds some *stake* which is part of the amount of GTU owned by the
+account. The staked amount can never be greater than the available amount on the
+account. The staked amount cannot be moved nor transferred in any way until it
+is released by the baker.
+
+.. note::
+   
+   If an account owns an amount that was transferred with a release schedule,
+   said amount can be staked even if not released yet.
+
+In order to be chosen for baking a block, the baker must participate in a
+*lottery* in which the probability of getting a winning ticket is roughly
+proportional to the staked amount.
+
+Epochs and slots
+----------------
+
+In the Concordium blockchain, time is subdivided into *slots*. Slots have a time
+duration fixed at the Genesis block. On any given branch, each slot can have at
+most one block, but multiple blocks on different branches can be produced in the
+same slot.
+
+When considering the rewards and other baking-related concepts, we use the
+concept of an *epoch* as a unit of time that defines a period in which the set
+of current bakers and stakes are fixed. Epochs have a time duration fixed at the
+Genesis block. In the testnet, epochs have a duration of **1 hour**.
+
+Start baking
+============
 
 Managing accounts
-=================
+-----------------
 
-This section provides a brief recap of the relevant steps for importing
-an account. For a complete description, see `Managing accounts`_.
+This section provides a brief recap of the relevant steps for importing an
+account. For a complete description, see :ref:`managing_accounts`.
+   
+Accounts are created using the :ref:`concordium_id` app. Once an account has been
+successfully created, navigating to the **More** tab and selecting **Export**
+allows the user to get a JSON file containing the account information.
 
-Accounts are created using the `Concordium ID`_ app. Once an account has
-been successfully created, navigating to the **More** tab and selecting
-**Export** allows the user to get a JSON file containing the account
-information.
-
-In order to import an account into the toolchain, the user needs to
-access their node-dashboard which when running the ``concordium-node``
-is located at http://localhost:8099.
-
-The node-dashboard will ask for a password to decrypt the exported file
-and import all accounts. The same password will be used for encrypting
-the transaction signing keys and the encrypted transfers key.
-
-.. image:: images/account-management-node-dashboard2.png
-   :align: center
-   :width: 460px
-
-The baker keys
-==============
-
-When the node is started with baker credentials it is ready to start
-baking once it is registered as a baker on the chain. Hence, to support
-registering as a baker after the node is running, the
-``concordium-node`` automatically generates a set of credentials
-``baker-credentials.json`` if not already present.
-
-These keys are generated in the data directory which will change
-depending on the running OS. On Linux and macOS, the data directory is
-``~/.local/share/concordium`` whereas in Windows it is
-``%LOCALAPPDATA%\\concordium``.
-
-Normally the data directory is not erased but the user can choose to
-make a copy of the file in case they ever wanted to use it in multiple
-running nodes or more advanced setups.
-
-Registering a baker and associating a reward account
-====================================================
-
-The first step towards becoming a baker is registering the baker keys in
-the chain in association with the reward account.
-
-The flow for registering the new baker from the node-dashboard is as
-follows:
-
-#. Import an account and select it as the active account.
-#. Introduce the key for signing transaction on the prompt under the
-   *Baking* header.
-#. Click on the button under the *Baking* header in order to start the
-   process.
-#. Wait for the transaction to be finalized, and then 2 epochs to become
-   active.
-
-.. image:: images/baking-node-dashboard4.png
-   :align: center
-   :width: 460px
-
-
-In every moment the node-dashboard informs of the status of the process.
-From this point on, the user can click on the ``Stop Baking`` button to
-unregister the baker if they want to.
-
-Both being included in the baker list and being removed from it happens
-2 epochs after the epoch in which the transaction was finalized.
-
-At this point, the baker has been registered and associated with the
-selected account. Rewards will be paid to that account and the node
-automatically starts trying to bake.
-
-Checking the status of the baker and its lottery power
-======================================================
-
-The user can see in the node dashboard that the node is baking and its
-status. However, this is also reflected in other components with
-different degrees of precision.
-
-In the """ , networkDashboardLink , """, the user's node will show its
-baker ID in the ``Baker`` column.
-
-
-However, there is still some information that is not shown in the
-node-dashboard neither in the network dashboard which is the lottery
-power of the bakers. The lottery power will determine how likely it is
-that a given baker will win the lottery and bake a block. As said, this
-is the percentage of the total delegated stake that is delegated to a
-given baker. The only current way for a user to check the stake that is
-delegated to a baker is using concordium-client_:
+In order to import an account into the toolchain, the user needs to execute the
+``concordium-client``:
 
 .. code-block:: console
 
-   $concordium-client consensus show-parameters --include-bakers
-   Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0
-   Election difficulty: 4.0e-2
-   Bakers:
-                                Account                       Lottery power
-           ----------------------------------------------------------------
-       ...
-       34: 4p2n8QQn5akq3XqAAJt2a5CsnGhDvUon6HExd2szrfkZCTD4FX   <0.0001
-       ...
+   $concordium-client config account import <path/to/exported/file> --name bakerAccount
 
-The given command will output a list with the different bakers that are
-registered in the chain and their relative lottery power.
+``concordium-client`` will ask for a password to decrypt the exported file and
+import all accounts. The same password will be used for encrypting the
+transaction signing keys and the encrypted transfers key.
 
-Also if the user's baker has been delegated enough stake, it should
-start producing blocks and the user can see in their wallet that they
-are receiving baking rewards in the account associated with the baker.
+Creating keys for a baker and registering it
+--------------------------------------------
 
-.. image:: images/baking-rewards.png
-   :align: center
-   :width: 460px
+.. note::
 
+   For this process the account needs to own some GTU so make sure to request the
+   100 GTU drop on the created account, which has to be done on the mobile app.
 
-Delegating to a baker
----------------------
+As mentioned above, each account has a unique baker ID that is used when
+registering its baker. This ID has to be provided by the network and currently
+cannot be pre-computed.
 
-At this point, the user's node is capable of baking as the baker keys
-have been added to the baker list and 2 epochs have passed since then.
-The node tries to get a winning ticket for the lottery using the stake
-delegated to the baker as an input to the lottery though a fresh baker
-doesn't have any stake upon creation.
+In order to create a fresh set of keys, the user has to execute the
+``concordium-client`` as:
 
-Delegations don't have a expiry time and require issuing another
-delegating transaction to another account or an undelegate transaction
-for them to finish.
+.. code-block:: console
+                
+   $concordium-client baker generate-keys <file-name>.json
 
-Requesting delegation from the Concordium accounts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Where the user can choose an arbitrary ``file-name`` for the keys file. To
+register this keys into the network the user needs to have a node running
+and send a ``baker add`` transaction to the network. This is achieved by
+executing the ``concordium-client`` as follows:
 
-As said before, Concordium owns 4 accounts in the network that have 5%
-of the initial total stake each. These accounts can delegate to bakers
-when requested and the delegation will be active for 2 epochs.
+.. code-block:: console
 
-In order to do this, the user must once more access the
-`node-dashboard`_. Once the baker is added to the baker list, the
-node-dashboard shows a new button to request delegation from the
-Concordium accounts.
+   $concordium-client baker add <file-name>.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json 
 
-.. image:: images/delegating-node-dashboard1.png
-   :align: center
-   :width: 460px
+replacing ``<amountToStake>`` with the intial amount that the user wants to
+stake on the baker and ``<file-name>`` with the file name that was used in the
+previous command. This command will send a ``baker add`` transaction to the
+network and will output a file ``baker-credentials.json`` that is suitable to be
+provided to the node in order to start baking.
 
-When requested, the delegation process will begin and the node-dashboard
-will report the different steps at which the delegation is in each
-instant. The user is allowed to have the stake delegated **for at least
-2 epochs** and it will be revoked automatically.
+The user can provide the flag ``--no-restake`` to avoid automatically adding the
+rewards to the staked amount on the baker. This behavior is described on the
+section `Restaking the earnings`_.
 
-Using the same command as before for checking the baker list, the user
-can check the delegated stake it has in each instant.
+In order to start the node with these baker keys and start producing blocks the
+user first needs to shut down the current running node (either by pressing
+``Ctrl + C`` on the terminal where the node is running or using the
+``concordium-node-stop`` executable).
 
+The file that was outputted in the previous step has to be placed in the data
+directory which will change depending on the running OS. On Linux and macOS, the
+data directory is ``~/.local/share/concordium`` whereas in Windows it is
+``%LOCALAPPDATA%\\concordium``.
 
-Delegating manually to a chosen baker
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. warning::
 
-Every baker is associated with an account. However, a baker does not
-automatically inherit its account's stake. In order to ensure that a
-baker has stake (which is necessary for participating in the lottery)
-accounts have to explicitly delegate their stake to the baker. To do
-that an account can send a *delegating transaction* which can be done
-from the command line.
+   The name of the file must be exactly ``baker-credentials.json`` and must be
+   placed in the exact folder mentioned above for the node to use it on startup.
 
-Assuming that the user has loaded the account into the toolchain either
-via the node dashboard or using the command line interface, a
-transaction for delegating the stake owned by the account ``SENDER`` to
-the baker ``BAKER_ID`` can be sent. In order to do it, the user will
-need to execute the following command:
+After placing the file in the appropriate directory, the user should start the
+node again using ``concordium-node``. The node will automatically start baking
+when the baker is included in the bakers for the current epoch. This will happen
+when finishing the epoch after the one in which the transaction for adding the
+baker was finalized.
 
-::
+.. note::
 
-   concordium-client account delegate --baker BAKER-ID --sender SENDER
+   If the transaction for adding the baker was finalized during epoch `E`, the
+   baker will be active when epoch `E+2` starts.
 
-The user may choose any baker ID from the ones registered in the
-blockchain and delegate stake to it. Sending a new delegating
-transaction from an account that is already delegating will undelegate
-from the old recipient and delegate to the new one.
+Manage the baker
+================
 
-The user can also choose to manually undelegate any running delegation
-sending an undelegate transaction, which is done in the command line
-with the following command:
+Checking the status of the baker and its lottery power
+------------------------------------------------------
 
-::
+In order to see if the node is baking, the user can check various sources that
+offer different degrees of precision in the information displayed.
 
-   concordium-client account undelegate --sender SENDER
+- In the `network dashboard <http://dashboard.testnet.concordium.com>`_, the
+  user's node will show its baker ID in the ``Baker`` column.
+- Using the ``concordium-client`` the user can check the list of current bakers
+  and the relative staked amount that they hold, i.e. its lottery power.  The
+  lottery power will determine how likely it is that a given baker will win the
+  lottery and bake a block. 
 
-In order to check if an account is currently delegating to a baker and
-its baker ID, the user can check the information of the account by
-`querying the node`_.
+  .. code-block:: console
 
+     $concordium-client consensus show-parameters --include-bakers
+     Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0
+     Election difficulty: 4.0e-2
+     Bakers:
+                                  Account                       Lottery power
+             ----------------------------------------------------------------
+         ...
+         34: 4p2n8QQn5akq3XqAAJt2a5CsnGhDvUon6HExd2szrfkZCTD4FX   <0.0001
+         ...
 
+- Using the ``concordium-client`` the user can check that the account has
+  registered a baker and the current amount that is staked by that baker.
+
+  .. code-block:: console
+
+     $./concordium-client account show bakerAccount
+     ...
+     
+     Baker: #22
+      - Staked amount: 10.000000 GTU
+      - Restake earnings: yes
+     ...  
+
+- If staked amount is big enough and there is a node running with the baker keys
+  loaded, that baker should eventually produce blocks and the user can see in
+  their mobile wallet that baking rewards are being received on the account, as
+  seen on this image:
+  
+  .. image:: images/bab-reward.png
+     :align: center
+     :width: 250px
+  
+Updating the staked amount
+--------------------------
+
+Although the staked amount is locked and cannot be moved, the user can modify
+that amount to increase it or decrease it.
+
+Modifying the staked amount takes **2 epochs** regardless of what operation is
+performed.
+
+When **decreasing the staked amount**, there is a *cooldown period* during which
+the operations are queued but not yet executed. This particularly means that
+supposing a cooldown period of `X epochs`, the change will be executed when `X`
+epochs after the transaction for updating the stake is finalized have
+passed. Note that after the change is executed it will still take 2 epochs for
+the change to take effect. In the testnet, this value is set to **168 epochs**
+which corresponds to **one week**.
+
+.. note::
+
+   The value of the *cooldown period* is not currently displayed in any usual
+   command on the ``concordium-client`` and can only be consulted using the
+   ``raw`` commands. As the value can change in each block, it can be seen with
+   the following command:
+
+   .. code-block:: console
+
+      $concordium-client raw GetBlockSummary
+      ...
+              "bakerCooldownEpochs": 168
+      ...
+
+In the case of increasing the staked amount, the change is executed in the
+moment the transaction is finalized. Note that after the change is executed it
+will still take 2 epochs for the change to take effect.
+
+The stake is updated using the ``concordium-client``:
+
+.. code-block:: console
+
+   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount              
+
+Note that modifying the staked amount modifies the probability of a baker being
+elected to create the next block.
+
+The user can then check when will this change be executed if decreasing the
+stake by querying for the account information:
+
+.. code-block:: console
+
+   $concordium-client account show bakerAccount
+   ...
+   
+   Baker: #22
+    - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
+    - Restake earnings: yes
+
+   ...
+
+.. warning::
+   
+   As said in the `Definitions`_ section, the staked amount is locked while
+   staked and cannot be transferred or moved in any way. The user should take
+   this into account and might consider staking an amount that will not be
+   needed in the short term. Also, note that deregistering as a baker or
+   modifying the staked amount requires that the account has some unlocked GTU
+   so there needs to be a sufficient amount of unlocked GTU on the account to
+   perform these operations.
+
+Restaking the earnings
+----------------------
+
+When participating as a baker in the network and baking blocks, the account
+receives rewards on each baked block. These rewards are automatically added to
+the staked amount by default.
+
+The user can choose to modify this behavior and instead receive the rewards in
+the account balance without staking them automatically. This switch can be
+changed through ``concordium-client``:
+
+.. code-block:: console
+
+   $concordium-client baker update-restake False --sender bakerAccount
+   $concordium-client baker update-restake True --sender bakerAccount
+
+Changing the switch will take effect 2 epochs after the transaction is
+finalized. The current value of the switch can be seen in the account
+information which can be queried using ``concordium-client``:
+
+.. code-block:: console
+
+   $concordium-client account show bakerAccount
+   ...
+   
+   Baker: #22
+    - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
+    - Restake earnings: yes
+
+   ...                
+
+When the baker is registered, it will automatically re-stake the earnings, but,
+as mentioned above, this can be changed by providing the ``--no-restake`` flag to
+the ``baker add`` command as shown here:
+
+.. code-block:: console
+
+   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake             
+   
 Finalization
 ------------
 
-For blocks to be considered part of the "authoritative" chain, they must
-go through a process of consensus that decides whether the nodes in the
-network agree on including a specific block. This process is called
-**finalization**. For more information about it, check `here`_.
+Finalization is the voting process performed by specific nodes (those belonging
+to the finalization committee) that *finalizes* a block when a sufficently big
+number of members of the committee have received the block and agree on its
+outcome. Newer blocks must have the finalized block as an ancestor to ensure the
+integrity of the chain. For more information about this process, check
+:ref:`glossary_finalization`.
 
-Finalization is done by the finalization committee which is formed by
-the bakers that have a certain amount of stake, so from the point of
-view of a user, no further action is needed in order to be eventually
-included in the finalization committee.
+The finalization committee is formed by the bakers that have a certain staked
+amount. This specifically implies that in order to participate in the
+finalization committee the user will probably have to modify the staked amount
+to reach said threshold. In the testnet, the staked amount needed to participate
+in the finalization committee is **0.1% of the total amount of existing GTU**.
 
-.. _here: /testnet/docs/glossary#finalization
+Participating in the finalization committee produces rewards on each block that
+is finalized which are paid to the baker account some time after the block is
+finalized.
 
-Detailed description on the time constraints
---------------------------------------------
+Removing a baker
+================
 
-For the interested user, the descriptions above are missing some pieces
-of information that draw the whole flow and the waiting times in each
-step. Here we present a diagram that tries to capture the events that
-take place on the chain and their waiting times as well as indicating
-the state of the node in each moment.
+The controlling account can choose to de-register its baker on the chain. To do
+so the user has to execute the ``concordium-client``:
 
-This explanation might be too detailed for the reader and it is not
-required for getting a general understanding of the flow.
+.. code-block:: console
 
-.. image:: images/timeline.png
-   :align: center
-   :width: 460px
+   $concordium-client baker remove --sender bakerAccount
 
+This will remove the baker from the baker list and unlock the staked amount on
+the baker so that it can be transferred or moved freely.
 
-In the diagram we are showing a node that will become a baker and get
-some stake delegated. We are assuming an `epoch`_ duration of 100.
+When removing the baker, there is a **cooldown period** (check `Updating the
+staked amount`_ above for more information about this value) during which the
+operation is queued but not yet executed. The user can check when will this take
+effect by querying the account information with ``concordium-client`` as usual:
 
-Note that the amounts reflected in the ``Lottery power`` and
-``Delegated stake`` boxes are orientative and don't mean absolute
-amounts, in particular the amount for being included in the finalization
-committee has to be above a certain threshold.
+.. code-block:: console
 
-As seen in the diagram, it takes between one and two epochs for baker
-changes to take effect. This is because the current bakers are based on
-the stake distribution at the end of the epoch before last. This way, if
-the block containing the transaction was baked at a slot time which
-happens in the epoch ``E``, the change will be effective when starting
-the epoch ``E + 2``.
+   $concordium-client account show bakerAccount
+   ...
 
+   Baker #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)
+    - Staked amount: 20.000000 GTU 
+    - Restake earnings: yes
 
-In practice, the user can expect the changes to take more than one and
-at most two epochs to become active under normal finalization
-conditions, and also expect the block bake and finalization time to not
-be distant.
+   ...
 
-There is one exception to this mechanism and it is the stake accounted
-for being part of the finalization committee. When stake is delegated
-and the delegation transaction is finalized, the finalization committee
-is instantly updated and if the user has enough stake, they will become
-a finalizer. This way, the ``Delegated stake`` timeline shows that the
-accounted stake for being part of the finalization committee changes in
-the exact moment when the transaction is finalized.
+.. warning::
 
-.. :ref:'Delegated stake'
-
-Note that when delegating stake to a baker, it is important to wait for
-the transaction that registers a baker to be in a finalized block. The
-reason is that if the transaction gets included in two different
-branches, it could happen that the winning branch does not have the
-baker ID that one wanted to delegate stake to. This means that one could
-end up delegating stake to a different baker than wanted.
+   Decreasing the staked amount and removing the baker cannot be done
+   simultaneously. During the cooldown period produced by decreasing the staked
+   amount, the baker cannot be removed and viceversa.
 
 Support & Feedback
 ==================

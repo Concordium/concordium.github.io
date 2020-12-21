@@ -20,7 +20,6 @@
 .. _slots: #slot
 .. _leadership election nonce: #leader-election
 .. _chain: #chain
-.. _delegated stake: #stake-delegation
 .. _block: #block
 .. _baking: #baker
 .. _finalizing: #finalization
@@ -154,6 +153,8 @@ for approximately one hour). At the start of each epoch, we compute a
 `leadership election nonce`_ based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
 
+.. _glossary_finalization:
+
 Finalization
 ============
 
@@ -161,7 +162,7 @@ The process by which a block is marked to be "finalized", i.e. part of the
 authoritative `chain`_. Transactions that are part of finalized blocks are
 considered authoritative. New blocks can be only added following the last
 finalized block. The finalization process is conducted periodically by the
-bakers with `delegated stake`_ at least 0.1% of the total stake in the system.
+bakers with `staked amount`_ at least 0.1% of the total stake in the system.
 
 Genesis Block
 =============
@@ -221,7 +222,7 @@ Lottery Power
 =============
 
 A baker's lottery power is its relative stake and is therefore proportional to
-the `stake`_ that is delegated to it. The lottery power is updated each
+the `staked amount`_ of that baker. The lottery power is updated each
 `epoch`_, and is based on the stake distribution at the end of the epoch before
 last. (This delay ensures that the stake distribution is determined before the
 randomness that fixes the bakers for the epoch: otherwise, stakeholders might
@@ -318,17 +319,12 @@ of these different events is controlled by the difficulty parameter *f*. For
 example, with difficulty 0.5 on average every second slot will have a lottery
 winner.
 
-Stake Delegation
-================
+Staked Amount
+=============
 
-The association between `accounts`_ and `bakers`_ that determines the stake
-associated with a baker, and hence its relative power in the `consensus
-mechanisms`_. Each account may delegate its stake to any baker, and the stake of
-a baker is the sum of the funds of the accounts that delegate to it. This
-delegation confers power to the baker, and therefore an account holder should
-trust the delegate baker to act honestly. Delegating the stake does not affect
-that account holder's ability to use the funds on the account, and does not give
-the baker control over the account.
+`Bakers`_ can have part of the balance of its account staked. The amount that is
+staked remains locked while staked and cannot be transferred or moved in any
+way. The staked amount is proportional to the `lottery power`_ of a baker.
 
 Testnet
 =======

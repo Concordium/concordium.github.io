@@ -12,6 +12,8 @@ Downloads
    :local:
    :backlinks: none
 
+.. _concordium_id:
+
 Concordium ID
 =============
 

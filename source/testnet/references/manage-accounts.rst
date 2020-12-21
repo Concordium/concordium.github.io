@@ -12,6 +12,8 @@
 .. _transaction: /testnet/docs/transactions
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
+.. _managing_accounts:
+   
 =================
 Managing Accounts
 =================
