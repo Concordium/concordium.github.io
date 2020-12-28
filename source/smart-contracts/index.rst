@@ -1,6 +1,11 @@
-=============================
-Smart Contract Documentation!
-=============================
+.. Concordium smart contracts documentation master file, created by
+   sphinx-quickstart on Thu Oct 22 15:01:04 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+========================================
+Concordium Smart Contract Documentation!
+========================================
 
 Welcome to the documentation of Concordium smart contracts!
 
@@ -13,6 +18,7 @@ The documentation is split into four categories
    - **References**: Precise descriptions of the machinery.
 
 .. todo::
+
    A list of information, still missing from the documentation
 
    **Guides**
@@ -40,6 +46,7 @@ The documentation is split into four categories
    :caption: Tutorials
 
    tutorials/first-contract
+   tutorials/piggy-bank/index
 
 .. toctree::
    :maxdepth: 1
@@ -55,7 +62,7 @@ The documentation is split into four categories
 
 .. toctree::
    :maxdepth: 1
-   :caption: On chain guides
+   :caption: On-chain guides
 
    guides/deploy-module
    guides/initialize-contract
@@ -67,10 +74,14 @@ The documentation is split into four categories
    :caption: References
 
    references/schema-json
+   references/simulate-context
    references/host-fns
-   Rust contract examples (repo) <https://gitlab.com/Concordium/smart-contracts/-/tree/master/rust-contracts/example-contracts>
+   references/references-on-chain
+   references/local-settings
+   Rust contract examples (repo) <https://github.com/Concordium/concordium-rust-smart-contracts>
    Concordium user documentation <https://developers.concordium.com/testnet/docs>
+   concordium-std <https://docs.rs/concordium-std/latest/concordium_std/>
 
 .. todo::
+
    Update user documentation link
-   Add link to crate docs for concordium-std under references when crate is published
