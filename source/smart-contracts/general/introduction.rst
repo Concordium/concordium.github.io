@@ -28,8 +28,8 @@ data from the real-world, such as prices of stocks, or weather information.
 What are smart contracts for?
 =============================
 
-The hope is to reduce the needed amount of trust in third-parties, in some cases
-removing the need for trusted third-party, in other cases reducing their
+Smart contracts can reduce the needed amount of trust in third-parties, in some cases
+removing the need for a trusted third-party, in other cases reducing their
 capabilities and thus reducing the amount of trust needed in them.
 
 Because smart contracts are executed completely transparently, in a way that
@@ -42,9 +42,7 @@ Auction smart contract example
 A use case for smart contracts could be for holding an auction; here we program
 the smart contract to accept different bids from anyone and have it keep track
 of the highest bidder.
-When the auction is over, the smart contract sends back all the bids, which are
-*not* the winner bid and sends the winner bid GTU to the seller, who sends the
-item to the winner.
+When the auction is over, the smart contract sends the winner bid GTU to the seller and all other bids back. The seller then should send the item to the winner.
 
 The smart contract replaces the main role of the auctioneer. The contract itself
 only governs the bidding part, and the on-chain distribution of GTUs. It will

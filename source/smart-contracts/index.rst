@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-========================================
-Concordium Smart Contract Documentation!
-========================================
+=======================================
+Concordium Smart Contract Documentation
+=======================================
 
 Welcome to the documentation of Concordium smart contracts!
 

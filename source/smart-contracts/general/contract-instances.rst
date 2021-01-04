@@ -25,7 +25,7 @@ instance.
 .. graphviz::
    :align: center
    :caption: Example of smart contract module containing two smart contracts:
-             Escrow and Crowdfunding. Each contract have two instances.
+             Escrow and Crowdfunding. Each contract has two instances.
 
    digraph G {
        rankdir="BT"
@@ -70,10 +70,10 @@ Instantiating a smart contract on-chain
 =======================================
 
 Every smart contract must contain a function for creating smart contract
-instances, such a function is referred to as the ``init``-function.
+instances. Such a function is referred to as the ``init``-function.
 
 To create a smart contract instance, an account sends a special transaction with
-a reference to deployed smart contract module and the name of the
+a reference to the deployed smart contract module and the name of the
 ``init``-function to use for instantiation.
 
 The transaction can also include an amount of GTU, which is added to the balance
@@ -90,7 +90,7 @@ To summarize; the transaction includes:
 The ``init`` function can signal that it does not wish to create a new instance
 with those parameters. If the ``init``-function accepts the parameters, it sets
 up the initial state of the instance and its balance. The instance is given an
-address on the chain and the account who send the transaction becomes the owner
+address on the chain and the account who sent the transaction becomes the owner
 of the instance. If the function rejects, no instance is created and only the
 transaction for attempting to create the instance is visible on-chain.
 
@@ -164,7 +164,7 @@ reduce cost.
 Action description
 ==================
 
-A ``receive``-function returns a *description of actions*, to be be executed and
+A ``receive``-function returns a *description of actions*, to be executed and
 the host environment then attempts to execute these actions on the chain.
 
 The possible actions a contract can produce are:
@@ -178,7 +178,7 @@ The possible actions a contract can produce are:
 
 If the actions fail to execute, the ``receive``-function is reverted, leaving
 the state and the balance of the instance unchanged. In such a case the only
-visible artifacts are the transaction triggering ``receive``-function resulting
+visible artifacts are the transaction triggering the ``receive``-function resulting
 in a rejection and the payment for the execution.
 
 Action descriptions can be combined to describe a sequence of actions to be

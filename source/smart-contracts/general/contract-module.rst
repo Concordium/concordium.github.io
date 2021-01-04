@@ -45,8 +45,8 @@ target and to be run in sandboxed environments. This is useful because smart
 contracts will be run by bakers in the network who do not necessarily trust
 the code.
 
-Wasm is a low-level language that is impractical to write by hand. Instead one
-would write smart contracts in a more high-level language which is then
+Wasm is a low-level language and it is impractical to write by hand. Instead one
+can write smart contracts in a more high-level language which is then
 compiled to Wasm.
 
 .. _wasm-limitations:
@@ -72,7 +72,7 @@ disallowed to use them. The reason for this is that Wasm floating-point numbers
 can have a special ``NaN`` ("not a number") value whose treatment can result in nondeterminism.
 
 The restriction applies statically, meaning that smart contracts cannot contain
-floating point types, nor can it contain any instructions that involve floating
+floating point types, nor can they contain any instructions that involve floating
 point values.
 
 
