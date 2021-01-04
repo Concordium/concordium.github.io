@@ -23,7 +23,7 @@ contract instance on-chain to interact with.
    how to create an instance see :ref:`initialize-contract`.
 
 Since interactions with a smart contract are transactions, you should also make
-sure to have ``concordium-client`` setup with an account with enough GTU to pay
+sure to have ``concordium-client`` set up with an account with enough GTU to pay
 for the transactions.
 
 .. note::
