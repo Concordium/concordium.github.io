@@ -9,9 +9,9 @@
 
 .. _contract-schema:
 
-=====================
-Smart contract schema
-=====================
+======================
+Smart contract schemas
+======================
 
 A smart contract schema is a description of how to represent bytes in a more
 structured representation. It can be used by external tools when displaying the
