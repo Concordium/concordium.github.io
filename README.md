@@ -34,11 +34,11 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ### Linux
 
-Install `python3`, `python3-sphinx`, `python3-sphinx-autobuild`, and the python package manager `pip`.
+Install `python3`, `python3-sphinx`, `python3-sphinx-autobuild`, and the python package manager `pip3`.
 
 To install the python dependencies run:
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Install `graphviz`:

@@ -7,7 +7,7 @@
 .. _epoch: /testnet/docs/glossary#epoch
 
 ==================================
-Becoming a baker (creating blocks)
+Become a baker (create blocks)
 ==================================
 
 .. contents::
@@ -29,15 +29,13 @@ The process of becoming a baker can be summarized in the following steps:
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
 
-After completing those steps, the node will bake blocks that will produce
-rewards for the associated account that registered it. The documentation that
-follows explains this steps and guides the user through the process.
+After completing those steps, the baker node will bake blocks. If a baked block
+is added to the chain the node's baker will receive a reward.
 
 .. note::
 
-   During this section we will use the name ``bakerAccount`` as the name of the
-   account that will be used to register and manage the baker. This name of the
-   account will be set when importing the account into the toolchain.
+   In this section we will use the name ``bakerAccount`` as the name of the
+   account that will be used to register and manage a baker.
 
 Definitions
 ===========
@@ -45,17 +43,17 @@ Definitions
 Baker
 -----
 
-A node is said to be a *baker* (or *is baking*) when it actively participates in
-the network by creating (or *baking*) new blocks that are added to the chain. A
+A node is a *baker* (or *is baking*) when it actively participates in
+the network by creating new blocks that are added to the chain. A
 baker collects, orders and validates the transactions that are included in a
-block to ensure that the integrity of the blockchain is maintained. It signs
-each block it bakes so that it can be checked and executed by the rest of the
+block to ensure that the integrity of the blockchain is maintained. The baker signs
+each block that they bake so that the block can be checked and executed by the rest of the
 participants of the network. 
 
 Baker keys
 ----------
 
-Each baker has a set of cryptographic keys to which we will refer as *baker
+Each baker has a set of cryptographic keys called *baker
 keys*. The node uses these keys to sign the blocks that it bakes. In order to
 bake blocks signed by a specific baker the node has to be running with its set
 of baker keys loaded.
@@ -63,7 +61,7 @@ of baker keys loaded.
 Baker account
 -------------
 
-Each account in the network can register one and only one new set of baker
+Each account in the network can register a unique set of baker
 keys that effectively registers a baker in the network, so this means
 that every account can choose whether to be a baker or not.
 
@@ -82,15 +80,21 @@ time a reward is paid to the associated account.
 Stake and lottery
 -----------------
 
+.. todo::
+
+    - Clarify what it means that the amount has to be *released* (first we need to say that
+      the amount needs to staked)
+    - Link to release schedule.
+    - Reword "*holds* *some* stake".
+
 A baker holds some *stake* which is part of the amount of GTU owned by the
-account. The staked amount can never be greater than the available amount on the
-account. The staked amount cannot be moved nor transferred in any way until it
+account. The staked amount cannot be moved or transferred until it
 is released by the baker.
 
 .. note::
    
    If an account owns an amount that was transferred with a release schedule,
-   said amount can be staked even if not released yet.
+   the amount can be staked even if not released yet.
 
 In order to be chosen for baking a block, the baker must participate in a
 *lottery* in which the probability of getting a winning ticket is roughly
@@ -103,6 +107,10 @@ In the Concordium blockchain, time is subdivided into *slots*. Slots have a time
 duration fixed at the Genesis block. On any given branch, each slot can have at
 most one block, but multiple blocks on different branches can be produced in the
 same slot.
+
+.. todo::
+
+    Let's add a picture.
 
 When considering the rewards and other baking-related concepts, we use the
 concept of an *epoch* as a unit of time that defines a period in which the set

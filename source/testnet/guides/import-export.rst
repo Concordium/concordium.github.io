@@ -4,7 +4,7 @@
 .. _Discord: https://discord.gg/xWmQ5tp
 
 ================================================================
-Exporting and importing IDs and accounts using the mobile wallet
+Export and importing IDs and accounts using the mobile wallet
 ================================================================
 
 .. contents::
