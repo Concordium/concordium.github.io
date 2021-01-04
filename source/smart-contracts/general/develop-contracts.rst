@@ -21,7 +21,7 @@ Developing smart contracts in Rust
 On the concordium blockchain smart contracts are deployed as Wasm modules, but
 Wasm is designed primarily as a compilation target and is not convenient to
 write by hand.
-Instead we can write our smart contract in the Rust_ programming language, which
+Instead we can write our smart contracts in the Rust_ programming language, which
 has good support for compiling to Wasm.
 
 .. note::
@@ -85,7 +85,7 @@ A simple counter example would look like:
        Ok(A::accept())
    }
 
-There are a number of things to notice
+There are a number of things to notice:
 
 - The type of the methods. The init methods must have the type as shown above,
   the only freedom the user has is in choosing what the state type is. The same
