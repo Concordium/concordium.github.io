@@ -42,11 +42,11 @@ On-chain language
 On the Concordium blockchain the smart contract language is a subset of `Web
 Assembly`_ (Wasm in short), which is designed to be a portable compilation
 target and to be run in sandboxed environments. This is perfect, since smart
-contracts will be run by bakers in the network, who does not necessarily trust
+contracts will be run by bakers in the network, who do not necessarily trust
 the code.
 
 Wasm is a low-level language and it is impractical to write by hand. Instead one
-would write the smart contract in a more high level language, which is then
+can write the smart contract in a more high level language, which is then
 compiled to Wasm.
 
 .. _wasm-limitations:
@@ -60,9 +60,9 @@ Limitations
 
 The blockchain environment is very particular in the sense that each node must
 be able to execute the contract in exactly the same way, using exactly the same
-amount of resources. Otherwise nodes would fail to reach consensus on what the
+amount of resources. Otherwise nodes would fail to reach consensus on the
 state of the chain. For this reason smart contracts must be more restricted than
-the basic Wasm dictates.
+general Wasm.
 
 Floating point numbers
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -72,7 +72,7 @@ disallowed to use them. The reason for this is that the Wasm specification is
 nondeterministic when it comes to treatment of NaN.
 
 The restriction applies statically, meaning that smart contracts cannot contain
-floating point types, nor can it contain any instructions that involve floating
+floating point types, nor can they contain any instructions that involve floating
 point values.
 
 
