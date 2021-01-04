@@ -10,7 +10,7 @@
 {# Add the topbar #}
 {% block extrabody %}
     <nav class="topbar">
-        <a href="{{ pathto('smart-contracts/index') }}" class="{{ 'active' if entry is defined and entry == 'smart-contracts/index' }}"> <i class="icon fa fa-file-o"></i> Smart contract </a>
+        <a href="{{ pathto('smart-contracts/index') }}" class="{{ 'active' if entry is defined and entry == 'smart-contracts/index' }}"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
         <a href="{{ pathto('testnet/index') }}" class="{{ 'active' if entry is defined and entry == 'testnet/index' else '' }}" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
     </nav>
 {% endblock %}
