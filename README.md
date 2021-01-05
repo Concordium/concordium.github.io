@@ -1,9 +1,10 @@
 # Concordium Documentation
 
-The documentation is structured according to this
-[guide](https://documentation.divio.com/).
+Before contributing please read and follow the principles outlined in
+- the [Divio documentation guide](https://documentation.divio.com/)
+- our [style guide](#style-guide).
 
-It is written in reStructuredText ([Link to the
+The documentation is written in reStructuredText ([Link to the
 basics](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)).
 
 For building the documentation we use
@@ -93,7 +94,16 @@ Merges to `main` are auto-deployed to Heroku.
 
 ## Style guide
 
-### Headers
+### Language
+
+* For a user guide, prefer **second person** and **imperative** ("click on X").
+* Keep sentences **short**.
+* Prefer **present** continuous ("is") over future ("will be").
+* Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
+
+### Formatting
+
+#### Headers
 Use *sentence-style capitalization*, i.e., only capitalize the first letter of a
 header.
 
@@ -118,7 +128,7 @@ Header 5
 ~~~~~~~~
 ```
 
-### Terminal commands
+#### Terminal commands
 
 Use `code-block:: console` to show content from a terminal and prepend commands
 with `$` without a space in between.
@@ -135,7 +145,18 @@ Example:
    Hello, world!
 ```
 
-### Indentation
+#### Buttons and clickable elements
+
+Use **bold** to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**").
+
+#### Emphasis
+
+- Use *italics* for text emphasis (e.g., when introducing a new term: "Obtain an identity from an *identity provider*.").
+- After the term is introduced avoid emphasising it again in the same text.
+
+### Code formatting for this repository
+
+#### Indentation
 Use three spaces for indentation.
 This aligns the directive name (`note::`) with the content of the directive (`This line...`).
 
