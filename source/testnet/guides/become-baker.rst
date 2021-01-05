@@ -100,10 +100,10 @@ Stake and lottery
 
 .. todo::
 
-    - Clarify what it means that the amount has to be *released* (first we need to say that
-      the amount needs to staked)
-    - Link to release schedule.
-    - Reword "*holds* *some* stake".
+   - Clarify what it means that the amount has to be *released* (first we need to say that
+     the amount needs to staked)
+   - Link to release schedule.
+   - Reword "*holds* *some* stake".
 
 A baker holds some *stake* which is part of the amount of GTU owned by the
 account. The staked amount cannot be moved or transferred until it
@@ -128,7 +128,7 @@ same slot.
 
 .. todo::
 
-    Let's add a picture.
+   Let's add a picture.
 
 When considering the rewards and other baking-related concepts, we use the
 concept of an *epoch* as a unit of time that defines a period in which the set
