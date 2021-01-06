@@ -1,4 +1,5 @@
 .. _build-schema:
+.. _list of types implementing the SchemaType: https://docs.rs/concordium-contracts-common/0.2.0/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls
 
 =======================
 Build a contract schema
@@ -28,7 +29,7 @@ The options are to include a schema for the contract state, and/or for each of
 the parameters of ``init``- and ``receive``-functions.
 
 Every type we want to include in the schema must implement the ``SchemaType``
-trait. This is already done for all base types.
+trait. This is already done for all base types and some other types (see `list of types implementing the SchemaType`_).
 For most other cases, it can also be achieved automatically, using
 ``#[derive(SchemaType)]``::
 
@@ -58,7 +59,7 @@ with the ``#[contract_state(contract = ...)]`` macro::
        ...
    }
 
-Or even simpler if the contract state is a base type, e.g., u32::
+Or even simpler if the contract state is of a type that already implements ``SchemaType``, e.g., u32::
 
    #[contract_state(contract = "my_contract")]
    type State = u32;
