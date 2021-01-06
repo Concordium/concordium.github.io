@@ -7,12 +7,17 @@
 .. _epoch: /testnet/docs/glossary#epoch
 
 ==================================
-Becoming a baker (creating blocks)
+Become a baker (create blocks)
 ==================================
 
 .. contents::
    :local:
    :backlinks: none
+
+.. todo::
+
+   We need to address the user consistently; could we use the second person
+   and imperative (let's avoid writing 'the user')?
 
 This section explains what a baker is, what is its role in the network and how
 to become one.
@@ -29,15 +34,13 @@ The process of becoming a baker can be summarized in the following steps:
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
 
-After completing those steps, the node will bake blocks that will produce
-rewards for the associated account that registered it. The documentation that
-follows explains this steps and guides the user through the process.
+After completing those steps, the baker node will bake blocks. If a baked block
+is added to the chain the node's baker will receive a reward.
 
 .. note::
 
-   During this section we will use the name ``bakerAccount`` as the name of the
-   account that will be used to register and manage the baker. This name of the
-   account will be set when importing the account into the toolchain.
+   In this section we will use the name ``bakerAccount`` as the name of the
+   account that will be used to register and manage a baker.
 
 Definitions
 ===========
@@ -45,17 +48,17 @@ Definitions
 Baker
 -----
 
-A node is said to be a *baker* (or *is baking*) when it actively participates in
-the network by creating (or *baking*) new blocks that are added to the chain. A
+A node is a *baker* (or *is baking*) when it actively participates in
+the network by creating new blocks that are added to the chain. A
 baker collects, orders and validates the transactions that are included in a
-block to ensure that the integrity of the blockchain is maintained. It signs
-each block it bakes so that it can be checked and executed by the rest of the
+block to maintain the integrity of the blockchain. The baker signs
+each block that they bake so that the block can be checked and executed by the rest of the
 participants of the network. 
 
 Baker keys
 ----------
 
-Each baker has a set of cryptographic keys to which we will refer as *baker
+Each baker has a set of cryptographic keys called *baker
 keys*. The node uses these keys to sign the blocks that it bakes. In order to
 bake blocks signed by a specific baker the node has to be running with its set
 of baker keys loaded.
@@ -63,18 +66,31 @@ of baker keys loaded.
 Baker account
 -------------
 
-Each account in the network can register one and only one new set of baker
+Each account in the network can register a unique set of baker
 keys that effectively registers a baker in the network, so this means
 that every account can choose whether to be a baker or not.
 
+.. todo:
+
+   - Should we say at this point how to register a baker? Otherwise it feels abstract.
+     The text about the baker ID (in the paragraph below) becomes less clear:
+     Does registration automatically yield a baker ID? Where does the baker ID come from?
+   - Could we remove the following sentence (it would be nice to write the text clearly
+     without needing that clarification, and possibly it is already written like that)?
+
 During this guide we will refer to the account that opted to be a baker simply
 as *the account*, *the baker account* or *the associated account*.
+
+.. todo:
+
+   Could we clarify why we mention a baker ID given that the baker ID is not needed
+   for any operation?
 
 Each registered baker is given a baker ID in the network. The baker ID is unique
 for each account so if an account removes its baker and then registers a new
 baker, it will have the same baker ID as the original baker. This ID merely tags
 the baker and is not needed to be provided for any operation, as the sender
-account already identifies in which baker should the operation be performed.
+account already identifies in which baker performs the operation.
 
 Whenever a baker bakes a valid block that gets included in the chain, after some
 time a reward is paid to the associated account.
@@ -82,15 +98,21 @@ time a reward is paid to the associated account.
 Stake and lottery
 -----------------
 
+.. todo::
+
+   - Clarify what it means that the amount has to be *released* (first we need to say that
+     the amount needs to staked)
+   - Link to release schedule.
+   - Reword "*holds* *some* stake".
+
 A baker holds some *stake* which is part of the amount of GTU owned by the
-account. The staked amount can never be greater than the available amount on the
-account. The staked amount cannot be moved nor transferred in any way until it
+account. The staked amount cannot be moved or transferred until it
 is released by the baker.
 
 .. note::
    
    If an account owns an amount that was transferred with a release schedule,
-   said amount can be staked even if not released yet.
+   the amount can be staked even if not released yet.
 
 In order to be chosen for baking a block, the baker must participate in a
 *lottery* in which the probability of getting a winning ticket is roughly
@@ -103,6 +125,10 @@ In the Concordium blockchain, time is subdivided into *slots*. Slots have a time
 duration fixed at the Genesis block. On any given branch, each slot can have at
 most one block, but multiple blocks on different branches can be produced in the
 same slot.
+
+.. todo::
+
+   Let's add a picture.
 
 When considering the rewards and other baking-related concepts, we use the
 concept of an *epoch* as a unit of time that defines a period in which the set
@@ -122,8 +148,7 @@ Accounts are created using the :ref:`concordium_id` app. Once an account has bee
 successfully created, navigating to the **More** tab and selecting **Export**
 allows the user to get a JSON file containing the account information.
 
-In order to import an account into the toolchain, the user needs to execute the
-``concordium-client``:
+To import an account into the toolchain run
 
 .. code-block:: console
 
@@ -139,35 +164,41 @@ Creating keys for a baker and registering it
 .. note::
 
    For this process the account needs to own some GTU so make sure to request the
-   100 GTU drop on the created account, which has to be done on the mobile app.
+   100 GTU drop for the account in the mobile app.
+
+.. todo::
+
+   Clarify how the baker ID relates to the keys.
 
 As mentioned above, each account has a unique baker ID that is used when
 registering its baker. This ID has to be provided by the network and currently
-cannot be pre-computed.
+cannot be precomputed.
 
-In order to create a fresh set of keys, the user has to execute the
-``concordium-client`` as:
+To create a fresh set of keys run
 
 .. code-block:: console
                 
-   $concordium-client baker generate-keys <file-name>.json
+   $concordium-client baker generate-keys <keys-file>.json
 
-Where the user can choose an arbitrary ``file-name`` for the keys file. To
-register this keys into the network the user needs to have a node running
-and send a ``baker add`` transaction to the network. This is achieved by
-executing the ``concordium-client`` as follows:
+where you can choose an arbitrary name the keys file. To
+register the keys in the network you need to be :ref:`running a node <my-reference-label>`
+and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add <file-name>.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json 
+   $concordium-client baker add <file-name>.json --sender bakerAccount --stake <amountToStake> --out <concordium-data-dir>/baker-credentials.json
 
-replacing ``<amountToStake>`` with the intial amount that the user wants to
-stake on the baker and ``<file-name>`` with the file name that was used in the
-previous command. This command will send a ``baker add`` transaction to the
-network and will output a file ``baker-credentials.json`` that is suitable to be
-provided to the node in order to start baking.
+replacing
 
-The user can provide the flag ``--no-restake`` to avoid automatically adding the
+- ``<amountToStake>`` with the GTU amount for the baker's initial stake
+- ``<concordium-dir>`` with the following data directory:
+
+  * on Linux and MacOS: ``~/.local/share/concordium``
+  * on Windows: ``%LOCALAPPDATA%\\concordium``.
+
+(The output file name should remain ``baker-credentials.json``).
+
+Provide a ``--no-restake`` flag to avoid automatically adding the
 rewards to the staked amount on the baker. This behavior is described on the
 section `Restaking the earnings`_.
 
@@ -176,17 +207,7 @@ user first needs to shut down the current running node (either by pressing
 ``Ctrl + C`` on the terminal where the node is running or using the
 ``concordium-node-stop`` executable).
 
-The file that was outputted in the previous step has to be placed in the data
-directory which will change depending on the running OS. On Linux and macOS, the
-data directory is ``~/.local/share/concordium`` whereas in Windows it is
-``%LOCALAPPDATA%\\concordium``.
-
-.. warning::
-
-   The name of the file must be exactly ``baker-credentials.json`` and must be
-   placed in the exact folder mentioned above for the node to use it on startup.
-
-After placing the file in the appropriate directory, the user should start the
+After placing the file in the appropriate directory, start the
 node again using ``concordium-node``. The node will automatically start baking
 when the baker is included in the bakers for the current epoch. This will happen
 when finishing the epoch after the one in which the transaction for adding the
@@ -238,7 +259,7 @@ offer different degrees of precision in the information displayed.
       - Restake earnings: yes
      ...  
 
-- If staked amount is big enough and there is a node running with the baker keys
+- If the staked amount is big enough and there is a node running with the baker keys
   loaded, that baker should eventually produce blocks and the user can see in
   their mobile wallet that baking rewards are being received on the account, as
   seen on this image:
@@ -251,7 +272,7 @@ Updating the staked amount
 --------------------------
 
 Although the staked amount is locked and cannot be moved, the user can modify
-that amount to increase it or decrease it.
+that amount to increase or decrease it.
 
 Modifying the staked amount takes **2 epochs** regardless of what operation is
 performed.
@@ -290,6 +311,10 @@ The stake is updated using the ``concordium-client``:
 
 Note that modifying the staked amount modifies the probability of a baker being
 elected to create the next block.
+
+.. todo::
+
+   Could this sentence be clarified?
 
 The user can then check when will this change be executed if decreasing the
 stake by querying for the account information:

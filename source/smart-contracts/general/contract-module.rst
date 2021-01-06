@@ -4,7 +4,7 @@
 Smart contract modules
 ======================
 
-Smart contracts are deployed on-chain in *smart contract modules*.
+Smart contracts are deployed on the chain in *smart contract modules*.
 
 .. note::
 
@@ -40,13 +40,13 @@ On-chain language
 =================
 
 On the Concordium blockchain the smart contract language is a subset of `Web
-Assembly`_ (Wasm in short), which is designed to be a portable compilation
-target and to be run in sandboxed environments. This is perfect, since smart
-contracts will be run by bakers in the network, who do not necessarily trust
+Assembly`_ (Wasm in short) which is designed to be a portable compilation
+target and to be run in sandboxed environments. This is useful because smart
+contracts will be run by bakers in the network who do not necessarily trust
 the code.
 
 Wasm is a low-level language and it is impractical to write by hand. Instead one
-can write the smart contract in a more high level language, which is then
+can write smart contracts in a more high-level language which is then
 compiled to Wasm.
 
 .. _wasm-limitations:
@@ -61,15 +61,15 @@ Limitations
 The blockchain environment is very particular in the sense that each node must
 be able to execute the contract in exactly the same way, using exactly the same
 amount of resources. Otherwise nodes would fail to reach consensus on the
-state of the chain. For this reason smart contracts must be more restricted than
-general Wasm.
+state of the chain. For this reason smart contracts need to be written in a restricted
+subset of Wasm.
 
 Floating point numbers
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Although Wasm does have support for floating point numbers, a smart contract is
-disallowed to use them. The reason for this is that the Wasm specification is
-nondeterministic when it comes to treatment of NaN.
+disallowed to use them. The reason for this is that Wasm floating-point numbers
+can have a special ``NaN`` ("not a number") value whose treatment can result in nondeterminism.
 
 The restriction applies statically, meaning that smart contracts cannot contain
 floating point types, nor can they contain any instructions that involve floating
@@ -80,26 +80,30 @@ Deployment
 ==========
 
 Deploying a module to the chain means submitting the module bytecode as a
-transaction to the Concordium network. If *valid*, this transaction will be
+transaction to the Concordium network. If *valid* this transaction will be
 included in a block. This transaction, as every other transaction, has an
 associated cost. The cost is based on the size of the bytecode and is charged
-for both checking validity of the module, as well as on-chain storage.
+for both checking validity of the module and on-chain storage.
 
-The deployment itself does not trigger any of the user-defined behaviors in a
-smart contract and a user must first create an *instance* of a contract.
+The deployment itself does not execute
+smart contract. To execute, a user must first create an *instance* of a contract.
 
 .. seealso::
 
-   See :ref:`contract-instances` for more information about this.
+   See :ref:`contract-instances` for more information.
 
 .. _smart-contracts-on-chain:
 
+.. _smart-contracts-on-the-chain:
+
 .. _contract-on-chain:
 
-Smart contract on chain
-=======================
+.. _contract-on-the-chain:
 
-A smart contract on-chain is a collection of functions exported from a deployed
+Smart contract on the chain
+===========================
+
+A smart contract on the chain is a collection of functions exported from a deployed
 module. The concrete mechanism used for this is the `Web Assembly`_ export
 section. A smart contract must export one function for initializing new
 instances and can export zero or more functions for updating the instance.
