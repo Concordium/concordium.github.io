@@ -28,8 +28,8 @@ The options are to include a schema for the contract state, and/or for each of
 the parameters of ``init``- and ``receive``-functions.
 
 Every type we want to include in the schema must implement the ``SchemaType``
-trait.
-For most cases this can be achieved automatically, using
+trait. This is already done for all base types.
+For most other cases, it can also be achieved automatically, using
 ``#[derive(SchemaType)]``::
 
    #[derive(SchemaType)]
@@ -50,13 +50,18 @@ Including contract state
 ------------------------
 
 To generate and include the schema for the contract state, we annotate the type
-with the ``#[contract-state(contract = ...)]`` macro::
+with the ``#[contract_state(contract = ...)]`` macro::
 
-   #[contract-state(contract = "my_contract")]
+   #[contract_state(contract = "my_contract")]
    #[derive(SchemaType)]
    struct MyState {
        ...
    }
+
+Or even simpler if the contract state is a base type, e.g., u32::
+
+   #[contract_state(contract = "my_contract")]
+   type State = u32;
 
 Including function parameters
 -----------------------------
