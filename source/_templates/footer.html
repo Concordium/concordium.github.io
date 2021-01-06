@@ -1,0 +1,8 @@
+{% extends '!footer.html' %}
+
+{%- block contentinfo %}
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="{{ pathto('_static/cc-sa-by.png', True) }}" />
+</a>
+{{ super() }}
+{%- endblock %}
