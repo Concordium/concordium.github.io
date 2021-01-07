@@ -80,17 +80,10 @@ Run the following command:
 make html
 ```
 
-
 To check for dead links (also done by the CI), run:
 ```
 make linkcheck
 ```
-
-
-## Deployment
-
-Merges to `main` are auto-deployed to Heroku.
-
 
 ## Style guide
 
