@@ -168,7 +168,7 @@ A transfer is done using the following command:
 
 Apart from the generic transaction flags above, the parameters are:
 
--  ``--amount``: Number of tokens to send in units of 10-4 GTU.
+-  ``--amount``: Number of GTU tokens to send.
 -  ``--receiver``: Name or address of the receiver account.
 
 

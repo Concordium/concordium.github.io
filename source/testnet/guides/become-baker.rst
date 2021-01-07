@@ -271,26 +271,31 @@ offer different degrees of precision in the information displayed.
 Updating the staked amount
 --------------------------
 
-Although the staked amount is locked and cannot be moved, the user can modify
-that amount to increase or decrease it.
+To update the baker stake run
 
-Modifying the staked amount takes **2 epochs** regardless of what operation is
-performed.
+.. code-block:: console
 
-When **decreasing the staked amount**, there is a *cooldown period* during which
-the operations are queued but not yet executed. This particularly means that
-supposing a cooldown period of `X epochs`, the change will be executed when `X`
-epochs after the transaction for updating the stake is finalized have
-passed. Note that after the change is executed it will still take 2 epochs for
-the change to take effect. In the testnet, this value is set to **168 epochs**
-which corresponds to **one week**.
+   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount              
+
+Modifying the staked amount modifies the probability that a baker gets elected to bake blocks.
+
+When a baker adds stake for the first time or increases their stake
+
+- that change becomes visible on the chain immediately (e.g. through ``concordium-client account show bakerAccount``)
+- the baker can bake (and possibly finalize, if stake is sufficient) after 2 epochs
+
+When a baker decreases the stake amount
+
+- the change becomes visible on the chain after the *cooldown period* (currently 168 epochs)
+
+  * - the pending change can also be queried immediately after the  using
+      ``concordium-client raw GetAccountInfo`` and observing the ``pendingChange`` attribute
+
+- the change takes affect after the cooldown period plus 2 epochs
 
 .. note::
 
-   The value of the *cooldown period* is not currently displayed in any usual
-   command on the ``concordium-client`` and can only be consulted using the
-   ``raw`` commands. As the value can change in each block, it can be seen with
-   the following command:
+   Check the value of the cooldown period as follows:
 
    .. code-block:: console
 
@@ -299,22 +304,10 @@ which corresponds to **one week**.
               "bakerCooldownEpochs": 168
       ...
 
-In the case of increasing the staked amount, the change is executed in the
-moment the transaction is finalized. Note that after the change is executed it
-will still take 2 epochs for the change to take effect.
-
-The stake is updated using the ``concordium-client``:
-
-.. code-block:: console
-
-   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount              
-
-Note that modifying the staked amount modifies the probability of a baker being
-elected to create the next block.
 
 .. todo::
 
-   Could this sentence be clarified?
+   Could the following sentence be clarified?
 
 The user can then check when will this change be executed if decreasing the
 stake by querying for the account information:
@@ -332,13 +325,11 @@ stake by querying for the account information:
 
 .. warning::
    
-   As said in the `Definitions`_ section, the staked amount is locked while
-   staked and cannot be transferred or moved in any way. The user should take
+   As said in the `Definitions`_ section, the staked amount is *locked*,
+   i.e. it cannot be transferred or used for payment. The user should take
    this into account and might consider staking an amount that will not be
-   needed in the short term. Also, note that deregistering as a baker or
-   modifying the staked amount requires that the account has some unlocked GTU
-   so there needs to be a sufficient amount of unlocked GTU on the account to
-   perform these operations.
+   needed in the short term. In particular, to deregister a baker or to
+   modify the staked amount the user needs to own some non-staked GTU.
 
 Restaking the earnings
 ----------------------
@@ -356,8 +347,9 @@ changed through ``concordium-client``:
    $concordium-client baker update-restake False --sender bakerAccount
    $concordium-client baker update-restake True --sender bakerAccount
 
-Changing the switch will take effect 2 epochs after the transaction is
-finalized. The current value of the switch can be seen in the account
+Changes to the restake flag will take effect immediately; however, the changes start
+affecting baking and finalizing power in the epoch after next.
+The current value of the switch can be seen in the account
 information which can be queried using ``concordium-client``:
 
 .. code-block:: console
@@ -382,12 +374,12 @@ the ``baker add`` command as shown here:
 Finalization
 ------------
 
-Finalization is the voting process performed by specific nodes (those belonging
-to the finalization committee) that *finalizes* a block when a sufficently big
+Finalization is the voting process performed by nodes
+in the *finalization committee* that *finalizes* a block when a sufficiently big
 number of members of the committee have received the block and agree on its
 outcome. Newer blocks must have the finalized block as an ancestor to ensure the
-integrity of the chain. For more information about this process, check
-:ref:`glossary_finalization`.
+integrity of the chain. For more information about this process, check the
+:ref:`glossary_finalization` section.
 
 The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
@@ -396,7 +388,7 @@ to reach said threshold. In the testnet, the staked amount needed to participate
 in the finalization committee is **0.1% of the total amount of existing GTU**.
 
 Participating in the finalization committee produces rewards on each block that
-is finalized which are paid to the baker account some time after the block is
+is finalized. The rewards are paid to the baker account some time after the block is
 finalized.
 
 Removing a baker
@@ -414,7 +406,7 @@ the baker so that it can be transferred or moved freely.
 
 When removing the baker, there is a **cooldown period** (check `Updating the
 staked amount`_ above for more information about this value) during which the
-operation is queued but not yet executed. The user can check when will this take
+operation is queued but not yet executed. The user can check when this takes
 effect by querying the account information with ``concordium-client`` as usual:
 
 .. code-block:: console

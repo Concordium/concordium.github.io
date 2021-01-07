@@ -4,23 +4,33 @@
 Smart contract instances
 ========================
 
+.. todo::
+
+   - Clarify how instances relate to smart contracts relate to modules
+     (e.g., right now it says that an instance is a module + state but the
+     picture below shows instances as contracts + state).
+   - Decide how exactly we should define smart-contract modules (as its own concept
+     or as Wasm modules), and whether we should talk about them at all.
+   - Decide whether we should have a concrete code example, and whether it should
+     be in Wasm or Rust or perhaps pseudocode.
+   - Consider having a picture that explains the relationship between modules and instances.
+
 A **smart contract instance** is a smart contract module together with a
 specific state and an amount of GTU tokens.
 Multiple smart contract instances can be created from the same module.
-For example, for the auction contract, there could be multiple instances, each
+For example, for an :ref:`auction <auction>` contract, there could be multiple instances, each
 one dedicated to bidding for a specific item and with its own participants.
 
 Smart contract instances can be created from a deployed :ref:`smart contract
 module<contract-module>` via the ``init`` transaction which invokes the
-requested function in the *smart contract module*. This function can take a
+requested function in the smart contract module. This function can take a
 parameter.
 Its end result is required to be the initial smart contract state of the
 instance.
 
 .. note::
 
-   A smart contract instance is often just called an *instance*, when it is clear
-   from the context that it is a smart contract instance.
+   A smart contract instance is often just called an *instance*.
 
 .. graphviz::
    :align: center
