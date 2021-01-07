@@ -30,3 +30,4 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
           CLEAN: true
+          CLEAN_EXCLUDE: '["index.html"]'
