@@ -1,0 +1,509 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Troubleshooting and known issues &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Glossary of Concordium Terms" href="glossary.html" />
+    <link rel="prev" title="Downloads" href="downloads.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">See Also</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="downloads.html">Downloads</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting and known issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Issue with adding a baker on node dashboard on Mac in previous Mac release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Multiple nodes, bakers, and accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Appearance of high memory consumption of the node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Symbolic links in <code class="docutils literal notranslate"><span class="pre">Documents</span></code> path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Node does not catch up with chain on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-error-port-already-in-use">Docker error port already in use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Supported ID document types and countries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Inconsistency with Spanish national identity card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">Performance issues in mobile wallet on Android phones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">Robustness issues with shielded transfer in mobile wallets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">Creation of account fails with imported identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">Node dashboard shows outdated information after node reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">Node dashboard does not load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Troubleshooting and known issues</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/testnet/see-also/troubleshooting.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting-and-known-issues">
+<h1>Troubleshooting and known issues<a class="headerlink" href="#troubleshooting-and-known-issues" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id13">Issue with adding a baker on node dashboard on Mac in previous Mac release</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id14">Multiple nodes, bakers, and accounts</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id15">Appearance of high memory consumption of the node</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id16">Symbolic links in <code class="docutils literal notranslate"><span class="pre">Documents</span></code> path</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id17">Node does not catch up with chain on Windows</a></p></li>
+<li><p><a class="reference internal" href="#docker-error-port-already-in-use" id="id18">Docker error port already in use</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id19">Supported ID document types and countries</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id20">Inconsistency with Spanish national identity card</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id21">Performance issues in mobile wallet on Android phones</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id22">Robustness issues with shielded transfer in mobile wallets</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id23">Creation of account fails with imported identity</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id24">Node dashboard shows outdated information after node reset</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id25">Node dashboard does not load</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ssh-tunnel-to-the-node" id="id26">SSH tunnel to the node</a></p></li>
+<li><p><a class="reference internal" href="#configure-the-middleware-address" id="id27">Configure the middleware address</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id28">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>If you cannot find your issue here, please email <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>,
+including logs from the <code class="docutils literal notranslate"><span class="pre">concordium-node-retrieve-logs</span></code> tool.</p>
+<div class="section" id="id1">
+<h2>Issue with adding a baker on node dashboard on Mac in previous Mac release<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>There was an issue on Mac when trying to add a baker on the node dashboard,
+which failed with a network error in the first released Mac version. We have
+fixed the issue and uploaded a new release for Mac to our
+<a class="reference external" href="https://developers.concordium.com/testnet/docs/downloads">https://developers.concordium.com/testnet/docs/downloads</a> page. Please make sure
+to download the latest Mac version, released on 2020-10-16, stop your node,
+reset your data, and restart your node.</p>
+<p>If you have a previous release version, please complete the following
+steps:</p>
+<ul class="simple">
+<li><p>Delete folder <code class="docutils literal notranslate"><span class="pre">~/Documents/concordium-software</span></code>.</p></li>
+<li><p>Extract the new release .zip into folder <code class="docutils literal notranslate"><span class="pre">~/Documents</span></code>.</p></li>
+<li><p>Open a terminal in <code class="docutils literal notranslate"><span class="pre">~/Documents/concordium-software</span></code> and run
+<code class="docutils literal notranslate"><span class="pre">./concordium-node-stop</span></code>.</p></li>
+<li><p>Reset the data by running <code class="docutils literal notranslate"><span class="pre">./concordium-node-reset-data</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">./concordium-node</span></code> and let it catch up.</p></li>
+</ul>
+<p>Note that in all releases you can use the Concordium client for account
+and baker management, see e.g.
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">config</span> <span class="pre">account</span> <span class="pre">--help</span></code> and
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">baker</span> <span class="pre">--help</span></code>, respectively, to get started.</p>
+</div>
+<div class="section" id="id2">
+<h2>Multiple nodes, bakers, and accounts<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>We do not currently support running two nodes on the same machine. This means
+that while it is possible, we provide no support for it. When the
+<code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> tool is run when the node is already running it will either
+do nothing, in case none of the parameters, e.g., node name, have changed, or
+restart the node with the new parameters. Note that “do nothing” means that it
+will attach the terminal to the existing running node, so it will appear similar
+to if another node is running, but upon close inspection it will become clear
+that the outputs of the previously running, and the “newly started” nodes are
+the same.</p>
+<p>A node can only run as one baker. A baker is by definition a member of the
+committee. The current committee can be obtained by querying the node via
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">consensus</span> <span class="pre">show-parameters</span> <span class="pre">--include-bakers</span></code>. A node can run
+as a baker or not, depending on how it is started, and whether the keys it
+starts with are registered in the committee.</p>
+<p>Which baker the node runs as is determined by the baker keys that it starts with
+(these are in the file <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code>). If a node is restarted it
+reloads the keys that exist at the time it starts.</p>
+<p>The same account can be used to register multiple bakers. All these bakers will,
+by default, have the account as the reward account. An account can only delegate
+to one of the bakers however (delegate in the sense that the tokens on the
+account will count towards the stake of the baker). When a baker is registered,
+and without further action, it will be in the committee, but it will have 0%
+stake. Any account can subsequently delegate to any of the registered bakers.</p>
+</div>
+<div class="section" id="id3">
+<h2>Appearance of high memory consumption of the node<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>The Concordium node may appear to use a lot of memory, and its memory
+consumption may grow over time. This happens because the node internally uses
+the LMDB database for block and transaction storage. LMDB manages the database
+as a single memory-mapped file which can cause certain tools to erroneously
+include the whole or parts of the database file into the reported memory
+consumption of the process.</p>
+</div>
+<div class="section" id="id4">
+<h2>Symbolic links in <code class="docutils literal notranslate"><span class="pre">Documents</span></code> path<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>On Linux and macOS the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool must be run from
+<code class="docutils literal notranslate"><span class="pre">$HOME/Documents/concordium-software</span></code> directory or its subdirectory.</p>
+<p>The tool checks the absolute path of the directory and any symbolic links in the
+path will make this check fail.</p>
+<p>For example if <code class="docutils literal notranslate"><span class="pre">$HOME/Documents</span></code> is a symbolic link to some other directory
+then the tool will fail to start.</p>
+<p>The easiest way to check the absolute path is to run <code class="docutils literal notranslate"><span class="pre">pwd</span> <span class="pre">-P</span></code>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Node does not catch up with chain on Windows<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>On Windows, the Concordium node may fail to catch up with the chain when
+changing internet connections. It usually catches up with the chain again after
+few minutes. Otherwise, stop and restart the node.</p>
+<p>Failure to catch-up on Windows might also occur, if the time in the docker
+virtual machine is out of sync. This can happen as a result of the machine
+entering sleep (even if the node is not running at the time). The following may
+be indications that this has occurred:</p>
+<ul class="simple">
+<li><p>Errors in the log such as
+<code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">External:</span> <span class="pre">Error</span> <span class="pre">importing</span> <span class="pre">block:</span> <span class="pre">ResultEarlyBlock</span></code> (or any
+other error involving <code class="docutils literal notranslate"><span class="pre">ResultEarlyBlock</span></code>).</p></li>
+<li><p>Timestamps of messages in the log do not match the system time.
+(Note, the log timestamps are given in the UTC timezone; you may need
+to add or subtract a few hours to convert to your local time.)</p></li>
+</ul>
+<p>To fix this, shutdown the node, restart your computer (or just restart Docker
+Desktop), and then restart the node.</p>
+<p>If the problem persists, it could be that the system time is set incorrectly.
+(This is especially likely if you observe negative times on the Concordium
+Network Dashboard.) To fix this, open <em>Date &amp; time settings</em> and select <em>Sync
+now</em> under <em>Synchronize your clock</em>. You may have to restart the node as
+described above after synchronizing your clock.</p>
+<p>(Note: it may be possible to resynchronize the virtual machine’s clock without
+having to restart it. This can be done by stopping and restarting the <em>Time
+synchronization</em> integration service for the docker virtual machine using
+<em>Hyper-V Manager</em>.)</p>
+</div>
+<div class="section" id="docker-error-port-already-in-use">
+<h2>Docker error port already in use<a class="headerlink" href="#docker-error-port-already-in-use" title="Permalink to this headline">¶</a></h2>
+<p>The node may fail starting with the error <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">starting</span> <span class="pre">{..}</span> <span class="pre">proxy:</span> <span class="pre">listen</span>
+<span class="pre">tcp</span> <span class="pre">0.0.0.0:{PORT}:</span> <span class="pre">bind:</span> <span class="pre">address</span> <span class="pre">already</span> <span class="pre">in</span> <span class="pre">use</span></code>, which can be remedied by
+using a different <code class="docutils literal notranslate"><span class="pre">{PORT}</span></code> than the default used by the node.</p>
+<p>The ports used by the node are as follows:</p>
+<ul class="simple">
+<li><p>8888, the port for P2P networking, which can be set with
+<code class="docutils literal notranslate"><span class="pre">--listen-node-port</span></code></p></li>
+<li><p>8099, the port used by the node dashboard, which can be set with
+<code class="docutils literal notranslate"><span class="pre">--listen-dashboard-port</span></code></p></li>
+<li><p>8082, the port used by internal backend, which can be set with
+<code class="docutils literal notranslate"><span class="pre">--listen-middleware-port</span></code></p></li>
+<li><p>10000, the gRPC port, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-grpc-port</span></code></p></li>
+</ul>
+<p>When changing the mappings above the docker container must be stopped, reset,
+and started again. To reset the container either use
+<code class="docutils literal notranslate"><span class="pre">concordiumn-node-reset-data</span></code> or run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">concordium-client</span></code> in a
+terminal.</p>
+</div>
+<div class="section" id="id6">
+<h2>Supported ID document types and countries<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>For issuing a real-world identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code>, i.e.
+an identity based on a physical ID document, 3rd parties identity issuer
+Notabene and identity verifier Onfido are invoked. For a list of supported ID
+document types and countries, please visit <a class="reference external" href="http://onfido.com/supported-documents">supported ID documents</a>.</p>
+<p>The previously described identity issuing option can be selected in the process
+of creating a new identity using <code class="docutils literal notranslate"><span class="pre">Notabene</span></code> on the New Identity Verification
+screen. Note that with option <code class="docutils literal notranslate"><span class="pre">Notabene</span> <span class="pre">development</span></code> test identities can be
+issued, which are not verified against physical ID documents.</p>
+</div>
+<div class="section" id="id7">
+<h2>Inconsistency with Spanish national identity card<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>A Spanish national identity card shows the serial number of the card (NUM
+SOPORT) and the identity number of the holder (DNI). When issuing a real-world
+identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code>, based on a Spanish national
+identity card, NUM SOPORT should be included in the issued identity.
+Inconsistencies may be observed where DNI is used instead. This issue is caused
+on the side of the 3rd party issue verifier Onfido.</p>
+</div>
+<div class="section" id="id8">
+<h2>Performance issues in mobile wallet on Android phones<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Performance issues, e.g. long processing times, might occur when running the
+mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code> on a low end Android phone. Processing delays
+might not be indicated by approriate waiting screens.</p>
+</div>
+<div class="section" id="id9">
+<h2>Robustness issues with shielded transfer in mobile wallets<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>When executing multiple shielded transfers or unshielding flows in the mobile
+wallets within a very short period of time, inconsistencies might be observed.
+Those robustness issues can be circumvented by waiting a few seconds between
+such transactions.</p>
+</div>
+<div class="section" id="id10">
+<h2>Creation of account fails with imported identity<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Creating a new account with an imported identity fails in the following
+scenario:</p>
+<ul class="simple">
+<li><p>create an identity</p></li>
+<li><p>make an export</p></li>
+<li><p>create accounts using the identity</p></li>
+<li><p>reinstall the app</p></li>
+<li><p>import the exportfile</p></li>
+<li><p>create an account, using the imported identity.</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>Node dashboard shows outdated information after node reset<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>The node dashboard stores information about the baking status and pending
+transactions. This state is stored in the browser and is not cleared with the
+node reset. To clear the information, use the following keys while being on the
+node dashboard:</p>
+<ul class="simple">
+<li><p>Windows/Linux: ctrl + delete</p></li>
+<li><p>MacOS: ctrl + fn + backspace Once pressed, you will be prompted to
+confirm the action.</p></li>
+</ul>
+<p>You can also delete the entries in the browser’s local storage manually and
+immediately refresh the webpage before it re-inserts the entries again.</p>
+</div>
+<div class="section" id="id12">
+<h2>Node dashboard does not load<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>When connecting to the node dashboard from a machine other than the one running
+the node, the node dashboard may not load, showing the error “Oops, something
+went wrong: HTTP Network error”. Accessing the node dashboard remotely is not
+supported, but may be achieved in one of the following ways.</p>
+<div class="section" id="ssh-tunnel-to-the-node">
+<h3>SSH tunnel to the node<a class="headerlink" href="#ssh-tunnel-to-the-node" title="Permalink to this headline">¶</a></h3>
+<p>If the node is running on a server to which you have SSH access, you can forward
+ports on your local machine to ports on the server via an SSH tunnel. To access
+the node dashboard, it is necessary to forward both the node dashboard server
+port (8099 by default) and the middleware port (8082 by default). For example:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">L</span><span class="w"> </span><span class="mi">8099</span>:<span class="mf">0.0.0.0</span>:<span class="mi">8099</span><span class="w"> </span><span class="o">-</span><span class="n">L</span><span class="w"> </span><span class="mi">8082</span>:<span class="mf">0.0.0.0</span>:<span class="mi">8082</span><span class="w"> </span><span class="n">user</span><span class="o">@</span><span class="n">server</span><span class="w"></span>
+</pre></div>
+</div>
+<p>It should then be possible to access the node dashboard at
+<a class="reference external" href="http://localhost:8099/">http://localhost:8099/</a>.</p>
+</div>
+<div class="section" id="configure-the-middleware-address">
+<h3>Configure the middleware address<a class="headerlink" href="#configure-the-middleware-address" title="Permalink to this headline">¶</a></h3>
+<p>The node dashboard by default attempts to connect to the middleware server at
+<code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> (the local machine). It is possible to configure this when
+starting the node by providing the command-line argument
+<code class="docutils literal notranslate"><span class="pre">--listen-middleware-address</span> <span class="pre">&lt;node</span> <span class="pre">address&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;node</span> <span class="pre">address&gt;</span></code> is the
+address that you will use to connect to the node. (To change this, the node must
+be <a class="reference external" href="/testnet/docs/quickstart-node#stopping-the-node">stopped</a>, reset, and started again. To reset the node use
+<code class="docutils literal notranslate"><span class="pre">concordium-node-reset-data</span></code> in a terminal.)</p>
+<p>Note that it is <em>strongly recommended</em> to configure your firewall so that access
+to ports other than 8888 (peer-to-peer networking) is not possible from the
+public internet. Someone with access to the <a class="reference external" href="/testnet/docs/quickstart-node#configuring-ports">other ports</a> may be able to take
+control of your node or accounts you have saved on the node.</p>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you run into any issues or have suggestions, post your question or feedback
+on <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a> or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary of Concordium Terms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="downloads.html" class="btn btn-neutral float-left" title="Downloads" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

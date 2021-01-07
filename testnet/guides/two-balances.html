@@ -1,0 +1,386 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>One Account, Two Balances and Shielded Transfers &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Export and importing IDs and accounts using the mobile wallet" href="import-export.html" />
+    <link rel="prev" title="Create an Account, Send and Receive GTU" href="account-basics.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="account-basics.html">Create an Account, Send and Receive GTU</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">One Account, Two Balances and Shielded Transfers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accounts-have-two-balances">Accounts have two balances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Decrypting shielded transfers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-an-amount-between-the-two-balances">Moving an amount between the two balances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Fees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker (create blocks)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">See Also</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/licenses.html">Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>One Account, Two Balances and Shielded Transfers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/testnet/guides/two-balances.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="one-account-two-balances-and-shielded-transfers">
+<h1>One Account, Two Balances and Shielded Transfers<a class="headerlink" href="#one-account-two-balances-and-shielded-transfers" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#accounts-have-two-balances" id="id5">Accounts have two balances</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id6">Decrypting shielded transfers</a></p></li>
+<li><p><a class="reference internal" href="#moving-an-amount-between-the-two-balances" id="id7">Moving an amount between the two balances</a></p>
+<ul>
+<li><p><a class="reference internal" href="#submitting-a-shielding" id="id8">Submitting a shielding</a></p></li>
+<li><p><a class="reference internal" href="#submitting-a-unshielding" id="id9">Submitting a unshielding</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id10">Making a shielded transfer</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id4" id="id11">Fees</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id12">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>With the release of Open Testnet 3, it is now possible to make shielded
+transfers. A shielded transfer is a <a class="reference external" href="glossary#global-transaction-unit-gtu-">GTU</a> transfer in which the amount
+of GTU is encrypted. The addition of shielded transfers means that the
+Concordium ID app looks slightly different, to accommodate the new
+functionality. The new design and functionality will be explained below.</p>
+<div class="section" id="accounts-have-two-balances">
+<h2>Accounts have two balances<a class="headerlink" href="#accounts-have-two-balances" title="Permalink to this headline">¶</a></h2>
+<p>When we think of a regular bank account, we know that it only has one
+balance. On the Concordium blockchain an account is slightly different,
+as it has two balances: A <strong>balance</strong> and a <strong>shielded balance</strong>.</p>
+<img alt="../../_images/st1_wireframe.png" class="align-center" src="../../_images/st1_wireframe.png" />
+<p>As you can see on the screenshot, the new <em>Accounts</em> screen might look
+something like this: A handful of accounts, which each have two separate
+balances. Let’s take a look at the <strong>Example Account</strong>.</p>
+<p>The account name Example Account and the total amount of the account is
+seen just above the two balances, and as you might notice we now have
+<strong>balance</strong> and <strong>shielded balance</strong>. The balance is the regular balance
+as we know it, and the shielded balance is the new addition to the
+account, that means we can make shielded transfers. As you see, the
+shielded balance has a small padlock beside it’s amount, and this means
+that the balance has received a shielded transaction that has not been
+decrypted yet. This is also reflected in the total balance of the
+account, and the total balance of all accounts, as we do not know the
+complete amount of GTU on the shielded balance(s) of all accounts yet.</p>
+</div>
+<div class="section" id="id2">
+<h2>Decrypting shielded transfers<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>To decrypt the received shielded transfers in the shielded balance, you
+simply have to press the shielded balance. At this point you will be
+prompted with an authentication screen, to verify that you are actually
+allowed to decrypt the shielded transfers.</p>
+<p>After having done the verification, the phone will start to decrypt all
+the shielded transfers that have not yet been decrypted. Depending on
+the amount of shielded transfers that need decryption, this might take a
+little while. A shielded transfer only has to be decrypted once, so once
+it has been decrypted on your phone, it will stay decrypted on your
+phone. When all shielded transfers have been decrypted, you might notice
+that the padlock beside the shielded balance has disappeared, and that
+we now can see the complete shielded amount and total amount of the
+Example Account. If more shielded balances have a padlock beside their
+amounts, the process can be done for those as well, to reveal the total
+balance of all accounts.</p>
+<img alt="../../_images/st2_wireframe.png" class="align-center" src="../../_images/st2_wireframe.png" />
+<img alt="../../_images/st3_wireframe.png" class="align-center" src="../../_images/st3_wireframe.png" />
+</div>
+<div class="section" id="moving-an-amount-between-the-two-balances">
+<h2>Moving an amount between the two balances<a class="headerlink" href="#moving-an-amount-between-the-two-balances" title="Permalink to this headline">¶</a></h2>
+<p>To make a shielded transfer, you need to have the funds to do so. A
+shielded transfer can only be done from the shielded balance of an
+account to the shielded balance of another account. As it is not
+possible to make a shielded transfer from a regular balance, we might
+have to move some GTU from the regular balance to the shielded balance,
+before we have enough GTU for a shielded transfer. We call the action of
+moving GTU from the regular balance to the shielded balance a
+<strong>Shielding</strong>, and the reversed action of moving from the shielded
+balance to the regular an <strong>Unshielding</strong>.</p>
+<div class="section" id="submitting-a-shielding">
+<h3>Submitting a shielding<a class="headerlink" href="#submitting-a-shielding" title="Permalink to this headline">¶</a></h3>
+<p>To shield an amount you have to enter the balance of the account, on
+which you want to make a shielding. Let’s make a shielding from the
+balance of the Example Account. After entering the balance, you have to
+press the <strong>Send</strong> button, which will take us to the next screen.</p>
+<img alt="../../_images/st4_wireframe.png" class="align-center" src="../../_images/st4_wireframe.png" />
+<img alt="../../_images/st5_wireframe.png" class="align-center" src="../../_images/st5_wireframe.png" />
+<p>On the next screen you can enter the desired amount, and you have the
+ability to <strong>Select recipient or shield amount</strong>. When deciding on a
+recipient, press the <strong>Shield amount</strong> option. If everything looks
+correct, you can press <strong>Shield amount</strong> to finish the process.</p>
+<img alt="../../_images/st6_wireframe.png" class="align-center" src="../../_images/st6_wireframe.png" />
+<img alt="../../_images/st7_wireframe.png" class="align-center" src="../../_images/st7_wireframe.png" />
+<img alt="../../_images/st8_wireframe.png" class="align-center" src="../../_images/st8_wireframe.png" />
+</div>
+<div class="section" id="submitting-a-unshielding">
+<h3>Submitting a unshielding<a class="headerlink" href="#submitting-a-unshielding" title="Permalink to this headline">¶</a></h3>
+<p>To conduct an unshielding, you just have to follow the same process as
+for a shielding, except you start from the <strong>shielded balance</strong>, and
+choose <strong>Unshield amount</strong> in the recipients list.</p>
+</div>
+<div class="section" id="id3">
+<h3>Making a shielded transfer<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Let’s take the shielded balance of the <strong>Example Account</strong> as an example
+for a shielded transfer. To conduct a shielded transfer, you have to
+press the <strong>Send</strong> button again. On the next screen, we decide on an
+amount, and press the <strong>Select recipient or unshield amount</strong> button,
+just as you did for the shielding and unshielding processes.</p>
+<img alt="../../_images/st9_wireframe.png" class="align-center" src="../../_images/st9_wireframe.png" />
+<img alt="../../_images/st10_wireframe.png" class="align-center" src="../../_images/st10_wireframe.png" />
+<img alt="../../_images/st11_wireframe.png" class="align-center" src="../../_images/st11_wireframe.png" />
+<p>At this time, instead of choosing unshield amount, you decide on a
+<strong>recipient</strong>. Let’s say you want to make a shielded transfer to your
+Savings account, so you press the recipient called <strong>Savings</strong>. Notice
+the shield on the side, which means it will be a shielded transfer to
+the shielded balance of your Savings account. Of course shielded
+transfers can also be done to external accounts not owned by yourself.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Fees<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Making shieldings, unshieldings and shielded transfers will cost a
+<strong>fee</strong>, just like the regular transfers. This fee will differ between
+the different types of transfers, but the one thing they have in common
+is that they will always be deducted from the regular balance of the
+account used to make the transaction. These fees will of course be shown
+in the log of your regular balance, but it will also be shown if you
+take a look at the transaction details from the shielded balance.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you run into any issues or have suggestions, post your question or
+feedback on <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="import-export.html" class="btn btn-neutral float-right" title="Export and importing IDs and accounts using the mobile wallet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="account-basics.html" class="btn btn-neutral float-left" title="Create an Account, Send and Receive GTU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

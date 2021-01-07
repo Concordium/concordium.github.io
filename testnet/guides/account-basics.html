@@ -1,0 +1,412 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Create an Account, Send and Receive GTU &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="One Account, Two Balances and Shielded Transfers" href="two-balances.html" />
+    <link rel="prev" title="Testnet" href="../index.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Create an Account, Send and Receive GTU</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Identities and accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Before you start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Create an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Create an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Request 100 GTU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Send 10 GTU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Receive GTU from someone else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-shielded-balance-and-transfers">The shielded balance and transfers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker (create blocks)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">See Also</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/licenses.html">Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Create an Account, Send and Receive GTU</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/testnet/guides/account-basics.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="create-an-account-send-and-receive-gtu">
+<h1>Create an Account, Send and Receive GTU<a class="headerlink" href="#create-an-account-send-and-receive-gtu" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id8">Identities and accounts</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id9">Before you start</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id10">Create an identity</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id11">Create an account</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">Request 100 GTU</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id13">Send 10 GTU</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id14">Receive GTU from someone else</a></p></li>
+<li><p><a class="reference internal" href="#the-shielded-balance-and-transfers" id="id15">The shielded balance and transfers</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>In this quickstart, you will learn how to create an account, receive 100
+GTU and send 10 GTU. <a class="reference external" href="glossary#global-transaction-unit-gtu-">GTU</a> is the currency of the Concordium
+blockchain. To do all this, you need both an identity and an account.</p>
+<div class="section" id="id1">
+<h2>Identities and accounts<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The first step towards creating an account on the Concordium Platform is
+to obtain an <em>identity</em> from an identity provider. An identity provider
+is a person or organization that performs off-chain identification of
+users. Identity providers might collect and verify some user information
+from you, such as your name or date of birth. These pieces of user
+information are called <em>attributes</em>.</p>
+<p>Once you have an identity you can open accounts that will be associated
+with it. For each account, you can specify which attributes, among the
+ones the identity provider approved, you want to reveal publicly on the
+account. You can reveal any number of them, including none.</p>
+<p>To learn more about identities and accounts, see the <a class="reference external" href="identities-and-accounts">reference guide</a>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Before you start<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>To follow the steps in this quickstart, you need the mobile wallet
+<a class="reference external" href="/testnet/docs/downloads#concordium-id">Concordium ID</a> for either iOS or Android. The first time you open
+Concordium ID, you will be prompted to choose a passcode, and select if
+you want to add either biometrics or a password. After you have done
+that, you are ready to make your first ID and account.</p>
+<p>In Concordium ID, you can choose between two identity providers,
+<a class="reference external" href="https://notabene.id/">Notabene</a> and <strong>Notabene (development)</strong>.</p>
+<ul class="simple">
+<li><p>Notabene will have you go through a process that verifies your
+real-life identity.</p></li>
+<li><p>Notabene (development) will issue an identity with attributes of your
+choice that you choose on their website.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Create an identity<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>If you have not created an identity yet, you will need to do so, before
+you can start making transactions. The <em>Accounts</em> screen will have a
+<strong>Create identity</strong> button, which you can press to start the process.
+The next screen will let you name your identity, and by clicking
+<strong>Next</strong> you will be asked to choose between the <a class="reference external" href="https://notabene.id/">Notabene</a> and
+<strong>Notabene (development)</strong> options, as mentioned above. By finishing
+either of the Notabene processes, you will end up with the <em>Identity
+submitted!</em> screen, which tells you that your identity will soon be
+ready.</p>
+<a class="reference internal image-reference" href="../../_images/ca1_wireframe.png"><img alt="../../_images/ca1_wireframe.png" src="../../_images/ca1_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca2_wireframe.png"><img alt="../../_images/ca2_wireframe.png" src="../../_images/ca2_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca4_wireframe.png"><img alt="../../_images/ca4_wireframe.png" src="../../_images/ca4_wireframe.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id4">
+<h2>Create an account<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Having created an identity, you are now ready to create an account as
+well. If you have not created an account yet, the <em>Accounts</em> screen will
+display a button called <strong>Create account</strong>. Press this button or the
+little plus sign in the upper right corner, to get started.</p>
+<a class="reference internal image-reference" href="../../_images/ca6_wireframe.png"><img alt="../../_images/ca6_wireframe.png" src="../../_images/ca6_wireframe.png" style="width: 32%;" /></a>
+<p>Now give your account a name to continue the creation process. On the
+following screen you have to choose which identity to add your account
+to. In case you have more than one, you can decide which to use. Else
+just pick the one you just created.</p>
+<a class="reference internal image-reference" href="../../_images/ca7_wireframe.png"><img alt="../../_images/ca7_wireframe.png" src="../../_images/ca7_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca8_wireframe.png"><img alt="../../_images/ca8_wireframe.png" src="../../_images/ca8_wireframe.png" style="width: 32%;" /></a>
+<p>Having chosen your desired identity, you can now choose what identity
+data you want to be publically visible on your account. You can choose
+however many you want, including none at all. The last step is to press
+<strong>Create account</strong>, which will submit your account to the chain.</p>
+<a class="reference internal image-reference" href="../../_images/ca9_wireframe.png"><img alt="../../_images/ca9_wireframe.png" src="../../_images/ca9_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca10_wireframe.png"><img alt="../../_images/ca10_wireframe.png" src="../../_images/ca10_wireframe.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id5">
+<h2>Request 100 GTU<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>On the Testnet you can request 100 GTU for your newly created account.
+This is a testnet feature that allows you to test the toolchain. After
+creating your account, go to the <em>Accounts</em> screen and do the following:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>Balance</strong> of your account. We will come back to the
+<strong>Shielded Balance</strong> in a later <a class="reference external" href="/testnet/docs/quickstart-shielded-transfers">quickstart</a>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/ca12_wireframe.png"><img alt="../../_images/ca12_wireframe.png" src="../../_images/ca12_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca13_wireframe.png"><img alt="../../_images/ca13_wireframe.png" src="../../_images/ca13_wireframe.png" style="width: 32%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>To request 100 GTU, press <strong>Request 100 GTU</strong>.</p></li>
+<li><p>After a little while, you should receive your first 100 GTU.</p></li>
+</ol>
+<p>This request can be done once per account.</p>
+</div>
+<div class="section" id="id6">
+<h2>Send 10 GTU<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>If you have no GTU yet, check out above how to request 100 GTU in the
+previous section. Go to the <em>Accounts</em> screen and pick the account you
+want to send 10 GTU from. Click the <strong>Balance</strong> part of the account.
+After entering the balance, press the <strong>Send Funds</strong> button, and you
+will be met by the next screen.</p>
+<a class="reference internal image-reference" href="../../_images/ca22_wireframe.png"><img alt="../../_images/ca22_wireframe.png" src="../../_images/ca22_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca15_wireframe.png"><img alt="../../_images/ca15_wireframe.png" src="../../_images/ca15_wireframe.png" style="width: 32%;" /></a>
+<p>On the <em>Send Funds</em> screen, you decide on the amount of GTU you want to
+send, and you have the option to pick a recipient. Start by entering 10
+GTU. Then press the <strong>Select recipient or shield amount</strong> button. Now,
+if you do not have more than one account yet, or have not added any
+recipients in the address book, the screen will look something like
+this:</p>
+<a class="reference internal image-reference" href="../../_images/ca16_wireframe.png"><img alt="../../_images/ca16_wireframe.png" src="../../_images/ca16_wireframe.png" style="width: 32%;" /></a>
+<p>As you can see, their is a button called <strong>Shield amount</strong>, which we
+will not get into yet. Instead, to add a recipient, you can either press
+the little plus in the upper right corner, or press the QR to scan
+someone elses account. Let’s press the little plus, and enter the
+account address and a name for the recipient. If you do not have an
+address to send GTU to yet, check <a class="reference external" href="#receive-gtu-from-someone-else">this</a> out to have someone share
+their information with you. You can now choose your newly added entry in
+the address book, as the recipient for your transaction. Finish the
+process by pressing <strong>Send funds</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/ca18_wireframe.png"><img alt="../../_images/ca18_wireframe.png" src="../../_images/ca18_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca19_wireframe.png"><img alt="../../_images/ca19_wireframe.png" src="../../_images/ca19_wireframe.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ca20_wireframe.png"><img alt="../../_images/ca20_wireframe.png" src="../../_images/ca20_wireframe.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id7">
+<h2>Receive GTU from someone else<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>In order to receive GTU from someone, you have to give them the address
+of the account you want them to send GTU to. To do this, you go to
+<em>Accounts</em> and choose an account. If you click on <strong>ADDRESS</strong>, you will
+see:</p>
+<img alt="../../_images/ca21_wireframe.png" class="align-center" src="../../_images/ca21_wireframe.png" />
+<p>Here, you see the address displayed both as text and as a QR code. Give this information to the person you expect to send you GTU.</p>
+</div>
+<div class="section" id="the-shielded-balance-and-transfers">
+<h2>The shielded balance and transfers<a class="headerlink" href="#the-shielded-balance-and-transfers" title="Permalink to this headline">¶</a></h2>
+<p>As you have probably noticed in this quickstart, the accounts hold a
+second <strong>Shielded Balance</strong>. To learn more about the shielded balance
+and the shielded transfers that can be done with it, continue to this
+next <a class="reference external" href="/testnet/docs/quickstart-shielded-transfers">Quickstart: Two balances and shielded transfers.</a></p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you run into any issues or have suggestions, post your question or
+feedback on <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="two-balances.html" class="btn btn-neutral float-right" title="One Account, Two Balances and Shielded Transfers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Testnet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

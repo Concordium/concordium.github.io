@@ -1,0 +1,517 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Concordium Client &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Identities and accounts" href="id-accounts.html" />
+    <link rel="prev" title="Become a baker (create blocks)" href="../guides/become-baker.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concordium Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Commands and help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">Shell completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">See Also</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/licenses.html">Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Concordium Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/testnet/references/concordium-client.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concordium-client">
+<h1>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id11">Commands and help</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id12">Configuration</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id13">Location</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id14">Initialization</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id15">Display contents</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example" id="id16">Example:</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id6" id="id17">Add accounts and keys</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id18">Add account</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id19">Add key to an account</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id20">Import accounts and keys from the Wallet apps</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id10" id="id21">Shell completion</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id22">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>The Concordium distribution ships with a CLI tool named <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
+<p>In the current testnet setup, this client requires a <a class="reference external" href="/testnet/docs/quickstart-node">local node</a>
+(<code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>) to be running. The client will perform its queries and
+send transactions through that node.</p>
+<p>Due to directory mapping between the Docker container and the host machine, the
+tool must be currently invoked from within the following system-dependent
+directory:</p>
+<ul class="simple">
+<li><p>Linux/macOS: <code class="docutils literal notranslate"><span class="pre">$HOME/Documents/concordium-software</span></code></p></li>
+<li><p>Windows: {FOLDERID_Documents}\concordium-software
+(<code class="docutils literal notranslate"><span class="pre">C:\\Users\\%USERNAME%\\Documents\\concordium-software</span></code> in a
+standard setup)</p></li>
+</ul>
+<p><strong>This page will describe the commands that are related with configuration of
+the client, but the rest of available commands will be discussed on the pages
+where the features that use them are documented. Some commands will perform</strong><a class="reference external" href="/testnet/docs/queries">queries</a><strong>and others send</strong><a class="reference external" href="/testnet/docs/transactions">transactions</a><strong>.</strong></p>
+<div class="section" id="id1">
+<h2>Commands and help<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The commands supported by the tool are divided into two categories: the
+high-level and low-level commands. The high-level commands provide a streamlined
+and consistent user interface, automatically handling as much complexity as
+possible. While most of the common operations are available via high-level
+commands, the low-level commands provide a more direct interface to the node,
+and some information and capabilities are not available in high-level commands.</p>
+<p>The high-level commands are grouped by topic (<code class="docutils literal notranslate"><span class="pre">account</span></code>, <code class="docutils literal notranslate"><span class="pre">baker</span></code>, <code class="docutils literal notranslate"><span class="pre">config</span></code>
+etc.). The low-level commands are grouped in the <code class="docutils literal notranslate"><span class="pre">raw</span></code> category and have
+CamelCase names.</p>
+<p>Invoke <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">--help</span></code> to see the full list of topics. Include the
+topic to see the available commands within that topic:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config --help
+<span class="go">Usage: concordium-client config COMMAND</span>
+<span class="go">  Commands for inspecting and changing local configuration.</span>
+
+<span class="go">Available options:</span>
+<span class="go">  -h,--help                Show this help text</span>
+
+<span class="go">Available commands:</span>
+<span class="go">  init                     Initialize configuration.</span>
+<span class="go">  show                     Show configuration.</span>
+<span class="go">  account                  Commands for inspecting and changing account-specific configuration.</span>
+</pre></div>
+</div>
+<p>Give the full command to see available options related to that command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import --help
+<span class="go">Usage: concordium-client config account import FILE [--name NAME]</span>
+<span class="go">  Import an account to persistent config.</span>
+
+<span class="go">Available options:</span>
+<span class="go">  FILE                     Account file exported from the wallet.</span>
+<span class="go">  --name NAME              Name of the account.</span>
+<span class="go">  -h,--help                Show this help text</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>You can store accounts and their keys on disk to avoid having to pass them as
+command-line options.</p>
+<p>Accounts may also be associated with names which may then be used in place of
+the address throughout the client’s commands. This is an entirely local feature
+for convenience and may be done for any account — it does not require possession
+of the account’s keys.</p>
+<p>Each account has</p>
+<ul class="simple">
+<li><p>one or more (up to 256) key-pairs for signing transactions. They are
+identified by the key index, which is an integer starting at 0.</p></li>
+<li><p>decryption key-pair used for decrypting the shielded balance of the
+account.</p></li>
+</ul>
+<p>For all those keys, the private part of the key-pair is encrypted in the local
+storage and a password is required each time the key is needed. The password is
+chosen when the keys are either imported via <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">account</span> <span class="pre">import</span></code> (see
+below), or when keys are added to the account afterwards.</p>
+<p>Read more about accounts <a class="reference external" href="/testnet/docs/managing-accounts">here</a>.</p>
+<div class="section" id="id3">
+<h3>Location<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>On the testnet, the configuration directory is mapped by Docker into a
+system-dependent directory:</p>
+<ul class="simple">
+<li><p>Linux/macOS: <code class="docutils literal notranslate"><span class="pre">$HOME/.config/concordium</span></code></p></li>
+<li><p>Windows: {FOLDERID_RoamingAppData}\concordium
+(<code class="docutils literal notranslate"><span class="pre">C:\\Users\\%USERNAME%\\AppData\\Roaming\\concordium</span></code> in a
+standard setup)</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Initialization<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The command <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">config</span> <span class="pre">init</span></code> initializes the configuration
+structure. The distribution does this automatically, so it should not be
+necessary to use this command. If the configuration structure becomes corrupt
+for some reason, it may also be able to repair it.</p>
+</div>
+<div class="section" id="id5">
+<h3>Display contents<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
+</pre></div>
+</div>
+<p>Display the full contents of the persistent configuration. This will display the
+stored keys that are used for signing transactions (under the <code class="docutils literal notranslate"><span class="pre">Account</span> <span class="pre">Keys</span></code>
+section) and the stored key for sending encrypted transfers (under the
+<code class="docutils literal notranslate"><span class="pre">Encryption</span> <span class="pre">secret</span> <span class="pre">key</span></code> section) when they are present.</p>
+<div class="section" id="example">
+<h4>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
+<span class="go">Base configuration:</span>
+<span class="go">- Verbose:            no</span>
+<span class="go">- Account config dir: /var/lib/concordium/config/accounts</span>
+<span class="go">- Account name map:</span>
+<span class="go">    default -&gt; 3urFJGp9AaU62fQ3DEfCczqJwVt9V3F1gjE5PPBaYgqBD6rqPB</span>
+
+<span class="go">Account keys:</span>
+<span class="go">- &#39;3urFJGp9AaU62fQ3DEfCczqJwVt9V3F1gjE5PPBaYgqBD6rqPB&#39;</span>
+<span class="go">{</span>
+<span class="go">    &quot;0&quot;: {</span>
+<span class="go">        &quot;encryptedSignKey&quot;: {</span>
+<span class="go">            &quot;metadata&quot;: {</span>
+<span class="go">                &quot;encryptionMethod&quot;: &quot;AES-256&quot;,</span>
+<span class="go">                &quot;iterations&quot;: 100000,</span>
+<span class="go">                &quot;salt&quot;: &quot;tRiBas12Z1Y7dydTTdsHbw==&quot;,</span>
+<span class="go">                &quot;initializationVector&quot;: &quot;5hPahE0+YXzNs+pRJjkzgg==&quot;,</span>
+<span class="go">                &quot;keyDerivationMethod&quot;: &quot;PBKDF2WithHmacSHA256&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;cipherText&quot;: &quot;h8AXOHt9jHINQp/GWWQrWPiXP5k9swBHQBJmcsSNFcBsie8PjuG7XPjrOQbKzZOUm7+ad1jvsMRLR58hqxKPbRUCcM8+j3O1pWtbycSItE8=&quot;</span>
+<span class="go">        },</span>
+<span class="go">        &quot;verifyKey&quot;: &quot;7c50c09a5e5537b84e83964a5522a99731e4f7f45c6527ea753970f415e6671b&quot;,</span>
+<span class="go">        &quot;schemeId&quot;: &quot;Ed25519&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;1&quot;: {</span>
+<span class="go">        &quot;encryptedSignKey&quot;: {</span>
+<span class="go">            &quot;metadata&quot;: {</span>
+<span class="go">                &quot;encryptionMethod&quot;: &quot;AES-256&quot;,</span>
+<span class="go">                &quot;iterations&quot;: 100000,</span>
+<span class="go">                &quot;salt&quot;: &quot;Q8lU7AHxDrZ6mvKbS4lFmw==&quot;,</span>
+<span class="go">                &quot;initializationVector&quot;: &quot;qR7n0N1FiIlNbzsmYWLYHg==&quot;,</span>
+<span class="go">                &quot;keyDerivationMethod&quot;: &quot;PBKDF2WithHmacSHA256&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;cipherText&quot;: &quot;5IVYAOAFWv6sCSQVXVE1/UfKKqC+Ati8DyV9MtFG1KqYQ6KG8/T9E5ZO05ORrm+ltsXZ6b273yDUnHCWtoErNzmKlqGRS7cIO/rwtDEg3nQ=&quot;</span>
+<span class="go">        },</span>
+<span class="go">        &quot;verifyKey&quot;: &quot;50ec0b507164f586e7410c09c20dac0666536136396766de06d29b07b6b61fa3&quot;,</span>
+<span class="go">        &quot;schemeId&quot;: &quot;Ed25519&quot;</span>
+<span class="go">    },</span>
+<span class="go">    ...</span>
+<span class="go">}</span>
+<span class="go">Encryption secret keys:</span>
+<span class="go">- &#39;3urFJGp9AaU62fQ3DEfCczqJwVt9V3F1gjE5PPBaYgqBD6rqPB&#39;: {</span>
+<span class="go">    &quot;metadata&quot;: {</span>
+<span class="go">        &quot;encryptionMethod&quot;: &quot;AES-256&quot;,</span>
+<span class="go">        &quot;iterations&quot;: 100000,</span>
+<span class="go">        &quot;salt&quot;: &quot;w7pmsDi1K4bWf+zkLCuzVw==&quot;,</span>
+<span class="go">        &quot;initializationVector&quot;: &quot;EXhd7ctFeqKvaA0P/oB8wA==&quot;,</span>
+<span class="go">        &quot;keyDerivationMethod&quot;: &quot;PBKDF2WithHmacSHA256&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;cipherText&quot;: &quot;pYvIywCAMLhvag1EJmGVuVezGsNvYn24zBnB6TCTkwEwOH50AOrx8NAZnVuQteZMQ7k7Kd7a1RorSxIQI1H/WX+Usi8f3VLnzdZFJmbk4Cme+dcgAbI+wWr0hisgrCDl&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Note that listed location of the configuration is the path inside the Docker
+container.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Add accounts and keys<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>See also the <a class="reference external" href="/testnet/docs/managing-accounts">Managing accounts</a> section.</p>
+<div class="section" id="id7">
+<h4>Add account<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account add ADDRESS <span class="o">[</span>--name NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p>Add account address to persistent configuration, optionally naming the account.</p>
+<p>If a name was provided, this name may now be used to refer to the account
+throughout the client.</p>
+<p>This doesn’t add any private information to the stored account, so it can be
+considered as just creating an alias for an address.</p>
+</div>
+<div class="section" id="id8">
+<h4>Add key to an account<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account add-keys --account ACCOUNT --keys KEYS
+</pre></div>
+</div>
+<p>Add a sign/verify key-pair to a specific account. The <code class="docutils literal notranslate"><span class="pre">KEYS</span></code> parameter must be
+a JSON file that contains the keys that will be added in the same format as they
+were shown above when printing the configuration:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;idx&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;encryptedSignKey&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;metadata&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;encryptionMethod&quot;</span><span class="o">:</span> <span class="s2">&quot;AES-256&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;iterations&quot;</span><span class="o">:</span> <span class="p">...,</span>
+         <span class="s2">&quot;salt&quot;</span><span class="o">:</span> <span class="p">...,</span>
+         <span class="s2">&quot;initializationVector&quot;</span><span class="o">:</span> <span class="p">...,</span>
+         <span class="s2">&quot;keyDerivationMethod&quot;</span><span class="o">:</span> <span class="s2">&quot;PBKDF2WithHmacSHA256&quot;</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;cipherText&quot;</span><span class="o">:</span> <span class="p">...</span>
+     <span class="p">},</span>
+     <span class="s2">&quot;verifyKey&quot;</span><span class="o">:</span> <span class="p">...,</span>
+     <span class="s2">&quot;schemeId&quot;</span><span class="o">:</span> <span class="s2">&quot;Ed25519&quot;</span>
+   <span class="p">},</span>
+   <span class="p">...</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>Import accounts and keys from the Wallet apps<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import FILE <span class="o">[</span>--name NAME<span class="o">]</span><span class="sb">``</span>
+</pre></div>
+</div>
+<p>Import the keys of one or more accounts from a JSON file exported from the
+<a class="reference external" href="/testnet/docs/downloads#concordium-id">Concordium ID</a> app.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--name</span></code> option selects which account to import and imports it with this
+name. If it’s omitted, all accounts in the file are imported under their
+existing names.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>Shell completion<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> has support for generating completion functions for
+bash, zsh, and fish.</p>
+<p>For bash, the command for installing the completions is:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">source</span> &lt;<span class="o">(</span>concordium-client --bash-completion-script <span class="sb">`</span>which concordium-client<span class="sb">`</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">--bash-completion-script</span></code> by <code class="docutils literal notranslate"><span class="pre">--zsh-completion-script</span></code> or
+<code class="docutils literal notranslate"><span class="pre">--fish-completion-script</span></code> for zsh and fish, respectively.</p>
+<p>See the documentation of the <a class="reference external" href="https://github.com/pcapriotti/optparse-applicative#bash-zsh-and-fish-completions">framework</a> used to implement the command
+structure of <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for more details.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you run into any issues or have suggestions, post your question or feedback
+on <a class="reference external" href="https://discord.com/invite/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="id-accounts.html" class="btn btn-neutral float-right" title="Identities and accounts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../guides/become-baker.html" class="btn btn-neutral float-left" title="Become a baker (create blocks)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

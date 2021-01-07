@@ -1,0 +1,658 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>My first smart contract: Counter &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The piggy bank smart contract" href="piggy-bank/index.html" />
+    <link rel="prev" title="Developing smart contracts in Rust" href="../general/develop-contracts.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">My first smart contract: Counter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#counter-contract">Counter contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-library">Standard library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specifying-the-contract-state">Specifying the contract state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-init-function">The <code class="docutils literal notranslate"><span class="pre">init</span></code>-function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-init-macro">The <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code> macro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-instantiation">Testing instantiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receive-functions"><code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-receive-macro">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-increment">Testing increment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="piggy-bank/index.html">The piggy bank smart contract</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/local-simulate.html">Locally simulate contract functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references-on-chain.html">References on-chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/local-settings.html">Local settings</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://developers.concordium.com/testnet/docs">Concordium user documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Concordium Smart Contract Documentation</a> &raquo;</li>
+        
+      <li>My first smart contract: Counter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/smart-contracts/tutorials/first-contract.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="my-first-smart-contract-counter">
+<span id="first-contract"></span><h1>My first smart contract: Counter<a class="headerlink" href="#my-first-smart-contract-counter" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we are going to build a minimal smart contract.
+The goal is to give you a run-through every part of the contract development
+process.
+You will learn the basics of how to setup, write, build, test and deploy a
+smart contract using Rust.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The reader is assumed to have basic knowledge of what a blockchain and smart
+contract is, and some experience with the Rust programming language.</p>
+</div>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>Before we start, make sure to have the necessary tooling for building Rust
+contracts.
+The guide <a class="reference internal" href="../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> will show you how to do this.
+Also, make sure to have a text editor setup for writing Rust.</p>
+<p>We also need to setup a new smart contract project.
+Follow the guide <a class="reference internal" href="../guides/setup-contract.html#setup-contract"><span class="std std-ref">Setting up a smart contract project</span></a> and return to this point afterwards.</p>
+</div>
+<div class="section" id="counter-contract">
+<h2>Counter contract<a class="headerlink" href="#counter-contract" title="Permalink to this headline">¶</a></h2>
+<p>We are now ready for writing our first smart contract for the Concordium
+blockchain.</p>
+<p>The contract we are going to build in this tutorial is going to act as a
+counter, which starts at 0, and exposes a function for incrementing its value.
+Since contracts and instances are publicly available, we also want to require
+that the counter can only be incremented by the owner of the instance.</p>
+<p>The contract itself is not that interesting nor even a realistic use case of
+smart contracts, but it is easy to understand and it is enough for us to try the
+whole process of contract development.</p>
+</div>
+<div class="section" id="standard-library">
+<h2>Standard library<a class="headerlink" href="#standard-library" title="Permalink to this headline">¶</a></h2>
+<p>The source code of our smart contract is going to be in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory,
+which already contains the file <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code>, assuming you follow the above guide
+to setup your project.
+Open <code class="docutils literal notranslate"><span class="pre">src/lib.rs</span></code> in your editor and you’ll see some code for writing tests,
+which you can delete for now. We will come back to tests later in this tutorial.</p>
+<p>First, we bring everything from the <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> library into scope,
+by adding the line:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This library contains everything needed for writing our smart contract.
+It provides convenient wrappers around some low-level operations making our code
+more readable.</p>
+</div>
+<div class="section" id="specifying-the-contract-state">
+<h2>Specifying the contract state<a class="headerlink" href="#specifying-the-contract-state" title="Permalink to this headline">¶</a></h2>
+<p>First, we specify the type of the contract state. The contract state could be
+any type and is typically a <code class="docutils literal notranslate"><span class="pre">struct</span></code> or an <code class="docutils literal notranslate"><span class="pre">enum</span></code>.
+Since our contract is going to be a simple counter, we just let the state be an
+unsigned integer:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="nc">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>On the blockchain, the state of a smart contract is represented by an array of
+bytes, and it is important that our contract state is serializable to bytes.
+When using the <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> library, this all boils down to our type
+for the contract state having to implement the <code class="docutils literal notranslate"><span class="pre">Serialized</span></code> trait from
+<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>.</p>
+<p>Luckily the library already contains implementations for most of the primitives
+and standard types in Rust, meaning <code class="docutils literal notranslate"><span class="pre">u32</span></code> already implements the trait, so no
+more work is necessary for the state.</p>
+</div>
+<div class="section" id="the-init-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">init</span></code>-function<a class="headerlink" href="#the-init-function" title="Permalink to this headline">¶</a></h2>
+<p>A smart contract must specify an <code class="docutils literal notranslate"><span class="pre">init</span></code>-function, which is called when new
+instances of the contract are created, and is used to setup the initial state of
+the contract instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have experience with Object-Oriented Programming, it might help to
+think of a smart contract as a <em>class</em>, the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function as a
+<em>constructor</em> and smart contract instances as <em>objects</em>.</p>
+</div>
+<p>In the case our the counter, the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function should set the initial state
+to 0.
+But before going into the details, have a look at the resulting code of writing
+the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function for our counter contract:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">counter_init</span><span class="p">(</span><span class="w"></span>
+<span class="w">   </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="nb">Ok</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-init-macro">
+<h2>The <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code> macro<a class="headerlink" href="#the-init-macro" title="Permalink to this headline">¶</a></h2>
+<p>In Rust an <code class="docutils literal notranslate"><span class="pre">init</span></code>-function can be specified as a regular function, annotated
+with the procedural macro from <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code> called <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code>.
+The macro saves you from some details of setting up the function as an
+external function and supplies a nicer interface for accessing information and
+logging events.</p>
+<p>You are required to set the <code class="docutils literal notranslate"><span class="pre">contract</span></code> attribute of the macro, which is going
+to be the name of the exposed <code class="docutils literal notranslate"><span class="pre">init</span></code>-function and therefore visible on the
+chain with “init_” as prefix.</p>
+<p>Unsurprisingly, we choose to call our contract “counter”.</p>
+<p>The function only takes one argument <code class="docutils literal notranslate"><span class="pre">ctx</span></code>, which is an object with a number
+of getter functions for accessing information about the current context, such as
+who invoke this function, the argument supplied and the current state of the
+chain.</p>
+<p>The return type of our function is <code class="docutils literal notranslate"><span class="pre">InitResult&lt;State&gt;</span></code>, which is an alias for
+<code class="docutils literal notranslate"><span class="pre">Result&lt;State,</span> <span class="pre">Reject&gt;</span></code>.</p>
+<p>The function body should set our counter state to 0, which is straight forward.</p>
+</div>
+<div class="section" id="testing-instantiation">
+<h2>Testing instantiation<a class="headerlink" href="#testing-instantiation" title="Permalink to this headline">¶</a></h2>
+<p>A smart contract can be tested at several levels, which is described in detail
+&lt;here&gt;.
+In this tutorial, we will only cover unit tests.</p>
+<p>Since a smart contract is written as a Rust library, we can test it as one would
+test any library and write unit-tests as part of the Rust module.
+At the bottom of our contract, make sure you have the following starting point:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[cfg(test)]</span><span class="w"></span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This is our test module, which is a common pattern for writing unit tests in
+Rust, so we will not spend time on explaining any of the above code.</p>
+<p>For our first test, we wish to call the <code class="docutils literal notranslate"><span class="pre">counter_init</span></code> function as just a
+regular function, but we first need a way to construct the argument.
+Luckily <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code> contains a submodule <code class="docutils literal notranslate"><span class="pre">test_infrastructure</span></code> with
+stubs for this, so let us first bring everything from the submodule into scope.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[cfg(test)]</span><span class="w"></span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+</span>
+<span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>To construct the argument for <code class="docutils literal notranslate"><span class="pre">counter_init</span></code>, we use
+<code class="docutils literal notranslate"><span class="pre">InitContextTest::empty()</span></code>, which is a stub for the context:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>As hinted by <code class="docutils literal notranslate"><span class="pre">empty</span></code>, the name of the constructor, our context is empty, and
+if the contract tries to access anything in the context the test will fail.
+This will be fine for now, since our contract does not access the context during
+initialization.
+You will see how to create a non-empty context a bit later in this tutorial.</p>
+<p>With the argument constructed we can now call our function and get back
+a result:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Now we should inspect the result and ensure everything is as expected.
+First, we match on the result to unwrap the state created if result is <code class="docutils literal notranslate"><span class="pre">Ok</span></code>.
+If instead the result is an <code class="docutils literal notranslate"><span class="pre">Err</span></code>, we fail the test with an error message:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fail</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Contract initialization failed.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We use <code class="docutils literal notranslate"><span class="pre">fail!</span></code> to fail the test.
+This is a small wrapper around <code class="docutils literal notranslate"><span class="pre">panic!</span></code> which is designed for use with the
+<code class="docutils literal notranslate"><span class="pre">wasm32</span></code> target.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">fail!</span></code> solves an issue with reporting errors, when tests are compiled to
+Wasm, and behaves just like <code class="docutils literal notranslate"><span class="pre">panic!</span></code> when compiled to native code.</p>
+</div>
+<p>You might wonder why <code class="docutils literal notranslate"><span class="pre">fail!</span></code> uses <code class="docutils literal notranslate"><span class="pre">panic!</span></code> when we said it was better <em>not</em>
+to panic earlier in this tutorial.
+The difference between now and then, is that now we are writing tests, and
+testing in Rust uses panic to fail and will not be included in our smart
+contract when we build it for release.</p>
+<p>Lastly, we check if the state is set to 0, using <code class="docutils literal notranslate"><span class="pre">claim_eq!</span></code>, which, similar
+to <code class="docutils literal notranslate"><span class="pre">fail!</span></code>, is a wrapper around <code class="docutils literal notranslate"><span class="pre">assert_eq!</span></code>, solving some error reporting:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Initial count set to 0&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Altogether the test should look something like this:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="c1">// Setup</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">   </span><span class="c1">// Call the init function</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">   </span><span class="c1">// Inspect the result</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nb">Ok</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fail</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Contract initialization failed.&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">   </span><span class="p">};</span><span class="w"></span>
+<span class="w">   </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Initial count set to 0&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We can compile the test to native code and run it, by executing the following in
+a terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo <span class="nb">test</span>
+</pre></div>
+</div>
+<p>It should run one test, and hopefully it succeeds.</p>
+</div>
+<div class="section" id="receive-functions">
+<h2><code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions<a class="headerlink" href="#receive-functions" title="Permalink to this headline">¶</a></h2>
+<p>We have now defined how instances of our smart contract are created, and our
+smart contract is in principle a valid contract at this point.
+However, we would also like to define how to interact with instances of our
+contract.
+Specifically, a way to increment the counter, and recall the requirement of only
+allowing the contract owner to increment.</p>
+<p>A smart contract can expose zero or more functions for interacting with an
+instance.
+These functions are called <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions, and can read and
+write to the state of the instance, access the state of the blockchain and
+return a description of actions to be executed on-chain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A continuation of the analogy to Object Oriented Programming:
+<code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions corresponds to object methods.</p>
+</div>
+<p>There are 3 types of actions possible in the description:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Accept</strong>: Accept incoming GTU. Always succeeds.</p></li>
+<li><p><strong>Simple Transfer</strong>: Transfer some amount of GTU from the balance of the
+smart contract instance to an account.</p></li>
+<li><p><strong>Send</strong>: Trigger <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function of a smart contract instance, with
+a parameter and an amount of GTU.</p></li>
+</ul>
+</div></blockquote>
+<p>and two ways to compose actions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>And</strong>: Runs the first action, if it succeeds runs the second action,
+otherwise results in rejection.</p></li>
+<li><p><strong>Or</strong>: Runs the first action, <strong>if it fails</strong>, runs the second action,
+otherwise results in success.</p></li>
+</ul>
+</div></blockquote>
+<p>Our simple counter contract is only going to use <strong>Accept</strong>, but we refer the
+reader to <a class="reference internal" href="../general/contract-instances.html#contract-instance-actions"><span class="std std-ref">Logging events</span></a> for more information on this topic.</p>
+<p>Again, have a look at the code before we start explaining things:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">, name = </span><span class="s">&quot;increment&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">   </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">State</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="c1">// Assertions</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
+<span class="w">   </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"> </span><span class="c1">// Only the owner can increment.</span>
+
+<span class="w">   </span><span class="c1">// Update the contract state</span>
+<span class="w">   </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">   </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">accept</span><span class="p">())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-receive-macro">
+<h2>The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro<a class="headerlink" href="#the-receive-macro" title="Permalink to this headline">¶</a></h2>
+<p>Specifying <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions in Rust, can be done using the procedural macro
+<code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code>, which, like <code class="docutils literal notranslate"><span class="pre">#[init(...)]</span></code>, sets up an external function
+and supplies us with an interface for accessing the context of the chain and for
+logging events.
+But, unlike the <code class="docutils literal notranslate"><span class="pre">#[init(...)]</span></code> macro, the function for <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> is
+also supplied with a mutable reference to the current state of the instance.</p>
+<p>The macro requires the name of the contract using the <code class="docutils literal notranslate"><span class="pre">contract</span></code> attribute,
+which should match the name in the corresponding attribute in <code class="docutils literal notranslate"><span class="pre">#[init(...)]</span></code>
+(<code class="docutils literal notranslate"><span class="pre">counter</span></code> in our case), and a name for this <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function, which we
+choose to be <code class="docutils literal notranslate"><span class="pre">increment</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">, name = </span><span class="s">&quot;increment&quot;</span><span class="cp">)]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The return type of the function is <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;A&gt;</span></code>, which is an alias for
+<code class="docutils literal notranslate"><span class="pre">Result&lt;A,</span> <span class="pre">Reject&gt;</span></code>.
+Here <code class="docutils literal notranslate"><span class="pre">A</span></code> implements <code class="docutils literal notranslate"><span class="pre">HasActions</span></code>, which exposes functions for creating the
+different actions.</p>
+<p>We ensure only the owner can increment, by checking if the sender is the
+owner account.
+The sender can be accessed from the context parameter as <code class="docutils literal notranslate"><span class="pre">ctx.sender()</span></code>, this
+returns an address, which is either the address of an account or the address of
+a smart contract instance:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Send</strong> action allows contract instances to interact with each other.</p>
+</div>
+<p>The owner can also be accessed through the context by using <code class="docutils literal notranslate"><span class="pre">ctx.owner()</span></code>,
+which will always return an account address, since only accounts can create and
+own smart contract instances:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">matches_account</span></code> method on the sender address, we can compare it to
+an account; the owner, and if the sender is a contract or not the owner account
+it results in false, making <code class="docutils literal notranslate"><span class="pre">ensure!</span></code> reject the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function
+invocation:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"> </span><span class="c1">// Only the owner can increment.</span>
+</pre></div>
+</div>
+<p>There is also an optional third argument, which is the error to return
+<em>when testing</em> the contract.
+This error message will not be used in the resulting smart contract, when
+deployed to the chain, since the protocol of the Concordium blockchain does not
+log the error messages of smart contracts rejecting, therefore adding error
+messages is only useful when testing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to reject directly in your smart contract, you should use
+<code class="docutils literal notranslate"><span class="pre">bail!</span></code> to terminate early. <code class="docutils literal notranslate"><span class="pre">ensure_eq!</span></code> and <code class="docutils literal notranslate"><span class="pre">ensure!</span></code> corresponds are
+using <code class="docutils literal notranslate"><span class="pre">bail!</span></code> internally. We strongly recommend using these for when the
+intention is to signal a logic error, or malformed input. <code class="docutils literal notranslate"><span class="pre">panic!</span></code> and
+equivalents should be reserved for unexpected error conditions. To reduce
+code size as much as possible we recommend using <code class="docutils literal notranslate"><span class="pre">concordium_std::trap</span></code> in
+place of <code class="docutils literal notranslate"><span class="pre">panic!</span></code> to reduce code size. There is no advantage in the
+unwinding logic that <code class="docutils literal notranslate"><span class="pre">panic!</span></code> provides, since this is not observable when
+the contract executes on the chain.</p>
+</div>
+<p>Now that we have ensured the context is right for incrementing the counter, we
+just need to update the state:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since increment does not create any actions on-chain, we just result in
+<strong>Accept</strong>, which we can create using the <code class="docutils literal notranslate"><span class="pre">accept</span></code> function on the generic
+<code class="docutils literal notranslate"><span class="pre">A</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">accept</span><span class="p">())</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="testing-increment">
+<h2>Testing increment<a class="headerlink" href="#testing-increment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">test_increment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Setup</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">zero</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogRecorder</span>::<span class="n">init</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Call the receive function</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter_increment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Inspect the result</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">actions</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fail</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Contract failed, when it should have succeeded.&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">Accept</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Contract should only accept&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The state should be incremented&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="piggy-bank/index.html" class="btn btn-neutral float-right" title="The piggy bank smart contract" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../general/develop-contracts.html" class="btn btn-neutral float-left" title="Developing smart contracts in Rust" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

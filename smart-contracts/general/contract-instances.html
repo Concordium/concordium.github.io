@@ -1,0 +1,472 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Smart contract instances &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Smart contract schemas" href="contract-schema.html" />
+    <link rel="prev" title="Smart contract modules" href="contract-module.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to smart contracts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Smart contract instances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#state-of-a-smart-contract-instance">State of a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instantiating-a-smart-contract-on-chain">Instantiating a smart contract on-chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instance-state">Instance state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interacting-with-an-instance">Interacting with an instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging-events">Logging events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#action-description">Action description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resource-accounting.html">Resource accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Developing smart contracts in Rust</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/local-simulate.html">Locally simulate contract functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references-on-chain.html">References on-chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/local-settings.html">Local settings</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://developers.concordium.com/testnet/docs">Concordium user documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Concordium Smart Contract Documentation</a> &raquo;</li>
+        
+      <li>Smart contract instances</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/smart-contracts/general/contract-instances.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="smart-contract-instances">
+<span id="contract-instances"></span><h1>Smart contract instances<a class="headerlink" href="#smart-contract-instances" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>smart contract instance</strong> is a smart contract module together with a
+specific state and an amount of GTU tokens.
+Multiple smart contract instances can be created from the same module.
+For example, for the auction contract, there could be multiple instances, each
+one dedicated to bidding for a specific item and with its own participants.</p>
+<p>Smart contract instances can be created from a deployed <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">smart contract
+module</span></a> via the <code class="docutils literal notranslate"><span class="pre">init</span></code> transaction which invokes the
+requested function in the <em>smart contract module</em>. This function can take a
+parameter.
+Its end result is required to be the initial smart contract state of the
+instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A smart contract instance is often just called an <em>instance</em>, when it is clear
+from the context that it is a smart contract instance.</p>
+</div>
+<div class="figure align-center" id="id1">
+<div class="graphviz"><object data="../../_images/graphviz-a1969276dd5f6724d08d587e993efa9348d223c5.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+    rankdir=&quot;BT&quot;
+
+    subgraph cluster_0 {
+        label = &quot;Module&quot;;
+        labelloc=b;
+        node [fillcolor=white, shape=note]
+        &quot;Crowdfunding&quot;;
+        &quot;Escrow&quot;;
+    }
+
+    subgraph cluster_1 {
+        label = &quot;Instances&quot;;
+        style=dotted;
+        node [shape=box, style=rounded]
+        House;
+        Car;
+        Gadget;
+        Boardgame;
+    }
+
+    House:n -&gt; Escrow;
+    Car:n -&gt; Escrow;
+    Gadget:n -&gt; Crowdfunding;
+    Boardgame:n -&gt; Crowdfunding;
+}</p></object></div>
+<p class="caption"><span class="caption-text">Example of smart contract module containing two smart contracts:
+Escrow and Crowdfunding. Each contract has two instances.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="state-of-a-smart-contract-instance">
+<h2>State of a smart contract instance<a class="headerlink" href="#state-of-a-smart-contract-instance" title="Permalink to this headline">¶</a></h2>
+<p>The state of a smart contract instance consists of two parts, the user-defined
+state and the amount of GTU the contract holds, i.e., its <em>balance</em>. When
+referring to state we typically mean only the user-defined state. The reason for
+treating the GTU amount separately is that the GTU can only be spent and
+received according to rules of the network, e.g., contracts cannot create new
+GTU, nor can they destroy it.</p>
+</div>
+<div class="section" id="instantiating-a-smart-contract-on-chain">
+<span id="contract-instances-init-on-chain"></span><h2>Instantiating a smart contract on-chain<a class="headerlink" href="#instantiating-a-smart-contract-on-chain" title="Permalink to this headline">¶</a></h2>
+<p>Every smart contract must contain a function for creating smart contract
+instances. Such a function is referred to as the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p>
+<p>To create a smart contract instance, an account sends a special transaction with
+a reference to the deployed smart contract module and the name of the
+<code class="docutils literal notranslate"><span class="pre">init</span></code>-function to use for instantiation.</p>
+<p>The transaction can also include an amount of GTU, which is added to the balance
+of the smart contract instance. A parameter for the function is supplied as part
+of the transaction in the form of an array of bytes.</p>
+<p>To summarize; the transaction includes:</p>
+<ul class="simple">
+<li><p>Reference to the smart contract module.</p></li>
+<li><p>Name of the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p></li>
+<li><p>Parameter for the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p></li>
+<li><p>Amount of GTU for the instance.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">init</span></code> function can signal that it does not wish to create a new instance
+with those parameters. If the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function accepts the parameters, it sets
+up the initial state of the instance and its balance. The instance is given an
+address on the chain and the account who sent the transaction becomes the owner
+of the instance. If the function rejects, no instance is created and only the
+transaction for attempting to create the instance is visible on-chain.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guides/initialize-contract.html#initialize-contract"><span class="std std-ref">Initialize a smart contract instance</span></a> guide for how to initialize a
+contract in practice.</p>
+</div>
+</div>
+<div class="section" id="instance-state">
+<h2>Instance state<a class="headerlink" href="#instance-state" title="Permalink to this headline">¶</a></h2>
+<p>Every smart contract instance holds its own state, which is represented on-chain
+as an array of bytes. The instance uses functions provided by the host
+environment to read, write and resize the state.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-state"><span class="std std-ref">Smart contract instance state</span></a> for the reference of these functions.</p>
+</div>
+<p>Smart contract state is limited in size. Currently the limit on smart contract
+state is 16KiB.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Check out <a class="reference internal" href="resource-accounting.html#resource-accounting"><span class="std std-ref">Resource accounting</span></a> for more on this.</p>
+</div>
+</div>
+<div class="section" id="interacting-with-an-instance">
+<h2>Interacting with an instance<a class="headerlink" href="#interacting-with-an-instance" title="Permalink to this headline">¶</a></h2>
+<p>A smart contract can expose zero or more functions for interacting with an
+instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Functions for interacting with a smart contract instance are referred to as
+<code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions.</p>
+</div>
+<p>Just like with <code class="docutils literal notranslate"><span class="pre">init</span></code>-functions, the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions are triggered using
+transactions, which contain some amount of GTU for the contract and an argument
+for the function in the form of bytes.</p>
+<p>To summarize, the transaction includes:</p>
+<ul class="simple">
+<li><p>Address to smart contract instance.</p></li>
+<li><p>Name of the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p></li>
+<li><p>Parameter for <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p></li>
+<li><p>Amount of GTU for the instance.</p></li>
+</ul>
+</div>
+<div class="section" id="logging-events">
+<span id="contract-instance-actions"></span><h2>Logging events<a class="headerlink" href="#logging-events" title="Permalink to this headline">¶</a></h2>
+<p>Events can be logged during the execution of smart contract functions. This is
+the case for both <code class="docutils literal notranslate"><span class="pre">init</span></code>- and <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions. The logs are designed for
+off-chain use, so that actors outside of the chain can monitor for events and
+react on them. Logs are not accessible to smart contracts, or any other actor on
+the chain. Events can be logged using a function supplied by the host
+environment.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-log"><span class="std std-ref">Logging events</span></a> for the reference of this function.</p>
+</div>
+<p>These event logs are retained by bakers and included in transaction summaries.</p>
+<p>Logging an event has an associated cost, similar to the cost of writing to the
+contract’s state. In most cases it would only make sense to log a few bytes to
+reduce cost.</p>
+</div>
+<div class="section" id="action-description">
+<h2>Action description<a class="headerlink" href="#action-description" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function returns a <em>description of actions</em>, to be executed and
+the host environment then attempts to execute these actions on the chain.</p>
+<p>The possible actions a contract can produce are:</p>
+<ul class="simple">
+<li><p><strong>Accept</strong> Accept incoming GTU. Always succeeds.</p></li>
+<li><p><strong>Simple transfer</strong> Send some amount of GTU from the instance to the specified
+account.</p></li>
+<li><p><strong>Send</strong> Invoke <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function of the specified smart contract instance,
+and optionally transfer some GTU from the sending instance to the receiving
+instance.</p></li>
+</ul>
+<p>If the actions fail to execute, the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function is reverted, leaving
+the state and the balance of the instance unchanged. In such a case the only
+visible artifacts are the transaction triggering the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function resulting
+in a rejection and the payment for the execution.</p>
+<p>Action descriptions can be combined to describe a sequence of actions to be
+executed and have the second action to be executed depending on the first
+action.</p>
+<ul class="simple">
+<li><p><strong>And</strong> Try the second action <strong>if</strong> the first succeeds, otherwise fail.</p></li>
+<li><p><strong>Or</strong> Try the second action <strong>only if</strong> the first action fails.</p></li>
+</ul>
+<p>These combinators allow the action description to form a decision tree, where
+the leafs are the actions and the nodes are combinators.</p>
+<div class="figure align-center" id="id2">
+<div class="graphviz"><object data="../../_images/graphviz-e1dbd4f259aeaadb8218974d61bb7ded4a469ff4.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+    node [color=transparent]
+    or1 [label = &quot;Or&quot;];
+    and1 [label = &quot;And&quot;];
+    transA [label = &quot;Transfer x to Alice&quot;];
+    transB [label = &quot;Transfer y to Bob&quot;];
+    transC [label = &quot;Transfer z to Charlie&quot;];
+
+    or1 -&gt; and1;
+    and1 -&gt; transA;
+    and1 -&gt; transB;
+    or1 -&gt; transC;
+}</p></object></div>
+<p class="caption"><span class="caption-text">Example of an action description, which tries to transfer to Alice
+and then Bob, if any of these fails, it will try to transfer to
+Charlie instead.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-actions"><span class="std std-ref">Action description</span></a> for the reference of how to create the
+actions.</p>
+</div>
+<p>The whole actions tree is executed <strong>atomically</strong>, and either leads to updates
+to all the relevant instances and accounts, or, in case of rejection, to payment
+for execution, but no other changes. The account which sent the initiating
+transaction pays for the execution of the entire tree.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="contract-schema.html" class="btn btn-neutral float-right" title="Smart contract schemas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="contract-module.html" class="btn btn-neutral float-left" title="Smart contract modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

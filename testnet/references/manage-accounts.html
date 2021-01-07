@@ -1,0 +1,339 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Managing Accounts &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Transactions" href="transactions.html" />
+    <link rel="prev" title="Identities and accounts" href="id-accounts.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Managing Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">The mobile wallet: Concordium ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Command-line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Node Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Account sequence number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">See Also</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/licenses.html">Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Managing Accounts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/testnet/references/manage-accounts.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-accounts">
+<span id="id1"></span><h1>Managing Accounts<a class="headerlink" href="#managing-accounts" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#id2" id="id6">The mobile wallet: Concordium ID</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id7">Command-line tool</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id8">Node Dashboard</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id9">Account sequence number</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>An account on the Concordium blockchain consists of two parts. The <a class="reference external" href="/testnet/docs/glossary#on-chain">on-chain</a>
+part which is publicly visible, and maintained by the bakers, and the
+<a class="reference external" href="/testnet/docs/glossary#off-chain">off-chain</a> part which contains</p>
+<ul class="simple">
+<li><p>private keys of the account which are used to sign actions by the
+account (e.g., sending transfers, deploying smart contracts)</p></li>
+<li><p>the identity an account is created from. This is needed for managing
+the account on the chain, e.g., renewing it.</p></li>
+<li><p>decryption keys used for <a class="reference external" href="/testnet/docs/quickstart-shielded-transfers">shielded transfers</a>.</p></li>
+</ul>
+<p>Concordium provides several ways of interacting with the on-chain account.
+Off-chain parts of accounts can be transferred between different devices, and
+the same account can be used from multiple devices at the same time.</p>
+<p>Accounts on the chain are identified via an account address, which is a 32-byte
+sequence. The address is usually displayed in Base58Check encoding with version
+byte 1. An example of such an address is
+<code class="docutils literal notranslate"><span class="pre">3ZFGxLtnUUSJGW2WqjMh1DDjxyq5rnytCwkSqxFTpsWSFdQnNn</span></code>.</p>
+<p>In the tools described below the user will typically select an <strong>account name</strong>
+which makes the account easier to identify. It is important to note that an
+account name is a purely local concept and is not used by the Concordium
+blockchain.</p>
+<div class="section" id="id2">
+<h2>The mobile wallet: Concordium ID<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="/testnet/docs/downloads#concordium-id">Concordium ID</a> is a smartphone app that allows creation of accounts from
+identities issued by the external identity provider <a class="reference external" href="https://notabene.id">Notabene</a>, as well as
+transfers of GTU from created accounts.</p>
+<p>This app can export identities and accounts that the user created.</p>
+</div>
+<div class="section" id="id3">
+<h2>Command-line tool<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>The Concordium distribution ships with a command-line tool named
+<a class="reference external" href="/testnet/docs/client">concordium-client</a>. It is designed as a low-level interface to the
+Concordium blockchain. It cannot be used to create identities, but it can
+<a class="reference external" href="/testnet/docs/client#import-accounts-and-keys-from-wallet-apps">import</a> accounts exported from the mobile wallets. Once an account has been
+imported, the tool can be used to do GTU transfers from the account, as well as
+send all other <a class="reference external" href="/testnet/docs/transactions">transaction</a> types supported by the Concordium blockchain.</p>
+</div>
+<div class="section" id="id4">
+<h2>Node Dashboard<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>The node dashboard can import accounts from the files exported from the wallet.
+The dashboard only uses the account to register the node as a baker.</p>
+<p>The node dashboard shares configuration with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>, so once an
+account has been imported into one of the applications, it is also available in
+the other.</p>
+</div>
+<div class="section" id="id5">
+<h2>Account sequence number<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Each account on the Concordium blockchain has a sequence number and each
+transaction signed by the account must have a sequence number. For a transaction
+to be considered valid its sequence number must be the next available one for
+the account. The sequence number is maintained by all the bakers in order to
+validate transactions.</p>
+<p>The sequence number can be looked up from an up to date node by running</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show <span class="o">[</span>ACCOUNT<span class="o">]</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">[ACCOUNT]</span></code> is an optional argument that is either an address of an
+account or the name of an account chosen when importing the account. If no
+address is provided, <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will use the account name
+<code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+<p>The mobile wallets and the node dashboard automatically keep track of the
+sequence number and assign the correct one when sending transactions.
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> also tracks the sequence number automatically, but it can
+also be set manually via the option <code class="docutils literal notranslate"><span class="pre">--nonce</span></code>.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you run into any issues or have suggestions, post your question or
+feedback on <a class="reference external" href="https://discord.com/invite/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="transactions.html" class="btn btn-neutral float-right" title="Transactions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="id-accounts.html" class="btn btn-neutral float-left" title="Identities and accounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

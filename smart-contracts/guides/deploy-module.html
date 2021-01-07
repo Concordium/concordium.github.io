@@ -1,0 +1,355 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Deploy a smart contract module &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Initialize a smart contract instance" href="initialize-contract.html" />
+    <link rel="prev" title="Build using no_std" href="no-std.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup-tools.html">Install tools for development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-contract.html">Setting up a smart contract project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-simulate.html">Locally simulate contract functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deploy a smart contract module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#naming-a-module">Naming a module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inspect-instance.html">Inspect a smart contract instance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references-on-chain.html">References on-chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/local-settings.html">Local settings</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://developers.concordium.com/testnet/docs">Concordium user documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Concordium Smart Contract Documentation</a> &raquo;</li>
+        
+      <li>Deploy a smart contract module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/smart-contracts/guides/deploy-module.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploy-a-smart-contract-module">
+<span id="deploy-module"></span><h1>Deploy a smart contract module<a class="headerlink" href="#deploy-a-smart-contract-module" title="Permalink to this headline">¶</a></h1>
+<p>This guide will show you how to deploy a smart contract module <em>on-chain</em> and
+how to name it.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>Make sure to have the latest <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> installed and a smart
+contract module ready to be deployed.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For instructions on how to install <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> see
+<a class="reference internal" href="setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
+</div>
+<p>Since deploying a smart contract module is done in the form of a transaction,
+you will also need to have <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> setup with an account with
+enough GTU to pay for the transaction.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The cost of the transaction is dependent on the size of the smart contract
+module. <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> shows the cost and asks for confirmation
+before it executes any transaction.</p>
+</div>
+</div>
+<div class="section" id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+<p>To deploy a smart contract module <code class="docutils literal notranslate"><span class="pre">my_module.wasm</span></code> using the account
+with name account-name, run the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm --sender account_name
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The –sender option can be omitted if the account “default” is to be used. For brevity, we will do so in the following.</p>
+</div>
+<p>If successful, the output should be similar to the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Module successfully deployed with reference: &#39;d121f262f3d34b9737faa5ded2135cf0b994c9c32fe90d7f11fae7cd31441e86&#39;.</span>
+</pre></div>
+</div>
+<p>Make note of the module reference as it is used when creating smart contract
+instances.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For a guide on how to initialize smart contracts from a deployed module see
+<a class="reference internal" href="initialize-contract.html#initialize-contract"><span class="std std-ref">Initialize a smart contract instance</span></a>.</p>
+<p>For more information about module references, see <a class="reference internal" href="../references/references-on-chain.html#references-on-chain"><span class="std std-ref">References on-chain</span></a>.</p>
+</div>
+</div>
+<div class="section" id="naming-a-module">
+<span id="id1"></span><h2>Naming a module<a class="headerlink" href="#naming-a-module" title="Permalink to this headline">¶</a></h2>
+<p>A module can be given a local alias, or <em>name</em>, which makes referencing it
+easier.
+The name is only stored locally by <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>, and is not
+visible on-chain.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For an explanation of how and where the names and other local settings are
+stored, see <a class="reference internal" href="../references/local-settings.html#local-settings"><span class="std std-ref">Local settings</span></a>.</p>
+</div>
+<p>To add a name during deployment, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> parameter is used.
+Here, we are naming the module <code class="docutils literal notranslate"><span class="pre">my_deployed_module</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm --name my_deployed_module
+</pre></div>
+</div>
+<p>If successful, the output should be similar to the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Module successfully deployed with reference: &#39;9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2&#39; (my_deployed_module).</span>
+</pre></div>
+</div>
+<p>Modules can also be named using the <code class="docutils literal notranslate"><span class="pre">name</span></code> command.
+To name a deployed module with reference
+<code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> as
+<code class="docutils literal notranslate"><span class="pre">some_deployed_module</span></code>, run the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module name <span class="se">\</span>
+          9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 <span class="se">\</span>
+          --name some_deployed_module
+</pre></div>
+</div>
+<p>The output should be similar to the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Module reference 9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 was successfully named &#39;some_deployed_module&#39;.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="initialize-contract.html" class="btn btn-neutral float-right" title="Initialize a smart contract instance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="no-std.html" class="btn btn-neutral float-left" title="Build using no_std" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
