@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   build-and-deploy:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     container: sphinxdoc/sphinx
     steps:
@@ -20,7 +21,7 @@ jobs:
 
       - name: Build 🛠
         shell: bash
-        run: sphinx-build source build
+        run: sphinx-build source build/en/testnet4
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
