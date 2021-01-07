@@ -118,7 +118,7 @@ contracts, we associate the functions using a naming scheme:
 
 - ``<contract-name>.<receive-function-name>``: Functions for interacting with a
   smart contract are prefixed with the contract name, followed by a ``.`` and a
-  name for the function. Same as for ``init``, the contract name is not allowed
+  name for the function. Same as for the init function, the contract name is not allowed
   to contain the ``.`` symbol.
 
 .. note::

@@ -56,7 +56,7 @@ It is recommended to use the ``concordium_std`` crate, which provides a
 more Rust-like experience for developing smart contract modules and calling
 host functions.
 
-The crate enables writing ``init``- and ``receive``-functions as simple Rust
+The crate enables writing init and receive functions as simple Rust
 functions annotated with ``#[init(...)]`` and ``#[receive(...)]``, respectively.
 
 A simple counter example would look like:
@@ -90,10 +90,10 @@ There are a number of things to notice:
 - The type of the methods. The init methods must have the type as shown above,
   the only freedom the user has is in choosing what the state type is. The same
   applies to the receive method, with the additional requirement that the type
-  of the ``state`` variable must match the type returned by the ``init`` method.
+  of the ``state`` variable must match the type returned by the init function.
 
 - The annotation ``#[init(contract = "counter")]`` marks the method it is
-  applied to as the ``init`` method of the contract named ``counter``.
+  applied to as the init function of the contract named ``counter``.
   Concretely, this means that behind the scenes this macro generates an exported
   function with the required signature and name `init_counter`.
 
@@ -148,7 +148,7 @@ enums.
        ...
    }
 
-The same is necessary for parameters for ``init``- and ``receive``-functions.
+The same is necessary for parameters for init and receive functions.
 
 .. note::
 
@@ -160,7 +160,7 @@ The same is necessary for parameters for ``init``- and ``receive``-functions.
 Working with parameters
 -----------------------
 
-Parameters for the ``init``- and ``receive``-functions are, like the instance
+Parameters for the init and receive functions are, like the instance
 state, represented as byte arrays.
 While the byte arrays can be used directly, they can also be deserialized into
 structured data.
@@ -203,7 +203,7 @@ As an example, see the following contract in which the parameter
        Ok(A::accept())
    }
 
-The ``receive``-function above is inefficient in that it deserializes the
+The receive function above is inefficient in that it deserializes the
 ``value`` even when it is not needed, i.e., when ``should_add`` is ``false``.
 
 To get more control, and in this case, more efficiency, we can deserialize the

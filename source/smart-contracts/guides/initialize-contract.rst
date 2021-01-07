@@ -28,7 +28,7 @@ the transaction.
 .. note::
 
    The cost of this transaction depends on the size of the parameters sent to
-   the ``init``-function and the complexity of the function itself.
+   the init function and the complexity of the function itself.
 
 Initialization
 ==============

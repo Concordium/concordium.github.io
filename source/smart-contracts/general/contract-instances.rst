@@ -80,11 +80,11 @@ Instantiating a smart contract on-chain
 =======================================
 
 Every smart contract must contain a function for creating smart contract
-instances. Such a function is referred to as the ``init``-function.
+instances. Such a function is referred to as the *init function*.
 
 To create a smart contract instance, an account sends a special transaction with
 a reference to the deployed smart contract module and the name of the
-``init``-function to use for instantiation.
+init function to use for instantiation.
 
 The transaction can also include an amount of GTU, which is added to the balance
 of the smart contract instance. A parameter for the function is supplied as part
@@ -93,12 +93,12 @@ of the transaction in the form of an array of bytes.
 To summarize; the transaction includes:
 
 - Reference to the smart contract module.
-- Name of the ``init``-function.
-- Parameter for the ``init``-function.
+- Name of the init function.
+- Parameter for the init function.
 - Amount of GTU for the instance.
 
-The ``init`` function can signal that it does not wish to create a new instance
-with those parameters. If the ``init``-function accepts the parameters, it sets
+The init function can signal that it does not wish to create a new instance
+with those parameters. If the init function accepts the parameters, it sets
 up the initial state of the instance and its balance. The instance is given an
 address on the chain and the account who sent the transaction becomes the owner
 of the instance. If the function rejects, no instance is created and only the
@@ -136,17 +136,17 @@ instance.
 .. note::
 
    Functions for interacting with a smart contract instance are referred to as
-   ``receive``-functions.
+   receive functions.
 
-Just like with ``init``-functions, the ``receive``-functions are triggered using
+Just like with init functions, the receive functions are triggered using
 transactions, which contain some amount of GTU for the contract and an argument
 for the function in the form of bytes.
 
 To summarize, the transaction includes:
 
 - Address to smart contract instance.
-- Name of the ``receive``-function.
-- Parameter for ``receive``-function.
+- Name of the receive-function.
+- Parameter for the receive function.
 - Amount of GTU for the instance.
 
 .. _contract-instance-actions:
@@ -155,7 +155,7 @@ Logging events
 ==============
 
 Events can be logged during the execution of smart contract functions. This is
-the case for both ``init``- and ``receive``-functions. The logs are designed for
+the case for both init and receive functions. The logs are designed for
 off-chain use, so that actors outside of the chain can monitor for events and
 react on them. Logs are not accessible to smart contracts, or any other actor on
 the chain. Events can be logged using a function supplied by the host
@@ -174,7 +174,7 @@ reduce cost.
 Action description
 ==================
 
-A ``receive``-function returns a *description of actions*, to be executed and
+A receive function returns a *description of actions*, to be executed and
 the host environment then attempts to execute these actions on the chain.
 
 The possible actions a contract can produce are:
@@ -182,13 +182,13 @@ The possible actions a contract can produce are:
 - **Accept** Accept incoming GTU. Always succeeds.
 - **Simple transfer** Send some amount of GTU from the instance to the specified
   account.
-- **Send** Invoke ``receive``-function of the specified smart contract instance,
+- **Send** Invoke receive function of the specified smart contract instance,
   and optionally transfer some GTU from the sending instance to the receiving
   instance.
 
-If the actions fail to execute, the ``receive``-function is reverted, leaving
+If the actions fail to execute, the receive function is reverted, leaving
 the state and the balance of the instance unchanged. In such a case the only
-visible artifacts are the transaction triggering the ``receive``-function resulting
+visible artifacts are the transaction triggering the receive function resulting
 in a rejection and the payment for the execution.
 
 Action descriptions can be combined to describe a sequence of actions to be

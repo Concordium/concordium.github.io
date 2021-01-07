@@ -27,7 +27,7 @@ Why use a contract schema
 =========================
 
 Data on the blockchain, such as the state of an instance and parameters passed
-to ``init``- and ``receive``-functions, is serialized as a sequence of bytes.
+to init and receive functions, is serialized as a sequence of bytes.
 The serialization is optimized for efficiency, rather than human readability.
 
 Usually these bytes have structure and this structure is known to the smart
@@ -75,7 +75,7 @@ The schema format
 
 A schema can contain the structure information for a smart contract module
 and for each contract it can contain the description of the state and
-parameters for ``init`` and each of the ``receive``-functions.
+parameters for init and each of the receive functions.
 Each of these descriptions are referred to as a *schema type* and are always
 optional to include in the schema.
 

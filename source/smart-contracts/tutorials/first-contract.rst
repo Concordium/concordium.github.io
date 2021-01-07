@@ -85,22 +85,22 @@ more work is necessary for the state.
 
    Link to more information.
 
-The ``init``-function
+The init function
 =====================
 
-A smart contract must specify an ``init``-function, which is called when new
+A smart contract must specify an init function, which is called when new
 instances of the contract are created, and is used to setup the initial state of
 the contract instance.
 
 .. note::
    If you have experience with Object-Oriented Programming, it might help to
-   think of a smart contract as a *class*, the ``init``-function as a
+   think of a smart contract as a *class*, the init function as a
    *constructor* and smart contract instances as *objects*.
 
-In the case our the counter, the ``init``-function should set the initial state
+In the case our the counter, the init function should set the initial state
 to 0.
 But before going into the details, have a look at the resulting code of writing
-the ``init``-function for our counter contract::
+the init function for our counter contract::
 
    #[init(contract = "counter")]
    fn counter_init(
@@ -113,14 +113,14 @@ the ``init``-function for our counter contract::
 The ``#[init(..)]`` macro
 =========================
 
-In Rust an ``init``-function can be specified as a regular function, annotated
+In Rust an init function can be specified as a regular function, annotated
 with the procedural macro from ``concordium_std`` called ``#[init(..)]``.
 The macro saves you from some details of setting up the function as an
 external function and supplies a nicer interface for accessing information and
 logging events.
 
 You are required to set the ``contract`` attribute of the macro, which is going
-to be the name of the exposed ``init``-function and therefore visible on the
+to be the name of the exposed init function and therefore visible on the
 chain with "init\_" as prefix.
 
 Unsurprisingly, we choose to call our contract "counter".
@@ -288,7 +288,7 @@ a terminal:
 It should run one test, and hopefully it succeeds.
 
 
-``receive``-functions
+receive functions
 =====================
 
 We have now defined how instances of our smart contract are created, and our
@@ -300,21 +300,21 @@ allowing the contract owner to increment.
 
 A smart contract can expose zero or more functions for interacting with an
 instance.
-These functions are called ``receive``-functions, and can read and
+These functions are called receive functions, and can read and
 write to the state of the instance, access the state of the blockchain and
 return a description of actions to be executed on-chain.
 
 .. note::
 
    A continuation of the analogy to Object Oriented Programming:
-   ``receive``-functions corresponds to object methods.
+   receive functions corresponds to object methods.
 
 There are 3 types of actions possible in the description:
 
    * **Accept**: Accept incoming GTU. Always succeeds.
    * **Simple Transfer**: Transfer some amount of GTU from the balance of the
      smart contract instance to an account.
-   * **Send**: Trigger ``receive``-function of a smart contract instance, with
+   * **Send**: Trigger receive function of a smart contract instance, with
      a parameter and an amount of GTU.
 
 and two ways to compose actions:
@@ -349,7 +349,7 @@ Again, have a look at the code before we start explaining things::
 The ``#[receive(...)]`` macro
 =============================
 
-Specifying ``receive``-functions in Rust, can be done using the procedural macro
+Specifying receive functions in Rust, can be done using the procedural macro
 ``#[receive(...)]``, which, like ``#[init(...)]``, sets up an external function
 and supplies us with an interface for accessing the context of the chain and for
 logging events.
@@ -358,7 +358,7 @@ also supplied with a mutable reference to the current state of the instance.
 
 The macro requires the name of the contract using the ``contract`` attribute,
 which should match the name in the corresponding attribute in ``#[init(...)]``
-(``counter`` in our case), and a name for this ``receive``-function, which we
+(``counter`` in our case), and a name for this receive function, which we
 choose to be ``increment``::
 
    #[receive(contract = "counter", name = "increment")]
@@ -393,7 +393,7 @@ own smart contract instances::
 
 Using the ``matches_account`` method on the sender address, we can compare it to
 an account; the owner, and if the sender is a contract or not the owner account
-it results in false, making ``ensure!`` reject the ``receive``-function
+it results in false, making ``ensure!`` reject the receive function
 invocation::
 
    ensure!(sender.matches_account(&owner)); // Only the owner can increment.
