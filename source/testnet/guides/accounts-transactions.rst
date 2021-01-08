@@ -34,7 +34,7 @@ choose whichever name you want.
 When pressing **Next**, you will be met with a screen on which you must decide which identity to add the new account to. 
 So far you probably only have one, but if you have more you can pick whichever identity you want from the list. By 
 clicking on an identity, you will be taken to the next screen. When creating a non-initial account, i.e. an account 
-that is not created upon identity creation, you can choose to reveal a number of attributes. This is not necessary, 
+that is not created upon identity creation, you can choose to reveal a number of :ref:`attributes-glossary`. This is not necessary, 
 and if you do not have a specific reason to do so, we recommend not revealing any. 
 
 .. image:: images/concordium-id/acc3.png
@@ -113,7 +113,7 @@ cost a fee, and depending on the type of transaction the fee might differ. Press
 Move an amount to the shielded balance
 ========================================
 If we go back to the *Accounts* screen, we can now see that the 10 GTU has been transferred to the *Balance* of *Example Account 1*. As you might 
-have noticed before, the accounts also have a *Shielded Balance*. In short, the shielded balance is for keeping shielded (encrypted) amounts 
+have noticed before, the accounts also have a :ref:`shielded-balance-glossary`. In short, the shielded balance is for keeping shielded (encrypted) amounts 
 of GTU on the account. Lets’ try adding some shielded GTU to our *Example Account 2*. Start by pressing the **Shielded Balance** area of the account card.
 
 .. image:: images/concordium-id/acc19.png

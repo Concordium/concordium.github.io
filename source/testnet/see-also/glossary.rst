@@ -24,8 +24,10 @@ cooperation with the account's :ref:`identity provider<glossary-identity-provide
 
 .. _glossary-attribute:
 
-Attribute
-=========
+.. _attributes-glossary:
+
+Attributes
+==========
 
 User data, such as date of birth or country of residence, that is associated
 with a user :ref:`identity<glossary-identity>`. Users can choose which attributes should be revealed in
@@ -185,12 +187,24 @@ See :ref:`identity provider<glossary-identity-provider>`.
 
 .. _glossary-identity-provider:
 
+.. _provider-glossary:
+
 Identity Provider
 =================
 
 A person or organization that performs off-chain identification of users. Users
 are required to obtain an identity object from an identity provider in order to
 open an account on the Concordium Platform.
+
+
+.. _initial-account-glossary:
+
+Initial Account
+===============
+
+An intial account is an account submitted to the chain by the identity provider,
+during the process of requesting a new identity. The owner of initial account
+is therefor known by the identity provider which submitted it to the chain.
 
 .. _glossary-leader-election:
 
