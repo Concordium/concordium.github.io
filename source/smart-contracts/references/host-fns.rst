@@ -114,29 +114,6 @@ Functions for reading information about the chain.
    :return: Time in milliseconds
    :rtype: i64
 
-.. function:: get_slot_number() -> i64
-
-   Get the slot number of the current block.
-
-   :return: Slot number
-   :rtype: i64
-
-.. function:: get_block_height() -> i64
-
-   Get block height of the current block.
-
-   :return: Block height
-   :rtype: i64
-
-.. function:: get_finalized_height() -> i64
-
-   Get the height of the last finalized block, i.e., block to which the
-   current block has a finalized pointer to.
-
-   :return: Finalized height
-   :rtype: i64
-
-
 Only in ``init``-function
 ================================
 Functions only accessible for smart contract ``init``-functions. If called from

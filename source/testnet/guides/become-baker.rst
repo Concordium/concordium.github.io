@@ -53,7 +53,7 @@ the network by creating new blocks that are added to the chain. A
 baker collects, orders and validates the transactions that are included in a
 block to maintain the integrity of the blockchain. The baker signs
 each block that they bake so that the block can be checked and executed by the rest of the
-participants of the network. 
+participants of the network.
 
 Baker keys
 ----------
@@ -110,7 +110,7 @@ account. The staked amount cannot be moved or transferred until it
 is released by the baker.
 
 .. note::
-   
+
    If an account owns an amount that was transferred with a release schedule,
    the amount can be staked even if not released yet.
 
@@ -143,7 +143,7 @@ Managing accounts
 
 This section provides a brief recap of the relevant steps for importing an
 account. For a complete description, see :ref:`managing_accounts`.
-   
+
 Accounts are created using the :ref:`concordium_id` app. Once an account has been
 successfully created, navigating to the **More** tab and selecting **Export**
 allows the user to get a JSON file containing the account information.
@@ -177,7 +177,7 @@ cannot be precomputed.
 To create a fresh set of keys run
 
 .. code-block:: console
-                
+
    $concordium-client baker generate-keys <keys-file>.json
 
 where you can choose an arbitrary name the keys file. To
@@ -232,7 +232,7 @@ offer different degrees of precision in the information displayed.
 - Using the ``concordium-client`` the user can check the list of current bakers
   and the relative staked amount that they hold, i.e. its lottery power.  The
   lottery power will determine how likely it is that a given baker will win the
-  lottery and bake a block. 
+  lottery and bake a block.
 
   .. code-block:: console
 
@@ -253,21 +253,21 @@ offer different degrees of precision in the information displayed.
 
      $./concordium-client account show bakerAccount
      ...
-     
+
      Baker: #22
       - Staked amount: 10.000000 GTU
       - Restake earnings: yes
-     ...  
+     ...
 
 - If the staked amount is big enough and there is a node running with the baker keys
   loaded, that baker should eventually produce blocks and the user can see in
   their mobile wallet that baking rewards are being received on the account, as
   seen on this image:
-  
+
   .. image:: images/bab-reward.png
      :align: center
      :width: 250px
-  
+
 Updating the staked amount
 --------------------------
 
@@ -307,7 +307,7 @@ The stake is updated using the ``concordium-client``:
 
 .. code-block:: console
 
-   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount              
+   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount
 
 Note that modifying the staked amount modifies the probability of a baker being
 elected to create the next block.
@@ -323,7 +323,7 @@ stake by querying for the account information:
 
    $concordium-client account show bakerAccount
    ...
-   
+
    Baker: #22
     - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
     - Restake earnings: yes
@@ -331,7 +331,7 @@ stake by querying for the account information:
    ...
 
 .. warning::
-   
+
    As said in the `Definitions`_ section, the staked amount is locked while
    staked and cannot be transferred or moved in any way. The user should take
    this into account and might consider staking an amount that will not be
@@ -364,12 +364,12 @@ information which can be queried using ``concordium-client``:
 
    $concordium-client account show bakerAccount
    ...
-   
+
    Baker: #22
     - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
     - Restake earnings: yes
 
-   ...                
+   ...
 
 When the baker is registered, it will automatically re-stake the earnings, but,
 as mentioned above, this can be changed by providing the ``--no-restake`` flag to
@@ -377,8 +377,8 @@ the ``baker add`` command as shown here:
 
 .. code-block:: console
 
-   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake             
-   
+   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake
+
 Finalization
 ------------
 
@@ -423,7 +423,7 @@ effect by querying the account information with ``concordium-client`` as usual:
    ...
 
    Baker #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)
-    - Staked amount: 20.000000 GTU 
+    - Staked amount: 20.000000 GTU
     - Restake earnings: yes
 
    ...
