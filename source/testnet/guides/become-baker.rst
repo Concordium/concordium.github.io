@@ -19,13 +19,13 @@ Become a baker (create blocks)
    We need to address the user consistently; could we use the second person
    and imperative (let's avoid writing 'the user')?
 
-This section explains what a baker is, what is its role in the network and how
+This section explains what a baker is, its role in the network and how
 to become one.
 
 By reading this section you will learn:
 
 -  What is a baker and the concepts related to it.
--  How to upgrade your node for becoming a baker.
+-  How to upgrade your node to become a baker.
 
 The process of becoming a baker can be summarized in the following steps:
 
@@ -34,7 +34,7 @@ The process of becoming a baker can be summarized in the following steps:
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
 
-After completing those steps, the baker node will bake blocks. If a baked block
+After completing these steps, the baker node will bake blocks. If a baked block
 is added to the chain the node's baker will receive a reward.
 
 .. note::
@@ -53,7 +53,7 @@ the network by creating new blocks that are added to the chain. A
 baker collects, orders and validates the transactions that are included in a
 block to maintain the integrity of the blockchain. The baker signs
 each block that they bake so that the block can be checked and executed by the rest of the
-participants of the network. 
+participants of the network.
 
 Baker keys
 ----------
@@ -90,7 +90,7 @@ Each registered baker is given a baker ID in the network. The baker ID is unique
 for each account so if an account removes its baker and then registers a new
 baker, it will have the same baker ID as the original baker. This ID merely tags
 the baker and is not needed to be provided for any operation, as the sender
-account already identifies in which baker performs the operation.
+account already identifies which baker performed the operation.
 
 Whenever a baker bakes a valid block that gets included in the chain, after some
 time a reward is paid to the associated account.
@@ -110,7 +110,7 @@ account. The staked amount cannot be moved or transferred until it
 is released by the baker.
 
 .. note::
-   
+
    If an account owns an amount that was transferred with a release schedule,
    the amount can be staked even if not released yet.
 
@@ -143,7 +143,7 @@ Managing accounts
 
 This section provides a brief recap of the relevant steps for importing an
 account. For a complete description, see :ref:`managing_accounts`.
-   
+
 Accounts are created using the :ref:`concordium_id` app. Once an account has been
 successfully created, navigating to the **More** tab and selecting **Export**
 allows the user to get a JSON file containing the account information.
@@ -177,7 +177,7 @@ cannot be precomputed.
 To create a fresh set of keys run
 
 .. code-block:: console
-                
+
    $concordium-client baker generate-keys <keys-file>.json
 
 where you can choose an arbitrary name the keys file. To
@@ -218,8 +218,8 @@ baker was finalized.
    If the transaction for adding the baker was finalized during epoch `E`, the
    baker will be active when epoch `E+2` starts.
 
-Manage the baker
-================
+Managing the baker
+==================
 
 Checking the status of the baker and its lottery power
 ------------------------------------------------------
@@ -232,7 +232,7 @@ offer different degrees of precision in the information displayed.
 - Using the ``concordium-client`` the user can check the list of current bakers
   and the relative staked amount that they hold, i.e. its lottery power.  The
   lottery power will determine how likely it is that a given baker will win the
-  lottery and bake a block. 
+  lottery and bake a block.
 
   .. code-block:: console
 
@@ -253,21 +253,21 @@ offer different degrees of precision in the information displayed.
 
      $./concordium-client account show bakerAccount
      ...
-     
+
      Baker: #22
       - Staked amount: 10.000000 GTU
       - Restake earnings: yes
-     ...  
+     ...
 
 - If the staked amount is big enough and there is a node running with the baker keys
   loaded, that baker should eventually produce blocks and the user can see in
-  their mobile wallet that baking rewards are being received on the account, as
-  seen on this image:
-  
+  their mobile wallet that baking rewards are being received by the account, as
+  seen in this image:
+
   .. image:: images/bab-reward.png
      :align: center
      :width: 250px
-  
+
 Updating the staked amount
 --------------------------
 
@@ -275,23 +275,23 @@ To update the baker stake run
 
 .. code-block:: console
 
-   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount              
+   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount
 
 Modifying the staked amount modifies the probability that a baker gets elected to bake blocks.
 
-When a baker adds stake for the first time or increases their stake
+When a baker adds stake for the first time or increases their stake:
 
-- that change becomes visible on the chain immediately (e.g. through ``concordium-client account show bakerAccount``)
-- the baker can bake (and possibly finalize, if stake is sufficient) after 2 epochs
+- That change becomes visible on the chain immediately (e.g. through ``concordium-client account show bakerAccount``)
+- The baker can bake (and possibly finalize, if stake is sufficient) after 2 epochs
 
-When a baker decreases the stake amount
+When a baker decreases the stake amount:
 
-- the change becomes visible on the chain after the *cooldown period* (currently 168 epochs)
+- The change becomes visible on the chain after the *cooldown period* (currently 168 epochs)
 
-  * - the pending change can also be queried immediately after the  using
+  * - The pending change can also be queried immediately after the  using
       ``concordium-client raw GetAccountInfo`` and observing the ``pendingChange`` attribute
 
-- the change takes affect after the cooldown period plus 2 epochs
+- The change takes effect after the cooldown period plus 2 epochs
 
 .. note::
 
@@ -309,14 +309,13 @@ When a baker decreases the stake amount
 
    Could the following sentence be clarified?
 
-The user can then check when will this change be executed if decreasing the
-stake by querying for the account information:
+When decreasing the stake, the user can then check when this change will be executed by querying for the account information:
 
 .. code-block:: console
 
    $concordium-client account show bakerAccount
    ...
-   
+
    Baker: #22
     - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
     - Restake earnings: yes
@@ -324,12 +323,13 @@ stake by querying for the account information:
    ...
 
 .. warning::
-   
-   As said in the `Definitions`_ section, the staked amount is *locked*,
+
+   As noted in the `Definitions`_ section, the staked amount is *locked*,
    i.e. it cannot be transferred or used for payment. The user should take
-   this into account and might consider staking an amount that will not be
+   this into account and consider staking an amount that will not be
    needed in the short term. In particular, to deregister a baker or to
-   modify the staked amount the user needs to own some non-staked GTU.
+   modify the staked amount the user needs to own some non-staked GTU to
+   cover the transaction costs.
 
 Restaking the earnings
 ----------------------
@@ -356,21 +356,21 @@ information which can be queried using ``concordium-client``:
 
    $concordium-client account show bakerAccount
    ...
-   
+
    Baker: #22
     - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
     - Restake earnings: yes
 
-   ...                
+   ...
 
-When the baker is registered, it will automatically re-stake the earnings, but,
-as mentioned above, this can be changed by providing the ``--no-restake`` flag to
+When the baker is registered, it will automatically re-stake the earnings, but as
+mentioned above, this can be changed by providing the ``--no-restake`` flag to
 the ``baker add`` command as shown here:
 
 .. code-block:: console
 
-   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake             
-   
+   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake
+
 Finalization
 ------------
 
@@ -378,7 +378,7 @@ Finalization is the voting process performed by nodes
 in the *finalization committee* that *finalizes* a block when a sufficiently big
 number of members of the committee have received the block and agree on its
 outcome. Newer blocks must have the finalized block as an ancestor to ensure the
-integrity of the chain. For more information about this process, check the
+integrity of the chain. For more information about this process, see the
 :ref:`glossary_finalization` section.
 
 The finalization committee is formed by the bakers that have a certain staked
@@ -415,7 +415,7 @@ effect by querying the account information with ``concordium-client`` as usual:
    ...
 
    Baker #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)
-    - Staked amount: 20.000000 GTU 
+    - Staked amount: 20.000000 GTU
     - Restake earnings: yes
 
    ...
@@ -431,4 +431,3 @@ Support & Feedback
 
 If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com.
-
