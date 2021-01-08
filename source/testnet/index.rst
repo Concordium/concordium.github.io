@@ -6,6 +6,8 @@ Testnet
    :maxdepth: 1
    :caption: Guides
 
+   guides/get-the-app
+   guides/get-started
    guides/run-node
    guides/become-baker
 
