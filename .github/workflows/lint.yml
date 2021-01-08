@@ -25,6 +25,26 @@ jobs:
         shell: bash
         run: sphinx-build source build -b linkcheck
 
+  lint:
+    runs-on: ubuntu-latest
+    container: sphinxdoc/sphinx
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+
+      - name: Install 🔧
+        shell: bash
+        run: |
+          apt-get update
+          apt-get install -y graphviz git rsync
+          pip3 install -r requirements.txt
+
+      - name: Lint 🔍
+        shell: bash
+        run: doc8 source
+
   build:
     runs-on: ubuntu-latest
     container: sphinxdoc/sphinx

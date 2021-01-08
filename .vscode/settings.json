@@ -2,6 +2,6 @@
     "restructuredtext.confPath": "${workspaceFolder}/source",
     "restructuredtext.linter.name": "doc8",
     "restructuredtext.linter.extraArgs": [
-        "--max-line-length=80"
+        "--config ${workspaceFolder}/doc8.ini"
     ],
 }

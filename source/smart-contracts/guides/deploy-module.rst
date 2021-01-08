@@ -37,9 +37,9 @@ with name account-name, run the following command:
 .. code-block:: console
 
    $concordium-client module deploy my_module.wasm --sender account_name
-   
+
 .. note::
-   
+
    The --sender option can be omitted if the account "default" is to be used. For brevity, we will do so in the following.
 
 If successful, the output should be similar to the following:
