@@ -83,7 +83,7 @@ you can input the amount you want to transfer, and select a recipient. In this e
 .. image:: images/concordium-id/acc12.png
       :width: 32%
 
-Having decided on an amount, we will now choose the recipient. To do this, press the Select **Recient or shield amount** button. 
+Having decided on an amount, we will now choose the recipient. To do this, press the Select **Recipient or shield amount** button. 
 On this page you can search for recipients in your *address book* or add your recipient by scanning the receiving account’s QR code. 
 As you can see in the screenshot, we only have one recipient saved, *Example Account 1*. Above that, we have the option to *Shield an 
 amount*, but we will get back to that later. We will choose *Example Account 1* as our recipient in this example.

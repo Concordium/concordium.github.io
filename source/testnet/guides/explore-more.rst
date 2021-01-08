@@ -58,7 +58,7 @@ Address Book
 ============
 As the name suggests, the *Address Book* is a place to keep account addresses. If you browse to the *Address Book* you will see that 
 the addresses of your own accounts are already stored there. Besides seeing your own addresses, you can also add more entries to 
-the *Address Book*, either by pressing the **QR code symbol*, or pressing the **plus sign** in the upper right corner. By doing that you 
+the *Address Book*, either by pressing the **QR code symbol**, or pressing the **plus sign** in the upper right corner. By doing that you 
 can enter a new recipient address and give it a nickname in your *Address Book*. The entries in your address book can of course be 
 searched, when you make a transfer.
 
