@@ -6,9 +6,6 @@ Testnet
    :maxdepth: 1
    :caption: Guides
 
-   guides/account-basics
-   guides/two-balances
-   guides/import-export
    guides/run-node
    guides/become-baker
 
