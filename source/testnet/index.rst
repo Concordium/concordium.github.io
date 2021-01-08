@@ -8,6 +8,7 @@ Testnet
 
    guides/get-the-app
    guides/get-started
+   guides/accounts-transactions
    guides/run-node
    guides/become-baker
 
