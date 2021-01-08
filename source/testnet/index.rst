@@ -30,7 +30,7 @@ Testnet
    see-also/troubleshooting
    see-also/glossary
    see-also/release-notes
-   see-also/licenses
+   see-also/third-party-licenses
 
 Support & Feedback
 ==================
