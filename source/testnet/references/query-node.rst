@@ -35,6 +35,8 @@ a backend node:
    statistics related to baking and finalization of blocks.
 
 
+.. _query-account-state:
+
 Account state
 =============
 
