@@ -34,7 +34,7 @@ Before running a Concordium node you will need to
 
    -  On *Linux*, allow Docker to be run as a non-root user.
 
-2. Download and extract the `Concordium Node and Client`_ software. This
+2. Download and extract the :ref:`concordium-node-and-client-download` software. This
    produces a directory named ``concordium-software``. Move this folder
    into the ``Documents`` folder of your home directory. It's very
    important that this directory is moved in its entirety and with the
@@ -44,7 +44,7 @@ Before running a Concordium node you will need to
 Upgrade from an earlier version of Open Testnet
 ===============================================
 
-To upgrade to the current Concordium software for Open Testnet 3:
+To upgrade to the current Concordium software for Open Testnet 4:
 
 -  Follow the above steps to `download`_ the most recent Concordium
    software.
@@ -70,8 +70,7 @@ To upgrade to the current Concordium software for Open Testnet 3:
    versions we recommend entering **y** which will delete all account
    keys.
 
-.. _Concordium Node and Client: /testnet/docs/downloads#concordium-node-and-client
-.. _download: /testnet/docs/downloads#concordium-node-and-client
+.. _download: /testnet/see-also/downloads.html
 
 .. _my-reference-label:
 
@@ -110,12 +109,15 @@ The tool will now download the Concordium Client image and load it into
 Docker. The client will launch and start outputting logging information
 about the operation of the node.
 
+.. _`Netwok Dashboard`: https://dashboard.testnet.concordium.com/
+
+
 Seeing your node on the dashboards
 ==================================
 
 After running ``concordium-node`` you can
 
--  see your node on the """ , networkDashboardLink , """
+-  see your node on the `Network Dashboard`_
 -  `query`_ information about blocks, transactions, and accounts
 
 Network dashboard
@@ -125,14 +127,14 @@ It will take the client a while to catch up with the state of the
 Concordium blockchain. This involves, for example, downloading
 information about all the blocks in the chain.
 
-Among other information, on the """ , networkDashboardLink , """ you can
+Among other information, on the `Network Dashboard`_ you can
 get an idea of how long it will take your node to catch up with the
 chain. For that you can compare the node's **Length** value (number of
 blocks your node received) with the **Chain Len** value (number of
 blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.
 
-.. _query: /testnet/docs/queries
+.. _query: /testnet/references/query-node.html
 
 Enabling inbound connections
 ============================
@@ -151,7 +153,7 @@ platform configuration you will either need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
-.. _if so configured: /testnet/docs/quickstart-baker
+.. _if so configured: /testnet/guides/become-baker.html
 
 Configuring ports
 -----------------
@@ -162,22 +164,20 @@ used by the node are as follows:
 
 -  8888, the port for peer-to-peer networking, which can be set with
    ``--listen-node-port``
--  8099, the port used by the node dashboard, which can be set with
-   ``--listen-dashboard-port``
 -  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
 
 When changing the mappings above the docker container must be
-`stopped`_, reset, and started again. To reset the container either use
+stopped (:ref:`stop-a-node`), reset, and started again. To reset the container either use
 ``concordium-node-reset-data`` or run ``docker rm concordium-client`` in
 a terminal.
 
 We *strongly recommend* that your firewall should be configured to only
 allow public connections on port 8888 (the peer-to-peer networking
 port). Someone with access to the other ports may be able to take
-control of your node or accounts you have saved on the node. Remote
-access to the node dashboard is not supported, but `see here`_ for a
-workaround.
+control of your node or accounts you have saved on the node.
+
+.. _stop-a-node:
 
 Stopping the node
 =================
@@ -189,9 +189,6 @@ If you accidentally close the window without explicitly shutting down
 the client, it will keep running in the background in Docker. In that
 case, use the ``concordium-node-stop`` binary in the same way you opened
 the ``concordium-node`` executable.
-
-.. _stopped: #stopping-the-node
-.. _see here: /testnet/docs/troubleshooting#node-dashboard-does-not-load
 
 Support & Feedback
 ==================
@@ -206,4 +203,4 @@ testnet@concordium.com. You can also reach out at our `Discord`_, or
 check out our `Troubleshooting`_ page.
 
 .. _Discord: https://discord.gg/xWmQ5tp
-.. _Troubleshooting: /testnet/docs/troubleshooting
+.. _Troubleshooting: /testnet/see-also/troubleshooting.html

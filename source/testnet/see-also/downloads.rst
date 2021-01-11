@@ -56,6 +56,8 @@ Requirements
 
 Concordium ID is supported on iOS 13 and upwards.
 
+.. _concordium-node-and-client-download:
+
 Concordium Node and Client
 ==========================
 
