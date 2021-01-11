@@ -42,7 +42,7 @@ compiled to Wasm.
 To obtain correct exports, the `crate-type` attribute must be set to
 ``["cdylib", "rlib"]`` in the manifest file:
 
-.. code-block:: console
+.. code-block:: text
 
    ...
    [lib]
