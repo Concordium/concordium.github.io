@@ -24,8 +24,6 @@ cooperation with the account's :ref:`identity provider<glossary-identity-provide
 
 .. _glossary-attribute:
 
-.. _attributes-glossary:
-
 Attributes
 ==========
 
@@ -187,8 +185,6 @@ See :ref:`identity provider<glossary-identity-provider>`.
 
 .. _glossary-identity-provider:
 
-.. _provider-glossary:
-
 Identity Provider
 =================
 
@@ -197,7 +193,7 @@ are required to obtain an identity object from an identity provider in order to
 open an account on the Concordium Platform.
 
 
-.. _initial-account-glossary:
+.. _glossary-initial-account:
 
 Initial Account
 ===============

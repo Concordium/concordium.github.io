@@ -19,8 +19,8 @@ Set up a passcode and biometrics
 ================================
 
 When you open the Concordium ID app for the first time, you will be greeted by a flow
-that will help you setup a passcode and biometric authentication, create an :ref:`initial-account-glossary`,
-and it will also guide you through getting an :ref:`identity-glossary`. It is important to notice that the
+that will help you setup a passcode and biometric authentication, create an :ref:`glossary-initial-account`,
+and it will also guide you through getting an :ref:`glossary-identity-provider`. It is important to notice that the
 initial account will be submitted to the chain by the identity provider, but after your identity
 is created you will be able to make accounts yourself, that will be unknown to the identity provider.
 
@@ -71,7 +71,7 @@ The three steps mentioned above is:
 
 1. Naming of your initial account
 2. Naming your identity
-3. Requesting the initial account and identity from an :ref:`provider-glossary` of your choice
+3. Requesting the initial account and identity from an :ref:`glossary-identity-provider` of your choice
 
 You will meet the first step on the next page, which prompts you to enter a name for your initial account. Pressing continue
 will take you to the next page, on which you have to name your identity. Both of these names will only be known by yourself,
