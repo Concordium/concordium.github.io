@@ -2,11 +2,10 @@
 .. _Creating an account: #creating-an-account
 .. _Benefits: #benefits
 .. _`anonymity revocation`: /testnet/references/id-accounts.html#revoking-anonymity
-.. _Concordium ID: /testnet/see-also/downloads.html#concordium-id
 .. _`initial account`: /testnet/see-also/glossary.html#initial-account
 .. _Notabene: https://notabene.id/
 .. _Onfido: https://onfido.com/
-.. _`mobile wallet`: /test/guides/get-started.html
+.. _`Concordium ID`: /test/guides/get-started.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 =======================
@@ -21,14 +20,19 @@ Identities and accounts
 In order to be an active participant on the Concordium blockchain (e.g., hold,
 send, receive :ref:`glossary-GTU`) a user must create an *account*.
 
-To facilitate compliance with relevant regulations, an account can only be
-created from an *identity* which is issued :ref:`glossary-off-chain` by an Identity provider.
-While an account has to be created from an identity, the user's privacy is still
-protected, and the account owner's identity can only be revealed via the process
-of `anonymity revocation`_, which can only happen under stringent regulations,
-such as upon a court order. In particular, a key feature of the design of
-identities and accounts is that the identity provider cannot reveal the identity
-of an account on their own.
+The user will get an `initial account`_ at the same time as an *identity* has been issued
+by an identity provider. As the initial account is submitted to the chain by the
+identity provider, said identity provider will know the owner of the initial account. For this
+reason, the user may consider not using the initial account, and create a regular account instead.
+
+The owner of a regular account, will only be known by the owner himself. To facilitate
+compliance with relevant regulations, a regular account can only be created from an *identity*
+which is issued :ref:`glossary-off-chain` by an Identity provider. While an account
+has to be created from an identity, the user's privacy is still protected, and the
+account owner's identity can only be revealed via the process of `anonymity revocation`_,
+which can only happen under stringent regulations, such as upon a court order. In
+particular, a key feature of the design of identities and accounts is that the identity
+provider cannot reveal the identity of an account on their own.
 
 Anonymity revocation can only happen in exceptional circumstances (e.g., if
 authorities have detected suspicious activity on the account) and requires
@@ -50,7 +54,7 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-Identities can be created via the `mobile wallet`_. Identity issuance requires
+Identities can be created via `Concordium ID`_. Identity issuance requires
 *Identity Verification*, which is the process of verifying the real-life
 identity of the user. This will typically involve taking photographs, scans of
 identification documents (e.g., passport), etc. Identity verification also
