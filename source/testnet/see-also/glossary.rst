@@ -319,6 +319,14 @@ can use a number of encrypted amounts from this list as inputs to the transfer.
 
 .. _glossary-shielding:
 
+.. _glossary-shielded-transfer:
+
+Shielded transfer
+=================
+
+Transfer from :ref:`shielded balance<glossary-shielded-balance>` of an account to a :ref:`shielded balance<glossary-shielded-balance>`.
+The amount that is transferred is only visible to the sender and the receiver.
+
 Shielding
 =========
 
