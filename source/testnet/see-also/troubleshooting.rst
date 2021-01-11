@@ -1,4 +1,3 @@
-.. _`Issue with adding a baker on node dashboard on Mac in previous Mac release`: #issue-with-adding-baker-on-node-dashboard-on-mac-in-previous-mac-release
 .. _`Multiple nodes, bakers, and accounts`: #multiple-nodes-bakers-and-accounts
 .. _`Appearance of high memory consumption of the node`: #appearance-of-high-memory-consumption-of-the-node
 .. _`Symbolic links in Documents path`: #symbolic-links-in-documents-path
@@ -9,8 +8,6 @@
 .. _`Performance issues in mobile wallet on Android phones`: #performance-issues-in-mobile-wallet-on-android-phones
 .. _`Robustness issues with shielded transfer in mobile wallets`: #robustness-issues-with-shielded-transfer-in-mobile-wallets
 .. _`Creation of account fails with imported identity`: #creation-of-account-fails-with-imported-identity
-.. _`Node dashboard shows outdated information after node reset`: #node-dashboard-shows-outdated-information-after-node-reset
-.. _`Node dashboard does not load`: #node-dashboard-does-not-load
 .. _supported ID documents: http://onfido.com/supported-documents
 .. _stopped: /testnet/docs/quickstart-node#stopping-the-node
 .. _other ports: /testnet/docs/quickstart-node#configuring-ports
@@ -26,31 +23,6 @@ Troubleshooting and known issues
 
 If you cannot find your issue here, please email testnet@concordium.com,
 including logs from the ``concordium-node-retrieve-logs`` tool.
-
-Issue with adding a baker on node dashboard on Mac in previous Mac release
-==========================================================================
-
-There was an issue on Mac when trying to add a baker on the node dashboard,
-which failed with a network error in the first released Mac version. We have
-fixed the issue and uploaded a new release for Mac to our
-https://developers.concordium.com/testnet/docs/downloads page. Please make sure
-to download the latest Mac version, released on 2020-10-16, stop your node,
-reset your data, and restart your node.
-
-If you have a previous release version, please complete the following
-steps:
-
--  Delete folder ``~/Documents/concordium-software``.
--  Extract the new release .zip into folder ``~/Documents``.
--  Open a terminal in ``~/Documents/concordium-software`` and run
-   ``./concordium-node-stop``.
--  Reset the data by running ``./concordium-node-reset-data``.
--  Run ``./concordium-node`` and let it catch up.
-
-Note that in all releases you can use the Concordium client for account
-and baker management, see e.g.
-``concordium-client config account --help`` and
-``concordium-client baker --help``, respectively, to get started.
 
 Multiple nodes, bakers, and accounts
 ====================================
@@ -211,60 +183,6 @@ scenario:
 -  reinstall the app
 -  import the exportfile
 -  create an account, using the imported identity.
-
-Node dashboard shows outdated information after node reset
-==========================================================
-
-The node dashboard stores information about the baking status and pending
-transactions. This state is stored in the browser and is not cleared with the
-node reset. To clear the information, use the following keys while being on the
-node dashboard:
-
--  Windows/Linux: ctrl + delete
--  MacOS: ctrl + fn + backspace Once pressed, you will be prompted to
-   confirm the action.
-
-You can also delete the entries in the browser's local storage manually and
-immediately refresh the webpage before it re-inserts the entries again.
-
-Node dashboard does not load
-============================
-
-When connecting to the node dashboard from a machine other than the one running
-the node, the node dashboard may not load, showing the error "Oops, something
-went wrong: HTTP Network error". Accessing the node dashboard remotely is not
-supported, but may be achieved in one of the following ways.
-
-SSH tunnel to the node
-----------------------
-
-If the node is running on a server to which you have SSH access, you can forward
-ports on your local machine to ports on the server via an SSH tunnel. To access
-the node dashboard, it is necessary to forward both the node dashboard server
-port (8099 by default) and the middleware port (8082 by default). For example:
-
-::
-
-   ssh -L 8099:0.0.0.0:8099 -L 8082:0.0.0.0:8082 user@server
-
-It should then be possible to access the node dashboard at
-http://localhost:8099/.
-
-Configure the middleware address
---------------------------------
-
-The node dashboard by default attempts to connect to the middleware server at
-``127.0.0.1`` (the local machine). It is possible to configure this when
-starting the node by providing the command-line argument
-``--listen-middleware-address <node address>``, where ``<node address>`` is the
-address that you will use to connect to the node. (To change this, the node must
-be `stopped`_, reset, and started again. To reset the node use
-``concordium-node-reset-data`` in a terminal.)
-
-Note that it is *strongly recommended* to configure your firewall so that access
-to ports other than 8888 (peer-to-peer networking) is not possible from the
-public internet. Someone with access to the `other ports`_ may be able to take
-control of your node or accounts you have saved on the node.
 
 Support & Feedback
 ==================
