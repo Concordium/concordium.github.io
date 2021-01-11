@@ -34,12 +34,7 @@ Before running a Concordium node you will need to
 
    -  On *Linux*, allow Docker to be run as a non-root user.
 
-2. Download and extract the :ref:`concordium-node-and-client-download` software. This
-   produces a directory named ``concordium-software``. Move this folder
-   into the ``Documents`` folder of your home directory. It's very
-   important that this directory is moved in its entirety and with the
-   name unchanged. The final path should be
-   ``$HOME/Documents/concordium-software/<executables>``.
+2. Download and extract the :ref:`concordium-node-and-client-download` software.
 
 Upgrade from an earlier version of Open Testnet
 ===============================================
@@ -109,11 +104,11 @@ The tool will now download the Concordium Client image and load it into
 Docker. The client will launch and start outputting logging information
 about the operation of the node.
 
-.. _`Netwok Dashboard`: https://dashboard.testnet.concordium.com/
+.. _`Network Dashboard`: https://dashboard.testnet.concordium.com/
 
 
-Seeing your node on the dashboards
-==================================
+Seeing your node on the dashboard
+=================================
 
 After running ``concordium-node`` you can
 
