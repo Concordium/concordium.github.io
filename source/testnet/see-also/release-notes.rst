@@ -17,6 +17,38 @@ Release Notes
    :local:
    :backlinks: none
 
+Open Testnet v4
+===============
+
+January 13th, 2020
+
+Smart contracts:
+----------------
+* Smart contracts support on chain
+* Rust supported as off-chain SC language
+* Cargo-concordium tool for building and testing smart contracts off-chain
+* Documentation for smart contracts added to developer docs
+* SC transactions added to Concordium client
+
+Tokenomics (to match tokenomics model):
+---------------------------------------
+* Rewards for baking and finalization changed
+* Minting changed
+* Chain parameters updated
+* Updated network dashboard block explorer to include new info
+* Amount lock-up transaction with schedule added
+* Staking changed so staked amount is locked
+* Mobile app updated to show staking and amount lockup schedules
+* Delegation disabled
+
+ID provider:
+------------
+* Initial account creation added to ID provider process
+* Mobile app updated to support initial account creation
+
+
+
+
 Open Testnet v3 update 2
 ========================
 
