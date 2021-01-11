@@ -14,7 +14,7 @@
 .. |bail| replace:: ``bail!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
-.. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account
+.. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#function.matches_account
 .. |matches_account| replace:: ``matches_account``
 .. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
@@ -236,11 +236,11 @@ return a description of actions to be executed on-chain.
 
 .. note::
 
-   For a Rust_ developer, receive functions compares to type methods, with
-   a mutable reference to self.
+   For a Rust_ developer, receive functions are like methods with
+   a mutable reference to `self`.
 
-   A continuation of the analogy to Object Oriented Programming:
-   receive functions corresponds to object methods.
+   A continuation of the analogy to object-oriented programming:
+   receive functions correspond to object methods.
 
 The ``#[receive(...)]`` macro
 -----------------------------
@@ -375,7 +375,7 @@ smart contract. A smart contract without a way to extract GTU, should be sure
 not to accept any non-zero amount of GTU, since these GTU would be *inaccessible
 forever*.
 
-Our piggy bank is gonna have a way to retrieve GTU, so we can disable this by
+Our piggy bank is going to have a way to retrieve GTU, so we can disable this by
 adding the ``payable`` attribute to the |receive| macro, which will allow the
 function to accept a non-zero amount of GTU. Now the function is required to
 take an extra argument ``amount: Amount``, which represents the amount included
@@ -451,7 +451,7 @@ accounts, ``sender`` is of the  ``Address`` type, which is either an account
 address or a contract instance address.
 
 To compare the ``sender`` with ``owner`` we can use the |matches_account|_
-method defined on the ``sender``, which will only return true if the sender is
+function defined on the ``sender``, which will only return true if the sender is
 an account address and is equal to the owner:
 
 .. code-block:: rust

@@ -216,8 +216,8 @@ receive function.
    :param i64 addr_index: Index of the smart contract instance address to send to
    :param i64 addr_subindex: Subindex of the smart contract instance address to send to
    :param i32 receive_name: Pointer to a memory location containing the name of the receive function to invoke
-   :param i32 receive_name_len: Length of the receive method name. Determines how much memory will be read by the host.
-   :param i64 amount: The amount of GTU to invoke the receive method with
+   :param i32 receive_name_len: Length of the receive function name. Determines how much memory will be read by the host.
+   :param i64 amount: The amount of GTU to invoke the receive function with
    :param i32 parameter: Pointer to a memory location containing the parameters to the receive function
    :param i32 parameter_len: Length of the parameters
    :return: Identifier of the resulting action.

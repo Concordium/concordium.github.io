@@ -44,7 +44,7 @@ The output should be similar to the following:
            "first_field": 0,
            "second_field": 42
        }
-   Methods:
+   Functions:
     - receive_one
     - receive_two
 

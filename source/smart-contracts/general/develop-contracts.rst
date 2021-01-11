@@ -42,7 +42,7 @@ compiled to Wasm.
 To obtain correct exports, the `crate-type` attribute must be set to
 ``["cdylib", "rlib"]`` in the manifest file:
 
-.. code-block::
+.. code-block:: console
 
    ...
    [lib]
@@ -59,7 +59,7 @@ host functions.
 The crate enables writing init and receive functions as simple Rust
 functions annotated with ``#[init(...)]`` and ``#[receive(...)]``, respectively.
 
-A simple counter example would look like:
+Here is an example of a smart contract that implements a counter:
 
 .. code-block:: rust
 
@@ -87,52 +87,55 @@ A simple counter example would look like:
 
 There are a number of things to notice:
 
-- The type of the methods. The init methods must have the type as shown above,
-  the only freedom the user has is in choosing what the state type is. The same
-  applies to the receive method, with the additional requirement that the type
-  of the ``state`` variable must match the type returned by the init function.
+.. todo::
 
-- The annotation ``#[init(contract = "counter")]`` marks the method it is
+   - Write up the requirements in an easier to read way (e.g., split up paragraphs into sub-bullets).
+   - These requirements should be part of a specification that is written up somewhere,
+     i.e., not just as part of this example.
+
+- The type of the functions:
+
+  * An init function must be of type ``&impl HasInitContext -> InitResult<MyState>``
+    where ``MyState`` is a type that implements the ``Serialize`` trait.
+  * A receive function must take a ``A: HasActions`` type parameter,
+    a ``&impl HasReceiveContext`` and a ``&mut MyState`` parameter, and return
+    a ``ReceiveResult<A>``.
+
+- The annotation ``#[init(contract = "counter")]`` marks the function it is
   applied to as the init function of the contract named ``counter``.
   Concretely, this means that behind the scenes this macro generates an exported
-  function with the required signature and name `init_counter`.
+  function with the required signature and name ``init_counter``.
 
 - ``#[receive(contract = "counter", name = "increment")]`` deserializes and
   supplies the state to be manipulated directly.
   Behind the scenes this annotation also generates an exported function with name
-  `counter.increment` that has the required signature, and does all of the
+  ``counter.increment`` that has the required signature, and does all of the
   boilerplate of deserializing the state into the required type ``State``.
 
 .. note::
 
    Note that deserialization is not without cost, and in some cases the
    user might want more fine-grained control over the use of host functions.
-   For such use-cases the annotations support a ``low_level`` option, which has
+   For such use cases the annotations support a ``low_level`` option, which has
    less overhead, but requires more from the user.
 
 .. todo::
 
-   Describe low-level
+   - Describe low-level
+   - Introduce the concept of host functions before using them in the note above
 
 
 Serializable state and parameters
 ---------------------------------
 
-On-chain, the state of an instance is represented as a byte array, and exposed
+.. todo:: Clarify what it means that the state is exposed similarly to ``File``;
+   preferably, without referring to ``File``.
+
+On-chain, the state of an instance is represented as a byte array and exposed
 in a similar interface as the ``File`` interface of the Rust standard library.
 
-Using the default interface described in the preceding section, the type of the
-contract state must be serializable in order for the generated code to be able
-to construct the structured state from the serialized one.
-
-This can be done using the ``Serialize`` trait, which contains a functions for
-both serializing and deserializing between values and their byte representation.
-
-.. note::
-
-   The ``Serialize`` interface does not support so-called zero-copy
-   deserialization at the moment.
-   This is coming as well, but it does make the interface more complex.
+This can be done using the ``Serialize`` trait which contains (de-)serialization
+functions.
 
 The ``concordium_std`` crate includes this trait and implementations for
 most types in the Rust standard library.
@@ -148,7 +151,7 @@ enums.
        ...
    }
 
-The same is necessary for parameters for init and receive functions.
+The same is necessary for parameters to init and receive functions.
 
 .. note::
 
@@ -165,7 +168,7 @@ state, represented as byte arrays.
 While the byte arrays can be used directly, they can also be deserialized into
 structured data.
 
-The simplest way to deserialize a parameter is through `get()`_-method from
+The simplest way to deserialize a parameter is through the `get()`_ function of
 the `Get`_ trait.
 
 As an example, see the following contract in which the parameter

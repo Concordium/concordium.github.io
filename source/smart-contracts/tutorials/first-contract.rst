@@ -7,9 +7,9 @@ My first smart contract: Counter
 ================================
 
 In this tutorial, we are going to build a minimal smart contract.
-The goal is to give you a run-through every part of the contract development
+The goal is to give you a run-through of every part of the contract development
 process.
-You will learn the basics of how to setup, write, build, test and deploy a
+You will learn the basics of how to set up, write, build, test and deploy a
 smart contract using Rust.
 
 .. warning::
@@ -23,7 +23,7 @@ Preparation
 Before we start, make sure to have the necessary tooling for building Rust
 contracts.
 The guide :ref:`setup-tools` will show you how to do this.
-Also, make sure to have a text editor setup for writing Rust.
+Also, make sure to have a text editor for writing Rust.
 
 We also need to setup a new smart contract project.
 Follow the guide :ref:`setup-contract` and return to this point afterwards.
@@ -391,7 +391,7 @@ own smart contract instances::
 
    let owner = ctx.owner();
 
-Using the ``matches_account`` method on the sender address, we can compare it to
+Using the ``matches_account`` function on the sender address, we can compare it to
 an account; the owner, and if the sender is a contract or not the owner account
 it results in false, making ``ensure!`` reject the receive function
 invocation::
