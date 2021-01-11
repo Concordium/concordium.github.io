@@ -73,7 +73,7 @@ To upgrade to the current Concordium software for Open Testnet 3:
 .. _Concordium Node and Client: /testnet/docs/downloads#concordium-node-and-client
 .. _download: /testnet/docs/downloads#concordium-node-and-client
 
-.. _my-reference-label:
+.. _running-a-node:
 
 Running a node
 ==============

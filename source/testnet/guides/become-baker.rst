@@ -181,7 +181,7 @@ To create a fresh set of keys run
    $concordium-client baker generate-keys <keys-file>.json
 
 where you can choose an arbitrary name the keys file. To
-register the keys in the network you need to be :ref:`running a node <my-reference-label>`
+register the keys in the network you need to be :ref:`running a node <running-a-node>`
 and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
