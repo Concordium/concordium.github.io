@@ -13,7 +13,7 @@ information about blocks and transactions to the nodes in the Concordium
 network. After following this guide, you will be able to
 
 -  run a Concordium node
--  observe it on the node and network dashboards and
+-  observe it on the network dashboard and
 -  query the state of the Concordium blockchain directly from your
    machine.
 
@@ -21,7 +21,7 @@ You do not need an account to run a node.
 
 .. _Before you begin: #before-you-begin
 .. _Running a node: #running-a-node
-.. _Seeing your node on the dashboards: #seeing-your-node-on-the-dashboards
+.. _Seeing your node on the dashboard: #seeing-your-node-on-the-dashboard
 .. _Enabling inbound connections: #enabling-inbound-connections
 .. _Stopping the node: #stopping-the-node
 
@@ -116,8 +116,6 @@ Seeing your node on the dashboards
 After running ``concordium-node`` you can
 
 -  see your node on the """ , networkDashboardLink , """
--  access the node dashboard at `http://localhost:8099`_ (this link
-   becomes active after the node is run)
 -  `query`_ information about blocks, transactions, and accounts
 
 Network dashboard
@@ -134,34 +132,7 @@ blocks your node received) with the **Chain Len** value (number of
 blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.
 
-.. _`http://localhost:8099`: http://localhost:8099/
 .. _query: /testnet/docs/queries
-
-Node dashboard
---------------
-
-You can also access the *node dashboard* at http://localhost:8099/.
-
--  While the node is catching up with the rest of the blockchain the
-   dashboard will display the following message:
-
-      *Your node has no peers yet. Please wait before making
-      transactions.*
-
--  When the node is sufficiently caught up with the blockchain it will
-   start connecting to peers who will help the node get up-to-date with
-   the rest of the chain.
-
-   At that point the dashboard will say:
-
-      *Your node is currently catching up with the network. Please wait
-      before making transactions.*
-
-   You can now see the number of messages sent and received by your node
-   in the top right corner of the dashboard.
-
--  When the node is caught up with the Concordium blockchain the above
-   messages will disappear.
 
 Enabling inbound connections
 ============================
@@ -193,8 +164,7 @@ used by the node are as follows:
    ``--listen-node-port``
 -  8099, the port used by the node dashboard, which can be set with
    ``--listen-dashboard-port``
--  8082, the port used by middleware (which supports the node
-   dashboard), which can be set with ``--listen-middleware-port``
+-  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
 
 When changing the mappings above the docker container must be
