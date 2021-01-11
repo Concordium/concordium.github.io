@@ -1,16 +1,11 @@
 .. _Obtaining an identity: #obtaining-an-identity
 .. _Creating an account: #creating-an-account
 .. _Benefits: #benefits
-.. _Revoking anonymity: #revoking-anonymity
-.. _GTU: /testnet/docs/glossary#global-transaction-unit-gtu-
-.. _off-chain: /testnet/docs/glossary#off-chain
-.. _wallet: /testnet/docs/quickstart-wallet#before-you-start
-.. _Concordium ID: /testnet/docs/downloads#concordium-id
+.. _`anonymity revocation`: /testnet/references/id-accounts.html#revoking-anonymity
+.. _Concordium ID: /testnet/see-also/downloads.html#concordium-id
 .. _Notabene: https://notabene.id/
 .. _Onfido: https://onfido.com/
-.. _mainnet: /testnet/docs/glossary#mainnet
-.. _on-chain: /testnet/docs/glossary#on-chain
-.. _anonymity revocation: #revoking-anonymity
+.. _`mobile wallet`: /test/guides/get-started.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 =======================
@@ -23,13 +18,13 @@ Identities and accounts
 
 
 In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive `GTU`_) a user must create an *account*.
+send, receive :ref:`glossary-GTU`) a user must create an *account*.
 
 To facilitate compliance with relevant regulations, an account can only be
-created from an *identity* which is issued `off-chain`_ by an Identity provider.
+created from an *identity* which is issued :ref:`glossary-off-chain` by an Identity provider.
 While an account has to be created from an identity, the user's privacy is still
 protected, and the account owner's identity can only be revealed via the process
-of *anonymity revocation*, which can only happen under stringent regulations,
+of `anonymity revocation`_, which can only happen under stringent regulations,
 such as upon a court order. In particular, a key feature of the design of
 identities and accounts is that the identity provider cannot reveal the identity
 of an account on their own.
@@ -54,7 +49,7 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-Identities can be created via the mobile `wallet`_. Identity issuance requires
+Identities can be created via the `mobile wallet`_. Identity issuance requires
 *Identity Verification*, which is the process of verifying the real-life
 identity of the user. This will typically involve taking photographs, scans of
 identification documents (e.g., passport), etc. Identity verification also
@@ -74,13 +69,13 @@ on the provided documentation.
 
 The *Notabene (development)* flow allows the user to provide their own
 attributes and does no verification. This flow is available for testing
-purposes, and will not be supported on the `mainnet`_.
+purposes, and will not be supported on the :ref:`glossary-mainnet`.
 
 Creating an account
 ===================
 
 Once a user has an identity, they can use it to create a number of accounts. In
-contrast to obtaining an identity, opening an account is an `on-chain`_ action
+contrast to obtaining an identity, opening an account is an :ref:`glossary-on-chain` action
 and requires sending a transaction to a node participating in the Concordium
 network. The input to the transaction is a *credential* which contains a number
 of cryptographic proofs, as well as a selection of attributes the user wishes to
@@ -106,6 +101,8 @@ residence. Since this information is publicly accessible anybody can check it
 before interacting with an account. Moreover, being able to see who issued the
 identity enables whoever wishes to interact with an account to judge the level
 of risk in the transaction.
+
+.. _revoking-anomity:
 
 Revoking anonymity
 ==================
