@@ -3,6 +3,7 @@
 .. _Benefits: #benefits
 .. _`anonymity revocation`: /testnet/references/id-accounts.html#revoking-anonymity
 .. _Concordium ID: /testnet/see-also/downloads.html#concordium-id
+.. _`initial account`: /testnet/see-also/glossary.html#initial-account
 .. _Notabene: https://notabene.id/
 .. _Onfido: https://onfido.com/
 .. _`mobile wallet`: /test/guides/get-started.html
@@ -74,7 +75,8 @@ purposes, and will not be supported on the :ref:`glossary-mainnet`.
 Creating an account
 ===================
 
-Once a user has an identity, they can use it to create a number of accounts. In
+Once a user has an identity, they can use it to create a number of accounts, besides the
+`initial account`_ created by the identity provider upon creating the identity. In
 contrast to obtaining an identity, opening an account is an :ref:`glossary-on-chain` action
 and requires sending a transaction to a node participating in the Concordium
 network. The input to the transaction is a *credential* which contains a number
