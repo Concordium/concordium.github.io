@@ -288,7 +288,7 @@ a terminal:
 It should run one test, and hopefully it succeeds.
 
 
-receive functions
+Receive functions
 =====================
 
 We have now defined how instances of our smart contract are created, and our
