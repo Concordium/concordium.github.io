@@ -17,7 +17,7 @@ Concordium ID: Get started with accounts and transactions
    :local:
    :backlinks: none
 
-Before following this guide you should have finished requesting your first initial account and identity, as described in `the previous chapter`_.
+Before following this guide you should have finished requesting your initial account and identity, as described in `the previous chapter`_.
 
 Create a new account
 ====================
