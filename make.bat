@@ -12,6 +12,7 @@ set BUILDDIR=build
 
 if "%1" == "" goto help
 if "%1" == "dev" goto dev
+if "%1" == "lint" goto lint
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -31,6 +32,10 @@ goto end
 
 :dev
 sphinx-autobuild.exe %SOURCEDIR% %BUILDDIR/html -E
+goto end
+
+:lint
+doc8 ./source --ignore D004 --ignore D002
 goto end
 
 :help
