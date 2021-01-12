@@ -28,8 +28,12 @@ the same.
 
 A node can only run as one baker. A baker is by definition a member of the
 committee. The current committee can be obtained by querying the node via
-``concordium-client consensus show-parameters --include-bakers``. A node can run
-as a baker or not, depending on how it is started, and whether the keys it
+
+.. code-block:: console
+
+   $concordium-client consensus show-parameters --include-bakers
+
+A node can run as a baker or not, depending on how it is started, and whether the keys it
 starts with are registered in the committee.
 
 Which baker the node runs as is determined by the baker keys that it starts with
@@ -118,9 +122,12 @@ The ports used by the node are as follows:
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
 
 When changing the mappings above the docker container must be stopped, reset,
-and started again. To reset the container either use
-``concordiumn-node-reset-data`` or run ``docker rm concordium-client`` in a
-terminal.
+and started again. To reset the container either use ``concordiumn-node-reset-data`` or run the following in a terminal
+
+.. code-block:: console
+
+   $docker rm concordium-client
+  
 
 Supported ID document types and countries
 =========================================
