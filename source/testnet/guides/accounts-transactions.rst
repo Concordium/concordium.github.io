@@ -204,7 +204,7 @@ an unshielding, will be deducted from the regular balance of the account respons
 
 Share your account address
 ==========================
-If you want to share the address of your account, this can be easily done by pressing the **Address** button. This will take you to a page,
+If you want to share the address of your account, this can be easily done by pressing the **Address** button. This will take you to a page
 where you have multiple options of sharing the account address. Try pressing the **Share** button, and share your address with someone.
 
 .. image:: images/concordium-id/acc37.png
