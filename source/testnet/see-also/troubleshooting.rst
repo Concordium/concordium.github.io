@@ -1,5 +1,4 @@
 .. _supported ID documents: http://onfido.com/supported-documents
-.. _other ports: /testnet/docs/quickstart-node#configuring-ports
 .. _Discord: https://discord.gg/xWmQ5tp
 
 ================================
@@ -100,8 +99,6 @@ The ports used by the node are as follows:
 
 -  8888, the port for P2P networking, which can be set with
    ``--listen-node-port``
--  8099, the port used by the node dashboard, which can be set with
-   ``--listen-dashboard-port``
 -  8082, the port used by internal backend, which can be set with
    ``--listen-middleware-port``
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
@@ -112,7 +109,7 @@ and started again. To reset the container either use ``concordiumn-node-reset-da
 .. code-block:: console
 
    $docker rm concordium-client
-  
+
 Special language characters in the Windows client
 =================================================
 
@@ -131,7 +128,7 @@ of creating a new identity using ``Notabene`` on the New Identity Verification
 screen. Note that with option ``Notabene development`` test identities can be
 issued, which are not verified against physical ID documents.
 
-Inconsistency with numbers on ID documents 
+Inconsistency with numbers on ID documents
 ==========================================
 
 When issuing an identity in the mobile wallet ``Concordium ID`` with identity provider ``Notabene``, which is based on a Danish ID document or a Spanish national identity card, the personal identity number might be included as document number in the issued identity instead of the actual ID document number.
