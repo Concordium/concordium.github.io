@@ -14,31 +14,29 @@
 
 <body>
     <div class="logo-container">
-        <img class="logo" src="{{pathto('_static/concordium-logo.svg', 1)}}" />
+        <img class="logo" src="{{pathto('_static/concordium-logo-dark.svg', 1)}}" />
         <h1>Documentation</h1>
     </div>
 
     <div class="features-container">
+        <div class="feature">
+            <a href="{{ pathto('testnet/index') }}">
+                <div class="feature-box">
+                    <i class="icon fa fa-connectdevelop"></i>
+                    <h4>Testnet 4</h4>
+                    <p>
+                        Learn more about Testnet 4 and how to participate.
+                    </p>
+                </div>
+            </a>
+        </div>
         <div class="feature">
             <a href="{{ pathto('smart-contracts/index') }}">
                 <div class="feature-box">
                     <i class="icon fa fa-file-o"></i>
                     <h4>Smart Contracts</h4>
                     <p>
-                        Learn what about smart contracts and how to develop your own right
-                        here!
-                    </p>
-                </div>
-            </a>
-        </div>
-        <div class="feature">
-            <a href="{{ pathto('testnet/index') }}">
-                <div class="feature-box">
-                    <i class="icon fa fa-connectdevelop"></i>
-                    <h4>Testnet</h4>
-                    <p>
-                        Learn how to run your own node and take part of the Concordium
-                        blockchain.
+                        Learn more about smart contracts and how to develop your own.
                     </p>
                 </div>
             </a>
@@ -47,6 +45,11 @@
 
     <style>
         body {
+            background: url(../_static/background-img.png) no-repeat center center fixed, rgb(240, 240, 240);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             margin: 0;
             padding: 0;
             display: flex;
@@ -55,22 +58,21 @@
         }
 
         .logo-container {
-            background-color: black;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10vh 0;
+            padding: 2vh 0;
         }
 
         .logo-container h1 {
-            color: white;
+            color: black;
             font-weight: normal;
-            max-height: 40vh;
+            max-height: 5vh;
         }
 
         .logo {
-            max-width: 1000px;
+            max-width: 650px;
             max-height: 25vh;
             margin: 2em;
         }
@@ -98,9 +100,11 @@
             border-radius: 5px;
             padding: 1em;
             width: 310px;
-            text-align: justify;
+            text-align: center;
+            font-family: Lato;
             word-spacing: -2px;
             border: 1px solid rgb(200, 200, 200);
+            border-radius: 15px;
             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
