@@ -88,7 +88,6 @@ Example
    Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    Amount:                1026.000000 GTU
    Nonce:                 1
-   Delegation:            baker 3
    Encryption public key: a820662531d0aac70b3a80dd8a249aa692436097d06da005aec7c56aad17997ec8331d1e4050fd8dced2b92f06277bd5acf72a731dc9fdac7f37c93a7be919d2bfe3fe7a19731b0f764f5cb2d0c1e7aad6f17eb378fb306f27408c9e7ea966d9
 
    Encrypted balance:
