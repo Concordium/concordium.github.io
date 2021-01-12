@@ -18,7 +18,7 @@ Export
 ======
 Using the Concordium ID app it is possible to export your accounts and identities. To get started, browse to the *More* page.
 Depending on whether you are using the Android or iOS version of the app, the *More* page will look slightly different.
-On Android you will see three menu items: *Address Book*, *Export* and *Import*. On iOS you will only see *Address Book* and *Import*.
+On Android you will see three menu items: *Address Book*, *Export* and *Import*. On iOS you will only see *Address Book* and *Export*.
 This is because the Import feature works in two different ways depending on the platform, but we will get back to that.
 
 .. image:: images/concordium-id/exp1.png
