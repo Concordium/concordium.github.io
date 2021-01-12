@@ -1,12 +1,3 @@
-.. _download page: /testnet/docs/downloads
-.. _iOS Concordium ID: /testnet/docs/downloads
-.. _Added import to app: /testnet/docs/quickstart-export-import
-.. _Encrypted(shielded) amounts and transfers: /testnet/docs/quickstart-shielded-transfers
-.. _here: https://developer.concordium.com/testnet/docs/downloads#concordium-id
-.. _upgrade: /testnet/docs/quickstart-node#upgrade-from-open-testnet-v1
-.. _Concordium Node version 0.2.13: /testnet/docs/downloads#concordium-node-and-client
-.. _Concordium ID: /testnet/docs/downloads#concordium-id
-.. _Concordium Node and Client Software: /testnet/docs/downloads#concordium-node-and-client
 .. _Dashboard: https://dashboard.testnet.concordium.com/
 
 =============
@@ -17,13 +8,47 @@ Release Notes
    :local:
    :backlinks: none
 
+Open Testnet v4
+===============
+
+January 13th, 2020
+
+Smart contracts:
+
+* Smart contracts support on chain
+* Rust supported as off-chain Smart Contract language
+* `Concordium-std <https://crates.io/crates/concordium-std>`_ library added for developing smart contracts in Rust.
+* ``Cargo-concordium`` tool for building and testing smart contracts off-chain
+* Documentation for smart contracts added to `developer documentation <https://concordium.github.io/en/testnet4/smart-contracts/index.html>`_
+* Smart Contract transactions added to ``concordium-client``
+
+
+Tokenomics (to match tokenomics model):
+
+* Rewards for baking and finalization changed
+* Minting changed
+* Extended the list of adjustable chain parameters
+* Updated `network dashboard block explorer <https://dashboard.testnet.concordium.com/chain>`_ to include new info
+* Amount lock-up transaction with schedule added
+* Staking changed so staked amount is locked
+* Mobile app updated to show staking and amount lockup schedules
+* Delegation removed
+
+ID layer:
+
+* Initial account creation added to ID provider process
+* Mobile app updated to support initial account creation
+
+
+
+
 Open Testnet v3 update 2
 ========================
 
 October 16th, 2020
 
 A new Mac version is released after fixing an issue with adding a baker on the
-dashboard. The `download page`_ has been updated accordingly. Please download
+dashboard. The :ref:`downloads page <downloads>` has been updated accordingly. Please download
 the latest Mac release, then stop your node, reset your data, and restart your
 node.
 
@@ -34,7 +59,7 @@ October 8th, 2020
 
 New mobile wallets are released after some bug fixes on both iOS and Android.
 The released versions are ConcordiumID version 0.1.52 for iOS and version 0.5.24
-for Android. The `download page`_ has been updated accordingly. The node
+for Android. The :ref:`downloads page <downloads>` has been updated accordingly. The node
 software is unaffected by this update.
 
 Open Testnet v3
@@ -44,14 +69,14 @@ October 6th, 2020.
 
 -  Chain visualization: The connection of blocks has been made more
    stable to ensure that it progresses smoothly.
--  `iOS Concordium ID`_ app available.
--  `Added import to app`_. It is now possible to import a file that has
+-  :ref:`iOS Concordium ID <concordium_id>` app available.
+-  Added import to app. It is now possible to import a file that has
    previously been exported. This enables moving identities and accounts
    to other mobile devices and restoring from backup.
 -  µGTU. The smallest unit has been changed from 10-4 to 10-6.
 -  Bulletproofs. The core blockchain has been updated to support use of
    bulletproofs.
--  `Encrypted(shielded) amounts and transfers`_. Support for shielded
+-  :ref:`Encrypted(shielded) amounts and transfers <move-an-amount-to-the-shielded-balance>`. Support for shielded
    transactions has been added to the core blockchain. Support for
    sending and receiving shielded amounts are added to the mobile apps
    and the Concordium client.
@@ -66,7 +91,7 @@ July 2, 2020
 An issue was identified in the Concordium ID app for Android. When using an
 identification document with no expiry date (such as a Swiss driving license)
 the app will crash upon completion of the ID issuance process. An app update has
-been issued and is available `here`_. The node software is unaffected by this
+been issued and is available here (No longer available - See the :ref:`downloads page <downloads>` for the newest app). The node software is unaffected by this
 update.
 
 Open Testnet v2
@@ -74,21 +99,20 @@ Open Testnet v2
 
 June 29, 2020
 
-*Follow our instructions on how to*\ `upgrade`_\ *to Open Testnet v2
-from v1.*
+Follow our instructions on how to upgrade to Open Testnet v2
+from v1.
 
 The Testnet v2 is the second public release of the Concordium Blockchain. Open
 Testnet aims at demonstrating the technology behind the Concordium Blockchain.
 This version is not feature-complete compared to the expected features for the
 first Mainnet version of the Concordium Blockchain.
 
-This version of the Testnet is running `Concordium Node version
-0.2.13`_.
+This version of the Testnet is running Concordium Node version 0.2.13.
 
 Updates
 =======
 
--  `Concordium ID`_, an Android mobile app for accessing identities and
+-  :ref:`Concordium ID <concordium_id>`, an Android mobile app for accessing identities and
    accounts
 -  Identity provider integration in Android mobile app
 
@@ -106,7 +130,7 @@ Updates
 
    -  Storage of the chain on nodes has been optimized
 
--  `Concordium Node and Client Software`_ improvements. Extended in the
+-  :ref:`Concordium Node and Client Software <concordium-node-and-client>` improvements. Extended in the
    following areas:
 
    -  Managing bakers
@@ -116,7 +140,7 @@ Updates
 
 -  Block explorer added to dashboard
 -  Node dashboard with support for becoming a baker
--  Improvements to the """ , networkDashboardLink , """
+-  Improvements to the `Network Dashboard <https://dashboard.testnet.concordium.com>`_
 
 Open Testnet v1
 ===============

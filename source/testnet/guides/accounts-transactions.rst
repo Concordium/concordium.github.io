@@ -114,6 +114,8 @@ cost a fee, and depending on the type of transaction the fee might differ. Press
 .. image:: images/concordium-id/acc18.png
       :width: 32%
 
+.. _move-an-amount-to-the-shielded-balance:
+
 Move an amount to the shielded balance
 ========================================
 If we go back to the *Accounts* screen, we can now see that the 10 GTU has been transferred to the *Balance* of *Example Account 1*. As you might
