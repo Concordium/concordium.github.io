@@ -2,6 +2,7 @@
 .. _Set up a passcode and biometrics: #set-up-a-passcode-and-biometrics
 .. _Request your initial account and identity: #request-your-initial-account-and-identity
 .. _`the previous chapter`: get-the-app.html
+.. _`Identities and accounts`: /testnet/references/id-accounts.html
 .. _Discord: https://discord.gg/xWmQ5tp
 
 
@@ -20,9 +21,12 @@ Set up a passcode and biometrics
 
 When you open the Concordium ID app for the first time, you will be greeted by a flow
 that will help you setup a passcode and biometric authentication, create an :ref:`glossary-initial-account`,
-and it will also guide you through getting an :ref:`glossary-identity-provider`. It is important to notice that the
-initial account will be submitted to the chain by the identity provider, but after your identity
-is created you will be able to make accounts yourself, that will be unknown to the identity provider.
+and it will also guide you through getting an :ref:`glossary-identity`. The initial account is a special type of account,
+that is submitted to the chain by the :ref:`glossary-identity-provider`, upon creation of an identity. You can make the
+the same transactions from an initial account as from regular accounts, but the owner of the initial account will be
+known by the identity provider. After your identity is created you will be able to submit accounts to the chain
+yourself, and these will be unknown by the identity provider. You can learn more about accounts on the `Identities
+and accounts`_ page.
 
 The first screen you will meet when opening Concordium ID is this one. It will just explain that
 you have to go through this process to get started.
@@ -89,8 +93,8 @@ By pressing **Continue to identity providers**, you will be taken to a page wher
 An identity provider is an external entity who will verify who you are, before returning an identity object to be used on the chain.
 For now you can choose between:
 
-* *Notabene Development* which will give you a test identity without formal verification.
-* *Notabene* via which you will be formally verified.
+* *Notabene Development* which will give you a test identity without real life identity verification.
+* *Notabene* via which your real life identity will be verified.
 
 .. image:: images/concordium-id/int8.png
       :width: 32%
