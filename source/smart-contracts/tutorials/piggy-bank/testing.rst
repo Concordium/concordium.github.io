@@ -265,7 +265,7 @@ produce the action for accepting the GTU.
 
 .. code-block:: rust
 
-   let actions = match actions_result.expect("Inserting GTU results in error.");
+   let actions = actions_result.expect("Inserting GTU results in error.");
 
    assert_eq!(actions, ActionsTree::accept(), "No action should be produced.");
    assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
@@ -282,7 +282,7 @@ The second test becomes:
 
        let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
 
-       let actions = match actions_result.expect("Inserting GTU results in error.");
+       let actions = actions_result.expect("Inserting GTU results in error.");
 
        assert_eq!(actions, ActionsTree::accept(), "No action should be produced.");
        assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
@@ -415,7 +415,7 @@ reasons for rejection:
 
 .. code-block:: rust
 
-   #[derive(Debug, PartialEq, Eq)]
+   #[derive(Debug, PartialEq, Eq, Debug)]
    enum SmashError {
        NotOwner,
        AlreadySmashed,
@@ -499,7 +499,7 @@ We can now check which error was produced in the test:
 
        let mut state = PiggyBankState::Intact;
 
-       let actions_result: ReceiveResult<ActionsTree> = piggy_smash(&ctx, &mut state);
+       let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
 
        let err = actions_result.expect_err("Contract is expected to fail.");
        assert_eq!(err, SmashError::NotOwner, "Expected to fail with error NotOwner")
