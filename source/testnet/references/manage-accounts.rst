@@ -64,7 +64,7 @@ can happen in two ways:
 
 - the account has :ref:`staked<glossary-staked-amount>` some (or all) of the public
   balance in order to become a baker
-- some of the public balance is locked-up because it was received via a
+- some of the public balance is locked up because it was received via a
   :ref:`transfer with schedule<glossary-transfer-with-schedule>`
 
 The locked-up balance can only be staked, but it can not be used for payment of
