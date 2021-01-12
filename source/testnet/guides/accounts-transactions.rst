@@ -140,7 +140,7 @@ to finalize on the chain.
 By going back to the *Accounts* page, it can now be seen that there is 10 GTU on the *Shielded Balance* of *Example Account 2*. If the *Shielded
 Balance* area of the account card is pressed, we can see that there is a *Shielded amount* transaction in the shielded balance transfers log.
 Making a shielding transaction will also cost a fee, but this fee will be deducted from the regular balance of the account. Try going
-back and have a look in the transfer log of the regular *Balance*.
+back and have a look at the transfer log of the regular *Balance*.
 
 .. image:: images/concordium-id/acc25.png
       :width: 32%
