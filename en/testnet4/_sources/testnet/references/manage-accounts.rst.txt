@@ -13,7 +13,7 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _managing_accounts:
-   
+
 =================
 Managing Accounts
 =================

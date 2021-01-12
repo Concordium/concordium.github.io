@@ -228,9 +228,6 @@ when <a class="reference internal" href="../guides/local-simulate.html#local-sim
 <p>Example of context</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;slotNumber&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;blockHeight&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;finalizedHeight&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
     <span class="p">},</span>
     <span class="nt">&quot;initOrigin&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
@@ -268,9 +265,6 @@ reference a policy.</p>
 <p>Example of context:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;slotNumber&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;blockHeight&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;finalizedHeight&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
     <span class="p">},</span>
     <span class="nt">&quot;invoker&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
@@ -357,29 +351,14 @@ information of the blockchain at the block the smart contract is executed in.
 Below we refer to this block as the <em>current block</em>.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-      <span class="nt">&quot;slotNumber&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
-      <span class="nt">&quot;blockHeight&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
-      <span class="nt">&quot;finalizedHeight&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
       <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-<div class="section" id="slotnumber">
-<h3><code class="docutils literal notranslate"><span class="pre">slotNumber</span></code><a class="headerlink" href="#slotnumber" title="Permalink to this headline">¶</a></h3>
-<p>The slot number for the current block as a JSON number.</p>
 </div>
 <div class="section" id="slottime">
 <h3><code class="docutils literal notranslate"><span class="pre">slotTime</span></code><a class="headerlink" href="#slottime" title="Permalink to this headline">¶</a></h3>
 <p>The slot time at the beginning of the current block as a JSON string in the
 format of <a class="reference external" href="https://tools.ietf.org/html/rfc3339">RFC3339</a> with precision up to milliseconds.</p>
-</div>
-<div class="section" id="blockheight">
-<h3><code class="docutils literal notranslate"><span class="pre">blockHeight</span></code><a class="headerlink" href="#blockheight" title="Permalink to this headline">¶</a></h3>
-<p>The block height of the current block as a JSON number.</p>
-</div>
-<div class="section" id="finalizedheight">
-<h3><code class="docutils literal notranslate"><span class="pre">finalizedHeight</span></code><a class="headerlink" href="#finalizedheight" title="Permalink to this headline">¶</a></h3>
-<p>The block height of the last finalized block as a JSON number.</p>
 </div>
 </div>
 <div class="section" id="policy">

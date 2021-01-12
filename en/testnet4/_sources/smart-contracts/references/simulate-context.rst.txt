@@ -21,9 +21,6 @@ Example of context
 
     {
         "metadata": {
-            "slotNumber": 1,
-            "blockHeight": 1,
-            "finalizedHeight": 1,
             "slotTime": "2021-01-01T00:00:01Z"
         },
         "initOrigin": "3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF",
@@ -69,9 +66,6 @@ Example of context:
 
     {
         "metadata": {
-            "slotNumber": 1,
-            "blockHeight": 1,
-            "finalizedHeight": 1,
             "slotTime": "2021-01-01T00:00:01Z"
         },
         "invoker": "3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF",
@@ -182,38 +176,15 @@ Example:
 .. code-block:: json
 
    {
-         "slotNumber": 123456789,
-         "blockHeight": 123456789,
-         "finalizedHeight": 123456789,
          "slotTime": "2021-01-01T00:00:01Z"
    }
 
-
-``slotNumber``
---------------
-
-The slot number for the current block as a JSON number.
 
 ``slotTime``
 ------------
 
 The slot time at the beginning of the current block as a JSON string in the
 format of RFC3339_ with precision up to milliseconds.
-
-``blockHeight``
----------------
-
-The block height of the current block as a JSON number.
-
-
-``finalizedHeight``
--------------------
-
-The block height of the last finalized block as a JSON number.
-
-.. todo::
-
-   Link definition of finalized blocks
 
 .. _context-sender-policy:
 
