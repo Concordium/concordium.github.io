@@ -1,103 +1,135 @@
 
 
-<!doctype html>
-  <html class="no-js" lang="">
+<!DOCTYPE html>
+<html class="no-js" lang="">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="utf-8" />
     <title>Concordium Documentation</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css">
-    <meta name="theme-color" content="#000000">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/concordium-logo-no-text.svg" />
+    <meta name="theme-color" content="#000000" />
     
 <link href="_static/style.css" rel="stylesheet" type="text/css">
 
- </head>
+</head>
 
-  <body>
+<body>
     <div class="logo-container">
-        <img class="logo" src="_static/concordium-logo.svg"/>
+        <img class="logo" src="_static/concordium-logo-dark.svg" />
         <h1>Documentation</h1>
     </div>
 
     <div class="features-container">
-        <a href="smart-contracts/index.html">
-            <div class="feature">
-                <i class="icon fa fa-file-o"></i>
-                <h4>Smart Contracts</h4>
-                <p>Learn what about smart contracts and how to develop your own right here!</p>
-            </div>
-        </a>
-        <a href="testnet/index.html">
-            <div class="feature">
-                <i class="icon fa fa-connectdevelop"></i>
-                <h4>Testnet</h4>
-                <p>Learn how to run your own node and take part of the Concordium blockchain.</p>
-            </div>
-        </a>
+        <div class="feature">
+            <a href="testnet/index.html">
+                <div class="feature-box">
+                    <i class="icon fa fa-connectdevelop"></i>
+                    <h4>Testnet 4</h4>
+                    <p>
+                        Learn more about Testnet 4 and how to participate.
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="feature">
+            <a href="smart-contracts/index.html">
+                <div class="feature-box">
+                    <i class="icon fa fa-file-o"></i>
+                    <h4>Smart Contracts</h4>
+                    <p>
+                        Learn more about smart contracts and how to develop your own.
+                    </p>
+                </div>
+            </a>
+        </div>
     </div>
 
     <style>
         body {
+            background: url(_static/background-img.png) no-repeat center center fixed, rgb(240, 240, 240);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             font-family: RobotoSlab;
         }
+
         .logo-container {
-            background-color: black;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 150px 0;
+            padding: 2vh 0;
         }
+
         .logo-container h1 {
-            color: white;
+            color: black;
             font-weight: normal;
+            max-height: 5vh;
         }
+
         .logo {
-            max-width: 900px;
+            max-width: 650px;
+            max-height: 25vh;
+            margin: 2em;
         }
+
         .features-container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap-reverse;
             padding: 50px;
         }
+
         .features-container a {
             color: black;
             text-decoration: none;
         }
+
         .feature {
+            margin: 1em;
+        }
+
+        .feature-box {
             display: flex;
             flex-direction: column;
             background-color: white;
             border-radius: 5px;
-            margin: 1em;
             padding: 1em;
             width: 310px;
-            text-align: justify;
-            word-spacing:-2px;
-            border: 1px solid rgb(200,200,200);
-            box-shadow: 0 0 1px rgba(0,0,0,0.3);
+            text-align: center;
+            font-family: Lato;
+            word-spacing: -2px;
+            border: 1px solid rgb(200, 200, 200);
+            border-radius: 15px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
-        .feature:hover {
-            background-color: rgba(240,240,240);
+
+        .feature-box:hover {
+            background-color: rgba(240, 240, 240);
         }
-        .feature h4 {
+
+        .feature-box h4 {
             text-align: center;
         }
+
         .feature p {
             margin: 0;
         }
+
         .feature .icon {
             align-self: center;
             padding: 10px;
             font-size: 50px;
         }
     </style>
-  </body>
+</body>
 
-  </html>
+</html>
