@@ -1,15 +1,4 @@
-.. _`Multiple nodes, bakers, and accounts`: #multiple-nodes-bakers-and-accounts
-.. _`Appearance of high memory consumption of the node`: #appearance-of-high-memory-consumption-of-the-node
-.. _`Symbolic links in Documents path`: #symbolic-links-in-documents-path
-.. _`Node does not catch up with chain on Windows`: #node-does-not-catch-up-with-chain-on-windows
-.. _`Error starting the node due to port already in use`: #docker-error-port-already-in-use
-.. _`Supported ID document types and countries`: #supported-id-document-types-and-countries
-.. _`Inconsistency with Spanish national identity card`: #inconsistency-with-spanish-national-identity-card
-.. _`Performance issues in mobile wallet on Android phones`: #performance-issues-in-mobile-wallet-on-android-phones
-.. _`Robustness issues with shielded transfer in mobile wallets`: #robustness-issues-with-shielded-transfer-in-mobile-wallets
-.. _`Creation of account fails with imported identity`: #creation-of-account-fails-with-imported-identity
 .. _supported ID documents: http://onfido.com/supported-documents
-.. _stopped: /testnet/docs/quickstart-node#stopping-the-node
 .. _other ports: /testnet/docs/quickstart-node#configuring-ports
 .. _Discord: https://discord.gg/xWmQ5tp
 
