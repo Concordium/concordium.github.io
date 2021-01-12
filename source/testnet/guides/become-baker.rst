@@ -6,6 +6,8 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
 .. _epoch: /testnet/docs/glossary#epoch
 
+.. _become-a-baker:
+
 ==================================
 Become a baker (create blocks)
 ==================================

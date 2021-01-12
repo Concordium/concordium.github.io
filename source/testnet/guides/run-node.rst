@@ -138,8 +138,8 @@ If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
-Concordium network. It will be able to send transactions and, `if so
-configured`_, to bake and finalize.
+Concordium network. It will be able to send transactions and,
+:ref:`if so configured<become-a-baker>`, to bake and finalize.
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
@@ -147,8 +147,6 @@ on port ``8888`` for inbound connections. Depending on your network and
 platform configuration you will either need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
-
-.. _if so configured: /testnet/guides/become-baker.html
 
 Configuring ports
 -----------------
@@ -195,7 +193,6 @@ retrieve information about the programs currently running on the system.
 
 You can send your logs, system information, questions and feedback to
 testnet@concordium.com. You can also reach out at our `Discord`_, or
-check out our `Troubleshooting`_ page.
+check out our :ref:`troubleshooting page<troubleshooting-and-known-issues>`
 
 .. _Discord: https://discord.gg/xWmQ5tp
-.. _Troubleshooting: /testnet/see-also/troubleshooting.html
