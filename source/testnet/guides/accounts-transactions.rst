@@ -65,7 +65,7 @@ two new pieces of information, **which you can read more about HERE??? REMEMBER 
 
 Make a transaction
 ====================
-Next up, try pressing the **Balance** area of your newly created account. This will take you to the following screen. On this
+Next up, try pressing the **Balance** area of your newly created account. On this
 screen you can see the current balance of your account, and at this point, it will also let you request 100 GTU to use on
 the Testnet. The request for 100 GTU is a Testnet feature, and will only be available on an account once. By pressing it,
 you will notice a transaction appearing. This will be pending for a bit, and then the 100 GTU will be added to your account.
