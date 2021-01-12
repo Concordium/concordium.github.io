@@ -218,7 +218,7 @@ On the Concordium blockchain it is possible to make a transaction that releases 
 *transfer with a schedule*. For now we will not get into how to make such a transfer as it cannot be done from Concordium ID,
 but let’s check out how a release schedule can be inspected. If you receive a transfer with a release schedule, you can press the
 **burger menu** in the upper right corner of the balance screen. This will allow you to press **Release schedule**, and by doing this you
-will be taken to a screen containing information on when and how much GTU will be released. If you want to learn more about how to
+will be taken to a screen containing information on how much GTU will be released and when. If you want to learn more about how to
 make a transfer with a release schedule, **you can read about it here BE SURE TO INSERT LINK HERE**.
 
 .. image:: images/concordium-id/rel1.png
