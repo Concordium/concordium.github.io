@@ -31,7 +31,7 @@ choose whichever name you want.
 .. image:: images/concordium-id/acc2.png
       :width: 32%
 
-When pressing **Next**, you will be met with a screen on which you must decide which identity to add the new account to.
+When pressing **Next**, you will be met with a screen on which you must decide which identity to use to open the new account.
 So far you probably only have one, but if you have more you can pick whichever identity you want from the list. By
 clicking on an identity, you will be taken to the next screen. When creating a non-initial account, i.e. an account
 that is not created upon identity creation, you can choose to reveal a number of :ref:`glossary-attribute`. This is not necessary,
