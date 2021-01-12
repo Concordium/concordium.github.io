@@ -25,7 +25,7 @@ by an identity provider. As the initial account is submitted to the chain by the
 identity provider, said identity provider will know the owner of the initial account. For this
 reason, the user may consider not using the initial account, and create a regular account instead.
 
-The owner of a regular account, will only be known by the owner himself. To facilitate
+Regular accounts' owner is not known to the identity providers, or any other single entity. To facilitate
 compliance with relevant regulations, a regular account can only be created from an *identity*
 which is issued :ref:`glossary-off-chain` by an Identity provider. While an account
 has to be created from an identity, the user's privacy is still protected, and the
