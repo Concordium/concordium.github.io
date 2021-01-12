@@ -13,7 +13,7 @@ when :ref:`simulating contract functions locally<local-simulate>`.
 Init context
 ============
 
-The context accessible in an ``init``-function.
+The context accessible in an init function.
 
 Example of context
 
@@ -40,7 +40,7 @@ reference of the fields.
 ``initOrigin``
 --------------
 
-The account address which triggered the invocation of the ``init``-function, by
+The account address which triggered the invocation of the init function, by
 instantiating the smart contract.
 
 Example:
@@ -58,7 +58,7 @@ reference a policy.
 Receive context
 ===============
 
-The context accessible in a ``receive``-function.
+The context accessible in a receive function.
 
 Example of context:
 
@@ -93,7 +93,7 @@ reference of the fields.
 -----------
 
 The account address which made the transaction triggering the invocation of the
-``receive``-function, by updating a smart contract instance.
+receive function, by updating a smart contract instance.
 
 Example:
 
@@ -104,7 +104,7 @@ Example:
 ``sender``
 ----------
 
-The address of the sender of the message triggering the ``receive``-function.
+The address of the sender of the message triggering the receive function.
 Can be either a smart contract instance or an account address, given as a JSON
 object.
 

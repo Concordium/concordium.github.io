@@ -114,39 +114,62 @@ Functions for reading information about the chain.
    :return: Time in milliseconds
    :rtype: i64
 
-Only in ``init``-function
+.. function:: get_slot_number() -> i64
+
+   Get the slot number of the current block.
+
+   :return: Slot number
+   :rtype: i64
+
+.. function:: get_block_height() -> i64
+
+   Get block height of the current block.
+
+   :return: Block height
+   :rtype: i64
+
+.. function:: get_finalized_height() -> i64
+
+   Get the height of the last finalized block, i.e., block to which the
+   current block has a finalized pointer to.
+
+   :return: Finalized height
+   :rtype: i64
+
+
+Only in init function
 ================================
-Functions only accessible for smart contract ``init``-functions. If called from
-a ``receive`` function execution will abort.
+Functions only accessible for smart contract init functions. If called from
+a receive function execution will abort.
 
 .. function:: get_init_origin(start)
 
-   Get the address of the account that triggered the ``init``-function.
+   Get the address of the account that triggered the init function.
 
    :param i32 start: Pointer of location to put the address. The address is 32
                      bytes and the memory must be large enough to contain it.
 
 
-Only in ``receive``-function
+Only in receive function
 ================================
-Functions only accessible for smart contract ``receive``-functions.
+Functions only accessible for smart contract receive functions.
 
 .. function:: get_receive_invoker(start)
 
    Get the address of the account that initiated the top-level transaction
-   which lead to triggering the ``receive``-function.
+   which lead to triggering the receive function.
 
    :param i32 start: Pointer of location to put the address
 
 .. function:: get_receive_sender(start)
 
-   Get the address of the account or contract, triggering the ``receive``-function.
+   Get the address of the account or contract, triggering the receive function.
 
    :param i32 start: Pointer of location to put the address
 
 .. function:: get_receive_self_address(start)
 
-   Get the address of the contract instance, running the ``receive``-function.
+   Get the address of the contract instance, running the receive function.
 
    :param i32 start: Pointer of location to put the address
 
@@ -168,7 +191,7 @@ Functions only accessible for smart contract ``receive``-functions.
 Action description
 --------------------------------
 The description of actions to execute on the chain, returned by smart contract
-``receive``-function.
+receive function.
 
 .. function:: accept() -> i32
 
@@ -192,10 +215,10 @@ The description of actions to execute on the chain, returned by smart contract
 
    :param i64 addr_index: Index of the smart contract instance address to send to
    :param i64 addr_subindex: Subindex of the smart contract instance address to send to
-   :param i32 receive_name: Pointer to a memory location containing the name of the ``receive``-function to invoke
-   :param i32 receive_name_len: Length of the receive method name. Determines how much memory will be read by the host.
-   :param i64 amount: The amount of GTU to invoke the receive method with
-   :param i32 parameter: Pointer to a memory location containing the parameters to the ``receive``-function
+   :param i32 receive_name: Pointer to a memory location containing the name of the receive function to invoke
+   :param i32 receive_name_len: Length of the receive function name. Determines how much memory will be read by the host.
+   :param i64 amount: The amount of GTU to invoke the receive function with
+   :param i32 parameter: Pointer to a memory location containing the parameters to the receive function
    :param i32 parameter_len: Length of the parameters
    :return: Identifier of the resulting action.
    :rtype: i32
