@@ -6,6 +6,9 @@
 .. _Share your account address: #share-your-account-address
 .. _Inspect a release schedule: #inspect-a-release-schedule
 .. _`the previous chapter`: get-started.html
+.. _`managing accounts`: /testnet/references/manage-accounts.html
+.. _`Concordium Client`: /testnet/references/concordium-client.html
+.. _`Transactions`: /testnet/references/transactions.html
 .. _Discord: https://discord.gg/xWmQ5tp
 
 
@@ -55,7 +58,8 @@ has been submitted.
 By pressing **Ok, thanks** on the submission overview, you will be taken back to the account page. You might see that your new
 account is still pending, as it can take a few minutes to finalize on chain. If you have not tried to do so yet, you can
 try pressing the downwards facing arrow on one of the account cards, to see that it will fold out the card. This reveals
-two new pieces of information, **which you can read more about HERE??? REMEMBER TO FIX THIS**
+two new pieces of information, *at disposal* and *staked*. The at disposal field will tell you how much of the accounts balance is
+at available for use at the given moment, and the staked amount you can read more about on the `managing accounts`_ page.
 
 .. image:: images/concordium-id/acc7.png
       :width: 32%
@@ -219,7 +223,7 @@ On the Concordium blockchain it is possible to make a transaction that releases 
 but let’s check out how a release schedule can be inspected. If you receive a transfer with a release schedule, you can press the
 **burger menu** in the upper right corner of the balance screen. This will allow you to press **Release schedule**, and by doing this you
 will be taken to a screen containing information on how much GTU will be released and when. If you want to learn more about how to
-make a transfer with a release schedule, **you can read about it here BE SURE TO INSERT LINK HERE**.
+make a transfer with a release schedule, you can have a look at the `Concordium Client`_ and `Transactions`_ pages.
 
 .. image:: images/concordium-id/rel1.png
       :width: 32%
