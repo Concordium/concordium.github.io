@@ -114,6 +114,10 @@ and started again. To reset the container either use ``concordiumn-node-reset-da
 
    $docker rm concordium-client
   
+Special language characters in the Windows client
+=================================================
+
+Depending on the code page of the Windows machine, the ``concordium-client`` might not print all special language characters in account names correctly. Instead it replaces unknown characters with a question mark. In such a case, you can either use the account address for client commands instead of the incomplete name, check the name mapping file or change the code page of the terminal to utf-8 by running ``chcp 65001``.
 
 Supported ID document types and countries
 =========================================
@@ -128,15 +132,16 @@ of creating a new identity using ``Notabene`` on the New Identity Verification
 screen. Note that with option ``Notabene development`` test identities can be
 issued, which are not verified against physical ID documents.
 
-Inconsistency with Spanish national identity card
-=================================================
+Inconsistency with numbers on ID documents 
+==========================================
 
-A Spanish national identity card shows the serial number of the card (NUM
-SOPORT) and the identity number of the holder (DNI). When issuing a real-world
-identity in the mobile wallet ``Concordium ID``, based on a Spanish national
-identity card, NUM SOPORT should be included in the issued identity.
-Inconsistencies may be observed where DNI is used instead. This issue is caused
-on the side of the 3rd party issue verifier Onfido.
+When issuing an identity in the mobile wallet ``Concordium ID`` with identity provider ``Notabene``, which is based on a Danish ID document or a Spanish national identity card, the personal identity number might be included as document number in the issued identity instead of the actual ID document number.
+
+Danish ID documents (e.g. passport or driver's license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead.
+
+A Spanish national identity card shows the serial number of the card (NUM SOPORT) and the identity number of the holder (DNI). NUM SOPORT should be included in the issued identity. Inconsistencies may be observed where DNI is used instead.
+
+The issues are reported to identity provider Notabene as well as identity verifier Onfido.
 
 Performance issues in mobile wallet on Android phones
 =====================================================
