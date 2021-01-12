@@ -6,9 +6,10 @@ Testnet
    :maxdepth: 1
    :caption: Guides
 
-   guides/account-basics
-   guides/two-balances
-   guides/import-export
+   guides/get-the-app
+   guides/get-started
+   guides/accounts-transactions
+   guides/explore-more
    guides/run-node
    guides/become-baker
 
@@ -30,7 +31,7 @@ Testnet
    see-also/troubleshooting
    see-also/glossary
    see-also/release-notes
-   see-also/licenses
+   see-also/third-party-licenses
 
 Support & Feedback
 ==================

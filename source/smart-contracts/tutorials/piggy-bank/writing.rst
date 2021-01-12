@@ -14,7 +14,7 @@
 .. |bail| replace:: ``bail!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
-.. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account
+.. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#function.matches_account
 .. |matches_account| replace:: ``matches_account``
 .. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
@@ -149,18 +149,18 @@ Setting up a piggy bank
 =======================
 
 Time to write the function for setting up a new piggy bank, which in turn means
-specifying the ``init``-function for a smart contract.
-A smart contract must specify an ``init``-function, which is called when new
+specifying the init function for a smart contract.
+A smart contract must specify an init function, which is called when new
 instances of the contract are created, and is used to setup the initial state of
 the contract instance.
 
 .. note::
 
-   A Rust_ developer could compare ``init``-functions with the convention of
+   A Rust_ developer could compare init functions with the convention of
    having a ``new`` function for types, and the smart contract as the type.
 
    If you have experience with Object-Oriented Programming, it might help to
-   think of a smart contract as a *class*, the ``init``-function as a
+   think of a smart contract as a *class*, the init function as a
    *constructor* and smart contract instances as *objects*.
 
 In the case of the piggy bank; the initial state should be set to ``Intact``.
@@ -169,7 +169,7 @@ In the case of the piggy bank; the initial state should be set to ``Intact``.
 The ``#[init]`` macro
 -------------------------
 
-In Rust_ an ``init``-function can be specified as a regular function, annotated
+In Rust_ an init function can be specified as a regular function, annotated
 with a procedural macro from |concordium-std| called |init|_.
 With this we can define how to setup a piggy bank as:
 
@@ -230,22 +230,22 @@ Specifically how to insert GTU and how to smash a piggy bank.
 
 A smart contract can expose zero or more functions for interacting with an
 instance.
-These functions are called ``receive``-functions, and can read and
+These functions are called receive functions, and can read and
 write to the state of the instance, read the state of the blockchain and
 return a description of actions to be executed on-chain.
 
 .. note::
 
-   For a Rust_ developer, ``receive``-functions compares to type methods, with
-   a mutable reference to self.
+   For a Rust_ developer, receive functions are like methods with
+   a mutable reference to `self`.
 
-   A continuation of the analogy to Object Oriented Programming:
-   ``receive``-functions corresponds to object methods.
+   A continuation of the analogy to object-oriented programming:
+   receive functions correspond to object methods.
 
 The ``#[receive(...)]`` macro
 -----------------------------
 
-Specifying ``receive``-functions in Rust, can be done using the procedural macro
+Specifying receive functions in Rust, can be done using the procedural macro
 |receive|_, which, like |init|_, is used to annotate a function and sets up an
 external function and supplies us with an interface for accessing the context.
 But, unlike the |init|_ macro, the function for |receive|_ is also supplied with
@@ -264,7 +264,7 @@ a mutable reference to the current state of the instance:
 The macro requires the name of the contract given using the ``contract``
 attribute, which should match the name in the corresponding attribute in |init|_
 (``"PiggyBank"`` in our case). It also requires a name to identify this
-particular ``receive``-function using ``name``, this name together with the
+particular receive function using ``name``, this name together with the
 contract name have to be unique for a smart contract module.
 
 The return type of the function is ``ReceiveResult<A>``, which is an alias for
@@ -279,7 +279,7 @@ A smart contract can produce 3 types of actions:
 - **Accept**: Accept incoming GTU. Always succeeds.
 - **Simple Transfer**: Transfer some amount of GTU from the balance of the
   smart contract instance to an account.
-- **Send**: Trigger ``receive``-function of a smart contract instance, with
+- **Send**: Trigger receive function of a smart contract instance, with
   a parameter and an amount of GTU.
 
 Additionally there are two ways to sequence these actions:
@@ -295,7 +295,7 @@ Inserting GTU
 -------------
 
 The first interaction we will specify for our piggy bank is how to insert GTU.
-We start with defining a ``receive``-function as:
+We start with defining a receive function as:
 
 .. code-block:: rust
 
@@ -308,7 +308,7 @@ We start with defining a ``receive``-function as:
    }
 
 Here we make sure the contract name matches the one we use for the |init|_ macro
-and we name this ``receive``-function ``"insert"``.
+and we name this receive function ``"insert"``.
 The function will not need to use the context ``_ctx``, so by convention, we
 make sure to prefix the argument with ``_``.
 
@@ -375,7 +375,7 @@ smart contract. A smart contract without a way to extract GTU, should be sure
 not to accept any non-zero amount of GTU, since these GTU would be *inaccessible
 forever*.
 
-Our piggy bank is gonna have a way to retrieve GTU, so we can disable this by
+Our piggy bank is going to have a way to retrieve GTU, so we can disable this by
 adding the ``payable`` attribute to the |receive| macro, which will allow the
 function to accept a non-zero amount of GTU. Now the function is required to
 take an extra argument ``amount: Amount``, which represents the amount included
@@ -437,10 +437,10 @@ To access the contract owner, we use a getter function exposed by the context
 
 This returns the account address of the contract instance owner, i.e. the
 account which created the smart contract instance by invoking the
-``init``-function.
+init function.
 
 Similarly the context has a getter function for the one who send the current
-message, which triggered this ``receive``-function:
+message, which triggered this receive function:
 
 .. code-block:: rust
 
@@ -451,7 +451,7 @@ accounts, ``sender`` is of the  ``Address`` type, which is either an account
 address or a contract instance address.
 
 To compare the ``sender`` with ``owner`` we can use the |matches_account|_
-method defined on the ``sender``, which will only return true if the sender is
+function defined on the ``sender``, which will only return true if the sender is
 an account address and is equal to the owner:
 
 .. code-block:: rust
@@ -499,7 +499,7 @@ construct and return the action for a simple transfer:
 
    Ok(A::simple_transfer(&owner, balance))
 
-The final definition of our "smash" ``receive``-function is then:
+The final definition of our "smash" receive function is then:
 
 .. code-block:: rust
 

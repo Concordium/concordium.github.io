@@ -24,14 +24,16 @@ write by hand.
 Instead we can write our smart contracts in the Rust_ programming language, which
 has good support for compiling to Wasm.
 
-.. note::
+Smart contracts do not have to be written in Rust.
+This is simply the first SDK we provide.
+Manually written Wasm, or Wasm compiled from C, C++, AssemblyScript_, and
+others, is equally valid on the chain, as long as it adheres to the :ref:`Wasm
+limitations we impose <wasm-limitations>`.
 
-   We emphasize that there is no requirement that contracts must be
-   written in Rust.
-   This is simply the first SDK we provide.
-   Manually written Wasm, or Wasm compiled from C, C++, AssemblyScript_, and
-   others, is equally valid on the chain, as long as it adheres to the :ref:`Wasm
-   limitations we impose <wasm-limitations>`.
+.. seealso::
+
+   For more information on the functions described below, see the concordium_std_
+   API for writing smart contracts on the Concordium blockchain in Rust.
 
 .. seealso::
 
@@ -42,7 +44,7 @@ compiled to Wasm.
 To obtain correct exports, the `crate-type` attribute must be set to
 ``["cdylib", "rlib"]`` in the manifest file:
 
-.. code-block::
+.. code-block:: text
 
    ...
    [lib]
@@ -56,10 +58,10 @@ It is recommended to use the ``concordium_std`` crate, which provides a
 more Rust-like experience for developing smart contract modules and calling
 host functions.
 
-The crate enables writing ``init``- and ``receive``-functions as simple Rust
+The crate enables writing init and receive functions as simple Rust
 functions annotated with ``#[init(...)]`` and ``#[receive(...)]``, respectively.
 
-A simple counter example would look like:
+Here is an example of a smart contract that implements a counter:
 
 .. code-block:: rust
 
@@ -87,52 +89,55 @@ A simple counter example would look like:
 
 There are a number of things to notice:
 
-- The type of the methods. The init methods must have the type as shown above,
-  the only freedom the user has is in choosing what the state type is. The same
-  applies to the receive method, with the additional requirement that the type
-  of the ``state`` variable must match the type returned by the ``init`` method.
+.. todo::
 
-- The annotation ``#[init(contract = "counter")]`` marks the method it is
-  applied to as the ``init`` method of the contract named ``counter``.
+   - Write up the requirements in an easier to read way (e.g., split up paragraphs into sub-bullets).
+   - These requirements should be part of a specification that is written up somewhere,
+     i.e., not just as part of this example.
+
+- The type of the functions:
+
+  * An init function must be of type ``&impl HasInitContext -> InitResult<MyState>``
+    where ``MyState`` is a type that implements the ``Serialize`` trait.
+  * A receive function must take a ``A: HasActions`` type parameter,
+    a ``&impl HasReceiveContext`` and a ``&mut MyState`` parameter, and return
+    a ``ReceiveResult<A>``.
+
+- The annotation ``#[init(contract = "counter")]`` marks the function it is
+  applied to as the init function of the contract named ``counter``.
   Concretely, this means that behind the scenes this macro generates an exported
-  function with the required signature and name `init_counter`.
+  function with the required signature and name ``init_counter``.
 
 - ``#[receive(contract = "counter", name = "increment")]`` deserializes and
   supplies the state to be manipulated directly.
   Behind the scenes this annotation also generates an exported function with name
-  `counter.increment` that has the required signature, and does all of the
+  ``counter.increment`` that has the required signature, and does all of the
   boilerplate of deserializing the state into the required type ``State``.
 
 .. note::
 
    Note that deserialization is not without cost, and in some cases the
    user might want more fine-grained control over the use of host functions.
-   For such use-cases the annotations support a ``low_level`` option, which has
+   For such use cases the annotations support a ``low_level`` option, which has
    less overhead, but requires more from the user.
 
 .. todo::
 
-   Describe low-level
+   - Describe low-level
+   - Introduce the concept of host functions before using them in the note above
 
 
 Serializable state and parameters
 ---------------------------------
 
-On-chain, the state of an instance is represented as a byte array, and exposed
+.. todo:: Clarify what it means that the state is exposed similarly to ``File``;
+   preferably, without referring to ``File``.
+
+On-chain, the state of an instance is represented as a byte array and exposed
 in a similar interface as the ``File`` interface of the Rust standard library.
 
-Using the default interface described in the preceding section, the type of the
-contract state must be serializable in order for the generated code to be able
-to construct the structured state from the serialized one.
-
-This can be done using the ``Serialize`` trait, which contains a functions for
-both serializing and deserializing between values and their byte representation.
-
-.. note::
-
-   The ``Serialize`` interface does not support so-called zero-copy
-   deserialization at the moment.
-   This is coming as well, but it does make the interface more complex.
+This can be done using the ``Serialize`` trait which contains (de-)serialization
+functions.
 
 The ``concordium_std`` crate includes this trait and implementations for
 most types in the Rust standard library.
@@ -148,7 +153,7 @@ enums.
        ...
    }
 
-The same is necessary for parameters for ``init``- and ``receive``-functions.
+The same is necessary for parameters to init and receive functions.
 
 .. note::
 
@@ -160,19 +165,19 @@ The same is necessary for parameters for ``init``- and ``receive``-functions.
 Working with parameters
 -----------------------
 
-Parameters for the ``init``- and ``receive``-functions are, like the instance
+Parameters to the init and receive functions are, like the instance
 state, represented as byte arrays.
 While the byte arrays can be used directly, they can also be deserialized into
 structured data.
 
-The simplest way to deserialize a parameter is through `get()`_-method from
+The simplest way to deserialize a parameter is through the `get()`_ function of
 the `Get`_ trait.
 
 As an example, see the following contract in which the parameter
 ``ReceiveParameter`` is deserialized on the highlighted line:
 
 .. code-block:: rust
-   :emphasize-lines: 23
+   :emphasize-lines: 24
 
    use concordium_std::*;
 
@@ -184,6 +189,7 @@ As an example, see the following contract in which the parameter
        value: u32,
    }
 
+   #[init(contract = "parameter_example")]
    fn init(
        _ctx: &impl HasInitContext,
    ) -> InitResult<State> {
@@ -203,7 +209,7 @@ As an example, see the following contract in which the parameter
        Ok(A::accept())
    }
 
-The ``receive``-function above is inefficient in that it deserializes the
+The receive function above is inefficient in that it deserializes the
 ``value`` even when it is not needed, i.e., when ``should_add`` is ``false``.
 
 To get more control, and in this case, more efficiency, we can deserialize the
@@ -227,10 +233,10 @@ parameter using the `Read`_ trait:
        Ok(A::accept())
    }
 
-Notice that the ``value`` value is only deserialized if ``should_add`` is
+Notice that the ``value`` is only deserialized if ``should_add`` is
 ``true``.
 While the gain in efficiency is minimal in this example, it could have an
-substantial impact for certain kinds of smart contracts.
+substantial impact for more complex examples.
 
 
 Building a smart contract module with ``cargo-concordium``
@@ -293,3 +299,4 @@ Move heavy calculations off-chain
 .. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
 .. _Get: https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html
 .. _Read: https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html
+.. _concordium_std: https://docs.rs/concordium-std/0.3.1/concordium_std/

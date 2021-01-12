@@ -1,56 +1,6 @@
 .. _whitepaper: https://concordium.com/wp-content/uploads/2020/04/Concordium-White-Paper-Vol.-1.0-April-2020-1.pdf
-.. _encryption key: #encryption-key
-.. _identity: #identity
-.. _identity provider: #identity-provider
-.. _blocks: #block
-.. _best chain: #best-chain
-.. _baker: #baker
-.. _finalized: #finalization
-.. _transactions: #transaction
-.. _genesis block: #genesis-block
-.. _slot time: #slot
-.. _blocks: #block
-.. _consensus: #consensus
-.. _baking: #baker
-.. _finalization: #finalization
-.. _encryption-key: #encryption-key
-.. _GTU: #global-transaction-unit-gtu-
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
-.. _encrypted amounts: #encrypted-amount
-.. _slots: #slot
-.. _leadership election nonce: #leader-election
-.. _chain: #chain
-.. _block: #block
-.. _baking: #baker
-.. _finalizing: #finalization
-.. _account: #account
-.. _encryption key: #encryption-key
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
-.. _shielding: #shielding
-.. _unshielding: #unshielding
-.. _shielded balance: #shielded-balance
-.. _accounts: #account
-.. _bakers: #baker
-.. _consensus mechanisms: #consensus
-.. _mainnet: #mainnet
-.. _transaction sequence number: #transaction-sequence-number
-.. _transactions: #transaction
-.. _account: #account
-.. _shielded balance: #shielded-balance
-.. _lottery power: #lottery-power
-.. _identity provider: #identity-provider
-.. _baker: #baker
-.. _slot: #slot
-.. _lottery power: #lottery-power
-.. _winning probability: #winning-probability
-.. _stake: #stake-delegation
-.. _epoch: #epoch
-.. _testnet: #testnet
-.. _baker node: #baker
-.. _finalization: #finalization
-.. _block: #block
-.. _leader election: #leader-election
-.. _Transaction sequence number: #transaction-sequence-number
 
 ============================
 Glossary of Concordium Terms
@@ -59,53 +9,67 @@ Glossary of Concordium Terms
 See also our `whitepaper`_ for more details on the terms described
 below.
 
+.. _glossary-account:
+
 Account
 =======
 
 An addressable store of funds on the blockchain. An account is associated with
 one or more *account keys* that can be used to authorize transactions
-originating from the account, as well as with an `encryption key`_ that can be
+originating from the account, as well as with an :ref:`encryption key<glossary-encryption-key>` that can be
 used to send encrypted transfers to the account. An account is also associated
-with the account holder's `identity`_, although this association is encrypted
+with the account holder's :ref:`identity<glossary-identity>`, although this association is encrypted
 for anonymity. This anonymity can only be revoked by anonymity revokers, in
-cooperation with the account's `identity provider`_.
+cooperation with the account's :ref:`identity provider<glossary-identity-provider>`.
 
-Attribute
-=========
+.. _glossary-attribute:
+
+Attributes
+==========
 
 User data, such as date of birth or country of residence, that is associated
-with a user `identity`_. Users can choose which attributes should be revealed in
+with a user :ref:`identity<glossary-identity>`. Users can choose which attributes should be revealed in
 each of their accounts.
+
+.. _glossary-baker:
 
 Baker
 =====
 
-A node that participates in the production of `blocks`_, referred to as
+A node that participates in the production of :ref:`blocks<glossary-block>`, referred to as
 *baking*.
+
+.. _glossary-best-block:
 
 Best block
 ==========
 
-Last block on the `best chain`_.
+Last block on the :ref:`best chain<glossary-best-chain>`.
+
+.. _glossary-best-chain:
 
 Best chain
 ==========
 
-The chain a `baker`_ will build upon when making a new block. The best chain
+The chain a :ref:`baker<glossary-baker>` will build upon when making a new block. The best chain
 selection procedure is determined by the consensus protocol. In particular, the
-best chain has the most `finalized`_ blocks, and the most blocks after the last
+best chain has the most :ref:`finalized<glossary_finalization>` blocks, and the most blocks after the last
 finalized block.
+
+.. _glossary-block:
 
 Block
 =====
 
-The basic unit of the blockchain, which is produced by a `baker`_. A block
-contains a (possibly empty) list of `transactions`_, and has a pointer to a
-previous block (with the exception of the `genesis block`_). A block and its
+The basic unit of the blockchain, which is produced by a :ref:`baker<glossary-baker>`. A block
+contains a (possibly empty) list of :ref:`transaction<glossary-transaction>`, and has a pointer to a
+previous block (with the exception of the :ref:`genesis block<glossary-genesis-block>`). A block and its
 predecessors form a chain, and the sequence of transactions they contain form a
-ledger. Each block has a `slot time`_ that records when it was baked. A block
+ledger. Each block has a :ref:`slot time<glossary-slot>` that records when it was baked. A block
 also contains information relating to consensus, for instance establishing which
 baker created the block, and that the baker was entitled to do so.
+
+.. _glossary-catch-up:
 
 Catch-up
 ========
@@ -113,44 +77,56 @@ Catch-up
 The mechanism by which a node receive messages that may have been missed, for
 instance because the node was offline when it was sent.
 
+.. _glossary-chain:
+
 Chain
 =====
 
-A sequence of `blocks`_, starting from the `genesis block`_, in which each
+A sequence of :ref:`blocks<glossary-block>`, starting from the :ref:`genesis block<glossary-genesis-block>`, in which each
 successive block points to the predecessor. There may be multiple valid chains,
-and the `consensus`_ protocol establishes which chain is authoritative.
+and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is authoritative.
+
+.. _glossary-consensus:
 
 Consensus
 =========
 
-The process by which nodes agree which `transactions`_ have occurred and in what
-order. This consists of `baking`_ and `finalization`_.
+The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
+order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary_finalization>`.
+
+.. _glossary-decryption-key:
 
 Decryption key
 ==============
 
-Dual to `encryption-key`_. In contrast to the encryption key, which is public,
+Dual to :ref:`encryption key<glossary-encryption-key>`. In contrast to the encryption key, which is public,
 this key is only known to the account holder.
+
+.. _glossary-encrypted-amount:
 
 Encrypted amount
 ================
 
-An amount of `GTU`_ that is encrypted with the public key of an account. Only
+An amount of :ref:`GTU<glossary-GTU>` that is encrypted with the public key of an account. Only
 the owner of the secret key can determine how many GTUs are contained in the
 encryption.
+
+.. _glossary-encryption-key:
 
 Encryption key
 ==============
 
 An `ElGamal`_ public key associated to an account which is used to encrypt all
-`encrypted amounts`_ on the account.
+:ref:`encrypted amounts<glossary-encrypted-amount>` on the account.
+
+.. _glossary-epoch:
 
 Epoch
 =====
 
-A time period consisting of multiple `slots`_ (on the testnet, an epoch lasts
+A time period consisting of multiple :ref:`slots<glossary-slot>` (on the testnet, an epoch lasts
 for approximately one hour). At the start of each epoch, we compute a
-`leadership election nonce`_ based on the block nonces of the previous epoch.
+:ref:`leadership election nonce<glossary-leader-election>` based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
 
 .. _glossary_finalization:
@@ -159,16 +135,20 @@ Finalization
 ============
 
 The process by which a block is marked to be "finalized", i.e. part of the
-authoritative `chain`_. Transactions that are part of finalized blocks are
+authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are
 considered authoritative. New blocks can be only added following the last
 finalized block. The finalization process is conducted periodically by the
-bakers with `staked amount`_ at least 0.1% of the total stake in the system.
+bakers with :ref:`staked amount<glossary-staked-amount>` at least 0.1% of the total stake in the system.
+
+.. _glossary-genesis-block:
 
 Genesis Block
 =============
 
-The first `block`_ in a `chain`_. The genesis block establishes the starting
+The first :ref:`block<glossary-block>` in a :ref:`chain<glossary-chain>`. The genesis block establishes the starting
 state of the chain, before any transactions have occurred.
+
+.. _glossary-GTU:
 
 Global Transaction Unit (GTU)
 =============================
@@ -179,25 +159,31 @@ purposes:
 -  as a form of payment between users via transactions,
 -  as a payment for executing smart contracts,
 -  as a store of value,
--  as a reward for honest behaviour (e.g. `baking`_ or `finalizing`_
+-  as a reward for honest behaviour (e.g. :ref:`baking<glossary-baker>` or :ref:`finalizing<glossary_finalization>`
    blocks on top of the longest chain), to incentivize blockchain users.
 
 The smallest subdivision of GTU is the µGTU (micro GTU), with 1 GTU = 1,000,000
 µGTU. This means that GTU amounts are given with up to six decimal places of
 precision.
 
+.. _glossary-identity:
+
 Identity
 ========
 
 Before opening an account on the Concordium Platform, one's real-world identity
-must be verified and recorded by an `identity provider`_. A user’s identity is
+must be verified and recorded by an :ref:`identity provider<glossary-identity-provider>`. A user’s identity is
 anonymous on-chain, however this anonymity can be revoked and their real-world
 identity revealed in response to a valid request from a government authority.
+
+.. _glossary-identity-issuer:
 
 Identity Issuer
 ===============
 
-See `identity provider`_.
+See :ref:`identity provider<glossary-identity-provider>`.
+
+.. _glossary-identity-provider:
 
 Identity Provider
 =================
@@ -206,56 +192,77 @@ A person or organization that performs off-chain identification of users. Users
 are required to obtain an identity object from an identity provider in order to
 open an account on the Concordium Platform.
 
+
+.. _glossary-initial-account:
+
+Initial Account
+===============
+
+An intial account is an account submitted to the chain by the identity provider,
+during the process of requesting a new identity. The owner of initial account
+is therefor known by the identity provider which submitted it to the chain.
+
+.. _glossary-leader-election:
+
 Leader Election
 ===============
 
-To check whether a given `baker`_ has won in a given `slot`_, the baker uses the
+To check whether a given :ref:`baker<glossary-baker>` has won in a given :ref:`slot<glossary-slot>`, the baker uses the
 slot number and the *leadership election nonce* to compute a value *r*. The
 leadership election nonce is a random value that is periodically updated to
 prevent parties from predicting too far into the future when they will win. A
 baker wins if the value *r* is below a certain threshold, which depends on the
-baker’s `lottery power`_ and a common difficulty parameter *f*. The `winning
-probability`_ is roughly proportional to the baker's stake, and higher
+baker’s :ref:`lottery power<glossary-lottery-power>` and a common difficulty parameter *f*. The :ref:`winning
+probability<glossary-winning-probability>` is roughly proportional to the baker's stake, and higher
 difficulty parameters decrease the winning probability for all parties.
+
+.. _glossary-lottery-power:
 
 Lottery Power
 =============
 
 A baker's lottery power is its relative stake and is therefore proportional to
-the `staked amount`_ of that baker. The lottery power is updated each
-`epoch`_, and is based on the stake distribution at the end of the epoch before
+the :ref:`staked amount<glossary-staked-amount>` of that baker. The lottery power is updated each
+:ref:`epoch<glossary-epoch>`, and is based on the stake distribution at the end of the epoch before
 last. (This delay ensures that the stake distribution is determined before the
 randomness that fixes the bakers for the epoch: otherwise, stakeholders might
 redistribute their stake to luckier bakers, which undermines the security of the
 system.)
 
+.. _glossary-mainnet:
+
 Mainnet
 =======
 
 The main Concordium network which is expected to launch in early 2021. The
-mainnet will receive periodic upgrades, but in contrast to the `testnet`_, it
+mainnet will receive periodic upgrades, but in contrast to the :ref:`testnet<glossary-testnet>`, it
 will never be reset, and accounts created on the mainnet will remain
 indefinitely.
+
+.. _glossary-node:
 
 Node
 ====
 
 A participant in the Concordium network. Nodes receive blocks and transactions,
-and track the current state of the blockchain. A `baker node`_ has cryptographic
-keys that enable it to take part in baking and `finalization`_. A node without
+and track the current state of the blockchain. A :ref:`baker node<glossary-baker>` has cryptographic
+keys that enable it to take part in baking and :ref:`finalization<glossary_finalization>`. A node without
 these keys is referred to as a *passive node*.
+
+.. _glossary-nonce:
 
 Nonce
 =====
 
 May refer to:
 
--  *Block Nonce*: a randomized value included by the `baker`_ in each
-   `block`_, and used to determine the leadership election nonce.
+-  *Block Nonce*: a randomized value included by the :ref:`baker<glossary-baker>` in each
+   :ref:`block<glossary-block>`, and used to determine the leadership election nonce.
 -  *Leadership Election Nonce*: a randomized value that is updated each
-   `epoch`_ that is used to seed the `leader election`_ process.
--  `Transaction sequence number`_ (same as account sequence number)
+   :ref:`epoch<glossary-epoch>` that is used to seed the :ref:`leader election<glossary-leader-election>` process.
+-  :ref:`Transaction sequence number<glossary-transaction-sequence-number>` (same as account sequence number)
 
+.. _glossary-off-chain:
 
 Off-chain
 =========
@@ -266,6 +273,8 @@ Concordium blockchain the user must first work with an identity provider, e.g.,
 via their website or mobile application, to obtain a specific digital
 certificate. We refer to this certificate as the **identity**.
 
+.. _glossary-on-chain:
+
 On-chain
 ========
 
@@ -275,12 +284,14 @@ or implicit as part of the consensus protocol. An example of the former is a
 transaction such as a GTU transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
 
+.. _glossary-shielded-balance:
+
 Shielded balance
 ================
 
-The part of the balance of an `account`_ that only the owner of the account can
+The part of the balance of an :ref:`account<glossary-account>` that only the owner of the account can
 see. This is achieved by encrypting transfers to an account with the account's
-`encryption key`_. Every participant of the Concordium network can see the
+:ref:`encryption key<glossary-encryption-key>`. Every participant of the Concordium network can see the
 `ciphertexts`_ of all the transfers, however they provide no information on how
 many GTUs were transferred. The receiver of the transfer can use their secret
 key to decrypt the ciphertexts, and seeing how many GTUs they have received.
@@ -288,12 +299,16 @@ key to decrypt the ciphertexts, and seeing how many GTUs they have received.
 For technical reasons the shielded balance of the account consists of two parts,
 the "self balance" and the "incoming encrypted amounts".
 
+.. _glossary-self-balance:
+
 Self balance
 ^^^^^^^^^^^^
 
 This is a single encrypted amount that is updated each time the account performs
-and encrypted transfer, `shielding`_, or `unshielding`_. Only the account itself
+and encrypted transfer, :ref:`shielding<glossary-shielding>`, or :ref:`unshielding<glossary-unshielding>`. Only the account itself
 can update this value.
+
+.. _glossary-incoming-encrypted-amount:
 
 Incoming encrypted amount
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -302,11 +317,14 @@ This is a list of encrypted amounts that is extended each time an account
 receives an encrypted transfer. When the account makes an encrypted transfer it
 can use a number of encrypted amounts from this list as inputs to the transfer.
 
+.. _glossary-shielding:
+
 Shielding
 =========
 
-The action of transferring a part of the public balance to the `shielded
-balance`_.
+The action of transferring a part of the public balance to the :ref:`shielded balance<glossary-shielded-balance>`.
+
+.. _glossary-slot:
 
 Slot
 ====
@@ -319,51 +337,61 @@ of these different events is controlled by the difficulty parameter *f*. For
 example, with difficulty 0.5 on average every second slot will have a lottery
 winner.
 
+.. _glossary-staked-amount:
+
 Staked Amount
 =============
 
-`Bakers`_ can have part of the balance of its account staked. The amount that is
+:ref:`bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
 staked remains locked while staked and cannot be transferred or moved in any
-way. The staked amount is proportional to the `lottery power`_ of a baker.
+way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
+
+.. _glossary-testnet:
 
 Testnet
 =======
 
 A test network run by Concordium to test its protocols and software. There can
 be several test networks in existence at the same time. All the features are
-tested on the testnet before they are released on the `mainnet`_.
+tested on the testnet before they are released on the :ref:`mainnet<glossary-mainnet>`.
 
-
+.. _glossary-transaction:
 
 Transaction
 ===========
 
 An atomic operation that defines a change of state in the ledger, such as
 transferring funds from one account to another. A transaction typically has a
-sender account and a `transaction sequence number`_, and incurs a fee. The
+sender account and a :ref:`transaction sequence number<glossary-transaction-sequence-number>`, and incurs a fee. The
 sender account must sign the transaction to authorize it. (The exception to this
 is a credential deployment transaction that creates a new account, which does
 not have a sender account.)
 
+.. _glossary-transaction-sequence-number:
+
 Transaction Sequence Number
 ===========================
 
-A sequence number that orders `transactions`_ on a given `account`_. In a
+A sequence number that orders :ref:`transaction<glossary-transaction>` on a given :ref:`account<glossary-account>`. In a
 ledger, all transactions for an account must be ordered with consecutive
 transaction sequence numbers, starting from 1. Transaction sequence numbers
 ensure that a transaction cannot be repeated in the ledger, and that the
 transactions occur in the order intended by the sender account holder.
 
+.. _glossary-unshielding:
+
 Unshielding
 ===========
 
-The action of transferring a part of the `shielded balance`_ to the public
+The action of transferring a part of the :ref:`shielded balance<glossary-shielded-balance>` to the public
 balance.
+
+.. _glossary-winning-probability:
 
 Winning probability
 ===================
 
 The winning probability is the probability that a baker wins in a given slot.
 The probability is *1-(1-f)α*, where *f* is the difficulty parameter and *α* is
-the `lottery power`_.
+the :ref:`lottery power<glossary-lottery-power>`.
 
