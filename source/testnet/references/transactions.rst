@@ -361,6 +361,8 @@ of ``--index`` which has the same meaning as in the
    [13:34:18] Waiting for the transaction to be finalized...
    [13:34:18] Transaction finalized.
 
+.. _transfer-with-a-schedule:
+
 Transfer with schedule
 ----------------------
 
@@ -397,7 +399,7 @@ would be done with the following command:
 
    $concordium-client transaction send-gtu-scheduled --schedule "100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z" --receiver B --sender A
 
-Querying afterwards for the account information of the receiver account will show the
+Querying account information of the receiver account afterwards, will show the
 list of releases that are still pending to be released:
 
 .. code-block:: console
