@@ -569,7 +569,7 @@ Instead we need generate code reporting the error back to the host, who is
 running the Wasm, and to do so, |concordium-std| provides replacements:
 
 - A call to ``panic!`` should be replace with |fail|_.
-- The ``expect`` and ``expect_err`` method should be replaced with
+- The ``expect`` and ``expect_err`` function should be replaced with
   |expect_report|_ and |expect_err_report|_.
 - ``assert`` and ``assert_eq`` should be replace with |claim|_ and |claim_eq|_
   respectively.

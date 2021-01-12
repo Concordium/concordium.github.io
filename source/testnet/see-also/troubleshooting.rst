@@ -1,6 +1,8 @@
 .. _supported ID documents: http://onfido.com/supported-documents
 .. _Discord: https://discord.gg/xWmQ5tp
 
+.. _troubleshooting-and-known-issues:
+
 ================================
 Troubleshooting and known issues
 ================================

@@ -27,8 +27,15 @@ Why use a contract schema
 =========================
 
 Data on the blockchain, such as the state of an instance and parameters passed
-to ``init``- and ``receive``-functions, is serialized as a sequence of bytes.
+to init and receive functions, is serialized as a sequence of bytes.
 The serialization is optimized for efficiency, rather than human readability.
+
+.. todo::
+
+   Consider rewriting this subsection as it can be somewhat difficult to
+   understand; in particular, possibly just say that for convenience, the user
+   can pass unserialized data into a function as long as they also provide a
+   schema that spells out how to (de)serialize the data.
 
 Usually these bytes have structure and this structure is known to the smart
 contract as part of the contract functions, but outside of these functions it
@@ -43,17 +50,17 @@ bytes, and can be used by external tools.
 
 .. note::
 
-   Tools like ``concordium-client`` can use a schema to serialize JSON into
-   bytes for when :ref:`specifying a parameter<init-passing-parameter-json>`,
-   and deserializing the state of contract instances to JSON.
+   The ``concordium-client`` tool can use a schema to
+   :ref:`serialize JSON parameters<init-passing-parameter-json>`
+   and to deserialize the state of contract instances to JSON.
 
-The schema is then either embedded into the smart contract module deployed
+The schema is then either embedded into a smart contract module that is deployed
 to the chain, or is written to a file and passed around off-chain.
 
 Should you embed or write to a file?
 ====================================
 
-Whether a contract schema should be embedded or written to a file, depends on
+Whether a contract schema should be embedded or written to a file depends on
 your situation.
 
 Embedding the schema into the smart contract module distributes the schema
@@ -67,17 +74,26 @@ size of the smart contract itself.
 Having the schema in a separate file allows you to have the schema without
 paying for the extra bytes when deploying.
 The downside is that you instead have to distribute the schema file through some
-other channel and ensure contract users are using the correct file with your
+other channel and ensure that contract users are using the correct file with your
 smart contract.
 
 The schema format
 =================
 
-A schema can contain the structure information for a smart contract module
-and for each contract it can contain the description of the state and
-parameters for ``init`` and each of the ``receive``-functions.
-Each of these descriptions are referred to as a *schema type* and are always
-optional to include in the schema.
+.. todo::
+
+   Clarify whether we talk about *any* abstract schema that a user could implement,
+   or a specific schema supplied by Concordium. Then only talk about one or the other,
+   or at least clearly separate the discussion of those.
+
+A schema can contain
+
+- structure information for a smart contract module
+- description of smart-contract state
+- parameters for init and receive functions of a smart contract.
+
+Each of these descriptions is referred to as a *schema type*. Schema types are always
+optional to include in a schema.
 
 Currently the supported schema types are inspired by what is commonly used in
 the Rust programming language:
@@ -116,7 +132,7 @@ the Rust programming language:
    }
 
 
-Where ``SizeLength`` describes the number of bytes used to describe the length
+Here, ``SizeLength`` describes the number of bytes used to describe the length
 of a variable length type, such as ``List``.
 
 .. code-block:: rust
@@ -128,7 +144,7 @@ of a variable length type, such as ``List``.
        Eight,
    }
 
-For a reference to how a schema type is serialized into bytes, we refer the
+For a reference on how a schema type is serialized into bytes, we refer the
 reader to the `implementation in Rust`_.
 
 .. _contract-schema-which-to-choose:
