@@ -15,12 +15,13 @@
 .. _an account: /testnet/docs/identities-and-accounts
 .. _wallet: /testnet/docs/quickstart-wallet#before-you-start
 .. _importing the account: /testnet/docs/managing-accounts
-.. _finalized: /testnet/docs/glossary#finalization
 .. _becoming a baker: /testnet/docs/quickstart-baker
 .. _incoming encrypted amounts: /testnet/docs/glossary#incoming-encrypted-amount
 .. _Querying an account: /testnet/docs/queries#account-state
 .. _self balance: /testnet/docs/glossary#self-balance
 .. _Discord: https://discord.com/invite/xWmQ5tp
+
+.. _transactions:
 
 ============
 Transactions

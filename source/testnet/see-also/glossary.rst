@@ -94,6 +94,17 @@ Consensus
 The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
 order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary_finalization>`.
 
+.. _glossary-credential:
+
+Credential
+==========
+
+A certificate derived from the :ref:`glossary-identity-object` that proves that
+the owner has been verified by an identity provider. The key feature of the
+credential is that it **does not** identify the owner to the identity provider,
+nor to any other single entity, however it contains enough information to allow
+anonymity revokers in concert with the identity provider to find the owner.
+
 .. _glossary-decryption-key:
 
 Decryption key
@@ -183,6 +194,15 @@ Identity Issuer
 
 See :ref:`identity provider<glossary-identity-provider>`.
 
+.. _glossary-identity-object:
+
+Identity Object
+===============
+
+An object issued by the :ref:`glossary-identity-provider` to the user which
+allows the user to prove to third parties that their real life identity has been
+verified by a trusted third party.
+
 .. _glossary-identity-provider:
 
 Identity Provider
@@ -198,9 +218,13 @@ open an account on the Concordium Platform.
 Initial Account
 ===============
 
-An intial account is an account submitted to the chain by the identity provider,
-during the process of requesting a new identity. The owner of initial account
-is therefor known by the identity provider which submitted it to the chain.
+An intial account is an account submitted to the chain by the identity provider
+during the process of requesting a new identity. The initial account can
+perform all of the same actions as a regular account, however the real-life
+identity of the initial-account owner is known by the identity provider
+who submitted it to the chain. In contrast, the real-life identity of the
+owner of a regular account can only be ascertained by anonymity revokers working
+in concert with the identity provider.
 
 .. _glossary-leader-election:
 
@@ -317,6 +341,15 @@ This is a list of encrypted amounts that is extended each time an account
 receives an encrypted transfer. When the account makes an encrypted transfer it
 can use a number of encrypted amounts from this list as inputs to the transfer.
 
+.. _glossary-shielded-transfer:
+
+Shielded transfer
+=================
+
+Transfer from :ref:`shielded balance<glossary-shielded-balance>` of an account
+to a :ref:`shielded balance<glossary-shielded-balance>` of another account.
+The amount that is transferred is only visible to the sender and the receiver.
+
 .. _glossary-shielding:
 
 Shielding
@@ -367,6 +400,17 @@ sender account must sign the transaction to authorize it. (The exception to this
 is a credential deployment transaction that creates a new account, which does
 not have a sender account.)
 
+.. _glossary-transfer-with-schedule:
+
+Transfer with schedule
+======================
+
+A special kind of transfer of GTU that makes the GTU amount available to the
+receiver only in a limited way until a specified point in time. The point in
+time is specified as part of a transfer. The GTU are immediately owned by the
+receiver account, and the transfer cannot be revoked, but the receiver cannot
+spend the GTU until the specified time.
+
 .. _glossary-transaction-sequence-number:
 
 Transaction Sequence Number
@@ -394,4 +438,3 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is *1-(1-f)α*, where *f* is the difficulty parameter and *α* is
 the :ref:`lottery power<glossary-lottery-power>`.
-
