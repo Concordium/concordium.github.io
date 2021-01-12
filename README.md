@@ -54,6 +54,20 @@ brew install python3 graphviz
 pip3 install -r requirements.txt
 ```
 
+### Windows
+
+Install [python3](https://www.python.org/downloads/windows/)
+and select a python installer, e.g. [this one](https://www.python.org/ftp/python/3.9.1/python-3.9.1-amd64.exe).
+Download and run the launcher. Make sure to select "Add Python to PATH" at the bottom before proceeding with the install.
+
+After that from a terminal run
+```
+pip3 install -r requirements.txt
+```
+from the root of this repository.
+
+If you want the graphs to render properly you also need to install the `dot` tool, which is part of the [graphviz package](https://graphviz.org/download/).
+
 ## Development
 
 To watch the doc files and automate the build run:
