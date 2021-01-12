@@ -24,7 +24,7 @@ which contains
 
 -  private keys of the account which are used to sign actions by the
    account (e.g., sending transfers, deploying smart contracts)
--  the identity an account is created from. This is needed for managing
+-  the identity an account is created from (this is needed for managing
    the account on the chain.
 -  decryption keys used for :ref:`shielded transfers<glossary-shielded-transfer>`.
 
