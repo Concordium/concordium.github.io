@@ -16,6 +16,8 @@
 .. _other ports: /testnet/docs/quickstart-node#configuring-ports
 .. _Discord: https://discord.gg/xWmQ5tp
 
+.. _troubleshooting-and-known-issues:
+
 ================================
 Troubleshooting and known issues
 ================================
