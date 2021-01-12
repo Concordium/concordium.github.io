@@ -22,7 +22,7 @@ contract deployed in some module on-chain.
    For instructions on how to deploy a smart contract module see :ref:`deploy-module`.
 
 Since initializing a smart contract is a transaction, you should also make sure
-to have ``concordium-client`` setup with an account with enough GTU to pay for
+to have ``concordium-client`` set up with an account with enough GTU to pay for
 the transaction.
 
 .. note::

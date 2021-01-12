@@ -228,6 +228,8 @@ epub_exclude_files = ['search.html']
 
 # -- Options for linkchecking -------------------------------------------------
 
+linkcheck_workers = 1
+linkcheck_retries = 2
 linkcheck_request_headers = {
     "https://crates.io/": {
         "Accept": "text/html",
