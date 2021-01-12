@@ -415,7 +415,7 @@ reasons for rejection:
 
 .. code-block:: rust
 
-   #[derive(Debug, PartialEq, Eq, Debug)]
+   #[derive(Debug, PartialEq, Eq)]
    enum SmashError {
        NotOwner,
        AlreadySmashed,
