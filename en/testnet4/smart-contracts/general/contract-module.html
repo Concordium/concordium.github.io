@@ -116,7 +116,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -295,7 +294,7 @@ module. The concrete mechanism used for this is the <a class="reference external
 section. A smart contract must export one function for initializing new
 instances and can export zero or more functions for updating the instance.</p>
 <p>Since a smart contract module can export functions for multiple different smart
-contract, we associate the functions using a naming scheme:</p>
+contracts, we associate the functions using a naming scheme:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">init_&lt;contract-name&gt;</span></code>: The function for initializing a smart contract must
 start with <code class="docutils literal notranslate"><span class="pre">init_</span></code> followed by a name of the smart contract. The contract
@@ -303,7 +302,7 @@ must consist only of ASCII alphanumeric or punctuation characters, and is not
 allowed to contain the <code class="docutils literal notranslate"><span class="pre">.</span></code> symbol.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;contract-name&gt;.&lt;receive-function-name&gt;</span></code>: Functions for interacting with a
 smart contract are prefixed with the contract name, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code> and a
-name for the function. Same as for <code class="docutils literal notranslate"><span class="pre">init</span></code>, the contract name is not allowed
+name for the function. Same as for the init function, the contract name is not allowed
 to contain the <code class="docutils literal notranslate"><span class="pre">.</span></code> symbol.</p></li>
 </ul>
 <div class="admonition note">

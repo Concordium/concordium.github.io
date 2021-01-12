@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Become a baker (create blocks)" href="become-baker.html" />
-    <link rel="prev" title="Export and importing IDs and accounts using the mobile wallet" href="import-export.html" />
+    <link rel="prev" title="Concordium ID: Explore the More page" href="explore-more.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -102,16 +102,17 @@
             
               <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="account-basics.html">Create an Account, Send and Receive GTU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-the-app.html">Concordium ID: Install the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Concordium ID: Get started with the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts-transactions.html">Concordium ID: Get started with accounts and transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-more.html">Concordium ID: Explore the <em>More</em> page</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run a Node</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Before you begin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#upgrade-from-an-earlier-version-of-open-testnet">Upgrade from an earlier version of Open Testnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#my-reference-label">Running a node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Seeing your node on the dashboards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Enabling inbound connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Stopping the node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Running a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Seeing your node on the dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Enabling inbound connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stop-a-node">Stopping the node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -121,7 +122,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
@@ -207,22 +208,21 @@
 <h1>Run a Node<a class="headerlink" href="#run-a-node" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id6">Before you begin</a></p></li>
-<li><p><a class="reference internal" href="#upgrade-from-an-earlier-version-of-open-testnet" id="id7">Upgrade from an earlier version of Open Testnet</a></p></li>
-<li><p><a class="reference internal" href="#my-reference-label" id="id8">Running a node</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id9">Seeing your node on the dashboards</a></p>
+<li><p><a class="reference internal" href="#id1" id="id8">Before you begin</a></p></li>
+<li><p><a class="reference internal" href="#upgrade-from-an-earlier-version-of-open-testnet" id="id9">Upgrade from an earlier version of Open Testnet</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id10">Running a node</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id11">Seeing your node on the dashboard</a></p>
 <ul>
-<li><p><a class="reference internal" href="#network-dashboard" id="id10">Network dashboard</a></p></li>
-<li><p><a class="reference internal" href="#node-dashboard" id="id11">Node dashboard</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">Network dashboard</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id4" id="id12">Enabling inbound connections</a></p>
+<li><p><a class="reference internal" href="#id6" id="id13">Enabling inbound connections</a></p>
 <ul>
-<li><p><a class="reference internal" href="#configuring-ports" id="id13">Configuring ports</a></p></li>
+<li><p><a class="reference internal" href="#configuring-ports" id="id14">Configuring ports</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id5" id="id14">Stopping the node</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id15">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#stop-a-node" id="id15">Stopping the node</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>In this guide, you learn how to run a node on your computer that
@@ -232,7 +232,7 @@ information about blocks and transactions to the nodes in the Concordium
 network. After following this guide, you will be able to</p>
 <ul class="simple">
 <li><p>run a Concordium node</p></li>
-<li><p>observe it on the node and network dashboards and</p></li>
+<li><p>observe it on the network dashboard and</p></li>
 <li><p>query the state of the Concordium blockchain directly from your
 machine.</p></li>
 </ul>
@@ -246,19 +246,14 @@ machine.</p></li>
 <li><p>On <em>Linux</em>, allow Docker to be run as a non-root user.</p></li>
 </ul>
 </li>
-<li><p>Download and extract the <a class="reference external" href="/testnet/docs/downloads#concordium-node-and-client">Concordium Node and Client</a> software. This
-produces a directory named <code class="docutils literal notranslate"><span class="pre">concordium-software</span></code>. Move this folder
-into the <code class="docutils literal notranslate"><span class="pre">Documents</span></code> folder of your home directory. It’s very
-important that this directory is moved in its entirety and with the
-name unchanged. The final path should be
-<code class="docutils literal notranslate"><span class="pre">$HOME/Documents/concordium-software/&lt;executables&gt;</span></code>.</p></li>
+<li><p>Download and extract the <a class="reference internal" href="../see-also/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Concordium Node and Client</span></a> software.</p></li>
 </ol>
 </div>
 <div class="section" id="upgrade-from-an-earlier-version-of-open-testnet">
 <h2>Upgrade from an earlier version of Open Testnet<a class="headerlink" href="#upgrade-from-an-earlier-version-of-open-testnet" title="Permalink to this headline">¶</a></h2>
-<p>To upgrade to the current Concordium software for Open Testnet 3:</p>
+<p>To upgrade to the current Concordium software for Open Testnet 4:</p>
 <ul>
-<li><p>Follow the above steps to <a class="reference external" href="/testnet/docs/downloads#concordium-node-and-client">download</a> the most recent Concordium
+<li><p>Follow the above steps to <a class="reference external" href="/testnet/see-also/downloads.html">download</a> the most recent Concordium
 software.</p></li>
 <li><p>Run the <code class="docutils literal notranslate"><span class="pre">concordium-node-reset-data</span></code> executable from the unzipped
 archive.</p>
@@ -284,8 +279,8 @@ keys.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="my-reference-label">
-<span id="id2"></span><h2>Running a node<a class="headerlink" href="#my-reference-label" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<span id="id3"></span><h2>Running a node<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>To start running a client that will join the Open Testnet follow these
 steps:</p>
 <ol class="arabic simple">
@@ -319,62 +314,34 @@ node to catch-up with the Concordium network.</strong></p></li>
 Docker. The client will launch and start outputting logging information
 about the operation of the node.</p>
 </div>
-<div class="section" id="id3">
-<h2>Seeing your node on the dashboards<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>Seeing your node on the dashboard<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>After running <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> you can</p>
 <ul class="simple">
-<li><p>see your node on the “”” , networkDashboardLink , “””</p></li>
-<li><p>access the node dashboard at <a class="reference external" href="http://localhost:8099/">http://localhost:8099</a> (this link
-becomes active after the node is run)</p></li>
-<li><p><a class="reference external" href="/testnet/docs/queries">query</a> information about blocks, transactions, and accounts</p></li>
+<li><p>see your node on the <a class="reference external" href="https://dashboard.testnet.concordium.com/">Network Dashboard</a></p></li>
+<li><p><a class="reference external" href="/testnet/references/query-node.html">query</a> information about blocks, transactions, and accounts</p></li>
 </ul>
-<div class="section" id="network-dashboard">
-<h3>Network dashboard<a class="headerlink" href="#network-dashboard" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Network dashboard<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>It will take the client a while to catch up with the state of the
 Concordium blockchain. This involves, for example, downloading
 information about all the blocks in the chain.</p>
-<p>Among other information, on the “”” , networkDashboardLink , “”” you can
+<p>Among other information, on the <a class="reference external" href="https://dashboard.testnet.concordium.com/">Network Dashboard</a> you can
 get an idea of how long it will take your node to catch up with the
 chain. For that you can compare the node’s <strong>Length</strong> value (number of
 blocks your node received) with the <strong>Chain Len</strong> value (number of
 blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.</p>
 </div>
-<div class="section" id="node-dashboard">
-<h3>Node dashboard<a class="headerlink" href="#node-dashboard" title="Permalink to this headline">¶</a></h3>
-<p>You can also access the <em>node dashboard</em> at <a class="reference external" href="http://localhost:8099/">http://localhost:8099/</a>.</p>
-<ul>
-<li><p>While the node is catching up with the rest of the blockchain the
-dashboard will display the following message:</p>
-<blockquote>
-<div><p><em>Your node has no peers yet. Please wait before making
-transactions.</em></p>
-</div></blockquote>
-</li>
-<li><p>When the node is sufficiently caught up with the blockchain it will
-start connecting to peers who will help the node get up-to-date with
-the rest of the chain.</p>
-<p>At that point the dashboard will say:</p>
-<blockquote>
-<div><p><em>Your node is currently catching up with the network. Please wait
-before making transactions.</em></p>
-</div></blockquote>
-<p>You can now see the number of messages sent and received by your node
-in the top right corner of the dashboard.</p>
-</li>
-<li><p>When the node is caught up with the Concordium blockchain the above
-messages will disappear.</p></li>
-</ul>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>Enabling inbound connections<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>Enabling inbound connections<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
-Concordium network. It will be able to send transactions and, <a class="reference external" href="/testnet/docs/quickstart-baker">if so
-configured</a>, to bake and finalize.</p>
+Concordium network. It will be able to send transactions and,
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
 <p>However you can also make your node an even better network participant
 by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
 on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections. Depending on your network and
@@ -389,26 +356,21 @@ used by the node are as follows:</p>
 <ul class="simple">
 <li><p>8888, the port for peer-to-peer networking, which can be set with
 <code class="docutils literal notranslate"><span class="pre">--listen-node-port</span></code></p></li>
-<li><p>8099, the port used by the node dashboard, which can be set with
-<code class="docutils literal notranslate"><span class="pre">--listen-dashboard-port</span></code></p></li>
-<li><p>8082, the port used by middleware (which supports the node
-dashboard), which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-middleware-port</span></code></p></li>
+<li><p>8082, the port used by middleware, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-middleware-port</span></code></p></li>
 <li><p>10000, the gRPC port, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-grpc-port</span></code></p></li>
 </ul>
 <p>When changing the mappings above the docker container must be
-<a class="reference external" href="#stopping-the-node">stopped</a>, reset, and started again. To reset the container either use
+stopped (<a class="reference internal" href="#stop-a-node"><span class="std std-ref">Stopping the node</span></a>), reset, and started again. To reset the container either use
 <code class="docutils literal notranslate"><span class="pre">concordium-node-reset-data</span></code> or run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">concordium-client</span></code> in
 a terminal.</p>
 <p>We <em>strongly recommend</em> that your firewall should be configured to only
 allow public connections on port 8888 (the peer-to-peer networking
 port). Someone with access to the other ports may be able to take
-control of your node or accounts you have saved on the node. Remote
-access to the node dashboard is not supported, but <a class="reference external" href="/testnet/docs/troubleshooting#node-dashboard-does-not-load">see here</a> for a
-workaround.</p>
+control of your node or accounts you have saved on the node.</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Stopping the node<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stop-a-node">
+<span id="id7"></span><h2>Stopping the node<a class="headerlink" href="#stop-a-node" title="Permalink to this headline">¶</a></h2>
 <p>To stop the node, press <strong>CTRL+c</strong>, and wait for the node to do a clean
 shutdown.</p>
 <p>If you accidentally close the window without explicitly shutting down
@@ -424,7 +386,7 @@ running image to a file. Additionally, if given permission, it will
 retrieve information about the programs currently running on the system.</p>
 <p>You can send your logs, system information, questions and feedback to
 <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>. You can also reach out at our <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a>, or
-check out our <a class="reference external" href="/testnet/docs/troubleshooting">Troubleshooting</a> page.</p>
+check out our <a class="reference internal" href="../see-also/troubleshooting.html#troubleshooting-and-known-issues"><span class="std std-ref">troubleshooting page</span></a></p>
 </div>
 </div>
 
@@ -435,7 +397,7 @@ check out our <a class="reference external" href="/testnet/docs/troubleshooting"
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="become-baker.html" class="btn btn-neutral float-right" title="Become a baker (create blocks)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="import-export.html" class="btn btn-neutral float-left" title="Export and importing IDs and accounts using the mobile wallet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="explore-more.html" class="btn btn-neutral float-left" title="Concordium ID: Explore the More page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

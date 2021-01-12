@@ -111,7 +111,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -140,8 +139,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#function-parameter">Function parameter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smart-contract-instance-state">Smart contract instance state</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chain-data">Chain data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#only-in-init-function">Only in <code class="docutils literal notranslate"><span class="pre">init</span></code>-function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#only-in-receive-function">Only in <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#only-in-init-function">Only in init function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#only-in-receive-function">Only in receive function</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="references-on-chain.html">References on-chain</a></li>
@@ -392,15 +391,58 @@ The additional state is initialized to <cite>0</cite>.</p>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt id="concordium.get_slot_number">
+<code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_slot_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; i64<a class="headerlink" href="#concordium.get_slot_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the slot number of the current block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Slot number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="concordium.get_block_height">
+<code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_block_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; i64<a class="headerlink" href="#concordium.get_block_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get block height of the current block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Block height</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="concordium.get_finalized_height">
+<code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_finalized_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; i64<a class="headerlink" href="#concordium.get_finalized_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the height of the last finalized block, i.e., block to which the
+current block has a finalized pointer to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Finalized height</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="only-in-init-function">
-<h2>Only in <code class="docutils literal notranslate"><span class="pre">init</span></code>-function<a class="headerlink" href="#only-in-init-function" title="Permalink to this headline">¶</a></h2>
-<p>Functions only accessible for smart contract <code class="docutils literal notranslate"><span class="pre">init</span></code>-functions. If called from
-a <code class="docutils literal notranslate"><span class="pre">receive</span></code> function execution will abort.</p>
+<h2>Only in init function<a class="headerlink" href="#only-in-init-function" title="Permalink to this headline">¶</a></h2>
+<p>Functions only accessible for smart contract init functions. If called from
+a receive function execution will abort.</p>
 <dl class="py function">
 <dt id="concordium.get_init_origin">
 <code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_init_origin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.get_init_origin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the address of the account that triggered the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p>
+<dd><p>Get the address of the account that triggered the init function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>start</strong> (<em>i32</em>) – Pointer of location to put the address. The address is 32
@@ -411,13 +453,13 @@ bytes and the memory must be large enough to contain it.</p>
 
 </div>
 <div class="section" id="only-in-receive-function">
-<h2>Only in <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function<a class="headerlink" href="#only-in-receive-function" title="Permalink to this headline">¶</a></h2>
-<p>Functions only accessible for smart contract <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions.</p>
+<h2>Only in receive function<a class="headerlink" href="#only-in-receive-function" title="Permalink to this headline">¶</a></h2>
+<p>Functions only accessible for smart contract receive functions.</p>
 <dl class="py function">
 <dt id="concordium.get_receive_invoker">
 <code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_receive_invoker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.get_receive_invoker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the address of the account that initiated the top-level transaction
-which lead to triggering the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p>
+which lead to triggering the receive function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>start</strong> (<em>i32</em>) – Pointer of location to put the address</p>
@@ -428,7 +470,7 @@ which lead to triggering the <code class="docutils literal notranslate"><span cl
 <dl class="py function">
 <dt id="concordium.get_receive_sender">
 <code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_receive_sender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.get_receive_sender" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the address of the account or contract, triggering the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p>
+<dd><p>Get the address of the account or contract, triggering the receive function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>start</strong> (<em>i32</em>) – Pointer of location to put the address</p>
@@ -439,7 +481,7 @@ which lead to triggering the <code class="docutils literal notranslate"><span cl
 <dl class="py function">
 <dt id="concordium.get_receive_self_address">
 <code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">get_receive_self_address</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.get_receive_self_address" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the address of the contract instance, running the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p>
+<dd><p>Get the address of the contract instance, running the receive function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>start</strong> (<em>i32</em>) – Pointer of location to put the address</p>
@@ -475,7 +517,7 @@ which lead to triggering the <code class="docutils literal notranslate"><span cl
 <div class="section" id="action-description">
 <span id="host-functions-actions"></span><h3>Action description<a class="headerlink" href="#action-description" title="Permalink to this headline">¶</a></h3>
 <p>The description of actions to execute on the chain, returned by smart contract
-<code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p>
+receive function.</p>
 <dl class="py function">
 <dt id="concordium.accept">
 <code class="sig-prename descclassname">concordium.</code><code class="sig-name descname">accept</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; i32<a class="headerlink" href="#concordium.accept" title="Permalink to this definition">¶</a></dt>
@@ -519,10 +561,10 @@ which lead to triggering the <code class="docutils literal notranslate"><span cl
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>addr_index</strong> (<em>i64</em>) – Index of the smart contract instance address to send to</p></li>
 <li><p><strong>addr_subindex</strong> (<em>i64</em>) – Subindex of the smart contract instance address to send to</p></li>
-<li><p><strong>receive_name</strong> (<em>i32</em>) – Pointer to a memory location containing the name of the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function to invoke</p></li>
-<li><p><strong>receive_name_len</strong> (<em>i32</em>) – Length of the receive method name. Determines how much memory will be read by the host.</p></li>
-<li><p><strong>amount</strong> (<em>i64</em>) – The amount of GTU to invoke the receive method with</p></li>
-<li><p><strong>parameter</strong> (<em>i32</em>) – Pointer to a memory location containing the parameters to the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function</p></li>
+<li><p><strong>receive_name</strong> (<em>i32</em>) – Pointer to a memory location containing the name of the receive function to invoke</p></li>
+<li><p><strong>receive_name_len</strong> (<em>i32</em>) – Length of the receive function name. Determines how much memory will be read by the host.</p></li>
+<li><p><strong>amount</strong> (<em>i64</em>) – The amount of GTU to invoke the receive function with</p></li>
+<li><p><strong>parameter</strong> (<em>i32</em>) – Pointer to a memory location containing the parameters to the receive function</p></li>
 <li><p><strong>parameter_len</strong> (<em>i32</em>) – Length of the parameters</p></li>
 </ul>
 </dd>

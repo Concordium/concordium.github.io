@@ -1,0 +1,416 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Concordium ID: Get started with accounts and transactions &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Concordium ID: Explore the More page" href="explore-more.html" />
+    <link rel="prev" title="Concordium ID: Get started with the app" href="get-started.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+    <nav class="topbar">
+        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    </nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-the-app.html">Concordium ID: Install the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Concordium ID: Get started with the app</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concordium ID: Get started with accounts and transactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Create a new account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Make a transaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Move an amount to the shielded balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Make a shielded transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Unshield an amount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Share your account address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">Inspect a release schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="explore-more.html">Concordium ID: Explore the <em>More</em> page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker (create blocks)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">See Also</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../see-also/third-party-licenses.html">Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Concordium ID: Get started with accounts and transactions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/docs/blob/main/source/testnet/guides/accounts-transactions.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concordium-id-get-started-with-accounts-and-transactions">
+<h1>Concordium ID: Get started with accounts and transactions<a class="headerlink" href="#concordium-id-get-started-with-accounts-and-transactions" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id9">Create a new account</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id10">Make a transaction</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">Move an amount to the shielded balance</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">Make a shielded transfer</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id13">Unshield an amount</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id14">Share your account address</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id15">Inspect a release schedule</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>Before following this guide you should have finished requesting your initial account and identity, as described in <a class="reference external" href="get-started.html">the previous chapter</a>.</p>
+<div class="section" id="id1">
+<h2>Create a new account<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Before getting into how accounts, their balances and transactions work, let’s create a second account. Start by going
+to the <em>Accounts</em> page. In the upper right corner you should see a <strong>plus sign</strong>. Press that to continue. On the next screen
+you will be asked to name your new account. In this example we will choose the name <em>Example Account 2</em>, but you can
+choose whichever name you want.</p>
+<a class="reference internal image-reference" href="../../_images/acc1.png"><img alt="../../_images/acc1.png" src="../../_images/acc1.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc2.png"><img alt="../../_images/acc2.png" src="../../_images/acc2.png" style="width: 32%;" /></a>
+<p>When pressing <strong>Next</strong>, you will be met with a screen on which you must decide which identity to use to open the new account.
+So far you probably only have one, but if you have more you can pick whichever identity you want from the list. By
+clicking on an identity, you will be taken to the next screen. When creating a non-initial account, i.e. an account
+that is not created upon identity creation, you can choose to reveal a number of <a class="reference internal" href="../see-also/glossary.html#glossary-attribute"><span class="std std-ref">Attributes</span></a>. This is not necessary,
+and if you do not have a specific reason to do so, we recommend not revealing any, as revealed attributes go on-chain and cannot be removed.</p>
+<a class="reference internal image-reference" href="../../_images/acc3.png"><img alt="../../_images/acc3.png" src="../../_images/acc3.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc4.png"><img alt="../../_images/acc4.png" src="../../_images/acc4.png" style="width: 32%;" /></a>
+<p>If you do press the <strong>Reveal account attributes button</strong>, you will be taken to the following page. You can tick
+off the attributes you would like to reveal, and then press <strong>Submit account</strong>. Pressing <strong>Submit account</strong> on this or the previous
+page, will take you to the final account creation page, which will give you a short overview and tell you that the account
+has been submitted.</p>
+<a class="reference internal image-reference" href="../../_images/acc5.png"><img alt="../../_images/acc5.png" src="../../_images/acc5.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc6.png"><img alt="../../_images/acc6.png" src="../../_images/acc6.png" style="width: 32%;" /></a>
+<p>By pressing <strong>Ok, thanks</strong> on the submission overview, you will be taken back to the account page. You might see that your new
+account is still pending, as it can take a few minutes to finalize on chain. If you have not tried to do so yet, you can
+try pressing the downwards facing arrow on one of the account cards, to see that it will fold out the card. This reveals
+two new pieces of information, <em>at disposal</em> and <em>staked</em>. The at disposal field will tell you how much of the accounts balance is
+at available for use at the given moment, and the staked amount you can read more about on the <a class="reference external" href="/testnet/references/manage-accounts.html">managing accounts</a> page.</p>
+<a class="reference internal image-reference" href="../../_images/acc7.png"><img alt="../../_images/acc7.png" src="../../_images/acc7.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc8.png"><img alt="../../_images/acc8.png" src="../../_images/acc8.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id2">
+<h2>Make a transaction<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Next up, try pressing the <strong>Balance</strong> area of your newly created account. On this
+screen you can see the current balance of your account, and at this point, it will also let you request 100 GTU to use on
+the Testnet. The request for 100 GTU is a Testnet feature, and will only be available on an account once. By pressing it,
+you will notice a transaction appearing. This will be pending for a bit, and then the 100 GTU will be added to your account.</p>
+<a class="reference internal image-reference" href="../../_images/acc9.png"><img alt="../../_images/acc9.png" src="../../_images/acc9.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc10.png"><img alt="../../_images/acc10.png" src="../../_images/acc10.png" style="width: 32%;" /></a>
+<p>Now that we have some GTU in our account, let’s try making a transaction. Press the <strong>SEND</strong> button to do that. On the next page
+you can input the amount you want to transfer, and select a recipient. In this example we will transfer 10 GTU.</p>
+<a class="reference internal image-reference" href="../../_images/acc11.png"><img alt="../../_images/acc11.png" src="../../_images/acc11.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc12.png"><img alt="../../_images/acc12.png" src="../../_images/acc12.png" style="width: 32%;" /></a>
+<p>Having decided on an amount, we will now choose the recipient. To do this, press the Select <strong>Recipient or shield amount</strong> button.
+On this page you can search for recipients in your <em>address book</em> or add your recipient by scanning the receiving account’s QR code.
+As you can see in the screenshot, we only have one recipient saved, <em>Example Account 1</em>. Above that, we have the option to <em>Shield an
+amount</em>, but we will get back to that later. We will choose <em>Example Account 1</em> as our recipient in this example.</p>
+<a class="reference internal image-reference" href="../../_images/acc13.png"><img alt="../../_images/acc13.png" src="../../_images/acc13.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc14.png"><img alt="../../_images/acc14.png" src="../../_images/acc14.png" style="width: 32%;" /></a>
+<p>With the amount and recipient chosen, we can press <strong>Send Funds</strong> to continue. By doing this we are met by a confirmation screen on
+which we can verify the amount, recipient and sending account.  By pressing <strong>Yes, send funds</strong>, we will verify ourselves using a passcode
+or biometrics, and then the transaction is submitted to the chain. It might take a bit for the transaction to finalize.</p>
+<a class="reference internal image-reference" href="../../_images/acc15.png"><img alt="../../_images/acc15.png" src="../../_images/acc15.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc16.png"><img alt="../../_images/acc16.png" src="../../_images/acc16.png" style="width: 32%;" /></a>
+<p>We can now see that the <em>Example Account 2</em>’s <em>Transfers</em> log shows that the amount has been deducted, plus a <em>fee</em>. All transactions will
+cost a fee, and depending on the type of transaction the fee might differ. Pressing the transaction will let you see more details.</p>
+<a class="reference internal image-reference" href="../../_images/acc17.png"><img alt="../../_images/acc17.png" src="../../_images/acc17.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc18.png"><img alt="../../_images/acc18.png" src="../../_images/acc18.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id3">
+<span id="id4"></span><h2>Move an amount to the shielded balance<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>If we go back to the <em>Accounts</em> screen, we can now see that the 10 GTU has been transferred to the <em>Balance</em> of <em>Example Account 1</em>. As you might
+have noticed before, the accounts also have a <a class="reference internal" href="../see-also/glossary.html#glossary-shielded-balance"><span class="std std-ref">Shielded balance</span></a>. In short, the shielded balance is for keeping shielded (encrypted) amounts
+of GTU on the account. Lets’ try adding some shielded GTU to our <em>Example Account 2</em>. Start by pressing the <strong>Shielded Balance</strong> area of the account card.</p>
+<a class="reference internal image-reference" href="../../_images/acc19.png"><img alt="../../_images/acc19.png" src="../../_images/acc19.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc20.png"><img alt="../../_images/acc20.png" src="../../_images/acc20.png" style="width: 32%;" /></a>
+<p>Next, press the <strong>SEND</strong> button again and enter an amount of GTU to <em>shield</em>, which is the action of adding some GTU to the <em>Shielded Balance</em>.
+After doing that, let’s press <strong>Select Recipient or shield amount</strong> again. Instead of choosing a recipient, this time we will press <strong>Shield amount</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/acc21.png"><img alt="../../_images/acc21.png" src="../../_images/acc21.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc22.png"><img alt="../../_images/acc22.png" src="../../_images/acc22.png" style="width: 32%;" /></a>
+<p>We can now continue and confirm the transaction, just like we did before with the regular transfer. The transaction might take a moment
+to finalize on the chain.</p>
+<a class="reference internal image-reference" href="../../_images/acc23.png"><img alt="../../_images/acc23.png" src="../../_images/acc23.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc24.png"><img alt="../../_images/acc24.png" src="../../_images/acc24.png" style="width: 32%;" /></a>
+<p>By going back to the <em>Accounts</em> page, it can now be seen that there is 10 GTU on the <em>Shielded Balance</em> of <em>Example Account 2</em>. If the <em>Shielded
+Balance</em> area of the account card is pressed, we can see that there is a <em>Shielded amount</em> transaction in the shielded balance transfers log.
+Making a shielding transaction will also cost a fee, but this fee will be deducted from the regular balance of the account. Try going
+back and have a look at the transfer log of the regular <em>Balance</em>.</p>
+<a class="reference internal image-reference" href="../../_images/acc25.png"><img alt="../../_images/acc25.png" src="../../_images/acc25.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc26.png"><img alt="../../_images/acc26.png" src="../../_images/acc26.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id5">
+<h2>Make a shielded transfer<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Having some shielded GTU available, we can now try making a <em>Shielded transfer</em>, which means that we can make a transfer with an encrypted
+amount of GTU. The first step is to browse to the <em>shielded balance</em> page of the account containing shielded GTU, if you are not already
+there. Then press the <strong>SEND</strong> button. You will now be able to enter an amount and choose a recipient. In this example we have chosen to
+transfer 2 GTU. When pressing the <strong>Select Recipient or unshield amount</strong> button, you will be able to choose a recipient. We will choose
+<em>Example Account 2</em> in this example.</p>
+<a class="reference internal image-reference" href="../../_images/acc27.png"><img alt="../../_images/acc27.png" src="../../_images/acc27.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc28.png"><img alt="../../_images/acc28.png" src="../../_images/acc28.png" style="width: 32%;" /></a>
+<p>With the amount and recipient in place, you can now continue. Just like the other transactions you will now see a confirmation screen,
+and by continuing from that you will be able to verify yourself with a passcode or biometrics, and then submit the shielded transaction
+to the chain. Again, the transaction might take a moment to finalize on the chain.</p>
+<a class="reference internal image-reference" href="../../_images/acc29.png"><img alt="../../_images/acc29.png" src="../../_images/acc29.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc30.png"><img alt="../../_images/acc30.png" src="../../_images/acc30.png" style="width: 32%;" /></a>
+<p>Now, if you go back to the <em>Accounts</em> screen, you should be able to see that a little shield has appeared beside the amount on the
+<em>Shielded Balance</em> of the receiving account. This indicates that there are newly received shielded transactions on the shielded balance.
+Try pressing the shielded balance, and notice that you have to enter a passcode or use your biometrics to enter it.
+This happens because you need to decrypt received shielded transactions, before you can see the amount.</p>
+<a class="reference internal image-reference" href="../../_images/acc31.png"><img alt="../../_images/acc31.png" src="../../_images/acc31.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc32.png"><img alt="../../_images/acc32.png" src="../../_images/acc32.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id6">
+<h2>Unshield an amount<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>After the decryption, the amount is now visible in the <em>shielded balance</em> and on the account card on the <em>Accounts</em> screen. Now, what if we
+want to move some GTU from a shielded balance to a regular balance? Let’s try to move the 2 GTU to the regular balance via the action of
+<em>Unshielding</em> an amount. To do this, press the <strong>SEND</strong> button in the shielded balance. Enter 2 as the amount, and then press <strong>Select Recipient
+or unshield amount</strong>. <strong>Choose Unshield amount</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/acc33.png"><img alt="../../_images/acc33.png" src="../../_images/acc33.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc34.png"><img alt="../../_images/acc34.png" src="../../_images/acc34.png" style="width: 32%;" /></a>
+<p>Now finish the transaction like you did with the other ones, and try browsing to the regular balance of the account to see the unshielding.
+If the transaction has finalized on chain, you should now be able to see that an <em>Unshielded amount</em> has ticked in on the regular balance.
+Notice how it is not 2 GTU, even though the amount you just unshielded was 2. This is because the fee for making any transaction, including
+an unshielding, will be deducted from the regular balance of the account responsible for the transaction.</p>
+<a class="reference internal image-reference" href="../../_images/acc35.png"><img alt="../../_images/acc35.png" src="../../_images/acc35.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc36.png"><img alt="../../_images/acc36.png" src="../../_images/acc36.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id7">
+<h2>Share your account address<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>If you want to share the address of your account, this can be easily done by pressing the <strong>Address</strong> button. This will take you to a page
+where you have multiple options of sharing the account address. Try pressing the <strong>Share</strong> button, and share your address with someone.</p>
+<a class="reference internal image-reference" href="../../_images/acc37.png"><img alt="../../_images/acc37.png" src="../../_images/acc37.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/acc38.png"><img alt="../../_images/acc38.png" src="../../_images/acc38.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="id8">
+<h2>Inspect a release schedule<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>On the Concordium blockchain it is possible to make a transaction that releases the transferred amount over time. This is called a
+<em>transfer with a schedule</em>. For now we will not get into how to make such a transfer as it cannot be done from Concordium ID,
+but let’s check out how a release schedule can be inspected. If you receive a transfer with a release schedule, you can press the
+<strong>burger menu</strong> in the upper right corner of the balance screen. This will allow you to press <strong>Release schedule</strong>, and by doing this you
+will be taken to a screen containing information on how much GTU will be released and when. If you want to learn more about how to
+make a transfer with a release schedule, you can have a look at the <a class="reference external" href="/testnet/references/concordium-client.html">Concordium Client</a> and <a class="reference external" href="/testnet/references/transactions.html">Transactions</a> pages.</p>
+<a class="reference internal image-reference" href="../../_images/rel1.png"><img alt="../../_images/rel1.png" src="../../_images/rel1.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/rel2.png"><img alt="../../_images/rel2.png" src="../../_images/rel2.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../_images/rel3.png"><img alt="../../_images/rel3.png" src="../../_images/rel3.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you run into any issues or have suggestions, post your question or
+feedback on <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="explore-more.html" class="btn btn-neutral float-right" title="Concordium ID: Explore the More page" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="get-started.html" class="btn btn-neutral float-left" title="Concordium ID: Get started with the app" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2020, Concordium.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

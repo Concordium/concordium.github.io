@@ -111,7 +111,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -235,7 +234,7 @@ schema for.</p>
 contract for building the schema.</p>
 <p>We can choose which parts of our smart contract to included in the schema.
 The options are to include a schema for the contract state, and/or for each of
-the parameters of <code class="docutils literal notranslate"><span class="pre">init</span></code>- and <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions.</p>
+the parameters of init and receive functions.</p>
 <p>Every type we want to include in the schema must implement the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code>
 trait. This is already done for all base types and some other types (see <a class="reference external" href="https://docs.rs/concordium-contracts-common/0.2.0/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls">list of types implementing the SchemaType</a>).
 For most other cases, it can also be achieved automatically, using
@@ -268,8 +267,8 @@ with the <code class="docutils literal notranslate"><span class="pre">#[contract
 </div>
 <div class="section" id="including-function-parameters">
 <h3>Including function parameters<a class="headerlink" href="#including-function-parameters" title="Permalink to this headline">¶</a></h3>
-<p>To generate and include the schema for parameters for <code class="docutils literal notranslate"><span class="pre">init</span></code>- and
-<code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions, we set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> attribute for the
+<p>To generate and include the schema for parameters for init  and
+receive functions, we set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> attribute for the
 <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code>- and <code class="docutils literal notranslate"><span class="pre">#[receive(..)]</span></code>-macro:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>

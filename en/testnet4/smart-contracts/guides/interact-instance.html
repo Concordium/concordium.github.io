@@ -111,7 +111,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -219,7 +218,7 @@
   <div class="section" id="interact-with-a-smart-contract-instance">
 <span id="interact-instance"></span><h1>Interact with a smart contract instance<a class="headerlink" href="#interact-with-a-smart-contract-instance" title="Permalink to this headline">¶</a></h1>
 <p>This guide will show you, how to interact with a smart contract instance, which
-means triggering a <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function that, possibly, updates the state of the
+means triggering a receive function that, possibly, updates the state of the
 instance.</p>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
@@ -238,13 +237,13 @@ for the transactions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The cost of this transaction depends on the size of the parameters sent to
-the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function and the complexity of the function itself.</p>
+the receive function and the complexity of the function itself.</p>
 </div>
 </div>
 <div class="section" id="interaction">
 <h2>Interaction<a class="headerlink" href="#interaction" title="Permalink to this headline">¶</a></h2>
 <p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the parameterless
-<code class="docutils literal notranslate"><span class="pre">receive</span></code>-function <code class="docutils literal notranslate"><span class="pre">my_receive</span></code> while allowing up to 1000 energy to be used,
+receive function <code class="docutils literal notranslate"><span class="pre">my_receive</span></code> while allowing up to 1000 energy to be used,
 run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_receive --energy <span class="m">1000</span>
 </pre></div>
@@ -261,7 +260,7 @@ The schema is used to serialize the JSON into binary.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">Read more about why and how to use smart contract schemas</span></a>.</p>
 </div>
-<p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function
+<p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.json</span></code> in JSON
 format, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_parameter_receive <span class="se">\</span>
@@ -311,7 +310,7 @@ using the <code class="docutils literal notranslate"><span class="pre">--schema<
 <h3>Passing parameters in binary format<a class="headerlink" href="#passing-parameters-in-binary-format" title="Permalink to this headline">¶</a></h3>
 <p>When passing parameters in binary format, a
 <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">contract schema</span></a> is not needed.</p>
-<p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function
+<p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.bin</span></code> in binary
 format, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_parameter_receive <span class="se">\</span>

@@ -111,7 +111,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -224,7 +223,7 @@
 when <a class="reference internal" href="../guides/local-simulate.html#local-simulate"><span class="std std-ref">simulating contract functions locally</span></a>.</p>
 <div class="section" id="init-context">
 <h2>Init context<a class="headerlink" href="#init-context" title="Permalink to this headline">¶</a></h2>
-<p>The context accessible in an <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p>
+<p>The context accessible in an init function.</p>
 <p>Example of context</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -246,7 +245,7 @@ reference of the fields.</p>
 </div>
 <div class="section" id="initorigin">
 <h3><code class="docutils literal notranslate"><span class="pre">initOrigin</span></code><a class="headerlink" href="#initorigin" title="Permalink to this headline">¶</a></h3>
-<p>The account address which triggered the invocation of the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function, by
+<p>The account address which triggered the invocation of the init function, by
 instantiating the smart contract.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
@@ -261,7 +260,7 @@ reference a policy.</p>
 </div>
 <div class="section" id="receive-context">
 <h2>Receive context<a class="headerlink" href="#receive-context" title="Permalink to this headline">¶</a></h2>
-<p>The context accessible in a <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p>
+<p>The context accessible in a receive function.</p>
 <p>Example of context:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -291,7 +290,7 @@ reference of the fields.</p>
 <div class="section" id="invoker">
 <h3><code class="docutils literal notranslate"><span class="pre">invoker</span></code><a class="headerlink" href="#invoker" title="Permalink to this headline">¶</a></h3>
 <p>The account address which made the transaction triggering the invocation of the
-<code class="docutils literal notranslate"><span class="pre">receive</span></code>-function, by updating a smart contract instance.</p>
+receive function, by updating a smart contract instance.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
 </pre></div>
@@ -299,7 +298,7 @@ reference of the fields.</p>
 </div>
 <div class="section" id="sender">
 <h3><code class="docutils literal notranslate"><span class="pre">sender</span></code><a class="headerlink" href="#sender" title="Permalink to this headline">¶</a></h3>
-<p>The address of the sender of the message triggering the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.
+<p>The address of the sender of the message triggering the receive function.
 Can be either a smart contract instance or an account address, given as a JSON
 object.</p>
 <p>Example of account address:</p>

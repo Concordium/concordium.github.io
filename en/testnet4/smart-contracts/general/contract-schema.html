@@ -117,7 +117,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -232,7 +231,7 @@ Rust, see <a class="reference internal" href="../guides/build-schema.html#build-
 <div class="section" id="why-use-a-contract-schema">
 <h2>Why use a contract schema<a class="headerlink" href="#why-use-a-contract-schema" title="Permalink to this headline">¶</a></h2>
 <p>Data on the blockchain, such as the state of an instance and parameters passed
-to <code class="docutils literal notranslate"><span class="pre">init</span></code>- and <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions, is serialized as a sequence of bytes.
+to init and receive functions, is serialized as a sequence of bytes.
 The serialization is optimized for efficiency, rather than human readability.</p>
 <p>Usually these bytes have structure and this structure is known to the smart
 contract as part of the contract functions, but outside of these functions it
@@ -245,16 +244,16 @@ in a <em>smart contract schema</em>, which describes how to make structure from 
 bytes, and can be used by external tools.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Tools like <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> can use a schema to serialize JSON into
-bytes for when <a class="reference internal" href="../guides/initialize-contract.html#init-passing-parameter-json"><span class="std std-ref">specifying a parameter</span></a>,
-and deserializing the state of contract instances to JSON.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool can use a schema to
+<a class="reference internal" href="../guides/initialize-contract.html#init-passing-parameter-json"><span class="std std-ref">serialize JSON parameters</span></a>
+and to deserialize the state of contract instances to JSON.</p>
 </div>
-<p>The schema is then either embedded into the smart contract module deployed
+<p>The schema is then either embedded into a smart contract module that is deployed
 to the chain, or is written to a file and passed around off-chain.</p>
 </div>
 <div class="section" id="should-you-embed-or-write-to-a-file">
 <h2>Should you embed or write to a file?<a class="headerlink" href="#should-you-embed-or-write-to-a-file" title="Permalink to this headline">¶</a></h2>
-<p>Whether a contract schema should be embedded or written to a file, depends on
+<p>Whether a contract schema should be embedded or written to a file depends on
 your situation.</p>
 <p>Embedding the schema into the smart contract module distributes the schema
 together with the contract ensuring the correct schema is being used and also
@@ -266,16 +265,19 @@ size of the smart contract itself.</p>
 <p>Having the schema in a separate file allows you to have the schema without
 paying for the extra bytes when deploying.
 The downside is that you instead have to distribute the schema file through some
-other channel and ensure contract users are using the correct file with your
+other channel and ensure that contract users are using the correct file with your
 smart contract.</p>
 </div>
 <div class="section" id="the-schema-format">
 <h2>The schema format<a class="headerlink" href="#the-schema-format" title="Permalink to this headline">¶</a></h2>
-<p>A schema can contain the structure information for a smart contract module
-and for each contract it can contain the description of the state and
-parameters for <code class="docutils literal notranslate"><span class="pre">init</span></code> and each of the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions.
-Each of these descriptions are referred to as a <em>schema type</em> and are always
-optional to include in the schema.</p>
+<p>A schema can contain</p>
+<ul class="simple">
+<li><p>structure information for a smart contract module</p></li>
+<li><p>description of smart-contract state</p></li>
+<li><p>parameters for init and receive functions of a smart contract.</p></li>
+</ul>
+<p>Each of these descriptions is referred to as a <em>schema type</em>. Schema types are always
+optional to include in a schema.</p>
 <p>Currently the supported schema types are inspired by what is commonly used in
 the Rust programming language:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -310,7 +312,7 @@ the Rust programming language:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Where <code class="docutils literal notranslate"><span class="pre">SizeLength</span></code> describes the number of bytes used to describe the length
+<p>Here, <code class="docutils literal notranslate"><span class="pre">SizeLength</span></code> describes the number of bytes used to describe the length
 of a variable length type, such as <code class="docutils literal notranslate"><span class="pre">List</span></code>.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">SizeLength</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">One</span><span class="p">,</span><span class="w"></span>
@@ -320,7 +322,7 @@ of a variable length type, such as <code class="docutils literal notranslate"><s
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>For a reference to how a schema type is serialized into bytes, we refer the
+<p>For a reference on how a schema type is serialized into bytes, we refer the
 reader to the <a class="reference external" href="https://gitlab.com/Concordium/smart-contracts/-/blob/master/concordium-contracts-common/src/schema.rs">implementation in Rust</a>.</p>
 </div>
 <div class="section" id="embedding-schemas-on-chain">

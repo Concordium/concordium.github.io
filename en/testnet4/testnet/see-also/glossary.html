@@ -102,9 +102,10 @@
             
               <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/accounts-transactions.html">Concordium ID: Get started with accounts and transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/explore-more.html">Concordium ID: Explore the <em>More</em> page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
@@ -112,7 +113,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
@@ -122,7 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting and known issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary of Concordium Terms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#account">Account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#attribute">Attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributes">Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#baker">Baker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#best-block">Best block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#best-chain">Best chain</a></li>
@@ -130,6 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#catch-up">Catch-up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chain">Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#consensus">Consensus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#credential">Credential</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#decryption-key">Decryption key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#encrypted-amount">Encrypted amount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#encryption-key">Encryption key</a></li>
@@ -139,7 +141,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#global-transaction-unit-gtu">Global Transaction Unit (GTU)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#glossary-identity">Identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#glossary-identity-issuer">Identity Issuer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary-identity-object">Identity Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#glossary-identity-provider">Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-account">Initial Account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#leader-election">Leader Election</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lottery-power">Lottery Power</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mainnet">Mainnet</a></li>
@@ -148,11 +152,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#off-chain">Off-chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#on-chain">On-chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shielded-balance">Shielded balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shielded-transfer">Shielded transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shielding">Shielding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#slot">Slot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#staked-amount">Staked Amount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testnet">Testnet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transaction">Transaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transfer-with-schedule">Transfer with schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transaction-sequence-number">Transaction Sequence Number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unshielding">Unshielding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#winning-probability">Winning probability</a></li>
@@ -245,8 +251,8 @@ with the account holder’s <a class="reference internal" href="#glossary-identi
 for anonymity. This anonymity can only be revoked by anonymity revokers, in
 cooperation with the account’s <a class="reference internal" href="#glossary-identity-provider"><span class="std std-ref">identity provider</span></a>.</p>
 </div>
-<div class="section" id="attribute">
-<span id="glossary-attribute"></span><h2>Attribute<a class="headerlink" href="#attribute" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributes">
+<span id="glossary-attribute"></span><h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <p>User data, such as date of birth or country of residence, that is associated
 with a user <a class="reference internal" href="#glossary-identity"><span class="std std-ref">identity</span></a>. Users can choose which attributes should be revealed in
 each of their accounts.</p>
@@ -292,6 +298,14 @@ and the <a class="reference internal" href="#glossary-consensus"><span class="st
 <span id="glossary-consensus"></span><h2>Consensus<a class="headerlink" href="#consensus" title="Permalink to this headline">¶</a></h2>
 <p>The process by which nodes agree which <a class="reference internal" href="#glossary-transaction"><span class="std std-ref">transaction</span></a> have occurred and in what
 order. This consists of <a class="reference internal" href="#glossary-baker"><span class="std std-ref">baking</span></a> and <a class="reference internal" href="#glossary-finalization"><span class="std std-ref">finalization</span></a>.</p>
+</div>
+<div class="section" id="credential">
+<span id="glossary-credential"></span><h2>Credential<a class="headerlink" href="#credential" title="Permalink to this headline">¶</a></h2>
+<p>A certificate derived from the <a class="reference internal" href="#glossary-identity-object"><span class="std std-ref">Identity Object</span></a> that proves that
+the owner has been verified by an identity provider. The key feature of the
+credential is that it <strong>does not</strong> identify the owner to the identity provider,
+nor to any other single entity, however it contains enough information to allow
+anonymity revokers in concert with the identity provider to find the owner.</p>
 </div>
 <div class="section" id="decryption-key">
 <span id="glossary-decryption-key"></span><h2>Decryption key<a class="headerlink" href="#decryption-key" title="Permalink to this headline">¶</a></h2>
@@ -355,11 +369,27 @@ identity revealed in response to a valid request from a government authority.</p
 <span id="identity-issuer"></span><h2>Identity Issuer<a class="headerlink" href="#glossary-identity-issuer" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference internal" href="#glossary-identity-provider"><span class="std std-ref">identity provider</span></a>.</p>
 </div>
+<div class="section" id="glossary-identity-object">
+<span id="identity-object"></span><h2>Identity Object<a class="headerlink" href="#glossary-identity-object" title="Permalink to this headline">¶</a></h2>
+<p>An object issued by the <a class="reference internal" href="#glossary-identity-provider"><span class="std std-ref">Identity Provider</span></a> to the user which
+allows the user to prove to third parties that their real life identity has been
+verified by a trusted third party.</p>
+</div>
 <div class="section" id="glossary-identity-provider">
 <span id="identity-provider"></span><h2>Identity Provider<a class="headerlink" href="#glossary-identity-provider" title="Permalink to this headline">¶</a></h2>
 <p>A person or organization that performs off-chain identification of users. Users
 are required to obtain an identity object from an identity provider in order to
 open an account on the Concordium Platform.</p>
+</div>
+<div class="section" id="initial-account">
+<span id="glossary-initial-account"></span><h2>Initial Account<a class="headerlink" href="#initial-account" title="Permalink to this headline">¶</a></h2>
+<p>An intial account is an account submitted to the chain by the identity provider
+during the process of requesting a new identity. The initial account can
+perform all of the same actions as a regular account, however the real-life
+identity of the initial-account owner is known by the identity provider
+who submitted it to the chain. In contrast, the real-life identity of the
+owner of a regular account can only be ascertained by anonymity revokers working
+in concert with the identity provider.</p>
 </div>
 <div class="section" id="leader-election">
 <span id="glossary-leader-election"></span><h2>Leader Election<a class="headerlink" href="#leader-election" title="Permalink to this headline">¶</a></h2>
@@ -446,6 +476,12 @@ receives an encrypted transfer. When the account makes an encrypted transfer it
 can use a number of encrypted amounts from this list as inputs to the transfer.</p>
 </div>
 </div>
+<div class="section" id="shielded-transfer">
+<span id="glossary-shielded-transfer"></span><h2>Shielded transfer<a class="headerlink" href="#shielded-transfer" title="Permalink to this headline">¶</a></h2>
+<p>Transfer from <a class="reference internal" href="#glossary-shielded-balance"><span class="std std-ref">shielded balance</span></a> of an account
+to a <a class="reference internal" href="#glossary-shielded-balance"><span class="std std-ref">shielded balance</span></a> of another account.
+The amount that is transferred is only visible to the sender and the receiver.</p>
+</div>
 <div class="section" id="shielding">
 <span id="glossary-shielding"></span><h2>Shielding<a class="headerlink" href="#shielding" title="Permalink to this headline">¶</a></h2>
 <p>The action of transferring a part of the public balance to the <a class="reference internal" href="#glossary-shielded-balance"><span class="std std-ref">shielded balance</span></a>.</p>
@@ -480,6 +516,14 @@ sender account and a <a class="reference internal" href="#glossary-transaction-s
 sender account must sign the transaction to authorize it. (The exception to this
 is a credential deployment transaction that creates a new account, which does
 not have a sender account.)</p>
+</div>
+<div class="section" id="transfer-with-schedule">
+<span id="glossary-transfer-with-schedule"></span><h2>Transfer with schedule<a class="headerlink" href="#transfer-with-schedule" title="Permalink to this headline">¶</a></h2>
+<p>A special kind of transfer of GTU that makes the GTU amount available to the
+receiver only in a limited way until a specified point in time. The point in
+time is specified as part of a transfer. The GTU are immediately owned by the
+receiver account, and the transfer cannot be revoked, but the receiver cannot
+spend the GTU until the specified time.</p>
 </div>
 <div class="section" id="transaction-sequence-number">
 <span id="glossary-transaction-sequence-number"></span><h2>Transaction Sequence Number<a class="headerlink" href="#transaction-sequence-number" title="Permalink to this headline">¶</a></h2>

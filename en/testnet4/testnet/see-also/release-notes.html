@@ -102,9 +102,10 @@
             
               <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/accounts-transactions.html">Concordium ID: Get started with accounts and transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/explore-more.html">Concordium ID: Explore the <em>More</em> page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
@@ -112,7 +113,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
@@ -122,6 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting and known issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#open-testnet-v4">Open Testnet v4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v3-update-2">Open Testnet v3 update 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v3-update-1">Open Testnet v3 update 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v3">Open Testnet v3</a></li>
@@ -208,25 +210,55 @@
 <h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#open-testnet-v3-update-2" id="id1">Open Testnet v3 update 2</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3-update-1" id="id2">Open Testnet v3 update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3" id="id3">Open Testnet v3</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v2-update-1" id="id4">Open Testnet v2 update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v2" id="id5">Open Testnet v2</a></p></li>
-<li><p><a class="reference internal" href="#updates" id="id6">Updates</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v1" id="id7">Open Testnet v1</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v4" id="id1">Open Testnet v4</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3-update-2" id="id2">Open Testnet v3 update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3-update-1" id="id3">Open Testnet v3 update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3" id="id4">Open Testnet v3</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v2-update-1" id="id5">Open Testnet v2 update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v2" id="id6">Open Testnet v2</a></p></li>
+<li><p><a class="reference internal" href="#updates" id="id7">Updates</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v1" id="id8">Open Testnet v1</a></p>
 <ul>
-<li><p><a class="reference internal" href="#features" id="id8">Features</a></p></li>
+<li><p><a class="reference internal" href="#features" id="id9">Features</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#concordium-nodes" id="id9">Concordium Nodes</a></p></li>
+<li><p><a class="reference internal" href="#concordium-nodes" id="id10">Concordium Nodes</a></p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v4">
+<h2>Open Testnet v4<a class="headerlink" href="#open-testnet-v4" title="Permalink to this headline">¶</a></h2>
+<p>January 13th, 2020</p>
+<p>Smart contracts:</p>
+<ul class="simple">
+<li><p>Smart contracts support on chain</p></li>
+<li><p>Rust supported as off-chain Smart Contract language</p></li>
+<li><p><a class="reference external" href="https://crates.io/crates/concordium-std">Concordium-std</a> library added for developing smart contracts in Rust.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cargo-concordium</span></code> tool for building and testing smart contracts off-chain</p></li>
+<li><p>Documentation for smart contracts added to <a class="reference external" href="https://concordium.github.io/en/testnet4/smart-contracts/index.html">developer documentation</a></p></li>
+<li><p>Smart Contract transactions added to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code></p></li>
+</ul>
+<p>Tokenomics (to match tokenomics model):</p>
+<ul class="simple">
+<li><p>Rewards for baking and finalization changed</p></li>
+<li><p>Minting changed</p></li>
+<li><p>Extended the list of adjustable chain parameters</p></li>
+<li><p>Updated <a class="reference external" href="https://dashboard.testnet.concordium.com/chain">network dashboard block explorer</a> to include new info</p></li>
+<li><p>Amount lock-up transaction with schedule added</p></li>
+<li><p>Staking changed so staked amount is locked</p></li>
+<li><p>Mobile app updated to show staking and amount lockup schedules</p></li>
+<li><p>Delegation removed</p></li>
+</ul>
+<p>ID layer:</p>
+<ul class="simple">
+<li><p>Initial account creation added to ID provider process</p></li>
+<li><p>Mobile app updated to support initial account creation</p></li>
 </ul>
 </div>
 <div class="section" id="open-testnet-v3-update-2">
 <h2>Open Testnet v3 update 2<a class="headerlink" href="#open-testnet-v3-update-2" title="Permalink to this headline">¶</a></h2>
 <p>October 16th, 2020</p>
 <p>A new Mac version is released after fixing an issue with adding a baker on the
-dashboard. The <a class="reference external" href="/testnet/docs/downloads">download page</a> has been updated accordingly. Please download
+dashboard. The <a class="reference internal" href="downloads.html#downloads"><span class="std std-ref">downloads page</span></a> has been updated accordingly. Please download
 the latest Mac release, then stop your node, reset your data, and restart your
 node.</p>
 </div>
@@ -235,7 +267,7 @@ node.</p>
 <p>October 8th, 2020</p>
 <p>New mobile wallets are released after some bug fixes on both iOS and Android.
 The released versions are ConcordiumID version 0.1.52 for iOS and version 0.5.24
-for Android. The <a class="reference external" href="/testnet/docs/downloads">download page</a> has been updated accordingly. The node
+for Android. The <a class="reference internal" href="downloads.html#downloads"><span class="std std-ref">downloads page</span></a> has been updated accordingly. The node
 software is unaffected by this update.</p>
 </div>
 <div class="section" id="open-testnet-v3">
@@ -244,14 +276,14 @@ software is unaffected by this update.</p>
 <ul class="simple">
 <li><p>Chain visualization: The connection of blocks has been made more
 stable to ensure that it progresses smoothly.</p></li>
-<li><p><a class="reference external" href="/testnet/docs/downloads">iOS Concordium ID</a> app available.</p></li>
-<li><p><a class="reference external" href="/testnet/docs/quickstart-export-import">Added import to app</a>. It is now possible to import a file that has
+<li><p><a class="reference internal" href="downloads.html#concordium-id"><span class="std std-ref">iOS Concordium ID</span></a> app available.</p></li>
+<li><p>Added import to app. It is now possible to import a file that has
 previously been exported. This enables moving identities and accounts
 to other mobile devices and restoring from backup.</p></li>
 <li><p>µGTU. The smallest unit has been changed from 10-4 to 10-6.</p></li>
 <li><p>Bulletproofs. The core blockchain has been updated to support use of
 bulletproofs.</p></li>
-<li><p><a class="reference external" href="/testnet/docs/quickstart-shielded-transfers">Encrypted(shielded) amounts and transfers</a>. Support for shielded
+<li><p><a class="reference internal" href="../guides/accounts-transactions.html#id3"><span class="std std-ref">Encrypted(shielded) amounts and transfers</span></a>. Support for shielded
 transactions has been added to the core blockchain. Support for
 sending and receiving shielded amounts are added to the mobile apps
 and the Concordium client.</p></li>
@@ -265,25 +297,24 @@ and the Concordium client.</p></li>
 <p>An issue was identified in the Concordium ID app for Android. When using an
 identification document with no expiry date (such as a Swiss driving license)
 the app will crash upon completion of the ID issuance process. An app update has
-been issued and is available <a class="reference external" href="https://developer.concordium.com/testnet/docs/downloads#concordium-id">here</a>. The node software is unaffected by this
+been issued and is available here (No longer available - See the <a class="reference internal" href="downloads.html#downloads"><span class="std std-ref">downloads page</span></a> for the newest app). The node software is unaffected by this
 update.</p>
 </div>
 <div class="section" id="open-testnet-v2">
 <h2>Open Testnet v2<a class="headerlink" href="#open-testnet-v2" title="Permalink to this headline">¶</a></h2>
 <p>June 29, 2020</p>
-<p><em>Follow our instructions on how to</em><a class="reference external" href="/testnet/docs/quickstart-node#upgrade-from-open-testnet-v1">upgrade</a><em>to Open Testnet v2
-from v1.</em></p>
+<p>Follow our instructions on how to upgrade to Open Testnet v2
+from v1.</p>
 <p>The Testnet v2 is the second public release of the Concordium Blockchain. Open
 Testnet aims at demonstrating the technology behind the Concordium Blockchain.
 This version is not feature-complete compared to the expected features for the
 first Mainnet version of the Concordium Blockchain.</p>
-<p>This version of the Testnet is running <a class="reference external" href="/testnet/docs/downloads#concordium-node-and-client">Concordium Node version
-0.2.13</a>.</p>
+<p>This version of the Testnet is running Concordium Node version 0.2.13.</p>
 </div>
 <div class="section" id="updates">
 <h2>Updates<a class="headerlink" href="#updates" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="/testnet/docs/downloads#concordium-id">Concordium ID</a>, an Android mobile app for accessing identities and
+<li><p><a class="reference internal" href="downloads.html#concordium-id"><span class="std std-ref">Concordium ID</span></a>, an Android mobile app for accessing identities and
 accounts</p></li>
 <li><p>Identity provider integration in Android mobile app</p>
 <ul>
@@ -304,7 +335,7 @@ removing the need to do a complete catch-up.</p></li>
 <li><p>Storage of the chain on nodes has been optimized</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="/testnet/docs/downloads#concordium-node-and-client">Concordium Node and Client Software</a> improvements. Extended in the
+<li><p><a class="reference internal" href="downloads.html#concordium-node-and-client"><span class="std std-ref">Concordium Node and Client Software</span></a> improvements. Extended in the
 following areas:</p>
 <ul>
 <li><p>Managing bakers</p></li>
@@ -315,7 +346,7 @@ following areas:</p>
 </li>
 <li><p>Block explorer added to dashboard</p></li>
 <li><p>Node dashboard with support for becoming a baker</p></li>
-<li><p>Improvements to the “”” , networkDashboardLink , “””</p></li>
+<li><p>Improvements to the <a class="reference external" href="https://dashboard.testnet.concordium.com">Network Dashboard</a></p></li>
 </ul>
 </div>
 <div class="section" id="open-testnet-v1">

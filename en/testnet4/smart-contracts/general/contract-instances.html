@@ -119,7 +119,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/first-contract.html">My first smart contract: Counter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contract development guides</span></p>
@@ -225,20 +224,19 @@
 <p>A <strong>smart contract instance</strong> is a smart contract module together with a
 specific state and an amount of GTU tokens.
 Multiple smart contract instances can be created from the same module.
-For example, for the auction contract, there could be multiple instances, each
+For example, for an <a class="reference internal" href="introduction.html#auction"><span class="std std-ref">auction</span></a> contract, there could be multiple instances, each
 one dedicated to bidding for a specific item and with its own participants.</p>
 <p>Smart contract instances can be created from a deployed <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">smart contract
 module</span></a> via the <code class="docutils literal notranslate"><span class="pre">init</span></code> transaction which invokes the
-requested function in the <em>smart contract module</em>. This function can take a
+requested function in the smart contract module. This function can take a
 parameter.
 Its end result is required to be the initial smart contract state of the
 instance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A smart contract instance is often just called an <em>instance</em>, when it is clear
-from the context that it is a smart contract instance.</p>
+<p>A smart contract instance is often just called an <em>instance</em>.</p>
 </div>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id3">
 <div class="graphviz"><object data="../../_images/graphviz-a1969276dd5f6724d08d587e993efa9348d223c5.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph G {
     rankdir=&quot;BT&quot;
@@ -267,36 +265,36 @@ from the context that it is a smart contract instance.</p>
     Boardgame:n -&gt; Crowdfunding;
 }</p></object></div>
 <p class="caption"><span class="caption-text">Example of smart contract module containing two smart contracts:
-Escrow and Crowdfunding. Each contract has two instances.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+Escrow and Crowdfunding. Each contract has two instances.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="state-of-a-smart-contract-instance">
 <h2>State of a smart contract instance<a class="headerlink" href="#state-of-a-smart-contract-instance" title="Permalink to this headline">¶</a></h2>
 <p>The state of a smart contract instance consists of two parts, the user-defined
 state and the amount of GTU the contract holds, i.e., its <em>balance</em>. When
 referring to state we typically mean only the user-defined state. The reason for
-treating the GTU amount separately is that the GTU can only be spent and
-received according to rules of the network, e.g., contracts cannot create new
-GTU, nor can they destroy it.</p>
+treating the GTU amount separately is that GTU can only be spent and
+received according to rules of the network, e.g., contracts cannot create
+or destroy GTU tokens.</p>
 </div>
 <div class="section" id="instantiating-a-smart-contract-on-chain">
 <span id="contract-instances-init-on-chain"></span><h2>Instantiating a smart contract on-chain<a class="headerlink" href="#instantiating-a-smart-contract-on-chain" title="Permalink to this headline">¶</a></h2>
 <p>Every smart contract must contain a function for creating smart contract
-instances. Such a function is referred to as the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p>
+instances. Such a function is referred to as the <em>init function</em>.</p>
 <p>To create a smart contract instance, an account sends a special transaction with
 a reference to the deployed smart contract module and the name of the
-<code class="docutils literal notranslate"><span class="pre">init</span></code>-function to use for instantiation.</p>
+init function to use for instantiation.</p>
 <p>The transaction can also include an amount of GTU, which is added to the balance
-of the smart contract instance. A parameter for the function is supplied as part
+of the smart contract instance. A parameter to the function is supplied as part
 of the transaction in the form of an array of bytes.</p>
-<p>To summarize; the transaction includes:</p>
+<p>To summarize, the transaction includes:</p>
 <ul class="simple">
 <li><p>Reference to the smart contract module.</p></li>
-<li><p>Name of the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p></li>
-<li><p>Parameter for the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function.</p></li>
+<li><p>Name of the init function.</p></li>
+<li><p>Parameter to the init function.</p></li>
 <li><p>Amount of GTU for the instance.</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">init</span></code> function can signal that it does not wish to create a new instance
-with those parameters. If the <code class="docutils literal notranslate"><span class="pre">init</span></code>-function accepts the parameters, it sets
+<p>The init function can signal that it does not wish to create a new instance
+with those parameters. If the init function accepts the parameters, it sets
 up the initial state of the instance and its balance. The instance is given an
 address on the chain and the account who sent the transaction becomes the owner
 of the instance. If the function rejects, no instance is created and only the
@@ -309,12 +307,12 @@ contract in practice.</p>
 </div>
 <div class="section" id="instance-state">
 <h2>Instance state<a class="headerlink" href="#instance-state" title="Permalink to this headline">¶</a></h2>
-<p>Every smart contract instance holds its own state, which is represented on-chain
+<p>Every smart contract instance holds its own state which is represented on-chain
 as an array of bytes. The instance uses functions provided by the host
 environment to read, write and resize the state.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-state"><span class="std std-ref">Smart contract instance state</span></a> for the reference of these functions.</p>
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-state"><span class="std std-ref">Smart contract instance state</span></a> for a reference of these functions.</p>
 </div>
 <p>Smart contract state is limited in size. Currently the limit on smart contract
 state is 16KiB.</p>
@@ -326,29 +324,24 @@ state is 16KiB.</p>
 <div class="section" id="interacting-with-an-instance">
 <h2>Interacting with an instance<a class="headerlink" href="#interacting-with-an-instance" title="Permalink to this headline">¶</a></h2>
 <p>A smart contract can expose zero or more functions for interacting with an
-instance.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Functions for interacting with a smart contract instance are referred to as
-<code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions.</p>
-</div>
-<p>Just like with <code class="docutils literal notranslate"><span class="pre">init</span></code>-functions, the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions are triggered using
+instance, referred to as <em>receive functions</em>.</p>
+<p>Just like with init functions, receive functions are triggered using
 transactions, which contain some amount of GTU for the contract and an argument
-for the function in the form of bytes.</p>
-<p>To summarize, the transaction includes:</p>
+to the function in the form of bytes.</p>
+<p>To summarize, a transaction for smart-contract interaction includes:</p>
 <ul class="simple">
 <li><p>Address to smart contract instance.</p></li>
-<li><p>Name of the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p></li>
-<li><p>Parameter for <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function.</p></li>
+<li><p>Name of the receive function.</p></li>
+<li><p>Parameter to the receive function.</p></li>
 <li><p>Amount of GTU for the instance.</p></li>
 </ul>
 </div>
 <div class="section" id="logging-events">
 <span id="contract-instance-actions"></span><h2>Logging events<a class="headerlink" href="#logging-events" title="Permalink to this headline">¶</a></h2>
 <p>Events can be logged during the execution of smart contract functions. This is
-the case for both <code class="docutils literal notranslate"><span class="pre">init</span></code>- and <code class="docutils literal notranslate"><span class="pre">receive</span></code>-functions. The logs are designed for
+the case for both init and receive functions. The logs are designed for
 off-chain use, so that actors outside of the chain can monitor for events and
-react on them. Logs are not accessible to smart contracts, or any other actor on
+react to them. Logs are not accessible to smart contracts, or any other actor on
 the chain. Events can be logged using a function supplied by the host
 environment.</p>
 <div class="admonition seealso">
@@ -362,31 +355,43 @@ reduce cost.</p>
 </div>
 <div class="section" id="action-description">
 <h2>Action description<a class="headerlink" href="#action-description" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function returns a <em>description of actions</em>, to be executed and
-the host environment then attempts to execute these actions on the chain.</p>
-<p>The possible actions a contract can produce are:</p>
+<p>A receive function returns a <em>description of actions</em> to be executed by
+the host environment on the chain.</p>
+<p>The possible actions that a contract can produce are:</p>
 <ul class="simple">
-<li><p><strong>Accept</strong> Accept incoming GTU. Always succeeds.</p></li>
-<li><p><strong>Simple transfer</strong> Send some amount of GTU from the instance to the specified
-account.</p></li>
-<li><p><strong>Send</strong> Invoke <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function of the specified smart contract instance,
+<li><p><strong>Accept</strong> is a primitive action that always succeeds.</p></li>
+<li><p><strong>Simple transfer</strong> of GTU from the instance to the specified account.</p></li>
+<li><p><strong>Send</strong>: invoke receive function of the specified smart contract instance,
 and optionally transfer some GTU from the sending instance to the receiving
 instance.</p></li>
 </ul>
-<p>If the actions fail to execute, the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function is reverted, leaving
-the state and the balance of the instance unchanged. In such a case the only
-visible artifacts are the transaction triggering the <code class="docutils literal notranslate"><span class="pre">receive</span></code>-function resulting
-in a rejection and the payment for the execution.</p>
-<p>Action descriptions can be combined to describe a sequence of actions to be
-executed and have the second action to be executed depending on the first
-action.</p>
+<p>If an action fails to execute, the receive function is reverted, leaving
+the state and the balance of the instance unchanged. However,</p>
 <ul class="simple">
-<li><p><strong>And</strong> Try the second action <strong>if</strong> the first succeeds, otherwise fail.</p></li>
-<li><p><strong>Or</strong> Try the second action <strong>only if</strong> the first action fails.</p></li>
+<li><p>the transaction that triggers the (unsuccessful) receive function is still added to the chain, and</p></li>
+<li><p>the transaction cost, including the cost of executing the failed action,
+is deducted from the sending account.</p></li>
 </ul>
-<p>These combinators allow the action description to form a decision tree, where
-the leafs are the actions and the nodes are combinators.</p>
-<div class="figure align-center" id="id2">
+<div class="section" id="processing-multiple-action-descriptions">
+<h3>Processing multiple action descriptions<a class="headerlink" href="#processing-multiple-action-descriptions" title="Permalink to this headline">¶</a></h3>
+<p>You can chain action descriptions using the <strong>and</strong> combinator.
+An action-description sequence <code class="docutils literal notranslate"><span class="pre">A</span></code> <strong>and</strong> <code class="docutils literal notranslate"><span class="pre">B</span></code></p>
+<ol class="arabic simple">
+<li><p>Executes <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> succeeds, executes <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">B</span></code> fails the whole action sequence fails (and the result of <code class="docutils literal notranslate"><span class="pre">A</span></code> is reverted).</p></li>
+</ol>
+</div>
+<div class="section" id="handling-errors">
+<h3>Handling errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>or</strong> combinator to execute an action in case that a previous action fails.
+An action description <code class="docutils literal notranslate"><span class="pre">A</span></code> <strong>or</strong> <code class="docutils literal notranslate"><span class="pre">B</span></code></p>
+<ol class="arabic simple">
+<li><p>Executes <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> succeeds, stops executing.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> fails, executes <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
+</ol>
+<div class="figure align-center" id="id4">
 <div class="graphviz"><object data="../../_images/graphviz-e1dbd4f259aeaadb8218974d61bb7ded4a469ff4.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph G {
     node [color=transparent]
@@ -403,17 +408,18 @@ the leafs are the actions and the nodes are combinators.</p>
 }</p></object></div>
 <p class="caption"><span class="caption-text">Example of an action description, which tries to transfer to Alice
 and then Bob, if any of these fails, it will try to transfer to
-Charlie instead.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+Charlie instead.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-actions"><span class="std std-ref">Action description</span></a> for the reference of how to create the
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-actions"><span class="std std-ref">Action description</span></a> for a reference of how to create the
 actions.</p>
 </div>
-<p>The whole actions tree is executed <strong>atomically</strong>, and either leads to updates
+<p>The whole action tree is executed <strong>atomically</strong>, and either leads to updates
 to all the relevant instances and accounts, or, in case of rejection, to payment
 for execution, but no other changes. The account which sent the initiating
 transaction pays for the execution of the entire tree.</p>
+</div>
 </div>
 </div>
 

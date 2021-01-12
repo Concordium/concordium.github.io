@@ -44,7 +44,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Managing Accounts" href="manage-accounts.html" />
+    <link rel="next" title="Accounts" href="manage-accounts.html" />
     <link rel="prev" title="Concordium Client" href="concordium-client.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -102,9 +102,10 @@
             
               <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/accounts-transactions.html">Concordium ID: Get started with accounts and transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/explore-more.html">Concordium ID: Explore the <em>More</em> page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
@@ -115,11 +116,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">Obtaining an identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">Creating an account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">Benefits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Revoking anonymity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#revoking-anonymity">Revoking anonymity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-node.html">Querying a node</a></li>
 </ul>
@@ -205,27 +206,31 @@
 <h1>Identities and accounts<a class="headerlink" href="#identities-and-accounts" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id5">Obtaining an identity</a></p>
+<li><p><a class="reference internal" href="#id1" id="id4">Obtaining an identity</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-id-mobile-wallet-identity" id="id6">Concordium ID (mobile wallet) identity</a></p></li>
+<li><p><a class="reference internal" href="#concordium-id-mobile-wallet-identity" id="id5">Concordium ID (mobile wallet) identity</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id2" id="id7">Creating an account</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id8">Benefits</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id9">Revoking anonymity</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id6">Creating an account</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id7">Benefits</a></p></li>
+<li><p><a class="reference internal" href="#revoking-anonymity" id="id8">Revoking anonymity</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive <a class="reference external" href="/testnet/docs/glossary#global-transaction-unit-gtu-">GTU</a>) a user must create an <em>account</em>.</p>
-<p>To facilitate compliance with relevant regulations, an account can only be
-created from an <em>identity</em> which is issued <a class="reference external" href="/testnet/docs/glossary#off-chain">off-chain</a> by an Identity provider.
-While an account has to be created from an identity, the user’s privacy is still
-protected, and the account owner’s identity can only be revealed via the process
-of <em>anonymity revocation</em>, which can only happen under stringent regulations,
-such as upon a court order. In particular, a key feature of the design of
-identities and accounts is that the identity provider cannot reveal the identity
-of an account on their own.</p>
+send, receive <a class="reference internal" href="../see-also/glossary.html#glossary-gtu"><span class="std std-ref">Global Transaction Unit (GTU)</span></a>) a user must create an <em>account</em>.</p>
+<p>The user will get an <a class="reference internal" href="../see-also/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> at the same time as an <em>identity</em> has been issued
+by an identity provider. As the initial account is submitted to the chain by the
+identity provider, said identity provider will know the owner of the initial account. For this
+reason, the user may consider not using the initial account, and create a regular account instead.</p>
+<p>Regular accounts’ owner is not known to the identity providers, or any other single entity. To facilitate
+compliance with relevant regulations, a regular account can only be created from an <em>identity</em>
+which is issued <a class="reference internal" href="../see-also/glossary.html#glossary-off-chain"><span class="std std-ref">Off-chain</span></a> by an Identity provider. While an account
+has to be created from an identity, the user’s privacy is still protected, and the
+account owner’s identity can only be revealed via the process of <a class="reference external" href="/testnet/references/id-accounts.html#revoking-anonymity">anonymity revocation</a>,
+which can only happen under stringent regulations, such as upon a court order. In
+particular, a key feature of the design of identities and accounts is that the identity
+provider cannot reveal the identity of an account on their own.</p>
 <p>Anonymity revocation can only happen in exceptional circumstances (e.g., if
 authorities have detected suspicious activity on the account) and requires
 action by one or more anonymity revokers and the identity provider who issued
@@ -242,14 +247,14 @@ attributes are certified by the identity provider. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.</p>
-<p>Identities can be created via the mobile <a class="reference external" href="/testnet/docs/quickstart-wallet#before-you-start">wallet</a>. Identity issuance requires
+<p>Identities can be created via <a class="reference external" href="/test/guides/get-started.html">Concordium ID</a>. Identity issuance requires
 <em>Identity Verification</em>, which is the process of verifying the real-life
 identity of the user. This will typically involve taking photographs, scans of
 identification documents (e.g., passport), etc. Identity verification also
 checks that the user-chosen attributes are valid for the user.</p>
 <div class="section" id="concordium-id-mobile-wallet-identity">
 <h3>Concordium ID (mobile wallet) identity<a class="headerlink" href="#concordium-id-mobile-wallet-identity" title="Permalink to this headline">¶</a></h3>
-<p>In the testnet phase the <a class="reference external" href="/testnet/docs/downloads#concordium-id">Concordium ID</a> app supports two identity issuance
+<p>In the testnet phase the <a class="reference external" href="/test/guides/get-started.html">Concordium ID</a> app supports two identity issuance
 flows: <em>Notabene</em> and <em>Notabene (development)</em>. In both cases the identity
 provider is <a class="reference external" href="https://notabene.id/">Notabene</a>, but the identity verifiers differ.</p>
 <p>The <em>Notabene</em> flow is supported by <a class="reference external" href="https://onfido.com/">Onfido</a> and requires the user to take
@@ -258,13 +263,14 @@ driver’s license or identity card. The identity attributes are determined base
 on the provided documentation.</p>
 <p>The <em>Notabene (development)</em> flow allows the user to provide their own
 attributes and does no verification. This flow is available for testing
-purposes, and will not be supported on the <a class="reference external" href="/testnet/docs/glossary#mainnet">mainnet</a>.</p>
+purposes, and will not be supported on the <a class="reference internal" href="../see-also/glossary.html#glossary-mainnet"><span class="std std-ref">Mainnet</span></a>.</p>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>Creating an account<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Once a user has an identity, they can use it to create a number of accounts. In
-contrast to obtaining an identity, opening an account is an <a class="reference external" href="/testnet/docs/glossary#on-chain">on-chain</a> action
+<p>Once a user has an identity, they can use it to create a number of accounts, besides the
+<a class="reference internal" href="../see-also/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> created by the identity provider upon creating the identity. In
+contrast to obtaining an identity, opening an account is an <a class="reference internal" href="../see-also/glossary.html#glossary-on-chain"><span class="std std-ref">On-chain</span></a> action
 and requires sending a transaction to a node participating in the Concordium
 network. The input to the transaction is a <em>credential</em> which contains a number
 of cryptographic proofs, as well as a selection of attributes the user wishes to
@@ -272,7 +278,7 @@ reveal publicly. The proofs establish that the attributes the user revealed
 publicly are the ones approved by the identity provider. The proofs reveal no
 other information. In particular, the identity provider itself cannot determine
 the owner of the account. (Revealing the owner is only possible through
-<a class="reference external" href="#revoking-anonymity">anonymity revocation</a>, which requires the identity provider and anonymity
+<a class="reference external" href="/testnet/references/id-accounts.html#revoking-anonymity">anonymity revocation</a>, which requires the identity provider and anonymity
 revokers to act together.) Note that revealing attributes publicly is completely
 optional. The benefit gained from revealing attributes is that other users may
 decide whether to trust the account based on the publicly available information.</p>
@@ -290,8 +296,8 @@ before interacting with an account. Moreover, being able to see who issued the
 identity enables whoever wishes to interact with an account to judge the level
 of risk in the transaction.</p>
 </div>
-<div class="section" id="id4">
-<h2>Revoking anonymity<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="revoking-anonymity">
+<span id="revoking-anomity"></span><h2>Revoking anonymity<a class="headerlink" href="#revoking-anonymity" title="Permalink to this headline">¶</a></h2>
 <p>When necessary, the anonymity revokers and identity provider can work together
 to determine the owner of an account and determine which accounts belong to the
 same owner. (They should only do so when legally obliged to, such as by a court
@@ -328,7 +334,7 @@ on <a class="reference external" href="https://discord.com/invite/xWmQ5tp">Disco
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="manage-accounts.html" class="btn btn-neutral float-right" title="Managing Accounts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="manage-accounts.html" class="btn btn-neutral float-right" title="Accounts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="concordium-client.html" class="btn btn-neutral float-left" title="Concordium Client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

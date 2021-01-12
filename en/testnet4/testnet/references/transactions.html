@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Querying a node" href="query-node.html" />
-    <link rel="prev" title="Managing Accounts" href="manage-accounts.html" />
+    <link rel="prev" title="Accounts" href="manage-accounts.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -102,9 +102,10 @@
             
               <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/account-basics.html">Create an Account, Send and Receive GTU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/two-balances.html">One Account, Two Balances and Shielded Transfers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/import-export.html">Export and importing IDs and accounts using the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/accounts-transactions.html">Concordium ID: Get started with accounts and transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/explore-more.html">Concordium ID: Explore the <em>More</em> page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
@@ -112,7 +113,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities and accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Managing Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Transactions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">Concordium ID (mobile wallet)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">Command-line tool</a></li>
@@ -200,7 +201,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="transactions">
-<h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#id2" id="id8">Concordium ID (mobile wallet)</a></p></li>
@@ -214,9 +215,10 @@
 <li><p><a class="reference internal" href="#id5" id="id12">Encrypted transfer</a></p></li>
 <li><p><a class="reference internal" href="#id6" id="id13">Shield an amount</a></p></li>
 <li><p><a class="reference internal" href="#id7" id="id14">Unshield an amount</a></p></li>
+<li><p><a class="reference internal" href="#transfer-with-schedule" id="id15">Transfer with schedule</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id15">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>A <em>transaction</em> is an operation which applies some change to the chain.
@@ -275,6 +277,16 @@ different transaction types are performed using specialized subcommands:</p>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-gtu</span></code></p></td>
 <td><p>Transfer GTU tokens</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span>
+<span class="pre">send-gtu-encrypted</span></code></p></td>
+<td><p>Transfer GTU tokens between shielded
+balances</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span>
+<span class="pre">send-gtu-scheduled</span></code></p></td>
+<td><p>Make a transfer that will be
+released gradually</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code></p></td>
 <td><p>Add a new baker</p></td>
@@ -358,7 +370,7 @@ about a command, invoke it with the <code class="docutils literal notranslate"><
 </div>
 <p>Apart from the generic transaction flags above, the parameters are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: Number of tokens to send in units of 10-4 GTU.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: Number of GTU tokens to send.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--receiver</span></code>: Name or address of the receiver account.</p></li>
 </ul>
 <div class="section" id="example-transferring-25-gtu-from-one-account-to-another">
@@ -523,6 +535,54 @@ of <code class="docutils literal notranslate"><span class="pre">--index</span></
 </pre></div>
 </div>
 </div>
+<div class="section" id="transfer-with-schedule">
+<span id="transfer-with-a-schedule"></span><h3>Transfer with schedule<a class="headerlink" href="#transfer-with-schedule" title="Permalink to this headline">¶</a></h3>
+<p>The command to send a transfer of GTU that will be released gradually over a
+release schedule with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-gtu-scheduled</span></code>.
+There are two ways of specifying the release schedule, either as regular intervals
+or as an explicit schedule at specific timestamps.</p>
+<p>When specifying the release schedule with regular intervals, the options <code class="docutils literal notranslate"><span class="pre">--amount</span></code>
+, <code class="docutils literal notranslate"><span class="pre">--every</span></code>, <code class="docutils literal notranslate"><span class="pre">--for</span></code> and <code class="docutils literal notranslate"><span class="pre">--starting</span></code> must be provided. For example, sending a transaction from A to B that will:</p>
+<ul class="simple">
+<li><p>release the same amount every day</p></li>
+<li><p>for 10 days in a row</p></li>
+<li><p>for a total amount of 100 GTU</p></li>
+<li><p>starting on the 10th of February 2021 at 12:00:00 UTC</p></li>
+</ul>
+<p>would be done with the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-scheduled --amount <span class="m">100</span> --every Day --for <span class="m">10</span> --starting <span class="m">2021</span>-02-10T12:00:00Z --receiver B --sender A
+</pre></div>
+</div>
+<p>When specifying the release schedule explicitly, the option <code class="docutils literal notranslate"><span class="pre">--schedule</span></code> must be used
+which takes a comma-separated list of releases in the form of <code class="docutils literal notranslate"><span class="pre">&lt;amount&gt;</span> <span class="pre">at</span> <span class="pre">&lt;date&gt;</span></code>. For example,
+sending a transaction from A to B that will:</p>
+<ul class="simple">
+<li><p>release 100 on January 1st 2021 at 12:00:00 UTC</p></li>
+<li><p>release 150 on February 15th 2021 at 12:00:00 UTC</p></li>
+<li><p>release 200 on December 31st 2021 at 12:00:00 UTC</p></li>
+</ul>
+<p>would be done with the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-scheduled --schedule <span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span> --receiver B --sender A
+</pre></div>
+</div>
+<p>Querying account information of the receiver account afterwards, will show the
+list of releases that are still pending to be released:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show B
+<span class="go">Local name:            B</span>
+<span class="go">Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ</span>
+<span class="go">Balance:               550.000000 GTU</span>
+<span class="go">Release schedule:      total 450.000000 GTU</span>
+<span class="go">   Fri, 1 Jan 2021 12:00:00 UTC:                100.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.</span>
+<span class="go">   Mon, 15 Feb 2021 12:00:00 UTC:               150.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.</span>
+<span class="go">   Fri, 31 Dec 2021 12:00:00 UTC:               200.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.</span>
+<span class="go">Nonce:                 1</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+<p>The amount that is not yet released is also accounted in the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> field
+so in this case the account owns <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">GTU</span></code> that don’t belong to any pending
+release schedule.</p>
+</div>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
@@ -538,7 +598,7 @@ feedback on <a class="reference external" href="https://discord.com/invite/xWmQ5
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="query-node.html" class="btn btn-neutral float-right" title="Querying a node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="manage-accounts.html" class="btn btn-neutral float-left" title="Managing Accounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="manage-accounts.html" class="btn btn-neutral float-left" title="Accounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

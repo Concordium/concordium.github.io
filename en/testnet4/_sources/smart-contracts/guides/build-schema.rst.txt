@@ -26,7 +26,7 @@ contract for building the schema.
 
 We can choose which parts of our smart contract to included in the schema.
 The options are to include a schema for the contract state, and/or for each of
-the parameters of ``init``- and ``receive``-functions.
+the parameters of init and receive functions.
 
 Every type we want to include in the schema must implement the ``SchemaType``
 trait. This is already done for all base types and some other types (see `list of types implementing the SchemaType`_).
@@ -67,8 +67,8 @@ Or even simpler if the contract state is of a type that already implements ``Sch
 Including function parameters
 -----------------------------
 
-To generate and include the schema for parameters for ``init``- and
-``receive``-functions, we set the optional ``parameter`` attribute for the
+To generate and include the schema for parameters for init  and
+receive functions, we set the optional ``parameter`` attribute for the
 ``#[init(..)]``- and ``#[receive(..)]``-macro::
 
    #[derive(SchemaType)]
