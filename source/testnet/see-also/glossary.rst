@@ -218,7 +218,7 @@ open an account on the Concordium Platform.
 Initial Account
 ===============
 
-An intial account is an account submitted to the chain by the identity provider,
+An intial account is an account submitted to the chain by the identity provider
 during the process of requesting a new identity. The initial account can
 perform all of the same actions as a regular account, however the real-life
 identity of the initial-account owner is known by the identity provider
