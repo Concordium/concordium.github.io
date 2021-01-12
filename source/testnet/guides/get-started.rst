@@ -41,7 +41,7 @@ a six-digit passcode. If you would rather use a full password including letters,
 
 
 Having chosen either a passcode or a full password, you will get the option to also use biometrics if your phone
-supports it. This can e.g. be facial recognition or fingerprint. We recommend using biometrics if you have the option to do so.
+supports it, i.e. facial recognition or fingerprint. We recommend using biometrics if you have the option to do so.
 
 .. image:: images/concordium-id/int3.png
       :width: 32%
