@@ -5,6 +5,7 @@
 .. _Concordium ID: /testnet/see-also/downloads.html#concordium-id
 .. _Concordium Node and Client Software: /testnet/see-also/downloads.html#concordium-node-and-client
 .. _Dashboard: https://dashboard.testnet.concordium.com/
+.. _`Encrypted(shielded) amounts and transfers`: /testnet/guides/accounts-transactions.html#move-an-amount-to-the-shielded-balance
 
 =============
 Release Notes
@@ -22,23 +23,25 @@ January 13th, 2020
 Smart contracts:
 
 * Smart contracts support on chain
-* Rust supported as off-chain SC language
-* Cargo-concordium tool for building and testing smart contracts off-chain
-* Documentation for smart contracts added to `developer docs <https://concordium.github.io/en/testnet4/smart-contracts/index.html>`_
-* SC transactions added to Concordium client
+* Rust supported as off-chain Smart Contract language
+* `Concordium-std <https://crates.io/crates/concordium-std>`_ library added for developing smart contracts in Rust.
+* ``Cargo-concordium`` tool for building and testing smart contracts off-chain
+* Documentation for smart contracts added to `developer documentation <https://concordium.github.io/en/testnet4/smart-contracts/index.html>`_
+* Smart Contract transactions added to ``concordium-client``
+
 
 Tokenomics (to match tokenomics model):
 
 * Rewards for baking and finalization changed
 * Minting changed
-* Chain parameters updated
+* Extended the list of adjustable chain parameters
 * Updated `network dashboard block explorer <https://dashboard.testnet.concordium.com/chain>`_ to include new info
 * Amount lock-up transaction with schedule added
 * Staking changed so staked amount is locked
 * Mobile app updated to show staking and amount lockup schedules
-* Delegation disabled
+* Delegation removed
 
-ID provider:
+ID layer:
 
 * Initial account creation added to ID provider process
 * Mobile app updated to support initial account creation
@@ -80,7 +83,7 @@ October 6th, 2020.
 -  µGTU. The smallest unit has been changed from 10-4 to 10-6.
 -  Bulletproofs. The core blockchain has been updated to support use of
    bulletproofs.
--  Encrypted(shielded) amounts and transfers. Support for shielded
+-  `Encrypted(shielded) amounts and transfers`_. Support for shielded
    transactions has been added to the core blockchain. Support for
    sending and receiving shielded amounts are added to the mobile apps
    and the Concordium client.
