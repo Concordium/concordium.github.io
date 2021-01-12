@@ -5,8 +5,7 @@
 .. _Shield an amount: #shield-an-amount
 .. _Unshield an amount: #unshield-an-amount
 .. _account: /testnet/docs/glossary#account
-.. _stake delegation: /testnet/docs/glossary#stake-delegation
-.. _adding a baker: /testnet/docs/quickstart-baker
+.. _adding a baker: /testnet/guides/become-baker
 .. _block: /testnet/docs/glossary#baker
 .. _sequence number: /testnet/docs/glossary#transaction-sequence-number
 .. _finalized: /testnet/docs/glossary#finalization
@@ -36,8 +35,8 @@ this account.
 
 There are several transaction types: The most basic one is a GTU transfer, which
 moves tokens from the sender account to another account. Other transaction types
-include encrypted transfers, `stake delegation`_, `adding a baker`_, and
-updating keys of accounts and bakers.
+include encrypted transfers, `adding a baker`_, and updating keys of accounts
+and bakers.
 
 Every transaction has a well-defined *cost*, the value of which depends on the
 transaction type as well as the payload in a way that reflects the computational
@@ -94,17 +93,12 @@ different transaction types are performed using specialized subcommands:
 +-------------------------------+-------------------------------------+
 | ``baker remove``              | Remove a baker                      |
 +-------------------------------+-------------------------------------+
-| ``baker set-account``         | Update reward account of a baker    |
+| ``baker update-stake``        | Update the staked amount of a baker |
 +-------------------------------+-------------------------------------+
-| ``baker set-key``             | Update signature key of a baker     |
-+-------------------------------+-------------------------------------+
-| ``baker set-aggregation-key`` | Update aggregation key of a baker   |
-+-------------------------------+-------------------------------------+
-| ``account delegate``          | Deletegate an account's stake to a  |
+| ``baker update-restake``      | Update the restaking switch of a    |
 |                               | baker                               |
 +-------------------------------+-------------------------------------+
-| ``account undelegate``        | Ensure that an account's stake is   |
-|                               | not delegated                       |
+| ``baker set-key``             | Update the keys of a baker          |
 +-------------------------------+-------------------------------------+
 | ``account add-keys``          | Add additional signing keys to the  |
 |                               | account                             |
@@ -150,12 +144,15 @@ the signing keys.
 Once a transaction has been submitted, the command will continuously poll and
 display its status until it's been `finalized`_.
 
-The command for transferring GTU is described below. The remaining commands are
-used to add, remove, and configure bakers as well as delegating stake to them.
-They expose a lower level, but more versatile set of features compared to the
-tools described in the quickstart on `becoming a baker`_. As such, they are
-considered "advanced" for now and not further explained. For more information
-about a command, invoke it with the ``--help`` flag.
+The commands for transferring GTU (both plain transfers and encrypted transfers)
+are described below.
+
+The remaining commands are used to add, remove, and configure bakers. Their
+behavior is explained on the guide for `becoming a baker`_.
+
+.. note::
+   
+   For more information about a command, invoke it with the ``--help`` flag.
 
 Transfer
 --------
