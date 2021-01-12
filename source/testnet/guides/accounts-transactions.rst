@@ -42,7 +42,7 @@ and if you do not have a specific reason to do so, we recommend not revealing an
 .. image:: images/concordium-id/acc4.png
       :width: 32%
 
-Should you choose to press the **Reveal account attributes button**, you will be taken to the following page. You can tick
+If you do press the **Reveal account attributes button**, you will be taken to the following page. You can tick
 off the attributes you would like to reveal, and then press **Submit account**. Pressing **Submit account** on this or the previous
 page, will take you to the final account creation page, which will give you a short overview and tell you that the account
 has been submitted.
