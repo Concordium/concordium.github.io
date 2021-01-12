@@ -18,9 +18,13 @@ part which is publicly visible, and maintained by the bakers, and the
 
 The on-chain part of the account consists of
 
-- the credentials associated with the account.
+- the credentials associated with the account
+- public balance
+- shielded balance
+- account sequence number
+- public keys to verify transaction signatures.
 
-which contains
+The off-chain part of the account contains
 
 -  private keys of the account which are used to sign actions by the
    account (e.g., sending transfers, deploying smart contracts)
@@ -76,9 +80,9 @@ with 100 GTU on the public balance. None of it is locked-up or staked.
 
 Then on January 2 the account receives 50 GTU via a :ref:`transfer with
 schedule<glossary-transfer-with-schedule>` with the release scheduled for
-December 31 of the same year. At this point, January 2, the account has 50 GTU
+December 31 of the same year. At this point, January 2, the account has 100 GTU
 at disposal, the rest being locked. If the account tried to transfer more than
-50 GTU the transaction would be rejected.
+100 GTU the transaction would be rejected.
 
 On January 3 the account becomes a baker with the initial stake of 125 GTU.
 This is successful because the total public balance is 150GTU.
