@@ -129,7 +129,7 @@ After doing that, let’s press **Select Recipient or shield amount** again. Ins
 .. image:: images/concordium-id/acc22.png
       :width: 32%
 
-We can now continue, and confirm the transaction, just like we did before with the regular transfer. The transaction might take a moment
+We can now continue and confirm the transaction, just like we did before with the regular transfer. The transaction might take a moment
 to finalize on the chain.
 
 .. image:: images/concordium-id/acc23.png
