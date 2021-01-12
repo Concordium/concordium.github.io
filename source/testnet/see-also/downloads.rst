@@ -6,6 +6,8 @@
 .. _TestFlight: https://apps.apple.com/dk/app/testflight/id899247664?l=da
 .. _`TestFlight beta program`: https://testflight.apple.com/join/X9MJhsPC
 
+.. _downloads:
+
 =========
 Downloads
 =========
@@ -42,6 +44,8 @@ Installing the Concordium ID app on iOS requires installation of Apple’s TestF
 3. Open the TestFlight app on your iPhone and install Concordium ID.
 
 .. _concordium-node-and-client-download:
+
+.. _concordium-node-and-client:
 
 Concordium Node and Client
 ==========================
