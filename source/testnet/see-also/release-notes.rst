@@ -1,8 +1,3 @@
-.. _download page: /testnet/see-also/downloads.html
-.. _iOS Concordium ID: /testnet/see-also/downloads.html
-.. _here: https://developer.concordium.com/testnet/docs/downloads.html#concordium-id
-.. _Concordium ID: /testnet/see-also/downloads.html#concordium-id
-.. _Concordium Node and Client Software: /testnet/see-also/downloads.html#concordium-node-and-client
 .. _Dashboard: https://dashboard.testnet.concordium.com/
 .. _`Encrypted(shielded) amounts and transfers`: /testnet/guides/accounts-transactions.html#move-an-amount-to-the-shielded-balance
 
@@ -54,7 +49,7 @@ Open Testnet v3 update 2
 October 16th, 2020
 
 A new Mac version is released after fixing an issue with adding a baker on the
-dashboard. The `download page`_ has been updated accordingly. Please download
+dashboard. The :ref:`downloads page <downloads>` has been updated accordingly. Please download
 the latest Mac release, then stop your node, reset your data, and restart your
 node.
 
@@ -65,7 +60,7 @@ October 8th, 2020
 
 New mobile wallets are released after some bug fixes on both iOS and Android.
 The released versions are ConcordiumID version 0.1.52 for iOS and version 0.5.24
-for Android. The `download page`_ has been updated accordingly. The node
+for Android. The :ref:`downloads page <downloads>` has been updated accordingly. The node
 software is unaffected by this update.
 
 Open Testnet v3
@@ -75,7 +70,7 @@ October 6th, 2020.
 
 -  Chain visualization: The connection of blocks has been made more
    stable to ensure that it progresses smoothly.
--  `iOS Concordium ID`_ app available.
+-  :ref:`iOS Concordium ID <concordium_id>` app available.
 -  Added import to app. It is now possible to import a file that has
    previously been exported. This enables moving identities and accounts
    to other mobile devices and restoring from backup.
@@ -97,7 +92,7 @@ July 2, 2020
 An issue was identified in the Concordium ID app for Android. When using an
 identification document with no expiry date (such as a Swiss driving license)
 the app will crash upon completion of the ID issuance process. An app update has
-been issued and is available here (No longer available - See the `download page`_ for the newest app). The node software is unaffected by this
+been issued and is available here (No longer available - See the :ref:`downloads page <downloads>` for the newest app). The node software is unaffected by this
 update.
 
 Open Testnet v2
@@ -118,7 +113,7 @@ This version of the Testnet is running Concordium Node version 0.2.13.
 Updates
 =======
 
--  `Concordium ID`_, an Android mobile app for accessing identities and
+-  :ref:`Concordium ID <concordium_id>`, an Android mobile app for accessing identities and
    accounts
 -  Identity provider integration in Android mobile app
 
@@ -136,7 +131,7 @@ Updates
 
    -  Storage of the chain on nodes has been optimized
 
--  `Concordium Node and Client Software`_ improvements. Extended in the
+-  :ref:`Concordium Node and Client Software <concordium-node-and-client>` improvements. Extended in the
    following areas:
 
    -  Managing bakers

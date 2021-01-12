@@ -4,6 +4,8 @@
 .. _node: /testnet/docs/quickstart-node
 .. _client: /testnet/docs/client
 
+.. _downloads:
+
 =========
 Downloads
 =========
@@ -55,6 +57,8 @@ Requirements
 ~~~~~~~~~~~~
 
 Concordium ID is supported on iOS 13 and upwards.
+
+.. _concordium-node-and-client:
 
 Concordium Node and Client
 ==========================
