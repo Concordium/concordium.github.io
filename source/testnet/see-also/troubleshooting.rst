@@ -16,8 +16,7 @@ including logs from the ``concordium-node-retrieve-logs`` tool.
 Multiple nodes, bakers, and accounts
 ====================================
 
-We do not currently support running two nodes on the same machine. This means
-that while it is possible, we provide no support for it. When the
+We do not currently support running two nodes on the same machine. When the
 ``concordium-node`` tool is run when the node is already running it will either
 do nothing, in case none of the parameters, e.g., node name, have changed, or
 restart the node with the new parameters. Note that "do nothing" means that it
@@ -157,19 +156,6 @@ When executing multiple shielded transfers or unshielding flows in the mobile
 wallets within a very short period of time, inconsistencies might be observed.
 Those robustness issues can be circumvented by waiting a few seconds between
 such transactions.
-
-Creation of account fails with imported identity
-================================================
-
-Creating a new account with an imported identity fails in the following
-scenario:
-
--  create an identity
--  make an export
--  create accounts using the identity
--  reinstall the app
--  import the exportfile
--  create an account, using the imported identity.
 
 Support & Feedback
 ==================
