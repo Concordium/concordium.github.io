@@ -10,12 +10,13 @@
 .. _Shell completion: #shell-completion
 .. _local node: /testnet/docs/quickstart-node
 .. _queries: /testnet/docs/queries
-.. _transactions: /testnet/docs/transactions
 .. _Concordium ID: /testnet/docs/downloads#concordium-id
 .. _framework: https://github.com/pcapriotti/optparse-applicative#bash-zsh-and-fish-completions
 .. _Discord: https://discord.com/invite/xWmQ5tp
 .. _here: /testnet/docs/managing-accounts
 .. _Managing accounts: /testnet/docs/managing-accounts
+
+.. _concordium_client:
 
 =================
 Concordium Client
@@ -44,7 +45,7 @@ directory:
 **This page will describe the commands that are related with configuration of
 the client, but the rest of available commands will be discussed on the pages
 where the features that use them are documented. Some commands will perform**\
-`queries`_\ **and others send**\ `transactions`_\ **.**
+`queries`_\ **and others send** :ref:`transactions<transactions>`\ **.**
 
 Commands and help
 =================
@@ -258,6 +259,7 @@ were shown above when printing the configuration:
       ...
     }
 
+.. _concordium-client-import-accounts-keys:
 
 Import accounts and keys from the Wallet apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
