@@ -1,7 +1,6 @@
 .. _download page: /testnet/see-also/downloads.html
 .. _iOS Concordium ID: /testnet/see-also/downloads.html
 .. _here: https://developer.concordium.com/testnet/docs/downloads.html#concordium-id
-.. _Concordium Node version 0.2.13: /testnet/see-also/downloads.html#concordium-node-and-client
 .. _Concordium ID: /testnet/see-also/downloads.html#concordium-id
 .. _Concordium Node and Client Software: /testnet/see-also/downloads.html#concordium-node-and-client
 .. _Dashboard: https://dashboard.testnet.concordium.com/
@@ -114,8 +113,7 @@ Testnet aims at demonstrating the technology behind the Concordium Blockchain.
 This version is not feature-complete compared to the expected features for the
 first Mainnet version of the Concordium Blockchain.
 
-This version of the Testnet is running `Concordium Node version
-0.2.13`_.
+This version of the Testnet is running Concordium Node version 0.2.13.
 
 Updates
 =======
