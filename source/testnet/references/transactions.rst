@@ -90,6 +90,12 @@ different transaction types are performed using specialized subcommands:
 +===============================+=====================================+
 | ``transaction send-gtu``      | Transfer GTU tokens                 |
 +-------------------------------+-------------------------------------+
+| ``transaction                 | Transfer GTU tokens between shielded|
+| send-gtu-encrypted``          | balances                            |
++-------------------------------+-------------------------------------+
+| ``transaction                 | Make a transfer that will be        |
+| send-gtu-scheduled``          | released gradually                  |
++-------------------------------+-------------------------------------+
 | ``baker add``                 | Add a new baker                     |
 +-------------------------------+-------------------------------------+
 | ``baker remove``              | Remove a baker                      |
@@ -355,9 +361,64 @@ of ``--index`` which has the same meaning as in the
    [13:34:18] Waiting for the transaction to be finalized...
    [13:34:18] Transaction finalized.
 
+Transfer with schedule
+----------------------
+
+The command to send a transfer of GTU that will be released gradually over a
+release schedule with ``concordium-client`` is ``transaction send-gtu-scheduled``.
+There are two ways of specifying the release schedule, either as regular intervals
+or as an explicit schedule at specific timestamps.
+
+When specifying the release schedule with regular intervals, the options ``--amount``
+, ``--every``, ``--for`` and ``--starting`` must be provided. For example, sending a transaction from A to B that will:
+
+- release the same amount every day
+- for 10 days in a row
+- for a total amount of 100 GTU
+- starting on the 10th of February 2021 at 12:00:00 UTC
+
+would be done with the following command:
+
+.. code-block:: console
+
+   $concordium-client transaction send-gtu-scheduled --amount 100 --every Day --for 10 --starting 2021-02-10T12:00:00Z --receiver B --sender A
+
+When specifying the release schedule explicitly, the option ``--schedule`` must be used
+which takes a comma-separated list of releases in the form of ``<amount> at <date>``. For example,
+sending a transaction from A to B that will:
+
+- release 100 on January 1st 2021 at 12:00:00 UTC
+- release 150 on February 15th 2021 at 12:00:00 UTC
+- release 200 on December 31st 2021 at 12:00:00 UTC
+
+would be done with the following command:
+
+.. code-block:: console
+
+   $concordium-client transaction send-gtu-scheduled --schedule "100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z" --receiver B --sender A
+
+Querying afterwards for the account information of the receiver account will show the
+list of releases that are still pending to be released:
+
+.. code-block:: console
+
+   $concordium-client account show B
+   Local name:            B
+   Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ
+   Balance:               550.000000 GTU
+   Release schedule:      total 450.000000 GTU
+      Fri, 1 Jan 2021 12:00:00 UTC:                100.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
+      Mon, 15 Feb 2021 12:00:00 UTC:               150.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
+      Fri, 31 Dec 2021 12:00:00 UTC:               200.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
+   Nonce:                 1
+   ...
+
+The amount that is not yet released is also accounted in the ``Balance`` field
+so in this case the account owns ``100 GTU`` that don't belong to any pending
+release schedule.
+
 Support & Feedback
 ==================
 
 If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com.
-
