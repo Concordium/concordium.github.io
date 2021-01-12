@@ -24,14 +24,16 @@ write by hand.
 Instead we can write our smart contracts in the Rust_ programming language, which
 has good support for compiling to Wasm.
 
-.. note::
+Smart contracts do not have to be written in Rust.
+This is simply the first SDK we provide.
+Manually written Wasm, or Wasm compiled from C, C++, AssemblyScript_, and
+others, is equally valid on the chain, as long as it adheres to the :ref:`Wasm
+limitations we impose <wasm-limitations>`.
 
-   We emphasize that there is no requirement that contracts must be
-   written in Rust.
-   This is simply the first SDK we provide.
-   Manually written Wasm, or Wasm compiled from C, C++, AssemblyScript_, and
-   others, is equally valid on the chain, as long as it adheres to the :ref:`Wasm
-   limitations we impose <wasm-limitations>`.
+.. seealso::
+
+   For more information on the functions described below, see the concordium_std_
+   API for writing smart contracts on the Concordium blockchain in Rust.
 
 .. seealso::
 
@@ -163,7 +165,7 @@ The same is necessary for parameters to init and receive functions.
 Working with parameters
 -----------------------
 
-Parameters for the init and receive functions are, like the instance
+Parameters to the init and receive functions are, like the instance
 state, represented as byte arrays.
 While the byte arrays can be used directly, they can also be deserialized into
 structured data.
@@ -175,7 +177,7 @@ As an example, see the following contract in which the parameter
 ``ReceiveParameter`` is deserialized on the highlighted line:
 
 .. code-block:: rust
-   :emphasize-lines: 23
+   :emphasize-lines: 24
 
    use concordium_std::*;
 
@@ -187,6 +189,7 @@ As an example, see the following contract in which the parameter
        value: u32,
    }
 
+   #[init(contract = "parameter_example")]
    fn init(
        _ctx: &impl HasInitContext,
    ) -> InitResult<State> {
@@ -230,10 +233,10 @@ parameter using the `Read`_ trait:
        Ok(A::accept())
    }
 
-Notice that the ``value`` value is only deserialized if ``should_add`` is
+Notice that the ``value`` is only deserialized if ``should_add`` is
 ``true``.
 While the gain in efficiency is minimal in this example, it could have an
-substantial impact for certain kinds of smart contracts.
+substantial impact for more complex examples.
 
 
 Building a smart contract module with ``cargo-concordium``
@@ -296,3 +299,4 @@ Move heavy calculations off-chain
 .. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
 .. _Get: https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html
 .. _Read: https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html
+.. _concordium_std: https://docs.rs/concordium-std/0.3.1/concordium_std/

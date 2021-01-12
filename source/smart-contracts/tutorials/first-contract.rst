@@ -25,7 +25,7 @@ contracts.
 The guide :ref:`setup-tools` will show you how to do this.
 Also, make sure to have a text editor for writing Rust.
 
-We also need to setup a new smart contract project.
+We also need to set up a new smart-contract project.
 Follow the guide :ref:`setup-contract` and return to this point afterwards.
 
 Counter contract
@@ -48,7 +48,7 @@ Standard library
 
 The source code of our smart contract is going to be in the ``src`` directory,
 which already contains the file ``lib.rs``, assuming you follow the above guide
-to setup your project.
+to set up your project.
 Open ``src/lib.rs`` in your editor and you'll see some code for writing tests,
 which you can delete for now. We will come back to tests later in this tutorial.
 
@@ -77,7 +77,7 @@ When using the ``concordium-std`` library, this all boils down to our type
 for the contract state having to implement the ``Serialized`` trait from
 ``concordium-std``.
 
-Luckily the library already contains implementations for most of the primitives
+Luckily, the library already contains implementations for most of the primitives
 and standard types in Rust, meaning ``u32`` already implements the trait, so no
 more work is necessary for the state.
 
@@ -89,13 +89,13 @@ The init function
 =====================
 
 A smart contract must specify an init function, which is called when new
-instances of the contract are created, and is used to setup the initial state of
+instances of the contract are created, and is used to set up the initial state of
 the contract instance.
 
 .. note::
-   If you have experience with Object-Oriented Programming, it might help to
+   If you have experience with object-oriented programming, it might help to
    think of a smart contract as a *class*, the init function as a
-   *constructor* and smart contract instances as *objects*.
+   *constructor* and smart-contract instances as *objects*.
 
 In the case our the counter, the init function should set the initial state
 to 0.
@@ -115,19 +115,19 @@ The ``#[init(..)]`` macro
 
 In Rust an init function can be specified as a regular function, annotated
 with the procedural macro from ``concordium_std`` called ``#[init(..)]``.
-The macro saves you from some details of setting up the function as an
+The macro saves you the details of setting up an
 external function and supplies a nicer interface for accessing information and
 logging events.
 
 You are required to set the ``contract`` attribute of the macro, which is going
 to be the name of the exposed init function and therefore visible on the
-chain with "init\_" as prefix.
+chain with ``init_`` as prefix.
 
-Unsurprisingly, we choose to call our contract "counter".
+Unsurprisingly, we choose to call our contract ``counter``.
 
-The function only takes one argument ``ctx``, which is an object with a number
+The function takes a single ``ctx`` argument, which is an object with a number
 of getter functions for accessing information about the current context, such as
-who invoke this function, the argument supplied and the current state of the
+who invoked this function, the argument supplied and the current state of the
 chain.
 
 The return type of our function is ``InitResult<State>``, which is an alias for

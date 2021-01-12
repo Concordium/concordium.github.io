@@ -6,12 +6,12 @@
 Setup a contract project
 ========================
 
-A Smart contracts in Rust is written as an ordinary Rust library crate.
+A smart contract in Rust is written as an ordinary Rust library crate.
 The library is then compiled to Wasm using the Rust target
 ``wasm32-unknown-unknown`` and, since it is just a Rust library, we can use
 Cargo_ for dependency management.
 
-To setup a new smart contract project, first create a project directory, inside
+To setup a new smart contract project, first create a project directory. Inside
 the project directory run the following in a terminal:
 
 .. code-block:: console
@@ -20,7 +20,7 @@ the project directory run the following in a terminal:
 
 This will setup a default Rust library project by creating a few files and
 directories.
-Your directory should now contain a ``Cargo.toml`` file and a ``src``
+Your directory should now contain a ``Cargo.toml`` file, a ``src``
 directory and some hidden files.
 
 To be able to build Wasm we need to tell cargo the right ``crate-type``.
@@ -32,7 +32,7 @@ This is done by adding the following in the file ``Cargo.toml``::
 Adding the smart contract standard library
 ==========================================
 
-Next step is to add ``concordium-std`` as a dependency.
+The next step is to add ``concordium-std`` as a dependency.
 It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.
 
