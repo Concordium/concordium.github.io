@@ -67,7 +67,7 @@ chain by yourself, which means the owner of these accounts will be only known by
       :width: 32%
       :align: center
 
-The three steps mentioned above is:
+The three steps mentioned above are:
 
 1. Naming of your initial account
 2. Naming your identity
