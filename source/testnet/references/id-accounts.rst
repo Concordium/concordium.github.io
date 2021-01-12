@@ -2,7 +2,6 @@
 .. _Creating an account: #creating-an-account
 .. _Benefits: #benefits
 .. _`anonymity revocation`: /testnet/references/id-accounts.html#revoking-anonymity
-.. _`initial account`: /testnet/see-also/glossary.html#initial-account
 .. _Notabene: https://notabene.id/
 .. _Onfido: https://onfido.com/
 .. _`Concordium ID`: /test/guides/get-started.html
@@ -20,7 +19,7 @@ Identities and accounts
 In order to be an active participant on the Concordium blockchain (e.g., hold,
 send, receive :ref:`glossary-GTU`) a user must create an *account*.
 
-The user will get an `initial account`_ at the same time as an *identity* has been issued
+The user will get an :ref:`glossary-initial-account` at the same time as an *identity* has been issued
 by an identity provider. As the initial account is submitted to the chain by the
 identity provider, said identity provider will know the owner of the initial account. For this
 reason, the user may consider not using the initial account, and create a regular account instead.
@@ -80,7 +79,7 @@ Creating an account
 ===================
 
 Once a user has an identity, they can use it to create a number of accounts, besides the
-`initial account`_ created by the identity provider upon creating the identity. In
+:ref:`glossary-initial-account` created by the identity provider upon creating the identity. In
 contrast to obtaining an identity, opening an account is an :ref:`glossary-on-chain` action
 and requires sending a transaction to a node participating in the Concordium
 network. The input to the transaction is a *credential* which contains a number
