@@ -221,7 +221,7 @@ Initial Account
 An intial account is an account submitted to the chain by the identity provider,
 during the process of requesting a new identity. The initial account can
 perform all of the same actions as a regular account, however the real life
-identity of the owner of initial account is known by the identity provider
+identity of the initial-account owner is known by the identity provider
 which submitted it to the chain. In contrast, the real life identity of the
 owner of a regular account can only be ascertained by anonymity revokers working
 in concert with the identity provider.
