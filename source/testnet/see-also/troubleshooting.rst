@@ -57,20 +57,6 @@ as a single memory-mapped file which can cause certain tools to erroneously
 include the whole or parts of the database file into the reported memory
 consumption of the process.
 
-Symbolic links in ``Documents`` path
-====================================
-
-On Linux and macOS the ``concordium-client`` tool must be run from
-``$HOME/Documents/concordium-software`` directory or its subdirectory.
-
-The tool checks the absolute path of the directory and any symbolic links in the
-path will make this check fail.
-
-For example if ``$HOME/Documents`` is a symbolic link to some other directory
-then the tool will fail to start.
-
-The easiest way to check the absolute path is to run ``pwd -P``.
-
 Node does not catch up with chain on Windows
 ============================================
 
