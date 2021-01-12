@@ -170,7 +170,7 @@ to the chain. Again, the transaction might take a moment to finalize on the chai
       :width: 32%
 
 
-Now, if you go back to the *Accounts* screen, you should be able to see that a little shield has appeared besides the amount on the
+Now, if you go back to the *Accounts* screen, you should be able to see that a little shield has appeared beside the amount on the
 *Shielded Balance* of the receiving account. This indicates that there are newly received shielded transactions on the shielded balance.
 Try pressing the shielded balance, and notice that you have to enter a passcode or use your biometrics to enter it.
 This happens because you need to decrypt received shielded transactions, before you can see the amount.
