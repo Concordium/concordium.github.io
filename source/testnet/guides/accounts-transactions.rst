@@ -35,7 +35,7 @@ When pressing **Next**, you will be met with a screen on which you must decide w
 So far you probably only have one, but if you have more you can pick whichever identity you want from the list. By
 clicking on an identity, you will be taken to the next screen. When creating a non-initial account, i.e. an account
 that is not created upon identity creation, you can choose to reveal a number of :ref:`glossary-attribute`. This is not necessary,
-and if you do not have a specific reason to do so, we recommend not revealing any.
+and if you do not have a specific reason to do so, we recommend not revealing any, as revealed attributes go on-chain and cannot be removed.
 
 .. image:: images/concordium-id/acc3.png
       :width: 32%
