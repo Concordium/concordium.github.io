@@ -60,7 +60,7 @@ The public balance of the account is used for payment of transaction fees,
 baking, finalization, and transfers.
 
 At any given time some of the public balance might be unavailable for use. This
-can happen in two ways.
+can happen in two ways:
 
 - the account has :ref:`staked<glossary-staked-amount>` some (or all) of the public
   balance in order to become a baker
