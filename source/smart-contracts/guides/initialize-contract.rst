@@ -28,7 +28,7 @@ the transaction.
 .. note::
 
    The cost of this transaction depends on the size of the parameters sent to
-   the ``init``-function and the complexity of the function itself.
+   the init function and the complexity of the function itself.
 
 Initialization
 ==============
@@ -79,7 +79,7 @@ The schema is used to serialize the JSON into binary.
 
    :ref:`Read more about why and how to use smart contract schemas <contract-schema>`.
 
-   :ref:`Parameters can also passed in binary format <init-passing-parameter-bin>`.
+   :ref:`Parameters can be also passed in binary format <init-passing-parameter-bin>`.
 
 To initialize an instance of the contract ``my_parameter_contract`` from the
 module with reference

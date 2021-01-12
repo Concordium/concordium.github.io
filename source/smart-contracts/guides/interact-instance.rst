@@ -5,7 +5,7 @@ Interact with a smart contract instance
 =======================================
 
 This guide will show you, how to interact with a smart contract instance, which
-means triggering a ``receive``-function that, possibly, updates the state of the
+means triggering a receive function that, possibly, updates the state of the
 instance.
 
 Preparation
@@ -29,13 +29,13 @@ for the transactions.
 .. note::
 
    The cost of this transaction depends on the size of the parameters sent to
-   the ``receive``-function and the complexity of the function itself.
+   the receive function and the complexity of the function itself.
 
 Interaction
 ===========
 
 To update an instance with address index ``0`` using the parameterless
-``receive``-function ``my_receive`` while allowing up to 1000 energy to be used,
+receive function ``my_receive`` while allowing up to 1000 energy to be used,
 run the following command:
 
 .. code-block:: console
@@ -60,7 +60,7 @@ The schema is used to serialize the JSON into binary.
    :ref:`Read more about why and how to use smart contract schemas
    <contract-schema>`.
 
-To update an instance with address index ``0`` using the ``receive``-function
+To update an instance with address index ``0`` using the receive function
 ``my_parameter_receive`` with a parameter file ``my_parameter.json`` in JSON
 format, run the following command:
 
@@ -115,7 +115,7 @@ Passing parameters in binary format
 When passing parameters in binary format, a
 :ref:`contract schema <contract-schema>` is not needed.
 
-To update an instance with address index ``0`` using the ``receive``-function
+To update an instance with address index ``0`` using the receive function
 ``my_parameter_receive`` with a parameter file ``my_parameter.bin`` in binary
 format, run the following command:
 

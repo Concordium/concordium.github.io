@@ -9,17 +9,9 @@
 .. _Inspect consensus parameters: #inspect-consensus-parameters
 .. _Inspect consensus status: #inspect-consensus-status
 .. _ID layer: #id-layer
-.. _concordium-client: /testnet/docs/client
-.. _best block: /testnet/docs/glossary#best-block
-.. _shielded balance: /testnet/docs/glossary#shielded-balance
-.. _sequence number: /testnet/docs/glossary#transaction-sequence-number
-.. _incoming encrypted amounts: /testnet/docs/glossary#incoming-encrypted-amount
-.. _self balance: /testnet/docs/glossary#self-balance
-.. _identity: /testnet/docs/identities-and-accounts
-.. _transaction: /testnet/docs/glossary#transaction
-.. _best block: /testnet/docs/glossary#best-block
-.. _glossary: /testnet/docs/glossary
-.. _best block: /testnet/docs/glossary#best-block
+.. _concordium-client: /testnet/references/concordium-client.html
+.. _identity: /testnet/references/id-accounts.html
+.. _glossary: /testnet/see-also/glossary.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 ===============
@@ -55,8 +47,7 @@ List accounts
 
 List the addresses of all accounts on the chain as of a specific block:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current `best
-   block`_.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
 
 Example
 ~~~~~~~
@@ -82,9 +73,8 @@ can also decrypt the shielded balance.
 
 -  ``ACCOUNT``: Address or local name of the account (if not provided,
    will show the account with the local alias ``"default"``).
--  ``BLOCK``: Full hash of target block. Defaults to the current `best
-   block`_.
--  ``--encrypted``: Show the `shielded balance`_ (explained below).
+-  ``BLOCK``: Full hash of target block. Defaults to the current :ref:`glossary-best-block`.
+-  ``--encrypted``: Show the :ref:`glossary-shielded-balance` (explained below).
 -  ``--decrypt-encrypted``: Show the shielded balance and decrypt it
    (explained below).
 
@@ -98,7 +88,6 @@ Example
    Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    Amount:                1026.000000 GTU
    Nonce:                 1
-   Delegation:            baker 3
    Encryption public key: a820662531d0aac70b3a80dd8a249aa692436097d06da005aec7c56aad17997ec8331d1e4050fd8dced2b92f06277bd5acf72a731dc9fdac7f37c93a7be919d2bfe3fe7a19731b0f764f5cb2d0c1e7aad6f17eb378fb306f27408c9e7ea966d9
 
    Encrypted balance:
@@ -114,15 +103,15 @@ The output shows that the account with the local name ``my-account``
 
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
 -  has a balance of 1026 GTU,
--  has `sequence number`_ ``1``, and
+-  has :ref:`glossary-transaction-sequence-number` ``1``, and
 -  delegates its stake to the baker with ID 3.
 -  has ``a820662531d...`` as the key for receiving encrypted transfers.
--  has no `incoming encrypted amounts`_.
--  has a `self balance`_ of ``a9d35bf62442aabad72c...``. By default this
+-  has no :ref:`glossary-incoming-encrypted-amount`.
+-  has a :ref:`glossary-self-balance` of ``a9d35bf62442aabad72c...``. By default this
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
 
-Furthermore, the account's credential reveals no attributes from the `identity`_
+Furthermore, the account's credential reveals no attributes from the :ref:`glossary-identity`
 that the account is derived from, and expires at the end of September 2021.
 
 If the flag ``--decrypt-encrypted`` is provided, each of the encrypted amounts
@@ -138,7 +127,7 @@ Transaction status
 
    $concordium-client transaction status TX-HASH
 
-Display the lifecycle state of a `transaction`_ (pending, committed, finalized,
+Display the lifecycle state of a :ref:`glossary-transaction` (pending, committed, finalized,
 or absent).
 
 If the transaction is commited or finalized, the status (success or rejected)
@@ -166,8 +155,7 @@ Display information about a specific block. Note that some fields (e.g. slot
 time) are objective (i.e. all nodes participating in the Concordium network will
 agree on these) while others (e.g. arrival time) are specific to the local node:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current `best
-   block`_.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
 
 Example
 ~~~~~~~
@@ -201,10 +189,9 @@ Inspect consensus parameters
    $concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
 
 Show `election parameters`_ for a specific block, optionally including
-bakers and their `lottery power`_:
+bakers and their :ref:`glossary-lottery-power`:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current `best
-   block`_.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
 -  ``--include-bakers``: If set, include table of bakers and their
    lottery power. The lottery power is recomputed periodically, so operations
    that affect them do not take effect immediately. For more information about
@@ -228,10 +215,8 @@ Example
         4: 4pZN572izXS2jSNuGQ1nFg5ggvZZXsghFJMERzDqTNnJZkLyvX   19.9866 %
         ...
 
-.. _election parameters: /testnet/docs/glossary#leader-election
-.. _lottery power: /testnet/docs/glossary#lottery-power
-.. _best block: /testnet/docs/glossary#best-block
-.. _detailed description on the time constraints: /testnet/docs/quickstart-baker#detailed-description-on-the-epoch-constraints
+.. _`election parameters`: /testnet/see-also/glossary.html#leader-election
+.. _detailed description on the time constraints: /testnet/guides/become-baker.html/#epocs-and-slots
 
 Inspect consensus status
 ------------------------
@@ -286,7 +271,7 @@ ID layer
    $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
 
 Display the list of identity providers or anonymity revokers at a given block,
-defaulting to `best block`_.
+defaulting to :ref:`glossary-best-block`.
 
 Support & Feedback
 ==================

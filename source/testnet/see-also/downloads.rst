@@ -1,8 +1,10 @@
-.. _link: https://testflight.apple.com/join/X9MJhsPC
-.. _Open Testnet v3: /testnet/docs/release-notes
+.. _Open Testnet v4: /testnet/see-also/release-notes.html
 .. _Concordium client: /testnet/docs/client
 .. _node: /testnet/docs/quickstart-node
 .. _client: /testnet/docs/client
+.. _`Concordium ID APK`: https://client-distribution-testnet.concordium.com/wallet-testnet-release-0.5.24.apk
+.. _TestFlight: https://apps.apple.com/dk/app/testflight/id899247664?l=da
+.. _`TestFlight beta program`: https://testflight.apple.com/join/X9MJhsPC
 
 =========
 Downloads
@@ -17,51 +19,34 @@ Downloads
 Concordium ID
 =============
 
-Android
--------
+Installation on Android
+-----------------------
 
-- Download the """ , androidApkLink , """ to your phone.
-- You may see a warning about downloading the .apk-file. If asked
-  whether you want to keep the .apk-file, press **OK**.
-- After opening the .apk-file, you may see a warning saying that your
-  phone is not allowed to install apps from this source. Press
-  **Settings**, toggle **Allow from this source** and go back.
-- You are now asked if you want to install the application. Press
-  **Install**.
+Installation requirements: Android 8 or newer.
 
-Requirements
-~~~~~~~~~~~~
-
-Concordium ID is supported on Android 8 and upwards.
-
-iOS
----
-
-To get the Concordium ID app for iOS, you can click this `link`_ on your iPhone.
-By clicking the link, you will be taken to a page that let's you install the
-TestFlight app, followed by a guide on how to install Concordium ID using
-TestFlight.
-
-The page you will be taken to, should look something like this:
-
-.. image:: images/TestFlight.png
-   :align: center
-
-Installing the TestFlight app will be necessary to get Concordium ID, as that is
-Apple's way of distributing apps not yet released to the actual App Store.
+1. Download the `Concordium ID APK`_ to your phone.
+2. You may see a warning about downloading the .apk-file. If you are asked whether you want to keep the .apk-file, press **OK**.
+3. After opening the .apk-file, you may see a warning saying that your phone is not allowed to install apps from this source. Press **Settings**, toggle **Allow from this source** and go back.
+4. You are now asked if you want to install the application. Press **Install**.
 
 
-Requirements
-~~~~~~~~~~~~
+Installation on iOS
+-------------------
 
-Concordium ID is supported on iOS 13 and upwards.
+Installation requirements: iOS 13 or newer.
+
+Installing the Concordium ID app on iOS requires installation of Apple’s TestFlight app, which is used to distribute beta versions of iOS apps.
+
+1. Install `TestFlight`_ via App Store.
+2. Join our `TestFlight beta program`_ via your iPhone (it works best if you click the link directly on your iPhone), and follow the steps shown in there, to add Concordium ID to TestFlight.
+3. Open the TestFlight app on your iPhone and install Concordium ID.
 
 .. _concordium-node-and-client-download:
 
 Concordium Node and Client
 ==========================
 
-Concordium node and client software for `Open Testnet v3`_:
+Concordium node and client software for `Open Testnet v4`_:
 
 """, nodeSoftwareLinks , """
 

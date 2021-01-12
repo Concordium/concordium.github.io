@@ -21,13 +21,13 @@ Become a baker (create blocks)
    We need to address the user consistently; could we use the second person
    and imperative (let's avoid writing 'the user')?
 
-This section explains what a baker is, what is its role in the network and how
+This section explains what a baker is, its role in the network and how
 to become one.
 
 By reading this section you will learn:
 
 -  What is a baker and the concepts related to it.
--  How to upgrade your node for becoming a baker.
+-  How to upgrade your node to become a baker.
 
 The process of becoming a baker can be summarized in the following steps:
 
@@ -36,7 +36,7 @@ The process of becoming a baker can be summarized in the following steps:
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
 
-After completing those steps, the baker node will bake blocks. If a baked block
+After completing these steps, the baker node will bake blocks. If a baked block
 is added to the chain the node's baker will receive a reward.
 
 .. note::
@@ -92,7 +92,7 @@ Each registered baker is given a baker ID in the network. The baker ID is unique
 for each account so if an account removes its baker and then registers a new
 baker, it will have the same baker ID as the original baker. This ID merely tags
 the baker and is not needed to be provided for any operation, as the sender
-account already identifies in which baker performs the operation.
+account already identifies which baker performed the operation.
 
 Whenever a baker bakes a valid block that gets included in the chain, after some
 time a reward is paid to the associated account.
@@ -183,7 +183,7 @@ To create a fresh set of keys run
    $concordium-client baker generate-keys <keys-file>.json
 
 where you can choose an arbitrary name the keys file. To
-register the keys in the network you need to be :ref:`running a node <my-reference-label>`
+register the keys in the network you need to be :ref:`running a node <running-a-node>`
 and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
@@ -220,8 +220,8 @@ baker was finalized.
    If the transaction for adding the baker was finalized during epoch `E`, the
    baker will be active when epoch `E+2` starts.
 
-Manage the baker
-================
+Managing the baker
+==================
 
 Checking the status of the baker and its lottery power
 ------------------------------------------------------
@@ -263,8 +263,8 @@ offer different degrees of precision in the information displayed.
 
 - If the staked amount is big enough and there is a node running with the baker keys
   loaded, that baker should eventually produce blocks and the user can see in
-  their mobile wallet that baking rewards are being received on the account, as
-  seen on this image:
+  their mobile wallet that baking rewards are being received by the account, as
+  seen in this image:
 
   .. image:: images/bab-reward.png
      :align: center
@@ -273,26 +273,31 @@ offer different degrees of precision in the information displayed.
 Updating the staked amount
 --------------------------
 
-Although the staked amount is locked and cannot be moved, the user can modify
-that amount to increase or decrease it.
+To update the baker stake run
 
-Modifying the staked amount takes **2 epochs** regardless of what operation is
-performed.
+.. code-block:: console
 
-When **decreasing the staked amount**, there is a *cooldown period* during which
-the operations are queued but not yet executed. This particularly means that
-supposing a cooldown period of `X epochs`, the change will be executed when `X`
-epochs after the transaction for updating the stake is finalized have
-passed. Note that after the change is executed it will still take 2 epochs for
-the change to take effect. In the testnet, this value is set to **168 epochs**
-which corresponds to **one week**.
+   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount
+
+Modifying the staked amount modifies the probability that a baker gets elected to bake blocks.
+
+When a baker adds stake for the first time or increases their stake:
+
+- That change becomes visible on the chain immediately (e.g. through ``concordium-client account show bakerAccount``)
+- The baker can bake (and possibly finalize, if stake is sufficient) after 2 epochs
+
+When a baker decreases the stake amount:
+
+- The change becomes visible on the chain after the *cooldown period* (currently 168 epochs)
+
+  * - The pending change can also be queried immediately after the  using
+      ``concordium-client raw GetAccountInfo`` and observing the ``pendingChange`` attribute
+
+- The change takes effect after the cooldown period plus 2 epochs
 
 .. note::
 
-   The value of the *cooldown period* is not currently displayed in any usual
-   command on the ``concordium-client`` and can only be consulted using the
-   ``raw`` commands. As the value can change in each block, it can be seen with
-   the following command:
+   Check the value of the cooldown period as follows:
 
    .. code-block:: console
 
@@ -301,25 +306,12 @@ which corresponds to **one week**.
               "bakerCooldownEpochs": 168
       ...
 
-In the case of increasing the staked amount, the change is executed in the
-moment the transaction is finalized. Note that after the change is executed it
-will still take 2 epochs for the change to take effect.
-
-The stake is updated using the ``concordium-client``:
-
-.. code-block:: console
-
-   $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount
-
-Note that modifying the staked amount modifies the probability of a baker being
-elected to create the next block.
 
 .. todo::
 
-   Could this sentence be clarified?
+   Could the following sentence be clarified?
 
-The user can then check when will this change be executed if decreasing the
-stake by querying for the account information:
+When decreasing the stake, the user can then check when this change will be executed by querying for the account information:
 
 .. code-block:: console
 
@@ -334,13 +326,12 @@ stake by querying for the account information:
 
 .. warning::
 
-   As said in the `Definitions`_ section, the staked amount is locked while
-   staked and cannot be transferred or moved in any way. The user should take
-   this into account and might consider staking an amount that will not be
-   needed in the short term. Also, note that deregistering as a baker or
-   modifying the staked amount requires that the account has some unlocked GTU
-   so there needs to be a sufficient amount of unlocked GTU on the account to
-   perform these operations.
+   As noted in the `Definitions`_ section, the staked amount is *locked*,
+   i.e. it cannot be transferred or used for payment. The user should take
+   this into account and consider staking an amount that will not be
+   needed in the short term. In particular, to deregister a baker or to
+   modify the staked amount the user needs to own some non-staked GTU to
+   cover the transaction costs.
 
 Restaking the earnings
 ----------------------
@@ -358,8 +349,9 @@ changed through ``concordium-client``:
    $concordium-client baker update-restake False --sender bakerAccount
    $concordium-client baker update-restake True --sender bakerAccount
 
-Changing the switch will take effect 2 epochs after the transaction is
-finalized. The current value of the switch can be seen in the account
+Changes to the restake flag will take effect immediately; however, the changes start
+affecting baking and finalizing power in the epoch after next.
+The current value of the switch can be seen in the account
 information which can be queried using ``concordium-client``:
 
 .. code-block:: console
@@ -373,8 +365,8 @@ information which can be queried using ``concordium-client``:
 
    ...
 
-When the baker is registered, it will automatically re-stake the earnings, but,
-as mentioned above, this can be changed by providing the ``--no-restake`` flag to
+When the baker is registered, it will automatically re-stake the earnings, but as
+mentioned above, this can be changed by providing the ``--no-restake`` flag to
 the ``baker add`` command as shown here:
 
 .. code-block:: console
@@ -384,12 +376,12 @@ the ``baker add`` command as shown here:
 Finalization
 ------------
 
-Finalization is the voting process performed by specific nodes (those belonging
-to the finalization committee) that *finalizes* a block when a sufficently big
+Finalization is the voting process performed by nodes
+in the *finalization committee* that *finalizes* a block when a sufficiently big
 number of members of the committee have received the block and agree on its
 outcome. Newer blocks must have the finalized block as an ancestor to ensure the
-integrity of the chain. For more information about this process, check
-:ref:`glossary_finalization`.
+integrity of the chain. For more information about this process, see the
+:ref:`glossary_finalization` section.
 
 The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
@@ -398,7 +390,7 @@ to reach said threshold. In the testnet, the staked amount needed to participate
 in the finalization committee is **0.1% of the total amount of existing GTU**.
 
 Participating in the finalization committee produces rewards on each block that
-is finalized which are paid to the baker account some time after the block is
+is finalized. The rewards are paid to the baker account some time after the block is
 finalized.
 
 Removing a baker
@@ -416,7 +408,7 @@ the baker so that it can be transferred or moved freely.
 
 When removing the baker, there is a **cooldown period** (check `Updating the
 staked amount`_ above for more information about this value) during which the
-operation is queued but not yet executed. The user can check when will this take
+operation is queued but not yet executed. The user can check when this takes
 effect by querying the account information with ``concordium-client`` as usual:
 
 .. code-block:: console
@@ -441,4 +433,3 @@ Support & Feedback
 
 If you run into any issues or have suggestions, post your question or
 feedback on `Discord`_, or contact us at testnet@concordium.com.
-

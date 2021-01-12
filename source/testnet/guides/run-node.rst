@@ -67,7 +67,7 @@ To upgrade to the current Concordium software for Open Testnet 4:
 
 .. _download: /testnet/see-also/downloads.html
 
-.. _my-reference-label:
+.. _running-a-node:
 
 Running a node
 ==============

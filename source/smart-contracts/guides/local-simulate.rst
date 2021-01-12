@@ -4,8 +4,8 @@
 Locally simulate contract functions
 ===================================
 
-This guide is about how to locally simulate an invocation of some ``init``- or
-``receive``-function from a Wasm smart contract module in a given context and
+This guide is about how to locally simulate an invocation of some init or
+receive function from a Wasm smart contract module in a given context and
 state.
 This simulation is useful for inspecting a smart contract and the outcome in
 specific scenarios.
