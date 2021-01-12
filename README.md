@@ -72,6 +72,7 @@ If you want the graphs to render properly you also need to install the `dot` too
 
 To watch the doc files and automate the build run:
 
+### macOS and Linux
 ```
 make dev
 ```
@@ -81,6 +82,20 @@ Before committing, make sure to run the linter and fix all the errors reported:
 ```
 make lint
 ```
+
+### Windows
+
+```
+./make.bat dev
+```
+and navigate to [localhost:8000](http://localhost:8000).
+
+Before committing, make sure to try to build and fix any warnings that are reported.
+
+```
+./make.bat html
+```
+
 
 > **Note**: In `make dev` we disable the cache on build as this tends to cause
 > inconsistencies. If the build time becomes too slow, it might be worth
