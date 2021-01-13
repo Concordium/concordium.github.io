@@ -275,6 +275,8 @@ ID layer
 Display the list of identity providers or anonymity revokers at a given block,
 defaulting to the :ref:`best block<glossary-best-block>`.
 
+.. _exchange-rates:
+
 Exchange rates
 ==============
 
