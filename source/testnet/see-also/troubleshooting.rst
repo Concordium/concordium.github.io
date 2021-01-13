@@ -18,13 +18,8 @@ Multiple nodes, bakers, and accounts
 ====================================
 
 We do not currently support running two nodes on the same machine. When the
-``concordium-node`` tool is run when the node is already running it will either
-do nothing, in case none of the parameters, e.g., node name, have changed, or
-restart the node with the new parameters. Note that "do nothing" means that it
-will attach the terminal to the existing running node, so it will appear similar
-to if another node is running, but upon close inspection it will become clear
-that the outputs of the previously running, and the "newly started" nodes are
-the same.
+``concordium-node`` tool is run when the node is already running it will it you
+if you want to stop the currently running node and start a new one.
 
 A node can only run as one baker. A baker is by definition a member of the
 committee. The current committee can be obtained by querying the node via
@@ -39,13 +34,6 @@ starts with are registered in the committee.
 Which baker the node runs as is determined by the baker keys that it starts with
 (these are in the file ``baker-credentials.json``). If a node is restarted it
 reloads the keys that exist at the time it starts.
-
-The same account can be used to register multiple bakers. All these bakers will,
-by default, have the account as the reward account. An account can only delegate
-to one of the bakers however (delegate in the sense that the tokens on the
-account will count towards the stake of the baker). When a baker is registered,
-and without further action, it will be in the committee, but it will have 0%
-stake. Any account can subsequently delegate to any of the registered bakers.
 
 Appearance of high memory consumption of the node
 =================================================
