@@ -13,6 +13,11 @@
     padding-right: 0.5em;
 }
 
+.wy-side-nav-search {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 .sidebar-top-menu {
     display: flex;
     flex-direction: row;
@@ -20,15 +25,14 @@
     justify-content: space-between;
 }
 
+
 .sidebar-top-menu a {
-    color: #fcfcfc;
-    padding: 0.5em;
-    border-radius: 10px;
-    border: 1px solid black;
+    color: #d9d9d9;
+    padding: 0.6em;
+    border-radius: 2px 2px 0 0;
 }
 
+
 .sidebar-top-menu a.active {
-    background-color: #fcfcfc;
-    color: black;
-    border-color: #2472a4;
+    background-color: #343131;
 }
