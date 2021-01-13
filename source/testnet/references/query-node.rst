@@ -273,7 +273,48 @@ ID layer
    $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
 
 Display the list of identity providers or anonymity revokers at a given block,
-defaulting to :ref:`glossary-best-block`.
+defaulting to the :ref:`best block<glossary-best-block>`.
+
+Exchange rates
+==============
+
+Conversion rates between NRG, GTU, and Euros can fluctuate between blocks. To get a best estimate of the current
+exchange rates, query the chain parameters of the :ref:`best block<glossary-best-block>`:
+
+.. code-block:: console
+
+   $concordium-client raw GetBlockSummary
+
+You can also add a block hash at the end of the command to query a specific block.
+
+The command returns the information about a block in JSON format. The exchange rates are
+in the ``chainParameters`` section under ``microGTUPerEuro`` and ``euroPerEnergy``:
+
+.. code-block:: json
+
+    ...
+    "chainParameters": {
+        ...
+        "microGTUPerEuro": {
+            "denominator": 1,
+            "numerator": 100 000 000
+        },
+        ...
+        "euroPerEnergy": {
+            "denominator": 1 000 000,
+            "numerator": 1
+        }
+
+In this example, conversions between Euros, GTU and NRG are as follows:
+
+- 1 EUR = 100 000 000 microGTU = 100 000 000 / 1 000 000 GTU = 100 GTU
+- 1 NRG = 10 :sup:`-6` EUR
+- 1 NRG = 10 :sup:`-4` GTU
+
+Conversion changes happen through transactions that update the chain parameters.
+If an update transaction has been posted it will take time to take effect. You can see
+whether updates to the chain parameters are being processed by looking for attributes
+that are prefixed with ``pending`` in the result of the above query.
 
 Support & Feedback
 ==================

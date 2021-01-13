@@ -31,7 +31,7 @@ effort of applying the transaction as closely as possible. When the transaction
 is sumbitted, its cost is deducted from the sender's account and paid to the
 network as a fee for carrying out the transaction. Cost is measured in the unit
 NRG which corresponds to GTU according to a variable conversion factor
-(currently 1 NRG = 0.0001 GTU).
+(currently 1 NRG = 0.0001 GTU). To find out the current exchange rate see :ref:`exchange rates`.
 
 Once a baker receives a transaction from some client, it performs a few basic
 checks to verify that the transaction is eligible for *inclusion* in a :ref:`block<glossary-block>`.
