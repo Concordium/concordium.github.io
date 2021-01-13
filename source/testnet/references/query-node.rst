@@ -131,7 +131,7 @@ Transaction status
 Display the lifecycle state of a :ref:`glossary-transaction` (pending, committed, finalized,
 or absent).
 
-If the transaction is commited or finalized, the status (success or rejected)
+If the transaction is committed or finalized, the status (success or rejected)
 and execution cost is included as well.
 
 Example

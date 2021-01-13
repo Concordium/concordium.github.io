@@ -171,8 +171,10 @@ Logging an event has an associated cost, similar to the cost of writing to the
 contract's state. In most cases it would only make sense to log a few bytes to
 reduce cost.
 
-Action description
-==================
+.. _action-descriptions:
+
+Action descriptions
+===================
 
 A receive function returns a *description of actions* to be executed by
 the host environment on the chain.

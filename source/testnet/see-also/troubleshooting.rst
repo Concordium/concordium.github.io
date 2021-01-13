@@ -133,7 +133,7 @@ Performance issues in mobile wallet on Android phones
 
 Performance issues, e.g. long processing times, might occur when running the
 mobile wallet ``Concordium ID`` on a low end Android phone. Processing delays
-might not be indicated by approriate waiting screens.
+might not be indicated by appropriate waiting screens.
 
 Robustness issues with shielded transfer in mobile wallets
 ==========================================================
