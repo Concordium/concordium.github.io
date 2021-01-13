@@ -105,8 +105,7 @@ The output shows that the account with the local name ``my-account``
 
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
 -  has a balance of 1026 GTU,
--  has :ref:`glossary-transaction-sequence-number` ``1``, and
--  delegates its stake to the baker with ID 3.
+-  has :ref:`glossary-transaction-sequence-number` ``1``,
 -  has ``a820662531d...`` as the key for receiving encrypted transfers.
 -  has no :ref:`glossary-incoming-encrypted-amount`.
 -  has a :ref:`glossary-self-balance` of ``a9d35bf62442aabad72c...``. By default this
