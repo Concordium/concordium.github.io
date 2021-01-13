@@ -43,7 +43,7 @@ updating keys of accounts and bakers.
 Every transaction has a well-defined *cost*, the value of which depends on the
 transaction type as well as the payload in a way that reflects the computational
 effort of applying the transaction as closely as possible. When the transaction
-is sumbitted, its cost is deducted from the sender's account and paid to the
+is submitted, its cost is deducted from the sender's account and paid to the
 network as a fee for carrying out the transaction. Cost is measured in the unit
 NRG which corresponds to GTU according to a variable conversion factor
 (currently 1 NRG = 0.0001 GTU).

@@ -426,7 +426,7 @@ effect by querying the account information with ``concordium-client`` as usual:
 
    Decreasing the staked amount and removing the baker cannot be done
    simultaneously. During the cooldown period produced by decreasing the staked
-   amount, the baker cannot be removed and viceversa.
+   amount, the baker cannot be removed and vice versa.
 
 Support & Feedback
 ==================

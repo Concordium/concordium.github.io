@@ -37,7 +37,7 @@ It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.
 
 The library is added by opening ``Cargo.toml`` and adding the line
-``concordium-std = "*"`` (preferrably, replace the `*` with the latest version of `concordium-std`_) in
+``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
 the ``[dependencies]`` section::
 
    [dependencies]
