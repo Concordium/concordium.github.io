@@ -299,4 +299,4 @@ Move heavy calculations off-chain
 .. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
 .. _Get: https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html
 .. _Read: https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html
-.. _concordium_std: https://docs.rs/concordium-std/0.3.1/concordium_std/
+.. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std/

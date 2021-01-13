@@ -1,10 +1,5 @@
-.. _Obtaining an identity: #obtaining-an-identity
-.. _Creating an account: #creating-an-account
-.. _Benefits: #benefits
-.. _`anonymity revocation`: /testnet/references/id-accounts.html#revoking-anonymity
 .. _Notabene: https://notabene.id/
 .. _Onfido: https://onfido.com/
-.. _`Concordium ID`: /test/guides/get-started.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _reference-id-accounts:
@@ -30,7 +25,7 @@ Regular accounts' owner is not known to the identity providers, or any other sin
 compliance with relevant regulations, a regular account can only be created from an *identity*
 which is issued :ref:`glossary-off-chain` by an Identity provider. While an account
 has to be created from an identity, the user's privacy is still protected, and the
-account owner's identity can only be revealed via the process of `anonymity revocation`_,
+account owner's identity can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`,
 which can only happen under stringent regulations, such as upon a court order. In
 particular, a key feature of the design of identities and accounts is that the identity
 provider cannot reveal the identity of an account on their own.
@@ -55,7 +50,7 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-Identities can be created via `Concordium ID`_. Identity issuance requires
+Identities can be created via :ref:`Concordium ID<testnet-get-started>`. Identity issuance requires
 *Identity Verification*, which is the process of verifying the real-life
 identity of the user. This will typically involve taking photographs, scans of
 identification documents (e.g., passport), etc. Identity verification also
@@ -64,7 +59,7 @@ checks that the user-chosen attributes are valid for the user.
 Concordium ID (mobile wallet) identity
 --------------------------------------
 
-In the testnet phase the `Concordium ID`_ app supports two identity issuance
+In the testnet phase the :ref:`Concordium ID<testnet-get-started>` app supports two identity issuance
 flows: *Notabene* and *Notabene (development)*. In both cases the identity
 provider is `Notabene`_, but the identity verifiers differ.
 
@@ -90,7 +85,7 @@ reveal publicly. The proofs establish that the attributes the user revealed
 publicly are the ones approved by the identity provider. The proofs reveal no
 other information. In particular, the identity provider itself cannot determine
 the owner of the account. (Revealing the owner is only possible through
-`anonymity revocation`_, which requires the identity provider and anonymity
+:ref:`anonymity revocation<revoking-anomity>`, which requires the identity provider and anonymity
 revokers to act together.) Note that revealing attributes publicly is completely
 optional. The benefit gained from revealing attributes is that other users may
 decide whether to trust the account based on the publicly available information.

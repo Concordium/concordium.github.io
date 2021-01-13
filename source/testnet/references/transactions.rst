@@ -1,9 +1,3 @@
-.. _Concordium ID (mobile wallet): #concordium-id-mobile-wallet
-.. _Command-line tool: #command-line-tool
-.. _Transfer: #transfer
-.. _Encrypted transfer: #encrypted-transfer
-.. _Shield an amount: #shield-an-amount
-.. _Unshield an amount: #unshield-an-amount
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _transactions:
@@ -28,7 +22,7 @@ and bakers.
 Every transaction has a well-defined *cost*, the value of which depends on the
 transaction type as well as the payload in a way that reflects the computational
 effort of applying the transaction as closely as possible. When the transaction
-is sumbitted, its cost is deducted from the sender's account and paid to the
+is submitted, its cost is deducted from the sender's account and paid to the
 network as a fee for carrying out the transaction. Cost is measured in the unit
 NRG which corresponds to GTU according to a variable conversion factor
 (currently 1 NRG = 0.0001 GTU). Read more about conversions between GTU, NRG, and Euros in :ref:`exchange-rates`.

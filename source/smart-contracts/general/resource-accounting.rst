@@ -370,7 +370,7 @@ Resource accounting
 
    Note that depending on the implementation, the stack(s) could be a pre-allocated
    part of memory, or it/they will be dynamically allocated. In the latter case,
-   the cost of allocation should not be ommitted. Furthermore, the granularity of
+   the cost of allocation should not be omitted. Furthermore, the granularity of
    allocation should be considered: at each function call, stack size for the
    maximum possible usage by the function may be allocated (as opposed to the
    optimization regarding recursion described above).
@@ -436,7 +436,7 @@ Resource accounting
    The :math:`\BLOCK` and :math:`\LOOP` markers and the implicit labels blocks
    define are only needed for validation and to generate the correct target
    addresses for branch instructions. In the eventual code to be executed, the
-   branch instructions are the only necessary semantical components, specifying the
+   branch instructions are the only necessary semantic components, specifying the
    correct instruction to continue with in the instruction sequence.
 
    A consequence is that any amount of nested blocks do not add to accounted cost

@@ -1,18 +1,7 @@
 
-.. _Account state: #account-state
-.. _List accounts: #list-accounts
-.. _Inspect specific account: #inspect-specific-account
-.. _Transaction status: #transaction-status
-.. _Block state: #block-state
-.. _Inspect specific block: #inspect-specific-block
-.. _Consensus state: #consensus-state
-.. _Inspect consensus parameters: #inspect-consensus-parameters
-.. _Inspect consensus status: #inspect-consensus-status
-.. _ID layer: #id-layer
-.. _concordium-client: /testnet/references/concordium-client.html
-.. _identity: /testnet/references/id-accounts.html
-.. _glossary: /testnet/see-also/glossary.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
+
+.. _testnet-query-node:
 
 ===============
 Querying a node
@@ -22,7 +11,7 @@ Querying a node
    :local:
    :backlinks: none
 
-The concordium-client_ tool supports queries of multiple kinds of state against
+The :ref:`concordium-client<concordium_client>` tool supports queries of multiple kinds of state against
 a backend node:
 
 -  Account state: List all accounts and display all publicly available
@@ -105,8 +94,7 @@ The output shows that the account with the local name ``my-account``
 
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
 -  has a balance of 1026 GTU,
--  has :ref:`glossary-transaction-sequence-number` ``1``, and
--  delegates its stake to the baker with ID 3.
+-  has :ref:`glossary-transaction-sequence-number` ``1``,
 -  has ``a820662531d...`` as the key for receiving encrypted transfers.
 -  has no :ref:`glossary-incoming-encrypted-amount`.
 -  has a :ref:`glossary-self-balance` of ``a9d35bf62442aabad72c...``. By default this
@@ -132,7 +120,7 @@ Transaction status
 Display the lifecycle state of a :ref:`glossary-transaction` (pending, committed, finalized,
 or absent).
 
-If the transaction is commited or finalized, the status (success or rejected)
+If the transaction is committed or finalized, the status (success or rejected)
 and execution cost is included as well.
 
 Example
@@ -178,7 +166,7 @@ Example
    Transaction energy cost:    112 NRG
    Transactions size:          284
 
-See the `glossary`_ for detailed descriptions of the individual fields.
+See the :ref:`glossary<glossary>` for detailed descriptions of the individual fields.
 
 Consensus state
 ===============
@@ -190,15 +178,15 @@ Inspect consensus parameters
 
    $concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
 
-Show `election parameters`_ for a specific block, optionally including
+Show :ref:`election parameters<glossary-leader-election>` for a specific block, optionally including
 bakers and their :ref:`glossary-lottery-power`:
 
 -  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
 -  ``--include-bakers``: If set, include table of bakers and their
    lottery power. The lottery power is recomputed periodically, so operations
    that affect them do not take effect immediately. For more information about
-   what information will be shown here, see the `detailed description on the
-   time constraints`_.
+   what information will be shown here, see the :ref:`detailed description on the
+   time constraints<epochs-and-slots>`.
 
 Example
 ~~~~~~~
@@ -217,8 +205,6 @@ Example
         4: 4pZN572izXS2jSNuGQ1nFg5ggvZZXsghFJMERzDqTNnJZkLyvX   19.9866 %
         ...
 
-.. _`election parameters`: /testnet/see-also/glossary.html#leader-election
-.. _detailed description on the time constraints: /testnet/guides/become-baker.html/#epocs-and-slots
 
 Inspect consensus status
 ------------------------
