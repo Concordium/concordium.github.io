@@ -21,6 +21,7 @@ We do not currently support running two nodes on the same machine. When the
 ``concordium-node`` tool is run when the node is already running it will it you
 if you want to stop the currently running node and start a new one.
 
+
 A node can only run as one baker. A baker is by definition a member of the
 committee. The current committee can be obtained by querying the node via
 
@@ -124,8 +125,6 @@ Inconsistency with numbers on ID documents
 When issuing an identity in the mobile wallet ``Concordium ID`` with identity provider ``Notabene``, which is based on a Danish ID document or a Spanish national identity card, the personal identity number might be included as document number in the issued identity instead of the actual ID document number.
 
 Danish ID documents (e.g. passport or driver's license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead.
-
-A Spanish national identity card shows the serial number of the card (NUM SOPORT) and the identity number of the holder (DNI). NUM SOPORT should be included in the issued identity. Inconsistencies may be observed where DNI is used instead.
 
 The issues are reported to identity provider Notabene as well as identity verifier Onfido.
 
