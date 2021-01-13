@@ -504,7 +504,7 @@ to testing it, we check that it builds by running:
 
    $cargo concordium build
 
-Thich should succeed if everything is set up correctly. Otherwise, compare your
+This should succeed if everything is set up correctly. Otherwise, compare your
 code with the one found here_.
 
 .. _here: https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs
