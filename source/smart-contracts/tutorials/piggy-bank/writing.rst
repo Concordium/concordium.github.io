@@ -86,7 +86,7 @@ Piggy bank contract
 The contract we are going to build in this tutorial is going to act as a classic
 piggy bank. Everyone should be able to put money in the form of GTU into it, but only the owner
 can smash it and retrieve the GTU inside. Once the piggy bank has been
-smashed, it should not be possible to add money to it.
+smashed, it should not be possible to add GTU to it.
 
 .. todo::
 
