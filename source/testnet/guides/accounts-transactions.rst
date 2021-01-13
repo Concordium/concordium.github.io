@@ -12,6 +12,8 @@
 .. _Discord: https://discord.gg/xWmQ5tp
 
 
+.. _guide-account-transactions:
+
 =========================================================
 Concordium ID: Get started with accounts and transactions
 =========================================================
