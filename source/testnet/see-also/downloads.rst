@@ -1,8 +1,4 @@
-.. _Open Testnet v4: /testnet/see-also/release-notes.html
-.. _Concordium client: /testnet/docs/client
-.. _node: /testnet/docs/quickstart-node
-.. _client: /testnet/docs/client
-.. _`Concordium ID APK`: https://client-distribution-testnet.concordium.com/wallet-testnet-release-0.5.24.apk
+.. _`Concordium ID APK`: https://client-distribution-testnet.concordium.com/wallet-testnet-release-0.5.30.apk
 .. _TestFlight: https://apps.apple.com/dk/app/testflight/id899247664?l=da
 .. _`TestFlight beta program`: https://testflight.apple.com/join/X9MJhsPC
 
@@ -50,15 +46,15 @@ Installing the Concordium ID app on iOS requires installation of Apple’s TestF
 Concordium Node and Client
 ==========================
 
-Concordium node and client software for `Open Testnet v4`_:
+Concordium node and client software for :ref:`Open Testnet v4 <open-testnet-v4>`:
 
-""", nodeSoftwareLinks , """
+* `Linux <https://client-distribution-testnet.concordium.com/concordium-software-linux_0.4.8-0.tar.gz>`_
+* `Windows <https://client-distribution-testnet.concordium.com/concordium-software-win_0.4.8-0.zip>`_
+* `MacOS <https://client-distribution-testnet.concordium.com/concordium-software-macos_0.4.8-0.zip>`_
 
-Download and extract the archive into the ``Documents`` folder of your home
-directory. Please make sure to unpack the archive into this folder as this is
-necessary to run the `Concordium client`_.
+Download and extract the archive on your machine.
 
-Read more about the Concordium `node`_ and `client`_ software in our reference
+Read more about the Concordium :ref:`node <run-a-node>` and :ref:`client <concordium_client>` software in our reference
 guides.
 
 .. _requirements-1:
@@ -94,6 +90,6 @@ Desktop, server or laptop hardware running a recent version of Mac OS with:
 
 You need a broadband connection to run our node. It is preferable to run the
 node continuously. If you use a laptop please be aware that sleep can cause
-problems with the docker container used to run the node. Refer to our known
-problems list at https://developer.concordium.com/testnet/docs/troubleshooting
+problems with the docker container used to run the node. Refer to our :ref:`known
+problems list <troubleshooting-and-known-issues>`.
 
