@@ -50,7 +50,7 @@ Concordium node and client software for :ref:`Open Testnet v4 <open-testnet-v4>`
 
 * `Linux <https://client-distribution-testnet.concordium.com/concordium-software-linux_0.4.8-0.tar.gz>`_
 * `Windows <https://client-distribution-testnet.concordium.com/concordium-software-win_0.4.8-0.zip>`_
-* `Mac <https://client-distribution-testnet.concordium.com/concordium-software-macos_0.4.8-0.zip>`_
+* `MacOS <https://client-distribution-testnet.concordium.com/concordium-software-macos_0.4.8-0.zip>`_
 
 Download and extract the archive on your machine.
 
