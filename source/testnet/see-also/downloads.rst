@@ -52,7 +52,7 @@ Concordium node and client software for :ref:`Open Testnet v4 <open-testnet-v4>`
 * `Windows <https://client-distribution-testnet.concordium.com/concordium-software-win_0.4.8-0.zip>`_
 * `Mac <https://client-distribution-testnet.concordium.com/concordium-software-macos_0.4.8-0.zip>`_
 
-Download and extract the archive on your machine. 
+Download and extract the archive on your machine.
 
 Read more about the Concordium :ref:`node <run-a-node>` and :ref:`client <concordium_client>` software in our reference
 guides.
