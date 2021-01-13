@@ -52,18 +52,14 @@
 
 <body class="wy-body-for-nav">
 
-  
-    <nav class="topbar">
-        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
-        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
-    </nav>
-
+   
   <div class="wy-grid-for-nav">
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: black" >
           
+
 
           
             <a href="../../index.html">
@@ -90,6 +86,11 @@
 </div>
 
           
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
         </div>
 
         
@@ -206,35 +207,35 @@
 <span id="become-a-baker"></span><h1>Become a baker (create blocks)<a class="headerlink" href="#become-a-baker-create-blocks" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#definitions" id="id6">Definitions</a></p>
+<li><p><a class="reference internal" href="#definitions" id="id8">Definitions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#baker" id="id7">Baker</a></p></li>
-<li><p><a class="reference internal" href="#baker-keys" id="id8">Baker keys</a></p></li>
-<li><p><a class="reference internal" href="#baker-account" id="id9">Baker account</a></p></li>
-<li><p><a class="reference internal" href="#stake-and-lottery" id="id10">Stake and lottery</a></p></li>
-<li><p><a class="reference internal" href="#epochs-and-slots" id="id11">Epochs and slots</a></p></li>
+<li><p><a class="reference internal" href="#baker" id="id9">Baker</a></p></li>
+<li><p><a class="reference internal" href="#baker-keys" id="id10">Baker keys</a></p></li>
+<li><p><a class="reference internal" href="#baker-account" id="id11">Baker account</a></p></li>
+<li><p><a class="reference internal" href="#stake-and-lottery" id="id12">Stake and lottery</a></p></li>
+<li><p><a class="reference internal" href="#epochs-and-slots" id="id13">Epochs and slots</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#start-baking" id="id12">Start baking</a></p>
+<li><p><a class="reference internal" href="#start-baking" id="id14">Start baking</a></p>
 <ul>
-<li><p><a class="reference internal" href="#managing-accounts" id="id13">Managing accounts</a></p></li>
-<li><p><a class="reference internal" href="#creating-keys-for-a-baker-and-registering-it" id="id14">Creating keys for a baker and registering it</a></p></li>
+<li><p><a class="reference internal" href="#managing-accounts" id="id15">Managing accounts</a></p></li>
+<li><p><a class="reference internal" href="#creating-keys-for-a-baker-and-registering-it" id="id16">Creating keys for a baker and registering it</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#managing-the-baker" id="id15">Managing the baker</a></p>
+<li><p><a class="reference internal" href="#managing-the-baker" id="id17">Managing the baker</a></p>
 <ul>
-<li><p><a class="reference internal" href="#checking-the-status-of-the-baker-and-its-lottery-power" id="id16">Checking the status of the baker and its lottery power</a></p></li>
-<li><p><a class="reference internal" href="#updating-the-staked-amount" id="id17">Updating the staked amount</a></p></li>
-<li><p><a class="reference internal" href="#restaking-the-earnings" id="id18">Restaking the earnings</a></p></li>
-<li><p><a class="reference internal" href="#finalization" id="id19">Finalization</a></p></li>
+<li><p><a class="reference internal" href="#checking-the-status-of-the-baker-and-its-lottery-power" id="id18">Checking the status of the baker and its lottery power</a></p></li>
+<li><p><a class="reference internal" href="#updating-the-staked-amount" id="id19">Updating the staked amount</a></p></li>
+<li><p><a class="reference internal" href="#restaking-the-earnings" id="id20">Restaking the earnings</a></p></li>
+<li><p><a class="reference internal" href="#finalization" id="id21">Finalization</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#removing-a-baker" id="id20">Removing a baker</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id21">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#removing-a-baker" id="id22">Removing a baker</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id23">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>This section explains what a baker is, its role in the network and how
-to become one.</p>
+<p>This section explains what a baker is, its role in the network and how to become
+one.</p>
 <p>By reading this section you will learn:</p>
 <ul class="simple">
 <li><p>What is a baker and the concepts related to it.</p></li>
@@ -258,40 +259,30 @@ account that will be used to register and manage a baker.</p>
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="baker">
 <h3>Baker<a class="headerlink" href="#baker" title="Permalink to this headline">¶</a></h3>
-<p>A node is a <em>baker</em> (or <em>is baking</em>) when it actively participates in
-the network by creating new blocks that are added to the chain. A
-baker collects, orders and validates the transactions that are included in a
-block to maintain the integrity of the blockchain. The baker signs
-each block that they bake so that the block can be checked and executed by the rest of the
-participants of the network.</p>
+<p>A node is a <em>baker</em> (or <em>is baking</em>) when it actively participates in the
+network by creating new blocks that are added to the chain. A baker collects,
+orders and validates the transactions that are included in a block to maintain
+the integrity of the blockchain. The baker signs each block that they bake so
+that the block can be checked and executed by the rest of the participants of
+the network.</p>
 </div>
 <div class="section" id="baker-keys">
 <h3>Baker keys<a class="headerlink" href="#baker-keys" title="Permalink to this headline">¶</a></h3>
-<p>Each baker has a set of cryptographic keys called <em>baker
-keys</em>. The node uses these keys to sign the blocks that it bakes. In order to
-bake blocks signed by a specific baker the node has to be running with its set
-of baker keys loaded.</p>
+<p>Each baker has a set of cryptographic keys called <em>baker keys</em>. The node uses
+these keys to sign the blocks that it bakes. In order to bake blocks signed by a
+specific baker the node has to be running with its set of baker keys loaded.</p>
 </div>
 <div class="section" id="baker-account">
 <h3>Baker account<a class="headerlink" href="#baker-account" title="Permalink to this headline">¶</a></h3>
-<p>Each account in the network can register a unique set of baker
-keys that effectively registers a baker in the network, so this means
-that every account can choose whether to be a baker or not.</p>
-<p>During this guide we will refer to the account that opted to be a baker simply
-as <em>the account</em>, <em>the baker account</em> or <em>the associated account</em>.</p>
-<p>Each registered baker is given a baker ID in the network. The baker ID is unique
-for each account so if an account removes its baker and then registers a new
-baker, it will have the same baker ID as the original baker. This ID merely tags
-the baker and is not needed to be provided for any operation, as the sender
-account already identifies which baker performed the operation.</p>
+<p>Each account can use a set of baker keys to register a baker.</p>
 <p>Whenever a baker bakes a valid block that gets included in the chain, after some
 time a reward is paid to the associated account.</p>
 </div>
 <div class="section" id="stake-and-lottery">
 <h3>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Permalink to this headline">¶</a></h3>
-<p>A baker holds some <em>stake</em> which is part of the amount of GTU owned by the
-account. The staked amount cannot be moved or transferred until it
-is released by the baker.</p>
+<p>The account can stake part of its GTU balance into the <em>baker stake</em> and can
+later manually release all or part of the staked amount. The staked amount
+cannot be moved or transferred until it is released by the baker.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If an account owns an amount that was transferred with a release schedule,
@@ -300,6 +291,8 @@ the amount can be staked even if not released yet.</p>
 <p>In order to be chosen for baking a block, the baker must participate in a
 <em>lottery</em> in which the probability of getting a winning ticket is roughly
 proportional to the staked amount.</p>
+<p>The same stake is used when calculating whether a baker is included in the finalization
+committee or not. See <a class="reference internal" href="#finalization">Finalization</a>.</p>
 </div>
 <div class="section" id="epochs-and-slots">
 <h3>Epochs and slots<a class="headerlink" href="#epochs-and-slots" title="Permalink to this headline">¶</a></h3>
@@ -321,7 +314,7 @@ Genesis block. In the testnet, epochs have a duration of <strong>1 hour</strong>
 account. For a complete description, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
 <p>Accounts are created using the <a class="reference internal" href="../see-also/downloads.html#concordium-id"><span class="std std-ref">Concordium ID</span></a> app. Once an account has been
 successfully created, navigating to the <strong>More</strong> tab and selecting <strong>Export</strong>
-allows the user to get a JSON file containing the account information.</p>
+allows you to get a JSON file containing the account information.</p>
 <p>To import an account into the toolchain run</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import &lt;path/to/exported/file&gt; --name bakerAccount
 </pre></div>
@@ -337,23 +330,25 @@ transaction signing keys and the encrypted transfers key.</p>
 <p>For this process the account needs to own some GTU so make sure to request the
 100 GTU drop for the account in the mobile app.</p>
 </div>
-<p>As mentioned above, each account has a unique baker ID that is used when
-registering its baker. This ID has to be provided by the network and currently
-cannot be precomputed.</p>
-<p>To create a fresh set of keys run</p>
+<p>Each account has a unique baker ID that is used when registering its baker. This
+ID has to be provided by the network and currently cannot be precomputed. This
+ID must be given inside the baker keys file to the node so that it can use the
+baker keys to create blocks. The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will automatically fill
+this field when performing the following operations.</p>
+<p>To create a fresh set of keys run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker generate-keys &lt;keys-file&gt;.json
 </pre></div>
 </div>
-<p>where you can choose an arbitrary name the keys file. To
+<p>where you can choose an arbitrary name for the keys file. To
 register the keys in the network you need to be <a class="reference internal" href="run-node.html#id2"><span class="std std-ref">running a node</span></a>
 and send a <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;file-name&gt;.json --sender bakerAccount --stake &lt;amountToStake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amountToStake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
 <p>replacing</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;amountToStake&gt;</span></code> with the GTU amount for the baker’s initial stake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-dir&gt;</span></code> with the following data directory:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with the following data directory:</p>
 <ul>
 <li><p>on Linux and MacOS: <code class="docutils literal notranslate"><span class="pre">~/.local/share/concordium</span></code></p></li>
 <li><p>on Windows: <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%\\concordium</span></code>.</p></li>
@@ -364,19 +359,46 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 <p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the
 rewards to the staked amount on the baker. This behavior is described on the
 section <a class="reference internal" href="#restaking-the-earnings">Restaking the earnings</a>.</p>
-<p>In order to start the node with these baker keys and start producing blocks the
-user first needs to shut down the current running node (either by pressing
+<p>In order to start the node with these baker keys and start producing blocks you
+first need to shut down the current running node (either by pressing
 <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or using the
 <code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable).</p>
-<p>After placing the file in the appropriate directory, start the
-node again using <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>. The node will automatically start baking
-when the baker is included in the bakers for the current epoch. This will happen
-when finishing the epoch after the one in which the transaction for adding the
-baker was finalized.</p>
+<p>After placing the file in the appropriate directory (already done in the
+previous command when specifying the output file), start the node again using
+<code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>. The node will automatically start baking when the baker
+gets included in the bakers for the current epoch.</p>
+<p>This change will be executed
+immediately and will take effect when finishing the epoch after the one in which
+the transaction for adding the baker was included in a block.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Timeline: adding a baker</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 41%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After 2 epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker is included in the baking committee</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the transaction for adding the baker was finalized during epoch <cite>E</cite>, the
-baker will be active when epoch <cite>E+2</cite> starts.</p>
+<p>If the transaction for adding the baker was included in a block during epoch <cite>E</cite>, the
+baker will be considered as part of the baking committee when epoch
+<cite>E+2</cite> starts.</p>
 </div>
 </div>
 </div>
@@ -384,13 +406,13 @@ baker will be active when epoch <cite>E+2</cite> starts.</p>
 <h2>Managing the baker<a class="headerlink" href="#managing-the-baker" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="checking-the-status-of-the-baker-and-its-lottery-power">
 <h3>Checking the status of the baker and its lottery power<a class="headerlink" href="#checking-the-status-of-the-baker-and-its-lottery-power" title="Permalink to this headline">¶</a></h3>
-<p>In order to see if the node is baking, the user can check various sources that
+<p>In order to see if the node is baking, you can check various sources that
 offer different degrees of precision in the information displayed.</p>
 <ul>
-<li><p>In the <a class="reference external" href="http://dashboard.testnet.concordium.com">network dashboard</a>, the
-user’s node will show its baker ID in the <code class="docutils literal notranslate"><span class="pre">Baker</span></code> column.</p></li>
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> the user can check the list of current bakers
-and the relative staked amount that they hold, i.e. its lottery power.  The
+<li><p>In the <a class="reference external" href="http://dashboard.testnet.concordium.com">network dashboard</a>, your
+node will show its baker ID in the <code class="docutils literal notranslate"><span class="pre">Baker</span></code> column.</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check the list of current bakers
+and the relative staked amount that they hold, i.e. their lottery power.  The
 lottery power will determine how likely it is that a given baker will win the
 lottery and bake a block.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
@@ -405,7 +427,7 @@ lottery and bake a block.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> the user can check that the account has
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check that the account has
 registered a baker and the current amount that is staked by that baker.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client account show bakerAccount
 <span class="go">...</span>
@@ -417,10 +439,10 @@ registered a baker and the current amount that is staked by that baker.</p>
 </pre></div>
 </div>
 </li>
-<li><p>If the staked amount is big enough and there is a node running with the baker keys
-loaded, that baker should eventually produce blocks and the user can see in
-their mobile wallet that baking rewards are being received by the account, as
-seen in this image:</p>
+<li><p>If the staked amount is big enough and there is a node running with the baker
+keys loaded, that baker should eventually produce blocks and you can see
+in your mobile wallet that baking rewards are being received by the account,
+as seen in this image:</p>
 <a class="reference internal image-reference" href="../../_images/bab-reward.png"><img alt="../../_images/bab-reward.png" class="align-center" src="../../_images/bab-reward.png" style="width: 250px;" /></a>
 </li>
 </ul>
@@ -431,28 +453,83 @@ seen in this image:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker update-stake --stake &lt;newAmount&gt; --sender bakerAccount
 </pre></div>
 </div>
-<p>Modifying the staked amount modifies the probability that a baker gets elected to bake blocks.</p>
-<p>When a baker adds stake for the first time or increases their stake:</p>
-<ul class="simple">
-<li><p>That change becomes visible on the chain immediately (e.g. through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>)</p></li>
-<li><p>The baker can bake (and possibly finalize, if stake is sufficient) after 2 epochs</p></li>
-</ul>
-<p>When a baker decreases the stake amount:</p>
-<ul class="simple">
-<li><p>The change becomes visible on the chain after the <em>cooldown period</em> (currently 168 epochs)</p>
-<ul>
-<li><ul>
-<li><p>The pending change can also be queried immediately after the  using
-<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">raw</span> <span class="pre">GetAccountInfo</span></code> and observing the <code class="docutils literal notranslate"><span class="pre">pendingChange</span></code> attribute</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>The change takes effect after the cooldown period plus 2 epochs</p></li>
-</ul>
+<p>Modifying the staked amount modifies the probability that a baker gets elected
+to bake blocks.</p>
+<p>When a baker <strong>adds stake for the first time or increases their stake</strong>, that
+change is executed on the chain and becomes visible as soon as the transaction
+is included in a block (can be seen through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span>
+<span class="pre">bakerAccount</span></code>) and takes effect 2 epochs after that.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Timeline: increasing the stake</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 42%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After 2 epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker uses the new stake</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<p>When a baker <strong>decreases the staked amount</strong>, the change will need <em>2 +
+bakerCooldownEpochs</em> epochs to take effect. The change becomes visible on the
+chain as soon as the transaction is included in a block, it can be consulted through
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
+<span class="go">...</span>
+
+<span class="go">Baker: #22</span>
+<span class="go"> - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)</span>
+<span class="go"> - Restake earnings: yes</span>
+
+<span class="go">...</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Timeline: decreasing the stake</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 34%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After <em>2 + bakerCooldownEpochs</em> epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker uses the new stake</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Stake can be decreased again or
+baker can be removed</p></td>
+<td><p>✗</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Check the value of the cooldown period as follows:</p>
+<p>In the testnet, <code class="docutils literal notranslate"><span class="pre">bakerCooldownEpochs</span></code> is set initially to 168 epochs. This
+value can be checked as follows:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockSummary
 <span class="go">...</span>
 <span class="go">        &quot;bakerCooldownEpochs&quot;: 168</span>
@@ -460,25 +537,14 @@ seen in this image:</p>
 </pre></div>
 </div>
 </div>
-<p>When decreasing the stake, the user can then check when this change will be executed by querying for the account information:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
-<span class="go">...</span>
-
-<span class="go">Baker: #22</span>
-<span class="go"> - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)</span>
-<span class="go"> - Restake earnings: yes</span>
-
-<span class="go">...</span>
-</pre></div>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>As noted in the <a class="reference internal" href="#definitions">Definitions</a> section, the staked amount is <em>locked</em>,
-i.e. it cannot be transferred or used for payment. The user should take
-this into account and consider staking an amount that will not be
-needed in the short term. In particular, to deregister a baker or to
-modify the staked amount the user needs to own some non-staked GTU to
-cover the transaction costs.</p>
+i.e. it cannot be transferred or used for payment. You should take this
+into account and consider staking an amount that will not be needed in the
+short term. In particular, to deregister a baker or to modify the staked
+amount you need to own some non-staked GTU to cover the transaction
+costs.</p>
 </div>
 </div>
 <div class="section" id="restaking-the-earnings">
@@ -486,27 +552,56 @@ cover the transaction costs.</p>
 <p>When participating as a baker in the network and baking blocks, the account
 receives rewards on each baked block. These rewards are automatically added to
 the staked amount by default.</p>
-<p>The user can choose to modify this behavior and instead receive the rewards in
+<p>You can choose to modify this behavior and instead receive the rewards in
 the account balance without staking them automatically. This switch can be
 changed through <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker update-restake False --sender bakerAccount
 <span class="gp">$</span>concordium-client baker update-restake True --sender bakerAccount
 </pre></div>
 </div>
-<p>Changes to the restake flag will take effect immediately; however, the changes start
-affecting baking and finalizing power in the epoch after next.
-The current value of the switch can be seen in the account
-information which can be queried using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+<p>Changes to the restake flag will take effect immediately; however, the changes
+start affecting baking and finalizing power in the epoch after next. The current
+value of the switch can be seen in the account information which can be queried
+using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
 <span class="go">Baker: #22</span>
-<span class="go"> - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)</span>
+<span class="go"> - Staked amount: 50.000000 GTU</span>
 <span class="go"> - Restake earnings: yes</span>
 
 <span class="go">...</span>
 </pre></div>
 </div>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Timeline: updating restake</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 34%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>2 epochs after being rewarded</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Earnings will [not] be restaked automatically</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>If restaking automatically, the gained
+stake affects the lottery power</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
 <p>When the baker is registered, it will automatically re-stake the earnings, but as
 mentioned above, this can be changed by providing the <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to
 the <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> command as shown here:</p>
@@ -516,35 +611,36 @@ the <code class="docutils literal notranslate"><span class="pre">baker</span> <s
 </div>
 <div class="section" id="finalization">
 <h3>Finalization<a class="headerlink" href="#finalization" title="Permalink to this headline">¶</a></h3>
-<p>Finalization is the voting process performed by nodes
-in the <em>finalization committee</em> that <em>finalizes</em> a block when a sufficiently big
-number of members of the committee have received the block and agree on its
-outcome. Newer blocks must have the finalized block as an ancestor to ensure the
-integrity of the chain. For more information about this process, see the
-<a class="reference internal" href="../see-also/glossary.html#glossary-finalization"><span class="std std-ref">Finalization</span></a> section.</p>
+<p>Finalization is the voting process performed by nodes in the <em>finalization
+committee</em> that <em>finalizes</em> a block when a sufficiently big number of members of
+the committee have received the block and agree on its outcome. Newer blocks
+must have the finalized block as an ancestor to ensure the integrity of the
+chain. For more information about this process, see the
+<a class="reference internal" href="../see-also/glossary.html#glossary-finalization"><span class="std std-ref">finalization</span></a> section.</p>
 <p>The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
-finalization committee the user will probably have to modify the staked amount
+finalization committee you will probably have to modify the staked amount
 to reach said threshold. In the testnet, the staked amount needed to participate
 in the finalization committee is <strong>0.1% of the total amount of existing GTU</strong>.</p>
 <p>Participating in the finalization committee produces rewards on each block that
-is finalized. The rewards are paid to the baker account some time after the block is
-finalized.</p>
+is finalized. The rewards are paid to the baker account some time after the
+block is finalized.</p>
 </div>
 </div>
 <div class="section" id="removing-a-baker">
 <h2>Removing a baker<a class="headerlink" href="#removing-a-baker" title="Permalink to this headline">¶</a></h2>
 <p>The controlling account can choose to de-register its baker on the chain. To do
-so the user has to execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+so you have to execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker remove --sender bakerAccount
 </pre></div>
 </div>
 <p>This will remove the baker from the baker list and unlock the staked amount on
 the baker so that it can be transferred or moved freely.</p>
-<p>When removing the baker, there is a <strong>cooldown period</strong> (check <a class="reference internal" href="#updating-the-staked-amount">Updating the
-staked amount</a> above for more information about this value) during which the
-operation is queued but not yet executed. The user can check when this takes
-effect by querying the account information with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as usual:</p>
+<p>When removing the baker, the change has the same timeline as decreasing
+the staked amount. The change will need <em>2 + bakerCooldownEpochs</em> epochs to take effect.
+The change becomes visible on the chain as soon as the transaction is included in a block and you
+can check when this change will be take effect by querying the account information
+with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as usual:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
@@ -555,11 +651,35 @@ effect by querying the account information with <code class="docutils literal no
 <span class="go">...</span>
 </pre></div>
 </div>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Timeline: removing a baker</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 33%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After <em>2 + bakerCooldownEpochs</em> epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker is removed from the baking committee</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Decreasing the staked amount and removing the baker cannot be done
 simultaneously. During the cooldown period produced by decreasing the staked
-amount, the baker cannot be removed and viceversa.</p>
+amount, the baker cannot be removed and vice versa.</p>
 </div>
 </div>
 <div class="section" id="support-feedback">

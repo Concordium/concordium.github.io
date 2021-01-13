@@ -52,18 +52,14 @@
 
 <body class="wy-body-for-nav">
 
-  
-    <nav class="topbar">
-        <a href="../../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
-        <a href="../../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
-    </nav>
-
+   
   <div class="wy-grid-for-nav">
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: black" >
           
+
 
           
             <a href="../../../index.html">
@@ -90,6 +86,11 @@
 </div>
 
           
+<nav class="sidebar-top-menu">
+    <a href="../../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
         </div>
 
         
@@ -229,20 +230,20 @@ contract is, and some experience with <a class="reference external" href="https:
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#preparation" id="id6">Preparation</a></p></li>
-<li><p><a class="reference internal" href="#bringing-in-the-standard-library" id="id7">Bringing in the standard library</a></p></li>
-<li><p><a class="reference internal" href="#piggy-bank-contract" id="id8">Piggy bank contract</a></p></li>
-<li><p><a class="reference internal" href="#specifying-the-state" id="id9">Specifying the state</a></p></li>
-<li><p><a class="reference internal" href="#setting-up-a-piggy-bank" id="id10">Setting up a piggy bank</a></p>
+<li><p><a class="reference internal" href="#preparation" id="id5">Preparation</a></p></li>
+<li><p><a class="reference internal" href="#bringing-in-the-standard-library" id="id6">Bringing in the standard library</a></p></li>
+<li><p><a class="reference internal" href="#piggy-bank-contract" id="id7">Piggy bank contract</a></p></li>
+<li><p><a class="reference internal" href="#specifying-the-state" id="id8">Specifying the state</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-a-piggy-bank" id="id9">Setting up a piggy bank</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-init-macro" id="id11">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></p></li>
+<li><p><a class="reference internal" href="#the-init-macro" id="id10">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#define-interaction-with-piggy-banks" id="id12">Define interaction with piggy banks</a></p>
+<li><p><a class="reference internal" href="#define-interaction-with-piggy-banks" id="id11">Define interaction with piggy banks</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-receive-macro" id="id13">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></p></li>
-<li><p><a class="reference internal" href="#inserting-gtu" id="id14">Inserting GTU</a></p></li>
-<li><p><a class="reference internal" href="#smashing-a-piggy-bank" id="id15">Smashing a piggy bank</a></p></li>
+<li><p><a class="reference internal" href="#the-receive-macro" id="id12">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></p></li>
+<li><p><a class="reference internal" href="#inserting-gtu" id="id13">Inserting GTU</a></p></li>
+<li><p><a class="reference internal" href="#smashing-a-piggy-bank" id="id14">Smashing a piggy bank</a></p></li>
 </ul>
 </li>
 </ul>
@@ -252,8 +253,8 @@ contract is, and some experience with <a class="reference external" href="https:
 <p>Before we start, make sure to have the necessary tooling for building Rust
 contracts.
 The guide <a class="reference internal" href="../../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> will show you how to do this.
-Also, make sure to have a text editor setup for writing Rust.</p>
-<p>We also need to setup a new smart contract project.
+Also, make sure to have a text editor for writing Rust.</p>
+<p>We also need to set up a new smart contract project.
 Follow the guide <a class="reference internal" href="../../guides/setup-contract.html#setup-contract"><span class="std std-ref">Setting up a smart contract project</span></a> and return to this point afterwards.</p>
 <p>We are now ready for writing a smart contract for the Concordium blockchain!</p>
 </div>
@@ -261,7 +262,7 @@ Follow the guide <a class="reference internal" href="../../guides/setup-contract
 <h2><span class="section-number">1.2. </span>Bringing in the standard library<a class="headerlink" href="#bringing-in-the-standard-library" title="Permalink to this headline">¶</a></h2>
 <p>The source code of our smart contract is going to be in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory,
 which already contains the file <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code>, assuming you follow the above guide
-to setup your project.
+to set up your project.
 Open <code class="docutils literal notranslate"><span class="pre">src/lib.rs</span></code> in your editor and you’ll see some code for writing tests,
 which you can delete for now. We will come back to tests later in this tutorial.</p>
 <p>First, we bring everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope,
@@ -277,19 +278,21 @@ save a lot of code for the vast majority of contract developers.</p>
 <div class="section" id="piggy-bank-contract">
 <h2><span class="section-number">1.3. </span>Piggy bank contract<a class="headerlink" href="#piggy-bank-contract" title="Permalink to this headline">¶</a></h2>
 <p>The contract we are going to build in this tutorial is going to act as a classic
-piggy bank. Everyone should be able to insert GTU into it, but only the owner
+piggy bank. Everyone should be able to put money in the form of GTU into it, but only the owner
 can smash it and retrieve the GTU inside. Once the piggy bank has been
-smashed, it should prevent insertion of GTU.</p>
-<p>The piggy bank smart contract is going to contain a function for setting up a
+smashed, it should not be possible to add GTU to it.</p>
+<p>The piggy-bank smart contract is going to contain a function for setting up a
 new piggy bank and two functions for updating a piggy bank; one is for everyone
 to use for inserting GTU, the other is for the owner to smash the piggy bank and
 prevent further interaction.</p>
 </div>
 <div class="section" id="specifying-the-state">
 <h2><span class="section-number">1.4. </span>Specifying the state<a class="headerlink" href="#specifying-the-state" title="Permalink to this headline">¶</a></h2>
-<p>The piggy bank must contain some state. The blockchain keeps track of the
-balance of each smart contract instance, meaning we will need to
-track the state of whether it has been smashed or not.</p>
+<p>To implement a piggy bank we need to keep track of the amount of GTU it holds,
+and we need to know whether it has been smashed. The blockchain will take care
+of the first task for us since the chain keeps track of the balance of each smart-contract
+instance. Therefore, we only need to maintain whether the piggy bank has been smashed,
+which we do as part of the smart-contract <em>state</em>.</p>
 <p>In Rust we represent this state as an enum, with a variant for the piggy bank
 being intact and one for it being smashed:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">PiggyBankState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -313,9 +316,8 @@ and standard types in <a class="reference external" href="https://www.rust-lang.
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>In this tutorial we will also need to check state for equality, so we might as
-well derive the trait implementation for <code class="docutils literal notranslate"><span class="pre">PartialEq</span></code> and <code class="docutils literal notranslate"><span class="pre">Eq</span></code> already, which
-is not necessary, but will allow us to use <code class="docutils literal notranslate"><span class="pre">==</span></code> and will come in handy later:</p>
+<p>Later in this tutorial, we will also need to check the state for equality, so we also
+derive the trait implementation for <code class="docutils literal notranslate"><span class="pre">PartialEq</span></code> and <code class="docutils literal notranslate"><span class="pre">Eq</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serialize, PartialEq, Eq, Debug)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">PiggyBankState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">Intact</span><span class="p">,</span><span class="w"></span>
@@ -329,49 +331,46 @@ is not necessary, but will allow us to use <code class="docutils literal notrans
 <p>Time to write the function for setting up a new piggy bank, which in turn means
 specifying the init function for a smart contract.
 A smart contract must specify an init function, which is called when new
-instances of the contract are created, and is used to setup the initial state of
+instances of the contract are created, and is used to set up the initial state of
 the contract instance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A <a class="reference external" href="https://www.rust-lang.org/">Rust</a> developer could compare init functions with the convention of
 having a <code class="docutils literal notranslate"><span class="pre">new</span></code> function for types, and the smart contract as the type.</p>
-<p>If you have experience with Object-Oriented Programming, it might help to
+<p>If you have experience with object-oriented programming, it might help to
 think of a smart contract as a <em>class</em>, the init function as a
 <em>constructor</em> and smart contract instances as <em>objects</em>.</p>
 </div>
 <p>In the case of the piggy bank; the initial state should be set to <code class="docutils literal notranslate"><span class="pre">Intact</span></code>.</p>
 <div class="section" id="the-init-macro">
 <h3><span class="section-number">1.5.1. </span>The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro<a class="headerlink" href="#the-init-macro" title="Permalink to this headline">¶</a></h3>
-<p>In <a class="reference external" href="https://www.rust-lang.org/">Rust</a> an init function can be specified as a regular function, annotated
+<p>In <a class="reference external" href="https://www.rust-lang.org/">Rust</a> an init function can be specified as a regular function that is annotated
 with a procedural macro from <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> called <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>.
-With this we can define how to setup a piggy bank as:</p>
+This allows us to create a new piggy bank as follows:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">piggy_init</span><span class="p">(</span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">PiggyBankState</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The macro saves you from some details of setting up the function as an external
-function, serializing the state to bytes and supplies a nicer interface for
-accessing context information.</p>
-<p>It requires a name for the smart contract, which we in this case choose to be
+<p>The macro saves you the details of setting up the function as an external
+function and serializing the state to bytes. The macro also provides an interface for
+accessing information about the context of the smart-contract call.</p>
+<p>The init function requires a name for the smart contract, which we choose to be
 <code class="docutils literal notranslate"><span class="pre">&quot;PiggyBank&quot;</span></code>. The name <a class="footnote-reference brackets" href="#valid-name" id="id4">1</a> is used as part of the exported
-function, and is how we identify this smart contract, from any other smart
-contract in our smart contract module.</p>
+function, and is how we distinguish this smart contract from other smart
+contracts in our module.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">)]</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The function it annotates only takes one argument <code class="docutils literal notranslate"><span class="pre">ctx:</span> <span class="pre">&amp;impl</span> <span class="pre">HasInitContext</span></code>,
+<p>The init function takes a single argument, <code class="docutils literal notranslate"><span class="pre">ctx:</span> <span class="pre">&amp;impl</span> <span class="pre">HasInitContext</span></code>,
 which is a zero-sized struct with a number of getter functions for accessing
-information about the current context, such as: who invoked this contract, any
-supplied parameters and some information of the current state of the blockchain.</p>
+information about the current context, such as the account that invoked this contract, the
+supplied arguments and information about the state of the blockchain.</p>
 <p>The return type of our function is <code class="docutils literal notranslate"><span class="pre">InitResult&lt;PiggyBankState&gt;</span></code>, which is an
 alias for <code class="docutils literal notranslate"><span class="pre">Result&lt;PiggyBankState,</span> <span class="pre">Reject&gt;</span></code>. The returned state is serialized
 and set as the initial state of the smart contract.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">piggy_init</span><span class="p">(</span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">PiggyBankState</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Initializing our piggy bank state to be <code class="docutils literal notranslate"><span class="pre">Intact</span></code> is then straight forward:</p>
+<p>Initializing our piggy bank state to be <code class="docutils literal notranslate"><span class="pre">Intact</span></code> is then straightforward:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="nb">Ok</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
@@ -388,11 +387,11 @@ punctuation characters, and is not allowed to contain the <code class="docutils 
 </div>
 <div class="section" id="define-interaction-with-piggy-banks">
 <h2><span class="section-number">1.6. </span>Define interaction with piggy banks<a class="headerlink" href="#define-interaction-with-piggy-banks" title="Permalink to this headline">¶</a></h2>
-<p>We have now defined how instances of our smart contract are created and the
+<p>We have now defined how instances of our smart contract are created, and the
 smart contract is in principle a valid contract.
 However, we would also like to define how to interact with instances of our
 contract.
-Specifically how to insert GTU and how to smash a piggy bank.</p>
+Specifically how to add GTU to it and how to smash a piggy bank.</p>
 <p>A smart contract can expose zero or more functions for interacting with an
 instance.
 These functions are called receive functions, and can read and
@@ -407,7 +406,7 @@ receive functions correspond to object methods.</p>
 </div>
 <div class="section" id="the-receive-macro">
 <h3><span class="section-number">1.6.1. </span>The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro<a class="headerlink" href="#the-receive-macro" title="Permalink to this headline">¶</a></h3>
-<p>Specifying receive functions in Rust, can be done using the procedural macro
+<p>In Rust, receive functions can be specified using the procedural macro
 <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a>, which, like <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>, is used to annotate a function and sets up an
 external function and supplies us with an interface for accessing the context.
 But, unlike the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a> macro, the function for <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a> is also supplied with
@@ -421,36 +420,20 @@ a mutable reference to the current state of the instance:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The macro requires the name of the contract given using the <code class="docutils literal notranslate"><span class="pre">contract</span></code>
-attribute, which should match the name in the corresponding attribute in <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>
+<p>The <code class="docutils literal notranslate"><span class="pre">contract</span></code> attribute supplies the name of the contract to the macro.
+This name should match the name in the corresponding attribute in <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>
 (<code class="docutils literal notranslate"><span class="pre">&quot;PiggyBank&quot;</span></code> in our case). It also requires a name to identify this
-particular receive function using <code class="docutils literal notranslate"><span class="pre">name</span></code>, this name together with the
-contract name have to be unique for a smart contract module.</p>
+particular receive function using <code class="docutils literal notranslate"><span class="pre">name</span></code>. The name and contract attributes
+each have to be unique within a smart contract module.</p>
 <p>The return type of the function is <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;A&gt;</span></code>, which is an alias for
 <code class="docutils literal notranslate"><span class="pre">Result&lt;A,</span> <span class="pre">Reject&gt;</span></code>.
-Here <code class="docutils literal notranslate"><span class="pre">A</span></code> implements <code class="docutils literal notranslate"><span class="pre">HasActions</span></code>, which exposes functions for creating
-different actions.</p>
-<p class="rubric">Actions</p>
-<p>A smart contract can produce 3 types of actions:</p>
-<ul class="simple">
-<li><p><strong>Accept</strong>: Accept incoming GTU. Always succeeds.</p></li>
-<li><p><strong>Simple Transfer</strong>: Transfer some amount of GTU from the balance of the
-smart contract instance to an account.</p></li>
-<li><p><strong>Send</strong>: Trigger receive function of a smart contract instance, with
-a parameter and an amount of GTU.</p></li>
-</ul>
-<p>Additionally there are two ways to sequence these actions:</p>
-<ul class="simple">
-<li><p><strong>And</strong>: Runs the first action, if it succeeds runs the second action,
-otherwise results in rejection.</p></li>
-<li><p><strong>Or</strong>: Runs the first action, <strong>if it fails</strong>, runs the second action,
-otherwise results in success.</p></li>
-</ul>
-<p>In this contract we will only need to use <strong>Accept</strong> and <strong>Simple Transfer</strong>.</p>
+Here, <code class="docutils literal notranslate"><span class="pre">A</span></code> implements <code class="docutils literal notranslate"><span class="pre">HasActions</span></code>, which exposes functions for creating
+various <a class="reference internal" href="../../general/contract-instances.html#action-descriptions"><span class="std std-ref">actions</span></a>.</p>
+<p>In this contract we will use the <strong>Accept</strong> and <strong>Simple Transfer</strong> actions.</p>
 </div>
 <div class="section" id="inserting-gtu">
 <h3><span class="section-number">1.6.2. </span>Inserting GTU<a class="headerlink" href="#inserting-gtu" title="Permalink to this headline">¶</a></h3>
-<p>The first interaction we will specify for our piggy bank is how to insert GTU.
+<p>The first interaction we will specify for our piggy bank is how to insert GTU into it.
 We start with defining a receive function as:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;insert&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">piggy_insert</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
@@ -461,11 +444,11 @@ We start with defining a receive function as:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Here we make sure the contract name matches the one we use for the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a> macro
-and we name this receive function <code class="docutils literal notranslate"><span class="pre">&quot;insert&quot;</span></code>.
-The function will not need to use the context <code class="docutils literal notranslate"><span class="pre">_ctx</span></code>, so by convention, we
-make sure to prefix the argument with <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
-<p>In the function body we have to make sure the piggy bank is still intact, the
+<p>Here, we make sure that the contract name matches the one we use for the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a> macro,
+and we name the receive function <code class="docutils literal notranslate"><span class="pre">insert</span></code>.
+The function will not need to use the <code class="docutils literal notranslate"><span class="pre">_ctx</span></code> context, so by convention, we
+prefix the argument with <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+<p>In the function body we have to make sure that the piggy bank is still intact: the
 smart contract should reject any messages if the piggy bank is smashed:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">Reject</span><span class="w"> </span><span class="p">{});</span><span class="w"></span>
@@ -479,22 +462,19 @@ smart contract should reject any messages if the piggy bank is smashed:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Checking a bunch of conditions and returning early is also a common pattern, so
-there is even a <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html"><code class="docutils literal notranslate"><span class="pre">ensure!</span></code></a> macro for this, it takes a condition and returns
-early, if this is not true:</p>
+<p>Furthermore, we can use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html"><code class="docutils literal notranslate"><span class="pre">ensure!</span></code></a> macro for returning early depending on a condition:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>From this line, we will know that the state of the piggy bank is intact and all
 we have left to do is accept the incoming amount of GTU.
 The GTU balance is maintained by the blockchain, so there is no need for us to
-maintain this in our contract, it just needs to produce the accept action, which
-is possible using the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> by running <code class="docutils literal notranslate"><span class="pre">A::accept()</span></code>, which you will
-read more about in a moment.</p>
+maintain this in our contract. The contract just needs to produce the <strong>Accept</strong> action
+using the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> (more on that below):</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">accept</span><span class="p">())</span><span class="w"></span>
 </pre></div>
 </div>
-<p>So far we have the following definition of how to insert in a piggy bank:</p>
+<p>So far we have the following definition of the receive function:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;insert&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">piggy_insert</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
@@ -505,26 +485,19 @@ read more about in a moment.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Our definition of how to insert GTU is almost done, but one important detail is
+<p>Our definition of how to add GTU to the piggy bank is almost done, but one important detail is
 missing.
-If we were to send some amount of GTU to the current definition, it would reject
-before even running our code. This is a safety feature of <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>,
-which assumes by default that function defined using <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> and <code class="docutils literal notranslate"><span class="pre">#[receive]</span></code> are
-not to accept any non-zero amount of GTU.</p>
-<p>The reason for this behavior is to reduce the risk of creating a smart
-contract accepting GTU without functionality for retrieving the GTU of the
-smart contract. A smart contract without a way to extract GTU, should be sure
-not to accept any non-zero amount of GTU, since these GTU would be <em>inaccessible
-forever</em>.</p>
-<p>Our piggy bank is going to have a way to retrieve GTU, so we can disable this by
-adding the <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute to the <code class="docutils literal notranslate"><span class="pre">#[receive]</span></code> macro, which will allow the
-function to accept a non-zero amount of GTU. Now the function is required to
-take an extra argument <code class="docutils literal notranslate"><span class="pre">amount:</span> <span class="pre">Amount</span></code>, which represents the amount included
-in the current transfer triggering this function of the smart contract.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute also exists for the <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro.</p>
-</div>
+If we were to send GTU to the current smart contract, the transaction
+would be rejected. This is a safety feature of <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>,
+which, by default, prevents init and receive functions
+from accepting GTU.</p>
+<p>The reason for rejecting GTU by default is to reduce the risk of creating a smart
+contract that accepts GTU without retrieving it: any GTU passed to such a contract
+would be <em>inaccessible forever</em>.</p>
+<p>To be able to accept GTU, we have to add the <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute to the <code class="docutils literal notranslate"><span class="pre">#[receive]</span></code> macro.
+Now the function is required to
+take an extra argument <code class="docutils literal notranslate"><span class="pre">amount:</span> <span class="pre">Amount</span></code>, which represents the amount that is passed to the receive
+function.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;insert&quot;</span><span class="cp">, payable)]</span><span class="w"></span>
 </span><span class="k">fn</span> <span class="nf">piggy_insert</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
@@ -536,8 +509,12 @@ in the current transfer triggering this function of the smart contract.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Again, since the blockchain is maintaining the balance of our smart contract, we
-do not have to, and the <code class="docutils literal notranslate"><span class="pre">amount</span></code> is not used by our contract.</p>
+<p>As mentioned above, since the blockchain is maintaining the balance of our smart contract, we
+do not have to do that ourselves, and the <code class="docutils literal notranslate"><span class="pre">amount</span></code> is not used by our contract.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute also exists for the <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro.</p>
+</div>
 </div>
 <div class="section" id="smashing-a-piggy-bank">
 <h3><span class="section-number">1.6.3. </span>Smashing a piggy bank<a class="headerlink" href="#smashing-a-piggy-bank" title="Permalink to this headline">¶</a></h3>
@@ -547,7 +524,7 @@ Just to recap, we only want the owner of the piggy bank (smart contract
 instance) to be able to call this and only if the piggy bank has not already
 been smashed.
 It should set its state to be smashed and transfer all of its GTU to the owner.</p>
-<p>Again we use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a> macro, and start with:</p>
+<p>Again we use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a> macro to define the smash function:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
@@ -557,33 +534,31 @@ It should set its state to be smashed and transfer all of its GTU to the owner.<
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>We ensure the contract name matches the one of our smart contract, and we choose
-to name this function <code class="docutils literal notranslate"><span class="pre">&quot;smash&quot;</span></code>.
-Since the owner is about to empty the piggy bank, it would not make sense to
-allow a non-zero amount, meaning we do not add the <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute here.</p>
+<p>We ensure that the contract name matches the one of our smart contract and we choose
+to name this function <code class="docutils literal notranslate"><span class="pre">smash</span></code>.</p>
 <p>To access the contract owner, we use a getter function exposed by the context
 <code class="docutils literal notranslate"><span class="pre">ctx</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This returns the account address of the contract instance owner, i.e. the
-account which created the smart contract instance by invoking the
+account that created the smart contract instance by invoking the
 init function.</p>
-<p>Similarly the context has a getter function for the one who send the current
-message, which triggered this receive function:</p>
+<p>Similarly, the context has a getter function to access the sender of the current
+message that triggered this receive function:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Since smart contract instances are capable of sending messages as well as
-accounts, <code class="docutils literal notranslate"><span class="pre">sender</span></code> is of the  <code class="docutils literal notranslate"><span class="pre">Address</span></code> type, which is either an account
+<p>Since both accounts and smart-contract instances are capable of sending messages,
+<code class="docutils literal notranslate"><span class="pre">sender</span></code> is of the  <code class="docutils literal notranslate"><span class="pre">Address</span></code> type, which is either an account
 address or a contract instance address.</p>
 <p>To compare the <code class="docutils literal notranslate"><span class="pre">sender</span></code> with <code class="docutils literal notranslate"><span class="pre">owner</span></code> we can use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#function.matches_account"><code class="docutils literal notranslate"><span class="pre">matches_account</span></code></a>
 function defined on the <code class="docutils literal notranslate"><span class="pre">sender</span></code>, which will only return true if the sender is
-an account address and is equal to the owner:</p>
+an account address that is equal to the owner:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Next we ensure the state of the piggy bank is <code class="docutils literal notranslate"><span class="pre">Intact</span></code>, just like previously:</p>
+<p>Next we ensure that the state of the piggy bank is <code class="docutils literal notranslate"><span class="pre">Intact</span></code>, just like previously:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -594,12 +569,12 @@ owner, meaning we now get to the smashing part:</p>
 </div>
 <p>Since the state is a mutable reference, we can simply mutate it to be
 <code class="docutils literal notranslate"><span class="pre">Smashed</span></code>, preventing anyone from inserting any more GTU.</p>
-<p>Lastly we need to transfer the amount of GTU on the balance of our current piggy
-bank (smart contract instance).</p>
-<p>To transfer some amount of GTU from a smart contract instance, we create an
+<p>Lastly we need to empty the piggy bank. To do that, we transfer all the GTU
+of the smart-contract instance to an account.</p>
+<p>To transfer GTU from a smart contract instance we create an
 action for a simple transfer, again using the generic <code class="docutils literal notranslate"><span class="pre">A</span></code>.
-To construct a simple transfer, we need to provide the address of the receiving
-account and the amount to include in the transfer.
+To construct a simple transfer we need to provide the address of the receiving
+account and the amount to be transferred.
 In our case the receiver is the owner of the piggy bank and the amount is the
 entire balance of the piggy bank.</p>
 <p>The context has a getter function for reading
@@ -631,20 +606,13 @@ construct and return the action for a simple transfer:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Since a blockchain is a decentralized system, one might think we have to
-worry about the usual problems when dealing with mutable state. Problems
-such as race conditions, but the semantics of smart contracts require the
-execution to be atomic, in order to reach consensus.</p>
-</div>
-<p>We now have all the parts for our piggy bank smart contract, before we move on
+<p>We now have all the parts for our piggy bank smart contract. Before we move on
 to testing it, we check that it builds by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
 </pre></div>
 </div>
-<p>Which should succeed if everything is setup correctly, otherwise compare your
-code with the one found here.</p>
+<p>This should succeed if everything is set up correctly. Otherwise, compare your
+code with the one found <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs">here</a>.</p>
 </div>
 </div>
 </div>

@@ -52,18 +52,14 @@
 
 <body class="wy-body-for-nav">
 
-  
-    <nav class="topbar">
-        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
-        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
-    </nav>
-
+   
   <div class="wy-grid-for-nav">
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: black" >
           
+
 
           
             <a href="../../index.html">
@@ -90,6 +86,11 @@
 </div>
 
           
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
         </div>
 
         
@@ -116,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Querying a node</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Account state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#query-account-state">Account state</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">Transaction status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id7">Block state</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id10">Consensus state</a></li>
@@ -206,7 +207,7 @@
 <h1>Querying a node<a class="headerlink" href="#querying-a-node" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id16">Account state</a></p>
+<li><p><a class="reference internal" href="#query-account-state" id="id16">Account state</a></p>
 <ul>
 <li><p><a class="reference internal" href="#id2" id="id17">List accounts</a></p>
 <ul>
@@ -264,8 +265,8 @@ and its relation to other blocks on the chain.</p></li>
 <li><p>Consensus state: Show the parameters of the consensus protocol and
 statistics related to baking and finalization of blocks.</p></li>
 </ul>
-<div class="section" id="id1">
-<h2>Account state<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="query-account-state">
+<span id="id1"></span><h2>Account state<a class="headerlink" href="#query-account-state" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>List accounts<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account list <span class="o">[</span>--block BLOCK-HASH<span class="o">]</span>
@@ -350,7 +351,7 @@ accessing the decryption key.</p>
 </div>
 <p>Display the lifecycle state of a <a class="reference internal" href="../see-also/glossary.html#glossary-transaction"><span class="std std-ref">Transaction</span></a> (pending, committed, finalized,
 or absent).</p>
-<p>If the transaction is commited or finalized, the status (success or rejected)
+<p>If the transaction is committed or finalized, the status (success or rejected)
 and execution cost is included as well.</p>
 <div class="section" id="id6">
 <h3>Example<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>

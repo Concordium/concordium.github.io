@@ -52,18 +52,14 @@
 
 <body class="wy-body-for-nav">
 
-  
-    <nav class="topbar">
-        <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
-        <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
-    </nav>
-
+   
   <div class="wy-grid-for-nav">
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: black" >
           
+
 
           
             <a href="../../index.html">
@@ -90,6 +86,11 @@
 </div>
 
           
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
         </div>
 
         
@@ -222,47 +223,47 @@
 </ul>
 </div>
 <p>A <em>transaction</em> is an operation which applies some change to the chain.
-Transactions always have one sender <a class="reference external" href="/testnet/docs/glossary#account">account</a> and are signed using the keys of
+Transactions always have one sender <a class="reference internal" href="../see-also/glossary.html#glossary-account"><span class="std std-ref">account</span></a> and are signed using the keys of
 this account.</p>
 <p>There are several transaction types: The most basic one is a GTU transfer, which
 moves tokens from the sender account to another account. Other transaction types
-include encrypted transfers, <a class="reference external" href="/testnet/docs/glossary#stake-delegation">stake delegation</a>, <a class="reference external" href="/testnet/docs/quickstart-baker">adding a baker</a>, and
-updating keys of accounts and bakers.</p>
+include encrypted transfers, <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">adding a baker</span></a>, and updating keys of accounts
+and bakers.</p>
 <p>Every transaction has a well-defined <em>cost</em>, the value of which depends on the
 transaction type as well as the payload in a way that reflects the computational
 effort of applying the transaction as closely as possible. When the transaction
-is sumbitted, its cost is deducted from the sender’s account and paid to the
+is submitted, its cost is deducted from the sender’s account and paid to the
 network as a fee for carrying out the transaction. Cost is measured in the unit
 NRG which corresponds to GTU according to a variable conversion factor
 (currently 1 NRG = 0.0001 GTU).</p>
 <p>Once a baker receives a transaction from some client, it performs a few basic
-checks to verify that the transaction is eligible for <em>inclusion</em> in a <a class="reference external" href="/testnet/docs/glossary#baker">block</a>.
+checks to verify that the transaction is eligible for <em>inclusion</em> in a <a class="reference internal" href="../see-also/glossary.html#glossary-block"><span class="std std-ref">block</span></a>.
 If any of these checks fail, the transaction is ignored. Included transactions
 which satisfy all further requirements are considered <em>successful</em> and have
 their changes applied to the chain. If something doesn’t check out (for
 instance, the sender attempted to overdraw their account), the transaction is
 still included, but recorded as <em>rejected</em>. A rejected transaction has no effect
 other than deducting its cost from the sender.</p>
-<p>Each account has a <a class="reference external" href="/testnet/docs/glossary#transaction-sequence-number">sequence number</a> associated with it. This number increases
+<p>Each account has a <a class="reference internal" href="../see-also/glossary.html#glossary-transaction-sequence-number"><span class="std std-ref">sequence number</span></a> associated with it. This number increases
 sequentially with each transaction sent from this account and is recorded into
 the transaction. Transactions with sequence numbers that don’t match the current
 one of the account are not considered eligible for inclusion on the chain. This
 ensures that transactions are included only once and in a specific order.</p>
-<p>Until some block containing a given transaction is <a class="reference external" href="/testnet/docs/glossary#finalization">finalized</a>, there is no
+<p>Until some block containing a given transaction is <a class="reference internal" href="../see-also/glossary.html#glossary-finalization"><span class="std std-ref">finalized</span></a>, there is no
 guarantee that the transaction is permanent.</p>
-<p>Transfers (both plain and encrypted) can be performed using the <a class="reference external" href="/testnet/docs/downloads#concordium-id">Concordium ID</a>
-mobile app, or the <a class="reference external" href="/testnet/docs/client">concordium-client</a> tool. All other transaction types
+<p>Transfers (both plain and encrypted) can be performed using the <a class="reference internal" href="../see-also/downloads.html#concordium-id"><span class="std std-ref">Concordium ID</span></a>
+mobile app, or the <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a> tool. All other transaction types
 can only be done through <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
 <div class="section" id="id2">
 <h2>Concordium ID (mobile wallet)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Once you create <a class="reference external" href="/testnet/docs/identities-and-accounts">an account</a> in the <a class="reference external" href="/testnet/docs/quickstart-wallet#before-you-start">wallet</a>, the <strong>SEND</strong> button brings you
+<p>Once you create <a class="reference internal" href="id-accounts.html#reference-id-accounts"><span class="std std-ref">an account</span></a> in the <a class="reference internal" href="../guides/accounts-transactions.html#guide-account-transactions"><span class="std std-ref">wallet</span></a>, the <strong>SEND</strong> button brings you
 to the screen for doing transfers from the given account. Depending on whether
 you are in the public or shielded balance part of the account the transfer will
 be a plain transfer, or an encrypted transfer.</p>
 </div>
 <div class="section" id="id3">
 <h2>Command-line tool<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>All types of transactions can be performed using <a class="reference external" href="/testnet/docs/client">concordium-client</a>. The
+<p>All types of transactions can be performed using <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. The
 different transaction types are performed using specialized subcommands:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -294,22 +295,15 @@ released gradually</p></td>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">remove</span></code></p></td>
 <td><p>Remove a baker</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">set-account</span></code></p></td>
-<td><p>Update reward account of a baker</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">update-stake</span></code></p></td>
+<td><p>Update the staked amount of a baker</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">set-key</span></code></p></td>
-<td><p>Update signature key of a baker</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">set-aggregation-key</span></code></p></td>
-<td><p>Update aggregation key of a baker</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">delegate</span></code></p></td>
-<td><p>Deletegate an account’s stake to a
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">update-restake</span></code></p></td>
+<td><p>Update the restaking switch of a
 baker</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">undelegate</span></code></p></td>
-<td><p>Ensure that an account’s stake is
-not delegated</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">set-key</span></code></p></td>
+<td><p>Update the keys of a baker</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">add-keys</span></code></p></td>
 <td><p>Add additional signing keys to the
@@ -334,7 +328,7 @@ common set of flags and configuration to control how they build transactions.
 Depending on the exact context, the flags are currently all optional:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--sender</span></code>: Name or address of the transaction’s sender account.
-The name is the one used when <a class="reference external" href="/testnet/docs/managing-accounts">importing the account</a> (assuming that this
+The name is the one used when <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">importing the account</span></a> (assuming that this
 was done). Defaults to the account name “default”.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--keys</span></code>: A number of sign/verify key-pairs associated with the
 account, used to sign the transaction. The format is shown in the example
@@ -355,13 +349,15 @@ before sending it, and ask the user to confirm that it matches their intent.
 Just before the transaction is sent the user is asked for the password to access
 the signing keys.</p>
 <p>Once a transaction has been submitted, the command will continuously poll and
-display its status until it’s been <a class="reference external" href="/testnet/docs/glossary#finalization">finalized</a>.</p>
-<p>The command for transferring GTU is described below. The remaining commands are
-used to add, remove, and configure bakers as well as delegating stake to them.
-They expose a lower level, but more versatile set of features compared to the
-tools described in the quickstart on <a class="reference external" href="/testnet/docs/quickstart-baker">becoming a baker</a>. As such, they are
-considered “advanced” for now and not further explained. For more information
-about a command, invoke it with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag.</p>
+display its status until it’s been <a class="reference internal" href="../see-also/glossary.html#glossary-finalization"><span class="std std-ref">finalized</span></a>.</p>
+<p>The commands for transferring GTU (both plain transfers and encrypted transfers)
+are described below.</p>
+<p>The remaining commands are used to add, remove, and configure bakers. Their
+behavior is explained on the guide for <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">becoming a baker</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about a command, invoke it with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag.</p>
+</div>
 <div class="section" id="id4">
 <h3>Transfer<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>A transfer is done using the following command:</p>
@@ -446,8 +442,8 @@ Concordium network</p></li>
 </div>
 <p>This command has all of the additional options of <code class="docutils literal notranslate"><span class="pre">send-gtu</span></code>, as well as an
 additional flag <code class="docutils literal notranslate"><span class="pre">--index.</span></code> This flag, if given, is used to select which
-<a class="reference external" href="/testnet/docs/glossary#incoming-encrypted-amount">incoming encrypted amounts</a> that will be used as input to the transaction.
-This is best illustrated on an example. <a class="reference external" href="/testnet/docs/queries#account-state">Querying an account</a> can display the
+<a class="reference internal" href="../see-also/glossary.html#glossary-incoming-encrypted-amount"><span class="std std-ref">incoming encrypted amounts</span></a> that will be used as input to the transaction.
+This is best illustrated on an example. <a class="reference internal" href="query-node.html#query-account-state"><span class="std std-ref">Querying an account</span></a> can display the
 list of incoming amounts on account. An output could look as follows</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...</span>
 <span class="go">Encrypted balance:</span>
@@ -460,7 +456,7 @@ list of incoming amounts on account. An output could look as follows</p>
 </pre></div>
 </div>
 <p>If we were to <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> from the account while supplying index 8,
-only the encrypted amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference external" href="/testnet/docs/glossary#self-balance">self balance</a>
+only the encrypted amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference internal" href="../see-also/glossary.html#glossary-self-balance"><span class="std std-ref">self balance</span></a>
 would be used as input of the encrypted transfer.</p>
 <p>If the supplied index is out of range <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will refuse to send
 the transaction.</p>

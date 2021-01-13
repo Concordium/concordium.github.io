@@ -52,18 +52,14 @@
 
 <body class="wy-body-for-nav">
 
-  
-    <nav class="topbar">
-        <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
-        <a href="../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
-    </nav>
-
+   
   <div class="wy-grid-for-nav">
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: black" >
           
+
 
           
             <a href="../../index.html">
@@ -90,6 +86,11 @@
 </div>
 
           
+<nav class="sidebar-top-menu">
+    <a href="../../testnet/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
         </div>
 
         
@@ -110,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#instance-state">Instance state</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#interacting-with-an-instance">Interacting with an instance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#logging-events">Logging events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#action-description">Action description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#action-descriptions">Action descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contract-schema.html">Smart contract schemas</a></li>
@@ -236,7 +237,7 @@ instance.</p>
 <p class="admonition-title">Note</p>
 <p>A smart contract instance is often just called an <em>instance</em>.</p>
 </div>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <div class="graphviz"><object data="../../_images/graphviz-a1969276dd5f6724d08d587e993efa9348d223c5.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph G {
     rankdir=&quot;BT&quot;
@@ -265,7 +266,7 @@ instance.</p>
     Boardgame:n -&gt; Crowdfunding;
 }</p></object></div>
 <p class="caption"><span class="caption-text">Example of smart contract module containing two smart contracts:
-Escrow and Crowdfunding. Each contract has two instances.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+Escrow and Crowdfunding. Each contract has two instances.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="state-of-a-smart-contract-instance">
 <h2>State of a smart contract instance<a class="headerlink" href="#state-of-a-smart-contract-instance" title="Permalink to this headline">¶</a></h2>
@@ -353,8 +354,8 @@ environment.</p>
 contract’s state. In most cases it would only make sense to log a few bytes to
 reduce cost.</p>
 </div>
-<div class="section" id="action-description">
-<h2>Action description<a class="headerlink" href="#action-description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="action-descriptions">
+<span id="id3"></span><h2>Action descriptions<a class="headerlink" href="#action-descriptions" title="Permalink to this headline">¶</a></h2>
 <p>A receive function returns a <em>description of actions</em> to be executed by
 the host environment on the chain.</p>
 <p>The possible actions that a contract can produce are:</p>
@@ -391,7 +392,7 @@ An action description <code class="docutils literal notranslate"><span class="pr
 <li><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> succeeds, stops executing.</p></li>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> fails, executes <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
 </ol>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <div class="graphviz"><object data="../../_images/graphviz-e1dbd4f259aeaadb8218974d61bb7ded4a469ff4.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph G {
     node [color=transparent]
@@ -408,7 +409,7 @@ An action description <code class="docutils literal notranslate"><span class="pr
 }</p></object></div>
 <p class="caption"><span class="caption-text">Example of an action description, which tries to transfer to Alice
 and then Bob, if any of these fails, it will try to transfer to
-Charlie instead.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+Charlie instead.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>

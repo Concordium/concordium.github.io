@@ -37,7 +37,7 @@ It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.
 
 The library is added by opening ``Cargo.toml`` and adding the line
-``concordium-std = "0.3"`` (or whichever version is currently recommended), in
+``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
 the ``[dependencies]`` section::
 
    [dependencies]
@@ -59,5 +59,6 @@ The crate documentation can be found on docs.rs_.
 .. _rustup: https://rustup.rs/
 .. _repository: https://gitlab.com/Concordium/concordium-std
 .. _docs.rs: https://docs.rs/crate/concordium-std/
+.. _`concordium-std`: https://docs.rs/crate/concordium-std/
 
 That is it! You are now ready to develop your own smart contract.

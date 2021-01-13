@@ -53,7 +53,7 @@ Best chain
 
 The chain a :ref:`baker<glossary-baker>` will build upon when making a new block. The best chain
 selection procedure is determined by the consensus protocol. In particular, the
-best chain has the most :ref:`finalized<glossary_finalization>` blocks, and the most blocks after the last
+best chain has the most :ref:`finalized<glossary-finalization>` blocks, and the most blocks after the last
 finalized block.
 
 .. _glossary-block:
@@ -92,7 +92,7 @@ Consensus
 =========
 
 The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
-order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary_finalization>`.
+order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary-finalization>`.
 
 .. _glossary-credential:
 
@@ -140,7 +140,7 @@ for approximately one hour). At the start of each epoch, we compute a
 :ref:`leadership election nonce<glossary-leader-election>` based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
 
-.. _glossary_finalization:
+.. _glossary-finalization:
 
 Finalization
 ============
@@ -170,7 +170,7 @@ purposes:
 -  as a form of payment between users via transactions,
 -  as a payment for executing smart contracts,
 -  as a store of value,
--  as a reward for honest behaviour (e.g. :ref:`baking<glossary-baker>` or :ref:`finalizing<glossary_finalization>`
+-  as a reward for honest behaviour (e.g. :ref:`baking<glossary-baker>` or :ref:`finalizing<glossary-finalization>`
    blocks on top of the longest chain), to incentivize blockchain users.
 
 The smallest subdivision of GTU is the µGTU (micro GTU), with 1 GTU = 1,000,000
@@ -270,7 +270,7 @@ Node
 
 A participant in the Concordium network. Nodes receive blocks and transactions,
 and track the current state of the blockchain. A :ref:`baker node<glossary-baker>` has cryptographic
-keys that enable it to take part in baking and :ref:`finalization<glossary_finalization>`. A node without
+keys that enable it to take part in baking and :ref:`finalization<glossary-finalization>`. A node without
 these keys is referred to as a *passive node*.
 
 .. _glossary-nonce:

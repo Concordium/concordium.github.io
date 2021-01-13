@@ -1,24 +1,9 @@
-.. _Concordium ID (mobile wallet): #concordium-id-mobile-wallet-
+.. _Concordium ID (mobile wallet): #concordium-id-mobile-wallet
 .. _Command-line tool: #command-line-tool
 .. _Transfer: #transfer
 .. _Encrypted transfer: #encrypted-transfer
 .. _Shield an amount: #shield-an-amount
 .. _Unshield an amount: #unshield-an-amount
-.. _account: /testnet/docs/glossary#account
-.. _stake delegation: /testnet/docs/glossary#stake-delegation
-.. _adding a baker: /testnet/docs/quickstart-baker
-.. _block: /testnet/docs/glossary#baker
-.. _sequence number: /testnet/docs/glossary#transaction-sequence-number
-.. _finalized: /testnet/docs/glossary#finalization
-.. _Concordium ID: /testnet/docs/downloads#concordium-id
-.. _concordium-client: /testnet/docs/client
-.. _an account: /testnet/docs/identities-and-accounts
-.. _wallet: /testnet/docs/quickstart-wallet#before-you-start
-.. _importing the account: /testnet/docs/managing-accounts
-.. _becoming a baker: /testnet/docs/quickstart-baker
-.. _incoming encrypted amounts: /testnet/docs/glossary#incoming-encrypted-amount
-.. _Querying an account: /testnet/docs/queries#account-state
-.. _self balance: /testnet/docs/glossary#self-balance
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _transactions:
@@ -32,24 +17,24 @@ Transactions
    :backlinks: none
 
 A *transaction* is an operation which applies some change to the chain.
-Transactions always have one sender `account`_ and are signed using the keys of
+Transactions always have one sender :ref:`account<glossary-account>` and are signed using the keys of
 this account.
 
 There are several transaction types: The most basic one is a GTU transfer, which
 moves tokens from the sender account to another account. Other transaction types
-include encrypted transfers, `stake delegation`_, `adding a baker`_, and
-updating keys of accounts and bakers.
+include encrypted transfers, :ref:`adding a baker<become-a-baker>`, and updating keys of accounts
+and bakers.
 
 Every transaction has a well-defined *cost*, the value of which depends on the
 transaction type as well as the payload in a way that reflects the computational
 effort of applying the transaction as closely as possible. When the transaction
-is sumbitted, its cost is deducted from the sender's account and paid to the
+is submitted, its cost is deducted from the sender's account and paid to the
 network as a fee for carrying out the transaction. Cost is measured in the unit
 NRG which corresponds to GTU according to a variable conversion factor
 (currently 1 NRG = 0.0001 GTU).
 
 Once a baker receives a transaction from some client, it performs a few basic
-checks to verify that the transaction is eligible for *inclusion* in a `block`_.
+checks to verify that the transaction is eligible for *inclusion* in a :ref:`block<glossary-block>`.
 If any of these checks fail, the transaction is ignored. Included transactions
 which satisfy all further requirements are considered *successful* and have
 their changes applied to the chain. If something doesn't check out (for
@@ -57,17 +42,17 @@ instance, the sender attempted to overdraw their account), the transaction is
 still included, but recorded as *rejected*. A rejected transaction has no effect
 other than deducting its cost from the sender.
 
-Each account has a `sequence number`_ associated with it. This number increases
+Each account has a :ref:`sequence number<glossary-transaction-sequence-number>` associated with it. This number increases
 sequentially with each transaction sent from this account and is recorded into
 the transaction. Transactions with sequence numbers that don't match the current
 one of the account are not considered eligible for inclusion on the chain. This
 ensures that transactions are included only once and in a specific order.
 
-Until some block containing a given transaction is `finalized`_, there is no
+Until some block containing a given transaction is :ref:`finalized<glossary-finalization>`, there is no
 guarantee that the transaction is permanent.
 
-Transfers (both plain and encrypted) can be performed using the `Concordium ID`_
-mobile app, or the concordium-client_ tool. All other transaction types
+Transfers (both plain and encrypted) can be performed using the :ref:`Concordium ID<concordium_id>`
+mobile app, or the :ref:`concordium-client<concordium_client>` tool. All other transaction types
 can only be done through ``concordium-client``.
 
 
@@ -75,7 +60,7 @@ can only be done through ``concordium-client``.
 Concordium ID (mobile wallet)
 =============================
 
-Once you create `an account`_ in the `wallet`_, the **SEND** button brings you
+Once you create :ref:`an account<reference-id-accounts>` in the :ref:`wallet<guide-account-transactions>`, the **SEND** button brings you
 to the screen for doing transfers from the given account. Depending on whether
 you are in the public or shielded balance part of the account the transfer will
 be a plain transfer, or an encrypted transfer.
@@ -83,7 +68,7 @@ be a plain transfer, or an encrypted transfer.
 Command-line tool
 =================
 
-All types of transactions can be performed using concordium-client_. The
+All types of transactions can be performed using :ref:`concordium-client<concordium_client>`. The
 different transaction types are performed using specialized subcommands:
 
 +-------------------------------+-------------------------------------+
@@ -101,17 +86,12 @@ different transaction types are performed using specialized subcommands:
 +-------------------------------+-------------------------------------+
 | ``baker remove``              | Remove a baker                      |
 +-------------------------------+-------------------------------------+
-| ``baker set-account``         | Update reward account of a baker    |
+| ``baker update-stake``        | Update the staked amount of a baker |
 +-------------------------------+-------------------------------------+
-| ``baker set-key``             | Update signature key of a baker     |
-+-------------------------------+-------------------------------------+
-| ``baker set-aggregation-key`` | Update aggregation key of a baker   |
-+-------------------------------+-------------------------------------+
-| ``account delegate``          | Deletegate an account's stake to a  |
+| ``baker update-restake``      | Update the restaking switch of a    |
 |                               | baker                               |
 +-------------------------------+-------------------------------------+
-| ``account undelegate``        | Ensure that an account's stake is   |
-|                               | not delegated                       |
+| ``baker set-key``             | Update the keys of a baker          |
 +-------------------------------+-------------------------------------+
 | ``account add-keys``          | Add additional signing keys to the  |
 |                               | account                             |
@@ -131,7 +111,7 @@ common set of flags and configuration to control how they build transactions.
 Depending on the exact context, the flags are currently all optional:
 
 -  ``--sender``: Name or address of the transaction's sender account.
-   The name is the one used when `importing the account`_ (assuming that this
+   The name is the one used when :ref:`importing the account<managing_accounts>` (assuming that this
    was done). Defaults to the account name "default".
 -  ``--keys``: A number of sign/verify key-pairs associated with the
    account, used to sign the transaction. The format is shown in the example
@@ -155,14 +135,17 @@ Just before the transaction is sent the user is asked for the password to access
 the signing keys.
 
 Once a transaction has been submitted, the command will continuously poll and
-display its status until it's been `finalized`_.
+display its status until it's been :ref:`finalized<glossary-finalization>`.
 
-The command for transferring GTU is described below. The remaining commands are
-used to add, remove, and configure bakers as well as delegating stake to them.
-They expose a lower level, but more versatile set of features compared to the
-tools described in the quickstart on `becoming a baker`_. As such, they are
-considered "advanced" for now and not further explained. For more information
-about a command, invoke it with the ``--help`` flag.
+The commands for transferring GTU (both plain transfers and encrypted transfers)
+are described below.
+
+The remaining commands are used to add, remove, and configure bakers. Their
+behavior is explained on the guide for :ref:`becoming a baker<become-a-baker>`.
+
+.. note::
+
+   For more information about a command, invoke it with the ``--help`` flag.
 
 Transfer
 --------
@@ -260,8 +243,8 @@ The interaction looks as follows.
 
 This command has all of the additional options of ``send-gtu``, as well as an
 additional flag ``--index.`` This flag, if given, is used to select which
-`incoming encrypted amounts`_ that will be used as input to the transaction.
-This is best illustrated on an example. `Querying an account`_ can display the
+:ref:`incoming encrypted amounts<glossary-incoming-encrypted-amount>` that will be used as input to the transaction.
+This is best illustrated on an example. :ref:`Querying an account<query-account-state>` can display the
 list of incoming amounts on account. An output could look as follows
 
 .. code-block:: console
@@ -276,7 +259,7 @@ list of incoming amounts on account. An output could look as follows
    ...
 
 If we were to ``send-gtu-encrypted`` from the account while supplying index 8,
-only the encrypted amount ``8c0faff6739bffc531c5...`` and the `self balance`_
+only the encrypted amount ``8c0faff6739bffc531c5...`` and the :ref:`self balance<glossary-self-balance>`
 would be used as input of the encrypted transfer.
 
 If the supplied index is out of range ``concordium-client`` will refuse to send

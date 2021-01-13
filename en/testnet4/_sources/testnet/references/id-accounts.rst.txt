@@ -7,6 +7,8 @@
 .. _`Concordium ID`: /test/guides/get-started.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
+.. _reference-id-accounts:
+
 =======================
 Identities and accounts
 =======================
