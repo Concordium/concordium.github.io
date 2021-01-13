@@ -2,6 +2,8 @@
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
 
+.. _glossary:
+
 ============================
 Glossary of Concordium Terms
 ============================

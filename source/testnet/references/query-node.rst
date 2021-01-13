@@ -1,18 +1,7 @@
 
-.. _Account state: #account-state
-.. _List accounts: #list-accounts
-.. _Inspect specific account: #inspect-specific-account
-.. _Transaction status: #transaction-status
-.. _Block state: #block-state
-.. _Inspect specific block: #inspect-specific-block
-.. _Consensus state: #consensus-state
-.. _Inspect consensus parameters: #inspect-consensus-parameters
-.. _Inspect consensus status: #inspect-consensus-status
-.. _ID layer: #id-layer
-.. _concordium-client: /testnet/references/concordium-client.html
-.. _identity: /testnet/references/id-accounts.html
-.. _glossary: /testnet/see-also/glossary.html
 .. _Discord: https://discord.com/invite/xWmQ5tp
+
+.. _testnet-query-node:
 
 ===============
 Querying a node
@@ -22,7 +11,7 @@ Querying a node
    :local:
    :backlinks: none
 
-The concordium-client_ tool supports queries of multiple kinds of state against
+The :ref:`concordium-client<concordium_client>` tool supports queries of multiple kinds of state against
 a backend node:
 
 -  Account state: List all accounts and display all publicly available
@@ -177,7 +166,7 @@ Example
    Transaction energy cost:    112 NRG
    Transactions size:          284
 
-See the `glossary`_ for detailed descriptions of the individual fields.
+See the :ref:`glossary<glossary>` for detailed descriptions of the individual fields.
 
 Consensus state
 ===============

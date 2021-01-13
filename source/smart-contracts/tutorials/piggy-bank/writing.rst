@@ -14,7 +14,7 @@
 .. |bail| replace:: ``bail!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
-.. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#function.matches_account
+.. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account
 .. |matches_account| replace:: ``matches_account``
 .. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
