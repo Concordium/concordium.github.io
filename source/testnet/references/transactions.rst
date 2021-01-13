@@ -1,9 +1,3 @@
-.. _Concordium ID (mobile wallet): #concordium-id-mobile-wallet
-.. _Command-line tool: #command-line-tool
-.. _Transfer: #transfer
-.. _Encrypted transfer: #encrypted-transfer
-.. _Shield an amount: #shield-an-amount
-.. _Unshield an amount: #unshield-an-amount
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _transactions:

@@ -1,20 +1,5 @@
-.. _Commands and help: #commands-and-help
-.. _Configuration: #configuration
-.. _Location: #location
-.. _Initialization: #initialization
-.. _Display contents: #display-contents
-.. _Add accounts and keys: #add-accounts-and-keys
-.. _Add account: #add-account
-.. _Add key to an account: #add-key-to-an-account
-.. _Import accounts and keys from the Wallet apps: #import-accounts-and-keys-from-the-wallet-apps
-.. _Shell completion: #shell-completion
-.. _local node: /testnet/docs/quickstart-node
-.. _queries: /testnet/docs/queries
-.. _Concordium ID: /testnet/docs/downloads#concordium-id
-.. _framework: https://github.com/pcapriotti/optparse-applicative#bash-zsh-and-fish-completions
+.. _framework: https://github.com/pcapriotti/optparse-applicative#user-content-bash-zsh-and-fish-completions
 .. _Discord: https://discord.com/invite/xWmQ5tp
-.. _here: /testnet/docs/managing-accounts
-.. _Managing accounts: /testnet/docs/managing-accounts
 
 .. _concordium_client:
 
@@ -29,7 +14,7 @@ Concordium Client
 
 The Concordium distribution ships with a CLI tool named ``concordium-client``.
 
-In the current testnet setup, this client requires a `local node`_
+In the current testnet setup, this client requires a :ref:`local node<run-a-node>`
 (``concordium-node``) to be running. The client will perform its queries and
 send transactions through that node.
 
@@ -42,10 +27,12 @@ directory:
    (``C:\\Users\\%USERNAME%\\Documents\\concordium-software`` in a
    standard setup)
 
-**This page will describe the commands that are related with configuration of
-the client, but the rest of available commands will be discussed on the pages
-where the features that use them are documented. Some commands will perform**\
-`queries`_\ **and others send** :ref:`transactions<transactions>`\ **.**
+.. note::
+
+   This page will describe the commands that are related with configuration of
+   the client, but the rest of available commands will be discussed on the pages
+   where the features that use them are documented. Some commands will perform
+   :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions>`.
 
 Commands and help
 =================
@@ -114,7 +101,7 @@ storage and a password is required each time the key is needed. The password is
 chosen when the keys are either imported via ``config account import`` (see
 below), or when keys are added to the account afterwards.
 
-Read more about accounts `here`_.
+Read more about accounts :ref:`here<managing_accounts>`.
 
 Location
 --------
@@ -211,7 +198,7 @@ container.
 Add accounts and keys
 ---------------------
 
-See also the `Managing accounts`_ section.
+See also the :ref:`Managing accounts<managing_accounts>` section.
 
 Add account
 ~~~~~~~~~~~
@@ -266,10 +253,10 @@ Import accounts and keys from the Wallet apps
 
 .. code-block:: console
 
-   $concordium-client config account import FILE [--name NAME]``
+   $concordium-client config account import FILE [--name NAME]
 
 Import the keys of one or more accounts from a JSON file exported from the
-`Concordium ID`_ app.
+:ref:`Concordium ID<concordium_id>` app.
 
 The ``--name`` option selects which account to import and imports it with this
 name. If it's omitted, all accounts in the file are imported under their

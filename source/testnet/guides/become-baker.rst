@@ -1,10 +1,7 @@
 
 .. _networkDashboardLink: https://dashboard.testnet.concordium.com/
-.. _concordium-client: /testnet/docs/client
 .. _node-dashboard: http://localhost:8099
-.. _querying the node: /testnet/docs/queries#account-state
 .. _Discord: https://discord.com/invite/xWmQ5tp
-.. _epoch: /testnet/docs/glossary#epoch
 
 .. _become-a-baker:
 
@@ -89,6 +86,8 @@ proportional to the staked amount.
 
 The same stake is used when calculating whether a baker is included in the finalization
 committee or not. See Finalization_.
+
+.. _epochs-and-slots:
 
 Epochs and slots
 ----------------
