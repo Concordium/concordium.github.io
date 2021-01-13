@@ -100,7 +100,7 @@ prevent further interaction.
 Specifying the state
 ====================
 
-To implement a piggy bank we need to keep track of the amount of money it holds,
+To implement a piggy bank we need to keep track of the amount of GTU it holds,
 and we need to know whether it has been smashed. The blockchain will take care
 of the first task for us since the chain keeps track of the balance of each smart-contract
 instance. Therefore, we only need to maintain whether the piggy bank has been smashed,
