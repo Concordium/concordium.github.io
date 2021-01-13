@@ -229,13 +229,8 @@ including logs from the <code class="docutils literal notranslate"><span class="
 <div class="section" id="multiple-nodes-bakers-and-accounts">
 <h2>Multiple nodes, bakers, and accounts<a class="headerlink" href="#multiple-nodes-bakers-and-accounts" title="Permalink to this headline">¶</a></h2>
 <p>We do not currently support running two nodes on the same machine. When the
-<code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> tool is run when the node is already running it will either
-do nothing, in case none of the parameters, e.g., node name, have changed, or
-restart the node with the new parameters. Note that “do nothing” means that it
-will attach the terminal to the existing running node, so it will appear similar
-to if another node is running, but upon close inspection it will become clear
-that the outputs of the previously running, and the “newly started” nodes are
-the same.</p>
+<code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> tool is run, while another node is already running, it will ask you
+if you want to stop the currently running node and start a new one.</p>
 <p>A node can only run as one baker. A baker is by definition a member of the
 committee. The current committee can be obtained by querying the node via</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
@@ -246,12 +241,6 @@ starts with are registered in the committee.</p>
 <p>Which baker the node runs as is determined by the baker keys that it starts with
 (these are in the file <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code>). If a node is restarted it
 reloads the keys that exist at the time it starts.</p>
-<p>The same account can be used to register multiple bakers. All these bakers will,
-by default, have the account as the reward account. An account can only delegate
-to one of the bakers however (delegate in the sense that the tokens on the
-account will count towards the stake of the baker). When a baker is registered,
-and without further action, it will be in the committee, but it will have 0%
-stake. Any account can subsequently delegate to any of the registered bakers.</p>
 </div>
 <div class="section" id="appearance-of-high-memory-consumption-of-the-node">
 <h2>Appearance of high memory consumption of the node<a class="headerlink" href="#appearance-of-high-memory-consumption-of-the-node" title="Permalink to this headline">¶</a></h2>
@@ -329,7 +318,6 @@ issued, which are not verified against physical ID documents.</p>
 <h2>Inconsistency with numbers on ID documents<a class="headerlink" href="#inconsistency-with-numbers-on-id-documents" title="Permalink to this headline">¶</a></h2>
 <p>When issuing an identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code> with identity provider <code class="docutils literal notranslate"><span class="pre">Notabene</span></code>, which is based on a Danish ID document or a Spanish national identity card, the personal identity number might be included as document number in the issued identity instead of the actual ID document number.</p>
 <p>Danish ID documents (e.g. passport or driver’s license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead.</p>
-<p>A Spanish national identity card shows the serial number of the card (NUM SOPORT) and the identity number of the holder (DNI). NUM SOPORT should be included in the issued identity. Inconsistencies may be observed where DNI is used instead.</p>
 <p>The issues are reported to identity provider Notabene as well as identity verifier Onfido.</p>
 </div>
 <div class="section" id="performance-issues-in-mobile-wallet-on-android-phones">
