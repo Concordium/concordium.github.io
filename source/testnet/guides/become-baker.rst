@@ -87,6 +87,8 @@ proportional to the staked amount.
 The same stake is used when calculating whether a baker is included in the finalization
 committee or not. See Finalization_.
 
+.. _epochs-and-slots:
+
 Epochs and slots
 ----------------
 

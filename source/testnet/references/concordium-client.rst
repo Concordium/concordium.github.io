@@ -1,4 +1,4 @@
-.. _framework: https://github.com/pcapriotti/optparse-applicative#bash-zsh-and-fish-completions
+.. _framework: https://github.com/pcapriotti/optparse-applicative#user-content-bash-zsh-and-fish-completions
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _concordium_client:
@@ -27,10 +27,12 @@ directory:
    (``C:\\Users\\%USERNAME%\\Documents\\concordium-software`` in a
    standard setup)
 
-**This page will describe the commands that are related with configuration of
-the client, but the rest of available commands will be discussed on the pages
-where the features that use them are documented. Some commands will perform**\
-:ref:`queries<testnet-query-node>`\ **and others send** :ref:`transactions<transactions>`\ **.**
+.. note::
+
+   This page will describe the commands that are related with configuration of
+   the client, but the rest of available commands will be discussed on the pages
+   where the features that use them are documented. Some commands will perform
+   :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions>`.
 
 Commands and help
 =================

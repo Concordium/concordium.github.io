@@ -178,15 +178,15 @@ Inspect consensus parameters
 
    $concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
 
-Show `election parameters`_ for a specific block, optionally including
+Show :ref:`election parameters<glossary-leader-election>` for a specific block, optionally including
 bakers and their :ref:`glossary-lottery-power`:
 
 -  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
 -  ``--include-bakers``: If set, include table of bakers and their
    lottery power. The lottery power is recomputed periodically, so operations
    that affect them do not take effect immediately. For more information about
-   what information will be shown here, see the `detailed description on the
-   time constraints`_.
+   what information will be shown here, see the :ref:`detailed description on the
+   time constraints<epochs-and-slots>`.
 
 Example
 ~~~~~~~
@@ -205,8 +205,6 @@ Example
         4: 4pZN572izXS2jSNuGQ1nFg5ggvZZXsghFJMERzDqTNnJZkLyvX   19.9866 %
         ...
 
-.. _`election parameters`: /testnet/see-also/glossary.html#leader-election
-.. _detailed description on the time constraints: /testnet/guides/become-baker.html/#epocs-and-slots
 
 Inspect consensus status
 ------------------------
