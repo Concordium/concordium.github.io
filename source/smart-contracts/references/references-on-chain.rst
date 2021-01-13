@@ -40,7 +40,7 @@ Example of a contract instance address:
    {"index":0,"subindex":0}
 
 Currently, only indexes are used.
-Subindexes will be used when the deletion of instances has been implemented.
-Until then, subindexes default to the value ``0``.
+Subindices will be used when the deletion of instances has been implemented.
+Until then, subindices default to the value ``0``.
 
 .. _sha256sum: https://linux.die.net/man/1/sha256sum

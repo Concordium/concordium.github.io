@@ -1,10 +1,7 @@
 
-.. _Export: #export
-.. _Import: #import
-.. _`Address Book`: #address-book
-.. _`the previous chapter`: get-the-app.html
 .. _Discord: https://discord.gg/xWmQ5tp
 
+.. _testnet-explore-more:
 
 =======================================
 Concordium ID: Explore the *More* page

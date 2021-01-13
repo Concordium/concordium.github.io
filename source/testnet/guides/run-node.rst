@@ -1,3 +1,8 @@
+.. _`Network Dashboard`: https://dashboard.testnet.concordium.com/
+.. _Discord: https://discord.gg/xWmQ5tp
+
+.. _run-a-node:
+
 ==========
 Run a Node
 ==========
@@ -19,12 +24,6 @@ network. After following this guide, you will be able to
 
 You do not need an account to run a node.
 
-.. _Before you begin: #before-you-begin
-.. _Running a node: #running-a-node
-.. _Seeing your node on the dashboard: #seeing-your-node-on-the-dashboard
-.. _Enabling inbound connections: #enabling-inbound-connections
-.. _Stopping the node: #stopping-the-node
-
 Before you begin
 ================
 
@@ -41,7 +40,7 @@ Upgrade from an earlier version of Open Testnet
 
 To upgrade to the current Concordium software for Open Testnet 4:
 
--  Follow the above steps to `download`_ the most recent Concordium
+-  Follow the above steps to :ref:`download<downloads>` the most recent Concordium
    software.
 
 -  Run the ``concordium-node-reset-data`` executable from the unzipped
@@ -64,8 +63,6 @@ To upgrade to the current Concordium software for Open Testnet 4:
    Open Testnet 3. Therefore, if you have stored accounts from prior
    versions we recommend entering **y** which will delete all account
    keys.
-
-.. _download: /testnet/see-also/downloads.html
 
 .. _running-a-node:
 
@@ -104,16 +101,13 @@ The tool will now download the Concordium Client image and load it into
 Docker. The client will launch and start outputting logging information
 about the operation of the node.
 
-.. _`Network Dashboard`: https://dashboard.testnet.concordium.com/
-
-
 Seeing your node on the dashboard
 =================================
 
 After running ``concordium-node`` you can
 
 -  see your node on the `Network Dashboard`_
--  `query`_ information about blocks, transactions, and accounts
+-  :ref:`query<testnet-query-node>` information about blocks, transactions, and accounts
 
 Network dashboard
 -----------------
@@ -129,7 +123,6 @@ blocks your node received) with the **Chain Len** value (number of
 blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.
 
-.. _query: /testnet/references/query-node.html
 
 Enabling inbound connections
 ============================
@@ -195,4 +188,3 @@ You can send your logs, system information, questions and feedback to
 testnet@concordium.com. You can also reach out at our `Discord`_, or
 check out our :ref:`troubleshooting page<troubleshooting-and-known-issues>`
 
-.. _Discord: https://discord.gg/xWmQ5tp

@@ -8,6 +8,8 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v4:
+
 Open Testnet v4
 ===============
 
