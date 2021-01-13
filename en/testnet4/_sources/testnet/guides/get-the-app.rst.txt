@@ -1,7 +1,7 @@
 
 .. _`Concordium ID APK`: https://client-distribution-testnet.concordium.com/wallet-testnet-release-0.5.30.apk
 .. _TestFlight: https://apps.apple.com/dk/app/testflight/id899247664?l=da
-.. _`TestFlight beta program`: https://testflight.apple.com/join/X9MJhsPC
+.. _`TestFlight beta program`: https://testflight.apple.com/join/5LgqqrJ4
 .. _Discord: https://discord.gg/xWmQ5tp
 
 .. _testnet-get-the-app:
