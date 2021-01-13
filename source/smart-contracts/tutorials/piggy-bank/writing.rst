@@ -274,7 +274,7 @@ In this contract we will use the **Accept** and **Simple Transfer** actions.
 Inserting GTU
 -------------
 
-The first interaction we will specify for our piggy bank is how to put money into it.
+The first interaction we will specify for our piggy bank is how to insert GTU into it.
 We start with defining a receive function as:
 
 .. code-block:: rust
