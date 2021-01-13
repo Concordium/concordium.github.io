@@ -1,10 +1,7 @@
 
-.. _Set up a passcode and biometrics: #set-up-a-passcode-and-biometrics
-.. _Request your initial account and identity: #request-your-initial-account-and-identity
-.. _`the previous chapter`: get-the-app.html
-.. _`Identities and accounts`: /testnet/references/id-accounts.html
 .. _Discord: https://discord.gg/xWmQ5tp
 
+.. _testnet-get-started:
 
 =======================================
 Concordium ID: Get started with the app
@@ -14,7 +11,7 @@ Concordium ID: Get started with the app
    :local:
    :backlinks: none
 
-Before following this guide you should have finished installing Concordium ID, as described in `the previous chapter`_.
+Before following this guide you should have finished installing Concordium ID, as described in :ref:`the previous chapter<testnet-get-the-app>`.
 
 Set up a passcode and biometrics
 ================================
@@ -25,8 +22,8 @@ and it will also guide you through getting an :ref:`glossary-identity`. The init
 that is submitted to the chain by the :ref:`glossary-identity-provider`, upon creation of an identity. You can make the
 the same transactions from an initial account as from regular accounts, but the owner of the initial account will be
 known by the identity provider. After your identity is created you will be able to submit accounts to the chain
-yourself, and these will be unknown by the identity provider. You can learn more about accounts on the `Identities
-and accounts`_ page.
+yourself, and these will be unknown by the identity provider. You can learn more about accounts on the :ref:`Identities
+and accounts<reference-id-accounts>` page.
 
 The first screen you will meet when opening Concordium ID is this one. It will just explain that
 you have to go through this process to get started.

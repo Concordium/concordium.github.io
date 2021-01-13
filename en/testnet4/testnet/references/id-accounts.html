@@ -114,9 +114,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Identities and accounts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Obtaining an identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Creating an account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Benefits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#obtaining-an-identity">Obtaining an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-account">Creating an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benefits">Benefits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#revoking-anonymity">Revoking anonymity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -207,15 +207,15 @@
 <span id="identities-and-accounts"></span><h1>Identities and accounts<a class="headerlink" href="#reference-id-accounts" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id4">Obtaining an identity</a></p>
+<li><p><a class="reference internal" href="#obtaining-an-identity" id="id1">Obtaining an identity</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-id-mobile-wallet-identity" id="id5">Concordium ID (mobile wallet) identity</a></p></li>
+<li><p><a class="reference internal" href="#concordium-id-mobile-wallet-identity" id="id2">Concordium ID (mobile wallet) identity</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id2" id="id6">Creating an account</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id7">Benefits</a></p></li>
-<li><p><a class="reference internal" href="#revoking-anonymity" id="id8">Revoking anonymity</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#creating-an-account" id="id3">Creating an account</a></p></li>
+<li><p><a class="reference internal" href="#benefits" id="id4">Benefits</a></p></li>
+<li><p><a class="reference internal" href="#revoking-anonymity" id="id5">Revoking anonymity</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>In order to be an active participant on the Concordium blockchain (e.g., hold,
@@ -228,7 +228,7 @@ reason, the user may consider not using the initial account, and create a regula
 compliance with relevant regulations, a regular account can only be created from an <em>identity</em>
 which is issued <a class="reference internal" href="../see-also/glossary.html#glossary-off-chain"><span class="std std-ref">Off-chain</span></a> by an Identity provider. While an account
 has to be created from an identity, the user’s privacy is still protected, and the
-account owner’s identity can only be revealed via the process of <a class="reference external" href="/testnet/references/id-accounts.html#revoking-anonymity">anonymity revocation</a>,
+account owner’s identity can only be revealed via the process of <a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>,
 which can only happen under stringent regulations, such as upon a court order. In
 particular, a key feature of the design of identities and accounts is that the identity
 provider cannot reveal the identity of an account on their own.</p>
@@ -236,8 +236,8 @@ provider cannot reveal the identity of an account on their own.</p>
 authorities have detected suspicious activity on the account) and requires
 action by one or more anonymity revokers and the identity provider who issued
 the account’s identity.</p>
-<div class="section" id="id1">
-<h2>Obtaining an identity<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="obtaining-an-identity">
+<h2>Obtaining an identity<a class="headerlink" href="#obtaining-an-identity" title="Permalink to this headline">¶</a></h2>
 <p>Identities are issued by an identity provider. There is a registry of approved
 identity providers publicly accessible from the Concordium blockchain, with
 their contact information. Concordium Foundation will maintain the list in the
@@ -248,14 +248,14 @@ attributes are certified by the identity provider. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.</p>
-<p>Identities can be created via <a class="reference external" href="/test/guides/get-started.html">Concordium ID</a>. Identity issuance requires
+<p>Identities can be created via <a class="reference internal" href="../guides/get-started.html#testnet-get-started"><span class="std std-ref">Concordium ID</span></a>. Identity issuance requires
 <em>Identity Verification</em>, which is the process of verifying the real-life
 identity of the user. This will typically involve taking photographs, scans of
 identification documents (e.g., passport), etc. Identity verification also
 checks that the user-chosen attributes are valid for the user.</p>
 <div class="section" id="concordium-id-mobile-wallet-identity">
 <h3>Concordium ID (mobile wallet) identity<a class="headerlink" href="#concordium-id-mobile-wallet-identity" title="Permalink to this headline">¶</a></h3>
-<p>In the testnet phase the <a class="reference external" href="/test/guides/get-started.html">Concordium ID</a> app supports two identity issuance
+<p>In the testnet phase the <a class="reference internal" href="../guides/get-started.html#testnet-get-started"><span class="std std-ref">Concordium ID</span></a> app supports two identity issuance
 flows: <em>Notabene</em> and <em>Notabene (development)</em>. In both cases the identity
 provider is <a class="reference external" href="https://notabene.id/">Notabene</a>, but the identity verifiers differ.</p>
 <p>The <em>Notabene</em> flow is supported by <a class="reference external" href="https://onfido.com/">Onfido</a> and requires the user to take
@@ -267,8 +267,8 @@ attributes and does no verification. This flow is available for testing
 purposes, and will not be supported on the <a class="reference internal" href="../see-also/glossary.html#glossary-mainnet"><span class="std std-ref">Mainnet</span></a>.</p>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>Creating an account<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-an-account">
+<h2>Creating an account<a class="headerlink" href="#creating-an-account" title="Permalink to this headline">¶</a></h2>
 <p>Once a user has an identity, they can use it to create a number of accounts, besides the
 <a class="reference internal" href="../see-also/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> created by the identity provider upon creating the identity. In
 contrast to obtaining an identity, opening an account is an <a class="reference internal" href="../see-also/glossary.html#glossary-on-chain"><span class="std std-ref">On-chain</span></a> action
@@ -279,13 +279,13 @@ reveal publicly. The proofs establish that the attributes the user revealed
 publicly are the ones approved by the identity provider. The proofs reveal no
 other information. In particular, the identity provider itself cannot determine
 the owner of the account. (Revealing the owner is only possible through
-<a class="reference external" href="/testnet/references/id-accounts.html#revoking-anonymity">anonymity revocation</a>, which requires the identity provider and anonymity
+<a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>, which requires the identity provider and anonymity
 revokers to act together.) Note that revealing attributes publicly is completely
 optional. The benefit gained from revealing attributes is that other users may
 decide whether to trust the account based on the publicly available information.</p>
 </div>
-<div class="section" id="id3">
-<h2>Benefits<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">¶</a></h2>
 <p>Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
 provider issued an identity for an account, and who the anonymity revokers are

@@ -1,4 +1,4 @@
-.. _list of types implementing the SchemaType: https://docs.rs/concordium-contracts-common/0.2.0/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls
+.. _list of types implementing the SchemaType: https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls
 .. _build-schema:
 
 =======================

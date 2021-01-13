@@ -143,7 +143,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../references/references-on-chain.html">References on-chain</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references/local-settings.html">Local settings</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://developers.concordium.com/testnet/docs">Concordium user documentation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
 </ul>
 
@@ -552,7 +551,7 @@ message that triggered this receive function:</p>
 <p>Since both accounts and smart-contract instances are capable of sending messages,
 <code class="docutils literal notranslate"><span class="pre">sender</span></code> is of the  <code class="docutils literal notranslate"><span class="pre">Address</span></code> type, which is either an account
 address or a contract instance address.</p>
-<p>To compare the <code class="docutils literal notranslate"><span class="pre">sender</span></code> with <code class="docutils literal notranslate"><span class="pre">owner</span></code> we can use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#function.matches_account"><code class="docutils literal notranslate"><span class="pre">matches_account</span></code></a>
+<p>To compare the <code class="docutils literal notranslate"><span class="pre">sender</span></code> with <code class="docutils literal notranslate"><span class="pre">owner</span></code> we can use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account"><code class="docutils literal notranslate"><span class="pre">matches_account</span></code></a>
 function defined on the <code class="docutils literal notranslate"><span class="pre">sender</span></code>, which will only return true if the sender is
 an account address that is equal to the owner:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"></span>

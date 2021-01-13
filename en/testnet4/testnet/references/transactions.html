@@ -116,8 +116,8 @@
 <li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities and accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Transactions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Concordium ID (mobile wallet)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Command-line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concordium-id-mobile-wallet">Concordium ID (mobile wallet)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-tool">Command-line tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -205,21 +205,21 @@
 <span id="id1"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id2" id="id8">Concordium ID (mobile wallet)</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id9">Command-line tool</a></p>
+<li><p><a class="reference internal" href="#concordium-id-mobile-wallet" id="id2">Concordium ID (mobile wallet)</a></p></li>
+<li><p><a class="reference internal" href="#command-line-tool" id="id3">Command-line tool</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id4" id="id10">Transfer</a></p>
+<li><p><a class="reference internal" href="#transfer" id="id4">Transfer</a></p>
 <ul>
-<li><p><a class="reference internal" href="#example-transferring-25-gtu-from-one-account-to-another" id="id11">Example: Transferring 25 GTU from one account to another</a></p></li>
+<li><p><a class="reference internal" href="#example-transferring-25-gtu-from-one-account-to-another" id="id5">Example: Transferring 25 GTU from one account to another</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id5" id="id12">Encrypted transfer</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id13">Shield an amount</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id14">Unshield an amount</a></p></li>
-<li><p><a class="reference internal" href="#transfer-with-schedule" id="id15">Transfer with schedule</a></p></li>
+<li><p><a class="reference internal" href="#encrypted-transfer" id="id6">Encrypted transfer</a></p></li>
+<li><p><a class="reference internal" href="#shield-an-amount" id="id7">Shield an amount</a></p></li>
+<li><p><a class="reference internal" href="#unshield-an-amount" id="id8">Unshield an amount</a></p></li>
+<li><p><a class="reference internal" href="#transfer-with-schedule" id="id9">Transfer with schedule</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>A <em>transaction</em> is an operation which applies some change to the chain.
@@ -254,15 +254,15 @@ guarantee that the transaction is permanent.</p>
 <p>Transfers (both plain and encrypted) can be performed using the <a class="reference internal" href="../see-also/downloads.html#concordium-id"><span class="std std-ref">Concordium ID</span></a>
 mobile app, or the <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a> tool. All other transaction types
 can only be done through <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
-<div class="section" id="id2">
-<h2>Concordium ID (mobile wallet)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="concordium-id-mobile-wallet">
+<h2>Concordium ID (mobile wallet)<a class="headerlink" href="#concordium-id-mobile-wallet" title="Permalink to this headline">¶</a></h2>
 <p>Once you create <a class="reference internal" href="id-accounts.html#reference-id-accounts"><span class="std std-ref">an account</span></a> in the <a class="reference internal" href="../guides/accounts-transactions.html#guide-account-transactions"><span class="std std-ref">wallet</span></a>, the <strong>SEND</strong> button brings you
 to the screen for doing transfers from the given account. Depending on whether
 you are in the public or shielded balance part of the account the transfer will
 be a plain transfer, or an encrypted transfer.</p>
 </div>
-<div class="section" id="id3">
-<h2>Command-line tool<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="command-line-tool">
+<h2>Command-line tool<a class="headerlink" href="#command-line-tool" title="Permalink to this headline">¶</a></h2>
 <p>All types of transactions can be performed using <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. The
 different transaction types are performed using specialized subcommands:</p>
 <table class="docutils align-default">
@@ -358,8 +358,8 @@ behavior is explained on the guide for <a class="reference internal" href="../gu
 <p class="admonition-title">Note</p>
 <p>For more information about a command, invoke it with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag.</p>
 </div>
-<div class="section" id="id4">
-<h3>Transfer<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="transfer">
+<h3>Transfer<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h3>
 <p>A transfer is done using the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu
 </pre></div>
@@ -403,8 +403,8 @@ sender account A has three transaction signing keys 0, 1, 3).</p>
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>Encrypted transfer<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="encrypted-transfer">
+<h3>Encrypted transfer<a class="headerlink" href="#encrypted-transfer" title="Permalink to this headline">¶</a></h3>
 <p>An encrypted transfer is a transfer from a shielded balance to a shielded
 balance of another account. The command is very similar to a plain transfer</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount <span class="m">8</span>
@@ -461,8 +461,8 @@ would be used as input of the encrypted transfer.</p>
 <p>If the supplied index is out of range <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will refuse to send
 the transaction.</p>
 </div>
-<div class="section" id="id6">
-<h3>Shield an amount<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="shield-an-amount">
+<h3>Shield an amount<a class="headerlink" href="#shield-an-amount" title="Permalink to this headline">¶</a></h3>
 <p>The command to shield an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">account</span>
 <span class="pre">encrypt</span></code>. For example, an interaction to shield 10 GTU on account A looks as
 follows.</p>
@@ -493,8 +493,8 @@ always on the same account. The output looks as follows</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3>Unshield an amount<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="unshield-an-amount">
+<h3>Unshield an amount<a class="headerlink" href="#unshield-an-amount" title="Permalink to this headline">¶</a></h3>
 <p>The command to unshield an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is
 <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">decrypt</span></code>. For example, an interaction to unshield 7 GTU on
 account B looks as follows.</p>

@@ -78,7 +78,6 @@ The documentation is split into four categories
    references/references-on-chain
    references/local-settings
    Rust contract examples (repo) <https://github.com/Concordium/concordium-rust-smart-contracts>
-   Concordium user documentation <https://developers.concordium.com/testnet/docs>
    concordium-std <https://docs.rs/concordium-std/latest/concordium_std/>
 
 .. todo::

@@ -117,10 +117,10 @@
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Querying a node</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#query-account-state">Account state</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Transaction status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">Block state</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">Consensus state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#account-state">Account state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transaction-status">Transaction status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#block-state">Block state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consensus-state">Consensus state</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -204,56 +204,56 @@
            <div itemprop="articleBody">
             
   <div class="section" id="querying-a-node">
-<h1>Querying a node<a class="headerlink" href="#querying-a-node" title="Permalink to this headline">¶</a></h1>
+<span id="testnet-query-node"></span><h1>Querying a node<a class="headerlink" href="#querying-a-node" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#query-account-state" id="id16">Account state</a></p>
+<li><p><a class="reference internal" href="#account-state" id="id6">Account state</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id17">List accounts</a></p>
+<li><p><a class="reference internal" href="#list-accounts" id="id7">List accounts</a></p>
 <ul>
-<li><p><a class="reference internal" href="#example" id="id18">Example</a></p></li>
+<li><p><a class="reference internal" href="#example" id="id8">Example</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id3" id="id19">Inspect specific account</a></p>
+<li><p><a class="reference internal" href="#inspect-specific-account" id="id9">Inspect specific account</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id4" id="id20">Example</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id5" id="id21">Transaction status</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id6" id="id22">Example</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id7" id="id23">Block state</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id8" id="id24">Inspect specific block</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id9" id="id25">Example</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id10">Example</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id10" id="id26">Consensus state</a></p>
+<li><p><a class="reference internal" href="#transaction-status" id="id11">Transaction status</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id11" id="id27">Inspect consensus parameters</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id12" id="id28">Example</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id12">Example</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id13" id="id29">Inspect consensus status</a></p>
+<li><p><a class="reference internal" href="#block-state" id="id13">Block state</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id14" id="id30">Example</a></p></li>
+<li><p><a class="reference internal" href="#inspect-specific-block" id="id14">Inspect specific block</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id15">Example</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id15" id="id31">ID layer</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id32">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#consensus-state" id="id16">Consensus state</a></p>
+<ul>
+<li><p><a class="reference internal" href="#inspect-consensus-parameters" id="id17">Inspect consensus parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id18">Example</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#inspect-consensus-status" id="id19">Inspect consensus status</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id20">Example</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id-layer" id="id21">ID layer</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id22">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>The <a class="reference external" href="/testnet/references/concordium-client.html">concordium-client</a> tool supports queries of multiple kinds of state against
+<p>The <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a> tool supports queries of multiple kinds of state against
 a backend node:</p>
 <ul class="simple">
 <li><p>Account state: List all accounts and display all publicly available
@@ -265,10 +265,10 @@ and its relation to other blocks on the chain.</p></li>
 <li><p>Consensus state: Show the parameters of the consensus protocol and
 statistics related to baking and finalization of blocks.</p></li>
 </ul>
-<div class="section" id="query-account-state">
-<span id="id1"></span><h2>Account state<a class="headerlink" href="#query-account-state" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>List accounts<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="account-state">
+<span id="query-account-state"></span><h2>Account state<a class="headerlink" href="#account-state" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="list-accounts">
+<h3>List accounts<a class="headerlink" href="#list-accounts" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account list <span class="o">[</span>--block BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
@@ -287,8 +287,8 @@ statistics related to baking and finalization of blocks.</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Inspect specific account<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="inspect-specific-account">
+<h3>Inspect specific account<a class="headerlink" href="#inspect-specific-account" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show <span class="o">[</span>ACCOUNT<span class="o">]</span> <span class="o">[</span>--block BLOCK<span class="o">]</span> <span class="o">[</span>--encrypted<span class="o">]</span> <span class="o">[</span>--decrypt-encrypted<span class="o">]</span>
 </pre></div>
 </div>
@@ -303,8 +303,8 @@ will show the account with the local alias <code class="docutils literal notrans
 <li><p><code class="docutils literal notranslate"><span class="pre">--decrypt-encrypted</span></code>: Show the shielded balance and decrypt it
 (explained below).</p></li>
 </ul>
-<div class="section" id="id4">
-<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show my-account --encrypted
 <span class="go">Local name:            my-account</span>
 <span class="go">Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG</span>
@@ -343,8 +343,8 @@ accessing the decryption key.</p>
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Transaction status<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transaction-status">
+<h2>Transaction status<a class="headerlink" href="#transaction-status" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction status TX-HASH
 </pre></div>
 </div>
@@ -352,18 +352,18 @@ accessing the decryption key.</p>
 or absent).</p>
 <p>If the transaction is committed or finalized, the status (success or rejected)
 and execution cost is included as well.</p>
-<div class="section" id="id6">
-<h3>Example<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
 <span class="go">Transaction is finalized into block e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2 with status &quot;success&quot; and cost 0.011200 GTU (112 NRG).</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>Block state<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>Inspect specific block<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="block-state">
+<h2>Block state<a class="headerlink" href="#block-state" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inspect-specific-block">
+<h3>Inspect specific block<a class="headerlink" href="#inspect-specific-block" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client block show <span class="o">[</span>BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
@@ -373,8 +373,8 @@ agree on these) while others (e.g. arrival time) are specific to the local node:
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../see-also/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
 </ul>
-<div class="section" id="id9">
-<h4>Example<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client block show e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
 <span class="go">Hash:                       e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2</span>
 <span class="go">Parent block:               01aea0ec91fe37cb956aafcd6d0ab7f86cfd0207e5fffc2a87d40657e2c4fa40</span>
@@ -390,29 +390,29 @@ agree on these) while others (e.g. arrival time) are specific to the local node:
 <span class="go">Transactions size:          284</span>
 </pre></div>
 </div>
-<p>See the <a class="reference external" href="/testnet/see-also/glossary.html">glossary</a> for detailed descriptions of the individual fields.</p>
+<p>See the <a class="reference internal" href="../see-also/glossary.html#glossary"><span class="std std-ref">glossary</span></a> for detailed descriptions of the individual fields.</p>
 </div>
 </div>
 </div>
-<div class="section" id="id10">
-<h2>Consensus state<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>Inspect consensus parameters<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="consensus-state">
+<h2>Consensus state<a class="headerlink" href="#consensus-state" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inspect-consensus-parameters">
+<h3>Inspect consensus parameters<a class="headerlink" href="#inspect-consensus-parameters" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters <span class="o">[</span>--include-bakers<span class="o">]</span> <span class="o">[</span>--block BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
-<p>Show <a class="reference external" href="/testnet/see-also/glossary.html#leader-election">election parameters</a> for a specific block, optionally including
+<p>Show <a class="reference internal" href="../see-also/glossary.html#glossary-leader-election"><span class="std std-ref">election parameters</span></a> for a specific block, optionally including
 bakers and their <a class="reference internal" href="../see-also/glossary.html#glossary-lottery-power"><span class="std std-ref">Lottery Power</span></a>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../see-also/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--include-bakers</span></code>: If set, include table of bakers and their
 lottery power. The lottery power is recomputed periodically, so operations
 that affect them do not take effect immediately. For more information about
-what information will be shown here, see the <a class="reference external" href="/testnet/guides/become-baker.html/#epocs-and-slots">detailed description on the
-time constraints</a>.</p></li>
+what information will be shown here, see the <a class="reference internal" href="../guides/become-baker.html#epochs-and-slots"><span class="std std-ref">detailed description on the
+time constraints</span></a>.</p></li>
 </ul>
-<div class="section" id="id12">
-<h4>Example<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
 <span class="go">Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66</span>
 <span class="go">Bakers:</span>
@@ -428,8 +428,8 @@ time constraints</a>.</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="id13">
-<h3>Inspect consensus status<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="inspect-consensus-status">
+<h3>Inspect consensus status<a class="headerlink" href="#inspect-consensus-status" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus status
 </pre></div>
 </div>
@@ -441,8 +441,8 @@ heights).</p></li>
 <li><p>Statistics: Count, time, latency, and period of blocks received,
 arrived/validated, and finalized.</p></li>
 </ul>
-<div class="section" id="id14">
-<h4>Example<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h4>Example<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus status
 <span class="go">Best block:                  7f9641fd4dfc1ffca2ef187fdddff375bb975764d66d68744574b893b61a8338</span>
 <span class="go">Genesis block:               1c647ab5e7ff63b28926f5eed88a9d49b130942a54d791abfa79b4cc0c98acd0</span>
@@ -470,8 +470,8 @@ arrived/validated, and finalized.</p></li>
 Standard Deviation, respectively.</p>
 </div>
 </div>
-<div class="section" id="id15">
-<h3>ID layer<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id-layer">
+<h3>ID layer<a class="headerlink" href="#id-layer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client identity show <span class="o">(</span>identity-providers<span class="p">|</span>anonymity-revokers<span class="o">)</span> <span class="o">[</span>--block BLOCK<span class="o">]</span>
 </pre></div>
 </div>

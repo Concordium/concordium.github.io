@@ -144,7 +144,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/references-on-chain.html">References on-chain</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/local-settings.html">Local settings</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://developers.concordium.com/testnet/docs">Concordium user documentation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
 </ul>
 
@@ -237,7 +236,7 @@ contract for building the schema.</p>
 The options are to include a schema for the contract state, and/or for each of
 the parameters of init and receive functions.</p>
 <p>Every type we want to include in the schema must implement the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code>
-trait. This is already done for all base types and some other types (see <a class="reference external" href="https://docs.rs/concordium-contracts-common/0.2.0/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls">list of types implementing the SchemaType</a>).
+trait. This is already done for all base types and some other types (see <a class="reference external" href="https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls">list of types implementing the SchemaType</a>).
 For most other cases, it can also be achieved automatically, using
 <code class="docutils literal notranslate"><span class="pre">#[derive(SchemaType)]</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
