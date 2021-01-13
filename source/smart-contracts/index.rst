@@ -13,7 +13,7 @@ The documentation is split into four categories
 
    - **General**: Explaining concepts and details for understanding Concordium
      Smart Contracts.
-   - **Tutorials**: Step by step walkthrough with details explained as needed.
+   - **Tutorials**: Step by step walk-through with details explained as needed.
    - **How-to guides**: Short guides to achieve specific goals.
    - **References**: Precise descriptions of the machinery.
 

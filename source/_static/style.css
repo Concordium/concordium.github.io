@@ -1,7 +1,6 @@
 .wy-nav-content {
     max-width: 900px;
     margin: auto;
-    margin-top: 3em; /* Must be same or larger than .topbar height */
 }
 
 .wy-side-nav-search > a {
@@ -14,40 +13,27 @@
     padding-right: 0.5em;
 }
 
-/* Topbar styling */
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 300px;
-    right: 0;
-    z-index: 1;
-    height: 3em;
+.wy-side-nav-search {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sidebar-top-menu {
     display: flex;
-    /* justify-content: center; */
-    background-color: black;
-    color: white;
+    flex-direction: row;
+    margin-top: 1em;
+    margin-left: -.809em;
+    margin-right: -.809em;
 }
 
-.topbar a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
+.sidebar-top-menu a {
+    color: #d9d9d9;
+    flex: 1;
+    padding: 0.5em;
+    border-radius: 2px 2px 0 0;
 }
 
-.topbar a.active {
-    background-color: #efefef;
-    color: black
-}
 
-.topbar a:hover:not(.active) {
-    background-color: #444444;
-}
-
-@media only screen and (max-width: 770px) {
-    .topbar {
-        left: 0;
-    }
-    .wy-nav-top {
-        margin-top: 3em;
-    }
+.sidebar-top-menu a.active {
+    background-color: #343131;
 }
