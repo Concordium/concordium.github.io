@@ -54,10 +54,25 @@ brew install python3 graphviz
 pip3 install -r requirements.txt
 ```
 
+### Windows
+
+Install [python3](https://www.python.org/downloads/windows/)
+and select a python installer, e.g. [this one](https://www.python.org/ftp/python/3.9.1/python-3.9.1-amd64.exe).
+Download and run the launcher. Make sure to select "Add Python to PATH" at the bottom before proceeding with the install.
+
+After that from a terminal run
+```
+pip3 install -r requirements.txt
+```
+from the root of this repository.
+
+If you want the graphs to render properly you also need to install the `dot` tool, which is part of the [graphviz package](https://graphviz.org/download/).
+
 ## Development
 
 To watch the doc files and automate the build run:
 
+### macOS and Linux
 ```
 make dev
 ```
@@ -67,6 +82,20 @@ Before committing, make sure to run the linter and fix all the errors reported:
 ```
 make lint
 ```
+
+### Windows
+
+```
+./make.bat dev
+```
+and navigate to [localhost:8000](http://localhost:8000).
+
+Before committing, make sure to try to build and fix any warnings that are reported.
+
+```
+./make.bat html
+```
+
 
 > **Note**: In `make dev` we disable the cache on build as this tends to cause
 > inconsistencies. If the build time becomes too slow, it might be worth

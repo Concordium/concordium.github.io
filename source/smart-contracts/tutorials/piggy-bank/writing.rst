@@ -139,7 +139,7 @@ derive the trait implementation for ``PartialEq`` and ``Eq``:
 
 .. code-block:: rust
 
-   #[derive(Serialize, PartialEq, Eq)]
+   #[derive(Serialize, PartialEq, Eq, Debug)]
    enum PiggyBankState {
        Intact,
        Smashed,
@@ -297,7 +297,7 @@ smart contract should reject any messages if the piggy bank is smashed:
 
 .. code-block:: rust
 
-   if *state == PiggyBankState::Intact {
+   if *state == PiggyBankState::Smashed {
       return Err(Reject {});
    }
 
@@ -306,7 +306,7 @@ Rust_ in general, |concordium-std| exposes a |bail|_ macro:
 
 .. code-block:: rust
 
-   if *state == PiggyBankState::Intact {
+   if *state == PiggyBankState::Smashed {
       bail!();
    }
 
