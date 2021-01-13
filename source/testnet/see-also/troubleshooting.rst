@@ -18,7 +18,7 @@ Multiple nodes, bakers, and accounts
 ====================================
 
 We do not currently support running two nodes on the same machine. When the
-``concordium-node`` tool is run when the node is already running it will it you
+``concordium-node`` tool is run, while another node is already running, it will ask you
 if you want to stop the currently running node and start a new one.
 
 
