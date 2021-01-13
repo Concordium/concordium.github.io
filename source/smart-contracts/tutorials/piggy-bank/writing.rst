@@ -223,7 +223,7 @@ We have now defined how instances of our smart contract are created, and the
 smart contract is in principle a valid contract.
 However, we would also like to define how to interact with instances of our
 contract.
-Specifically how to add money to it and how to smash a piggy bank.
+Specifically how to add GTU to it and how to smash a piggy bank.
 
 A smart contract can expose zero or more functions for interacting with an
 instance.
