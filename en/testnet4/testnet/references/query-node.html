@@ -121,6 +121,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#transaction-status">Transaction status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#block-state">Block state</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#consensus-state">Consensus state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exchange-rates">Exchange rates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -207,50 +208,51 @@
 <span id="testnet-query-node"></span><h1>Querying a node<a class="headerlink" href="#querying-a-node" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#account-state" id="id6">Account state</a></p>
+<li><p><a class="reference internal" href="#account-state" id="id7">Account state</a></p>
 <ul>
-<li><p><a class="reference internal" href="#list-accounts" id="id7">List accounts</a></p>
+<li><p><a class="reference internal" href="#list-accounts" id="id8">List accounts</a></p>
 <ul>
-<li><p><a class="reference internal" href="#example" id="id8">Example</a></p></li>
+<li><p><a class="reference internal" href="#example" id="id9">Example</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#inspect-specific-account" id="id9">Inspect specific account</a></p>
+<li><p><a class="reference internal" href="#inspect-specific-account" id="id10">Inspect specific account</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id1" id="id10">Example</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#transaction-status" id="id11">Transaction status</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id2" id="id12">Example</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#block-state" id="id13">Block state</a></p>
-<ul>
-<li><p><a class="reference internal" href="#inspect-specific-block" id="id14">Inspect specific block</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id3" id="id15">Example</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id11">Example</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#consensus-state" id="id16">Consensus state</a></p>
+<li><p><a class="reference internal" href="#transaction-status" id="id12">Transaction status</a></p>
 <ul>
-<li><p><a class="reference internal" href="#inspect-consensus-parameters" id="id17">Inspect consensus parameters</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id4" id="id18">Example</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id13">Example</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#inspect-consensus-status" id="id19">Inspect consensus status</a></p>
+<li><p><a class="reference internal" href="#block-state" id="id14">Block state</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id5" id="id20">Example</a></p></li>
+<li><p><a class="reference internal" href="#inspect-specific-block" id="id15">Inspect specific block</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id16">Example</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id-layer" id="id21">ID layer</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id22">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#consensus-state" id="id17">Consensus state</a></p>
+<ul>
+<li><p><a class="reference internal" href="#inspect-consensus-parameters" id="id18">Inspect consensus parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id19">Example</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#inspect-consensus-status" id="id20">Inspect consensus status</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id21">Example</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id-layer" id="id22">ID layer</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#exchange-rates" id="id23">Exchange rates</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id24">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>The <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a> tool supports queries of multiple kinds of state against
@@ -476,8 +478,43 @@ Standard Deviation, respectively.</p>
 </pre></div>
 </div>
 <p>Display the list of identity providers or anonymity revokers at a given block,
-defaulting to <a class="reference internal" href="../see-also/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p>
+defaulting to the <a class="reference internal" href="../see-also/glossary.html#glossary-best-block"><span class="std std-ref">best block</span></a>.</p>
 </div>
+</div>
+<div class="section" id="exchange-rates">
+<span id="id6"></span><h2>Exchange rates<a class="headerlink" href="#exchange-rates" title="Permalink to this headline">¶</a></h2>
+<p>Conversion rates between NRG, GTU, and Euros can fluctuate between blocks. To get a best estimate of the current
+exchange rates, query the chain parameters of the <a class="reference internal" href="../see-also/glossary.html#glossary-best-block"><span class="std std-ref">best block</span></a>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockSummary
+</pre></div>
+</div>
+<p>You can also add a block hash at the end of the command to query a specific block.</p>
+<p>The command returns the information about a block in JSON format. The exchange rates are
+in the <code class="docutils literal notranslate"><span class="pre">chainParameters</span></code> section under <code class="docutils literal notranslate"><span class="pre">microGTUPerEuro</span></code> and <code class="docutils literal notranslate"><span class="pre">euroPerEnergy</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...</span>
+<span class="go">&quot;chainParameters&quot;: {</span>
+<span class="go">    ...</span>
+<span class="go">    &quot;microGTUPerEuro&quot;: {</span>
+<span class="go">        &quot;denominator&quot;: 1,</span>
+<span class="go">        &quot;numerator&quot;: 100 000 000</span>
+<span class="go">    },</span>
+<span class="go">    ...</span>
+<span class="go">    &quot;euroPerEnergy&quot;: {</span>
+<span class="go">        &quot;denominator&quot;: 1 000 000,</span>
+<span class="go">        &quot;numerator&quot;: 1</span>
+<span class="go">    }</span>
+</pre></div>
+</div>
+<p>In this example, conversions between Euros, GTU and NRG are as follows:</p>
+<ul class="simple">
+<li><p>1 EUR = 100 000 000 microGTU = 100 000 000 / 1 000 000 GTU = 100 GTU</p></li>
+<li><p>1 NRG = 10 <sup>-6</sup> EUR</p></li>
+<li><p>1 NRG = 10 <sup>-4</sup> GTU</p></li>
+</ul>
+<p>Conversion changes happen through transactions that update the chain parameters.
+If an update transaction has been posted it will take time to take effect. You can see
+whether updates to the chain parameters are being processed by looking for attributes
+that are prefixed with <code class="docutils literal notranslate"><span class="pre">pending</span></code> in the result of the above query.</p>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>

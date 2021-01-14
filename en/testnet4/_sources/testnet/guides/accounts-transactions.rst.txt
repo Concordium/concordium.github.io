@@ -61,8 +61,9 @@ Make a transaction
 ====================
 Next up, try pressing the **Balance** area of your newly created account. On this
 screen you can see the current balance of your account, and at this point, it will also let you request 100 GTU to use on
-the Testnet. The request for 100 GTU is a Testnet feature, and will only be available on an account once. By pressing it,
-you will notice a transaction appearing. This will be pending for a bit, and then the 100 GTU will be added to your account.
+the Testnet. The request for 100 GTU is a Testnet feature, and for Testnet 4 it will actually transfer 2000 GTU to the account,
+even though the button says 100. The GTU drop is only available on an account once. By pressing it, you will notice a transaction
+appearing. This will be pending for a bit, and after a while 2000 GTU will be added to your account.
 
 .. image:: images/concordium-id/acc9.png
       :width: 32%
