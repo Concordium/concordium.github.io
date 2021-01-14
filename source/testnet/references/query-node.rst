@@ -278,7 +278,7 @@ You can also add a block hash at the end of the command to query a specific bloc
 The command returns the information about a block in JSON format. The exchange rates are
 in the ``chainParameters`` section under ``microGTUPerEuro`` and ``euroPerEnergy``:
 
-.. code-block:: json
+.. code-block:: console
 
     ...
     "chainParameters": {
