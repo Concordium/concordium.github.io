@@ -8,6 +8,16 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v4-update-1:
+
+Open Testnet v4 Update 1
+========================
+
+January 14th, 2020
+
+* Fixed an issue in the node, where a parameter update transaction could cause the node to crash on restart.
+
+
 .. _open-testnet-v4:
 
 Open Testnet v4

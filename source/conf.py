@@ -228,6 +228,7 @@ epub_exclude_files = ['search.html']
 
 # -- Options for linkchecking -------------------------------------------------
 
+linkcheck_ignore = [r'https://fuchsia.googlesource.com/.+/', r'https://github.com/iqlusioninc/crates/tree/develop/zeroize_derive']
 linkcheck_workers = 1
 linkcheck_retries = 2
 linkcheck_request_headers = {
