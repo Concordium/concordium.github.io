@@ -31,12 +31,6 @@ It can be used for :ref:`compiling<compile-module>` and
 
    Add links for testing and schemas.
 
-It is installed by running:
-
-.. code-block:: console
-
-   $cargo install cargo-concordium
-
 .. note::
 
    Until Cargo Concordium is released on `crates.io`_, you have to manually
@@ -48,15 +42,11 @@ For a description of how to use the Cargo Concordium run:
 
    $cargo concordium --help
 
-Concordium Client
+Concordium software
 =================
 
-To deploy smart contract modules and interact with the chain, make sure to have
-``concordium-client`` installed on your local system.
-
-.. todo::
-
-   Link to install instructions
+To deploy smart contract modules and interact with the chain, make sure
+that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>`.
 
 
 .. _Rust: https://www.rust-lang.org/
