@@ -31,10 +31,8 @@ It can be used for :ref:`compiling<compile-module>` and
 
    Add links for testing and schemas.
 
-.. note::
-
-   Until Cargo Concordium is released on `crates.io`_, you have to manually
-   download it and place it in your PATH.
+Cargo Concordium is distributed as part of the :ref:`Concordium software<downloads>` package.
+The tool should be placed in your PATH.
 
 For a description of how to use the Cargo Concordium run:
 
@@ -43,11 +41,16 @@ For a description of how to use the Cargo Concordium run:
    $cargo concordium --help
 
 Concordium software
-=================
+===================
 
-To deploy smart contract modules and interact with the chain, make sure
-that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>`.
+The tool to deploy and interact with smart contracts is
+:ref:`concordium-client<concordium_client>`. It is distributed as part of the
+:ref:`Concordium software<downloads>` package.
 
+.. note::
+
+   To deploy smart contract modules and interact with the chain, make sure
+   that you are :ref:`running a node<run-a-node>`.
 
 .. _Rust: https://www.rust-lang.org/
 .. _Cargo: https://doc.rust-lang.org/cargo/

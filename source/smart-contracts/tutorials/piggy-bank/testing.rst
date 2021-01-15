@@ -260,8 +260,7 @@ For testing we can represent the actions as a simple tree structure
    by the host environment and is therefore not suitable for unit tests.
 
 Now we need to check if the function succeeded and verify the resulting state and actions.
-In our case the state should be still be intact and it should just
-produce the action for accepting the GTU.
+In our case the state should remain intact and the function produce only the action for accepting the GTU.
 
 .. code-block:: rust
 
