@@ -10,13 +10,8 @@ how to name it.
 Preparation
 ===========
 
-Make sure to have the latest ``concordium-client`` installed and a smart
-contract module ready to be deployed.
-
-.. seealso::
-
-   For instructions on how to install ``concordium-client`` see
-   :ref:`setup-tools`.
+Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and
+that you have a :ref:`smart-contract module<setup-tools>` ready to be deployed.
 
 Since deploying a smart contract module is done in the form of a transaction,
 you will also need to have ``concordium-client`` setup with an account with

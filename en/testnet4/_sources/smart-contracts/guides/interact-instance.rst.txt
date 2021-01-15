@@ -11,16 +11,12 @@ instance.
 Preparation
 ===========
 
-Make sure to have the latest ``concordium-client`` installed and a smart
-contract instance on-chain to interact with.
+Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and that you have a
+smart-contract instance on-chain to inspect.
 
 .. seealso::
-
-   For instructions on how to install ``concordium-client`` see
-   :ref:`setup-tools`.
-
    For how to deploy a smart contract module see :ref:`deploy-module` and for
-   how to create an instance see :ref:`initialize-contract`.
+   how to create an instance :ref:`initialize-contract`.
 
 Since interactions with a smart contract are transactions, you should also make
 sure to have ``concordium-client`` set up with an account with enough GTU to pay

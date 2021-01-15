@@ -119,7 +119,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Install tools for development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#rust-and-cargo">Rust and Cargo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cargo-concordium">Cargo Concordium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#concordium-client">Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concordium-software">Concordium software</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup-contract.html">Setting up a smart contract project</a></li>
@@ -236,24 +236,23 @@ blockchain.
 It can be used for <a class="reference internal" href="compile-module.html#compile-module"><span class="std std-ref">compiling</span></a> and
 <a class="reference internal" href="unit-test-contract.html#unit-test-contract"><span class="std std-ref">testing</span></a> smart contracts, and enables features such as
 <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">building contract schemas</span></a>.</p>
-<p>It is installed by running:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install cargo-concordium
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Until Cargo Concordium is released on <a class="reference external" href="https://crates.io/">crates.io</a>, you have to manually
-download it and place it in your PATH.</p>
-</div>
+<p>Cargo Concordium is distributed as part of the <a class="reference internal" href="../../testnet/see-also/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> package.
+The tool should be placed in your PATH.</p>
 <p>For a description of how to use the Cargo Concordium run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium --help
 </pre></div>
 </div>
 </div>
-<div class="section" id="concordium-client">
-<h2>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">¶</a></h2>
-<p>To deploy smart contract modules and interact with the chain, make sure to have
-<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> installed on your local system.</p>
+<div class="section" id="concordium-software">
+<h2>Concordium software<a class="headerlink" href="#concordium-software" title="Permalink to this headline">¶</a></h2>
+<p>The tool to deploy and interact with smart contracts is
+<a class="reference internal" href="../../testnet/references/concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. It is distributed as part of the
+<a class="reference internal" href="../../testnet/see-also/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> package.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To deploy smart contract modules and interact with the chain, make sure
+that you are <a class="reference internal" href="../../testnet/guides/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a>.</p>
+</div>
 </div>
 </div>
 

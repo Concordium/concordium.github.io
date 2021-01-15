@@ -157,7 +157,7 @@ placeholder for the context.
 
    let ctx = InitContextTest::empty();
 
-Just as the name suggest, the test context is empty and if any of the getter
+Just as the name suggests, the test context is empty and if any of the getter
 functions are called, it will make sure to fail the test, which should be fine
 for now, since our piggy bank is not reading anything from the context.
 
@@ -242,8 +242,8 @@ of our smart contract instance:
    let mut state = PiggyBankState::Intact;
 
 When calling ``piggy_insert`` we get back a result with actions, instead of an
-initial as with ``piggy_init``. But we will need to help the compiler with
-inferring which type to use for the generic ``A`` implementing |HasActions|_, so
+initial as with ``piggy_init``. But we will need to help the compiler
+infer which type to use for the generic ``A`` implementing |HasActions|_, so
 we add the result type ``ReceiveResult<ActionsTree>``:
 
 .. code-block:: rust
@@ -259,9 +259,8 @@ For testing we can represent the actions as a simple tree structure
    the smart contract module. This representation depends on functions supplied
    by the host environment and is therefore not suitable for unit tests.
 
-Now we should inspect the function succeeded, verify the state and actions
-produced. In our case the state should be still be intact and it should just
-produce the action for accepting the GTU.
+Now we need to check if the function succeeded and verify the resulting state and actions.
+In our case the state should remain intact and the function produce only the action for accepting the GTU.
 
 .. code-block:: rust
 

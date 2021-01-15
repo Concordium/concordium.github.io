@@ -302,7 +302,7 @@ placeholder for the context.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Just as the name suggest, the test context is empty and if any of the getter
+<p>Just as the name suggests, the test context is empty and if any of the getter
 functions are called, it will make sure to fail the test, which should be fine
 for now, since our piggy bank is not reading anything from the context.</p>
 <div class="admonition note">
@@ -371,8 +371,8 @@ of our smart contract instance:</p>
 </pre></div>
 </div>
 <p>When calling <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> we get back a result with actions, instead of an
-initial as with <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code>. But we will need to help the compiler with
-inferring which type to use for the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> implementing <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.HasActions.html"><code class="docutils literal notranslate"><span class="pre">HasActions</span></code></a>, so
+initial as with <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code>. But we will need to help the compiler
+infer which type to use for the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> implementing <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.HasActions.html"><code class="docutils literal notranslate"><span class="pre">HasActions</span></code></a>, so
 we add the result type <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;ActionsTree&gt;</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -385,9 +385,8 @@ we add the result type <code class="docutils literal notranslate"><span class="p
 the smart contract module. This representation depends on functions supplied
 by the host environment and is therefore not suitable for unit tests.</p>
 </div>
-<p>Now we should inspect the function succeeded, verify the state and actions
-produced. In our case the state should be still be intact and it should just
-produce the action for accepting the GTU.</p>
+<p>Now we need to check if the function succeeded and verify the resulting state and actions.
+In our case the state should remain intact and the function produce only the action for accepting the GTU.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting GTU results in error.&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>

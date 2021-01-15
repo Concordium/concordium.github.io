@@ -223,14 +223,8 @@ smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.</p>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
-<p>Make sure to have the latest <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> installed and a smart
-contract deployed in some module on-chain.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>For instructions on how to install <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> see
-<a class="reference internal" href="setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
-<p>For instructions on how to deploy a smart contract module see <a class="reference internal" href="deploy-module.html#deploy-module"><span class="std std-ref">Deploy a smart contract module</span></a>.</p>
-</div>
+<p>Make sure that you are <a class="reference internal" href="../../testnet/guides/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../testnet/see-also/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a smart
+contract <a class="reference internal" href="deploy-module.html#deploy-module"><span class="std std-ref">deployed</span></a> in some module on-chain.</p>
 <p>Since initializing a smart contract is a transaction, you should also make sure
 to have <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> set up with an account with enough GTU to pay for
 the transaction.</p>
@@ -245,10 +239,11 @@ the init function and the complexity of the function itself.</p>
 <p>To initialize an instance of the parameterless smart contract <code class="docutils literal notranslate"><span class="pre">my_contract</span></code>
 from a deployed module with reference
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> while
-allowing up to 1000 energy to be used, run the
+allowing up to 1000 NRG to be used, run the
 following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init <span class="se">\</span>
          9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 <span class="se">\</span>
+         --sender my_account <span class="se">\</span>
          --contract my_contract <span class="se">\</span>
          --energy <span class="m">1000</span>
 </pre></div>

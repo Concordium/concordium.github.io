@@ -11,15 +11,8 @@ Additionally, it will show how to name an instance.
 Preparation
 ===========
 
-Make sure to have the latest ``concordium-client`` installed and a smart
-contract deployed in some module on-chain.
-
-.. seealso::
-
-   For instructions on how to install ``concordium-client`` see
-   :ref:`setup-tools`.
-
-   For instructions on how to deploy a smart contract module see :ref:`deploy-module`.
+Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and that you have a smart
+contract :ref:`deployed <deploy-module>` in some module on-chain.
 
 Since initializing a smart contract is a transaction, you should also make sure
 to have ``concordium-client`` set up with an account with enough GTU to pay for
@@ -36,17 +29,23 @@ Initialization
 To initialize an instance of the parameterless smart contract ``my_contract``
 from a deployed module with reference
 ``9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2`` while
-allowing up to 1000 energy to be used, run the
+allowing up to 1000 NRG to be used, run the
 following command:
 
 .. code-block:: console
 
    $concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
+            --sender my_account \
             --contract my_contract \
             --energy 1000
 
 If successful, the output should be similar to the following:
+
+.. todo::
+
+   Update address format to ``<i, s>`` from ``{"index": i, "subindex": s}``
+   (throughout the documentation).
 
 .. code-block:: console
 
