@@ -11,15 +11,12 @@ state and receive-functions:
 Preparation
 ===========
 
-Make sure to have the latest ``concordium-client`` installed and a smart
-contract instance on-chain to inspect.
+Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and that you have a
+smart-contract instance on-chain to inspect.
 
 .. seealso::
-   For instructions on how to install ``concordium-client`` see
-   :ref:`setup-tools`.
-
    For how to deploy a smart contract module see :ref:`deploy-module` and for
-   how to create an instance :ref:`initialize-contract`
+   how to create an instance :ref:`initialize-contract`.
 
 Inspection
 ==========
