@@ -1,5 +1,7 @@
 .. _framework: https://github.com/pcapriotti/optparse-applicative#user-content-bash-zsh-and-fish-completions
 .. _Discord: https://discord.com/invite/xWmQ5tp
+.. _IP address: https://en.wikipedia.org/wiki/IP_address
+.. _port number: https://en.wikipedia.org/wiki/Port_(computer_networking)
 
 .. _concordium_client:
 
@@ -14,18 +16,11 @@ Concordium Client
 
 The Concordium distribution ships with a CLI tool named ``concordium-client``.
 
-In the current testnet setup, this client requires a :ref:`local node<run-a-node>`
-(``concordium-node``) to be running. The client will perform its queries and
-send transactions through that node.
-
-Due to directory mapping between the Docker container and the host machine, the
-tool must be currently invoked from within the following system-dependent
-directory:
-
--  Linux/macOS: ``$HOME/Documents/concordium-software``
--  Windows: {FOLDERID_Documents}\\concordium-software
-   (``C:\\Users\\%USERNAME%\\Documents\\concordium-software`` in a
-   standard setup)
+By default ``concordium-client`` performs its queries and sends transactions
+through a :ref:`local node<run-a-node>`. If the node runs on a different machine
+or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
+to set the `IP address`_ and `port number`_ that the node is accessible at. These
+flags are supported by all ``concordium-client`` commands.
 
 .. note::
 
