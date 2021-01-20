@@ -230,18 +230,11 @@
 </ul>
 </div>
 <p>The Concordium distribution ships with a CLI tool named <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
-<p>In the current testnet setup, this client requires a <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">local node</span></a>
-(<code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>) to be running. The client will perform its queries and
-send transactions through that node.</p>
-<p>Due to directory mapping between the Docker container and the host machine, the
-tool must be currently invoked from within the following system-dependent
-directory:</p>
-<ul class="simple">
-<li><p>Linux/macOS: <code class="docutils literal notranslate"><span class="pre">$HOME/Documents/concordium-software</span></code></p></li>
-<li><p>Windows: {FOLDERID_Documents}\concordium-software
-(<code class="docutils literal notranslate"><span class="pre">C:\\Users\\%USERNAME%\\Documents\\concordium-software</span></code> in a
-standard setup)</p></li>
-</ul>
+<p>By default <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> performs its queries and sends transactions
+through a <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">local node</span></a>. If the node runs on a different machine
+or in a custom setup, the options <code class="docutils literal notranslate"><span class="pre">--grpc-ip</span></code> and <code class="docutils literal notranslate"><span class="pre">--grpc-port</span></code> can be used
+to set the <a class="reference external" href="https://en.wikipedia.org/wiki/IP_address">IP address</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Port_(computer_networking)">port number</a> that the node is accessible at. These
+flags are supported by all <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> commands.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This page will describe the commands that are related with configuration of
