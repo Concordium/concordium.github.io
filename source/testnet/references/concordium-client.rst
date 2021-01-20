@@ -19,7 +19,7 @@ The Concordium distribution ships with a CLI tool named ``concordium-client``.
 By default ``concordium-client`` performs its queries and sends transactions
 through a :ref:`local node<run-a-node>`. If the node runs on a different machine
 or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
-to set the `IP address`_ and `port number`_ that node is accessible at. These
+to set the `IP address`_ and `port number`_ that the node is accessible at. These
 flags are supported by all ``concordium-client`` commands.
 
 .. note::
