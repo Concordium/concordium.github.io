@@ -281,8 +281,8 @@ length into.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The number of actual bytes read. This is always less than or equal
-to <code class="docutils literal notranslate"><span class="pre">offset</span></code>, but could be less if the parameter does not have
-enough bytes available.</p>
+to <code class="docutils literal notranslate"><span class="pre">length</span></code>. It is less if the parameter does not have
+enough bytes available (i.e., if <code class="docutils literal notranslate"><span class="pre">offset</span> <span class="pre">+</span> <span class="pre">length</span> <span class="pre">&gt;</span> <span class="pre">parameter_size</span></code>).</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>i32</p>

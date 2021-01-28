@@ -49,8 +49,8 @@ Function parameter
    :param i32 length: Number of bytes to read from the parameter.
    :param i32 offset: Starting offset in the parameter bytes.
    :return: The number of actual bytes read. This is always less than or equal
-            to ``offset``, but could be less if the parameter does not have
-            enough bytes available.
+            to ``length``. It is less if the parameter does not have
+            enough bytes available (i.e., if ``offset + length > parameter_size``).
    :rtype: i32
 
 .. _host-functions-state:

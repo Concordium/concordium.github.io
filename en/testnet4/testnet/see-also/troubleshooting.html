@@ -125,6 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#multiple-nodes-bakers-and-accounts">Multiple nodes, bakers, and accounts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#appearance-of-high-memory-consumption-of-the-node">Appearance of high memory consumption of the node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#node-does-not-catch-up-with-chain-on-windows">Node does not catch up with chain on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0">Node on Windows fails to bootstrap with Docker Desktop 3.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docker-error-port-already-in-use">Docker error port already in use</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#special-language-characters-in-the-windows-client">Special language characters in the Windows client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supported-id-document-types-and-countries">Supported ID document types and countries</a></li>
@@ -215,13 +216,14 @@
 <li><p><a class="reference internal" href="#multiple-nodes-bakers-and-accounts" id="id2">Multiple nodes, bakers, and accounts</a></p></li>
 <li><p><a class="reference internal" href="#appearance-of-high-memory-consumption-of-the-node" id="id3">Appearance of high memory consumption of the node</a></p></li>
 <li><p><a class="reference internal" href="#node-does-not-catch-up-with-chain-on-windows" id="id4">Node does not catch up with chain on Windows</a></p></li>
-<li><p><a class="reference internal" href="#docker-error-port-already-in-use" id="id5">Docker error port already in use</a></p></li>
-<li><p><a class="reference internal" href="#special-language-characters-in-the-windows-client" id="id6">Special language characters in the Windows client</a></p></li>
-<li><p><a class="reference internal" href="#supported-id-document-types-and-countries" id="id7">Supported ID document types and countries</a></p></li>
-<li><p><a class="reference internal" href="#inconsistency-with-numbers-on-id-documents" id="id8">Inconsistency with numbers on ID documents</a></p></li>
-<li><p><a class="reference internal" href="#performance-issues-in-mobile-wallet-on-android-phones" id="id9">Performance issues in mobile wallet on Android phones</a></p></li>
-<li><p><a class="reference internal" href="#robustness-issues-with-shielded-transfer-in-mobile-wallets" id="id10">Robustness issues with shielded transfer in mobile wallets</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id11">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0" id="id5">Node on Windows fails to bootstrap with Docker Desktop 3.1.0</a></p></li>
+<li><p><a class="reference internal" href="#docker-error-port-already-in-use" id="id6">Docker error port already in use</a></p></li>
+<li><p><a class="reference internal" href="#special-language-characters-in-the-windows-client" id="id7">Special language characters in the Windows client</a></p></li>
+<li><p><a class="reference internal" href="#supported-id-document-types-and-countries" id="id8">Supported ID document types and countries</a></p></li>
+<li><p><a class="reference internal" href="#inconsistency-with-numbers-on-id-documents" id="id9">Inconsistency with numbers on ID documents</a></p></li>
+<li><p><a class="reference internal" href="#performance-issues-in-mobile-wallet-on-android-phones" id="id10">Performance issues in mobile wallet on Android phones</a></p></li>
+<li><p><a class="reference internal" href="#robustness-issues-with-shielded-transfer-in-mobile-wallets" id="id11">Robustness issues with shielded transfer in mobile wallets</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id12">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>If you cannot find your issue here, please email <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>,
@@ -280,6 +282,32 @@ having to restart it. This can be done by stopping and restarting the <em>Time
 synchronization</em> integration service for the docker virtual machine using
 <em>Hyper-V Manager</em>.)</p>
 </div>
+<div class="section" id="node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0">
+<h2>Node on Windows fails to bootstrap with Docker Desktop 3.1.0<a class="headerlink" href="#node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0" title="Permalink to this headline">¶</a></h2>
+<p>When running your node on Windows, it might fail to bootstrap. In that case, it will not get any peers and does not catch up to the chain or at least not to the full fin length. You can check both e.g. on the network dashboard. Furthermore, the log will show the following entries:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ERROR: Can&#39;t connect to the desired address</span>
+<span class="go">INFO: Attempting to bootstrap</span>
+<span class="go">INFO: No peers at all - retrying bootstrapping</span>
+</pre></div>
+</div>
+<p>The issue only occurs with the latest Docker Desktop version 3.1.0. The node works fine with when running with earlier Docker versions. However, since Docker from version 3.0.0 and upwards automatically updates to the latest version when restarting, we strongly recommend to install Docker Desktop 2.5.0.1, which comes with Docker Engine version 19.03.13.</p>
+<ul class="simple">
+<li><p>To check, which Docker Desktop version you have installed, right-click the Docker Desktop system tray icon (i.e. the whale carrying a stack of containers) and choose “About Docker Desktop”. It should say 2.5.0.1 (or lower).</p></li>
+<li><p>To check, which Docker Engine version you have installed, run <cite>docker version</cite> in your terminal. It should say Version: 19.03.13 (or lower).</p></li>
+</ul>
+<p>We suggest the following workaround:</p>
+<ul class="simple">
+<li><p>Run <cite>concordium-node-stop</cite>.</p></li>
+<li><p>Run <cite>concordium-node-reset-data</cite> (optional).</p></li>
+<li><p>Uninstall your current Docker software.</p></li>
+<li><p>Download <a class="reference external" href="https://docs.docker.com/docker-for-windows/release-notes/#docker-desktop-community-2501">Docker Desktop version 2.5.0.1</a></p></li>
+<li><p>Install Docker Desktop version 2.5.0.1.</p></li>
+<li><p>When the installation is completed, make sure Docker is running.</p></li>
+<li><p>Whenever you are prompted that a new Docker Desktop is available, chose “Skip This Build” or “Remind me later”. Never click “Install Update”.</p></li>
+<li><p>Run <cite>concordium-node</cite>.</p></li>
+</ul>
+<p>Your node should now catch up to the full fin length and eventually get peers assigned. Whenever you restart your node, remember to not update to the newest version.</p>
+</div>
 <div class="section" id="docker-error-port-already-in-use">
 <h2>Docker error port already in use<a class="headerlink" href="#docker-error-port-already-in-use" title="Permalink to this headline">¶</a></h2>
 <p>The node may fail starting with the error <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">starting</span> <span class="pre">{..}</span> <span class="pre">proxy:</span> <span class="pre">listen</span>
@@ -316,9 +344,7 @@ issued, which are not verified against physical ID documents.</p>
 </div>
 <div class="section" id="inconsistency-with-numbers-on-id-documents">
 <h2>Inconsistency with numbers on ID documents<a class="headerlink" href="#inconsistency-with-numbers-on-id-documents" title="Permalink to this headline">¶</a></h2>
-<p>When issuing an identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code> with identity provider <code class="docutils literal notranslate"><span class="pre">Notabene</span></code>, which is based on a Danish ID document or a Spanish national identity card, the personal identity number might be included as document number in the issued identity instead of the actual ID document number.</p>
-<p>Danish ID documents (e.g. passport or driver’s license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead.</p>
-<p>The issues are reported to identity provider Notabene as well as identity verifier Onfido.</p>
+<p>When issuing an identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code> with identity provider <code class="docutils literal notranslate"><span class="pre">Notabene</span></code>, which is based on a Danish ID document, the personal identity number might be included as document number in the issued identity instead of the actual ID document number. Danish ID documents (e.g. passport or driver’s license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead. The issue is reported to identity provider Notabene.</p>
 </div>
 <div class="section" id="performance-issues-in-mobile-wallet-on-android-phones">
 <h2>Performance issues in mobile wallet on Android phones<a class="headerlink" href="#performance-issues-in-mobile-wallet-on-android-phones" title="Permalink to this headline">¶</a></h2>
