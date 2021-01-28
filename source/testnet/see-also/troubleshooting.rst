@@ -122,7 +122,7 @@ issued, which are not verified against physical ID documents.
 Inconsistency with numbers on ID documents
 ==========================================
 
-When issuing an identity in the mobile wallet ``Concordium ID`` with identity provider ``Notabene``, which is based on a Danish ID document, the personal identity number might be included as document number in the issued identity instead of the actual ID document number. Danish ID documents (e.g. passport or driver's license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead. The issue is reported to identity provider Notabene as well as identity verifier Onfido.
+When issuing an identity in the mobile wallet ``Concordium ID`` with identity provider ``Notabene``, which is based on a Danish ID document, the personal identity number might be included as document number in the issued identity instead of the actual ID document number. Danish ID documents (e.g. passport or driver's license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead. The issue is reported to identity provider Notabene.
 
 Performance issues in mobile wallet on Android phones
 =====================================================
