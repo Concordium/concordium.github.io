@@ -87,10 +87,10 @@ When running your node on Windows, it might fail to bootstrap. In that case, it 
 
 .. code-block:: console
 
-   ERROR: Can't connect to the desired address  
+   ERROR: Can't connect to the desired address
    INFO: Attempting to bootstrap
-   INFO: No peers at all - retrying bootstrapping  
- 
+   INFO: No peers at all - retrying bootstrapping
+
 The issue only occurs with the latest Docker Desktop version 3.1.0. The node works fine with when running with earlier Docker versions. However, since Docker from version 3.0.0 and upwards automatically updates to the latest version when restarting, we strongly recommend to install Docker Desktop 2.5.0.1, which comes with Docker Engine version 19.03.13.
 
 - To check, which Docker Desktop version you have installed, right-click the Docker Desktop system tray icon (i.e. the whale carrying a stack of containers) and choose "About Docker Desktop". It should say 2.5.0.1 (or lower).
