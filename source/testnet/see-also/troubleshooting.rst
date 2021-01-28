@@ -1,3 +1,4 @@
+.. _Docker Desktop version 2.5.0.1: https://docs.docker.com/docker-for-windows/release-notes/#docker-desktop-community-2501
 .. _supported ID documents: http://onfido.com/supported-documents
 .. _Discord: https://discord.gg/xWmQ5tp
 
@@ -78,6 +79,42 @@ described above after synchronizing your clock.
 having to restart it. This can be done by stopping and restarting the *Time
 synchronization* integration service for the docker virtual machine using
 *Hyper-V Manager*.)
+
+Node on Windows fails to bootstrap with Docker Desktop 3.1.0
+============================================================
+
+When running your node on Windows, it might fail to bootstrap. In that case, it will not get any peers and does not catch up to the chain or at least not to the full fin length. You can check both e.g. on the network dashboard. Furthermore, the log will show the following entries:
+
+.. code-block:: console
+
+   ERROR: Can't connect to the desired address  
+   INFO: Attempting to bootstrap
+   INFO: No peers at all - retrying bootstrapping  
+ 
+The issue only occurs with the latest Docker Desktop version 3.1.0. The node works fine with when running with earlier Docker versions. However, since Docker from version 3.0.0 and upwards automatically updates to the latest version when restarting, we strongly recommend to install Docker Desktop 2.5.0.1, which comes with Docker Engine version 19.03.13.
+
+- To check, which Docker Desktop version you have installed, right-click the Docker Desktop system tray icon (i.e. the whale carrying a stack of containers) and choose "About Docker Desktop". It should say 2.5.0.1 (or lower).
+- To check, which Docker Engine version you have installed, run `docker version` in your terminal. It should say Version: 19.03.13 (or lower).
+
+We suggest the following workaround:
+
+- Run `concordium-node-stop`.
+
+- Run `concordium-node-reset-data` (optional).
+
+- Uninstall your current Docker software.
+
+- Download `Docker Desktop version 2.5.0.1`_
+
+- Install Docker Desktop version 2.5.0.1.
+
+- When the installation is completed, make sure Docker is running.
+
+- Whenever you are prompted that a new Docker Desktop is available, chose "Skip This Build" or "Remind me later". Never click "Install Update".
+
+- Run `concordium-node`.
+
+Your node should now catch up to the full fin length and eventually get peers assigned. Whenever you restart your node, remember to not update to the newest version.
 
 Docker error port already in use
 ================================
