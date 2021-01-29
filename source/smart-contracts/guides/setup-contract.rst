@@ -41,7 +41,7 @@ The library is added by opening ``Cargo.toml`` and adding the line
 the ``[dependencies]`` section::
 
    [dependencies]
-   concordium-std = "0.3"
+   concordium-std = "0.4"
 
 The crate documentation can be found on docs.rs_.
 
