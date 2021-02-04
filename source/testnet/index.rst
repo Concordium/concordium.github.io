@@ -4,36 +4,36 @@ Testnet
 
 .. toctree::
    :maxdepth: 1
-   :caption: Guides
+   :caption: Mga Gabay
 
-   guides/get-the-app
-   guides/get-started
-   guides/accounts-transactions
-   guides/explore-more
-   guides/run-node
-   guides/become-baker
-
-.. toctree::
-   :maxdepth: 1
-   :caption: References
-
-   references/concordium-client
-   references/id-accounts
-   references/manage-accounts
-   references/transactions
-   references/query-node
+   Mga Gabay/kunin ang app
+   Mga Gabay/Magsimula
+   Mga Gabay/akawnt at transaksyon
+   Mga Gabay/galugarin at iba pa
+   Mga Gabay/mag run nang node
+  Mga Gabay/maging baker
 
 .. toctree::
    :maxdepth: 1
-   :caption: See Also
+   :caption: Referensiya
 
-   see-also/downloads
-   see-also/troubleshooting
-   see-also/glossary
-   see-also/release-notes
-   see-also/third-party-licenses
+   Referensiya/konkordyum-client
+   Referensiya/id-akawnts
+   Referensiya/imanage-akawnts
+   Referensiya/transaksyon
+   Referensiya/mga query-node
 
-Support & Feedback
+.. toctree::
+   :maxdepth: 1
+   :caption: Tingnan din
+
+   Tingnan-din/mag-downloads
+   Tingnan-din/mag-troubleshoot
+   Tingnan-din/mga-glossary
+   Tingnan-din/mga-release-notes
+   Tingnan-din/mga-third-party-licenses
+
+Suporta at mga puna
 ==================
 
 If you run into any issues or have suggestions, post your question or feedback
