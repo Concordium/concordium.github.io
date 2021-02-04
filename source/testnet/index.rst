@@ -1,39 +1,39 @@
 =======
-Testnet
+Test net
 =======
 
 .. toctree::
    :maxdepth: 1
-   :caption: Guides
+   :caption: Gabay
 
-   guides/get-the-app
-   guides/get-started
-   guides/accounts-transactions
-   guides/explore-more
-   guides/run-node
-   guides/become-baker
-
-.. toctree::
-   :maxdepth: 1
-   :caption: References
-
-   references/concordium-client
-   references/id-accounts
-   references/manage-accounts
-   references/transactions
-   references/query-node
+   gabay/kunin-ang-app
+   gabay/magsimula
+   gabay/akawnts-transaksyon
+   gabay/mag-eksplor-at iba pa
+   gabay/mag-ran-nowd
+   gabay/maging-baker
 
 .. toctree::
    :maxdepth: 1
-   :caption: See Also
+   :caption: Referensya
 
-   see-also/downloads
-   see-also/troubleshooting
-   see-also/glossary
-   see-also/release-notes
-   see-also/third-party-licenses
+   referensya/konkordyum-kleyente
+   referensya/id-akawnts
+   referensya/mag manej-akawnts
+   referensya/transaksyon
+   referensya/kwery-nowd
 
-Support & Feedback
+.. toctree::
+   :maxdepth: 1
+   :caption: Tingnan din
+
+   tingnan-din/mga downloads
+   tingnan-din/troubleshooting
+   tingnan-din/glossary
+   tingnan-din/release-notes
+   tingnan-din/third-party-licenses
+
+Suporta at Puna
 ==================
 
 If you run into any issues or have suggestions, post your question or feedback
