@@ -6,84 +6,87 @@
 
 .. _introduction:
 
-===============================
-Introduction to smart contracts
-===============================
+=========================
+Akıllı sözleşmelere giriş
+=========================
 
-A smart contract is a user-supplied piece of code submitted to the Concordium
-blockchain, used to define behavior that is not directly part of the core
-protocol. Smart contracts are executed by nodes in the Concordium network
-according to predefined rules. Their execution is fully transparent, and all
-nodes must agree on what the outcome of execution is based on only publicly
-available information.
+Akıllı sözleşme, kullanıcı tarafından  Concordium blok zincirine gönderilen
+ve doğrudan çekirdek protokolünün bir parçası olmayan davranışı tanımlamak
+için kullanılan bir kod parçasıdır. Akıllı sözleşmeler, önceden tanımlanmış 
+kurallara bağlı olarak Concordium ağındaki düğümler tarafından yönetilir.
+Bu yönetim tamamen şeffaftır ve tüm düğümler, yönetim sonucunun halka açık 
+bilgilere dayandığı konusunda hemfikir olmalıdır.
 
-A smart contract can receive, hold and send GTU, it is able to observe some
-aspects of the chain, and maintain its own state. Smart contracts are always
-executed as a response to **external** actions, e.g., an account sending a
-message. In practice smart contracts will often be a small part of a larger
-system, combining on and off-chain functionality. An example of off-chain
-functionality could be a server that invokes the smart contract based on
-data from the real-world, such as prices of stocks, or weather information.
+Akıllı bir sözleşme GTU alabilir, GTU tutabilir veya GTU gönderebilir. Akıllı 
+bir sözleşme ayrıca zincirin bazı yönlerini gözlemleyebilir ve kendi durmunu 
+koruyabilir. Akıllı sözleşmeler her zaman **dışarıdan gelen** eylemlere yanıt 
+olarak yürütülür. Örneğin, mesaj gönderen bir hesap. Akıllı sözleşmeler 
+uygulamada genellikle, zincir içi ve zincir dışı işlevselliği birleştiren 
+daha büyük bir sistemin küçük bir parçası olacaktır. Hisse senedi fiyatları 
+veya hava durumu bilgileri gibi, gerçek dünyadan gelen verilere dayalı olarak 
+akıllı sözleşmeyi başlatan bir sunucu, zincir dışı işlevselliğe bir örnek olabilir.
 
-What are smart contracts for?
-=============================
-
-Smart contracts can reduce the needed amount of trust in third-parties, in some cases
-removing the need for a trusted third-party, in other cases reducing their
-capabilities and thus reducing the amount of trust needed in them.
-
-Because smart contracts are executed completely transparently, in a way that
-anybody with access to a node can verify, they can be very useful for ensuring
-agreement between parties.
-
-.. _auction:
-
-Auction smart contract example
-------------------------------
-
-A use case for smart contracts could be for holding an auction; here we program
-the smart contract to accept different bids from anyone and have it keep track
-of the highest bidder.
-When the auction is over, the smart contract sends the winner bid GTU to the seller and all other bids back. The seller then should send the item to the winner.
-
-The smart contract replaces the main role of the auctioneer. The contract itself
-only governs the bidding part, and the on-chain distribution of GTUs. It will
-likely also need some logic for reimbursing the highest bidder if the seller
-does not fulfil their obligations. This will most likely mean that the contract
-needs to support some notion of proof that the seller has indeed fulfilled their
-obligation, or some way for the highest bidder to file a complaint. Smart
-contracts cannot resolve these real-world issues automatically, and the best
-solution is likely going to depend on the specifics of the auction.
-
-What are smart contracts *not* for?
-===================================
-
-Smart contracts are a very exciting technology and people are still finding new
-ways to take advantage of them.
-However, there are some cases where smart contracts are not a good solution.
-
-One of the key advantages of smart contracts are the trust in the code
-execution, and to achieve this a large number of nodes in the blockchain network
-have to execute the same code and ensure agreement of the result.
-Naturally, this becomes expensive compared to running the same code on one node
-in some cloud service.
-
-In cases where a smart contract depends on heavy calculations, it might be
-possible moving this calculation out of the smart contract and have the smart
-contract execute only some key parts of the computation, using cryptographic
-techniques to ensure the other parts are executed correctly.
-
-Finally, it is important to remember that smart contracts have no privacy and
-**everything** the smart contract has access to is accessible to everybody else
-on the Concordium network, meaning it is difficult to handle sensitive data in a
-smart contract. In some cases it might be possible to use cryptographic tools to
-not work with the data directly, but rather have the smart contracts work with
-derived notions such as encryptions and commitments, which hide the actual data.
-
-Life cycle of a smart contract
+Akıllı sözleşmeler ne içindir?
 ==============================
 
-A smart contract is first deployed to the chain as part of a :ref:`contract
-module <contract-module>`. After this a smart contract can be *initialized* to
-obtain a :ref:`smart contract instance <contract-instances>`. Finally a smart
-contract instance can be repeatedly updated according to its own logic.
+Akıllı sözleşmeler üçüncü şahıslara duyulan güveni azaltabilir. Bazı durumlarda 
+güvenilir bir üçüncü tarafa olan ihtiyacı ortadan kaldırır, bazı durumlarda da
+yeteneklerini azaltır ve böylelikle onlara duyulan güven miktarını azaltmış olur.
+
+Çünkü akıllı sözleşmeler, bir düğüme erişimi olan herkesin doğrulayabileceği bir 
+şekilde tamamen şeffaf yürütüldüğünden dolayı, taraflar arasındaki anlaşmayı 
+sağlamak için çok yararlı olabilirler.
+
+Akıllı açık artırma sözleşme örneği
+-----------------------------------
+
+Akıllı sözleşmeler için bir başa kullanım örneği ise bir açık artırma düzenlemek
+olabilir. Burada akıllı sözleşmeyi, herkesten gelen farklı teklifleri kabul 
+edecek ve en yüksek teklifi veren kişiyi takip edecek şekilde programlıyoruz.
+Açık artırma bittiğinde ise, akıllı sözleşmeyi kazananın GTU teklifini satıcıya 
+gönderir ve kazanamamış olan diğer tüm teklifler ise geri gönderilir. Satıcı daha 
+sonra ürünü kazanana göndermelidir.
+
+Akıllı sözleşme, açık artırma ile satan müzayedecinin ana rolünün yerini alır.
+Sözleşme yalnızca teklif bölümünü ve GTU'ların zincir üzerindeki dağıtımını yönetir.
+Eğer satıcı yükümlülüklerini yerine getirmezse, muhtemelen en yüksek teklifi verene 
+geri ödeme yapmak için biraz mantığa ihtiyaç duyacaktır. Büyük olasılıkla bu, 
+sözleşmenin gerçekten de satıcının yükümlülüklerini yerine getirip getirmediğine dair 
+bazı kanıtlarını desteklemesi gerektiğine veya en yüksek teklifi verenin şikayette 
+bulunabilmesinin bir yolu anlamına gelecektir. Akıllı sözleşmeler gerçek dünyanın
+bu sorunlarını otomatik olarak çözemez ve muhtemelen en iyi çözüm  açık artırmanın 
+özelliklerine bağlı olacaktır.
+
+Akıllı sözleşmeler ne için değildir?
+====================================
+
+Akıllı sözleşmeler çok heyecan verici bir teknolojidir ve insanlar halan bunlardan
+yararlanmanın yeni yollarını aramaya devam etmektedir. Ancek, akıllı sözleşmelerin 
+iyi bir çözüm olmadığı bazı durumlar da vardır.
+
+Akıllı sözleşmelerin en önemli kilit avantajlarından birisi kod yürütmesine olan 
+güvendir ve bunu başarmak için blockchain ağındaki çok sayıda düğüm aynı kodu 
+çalıştırmalı ve sonucun mutabakatını sağlanmalıdır. Doğal olarak bu, bazı bulut 
+hizmetlerinde aynı kodu tek bir düğümde çalıştırmakla karşılaştırıldığında daha 
+pahalı hale gelir.
+
+Akıllı sözleşmenin ağır hesaplamalara dayandığı bazı durumlarda, bu hesaplamayı 
+akıllı sözleşmenin dışına çıkarmak ve akıllı sözleşmenin, diğer parçaların doğru 
+bir şekilde yürütülmesini sağlamak için kriptografik teknikleri kullanarak 
+hesaplamanın yalnızca bazı önemli kısımlarını yürütmesini sağlamak mümkün olabilir.
+
+Son olarak, akıllı sözleşmelerde gizlilik olmadığını hatırlamak önemlidir. Akıllı 
+sözleşmenin erişime sahip olduğu her şeye Concordium ağındaki herkes erişebilir. Yani,
+hassas verileri akıllı bir sözleşmeyle ele almak zordur. Bazı durumlarda, verilerle 
+doğrudan çalışmamak için kriptografik araçlar kullanmak mümkün olabilir. Fakat bunun 
+yerine daha ziyade  akıllı sözleşmelerin, gerçek verileri gizleyen şifreleme ve 
+taahhütler gibi türetilmiş kavramlarla çalışmasını sağlamak mümkün olabilir. 
+
+Akıllı bir sözleşmenin yaşam döngüsü
+====================================
+
+Akıllı bir sözleşme ilk olarak zincire :ref:`contract module <contract-module>` 
+´ün bir parçası olarak konuşlandırılır. Bundan sonra, akıllı bir sözleşme 
+:ref:`smart contract instance <contract-instances>` elde etmek için başlatılabilir.
+Son olarak, akıllı bir sözleşme kendi mantığına bağlı olarak tekrar tekrar güncellenebilir.
+
