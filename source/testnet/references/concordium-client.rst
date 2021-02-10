@@ -196,7 +196,7 @@ Add accounts and keys
 See also the :ref:`Managing accounts<managing_accounts>` section.
 
 Add named account
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. code-block:: console
 
