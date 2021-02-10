@@ -195,16 +195,14 @@ Add accounts and keys
 
 See also the :ref:`Managing accounts<managing_accounts>` section.
 
-Add account
+Add named account
 ~~~~~~~~~~~
 
 .. code-block:: console
 
-   $concordium-client config account add ADDRESS [--name NAME]
+   $concordium-client config account name ADDRESS [--name NAME]
 
-Add account address to persistent configuration, optionally naming the account.
-
-If a name was provided, this name may now be used to refer to the account
+Add an account address to persistent configuration, naming it. This name may now be used to refer to the account
 throughout the client.
 
 This doesn't add any private information to the stored account, so it can be
