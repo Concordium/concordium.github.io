@@ -650,7 +650,7 @@ using ``cargo test``.
 
           let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
 
-          let err = actions_result.expect_err_report{"Contract is expected to fail.");
+          let err = actions_result.expect_err_report("Contract is expected to fail.");
           claim_eq!(err, SmashError::NotOwner, "Expected to fail with error NotOwner")
       }
    }

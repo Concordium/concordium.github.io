@@ -203,7 +203,7 @@
         
           
             
-              <a href="https://github.com/Concordium/docs/blob/main/source/smart-contracts/tutorials/piggy-bank/testing.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet4/source/smart-contracts/tutorials/piggy-bank/testing.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -731,7 +731,7 @@ using <code class="docutils literal notranslate"><span class="pre">cargo</span> 
 
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
 
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err_report</span><span class="p">{</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err_report</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span><span class="w"></span>
 </span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span><span class="w"></span>
 </span><span class="w">   </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -797,7 +797,19 @@ given context.</p>
     </section>
 
   </div>
-  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet4
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/testnet4/">testnet4</a></dd>
+    </dl>
+  </div>
+</div>
 
   <script type="text/javascript">
       jQuery(function () {
