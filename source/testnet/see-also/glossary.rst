@@ -438,5 +438,5 @@ Winning probability
 ===================
 
 The winning probability is the probability that a baker wins in a given slot.
-The probability is *1-(1-f)^α*, where *f* is the difficulty parameter and *α* is
+The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
