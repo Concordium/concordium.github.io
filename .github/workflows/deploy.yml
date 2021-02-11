@@ -21,7 +21,7 @@ jobs:
 
       - name: Build 🛠
         shell: bash
-        run: sphinx-build source build/en/testnet4
+        run: ./scripts/build.sh
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -30,4 +30,3 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
           CLEAN: true
-          CLEAN_EXCLUDE: '["/index.html"]'
