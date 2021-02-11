@@ -32,7 +32,7 @@ cp index.html "${build_dir}/index.html"
 for current_version in ${versions[@]}; do
   printf "\nVersion '${current_version}':\n-----------------------------\n"
   printf "Checking out branch '${current_version}'\n"
-  git switch ${current_version}
+  git checkout origin/${current_version}
   export current_version
 
   for current_language in ${languages[@]}; do
@@ -43,4 +43,4 @@ for current_version in ${versions[@]}; do
 done
 
 printf "Returning to 'main' branch\n"
-git switch main
+git checkout origin/main
