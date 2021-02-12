@@ -84,7 +84,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+# language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -128,12 +128,27 @@ html_theme_options = {
     # 'titles_only': False
 }
 
+
+current_language = os.environ['current_language'] if 'current_language' in os.environ else 'en'
+current_version = os.environ['current_version'] if 'current_version' in os.environ else 'local'
+versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
+languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
+
 html_context = {
     "display_github": True,
     "github_user": "Concordium",
-    "github_repo": "docs",
-    "github_version": "main",
+    "github_repo": "concordium.github.io",
+    "github_version": current_version,
     "conf_py_path": "/source/",
+    # Expose the versions and languages to the template engine
+    "current_language": current_language,
+    "current_version": current_version,
+    "languages": languages,
+    "versions": list(map(lambda name:
+        {
+        "name": name,
+        "url": "/{lng}/{vsn}/".format(lng = current_language, vsn = name)
+        }, versions))
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

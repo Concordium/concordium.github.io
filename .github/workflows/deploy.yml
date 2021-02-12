@@ -7,21 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     container: sphinxdoc/sphinx
     steps:
+      - name: Install git 🔧
+        shell: bash
+        run: |
+          apt-get update
+          apt-get install -y git
+
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
         with:
-          persist-credentials: false
+          fetch-depth: 0
 
       - name: Install 🔧
         shell: bash
         run: |
-          apt-get update
-          apt-get install -y graphviz git rsync
+          apt-get install -y graphviz rsync
           pip3 install -r requirements.txt
 
       - name: Build 🛠
         shell: bash
-        run: sphinx-build source build/en/testnet4
+        run: ./scripts/build.sh
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -30,4 +35,3 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
           CLEAN: true
-          CLEAN_EXCLUDE: '["/index.html"]'
