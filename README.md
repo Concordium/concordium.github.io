@@ -30,6 +30,11 @@ Todos are shown as warnings when building the docs.
 To generate SVG graphics, we use the [Graphviz
 extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
+## Development
+
+Currently the documentation is released only from the `testnet4` branch, and development of documentation for upcoming releases can be merged into the `main` branch without it being released.
+This also means pull requests fixing typos should be merged into both `testnet4` and `main`.
+
 ## Installation
 
 
