@@ -7,46 +7,46 @@
 .. _testnet-get-the-app:
 
 =======================================
-Concordium ID: Install the app
+Concordium ID: Zainstaluj aplikację
 =======================================
 
 .. contents::
    :local:
    :backlinks: none
 
-By reading this section and the following *Concordium* ID sections, you will get an
-overview of the basic functionality of the app. If you have never used Concordium
-ID or similar apps, this is a good place to get started.
+Czytając tę sekcję i następujące *Concordium* ID Sekcje, dostaniesz
+przegląd podstawowych funkcji aplikacji. Jeśli nigdy nie korzystałeś Concordium
+ID lub podobne aplikacje, to jest dobre miejsce zaczynać.
 
-The ConcordiumID app is available for Android and iOS phones. Depending on what
-platform you are using, the way of installing the app differs slightly.
+The ConcordiumID aplikacja jest dostępny dla systemu Android i iOS telefony. W zależności od czego
+Platforma ty używasz, sposób montażu aplikacja różni się nieznacznie.
 
 
-Installation on Android
+Instalacja na Androidzie
 =======================
 
-Installation requirements: Android 8 or newer.
+Wymagania instalacyjne: Android 8 lub nowsza.
 
-1. Download the `Concordium ID APK`_ to your phone.
-2. You may see a warning about downloading the .apk-file. If you are asked whether you want to keep the .apk-file, press **OK**.
-3. After opening the .apk-file, you may see a warning saying that your phone is not allowed to install apps from this source. Press **Settings**, toggle **Allow from this source** and go back.
-4. You are now asked if you want to install the application. Press **Install**.
+1. Ściągnij the `Concordium ID APK`_ do telefonu.
+2. Możesz zobaczyć ostrzeżenie o ściąganie the .apk-plik. Jeśli zostaniesz zapytany czy chcesz zachować the .apk-plik, naciśnij **OK**.
+3. Po otwarciu the .apk-plik, możesz zobaczyć ostrzeżenie mówiąc, że Twój telefon nie może instalować aplikacji z tego źródła. naciśnij **Ustawienia**, przełącznik **Zezwól z tego źródła** i Wróć.
+4. Jesteś teraz zapytany, czy chcesz zainstalować aplikację. naciśnij **Zainstalować**.
 
 
-Installation on iOS
+Instalacja na iOS
 ====================
 
-Installation requirements: iOS 13 or newer.
+Wymagania instalacyjne: iOS 13 lub nowsza.
 
-Installing the Concordium ID app on iOS requires installation of Apple’s TestFlight app, which is used to distribute beta versions of iOS apps.
+Instalowanie the Concordium ID aplikacja na iOS wymaga instalacji z Apple’s TestFlight aplikacja, który jest używany do dystrybucji beta wersje z iOS aplikacje.
 
-1. Install `TestFlight`_ via App Store.
-2. Join our `TestFlight beta program`_ via your iPhone (it works best if you click the link directly on your iPhone), and follow the steps shown in there, to add Concordium ID to TestFlight.
-3. Open the TestFlight app on your iPhone and install Concordium ID.
+1. zainstalować `TestFlight`_ za pośrednictwem sklepu z aplikacjami.
+2. Join our `TestFlight beta program`_ Przez Twój iPhone (działa najlepiej, gdy klikniesz łącze bezpośrednio na swoim iPhonie), and follow the steps shown in there, to add Concordium ID to TestFlight.
+3. otwarty the TestFlight aplikacja na Twoim iPhone i zainstalować Concordium ID.
 
 
-Support & Feedback
+Wsparcie i opinie
 ==================
 
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
+Jeśli napotkasz żadnych problemów lub mieć sugestie, opublikuj swoje pytanie lub
+informacje zwrotne na `Discord`_, lub Skontaktuj się z nami na testnet@concordium.com.
