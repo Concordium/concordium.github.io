@@ -127,8 +127,6 @@ The ports used by the node are as follows:
 
 -  8888, the port for P2P networking, which can be set with
    ``--listen-node-port``
--  8082, the port used by internal backend, which can be set with
-   ``--listen-middleware-port``
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
 
 When changing the mappings above the docker container must be stopped, reset,
