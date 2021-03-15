@@ -128,6 +128,7 @@ the Rust programming language:
        Array(u32, Type),
        Struct(Fields),
        Enum(List (String, Fields)),
+       String(SizeLength),
    }
 
    enum Fields {
