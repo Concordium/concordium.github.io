@@ -129,6 +129,8 @@ the Rust programming language:
        Struct(Fields),
        Enum(List (String, Fields)),
        String(SizeLength),
+       ContractName(SizeLength),
+       ReceiveName(SizeLength),
    }
 
    enum Fields {
