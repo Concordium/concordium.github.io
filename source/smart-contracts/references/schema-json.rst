@@ -43,6 +43,8 @@ JSON for schema type
        Struct(Fields),
        Enum(List (String, Fields)),
        String(SizeLength),
+       ContractName(SizeLength),
+       ReceiveName(SizeLength),
    }
 
 ``Unit``
@@ -213,6 +215,26 @@ In JSON the variant ``Some(9)`` is then
 ----------------
 
 Supplied as a JSON string.
+
+``ContractName``
+----------------
+
+Supplied as a JSON object with a ``contract`` field of type JSON string.
+Example:
+
+.. code-block:: json
+
+   { "contract": "my_contract" }
+
+``ReceiveName``
+----------------
+
+Supplied as a JSON object with the fields ``contract`` and ``func``, both of
+type JSON string. Example:
+
+.. code-block:: json
+
+   { "contract": "my_contract", "func": "my_receive" }
 
 JSON for schema type fields
 ===========================
