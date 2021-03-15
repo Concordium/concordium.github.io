@@ -42,6 +42,7 @@ JSON for schema type
        Array(u32, Type),
        Struct(Fields),
        Enum(List (String, Fields)),
+       String(SizeLength),
    }
 
 ``Unit``
@@ -207,6 +208,11 @@ In JSON the variant ``Some(9)`` is then
 .. code-block:: json
 
    { "Some": [9] }
+
+``String``
+----------------
+
+Supplied as a JSON string.
 
 JSON for schema type fields
 ===========================
