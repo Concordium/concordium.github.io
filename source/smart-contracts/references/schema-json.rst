@@ -24,10 +24,12 @@ JSON for schema type
        U16,
        U32,
        U64,
+       U128,
        I8,
        I16,
        I32,
        I64,
+       I128,
        Amount,
        AccountAddress,
        ContractAddress,
@@ -45,12 +47,22 @@ JSON for schema type
 ``Unit``
 --------
 
-No bytes are produced no matter the value given here, example:
+No bytes are produced no matter the value given here.
 
 ``U8``, ``U16``, ``U32``, ``U64``, ``I8``, ``I16``, ``I32``, ``I64``
 --------------------------------------------------------------------
 
 Give a JSON number within the size of the schema type.
+
+``U128``, ``I128``
+------------------
+
+Supplied as a JSON string. The value must be within the bounds of the type.
+Example:
+
+.. code-block:: json
+
+   "123456789"
 
 ``Amount``
 ----------
