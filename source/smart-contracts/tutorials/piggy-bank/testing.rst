@@ -414,7 +414,7 @@ reasons for rejection:
 
 .. code-block:: rust
 
-   #[derive(Debug, PartialEq, Eq)]
+   #[derive(Debug, PartialEq, Eq, Reject)]
    enum SmashError {
        NotOwner,
        AlreadySmashed,
@@ -507,12 +507,11 @@ We can now check which error was produced in the test:
 We leave it up to the reader to test, whether smashing a piggy bank, that have
 already been smashed results in the correct error.
 
-.. warning::
+.. note::
 
-   On-chain, there is no way to tell for which reason a smart contract rejects,
-   since the blockchain would not have any use of this information.
-   Thus, introducing a custom error type is solely for the purpose of writing
-   better tests.
+   On-chain, custom errors are represented with numeric error codes. When deriving
+   ``Reject`` for an enum, the order of variants determines the specific error
+   code. First variant will get ``-1``, second variant ``-2``, and so on.
 
 Compiling and running tests in Wasm
 ===================================

@@ -298,7 +298,7 @@ smart contract should reject any messages if the piggy bank is smashed:
 .. code-block:: rust
 
    if *state == PiggyBankState::Smashed {
-      return Err(Reject {});
+      return Err(Reject::default());
    }
 
 Since returning early is a common pattern when writing smart contracts and in
