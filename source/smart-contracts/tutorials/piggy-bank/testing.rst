@@ -420,6 +420,11 @@ reasons for rejection:
        AlreadySmashed,
    }
 
+.. seealso::
+
+   For more information about custom errors and deriving ``Reject``, see :ref:`custom-errors`.
+
+
 To use this error type; the function ``piggy_smash`` should return ``Result<A,
 SmashError>`` instead of ``ReceiveResult<A>``:
 
@@ -506,12 +511,6 @@ We can now check which error was produced in the test:
 
 We leave it up to the reader to test, whether smashing a piggy bank, that have
 already been smashed results in the correct error.
-
-.. note::
-
-   On-chain, custom errors are represented with numeric error codes. When deriving
-   ``Reject`` for an enum, the order of variants determines the specific error
-   code. First variant will get ``-1``, second variant ``-2``, and so on.
 
 Compiling and running tests in Wasm
 ===================================
