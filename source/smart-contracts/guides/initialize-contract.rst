@@ -42,11 +42,6 @@ following command:
 
 If successful, the output should be similar to the following:
 
-.. todo::
-
-   Update address format to ``<i, s>`` from ``{"index": i, "subindex": s}``
-   (throughout the documentation).
-
 .. code-block:: console
 
    Contract successfully initialized with address: {"index":0,"subindex":0}
