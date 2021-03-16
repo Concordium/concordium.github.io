@@ -242,7 +242,7 @@ of our smart contract instance:
    let mut state = PiggyBankState::Intact;
 
 When calling ``piggy_insert`` we get back a result with actions, instead of an
-initial as with ``piggy_init``. But we will need to help the compiler
+initial state as with ``piggy_init``. But we will need to help the compiler
 infer which type to use for the generic ``A`` implementing |HasActions|_, so
 we add the result type ``ReceiveResult<ActionsTree>``:
 
