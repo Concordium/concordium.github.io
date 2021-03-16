@@ -55,6 +55,7 @@ The documentation is split into four categories
    guides/setup-contract
    guides/compile-module
    guides/unit-test-contract
+   guides/custom-errors
    guides/local-simulate
    guides/build-schema
    guides/no-std
