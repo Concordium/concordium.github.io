@@ -1,3 +1,4 @@
+.. _custom discriminant values: https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations
 .. _custom-errors:
 
 ====================
@@ -13,7 +14,7 @@ Custom error codes help communicate why a contract rejects and can be returned
 both during initialization and during updates.
 
 On-chain, smart contracts return a numeric error code when rejecting. This is
-also the case, when using a custom error type. Therefore, a mapping from the
+also the case when using a custom error type. Therefore, a mapping from the
 custom error type to ``Reject``, in the form of an implementation of
 ``From<MyError> for Reject``, is needed. We can also derive it
 automatically using ``#[derive(Reject)]``::
@@ -34,7 +35,8 @@ automatically using ``#[derive(Reject)]``::
 .. warning::
 
    Deriving ``Reject`` is only possible for fieldless enums, i.e., enums where
-   the variants do not have associated data.
+   the variants do not have associated data. Additionally, derivation for enums
+   with `custom discriminant values`_ is not supported either.
 
 Using custom errors
 ===================
