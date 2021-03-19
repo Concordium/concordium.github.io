@@ -43,7 +43,7 @@ Function parameter
    :return: Byte size of the parameter.
    :rtype: i32
 
-.. function:: get_parameter_section(param_bytes, length, offset) -> i32
+.. function:: get_parameter_section(location, length, offset) -> i32
 
    Read a section of the parameter to the given location in Wasm linear memory.
    Return the number of bytes read.
@@ -51,7 +51,7 @@ Function parameter
    length into. If not, the function will trap and abort execution of
    the contract.
 
-   :param i32 param_bytes: Pointer of the write location in Wasm linear memory.
+   :param i32 location: Pointer of the write location in Wasm linear memory.
    :param i32 length: Number of bytes to read from the parameter.
    :param i32 offset: Starting offset in the parameter bytes.
    :return: The number of actual bytes read. This is always less than or equal
@@ -71,20 +71,20 @@ Smart contract instance state
    :return: Byte size of the contract state.
    :rtype: i32
 
-.. function:: load_state(start, length, offset) -> i32
+.. function:: load_state(location, length, offset) -> i32
 
    Read a section of the state to the given location. Return the number of
    bytes written. The location is assumed to contain enough memory to write the
    requested length into. If not, the function will trap and abort execution of
    the contract.
 
-   :param i32 start: Pointer to write location in Wasm linear memory.
+   :param i32 location: Pointer to write location in Wasm linear memory.
    :param i32 length: Number of bytes to read.
    :param i32 offset: Starting offset in the state bytes.
    :return: The number of read bytes.
    :rtype: i32
 
-.. function:: write_state(start, length, offset) -> i32
+.. function:: write_state(location, length, offset) -> i32
 
    Write a section of the memory to the state at a given offset.
    Return the number of bytes written.
@@ -92,7 +92,7 @@ Smart contract instance state
    The state is assumed to be large enough to write the requested
    length into.
 
-   :param i32 start: Pointer to read location in Wasm linear memory.
+   :param i32 location: Pointer to read location in Wasm linear memory.
    :param i32 length: Number of bytes to write.
    :param i32 offset: Starting offset in the state bytes.
    :return: The number of written bytes.
