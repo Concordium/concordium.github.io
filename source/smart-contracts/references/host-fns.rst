@@ -25,7 +25,7 @@ Logging events
    If not enough data can be read then this function will trap and abort
    execution of the smart contract.
 
-   :param i32 start: Pointer to start of the item in Wasm linear memory.
+   :param i32 start: Pointer to the start of the item in Wasm linear memory.
    :param i32 length: Number of bytes in the item.
 
    :return: ``-1`` if logging failed because the message was too long.
@@ -51,7 +51,7 @@ Function parameter
    length into. If not, the function will trap and abort execution of
    the contract.
 
-   :param i32 location: Pointer of the write location in Wasm linear memory.
+   :param i32 location: Pointer to the write location in Wasm linear memory.
    :param i32 length: Number of bytes to read from the parameter.
    :param i32 offset: Starting offset in the parameter bytes.
    :return: The number of actual bytes read. This is always less than or equal
@@ -145,7 +145,7 @@ a receive function execution will abort.
 
    Get the address of the account that triggered the init function.
 
-   :param i32 start: Pointer of location to put the address. The address is 32
+   :param i32 start: Pointer to the location to put the address. The address is 32
                      bytes and the memory must be large enough to contain it.
 
 Only in receive function
@@ -157,25 +157,25 @@ Functions only accessible for smart contract receive functions.
    Get the address of the account that initiated the top-level transaction
    which lead to triggering the receive function.
 
-   :param i32 start: Pointer of location to put the address.
+   :param i32 start: Pointer to the location to put the address.
 
 .. function:: get_receive_sender(start)
 
    Get the address of the account or contract, triggering the receive function.
 
-   :param i32 start: Pointer of location to put the address.
+   :param i32 start: Pointer to the location to put the address.
 
 .. function:: get_receive_self_address(start)
 
    Get the address of the contract instance, running the receive function.
 
-   :param i32 start: Pointer of location to put the address.
+   :param i32 start: Pointer to the location to put the address.
 
 .. function:: get_receive_owner(start)
 
    Get the address of the account, which created the contract instance.
 
-   :param i32 start: Pointer of location to put the address.
+   :param i32 start: Pointer to the location to put the address.
 
 .. function:: get_receive_self_balance() -> i64
 
