@@ -146,34 +146,37 @@ Example:
    - '3urFJGp9AaU62fQ3DEfCczqJwVt9V3F1gjE5PPBaYgqBD6rqPB'
    {
        "0": {
-           "encryptedSignKey": {
-               "metadata": {
-                   "encryptionMethod": "AES-256",
-                   "iterations": 100000,
-                   "salt": "tRiBas12Z1Y7dydTTdsHbw==",
-                   "initializationVector": "5hPahE0+YXzNs+pRJjkzgg==",
-                   "keyDerivationMethod": "PBKDF2WithHmacSHA256"
-               },
-               "cipherText": "h8AXOHt9jHINQp/GWWQrWPiXP5k9swBHQBJmcsSNFcBsie8PjuG7XPjrOQbKzZOUm7+ad1jvsMRLR58hqxKPbRUCcM8+j3O1pWtbycSItE8="
-           },
-           "verifyKey": "7c50c09a5e5537b84e83964a5522a99731e4f7f45c6527ea753970f415e6671b",
-           "schemeId": "Ed25519"
-       },
-       "1": {
-           "encryptedSignKey": {
-               "metadata": {
-                   "encryptionMethod": "AES-256",
-                   "iterations": 100000,
-                   "salt": "Q8lU7AHxDrZ6mvKbS4lFmw==",
-                   "initializationVector": "qR7n0N1FiIlNbzsmYWLYHg==",
-                   "keyDerivationMethod": "PBKDF2WithHmacSHA256"
-               },
-               "cipherText": "5IVYAOAFWv6sCSQVXVE1/UfKKqC+Ati8DyV9MtFG1KqYQ6KG8/T9E5ZO05ORrm+ltsXZ6b273yDUnHCWtoErNzmKlqGRS7cIO/rwtDEg3nQ="
-           },
-           "verifyKey": "50ec0b507164f586e7410c09c20dac0666536136396766de06d29b07b6b61fa3",
-           "schemeId": "Ed25519"
-       },
-       ...
+             "0": {
+                 "encryptedSignKey": {
+                     "metadata": {
+                         "encryptionMethod": "AES-256",
+                         "iterations": 100000,
+                         "salt": "tRiBas12Z1Y7dydTTdsHbw==",
+                         "initializationVector": "5hPahE0+YXzNs+pRJjkzgg==",
+                         "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+                     },
+                     "cipherText": "h8AXOHt9jHINQp/GWWQrWPiXP5k9swBHQBJmcsSNFcBsie8PjuG7XPjrOQbKzZOUm7+ad1jvsMRLR58hqxKPbRUCcM8+j3O1pWtbycSItE8="
+                 },
+                 "verifyKey": "7c50c09a5e5537b84e83964a5522a99731e4f7f45c6527ea753970f415e6671b",
+                 "schemeId": "Ed25519"
+             },
+             "1": {
+                 "encryptedSignKey": {
+                     "metadata": {
+                         "encryptionMethod": "AES-256",
+                         "iterations": 100000,
+                         "salt": "Q8lU7AHxDrZ6mvKbS4lFmw==",
+                         "initializationVector": "qR7n0N1FiIlNbzsmYWLYHg==",
+                         "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+                     },
+                     "cipherText": "5IVYAOAFWv6sCSQVXVE1/UfKKqC+Ati8DyV9MtFG1KqYQ6KG8/T9E5ZO05ORrm+ltsXZ6b273yDUnHCWtoErNzmKlqGRS7cIO/rwtDEg3nQ="
+                 },
+                 "verifyKey": "50ec0b507164f586e7410c09c20dac0666536136396766de06d29b07b6b61fa3",
+                 "schemeId": "Ed25519"
+             },
+             ...
+        },
+        ...
    }
    Encryption secret keys:
    - '3urFJGp9AaU62fQ3DEfCczqJwVt9V3F1gjE5PPBaYgqBD6rqPB': {
@@ -222,22 +225,26 @@ were shown above when printing the configuration:
 .. code-block:: js
 
    {
-      "idx": {
-        "encryptedSignKey": {
-          "metadata": {
-            "encryptionMethod": "AES-256",
-            "iterations": ...,
-            "salt": ...,
-            "initializationVector": ...,
-            "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+      "cidx": {
+          "kidx": {
+            "encryptedSignKey": {
+              "metadata": {
+                "encryptionMethod": "AES-256",
+                "iterations": ...,
+                "salt": ...,
+                "initializationVector": ...,
+                "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+              },
+              "cipherText": ...
+            },
+            "verifyKey": ...,
+            "schemeId": "Ed25519"
           },
-          "cipherText": ...
+          ...
         },
-        "verifyKey": ...,
-        "schemeId": "Ed25519"
-      },
-      ...
+        ...
     }
+Here, ``cidx`` denotes the credential index, and ``kidx`` denotes the key index.
 
 .. _concordium-client-import-accounts-keys:
 
