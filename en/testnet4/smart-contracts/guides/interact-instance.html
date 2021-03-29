@@ -38,6 +38,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -262,8 +263,8 @@ The schema is used to serialize the JSON into binary.</p>
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.json</span></code> in JSON
 format, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_parameter_receive <span class="se">\</span>
-         --energy <span class="m">1000</span> <span class="se">\</span>
-         --parameter-json my_parameter.json
+<span class="go">         --energy 1000 \</span>
+<span class="go">         --parameter-json my_parameter.json</span>
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -312,8 +313,8 @@ using the <code class="docutils literal notranslate"><span class="pre">--schema<
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.bin</span></code> in binary
 format, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_parameter_receive <span class="se">\</span>
-         --energy <span class="m">1000</span> <span class="se">\</span>
-         --parameter-bin my_parameter.bin
+<span class="go">         --energy 1000 \</span>
+<span class="go">         --parameter-bin my_parameter.bin</span>
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>

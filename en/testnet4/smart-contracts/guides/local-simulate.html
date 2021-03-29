@@ -38,6 +38,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -238,11 +239,11 @@ You will also need a smart contract module in Wasm to simulate.</p>
 <p>To simulate the instantiation of a smart contract instance using
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium run init --module contract.wasm <span class="se">\</span>
-                            --contract <span class="s2">&quot;my_contract&quot;</span> <span class="se">\</span>
-                            --context init-context.json <span class="se">\</span>
-                            --amount <span class="m">123456</span>.789 <span class="se">\</span>
-                            --parameter-bin parameter.bin <span class="se">\</span>
-                            --out-bin state.bin
+<span class="go">                            --contract &quot;my_contract&quot; \</span>
+<span class="go">                            --context init-context.json \</span>
+<span class="go">                            --amount 123456.789 \</span>
+<span class="go">                            --parameter-bin parameter.bin \</span>
+<span class="go">                            --out-bin state.bin</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">init-context.json</span></code> (used with the <code class="docutils literal notranslate"><span class="pre">--context</span></code> parameter) is a file that
@@ -272,13 +273,13 @@ An example of this context could be:</p>
 <p>To simulate an update to a contract smart contract instance using
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium run update --module contract.wasm <span class="se">\</span>
-                              --contract <span class="s2">&quot;my_contract&quot;</span> <span class="se">\</span>
-                              --func <span class="s2">&quot;some_receive&quot;</span> <span class="se">\</span>
-                              --context receive-context.json <span class="se">\</span>
-                              --amount <span class="m">123456</span>.789 <span class="se">\</span>
-                              --parameter-bin parameter.bin <span class="se">\</span>
-                              --state-bin state-in.bin <span class="se">\</span>
-                              --out-bin state-out.bin
+<span class="go">                              --contract &quot;my_contract&quot; \</span>
+<span class="go">                              --func &quot;some_receive&quot; \</span>
+<span class="go">                              --context receive-context.json \</span>
+<span class="go">                              --amount 123456.789 \</span>
+<span class="go">                              --parameter-bin parameter.bin \</span>
+<span class="go">                              --state-bin state-in.bin \</span>
+<span class="go">                              --out-bin state-out.bin</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">receive-context.json</span></code> (used with the <code class="docutils literal notranslate"><span class="pre">--context</span></code> parameter) is a file that
