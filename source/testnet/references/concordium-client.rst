@@ -255,7 +255,7 @@ Update keys of an account
    $concordium-client config account update-keys --account ACCOUNT --keys KEYS
 
 Update a sign/verify key-pair on a specific account. The ``KEYS`` parameter must be
-a JSON file that contains the keys that will be added in the same format as for adding keys. 
+a JSON file that contains the keys that will be added in the same format as for adding keys.
 
 
 Remove keys of an account
@@ -264,8 +264,8 @@ Remove keys of an account
 .. code-block:: console
 
    $concordium-client config account remove-keys --account ACCOUNT --credential-index CREDENTIALINDEX KEYINDICES
-   
-Remove sign/verify key-pairs from a specific credential of an account. The ``CREDENTIALINDEX`` specifies the credential that the key pairs should be removed from, and the space-seperated list of key indices specify which of the key pairs that should be removed. 
+
+Remove sign/verify key-pairs from a specific credential of an account. The ``CREDENTIALINDEX`` specifies the credential that the key pairs should be removed from, and the space-seperated list of key indices specify which of the key pairs that should be removed.
 
 .. _concordium-client-import-accounts-keys:
 
