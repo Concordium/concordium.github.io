@@ -87,11 +87,8 @@ different transaction types are performed using specialized subcommands:
 +-------------------------------+-------------------------------------+
 | ``baker set-key``             | Update the keys of a baker          |
 +-------------------------------+-------------------------------------+
-| ``account add-keys``          | Add additional signing keys to the  |
-|                               | account                             |
-+-------------------------------+-------------------------------------+
-| ``account remove-keys``       | Remove one or more signing keys     |
-|                               | from the account                    |
+| ``account update-keys``       | Update credentials keys for a       |
+|                               | specific credential                 |
 +-------------------------------+-------------------------------------+
 | ``account encrypt``           | Transfer part of the public balance |
 |                               | to shielded balance                 |
