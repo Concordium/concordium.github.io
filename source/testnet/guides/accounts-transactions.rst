@@ -111,7 +111,7 @@ Move an amount to the shielded balance
 ========================================
 If we go back to the *Accounts* screen, we can now see that the 10 GTU has been transferred to the *Balance* of *Example Account 1*. As you might
 have noticed before, the accounts also have a :ref:`glossary-shielded-balance`. In short, the shielded balance is for keeping shielded (encrypted) amounts
-of GTU on the account. Lets’ try adding some shielded GTU to our *Example Account 2*. Start by pressing the **Shielded Balance** area of the account card.
+of GTU on the account. Let’s try adding some shielded GTU to our *Example Account 2*. Start by pressing the **Balance** area of the account card.
 
 .. image:: images/concordium-id/acc19.png
       :width: 32%
