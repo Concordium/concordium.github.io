@@ -12,21 +12,21 @@ Accounts
    :backlinks: none
 
 
-An account on the Concordium blockchain consists of two parts. The :ref:`on-chain<glossary-on-chain>`
+An account on the Concordium blockchain consists of two parts and is owned by one or more :ref:`credential holders<glossary-credential-holder>`. The :ref:`on-chain<glossary-on-chain>`
 part which is publicly visible, and maintained by the bakers, and the
 :ref:`off-chain<glossary-off-chain>` part.
 
 The on-chain part of the account consists of
 
-- the credentials associated with the account
+- the credentials of the credential holders associated with the account
 - public balance
 - shielded balance
 - account sequence number
-- public keys to verify transaction signatures.
+- public keys of each credential to verify transaction signatures.
 
 The off-chain part of the account contains
 
--  private keys of the account which are used to sign actions by the
+-  private keys of credential holders which are used to sign actions by the
    account (e.g., sending transfers, deploying smart contracts)
 -  the identity an account is created from (this is needed for managing
    the account on the chain)

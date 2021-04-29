@@ -107,6 +107,13 @@ credential is that it **does not** identify the owner to the identity provider,
 nor to any other single entity, however it contains enough information to allow
 anonymity revokers in concert with the identity provider to find the owner.
 
+.. _glossary-credential-holder:
+
+Credential holder
+=================
+
+The user holding a credential. An account is owned by one or more credential holders. 
+
 .. _glossary-decryption-key:
 
 Decryption key
