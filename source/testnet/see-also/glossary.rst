@@ -112,7 +112,7 @@ anonymity revokers in concert with the identity provider to find the owner.
 Credential holder
 =================
 
-The user holding a credential. An account is owned by one or more credential holders. 
+The user holding a credential. An account is owned by one or more credential holders.
 
 .. _glossary-decryption-key:
 
