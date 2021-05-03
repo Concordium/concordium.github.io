@@ -117,7 +117,7 @@ Depending on the exact context, the flags are currently all optional:
    fetched automatically and should only be specified in special cases.
 -  ``--signers`` : Specification of which credential holders of the sender account that should sign the transaction, and which of their keys that should be used to sign. Example: ``--signers 0:1,0:2,3:0,3:1`` specifies that credential holder 0 signs with keys 1 and 2, while credential holder
    3 signs with keys 0 and 1. If the sender account is imported to the client, and ``--signers`` is not provided,
-   it will sign with all keys in the local config.
+   ``concordium-client`` will sign with all keys in the local configuration of the account.
 
 
 In most cases, it should be sufficient to provide only the ``--sender`` option
