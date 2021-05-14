@@ -1,3 +1,5 @@
+.. _concordium.software: https://concordium.software/
+
 .. _mobile-wallet-tc:
 
 =================================================
@@ -143,11 +145,11 @@ resulting from error or negligence.
 Even in areas in which stricter liability applies, Concordium Software is not liable for losses arising from
 
 * Breakdown of or lack of access to IT systems or damage to data in these systems attributable to any of the events listed below regardless of
-whether Concordium Software or a third-party supplier is responsible for the operation of these systems, power failure, or breakdown of
-Concordium Software’s power supply system or telecommunications, statutory intervention or administrative acts, acts of God, war, revolution,
-riot, civil unrest, sabotage, terrorism, or vandalism (including computer virus attacks or hacking).
+  whether Concordium Software or a third-party supplier is responsible for the operation of these systems, power failure, or breakdown of
+  Concordium Software’s power supply system or telecommunications, statutory intervention or administrative acts, acts of God, war, revolution,
+  riot, civil unrest, sabotage, terrorism, or vandalism (including computer virus attacks or hacking).
 * Strikes, lockouts, boycotts, or picketing, regardless of whether Concordium Software or its organization is itself a party to or has
-started such an industrial dispute and regardless of its cause. This also applies if the dispute affects only parts of Concordium Software.
+  started such an industrial dispute and regardless of its cause. This also applies if the dispute affects only parts of Concordium Software.
 * Other circumstances beyond or within the control of Concordium Software.
 
 Please be advised that Concordium Software is not liable for any defects or deficiencies in the goods or services for which you pay using
@@ -185,7 +187,7 @@ misunderstanding. The address is Østergade 13, 2., 1100 København K.
 New copy of these terms and conditions
 ======================================
 
-You can always find the latest version on concordium.software.
+You can always find the latest version on `concordium.software`_.
 
 You can contact Concordium Mobile Wallet support via support@concordium.software.
 
