@@ -7,4 +7,3 @@ Terms and Conditions
    :caption: Guides
 
    mobile-wallet-tc
-   
