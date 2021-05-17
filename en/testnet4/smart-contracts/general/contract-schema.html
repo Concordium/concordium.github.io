@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Smart contract schemas &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p><span class="caption-text">General</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contract-module.html">Smart contract modules</a></li>
@@ -117,11 +118,11 @@
 <li class="toctree-l1"><a class="reference internal" href="resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -131,14 +132,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
@@ -218,7 +219,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="smart-contract-schemas">
+  <section id="smart-contract-schemas">
 <span id="contract-schema"></span><h1>Smart contract schemas<a class="headerlink" href="#smart-contract-schemas" title="Permalink to this headline">¶</a></h1>
 <p>A smart contract schema is a description of how to represent bytes in a more
 structured representation. It can be used by external tools when displaying the
@@ -229,7 +230,7 @@ structured representation, such as JSON.</p>
 <p>For instructions on how to build the schema for a smart contract module in
 Rust, see <a class="reference internal" href="../guides/build-schema.html#build-schema"><span class="std std-ref">Build a contract schema</span></a>.</p>
 </div>
-<div class="section" id="why-use-a-contract-schema">
+<section id="why-use-a-contract-schema">
 <h2>Why use a contract schema<a class="headerlink" href="#why-use-a-contract-schema" title="Permalink to this headline">¶</a></h2>
 <p>Data on the blockchain, such as the state of an instance and parameters passed
 to init and receive functions, is serialized as a sequence of bytes.
@@ -251,8 +252,8 @@ and to deserialize the state of contract instances to JSON.</p>
 </div>
 <p>The schema is then either embedded into a smart contract module that is deployed
 to the chain, or is written to a file and passed around off-chain.</p>
-</div>
-<div class="section" id="should-you-embed-or-write-to-a-file">
+</section>
+<section id="should-you-embed-or-write-to-a-file">
 <h2>Should you embed or write to a file?<a class="headerlink" href="#should-you-embed-or-write-to-a-file" title="Permalink to this headline">¶</a></h2>
 <p>Whether a contract schema should be embedded or written to a file depends on
 your situation.</p>
@@ -268,8 +269,8 @@ paying for the extra bytes when deploying.
 The downside is that you instead have to distribute the schema file through some
 other channel and ensure that contract users are using the correct file with your
 smart contract.</p>
-</div>
-<div class="section" id="the-schema-format">
+</section>
+<section id="the-schema-format">
 <h2>The schema format<a class="headerlink" href="#the-schema-format" title="Permalink to this headline">¶</a></h2>
 <p>A schema can contain</p>
 <ul class="simple">
@@ -325,8 +326,8 @@ of a variable length type, such as <code class="docutils literal notranslate"><s
 </div>
 <p>For a reference on how a schema type is serialized into bytes, we refer the
 reader to the <a class="reference external" href="https://github.com/Concordium/concordium-contracts-common/blob/main/src/schema.rs">implementation in Rust</a>.</p>
-</div>
-<div class="section" id="embedding-schemas-on-chain">
+</section>
+<section id="embedding-schemas-on-chain">
 <span id="contract-schema-which-to-choose"></span><h2>Embedding schemas on-chain<a class="headerlink" href="#embedding-schemas-on-chain" title="Permalink to this headline">¶</a></h2>
 <p>Schemas are embedded into smart contract modules using the <a class="reference external" href="https://webassembly.github.io/spec/core/appendix/custom.html">custom
 section</a> feature of Wasm modules.
@@ -336,8 +337,8 @@ affect the semantics of running the Wasm module.</p>
 <code class="docutils literal notranslate"><span class="pre">concordium-schema-v1</span></code>.
 This collection is a list of pairs, containing the name of the contract encoded
 in UTF-8 and the contract schema bytes.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

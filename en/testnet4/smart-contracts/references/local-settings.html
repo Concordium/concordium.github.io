@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Local settings &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
@@ -111,11 +112,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -125,14 +126,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulate-context.html">Simulation contexts</a></li>
@@ -215,7 +216,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="local-settings">
+  <section id="local-settings">
 <span id="id1"></span><h1>Local settings<a class="headerlink" href="#local-settings" title="Permalink to this headline">¶</a></h1>
 <p>Local settings for <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> are stored in a single folder, the
 location of which depends on the specific operating system used:</p>
@@ -244,12 +245,12 @@ location of which depends on the specific operating system used:</p>
 <span class="go">    └── moduleNames.map</span>
 </pre></div>
 </div>
-<div class="section" id="local-names">
+<section id="local-names">
 <h2>Local Names<a class="headerlink" href="#local-names" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> allows the user to add local aliases, or <em>names</em>, to
 accounts, contract instances, and modules in order to make referencing them
 easier.</p>
-<div class="section" id="account-names">
+<section id="account-names">
 <h3>Account Names<a class="headerlink" href="#account-names" title="Permalink to this headline">¶</a></h3>
 <p>Account names are stored in the file <code class="docutils literal notranslate"><span class="pre">accounts/names.map</span></code> using a <em>custom</em>
 format, and should look similar to the following:</p>
@@ -257,8 +258,8 @@ format, and should look similar to the following:</p>
 <span class="go">my_other_account = 4Lh8CPhbL2XEn55RMjKii2XCXngdAC7wRLL2CNjq33EG9TiWxj</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="module-names">
+</section>
+<section id="module-names">
 <h3>Module Names<a class="headerlink" href="#module-names" title="Permalink to this headline">¶</a></h3>
 <p>Module names are stored in the file <code class="docutils literal notranslate"><span class="pre">contracts/moduleNames.map</span></code> as JSON, and
 should look similar to the following:</p>
@@ -268,8 +269,8 @@ should look similar to the following:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="contract-instance-names">
+</section>
+<section id="contract-instance-names">
 <h3>Contract Instance Names<a class="headerlink" href="#contract-instance-names" title="Permalink to this headline">¶</a></h3>
 <p>Contract instance names are stored in the file <code class="docutils literal notranslate"><span class="pre">contracts/contractNames.map</span></code>
 as JSON, and should look similar to the following:</p>
@@ -285,9 +286,9 @@ as JSON, and should look similar to the following:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Initialize a smart contract instance &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
@@ -111,11 +112,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-contract.html">Setting up a smart contract project</a></li>
@@ -125,7 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p><span class="caption-text">On-chain guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Initialize a smart contract instance</a><ul>
@@ -137,7 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
@@ -217,12 +218,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="initialize-a-smart-contract-instance">
+  <section id="initialize-a-smart-contract-instance">
 <span id="initialize-contract"></span><h1>Initialize a smart contract instance<a class="headerlink" href="#initialize-a-smart-contract-instance" title="Permalink to this headline">¶</a></h1>
 <p>This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.</p>
-<div class="section" id="preparation">
+<section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
 <p>Make sure that you are <a class="reference internal" href="../../testnet/guides/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../testnet/see-also/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a smart
 contract <a class="reference internal" href="deploy-module.html#deploy-module"><span class="std std-ref">deployed</span></a> in some module on-chain.</p>
@@ -234,8 +235,8 @@ the transaction.</p>
 <p>The cost of this transaction depends on the size of the parameters sent to
 the init function and the complexity of the function itself.</p>
 </div>
-</div>
-<div class="section" id="initialization">
+</section>
+<section id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
 <p>To initialize an instance of the parameterless smart contract <code class="docutils literal notranslate"><span class="pre">my_contract</span></code>
 from a deployed module with reference
@@ -264,7 +265,7 @@ see <a class="reference internal" href="../references/references-on-chain.html#r
 <p>Using module references directly can be inconvenient; to name them, see
 <a class="reference internal" href="deploy-module.html#naming-a-module"><span class="std std-ref">Naming a module</span></a>.</p>
 </div>
-<div class="section" id="passing-parameters-in-json-format">
+<section id="passing-parameters-in-json-format">
 <span id="init-passing-parameter-json"></span><h3>Passing parameters in JSON format<a class="headerlink" href="#passing-parameters-in-json-format" title="Permalink to this headline">¶</a></h3>
 <p>A parameter in JSON format can be passed if a <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">smart contract schema</span></a> is supplied, either as a file or embedded in the module.
 The schema is used to serialize the JSON into binary.</p>
@@ -316,8 +317,8 @@ using the <code class="docutils literal notranslate"><span class="pre">--schema<
 <p>GTU can also be transferred to a contract instance during initialization
 using the <code class="docutils literal notranslate"><span class="pre">--amount</span> <span class="pre">AMOUNT</span></code> parameter.</p>
 </div>
-</div>
-<div class="section" id="passing-parameters-in-binary-format">
+</section>
+<section id="passing-parameters-in-binary-format">
 <span id="init-passing-parameter-bin"></span><h3>Passing parameters in binary format<a class="headerlink" href="#passing-parameters-in-binary-format" title="Permalink to this headline">¶</a></h3>
 <p>When passing parameters in binary format, a <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">contract schema</span></a> is not needed.</p>
 <p>To initialize an instance of the contract <code class="docutils literal notranslate"><span class="pre">my_parameter_contract</span></code> from the
@@ -340,9 +341,9 @@ parameter file <code class="docutils literal notranslate"><span class="pre">my_p
 <p>For information on how to work with parameters in smart contracts, see
 <a class="reference internal" href="../general/develop-contracts.html#working-with-parameters"><span class="std std-ref">Working with parameters</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="naming-a-contract-instance">
+</section>
+</section>
+<section id="naming-a-contract-instance">
 <span id="naming-an-instance"></span><h2>Naming a contract instance<a class="headerlink" href="#naming-a-contract-instance" title="Permalink to this headline">¶</a></h2>
 <p>A contract instance can be given a local alias, or <em>name</em>, which makes
 referencing it easier.
@@ -383,8 +384,8 @@ the following command:</p>
 <p>For more information about contract instance addresses, see
 <a class="reference internal" href="../references/references-on-chain.html#references-on-chain"><span class="std std-ref">References on-chain</span></a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

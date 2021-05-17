@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Accounts &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Guides</span></p>
+              <p><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
@@ -111,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities and accounts</a></li>
@@ -124,7 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-node.html">Querying a node</a></li>
 </ul>
-<p class="caption"><span class="caption-text">See Also</span></p>
+<p><span class="caption-text">See Also</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
@@ -202,7 +203,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="accounts">
+  <section id="accounts">
 <span id="managing-accounts"></span><h1>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -250,9 +251,9 @@ byte 1. An example of such an address is
 <p>In the tools described below the user will typically select an <strong>account name</strong>
 which makes the account easier to identify. This is only a local alias, and is not used by the Concordium blockchain.
 The name is resolved to an address before interactions with the node.</p>
-<div class="section" id="account-concepts">
+<section id="account-concepts">
 <h2>Account concepts<a class="headerlink" href="#account-concepts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="account-balances">
+<section id="account-balances">
 <span id="managing-account-balances"></span><h3>Account balances<a class="headerlink" href="#account-balances" title="Permalink to this headline">¶</a></h3>
 <p>Each account has two balances, the <em>public balance</em> which can be <em>seen</em> by every
 member of the Concordium Network, and a <a class="reference internal" href="../see-also/glossary.html#glossary-shielded-balance"><span class="std std-ref">shielded
@@ -283,8 +284,8 @@ at disposal, the rest being locked. If the account tried to transfer more than
 <p>On January 3 the account becomes a baker with the initial stake of 125 GTU.
 This is successful because the total public balance is 150GTU.
 After this the account still has 25 GTU at disposal.</p>
-</div>
-<div class="section" id="account-sequence-number">
+</section>
+<section id="account-sequence-number">
 <h3>Account sequence number<a class="headerlink" href="#account-sequence-number" title="Permalink to this headline">¶</a></h3>
 <p>Each account on the Concordium blockchain has a <a class="reference internal" href="../see-also/glossary.html#glossary-transaction-sequence-number"><span class="std std-ref">sequence number</span></a> and each
 transaction signed by the account must have a sequence number. For a transaction
@@ -302,18 +303,18 @@ address is provided, <code class="docutils literal notranslate"><span class="pre
 <p>The <a class="reference internal" href="../see-also/downloads.html#concordium-id"><span class="std std-ref">Concordium ID</span></a> keeps track of the sequence number and assigns the correct one when sending transactions.
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tracks the sequence number automatically, but it can
 also be set manually via the option <code class="docutils literal notranslate"><span class="pre">--nonce</span></code>.</p>
-</div>
-</div>
-<div class="section" id="tools">
+</section>
+</section>
+<section id="tools">
 <h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-mobile-wallet-concordium-id">
+<section id="the-mobile-wallet-concordium-id">
 <span id="managing-concordium-id"></span><h3>The mobile wallet: Concordium ID<a class="headerlink" href="#the-mobile-wallet-concordium-id" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../see-also/downloads.html#concordium-id"><span class="std std-ref">Concordium ID</span></a> is a smartphone app that allows creation of accounts from
 identities issued by the external identity provider <a class="reference external" href="https://notabene.id">Notabene</a>, as well as
 transfers of GTU from created accounts. It supports both plain and encrypted transfers.</p>
 <p>This app can export identities and accounts that the user created.</p>
-</div>
-<div class="section" id="command-line-tool">
+</section>
+<section id="command-line-tool">
 <h3>Command-line tool<a class="headerlink" href="#command-line-tool" title="Permalink to this headline">¶</a></h3>
 <p>The Concordium distribution ships with a command-line tool named
 <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. It is designed as a low-level interface to the
@@ -321,9 +322,9 @@ Concordium blockchain. It cannot be used to create identities, but it can
 <a class="reference internal" href="concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import accounts</span></a> exported from the mobile wallets. Once an account has been
 imported, the tool can be used to do GTU transfers from the account, as well as
 send all other <a class="reference internal" href="transactions.html#transactions"><span class="std std-ref">transaction</span></a> types supported by the Concordium blockchain.</p>
-</div>
-</div>
-<div class="section" id="support-feedback">
+</section>
+</section>
+<section id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
 <p>If you run into any issues or have suggestions, post your question or
 feedback on <a class="reference external" href="https://discord.com/invite/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
@@ -333,8 +334,8 @@ feedback on <a class="reference external" href="https://discord.com/invite/xWmQ5
 <dd><p>In this explanation we ignore transaction fees.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

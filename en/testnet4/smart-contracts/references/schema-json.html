@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Schema JSON representation &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
@@ -111,11 +112,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -125,14 +126,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Schema JSON representation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#json-for-schema-type">JSON for schema type</a></li>
@@ -216,7 +217,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="schema-json-representation">
+  <section id="schema-json-representation">
 <span id="schema-json"></span><h1>Schema JSON representation<a class="headerlink" href="#schema-json-representation" title="Permalink to this headline">¶</a></h1>
 <p>This is a reference of how bytes, such as the contract state and parameters can
 be represented as JSON together with a <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code>.</p>
@@ -224,7 +225,7 @@ be represented as JSON together with a <code class="docutils literal notranslate
 <p class="admonition-title">See also</p>
 <p>See <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">Smart contract schemas</span></a> for more information on this topic.</p>
 </div>
-<div class="section" id="json-for-schema-type">
+<section id="json-for-schema-type">
 <h2>JSON for schema type<a class="headerlink" href="#json-for-schema-type" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">Unit</span><span class="p">,</span><span class="w"></span>
@@ -252,45 +253,45 @@ be represented as JSON together with a <code class="docutils literal notranslate
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="unit">
+<section id="unit">
 <h3><code class="docutils literal notranslate"><span class="pre">Unit</span></code><a class="headerlink" href="#unit" title="Permalink to this headline">¶</a></h3>
 <p>No bytes are produced no matter the value given here, example:</p>
-</div>
-<div class="section" id="u8-u16-u32-u64-i8-i16-i32-i64">
+</section>
+<section id="u8-u16-u32-u64-i8-i16-i32-i64">
 <h3><code class="docutils literal notranslate"><span class="pre">U8</span></code>, <code class="docutils literal notranslate"><span class="pre">U16</span></code>, <code class="docutils literal notranslate"><span class="pre">U32</span></code>, <code class="docutils literal notranslate"><span class="pre">U64</span></code>, <code class="docutils literal notranslate"><span class="pre">I8</span></code>, <code class="docutils literal notranslate"><span class="pre">I16</span></code>, <code class="docutils literal notranslate"><span class="pre">I32</span></code>, <code class="docutils literal notranslate"><span class="pre">I64</span></code><a class="headerlink" href="#u8-u16-u32-u64-i8-i16-i32-i64" title="Permalink to this headline">¶</a></h3>
 <p>Give a JSON number within the size of the schema type.</p>
-</div>
-<div class="section" id="amount">
+</section>
+<section id="amount">
 <h3><code class="docutils literal notranslate"><span class="pre">Amount</span></code><a class="headerlink" href="#amount" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON string in micro GTU. Example of 42 GTU:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;42000000&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="accountaddress">
+</section>
+<section id="accountaddress">
 <h3><code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code><a class="headerlink" href="#accountaddress" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON string. Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;2wkBET2rRgE8pahuaczxKbmv7ciehqsne57F9gtzf1PVdr2VP3&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="contractaddress">
+</section>
+<section id="contractaddress">
 <h3><code class="docutils literal notranslate"><span class="pre">ContractAddress</span></code><a class="headerlink" href="#contractaddress" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON object with <code class="docutils literal notranslate"><span class="pre">index</span></code> field and
 optionally <code class="docutils literal notranslate"><span class="pre">subindex</span></code> field, both JSON numbers. Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">10</span> <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="timestamp">
+</section>
+<section id="timestamp">
 <h3><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code><a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON string using the <a class="reference external" href="https://tools.ietf.org/html/rfc3339">RFC3339</a> format with the precision of
 milliseconds. Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;2020-12-11T11:38:37Z&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="duration">
+</section>
+<section id="duration">
 <h3><code class="docutils literal notranslate"><span class="pre">Duration</span></code><a class="headerlink" href="#duration" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON string as a list of time measures separated by whitespace.
 A measure is a number followed by the unit and no whitespace between is allowed.
@@ -310,24 +311,24 @@ contain any number of measures with the same unit in no particular order.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;10d 1h 42s 1h&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="pair">
+</section>
+<section id="pair">
 <h3><code class="docutils literal notranslate"><span class="pre">Pair</span></code><a class="headerlink" href="#pair" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON array with two items, depending on the
 nested types. Example of <code class="docutils literal notranslate"><span class="pre">Pair(U8,</span> <span class="pre">ContractAddress)</span></code>:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="list">
+</section>
+<section id="list">
 <h3><code class="docutils literal notranslate"><span class="pre">List</span></code><a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON array with items, depending on the
 nested type. Example of <code class="docutils literal notranslate"><span class="pre">List(U16)</span></code>:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="set">
+</section>
+<section id="set">
 <h3><code class="docutils literal notranslate"><span class="pre">Set</span></code><a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON array with <em>unique</em> items, depending on the
 nested type.
@@ -335,8 +336,8 @@ Example of <code class="docutils literal notranslate"><span class="pre">List(U16
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="map">
+</section>
+<section id="map">
 <h3><code class="docutils literal notranslate"><span class="pre">Map</span></code><a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON array with key-value pairs, depending on the type of
 the key and the type of value. Example of <code class="docutils literal notranslate"><span class="pre">Map(AccountAddress,</span> <span class="pre">U64)</span></code>:</p>
@@ -347,20 +348,20 @@ the key and the type of value. Example of <code class="docutils literal notransl
 <span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="array">
+</section>
+<section id="array">
 <h3><code class="docutils literal notranslate"><span class="pre">Array</span></code><a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON array with the length specified in the
 schema and items depending on the nested type. Example of <code class="docutils literal notranslate"><span class="pre">Array(12,</span> <span class="pre">U8)</span></code>:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="struct">
+</section>
+<section id="struct">
 <h3><code class="docutils literal notranslate"><span class="pre">Struct</span></code><a class="headerlink" href="#struct" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as the fields directly, see below.</p>
-</div>
-<div class="section" id="enum">
+</section>
+<section id="enum">
 <h3><code class="docutils literal notranslate"><span class="pre">Enum</span></code><a class="headerlink" href="#enum" title="Permalink to this headline">¶</a></h3>
 <p>An enum variant is supplied as an JSON object containing a single
 property, where the name of the variant as the property and the fields as the
@@ -376,9 +377,9 @@ value. More about the fields below.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;Some&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="json-for-schema-type-fields">
+</section>
+</section>
+<section id="json-for-schema-type-fields">
 <h2>JSON for schema type fields<a class="headerlink" href="#json-for-schema-type-fields" title="Permalink to this headline">¶</a></h2>
 <p>Structs and the different variants in an enum can have fields, and such fields
 can either be named or unnamed. Unnamed fields are referenced by position.</p>
@@ -389,7 +390,7 @@ can either be named or unnamed. Unnamed fields are referenced by position.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="named">
+<section id="named">
 <h3><code class="docutils literal notranslate"><span class="pre">Named</span></code><a class="headerlink" href="#named" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON object, with the field names as properties and corresponding
 values as property values.
@@ -409,8 +410,8 @@ schema field type.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="unnamed">
+</section>
+<section id="unnamed">
 <h3><code class="docutils literal notranslate"><span class="pre">Unnamed</span></code><a class="headerlink" href="#unnamed" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as a JSON array, with the fields as items corresponding to the types in
 the field schema.</p>
@@ -422,8 +423,8 @@ the field schema.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="empty">
+</section>
+<section id="empty">
 <h3><code class="docutils literal notranslate"><span class="pre">Empty</span></code><a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
 <p>Supplied as an empty JSON array.</p>
 <p>Example of empty fields in the Rust enum <code class="docutils literal notranslate"><span class="pre">Option</span></code>:</p>
@@ -437,9 +438,9 @@ the field schema.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;None&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

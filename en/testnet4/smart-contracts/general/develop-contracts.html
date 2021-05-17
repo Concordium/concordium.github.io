@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Developing smart contracts in Rust &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p><span class="caption-text">General</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contract-module.html">Smart contract modules</a></li>
@@ -117,11 +118,11 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -131,14 +132,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
@@ -218,7 +219,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="developing-smart-contracts-in-rust">
+  <section id="developing-smart-contracts-in-rust">
 <span id="writing-smart-contracts"></span><h1>Developing smart contracts in Rust<a class="headerlink" href="#developing-smart-contracts-in-rust" title="Permalink to this headline">¶</a></h1>
 <p>On the concordium blockchain smart contracts are deployed as Wasm modules, but
 Wasm is designed primarily as a compilation target and is not convenient to
@@ -249,7 +250,7 @@ crate-type = [&quot;cdylib&quot;, &quot;rlib&quot;]
 ...
 </pre></div>
 </div>
-<div class="section" id="writing-a-smart-contract-using-concordium-std">
+<section id="writing-a-smart-contract-using-concordium-std">
 <h2>Writing a smart contract using <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code><a class="headerlink" href="#writing-a-smart-contract-using-concordium-std" title="Permalink to this headline">¶</a></h2>
 <p>It is recommended to use the <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code> crate, which provides a
 more Rust-like experience for developing smart contract modules and calling
@@ -308,7 +309,7 @@ user might want more fine-grained control over the use of host functions.
 For such use cases the annotations support a <code class="docutils literal notranslate"><span class="pre">low_level</span></code> option, which has
 less overhead, but requires more from the user.</p>
 </div>
-<div class="section" id="serializable-state-and-parameters">
+<section id="serializable-state-and-parameters">
 <h3>Serializable state and parameters<a class="headerlink" href="#serializable-state-and-parameters" title="Permalink to this headline">¶</a></h3>
 <p>On-chain, the state of an instance is represented as a byte array and exposed
 in a similar interface as the <code class="docutils literal notranslate"><span class="pre">File</span></code> interface of the Rust standard library.</p>
@@ -332,8 +333,8 @@ enums.</p>
 <p>Strictly speaking we only need to deserialize bytes to our parameter type,
 but it is convenient to be able to serialize types when writing unit tests.</p>
 </div>
-</div>
-<div class="section" id="working-with-parameters">
+</section>
+<section id="working-with-parameters">
 <span id="id4"></span><h3>Working with parameters<a class="headerlink" href="#working-with-parameters" title="Permalink to this headline">¶</a></h3>
 <p>Parameters to the init and receive functions are, like the instance
 state, represented as byte arrays.
@@ -398,9 +399,9 @@ parameter using the <a class="reference external" href="https://docs.rs/concordi
 <code class="docutils literal notranslate"><span class="pre">true</span></code>.
 While the gain in efficiency is minimal in this example, it could have an
 substantial impact for more complex examples.</p>
-</div>
-</div>
-<div class="section" id="building-a-smart-contract-module-with-cargo-concordium">
+</section>
+</section>
+<section id="building-a-smart-contract-module-with-cargo-concordium">
 <h2>Building a smart contract module with <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code><a class="headerlink" href="#building-a-smart-contract-module-with-cargo-concordium" title="Permalink to this headline">¶</a></h2>
 <p>The Rust compiler has good support for compiling to Wasm using the
 <code class="docutils literal notranslate"><span class="pre">wasm32-unknown-unknown</span></code> target.
@@ -414,22 +415,22 @@ recommend using <code class="docutils literal notranslate"><span class="pre">car
 <p>For instructions on how to build using <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> see
 <a class="reference internal" href="../guides/compile-module.html#compile-module"><span class="std std-ref">Compile a Rust smart contract module</span></a>.</p>
 </div>
-</div>
-<div class="section" id="testing-smart-contracts">
+</section>
+<section id="testing-smart-contracts">
 <h2>Testing smart contracts<a class="headerlink" href="#testing-smart-contracts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="unit-tests-with-stubs">
+<section id="unit-tests-with-stubs">
 <h3>Unit tests with stubs<a class="headerlink" href="#unit-tests-with-stubs" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="simulate-contract-calls">
+</section>
+<section id="simulate-contract-calls">
 <h3>Simulate contract calls<a class="headerlink" href="#simulate-contract-calls" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="best-practices">
+</section>
+</section>
+<section id="best-practices">
 <h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="don-t-panic">
+<section id="don-t-panic">
 <h3>Don’t panic<a class="headerlink" href="#don-t-panic" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="avoid-creating-black-holes">
+</section>
+<section id="avoid-creating-black-holes">
 <h3>Avoid creating black holes<a class="headerlink" href="#avoid-creating-black-holes" title="Permalink to this headline">¶</a></h3>
 <p>A smart contract is not required to use the amount of GTU send to it, and by
 default a smart contract does not define any behavior for emptying the balance
@@ -439,12 +440,12 @@ them.</p>
 <p>Therefore it is good practice for smart contracts that are not dealing with GTU,
 to ensure the sent amount of GTU is zero and reject any invocations which are
 not.</p>
-</div>
-<div class="section" id="move-heavy-calculations-off-chain">
+</section>
+<section id="move-heavy-calculations-off-chain">
 <h3>Move heavy calculations off-chain<a class="headerlink" href="#move-heavy-calculations-off-chain" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

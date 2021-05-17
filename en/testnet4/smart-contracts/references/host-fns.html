@@ -6,7 +6,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Contract host functions &mdash; Concordium  documentation</title>
@@ -102,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
@@ -111,11 +112,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -125,14 +126,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulate-context.html">Simulation contexts</a></li>
@@ -220,7 +221,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="contract-host-functions">
+  <section id="contract-host-functions">
 <span id="host-functions"></span><h1>Contract host functions<a class="headerlink" href="#contract-host-functions" title="Permalink to this headline">¶</a></h1>
 <p>This is a reference of the functions in the <code class="docutils literal notranslate"><span class="pre">concordium</span></code> module supplied by a
 host running smart contract Wasm module.</p>
@@ -230,7 +231,7 @@ host running smart contract Wasm module.</p>
 Instead, they are to be used behind a more idiomatic, language-specific API
 supplied by a library, such as <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a> for Rust.</p>
 </div>
-<span class="target" id="module-concordium"></span><div class="section" id="logging-events">
+<span class="target" id="module-concordium"></span><section id="logging-events">
 <span id="host-functions-log"></span><h2>Logging events<a class="headerlink" href="#logging-events" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="concordium.log_event">
@@ -248,8 +249,8 @@ execution of the smart contract.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="function-parameter">
+</section>
+<section id="function-parameter">
 <h2>Function parameter<a class="headerlink" href="#function-parameter" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="concordium.get_parameter_size">
@@ -291,8 +292,8 @@ enough bytes available (i.e., if <code class="docutils literal notranslate"><spa
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="smart-contract-instance-state">
+</section>
+<section id="smart-contract-instance-state">
 <span id="host-functions-state"></span><h2>Smart contract instance state<a class="headerlink" href="#smart-contract-instance-state" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="concordium.state_size">
@@ -374,8 +375,8 @@ The additional state is initialized to <cite>0</cite>.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="chain-data">
+</section>
+<section id="chain-data">
 <span id="host-function-chain-getters"></span><h2>Chain data<a class="headerlink" href="#chain-data" title="Permalink to this headline">¶</a></h2>
 <p>Functions for reading information about the chain.</p>
 <dl class="py function">
@@ -435,8 +436,8 @@ current block has a finalized pointer to.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="only-in-init-function">
+</section>
+<section id="only-in-init-function">
 <h2>Only in init function<a class="headerlink" href="#only-in-init-function" title="Permalink to this headline">¶</a></h2>
 <p>Functions only accessible for smart contract init functions. If called from
 a receive function execution will abort.</p>
@@ -452,8 +453,8 @@ bytes and the memory must be large enough to contain it.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="only-in-receive-function">
+</section>
+<section id="only-in-receive-function">
 <h2>Only in receive function<a class="headerlink" href="#only-in-receive-function" title="Permalink to this headline">¶</a></h2>
 <p>Functions only accessible for smart contract receive functions.</p>
 <dl class="py function">
@@ -515,7 +516,7 @@ which lead to triggering the receive function.</p>
 </dl>
 </dd></dl>
 
-<div class="section" id="action-description">
+<section id="action-description">
 <span id="host-functions-actions"></span><h3>Action description<a class="headerlink" href="#action-description" title="Permalink to this headline">¶</a></h3>
 <p>The description of actions to execute on the chain, returned by smart contract
 receive function.</p>
@@ -624,9 +625,9 @@ one of the <code class="docutils literal notranslate"><span class="pre">actions<
 </dl>
 </dd></dl>
 
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
