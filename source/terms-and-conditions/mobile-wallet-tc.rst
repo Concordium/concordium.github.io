@@ -188,7 +188,7 @@ misunderstanding. The address is Østergade 13, 2., 1100 København K.
 New copy of these terms and conditions
 ======================================
 
-You can always find the latest version on `concordium.software`_.
+You can always find the latest version on concordium.software.
 
 You can contact Concordium Mobile Wallet support via support@concordium.software.
 
