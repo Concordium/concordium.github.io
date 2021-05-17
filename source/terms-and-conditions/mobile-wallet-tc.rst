@@ -1,4 +1,5 @@
 .. _concordium.software: https://concordium.software/
+.. _developers.concordium.com: https://developers.concordium.com/
 
 .. _mobile-wallet-tc:
 
@@ -16,7 +17,7 @@ Introduction
 ============
 
 Concordium Mobile Wallet is a digital wallet that is offered worldwide by Concordium Software ApS (‘Concordium Software’).
-At developers.concordium.com, you can read about how the app works. Concordium Software may continually change and/or
+At `developers.concordium.com`_, you can read about how the app works. Concordium Software may continually change and/or
 adjust the functions of Concordium Mobile Wallet. Concordium Software’s terms and conditions apply to Concordium
 Mobile Wallet users worldwide.
 
@@ -164,7 +165,7 @@ Privacy
 =======
 
 When reasonably practicable, Concordium Software will attempt to respect your privacy. Concordium Software will not monitor, edit, or
-disclose any personal information about you or your account, including its contents or you use of the Concordium Mobile Wallet, without
+disclose any personal information about you or your account, including its contents or your use of the Concordium Mobile Wallet, without
 your prior consent unless Concordium Software has a good faith belief that such action is necessary to: (i) comply with legal process or
 other legal requirements of any governmental authority; (ii) protect and defend the rights or property of Concordium Software;
 (iii) enforce this Agreement; (iv) protect the interests of users of the Concordium Mobile Wallet other than you or any other person;
@@ -188,7 +189,7 @@ misunderstanding. The address is Østergade 13, 2., 1100 København K.
 New copy of these terms and conditions
 ======================================
 
-You can always find the latest version on concordium.software.
+You can always find the latest version on `concordium.software`_.
 
 You can contact Concordium Mobile Wallet support via support@concordium.software.
 
