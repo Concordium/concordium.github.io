@@ -195,4 +195,5 @@ You can contact Concordium Mobile Wallet support via support@concordium.software
 Acceptance
 ==========
 
-By clicking on "I Accept" while downloading the Concordium Mobile Wallet, you agree to these terms and conditions.
+The first time you open the Concordium Mobile Wallet, you’ll be asked to click "Yes, I Accept" 
+to confirm that you agree to these terms and conditions.
