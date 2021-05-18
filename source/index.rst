@@ -9,4 +9,3 @@ Contents
 
    smart-contracts/index
    testnet/index
-   terms-and-conditions/index
