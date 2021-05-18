@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Introduction to smart contracts &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">General</span></p>
+              <p class="caption"><span class="caption-text">General</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to smart contracts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-are-smart-contracts-for">What are smart contracts for?</a></li>
@@ -117,11 +117,11 @@
 <li class="toctree-l1"><a class="reference internal" href="resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p><span class="caption-text">Tutorials</span></p>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p><span class="caption-text">Contract development guides</span></p>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -131,14 +131,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p><span class="caption-text">On-chain guides</span></p>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
@@ -218,7 +218,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="introduction-to-smart-contracts">
+  <div class="section" id="introduction-to-smart-contracts">
 <span id="introduction"></span><h1>Introduction to smart contracts<a class="headerlink" href="#introduction-to-smart-contracts" title="Permalink to this headline">¶</a></h1>
 <p>A smart contract is a user-supplied piece of code submitted to the Concordium
 blockchain, used to define behavior that is not directly part of the core
@@ -233,7 +233,7 @@ message. In practice smart contracts will often be a small part of a larger
 system, combining on and off-chain functionality. An example of off-chain
 functionality could be a server that invokes the smart contract based on
 data from the real-world, such as prices of stocks, or weather information.</p>
-<section id="what-are-smart-contracts-for">
+<div class="section" id="what-are-smart-contracts-for">
 <h2>What are smart contracts for?<a class="headerlink" href="#what-are-smart-contracts-for" title="Permalink to this headline">¶</a></h2>
 <p>Smart contracts can reduce the needed amount of trust in third-parties, in some cases
 removing the need for a trusted third-party, in other cases reducing their
@@ -241,7 +241,7 @@ capabilities and thus reducing the amount of trust needed in them.</p>
 <p>Because smart contracts are executed completely transparently, in a way that
 anybody with access to a node can verify, they can be very useful for ensuring
 agreement between parties.</p>
-<section id="auction-smart-contract-example">
+<div class="section" id="auction-smart-contract-example">
 <span id="auction"></span><h3>Auction smart contract example<a class="headerlink" href="#auction-smart-contract-example" title="Permalink to this headline">¶</a></h3>
 <p>A use case for smart contracts could be for holding an auction; here we program
 the smart contract to accept different bids from anyone and have it keep track
@@ -255,9 +255,9 @@ needs to support some notion of proof that the seller has indeed fulfilled their
 obligation, or some way for the highest bidder to file a complaint. Smart
 contracts cannot resolve these real-world issues automatically, and the best
 solution is likely going to depend on the specifics of the auction.</p>
-</section>
-</section>
-<section id="what-are-smart-contracts-not-for">
+</div>
+</div>
+<div class="section" id="what-are-smart-contracts-not-for">
 <h2>What are smart contracts <em>not</em> for?<a class="headerlink" href="#what-are-smart-contracts-not-for" title="Permalink to this headline">¶</a></h2>
 <p>Smart contracts are a very exciting technology and people are still finding new
 ways to take advantage of them.
@@ -277,15 +277,15 @@ on the Concordium network, meaning it is difficult to handle sensitive data in a
 smart contract. In some cases it might be possible to use cryptographic tools to
 not work with the data directly, but rather have the smart contracts work with
 derived notions such as encryptions and commitments, which hide the actual data.</p>
-</section>
-<section id="life-cycle-of-a-smart-contract">
+</div>
+<div class="section" id="life-cycle-of-a-smart-contract">
 <h2>Life cycle of a smart contract<a class="headerlink" href="#life-cycle-of-a-smart-contract" title="Permalink to this headline">¶</a></h2>
 <p>A smart contract is first deployed to the chain as part of a <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">contract
 module</span></a>. After this a smart contract can be <em>initialized</em> to
 obtain a <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">smart contract instance</span></a>. Finally a smart
 contract instance can be repeatedly updated according to its own logic.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

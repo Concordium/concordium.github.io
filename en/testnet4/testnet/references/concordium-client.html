@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Concordium Client &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
@@ -112,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Concordium Client</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#commands-and-help">Commands and help</a></li>
@@ -126,7 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-node.html">Querying a node</a></li>
 </ul>
-<p><span class="caption-text">See Also</span></p>
+<p class="caption"><span class="caption-text">See Also</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
@@ -204,7 +204,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="concordium-client">
+  <div class="section" id="concordium-client">
 <span id="id1"></span><h1>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -244,7 +244,7 @@ the client, but the rest of available commands will be discussed on the pages
 where the features that use them are documented. Some commands will perform
 <a class="reference internal" href="query-node.html#testnet-query-node"><span class="std std-ref">queries</span></a> and others send <a class="reference internal" href="transactions.html#transactions"><span class="std std-ref">transactions</span></a>.</p>
 </div>
-<section id="commands-and-help">
+<div class="section" id="commands-and-help">
 <h2>Commands and help<a class="headerlink" href="#commands-and-help" title="Permalink to this headline">¶</a></h2>
 <p>The commands supported by the tool are divided into two categories: the
 high-level and low-level commands. The high-level commands provide a streamlined
@@ -281,8 +281,8 @@ topic to see the available commands within that topic:</p>
 <span class="go">  -h,--help                Show this help text</span>
 </pre></div>
 </div>
-</section>
-<section id="configuration">
+</div>
+<div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>You can store accounts and their keys on disk to avoid having to pass them as
 command-line options.</p>
@@ -302,7 +302,7 @@ storage and a password is required each time the key is needed. The password is
 chosen when the keys are either imported via <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">account</span> <span class="pre">import</span></code> (see
 below), or when keys are added to the account afterwards.</p>
 <p>Read more about accounts <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">here</span></a>.</p>
-<section id="location">
+<div class="section" id="location">
 <h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
 <p>On the testnet, the configuration directory is mapped by Docker into a
 system-dependent directory:</p>
@@ -312,15 +312,15 @@ system-dependent directory:</p>
 (<code class="docutils literal notranslate"><span class="pre">C:\\Users\\%USERNAME%\\AppData\\Roaming\\concordium</span></code> in a
 standard setup)</p></li>
 </ul>
-</section>
-<section id="initialization">
+</div>
+<div class="section" id="initialization">
 <h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">config</span> <span class="pre">init</span></code> initializes the configuration
 structure. The distribution does this automatically, so it should not be
 necessary to use this command. If the configuration structure becomes corrupt
 for some reason, it may also be able to repair it.</p>
-</section>
-<section id="display-contents">
+</div>
+<div class="section" id="display-contents">
 <h3>Display contents<a class="headerlink" href="#display-contents" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
 </pre></div>
@@ -329,7 +329,7 @@ for some reason, it may also be able to repair it.</p>
 stored keys that are used for signing transactions (under the <code class="docutils literal notranslate"><span class="pre">Account</span> <span class="pre">Keys</span></code>
 section) and the stored key for sending encrypted transfers (under the
 <code class="docutils literal notranslate"><span class="pre">Encryption</span> <span class="pre">secret</span> <span class="pre">key</span></code> section) when they are present.</p>
-<section id="example">
+<div class="section" id="example">
 <h4>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
 <span class="go">Base configuration:</span>
@@ -386,12 +386,12 @@ section) and the stored key for sending encrypted transfers (under the
 </div>
 <p>Note that listed location of the configuration is the path inside the Docker
 container.</p>
-</section>
-</section>
-<section id="add-accounts-and-keys">
+</div>
+</div>
+<div class="section" id="add-accounts-and-keys">
 <h3>Add accounts and keys<a class="headerlink" href="#add-accounts-and-keys" title="Permalink to this headline">¶</a></h3>
 <p>See also the <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">Managing accounts</span></a> section.</p>
-<section id="add-account">
+<div class="section" id="add-account">
 <h4>Add account<a class="headerlink" href="#add-account" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account add ADDRESS <span class="o">[</span>--name NAME<span class="o">]</span>
 </pre></div>
@@ -401,8 +401,8 @@ container.</p>
 throughout the client.</p>
 <p>This doesn’t add any private information to the stored account, so it can be
 considered as just creating an alias for an address.</p>
-</section>
-<section id="add-key-to-an-account">
+</div>
+<div class="section" id="add-key-to-an-account">
 <h4>Add key to an account<a class="headerlink" href="#add-key-to-an-account" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account add-keys --account ACCOUNT --keys KEYS
 </pre></div>
@@ -429,8 +429,8 @@ were shown above when printing the configuration:</p>
  <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="import-accounts-and-keys-from-the-wallet-apps">
+</div>
+<div class="section" id="import-accounts-and-keys-from-the-wallet-apps">
 <span id="concordium-client-import-accounts-keys"></span><h4>Import accounts and keys from the Wallet apps<a class="headerlink" href="#import-accounts-and-keys-from-the-wallet-apps" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import FILE <span class="o">[</span>--name NAME<span class="o">]</span>
 </pre></div>
@@ -440,10 +440,10 @@ were shown above when printing the configuration:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">--name</span></code> option selects which account to import and imports it with this
 name. If it’s omitted, all accounts in the file are imported under their
 existing names.</p>
-</section>
-</section>
-</section>
-<section id="shell-completion">
+</div>
+</div>
+</div>
+<div class="section" id="shell-completion">
 <h2>Shell completion<a class="headerlink" href="#shell-completion" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> has support for generating completion functions for
 bash, zsh, and fish.</p>
@@ -455,13 +455,13 @@ bash, zsh, and fish.</p>
 <code class="docutils literal notranslate"><span class="pre">--fish-completion-script</span></code> for zsh and fish, respectively.</p>
 <p>See the documentation of the <a class="reference external" href="https://github.com/pcapriotti/optparse-applicative#user-content-bash-zsh-and-fish-completions">framework</a> used to implement the command
 structure of <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for more details.</p>
-</section>
-<section id="support-feedback">
+</div>
+<div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
 <p>If you run into any issues or have suggestions, post your question or feedback
 on <a class="reference external" href="https://discord.com/invite/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

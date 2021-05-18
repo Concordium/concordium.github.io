@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. Testing the piggy bank smart contract &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">General</span></p>
+              <p class="caption"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/contract-module.html">Smart contract modules</a></li>
@@ -112,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p><span class="caption-text">Tutorials</span></p>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">The piggy bank smart contract</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="writing.html">1. Writing the piggy bank smart contract</a></li>
@@ -120,7 +120,7 @@
 </ul>
 </li>
 </ul>
-<p><span class="caption-text">Contract development guides</span></p>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -130,14 +130,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p><span class="caption-text">On-chain guides</span></p>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references/simulate-context.html">Simulation contexts</a></li>
@@ -219,7 +219,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="testing-the-piggy-bank-smart-contract">
+  <div class="section" id="testing-the-piggy-bank-smart-contract">
 <span id="piggy-bank-testing"></span><h1><span class="section-number">2. </span>Testing the piggy bank smart contract<a class="headerlink" href="#testing-the-piggy-bank-smart-contract" title="Permalink to this headline">¶</a></h1>
 <p>This is the second <a class="reference internal" href="index.html#piggy-bank"><span class="std std-ref">part of a tutorial</span></a> on smart contract
 development.
@@ -245,7 +245,7 @@ contract is, and some experience with <a class="reference external" href="https:
 <li><p><a class="reference internal" href="#simulating-the-piggy-bank" id="id10">Simulating the piggy bank</a></p></li>
 </ul>
 </div>
-<section id="preparation">
+<div class="section" id="preparation">
 <h2><span class="section-number">2.1. </span>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
 <p>Before we start, make sure to have the necessary tooling for building Rust
 contracts.
@@ -254,8 +254,8 @@ Also, make sure to have a text editor setup for writing Rust.</p>
 <p>Since we are going to extend the smart contract code written in the previous
 part, either follow the previous part or copy the resulting code from there.</p>
 <p>We are now ready for writing unit tests for our smart contract!</p>
-</section>
-<section id="adding-a-test-module">
+</div>
+<div class="section" id="adding-a-test-module">
 <h2><span class="section-number">2.2. </span>Adding a test module<a class="headerlink" href="#adding-a-test-module" title="Permalink to this headline">¶</a></h2>
 <p>Since a smart contract module is written as a Rust library, we can test it as
 one would test any library and write unit-tests as part of the Rust module.</p>
@@ -286,8 +286,8 @@ stubs for this, so let us first bring everything from the submodule into scope.<
 </pre></div>
 </div>
 <p>Now we can start adding tests to this module.</p>
-</section>
-<section id="testing-instantiation-of-a-piggy-bank">
+</div>
+<div class="section" id="testing-instantiation-of-a-piggy-bank">
 <h2><span class="section-number">2.3. </span>Testing instantiation of a piggy bank<a class="headerlink" href="#testing-instantiation-of-a-piggy-bank" title="Permalink to this headline">¶</a></h2>
 <p>The first test we add is to verify a piggy bank is set up with the correct
 state.</p>
@@ -359,8 +359,8 @@ piggy bank:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo <span class="nb">test</span>
 </pre></div>
 </div>
-</section>
-<section id="test-inserting-gtu-into-a-piggy-bank">
+</div>
+<div class="section" id="test-inserting-gtu-into-a-piggy-bank">
 <h2><span class="section-number">2.4. </span>Test inserting GTU into a piggy bank<a class="headerlink" href="#test-inserting-gtu-into-a-piggy-bank" title="Permalink to this headline">¶</a></h2>
 <p>Next we should test the different functions for interacting with a piggy bank.
 This is done in the same way as initializing, except we use <code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code>
@@ -416,8 +416,8 @@ In our case the state should remain intact and the function produce only the act
 <p>Next we could add a test, checking that inserting into a piggy bank with state
 <code class="docutils literal notranslate"><span class="pre">Smashed</span></code> results in an error, but we have been through everything needed to
 do this, and we therefore leave as an exercise for the reader.</p>
-</section>
-<section id="test-smashing-a-piggy-bank">
+</div>
+<div class="section" id="test-smashing-a-piggy-bank">
 <h2><span class="section-number">2.5. </span>Test smashing a piggy bank<a class="headerlink" href="#test-smashing-a-piggy-bank" title="Permalink to this headline">¶</a></h2>
 <p>Testing <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> will follow the same pattern, but this time we will need
 to populate the context, since this function uses the context for getting the
@@ -478,8 +478,8 @@ in the previous tests:</p>
 </pre></div>
 </div>
 <p>Ensure everything compiles and the tests succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
-</section>
-<section id="testing-cause-of-rejection">
+</div>
+<div class="section" id="testing-cause-of-rejection">
 <h2><span class="section-number">2.6. </span>Testing cause of rejection<a class="headerlink" href="#testing-cause-of-rejection" title="Permalink to this headline">¶</a></h2>
 <p>We want to test that our piggy bank rejects in certain contexts, for example
 when someone besides the owner of the smart contract tries to smash it.</p>
@@ -605,8 +605,8 @@ since the blockchain would not have any use of this information.
 Thus, introducing a custom error type is solely for the purpose of writing
 better tests.</p>
 </div>
-</section>
-<section id="compiling-and-running-tests-in-wasm">
+</div>
+<div class="section" id="compiling-and-running-tests-in-wasm">
 <h2><span class="section-number">2.7. </span>Compiling and running tests in Wasm<a class="headerlink" href="#compiling-and-running-tests-in-wasm" title="Permalink to this headline">¶</a></h2>
 <p>When running <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code> our contract module and tests are compiled targeting
 your native platform, but on the Concordium blockchain a smart contract module
@@ -746,8 +746,8 @@ using <code class="docutils literal notranslate"><span class="pre">cargo</span> 
 <p>This will make a special test build of our smart contract module exporting all
 of our tests as functions and it will then run each of these functions catching
 the reported errors.</p>
-</section>
-<section id="simulating-the-piggy-bank">
+</div>
+<div class="section" id="simulating-the-piggy-bank">
 <h2><span class="section-number">2.8. </span>Simulating the piggy bank<a class="headerlink" href="#simulating-the-piggy-bank" title="Permalink to this headline">¶</a></h2>
 <p>So far the tests we have written are in <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and have to be compiled alongside
 the smart contract module in a test build, which is fine for unit testing, but
@@ -758,8 +758,8 @@ can use the simulate feature of <code class="docutils literal notranslate"><span
 wasm module and uses the Wasm interpreter to run a smart contract function in a
 given context.</p>
 <p>For more on how to do this: check out the guide <a class="reference internal" href="../../guides/local-simulate.html#local-simulate"><span class="std std-ref">Locally simulate contract functions</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

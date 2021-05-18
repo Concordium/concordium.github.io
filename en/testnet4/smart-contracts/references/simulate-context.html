@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Simulation contexts &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">General</span></p>
+              <p class="caption"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
@@ -112,11 +112,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p><span class="caption-text">Tutorials</span></p>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p><span class="caption-text">Contract development guides</span></p>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -126,14 +126,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p><span class="caption-text">On-chain guides</span></p>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Simulation contexts</a><ul>
@@ -219,11 +219,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="simulation-contexts">
+  <div class="section" id="simulation-contexts">
 <span id="simulate-context"></span><h1>Simulation contexts<a class="headerlink" href="#simulation-contexts" title="Permalink to this headline">¶</a></h1>
 <p>This is a reference of how the init- and receive-context is specified as JSON,
 when <a class="reference internal" href="../guides/local-simulate.html#local-simulate"><span class="std std-ref">simulating contract functions locally</span></a>.</p>
-<section id="init-context">
+<div class="section" id="init-context">
 <h2>Init context<a class="headerlink" href="#init-context" title="Permalink to this headline">¶</a></h2>
 <p>The context accessible in an init function.</p>
 <p>Example of context</p>
@@ -240,12 +240,12 @@ when <a class="reference internal" href="../guides/local-simulate.html#local-sim
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="metadata">
+<div class="section" id="metadata">
 <h3><code class="docutils literal notranslate"><span class="pre">metadata</span></code><a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
 <p>JSON Object containing the chain meta data, see <a class="reference internal" href="#context-metadata"><span class="std std-ref">Chain meta data</span></a> for a
 reference of the fields.</p>
-</section>
-<section id="initorigin">
+</div>
+<div class="section" id="initorigin">
 <h3><code class="docutils literal notranslate"><span class="pre">initOrigin</span></code><a class="headerlink" href="#initorigin" title="Permalink to this headline">¶</a></h3>
 <p>The account address which triggered the invocation of the init function, by
 instantiating the smart contract.</p>
@@ -253,14 +253,14 @@ instantiating the smart contract.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="senderpolicies">
+</div>
+<div class="section" id="senderpolicies">
 <h3><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code><a class="headerlink" href="#senderpolicies" title="Permalink to this headline">¶</a></h3>
 <p>JSON array of the policies of the sender, see <a class="reference internal" href="#context-sender-policy"><span class="std std-ref">Policy</span></a> for a
 reference a policy.</p>
-</section>
-</section>
-<section id="receive-context">
+</div>
+</div>
+<div class="section" id="receive-context">
 <h2>Receive context<a class="headerlink" href="#receive-context" title="Permalink to this headline">¶</a></h2>
 <p>The context accessible in a receive function.</p>
 <p>Example of context:</p>
@@ -284,12 +284,12 @@ reference a policy.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h3><code class="docutils literal notranslate"><span class="pre">metadata</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>JSON Object containing the chain meta data, see <a class="reference internal" href="#context-metadata"><span class="std std-ref">Chain meta data</span></a> for a
 reference of the fields.</p>
-</section>
-<section id="invoker">
+</div>
+<div class="section" id="invoker">
 <h3><code class="docutils literal notranslate"><span class="pre">invoker</span></code><a class="headerlink" href="#invoker" title="Permalink to this headline">¶</a></h3>
 <p>The account address which made the transaction triggering the invocation of the
 receive function, by updating a smart contract instance.</p>
@@ -297,8 +297,8 @@ receive function, by updating a smart contract instance.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="sender">
+</div>
+<div class="section" id="sender">
 <h3><code class="docutils literal notranslate"><span class="pre">sender</span></code><a class="headerlink" href="#sender" title="Permalink to this headline">¶</a></h3>
 <p>The address of the sender of the message triggering the receive function.
 Can be either a smart contract instance or an account address, given as a JSON
@@ -311,13 +311,13 @@ object.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;contract&quot;</span><span class="p">,</span> <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span> <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>JSON array of the policies of the sender, see <a class="reference internal" href="#context-sender-policy"><span class="std std-ref">Policy</span></a> for a
 reference a policy.</p>
-</section>
-<section id="owner">
+</div>
+<div class="section" id="owner">
 <h3><code class="docutils literal notranslate"><span class="pre">owner</span></code><a class="headerlink" href="#owner" title="Permalink to this headline">¶</a></h3>
 <p>JSON string containing the account address of the owner of the smart contract
 instance.</p>
@@ -325,8 +325,8 @@ instance.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="selfaddress">
+</div>
+<div class="section" id="selfaddress">
 <h3><code class="docutils literal notranslate"><span class="pre">selfAddress</span></code><a class="headerlink" href="#selfaddress" title="Permalink to this headline">¶</a></h3>
 <p>JSON object describing the contract address of the current smart contract
 instance.
@@ -335,17 +335,17 @@ Must contain the <code class="docutils literal notranslate"><span class="pre">in
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="selfbalance">
+</div>
+<div class="section" id="selfbalance">
 <h3><code class="docutils literal notranslate"><span class="pre">selfBalance</span></code><a class="headerlink" href="#selfbalance" title="Permalink to this headline">¶</a></h3>
 <p>A JSON string with the balance of the smart contract instance in micro GTU.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;100&quot;</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="chain-meta-data">
+</div>
+</div>
+<div class="section" id="chain-meta-data">
 <span id="context-metadata"></span><h2>Chain meta data<a class="headerlink" href="#chain-meta-data" title="Permalink to this headline">¶</a></h2>
 <p>Both the init- and receive-context contains a <code class="docutils literal notranslate"><span class="pre">metadata</span></code> section containing
 information of the blockchain at the block the smart contract is executed in.
@@ -356,13 +356,13 @@ Below we refer to this block as the <em>current block</em>.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="slottime">
+<div class="section" id="slottime">
 <h3><code class="docutils literal notranslate"><span class="pre">slotTime</span></code><a class="headerlink" href="#slottime" title="Permalink to this headline">¶</a></h3>
 <p>The slot time at the beginning of the current block as a JSON string in the
 format of <a class="reference external" href="https://tools.ietf.org/html/rfc3339">RFC3339</a> with precision up to milliseconds.</p>
-</section>
-</section>
-<section id="policy">
+</div>
+</div>
+<div class="section" id="policy">
 <span id="context-sender-policy"></span><h2>Policy<a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h2>
 <p>Both the init- and receive-context contain a list of policies of the sender.
 Such a policy is represented as a JSON Object.</p>
@@ -374,22 +374,22 @@ Such a policy is represented as a JSON Object.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="identityprovider">
+<div class="section" id="identityprovider">
 <h3><code class="docutils literal notranslate"><span class="pre">identityProvider</span></code><a class="headerlink" href="#identityprovider" title="Permalink to this headline">¶</a></h3>
 <p>The id of the identity provider as a JSON number.</p>
-</section>
-<section id="createdat">
+</div>
+<div class="section" id="createdat">
 <h3><code class="docutils literal notranslate"><span class="pre">createdAt</span></code><a class="headerlink" href="#createdat" title="Permalink to this headline">¶</a></h3>
 <p>The year and month of the date this policy was created at, given as a JSON
 string in the format <em>YYYYMM</em>.</p>
-</section>
-<section id="validto">
+</div>
+<div class="section" id="validto">
 <h3><code class="docutils literal notranslate"><span class="pre">validTo</span></code><a class="headerlink" href="#validto" title="Permalink to this headline">¶</a></h3>
 <p>The year and month of the date this policy is valid to, given as a JSON string
 in the format <em>YYYYMM</em>.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

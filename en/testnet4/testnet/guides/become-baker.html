@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Become a baker (create blocks) &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="get-the-app.html">Concordium ID: Install the app</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">Concordium ID: Get started with the app</a></li>
@@ -119,7 +119,7 @@
 </ul>
 </li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
-<p><span class="caption-text">See Also</span></p>
+<p class="caption"><span class="caption-text">See Also</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
@@ -205,7 +205,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="become-a-baker-create-blocks">
+  <div class="section" id="become-a-baker-create-blocks">
 <span id="become-a-baker"></span><h1>Become a baker (create blocks)<a class="headerlink" href="#become-a-baker-create-blocks" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -257,9 +257,9 @@ is added to the chain the node’s baker will receive a reward.</p>
 <p>In this section we will use the name <code class="docutils literal notranslate"><span class="pre">bakerAccount</span></code> as the name of the
 account that will be used to register and manage a baker.</p>
 </div>
-<section id="definitions">
+<div class="section" id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
-<section id="baker">
+<div class="section" id="baker">
 <h3>Baker<a class="headerlink" href="#baker" title="Permalink to this headline">¶</a></h3>
 <p>A node is a <em>baker</em> (or <em>is baking</em>) when it actively participates in the
 network by creating new blocks that are added to the chain. A baker collects,
@@ -267,20 +267,20 @@ orders and validates the transactions that are included in a block to maintain
 the integrity of the blockchain. The baker signs each block that they bake so
 that the block can be checked and executed by the rest of the participants of
 the network.</p>
-</section>
-<section id="baker-keys">
+</div>
+<div class="section" id="baker-keys">
 <h3>Baker keys<a class="headerlink" href="#baker-keys" title="Permalink to this headline">¶</a></h3>
 <p>Each baker has a set of cryptographic keys called <em>baker keys</em>. The node uses
 these keys to sign the blocks that it bakes. In order to bake blocks signed by a
 specific baker the node has to be running with its set of baker keys loaded.</p>
-</section>
-<section id="baker-account">
+</div>
+<div class="section" id="baker-account">
 <h3>Baker account<a class="headerlink" href="#baker-account" title="Permalink to this headline">¶</a></h3>
 <p>Each account can use a set of baker keys to register a baker.</p>
 <p>Whenever a baker bakes a valid block that gets included in the chain, after some
 time a reward is paid to the associated account.</p>
-</section>
-<section id="stake-and-lottery">
+</div>
+<div class="section" id="stake-and-lottery">
 <h3>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Permalink to this headline">¶</a></h3>
 <p>The account can stake part of its GTU balance into the <em>baker stake</em> and can
 later manually release all or part of the staked amount. The staked amount
@@ -295,8 +295,8 @@ the amount can be staked even if not released yet.</p>
 proportional to the staked amount.</p>
 <p>The same stake is used when calculating whether a baker is included in the finalization
 committee or not. See <a class="reference internal" href="#finalization">Finalization</a>.</p>
-</section>
-<section id="epochs-and-slots">
+</div>
+<div class="section" id="epochs-and-slots">
 <span id="id2"></span><h3>Epochs and slots<a class="headerlink" href="#epochs-and-slots" title="Permalink to this headline">¶</a></h3>
 <p>In the Concordium blockchain, time is subdivided into <em>slots</em>. Slots have a time
 duration fixed at the Genesis block. On any given branch, each slot can have at
@@ -306,11 +306,11 @@ same slot.</p>
 concept of an <em>epoch</em> as a unit of time that defines a period in which the set
 of current bakers and stakes are fixed. Epochs have a time duration fixed at the
 Genesis block. In the testnet, epochs have a duration of <strong>1 hour</strong>.</p>
-</section>
-</section>
-<section id="start-baking">
+</div>
+</div>
+<div class="section" id="start-baking">
 <h2>Start baking<a class="headerlink" href="#start-baking" title="Permalink to this headline">¶</a></h2>
-<section id="managing-accounts">
+<div class="section" id="managing-accounts">
 <h3>Managing accounts<a class="headerlink" href="#managing-accounts" title="Permalink to this headline">¶</a></h3>
 <p>This section provides a brief recap of the relevant steps for importing an
 account. For a complete description, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
@@ -324,8 +324,8 @@ allows you to get a JSON file containing the account information.</p>
 <p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will ask for a password to decrypt the exported file and
 import all accounts. The same password will be used for encrypting the
 transaction signing keys and the encrypted transfers key.</p>
-</section>
-<section id="creating-keys-for-a-baker-and-registering-it">
+</div>
+<div class="section" id="creating-keys-for-a-baker-and-registering-it">
 <h3>Creating keys for a baker and registering it<a class="headerlink" href="#creating-keys-for-a-baker-and-registering-it" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -402,11 +402,11 @@ the transaction for adding the baker was included in a block.</p>
 baker will be considered as part of the baking committee when epoch
 <cite>E+2</cite> starts.</p>
 </div>
-</section>
-</section>
-<section id="managing-the-baker">
+</div>
+</div>
+<div class="section" id="managing-the-baker">
 <h2>Managing the baker<a class="headerlink" href="#managing-the-baker" title="Permalink to this headline">¶</a></h2>
-<section id="checking-the-status-of-the-baker-and-its-lottery-power">
+<div class="section" id="checking-the-status-of-the-baker-and-its-lottery-power">
 <h3>Checking the status of the baker and its lottery power<a class="headerlink" href="#checking-the-status-of-the-baker-and-its-lottery-power" title="Permalink to this headline">¶</a></h3>
 <p>In order to see if the node is baking, you can check various sources that
 offer different degrees of precision in the information displayed.</p>
@@ -448,8 +448,8 @@ as seen in this image:</p>
 <a class="reference internal image-reference" href="../../_images/bab-reward.png"><img alt="../../_images/bab-reward.png" class="align-center" src="../../_images/bab-reward.png" style="width: 250px;" /></a>
 </li>
 </ul>
-</section>
-<section id="updating-the-staked-amount">
+</div>
+<div class="section" id="updating-the-staked-amount">
 <h3>Updating the staked amount<a class="headerlink" href="#updating-the-staked-amount" title="Permalink to this headline">¶</a></h3>
 <p>To update the baker stake run</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker update-stake --stake &lt;newAmount&gt; --sender bakerAccount
@@ -548,8 +548,8 @@ short term. In particular, to deregister a baker or to modify the staked
 amount you need to own some non-staked GTU to cover the transaction
 costs.</p>
 </div>
-</section>
-<section id="restaking-the-earnings">
+</div>
+<div class="section" id="restaking-the-earnings">
 <h3>Restaking the earnings<a class="headerlink" href="#restaking-the-earnings" title="Permalink to this headline">¶</a></h3>
 <p>When participating as a baker in the network and baking blocks, the account
 receives rewards on each baked block. These rewards are automatically added to
@@ -610,8 +610,8 @@ the <code class="docutils literal notranslate"><span class="pre">baker</span> <s
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add baker-keys.json --sender bakerAccount --stake &lt;amountToStake&gt; --out baker-credentials.json --no-restake
 </pre></div>
 </div>
-</section>
-<section id="finalization">
+</div>
+<div class="section" id="finalization">
 <h3>Finalization<a class="headerlink" href="#finalization" title="Permalink to this headline">¶</a></h3>
 <p>Finalization is the voting process performed by nodes in the <em>finalization
 committee</em> that <em>finalizes</em> a block when a sufficiently big number of members of
@@ -627,9 +627,9 @@ in the finalization committee is <strong>0.1% of the total amount of existing GT
 <p>Participating in the finalization committee produces rewards on each block that
 is finalized. The rewards are paid to the baker account some time after the
 block is finalized.</p>
-</section>
-</section>
-<section id="removing-a-baker">
+</div>
+</div>
+<div class="section" id="removing-a-baker">
 <h2>Removing a baker<a class="headerlink" href="#removing-a-baker" title="Permalink to this headline">¶</a></h2>
 <p>The controlling account can choose to de-register its baker on the chain. To do
 so you have to execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
@@ -683,13 +683,13 @@ with <code class="docutils literal notranslate"><span class="pre">concordium-cli
 simultaneously. During the cooldown period produced by decreasing the staked
 amount, the baker cannot be removed and vice versa.</p>
 </div>
-</section>
-<section id="support-feedback">
+</div>
+<div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
 <p>If you run into any issues or have suggestions, post your question or
 feedback on <a class="reference external" href="https://discord.com/invite/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

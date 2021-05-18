@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Smart contract modules &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">General</span></p>
+              <p class="caption"><span class="caption-text">General</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Smart contract modules</a><ul>
@@ -117,11 +117,11 @@
 <li class="toctree-l1"><a class="reference internal" href="resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p><span class="caption-text">Tutorials</span></p>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p><span class="caption-text">Contract development guides</span></p>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -131,14 +131,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p><span class="caption-text">On-chain guides</span></p>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
@@ -218,7 +218,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="smart-contract-modules">
+  <div class="section" id="smart-contract-modules">
 <span id="contract-module"></span><h1>Smart contract modules<a class="headerlink" href="#smart-contract-modules" title="Permalink to this headline">¶</a></h1>
 <p>Smart contracts are deployed on the chain in <em>smart contract modules</em>.</p>
 <div class="admonition note">
@@ -227,7 +227,7 @@
 </div>
 <p>A module can contain one or more smart contracts, allowing code to be shared
 among the contracts and can optionally contain <a class="reference internal" href="contract-schema.html#contract-schema"><span class="std std-ref">contract schemas</span></a>.</p>
-<figure class="align-center" id="id2">
+<div class="figure align-center" id="id2">
 <div class="graphviz"><object data="../../_images/graphviz-df720341db2d51e9625f9fcdd20ce92dab0758d7.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph G {
     subgraph cluster_0 {
@@ -237,10 +237,8 @@ among the contracts and can optionally contain <a class="reference internal" hre
         &quot;Escrow&quot;;
     }
 }</p></object></div>
-<figcaption>
-<p><span class="caption-text">A smart contract module containing two smart contracts.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">A smart contract module containing two smart contracts.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>The module must be self-contained, and only have a restricted list of imports
 that allow for interaction with the chain.
 These are provided by the host environment and are available for the smart
@@ -249,7 +247,7 @@ contract by importing a module named <code class="docutils literal notranslate">
 <p class="admonition-title">See also</p>
 <p>Check out <a class="reference internal" href="../references/host-fns.html#host-functions"><span class="std std-ref">Contract host functions</span></a> for a complete reference.</p>
 </div>
-<section id="on-chain-language">
+<div class="section" id="on-chain-language">
 <h2>On-chain language<a class="headerlink" href="#on-chain-language" title="Permalink to this headline">¶</a></h2>
 <p>On the Concordium blockchain the smart contract language is a subset of <a class="reference external" href="https://webassembly.org/">Web
 Assembly</a> (Wasm in short) which is designed to be a portable compilation
@@ -259,14 +257,14 @@ the code.</p>
 <p>Wasm is a low-level language and it is impractical to write by hand. Instead one
 can write smart contracts in a more high-level language which is then
 compiled to Wasm.</p>
-<section id="limitations">
+<div class="section" id="limitations">
 <span id="wasm-limitations"></span><h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
 <p>The blockchain environment is very particular in the sense that each node must
 be able to execute the contract in exactly the same way, using exactly the same
 amount of resources. Otherwise nodes would fail to reach consensus on the
 state of the chain. For this reason smart contracts need to be written in a restricted
 subset of Wasm.</p>
-<section id="floating-point-numbers">
+<div class="section" id="floating-point-numbers">
 <h4>Floating point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this headline">¶</a></h4>
 <p>Although Wasm does have support for floating point numbers, a smart contract is
 disallowed to use them. The reason for this is that Wasm floating-point numbers
@@ -274,10 +272,10 @@ can have a special <code class="docutils literal notranslate"><span class="pre">
 <p>The restriction applies statically, meaning that smart contracts cannot contain
 floating point types, nor can they contain any instructions that involve floating
 point values.</p>
-</section>
-</section>
-</section>
-<section id="deployment">
+</div>
+</div>
+</div>
+<div class="section" id="deployment">
 <h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
 <p>Deploying a module to the chain means submitting the module bytecode as a
 transaction to the Concordium network. If <em>valid</em> this transaction will be
@@ -290,8 +288,8 @@ smart contract. To execute, a user must first create an <em>instance</em> of a c
 <p class="admonition-title">See also</p>
 <p>See <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">Smart contract instances</span></a> for more information.</p>
 </div>
-</section>
-<section id="smart-contract-on-the-chain">
+</div>
+<div class="section" id="smart-contract-on-the-chain">
 <span id="contract-on-the-chain"></span><span id="contract-on-chain"></span><span id="smart-contracts-on-the-chain"></span><span id="smart-contracts-on-chain"></span><h2>Smart contract on the chain<a class="headerlink" href="#smart-contract-on-the-chain" title="Permalink to this headline">¶</a></h2>
 <p>A smart contract on the chain is a collection of functions exported from a deployed
 module. The concrete mechanism used for this is the <a class="reference external" href="https://webassembly.org/">Web Assembly</a> export
@@ -315,8 +313,8 @@ to contain the <code class="docutils literal notranslate"><span class="pre">.</s
 procedural macros <code class="docutils literal notranslate"><span class="pre">#[init(...)]</span></code> and <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> set up the
 correct naming scheme.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

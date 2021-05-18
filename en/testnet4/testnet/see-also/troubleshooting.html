@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Troubleshooting and known issues &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/get-the-app.html">Concordium ID: Install the app</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/get-started.html">Concordium ID: Get started with the app</a></li>
@@ -112,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
-<p><span class="caption-text">See Also</span></p>
+<p class="caption"><span class="caption-text">See Also</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="downloads.html">Downloads</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting and known issues</a><ul>
@@ -211,7 +211,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="troubleshooting-and-known-issues">
+  <div class="section" id="troubleshooting-and-known-issues">
 <span id="id1"></span><h1>Troubleshooting and known issues<a class="headerlink" href="#troubleshooting-and-known-issues" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -230,7 +230,7 @@
 </div>
 <p>If you cannot find your issue here, please email <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>,
 including logs from the <code class="docutils literal notranslate"><span class="pre">concordium-node-retrieve-logs</span></code> tool.</p>
-<section id="multiple-nodes-bakers-and-accounts">
+<div class="section" id="multiple-nodes-bakers-and-accounts">
 <h2>Multiple nodes, bakers, and accounts<a class="headerlink" href="#multiple-nodes-bakers-and-accounts" title="Permalink to this headline">¶</a></h2>
 <p>We do not currently support running two nodes on the same machine. When the
 <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> tool is run, while another node is already running, it will ask you
@@ -245,8 +245,8 @@ starts with are registered in the committee.</p>
 <p>Which baker the node runs as is determined by the baker keys that it starts with
 (these are in the file <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code>). If a node is restarted it
 reloads the keys that exist at the time it starts.</p>
-</section>
-<section id="appearance-of-high-memory-consumption-of-the-node">
+</div>
+<div class="section" id="appearance-of-high-memory-consumption-of-the-node">
 <h2>Appearance of high memory consumption of the node<a class="headerlink" href="#appearance-of-high-memory-consumption-of-the-node" title="Permalink to this headline">¶</a></h2>
 <p>The Concordium node may appear to use a lot of memory, and its memory
 consumption may grow over time. This happens because the node internally uses
@@ -254,8 +254,8 @@ the LMDB database for block and transaction storage. LMDB manages the database
 as a single memory-mapped file which can cause certain tools to erroneously
 include the whole or parts of the database file into the reported memory
 consumption of the process.</p>
-</section>
-<section id="node-does-not-catch-up-with-chain-on-windows">
+</div>
+<div class="section" id="node-does-not-catch-up-with-chain-on-windows">
 <h2>Node does not catch up with chain on Windows<a class="headerlink" href="#node-does-not-catch-up-with-chain-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>On Windows, the Concordium node may fail to catch up with the chain when
 changing internet connections. It usually catches up with the chain again after
@@ -283,8 +283,8 @@ described above after synchronizing your clock.</p>
 having to restart it. This can be done by stopping and restarting the <em>Time
 synchronization</em> integration service for the docker virtual machine using
 <em>Hyper-V Manager</em>.)</p>
-</section>
-<section id="node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0">
+</div>
+<div class="section" id="node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0">
 <h2>Node on Windows fails to bootstrap with Docker Desktop 3.1.0<a class="headerlink" href="#node-on-windows-fails-to-bootstrap-with-docker-desktop-3-1-0" title="Permalink to this headline">¶</a></h2>
 <p>When running your node on Windows, it might fail to bootstrap. In that case, it will not get any peers and does not catch up to the chain or at least not to the full fin length. You can check both e.g. on the network dashboard. Furthermore, the log will show the following entries:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ERROR: Can&#39;t connect to the desired address</span>
@@ -309,8 +309,8 @@ synchronization</em> integration service for the docker virtual machine using
 <li><p>Run <cite>concordium-node</cite>.</p></li>
 </ul>
 <p>Your node should now catch up to the full fin length and eventually get peers assigned. Whenever you restart your node, remember to not update to the newest version.</p>
-</section>
-<section id="docker-error-port-already-in-use">
+</div>
+<div class="section" id="docker-error-port-already-in-use">
 <h2>Docker error port already in use<a class="headerlink" href="#docker-error-port-already-in-use" title="Permalink to this headline">¶</a></h2>
 <p>The node may fail starting with the error <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">starting</span> <span class="pre">{..}</span> <span class="pre">proxy:</span> <span class="pre">listen</span>
 <span class="pre">tcp</span> <span class="pre">0.0.0.0:{PORT}:</span> <span class="pre">bind:</span> <span class="pre">address</span> <span class="pre">already</span> <span class="pre">in</span> <span class="pre">use</span></code>, which can be remedied by
@@ -326,12 +326,12 @@ and started again. To reset the container either use <code class="docutils liter
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker rm concordium-client
 </pre></div>
 </div>
-</section>
-<section id="special-language-characters-in-the-windows-client">
+</div>
+<div class="section" id="special-language-characters-in-the-windows-client">
 <h2>Special language characters in the Windows client<a class="headerlink" href="#special-language-characters-in-the-windows-client" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the code page of the Windows machine, the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> might not print all special language characters in account names correctly. Instead it replaces unknown characters with a question mark. In such a case, you can either use the account address for client commands instead of the incomplete name, check the name mapping file or change the code page of the terminal to utf-8 by running <code class="docutils literal notranslate"><span class="pre">chcp</span> <span class="pre">65001</span></code>.</p>
-</section>
-<section id="supported-id-document-types-and-countries">
+</div>
+<div class="section" id="supported-id-document-types-and-countries">
 <h2>Supported ID document types and countries<a class="headerlink" href="#supported-id-document-types-and-countries" title="Permalink to this headline">¶</a></h2>
 <p>For issuing a real-world identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code>, i.e.
 an identity based on a physical ID document, 3rd parties identity issuer
@@ -341,30 +341,30 @@ document types and countries, please visit <a class="reference external" href="h
 of creating a new identity using <code class="docutils literal notranslate"><span class="pre">Notabene</span></code> on the New Identity Verification
 screen. Note that with option <code class="docutils literal notranslate"><span class="pre">Notabene</span> <span class="pre">development</span></code> test identities can be
 issued, which are not verified against physical ID documents.</p>
-</section>
-<section id="inconsistency-with-numbers-on-id-documents">
+</div>
+<div class="section" id="inconsistency-with-numbers-on-id-documents">
 <h2>Inconsistency with numbers on ID documents<a class="headerlink" href="#inconsistency-with-numbers-on-id-documents" title="Permalink to this headline">¶</a></h2>
 <p>When issuing an identity in the mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code> with identity provider <code class="docutils literal notranslate"><span class="pre">Notabene</span></code>, which is based on a Danish ID document, the personal identity number might be included as document number in the issued identity instead of the actual ID document number. Danish ID documents (e.g. passport or driver’s license) have a document number field and a personal code number field for the CPR number. The number from the document number field should be included as document number in the issued identity. Inconsistencies may be observed where the CPR number is used instead. The issue is reported to identity provider Notabene.</p>
-</section>
-<section id="performance-issues-in-mobile-wallet-on-android-phones">
+</div>
+<div class="section" id="performance-issues-in-mobile-wallet-on-android-phones">
 <h2>Performance issues in mobile wallet on Android phones<a class="headerlink" href="#performance-issues-in-mobile-wallet-on-android-phones" title="Permalink to this headline">¶</a></h2>
 <p>Performance issues, e.g. long processing times, might occur when running the
 mobile wallet <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">ID</span></code> on a low end Android phone. Processing delays
 might not be indicated by appropriate waiting screens.</p>
-</section>
-<section id="robustness-issues-with-shielded-transfer-in-mobile-wallets">
+</div>
+<div class="section" id="robustness-issues-with-shielded-transfer-in-mobile-wallets">
 <h2>Robustness issues with shielded transfer in mobile wallets<a class="headerlink" href="#robustness-issues-with-shielded-transfer-in-mobile-wallets" title="Permalink to this headline">¶</a></h2>
 <p>When executing multiple shielded transfers or unshielding flows in the mobile
 wallets within a very short period of time, inconsistencies might be observed.
 Those robustness issues can be circumvented by waiting a few seconds between
 such transactions.</p>
-</section>
-<section id="support-feedback">
+</div>
+<div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
 <p>If you run into any issues or have suggestions, post your question or feedback
 on <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a> or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

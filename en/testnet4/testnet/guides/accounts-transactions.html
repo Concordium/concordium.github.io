@@ -6,8 +6,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Concordium ID: Get started with accounts and transactions &mdash; Concordium  documentation</title>
@@ -16,6 +15,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
 
   
@@ -35,11 +36,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -103,7 +103,7 @@
               
             
             
-              <p><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="get-the-app.html">Concordium ID: Install the app</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">Concordium ID: Get started with the app</a></li>
@@ -122,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a Node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker (create blocks)</a></li>
 </ul>
-<p><span class="caption-text">References</span></p>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/id-accounts.html">Identities and accounts</a></li>
@@ -130,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
-<p><span class="caption-text">See Also</span></p>
+<p class="caption"><span class="caption-text">See Also</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/downloads.html">Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../see-also/troubleshooting.html">Troubleshooting and known issues</a></li>
@@ -208,7 +208,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="concordium-id-get-started-with-accounts-and-transactions">
+  <div class="section" id="concordium-id-get-started-with-accounts-and-transactions">
 <span id="guide-account-transactions"></span><h1>Concordium ID: Get started with accounts and transactions<a class="headerlink" href="#concordium-id-get-started-with-accounts-and-transactions" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -223,7 +223,7 @@
 </ul>
 </div>
 <p>Before following this guide you should have finished requesting your initial account and identity, as described in <a class="reference internal" href="get-started.html#testnet-get-started"><span class="std std-ref">the previous chapter</span></a>.</p>
-<section id="create-a-new-account">
+<div class="section" id="create-a-new-account">
 <h2>Create a new account<a class="headerlink" href="#create-a-new-account" title="Permalink to this headline">¶</a></h2>
 <p>Before getting into how accounts, their balances and transactions work, let’s create a second account. Start by going
 to the <em>Accounts</em> page. In the upper right corner you should see a <strong>plus sign</strong>. Press that to continue. On the next screen
@@ -251,8 +251,8 @@ two new pieces of information, <em>at disposal</em> and <em>staked</em>. The at 
 at available for use at the given moment, and the staked amount you can read more about on the <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">managing accounts</span></a> page.</p>
 <a class="reference internal image-reference" href="../../_images/acc7.png"><img alt="../../_images/acc7.png" src="../../_images/acc7.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acc8.png"><img alt="../../_images/acc8.png" src="../../_images/acc8.png" style="width: 32%;" /></a>
-</section>
-<section id="make-a-transaction">
+</div>
+<div class="section" id="make-a-transaction">
 <h2>Make a transaction<a class="headerlink" href="#make-a-transaction" title="Permalink to this headline">¶</a></h2>
 <p>Next up, try pressing the <strong>Balance</strong> area of your newly created account. On this
 screen you can see the current balance of your account, and at this point, it will also let you request 100 GTU to use on
@@ -280,8 +280,8 @@ or biometrics, and then the transaction is submitted to the chain. It might take
 cost a fee, and depending on the type of transaction the fee might differ. Pressing the transaction will let you see more details.</p>
 <a class="reference internal image-reference" href="../../_images/acc17.png"><img alt="../../_images/acc17.png" src="../../_images/acc17.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acc18.png"><img alt="../../_images/acc18.png" src="../../_images/acc18.png" style="width: 32%;" /></a>
-</section>
-<section id="move-an-amount-to-the-shielded-balance">
+</div>
+<div class="section" id="move-an-amount-to-the-shielded-balance">
 <span id="id1"></span><h2>Move an amount to the shielded balance<a class="headerlink" href="#move-an-amount-to-the-shielded-balance" title="Permalink to this headline">¶</a></h2>
 <p>If we go back to the <em>Accounts</em> screen, we can now see that the 10 GTU has been transferred to the <em>Balance</em> of <em>Example Account 1</em>. As you might
 have noticed before, the accounts also have a <a class="reference internal" href="../see-also/glossary.html#glossary-shielded-balance"><span class="std std-ref">Shielded balance</span></a>. In short, the shielded balance is for keeping shielded (encrypted) amounts
@@ -302,8 +302,8 @@ Making a shielding transaction will also cost a fee, but this fee will be deduct
 back and have a look at the transfer log of the regular <em>Balance</em>.</p>
 <a class="reference internal image-reference" href="../../_images/acc25.png"><img alt="../../_images/acc25.png" src="../../_images/acc25.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acc26.png"><img alt="../../_images/acc26.png" src="../../_images/acc26.png" style="width: 32%;" /></a>
-</section>
-<section id="make-a-shielded-transfer">
+</div>
+<div class="section" id="make-a-shielded-transfer">
 <h2>Make a shielded transfer<a class="headerlink" href="#make-a-shielded-transfer" title="Permalink to this headline">¶</a></h2>
 <p>Having some shielded GTU available, we can now try making a <em>Shielded transfer</em>, which means that we can make a transfer with an encrypted
 amount of GTU. The first step is to browse to the <em>shielded balance</em> page of the account containing shielded GTU, if you are not already
@@ -323,8 +323,8 @@ Try pressing the shielded balance, and notice that you have to enter a passcode 
 This happens because you need to decrypt received shielded transactions, before you can see the amount.</p>
 <a class="reference internal image-reference" href="../../_images/acc31.png"><img alt="../../_images/acc31.png" src="../../_images/acc31.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acc32.png"><img alt="../../_images/acc32.png" src="../../_images/acc32.png" style="width: 32%;" /></a>
-</section>
-<section id="unshield-an-amount">
+</div>
+<div class="section" id="unshield-an-amount">
 <h2>Unshield an amount<a class="headerlink" href="#unshield-an-amount" title="Permalink to this headline">¶</a></h2>
 <p>After the decryption, the amount is now visible in the <em>shielded balance</em> and on the account card on the <em>Accounts</em> screen. Now, what if we
 want to move some GTU from a shielded balance to a regular balance? Let’s try to move the 2 GTU to the regular balance via the action of
@@ -338,15 +338,15 @@ Notice how it is not 2 GTU, even though the amount you just unshielded was 2. Th
 an unshielding, will be deducted from the regular balance of the account responsible for the transaction.</p>
 <a class="reference internal image-reference" href="../../_images/acc35.png"><img alt="../../_images/acc35.png" src="../../_images/acc35.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acc36.png"><img alt="../../_images/acc36.png" src="../../_images/acc36.png" style="width: 32%;" /></a>
-</section>
-<section id="share-your-account-address">
+</div>
+<div class="section" id="share-your-account-address">
 <h2>Share your account address<a class="headerlink" href="#share-your-account-address" title="Permalink to this headline">¶</a></h2>
 <p>If you want to share the address of your account, this can be easily done by pressing the <strong>Address</strong> button. This will take you to a page
 where you have multiple options of sharing the account address. Try pressing the <strong>Share</strong> button, and share your address with someone.</p>
 <a class="reference internal image-reference" href="../../_images/acc37.png"><img alt="../../_images/acc37.png" src="../../_images/acc37.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acc38.png"><img alt="../../_images/acc38.png" src="../../_images/acc38.png" style="width: 32%;" /></a>
-</section>
-<section id="inspect-a-release-schedule">
+</div>
+<div class="section" id="inspect-a-release-schedule">
 <h2>Inspect a release schedule<a class="headerlink" href="#inspect-a-release-schedule" title="Permalink to this headline">¶</a></h2>
 <p>On the Concordium blockchain it is possible to make a transaction that releases the transferred amount over time. This is called a
 <em>transfer with a schedule</em>. For now we will not get into how to make such a transfer as it cannot be done from Concordium ID,
@@ -357,13 +357,13 @@ make a transfer with a release schedule, you can have a look at the <a class="re
 <a class="reference internal image-reference" href="../../_images/rel1.png"><img alt="../../_images/rel1.png" src="../../_images/rel1.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/rel2.png"><img alt="../../_images/rel2.png" src="../../_images/rel2.png" style="width: 32%;" /></a>
 <a class="reference internal image-reference" href="../../_images/rel3.png"><img alt="../../_images/rel3.png" src="../../_images/rel3.png" style="width: 32%;" /></a>
-</section>
-<section id="support-feedback">
+</div>
+<div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
 <p>If you run into any issues or have suggestions, post your question or
 feedback on <a class="reference external" href="https://discord.gg/xWmQ5tp">Discord</a>, or contact us at <a class="reference external" href="mailto:testnet&#37;&#52;&#48;concordium&#46;com">testnet<span>&#64;</span>concordium<span>&#46;</span>com</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
