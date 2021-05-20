@@ -12,7 +12,7 @@ Accounts
    :backlinks: none
 
 
-An account on the Concordium blockchain consists of two parts and is owned by one or more :ref:`credential holders<glossary-credential-holder>`. The :ref:`on-chain<glossary-on-chain>`
+An account on the Concordium blockchain is owned by one or more :ref:`credential holders<glossary-credential-holder>` and consists of two parts: The :ref:`on-chain<glossary-on-chain>` part which is publicly visible, and maintained by the bakers, and the :ref:`off-chain<glossary-off-chain>` part.
 part which is publicly visible, and maintained by the bakers, and the
 :ref:`off-chain<glossary-off-chain>` part.
 
