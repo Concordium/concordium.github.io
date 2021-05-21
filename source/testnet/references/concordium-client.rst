@@ -86,9 +86,9 @@ of the account's keys.
 
 Each account has
 
--  one or more (up to 256) key-pairs for signing transactions. They are
+*  for each credential holder of the account, one or more (up to 256) key-pairs for signing transactions. They are
    identified by the key index, which is an integer starting at 0.
--  decryption key-pair used for decrypting the shielded balance of the
+*  decryption key-pair used for decrypting the shielded balance of the
    account.
 
 For all those keys, the private part of the key-pair is encrypted in the local
