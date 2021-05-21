@@ -32,6 +32,9 @@ cp index.html "${build_dir}/index.html"
 printf "Copying CLAs to ${build_dir}\n"
 cp -r CLAs "${build_dir}/CLAs"
 
+printf "Copying 'extra' directory to ${build_dir}\n"
+cp -r extra "${build_dir}/extra"
+
 for current_version in ${versions[@]}; do
   printf "\nVersion '${current_version}':\n-----------------------------\n"
   printf "Checking out branch '${current_version}'\n"
