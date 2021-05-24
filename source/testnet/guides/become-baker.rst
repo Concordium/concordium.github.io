@@ -247,7 +247,7 @@ offer different degrees of precision in the information displayed.
   in your mobile wallet that baking rewards are being received by the account,
   as seen in this image:
 
-  .. image:: images/bab-reward.png
+  .. image:: ../images/bab-reward.png
      :align: center
      :width: 250px
 

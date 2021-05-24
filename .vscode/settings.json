@@ -1,5 +1,5 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}/source",
+    "restructuredtext.confPath": "${workspaceFolder}\\source",
     "restructuredtext.linter.name": "doc8",
     "restructuredtext.linter.extraArgs": [
         "--config ${workspaceFolder}/doc8.ini"
