@@ -45,13 +45,13 @@ Create an initial account
 
 #. Press the right button to review the transaction on the Ledger. Verify that the following information on Ledger is identical to the information in the Desktop Wallet.
 
-   - Identity Credentials Public (IdCredSec)
+   - Identity Credentials Public (IdCredPub)
    - Registration ID (RegId)
    - Verification Key
    - Threshold
 
 #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction.
 
-#. In the Desktop Wallet, enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider verifies your identity and submits the initial account to the blockchain. When the identity provider has verified your identity and submitted it to the blockchain, there's a green check mark next to the Concordium logo on the identity.
+#. In the Desktop Wallet, enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
 #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
