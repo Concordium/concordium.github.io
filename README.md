@@ -27,7 +27,16 @@ directives
 
    Write a todo here
 ```
-Todos are shown as warnings when building the docs.
+
+To show TODOs as warnings when building the docs you need to uncomment the
+following line in `/source/conf.py`:
+
+```
+# todo_emit_warnings = True
+```
+
+NB: This will only show TODOs for the files being built; as opposed to TODOs
+from all files.
 
 To generate SVG graphics, we use the [Graphviz
 extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
