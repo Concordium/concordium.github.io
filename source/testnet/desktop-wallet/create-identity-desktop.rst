@@ -35,7 +35,7 @@ Create an initial account
 
 #. Connect your Ledger hardware wallet if you haven't done so already and enter your pin code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. When you've entered the PIN, press both buttons, and when it says **Concordium** press both buttons again. The Ledger says **Concordium is ready**.
 
-#. In the Desktop Wallet select **Submit**, when it says **Ledger Nano S is ready**. 
+#. In the Desktop Wallet select **Submit**, when it says **Ledger Nano S is ready**.
 
 #. Press both buttons to confirm the export of the following on the Ledger:
 
