@@ -31,7 +31,7 @@ if errorlevel 9009 (
 goto end
 
 :dev
-sphinx-autobuild.exe %SOURCEDIR% %BUILDDIR/html -E
+sphinx-autobuild.exe %SOURCEDIR% %BUILDDIR/html
 goto end
 
 :lint

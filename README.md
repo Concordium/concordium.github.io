@@ -27,7 +27,16 @@ directives
 
    Write a todo here
 ```
-Todos are shown as warnings when building the docs.
+
+To show TODOs as warnings when building the docs you need to uncomment the
+following line in `/source/conf.py`:
+
+```
+# todo_emit_warnings = True
+```
+
+NB: This will only show TODOs for the files being built; as opposed to TODOs
+from all files.
 
 To generate SVG graphics, we use the [Graphviz
 extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
@@ -104,10 +113,10 @@ Before committing, make sure to try to build and fix any warnings that are repor
 ```
 
 
-> **Note**: In `make dev` we disable the cache on build as this tends to cause
-> inconsistencies. If the build time becomes too slow, it might be worth
-> enabling again by removing `-E`.
-
+> **Note**:
+> When working on changes to the design it can be benefitial to disable
+> caching, as it can cause UI problems. To disable it, add the `-E` flag to the
+> `dev` command in the appropriate make file.
 
 ## Building the docs
 Run the following command:
