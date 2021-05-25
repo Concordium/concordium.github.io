@@ -104,10 +104,10 @@ Before committing, make sure to try to build and fix any warnings that are repor
 ```
 
 
-> **Note**: In `make dev` we disable the cache on build as this tends to cause
-> inconsistencies. If the build time becomes too slow, it might be worth
-> enabling again by removing `-E`.
-
+> **Note**:
+> When working on changes to the design it can be benefitial to disable
+> caching, as it can cause UI problems. To disable it, add the `-E` flag to the
+> `dev` command in the appropriate make file.
 
 ## Building the docs
 Run the following command:
