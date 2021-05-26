@@ -50,7 +50,7 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-Identities can be created via :ref:`Concordium ID<testnet-get-started>`. Identity issuance requires
+Identities can be created via :ref:`Concordium ID<mobile-get-started>`. Identity issuance requires
 *Identity Verification*, which is the process of verifying the real-life
 identity of the user. This will typically involve taking photographs, scans of
 identification documents (e.g., passport), etc. Identity verification also
@@ -59,7 +59,7 @@ checks that the user-chosen attributes are valid for the user.
 Concordium ID (mobile wallet) identity
 --------------------------------------
 
-In the testnet phase the :ref:`Concordium ID<testnet-get-started>` app supports two identity issuance
+In the testnet phase the :ref:`Concordium ID<mobile-get-started>` app supports two identity issuance
 flows: *Notabene* and *Notabene (development)*. In both cases the identity
 provider is `Notabene`_, but the identity verifiers differ.
 

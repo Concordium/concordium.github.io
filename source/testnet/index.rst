@@ -1,37 +1,58 @@
 =======
-Testnet
+Mainnet
 =======
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Installation
+
+   installation/get-the-app
+   installation/downloads
 
 .. toctree::
    :maxdepth: 1
    :caption: Guides
 
-   guides/get-the-app
-   guides/get-started
    guides/accounts-transactions
-   guides/explore-more
    guides/run-node
    guides/become-baker
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Concepts
+
+   concepts/id-accounts
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Concordium Mobile Wallet
+
+   mobile-wallet/get-started
+   mobile-wallet/explore-more
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Desktop Wallet
+
+   desktop-wallet/create-identity-desktop
 
 .. toctree::
    :maxdepth: 1
    :caption: References
 
    references/concordium-client
-   references/id-accounts
    references/manage-accounts
    references/transactions
    references/query-node
 
 .. toctree::
    :maxdepth: 1
-   :caption: See Also
+   :caption: Resources
 
-   see-also/downloads
-   see-also/troubleshooting
-   see-also/glossary
-   see-also/release-notes
-   see-also/third-party-licenses
+   resources/troubleshooting
+   resources/glossary
+   resources/release-notes
+   resources/third-party-licenses
 
 Support & Feedback
 ==================
