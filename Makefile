@@ -23,7 +23,7 @@ linkcheck:
 	@$(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)" "$(BUILDDIR)"
 
 dev:
-	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)/html" -E
+	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)/html"
 
 lint:
 	doc8 "$(SOURCEDIR)"
