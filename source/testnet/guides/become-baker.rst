@@ -30,6 +30,13 @@ is added to the chain, the baker of the node will receive a reward.
    In this section we will use the name ``bakerAccount`` as the name of the
    account that will be used to register and manage a baker.
 
+Prerequisites
+=============
+-  Run a node
+-  Create an account
+-  Export the JSON file with the account information
+-  Install the Concordium Client
+
 Start baking
 ============
 
@@ -66,7 +73,7 @@ and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amountToStake> --out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
 
 where you replace
 
