@@ -28,7 +28,7 @@ There are a couple of things you must set up in preparation before you can start
 - Download and install the Desktop Wallet.
 - Set up an initial account and an identity.
 - Set up a new account that you'll be using as baker account.
-- Verify that the account has a balance of at least ??? GTU.
+- Verify that the account balance has the required amount of GTU.
 
 Select an account to add as baker account
 =========================================
