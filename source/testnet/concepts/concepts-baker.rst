@@ -13,12 +13,12 @@ A node is a baker node when it participates actively in the network by creating 
 
 Baker keys
 ----------
-A node uses a set of cryptographic keys called baker keys to sign the blocks that it bakes. Each baker therefore has a set of baker keys. To bake the blocks signed by a specific baker the baker node must be running with the baker's particular set of baker keys loaded.
+A node uses a set of cryptographic keys called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and  for verifying whether the baker has won the lottery as described below. To become a baker node, the node must be configured with a set of baker keys.
 
 Baker account
 -------------
 
-Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker's account after some time.
+Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker's account after some time. The baker account also receives an award after each epoch. The reward per block is determined by the contents of the block, and is usually lower than the reward that is paid after.
 
 The account and can be viewed either in the Desktop Wallet or the Mobile Wallet depending on where the account was created.
 
@@ -43,7 +43,6 @@ Time concepts
 ----------------
 The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`slots <glossary-slot>`.
 
-When considering the rewards and other baking-related concepts, the
-concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the Genesis block.
+When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the Genesis block.
 
 Epochs are subdivided into slots. On any given branch, each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the Genesis block.
