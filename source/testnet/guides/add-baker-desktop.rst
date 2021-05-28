@@ -44,7 +44,7 @@ Stake an amount
 
 You need to stake an amount of GTU on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
 
-#. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that you account will be chosen to bake the next block.
+#. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to bake the next block.
 
    Baker accounts receive a reward when they have baked a block, and the reward
    is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
