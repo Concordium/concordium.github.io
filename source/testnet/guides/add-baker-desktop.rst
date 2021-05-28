@@ -149,6 +149,6 @@ When you have received and added all the required signatures, you can submit the
 #. Select **Finish** to leave the page.
 
 .. Warning::
-    Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted them. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
+    Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
 
 To start baking, you now have to start your node with the baker keys. See :ref:`Run a node<run-a-node>` for more information about this.
