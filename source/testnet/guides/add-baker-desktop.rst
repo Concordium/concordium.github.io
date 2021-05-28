@@ -86,7 +86,7 @@ Generate and sign the transaction on the Ledger
 
 #. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
+#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
 
 #. In the Desktop Wallet verify that all transaction details are correct and select **I am sure that the proposed changes are correct**.
 
@@ -117,9 +117,9 @@ If more than one signature is needed to sign off on the baker account proposal, 
 
 #. In the Desktop Wallet, select **Export transaction proposal**.
 
-#. Navigate to the location on your computer where you want to save the file. In **Save as type** make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
+#. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **Save as type** make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
 
-#. Send a copy of the file through a secure channel to the co-signers that must sign the transaction.
+#. Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Likewise, send a copy of the identicon through a secure channel that is different from the one used to send the file.
 
 Receive signatures from co-signers
 ==================================
@@ -142,7 +142,7 @@ When you have received and added all the required signatures, you can submit the
 
 #. Select **I understand this is the final submission, and that it cannot be reverted.**
 
-   -  If you don't want to submit the transaction to the chain, you can select **Close proposal**. The proposal is no longer active; however it is still visible in the list of proposals.
+   -  If you don't want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active; however it is still visible in the list of proposals.
 
 #. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the Ledger.
 
