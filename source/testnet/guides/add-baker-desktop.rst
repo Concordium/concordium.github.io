@@ -46,10 +46,10 @@ You need to stake an amount of GTU on the account that you want to add as baker 
 
 #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that you account will be chosen to bake the next block.
 
-   Baker accounts receive an award when they have baked a block, and the award
-   is added to the staked amount on the account by default. However, you can change this setting so that the award is added to the disposable amount instead.
+   Baker accounts receive a reward when they have baked a block, and the reward
+   is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
-   -  Select **No, don’t restake** if you'd rather add the awards to the disposable amount on the account.
+   -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
 #. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the GTU are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
 
