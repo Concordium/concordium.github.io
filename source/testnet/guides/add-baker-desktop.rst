@@ -56,8 +56,8 @@ You need to stake an amount of GTU on the account that you want to add as baker 
 #. Select **Generate keys**. The baker keys are generated and the public keys are displayed in the left pane. There are three public keys:
 
    - Election verify key
-   - Signature verify key 
-   - Aggregation verify 
+   - Signature verify key
+   - Aggregation verify
 
 #. Select **Continue** to generate the transaction.
 
@@ -75,7 +75,7 @@ There are two ways that you can generate the transaction:
 Generate the transaction without signing
 ----------------------------------------
 
-#. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**. 
+#. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
 #.  Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
 
@@ -92,7 +92,7 @@ Generate and sign the transaction on the Ledger
 
 #. Select **Generate and sign**. There's a message saying **Waiting for user to finish the process on the device**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet. 
+#. On the Ledger, there's a message saying **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet.
 
 #. When the Ledger says **Sign transaction**, press both buttons to confirm the transaction. The Ledger says **Concordium is ready**.
 
