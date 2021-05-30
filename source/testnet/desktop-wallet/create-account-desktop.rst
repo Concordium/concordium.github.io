@@ -56,7 +56,7 @@ Create an account
    - *Export IdCredSec*
    - *Public-key*
 
-#. The Ledger says **Review transaction**. Press both buttons to review. Press the right button to click through the information and press both buttons to confirm the information. The following information is displayed:
+#. The Ledger says **Review transaction**. Press both buttons to review. Press the right button to click through and verify all the information, and press both buttons to confirm the information. It's important the you verify the information for security reasons. The following information is displayed:
 
    -  the *public key*
    -  the *Sig threshold*

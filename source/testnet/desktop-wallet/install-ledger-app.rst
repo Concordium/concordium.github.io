@@ -9,14 +9,14 @@
 Set up the Ledger Nano S and install the Concordium Ledger App
 ==============================================================
 
-To be able to sign and send transactions using the Desktop Wallet, you need a Ledger hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.
+To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.
 
 Prerequisites
 =============
 
 -  Ledger hardware wallet
 
-.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
+.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger Nano S hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
 Set up the Ledger Nano S
 ========================
@@ -40,7 +40,7 @@ Update the Ledger Nano S firmware
 
 To find out which firmware version the Ledger is running, do the following:
 
-#. On the Ledger navigate to **Settings** and press both buttons.
+#. On the Ledger navigate to **Settings** and press both buttons for a little while to enter the Settings menu.
 
 #. Press the right button to navigate to **Firmware version**.
 
@@ -85,7 +85,7 @@ Install Python and pip
 Install the custom certificate on Windows
 -----------------------------------------
 
-You now have to install a custom certificate on the Ledger to ensure that the it trusts applications signed by Concordium's private key.
+You now have to install a custom certificate on the Ledger to ensure that it trusts applications signed by Concordium's private key.
 
 #. Disconnect the Ledger from your computer.
 
@@ -93,9 +93,9 @@ You now have to install a custom certificate on the Ledger to ensure that the it
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Close all applications that might be connected to the ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
 
-#. Press the right button while you reconnect the Ledger to the computer, hold the button until the Ledger says **recovery**.
+#. Press the right button while you reconnect the Ledger to the computer, and hold it down until the Ledger says **recovery**.
 
 #. Enter your PIN code.
 
@@ -124,25 +124,25 @@ Install Homebrew, Python, and pip
 
 #. Open the Terminal application. Click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
 
-#. Install the package manager Homebrew.
+#. Install the package manager Homebrew. Copy the following line into the Terminal and press enter.
 
 .. code-block:: console
 
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-2. Install Python3 and Pip3 to manage (alternatively use pyenv if you need multiple python versions):
+2. Install Python3 and Pip3 to manage (alternatively use pyenv if you need multiple python versions). Copy the following line into the Terminal and press enter:
 
 .. code-block:: console
 
    brew install python@3.9
 
-3. Install libusb:
+3. Install libusb. Copy the following line into the Terminal and press enter:
 
 .. code-block:: console
 
    brew install libusb
 
-4. If you have Mac with M1, install:
+4. If you have Mac with an M1 or similar Apple Silicon CPU, install:
 
 .. code-block:: console
 
@@ -163,11 +163,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Close all applications that might be connected to the ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
 
 #. Enter your PIN code.
 
@@ -242,11 +242,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Close all applications that might be connected to the ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
 
 #. Enter your PIN code.
 
