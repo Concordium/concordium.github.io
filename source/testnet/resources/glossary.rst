@@ -155,18 +155,14 @@ Finalization
 ============
 
 The process by which a block is marked to be "finalized", i.e. part of the
-authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are
-considered authoritative. New blocks can be only added following the last
-finalized block. The finalization process is conducted periodically by the
-bakers with :ref:`staked amount<glossary-staked-amount>` at least 0.1% of the total stake in the system.
+authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted periodically by the bakers with :ref:`staked amount<glossary-staked-amount>` at least 0.1% of the total stake in the system.
 
 .. _glossary-genesis-block:
 
 Genesis Block
 =============
 
-The first :ref:`block<glossary-block>` in a :ref:`chain<glossary-chain>`. The genesis block establishes the starting
-state of the chain, before any transactions have occurred.
+The first :ref:`block<glossary-block>` in a :ref:`chain<glossary-chain>`. The genesis block establishes the starting state of the chain, before any transactions have occurred.
 
 .. _glossary-GTU:
 
