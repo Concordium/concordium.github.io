@@ -15,6 +15,7 @@ Mainnet
 
    guides/accounts-transactions
    guides/run-node
+   guides/add-baker-desktop
    guides/become-baker
 
 .. toctree::
@@ -22,6 +23,7 @@ Mainnet
    :caption: Concepts
 
    concepts/id-accounts
+   concepts/concepts-baker
 
 .. toctree::
    :maxdepth: 1
