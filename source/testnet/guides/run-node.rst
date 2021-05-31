@@ -11,7 +11,7 @@ Run a Node
    :local:
    :backlinks: none
 
-In this guide, you learn how to run a node on your computer that
+In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
 information about blocks and transactions to the nodes in the Concordium
@@ -46,15 +46,6 @@ To upgrade to the current Concordium software for Mainnet:
 -  Run the ``concordium-node-reset-data`` executable from the unzipped
    archive.
 
-   -  For *Mac* users: the first time you open the tool, right-click the
-      ``concordium-node-reset-data`` file and select **Open**. A message
-      will appear that the software is from an unidentified developer.
-      Select **Open** again.
-   -  For *Windows* users: the first time you open the tool,
-      double-click the ``concordium-node-reset-data`` file. A message
-      will appear that the software is from an unidentified developer.
-      Select **More info** → **Run anyway**.
-
 -  The tool will ask:
 
       *Do you also want to remove saved keys?*
@@ -74,14 +65,6 @@ steps:
 
 1. Open the ``concordium-node`` executable from the unzipped archive.
 
--  For *Mac* users: the first time you open the tool, right-click the
-   ``concordium-node`` binary and select **Open**. A message will appear
-   that the software is from an unidentified developer. Select **Open**
-   again.
--  For *Windows* users: the first time you open the tool, double-click
-   the ``concordium-node`` binary. A message will appear that the
-   software is from an unidentified developer. Select **More info** →
-   **Run anyway**.
 -  When *restarting* a node consider using the
    ``--no-block-state-import`` option. This will download just the
    updates to the Concordium blockchain that occurred while the node was
