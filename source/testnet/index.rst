@@ -36,7 +36,9 @@ Mainnet
    :maxdepth: 1
    :caption: Desktop Wallet
 
+   desktop-wallet/install-ledger-app
    desktop-wallet/create-identity-desktop
+   desktop-wallet/create-account-desktop
 
 .. toctree::
    :maxdepth: 1
