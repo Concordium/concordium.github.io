@@ -5,6 +5,8 @@
 {# Adds extra headers to the template, such as custom styling #}
 {% block extrahead %}
 <link href="{{ pathto("_static/style.css", True) }}" rel="stylesheet" type="text/css">
+<meta http-equiv="refresh" content="0;url=/" />
+<link rel="canonical" href="/" />
 {% endblock %}
 
 {% block sidebartitle %}
