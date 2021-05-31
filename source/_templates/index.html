@@ -9,38 +9,15 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="{{pathto('_static/concordium-logo-no-text.svg', 1)}}" />
     <meta name="theme-color" content="#000000" />
-    {% block extrahead %} {% endblock %}
+    <link href="{{ pathto("_static/style.css", True) }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <div class="logo-container">
         <img class="logo" src="{{pathto('_static/concordium-logo-dark.svg', 1)}}" />
         <h1>Documentation</h1>
-    </div>
-
-    <div class="features-container">
-        <div class="feature">
-            <a href="{{ pathto('testnet/index') }}">
-                <div class="feature-box">
-                    <i class="icon fa fa-connectdevelop"></i>
-                    <h4>Testnet 4</h4>
-                    <p>
-                        Learn more about Testnet 4 and how to participate.
-                    </p>
-                </div>
-            </a>
-        </div>
-        <div class="feature">
-            <a href="{{ pathto('smart-contracts/index') }}">
-                <div class="feature-box">
-                    <i class="icon fa fa-file-o"></i>
-                    <h4>Smart Contracts</h4>
-                    <p>
-                        Learn more about smart contracts and how to develop your own.
-                    </p>
-                </div>
-            </a>
-        </div>
+        <p>The documentation can be found here, as soon as we have released Mainnet.</p>
+        <p>Keep an eye out for news <a href='https://medium.com/concordium'>here</a>.</p>
     </div>
 
     <style>
@@ -75,55 +52,6 @@
             max-width: 650px;
             max-height: 25vh;
             margin: 2em;
-        }
-
-        .features-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap-reverse;
-            padding: 50px;
-        }
-
-        .features-container a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .feature {
-            margin: 1em;
-        }
-
-        .feature-box {
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            border-radius: 5px;
-            padding: 1em;
-            width: 310px;
-            text-align: center;
-            font-family: Lato;
-            word-spacing: -2px;
-            border: 1px solid rgb(200, 200, 200);
-            border-radius: 15px;
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-box:hover {
-            background-color: rgba(240, 240, 240);
-        }
-
-        .feature-box h4 {
-            text-align: center;
-        }
-
-        .feature p {
-            margin: 0;
-        }
-
-        .feature .icon {
-            align-self: center;
-            padding: 10px;
-            font-size: 50px;
         }
     </style>
 </body>
