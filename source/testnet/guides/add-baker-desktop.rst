@@ -77,7 +77,7 @@ Generate the transaction without signing
 
 #. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-#.  Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
+#. Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
 
 .. _generate-sign:
 
