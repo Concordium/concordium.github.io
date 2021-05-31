@@ -1,4 +1,4 @@
-.. _`Network Dashboard`: https://dashboard.testnet.concordium.com/
+.. _`Network Dashboard`: https://dashboard.concordium.com/
 .. _Discord: https://discord.gg/xWmQ5tp
 
 .. _run-a-node:
@@ -35,10 +35,10 @@ Before running a Concordium node you will need to
 
 2. Download and extract the :ref:`concordium-node-and-client-download` software.
 
-Upgrade from an earlier version of Open Testnet
-===============================================
+Upgrade from Open Testnet
+=========================
 
-To upgrade to the current Concordium software for Open Testnet 4:
+To upgrade to the current Concordium software for Mainnet:
 
 -  Follow the above steps to :ref:`download<downloads>` the most recent Concordium
    software.
@@ -59,9 +59,9 @@ To upgrade to the current Concordium software for Open Testnet 4:
 
       *Do you also want to remove saved keys?*
 
-   Accounts that were created for prior versions are no longer valid on
-   Open Testnet 3. Therefore, if you have stored accounts from prior
-   versions we recommend entering **y** which will delete all account
+   Accounts that were created for an Open Testnet are not valid on
+   Mainnet. Therefore, if you have stored accounts from an Open
+   Testnet we recommend entering **y** which will delete all account
    keys.
 
 .. _running-a-node:
@@ -69,7 +69,7 @@ To upgrade to the current Concordium software for Open Testnet 4:
 Running a node
 ==============
 
-To start running a client that will join the Open Testnet follow these
+To start running a client that will join the Mainnet follow these
 steps:
 
 1. Open the ``concordium-node`` executable from the unzipped archive.
@@ -90,7 +90,7 @@ steps:
 2. Enter a name for your node. This name will be displayed in the public
    dashboard.
 
-3. If the tool has been started before you will asked if you want to
+3. If the tool has been started before you will be asked if you want to
    delete the local node database before starting. Pressing **y** will
    delete and subsequently recreate the information on the state of the
    Concordium blockchain that was saved on your computer. **Note that
@@ -119,7 +119,7 @@ information about all the blocks in the chain.
 Among other information, on the `Network Dashboard`_ you can
 get an idea of how long it will take your node to catch up with the
 chain. For that you can compare the node's **Length** value (number of
-blocks your node received) with the **Chain Len** value (number of
+blocks your node received) with the **Total Length** value (number of
 blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.
 
