@@ -141,8 +141,8 @@ platform configuration you will either need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
-Configuring ports
------------------
+Configuring ports and tokens
+----------------------------
 
 The node listens on four ports, which can be configured by supplying the
 appropriate command line arguments when starting the node. The ports
@@ -151,7 +151,11 @@ used by the node are as follows:
 -  8888, the port for peer-to-peer networking, which can be set with
    ``--listen-node-port``
 -  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
+-  8099, the port used by the node dashboard, which can be set with ``--listen-dashboard-port``
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
+
+An additional mapping is the gRPC token, which defaults to ``rpcadmin``, and can
+be set with ``--rpc-server-token``.
 
 When changing the mappings above the docker container must be
 stopped (:ref:`stop-a-node`), reset, and started again. To reset the container either use
@@ -162,6 +166,18 @@ We *strongly recommend* that your firewall should be configured to only
 allow public connections on port 8888 (the peer-to-peer networking
 port). Someone with access to the other ports may be able to take
 control of your node or accounts you have saved on the node.
+
+.. warning::
+
+   Docker makes changes to the `iptable <https://en.wikipedia.org/wiki/Iptables>`_ on Linux, which means that it is not
+   easy to block ports in practice.
+   This is especially a problem `when using UFW
+   <https://github.com/chaifeng/ufw-docker#problem>`_.
+   The gRPC port is currently not considered secure, and we, therefore,
+   *strongly recommend* changing the default gRPC token via the
+   ``--rpc-server-token`` flag when running a node.
+   This will provide reasonable security if the token is only ever used through
+   a secure channel.
 
 .. _stop-a-node:
 
