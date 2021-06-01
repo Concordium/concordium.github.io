@@ -102,7 +102,7 @@ Option 2: Generate and sign the transaction on the Ledger
 Export the transaction proposal
 ================================
 
-If you already have more than one credential on the account, it means that more than one signature is needed to sign the proposal. You must therefore share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain. If you have the necessary number of signatures, you can :ref:`credentials-generate-sign.
+If you already have more than one credential on the account, it means that more than one signature is needed to sign the proposal. You must therefore share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain. When you have the necessary number of signatures, you can generate and sign the transaction.
 
 #.  In the Desktop Wallet, select **Export transaction proposal**.
 
