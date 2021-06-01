@@ -301,9 +301,3 @@ Replace ``--bash-completion-script`` by ``--zsh-completion-script`` or
 See the documentation of the `framework`_ used to implement the command
 structure of ``concordium-client`` for more details.
 
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or feedback
-on `Discord`_, or contact us at testnet@concordium.com.
-

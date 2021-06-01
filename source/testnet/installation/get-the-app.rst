@@ -44,9 +44,3 @@ Installing the Concordium ID app on iOS requires installation of Apple’s TestF
 2. Join our `TestFlight beta program`_ via your iPhone (it works best if you click the link directly on your iPhone), and follow the steps shown in there, to add Concordium ID to TestFlight.
 3. Open the TestFlight app on your iPhone and install Concordium ID.
 
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.

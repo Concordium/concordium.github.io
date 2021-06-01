@@ -224,9 +224,3 @@ make a transfer with a release schedule, you can have a look at the :ref:`concor
       :width: 32%
 .. image:: ../images/concordium-id/rel3.png
       :width: 32%
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
