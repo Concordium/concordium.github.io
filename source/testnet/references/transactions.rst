@@ -45,7 +45,7 @@ ensures that transactions are included only once and in a specific order.
 Until some block containing a given transaction is :ref:`finalized<glossary-finalization>`, there is no
 guarantee that the transaction is permanent.
 
-Transfers (both plain and encrypted) can be performed using the :ref:`Concordium ID<concordium_id>`
+Transfers (both plain and encrypted) can be performed using the Mobile Wallet.
 mobile app, or the :ref:`concordium-client<concordium_client>` tool. All other transaction types
 can only be done through ``concordium-client``.
 

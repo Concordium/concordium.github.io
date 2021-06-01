@@ -81,7 +81,7 @@ October 6th, 2020.
 
 -  Chain visualization: The connection of blocks has been made more
    stable to ensure that it progresses smoothly.
--  :ref:`iOS Concordium ID <concordium_id>` app available.
+-  iOS Concordium ID app available.
 -  Added import to app. It is now possible to import a file that has
    previously been exported. This enables moving identities and accounts
    to other mobile devices and restoring from backup.
@@ -124,7 +124,7 @@ This version of the Testnet is running Concordium Node version 0.2.13.
 Updates
 =======
 
--  :ref:`Concordium ID <concordium_id>`, an Android mobile app for accessing identities and
+-  Concordium ID, an Android mobile app for accessing identities and
    accounts
 -  Identity provider integration in Android mobile app
 
