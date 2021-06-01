@@ -65,10 +65,10 @@ steps:
 
 1. Open the ``concordium-node`` executable from the unzipped archive.
 
--  When *restarting* a node consider using the
-   ``--no-block-state-import`` option. This will download just the
-   updates to the Concordium blockchain that occurred while the node was
-   inactive and might speed up the boot process.
+   -  When *restarting* a node consider using the
+      ``--no-block-state-import`` option. This will download just the
+      updates to the Concordium blockchain that occurred while the node was
+      inactive and might speed up the boot process.
 
 2. Enter a name for your node. This name will be displayed in the public
    dashboard.
