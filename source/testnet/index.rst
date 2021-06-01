@@ -18,6 +18,7 @@ Mainnet
    guides/overview-baker-process
    guides/add-baker-desktop
    guides/become-baker
+   guides/multi-credentials
 
 .. toctree::
    :maxdepth: 1
