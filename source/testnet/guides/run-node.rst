@@ -1,4 +1,4 @@
-.. _`Network Dashboard`: https://dashboard.testnet.concordium.com/
+.. _`Network Dashboard`: https://dashboard.concordium.com/
 .. _Discord: https://discord.gg/xWmQ5tp
 
 .. _run-a-node:
@@ -11,7 +11,7 @@ Run a node with Docker
    :local:
    :backlinks: none
 
-In this guide, you learn how to run a node on your computer that
+In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
 information about blocks and transactions to the nodes in the Concordium
@@ -35,10 +35,10 @@ Before running a Concordium node you will need to
 
 2. Download and extract the :ref:`concordium-node-and-client-download` software.
 
-Upgrade from an earlier version of Open Testnet
-===============================================
+Upgrade from Open Testnet
+=========================
 
-To upgrade to the current Concordium software for Open Testnet 4:
+To upgrade to the current Concordium software for Mainnet:
 
 -  Follow the above steps to :ref:`download<downloads>` the most recent Concordium
    software.
@@ -46,22 +46,13 @@ To upgrade to the current Concordium software for Open Testnet 4:
 -  Run the ``concordium-node-reset-data`` executable from the unzipped
    archive.
 
-   -  For *Mac* users: the first time you open the tool, right-click the
-      ``concordium-node-reset-data`` file and select **Open**. A message
-      will appear that the software is from an unidentified developer.
-      Select **Open** again.
-   -  For *Windows* users: the first time you open the tool,
-      double-click the ``concordium-node-reset-data`` file. A message
-      will appear that the software is from an unidentified developer.
-      Select **More info** → **Run anyway**.
-
 -  The tool will ask:
 
       *Do you also want to remove saved keys?*
 
-   Accounts that were created for prior versions are no longer valid on
-   Open Testnet 3. Therefore, if you have stored accounts from prior
-   versions we recommend entering **y** which will delete all account
+   Accounts that were created for an Open Testnet are not valid on
+   Mainnet. Therefore, if you have stored accounts from an Open
+   Testnet we recommend entering **y** which will delete all account
    keys.
 
 .. _running-a-node:
@@ -69,28 +60,20 @@ To upgrade to the current Concordium software for Open Testnet 4:
 Running a node
 ==============
 
-To start running a client that will join the Open Testnet follow these
+To start running a client that will join the Mainnet follow these
 steps:
 
 1. Open the ``concordium-node`` executable from the unzipped archive.
 
--  For *Mac* users: the first time you open the tool, right-click the
-   ``concordium-node`` binary and select **Open**. A message will appear
-   that the software is from an unidentified developer. Select **Open**
-   again.
--  For *Windows* users: the first time you open the tool, double-click
-   the ``concordium-node`` binary. A message will appear that the
-   software is from an unidentified developer. Select **More info** →
-   **Run anyway**.
--  When *restarting* a node consider using the
-   ``--no-block-state-import`` option. This will download just the
-   updates to the Concordium blockchain that occurred while the node was
-   inactive and might speed up the boot process.
+   -  When *restarting* a node consider using the
+      ``--no-block-state-import`` option. This will download just the
+      updates to the Concordium blockchain that occurred while the node was
+      inactive and might speed up the boot process.
 
 2. Enter a name for your node. This name will be displayed in the public
    dashboard.
 
-3. If the tool has been started before you will asked if you want to
+3. If the tool has been started before you will be asked if you want to
    delete the local node database before starting. Pressing **y** will
    delete and subsequently recreate the information on the state of the
    Concordium blockchain that was saved on your computer. **Note that
@@ -119,7 +102,7 @@ information about all the blocks in the chain.
 Among other information, on the `Network Dashboard`_ you can
 get an idea of how long it will take your node to catch up with the
 chain. For that you can compare the node's **Length** value (number of
-blocks your node received) with the **Chain Len** value (number of
+blocks your node received) with the **Total Length** value (number of
 blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.
 
@@ -141,8 +124,8 @@ platform configuration you will either need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
-Configuring ports
------------------
+Configuring ports and tokens
+----------------------------
 
 The node listens on four ports, which can be configured by supplying the
 appropriate command line arguments when starting the node. The ports
@@ -151,7 +134,11 @@ used by the node are as follows:
 -  8888, the port for peer-to-peer networking, which can be set with
    ``--listen-node-port``
 -  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
+-  8099, the port used by the node dashboard, which can be set with ``--listen-dashboard-port``
 -  10000, the gRPC port, which can be set with ``--listen-grpc-port``
+
+An additional mapping is the gRPC token, which defaults to ``rpcadmin``, and can
+be set with ``--rpc-server-token``.
 
 When changing the mappings above the docker container must be
 stopped (:ref:`stop-a-node`), reset, and started again. To reset the container either use
@@ -162,6 +149,18 @@ We *strongly recommend* that your firewall should be configured to only
 allow public connections on port 8888 (the peer-to-peer networking
 port). Someone with access to the other ports may be able to take
 control of your node or accounts you have saved on the node.
+
+.. warning::
+
+   Docker makes changes to the `iptable <https://en.wikipedia.org/wiki/Iptables>`_ on Linux, which means that it is not
+   easy to block ports in practice.
+   This is especially a problem `when using UFW
+   <https://github.com/chaifeng/ufw-docker#problem>`_.
+   The gRPC port is currently not considered secure, and we, therefore,
+   *strongly recommend* changing the default gRPC token via the
+   ``--rpc-server-token`` flag when running a node.
+   This will provide reasonable security if the token is only ever used through
+   a secure channel.
 
 .. _stop-a-node:
 
