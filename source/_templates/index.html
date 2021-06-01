@@ -22,8 +22,7 @@
         <div class="feature">
             <a href="{{ pathto('testnet/index') }}">
                 <div class="feature-box">
-                    <i class="icon fa fa-connectdevelop"></i>
-                    <h4>Testnet 4</h4>
+                    <h3>Mainnet</h3>
                     <p>
                         Learn more about Testnet 4 and how to participate.
                     </p>
@@ -33,8 +32,7 @@
         <div class="feature">
             <a href="{{ pathto('smart-contracts/index') }}">
                 <div class="feature-box">
-                    <i class="icon fa fa-file-o"></i>
-                    <h4>Smart Contracts</h4>
+                    <h3>Testnet</h3>
                     <p>
                         Learn more about smart contracts and how to develop your own.
                     </p>
@@ -58,21 +56,23 @@
         }
 
         .logo-container {
-            display: flex;
-            flex-direction: column;
+            width: 100%;
             align-items: center;
             justify-content: center;
             padding: 2vh 0;
         }
 
         .logo-container h1 {
+            position: relative;
+            top: 55px;
             color: black;
             font-weight: normal;
             max-height: 5vh;
         }
 
         .logo {
-            max-width: 650px;
+            float: left;
+            max-width: 300px;
             max-height: 25vh;
             margin: 2em;
         }
