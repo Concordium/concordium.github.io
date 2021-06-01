@@ -333,9 +333,3 @@ the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take
    Decreasing the staked amount and removing the baker can't be done
    simultaneously. During the cooldown period produced by decreasing the staked
    amount, the baker can't be removed and vice versa.
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.

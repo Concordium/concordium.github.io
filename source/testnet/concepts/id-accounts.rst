@@ -132,9 +132,3 @@ de-anonymized accounts.
 All of these actions are subject to rules and processes, and only the relevant
 entities learn any information about the account owner. No information is
 publicly revealed.
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or feedback
-on `Discord`_, or contact us at testnet@concordium.com.
