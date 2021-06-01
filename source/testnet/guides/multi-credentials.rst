@@ -46,20 +46,20 @@ Generate the transaction
 
 There are two ways that you can generate the transaction:
 
-Option 1: :ref:`Generate the transaction without signing<generate-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger or an internet connection to do this.
+Option 1: :ref:`Generate the transaction without signing<credentials-generate-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger or an internet connection to do this.
 
-Option 2: :ref:`Generate and sign the transaction<generate-sign>` This option requires a Ledger and an internet connection.
+Option 2: :ref:`Generate and sign the transaction<credentials-generate-sign>` This option requires a Ledger and an internet connection.
 
-.. _generate-without-sign:
+.. _credentials-generate-without-sign:
 
 Option 1: Generate the transaction without signing
 ---------------------------------------------------
 
 #. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-#.  Select **Generate without signing**. You can now :ref:`export the transaction proposal <export-transaction-proposal>`.
+#.  Select **Generate without signing**. You can now :ref:`export the transaction proposal <credentials-export-transaction-proposal>`.
 
-.. _generate-sign:
+.. _credentials-generate-sign:
 
 Option 2: Generate and sign the transaction on the Ledger
 ---------------------------------------------------------
@@ -97,7 +97,7 @@ Option 2: Generate and sign the transaction on the Ledger
 .. Note::
     If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In The Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
 
-    .. _export-transaction-proposal:
+    .. _credentials-export-transaction-proposal:
 
 Export the transaction proposal
 ================================
@@ -121,7 +121,7 @@ When the co-signers have signed the transaction, they return the signed transact
 
 #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and on to the Desktop Wallet.
 
-.. _submit-transaction:
+.. _credentials-submit-transaction:
 
 Submit the transaction to the blockchain
 ========================================
