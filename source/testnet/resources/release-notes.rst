@@ -142,7 +142,7 @@ Updates
 
    -  Storage of the chain on nodes has been optimized
 
--  :ref:`Concordium Node and Client Software <concordium-node-and-client>` improvements. Extended in the
+-  Concordium Node and Client Software improvements. Extended in the
    following areas:
 
    -  Managing bakers
