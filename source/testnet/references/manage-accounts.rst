@@ -136,12 +136,6 @@ Concordium blockchain. It cannot be used to create identities, but it can
 imported, the tool can be used to do GTU transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on Discord_, or contact us at testnet@concordium.com.
-
 
 .. rubric:: Footnotes
 

@@ -396,9 +396,3 @@ list of releases that are still pending to be released:
 The amount that is not yet released is also accounted in the ``Balance`` field
 so in this case the account owns ``100 GTU`` that don't belong to any pending
 release schedule.
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
