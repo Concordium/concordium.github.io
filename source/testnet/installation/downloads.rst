@@ -23,9 +23,22 @@ The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet
 Concordium Desktop Wallet
 =========================
 
--  Download the Desktop Wallet
+-  `Download for Windows <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.exe>`_
 
--  Download the Concordium Ledger App
+-  `Download for macOS <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.dmg>`_
+
+-  Download for Linux
+
+   -  `AppImage <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.AppImage>`_
+
+   -  `Debian package <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.deb>`_
+
+   -  `RPM <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.rpm>`_
+
+Concordium Ledger App
+=====================
+
+`Download the Concordium Ledger App <https://distribution.concordium.software/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
@@ -33,11 +46,11 @@ Concordium Client
 =================
 Download the Concordium Client:
 
--  `Download for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.0.1>`_
+-  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.0.1>`_
 
--  `Download for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
+-  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
 
--  `Download for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
+-  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
 
 Debian package
 ==============
