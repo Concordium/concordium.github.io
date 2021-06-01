@@ -85,6 +85,12 @@ where you replace
 
 (Keep the output file name as ``baker-credentials.json``).
 
+.. warning::
+
+   ``concordium-client`` will offer to encrypt the generated ``baker-credentials.json`` file.
+   Choose **not** to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
+   If this is a hard requirement for you then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
+
 Provide a ``--no-restake`` flag to avoid automatically adding the
 rewards to the staked amount on the baker. Read more about this behavior in the section :ref:`Restake earnings<restake-earnings>`.
 
