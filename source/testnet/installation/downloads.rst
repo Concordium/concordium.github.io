@@ -90,6 +90,5 @@ Desktop, server or laptop hardware running a recent version of Mac OS with:
 
 You need a broadband connection to run our node. It is preferable to run the
 node continuously. If you use a laptop please be aware that sleep can cause
-problems with the docker container used to run the node. Refer to our :ref:`known
-problems list <troubleshooting-and-known-issues>`.
+problems with the docker container used to run the node.
 

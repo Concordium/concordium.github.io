@@ -14,6 +14,7 @@ Mainnet
    :caption: Guides
 
    guides/accounts-transactions
+   guides/run-node-ubuntu
    guides/run-node
    guides/add-baker-desktop
    guides/become-baker
@@ -53,7 +54,6 @@ Mainnet
    :maxdepth: 1
    :caption: Resources
 
-   resources/troubleshooting
    resources/glossary
    resources/release-notes
    resources/third-party-licenses

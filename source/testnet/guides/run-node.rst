@@ -3,9 +3,9 @@
 
 .. _run-a-node:
 
-==========
-Run a Node
-==========
+======================
+Run a node with Docker
+======================
 
 .. contents::
    :local:
@@ -183,8 +183,3 @@ Logging information for your node can be retrieved using the
 ``concordium-node-retrieve-logs`` tool. This will save logs from the
 running image to a file. Additionally, if given permission, it will
 retrieve information about the programs currently running on the system.
-
-You can send your logs, system information, questions and feedback to
-testnet@concordium.com. You can also reach out at our `Discord`_, or
-check out our :ref:`troubleshooting page<troubleshooting-and-known-issues>`
-

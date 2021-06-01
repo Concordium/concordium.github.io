@@ -77,7 +77,7 @@ Generate the transaction without signing
 
 #. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-#.  Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
+#. Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
 
 .. _generate-sign:
 
@@ -151,4 +151,4 @@ When you have received and added all the required signatures, you can submit the
 .. Warning::
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
 
-To start baking, you now have to start your node with the baker keys. See :ref:`Run a node<run-a-node>` for more information about this.
+To start baking, you now have to start your node with the baker keys. See :ref:`Run a node on a server with Ubuntu<run-node-ubuntu>` for more information about this.
