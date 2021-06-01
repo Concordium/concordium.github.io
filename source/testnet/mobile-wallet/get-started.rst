@@ -11,8 +11,6 @@ Concordium ID: Get started with the app
    :local:
    :backlinks: none
 
-Before following this guide you should have finished installing Concordium ID, as described in :ref:`the previous chapter<testnet-get-the-app>`.
-
 Set up a passcode and biometrics
 ================================
 
