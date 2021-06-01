@@ -50,7 +50,7 @@ The ``concordium-node`` service that you just installed will be running around t
 Run a baker node on Ubuntu
 ==========================
 
-The following steps show you how to run a node as a :ref:`baker <baker-concept>` on a server that participates in the Concordium network. When a node is a baker node, it receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network.
+The following steps show you how to run a node as a :ref:`baker <baker-concept>` on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a baker node also participates in the lottery and produces its own blocks. If the stake is high enough the baker node also participates in finalization.
 
 Configure the node with baker keys
 ----------------------------------
