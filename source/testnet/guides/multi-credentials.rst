@@ -1,5 +1,5 @@
 
-.. _install-Ledger-app:
+.. _multi-credentials:
 
 =============================
 Add credentials to an account
