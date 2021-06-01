@@ -130,6 +130,13 @@ To check for dead links (also done by the CI), run:
 make linkcheck
 ```
 
+# Contributing (After release of Mainnet)
+
+The `main` branch is used for documentation for future releases, and documentation for new features should be done in branches starting from `main`.
+
+The `mainnet` branch contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
+Contributions such as improvements for the Mainnet documentation, should be branched of `mainnet` and then merged into both `mainnet` and `main` if still relevant.
+
 ## Style guide
 
 ### Language

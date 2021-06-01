@@ -14,7 +14,9 @@ Mainnet
    :caption: Guides
 
    guides/accounts-transactions
+   guides/run-node-ubuntu
    guides/run-node
+   guides/add-baker-desktop
    guides/become-baker
 
 .. toctree::
@@ -22,6 +24,7 @@ Mainnet
    :caption: Concepts
 
    concepts/id-accounts
+   concepts/concepts-baker
 
 .. toctree::
    :maxdepth: 1
@@ -34,7 +37,9 @@ Mainnet
    :maxdepth: 1
    :caption: Desktop Wallet
 
+   desktop-wallet/install-ledger-app
    desktop-wallet/create-identity-desktop
+   desktop-wallet/create-account-desktop
 
 .. toctree::
    :maxdepth: 1
@@ -49,7 +54,6 @@ Mainnet
    :maxdepth: 1
    :caption: Resources
 
-   resources/troubleshooting
    resources/glossary
    resources/release-notes
    resources/third-party-licenses

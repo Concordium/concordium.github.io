@@ -184,9 +184,7 @@ bakers and their :ref:`glossary-lottery-power`:
 -  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
 -  ``--include-bakers``: If set, include table of bakers and their
    lottery power. The lottery power is recomputed periodically, so operations
-   that affect them do not take effect immediately. For more information about
-   what information will be shown here, see the :ref:`detailed description on the
-   time constraints<epochs-and-slots>`.
+   that affect them do not take effect immediately.
 
 Example
 ~~~~~~~
