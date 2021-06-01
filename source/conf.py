@@ -117,7 +117,7 @@ html_theme_options = {
     # 'analytics_anonymize_ip': False,
     'logo_only': True,
     'display_version': True,
-    # 'prev_next_buttons_location': 'bottom',
+    'prev_next_buttons_location': None,
     # 'style_external_links': False,
     'style_nav_header_background': 'black',
     # # Toc options
