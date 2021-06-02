@@ -1,9 +1,9 @@
 
 .. _downloads:
 
-======================
-Installation downloads
-======================
+=========
+Downloads
+=========
 
 .. contents::
    :local:
