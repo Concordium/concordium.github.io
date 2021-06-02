@@ -302,9 +302,3 @@ If an update transaction has been posted it will take time to take effect. You c
 whether updates to the chain parameters are being processed by looking for attributes
 that are prefixed with ``pending`` in the result of the above query.
 
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or feedback
-on `Discord`_, or contact us at testnet@concordium.com.
-

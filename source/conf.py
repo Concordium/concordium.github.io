@@ -134,6 +134,14 @@ current_version = os.environ['current_version'] if 'current_version' in os.envir
 versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
 languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
 
+rst_epilog = """
+Support & Feedback
+==================
+
+If you have questions or feedback, join us on `Discourse <https://support.concordium.software/>`_, or contact us at support@concordium.software.
+"""
+
+
 html_context = {
     "display_github": True,
     "github_user": "Concordium",

@@ -77,13 +77,19 @@ and send a ``baker add`` transaction to the network:
 
 where you replace
 
-- ``<amountToStake>`` with the GTU amount for the baker's initial stake
+- ``<amount-to-stake>`` with the GTU amount for the baker's initial stake
 - ``<concordium-data-dir>`` with the following data directory:
 
   * on Linux and MacOS: ``~/.local/share/concordium``
   * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
 (Keep the output file name as ``baker-credentials.json``).
+
+.. warning::
+
+   ``concordium-client`` will offer to encrypt the generated ``baker-credentials.json`` file.
+   Choose **not** to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
+   If this is a hard requirement for you then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
 
 Provide a ``--no-restake`` flag to avoid automatically adding the
 rewards to the staked amount on the baker. Read more about this behavior in the section :ref:`Restake earnings<restake-earnings>`.
@@ -271,7 +277,7 @@ the ``baker add`` command as shown in the following:
 
 .. code-block:: console
 
-   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake
+   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amount-to-stake> --out baker-credentials.json --no-restake
 
 Finalization
 ------------
@@ -333,9 +339,3 @@ the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take
    Decreasing the staked amount and removing the baker can't be done
    simultaneously. During the cooldown period produced by decreasing the staked
    amount, the baker can't be removed and vice versa.
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.

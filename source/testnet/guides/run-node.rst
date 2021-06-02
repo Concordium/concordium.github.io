@@ -175,7 +175,7 @@ the client, it will keep running in the background in Docker. In that
 case, use the ``concordium-node-stop`` binary in the same way you opened
 the ``concordium-node`` executable.
 
-Support & Feedback
+Retrieve node logs
 ==================
 
 Logging information for your node can be retrieved using the
