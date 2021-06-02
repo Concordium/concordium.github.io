@@ -7,6 +7,7 @@ Mainnet
    :caption: Installation
 
    installation/downloads
+   installation/get-the-app
 
 .. toctree::
    :maxdepth: 1
