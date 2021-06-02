@@ -77,7 +77,7 @@ and send a ``baker add`` transaction to the network:
 
 where you replace
 
-- ``<amountToStake>`` with the GTU amount for the baker's initial stake
+- ``<amount-to-stake>`` with the GTU amount for the baker's initial stake
 - ``<concordium-data-dir>`` with the following data directory:
 
   * on Linux and MacOS: ``~/.local/share/concordium``
@@ -271,7 +271,7 @@ the ``baker add`` command as shown in the following:
 
 .. code-block:: console
 
-   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake
+   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amount-to-stake> --out baker-credentials.json --no-restake
 
 Finalization
 ------------
