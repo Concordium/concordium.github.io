@@ -14,32 +14,50 @@
 
 <body>
     <div class="logo-container">
-        <img class="logo" src="{{pathto('_static/concordium-logo-dark.svg', 1)}}" />
-        <h1>Documentation</h1>
+        <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
     </div>
 
     <div class="features-container">
         <div class="feature">
-            <a href="{{ pathto('testnet/index') }}">
-                <div class="feature-box">
-                    <h3>Mainnet</h3>
-                    <p>
-                        Learn more about Testnet 4 and how to participate.
-                    </p>
-                </div>
-            </a>
+            <div class="feature-box-mainnet">
+                <h1>
+                    <a href="{{ pathto('testnet/index') }}">Pre-release documentation</a>
+                </h1>
+                <h3>Get Started</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('testnet/index') }}">Download and install the Desktop Wallet</a></li>
+                    <li><a href="{{ pathto('testnet/desktop-wallet/create-identity-desktop') }}">Create an identity</a></li>
+                    <li><a href="{{ pathto('testnet/desktop-wallet/install-ledger-app') }}">Setup a Ledger Nano S</a></li>
+                </ul>
+                <h3>Run a node</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('testnet/guides/run-node-ubuntu') }}">Run a node on a Ubuntu server</a></li>
+                    <li><a href="{{ pathto('testnet/guides/run-node-ubuntu') }}">Run a baker node on Ubuntu</a></li>
+                </ul>
+                <h3>Become a baker</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('testnet/concepts/concepts-baker') }}">What is a baker?</a></li>
+                    <li><a href="{{ pathto('testnet/guides/add-baker-desktop') }}">Use the Desktop Wallet to add a baker</a></li>
+                    <li><a href="{{ pathto('testnet/guides/become-baker') }}">Use the Concordium Client to add a baker</a></li>
+                </ul>
+            </div>
         </div>
         <div class="feature">
-            <a href="{{ pathto('smart-contracts/index') }}">
-                <div class="feature-box">
-                    <h3>Testnet</h3>
-                    <p>
-                        Learn more about smart contracts and how to develop your own.
-                    </p>
-                </div>
-            </a>
-        </div>
+            <div class="feature-box-smart-contracts">
+                <h1>
+                    <a href="{{ pathto('smart-contracts/index') }}">Smart Contracts</a>
+                </h1>
+                <h3>General</h3>
+                <h3>Tutorials</h3>
+                <h3>Contract development guides</h3>
+                <h3>On-chain guides</h3>
+            </div>
+        </div>   
     </div>
+
+    
+
+
 
     <style>
         body {
@@ -56,25 +74,19 @@
         }
 
         .logo-container {
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            padding: 2vh 0;
-        }
-
-        .logo-container h1 {
-            position: relative;
-            top: 55px;
-            color: black;
-            font-weight: normal;
-            max-height: 5vh;
+	        height: 100px;
+	        width: 100%;
+	        margin: 10px;
+            text-align:center;
+            position:relative;
         }
 
         .logo {
-            float: left;
+            position:relative;
+            display:inline-block;
             max-width: 300px;
-            max-height: 25vh;
-            margin: 2em;
+            min-height: 100px;
+            margin-left: -28px;
         }
 
         .features-container {
@@ -93,28 +105,74 @@
             margin: 1em;
         }
 
-        .feature-box {
+        .feature-box-mainnet {
             display: flex;
             flex-direction: column;
-            background-color: white;
+            background-color: #FBFBF9;
             border-radius: 5px;
             padding: 1em;
-            width: 310px;
+            width: 350px;
             text-align: center;
             font-family: Lato;
-            word-spacing: -2px;
-            border: 1px solid rgb(200, 200, 200);
+            border: 1px solid #4486AB;
             border-radius: 15px;
             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
-        .feature-box:hover {
-            background-color: rgba(240, 240, 240);
+
+        .feature-box-smart-contracts {
+            display: flex;
+            flex-direction: column;
+            background-color: #FBFBF9;
+            border-radius: 5px;
+            padding: 1em;
+            width: 350px;
+            text-align: center;
+            font-family: Lato;
+            border: 1px solid #308274;
+            border-radius: 15px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
-        .feature-box h4 {
+        .feature-box-mainnet h1 {
             text-align: center;
+            margin-bottom: -5px;
         }
+        .feature-box-smart-contracts h1 {
+            text-align: center;
+            margin-bottom: -5px;
+        }
+
+        .feature-box-mainnet h3 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: -2px;
+        }
+        .feature-box-smart-contracts h3 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: -2px;
+        }
+
+        .feature-box-list {
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        .feature-box-list li{
+            margin-top: 7px;
+        }
+
+        .feature-box-mainnet a:hover {
+            text-align: center;
+            color: #4486AB;
+        }
+        .feature-box-smart-contracts a:hover {
+            text-align: center;
+            color: #308274;
+        }
+
+
 
         .feature p {
             margin: 0;
