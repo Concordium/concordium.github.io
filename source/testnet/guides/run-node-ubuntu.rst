@@ -24,7 +24,7 @@ Install the Debian package and run a node
 
 To run the node, you must install a Debian package. After installation, the ``concordium-node`` and ``concordium-node-collector`` services will be started.
 
-#. Download the Debian package.
+#. Download the :ref:`Debian package <downloads>`
 
 #. Install the package:
 

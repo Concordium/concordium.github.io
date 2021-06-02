@@ -97,7 +97,7 @@ Option 2: Generate and sign the transaction on the Ledger
 .. Note::
     If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In The Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
 
-    .. _credentials-export-transaction-proposal:
+.. _credentials-export-transaction-proposal:
 
 Export the transaction proposal
 ================================
