@@ -65,7 +65,7 @@ of the *Accounts*, *Identities* and the *Address Book* entries you have imported
 Update Passcode & Biometrics
 ============================
 Using this option it is possible to change the passcode or full password that you use to unlock your app. It is also possible to enable or disable
-biometrics. 
+biometrics.
 
 .. note::
    It is not possible to change your passcode, password or biometrics if you have pending identities or accounts on your phone.
