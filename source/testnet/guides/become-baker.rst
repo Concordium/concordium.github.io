@@ -77,13 +77,19 @@ and send a ``baker add`` transaction to the network:
 
 where you replace
 
-- ``<amountToStake>`` with the GTU amount for the baker's initial stake
+- ``<amount-to-stake>`` with the GTU amount for the baker's initial stake
 - ``<concordium-data-dir>`` with the following data directory:
 
   * on Linux and MacOS: ``~/.local/share/concordium``
   * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
 (Keep the output file name as ``baker-credentials.json``).
+
+.. warning::
+
+   ``concordium-client`` will offer to encrypt the generated ``baker-credentials.json`` file.
+   Choose **not** to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
+   If this is a hard requirement for you then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
 
 Provide a ``--no-restake`` flag to avoid automatically adding the
 rewards to the staked amount on the baker. Read more about this behavior in the section :ref:`Restake earnings<restake-earnings>`.
@@ -271,7 +277,7 @@ the ``baker add`` command as shown in the following:
 
 .. code-block:: console
 
-   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake
+   $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amount-to-stake> --out baker-credentials.json --no-restake
 
 Finalization
 ------------

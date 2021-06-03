@@ -6,8 +6,8 @@ Mainnet
    :maxdepth: 1
    :caption: Installation
 
-   installation/get-the-app
    installation/downloads
+   installation/get-the-app
 
 .. toctree::
    :maxdepth: 1
@@ -16,6 +16,7 @@ Mainnet
    guides/accounts-transactions
    guides/run-node-ubuntu
    guides/run-node
+   guides/overview-baker-process
    guides/add-baker-desktop
    guides/become-baker
    guides/multi-credentials
@@ -39,6 +40,7 @@ Mainnet
    :caption: Desktop Wallet
 
    desktop-wallet/install-ledger-app
+   desktop-wallet/get-started-desktop
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
 
