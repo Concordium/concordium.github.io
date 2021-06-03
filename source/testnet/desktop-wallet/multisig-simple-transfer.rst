@@ -61,7 +61,7 @@ In combination, these two options enable organizations to distribute the respons
 Generate the transaction proposal without signing
 -------------------------------------------------
 
-#. Verify that the **Transaction details** are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
+#. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
 
 #.  Select **Generate without signing**. You can now :ref:`export the transaction proposal<export-scheduled-proposal>`.
 
