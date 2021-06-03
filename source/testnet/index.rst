@@ -7,7 +7,6 @@ Mainnet
    :caption: Installation
 
    installation/downloads
-   installation/get-the-app
 
 .. toctree::
    :maxdepth: 1
@@ -16,6 +15,7 @@ Mainnet
    guides/accounts-transactions
    guides/run-node-ubuntu
    guides/run-node
+   guides/multisig-transfer
    guides/overview-baker-process
    guides/add-baker-desktop
    guides/become-baker

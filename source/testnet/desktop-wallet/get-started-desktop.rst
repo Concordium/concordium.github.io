@@ -18,7 +18,7 @@ Prerequisites
 
 -  :ref:`Run a node <run-node-ubuntu>` on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and post transaction.
 
--  Set up a :ref:`Ledger Nano S hardware wallet and install the Concordium Ledger App <install-Ledger-app>`.
+-  Set up a :ref:`Ledger Nano S hardware device and install the Concordium Ledger App <install-Ledger-app>`.
 
 Set up the Desktop Wallet
 =========================
