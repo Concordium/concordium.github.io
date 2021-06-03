@@ -1,8 +1,9 @@
 
-.. _create-multisig-scheduled:
+
+.. _create-multisig:
 
 =====================================================================
-Create a scheduled multi-signature GTU transfer in the Desktop Wallet
+Create a multi-signature GTU transfer in the Desktop Wallet
 =====================================================================
 
 .. contents::
@@ -10,24 +11,12 @@ Create a scheduled multi-signature GTU transfer in the Desktop Wallet
    :backlinks: none
    :depth: 1
 
-Scheduled multi-signature GTU transfer
-======================================
+Multi-signature GTU transfer
+============================
 
 A multi-signature transfer of GTU is a transaction that
 requires two or more co-signers to sign with their private keys to
-authorize the transaction. You can schedule the transaction in advance so
-that a specific amount of GTU can be released on a specific date and at
-a specific time in the future.
-
-You can create two types of release schedules: a regular interval
-schedule and an explicit schedule.
-
--  Use a regular interval schedule to release an equal amount of GTU to
-   a recipient at regular intervals.
-
--  Use an explicit schedule if you want the intervals between releases
-   to be of different lengths, and if you want to be able to release
-   different amounts of GTU to the recipient at each interval.
+authorize the transaction.
 
 Prerequisites
 =============
@@ -41,7 +30,7 @@ Make a transfer proposal
 
 #.  Go to **Multi Signature Transactions**, and then select **Make new proposal**. All available transactions are listed in the right pane.
 
-#.  Select **Send GTU with a schedule**.
+#.  Select **Send GTU**.
 
 #.  Select the relevant proposer. You’ll see a list of all the identities that you’re the custodian of. When you select an identity, the **Transactions Details** in the left pane are updated with the identity information and the current transaction expiry time. You'll be able to change the expiry time later in this process. Use the scrollbar if you can't see all the information. Select **Continue**.
 
@@ -51,61 +40,23 @@ Make a transfer proposal
 
 #.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**.
 
-#. Set the **Transaction expiry** time. Select **Continue**. You can now set up a release schedule.
+#. Set the **Transaction expiry** time and then select **Continue**.
 
 .. Note::
    You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It's important that you leave enough time for the co-signers to return their signatures in time.
-
-Add a release schedule
-======================
-
-You’re now ready to create a release schedule where you can specify when you want the transfer to take place. You can choose between a regular interval schedule and an explicit schedule.
-
-Option 1: Create a regular interval schedule
---------------------------------------------
-
-#.  Select **Regular interval** in **Schedule type**.
-
-#.  Select the frequency with which you want the transfers to be released in **Release every**.
-
-#.  Specify how many intervals you want to split the transfer into in **Split transfer in**.
-
-#.  Specify the date and time you want the first transfer to take place in **Starting**.
-
-#.  When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details.**
-
-.. Note::
-   You can divide a transfer into a maximum of 255 releases.
-
-Option 2: Create an explicit schedule
--------------------------------------
-
-#. Select **Explicit schedule**. For each release you want in the schedule, you have to specify the amount and the release time.
-
-#. Select **Add release to schedule** in **Releases**.
-
-#. Enter the amount you want to transfer in this release in **Amount**.
-
-#. Specify the date and time you want the transfer to take place in **Release time**.
-
-#. Select **Add**.
-
-#. Repeat the steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet. You can't edit the individual releases, but you can delete a release by selecting the Trash bin next to it.
-
-#. When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details**, and you can generate the transaction.
 
 Generate the transaction
 ========================
 
 There are two ways that you can generate the transaction:
 
--  :ref:`Generate the transaction proposal without signing<generate-scheduled-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger but you do need an internet connection.
+-  :ref:`Generate the transaction proposal without signing<generate-transfer-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger, but you do need an internet connection.
 
--  :ref:`Generate and sign the transaction<generate-sign-scheduled>` This option requires a Ledger but no internet connection.
+-  :ref:`Generate and sign the transaction<generate-sign-transfer>` This option requires a Ledger but no internet connection.
 
 In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals.
 
-.. _generate-scheduled-without-sign:
+.. _generate-transfer-without-sign:
 
 Generate the transaction proposal without signing
 -------------------------------------------------
@@ -114,7 +65,7 @@ Generate the transaction proposal without signing
 
 #.  Select **Generate without signing**. You can now :ref:`export the transaction proposal<export-scheduled-proposal>`.
 
-.. _generate-sign-scheduled:
+.. _generate-sign-transfer:
 
 Generate and sign the transaction proposal on the Ledger
 --------------------------------------------------------
@@ -123,21 +74,19 @@ Generate and sign the transaction proposal on the Ledger
 
 #. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
 
-#. In the Desktop Wallet, verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**. If you're not on the proposal page, go to **Multi Signature Transactions** -> **Your proposed transactions**, and then select the proposal you want to sign.
+#. In the Desktop Wallet, verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**. (If you're not on the proposal page, go to **Multi Signature Transactions** -> **Your proposed transactions**, and then select the proposal you want to sign.)
 
 #.  Select **Generate and sign**.
 
 #. The Ledger says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring GTU from.
 
-#. Continue navigating to the right. When you see **Continue with transaction** press both buttons.
+#. Continue navigating to the right. The Ledger shows the **Amount** you're going to transfer. Navigate to the right. The Ledger says **Recipient** and shows the recipient's address.
 
-#. The Ledger says **Release time**. Navigate to the right. The Ledger says **Amount**. Navigate to the right. The Ledger says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
-
-#. When you've navigated through and verified the information for each release, the Ledger says **Sign transaction**. Press both buttons.
+#. When you've navigated through and verified that the information is correct, the Ledger says **Sign transaction**. Press both buttons.
 
 #. The Ledger says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal including how many signatures that are required before you can submit the transaction to the chain.
 
-.. _export-scheduled-proposal:
+.. _export-transfer-proposal:
 
 Export a transaction proposal
 =============================
@@ -149,6 +98,8 @@ To propose a transaction to other co-signers, you have to share a file with them
 #.  Navigate to the location on your computer where you want to save the file. In **Save as type** make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
 
 #.  Send a copy of the file through a secure channel to the co-signers that must sign the transaction. We recommend that you send a copy of the identicon through a secure channel that is different from the one used to send the file.
+
+#. To print a copy of the proposal, select the printer icon in the upper-right corner, select Print to PDF, and then navigate to the place on your computer where you want to save the PDF.
 
 Receive signatures from co-signers
 ==================================

@@ -43,6 +43,7 @@ Mainnet
    desktop-wallet/get-started-desktop
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
+   desktop-wallet/multisig-simple-transfer
 
 .. toctree::
    :maxdepth: 1
