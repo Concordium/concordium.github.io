@@ -2,9 +2,9 @@
 
 .. _guide-account-transactions:
 
-=========================================================
-Concordium ID: Get started with accounts and transactions
-=========================================================
+===============================================================
+Get started with accounts and transactions in the mobile wallet
+===============================================================
 
 .. contents::
    :local:
@@ -19,9 +19,9 @@ to the *Accounts* page. In the upper right corner you should see a **plus sign**
 you will be asked to name your new account. In this example we will choose the name *Example Account 2*, but you can
 choose whichever name you want.
 
-.. image:: ../images/concordium-id/acc1.png
+.. image:: ../images/mobile-wallet/MW14.png
       :width: 32%
-.. image:: ../images/concordium-id/acc2.png
+.. image:: ../images/mobile-wallet/MW15.png
       :width: 32%
 
 When pressing **Next**, you will be met with a screen on which you must decide which identity to use to open the new account.
@@ -30,9 +30,9 @@ clicking on an identity, you will be taken to the next screen. When creating a n
 that is not created upon identity creation, you can choose to reveal a number of :ref:`glossary-attribute`. This is not necessary,
 and if you do not have a specific reason to do so, we recommend not revealing any, as revealed attributes go on-chain and cannot be removed.
 
-.. image:: ../images/concordium-id/acc3.png
+.. image:: ../images/mobile-wallet/MW16.png
       :width: 32%
-.. image:: ../images/concordium-id/acc4.png
+.. image:: ../images/mobile-wallet/MW17.png
       :width: 32%
 
 If you do press the **Reveal account attributes button**, you will be taken to the following page. You can tick
@@ -40,72 +40,64 @@ off the attributes you would like to reveal, and then press **Submit account**. 
 page, will take you to the final account creation page, which will give you a short overview and tell you that the account
 has been submitted.
 
-.. image:: ../images/concordium-id/acc5.png
+.. image:: ../images/mobile-wallet/MW18.png
       :width: 32%
-.. image:: ../images/concordium-id/acc6.png
+.. image:: ../images/mobile-wallet/MW19.png
       :width: 32%
 
 By pressing **Ok, thanks** on the submission overview, you will be taken back to the account page. You might see that your new
 account is still pending, as it can take a few minutes to finalize on chain. If you have not tried to do so yet, you can
 try pressing the downwards facing arrow on one of the account cards, to see that it will fold out the card. This reveals
 two new pieces of information, *at disposal* and *staked*. The at disposal field will tell you how much of the accounts balance is
-at available for use at the given moment, and the staked amount you can read more about on the :ref:`managing accounts<managing_accounts>` page.
+at available for use at the given moment, and the staked amount you can read more about on the :ref:`accounts<managing_accounts>` page.
 
-.. image:: ../images/concordium-id/acc7.png
+.. image:: ../images/mobile-wallet/MW20.png
       :width: 32%
-.. image:: ../images/concordium-id/acc8.png
+.. image:: ../images/mobile-wallet/MW21.png
       :width: 32%
 
 
 Make a transaction
 ====================
 Next up, try pressing the **Balance** area of your newly created account. On this
-screen you can see the current balance of your account, and at this point, it will also let you request 100 GTU to use on
-the Testnet. The request for 100 GTU is a Testnet feature, and for Testnet 4 it will actually transfer 2000 GTU to the account,
-even though the button says 100. The GTU drop is only available on an account once. By pressing it, you will notice a transaction
-appearing. This will be pending for a bit, and after a while 2000 GTU will be added to your account.
+screen you can see the current balance of your account. Given that you have just created a brand new account, the balance might still be 0.
+The following examples are made with some GTU on the balance, to demonstrate the functionality of the app. In this example we have 2000 GTU
+available on the balance. By pressing the **SEND** button, we will be taken to a screen, that will let us make a transfer.
 
-.. image:: ../images/concordium-id/acc9.png
+.. image:: ../images/mobile-wallet/MW22.png
       :width: 32%
-.. image:: ../images/concordium-id/acc10.png
-      :width: 32%
-
-Now that we have some GTU in our account, let’s try making a transaction. Press the **SEND** button to do that. On the next page
-you can input the amount you want to transfer, and select a recipient. In this example we will transfer 10 GTU.
-
-.. image:: ../images/concordium-id/acc11.png
-      :width: 32%
-.. image:: ../images/concordium-id/acc12.png
+.. image:: ../images/mobile-wallet/MW23.png
       :width: 32%
 
-Having decided on an amount, we will now choose the recipient. To do this, press the Select **Recipient or shield amount** button.
-On this page you can search for recipients in your *address book* or add your recipient by scanning the receiving account’s QR code.
-As you can see in the screenshot, we only have one recipient saved, *Example Account 1*. Above that, we have the option to *Shield an
-amount*, but we will get back to that later. We will choose *Example Account 1* as our recipient in this example.
+On this page you can see the amount of GTU at disposal on the balance, and the amount of GTU on the shielded balance, which we will come back to later.
+You can also input the amount you want to transfer, and lasty you can click the button that will let you select the receiver of the transaction.
+Let's try inputting an amount, press the **Select Recipient** button and then select a receiver. Right now the only recipient we have in our address book, is
+our *Example Account 2*. If you do not have your desired receiver in your address book already, you can add a new entry by pressing the + in the
+upper right corner.
 
-.. image:: ../images/concordium-id/acc13.png
+.. image:: ../images/mobile-wallet/MW24.png
       :width: 32%
-.. image:: ../images/concordium-id/acc14.png
+.. image:: ../images/mobile-wallet/MW25.png
       :width: 32%
 
 With the amount and recipient chosen, we can press **Send Funds** to continue. By doing this we are met by a confirmation screen on
 which we can verify the amount, recipient and sending account.  By pressing **Yes, send funds**, we will verify ourselves using a passcode
 or biometrics, and then the transaction is submitted to the chain. It might take a bit for the transaction to finalize.
 
-.. image:: ../images/concordium-id/acc15.png
+.. image:: ../images/mobile-wallet/MW26.png
       :width: 32%
-.. image:: ../images/concordium-id/acc16.png
+.. image:: ../images/mobile-wallet/MW27.png
       :width: 32%
+.. image:: ../images/mobile-wallet/MW28.png
+      :width: 32%     
 
-We can now see that the *Example Account 2*’s *Transfers* log shows that the amount has been deducted, plus a *fee*. All transactions will
+We can now see that the *Example Account 1*’s *Transfers* log shows that the amount has been deducted, plus a *fee*. All transactions will
 cost a fee, and depending on the type of transaction the fee might differ. Pressing the transaction will let you see more details.
 
-.. image:: ../images/concordium-id/acc17.png
+.. image:: ../images/mobile-wallet/MW29.png
       :width: 32%
-.. image:: ../images/concordium-id/acc18.png
-      :width: 32%
-
-.. _move-an-amount-to-the-shielded-balance:
+.. image:: ../images/mobile-wallet/MW30.png
+      :width: 32%  
 
 Move an amount to the shielded balance
 ========================================

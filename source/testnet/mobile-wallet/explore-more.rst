@@ -3,9 +3,9 @@
 
 .. _testnet-explore-more:
 
-=======================================
-Concordium ID: Explore the *More* page
-=======================================
+============================================
+Explore the *More* page in the mobile wallet
+============================================
 
 .. contents::
    :local:
