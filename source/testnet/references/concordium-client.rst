@@ -277,7 +277,7 @@ Import accounts and keys from the Wallet apps
    $concordium-client config account import FILE [--name NAME]
 
 Import the keys of one or more accounts from a JSON file exported from the
-:ref:`Concordium ID<concordium_id>` app.
+Mobile Wallet.
 
 The ``--name`` option selects which account to import and imports it with this
 name. If it's omitted, all accounts in the file are imported under their
@@ -300,10 +300,4 @@ Replace ``--bash-completion-script`` by ``--zsh-completion-script`` or
 
 See the documentation of the `framework`_ used to implement the command
 structure of ``concordium-client`` for more details.
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or feedback
-on `Discord`_, or contact us at testnet@concordium.com.
 

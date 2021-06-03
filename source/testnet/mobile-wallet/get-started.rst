@@ -11,8 +11,6 @@ Concordium ID: Get started with the app
    :local:
    :backlinks: none
 
-Before following this guide you should have finished installing Concordium ID, as described in :ref:`the previous chapter<testnet-get-the-app>`.
-
 Set up a passcode and biometrics
 ================================
 
@@ -81,9 +79,3 @@ account. It might be showing a *Pending icon*, which means the identity provider
 initial account and identity. You can also navigate to the *Identities screen* by clicking on **Identities** at the bottom of the
 display. On this screen you can see your newly created identity, which might also still be pending in case the identity provider
 has not finished it yet. All you have to do now, is wait for them to finish.
-
-Support & Feedback
-==================
-
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
