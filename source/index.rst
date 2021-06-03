@@ -8,4 +8,4 @@ Contents
    :hidden:
 
    smart-contracts/index
-   testnet/index
+   net/index
