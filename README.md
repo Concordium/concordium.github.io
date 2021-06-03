@@ -219,6 +219,17 @@ Example that follows both rules:
    This line has three spaces in front of it and it has an empty line above it.
 ```
 
+### Variables
+
+Use variables when it makes sense.
+
+Add new variables in the file `source/variables.rst`.
+
+Use the variables by:
+
+- Including a relative path to `variables.rst`, for example
+  `../../variables.rst`.
+- Then using the variable net, for example `|Net|`.
 
 ## License
 

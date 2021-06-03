@@ -1,6 +1,8 @@
 .. _`Network Dashboard`: https://dashboard.concordium.com/
 .. _Discord: https://discord.gg/xWmQ5tp
 
+.. include:: ../../variables.rst
+
 .. _run-a-node:
 
 ======================
@@ -38,7 +40,7 @@ Before running a Concordium node you will need to
 Upgrade from Open Testnet
 =========================
 
-To upgrade to the current Concordium software for Mainnet:
+To upgrade to the current Concordium software for |Net|:
 
 -  Follow the above steps to :ref:`download<downloads>` the most recent Concordium
    software.
@@ -51,7 +53,7 @@ To upgrade to the current Concordium software for Mainnet:
       *Do you also want to remove saved keys?*
 
    Accounts that were created for an Open Testnet are not valid on
-   Mainnet. Therefore, if you have stored accounts from an Open
+   |Net|. Therefore, if you have stored accounts from an Open
    Testnet we recommend entering **y** which will delete all account
    keys.
 
@@ -60,7 +62,7 @@ To upgrade to the current Concordium software for Mainnet:
 Running a node
 ==============
 
-To start running a client that will join the Mainnet follow these
+To start running a client that will join the |Net| follow these
 steps:
 
 1. Open the ``concordium-node`` executable from the unzipped archive.

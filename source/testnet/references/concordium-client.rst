@@ -3,6 +3,8 @@
 .. _IP address: https://en.wikipedia.org/wiki/IP_address
 .. _port number: https://en.wikipedia.org/wiki/Port_(computer_networking)
 
+.. include:: ../../variables.rst
+
 .. _concordium_client:
 
 =================
@@ -101,7 +103,7 @@ Read more about accounts :ref:`here<managing_accounts>`.
 Location
 --------
 
-On the testnet, the configuration directory is mapped by Docker into a
+On the |Net|, the configuration directory is mapped by Docker into a
 system-dependent directory:
 
 -  Linux/macOS: ``$HOME/.config/concordium``

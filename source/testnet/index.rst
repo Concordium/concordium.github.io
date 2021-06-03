@@ -1,6 +1,8 @@
-=======
-Mainnet
-=======
+.. include:: ../variables.rst
+
+=====
+|Net|
+=====
 
 .. toctree::
    :maxdepth: 1
