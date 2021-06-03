@@ -4,7 +4,7 @@
 .. _testnet-explore-more:
 
 ============================================
-Explore the *More* page in the mobile wallet
+Explore the *More* page in the Mobile Wallet
 ============================================
 
 .. contents::
@@ -73,4 +73,3 @@ biometrics.
 About
 =====
 In the About option you can find support information and the app version number.
-
