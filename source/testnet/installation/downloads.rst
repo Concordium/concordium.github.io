@@ -1,6 +1,3 @@
-.. _`Concordium ID APK`: https://client-distribution-testnet.concordium.com/wallet-testnet-release-0.5.30.apk
-.. _TestFlight: https://apps.apple.com/dk/app/testflight/id899247664?l=da
-.. _`TestFlight beta program`: https://testflight.apple.com/join/5LgqqrJ4
 
 .. _downloads:
 
@@ -12,83 +9,67 @@ Downloads
    :local:
    :backlinks: none
 
-.. _concordium_id:
+This topics contains information about where you can download the Concordium Wallets and tools. You can also find out about the hardware requirements for running a node.
 
-Concordium ID
+Mobile Wallet
 =============
 
-Installation on Android
------------------------
+The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
-Installation requirements: Android 8 or newer.
+-  iOS: Go to the App Store and search for Concordium Mobile Wallet.
 
-1. Download the `Concordium ID APK`_ to your phone.
-2. You may see a warning about downloading the .apk-file. If you are asked whether you want to keep the .apk-file, press **OK**.
-3. After opening the .apk-file, you may see a warning saying that your phone is not allowed to install apps from this source. Press **Settings**, toggle **Allow from this source** and go back.
-4. You are now asked if you want to install the application. Press **Install**.
+-  Android: Go to Google Play and search for Concordium Mobile Wallet.
 
+Concordium Desktop Wallet
+=========================
 
-Installation on iOS
--------------------
+-  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.0.0.exe>`_
 
-Installation requirements: iOS 13 or newer.
+-  `Download for macOS <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.dmg>`_
 
-Installing the Concordium ID app on iOS requires installation of Apple’s TestFlight app, which is used to distribute beta versions of iOS apps.
+-  Download for Linux
 
-1. Install `TestFlight`_ via App Store.
-2. Join our `TestFlight beta program`_ via your iPhone (it works best if you click the link directly on your iPhone), and follow the steps shown in there, to add Concordium ID to TestFlight.
-3. Open the TestFlight app on your iPhone and install Concordium ID.
+   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.0.AppImage>`_
+
+   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.0.deb>`_
+
+   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.0.rpm>`_
+
+Concordium Ledger App
+=====================
+
+`Download the Concordium Ledger App <https://distribution.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
-.. _concordium-node-and-client:
+Concordium Client
+=================
+Download the Concordium Client:
 
-Concordium Node and Client
-==========================
+-  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.0.1>`_
 
-Concordium node and client software for :ref:`Open Testnet v4 <open-testnet-v4>`:
+-  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
 
-* `Linux <https://client-distribution-testnet.concordium.com/concordium-software-linux_0.4.8-0.tar.gz>`_
-* `Windows <https://client-distribution-testnet.concordium.com/concordium-software-win_0.4.8-0.zip>`_
-* `MacOS <https://client-distribution-testnet.concordium.com/concordium-software-macos_0.4.8-0.zip>`_
+-  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
 
-Download and extract the archive on your machine.
+Debian package
+==============
+To run a node on a server with Ubuntu, you'll need to `download a Debian package <https://distribution.mainnet.concordium.software/deb/concordium-node_1.0.1-mainnet_amd64.deb>`_.
 
-Read more about the Concordium :ref:`node <run-a-node>` and :ref:`client <concordium_client>` software in our reference
-guides.
+Requirements for running a node
+===============================
 
-.. _requirements-1:
+The following are the minimum system requirements for running a node. If your system does not meet or exceed these requirements, you might not be able to run the node properly.
 
-Requirements
-------------
+You need a broadband connection to run a node, and we strongly recommend that the node is running around the clock. This is especially important if you're running a baker node.
 
-Below are the recommended requirements for running a node. Weaker hardware might
-still run the node, however you might experience problems.
+If you use a laptop in combination with Docker, sleep mode can cause problems with the Docker container used to run the node.
 
-**Linux**
+System requirements
+-------------------
 
-Desktop, server or laptop hardware running a recent version of 64-bit linux
-with:
+-  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen 5000 series or Intel Core 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
 
--  30 Gigabytes of free disk space
--  4 gigabytes of ram
+-  Minimum 16 GB of RAM.
 
-**Windows**
-
-Desktop, server or laptop hardware running 64-bit Windows 10 pro or Windows 10
-home version 2004 with:
-
--  30 Gigabytes of free disk space
--  8 gigabytes of ram
-
-**Mac**
-
-Desktop, server or laptop hardware running a recent version of Mac OS with:
-
--  30 Gigabytes of free disk space
--  8 gigabytes of ram
-
-You need a broadband connection to run our node. It is preferable to run the
-node continuously. If you use a laptop please be aware that sleep can cause
-problems with the docker container used to run the node.
-
+-  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).

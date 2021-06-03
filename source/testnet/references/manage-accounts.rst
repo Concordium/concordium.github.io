@@ -107,7 +107,7 @@ account or the name of an account chosen when importing the account. If no
 address is provided, ``concordium-client`` will use the account name
 ``default``.
 
-The :ref:`concordium_id` keeps track of the sequence number and assigns the correct one when sending transactions.
+The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually via the option ``--nonce``.
 
@@ -120,7 +120,7 @@ Tools
 The mobile wallet: Concordium ID
 --------------------------------
 
-:ref:`concordium_id` is a smartphone app that allows creation of accounts from
+The Mobile Wallet is a smartphone app that allows creation of accounts from
 identities issued by the external identity provider `Notabene`_, as well as
 transfers of GTU from created accounts. It supports both plain and encrypted transfers.
 

@@ -11,8 +11,6 @@ Create an identity and an initial account in the Desktop Wallet
 
 Before you can start using the Desktop Wallet and submit transactions to the blockchain, you need an identity and an initial account issued by an identity provider. The identity provider will submit the initial account to the chain and will know the identity of the owner of the initial account, but not of any regular accounts that you create.
 
-.. xref to identities and accounts doc
-
 Prerequisites
 =============
 -   Understanding of the concepts of identity and account.
@@ -55,3 +53,5 @@ Create an initial account
 #. In the Desktop Wallet, enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
 #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
+
+.. Note:: When you've created your identity and account, we strongly recommend that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
