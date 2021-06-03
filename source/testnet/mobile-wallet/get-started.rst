@@ -15,7 +15,7 @@ Get started with the mobile wallet
 
    Insert link to download section.
 
-Before following this guide you should have finished installing Concordium Mobile Wallet, as described in :ref:`Dowloads <downloads>`.
+Before following this guide you should have finished installing Concordium Mobile Wallet, as described in :ref:`Downloads <downloads>`.
 
 Set up a passcode and biometrics
 ================================
