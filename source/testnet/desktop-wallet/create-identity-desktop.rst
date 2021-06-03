@@ -54,4 +54,4 @@ Create an initial account
 
 #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
 
-.. Note:: When you've created our identity and account, we strongly recommend that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
+.. Note:: When you've created your identity and account, we strongly recommend that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
