@@ -7,15 +7,14 @@ Mainnet
    :caption: Installation
 
    installation/downloads
-   installation/get-the-app
 
 .. toctree::
    :maxdepth: 1
    :caption: Guides
 
-   guides/accounts-transactions
    guides/run-node-ubuntu
    guides/run-node
+   guides/multisig-transfer
    guides/overview-baker-process
    guides/add-baker-desktop
    guides/become-baker
@@ -33,6 +32,7 @@ Mainnet
    :caption: Concordium Mobile Wallet
 
    mobile-wallet/get-started
+   mobile-wallet/accounts-transactions
    mobile-wallet/explore-more
 
 .. toctree::
@@ -43,6 +43,7 @@ Mainnet
    desktop-wallet/get-started-desktop
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
+   desktop-wallet/multisig-simple-transfer
 
 .. toctree::
    :maxdepth: 1
