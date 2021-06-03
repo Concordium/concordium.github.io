@@ -41,7 +41,7 @@ searched, when you make a transfer.
 Export
 ======
 Using Concordium Mobile Wallet it is possible to export your accounts and identities. This can e.g. be useful to create back-ups, or to move
-your ID's and accounts if you get a new phone. To start an export, press the **Export** option. Doing that will take you to a new page, that
+your ID's and accounts if you get a new phone. To start an export, press the **Export** option. Doing that will take you to a new page that
 briefly explains what an export means. We recommend reading this carefully. Pressing **Continue** will take you to a page on which you will
 be asked to enter a password for your export file. After entering it twice, you can **Continue**. As a last step, you will be prompted by
 either iOS or Android on what you want to do with your exported file, using the layover from the phone’s operating system.
