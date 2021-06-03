@@ -1,7 +1,8 @@
-
 .. _networkDashboardLink: https://dashboard.testnet.concordium.com/
 .. _node-dashboard: http://localhost:8099
 .. _Discord: https://discord.com/invite/xWmQ5tp
+
+.. include:: ../../variables.rst
 
 .. _become-a-baker:
 
@@ -214,7 +215,7 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 
 .. note::
 
-   In the testnet, ``bakerCooldownEpochs`` is set initially to 168 epochs. This
+   In the |Net|, ``bakerCooldownEpochs`` is set initially to 168 epochs. This
    value can be checked as follows:
 
    .. code-block:: console
@@ -290,7 +291,7 @@ chain. For more information about this process, see the :ref:`finalization<gloss
 The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
 finalization committee you will probably have to modify the staked amount
-to reach said threshold. In the testnet, the staked amount needed to participate
+to reach said threshold. In the |Net|, the staked amount needed to participate
 in the finalization committee is **0.1% of the total amount of existing GTU**.
 
 Participating in the finalization committee produces rewards on each block that
