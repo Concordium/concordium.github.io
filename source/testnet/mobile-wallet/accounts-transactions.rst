@@ -3,7 +3,7 @@
 .. _guide-account-transactions:
 
 ===============================================================
-Get started with accounts and transactions in the mobile wallet
+Get started with accounts and transactions in the Mobile Wallet
 ===============================================================
 
 .. contents::
