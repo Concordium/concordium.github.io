@@ -10,8 +10,8 @@ Create a scheduled multi-signature GTU transfer in the Desktop Wallet
    :backlinks: none
    :depth: 1
 
-Multi-signature GTU transfer
-============================
+Scheduled multi-signature GTU transfer
+======================================
 
 A multi-signature transfer of GTU is a transaction that
 requires two or more co-signers to sign with their private keys to
@@ -49,9 +49,12 @@ Make a transfer proposal
 
 #.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
 
-#.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**. You can now set up a release schedule.
+#.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**.
 
-Set the **Transaction expiry** time. You must submit proposals to the chain within the last 2 hours up to the expiry date. This means you must set the expiry time so that it’s possible for any co-signers to return their signatures in time. Select **Continue**.
+#. Set the **Transaction expiry** time. Select **Continue**. You can now set up a release schedule.
+
+.. Note::
+   You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It's important that you leave enough time for the co-signers to return their signatures in time.
 
 Add a release schedule
 ======================
@@ -69,7 +72,7 @@ Option 1: Create a regular interval schedule
 
 #.  Specify the date and time you want the first transfer to take place in **Starting**.
 
-#.  When the schedule is complete, select **Continue**. You can now approve the transaction on the Ledger. You can see the release schedule under **Transaction Details.**
+#.  When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details.**
 
 .. Note::
    You can divide a transfer into a maximum of 255 releases.
@@ -87,7 +90,7 @@ Option 2: Create an explicit schedule
 
 #. Select **Add**.
 
-   Repeat the steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet You can't edit the individual releases, but you can delete a release by selecting the Trash bin next to it.
+#. Repeat the steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet. You can't edit the individual releases, but you can delete a release by selecting the Trash bin next to it.
 
 #. When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details**, and you can generate the transaction.
 
@@ -96,14 +99,16 @@ Generate the transaction
 
 There are two ways that you can generate the transaction:
 
--  :ref:`Generate the transaction without signing<generate-scheduled-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger or an internet connection to do this.
+-  :ref:`Generate the transaction proposal without signing<generate-scheduled-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger but you do need an internet connection.
 
--  :ref:`Generate and sign the transaction<generate-sign-scheduled>` This option requires a Ledger and an internet connection.
+-  :ref:`Generate and sign the transaction<generate-sign-scheduled>` This option requires a Ledger but no internet connection.
+
+In combination, these two options enable organizations to divide the responsibility of creating and signing transfers. It makes it possible to have one employee create the proposals and another one sign the proposals.
 
 .. _generate-scheduled-without-sign:
 
-Generate the transaction without signing
-----------------------------------------
+Generate the transaction proposal without signing
+-------------------------------------------------
 
 #. Verify that the **Transaction details** are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
@@ -111,14 +116,14 @@ Generate the transaction without signing
 
 .. _generate-sign-scheduled:
 
-Generate and sign the transaction on the Ledger
------------------------------------------------
+Generate and sign the transaction proposal on the Ledger
+--------------------------------------------------------
 
 #.  Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device**.
 
 #. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
 
-#. In the Desktop Wallet, verify that the Transaction details are as you intended, and then select **I am sure that the proposed changes are correct**.
+#. In the Desktop Wallet, verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**. If you're not on the proposal page, go to **Multi Signature Transactions** -> **Your proposed transactions**, and then select the proposal you want to sign.
 
 #.  Select **Generate and sign**.
 
@@ -165,9 +170,9 @@ When you have received and added all the required signatures, you can submit the
 
 #. Select **I understand this is the final submission, and that it cannot be reverted.**
 
-   - If you don't want to submit the transaction to the chain, you can select **Cancel proposal**. You're asked to verify that you want to close the proposal. The proposal is still visible in the list of proposals but it is no longer active.
+   - If you don't want to submit the transaction to the chain, you can select **Cancel proposal**. You're asked to verify that you want to close the proposal. The proposal is still visible in the list of proposals, but it's no longer active.
 
-#. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the Ledger.
+#. Select **Submit transaction to chain.** The transaction is submitted to the chain. After a short while, the transaction is finalized on the chain and its status changes to **Finalized**.
 
 #. Select **Finish** to leave the page.
 
