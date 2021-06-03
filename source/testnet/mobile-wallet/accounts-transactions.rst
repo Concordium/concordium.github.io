@@ -61,7 +61,7 @@ Make a transaction
 ====================
 Next up, try pressing the **Balance** area of your newly created account. On this
 screen you can see the current balance of your account. Given that you have just created a brand new account, the balance might still be 0.
-The following examples are made with some GTU on the balance, to demonstrate the functionality of the app. In this example we have 2000 GTU
+The following examples are made with some GTU on the balance to demonstrate the functionality of the app. In this example we have 2000 GTU
 available on the balance. By pressing the **SEND** button, we will be taken to a screen, that will let us make a transfer.
 
 .. image:: ../images/mobile-wallet/MW22.png
