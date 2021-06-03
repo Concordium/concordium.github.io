@@ -12,7 +12,6 @@ Mainnet
    :maxdepth: 1
    :caption: Guides
 
-   guides/accounts-transactions
    guides/run-node-ubuntu
    guides/run-node
    guides/multisig-transfer
@@ -33,6 +32,7 @@ Mainnet
    :caption: Concordium Mobile Wallet
 
    mobile-wallet/get-started
+   mobile-wallet/accounts-transactions
    mobile-wallet/explore-more
 
 .. toctree::
