@@ -1,9 +1,9 @@
 
 .. _create-multisig-scheduled:
 
-===========================================================
-Create a multi-signature GTU transfer in the Desktop Wallet
-===========================================================
+=====================================================================
+Create a scheduled multi-signature GTU transfer in the Desktop Wallet
+=====================================================================
 
 .. contents::
    :local:
