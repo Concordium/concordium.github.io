@@ -68,9 +68,9 @@ There are two ways that you can generate the transaction:
 
 -  :ref:`Generate the transaction without signing<generate-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger but you do need an internet connection.
 
--  :ref:`Generate and sign the transaction<generate-sign>` This option requires a Ledger but no internet connection.
+-  :ref:`Generate and sign the transaction<generate-sign>` This option requires a Ledger and an internet connection.
 
-In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals.
+In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than were the proposal was created.
 
 .. _generate-without-sign:
 
