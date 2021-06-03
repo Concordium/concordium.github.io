@@ -138,8 +138,8 @@ The `mainnet` branch contains documentation for the current Mainnet, and should 
 Contributions such as improvements for the Mainnet documentation, should be branched of `mainnet` and then merged into both `mainnet` and `main` if still relevant.
 
 **Note: New Mainnet-compatible features**:
-Documentation for new features expected to be released on the current Mainnet (could be a new feature for the Concordium Desktop-Wallet), should be branched of `mainnet`.
-The branch can be merged with `main` to be accessible on Testnet, then be merged into `mainnet` when released to Mainnet.
+Documentation for new features expected to be released on the current Mainnet (for example, be a new feature for the Concordium Desktop-Wallet), must be branched of `mainnet`.
+The branch can be merged with `main` to be accessible on Testnet and then be merged into `mainnet` when released to Mainnet.
 
 ## Style guide
 
