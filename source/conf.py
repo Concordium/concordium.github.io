@@ -117,7 +117,7 @@ html_theme_options = {
     # 'analytics_anonymize_ip': False,
     'logo_only': True,
     'display_version': True,
-    # 'prev_next_buttons_location': 'bottom',
+    'prev_next_buttons_location': None,
     # 'style_external_links': False,
     'style_nav_header_background': 'black',
     # # Toc options
@@ -133,6 +133,14 @@ current_language = os.environ['current_language'] if 'current_language' in os.en
 current_version = os.environ['current_version'] if 'current_version' in os.environ else 'local'
 versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
 languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
+
+rst_epilog = """
+Support & Feedback
+==================
+
+If you have questions or feedback, join us on `Discourse <https://support.concordium.software/>`_, or contact us at support@concordium.software.
+"""
+
 
 html_context = {
     "display_github": True,

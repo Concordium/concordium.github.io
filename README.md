@@ -137,6 +137,10 @@ The `main` branch is used for documentation for future releases, and documentati
 The `mainnet` branch contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
 Contributions such as improvements for the Mainnet documentation, should be branched of `mainnet` and then merged into both `mainnet` and `main` if still relevant.
 
+**Note: New Mainnet-compatible features**:
+Documentation for new features expected to be released on the current Mainnet (for example, be a new feature for the Concordium Desktop-Wallet), must be branched of `mainnet`.
+The branch can be merged with `main` to be accessible on Testnet and then be merged into `mainnet` when released to Mainnet.
+
 ## Style guide
 
 ### Language
@@ -215,6 +219,17 @@ Example that follows both rules:
    This line has three spaces in front of it and it has an empty line above it.
 ```
 
+### Variables
+
+Use variables when it makes sense.
+
+Add new variables in the file `source/variables.rst`.
+
+Use the variables by:
+
+- Including a relative path to `variables.rst`, for example
+  `../../variables.rst`.
+- Then using the variable net, for example `|Net|`.
 
 ## License
 
