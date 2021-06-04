@@ -4,23 +4,19 @@
 .. _mobile-get-started:
 
 =======================================
-Get started with the mobile wallet
+Get started with the Mobile Wallet
 =======================================
 
 .. contents::
    :local:
    :backlinks: none
 
-.. todo::
-
-   Insert link to download section.
-
 Before following this guide you should have finished installing Concordium Mobile Wallet, as described in :ref:`Downloads <downloads>`.
 
 Set up a passcode and biometrics
 ================================
 
-When you open the Concordium ID app for the first time, you will be greeted by a flow
+When you open the Mobile Wallet for the first time, you will be greeted by a flow
 that will help you setup a passcode and biometric authentication, create an :ref:`glossary-initial-account`,
 and it will also guide you through getting an :ref:`glossary-identity`. The initial account is a special type of account,
 that is submitted to the chain by the :ref:`glossary-identity-provider`, upon creation of an identity. You can make the
@@ -30,7 +26,7 @@ yourself, and these will be unknown by the identity provider. You can learn more
 and accounts<reference-id-accounts>` page.
 
 After reading and accepting the Terms and Conditions for the Concordium Mobile Wallet, the first screen you will meet when
-opening Concordium ID is this one. It will just explain that you have to go through this process to get started.
+opening the Mobile Wallet is this one. It will just explain that you have to go through this process to get started.
 
 .. image:: ../images/mobile-wallet/MW3.png
       :width: 32%

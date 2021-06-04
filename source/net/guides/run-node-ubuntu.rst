@@ -1,12 +1,12 @@
 .. _run-node-ubuntu:
 
-.. contents::
-   :local:
-   :backlinks: none
-
 ==================================
 Run a node on a server with Ubuntu
 ==================================
+
+.. contents::
+   :local:
+   :backlinks: none
 
 This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`baker node<baker-node-Ubuntu>`.
 

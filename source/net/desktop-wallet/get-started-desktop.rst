@@ -1,10 +1,5 @@
 .. _get-started-desktop:
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 2
-
 ====================================
 Get started with the Desktop Wallet
 ====================================
@@ -35,5 +30,5 @@ Set up the Desktop Wallet
 
 The next step is to :ref:`set up an initial account and an identity <create-initial-account-desktop>`.
 
-.. Note::
+.. Warning::
     Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.

@@ -1,13 +1,13 @@
 
 .. _create-initial-account-desktop:
 
-.. contents::
-   :local:
-   :backlinks: none
-
 ================================================================
 Create an identity and an initial account in the Desktop Wallet
 ================================================================
+
+.. contents::
+   :local:
+   :backlinks: none
 
 Before you can start using the Desktop Wallet and submit transactions to the blockchain, you need an identity and an initial account issued by an identity provider. The identity provider will submit the initial account to the chain and will know the identity of the owner of the initial account, but not of any regular accounts that you create.
 

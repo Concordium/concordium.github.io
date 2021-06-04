@@ -49,10 +49,8 @@ Transfers (both plain and encrypted) can be performed using the Mobile Wallet.
 mobile app, or the :ref:`concordium-client<concordium_client>` tool. All other transaction types
 can only be done through ``concordium-client``.
 
-
-
-Concordium ID (mobile wallet)
-=============================
+Mobile Wallet
+=============
 
 Once you create :ref:`an account<reference-id-accounts>` in the :ref:`wallet<guide-account-transactions>`, the **SEND** button brings you
 to the screen for doing transfers from the given account. Depending on whether

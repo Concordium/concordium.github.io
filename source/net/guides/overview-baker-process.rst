@@ -1,12 +1,12 @@
 .. _overview-baker:
 
-.. contents::
-   :local:
-   :backlinks: none
-
 ================================
 Overview of the baker process
 ================================
+
+.. contents::
+   :local:
+   :backlinks: none
 
 This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain. The guide assumes that you'll be using the Desktop Wallet in combination with a Ledger Nano S hardware wallet to generate baker key and that you'll be running the baker node on a server with Ubuntu.
 
