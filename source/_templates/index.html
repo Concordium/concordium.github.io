@@ -21,24 +21,19 @@
         <div class="feature">
             <div class="feature-box-mainnet">
                 <h1>
-                    <a href="{{ pathto('testnet/index') }}">Pre-release documentation</a>
+                    <a href="{{ pathto('net/index') }}">Mainnet</a>
                 </h1>
-                <h3>Get Started</h3>
+                <h3>How to make an account</h3>
                 <ul class="feature-box-list">
-                    <li><a href="{{ pathto('testnet/index') }}">Download and install the Desktop Wallet</a></li>
-                    <li><a href="{{ pathto('testnet/desktop-wallet/create-identity-desktop') }}">Create an identity</a></li>
-                    <li><a href="{{ pathto('testnet/desktop-wallet/install-ledger-app') }}">Setup a Ledger Nano S</a></li>
+                    <li><a href="{{ pathto('net/installation/downloads.rst') }}">Download a wallet</a></li>
+                    <li><a href="{{ pathto('net/desktop-wallet/create-identity-desktop') }}">Create your first account using <br> the Desktop Wallet</a></li>
+                    <li><a href="{{ pathto('net/desktop-wallet/create-identity-desktop') }}">Create your first account using <br> the Mobile Wallet</a></li>
+                    <li><a href="{{ pathto('net/desktop-wallet/install-ledger-app') }}">Setup a Ledger Nano S for <br> the Desktop Wallet</a></li>
                 </ul>
-                <h3>Run a node</h3>
+                <h3>Participate as a node runner</h3>
                 <ul class="feature-box-list">
-                    <li><a href="{{ pathto('testnet/guides/run-node-ubuntu') }}">Run a node on a Ubuntu server</a></li>
-                    <li><a href="{{ pathto('testnet/guides/run-node-ubuntu') }}">Run a baker node on Ubuntu</a></li>
-                </ul>
-                <h3>Become a baker</h3>
-                <ul class="feature-box-list">
-                    <li><a href="{{ pathto('testnet/concepts/concepts-baker') }}">What is a baker?</a></li>
-                    <li><a href="{{ pathto('testnet/guides/add-baker-desktop') }}">Use the Desktop Wallet to add a baker</a></li>
-                    <li><a href="{{ pathto('testnet/guides/become-baker') }}">Use the Concordium Client to add a baker</a></li>
+                    <li><a href="{{ pathto('net/guides/run-node-ubuntu') }}">Run a node on Ubuntu</a></li>
+                    <li><a href="{{ pathto('net/guides/run-node-ubuntu') }}">Run a baker node on Ubuntu</a></li>
                 </ul>
             </div>
         </div>
@@ -47,10 +42,10 @@
                 <h1>
                     <a href="{{ pathto('smart-contracts/index') }}">Smart Contracts</a>
                 </h1>
-                <h3>General</h3>
-                <h3>Tutorials</h3>
-                <h3>Contract development guides</h3>
-                <h3>On-chain guides</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('smart-contracts/tutorials/piggy-bank/index.rst') }}">Develop your first smart contract</a></li>
+                    <li><a href="{{ pathto('smart-contracts/guides/interact-instance.rst') }}">Interact with a smart contract</a></li>
+                </ul>
             </div>
         </div>   
     </div>
@@ -160,7 +155,7 @@
         }
 
         .feature-box-list li{
-            margin-top: 7px;
+            margin-top: 12px;
         }
 
         .feature-box-mainnet a:hover {
