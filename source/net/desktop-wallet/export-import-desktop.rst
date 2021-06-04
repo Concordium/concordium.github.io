@@ -12,7 +12,7 @@ Export identities, accounts, and addresses
 
 #.  Go to **Export/Import**.
 
-#.  Select ***Export**.
+#.  Select **Export**.
 
 #.  Create a password that contains at least 6 characters. You'll need the password to import the file into the Desktop Wallet so keep it safe.
 
@@ -23,9 +23,9 @@ Import identities, accounts, and addresses
 
 #.  Go to **Export/Import**.
 
-#.  Select **Import** and Navigate to the location on your computer where you saved the file, and then select **Open**.
+#.  Select **Import** and navigate to the location on your computer where you saved the file, and then select **Open**.
 
 #. Enter the password of the import. If the import is successful, you can see all the imported identities, accounts, and addresses in the right pane.
 
-.. Note::
+.. Warning::
     Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
