@@ -50,27 +50,12 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-Identities can be created via :ref:`Concordium ID<mobile-get-started>`. Identity issuance requires
-*Identity Verification*, which is the process of verifying the real-life
-identity of the user. This will typically involve taking photographs, scans of
-identification documents (e.g., passport), etc. Identity verification also
-checks that the user-chosen attributes are valid for the user.
+You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <mobile-get-started>`. The [NET] release presently supports the Notabene identity issuance flow.
 
-Concordium ID (mobile wallet) identity
---------------------------------------
+.. Note::
+   Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
 
-In the testnet phase the :ref:`Concordium ID<mobile-get-started>` app supports two identity issuance
-flows: *Notabene* and *Notabene (development)*. In both cases the identity
-provider is `Notabene`_, but the identity verifiers differ.
-
-The *Notabene* flow is supported by `Onfido`_ and requires the user to take
-photos of themselves, as well as supporting documentation such as a passport,
-driver's license or identity card. The identity attributes are determined based
-on the provided documentation.
-
-The *Notabene (development)* flow allows the user to provide their own
-attributes and does no verification. This flow is available for testing
-purposes, and will not be supported on the :ref:`glossary-mainnet`.
+Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs, scans of identification documents (e.g., passport), etc. Identity verification also checks that the user-chosen attributes are valid for the user.
 
 Creating an account
 ===================

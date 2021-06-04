@@ -115,9 +115,7 @@ also be set manually via the option ``--nonce``.
 Tools
 =====
 
-.. _managing-concordium-id:
-
-The mobile wallet: Concordium ID
+The Mobile Wallet
 --------------------------------
 
 The Mobile Wallet is a smartphone app that allows creation of accounts from

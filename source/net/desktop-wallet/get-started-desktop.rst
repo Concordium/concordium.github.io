@@ -1,10 +1,5 @@
 .. _get-started-desktop:
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 2
-
 ====================================
 Get started with the Desktop Wallet
 ====================================

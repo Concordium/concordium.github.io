@@ -1,14 +1,14 @@
 
 .. _create-account-desktop:
 
+========================================
+Create an account in the  Desktop Wallet
+========================================
+
 .. contents::
     :local:
     :backlinks: none
     :depth: 2
-
-========================================
-Create an account in the  Desktop Wallet
-========================================
 
 Once you've created an identity and an initial account, you can create as many accounts as you need.
 

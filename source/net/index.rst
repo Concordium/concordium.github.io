@@ -39,12 +39,13 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: Desktop Wallet
+   :caption: Concordium Desktop Wallet
 
    desktop-wallet/install-ledger-app
    desktop-wallet/get-started-desktop
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
+   desktop-wallet/export-import-desktop
    desktop-wallet/multisig-simple-transfer
 
 .. toctree::
