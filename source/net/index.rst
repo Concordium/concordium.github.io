@@ -64,3 +64,4 @@
    resources/glossary
    resources/release-notes
    resources/third-party-licenses
+   resources/dw-licenses
