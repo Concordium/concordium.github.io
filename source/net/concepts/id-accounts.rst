@@ -1,6 +1,5 @@
-.. _Notabene: https://notabene.id/
-.. _Onfido: https://onfido.com/
-.. _Discord: https://discord.com/invite/xWmQ5tp
+
+.. include:: ../../variables.rst
 
 .. _reference-id-accounts:
 
@@ -50,9 +49,9 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <mobile-get-started>`. The [NET] release presently supports the Notabene identity issuance flow.
+You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <mobile-get-started>`. The |Net| release presently supports the Notabene identity issuance flow.
 
-.. Note::
+.. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs, scans of identification documents (e.g., passport), etc. Identity verification also checks that the user-chosen attributes are valid for the user.
