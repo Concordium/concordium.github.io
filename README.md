@@ -130,7 +130,7 @@ To check for dead links (also done by the CI), run:
 make linkcheck
 ```
 
-# Contributing (After release of Mainnet)
+# Contributing
 
 The `main` branch is used for documentation for future releases, and documentation for new features should be done in branches starting from `main`.
 
