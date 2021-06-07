@@ -1,0 +1,357 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Introduction to smart contracts &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Smart contract modules" href="contract-module.html" />
+    <link rel="prev" title="Concordium Smart Contract Documentation" href="../index.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../../net/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Mainnet</a>
+    <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to smart contracts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-smart-contracts-for">What are smart contracts for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-smart-contracts-not-for">What are smart contracts <em>not</em> for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#life-cycle-of-a-smart-contract">Life cycle of a smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resource-accounting.html">Resource accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Developing smart contracts in Rust</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/custom-errors.html">Return custom errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/local-simulate.html">Locally simulate contract functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references-on-chain.html">References on-chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/local-settings.html">Local settings</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Concordium Smart Contract Documentation</a> &raquo;</li>
+        
+      <li>Introduction to smart contracts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/mainnet/source/smart-contracts/general/introduction.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-smart-contracts">
+<span id="introduction"></span><h1>Introduction to smart contracts<a class="headerlink" href="#introduction-to-smart-contracts" title="Permalink to this headline">¶</a></h1>
+<p>A smart contract is a user-supplied piece of code submitted to the Concordium
+blockchain, used to define behavior that is not directly part of the core
+protocol. Smart contracts are executed by nodes in the Concordium network
+according to predefined rules. Their execution is fully transparent, and all
+nodes must agree on what the outcome of execution is based on only publicly
+available information.</p>
+<p>A smart contract can receive, hold and send GTU, it is able to observe some
+aspects of the chain, and maintain its own state. Smart contracts are always
+executed as a response to <strong>external</strong> actions, e.g., an account sending a
+message. In practice smart contracts will often be a small part of a larger
+system, combining on and off-chain functionality. An example of off-chain
+functionality could be a server that invokes the smart contract based on
+data from the real-world, such as prices of stocks, or weather information.</p>
+<div class="section" id="what-are-smart-contracts-for">
+<h2>What are smart contracts for?<a class="headerlink" href="#what-are-smart-contracts-for" title="Permalink to this headline">¶</a></h2>
+<p>Smart contracts can reduce the needed amount of trust in third-parties, in some cases
+removing the need for a trusted third-party, in other cases reducing their
+capabilities and thus reducing the amount of trust needed in them.</p>
+<p>Because smart contracts are executed completely transparently, in a way that
+anybody with access to a node can verify, they can be very useful for ensuring
+agreement between parties.</p>
+<div class="section" id="auction-smart-contract-example">
+<span id="auction"></span><h3>Auction smart contract example<a class="headerlink" href="#auction-smart-contract-example" title="Permalink to this headline">¶</a></h3>
+<p>A use case for smart contracts could be for holding an auction; here we program
+the smart contract to accept different bids from anyone and have it keep track
+of the highest bidder.
+When the auction is over, the smart contract sends the winner bid GTU to the seller and all other bids back. The seller then should send the item to the winner.</p>
+<p>The smart contract replaces the main role of the auctioneer. The contract itself
+only governs the bidding part, and the on-chain distribution of GTUs. It will
+likely also need some logic for reimbursing the highest bidder if the seller
+does not fulfil their obligations. This will most likely mean that the contract
+needs to support some notion of proof that the seller has indeed fulfilled their
+obligation, or some way for the highest bidder to file a complaint. Smart
+contracts cannot resolve these real-world issues automatically, and the best
+solution is likely going to depend on the specifics of the auction.</p>
+</div>
+</div>
+<div class="section" id="what-are-smart-contracts-not-for">
+<h2>What are smart contracts <em>not</em> for?<a class="headerlink" href="#what-are-smart-contracts-not-for" title="Permalink to this headline">¶</a></h2>
+<p>Smart contracts are a very exciting technology and people are still finding new
+ways to take advantage of them.
+However, there are some cases where smart contracts are not a good solution.</p>
+<p>One of the key advantages of smart contracts are the trust in the code
+execution, and to achieve this a large number of nodes in the blockchain network
+have to execute the same code and ensure agreement of the result.
+Naturally, this becomes expensive compared to running the same code on one node
+in some cloud service.</p>
+<p>In cases where a smart contract depends on heavy calculations, it might be
+possible moving this calculation out of the smart contract and have the smart
+contract execute only some key parts of the computation, using cryptographic
+techniques to ensure the other parts are executed correctly.</p>
+<p>Finally, it is important to remember that smart contracts have no privacy and
+<strong>everything</strong> the smart contract has access to is accessible to everybody else
+on the Concordium network, meaning it is difficult to handle sensitive data in a
+smart contract. In some cases it might be possible to use cryptographic tools to
+not work with the data directly, but rather have the smart contracts work with
+derived notions such as encryptions and commitments, which hide the actual data.</p>
+</div>
+<div class="section" id="life-cycle-of-a-smart-contract">
+<h2>Life cycle of a smart contract<a class="headerlink" href="#life-cycle-of-a-smart-contract" title="Permalink to this headline">¶</a></h2>
+<p>A smart contract is first deployed to the chain as part of a <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">contract
+module</span></a>. After this a smart contract can be <em>initialized</em> to
+obtain a <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">smart contract instance</span></a>. Finally a smart
+contract instance can be repeatedly updated according to its own logic.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: mainnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/testnet4/">testnet4</a></dd>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

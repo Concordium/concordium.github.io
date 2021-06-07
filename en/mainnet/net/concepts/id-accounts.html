@@ -1,0 +1,401 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Identities and accounts &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bakers" href="concepts-baker.html" />
+    <link rel="prev" title="Add credentials to an account" href="../guides/multi-credentials.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: black" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Mainnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Identities and accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#obtaining-an-identity">Obtaining an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-account">Creating an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benefits">Benefits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#revoking-anonymity">Revoking anonymity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concepts-baker.html">Bakers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Get started with the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Mainnet</a> &raquo;</li>
+        
+      <li>Identities and accounts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/mainnet/source/net/concepts/id-accounts.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reference-id-accounts">
+<span id="identities-and-accounts"></span><h1>Identities and accounts<a class="headerlink" href="#reference-id-accounts" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#obtaining-an-identity" id="id1">Obtaining an identity</a></p></li>
+<li><p><a class="reference internal" href="#creating-an-account" id="id2">Creating an account</a></p></li>
+<li><p><a class="reference internal" href="#benefits" id="id3">Benefits</a></p></li>
+<li><p><a class="reference internal" href="#revoking-anonymity" id="id4">Revoking anonymity</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id5">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>In order to be an active participant on the Concordium blockchain (e.g., hold,
+send, receive <a class="reference internal" href="../resources/glossary.html#glossary-gtu"><span class="std std-ref">Global Transaction Unit (GTU)</span></a>) a user must create an <em>account</em>.</p>
+<p>The user will get an <a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> at the same time as an <em>identity</em> has been issued
+by an identity provider. As the initial account is submitted to the chain by the
+identity provider, said identity provider will know the owner of the initial account. For this
+reason, the user may consider not using the initial account, and create a regular account instead.</p>
+<p>Regular accounts’ owner is not known to the identity providers, or any other single entity. To facilitate
+compliance with relevant regulations, a regular account can only be created from an <em>identity</em>
+which is issued <a class="reference internal" href="../resources/glossary.html#glossary-off-chain"><span class="std std-ref">Off-chain</span></a> by an Identity provider. While an account
+has to be created from an identity, the user’s privacy is still protected, and the
+account owner’s identity can only be revealed via the process of <a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>,
+which can only happen under stringent regulations, such as upon a court order. In
+particular, a key feature of the design of identities and accounts is that the identity
+provider cannot reveal the identity of an account on their own.</p>
+<p>Anonymity revocation can only happen in exceptional circumstances (e.g., if
+authorities have detected suspicious activity on the account) and requires
+action by one or more anonymity revokers and the identity provider who issued
+the account’s identity.</p>
+<div class="section" id="obtaining-an-identity">
+<h2>Obtaining an identity<a class="headerlink" href="#obtaining-an-identity" title="Permalink to this headline">¶</a></h2>
+<p>Identities are issued by an identity provider. There is a registry of approved
+identity providers publicly accessible from the Concordium blockchain, with
+their contact information. Concordium Foundation will maintain the list in the
+beginning.</p>
+<p>Each identity contains a number of cryptographic values, and a number of
+user-chosen attributes, such as nationality or country of residence. These
+attributes are certified by the identity provider. The cryptographic values are
+a number of public and private keys, a signature from the identity provider, as
+well as a number of secret values the user must use to be able to use the
+identity to create accounts.</p>
+<p>You can create identities in the <a class="reference internal" href="../desktop-wallet/create-identity-desktop.html#create-initial-account-desktop"><span class="std std-ref">Desktop Wallet</span></a> or in the <a class="reference internal" href="../mobile-wallet/get-started.html#mobile-get-started"><span class="std std-ref">Mobile Wallet</span></a>. The Mainnet release presently supports the Notabene identity issuance flow.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.</p>
+</div>
+<p>Identity issuance requires <em>Identity Verification</em>, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs, scans of identification documents (e.g., passport), etc. Identity verification also checks that the user-chosen attributes are valid for the user.</p>
+</div>
+<div class="section" id="creating-an-account">
+<h2>Creating an account<a class="headerlink" href="#creating-an-account" title="Permalink to this headline">¶</a></h2>
+<p>Once a user has an identity, they can use it to create a number of accounts, besides the
+<a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> created by the identity provider upon creating the identity. In
+contrast to obtaining an identity, opening an account is an <a class="reference internal" href="../resources/glossary.html#glossary-on-chain"><span class="std std-ref">On-chain</span></a> action
+and requires sending a transaction to a node participating in the Concordium
+network. The input to the transaction is a <em>credential</em> which contains a number
+of cryptographic proofs, as well as a selection of attributes the user wishes to
+reveal publicly. The proofs establish that the attributes the user revealed
+publicly are the ones approved by the identity provider. The proofs reveal no
+other information. In particular, the identity provider itself cannot determine
+the owner of the account. (Revealing the owner is only possible through
+<a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>, which requires the identity provider and anonymity
+revokers to act together.) Note that revealing attributes publicly is completely
+optional. The benefit gained from revealing attributes is that other users may
+decide whether to trust the account based on the publicly available information.</p>
+</div>
+<div class="section" id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">¶</a></h2>
+<p>Every account on the chain must be derived from an identity that is verified and
+signed by an approved identity provider. It is publicly visible which identity
+provider issued an identity for an account, and who the anonymity revokers are
+for the account and the identity. In addition to this basic information which
+enables regulatory compliance, an account owner can choose to publicly reveal
+other values on their account, such as their nationality or country of
+residence. Since this information is publicly accessible anybody can check it
+before interacting with an account. Moreover, being able to see who issued the
+identity enables whoever wishes to interact with an account to judge the level
+of risk in the transaction.</p>
+</div>
+<div class="section" id="revoking-anonymity">
+<span id="revoking-anomity"></span><h2>Revoking anonymity<a class="headerlink" href="#revoking-anonymity" title="Permalink to this headline">¶</a></h2>
+<p>When necessary, the anonymity revokers and identity provider can work together
+to determine the owner of an account and determine which accounts belong to the
+same owner. (They should only do so when legally obliged to, such as by a court
+order.) Anonymity revocation is a two-stage process requiring cooperation of
+multiple parties.</p>
+<ol class="arabic simple">
+<li><p>Each account has an encryption of a specific <em>user identifier</em>. This
+number can be decrypted by sufficiently many of the anonymity revokers
+working together. (The set of anonymity revokers and the number of them
+required to decrypt the user identifier are determined when the identity is
+issued.)</p></li>
+<li><p>Once the user identifier is decrypted the identity provider can look
+up the real-life identity of the owner of the account.</p></li>
+</ol>
+<p>After step 2 the anonymity revokers can additionally decrypt a value that is
+held by the identity provider and allows the revokers to find all accounts the
+user has created from a given identity. Additionally, this value allows
+anonymity revokers to see the amount of GTUs in the shielded balance of
+de-anonymized accounts.</p>
+<p>All of these actions are subject to rules and processes, and only the relevant
+entities learn any information about the account owner. No information is
+publicly revealed.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: mainnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/testnet4/">testnet4</a></dd>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
