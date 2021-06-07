@@ -14,34 +14,45 @@
 
 <body>
     <div class="logo-container">
-        <img class="logo" src="{{pathto('_static/concordium-logo-dark.svg', 1)}}" />
-        <h1>Documentation</h1>
+        <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
     </div>
 
     <div class="features-container">
         <div class="feature">
-            <a href="{{ pathto('net/index') }}">
-                <div class="feature-box">
-                    <i class="icon fa fa-connectdevelop"></i>
-                    <h4>Testnet 4</h4>
-                    <p>
-                        Learn more about Testnet 4 and how to participate.
-                    </p>
-                </div>
-            </a>
+            <div class="feature-box-mainnet">
+                <h1>
+                    <a href="{{ pathto('net/index') }}">Mainnet</a>
+                </h1>
+                <h3>How to make an account</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('net/installation/downloads') }}">Download a wallet</a></li>
+                    <li><a href="{{ pathto('net/desktop-wallet/create-identity-desktop') }}">Create your first account using <br> the Desktop Wallet</a></li>
+                    <li><a href="{{ pathto('net/mobile-wallet/get-started') }}">Create your first account using <br> the Mobile Wallet</a></li>
+                    <li><a href="{{ pathto('net/desktop-wallet/install-ledger-app') }}">Setup a Ledger Nano S for <br> the Desktop Wallet</a></li>
+                </ul>
+                <h3>Participate as a node runner</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('net/guides/run-node-ubuntu') }}">Run a node on Ubuntu</a></li>
+                    <li><a href="{{ pathto('net/guides/run-node-ubuntu') }}">Run a baker node on Ubuntu</a></li>
+                </ul>
+            </div>
         </div>
         <div class="feature">
-            <a href="{{ pathto('smart-contracts/index') }}">
-                <div class="feature-box">
-                    <i class="icon fa fa-file-o"></i>
-                    <h4>Smart Contracts</h4>
-                    <p>
-                        Learn more about smart contracts and how to develop your own.
-                    </p>
-                </div>
-            </a>
-        </div>
+            <div class="feature-box-smart-contracts">
+                <h1>
+                    <a href="{{ pathto('smart-contracts/index') }}">Smart Contracts</a>
+                </h1>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('smart-contracts/tutorials/piggy-bank/index') }}">Develop your first smart contract</a></li>
+                    <li><a href="{{ pathto('smart-contracts/guides/interact-instance') }}">Interact with a smart contract</a></li>
+                </ul>
+            </div>
+        </div>   
     </div>
+
+    
+
+
 
     <style>
         body {
@@ -58,23 +69,19 @@
         }
 
         .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2vh 0;
-        }
-
-        .logo-container h1 {
-            color: black;
-            font-weight: normal;
-            max-height: 5vh;
+	        height: 100px;
+	        width: 100%;
+	        margin: 10px;
+            text-align:center;
+            position:relative;
         }
 
         .logo {
-            max-width: 650px;
-            max-height: 25vh;
-            margin: 2em;
+            position:relative;
+            display:inline-block;
+            max-width: 300px;
+            min-height: 100px;
+            margin-left: -28px;
         }
 
         .features-container {
@@ -93,28 +100,74 @@
             margin: 1em;
         }
 
-        .feature-box {
+        .feature-box-mainnet {
             display: flex;
             flex-direction: column;
-            background-color: white;
+            background-color: #FBFBF9;
             border-radius: 5px;
             padding: 1em;
-            width: 310px;
+            width: 350px;
             text-align: center;
             font-family: Lato;
-            word-spacing: -2px;
-            border: 1px solid rgb(200, 200, 200);
+            border: 1px solid #4486AB;
             border-radius: 15px;
             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
-        .feature-box:hover {
-            background-color: rgba(240, 240, 240);
+
+        .feature-box-smart-contracts {
+            display: flex;
+            flex-direction: column;
+            background-color: #FBFBF9;
+            border-radius: 5px;
+            padding: 1em;
+            width: 350px;
+            text-align: center;
+            font-family: Lato;
+            border: 1px solid #308274;
+            border-radius: 15px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
-        .feature-box h4 {
+        .feature-box-mainnet h1 {
             text-align: center;
+            margin-bottom: -5px;
         }
+        .feature-box-smart-contracts h1 {
+            text-align: center;
+            margin-bottom: -5px;
+        }
+
+        .feature-box-mainnet h3 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: -2px;
+        }
+        .feature-box-smart-contracts h3 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: -2px;
+        }
+
+        .feature-box-list {
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        .feature-box-list li{
+            margin-top: 12px;
+        }
+
+        .feature-box-mainnet a:hover {
+            text-align: center;
+            color: #4486AB;
+        }
+        .feature-box-smart-contracts a:hover {
+            text-align: center;
+            color: #308274;
+        }
+
+
 
         .feature p {
             margin: 0;
