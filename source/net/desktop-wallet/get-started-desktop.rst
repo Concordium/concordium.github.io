@@ -15,6 +15,9 @@ Prerequisites
 
 -  Set up a :ref:`Ledger Nano S hardware device and install the Concordium Ledger App <install-Ledger-app>`.
 
+.. Note::
+    Without GTU you can't submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.
+
 Set up the Desktop Wallet
 =========================
 
