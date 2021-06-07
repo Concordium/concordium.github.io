@@ -53,7 +53,7 @@ Install Concordium Ledger app on Windows
 ========================================
 
 Install Python3 and pip
-----------------------
+-----------------------
 
 #. In the **Start** menu, type *store* to open the Microsoft store.
 
@@ -121,7 +121,7 @@ Install Concordium Ledger app on macOS
 ======================================
 
 Install Homebrew, Python3, and pip
----------------------------------
+----------------------------------
 
 #. Open the Terminal application. Click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
 
@@ -201,7 +201,7 @@ Install Concordium Ledger app on Ubuntu
 =======================================
 
 Install Python3 and pip on Ubuntu
---------------------------------
+---------------------------------
 
 #. Add udev rules. For more information, see the Linux section in `Ledger ‘s guide Fix connection history <https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues>`_.
 
