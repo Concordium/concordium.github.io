@@ -19,13 +19,13 @@ This topic describes the information and the tasks that are available on account
 
 The most common tasks on an account are:
 
--  **Send GTU**: Send GTU to a recipient in your address book. See :ref:`Send GTU when only on co-signer is required <send-GTU-single-desktop>`
+-  **Send GTU**: Send GTU to a recipient in your address book. See :ref:`Send GTU when only one co-signer is required <send-GTU-single-desktop>`.
 
--  **Shield GTU**: Transfer GTU from your public balance to your shielded balance. See :ref:`Shield GTU on an account <shield-GTU-desktop>`
+-  **Shield GTU**: Transfer GTU from your public balance to your shielded balance. See :ref:`Shield GTU on an account <shield-GTU-desktop>`.
 
 In addition, you can see the following information about the selected account:
 
--  **Account Total**: The total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date. The **Balance** shows the GTU that are at your disposal and the amount of GTU that you've staked. The **Shielded balance** shows the amount of GTU that you've shielded. The **Balance** is visible to all participants on the Concordium Blockchain, while the **Shielded balance** is visible to you only.
+-  **Account Total**: The total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date. The **Balance** shows the GTU that are at your disposal, the amount of GTU that you've staked, and any GTU that are locked in a release schedule. The **At disposal** amount is the amount you can use for transactions, which excludes staked GTU and GTU in a release schedule. The **Shielded balance** shows the amount of GTU that you've shielded. The **Balance** is visible to all participants on the Concordium Blockchain, while the **Shielded balance** is visible to you only.
 
 -  **Transfers**: This is a list of the transfers on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed.
 
@@ -39,8 +39,8 @@ If you select **More**, you'll see a variety of information about your account a
 
 -  **Send GTU with a schedule**: Send GTU according to a schedule. See :ref:`Create a single signer GTU transfer with a schedule <GTU-single-schedule-desktop>`.
 
-- **Export transactions**: Export a file with a list of all transactions on the account. Select **Export transactions**, and then select **Export**. Save the fil as a .json file.
+- **Make account report**: Export a file with a list of all transactions on the account. Select **Make account report**, set the relevant filters, and then select **Make account report**. Save the fil as a .csv file.
 
 - **Transfer log filters**: Specify whether you want baker, block and finalization awards transfers to be visible in the **Transfers** list.
 
--  **Credential information**: Shows credentials that are associated with the account. This includes the credential ID, the creation date, and the valid to date.
+-  **Credential information**: Shows credentials that are associated with the account. This includes the signature threshold, credential ID's, creation dates, and valid to dates.

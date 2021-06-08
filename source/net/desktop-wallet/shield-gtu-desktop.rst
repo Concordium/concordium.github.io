@@ -13,7 +13,7 @@ Shield GTU on an account
 Shield GTU
 ==========
 
-When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network can't see the shielded balance. You can only make shielded transfers on accounts with a single credential, and if you have an account with GTU in the shielded balance, you can't add new credentials to that account.
+When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can't see the shielded balance or any shielded transfers going in or out of the account. You can only make shielded transfers on accounts with a single credential, and if you have an account with GTU in the shielded balance, you can't add new credentials to that account.
 
 #. Go to **Accounts** and select the relevant account.
 

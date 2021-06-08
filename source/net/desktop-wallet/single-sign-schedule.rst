@@ -25,6 +25,9 @@ schedule and an explicit schedule.
    to be of different lengths, and if you want to be able to release
    different amounts of GTU to the recipient at each interval.
 
+.. Note::
+   You can divide a transfer into a maximum of 255 releases.
+
 #. Go to **Accounts** and select the relevant account.
 
 #. Select **More**, and then select **Send GTU with a schedule**
@@ -58,8 +61,6 @@ Option 1: Create a regular interval schedule
 
 #. The Ledger says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal and that it's been submitted to the chain. Select **Finish**.
 
-.. Note::
-   You can divide a transfer into a maximum of 255 releases.
 
 Option 2: Create an explicit schedule
 -------------------------------------
