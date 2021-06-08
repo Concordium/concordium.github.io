@@ -92,4 +92,5 @@ The Desktop Wallet is available for Windows, macOS, and Linux with support for:
 Source Code
 -----------
 
-The source code for the Concordium Blockchain is free open source software. You can access our repositories on the `Concordium GitHub organisation page <https://github.com/Concordium>`_.
+The source code for the Concordium Blockchain is free open source software. You can access our repositories on the `Concordium GitHub organization page <https://github.com/Concordium>`_.
+
