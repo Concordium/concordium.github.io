@@ -16,11 +16,17 @@ Mobile Wallet
 
 The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
--  iOS: *Coming soon to the App Store*.
+iOS: *Soon available on the App Store*
+--------------------------------------
 
--  Android: *Coming soon to the Google Play Store*. 
+Android
+-------
 
--  Android APK: You can also download the `Concordium Mobile Wallet here <http://distribution.mainnet.concordium.software/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_. If you download the app using this link, you will have to allow installation of apps from unknown sources on your phone. You can find this option in Settings.
+.. image:: ../images/mobile-wallet/google-play-badge.png
+   :width: 25%
+   :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+
+Android APK: You can also download the `Concordium Mobile Wallet here <http://distribution.mainnet.concordium.software/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_. If you download the app using this link, you will have to allow installation of apps from unknown sources on your phone. You can find this option in Settings.
 
 
 Concordium Desktop Wallet
