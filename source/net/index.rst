@@ -45,7 +45,11 @@
    desktop-wallet/get-started-desktop
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
+   desktop-wallet/accounts-desktop
+   desktop-wallet/shield-gtu-desktop
    desktop-wallet/export-import-desktop
+   desktop-wallet/send-gtu-single-desktop
+   desktop-wallet/single-sign-schedule
    desktop-wallet/multisig-simple-transfer
 
 .. toctree::
