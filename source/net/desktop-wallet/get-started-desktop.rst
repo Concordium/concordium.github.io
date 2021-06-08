@@ -1,12 +1,12 @@
-.. _get-started-desktop:
+.. _set-up-desktop:
 
-====================================
-Get started with the Desktop Wallet
-====================================
+=========================
+Set up the Desktop Wallet
+=========================
 
 The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending GTU, adding a baker, and exporting and importing account information.
 
-The Desktop Wallet also supports storing of your private keys on a hardware wallet. Currently, only the Ledger Nano S is supported.
+The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, only the Ledger Nano S is supported.
 
 Prerequisites
 =============
