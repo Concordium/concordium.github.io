@@ -31,4 +31,4 @@ Step 4: Set up an identity and an initial account
 
 Once you've installed the Desktop Wallet, you must set up an identity and an initial account. We also recommend that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account-desktop>` and :ref:`Create an account in the Desktop Wallet<create-account-desktop>`.
 
-Your now ready to start using the Desktop Wallet.
+You're now ready to start using the Desktop Wallet.
