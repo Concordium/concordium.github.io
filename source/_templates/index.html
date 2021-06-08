@@ -20,9 +20,11 @@
     <div class="features-container">
         <div class="feature">
             <div class="feature-box-mainnet">
-                <h1>
-                    <a href="{{ pathto('net/index') }}">Mainnet</a>
-                </h1>
+                <a href="{{ pathto('net/index') }}"></a>
+                    <div class="feature-box-header">
+                        <h1>Mainnet</h1>
+                    </div>
+                </a>
                 <h3>How to make an account</h3>
                 <ul class="feature-box-list">
                     <li><a href="{{ pathto('net/installation/downloads') }}">Download a wallet</a></li>
@@ -93,49 +95,50 @@
             flex-direction: column;
             background-color: #FBFBF9;
             border-radius: 5px;
-            padding: 1em;
+            padding-bottom: 1em;
             width: 350px;
             text-align: center;
             font-family: Lato;
             border: 1px solid #4486AB;
             border-radius: 15px;
             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .feature-box-header {
+            width: 100%;
+            height: 50px;
+            background: #4486AB;
+            border-bottom: 1px solid #4486AB;
+        }
+
+        .feature-box-header:hover {
+            width: 100%;
+            height: 50px;
+            background: #FBFBF9;
+            border-bottom: 1px solid #4486AB;
         }
 
 
-        .feature-box-smart-contracts {
-            display: flex;
-            flex-direction: column;
-            background-color: #FBFBF9;
-            border-radius: 5px;
-            padding: 1em;
-            width: 350px;
+        .feature-box-header h1 {
             text-align: center;
-            font-family: Lato;
-            border: 1px solid #308274;
-            border-radius: 15px;
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-box-mainnet h1 {
-            text-align: center;
+            color: #FFFFFF;
             margin-bottom: -5px;
         }
-        .feature-box-smart-contracts h1 {
+
+        .feature-box-header h1:hover {
             text-align: center;
+            color: #4486AB;
             margin-bottom: -5px;
         }
+
 
         .feature-box-mainnet h3 {
             text-align: center;
             margin-top: 25px;
             margin-bottom: -2px;
         }
-        .feature-box-smart-contracts h3 {
-            text-align: center;
-            margin-top: 25px;
-            margin-bottom: -2px;
-        }
+
 
         .feature-box-list {
             text-align: center;
@@ -150,12 +153,6 @@
             text-align: center;
             color: #4486AB;
         }
-        .feature-box-smart-contracts a:hover {
-            text-align: center;
-            color: #308274;
-        }
-
-
 
         .feature p {
             margin: 0;
