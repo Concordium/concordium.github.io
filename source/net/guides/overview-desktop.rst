@@ -1,14 +1,15 @@
-.. _overview-baker:
 
-================================
-Overview of the baker process
-================================
+.. _overview-desktop:
+
+=========================================
+Overview of setting up the Desktop Wallet
+=========================================
 
 .. contents::
    :local:
    :backlinks: none
 
-This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain. The guide assumes that you'll be using the Desktop Wallet in combination with a Ledger Nano S hardware wallet to generate baker key and that you'll be running the baker node on a server with Ubuntu.
+This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you'll be using the Desktop Wallet in combination with a Ledger Nano S hardware device to generate and store keys and sign transactions.
 
 Step 1: Set up the node
 =======================
@@ -30,12 +31,4 @@ Step 4: Set up an identity and an initial account
 
 Once you've installed the Desktop Wallet, you must set up an identity and an initial account. We also recommend that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account-desktop>` and :ref:`Create an account in the Desktop Wallet<create-account-desktop>`.
 
-Step 5: Add a baker in the Desktop Wallet
-=========================================
-You're now ready to add a baker in the Desktop Wallet and generate baker keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See :ref:`Add a baker account in the Desktop Wallet <create-baker-desktop>`. You can also change the number of signatures required on an account before a transaction can be submitted to the blockchain. See :ref:`Change the signature threshold <guide-change-signature>`
-
-Step 6: Configure the node with the baker keys
-==============================================
-
-The last step is to configure the running node with the baker keys so the node
-can start baking. See :ref:`Run a baker node on Ubuntu<baker-node-Ubuntu>`.
+Your now ready to start using the Desktop Wallet.
