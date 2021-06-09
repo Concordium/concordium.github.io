@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Get started with the Desktop Wallet" href="get-started-desktop.html" />
+    <link rel="next" title="Set up the Desktop Wallet" href="get-started-desktop.html" />
     <link rel="prev" title="Explore the More page in the Mobile Wallet" href="../mobile-wallet/explore-more.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -111,6 +111,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
@@ -139,10 +140,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="get-started-desktop.html">Get started with the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started-desktop.html">Set up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
@@ -155,7 +160,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes-mainnet.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
 </ul>
@@ -279,8 +284,8 @@
 </div>
 <div class="section" id="install-concordium-ledger-app-on-windows">
 <h2>Install Concordium Ledger app on Windows<a class="headerlink" href="#install-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="install-python-and-pip">
-<h3>Install Python and pip<a class="headerlink" href="#install-python-and-pip" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-python3-and-pip">
+<h3>Install Python3 and pip<a class="headerlink" href="#install-python3-and-pip" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>In the <strong>Start</strong> menu, type <em>store</em> to open the Microsoft store.</p></li>
 <li><p>In <strong>Search</strong>, in the upper right corner, enter <em>python</em>.</p></li>
@@ -290,7 +295,7 @@
 <li><p>In the <strong>Start</strong> menu, type <em>PowerShell</em> and select <strong>Windows PowerShell</strong>. The command-line window opens.</p></li>
 <li><p>To confirm that Python3 was installed, enter</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python --version</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python3 --version</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="6">
@@ -333,8 +338,8 @@
 </div>
 <div class="section" id="install-concordium-ledger-app-on-macos">
 <h2>Install Concordium Ledger app on macOS<a class="headerlink" href="#install-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="install-homebrew-python-and-pip">
-<h3>Install Homebrew, Python, and pip<a class="headerlink" href="#install-homebrew-python-and-pip" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-homebrew-python3-and-pip">
+<h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Open the Terminal application. Click the <strong>Launchpad</strong> icon in the <strong>Dock</strong>, type <em>Terminal</em> in the search field, then select <strong>Terminal</strong>.</p></li>
 <li><p>Install the package manager Homebrew. Copy the following line into the Terminal and press enter.</p></li>
@@ -404,8 +409,8 @@
 </div>
 <div class="section" id="install-concordium-ledger-app-on-ubuntu">
 <h2>Install Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="install-python-and-pip-on-ubuntu">
-<h3>Install Python and pip on Ubuntu<a class="headerlink" href="#install-python-and-pip-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-python3-and-pip-on-ubuntu">
+<h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">Ledger ‘s guide Fix connection history</a>.</p></li>
 </ol>

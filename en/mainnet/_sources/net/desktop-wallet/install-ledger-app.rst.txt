@@ -52,8 +52,8 @@ For details on how to update the Ledger firmware, see `Ledger ‘s guide <https:
 Install Concordium Ledger app on Windows
 ========================================
 
-Install Python and pip
-----------------------
+Install Python3 and pip
+-----------------------
 
 #. In the **Start** menu, type *store* to open the Microsoft store.
 
@@ -69,7 +69,7 @@ Install Python and pip
 
 .. code-block:: console
 
-   Python --version
+   Python3 --version
 
 6. To confirm that the package manager named pip is installed, enter
 
@@ -120,8 +120,8 @@ Install the Concordium Ledger app on Windows
 Install Concordium Ledger app on macOS
 ======================================
 
-Install Homebrew, Python, and pip
----------------------------------
+Install Homebrew, Python3, and pip
+----------------------------------
 
 #. Open the Terminal application. Click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
 
@@ -200,8 +200,8 @@ Install the Concordium Ledger app on MacOS
 Install Concordium Ledger app on Ubuntu
 =======================================
 
-Install Python and pip on Ubuntu
---------------------------------
+Install Python3 and pip on Ubuntu
+---------------------------------
 
 #. Add udev rules. For more information, see the Linux section in `Ledger ‘s guide Fix connection history <https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues>`_.
 

@@ -110,7 +110,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#concordium-desktop-wallet">Concordium Desktop Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#concordium-ledger-app">Concordium Ledger App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#concordium-client">Concordium Client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Debian package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cargo-concordium">Cargo-concordium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-debian-package">Node Debian package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-suite-for-running-a-node-using-docker">Full suite for running a node using Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requirements-for-running-a-node">Requirements for running a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -120,6 +122,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
@@ -140,10 +143,14 @@
 <p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Get started with the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
@@ -156,7 +163,7 @@
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes-mainnet.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
 </ul>
@@ -234,48 +241,61 @@
 <span id="id1"></span><h1>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mobile-wallet" id="id3">Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id4">Concordium Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#concordium-ledger-app" id="id5">Concordium Ledger App</a></p></li>
-<li><p><a class="reference internal" href="#concordium-client" id="id6">Concordium Client</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id7">Debian package</a></p></li>
-<li><p><a class="reference internal" href="#requirements-for-running-a-node" id="id8">Requirements for running a node</a></p>
+<li><p><a class="reference internal" href="#mobile-wallet" id="id2">Mobile Wallet</a></p>
 <ul>
-<li><p><a class="reference internal" href="#system-requirements" id="id9">System requirements</a></p></li>
+<li><p><a class="reference internal" href="#ios-soon-available-on-the-app-store" id="id3">iOS: <em>Soon available on the App Store</em></a></p></li>
+<li><p><a class="reference internal" href="#android" id="id4">Android</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id5">Concordium Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#concordium-ledger-app" id="id6">Concordium Ledger App</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client" id="id7">Concordium Client</a></p></li>
+<li><p><a class="reference internal" href="#cargo-concordium" id="id8">Cargo-concordium</a></p></li>
+<li><p><a class="reference internal" href="#node-debian-package" id="id9">Node Debian package</a></p></li>
+<li><p><a class="reference internal" href="#full-suite-for-running-a-node-using-docker" id="id10">Full suite for running a node using Docker</a></p></li>
+<li><p><a class="reference internal" href="#requirements-for-running-a-node" id="id11">Requirements for running a node</a></p>
+<ul>
+<li><p><a class="reference internal" href="#system-requirements" id="id12">System requirements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id13">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This topics contains information about where you can download the Concordium Wallets and tools. You can also find out about the hardware requirements for running a node.</p>
 <div class="section" id="mobile-wallet">
 <h2>Mobile Wallet<a class="headerlink" href="#mobile-wallet" title="Permalink to this headline">¶</a></h2>
 <p>The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.</p>
-<ul class="simple">
-<li><p>iOS: Go to the App Store and search for Concordium Mobile Wallet.</p></li>
-<li><p>Android: Go to Google Play and search for Concordium Mobile Wallet.</p></li>
-</ul>
+<div class="section" id="ios-soon-available-on-the-app-store">
+<h3>iOS: <em>Soon available on the App Store</em><a class="headerlink" href="#ios-soon-available-on-the-app-store" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="android">
+<h3>Android<a class="headerlink" href="#android" title="Permalink to this headline">¶</a></h3>
+<p>You can find Concordium Mobile Wallet on Google Play.</p>
+<a class="reference external image-reference" href="https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet"><img alt="../../_images/google-play-badge.png" src="../../_images/google-play-badge.png" style="width: 25%;" /></a>
+<p>The Concordium Mobile Wallet has been verified by NowSecure.</p>
+<a class="reference external image-reference" href="https://www.nowsecure.com/certified-apps/concordium/"><img alt="../../_images/nowsecure_certificate.png" src="../../_images/nowsecure_certificate.png" style="width: 32%;" /></a>
+</div>
 </div>
 <div class="section" id="concordium-desktop-wallet">
 <h2>Concordium Desktop Wallet<a class="headerlink" href="#concordium-desktop-wallet" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.0.0.exe">Download for Windows</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.0.2.exe">Download for Windows</a></p></li>
 </ul>
 <p>When you install the Desktop Wallet on Windows, you’ll see an error message saying there’s a problem with the certificate. Simply, ignore the error and continue with the download. This issue will be resolved shortly.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.0.dmg">Download for macOS</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.0.2.dmg">Download for macOS</a></p></li>
 <li><p>Download for Linux</p>
 <ul>
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.0.AppImage">AppImage</a></p></li>
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.0.deb">Debian package</a></p></li>
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.0.rpm">RPM</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.2.AppImage">AppImage</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.2.deb">Debian package</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.2.rpm">RPM</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="concordium-ledger-app">
 <h2>Concordium Ledger App<a class="headerlink" href="#concordium-ledger-app" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://distribution.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip">Download the Concordium Ledger App</a></p>
+<p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip">Download the Concordium Ledger App</a></p>
 </div>
 <div class="section" id="concordium-client">
 <span id="concordium-node-and-client-download"></span><h2>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">¶</a></h2>
@@ -286,9 +306,25 @@
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe">Download the Concordium Client for Windows</a></p></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>Debian package<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cargo-concordium">
+<h2>Cargo-concordium<a class="headerlink" href="#cargo-concordium" title="Permalink to this headline">¶</a></h2>
+<p>Download cargo-concordium:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0">Download cargo-concordium for Linux</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0">Download cargo-concordium for MacOS</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe">Download cargo-concordium for Windows</a></p></li>
+</ul>
+</div>
+<div class="section" id="node-debian-package">
+<h2>Node Debian package<a class="headerlink" href="#node-debian-package" title="Permalink to this headline">¶</a></h2>
 <p>To run a node on a server with Ubuntu, you’ll need to <a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-node_1.0.1-mainnet_amd64.deb">download a Debian package</a>.</p>
+</div>
+<div class="section" id="full-suite-for-running-a-node-using-docker">
+<h2>Full suite for running a node using Docker<a class="headerlink" href="#full-suite-for-running-a-node-using-docker" title="Permalink to this headline">¶</a></h2>
+<p>Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-1.0.1-mainnet.tar.gz">Download the suite for Linux</a></p></li>
+</ul>
 </div>
 <div class="section" id="requirements-for-running-a-node">
 <h2>Requirements for running a node<a class="headerlink" href="#requirements-for-running-a-node" title="Permalink to this headline">¶</a></h2>

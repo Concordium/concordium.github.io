@@ -16,6 +16,7 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/overview-desktop
    guides/multisig-transfer
    guides/overview-baker-process
    guides/add-baker-desktop
@@ -45,7 +46,11 @@
    desktop-wallet/get-started-desktop
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
+   desktop-wallet/accounts-desktop
+   desktop-wallet/shield-gtu-desktop
    desktop-wallet/export-import-desktop
+   desktop-wallet/send-gtu-single-desktop
+   desktop-wallet/single-sign-schedule
    desktop-wallet/multisig-simple-transfer
 
 .. toctree::
@@ -62,6 +67,6 @@
    :caption: Resources
 
    resources/glossary
-   resources/release-notes
+   resources/release-notes-mainnet
    resources/third-party-licenses
    resources/dw-licenses
