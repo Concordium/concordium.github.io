@@ -126,7 +126,7 @@ Check the status of the baker and its lottery power
 To see if the node is baking, you can check various sources that
 offer different degrees of precision in the information displayed.
 
-- In the `network dashboard <http://dashboard.mainnet.concordium.software>`_, the baker ID of the node is shown in the ``Baker`` column.
+- In the `network dashboard <https://dashboard.mainnet.concordium.software>`_, the baker ID of the node is shown in the ``Baker`` column.
 - Using the ``concordium-client`` you can check the list of current bakers
   and the relative staked amount that they hold, that is, their lottery power.  The lottery power determines how likely it is that a given baker will win the lottery and bake a block.
 
