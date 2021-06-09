@@ -86,7 +86,7 @@ The Desktop Wallet is available for Windows, macOS, and Linux with support for:
    -  Shielded
    -  Multi-signature
 -  filtering and printing historic transactions
--  faker management
+-  baker management
 -  access to blockchain via a service node, which is usually owned by the user of the Desktop Wallet.
 
 Source Code
