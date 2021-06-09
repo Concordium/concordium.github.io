@@ -22,11 +22,18 @@ iOS: *Soon available on the App Store*
 Android
 -------
 
+You can find Concordium Mobile Wallet on Google Play.
+
 .. image:: ../images/mobile-wallet/google-play-badge.png
    :width: 25%
    :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
 
-Android APK: You can also download the `Concordium Mobile Wallet here <http://distribution.mainnet.concordium.software/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_. If you download the app using this link, you will have to allow installation of apps from unknown sources on your phone. You can find this option in Settings.
+The Concordium Mobile Wallet has been verified by NowSecure.
+
+.. image:: ../images/mobile-wallet/nowsecure_certificate.png
+      :width: 32%
+      :target: https://www.nowsecure.com/certified-apps/concordium/
+
 
 
 Concordium Desktop Wallet
@@ -36,7 +43,7 @@ Concordium Desktop Wallet
 
 When you install the Desktop Wallet on Windows, you'll see an error message saying there's a problem with the certificate. Simply, ignore the error and continue with the download. This issue will be resolved shortly.
 
--  `Download for macOS <https://distribution.mainnet.concordium.software/concordium-desktop-wallet-1.0.2.dmg>`_
+-  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.0.2.dmg>`_
 
 -  Download for Linux
 
@@ -49,7 +56,7 @@ When you install the Desktop Wallet on Windows, you'll see an error message sayi
 Concordium Ledger App
 =====================
 
-`Download the Concordium Ledger App <https://distribution.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
+`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
