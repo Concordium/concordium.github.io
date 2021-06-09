@@ -18,12 +18,12 @@ The Desktop Wallet must be connected to a running node on the Concordium blockch
 Step 2: Set up the Ledger Nano S
 ================================
 
-The Desktop Wallet requires that you store your keys on a Ledger Nanos S hardware wallet. This is to ensure that your private account keys are kept secure. To be able to use the Ledger Nano S with the Desktop Wallet, you must install the Concordium Ledger App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`
+The Desktop Wallet requires that you store your keys on a Ledger Nanos S hardware device. This is to ensure that your private account keys are kept secure. To be able to use the Ledger Nano S with the Desktop Wallet, you must install the Concordium Ledger App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`
 
 Step 3: Set up the Concordium Desktop Wallet
 ============================================
 
-You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker. See :ref:`Get started with the Desktop Wallet<get-started-desktop>`.
+You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker. See :ref:`Set up the Desktop Wallet<set-up-desktop>`.
 
 Step 4: Set up an identity and an initial account
 ==================================================
