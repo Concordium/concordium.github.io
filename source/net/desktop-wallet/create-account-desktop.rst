@@ -24,8 +24,6 @@ Prerequisites
 -   A Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger Nano S and install the Concordium Ledger App<install-ledger-app>`
 -   An identity and an initial account. See :ref:`Create an identity and an initial account in the Desktop Wallet<install-ledger-app>`
 
-.. An encrypted transfer to or from an account is only valid if that account   has only a single credential. If the account has non-zero encrypted balance, it is not possible to add new credentials to that account.
-
 Create an account
 =================
 
