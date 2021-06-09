@@ -1,4 +1,4 @@
-.. _`Network Dashboard`: https://dashboard.concordium.com/
+.. _`Network Dashboard`: https://dashboard.mainnet.concordium.software/
 .. _Discord: https://discord.gg/xWmQ5tp
 
 .. include:: ../../variables.rst
