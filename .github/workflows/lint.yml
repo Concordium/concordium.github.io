@@ -3,9 +3,11 @@ on:
   pull_request:
     branches:
       - main
+      - mainnet
   push:
     branches:
       - main
+      - mainnet
 
 jobs:
   lint:
