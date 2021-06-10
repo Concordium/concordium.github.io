@@ -38,9 +38,11 @@ Concordium Desktop Wallet
 
 -  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.0.2.exe>`_
 
-When you install the Desktop Wallet on Windows, you'll see an error message saying there's a problem with the certificate. Simply, ignore the error and continue with the download. This issue will be resolved shortly.
+When you install the Desktop Wallet on Windows, you'll see an error message saying there's a problem with the certificate. Simply ignore the error and continue with the download. This issue will be resolved shortly.
 
 -  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.0.2.dmg>`_
+
+Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
 
 -  Download for Linux
 
