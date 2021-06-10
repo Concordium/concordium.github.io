@@ -16,16 +16,13 @@ Mobile Wallet
 
 The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
-iOS: *Soon available on the App Store*
---------------------------------------
+You can find Concordium Mobile Wallet on App Store and Google Play.
 
-Android
--------
-
-You can find Concordium Mobile Wallet on Google Play.
-
+.. image:: ../images/mobile-wallet/app-store-badge.svg
+   :width: 23%
+   :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
 .. image:: ../images/mobile-wallet/google-play-badge.png
-   :width: 25%
+   :width: 29.5%
    :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
 
 The Concordium Mobile Wallet has been verified by NowSecure.
@@ -112,3 +109,7 @@ System requirements
 -  Minimum 16 GB of RAM.
 
 -  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
+
+
+
+*Apple® and the Apple logo® are trademarks of Apple Inc., registered in the U.S. and other countries*.
