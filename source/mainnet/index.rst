@@ -1,8 +1,8 @@
 :template: index.html
 
-============
+=======
 Mainnet
-============
+=======
 
 .. toctree::
    :hidden:

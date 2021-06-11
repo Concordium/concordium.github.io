@@ -1,4 +1,3 @@
-.. _`Network Dashboard`: https://dashboard.mainnet.concordium.software/
 .. _Discord: https://discord.gg/xWmQ5tp
 
 .. _run-a-node:

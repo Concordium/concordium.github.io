@@ -67,6 +67,6 @@
    :caption: Resources
 
    resources/glossary
-   resources/release-notes-mainnet
+   resources/release-notes
    resources/third-party-licenses
    resources/dw-licenses

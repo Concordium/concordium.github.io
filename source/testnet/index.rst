@@ -1,8 +1,6 @@
-:template: index.html
-
-============
-Mainnet
-============
+=======
+Testnet
+=======
 
 .. toctree::
    :hidden:
