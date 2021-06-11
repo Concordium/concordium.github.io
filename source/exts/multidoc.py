@@ -7,10 +7,19 @@ from sphinx import addnodes
 def flatmap(f, xs):
     return [y for ys in xs for y in f(ys)]
 
+# The number of top level directories until the right level for the toctree
+number_of_top_directories = 2 # source and mainnet/testnet
+
 def html_page_context(app, pagename, templatename, context, doctree):
     env = app.builder.env
+    # Split pagename path into parts
+    page_path_parts = pagename.split('/')
+    # Ignore the files at the top level
+    if len(page_path_parts) < number_of_top_directories:
+        return
+
     # Top directory of the current page
-    page_top_entry_name = pagename.split('/')[0]
+    page_top_entry_name = page_path_parts[number_of_top_directories - 1]
     # Get the document tree from the master document
     doctree = env.get_doctree(env.config.master_doc)
     # Get toctrees defined in master doc
@@ -18,7 +27,7 @@ def html_page_context(app, pagename, templatename, context, doctree):
     # Get direct children (entries) of the master doc
     master_entries = list(flatmap(lambda toctree: toctree['entries'], master_toctrees))
     # Get the directories entries of entries
-    master_entry_dirs = list(map(lambda e: e[1].split('/')[0], master_entries))
+    master_entry_dirs = list(map(lambda e: e[1].split('/')[number_of_top_directories - 1], master_entries))
     # Ensure the current page is in one of the entries
     if page_top_entry_name not in master_entry_dirs:
         return

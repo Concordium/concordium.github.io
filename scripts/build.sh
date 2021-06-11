@@ -6,7 +6,7 @@
 set -e # Fail script on error
 
 # Branches to include in the build, must be separated by comma and no spaces.
-all_versions='testnet4,mainnet'
+all_versions='mainnet,testnet'
 # Languages to include in the build
 all_languages='en'
 
@@ -25,7 +25,6 @@ printf "Building documentation versions: ${all_versions} for languages ${all_lan
 
 mkdir -p "${build_dir}"
 
-# Add root index.html
 printf "Copying index.html to ${build_dir}\n"
 cp index.html "${build_dir}/index.html"
 
@@ -37,16 +36,11 @@ cp -r extra "${build_dir}/extra"
 
 for current_version in ${versions[@]}; do
   printf "\nVersion '${current_version}':\n-----------------------------\n"
-  printf "Checking out branch '${current_version}'\n"
-  git checkout origin/${current_version}
   export current_version
 
   for current_language in ${languages[@]}; do
     export current_language
-    printf "\nRunning build on branch '${current_version}' for language '${current_language}'\n"
-    sphinx-build "${source_dir}" "${build_dir}/${current_language}/${current_version}" -D language="${current_language}"
+    printf "\nRunning build '${current_version}' for language '${current_language}'\n"
+    sphinx-build "${source_dir}" "${build_dir}/${current_language}" -c "${source_dir}/${current_version}" -D language="${current_language}"
   done
 done
-
-printf "Returning to 'main' branch\n"
-git checkout origin/main
