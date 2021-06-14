@@ -11,7 +11,8 @@ set SOURCEDIR=source
 set BUILDDIR=build
 
 if "%1" == "" goto help
-if "%1" == "dev" goto dev
+if "%1" == "dev-mainnet" goto dev-mainnet
+if "%1" == "dev-testnet" goto dev-testnet
 if "%1" == "lint" goto lint
 
 %SPHINXBUILD% >NUL 2>NUL
@@ -30,9 +31,14 @@ if errorlevel 9009 (
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
-:dev
-sphinx-autobuild.exe %SOURCEDIR% %BUILDDIR/html
+:dev-mainnet
+sphinx-autobuild.exe %SOURCEDIR% %BUILDDIR%\mainnet -c %SOURCEDIR%\mainnet
 goto end
+
+:dev-testnet
+sphinx-autobuild.exe %SOURCEDIR% %BUILDDIR%\testnet -c %SOURCEDIR%\testnet
+goto end
+
 
 :lint
 doc8 ./source --ignore D004 --ignore D002

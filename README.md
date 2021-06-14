@@ -29,7 +29,7 @@ directives
 ```
 
 To show TODOs as warnings when building the docs you need to uncomment the
-following line in `/source/conf.py`:
+following line in `/source/testnet/conf.py` and/or `/source/mainnet/conf.py`:
 
 ```
 # todo_emit_warnings = True
@@ -43,8 +43,13 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Development
 
-Currently the documentation is released only from the `testnet4` branch, and development of documentation for upcoming releases can be merged into the `main` branch without it being released.
-This also means pull requests fixing typos should be merged into both `testnet4` and `main`.
+All of the documentation lives in the `source` directory, here there are subdirectories for Mainnet and Testnet, and a subdirectory `shared` for content which can be shared between the two.
+
+The way to have shared content, is to make a file in both `mainnet` and `testnet`, which includes the shared content using the `include` directive.
+
+```
+.. include:: /shared/path/to/file.rst
+```
 
 ## Installation
 
@@ -89,10 +94,19 @@ If you want the graphs to render properly you also need to install the `dot` too
 To watch the doc files and automate the build run:
 
 ### macOS and Linux
+**Mainnet**
+
 ```
-make dev
+make dev-mainnet
 ```
-and navigate to [localhost:8000](http://localhost:8000).
+and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
+
+**Testnet**
+```
+make dev-testnet
+```
+and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
+
 
 Before committing, make sure to run the linter and fix all the errors reported:
 ```
@@ -101,10 +115,20 @@ make lint
 
 ### Windows
 
+
+**Mainnet**
+
 ```
-./make.bat dev
+make.bat dev-mainnet
 ```
-and navigate to [localhost:8000](http://localhost:8000).
+and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
+
+**Testnet**
+```
+make.bat dev-testnet
+```
+and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
+
 
 Before committing, make sure to try to build and fix any warnings that are reported.
 
@@ -119,27 +143,27 @@ Before committing, make sure to try to build and fix any warnings that are repor
 > `dev` command in the appropriate make file.
 
 ## Building the docs
-Run the following command:
+Run the build script from project root:
 
 ```
-make html
+./script/build.sh
 ```
 
-To check for dead links (also done by the CI), run:
+To check for dead links (can also be done by the CI), run:
 ```
-make linkcheck
+make linkcheck-mainnet
 ```
+or
+```
+make linkcheck-testnet
+```
+
 
 # Contributing
 
-The `main` branch is used for documentation for future releases, and documentation for new features should be done in branches starting from `main`.
+The `source/testnet` directory is used for documentation for future releases, and documentation for new features should be done here.
 
-The `mainnet` branch contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
-Contributions such as improvements for the Mainnet documentation, should be branched of `mainnet` and then merged into both `mainnet` and `main` if still relevant.
-
-**Note: New Mainnet-compatible features**:
-Documentation for new features expected to be released on the current Mainnet (for example, be a new feature for the Concordium Desktop-Wallet), must be branched of `mainnet`.
-The branch can be merged with `main` to be accessible on Testnet and then be merged into `mainnet` when released to Mainnet.
+The `source/mainnet` directory contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
 
 ## Style guide
 
