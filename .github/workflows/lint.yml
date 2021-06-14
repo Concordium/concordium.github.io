@@ -48,4 +48,4 @@ jobs:
 
       - name: Build 🛠
         shell: bash
-        run: sphinx-build source build -W
+        run: ./scripts/build.sh
