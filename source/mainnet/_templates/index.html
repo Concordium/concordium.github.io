@@ -15,7 +15,9 @@
 
 <body>
     <div class="logo-container">
-        <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
+        <a href="https://developer.concordium.software/">
+            <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
+        </a>
     </div>
 
     <div class="features-container">
@@ -41,6 +43,10 @@
         </div>
     </div>
 
+    <div class="logo-container">
+            <h4>New to Concordium? Go to <a href="https://concordium.com/">Concordium.com</a> to learn more about the project.</h4>
+    </div>
+
     <style>
         body {
             background: url({{pathto('_static/background-img.png', 1)}}) no-repeat center center fixed, rgb(240, 240, 240);
@@ -58,7 +64,8 @@
         .logo-container {
 	        height: 100px;
 	        width: 100%;
-	        margin: 10px;
+            margin-top: 10px;
+            margin-bottom: -30px;
             text-align:center;
             position:relative;
         }
@@ -68,7 +75,6 @@
             display:inline-block;
             max-width: 300px;
             min-height: 100px;
-            margin-left: -28px;
         }
 
         .features-container {
