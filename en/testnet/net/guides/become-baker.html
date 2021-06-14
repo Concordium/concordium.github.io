@@ -1,0 +1,688 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Become a baker using the Concordium Client &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Add credentials to an account" href="multi-credentials.html" />
+    <link rel="prev" title="Add a baker account in the Desktop Wallet" href="add-baker-desktop.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Become a baker using the Concordium Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-baking">Start baking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manage-the-baker">Manage the baker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-a-baker">Remove a baker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multi-credentials.html">Add credentials to an account</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Become a baker using the Concordium Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/net/guides/become-baker.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="become-a-baker-using-the-concordium-client">
+<span id="become-a-baker"></span><h1>Become a baker using the Concordium Client<a class="headerlink" href="#become-a-baker-using-the-concordium-client" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id6">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#start-baking" id="id7">Start baking</a></p>
+<ul>
+<li><p><a class="reference internal" href="#import-the-account" id="id8">Import the account</a></p></li>
+<li><p><a class="reference internal" href="#create-and-register-baker-keys" id="id9">Create and register baker keys</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#manage-the-baker" id="id10">Manage the baker</a></p>
+<ul>
+<li><p><a class="reference internal" href="#check-the-status-of-the-baker-and-its-lottery-power" id="id11">Check the status of the baker and its lottery power</a></p></li>
+<li><p><a class="reference internal" href="#update-the-staked-amount" id="id12">Update the staked amount</a></p></li>
+<li><p><a class="reference internal" href="#restake-the-earnings" id="id13">Restake the earnings</a></p></li>
+<li><p><a class="reference internal" href="#finalization" id="id14">Finalization</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#remove-a-baker" id="id15">Remove a baker</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>This guide takes you through the steps involved in upgrading your node to a baker node and managing the node using the Concordium Client.</p>
+<p>The process of becoming a baker involves the following:</p>
+<ol class="arabic simple">
+<li><p>Create account and acquire GTU.</p></li>
+<li><p>Create a set of baker keys.</p></li>
+<li><p>Register the baker keys with the account.</p></li>
+<li><p>Start the node with the baker keys.</p></li>
+</ol>
+<p>After completing these steps, the baker node will bake blocks. If a baked block
+is added to the chain, the baker of the node will receive a reward.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this section we will use the name <code class="docutils literal notranslate"><span class="pre">bakerAccount</span></code> as the name of the
+account that will be used to register and manage a baker.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Run a node</p></li>
+<li><p>Create an account</p></li>
+<li><p>Export the JSON file with the account information</p></li>
+<li><p>Install the Concordium Client</p></li>
+</ul>
+</div>
+<div class="section" id="start-baking">
+<h2>Start baking<a class="headerlink" href="#start-baking" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="import-the-account">
+<h3>Import the account<a class="headerlink" href="#import-the-account" title="Permalink to this headline">¶</a></h3>
+<p>This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
+<p>You create accounts in the Desktop Wallet or in the Mobile Wallet and to create a baker node, you need the account information. You get this information by exporting a JSON file with the account information from the wallet you’re using.</p>
+<p>To import an account run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import &lt;path/to/exported/file&gt; --name bakerAccount
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> asks for a password to decrypt the exported file and
+import all accounts. The same password will be used for encrypting the
+transaction signing keys and the encrypted transfers key.</p>
+</div>
+<div class="section" id="create-and-register-baker-keys">
+<h3>Create and register baker keys<a class="headerlink" href="#create-and-register-baker-keys" title="Permalink to this headline">¶</a></h3>
+<p>Each account has a unique baker ID that is used when registering its baker. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the baker keys file to the node so that it can use the baker keys to create blocks. The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will automatically fill this field when performing the following operations.</p>
+<p>To create a fresh set of keys run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker generate-keys &lt;keys-file&gt;.json
+</pre></div>
+</div>
+<p>You can choose an arbitrary name for the keys file. To register the keys in the network you need to be <a class="reference internal" href="run-node.html#running-a-node"><span class="std std-ref">running a node</span></a>
+and send a <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> transaction to the network:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
+</pre></div>
+</div>
+<p>where you replace</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the GTU amount for the baker’s initial stake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with the following data directory:</p>
+<ul>
+<li><p>on Linux and MacOS: <code class="docutils literal notranslate"><span class="pre">~/.local/share/concordium</span></code></p></li>
+<li><p>on Windows: <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%\\concordium</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p>(Keep the output file name as <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will offer to encrypt the generated <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code> file.
+Choose <strong>not</strong> to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
+If this is a hard requirement for you then you need to run the <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">debian package</span></a> and configure it appropriately.</p>
+</div>
+<p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the
+rewards to the staked amount on the baker. Read more about this behavior in the section <a class="reference internal" href="#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
+<p>To start the node with these baker keys and bake blocks, you
+first need to shut down the current running node. To do this, either press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or use the
+<code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable.</p>
+<p>When you’ve placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>. The node will automatically start baking when the baker is included in the bakers for the current epoch.</p>
+<p>This change is executed immediately, and it will take effect when finishing the epoch after the one in which the transaction for adding the baker was included in a block.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Timeline: adding a baker</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 41%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After 2 epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker is included in the baking committee</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the transaction for adding the baker was included in a block during epoch <cite>E</cite>, the baker will be considered as part of the baking committee when epoch <cite>E+2</cite> starts.</p>
+</div>
+</div>
+</div>
+<div class="section" id="manage-the-baker">
+<h2>Manage the baker<a class="headerlink" href="#manage-the-baker" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="check-the-status-of-the-baker-and-its-lottery-power">
+<h3>Check the status of the baker and its lottery power<a class="headerlink" href="#check-the-status-of-the-baker-and-its-lottery-power" title="Permalink to this headline">¶</a></h3>
+<p>To see if the node is baking, you can check various sources that
+offer different degrees of precision in the information displayed.</p>
+<ul>
+<li><p>In the <a class="reference external" href="https://dashboard.testnet.concordium.com">network dashboard</a>, the baker ID of the node is shown in the <code class="docutils literal notranslate"><span class="pre">Baker</span></code> column.</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check the list of current bakers
+and the relative staked amount that they hold, that is, their lottery power.  The lottery power determines how likely it is that a given baker will win the lottery and bake a block.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
+<span class="go">Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0</span>
+<span class="go">Election difficulty: 4.0e-2</span>
+<span class="go">Bakers:</span>
+<span class="go">                             Account                       Lottery power</span>
+<span class="go">        ----------------------------------------------------------------</span>
+<span class="go">    ...</span>
+<span class="go">    34: 4p2n8QQn5akq3XqAAJt2a5CsnGhDvUon6HExd2szrfkZCTD4FX   &lt;0.0001</span>
+<span class="go">    ...</span>
+</pre></div>
+</div>
+</li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check that the account has
+registered a baker and the current amount that is staked by that baker.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client account show bakerAccount
+<span class="go">...</span>
+
+<span class="go">Baker: #22</span>
+<span class="go"> - Staked amount: 10.000000 GTU</span>
+<span class="go"> - Restake earnings: yes</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>If the staked amount is high enough, and there is a node running with the baker keys loaded, the baker should eventually produce blocks. When this happens, you can see in your wallet that the account is receiving baking rewards.</p></li>
+</ul>
+</div>
+<div class="section" id="update-the-staked-amount">
+<h3>Update the staked amount<a class="headerlink" href="#update-the-staked-amount" title="Permalink to this headline">¶</a></h3>
+<p>To update the baker stake run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker update-stake --stake &lt;newAmount&gt; --sender bakerAccount
+</pre></div>
+</div>
+<p>When the staked amount is modified, the probability that a baker gets elected
+to bake blocks is also modified.</p>
+<p>When a baker adds a stake for the first time or increase the stake, that
+change is executed on the chain and becomes visible as soon as the transaction
+is included in a block (can be seen through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span>
+<span class="pre">bakerAccount</span></code>) and takes effect 2 epochs after that.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Timeline: increasing the stake</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 42%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After 2 epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker uses the new stake</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<p>When a baker <strong>decreases the staked amount</strong>, the change will need <em>2 +
+bakerCooldownEpochs</em> epochs to take effect. The change becomes visible on the
+chain as soon as the transaction is included in a block, it can be consulted through
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
+<span class="go">...</span>
+
+<span class="go">Baker: #22</span>
+<span class="go"> - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)</span>
+<span class="go"> - Restake earnings: yes</span>
+
+<span class="go">...</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Timeline: decreasing the stake</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 34%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After <em>2 + bakerCooldownEpochs</em> epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker uses the new stake</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Stake can be decreased again or
+baker can be removed</p></td>
+<td><p>✗</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the Testnet, <code class="docutils literal notranslate"><span class="pre">bakerCooldownEpochs</span></code> is set initially to 168 epochs. This
+value can be checked as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockSummary
+<span class="go">...</span>
+<span class="go">        &quot;bakerCooldownEpochs&quot;: 168</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The staked amount is <em>locked</em>. That is, you can’t transfer it or use it for payment. You should take this into account and consider staking an amount that will not be needed in the short term. In particular, to deregister a baker or to modify the staked amount you need to own some non-staked GTU to cover the transaction costs.</p>
+</div>
+</div>
+<div class="section" id="restake-the-earnings">
+<span id="restake-earnings"></span><h3>Restake the earnings<a class="headerlink" href="#restake-the-earnings" title="Permalink to this headline">¶</a></h3>
+<p>When participating as a baker in the network and baking blocks, the account
+receives rewards on each baked block. These rewards are automatically added to
+the staked amount by default.</p>
+<p>You can choose to modify this behavior and instead receive the rewards in
+the account balance without staking them automatically. You can change this switch through <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker update-restake False --sender bakerAccount
+<span class="gp">$</span>concordium-client baker update-restake True --sender bakerAccount
+</pre></div>
+</div>
+<p>Changes to the restake flag will take effect immediately; however, the changes
+start affecting baking and finalizing power in the epoch after next. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
+<span class="go">...</span>
+
+<span class="go">Baker: #22</span>
+<span class="go"> - Staked amount: 50.000000 GTU</span>
+<span class="go"> - Restake earnings: yes</span>
+
+<span class="go">...</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Timeline: updating restake</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 34%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>2 epochs after being rewarded</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Earnings will [not] be restaked automatically</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>If restaking automatically, the gained
+stake affects the lottery power</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<p>When the baker is registered, it will automatically restake the earnings, but you can change this by providing the <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to
+the <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> command as shown in the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add baker-keys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out baker-credentials.json --no-restake
+</pre></div>
+</div>
+</div>
+<div class="section" id="finalization">
+<h3>Finalization<a class="headerlink" href="#finalization" title="Permalink to this headline">¶</a></h3>
+<p>Finalization is the voting process performed by nodes in the <em>finalization
+committee</em> that <em>finalizes</em> a block when a sufficiently big number of members of the committee have received the block and agree on its outcome. Newer blocks
+must have the finalized block as an ancestor to ensure the integrity of the
+chain. For more information about this process, see the <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalization</span></a>.</p>
+<p>The finalization committee is formed by the bakers that have a certain staked
+amount. This specifically implies that in order to participate in the
+finalization committee you will probably have to modify the staked amount
+to reach said threshold. In the Testnet, the staked amount needed to participate
+in the finalization committee is <strong>0.1% of the total amount of existing GTU</strong>.</p>
+<p>Participating in the finalization committee produces rewards on each block that
+is finalized. The rewards are paid to the baker account some time after the
+block is finalized.</p>
+</div>
+</div>
+<div class="section" id="remove-a-baker">
+<h2>Remove a baker<a class="headerlink" href="#remove-a-baker" title="Permalink to this headline">¶</a></h2>
+<p>The controlling account can choose to de-register its baker on the chain. To do
+so you have to execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker remove --sender bakerAccount
+</pre></div>
+</div>
+<p>This removes the baker from the baker list and unlocks the staked amount on
+the baker so that it can be transferred or moved freely.</p>
+<p>When removing the baker, the change has the same timeline as decreasing
+the staked amount. The change will need <em>2 + bakerCooldownEpochs</em> epochs to take effect. The change becomes visible on the chain as soon as the transaction is included in a block and you can check when the change will be take effect by querying the account information with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
+<span class="go">...</span>
+
+<span class="go">Baker #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)</span>
+<span class="go"> - Staked amount: 20.000000 GTU</span>
+<span class="go"> - Restake earnings: yes</span>
+
+<span class="go">...</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Timeline: removing a baker</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 33%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>When transaction is included in a block</p></th>
+<th class="head"><p>After <em>2 + bakerCooldownEpochs</em> epochs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Baker is removed from the baking committee</p></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Decreasing the staked amount and removing the baker can’t be done
+simultaneously. During the cooldown period produced by decreasing the staked
+amount, the baker can’t be removed and vice versa.</p>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

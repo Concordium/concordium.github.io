@@ -1,0 +1,546 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Set up the Ledger Nano S and install the Concordium Ledger App &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Set up the Desktop Wallet" href="get-started-desktop.html" />
+    <link rel="prev" title="Explore the More page in the Mobile Wallet" href="../mobile-wallet/explore-more.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Set up the Ledger Nano S and install the Concordium Ledger App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-the-ledger-nano-s">Set up the Ledger Nano S</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-concordium-ledger-app-on-windows">Install Concordium Ledger app on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-concordium-ledger-app-on-macos">Install Concordium Ledger app on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-concordium-ledger-app-on-ubuntu">Install Concordium Ledger app on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Set up the Ledger Nano S and install the Concordium Ledger App</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/net/desktop-wallet/install-ledger-app.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app">
+<span id="install-ledger-app"></span><h1>Set up the Ledger Nano S and install the Concordium Ledger App<a class="headerlink" href="#set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#set-up-the-ledger-nano-s" id="id2">Set up the Ledger Nano S</a></p></li>
+<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-windows" id="id3">Install Concordium Ledger app on Windows</a></p></li>
+<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-macos" id="id4">Install Concordium Ledger app on macOS</a></p></li>
+<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-ubuntu" id="id5">Install Concordium Ledger app on Ubuntu</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ledger hardware wallet</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>During the process described in this guide, you’ll generate private keys on the Ledger Nano S hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.</p>
+</div>
+</div>
+<div class="section" id="set-up-the-ledger-nano-s">
+<h2>Set up the Ledger Nano S<a class="headerlink" href="#set-up-the-ledger-nano-s" title="Permalink to this headline">¶</a></h2>
+<p>The Ledger Nano S will generate the unique 24-word recovery phrase that is used to derive your private keys.</p>
+<ol class="arabic simple">
+<li><p>Download and install <strong>Ledger Live</strong>. For information on how to do this, see <a class="reference external" href="https://www.ledger.com/ledger-live/download">Ledger’s documentation</a>. You’ll only need Ledger Live when you set up the Ledger and update the firmware.</p></li>
+<li><p>Open <strong>Ledger Live</strong>, select <strong>Get started</strong>, and then select <strong>Nano S</strong>.</p></li>
+<li><p>Follow the on-screen setup instructions to set up your PIN code on the Ledger.</p></li>
+<li><p>Follow the on-screen instructions to get your 24-word recovery phrase.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.</p>
+</div>
+<p>Once you’ve set up the Ledger, you must check that it’s running the proper firmware version. The Concordium Ledger App currently only supports Ledger firmware version 2.0.0.</p>
+<div class="section" id="update-the-ledger-nano-s-firmware">
+<h3>Update the Ledger Nano S firmware<a class="headerlink" href="#update-the-ledger-nano-s-firmware" title="Permalink to this headline">¶</a></h3>
+<p>To find out which firmware version the Ledger is running, do the following:</p>
+<ol class="arabic simple">
+<li><p>On the Ledger navigate to <strong>Settings</strong> and press both buttons for a little while to enter the Settings menu.</p></li>
+<li><p>Press the right button to navigate to <strong>Firmware version</strong>.</p></li>
+<li><p>Press both buttons to view the <strong>Secure Element</strong> version. If it says <strong>2.0.0</strong>, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.</p></li>
+</ol>
+<p>For details on how to update the Ledger firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">Ledger ‘s guide</a></p>
+</div>
+</div>
+<div class="section" id="install-concordium-ledger-app-on-windows">
+<h2>Install Concordium Ledger app on Windows<a class="headerlink" href="#install-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-python3-and-pip">
+<h3>Install Python3 and pip<a class="headerlink" href="#install-python3-and-pip" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>In the <strong>Start</strong> menu, type <em>store</em> to open the Microsoft store.</p></li>
+<li><p>In <strong>Search</strong>, in the upper right corner, enter <em>python</em>.</p></li>
+<li><p>Select <strong>Python 3.9</strong>, and then select <strong>Install</strong>.</p>
+<p>Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying <strong>Python 3.9 just got installed</strong>.</p>
+</li>
+<li><p>In the <strong>Start</strong> menu, type <em>PowerShell</em> and select <strong>Windows PowerShell</strong>. The command-line window opens.</p></li>
+<li><p>To confirm that Python3 was installed, enter</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python3 --version</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>To confirm that the package manager named pip is installed, enter</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip --version</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>To install Python tools for the Ledger Nano S, enter</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-custom-certificate-on-windows">
+<h3>Install the custom certificate on Windows<a class="headerlink" href="#install-the-custom-certificate-on-windows" title="Permalink to this headline">¶</a></h3>
+<p>You now have to install a custom certificate on the Ledger to ensure that it trusts applications signed by Concordium’s private key.</p>
+<ol class="arabic simple">
+<li><p>Disconnect the Ledger from your computer.</p></li>
+<li><p>Download the ZIP folder with Concordium Ledger application.</p></li>
+<li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
+<li><p>Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
+<li><p>Press the right button while you reconnect the Ledger to the computer, and hold it down until the Ledger says <strong>recovery</strong>.</p></li>
+<li><p>Enter your PIN code.</p></li>
+<li><p>Open the folder you extracted the files to and double-click the <code class="docutils literal notranslate"><span class="pre">loadcertificate.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The certificate is installed on the Ledger.</p></li>
+<li><p>The Ledger says <strong>Certificate concordium</strong>. Press the right button to navigate through the key, and then press both buttons when the Ledger says Trust certificate.</p></li>
+<li><p>Enter your PIN.</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-concordium-ledger-app-on-windows">
+<h3>Install the Concordium Ledger app on Windows<a class="headerlink" href="#install-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. You can now use the Ledger with the Desktop Wallet.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="install-concordium-ledger-app-on-macos">
+<h2>Install Concordium Ledger app on macOS<a class="headerlink" href="#install-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-homebrew-python3-and-pip">
+<h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the Terminal application. Click the <strong>Launchpad</strong> icon in the <strong>Dock</strong>, type <em>Terminal</em> in the search field, then select <strong>Terminal</strong>.</p></li>
+<li><p>Install the package manager Homebrew. Copy the following line into the Terminal and press enter.</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install Python3 and Pip3 to manage (alternatively use pyenv if you need multiple python versions). Copy the following line into the Terminal and press enter:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install python@3.9</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install libusb. Copy the following line into the Terminal and press enter:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install libusb</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>If you have Mac with an M1 or similar Apple Silicon CPU, install:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install libjpeg</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Install ledgerblue:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-custom-certificate-using-macos">
+<h3>Install the custom certificate using macOS<a class="headerlink" href="#install-the-custom-certificate-using-macos" title="Permalink to this headline">¶</a></h3>
+<p>You now have to install a custom certificate to ensure that the Ledger trusts applications signed by Concordium’s private key.</p>
+<ol class="arabic simple">
+<li><p>Download the ZIP folder with the Concordium Ledger application.</p></li>
+<li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
+<li><p>Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
+<li><p>Disconnect the Ledger from your computer.</p></li>
+<li><p>Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says <strong>recovery mode</strong>.</p></li>
+<li><p>Enter your PIN code.</p></li>
+</ol>
+<p>Load the certificate onto the Ledger by running the following script from the extracted folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./loadcertificate.sh</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The certificate is installed on the Ledger.</p></li>
+<li><p>The Ledger says <strong>Certificate concordium</strong>. Press the right button to navigate through the key, and then press both buttons when the Ledger says <strong>Trust certificate</strong>.</p></li>
+<li><p>Enter your PIN.</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-concordium-ledger-app-on-macos">
+<h3>Install the Concordium Ledger app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. You can now use the Ledger with the Desktop Wallet.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="install-concordium-ledger-app-on-ubuntu">
+<h2>Install Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-python3-and-pip-on-ubuntu">
+<h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">Ledger ‘s guide Fix connection history</a>.</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install python3:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install python3</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install pip:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install python3-pip</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Install</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Install ledgerblue:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo pip3 install ledgerblue</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-custom-certificate-on-ubuntu">
+<h3>Install the custom certificate on Ubuntu<a class="headerlink" href="#install-the-custom-certificate-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>You now have to install a custom certificate to ensure that the Ledger trusts applications signed by Concordium’s private key.</p>
+<ol class="arabic simple">
+<li><p>Download the ZIP folder with the Concordium Ledger application.</p></li>
+<li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
+<li><p>Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
+<li><p>Disconnect the Ledger from your computer.</p></li>
+<li><p>Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says <strong>recovery mode</strong>.</p></li>
+<li><p>Enter your PIN code.</p></li>
+<li><p>Run the following script from the folder you extracted the files to:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./loadcertificate.sh</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The certificate is installed on the Ledger.</p></li>
+<li><p>Press the right button to navigate through the key, and then press both buttons when the Ledger says <strong>Trust certificate</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-concordium-ledger-app-on-ubuntu">
+<h3>Install the Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. You can now use the Ledger with the Desktop Wallet.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

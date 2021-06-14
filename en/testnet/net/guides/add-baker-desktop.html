@@ -1,0 +1,452 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Add a baker account in the Desktop Wallet &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Become a baker using the Concordium Client" href="become-baker.html" />
+    <link rel="prev" title="Overview of the baker process" href="overview-baker-process.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Add a baker account in the Desktop Wallet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-an-account-to-add-as-baker-account">Select an account to add as baker account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stake-an-amount">Stake an amount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-the-transaction">Generate the transaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export-baker-credentials">Export baker credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export-a-transaction-proposal">Export a transaction proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-credentials.html">Add credentials to an account</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Add a baker account in the Desktop Wallet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/net/guides/add-baker-desktop.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="add-a-baker-account-in-the-desktop-wallet">
+<span id="create-baker-desktop"></span><h1>Add a baker account in the Desktop Wallet<a class="headerlink" href="#add-a-baker-account-in-the-desktop-wallet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#select-an-account-to-add-as-baker-account" id="id3">Select an account to add as baker account</a></p></li>
+<li><p><a class="reference internal" href="#stake-an-amount" id="id4">Stake an amount</a></p></li>
+<li><p><a class="reference internal" href="#generate-the-transaction" id="id5">Generate the transaction</a></p></li>
+<li><p><a class="reference internal" href="#export-baker-credentials" id="id6">Export baker credentials</a></p></li>
+<li><p><a class="reference internal" href="#export-a-transaction-proposal" id="id7">Export a transaction proposal</a></p></li>
+<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id8">Receive signatures from co-signers</a></p></li>
+<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id9">Submit the transaction to the blockchain</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>A <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">baker</span></a> is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account.</p>
+<p>The process of becoming a baker involves the following:</p>
+<ol class="arabic simple">
+<li><p>Create a set of baker keys.</p></li>
+<li><p>Register the baker keys with the account.</p></li>
+<li><p>Start a <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">node</span></a> with the baker keys.</p></li>
+</ol>
+<p>When you’ve completed these steps, the baker node will be able to bake blocks. Read more about <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">being a baker</span></a>. This guide goes through all the steps involved in adding a baker in the Desktop Wallet.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>There are a couple of things you must set up in preparation before you can start baking.</p>
+<ul class="simple">
+<li><p>Run a node on the Concordium blockchain. Make sure that you have a setup where the node can operate around the clock.</p></li>
+<li><p>Set up a Ledger hardware wallet for your private key.</p></li>
+<li><p>Download and install the Desktop Wallet.</p></li>
+<li><p>Set up an initial account and an identity.</p></li>
+<li><p>Set up a new account that you’ll be using as baker account.</p></li>
+<li><p>Verify that the account balance has the required amount of GTU.</p></li>
+</ul>
+</div>
+<div class="section" id="select-an-account-to-add-as-baker-account">
+<h2>Select an account to add as baker account<a class="headerlink" href="#select-an-account-to-add-as-baker-account" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Go to the <strong>Multi Signature Transactions</strong> tab, and then select <strong>Add Baker</strong>.</p></li>
+<li><p>Select the identity that’s associated with the account you want to add as baker account, and then select <strong>Continue</strong>.</p></li>
+<li><p>Select the account you want to add as baker account, and then select <strong>Continue</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="stake-an-amount">
+<h2>Stake an amount<a class="headerlink" href="#stake-an-amount" title="Permalink to this headline">¶</a></h2>
+<p>You need to stake an amount of GTU on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can’t transfer it to other accounts. The account always shows how much of the balance that’s been staked.</p>
+<ol class="arabic">
+<li><p>Specify the amount that you want to stake where it says <strong>Amount</strong>. The more you stake the greater is the probability that your account will be chosen to bake the next block.</p>
+<p>Baker accounts receive a reward when they have baked a block, and the reward
+is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.</p>
+<ul class="simple">
+<li><p>Select <strong>No, don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p></li>
+</ul>
+</li>
+<li><p>When you look at the <strong>Transaction Details</strong> in the left pane, you can see the identity of the account owner, the account where the GTU are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.</p></li>
+<li><p>Select <strong>Generate keys</strong>. The baker keys are generated and the public keys are displayed in the left pane. There are three public keys:</p>
+<ul class="simple">
+<li><p>Election verify key</p></li>
+<li><p>Signature verify key</p></li>
+<li><p>Aggregation verify</p></li>
+</ul>
+</li>
+<li><p>Select <strong>Continue</strong> to generate the transaction.</p></li>
+</ol>
+</div>
+<div class="section" id="generate-the-transaction">
+<h2>Generate the transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways that you can generate the transaction:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#generate-without-sign"><span class="std std-ref">Generate the transaction without signing</span></a>. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
+<li><p><a class="reference internal" href="#generate-sign"><span class="std std-ref">Generate and sign the transaction</span></a> This option requires a Ledger and an internet connection.</p></li>
+</ul>
+<p>In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
+<div class="section" id="generate-the-transaction-without-signing">
+<span id="generate-without-sign"></span><h3>Generate the transaction without signing<a class="headerlink" href="#generate-the-transaction-without-signing" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Verify that the Transaction details are as you are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
+<li><p>Select <strong>Generate without signing</strong>. You can now <a class="reference internal" href="#export-baker-credentials"><span class="std std-ref">export the baker credentials</span></a>.</p></li>
+</ol>
+</div>
+<div class="section" id="generate-and-sign-the-transaction-on-the-ledger">
+<span id="generate-sign"></span><h3>Generate and sign the transaction on the Ledger<a class="headerlink" href="#generate-and-sign-the-transaction-on-the-ledger" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Connect the Ledger to the computer if you haven’t done so already. There’s a message saying <strong>Waiting for device</strong>.</p></li>
+<li><p>Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong>.</p></li>
+<li><p>In the Desktop Wallet verify that all transaction details are correct and select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
+<li><p>Select <strong>Generate and sign</strong>. There’s a message saying <strong>Waiting for user to finish the process on the device</strong>.</p></li>
+<li><p>On the Ledger, there’s a message saying <strong>Review transaction</strong>. Review the <strong>Amount to stake</strong> and the <strong>Restake earnings</strong> information to verify that it matches the transaction details in the Desktop Wallet.</p></li>
+<li><p>When the Ledger says <strong>Sign transaction</strong>, press both buttons to confirm the transaction. The Ledger says <strong>Concordium is ready</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If  you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
+</div>
+</div>
+</div>
+<div class="section" id="export-baker-credentials">
+<span id="id1"></span><h2>Export baker credentials<a class="headerlink" href="#export-baker-credentials" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>You have to export the baker credentials so that you can start the node with the baker keys. Select <strong>Export baker credentials</strong> and navigate to the place on your computer where you want to save the file.</p>
+<p>You can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which includes the status of the transaction, the identicon, and the digest to sign. You can also see the date and time before which you must submit the transaction proposal. If no more signatures are required, you can <a class="reference internal" href="#submit-transaction"><span class="std std-ref">submit the transaction to the blockchain</span></a>. If more signatures are required, you’ll have to export and send the transaction proposal to the co-signers.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
+</div>
+</div>
+<div class="section" id="export-a-transaction-proposal">
+<h2>Export a transaction proposal<a class="headerlink" href="#export-a-transaction-proposal" title="Permalink to this headline">¶</a></h2>
+<p>If more than one signature is needed to sign off on the baker account proposal, you must share a file of the type JSON with the co-signers. In the <strong>Signatures</strong> pane, you can see how many signatures are required before you can submit the transaction to the blockchain.</p>
+<ol class="arabic simple">
+<li><p>In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
+<li><p>Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
+<li><p>Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Optionally, you can also send a copy of the identicon through a secure channel that is different from the one used to send the file.</p></li>
+</ol>
+</div>
+<div class="section" id="receive-signatures-from-co-signers">
+<h2>Receive signatures from co-signers<a class="headerlink" href="#receive-signatures-from-co-signers" title="Permalink to this headline">¶</a></h2>
+<p>When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
+<ol class="arabic simple">
+<li><p>If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select <strong>Your proposed transactions</strong>. If you’re still on the same page, go to step 3.</p></li>
+<li><p>Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is <strong>Unsubmitted</strong>, and you can see the identicon, and the transaction hash.</p></li>
+<li><p>Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and on to the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="submit-the-transaction-to-the-blockchain">
+<span id="submit-transaction"></span><h2>Submit the transaction to the blockchain<a class="headerlink" href="#submit-the-transaction-to-the-blockchain" title="Permalink to this headline">¶</a></h2>
+<p>When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
+<ol class="arabic simple">
+<li><p>Review the transaction details carefully to ensure that all information is correct.</p></li>
+<li><p>Select <strong>I understand this is the final submission, and that it cannot be reverted.</strong></p>
+<ul class="simple">
+<li><p>If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active; however it is still visible in the list of proposals.</p></li>
+</ul>
+</li>
+<li><p>Select <strong>Submit transaction to chain.</strong> The transaction is submitted to the chain and finalized on the Ledger.</p></li>
+<li><p>Select <strong>Finish</strong> to leave the page.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Transactions on the blockchain are permanent. That is, they are irreversible and can’t be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.</p>
+</div>
+<p>To start baking, you now have to start your node with the baker keys. See <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a> for more information about this.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

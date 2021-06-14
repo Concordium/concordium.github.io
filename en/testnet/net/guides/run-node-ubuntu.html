@@ -1,0 +1,405 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Run a node on a server with Ubuntu &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Run a node with Docker" href="run-node.html" />
+    <link rel="prev" title="Downloads" href="../installation/downloads.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run a node on a server with Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-credentials.html">Add credentials to an account</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Run a node on a server with Ubuntu</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/net/guides/run-node-ubuntu.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-a-node-on-a-server-with-ubuntu">
+<span id="run-node-ubuntu"></span><h1>Run a node on a server with Ubuntu<a class="headerlink" href="#run-a-node-on-a-server-with-ubuntu" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p>
+<ul>
+<li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id2">Install the Debian package and run a node</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#run-a-baker-node-on-ubuntu" id="id3">Run a baker node on Ubuntu</a></p>
+<ul>
+<li><p><a class="reference internal" href="#configure-the-node-with-baker-keys" id="id4">Configure the node with baker keys</a></p></li>
+<li><p><a class="reference internal" href="#verify-that-a-node-is-a-baker-node" id="id5">Verify that a node is a baker node.</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a <a class="reference internal" href="#baker-node-ubuntu"><span class="std std-ref">baker node</span></a>.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ubuntu 20.04 must be installed on the server that is running the node.</p></li>
+<li><p>The server must be running around the clock.</p></li>
+<li><p>If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.</p></li>
+</ul>
+<div class="section" id="install-the-debian-package-and-run-a-node">
+<h3>Install the Debian package and run a node<a class="headerlink" href="#install-the-debian-package-and-run-a-node" title="Permalink to this headline">¶</a></h3>
+<p>To run the node, you must install a Debian package. After installation, the <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> and <code class="docutils literal notranslate"><span class="pre">concordium-node-collector</span></code> services will be started.</p>
+<ol class="arabic">
+<li><p>Download the <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Debian package</span></a></p></li>
+<li><p>Install the package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt install /path-to-downloaded-package</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>Where <code class="docutils literal notranslate"><span class="pre">path-to-downloaded-package</span></code> is the location of the downloaded <code class="docutils literal notranslate"><span class="pre">.deb</span></code> file.</p>
+<p>The path should be absolute, e.g., <code class="docutils literal notranslate"><span class="pre">./concordium-node.deb</span></code>, otherwise <code class="docutils literal notranslate"><span class="pre">apt</span></code> will assume that you want to install a package from the registry.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Enter a <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">name</span></code> when prompted. The node name is visible on the network dashboard. When you have installed the services, the <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> will be running automatically.</p></li>
+<li><p>To verify that the node is running, go to the <a class="reference external" href="https://dashboard.mainnet.concordium.software/">Concordium dashboard</a> and look for a node with the name you provided.</p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want more detailed information about building and maintaining a node, or if your node is not running, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md">Building .deb packages for ubuntu distributions README from Concordium</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="run-a-baker-node-on-ubuntu">
+<span id="baker-node-ubuntu"></span><h2>Run a baker node on Ubuntu<a class="headerlink" href="#run-a-baker-node-on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>The following steps show you how to run a node as a <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">baker</span></a> on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a baker node also participates in the lottery and produces its own blocks. If the stake is high enough the baker node also participates in finalization.</p>
+<div class="section" id="configure-the-node-with-baker-keys">
+<h3>Configure the node with baker keys<a class="headerlink" href="#configure-the-node-with-baker-keys" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Move the JSON file with the baker keys you generated in the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> to the server that’s running the node. Ensure that you have write permissions to the file. Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium/baker-credentials.json</span></code>.</p></li>
+<li><p>In the terminal, enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl edit concordium-node.service</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the following snippet to the opened file (the file is empty the first time you open it):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
+
+<span class="go">Environment=BAKER_CREDENTIALS_FILE=&lt;/var/lib/concordium/baker-credentials.json&gt;</span>
+</pre></div>
+</div>
+<p>Where you replace the path with the actual location of the file.</p>
+</li>
+<li><p>Save the edited file.</p></li>
+<li><p>Restart for the changes to take effect. Enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl restart concordium-node.service</span>
+</pre></div>
+</div>
+</li>
+<li><p>To verify the node is running, enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl status concordium-node</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="verify-that-a-node-is-a-baker-node">
+<h3>Verify that a node is a baker node.<a class="headerlink" href="#verify-that-a-node-is-a-baker-node" title="Permalink to this headline">¶</a></h3>
+<p>Two epochs (link) must have elapsed before you can see the baker ID of the node on the dashboard.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to see the status of the node. For more information, see <a class="reference internal" href="../references/concordium-client.html#concordium-client"><span class="std std-ref">Concordium Client</span></a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetNodeInfo
+
+<span class="go">...</span>
+
+<span class="go">Consensus type: &quot;Active&quot;</span>
+
+<span class="go">...</span>
+</pre></div>
+</div>
+<p>In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
+the account associated with the baker node. The bread icon appears as
+soon as the transaction has been submitted. That is, before the two
+epochs have elapsed.</p>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

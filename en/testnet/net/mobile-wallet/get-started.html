@@ -1,0 +1,374 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Get started with the Mobile Wallet &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Get started with accounts and transactions in the Mobile Wallet" href="accounts-transactions.html" />
+    <link rel="prev" title="Bakers" href="../concepts/concepts-baker.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get started with the Mobile Wallet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-a-passcode-and-biometrics">Set up a passcode and biometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#request-your-initial-account-and-identity">Request your initial account and identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Get started with the Mobile Wallet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/net/mobile-wallet/get-started.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="get-started-with-the-mobile-wallet">
+<span id="mobile-get-started"></span><h1>Get started with the Mobile Wallet<a class="headerlink" href="#get-started-with-the-mobile-wallet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#set-up-a-passcode-and-biometrics" id="id1">Set up a passcode and biometrics</a></p></li>
+<li><p><a class="reference internal" href="#request-your-initial-account-and-identity" id="id2">Request your initial account and identity</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id3">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>Before following this guide you should have finished installing Concordium Mobile Wallet, as described in <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>.</p>
+<div class="section" id="set-up-a-passcode-and-biometrics">
+<h2>Set up a passcode and biometrics<a class="headerlink" href="#set-up-a-passcode-and-biometrics" title="Permalink to this headline">¶</a></h2>
+<p>When you open the Mobile Wallet for the first time, you will be greeted by a flow
+that will help you setup a passcode and biometric authentication, create an <a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a>,
+and it will also guide you through getting an <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">Identity</span></a>. The initial account is a special type of account,
+that is submitted to the chain by the <a class="reference internal" href="../resources/glossary.html#glossary-identity-provider"><span class="std std-ref">Identity Provider</span></a>, upon creation of an identity. You can make the
+the same transactions from an initial account as from regular accounts, but the owner of the initial account will be
+known by the identity provider. After your identity is created you will be able to submit accounts to the chain
+yourself, and these will be unknown by the identity provider. You can learn more about accounts on the <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities
+and accounts</span></a> page.</p>
+<p>After reading and accepting the Terms and Conditions for the Concordium Mobile Wallet, the first screen you will meet when
+opening the Mobile Wallet is this one. It will just explain that you have to go through this process to get started.</p>
+<a class="reference internal image-reference" href="../../../_images/MW3.png"><img alt="../../../_images/MW3.png" src="../../../_images/MW3.png" style="width: 32%;" /></a>
+<p>If you are ready to continue, you can press <strong>Continue</strong>. The next screen will ask you to input
+a six-digit passcode. If you would rather use a full password including letters, you can also choose to do so here.</p>
+<a class="reference internal image-reference" href="../../../_images/MW4.png"><img alt="../../../_images/MW4.png" src="../../../_images/MW4.png" style="width: 32%;" /></a>
+<p>Having chosen either a passcode or a full password, you will get the option to also use biometrics if your phone
+supports it, i.e. facial recognition or fingerprint. We recommend using biometrics if you have the option to do so.</p>
+<a class="reference internal image-reference" href="../../../_images/MW5.png"><img alt="../../../_images/MW5.png" src="../../../_images/MW5.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="request-your-initial-account-and-identity">
+<h2>Request your initial account and identity<a class="headerlink" href="#request-your-initial-account-and-identity" title="Permalink to this headline">¶</a></h2>
+<p>Next up, you will get a choice between making a new initial account and identity, or importing an already existing set.
+Assuming this is the first time you are using Concordium Mobile Wallet, you can choose <strong>I want to create my initial account</strong> to continue.</p>
+<a class="reference internal image-reference" href="../../../_images/MW6.png"><img alt="../../../_images/MW6.png" src="../../../_images/MW6.png" style="width: 32%;" /></a>
+<p>On the next screen you will see a description of what the initial account is and the three steps you have to finish to get it,
+along with your identity. In short, the initial account is an account submitted to the chain by the identity provider of your
+choice, which means they will know that you are the owner of the account. Later you will be able to submit accounts to the
+chain by yourself, which means the owner of these accounts will be only known by you.</p>
+<a class="reference internal image-reference" href="../../../_images/MW8.png"><img alt="../../../_images/MW8.png" src="../../../_images/MW8.png" style="width: 32%;" /></a>
+<p>The three steps mentioned above are:</p>
+<ol class="arabic simple">
+<li><p>Naming of your initial account</p></li>
+<li><p>Naming your identity</p></li>
+<li><p>Requesting the initial account and identity from an <a class="reference internal" href="../resources/glossary.html#glossary-identity-provider"><span class="std std-ref">Identity Provider</span></a> of your choice</p></li>
+</ol>
+<p>You will meet the first step on the next page, which prompts you to enter a name for your initial account. Pressing continue
+will take you to the next page, on which you have to name your identity. Both of these names will only be known by yourself,
+so you can name them more or less whatever you want (There are a few constraints on what letters and signs you can use).</p>
+<p>In the examples below, we choose to call our initial account <em>Example Account 1</em> and our identity <em>Example Identity 1</em>. As
+mentioned, you can choose whichever names you want.</p>
+<a class="reference internal image-reference" href="../../../_images/MW9.png"><img alt="../../../_images/MW9.png" src="../../../_images/MW9.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/MW10.png"><img alt="../../../_images/MW10.png" src="../../../_images/MW10.png" style="width: 32%;" /></a>
+<p>By pressing <strong>Continue to identity providers</strong>, you will be taken to a page where you have to choose between <em>identity providers</em>.
+An identity provider is an external third party who will verify who you are, before returning an identity object to be used for creating accounts on the chain.
+For now Notabene is the only option, but more might be added later.</p>
+<a class="reference internal image-reference" href="../../../_images/MW11.png"><img alt="../../../_images/MW11.png" src="../../../_images/MW11.png" style="width: 32%;" /></a>
+<p>By pressing an identity provider button, you will be taken to the provider’s identity issuance flow. It will look similar to the one below.</p>
+<a class="reference internal image-reference" href="../../../_images/MW64.png"><img alt="../../../_images/MW64.png" src="../../../_images/MW64.png" style="width: 32%;" /></a>
+<p>After finishing the identity issuance flow, you will be met with the following screen. It will show you an overview
+of your identity and the initial account.</p>
+<a class="reference internal image-reference" href="../../../_images/MW12.png"><img alt="../../../_images/MW12.png" src="../../../_images/MW12.png" style="width: 32%;" /></a>
+<p>Depending on the identity provider you have chosen, the layout of the identity card might differ slightly. You can see that the
+Example Account 1 is held by the identity Example Identity 1. The account created during this process will be marked with <em>(Initial)</em>
+in the app, so you know which account is the initial account submitted to the chain by the identity provider.</p>
+<p>By pressing <strong>Finish</strong> you will be taken to the <em>Accounts screen</em>. On this screen you will be able to see your newly created initial
+account. It might be showing a <em>Pending icon</em>, which means the identity provider is still working on submitting and creating your
+initial account and identity. You can also navigate to the <em>Identities screen</em> by clicking on <strong>Identities</strong> at the bottom of the
+display. On this screen you can see your newly created identity, which might also still be pending in case the identity provider
+has not finished it yet. All you have to do now, is to wait for them to finish.</p>
+<a class="reference internal image-reference" href="../../../_images/MW13.png"><img alt="../../../_images/MW13.png" src="../../../_images/MW13.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/MW65.png"><img alt="../../../_images/MW65.png" src="../../../_images/MW65.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

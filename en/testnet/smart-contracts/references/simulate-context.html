@@ -1,0 +1,461 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Simulation contexts &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Contract host functions" href="host-fns.html" />
+    <link rel="prev" title="Schema JSON representation" href="schema-json.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../../net/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/custom-errors.html">Return custom errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/local-simulate.html">Locally simulate contract functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="schema-json.html">Schema JSON representation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulation contexts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#init-context">Init context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receive-context">Receive context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chain-meta-data">Chain meta data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#policy">Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="host-fns.html">Contract host functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references-on-chain.html">References on-chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-settings.html">Local settings</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Concordium Smart Contract Documentation</a> &raquo;</li>
+        
+      <li>Simulation contexts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/smart-contracts/references/simulate-context.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulation-contexts">
+<span id="simulate-context"></span><h1>Simulation contexts<a class="headerlink" href="#simulation-contexts" title="Permalink to this headline">¶</a></h1>
+<p>This is a reference of how the init- and receive-context is specified as JSON,
+when <a class="reference internal" href="../guides/local-simulate.html#local-simulate"><span class="std std-ref">simulating contract functions locally</span></a>.</p>
+<div class="section" id="init-context">
+<h2>Init context<a class="headerlink" href="#init-context" title="Permalink to this headline">¶</a></h2>
+<p>The context accessible in an init function.</p>
+<p>Example of context</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;initOrigin&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
+    <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="metadata">
+<h3><code class="docutils literal notranslate"><span class="pre">metadata</span></code><a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
+<p>JSON Object containing the chain meta data, see <a class="reference internal" href="#context-metadata"><span class="std std-ref">Chain meta data</span></a> for a
+reference of the fields.</p>
+</div>
+<div class="section" id="initorigin">
+<h3><code class="docutils literal notranslate"><span class="pre">initOrigin</span></code><a class="headerlink" href="#initorigin" title="Permalink to this headline">¶</a></h3>
+<p>The account address which triggered the invocation of the init function, by
+instantiating the smart contract.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="senderpolicies">
+<h3><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code><a class="headerlink" href="#senderpolicies" title="Permalink to this headline">¶</a></h3>
+<p>JSON array of the policies of the sender, see <a class="reference internal" href="#context-sender-policy"><span class="std std-ref">Policy</span></a> for a
+reference a policy.</p>
+</div>
+</div>
+<div class="section" id="receive-context">
+<h2>Receive context<a class="headerlink" href="#receive-context" title="Permalink to this headline">¶</a></h2>
+<p>The context accessible in a receive function.</p>
+<p>Example of context:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;invoker&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;selfAddress&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="nt">&quot;selfBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;account&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
+    <span class="p">}],</span>
+    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">metadata</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>JSON Object containing the chain meta data, see <a class="reference internal" href="#context-metadata"><span class="std std-ref">Chain meta data</span></a> for a
+reference of the fields.</p>
+</div>
+<div class="section" id="invoker">
+<h3><code class="docutils literal notranslate"><span class="pre">invoker</span></code><a class="headerlink" href="#invoker" title="Permalink to this headline">¶</a></h3>
+<p>The account address which made the transaction triggering the invocation of the
+receive function, by updating a smart contract instance.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sender">
+<h3><code class="docutils literal notranslate"><span class="pre">sender</span></code><a class="headerlink" href="#sender" title="Permalink to this headline">¶</a></h3>
+<p>The address of the sender of the message triggering the receive function.
+Can be either a smart contract instance or an account address, given as a JSON
+object.</p>
+<p>Example of account address:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;account&quot;</span><span class="p">,</span> <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Example of contract address:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;contract&quot;</span><span class="p">,</span> <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>JSON array of the policies of the sender, see <a class="reference internal" href="#context-sender-policy"><span class="std std-ref">Policy</span></a> for a
+reference a policy.</p>
+</div>
+<div class="section" id="owner">
+<h3><code class="docutils literal notranslate"><span class="pre">owner</span></code><a class="headerlink" href="#owner" title="Permalink to this headline">¶</a></h3>
+<p>JSON string containing the account address of the owner of the smart contract
+instance.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selfaddress">
+<h3><code class="docutils literal notranslate"><span class="pre">selfAddress</span></code><a class="headerlink" href="#selfaddress" title="Permalink to this headline">¶</a></h3>
+<p>JSON object describing the contract address of the current smart contract
+instance.
+Must contain the <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">subindex</span></code> fields with JSON numbers.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selfbalance">
+<h3><code class="docutils literal notranslate"><span class="pre">selfBalance</span></code><a class="headerlink" href="#selfbalance" title="Permalink to this headline">¶</a></h3>
+<p>A JSON string with the balance of the smart contract instance in micro GTU.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;100&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="chain-meta-data">
+<span id="context-metadata"></span><h2>Chain meta data<a class="headerlink" href="#chain-meta-data" title="Permalink to this headline">¶</a></h2>
+<p>Both the init- and receive-context contains a <code class="docutils literal notranslate"><span class="pre">metadata</span></code> section containing
+information of the blockchain at the block the smart contract is executed in.
+Below we refer to this block as the <em>current block</em>.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+      <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="slottime">
+<h3><code class="docutils literal notranslate"><span class="pre">slotTime</span></code><a class="headerlink" href="#slottime" title="Permalink to this headline">¶</a></h3>
+<p>The slot time at the beginning of the current block as a JSON string in the
+format of <a class="reference external" href="https://tools.ietf.org/html/rfc3339">RFC3339</a> with precision up to milliseconds.</p>
+</div>
+</div>
+<div class="section" id="policy">
+<span id="context-sender-policy"></span><h2>Policy<a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h2>
+<p>Both the init- and receive-context contain a list of policies of the sender.
+Such a policy is represented as a JSON Object.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="identityprovider">
+<h3><code class="docutils literal notranslate"><span class="pre">identityProvider</span></code><a class="headerlink" href="#identityprovider" title="Permalink to this headline">¶</a></h3>
+<p>The id of the identity provider as a JSON number.</p>
+</div>
+<div class="section" id="createdat">
+<h3><code class="docutils literal notranslate"><span class="pre">createdAt</span></code><a class="headerlink" href="#createdat" title="Permalink to this headline">¶</a></h3>
+<p>The year and month of the date this policy was created at, given as a JSON
+string in the format <em>YYYYMM</em>.</p>
+</div>
+<div class="section" id="validto">
+<h3><code class="docutils literal notranslate"><span class="pre">validTo</span></code><a class="headerlink" href="#validto" title="Permalink to this headline">¶</a></h3>
+<p>The year and month of the date this policy is valid to, given as a JSON string
+in the format <em>YYYYMM</em>.</p>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Build a contract schema &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Build using no_std" href="no-std.html" />
+    <link rel="prev" title="Locally simulate contract functions" href="local-simulate.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../../net/index.html" class="" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../index.html" class="active"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup-tools.html">Install tools for development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-contract.html">Setting up a smart contract project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-errors.html">Return custom errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-simulate.html">Locally simulate contract functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Build a contract schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-the-contract-for-a-schema">Setup the contract for a schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-schema">Building the schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+</ul>
+<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy-module.html">Deploy a smart contract module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inspect-instance.html">Inspect a smart contract instance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references-on-chain.html">References on-chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/local-settings.html">Local settings</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Concordium Smart Contract Documentation</a> &raquo;</li>
+        
+      <li>Build a contract schema</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/testnet/smart-contracts/guides/build-schema.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="build-a-contract-schema">
+<span id="build-schema"></span><h1>Build a contract schema<a class="headerlink" href="#build-a-contract-schema" title="Permalink to this headline">¶</a></h1>
+<p>This guide will show you how to build a smart contract schema, how to export it
+to a file, and/or embed the schema into the smart contract module, all using
+<code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>First, ensure you have <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> installed and if not the guide
+<a class="reference internal" href="setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> will help you.</p>
+<p>We also need the Rust source code of the smart contract you wish to build a
+schema for.</p>
+</div>
+<div class="section" id="setup-the-contract-for-a-schema">
+<h2>Setup the contract for a schema<a class="headerlink" href="#setup-the-contract-for-a-schema" title="Permalink to this headline">¶</a></h2>
+<p>In order to build a contract schema, we first have to prepare our smart
+contract for building the schema.</p>
+<p>We can choose which parts of our smart contract to included in the schema.
+The options are to include a schema for the contract state, and/or for each of
+the parameters of init and receive functions.</p>
+<p>Every type we want to include in the schema must implement the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code>
+trait. This is already done for all base types and some other types (see <a class="reference external" href="https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls">list of types implementing the SchemaType</a>).
+For most other cases, it can also be achieved automatically, using
+<code class="docutils literal notranslate"><span class="pre">#[derive(SchemaType)]</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">SomeType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Implementing the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> trait manually only requires specifying one
+function, which is a getter for a <code class="docutils literal notranslate"><span class="pre">schema::Type</span></code>, which essentially describes
+how this type is represented as bytes and how to represent it.</p>
+<div class="section" id="including-contract-state">
+<h3>Including contract state<a class="headerlink" href="#including-contract-state" title="Permalink to this headline">¶</a></h3>
+<p>To generate and include the schema for the contract state, we annotate the type
+with the <code class="docutils literal notranslate"><span class="pre">#[contract_state(contract</span> <span class="pre">=</span> <span class="pre">...)]</span></code> macro:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[contract_state(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">MyState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Or even simpler if the contract state is of a type that already implements <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code>, e.g., u32:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[contract_state(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">type</span> <span class="nc">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="including-function-parameters">
+<h3>Including function parameters<a class="headerlink" href="#including-function-parameters" title="Permalink to this headline">¶</a></h3>
+<p>To generate and include the schema for parameters for init  and
+receive functions, we set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> attribute for the
+<code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code>- and <code class="docutils literal notranslate"><span class="pre">#[receive(..)]</span></code>-macro:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">ReceiveParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_init</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;ReceiveParameter&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="building-the-schema">
+<h2>Building the schema<a class="headerlink" href="#building-the-schema" title="Permalink to this headline">¶</a></h2>
+<p>Now, we are ready to build the actual schema using <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, and we
+have the options to embed the schema and/or write the schema to a file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more on which to choose see
+<a class="reference internal" href="../general/contract-schema.html#contract-schema-which-to-choose"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="section" id="embedding-the-schema">
+<h3>Embedding the schema<a class="headerlink" href="#embedding-the-schema" title="Permalink to this headline">¶</a></h3>
+<p>In order to embed the schema into the smart contract module, we add
+<code class="docutils literal notranslate"><span class="pre">--schema-embed</span></code> to the build command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-embed
+</pre></div>
+</div>
+<p>If successful the output of the command will tell you the total size of the
+schema in bytes.</p>
+</div>
+<div class="section" id="outputting-a-schema-file">
+<h3>Outputting a schema file<a class="headerlink" href="#outputting-a-schema-file" title="Permalink to this headline">¶</a></h3>
+<p>To output the schema into a file, we can use the <code class="docutils literal notranslate"><span class="pre">--schema-out=FILE</span></code>
+where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path of the file to create:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out<span class="o">=</span><span class="s2">&quot;/some/path/schema.bin&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
