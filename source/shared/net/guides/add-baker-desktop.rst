@@ -70,7 +70,7 @@ There are two ways that you can generate the transaction:
 
 -  :ref:`Generate and sign the transaction<generate-sign>` This option requires a Ledger and an internet connection.
 
-In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than were the proposal was created.
+In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than where the proposal was created.
 
 .. _generate-without-sign:
 
@@ -99,7 +99,7 @@ Generate and sign the transaction on the Ledger
 #. When the Ledger says **Sign transaction**, press both buttons to confirm the transaction. The Ledger says **Concordium is ready**.
 
 .. Note::
-    If  you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. The Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
+    If  you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
 
     .. _export-baker-credentials:
 
@@ -108,7 +108,7 @@ Export baker credentials
 
 #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file.
 
-   You can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which includes the status of the transaction, the identicon, and the digest to sign. You can also see the date and time before which you must submit the transaction proposal. If no more signature are required, you can :ref:`submit the transaction to the blockchain <submit-transaction>`. If more signatures are required, you'll have to export and send the transaction proposal to the co-signers.
+   You can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which includes the status of the transaction, the identicon, and the digest to sign. You can also see the date and time before which you must submit the transaction proposal. If no more signatures are required, you can :ref:`submit the transaction to the blockchain <submit-transaction>`. If more signatures are required, you'll have to export and send the transaction proposal to the co-signers.
 
 .. Warning::
     This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
@@ -119,9 +119,9 @@ If more than one signature is needed to sign off on the baker account proposal, 
 
 #. In the Desktop Wallet, select **Export transaction proposal**.
 
-#. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **Save as type** make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
+#. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
 
-#. Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Likewise, send a copy of the identicon through a secure channel that is different from the one used to send the file.
+#. Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Optionally, you can also send a copy of the identicon through a secure channel that is different from the one used to send the file.
 
 Receive signatures from co-signers
 ==================================
