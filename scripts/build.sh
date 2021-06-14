@@ -41,6 +41,6 @@ for current_version in ${versions[@]}; do
   for current_language in ${languages[@]}; do
     export current_language
     printf "\nRunning build '${current_version}' for language '${current_language}'\n"
-    sphinx-build "${source_dir}" "${build_dir}/${current_language}" -c "${source_dir}/${current_version}" -D language="${current_language}"
+    sphinx-build "${source_dir}" "${build_dir}/${current_language}" -c "${source_dir}/${current_version}" -D language="${current_language}" -W
   done
 done
