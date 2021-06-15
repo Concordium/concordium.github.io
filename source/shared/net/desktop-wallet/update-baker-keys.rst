@@ -30,7 +30,7 @@ Select an account
 
    The baker keys are generated and you can view the transaction details in the left pane. You can see the identity, the account, and the expiry time of the transaction. You can also see the public baker keys.
 
-#. You have to export the baker credentials so that you can restart the node with the new baker keys. Select **Export baker credentials**. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**.and navigate to the place on your computer where you want to save the file.
+#. You have to export the baker credentials so that you can restart the node with the new baker keys. Select **Export baker credentials**. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
 .. Warning::
    This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else make sure to do so through a secure channel.
@@ -113,4 +113,3 @@ When you have received and added all the required signatures, you can submit the
 
 .. Warning::
     Transactions on the blockchain can't be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review the transaction before you submit it.
-
