@@ -52,6 +52,10 @@
    desktop-wallet/send-gtu-single-desktop
    desktop-wallet/single-sign-schedule
    desktop-wallet/multisig-simple-transfer
+   desktop-wallet/update-baker-keys
+   desktop-wallet/remove-baker
+   desktop-wallet/change-baker-stake
+   desktop-wallet/change-restake-settings
 
 .. toctree::
    :maxdepth: 1

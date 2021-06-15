@@ -24,6 +24,8 @@ The account and can be viewed either in the Desktop Wallet or the Mobile Wallet 
 
 Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.
 
+.. _concepts-baker-stake:
+
 Stake and lottery
 -----------------
 
