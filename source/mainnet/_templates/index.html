@@ -15,7 +15,9 @@
 
 <body>
     <div class="logo-container">
-        <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
+        <a href="https://developer.concordium.software/">
+            <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
+        </a>
     </div>
 
     <div class="features-container">
@@ -26,7 +28,7 @@
                         <h1>Mainnet</h1>
                     </div>
                 </a>
-                <h3>How to make an account</h3>
+                <h3>How to create an account</h3>
                 <ul class="feature-box-list">
                     <li><a href="{{ pathto('mainnet/net/installation/downloads') }}">Download a wallet</a></li>
                     <li><a href="{{ pathto('mainnet/net/desktop-wallet/create-identity-desktop') }}">Create your first account using <br> the Desktop Wallet</a></li>
@@ -39,6 +41,10 @@
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div class="logo-container">
+            <h4>New to Concordium? Go to <a href="https://concordium.com/">Concordium.com</a> to learn more about the project.</h4>
     </div>
 
     <style>
@@ -58,7 +64,8 @@
         .logo-container {
 	        height: 100px;
 	        width: 100%;
-	        margin: 10px;
+            margin-top: 10px;
+            margin-bottom: -30px;
             text-align:center;
             position:relative;
         }
@@ -68,7 +75,6 @@
             display:inline-block;
             max-width: 300px;
             min-height: 100px;
-            margin-left: -28px;
         }
 
         .features-container {
