@@ -9,10 +9,10 @@ Update the restake settings
    :backlinks: none
    :depth: 1
 
-Change what happens to baker rewards
-====================================
+Change restake settings
+=======================
 
-Baker rewards can either be restaked automatically or they can be transferred to the disposable amount of the account. The default setting is to restake the rewards. This topic describes how you change the setting.
+By default, your baker rewards are restaked when you create the baker account. However, you can also choose to have the rewards transferred to the disposable amount of your account. If you change the restake settings, the change will take effect after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. This topic describes how you change the setting.
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker restake earnings**.
 

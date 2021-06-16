@@ -9,9 +9,7 @@ Update the staked amount
    :backlinks: none
    :depth: 1
 
-You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account at any time. However, the staked amount will not change right away. If you increase the stake the change will take effect when the current epoch has elapsed.
-
-If you decrease the stake, the change will take effect after 7 days (which corresponds to 168 epochs). After this, the amount you’ve decreased the stake with is returned to your disposable balance.
+You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account at any time. If you increase the stake, the new stake will be applied after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. However, if you decrease the stake, there is a cool-down period before the new stake is applied. The cool down period is 7 days, which corresponds to 168 epochs. During this period, you'll not be able to remove the baker account or increase the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance.
 
 When you change the stake it can influence your chance of being selected to bake a block and receive baker rewards and of being included in the :ref:`finalization <glossary-finalization>` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a blocks and of being included in the finalization committee.
 
