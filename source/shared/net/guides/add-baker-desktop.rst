@@ -9,7 +9,7 @@ Add a baker account in the Desktop Wallet
     :backlinks: none
     :depth: 1
 
-A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account.
+A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking two :ref:`epochs <glossary-epoch>` after the transaction has been approved.
 
 The process of becoming a baker involves the following:
 
@@ -17,7 +17,7 @@ The process of becoming a baker involves the following:
 #. Register the baker keys with the account.
 #. Start a :ref:`node<run-a-node>` with the baker keys.
 
-When you've completed these steps, the baker node will be able to bake blocks. Read more about :ref:`being a baker <baker-concept>`. This guide goes through all the steps involved in adding a baker in the Desktop Wallet.
+This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To learn about running a baker node, see :ref:`Run a node on a server with Ubuntu<run-node-ubuntu>`.
 
 Prerequisites
 =============

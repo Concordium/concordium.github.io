@@ -12,7 +12,7 @@ Remove a baker account
 Remove a baker
 ==============
 
-If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking. When you've removed the baker, we recommend that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
+If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. When you've removed the baker, we recommend that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Remove baker**.
 
