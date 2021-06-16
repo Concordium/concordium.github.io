@@ -152,6 +152,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -252,14 +256,14 @@
 <li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>A <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">baker</span></a> is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account.</p>
+<p>A <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">baker</span></a> is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking two <a class="reference internal" href="../resources/glossary.html#glossary-epoch"><span class="std std-ref">epochs</span></a> after the transaction has been approved.</p>
 <p>The process of becoming a baker involves the following:</p>
 <ol class="arabic simple">
 <li><p>Create a set of baker keys.</p></li>
 <li><p>Register the baker keys with the account.</p></li>
 <li><p>Start a <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">node</span></a> with the baker keys.</p></li>
 </ol>
-<p>When you’ve completed these steps, the baker node will be able to bake blocks. Read more about <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">being a baker</span></a>. This guide goes through all the steps involved in adding a baker in the Desktop Wallet.</p>
+<p>This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To learn about running a baker node, see <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>There are a couple of things you must set up in preparation before you can start baking.</p>
@@ -446,7 +450,65 @@ is added to the staked amount on the account by default. However, you can change
   
   
     
-   
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': loadChoice() ? 'granted' : 'denied' });
+gtag('js', new Date());
+gtag('config', 'G-TE81YY48VB', {'anonymize_ip': true});
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+    document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+    if (!document.cookie.includes("cookie-consent=")) {
+        return undefined;
+    }
+    return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+    document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+    storeChoice(true)
+    gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'granted' });
+    removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+    storeChoice(false)
+    removeCookieConsentBanner()
+}
+
+
+</script>
+<div id="cookie-consent" class="consent">
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Disallow</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+<script>
+    const stored = loadChoice();
+    if (stored !== undefined) {
+        removeCookieConsentBanner()
+    }
+</script>
+
 
 </body>
 </html>
