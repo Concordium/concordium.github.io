@@ -51,6 +51,16 @@
     padding: 1em;
 }
 
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
+}
+
+.consent p {
+    margin-bottom: 0.5em;
+}
+
 .consent button {
     padding-left: 1em;
     padding-right: 1em;
