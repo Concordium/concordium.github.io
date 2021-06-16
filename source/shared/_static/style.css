@@ -40,3 +40,48 @@
 .sidebar-top-menu a.active {
     background-color: #343131;
 }
+
+.consent {
+    position: fixed;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    background: black;
+    color: #d9d9d9;
+    padding: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
+}
+
+.consent p {
+    margin-bottom: 0.5em;
+}
+
+.consent button {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.consent a:link {
+    margin-left: .5em;
+    color: lightblue;
+    text-decoration: underline;
+}
+
+.consent a:visited {
+    color: lightgrey;
+}
+
+.consent   a:hover {
+    color: #2980b9;
+}
+
+.consent a:active {
+    color: #d9d9d9;
+}
