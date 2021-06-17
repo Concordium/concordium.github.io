@@ -1,1 +1,1 @@
-.. include:: /shared/net/resources/third-party-licenses.rst
+.. include:: /../shared/net/resources/third-party-licenses.rst

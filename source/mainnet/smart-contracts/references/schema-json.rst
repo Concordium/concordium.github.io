@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/references/schema-json.rst
+.. include:: /../shared/smart-contracts/references/schema-json.rst

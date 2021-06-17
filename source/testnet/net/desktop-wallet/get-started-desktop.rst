@@ -1,1 +1,1 @@
-.. include:: /shared/net/desktop-wallet/get-started-desktop.rst
+.. include:: /../shared/net/desktop-wallet/get-started-desktop.rst

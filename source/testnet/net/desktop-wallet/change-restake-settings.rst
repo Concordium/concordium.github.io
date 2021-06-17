@@ -1,1 +1,1 @@
-.. include:: /shared/net/desktop-wallet/change-restake-settings.rst
+.. include:: /../shared/net/desktop-wallet/change-restake-settings.rst

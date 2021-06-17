@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/references/host-fns.rst
+.. include:: /../shared/smart-contracts/references/host-fns.rst

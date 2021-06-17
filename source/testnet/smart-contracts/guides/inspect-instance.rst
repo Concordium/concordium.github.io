@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/guides/inspect-instance.rst
+.. include:: /../shared/smart-contracts/guides/inspect-instance.rst

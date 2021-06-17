@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/guides/setup-tools.rst
+.. include:: /../shared/smart-contracts/guides/setup-tools.rst

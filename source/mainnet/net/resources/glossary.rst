@@ -1,1 +1,1 @@
-.. include:: /shared/net/resources/glossary.rst
+.. include:: /../shared/net/resources/glossary.rst
