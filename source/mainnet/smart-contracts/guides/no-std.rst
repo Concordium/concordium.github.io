@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/guides/no-std.rst
+.. include:: /../shared/smart-contracts/guides/no-std.rst

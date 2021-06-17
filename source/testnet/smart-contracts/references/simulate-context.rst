@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/references/simulate-context.rst
+.. include:: /../shared/smart-contracts/references/simulate-context.rst

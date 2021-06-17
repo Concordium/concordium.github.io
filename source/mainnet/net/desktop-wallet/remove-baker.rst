@@ -1,1 +1,1 @@
-.. include:: /shared/net/desktop-wallet/remove-baker.rst
+.. include:: /../shared/net/desktop-wallet/remove-baker.rst

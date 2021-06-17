@@ -1,1 +1,1 @@
-.. include:: /shared/net/references/query-node.rst
+.. include:: /../shared/net/references/query-node.rst

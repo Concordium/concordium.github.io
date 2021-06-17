@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/general/resource-accounting.rst
+.. include:: /../shared/smart-contracts/general/resource-accounting.rst

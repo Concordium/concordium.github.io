@@ -1,1 +1,1 @@
-.. include:: /shared/net/references/transactions.rst
+.. include:: /../shared/net/references/transactions.rst

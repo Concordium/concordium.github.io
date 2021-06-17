@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/references/references-on-chain.rst
+.. include:: /../shared/smart-contracts/references/references-on-chain.rst

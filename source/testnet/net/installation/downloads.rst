@@ -1,1 +1,1 @@
-.. include:: /shared/net/installation/downloads.rst
+.. include:: /../shared/net/installation/downloads.rst

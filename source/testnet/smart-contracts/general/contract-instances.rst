@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/general/contract-instances.rst
+.. include:: /../shared/smart-contracts/general/contract-instances.rst

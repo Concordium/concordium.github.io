@@ -1,1 +1,1 @@
-.. include:: /shared/net/desktop-wallet/multisig-simple-transfer.rst
+.. include:: /../shared/net/desktop-wallet/multisig-simple-transfer.rst
