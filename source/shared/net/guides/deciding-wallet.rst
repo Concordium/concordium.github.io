@@ -51,8 +51,8 @@ The following table lists the major features of each wallet.
      - Desktop Wallet
      - Mobile Wallet
    * - **Secured by password and biometrics**
-     - Yes
-     - Yes
+     - Password
+     - Password and biometrics
    * - **Encrypted**
      - Yes
      - Yes
