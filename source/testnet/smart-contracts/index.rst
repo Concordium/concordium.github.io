@@ -1,4 +1,4 @@
-.. include:: /shared/smart-contracts/index.rst
+.. include:: /../shared/smart-contracts/index.rst
 
 .. toctree::
    :maxdepth: 1

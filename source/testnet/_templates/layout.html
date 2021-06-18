@@ -10,8 +10,8 @@
 {% block sidebartitle %}
 {{super()}}
 <nav class="sidebar-top-menu">
-    <a href="{{ pathto('testnet/net/index') }}" class="{{ 'active' if entry is defined and entry == 'testnet/net/index' else '' }}" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
-    <a href="{{ pathto('testnet/smart-contracts/index') }}" class="{{ 'active' if entry is defined and entry == 'testnet/smart-contracts/index' }}"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+    <a href="{{ pathto('net/index') }}" class="{{ 'active' if entry is defined and entry == 'net/index' else '' }}" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="{{ pathto('smart-contracts/index') }}" class="{{ 'active' if entry is defined and entry == 'smart-contracts/index' }}"> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
 </nav>
 {% endblock %}
 

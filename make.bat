@@ -32,11 +32,11 @@ if errorlevel 9009 (
 goto end
 
 :dev-mainnet
-sphinx-autobuild %SOURCEDIR% %BUILDDIR%\mainnet -c %SOURCEDIR%\mainnet
+sphinx-autobuild %SOURCEDIR%\mainnet %BUILDDIR%\mainnet
 goto end
 
 :dev-testnet
-sphinx-autobuild %SOURCEDIR% %BUILDDIR%\testnet -c %SOURCEDIR%\testnet
+sphinx-autobuild %SOURCEDIR%\testnet %BUILDDIR%\testnet
 goto end
 
 

@@ -1,1 +1,1 @@
-.. include:: /shared/net/desktop-wallet/change-baker-stake.rst
+.. include:: /../shared/net/desktop-wallet/change-baker-stake.rst

@@ -1,1 +1,1 @@
-.. include:: /shared/net/desktop-wallet/send-gtu-single-desktop.rst
+.. include:: /../shared/net/desktop-wallet/send-gtu-single-desktop.rst

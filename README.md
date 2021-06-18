@@ -48,7 +48,7 @@ All of the documentation lives in the `source` directory, here there are subdire
 The way to have shared content, is to make a file in both `mainnet` and `testnet`, which includes the shared content using the `include` directive.
 
 ```
-.. include:: /shared/path/to/file.rst
+.. include:: /../shared/path/to/file.rst
 ```
 
 ## Installation

@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/guides/compile-module.rst
+.. include:: /../shared/smart-contracts/guides/compile-module.rst

@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/guides/local-simulate.rst
+.. include:: /../shared/smart-contracts/guides/local-simulate.rst

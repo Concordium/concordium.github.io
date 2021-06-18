@@ -1,1 +1,1 @@
-.. include:: /shared/smart-contracts/guides/custom-errors.rst
+.. include:: /../shared/smart-contracts/guides/custom-errors.rst

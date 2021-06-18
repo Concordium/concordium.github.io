@@ -8,7 +8,7 @@ def flatmap(f, xs):
     return [y for ys in xs for y in f(ys)]
 
 # The number of top level directories until the right level for the toctree
-number_of_top_directories = 2 # source and mainnet/testnet
+number_of_top_directories = 1
 
 def html_page_context(app, pagename, templatename, context, doctree):
     env = app.builder.env
