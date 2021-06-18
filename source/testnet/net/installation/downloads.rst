@@ -1,5 +1,5 @@
-.. _downloads:
 .. include:: ../../variables.rst
+.. _downloads:
 
 =========
 Downloads
@@ -85,5 +85,5 @@ System requirements
 
 
 
-*Apple® and the Apple logo® are trademarks of Apple Inc., registered in the U.S. and other countries*.
+*Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
 
