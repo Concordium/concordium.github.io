@@ -16,6 +16,7 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/deciding-wallet
    guides/overview-desktop
    guides/multisig-transfer
    guides/overview-baker-process
