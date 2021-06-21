@@ -56,7 +56,7 @@ An example of this context could be:
            "identityProvider": 1,
            "createdAt": "202012",
            "validTo": "202109"
-       }],
+       }]
    }
 
 .. seealso::
