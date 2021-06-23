@@ -57,6 +57,7 @@
    desktop-wallet/remove-baker
    desktop-wallet/change-baker-stake
    desktop-wallet/change-restake-settings
+   desktop-wallet/sign-transaction
 
 .. toctree::
    :maxdepth: 1
