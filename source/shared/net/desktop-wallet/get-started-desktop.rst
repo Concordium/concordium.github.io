@@ -11,7 +11,7 @@ The Desktop Wallet also supports storing of your private keys on a hardware devi
 Prerequisites
 =============
 
--  :ref:`Run a node <run-node-ubuntu>` on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and post transaction.
+-  :ref:`Run a node <run-node-ubuntu>` on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions.
 
 -  Set up a :ref:`Ledger Nano S hardware device and install the Concordium Ledger App <install-Ledger-app>`.
 
@@ -25,7 +25,7 @@ Set up the Desktop Wallet
 
 #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
-1. In the Desktop Wallet go to **Settings**, select **Multi signature settings**, and then select **Node settings**.
+#. In the Desktop Wallet go to **Settings**, select **Multi signature settings**, and then select **Node settings**.
 
 #. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
 
