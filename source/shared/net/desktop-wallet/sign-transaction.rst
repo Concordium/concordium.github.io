@@ -9,7 +9,7 @@ Sign a transaction proposal
     :backlinks: none
     :depth: 1
 
-As a co-signer on an account, you'll receive transaction proposals that you have to sign. You'll receive the proposals as files with the extension .json. Most often, you'll also receive a PDF file with the transaction information. You import the .json file into the Desktop Wallet and then you compare the transaction details with the contents of the PDF file. Some proposers also send a separate file with a copy of the identicon as an extra security measure.
+As a co-signer on an account, you'll receive transaction proposals that you have to sign. You'll receive the proposals as files with the extension .json. Sometimes, you'll also receive a PDF file with the transaction information. You import the .json file into the Desktop Wallet and then you compare the transaction details with the contents of the PDF file. Some proposers also send a separate file with a copy of the identicon as an extra security measure.
 
 .. Note::
     Every transaction has an expiry time. It's important that you return the signed proposal in time for the proposer to submit it to the blockchain before the expiry time has elapsed.
@@ -33,8 +33,8 @@ Import and sign a proposal
 
 #. The information that's displayed on the Ledger now will vary depending on the type of transaction, you're signing. Navigate through the information and verify that it matches the information in the Desktop Wallet. Use both buttons whenever you need to confirm information.
 
-#. Select the printer icon in the upper right corner to print a PDF of the signature and, optionally, click the identicon to copy it and paste it into a separate document.
+#. Select the printer icon in the upper right corner to print a PDF of the transaction and click the identicon to copy and paste it into a separate document.
 
 #. Select **Export signature**, give the file a name and the extension .json, and then select **Save**.
 
-#. Send the JSON file, the PDF, and the identicon through secure channels to the proposer of the transaction.
+#. Send the JSON file and the identicon through secure channels to the proposer of the transaction.
