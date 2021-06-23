@@ -67,26 +67,28 @@ Install Python3 and pip
 
 #. To confirm that Python3 was installed, enter
 
-.. code-block:: console
+   .. code-block:: console
 
-   Python3 --version
+      Python3 --version
 
 6. To confirm that the package manager named pip is installed, enter
 
-.. code-block:: console
+   .. code-block:: console
 
-   pip --version
+      pip --version
 
 7. To install Python tools for the Ledger Nano S, enter
 
-.. code-block:: console
+   .. code-block:: console
 
-   pip3 install ledgerblue
+      pip3 install ledgerblue
 
 Install the custom certificate on Windows
 -----------------------------------------
 
 You now have to install a custom certificate on the Ledger to ensure that it trusts applications signed by Concordium's private key.
+
+#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
 
 #. Disconnect the Ledger from your computer.
 
@@ -94,17 +96,15 @@ You now have to install a custom certificate on the Ledger to ensure that it tru
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
-
 #. Press the right button while you reconnect the Ledger to the computer, and hold it down until the Ledger says **recovery**.
 
 #. Enter your PIN code.
 
-#. Open the folder you extracted the files to and double-click the ``loadcertificate.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
+#. Open the folder you extracted the files to and double-click the ``loadcertificate.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**. A command-line window opens.
 
-#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The certificate is installed on the Ledger.
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. The Ledger says **Certificate concordium**. Press the right button to navigate through the key, and then press both buttons when the Ledger says Trust certificate.
+#. The certificate is installed on the Ledger. The Ledger says **Certificate concordium**. Press the right button to navigate through the key, and then press both buttons when the Ledger says Trust certificate.
 
 #. Enter your PIN.
 
@@ -127,44 +127,44 @@ Install Homebrew, Python3, and pip
 
 #. Install the package manager Homebrew. Copy the following line into the Terminal and press enter.
 
-.. code-block:: console
+   .. code-block:: console
 
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 2. Install Python3 and Pip3 to manage (alternatively use pyenv if you need multiple python versions). Copy the following line into the Terminal and press enter:
 
-.. code-block:: console
+   .. code-block:: console
 
-   brew install python@3.9
+      brew install python@3.9
 
 3. Install libusb. Copy the following line into the Terminal and press enter:
 
-.. code-block:: console
+   .. code-block:: console
 
-   brew install libusb
+      brew install libusb
 
 4. If you have Mac with an M1 or similar Apple Silicon CPU, install:
 
-.. code-block:: console
+   .. code-block:: console
 
-   brew install libjpeg
+      brew install libjpeg
 
 5. Install ledgerblue:
 
-.. code-block:: console
+   .. code-block:: console
 
-   pip3 install ledgerblue
+      pip3 install ledgerblue
 
 Install the custom certificate using macOS
 ------------------------------------------
 
 You now have to install a custom certificate to ensure that the Ledger trusts applications signed by Concordium's private key.
 
+#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+
 #. Download the ZIP folder with the Concordium Ledger application.
 
 #. Extract the files from the ZIP folder to a folder on your computer.
-
-#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
 
 #. Disconnect the Ledger from your computer.
 
@@ -172,15 +172,15 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Enter your PIN code.
 
-Load the certificate onto the Ledger by running the following script from the extracted folder:
+   Load the certificate onto the Ledger by running the following script from the extracted folder:
 
-.. code-block:: console
+   .. code-block:: console
 
-   ./loadcertificate.sh
+      ./loadcertificate.sh
 
-#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The certificate is installed on the Ledger.
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. The Ledger says **Certificate concordium**. Press the right button to navigate through the key, and then press both buttons when the Ledger says **Trust certificate**.
+#. The certificate is installed on the Ledger. The Ledger says **Certificate concordium**. Press the right button to navigate through the key, and then press both buttons when the Ledger says **Trust certificate**.
 
 #. Enter your PIN.
 
@@ -189,9 +189,9 @@ Install the Concordium Ledger app on MacOS
 
 #. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
 
-.. code-block:: console
+   .. code-block:: console
 
-   ./install.sh
+      ./install.sh
 
 2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
@@ -205,45 +205,45 @@ Install Python3 and pip on Ubuntu
 
 #. Add udev rules. For more information, see the Linux section in `Ledger ‘s guide Fix connection history <https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues>`_.
 
-.. code-block:: console
+   .. code-block:: console
 
-   wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+      wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
 
 
 2. Install python3:
 
-.. code-block:: console
+   .. code-block:: console
 
-   sudo apt-get install python3
+      sudo apt-get install python3
 
 3. Install pip:
 
-.. code-block:: console
+   .. code-block:: console
 
-   sudo apt-get install python3-pip
+      sudo apt-get install python3-pip
 
 4. Install
 
-.. code-block:: console
+   .. code-block:: console
 
-   sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
+      sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
 
 5. Install ledgerblue:
 
-.. code-block:: console
+   .. code-block:: console
 
-   sudo pip3 install ledgerblue
+      sudo pip3 install ledgerblue
 
 Install the custom certificate on Ubuntu
 ----------------------------------------
 
 You now have to install a custom certificate to ensure that the Ledger trusts applications signed by Concordium's private key.
 
+#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+
 #. Download the ZIP folder with the Concordium Ledger application.
 
 #. Extract the files from the ZIP folder to a folder on your computer.
-
-#. Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
 
 #. Disconnect the Ledger from your computer.
 
@@ -253,22 +253,22 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Run the following script from the folder you extracted the files to:
 
-.. code-block:: console
+   .. code-block:: console
 
-   ./loadcertificate.sh
+      ./loadcertificate.sh
 
-#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The certificate is installed on the Ledger.
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. Press the right button to navigate through the key, and then press both buttons when the Ledger says **Trust certificate**.
+#. The certificate is installed on the Ledger. Press the right button to navigate through the key, and then press both buttons when the Ledger says **Trust certificate**.
 
 Install the Concordium Ledger app on Ubuntu
 -------------------------------------------
 
 #. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
 
-.. code-block:: console
+   .. code-block:: console
 
-   ./install.sh
+      ./install.sh
 
 2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
