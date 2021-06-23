@@ -9,11 +9,11 @@ Desktop Wallet settings
     :backlinks: none
     :depth: 1
 
-The Desktop Wallet has a number settings such as password and node settings that you access by going to the **Settings** page.
+The Desktop Wallet has a number of settings such as password and node settings that you access by going to the **Settings** page.
 
 Multi-signature settings
 ========================
-The Desktop Wallet provides a set multi-signature transactions called Foundation transactions that only members of the Concordium Foundation can sign.
+The Desktop Wallet provides a set of multi-signature transactions called Foundation transactions that only members of the Concordium Foundation can sign.
 
 These transactions are disabled by default, and if you're not a member of the Concordium Foundation we strongly recommend that you don't enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you'll not be able to sign or submit any of these transactions.
 
