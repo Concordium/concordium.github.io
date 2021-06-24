@@ -16,7 +16,14 @@ Mobile Wallet
 
 The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
-A new |Net| version of the Mobile Wallet will soon be available.
+**iOS:**
+
+- To get the Concordium Mobile Wallet for Testnet on iOS, you must first install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`_ on your iPhone.
+- With TestFlight installed, follow `this link <https://testflight.apple.com/join/HZRi1WDT>`_ on your iPhone to join our beta.
+
+**Android:**
+
+- You can download the Android version of `Concordium Mobile Wallet for Testnet here. <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_
 
 Concordium Desktop Wallet
 =========================
