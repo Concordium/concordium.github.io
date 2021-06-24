@@ -16,7 +16,14 @@ Mobile Wallet
 
 The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
-A new |Net| version of the Mobile Wallet will soon be available.
+**iOS:**
+
+- To get the Concordium Mobile Wallet for Testnet on iOS, you must first install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`_ on your iPhone.
+- With TestFlight installed, follow `this link <https://testflight.apple.com/join/HZRi1WDT>`_ on your iPhone to join our beta.
+
+**Android:**
+
+- You can download the Android version of `Concordium Mobile Wallet for Testnet here. <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_
 
 Concordium Desktop Wallet
 =========================
@@ -40,6 +47,12 @@ Download the Concordium Client:
 
 -  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
 
+   - You need to make the client executable by running ``chmod +x
+     path/to/concordium-client_1.0.1`` in a terminal. Make sure to provide the
+     correct path to the downloaded client.
+   - You also need to `grant it permission to run in your Security & Privacy
+     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
+
 -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
 
 
@@ -50,6 +63,12 @@ Download cargo-concordium:
 -  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0>`_
 
 -  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0>`_
+
+   - You need to make the tool executable by running ``chmod +x
+     path/to/cargo-concordium_1.0.0`` in a terminal. Make sure to provide the
+     correct path to the downloaded tool.
+   - You also need to `grant it permission to run in your Security & Privacy
+     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
 
 -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe>`_
 

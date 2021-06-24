@@ -151,6 +151,10 @@
 <li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-restake-settings.html">Update the restake settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings-overview.html">Desktop Wallet settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposed-transactions.html">View transaction proposals</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -243,7 +247,7 @@
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node</span></a> on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and post transaction.</p></li>
+<li><p><a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node</span></a> on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions.</p></li>
 <li><p>Set up a <a class="reference internal" href="install-ledger-app.html#install-ledger-app"><span class="std std-ref">Ledger Nano S hardware device and install the Concordium Ledger App</span></a>.</p></li>
 </ul>
 <div class="admonition note">
@@ -256,8 +260,6 @@
 <ol class="arabic simple">
 <li><p>Install the Desktop Wallet. For more information, see <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Installation downloads</span></a>.</p></li>
 <li><p>Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.</p></li>
-</ol>
-<ol class="arabic simple">
 <li><p>In the Desktop Wallet go to <strong>Settings</strong>, select <strong>Multi signature settings</strong>, and then select <strong>Node settings</strong>.</p></li>
 <li><p>Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p></li>
 <li><p>Select <strong>Set connection</strong>. If the connection is working properly, there’s a message saying <strong>Successfully connected</strong>.</p></li>

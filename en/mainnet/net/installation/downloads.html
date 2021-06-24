@@ -157,6 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -246,19 +250,19 @@
 <span id="id1"></span><h1>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mobile-wallet" id="id2">Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id3">Concordium Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#concordium-ledger-app" id="id4">Concordium Ledger App</a></p></li>
-<li><p><a class="reference internal" href="#concordium-client" id="id5">Concordium Client</a></p></li>
-<li><p><a class="reference internal" href="#cargo-concordium" id="id6">Cargo-concordium</a></p></li>
-<li><p><a class="reference internal" href="#node-debian-package" id="id7">Node Debian package</a></p></li>
-<li><p><a class="reference internal" href="#full-suite-for-running-a-node-using-docker" id="id8">Full suite for running a node using Docker</a></p></li>
-<li><p><a class="reference internal" href="#requirements-for-running-a-node" id="id9">Requirements for running a node</a></p>
+<li><p><a class="reference internal" href="#mobile-wallet" id="id3">Mobile Wallet</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id4">Concordium Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#concordium-ledger-app" id="id5">Concordium Ledger App</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client" id="id6">Concordium Client</a></p></li>
+<li><p><a class="reference internal" href="#cargo-concordium" id="id7">Cargo-concordium</a></p></li>
+<li><p><a class="reference internal" href="#node-debian-package" id="id8">Node Debian package</a></p></li>
+<li><p><a class="reference internal" href="#full-suite-for-running-a-node-using-docker" id="id9">Full suite for running a node using Docker</a></p></li>
+<li><p><a class="reference internal" href="#requirements-for-running-a-node" id="id10">Requirements for running a node</a></p>
 <ul>
-<li><p><a class="reference internal" href="#system-requirements" id="id10">System requirements</a></p></li>
+<li><p><a class="reference internal" href="#system-requirements" id="id11">System requirements</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id11">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id12">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This topics contains information about where you can download the Concordium Wallets and tools for Mainnet. You can also find out about the hardware requirements for running a node.</p>
@@ -300,7 +304,15 @@
 <p>Download the Concordium Client:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/concordium-client_1.0.1">Download the Concordium Client for Linux</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/concordium-client_1.0.1">Download the Concordium Client for macOS</a>.</p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/concordium-client_1.0.1">Download the Concordium Client for macOS</a>.</p>
+<ul>
+<li><p>You need to make the client executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span>
+<span class="pre">path/to/concordium-client_1.0.1</span></code> in a terminal. Make sure to provide the
+correct path to the downloaded client.</p></li>
+<li><p>You also need to <a class="reference external" href="https://support.apple.com/en-gb/guide/mac-help/mh40616/mac">grant it permission to run in your Security &amp; Privacy
+settings</a>.</p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe">Download the Concordium Client for Windows</a></p></li>
 </ul>
 </div>
@@ -309,7 +321,15 @@
 <p>Download cargo-concordium:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0">Download cargo-concordium for Linux</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0">Download cargo-concordium for MacOS</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0">Download cargo-concordium for MacOS</a></p>
+<ul>
+<li><p>You need to make the tool executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span>
+<span class="pre">path/to/cargo-concordium_1.0.0</span></code> in a terminal. Make sure to provide the
+correct path to the downloaded tool.</p></li>
+<li><p>You also need to <a class="reference external" href="https://support.apple.com/en-gb/guide/mac-help/mh40616/mac">grant it permission to run in your Security &amp; Privacy
+settings</a>.</p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe">Download cargo-concordium for Windows</a></p></li>
 </ul>
 </div>
