@@ -10,8 +10,8 @@ Create a scheduled multi-signature GTU transfer in the Desktop Wallet
    :backlinks: none
    :depth: 1
 
-Scheduled multi-signature GTU transfer
-======================================
+Send GTU with a schedule
+========================
 
 A multi-signature transfer of GTU is a transaction that
 requires two or more co-signers to sign with their private keys to
@@ -22,12 +22,10 @@ a specific time in the future.
 You can create two types of release schedules: a regular interval
 schedule and an explicit schedule.
 
--  Use a regular interval schedule to release an equal amount of GTU to
+-  Use a :ref:`regular interval schedule <multisig-schedule-regular>`. to release an equal amount of GTU to
    a recipient at regular intervals.
 
--  Use an explicit schedule if you want the intervals between releases
-   to be of different lengths, and if you want to be able to release
-   different amounts of GTU to the recipient at each interval.
+-  Use an :ref:`explicit schedule <multisig-schedule-explicit>` if you want the intervals between releases to be of different lengths, and if you want to be able to release different amounts of GTU to the recipient at each interval.
 
 Prerequisites
 =============
@@ -43,15 +41,13 @@ Make a transfer proposal
 
 #.  Select **Send GTU with a schedule**.
 
-#.  Select the relevant proposer. You’ll see a list of all the identities that you’re the custodian of. When you select an identity, the **Transactions Details** in the left pane are updated with the identity information and the current transaction expiry time. You'll be able to change the expiry time later in this process. Use the scrollbar if you can't see all the information. Select **Continue**.
+#. All multi-signature accounts are displayed. Select the relevant sender account from the list of available accounts, and then select **Continue**. You'll be able to change the expiry time later in this process. Use the scrollbar if you can't see all the information. Select **Continue**.
 
-#. Select the relevant sender account from the list of available accounts, and then select **Continue**.
+#.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. (The amount must also be greater than zero.) In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
 
-#.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
+#.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**. You can now set up a release schedule.
 
-#.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**.
-
-#. Set the **Transaction expiry** time. Select **Continue**. You can now set up a release schedule.
+#. Set the **Transaction expiry** time. Select **Continue**.
 
 .. Note::
    You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It's important that you leave enough time for the co-signers to return their signatures in time.
@@ -59,7 +55,9 @@ Make a transfer proposal
 Add a release schedule
 ======================
 
-You’re now ready to create a release schedule where you can specify when you want the transfer to take place. You can choose between a regular interval schedule and an explicit schedule.
+You can now create a release schedule and specify when you want the transfer to take place. You can choose between a regular interval schedule and an explicit schedule.
+
+.. _multisig-schedule-regular:
 
 Option 1: Create a regular interval schedule
 --------------------------------------------
@@ -70,12 +68,18 @@ Option 1: Create a regular interval schedule
 
 #.  Specify how many intervals you want to split the transfer into in **Split transfer in**.
 
-#.  Specify the date and time you want the first transfer to take place in **Starting**.
-
-#.  When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details.**
-
 .. Note::
-   You can divide a transfer into a maximum of 255 releases.
+   The maximum number of releases is 255.
+
+4.  Specify the date and time you want the first transfer to take place in **Starting**.
+
+#.  When the schedule is complete, select **Continue**.
+
+#. Set the **Transaction expiry time** and then select **Continue**. You can see the release schedule under **Transaction Details**, and you can :ref:`generate the transaction <multisig-schedule-generate>`.
+
+You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It’s important that you leave enough time for the co-signers to return their signatures in time.
+
+.. _multisig-schedule-explicit:
 
 Option 2: Create an explicit schedule
 -------------------------------------
@@ -90,9 +94,13 @@ Option 2: Create an explicit schedule
 
 #. Select **Add**.
 
-#. Repeat the steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet. You can't edit the individual releases, but you can delete a release by selecting the Trash bin next to it.
+#. Select the **plus** icon and repeat the previous steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet. You can't edit the individual releases, but you can delete a release by selecting the Trash bin next to it.
 
-#. When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details**, and you can generate the transaction.
+#. When the schedule is complete, select **Continue**.
+
+#. Set the **Transaction expiry time** and then select **Continue**. You can see the release schedule under **Transaction Details**, and you can :ref:`generate the transaction <multisig-schedule-generate>`.
+
+.. _multisig-schedule-generate:
 
 Generate the transaction
 ========================

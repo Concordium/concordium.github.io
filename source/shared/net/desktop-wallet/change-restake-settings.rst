@@ -16,7 +16,7 @@ By default, your baker rewards are restaked when you create the baker account. H
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker restake earnings**.
 
-#. Select the **Identity** that's associated with the baker account whose keys you want to update, and then select **Continue**.
+.. #. Select the **Identity** that's associated with the baker account whose keys you want to update, and then select **Continue**.
 
 #. Select the **Account** whose baker keys you want to update, and then select **Continue**. Only baker accounts are listed.
 

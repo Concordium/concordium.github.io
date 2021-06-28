@@ -32,8 +32,6 @@ Make a transfer proposal
 
 #.  Select **Send GTU**.
 
-#.  Select the relevant proposer. You’ll see a list of all the identities that you’re the custodian of. When you select an identity, the **Transactions Details** in the left pane are updated with the identity information and the current transaction expiry time. You'll be able to change the expiry time later in this process. Use the scrollbar if you can't see all the information. Select **Continue**.
-
 #. Select the relevant sender account from the list of available accounts, and then select **Continue**.
 
 #.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
