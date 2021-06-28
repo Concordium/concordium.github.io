@@ -16,8 +16,6 @@ If you remove a baker in the desktop wallet, the node that is configured with th
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Remove baker**.
 
-.. #. Select the **Identity** that's associated with the baker account whose keys you want to update, and then select **Continue**.
-
 #. Select the **Account** that you no longer want to be a baker account, and then select **Continue**.
 
 #. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.

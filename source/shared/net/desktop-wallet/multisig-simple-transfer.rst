@@ -32,7 +32,7 @@ Make a transfer proposal
 
 #.  Select **Send GTU**.
 
-#. Select the relevant sender account from the list of available accounts, and then select **Continue**.
+#. Select the relevant sender account from the list of available accounts, and then select **Continue**. If only one account is available, this account will be selected automatically.
 
 #.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
 

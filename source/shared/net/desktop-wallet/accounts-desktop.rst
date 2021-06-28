@@ -27,7 +27,7 @@ In addition, you can see the following information about the selected account:
 
 -  The **Account Total** shows the total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date.
 
--  The **Balance** shows the GTU that are at your disposal, the amount of GTU that you've staked, and any GTU that are locked in a release schedule.
+-  The **Balance** shows the GTU that are at your disposal, the amount of GTU that you've staked, and any GTU that are locked in a release schedule. It does not include any shielded amounts.
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked GTU and GTU in a release schedule.
 
