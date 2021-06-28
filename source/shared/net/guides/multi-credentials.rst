@@ -22,8 +22,6 @@ Select an identity and an account
 =================================
 #. Go to the **Multi Signature Transactions** tab, select **Make new proposal**, and then select **Update account credentials**.
 
-#. Select the identity that's associated with the account whose credentials you want to update, and then select **Continue**.
-
 #. Select the account whose credentials you want to update. When you look at the **Transaction Details** in the left pane, you can see the current signature threshold and the current number of credentials associated with the account. Select **Continue**.
 
    If you only want to update the threshold, you can skip the next steps and go to :ref:`Change the signature Threshold <guide-change-signature>`.
