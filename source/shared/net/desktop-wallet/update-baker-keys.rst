@@ -22,8 +22,6 @@ Select an account
 
 #. Go to **Multi Signature Transactions**, and select **Make new proposal**, and then select **Update Baker Keys**.
 
-#. Select the **Identity** that's associated with the baker account whose keys you want to update, and then select **Continue**.
-
 #. Select the **Account** whose baker keys you want to update, and then select **Continue**. Only baker accounts are listed.
 
 #. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Generate keys**.
