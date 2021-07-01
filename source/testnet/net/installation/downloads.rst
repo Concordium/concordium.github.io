@@ -50,7 +50,7 @@ Concordium Ledger App
 
 - `Download the Concordium Ledger App. <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
 
-This version of the Ledger app is the same as the one used for Mainnet, so if you already have that installed, you do not need to install another version.
+This version of the Ledger App is the same as the one used for Mainnet, so if you already have that installed, you do not need to install this version.
 
 .. _concordium-node-and-client-download:
 
@@ -120,4 +120,3 @@ System requirements
 
 
 *Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
-

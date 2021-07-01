@@ -18,8 +18,6 @@ Change the staked amount
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
 
-#. Select the identity that’s associated with the account whose baker stake you want to change, and then select **Continue**.
-
 #. Select the account whose baker stake you want to change.
 
 #. Enter the new amount that you want to stake and select **Continue**.

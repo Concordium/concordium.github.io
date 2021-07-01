@@ -35,8 +35,6 @@ Select an account to add as baker account
 
 #. Go to the **Multi Signature Transactions** tab, and then select **Add Baker**.
 
-#. Select the identity that's associated with the account you want to add as baker account, and then select **Continue**.
-
 #. Select the account you want to add as baker account, and then select **Continue**.
 
 Stake an amount
