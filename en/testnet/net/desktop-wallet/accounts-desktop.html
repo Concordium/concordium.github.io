@@ -260,7 +260,16 @@
 </ul>
 <p>In addition, you can see the following information about the selected account:</p>
 <ul class="simple">
-<li><p><strong>Account Total</strong>: The total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date. The <strong>Balance</strong> shows the GTU that are at your disposal, the amount of GTU that you’ve staked, and any GTU that are locked in a release schedule. The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked GTU and GTU in a release schedule. The <strong>Shielded balance</strong> shows the amount of GTU that you’ve shielded. The <strong>Balance</strong> is visible to all participants on the Concordium Blockchain, while the <strong>Shielded balance</strong> is visible to you only.</p></li>
+<li><p>The <strong>Account Total</strong> shows the total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date.</p></li>
+<li><p>The <strong>Balance</strong> shows the GTU that are at your disposal, the amount of GTU that you’ve staked, and any GTU that are locked in a release schedule. It does not include any shielded amounts.</p></li>
+<li><p>The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked GTU and GTU in a release schedule.</p></li>
+<li><p>The <strong>Shielded balance</strong> shows the amount of GTU that you’ve shielded. The <strong>Balance</strong> is visible to all participants on the Concordium Blockchain, while the <strong>Shielded balance</strong> is visible to you only.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shielded transfers and Shielded balance is only available on accounts with a single credential. You can’t make shielded transfers on multi-signature accounts.</p>
+</div>
+<ul class="simple">
 <li><p><strong>Transfers</strong>: This is a list of the transfers on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you’ll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed.</p></li>
 <li><p><strong>Identity data</strong>: If you chose to reveal attributes, when you created the account, these attributes are visible here. If you created the account without revealing any attributes, there is no information here. Revealed attributes are visible to other participants on the chain.</p></li>
 </ul>
@@ -268,10 +277,12 @@
 <ul class="simple">
 <li><p><strong>Account address</strong>: Displays the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network.</p></li>
 <li><p><strong>Inspect release schedule</strong>: Shows any future GTU releases that are scheduled to be released on your account.</p></li>
-<li><p><strong>Send GTU with a schedule</strong>: Send GTU according to a schedule. See <a class="reference internal" href="single-sign-schedule.html#gtu-single-schedule-desktop"><span class="std std-ref">Create a single signer GTU transfer with a schedule</span></a>.</p></li>
-<li><p><strong>Make account report</strong>: Export a file with a list of all transactions on the account. Select <strong>Make account report</strong>, set the relevant filters, and then select <strong>Make account report</strong>. Save the fil as a .csv file.</p></li>
 <li><p><strong>Transfer log filters</strong>: Specify whether you want baker, block and finalization awards transfers to be visible in the <strong>Transfers</strong> list.</p></li>
+<li><p><strong>Make account report</strong>: Export a file with a list of all transactions on the account. Select <strong>Make account report</strong>, set the relevant filters, and then select <strong>Make account report</strong>. Save the fil as a .csv file.</p></li>
 <li><p><strong>Credential information</strong>: Shows credentials that are associated with the account. This includes the signature threshold, credential ID’s, creation dates, and valid to dates.</p></li>
+<li><p><strong>Send GTU with a schedule</strong>: Send GTU according to a schedule. See <a class="reference internal" href="single-sign-schedule.html#gtu-single-schedule-desktop"><span class="std std-ref">Create a single signer GTU transfer with a schedule</span></a>.</p></li>
+<li><p><strong>Update credentials</strong>: Add new credentials to the account. See <a class="reference internal" href="../guides/multi-credentials.html#multi-credentials"><span class="std std-ref">Add credentials to an account</span></a>.</p></li>
+<li><p><strong>Add baker</strong>: Make the account a baker account. See <a class="reference internal" href="../guides/add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">See Add a baker account in the Desktop Wallet</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="support-feedback">

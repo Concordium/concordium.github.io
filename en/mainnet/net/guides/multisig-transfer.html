@@ -114,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#scheduled-multi-signature-gtu-transfer">Scheduled multi-signature GTU transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#send-gtu-with-a-schedule">Send GTU with a schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#make-a-transfer-proposal">Make a transfer proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-a-release-schedule">Add a release schedule</a></li>
@@ -250,7 +250,7 @@
 <span id="create-multisig-scheduled"></span><h1>Create a scheduled multi-signature GTU transfer in the Desktop Wallet<a class="headerlink" href="#create-a-scheduled-multi-signature-gtu-transfer-in-the-desktop-wallet" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#scheduled-multi-signature-gtu-transfer" id="id1">Scheduled multi-signature GTU transfer</a></p></li>
+<li><p><a class="reference internal" href="#send-gtu-with-a-schedule" id="id1">Send GTU with a schedule</a></p></li>
 <li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
 <li><p><a class="reference internal" href="#make-a-transfer-proposal" id="id3">Make a transfer proposal</a></p></li>
 <li><p><a class="reference internal" href="#add-a-release-schedule" id="id4">Add a release schedule</a></p></li>
@@ -261,8 +261,8 @@
 <li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<div class="section" id="scheduled-multi-signature-gtu-transfer">
-<h2>Scheduled multi-signature GTU transfer<a class="headerlink" href="#scheduled-multi-signature-gtu-transfer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="send-gtu-with-a-schedule">
+<h2>Send GTU with a schedule<a class="headerlink" href="#send-gtu-with-a-schedule" title="Permalink to this headline">¶</a></h2>
 <p>A multi-signature transfer of GTU is a transaction that
 requires two or more co-signers to sign with their private keys to
 authorize the transaction. You can schedule the transaction in advance so
@@ -271,11 +271,9 @@ a specific time in the future.</p>
 <p>You can create two types of release schedules: a regular interval
 schedule and an explicit schedule.</p>
 <ul class="simple">
-<li><p>Use a regular interval schedule to release an equal amount of GTU to
+<li><p>Use a <a class="reference internal" href="#multisig-schedule-regular"><span class="std std-ref">regular interval schedule</span></a>. to release an equal amount of GTU to
 a recipient at regular intervals.</p></li>
-<li><p>Use an explicit schedule if you want the intervals between releases
-to be of different lengths, and if you want to be able to release
-different amounts of GTU to the recipient at each interval.</p></li>
+<li><p>Use an <a class="reference internal" href="#multisig-schedule-explicit"><span class="std std-ref">explicit schedule</span></a> if you want the intervals between releases to be of different lengths, and if you want to be able to release different amounts of GTU to the recipient at each interval.</p></li>
 </ul>
 </div>
 <div class="section" id="prerequisites">
@@ -290,11 +288,10 @@ different amounts of GTU to the recipient at each interval.</p></li>
 <ol class="arabic simple">
 <li><p>Go to <strong>Multi Signature Transactions</strong>, and then select <strong>Make new proposal</strong>. All available transactions are listed in the right pane.</p></li>
 <li><p>Select <strong>Send GTU with a schedule</strong>.</p></li>
-<li><p>Select the relevant proposer. You’ll see a list of all the identities that you’re the custodian of. When you select an identity, the <strong>Transactions Details</strong> in the left pane are updated with the identity information and the current transaction expiry time. You’ll be able to change the expiry time later in this process. Use the scrollbar if you can’t see all the information. Select <strong>Continue</strong>.</p></li>
-<li><p>Select the relevant sender account from the list of available accounts, and then select <strong>Continue</strong>.</p></li>
-<li><p>In <strong>Amount</strong>, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough GTU in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the <strong>Transaction details</strong> under <strong>Amount</strong>, you can see the estimated fee. Select <strong>Continue</strong>.</p></li>
-<li><p>Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select <strong>Continue</strong>.</p></li>
-<li><p>Set the <strong>Transaction expiry</strong> time. Select <strong>Continue</strong>. You can now set up a release schedule.</p></li>
+<li><p>All multi-signature accounts are displayed. Select the relevant sender account from the list of available accounts, and then select <strong>Continue</strong>. If only one account is available, this account will be selected automatically. You’ll be able to change the expiry time later in this process. Use the scrollbar if you can’t see all the information. Select <strong>Continue</strong>.</p></li>
+<li><p>In <strong>Amount</strong>, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough GTU in the account and you’ll have to change the amount. (The amount must also be greater than zero.) In the <strong>Transaction details</strong> under <strong>Amount</strong>, you can see the estimated fee. Select <strong>Continue</strong>.</p></li>
+<li><p>Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select <strong>Continue</strong>. You can now set up a release schedule.</p></li>
+<li><p>Set the <strong>Transaction expiry</strong> time. Select <strong>Continue</strong>.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -303,36 +300,41 @@ different amounts of GTU to the recipient at each interval.</p></li>
 </div>
 <div class="section" id="add-a-release-schedule">
 <h2>Add a release schedule<a class="headerlink" href="#add-a-release-schedule" title="Permalink to this headline">¶</a></h2>
-<p>You’re now ready to create a release schedule where you can specify when you want the transfer to take place. You can choose between a regular interval schedule and an explicit schedule.</p>
+<p>You can now create a release schedule and specify when you want the transfer to take place. You can choose between a regular interval schedule and an explicit schedule.</p>
 <div class="section" id="option-1-create-a-regular-interval-schedule">
-<h3>Option 1: Create a regular interval schedule<a class="headerlink" href="#option-1-create-a-regular-interval-schedule" title="Permalink to this headline">¶</a></h3>
+<span id="multisig-schedule-regular"></span><h3>Option 1: Create a regular interval schedule<a class="headerlink" href="#option-1-create-a-regular-interval-schedule" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Select <strong>Regular interval</strong> in <strong>Schedule type</strong>.</p></li>
 <li><p>Select the frequency with which you want the transfers to be released in <strong>Release every</strong>.</p></li>
 <li><p>Specify how many intervals you want to split the transfer into in <strong>Split transfer in</strong>.</p></li>
-<li><p>Specify the date and time you want the first transfer to take place in <strong>Starting</strong>.</p></li>
-<li><p>When the schedule is complete, select <strong>Continue</strong>. You can see the release schedule under <strong>Transaction Details.</strong></p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can divide a transfer into a maximum of 255 releases.</p>
+<p>The maximum number of releases is 255.</p>
 </div>
+<ol class="arabic simple" start="4">
+<li><p>Specify the date and time you want the first transfer to take place in <strong>Starting</strong>.</p></li>
+<li><p>When the schedule is complete, select <strong>Continue</strong>.</p></li>
+<li><p>Set the <strong>Transaction expiry time</strong> and then select <strong>Continue</strong>. You can see the release schedule under <strong>Transaction Details</strong>, and you can <a class="reference internal" href="#multisig-schedule-generate"><span class="std std-ref">generate the transaction</span></a>.</p></li>
+</ol>
+<p>You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It’s important that you leave enough time for the co-signers to return their signatures in time.</p>
 </div>
 <div class="section" id="option-2-create-an-explicit-schedule">
-<h3>Option 2: Create an explicit schedule<a class="headerlink" href="#option-2-create-an-explicit-schedule" title="Permalink to this headline">¶</a></h3>
+<span id="multisig-schedule-explicit"></span><h3>Option 2: Create an explicit schedule<a class="headerlink" href="#option-2-create-an-explicit-schedule" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Select <strong>Explicit schedule</strong>. For each release you want in the schedule, you have to specify the amount and the release time.</p></li>
 <li><p>Select <strong>Add release to schedule</strong> in <strong>Releases</strong>.</p></li>
 <li><p>Enter the amount you want to transfer in this release in <strong>Amount</strong>.</p></li>
 <li><p>Specify the date and time you want the transfer to take place in <strong>Release time</strong>.</p></li>
 <li><p>Select <strong>Add</strong>.</p></li>
-<li><p>Repeat the steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet. You can’t edit the individual releases, but you can delete a release by selecting the Trash bin next to it.</p></li>
-<li><p>When the schedule is complete, select <strong>Continue</strong>. You can see the release schedule under <strong>Transaction Details</strong>, and you can generate the transaction.</p></li>
+<li><p>Select the <strong>plus</strong> icon and repeat the previous steps for each release you want to add to the schedule. The scheduled releases are listed in chronological order in the Desktop Wallet. You can’t edit the individual releases, but you can delete a release by selecting the Trash bin next to it.</p></li>
+<li><p>When the schedule is complete, select <strong>Continue</strong>.</p></li>
+<li><p>Set the <strong>Transaction expiry time</strong> and then select <strong>Continue</strong>. You can see the release schedule under <strong>Transaction Details</strong>, and you can <a class="reference internal" href="#multisig-schedule-generate"><span class="std std-ref">generate the transaction</span></a>.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="generate-the-transaction">
-<h2>Generate the transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h2>
+<span id="multisig-schedule-generate"></span><h2>Generate the transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways that you can generate the transaction:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#generate-scheduled-without-sign"><span class="std std-ref">Generate the transaction proposal without signing</span></a>. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
