@@ -1,3 +1,5 @@
+.. _mainnet-release-notes:
+
 =============
 Release notes
 =============
