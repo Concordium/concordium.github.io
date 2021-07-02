@@ -263,4 +263,4 @@ linkcheck_request_headers = {
 }
 
 # -- InterSphinx links for linking between document versions ------------------
-intersphinx_mapping = {'testnet': ('http://developer.concordium.software/en/testnet/', None)}
+intersphinx_mapping = {'testnet': ('https://developer.concordium.software/en/testnet/', None)}
