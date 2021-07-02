@@ -45,6 +45,7 @@ extensions = [
     "sphinx_rtd_theme",
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
+    "sphinx.ext.intersphinx",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
     "multidoc"
 ]
@@ -260,3 +261,6 @@ linkcheck_request_headers = {
         "Accept-Encoding": "utf-8",
     }
 }
+
+# -- InterSphinx links for linking between document versions ------------------
+intersphinx_mapping = {'testnet': ('http://developer.concordium.software/en/testnet/', None)}
