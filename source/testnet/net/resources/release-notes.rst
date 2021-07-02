@@ -19,7 +19,7 @@ Open Testnet v5 Update 2
 The Desktop Wallet is available on Testnet for Windows, macOS, and Linux including:
 
 * All features released in v1.0.2 for Mainnet.
-* Transaction status is now available in account reports.
+* Transaction status in account reports.
 * Various bug fixes.
 * Foundation feature: Added support for bulk import of proposals
 
@@ -300,4 +300,3 @@ Concordium Nodes
 
 Concordium will be running 19 nodes in Europe for this iteration of the Testnet
 and an additional node in Hong Kong (all running both baker and finalizer).
-
