@@ -21,7 +21,7 @@ The Desktop Wallet is available on Testnet for Windows, macOS, and Linux includi
 * All features released in v1.0.2 for Mainnet.
 * Transaction status in account reports.
 * Various bug fixes.
-* Foundation feature: Added support for bulk import of proposals
+* Foundation feature: Added support for bulk import of proposals.
 
 
 
