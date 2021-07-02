@@ -59,7 +59,7 @@ Open Testnet v5
 
 May 12th, 2021
 
-Updated Open Testnet to match Mainnet features, which includes:
+Updated Open Testnet to match Mainnet features including:
 
 
 **Proof of Stake**
