@@ -8,6 +8,103 @@ Release Notes
    :local:
    :backlinks: none
 
+
+.. _open-testnet-v5-update-2:
+
+Open Testnet v5 Update 2
+========================
+
+**Concordium Desktop Wallet v1.1.3 for Testnet.**
+
+The Desktop Wallet is available on Testnet for Windows, macOS, and Linux including:
+
+* All features released in v1.0.2 for Mainnet.
+* Transaction status in account reports.
+* Various bug fixes.
+* Foundation feature: Added support for bulk import of proposals.
+
+
+
+.. _open-testnet-v5-update-1:
+
+Open Testnet v5 Update 1
+========================
+
+June 24th, 2021
+
+:ref:`Concordium Mobile Wallet for iOS v1.0.5. <mainnet:downloads>`
+
+* Added feature enabling change of passcode and biometrics.
+* Updates to Account page UI for easier shielding/unshielding transactions.
+* Added option to filter rewards in transaction log.
+* Added About page.
+* Improved security.
+* Various bug fixes and robustness improvements.
+* Code is now open source.
+
+:ref:`Concordium Mobile Wallet for Android v1.0.7(46). <mainnet:downloads>`
+
+* Added feature enabling change of passcode and biometrics.
+* Updates to Account page UI for easier shielding/unshielding transactions.
+* Added option to filter rewards in transaction log.
+* Added About page.
+* Improved security.
+* Various bug fixes and robustness improvements.
+* Code is now open source.
+
+.. _open-testnet-v5:
+
+Open Testnet v5
+===============
+
+May 12th, 2021
+
+Updated Open Testnet to match Mainnet features including:
+
+
+**Proof of Stake**
+
+The Concordium Blockchain uses a proof of stake mechanism to ensure resource-efficient operation of the network.
+
+
+**Two Layer Consensus Protocol**
+
+Nakamoto-Style Consensus Bakers participate in a form of lottery to win the right to append blocks to the chain.
+
+Finality Layer Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byzantine agreement to identify and mark common blocks in the chains of honest users as final.
+
+
+**Built in IDLayer**
+
+Account creation is based on a validated identity, but at the same time it provides transactional privacy for users with a mechanism that allows accountability to local regulatory authorities.
+
+Transactional privacy is further enhanced by support for shielded transfers.
+
+
+**Smart Contracts**
+
+Concordium blockchain has native support for smart contracts on-chain with our core on-chain language WebAssembly (Wasm), a portable well-defined assembly-like language.
+
+Rust is the first off-chain high level smart contract language.
+
+
+**Tokenomics and On-chain Incentivization**
+
+The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.
+
+The flow of GTU between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
+
+
+**Concordium Node**
+
+The Concordium node software is available for Linux and available in two different packages:
+
+* A distribution package, which provides wrappers for setting up the node in a Docker image.
+
+* A Debian package built for Ubuntu 20.04. This package allows for greater customization of the node set up.
+
+
+
 .. _open-testnet-v4-update-1:
 
 Open Testnet v4 Update 1
@@ -203,4 +300,3 @@ Concordium Nodes
 
 Concordium will be running 19 nodes in Europe for this iteration of the Testnet
 and an additional node in Hong Kong (all running both baker and finalizer).
-

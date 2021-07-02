@@ -61,6 +61,7 @@
    desktop-wallet/settings-overview
    desktop-wallet/overview-addresses
    desktop-wallet/proposed-transactions
+   desktop-wallet/make-account-report
 
 
 .. toctree::
