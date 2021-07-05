@@ -41,7 +41,7 @@ When you make a shielded transfer, the amount you transfer is only known to you 
 
 #. On the Ledger there's a message saying **Concordium is ready**, and then it says **Review transaction**. Using the right button, you now have to navigate through the following information to verify that it's correct and matches the transaction details in the Desktop Wallet:
 
-   -  **Encrypted amount transfer**, which is the amount that’s going to be transferred.
+   -  **Encrypted amount transfer**, which is the type of transaction. Because the amount is encrypted, the Ledger can't display the actual amount that's going to be transferred.
 
    -  **Sender**, which is the sender account.
 
