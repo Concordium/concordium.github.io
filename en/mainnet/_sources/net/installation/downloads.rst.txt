@@ -106,6 +106,13 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 - `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-1.0.1-mainnet.tar.gz>`_
 
 
+Mainnet genesis block
+=====================
+The genesis block is included in node distributions.
+Download the block separately to inspect it or to run a node in a custom configuration.
+
+- `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
+
 
 Requirements for running a node
 ===============================
