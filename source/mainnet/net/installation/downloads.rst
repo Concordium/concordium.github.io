@@ -109,7 +109,7 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 Mainnet genesis block
 =====================
 The genesis block is included in node distributions.
-Download the block separately to inspect it, or to run a node in a custom configuration.
+Download the block separately to inspect it or to run a node in a custom configuration.
 
 - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
