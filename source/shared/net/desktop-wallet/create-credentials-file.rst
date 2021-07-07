@@ -24,7 +24,7 @@ Create and export a file with credentials
 
 #. Select the identity you want to add to the account. The identity must have been created on the Ledger that's connected to the computer. Otherwise, you'll see an error message. Select **Continue**.
 
-#. Past the address of the account that you want to add credentials to, and then give the account a name. This is the name that will be shown in your list of accounts. Select **Continue**.
+#. Paste the address of the account that you want to add credentials to, and then give the account a name. This is the name that will be shown in your list of accounts. Select **Continue**.
 
 #. On the Ledger there's a message saying **Waiting for device**. Connect the Ledger to your computer and enter your PIN on the Ledger.
 
