@@ -17,7 +17,6 @@ Prerequisites
 .. Note::
    You can't make shielded transfers on multi-signature accounts.
 
-
 Send a shielded amount of GTU
 =============================
 

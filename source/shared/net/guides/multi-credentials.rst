@@ -10,13 +10,17 @@ Add credentials to an account
    :backlinks: none
    :depth: 1
 
+Add more credentials on an account
+==================================
+
+This guide describes how you add more credentials to an account, and how you :ref:`change the signature threshold for transactions<guide-change-signature>` on the account. For more information about the process of adding more credentials to an account, see :ref:`Overview of shared accounts with multiple credentials <overview-shared-accounts>`.
+
 Prerequisites
 =============
--  A JSON file with the credentials that you want to associate with the account.
 
-Update credentials on an account
-================================
-Sometimes organizations need to add multiple credentials to a single account to enable more than one person to manage the account. Likewise, organizations might also have to :ref:`change the signature threshold <guide-change-signature>` that controls the number of signatures that are needed before a transaction can be submitted to the blockchain. This guide describes how you add more credentials to an account and change the signature threshold for transactions related to the account.
+-  Create the account that's going to hold more credentials and share the account address with the users whose credentials, you're going to add to the account.
+
+-  Receive and save one or more files with the credentials that you want to associate with the account. For more information, see :ref:`Create a file with credentials <create-credentials-file>`.
 
 Select an identity and an account
 =================================
