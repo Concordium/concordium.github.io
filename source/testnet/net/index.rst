@@ -23,6 +23,7 @@
    guides/add-baker-desktop
    guides/become-baker
    guides/multi-credentials
+   guides/overview-shared-accounts
 
 .. toctree::
    :maxdepth: 1
@@ -48,6 +49,7 @@
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
    desktop-wallet/accounts-desktop
+   desktop-wallet/create-credentials-file
    desktop-wallet/shield-gtu-desktop
    desktop-wallet/export-import-desktop
    desktop-wallet/send-gtu-single-desktop
