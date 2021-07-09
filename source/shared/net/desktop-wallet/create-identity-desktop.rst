@@ -9,18 +9,15 @@ Create an identity and an initial account in the Desktop Wallet
    :local:
    :backlinks: none
 
-Before you can start using the Desktop Wallet and submit transactions to the blockchain, you need an identity and an initial account issued by an identity provider. The identity provider will submit the initial account to the chain and will know the identity of the owner of the initial account, but not of any regular accounts that you create.
+Before you can start using the Desktop Wallet and submit transactions to the blockchain, you need an initial account and an identity issued by an identity provider. The identity provider will submit the initial account to the chain and will know the identity of the owner of the initial account, but not of any other accounts that you create.
 
 Prerequisites
 =============
--   Understanding of the concepts of identity and account.
--   A Ledger hardware wallet that stores your private keys.
 
-.. Note::
-   You can't import accounts and identities created in the Concordium Mobile wallet.
+-   A Ledger hardware device that's set up and ready for use.
 
-.. xref to conceptual docs
-.. An encrypted transfer to or from an account is only valid if that account has only a single credential. If the account has non-zero encrypted balance, it is not possible to add new credentials to that account.
+.. Warning::
+   You can't import accounts and identities created in the Concordium Mobile wallet into the Desktop Wallet.
 
 Create an initial account
 =========================
@@ -31,27 +28,38 @@ Create an initial account
 
 #. Select an identity provider. Currently, Notabene is the only one available.
 
-#. Connect your Ledger hardware wallet if you haven't done so already and enter your pin code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. When you've entered the PIN, press both buttons, and when it says **Concordium** press both buttons again. The Ledger says **Concordium is ready**.
+#. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-#. In the Desktop Wallet select **Submit**, when it says **Ledger Nano S is ready**.
+#. In the Desktop Wallet, there's a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**.
+
+#. In the Desktop Wallet there's a message saying **Ledger Nano S is ready**. Select **Submit**.
 
 #. Press both buttons to confirm the export of the following on the Ledger:
 
    - Export PRF key
    - Export IdCredSec
-   - Public-key
+   - Public key
 
-#. Press the right button to review the transaction on the Ledger. Verify that the following information on Ledger is identical to the information in the Desktop Wallet.
+#. Press the right button to review the transaction on the Ledger. Confirm that the following information on Ledger corresponds to the information in the Desktop Wallet:
+
+   - Compare public key
+
+#. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
+
+#. The Ledger says **Review transaction**. Use the right button to navigate through the following information and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
    - Identity Credentials Public (IdCredPub)
-   - Registration ID (RegId)
-   - Verification Key
-   - Threshold
+   - Registration ID (RegId).
 
-#. The Ledger says **Sign transaction**. Press both buttons to sign the transaction.
+#. Use the right button to navigate through the following information and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-#. In the Desktop Wallet, enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
+   - Public key
+
+#. The Ledger says **Threshold**. Press the right button. The Ledger says **Sign transaction**. Press both buttons to sign the transaction.
+
+#. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
 #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
 
-.. Note:: When you've created your identity and account, we strongly recommend that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
+.. Note::
+   When you've created your identity and account, we strongly recommend that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
