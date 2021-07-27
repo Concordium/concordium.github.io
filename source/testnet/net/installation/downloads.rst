@@ -30,12 +30,7 @@ Concordium Desktop Wallet
 
 - `Download the Testnet version of Concordium Desktop Wallet for Windows. <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.1.5.exe>`_
 
-When installing the Testnet version of the Concordium Desktop Wallet for Windows, you will see a message saying that *Windows has protected your PC*.
-Simply click **More info**, and then **Run anyway**. Windows might also ask you, if you want to let the installer make changes to your computer. Click **Yes**.
-
 - `Download the Testnet version of Concordium Desktop Wallet for MacOS. <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.5.dmg>`_
-
-MacOS might block the Desktop Wallet the first time you try to run it, but you will be able to allow it to run in System Preferences, via the Security & Privacy menu.
 
 Currently, the Desktop Wallet doesn't support Apple M1 Macs.
 
