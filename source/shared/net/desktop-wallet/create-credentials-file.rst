@@ -28,7 +28,7 @@ Create and export a file with credentials
 
 #. Select **Reveal attributes** if you want any attributes to be public on the blockchain. We recommend that you don't reveal any attributes. Select **Continue**.
 
-#. On the Ledger there's a message saying **Waiting for device**. Connect the Ledger to your computer and enter your PIN on the Ledger.
+#. On the Ledger there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer and enter your PIN on the Ledger.
 
 #. On the Ledger press both buttons to open the Concordium application. There's a message saying **Concordium is ready**.
 
