@@ -23,7 +23,7 @@ This topic describes how you can send GTU from an account with only one signer a
 
 #. Select the recipient and select **Continue**.
 
-#. There's a message saying **Waiting for device**. Connect the Ledger to the computer and enter your PIN on Ledger.
+#. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
 
 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
 

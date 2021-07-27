@@ -30,7 +30,7 @@ When you make a shielded transfer, the amount you transfer is only known to you 
 
 #. Select the recipient of the GTU, and then select **Continue**.
 
-#. In the Desktop Wallet there’s a message saying **Waiting for device**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
+#. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
 #. On the Ledger, there's a message saying **Concordium**. Press both buttons to open the **Concordium Ledger App**. On the Ledger, there's a message saying  **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S** is ready.
 

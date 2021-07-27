@@ -68,7 +68,7 @@ Generate the transaction proposal without signing
 Generate and sign the transaction proposal on the Ledger
 --------------------------------------------------------
 
-#.  Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device**.
+#. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
 #. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
 

@@ -28,12 +28,12 @@ The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet
 Concordium Desktop Wallet
 =========================
 
-- `Download the Testnet version of Concordium Desktop Wallet for Windows. <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.1.3.exe>`_
+- `Download the Testnet version of Concordium Desktop Wallet for Windows. <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.1.5.exe>`_
 
 When installing the Testnet version of the Concordium Desktop Wallet for Windows, you will see a message saying that *Windows has protected your PC*.
 Simply click **More info**, and then **Run anyway**. Windows might also ask you, if you want to let the installer make changes to your computer. Click **Yes**.
 
-- `Download the Testnet version of Concordium Desktop Wallet for MacOS. <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.3.dmg>`_
+- `Download the Testnet version of Concordium Desktop Wallet for MacOS. <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.5.dmg>`_
 
 MacOS might block the Desktop Wallet the first time you try to run it, but you will be able to allow it to run in System Preferences, via the Security & Privacy menu.
 
@@ -41,14 +41,14 @@ Currently, the Desktop Wallet doesn't support Apple M1 Macs.
 
 - Download the Testnet version of Concordium Desktop Wallet for Linux:
 
-   - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.3.AppImage>`_
-   - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.3.deb>`_
-   - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.3.rpm>`_
+   - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.5.AppImage>`_
+   - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.5.deb>`_
+   - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.5.rpm>`_
 
 Concordium Ledger App
 =====================
 
-- `Download the Concordium Ledger App. <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
+- `Download the Concordium Ledger App. <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.2-target-2.0.0.zip>`_
 
 This version of the Ledger App is the same as the one used for Mainnet, so if you already have that installed, you do not need to install this version.
 
