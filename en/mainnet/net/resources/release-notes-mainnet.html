@@ -166,6 +166,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mainnet-1-update-1">Mainnet 1: Update 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mainnet-1-alpha-centauri">Mainnet 1: Alpha Centauri</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -247,21 +248,49 @@
 <span id="mainnet-release-notes"></span><h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri" id="id1">Mainnet 1: Alpha Centauri</a></p>
+<li><p><a class="reference internal" href="#mainnet-1-update-1" id="id1">Mainnet 1: Update 1</a></p>
 <ul>
-<li><p><a class="reference internal" href="#proof-of-stake" id="id2">Proof of Stake</a></p></li>
-<li><p><a class="reference internal" href="#two-layer-consensus-protocol" id="id3">Two Layer Consensus Protocol</a></p></li>
-<li><p><a class="reference internal" href="#built-in-idlayer" id="id4">Built in IDLayer</a></p></li>
-<li><p><a class="reference internal" href="#smart-contracts" id="id5">Smart Contracts</a></p></li>
-<li><p><a class="reference internal" href="#tokenomics-and-on-chain-incentivization" id="id6">Tokenomics and On-chain Incentivization</a></p></li>
-<li><p><a class="reference internal" href="#concordium-node" id="id7">Concordium Node</a></p></li>
-<li><p><a class="reference internal" href="#mobile-wallet" id="id8">Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#desktop-wallet" id="id9">Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#source-code" id="id10">Source Code</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5" id="id2">Concordium Desktop Wallet v1.1.5</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id11">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri" id="id3">Mainnet 1: Alpha Centauri</a></p>
+<ul>
+<li><p><a class="reference internal" href="#proof-of-stake" id="id4">Proof of Stake</a></p></li>
+<li><p><a class="reference internal" href="#two-layer-consensus-protocol" id="id5">Two Layer Consensus Protocol</a></p></li>
+<li><p><a class="reference internal" href="#built-in-idlayer" id="id6">Built in IDLayer</a></p></li>
+<li><p><a class="reference internal" href="#smart-contracts" id="id7">Smart Contracts</a></p></li>
+<li><p><a class="reference internal" href="#tokenomics-and-on-chain-incentivization" id="id8">Tokenomics and On-chain Incentivization</a></p></li>
+<li><p><a class="reference internal" href="#concordium-node" id="id9">Concordium Node</a></p></li>
+<li><p><a class="reference internal" href="#mobile-wallet" id="id10">Mobile Wallet</a></p></li>
+<li><p><a class="reference internal" href="#desktop-wallet" id="id11">Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#source-code" id="id12">Source Code</a></p></li>
 </ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id13">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<div class="section" id="mainnet-1-update-1">
+<h2>Mainnet 1: Update 1<a class="headerlink" href="#mainnet-1-update-1" title="Permalink to this headline">¶</a></h2>
+<p>July 27, 2021</p>
+<div class="section" id="concordium-desktop-wallet-v1-1-5">
+<h3>Concordium Desktop Wallet v1.1.5<a class="headerlink" href="#concordium-desktop-wallet-v1-1-5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>General improvements to the user interface, in particular for multi signature transaction flows.</p></li>
+<li><p>Change of wallet password now enforces the same length restriction as when initially set.</p></li>
+<li><p>Wallet exports now contain the genesis hash to prevent the import of a wallet from testnet to a mainnet wallet.</p></li>
+<li><p>Improved messages when waiting for a Ledger device to be connected.</p></li>
+<li><p>Transaction status is now included in an account report.</p></li>
+<li><p>Fixed an issue where e.g. a loss of connection could result in a failed identity when it should not.</p></li>
+<li><p>Security improvements. Node integration was available to the Electron renderer threads which is considered unsafe. This has now been disabled.</p></li>
+<li><p>Added foundation feature for importing and creating multi signature transactions in bulk.</p></li>
+<li><p>A number of bug fixes.</p></li>
+</ul>
+<p><strong>Concordium Ledger App v1.0.2</strong></p>
+<ul class="simple">
+<li><p>Scheduled transfer release times are now shown as human readable UTC date time strings.</p></li>
+<li><p>Fixed a UI bug in remove baker transaction.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="mainnet-1-alpha-centauri">
 <h2>Mainnet 1: Alpha Centauri<a class="headerlink" href="#mainnet-1-alpha-centauri" title="Permalink to this headline">¶</a></h2>

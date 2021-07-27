@@ -8,6 +8,29 @@ Release notes
    :local:
    :backlinks: none
 
+Mainnet 1: Update 1
+===================
+
+July 27, 2021
+
+Concordium Desktop Wallet v1.1.5
+--------------------------------
+
+-  General improvements to the user interface, in particular for multi signature transaction flows.
+-  Change of wallet password now enforces the same length restriction as when initially set.
+-  Wallet exports now contain the genesis hash to prevent the import of a wallet from testnet to a mainnet wallet.
+-  Improved messages when waiting for a Ledger device to be connected.
+-  Transaction status is now included in an account report.
+-  Fixed an issue where e.g. a loss of connection could result in a failed identity when it should not.
+-  Security improvements. Node integration was available to the Electron renderer threads which is considered unsafe. This has now been disabled.
+-  Added foundation feature for importing and creating multi signature transactions in bulk.
+-  A number of bug fixes.
+
+**Concordium Ledger App v1.0.2**
+
+-  Scheduled transfer release times are now shown as human readable UTC date time strings.
+-  Fixed a UI bug in remove baker transaction.
+
 Mainnet 1: Alpha Centauri
 =========================
 

@@ -37,26 +37,24 @@ The Concordium Mobile Wallet has been verified by NowSecure.
 Concordium Desktop Wallet
 =========================
 
--  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.0.2.exe>`_
+-  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.5.exe>`_
 
-When you install the Desktop Wallet on Windows, you'll see an error message saying there's a problem with the certificate. Simply ignore the error and continue with the download. This issue will be resolved shortly.
-
--  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.0.2.dmg>`_
+-  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.5.dmg>`_
 
 Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
 
 -  Download for Linux
 
-   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.2.AppImage>`_
+   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.5.AppImage>`_
 
-   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.2.deb>`_
+   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.5.deb>`_
 
-   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.0.2.rpm>`_
+   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.5.rpm>`_
 
 Concordium Ledger App
 =====================
 
-`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.0.0.zip>`_
+`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.2-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
