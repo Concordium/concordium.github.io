@@ -98,6 +98,8 @@ Node Debian package
 ===================
 To run a node on a server with Ubuntu, you'll need to `download a Debian package <https://distribution.mainnet.concordium.software/deb/concordium-node_1.0.1-mainnet_amd64.deb>`_.
 
+- SHA256 checksum of the download: ``dcb76543e4fb0346242df1d8873bbdf89af6ccbd49ea6b4d315bd1dc4c14a135``
+
 
 Full suite for running a node using Docker
 =============================================================
@@ -113,6 +115,7 @@ Download the block separately to inspect it or to run a node in a custom configu
 
 - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
+  - SHA256 checksum of the download: ``5fe6a62824d5b0dba6143243e90987ddf3e15cca079f21992de04d078d9ea6dc``
 
 Requirements for running a node
 ===============================
