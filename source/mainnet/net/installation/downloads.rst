@@ -37,19 +37,21 @@ The Concordium Mobile Wallet has been verified by NowSecure.
 Concordium Desktop Wallet
 =========================
 
--  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.5.exe>`_
+-  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.6.exe>`_
 
--  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.5.dmg>`_
+The Windows build is not ready yet but will arrive shortly. Until then the link will not work.
+
+-  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.6.dmg>`_
 
 Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
 
 -  Download for Linux
 
-   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.5.AppImage>`_
+   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.AppImage>`_
 
-   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.5.deb>`_
+   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.deb>`_
 
-   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.5.rpm>`_
+   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.rpm>`_
 
 Concordium Ledger App
 =====================

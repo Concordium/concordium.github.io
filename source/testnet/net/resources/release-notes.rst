@@ -8,6 +8,18 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v5-update-4:
+
+Open Testnet v5 Update 4
+========================
+
+July 28, 2021
+
+Concordium Desktop Wallet v1.1.6
+--------------------------------
+
+- Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
+
 .. _open-testnet-v5-update-3:
 
 Open Testnet v5 Update 3
