@@ -39,6 +39,8 @@ Concordium Desktop Wallet
 
 -  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.6.exe>`_
 
+The Windows build is not ready yet but will arrive shortly. Until then the link will not work.
+
 -  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.6.dmg>`_
 
 Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
