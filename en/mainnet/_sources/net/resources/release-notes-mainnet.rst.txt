@@ -8,6 +8,16 @@ Release notes
    :local:
    :backlinks: none
 
+Mainnet 1: Update 2
+===================
+
+July 28, 2021
+
+Concordium Desktop Wallet v1.1.6
+--------------------------------
+
+- Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
+
 Mainnet 1: Update 1
 ===================
 
