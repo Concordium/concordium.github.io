@@ -30,8 +30,6 @@ Concordium Desktop Wallet
 
 - `Download the Testnet version of Concordium Desktop Wallet for Windows. <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.1.6.exe>`_
 
-The Windows build is not ready yet but will arrive shortly. Until then the link will not work.
-
 - `Download the Testnet version of Concordium Desktop Wallet for MacOS. <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.6.dmg>`_
 
 Currently, the Desktop Wallet doesn't support Apple M1 Macs.
