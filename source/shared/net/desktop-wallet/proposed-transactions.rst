@@ -22,7 +22,7 @@ The list of proposals gives you an overview of all the multi-signature proposals
 
 Transactions can have the following status:
 
-*  **Unsubmitted**: The transaction has not been submitted to the chain yet for one of the following reasons:
+- **Unsubmitted**: The transaction has not been submitted to the chain yet for one of the following reasons:
 
    - You haven't sent the proposal to the co-signers yet, so they can't sign it.
    - The co-signer hasn't returned the proposal.
@@ -34,3 +34,5 @@ Transactions can have the following status:
 - **Finalized**: The proposal has been signed by all co-signers, the signatures have been imported, and the transaction has been submitted to the chain and :ref:`finalized <glossary-finalization>` on the chain.
 
 - **Expired**: The transaction was not submitted to the chain before the expiry time. You must submit proposals to the chain within the last 2 hours up to the expiry date. Otherwise, the proposal will expire, and you'll have to create a new one.
+
+- **Cancelled**: The proposal has been cancelled. You can cancel proposals with the status unsubmitted. This includes proposals that have been generated but not signed, proposals that have been generated and are awaiting signatures, and signed proposals that have not been submitted to the blockchain. Once a proposal has been submitted to the chain, you can't cancel it.
