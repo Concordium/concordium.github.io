@@ -22,7 +22,7 @@ The list of proposals gives you an overview of all the multi-signature proposals
 
 Transactions can have the following status:
 
-*  **Unsubmitted**: The transaction has not been submitted to the chain yet for one of the following reasons:
+- **Unsubmitted**: The transaction has not been submitted to the chain yet for one of the following reasons:
 
    - You haven't sent the proposal to the co-signers yet, so they can't sign it.
    - The co-signer hasn't returned the proposal.
