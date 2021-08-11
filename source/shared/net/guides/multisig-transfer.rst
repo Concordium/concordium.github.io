@@ -18,7 +18,7 @@ This guide describes how you create a multi-signature transfer with a schedule. 
 Prerequisites
 =============
 
--  Set up an :ref:`identity and an initial account <create-initial-account-desktop>`.
+- Set up an :ref:`identity and an initial account <create-initial-account-desktop>`.
 
 - Set up a :ref:`Ledger Nano S hardware device <install-Ledger-app>`
 
