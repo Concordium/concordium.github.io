@@ -51,7 +51,7 @@ schedule and an explicit schedule.
 
 -  Use a :ref:`regular interval schedule <multisig-schedule-regular>` to release an equal amount of GTU to a recipient at regular intervals.
 
--  Use an :ref:`explicit schedule <multisig-schedule-explicit>` if you want the intervals between releases to be of different lengths, and if you want to be able to release different amounts of GTU to the recipient at each interval.
+-  Use an :ref:`explicit schedule <multisig-schedule-explicit>` if you want the intervals between releases to be of different lengths, or if you want to be able to release different amounts of GTU to the recipient at each interval.
 
 Make a transfer proposal
 ========================
