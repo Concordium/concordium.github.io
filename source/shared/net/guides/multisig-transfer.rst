@@ -1,9 +1,9 @@
 
 .. _create-multisig-scheduled:
 
-=====================================================================
-Create a scheduled multi-signature GTU transfer in the Desktop Wallet
-=====================================================================
+=================================================
+Create a scheduled transfer in the Desktop Wallet
+=================================================
 
 .. contents::
    :local:
@@ -13,26 +13,45 @@ Create a scheduled multi-signature GTU transfer in the Desktop Wallet
 Send GTU with a schedule
 ========================
 
-A multi-signature transfer of GTU is a transaction that
-requires two or more co-signers to sign with their private keys to
-authorize the transaction. You can schedule the transaction in advance so
-that a specific amount of GTU can be released on a specific date and at
-a specific time in the future.
-
-You can create two types of release schedules: a regular interval
-schedule and an explicit schedule.
-
--  Use a :ref:`regular interval schedule <multisig-schedule-regular>`. to release an equal amount of GTU to
-   a recipient at regular intervals.
-
--  Use an :ref:`explicit schedule <multisig-schedule-explicit>` if you want the intervals between releases to be of different lengths, and if you want to be able to release different amounts of GTU to the recipient at each interval.
+This guide describes how you create a multi-signature transfer with a schedule. For information about multi-signature transfer without a schedule, see :ref:`Create a multi-signature GTU transfer in the Desktop Wallet <create-multisig>`.
 
 Prerequisites
 =============
 
--  Set up an :ref:`identity and an account <create-initial-account-desktop>`.
+- Set up an :ref:`identity and an initial account <create-initial-account-desktop>`.
 
--  Set up a :ref:`Ledger Nano S hardware device identity <install-Ledger-app>`.
+- Set up a :ref:`Ledger Nano S hardware device <install-Ledger-app>`
+
+- Set up an :ref:`account with multiple credentials <multi-credentials>`
+
+A multi-signature transfer of GTU is a transaction that
+requires two or more co-signers to sign with their private keys to
+authorize the transaction.
+
+To plan a multi-signature transfer ahead of time and to split the transfer into multiple releases, you can create a release schedule. Using a schedule, you specify the total amount of GTU to transfer and then the specific dates and times for each GTU release. In other words, you create one transfer with multiple releases.
+
+How a scheduled transfer works
+==============================
+
+When you submit the transaction to the chain, the following happens:
+
+- The total amount of GTU is transferred from the sender account to the recipient account. This is one transaction with a single transaction hash.
+
+- The amount becomes part of the recipient's account total but not of the recipient's disposable amount.
+
+- Whenever a release takes place, the released amount becomes part of the recipient's disposable amount.
+
+- In the list of transfers on the sender account and on the recipient account, the transfer is identified in parenthesis by **(With schedule)**. You can also view the schedule on the account when you go to **More** and then **Inspect release schedule**. For more information, see :ref:`Overview of accounts <overview-account-desktop>`.
+
+Release schedule types
+======================
+
+You can create two types of release schedules: a regular interval
+schedule and an explicit schedule.
+
+-  Use a :ref:`regular interval schedule <multisig-schedule-regular>` to release an equal amount of GTU to a recipient at regular intervals.
+
+-  Use an :ref:`explicit schedule <multisig-schedule-explicit>` if you want the intervals between releases to be of different lengths, or if you want to be able to release different amounts of GTU to the recipient at each interval.
 
 Make a transfer proposal
 ========================
