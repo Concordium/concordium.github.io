@@ -1,9 +1,9 @@
 
 .. _create-multisig-scheduled:
 
-=================================================================
-Create a scheduled multi-signature transfer in the Desktop Wallet
-=================================================================
+=================================================
+Create a scheduled transfer in the Desktop Wallet
+=================================================
 
 .. contents::
    :local:
