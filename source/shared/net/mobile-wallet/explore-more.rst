@@ -1,7 +1,7 @@
 
 .. _Discord: https://discord.gg/xWmQ5tp
 
-.. _testnet-explore-more:
+.. _explore-more:
 
 ============================================
 Explore the *More* page in the Mobile Wallet
