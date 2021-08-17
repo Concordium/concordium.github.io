@@ -15,7 +15,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create account and acquire GTU.
+#. Create an account in the Mobile Wallet and acquire GTU.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -43,7 +43,7 @@ Import the account
 
 This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see :ref:`managing_accounts`.
 
-You create accounts in the Desktop Wallet or in the Mobile Wallet and to create a baker node, you need the account information. You get this information by exporting a JSON file with the account information from the wallet you're using.
+You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you can't import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account sinformation by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  :ref:`Explore the *More* page in the Mobile Wallet <explore-more>`.
 
 To import an account run:
 
