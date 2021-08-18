@@ -113,7 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Become a baker using the Concordium Client</a><ul>
@@ -272,7 +272,7 @@
 <p>This guide takes you through the steps involved in upgrading your node to a baker node and managing the node using the Concordium Client.</p>
 <p>The process of becoming a baker involves the following:</p>
 <ol class="arabic simple">
-<li><p>Create account and acquire GTU.</p></li>
+<li><p>Create an account in the Mobile Wallet and acquire GTU.</p></li>
 <li><p>Create a set of baker keys.</p></li>
 <li><p>Register the baker keys with the account.</p></li>
 <li><p>Start the node with the baker keys.</p></li>
@@ -298,7 +298,7 @@ account that will be used to register and manage a baker.</p>
 <div class="section" id="import-the-account">
 <h3>Import the account<a class="headerlink" href="#import-the-account" title="Permalink to this headline">¶</a></h3>
 <p>This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<p>You create accounts in the Desktop Wallet or in the Mobile Wallet and to create a baker node, you need the account information. You get this information by exporting a JSON file with the account information from the wallet you’re using.</p>
+<p>You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  <a class="reference internal" href="../mobile-wallet/explore-more.html#explore-more"><span class="std std-ref">Explore the *More* page in the Mobile Wallet</span></a>.</p>
 <p>To import an account run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import &lt;path/to/exported/file&gt; --name bakerAccount
 </pre></div>

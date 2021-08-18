@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Create a scheduled multi-signature GTU transfer in the Desktop Wallet &mdash; Concordium  documentation</title>
+  <title>Create a scheduled transfer in the Desktop Wallet &mdash; Concordium  documentation</title>
   
 
   
@@ -113,9 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Create a scheduled multi-signature GTU transfer in the Desktop Wallet</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Create a scheduled transfer in the Desktop Wallet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#send-gtu-with-a-schedule">Send GTU with a schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-a-scheduled-transfer-works">How a scheduled transfer works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-schedule-types">Release schedule types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#make-a-transfer-proposal">Make a transfer proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-a-release-schedule">Add a release schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generate-the-transaction">Generate the transaction</a></li>
@@ -229,7 +231,7 @@
         
           <li><a href="../index.html">Testnet</a> &raquo;</li>
         
-      <li>Create a scheduled multi-signature GTU transfer in the Desktop Wallet</li>
+      <li>Create a scheduled transfer in the Desktop Wallet</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -250,41 +252,56 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="create-a-scheduled-multi-signature-gtu-transfer-in-the-desktop-wallet">
-<span id="create-multisig-scheduled"></span><h1>Create a scheduled multi-signature GTU transfer in the Desktop Wallet<a class="headerlink" href="#create-a-scheduled-multi-signature-gtu-transfer-in-the-desktop-wallet" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="create-a-scheduled-transfer-in-the-desktop-wallet">
+<span id="create-multisig-scheduled"></span><h1>Create a scheduled transfer in the Desktop Wallet<a class="headerlink" href="#create-a-scheduled-transfer-in-the-desktop-wallet" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#send-gtu-with-a-schedule" id="id1">Send GTU with a schedule</a></p></li>
 <li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#make-a-transfer-proposal" id="id3">Make a transfer proposal</a></p></li>
-<li><p><a class="reference internal" href="#add-a-release-schedule" id="id4">Add a release schedule</a></p></li>
-<li><p><a class="reference internal" href="#generate-the-transaction" id="id5">Generate the transaction</a></p></li>
-<li><p><a class="reference internal" href="#export-a-transaction-proposal" id="id6">Export a transaction proposal</a></p></li>
-<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id7">Receive signatures from co-signers</a></p></li>
-<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id8">Submit the transaction to the blockchain</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#how-a-scheduled-transfer-works" id="id3">How a scheduled transfer works</a></p></li>
+<li><p><a class="reference internal" href="#release-schedule-types" id="id4">Release schedule types</a></p></li>
+<li><p><a class="reference internal" href="#make-a-transfer-proposal" id="id5">Make a transfer proposal</a></p></li>
+<li><p><a class="reference internal" href="#add-a-release-schedule" id="id6">Add a release schedule</a></p></li>
+<li><p><a class="reference internal" href="#generate-the-transaction" id="id7">Generate the transaction</a></p></li>
+<li><p><a class="reference internal" href="#export-a-transaction-proposal" id="id8">Export a transaction proposal</a></p></li>
+<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id9">Receive signatures from co-signers</a></p></li>
+<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id10">Submit the transaction to the blockchain</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id11">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <div class="section" id="send-gtu-with-a-schedule">
 <h2>Send GTU with a schedule<a class="headerlink" href="#send-gtu-with-a-schedule" title="Permalink to this headline">¶</a></h2>
-<p>A multi-signature transfer of GTU is a transaction that
-requires two or more co-signers to sign with their private keys to
-authorize the transaction. You can schedule the transaction in advance so
-that a specific amount of GTU can be released on a specific date and at
-a specific time in the future.</p>
-<p>You can create two types of release schedules: a regular interval
-schedule and an explicit schedule.</p>
-<ul class="simple">
-<li><p>Use a <a class="reference internal" href="#multisig-schedule-regular"><span class="std std-ref">regular interval schedule</span></a>. to release an equal amount of GTU to
-a recipient at regular intervals.</p></li>
-<li><p>Use an <a class="reference internal" href="#multisig-schedule-explicit"><span class="std std-ref">explicit schedule</span></a> if you want the intervals between releases to be of different lengths, and if you want to be able to release different amounts of GTU to the recipient at each interval.</p></li>
-</ul>
+<p>This guide describes how you create a multi-signature transfer with a schedule. For information about multi-signature transfer without a schedule, see <a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html#create-multisig"><span class="std std-ref">Create a multi-signature GTU transfer in the Desktop Wallet</span></a>.</p>
 </div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Set up an <a class="reference internal" href="../desktop-wallet/create-identity-desktop.html#create-initial-account-desktop"><span class="std std-ref">identity and an account</span></a>.</p></li>
-<li><p>Set up a <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">Ledger Nano S hardware device identity</span></a>.</p></li>
+<li><p>Set up an <a class="reference internal" href="../desktop-wallet/create-identity-desktop.html#create-initial-account-desktop"><span class="std std-ref">identity and an initial account</span></a>.</p></li>
+<li><p>Set up a <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">Ledger Nano S hardware device</span></a></p></li>
+<li><p>Set up an <a class="reference internal" href="multi-credentials.html#multi-credentials"><span class="std std-ref">account with multiple credentials</span></a></p></li>
+</ul>
+<p>A multi-signature transfer of GTU is a transaction that
+requires two or more co-signers to sign with their private keys to
+authorize the transaction.</p>
+<p>To plan a multi-signature transfer ahead of time and to split the transfer into multiple releases, you can create a release schedule. Using a schedule, you specify the total amount of GTU to transfer and then the specific dates and times for each GTU release. In other words, you create one transfer with multiple releases.</p>
+</div>
+<div class="section" id="how-a-scheduled-transfer-works">
+<h2>How a scheduled transfer works<a class="headerlink" href="#how-a-scheduled-transfer-works" title="Permalink to this headline">¶</a></h2>
+<p>When you submit the transaction to the chain, the following happens:</p>
+<ul class="simple">
+<li><p>The total amount of GTU is transferred from the sender account to the recipient account. This is one transaction with a single transaction hash.</p></li>
+<li><p>The amount becomes part of the recipient’s account total but not of the recipient’s disposable amount.</p></li>
+<li><p>Whenever a release takes place, the released amount becomes part of the recipient’s disposable amount.</p></li>
+<li><p>In the list of transfers on the sender account and on the recipient account, the transfer is identified in parenthesis by <strong>(With schedule)</strong>. You can also view the schedule on the account when you go to <strong>More</strong> and then <strong>Inspect release schedule</strong>. For more information, see <a class="reference internal" href="../desktop-wallet/accounts-desktop.html#overview-account-desktop"><span class="std std-ref">Overview of accounts</span></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="release-schedule-types">
+<h2>Release schedule types<a class="headerlink" href="#release-schedule-types" title="Permalink to this headline">¶</a></h2>
+<p>You can create two types of release schedules: a regular interval
+schedule and an explicit schedule.</p>
+<ul class="simple">
+<li><p>Use a <a class="reference internal" href="#multisig-schedule-regular"><span class="std std-ref">regular interval schedule</span></a> to release an equal amount of GTU to a recipient at regular intervals.</p></li>
+<li><p>Use an <a class="reference internal" href="#multisig-schedule-explicit"><span class="std std-ref">explicit schedule</span></a> if you want the intervals between releases to be of different lengths, or if you want to be able to release different amounts of GTU to the recipient at each interval.</p></li>
 </ul>
 </div>
 <div class="section" id="make-a-transfer-proposal">
