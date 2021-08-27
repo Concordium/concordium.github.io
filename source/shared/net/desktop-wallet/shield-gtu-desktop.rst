@@ -30,3 +30,15 @@ If you have an account with GTU in the shielded balance, you can't add new crede
 #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
 #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
+
+.. _unshield-GTU:
+
+Unshield GTU
+============
+The steps to unshield GTU are similar to the ones to shield GTU.
+
+#. Select **Shielded Balance** on the relevant account, and then select **Unshield**.
+
+#. Enter the amount of GTU that you want to unshield, and then select **Continue**.
+
+#. Follow steps 4-7 as described above. When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the **Transfers** list.
