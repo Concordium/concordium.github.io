@@ -13,8 +13,10 @@ A transaction on the Concordium blockchain is an operation which applies some ch
 The most basic transaction is the GTU transfer that is used to send GTU from one account to another. However, there are several transaction types on the Concordium blockchain:
 
 - Send GTU
+- Send GTU with a schedule
 - Shield GTU
 - Unshield GTU
+- Make shielded transfer
 - Add baker
 - Remove baker
 - Update baker stake
@@ -37,7 +39,7 @@ In some situations, transactions are included in the blockchain but recorded as 
 
 There’s a :ref:`sequence number<glossary-transaction-sequence-number>` associated with each account. This number increases sequentially with each transaction sent from the account and is recorded into the transaction. If a transaction has a sequence number that doesn’t  match the current sequence number of the account, the transaction is not eligible for inclusion on the chain. This ensures that transactions are included only once and in a specific order.
 
-Transaction costs
+Transaction fees
 =================
 
-Every transaction has a well-defined *cost*, and the cost of each transaction depends on the transaction type. When the transaction is submitted to the chain, the cost is deducted from the sender's account and paid to the Concordium network as a fee for carrying out the transaction. Cost is measured in the unit NRG which corresponds to GTU according to a variable conversion factor (currently 1 NRG = 0.0001 GTU). Read more about conversions between GTU, NRG, and Euros in :ref:`exchange-rates`.
+Every transaction has a well-defined *fee*, and the fee of each transaction depends on the transaction type. When the transaction is submitted to the chain, the fee is deducted from the sender's account and paid to the Concordium network as a fee for carrying out the transaction. The fee is measured in the unit NRG which corresponds to GTU according to a variable conversion factor (currently 1 NRG = 0.0001 GTU). Read more about conversions between GTU, NRG, and Euros in :ref:`exchange-rates`.
