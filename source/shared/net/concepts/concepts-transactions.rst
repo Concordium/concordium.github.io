@@ -8,7 +8,7 @@ Transactions overview
     :local:
     :backlinks: none
 
-A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable . A transaction always has one sender :ref:`account<glossary-account>` and is signed using the keys of this account.
+A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :ref:`account<glossary-account>` and is signed using the keys of this account.
 
 The most basic transaction is the GTU transfer that is used to send GTU from one account to another. However, there are several transaction types on the Concordium blockchain:
 
