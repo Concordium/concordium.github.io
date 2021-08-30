@@ -12,6 +12,7 @@ Create an account in the  Desktop Wallet
 
 Once you've created an identity and an initial account, you can create as many accounts as you need.
 
+
 .. note::
     You can't import accounts that were created on the Mobile Wallet.
 
