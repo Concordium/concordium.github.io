@@ -27,8 +27,8 @@ The most basic transaction is the GTU transfer that is used to send GTU from one
 You can make transactions using either the Desktop Wallet, the Mobile Wallet, or the Concordium Client. Note that the Mobile Wallet doesn’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
 
 - Mobile Wallet: supports send GTU, shield GTU, and unshield GTU.
-- Desktop Wallet: supports all transaction types
-- Concordium Client: supports all transaction types
+- Desktop Wallet: supports all transaction types (except smart contract transactions).
+- Concordium Client: supports all transaction types.
 
 How transactions work
 =====================
