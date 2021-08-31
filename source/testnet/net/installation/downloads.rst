@@ -94,6 +94,8 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 
 - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.0.1-testnet.tar.gz>`_
 
+.. _requirements-run-node:
+
 Requirements for running a node
 ===============================
 
