@@ -13,6 +13,12 @@ Get started with the Mobile Wallet
 
 Before following this guide you should have finished installing Concordium Mobile Wallet, as described in :ref:`Downloads <downloads>`.
 
+You can also watch this video to see how to create your first account and identity in the Mobile Wallet.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/DO1cgpQ-w10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Set up a passcode and biometrics
 ================================
 

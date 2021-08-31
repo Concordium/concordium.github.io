@@ -14,6 +14,13 @@ Before following this guide you should have finished requesting your initial acc
 
 Create a new account
 ====================
+
+Read below or watch the video to learn how to create a new account.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/gtDXnuoMOes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Before getting into how accounts, their balances and transactions work, let’s create a second account. Start by going
 to the *Accounts* page. In the upper right corner you should see a **plus sign**. Press that to continue. On the next screen
 you will be asked to name your new account. In this example we will choose the name *Example Account 2*, but you can
@@ -119,7 +126,6 @@ Next, press the **SHIELD** button and enter an amount of GTU to *shield*, which 
 .. image:: ../images/mobile-wallet/MW34.png
       :width: 32%
 
-
 We can now continue and confirm the transaction, just like we did before with the regular transfer. The transaction might take a moment
 to finalize on the chain.
 
@@ -200,6 +206,13 @@ an unshielding, will be deducted from the regular balance of the account respons
 
 Share your account address
 ==========================
+
+Read below or watch the video to learn how to share your account address.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/ldSitbxrsjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 If you want to share the address of your account, this can be easily done by pressing the **Address** button. This will take you to a page
 where you have multiple options of sharing the account address. Try pressing the **Share** button, and share your address with someone.
 
