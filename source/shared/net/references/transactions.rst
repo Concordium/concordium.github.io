@@ -301,7 +301,7 @@ Transfer GTU with a  schedule
 
 The command to transfer GTU that will be released gradually according to a
 release schedule with ``concordium-client`` is ``transaction send-gtu-scheduled``.
-There are two ways of specifying the release schedule, either as regular intervals or as an explicit schedule.
+There are two ways of specifying the release schedule, either at regular intervals or as an explicit schedule.
 
 -  Use a regular interval schedule to release an equal amount of GTU to a recipient at regular intervals.
 
