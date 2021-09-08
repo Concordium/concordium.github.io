@@ -48,7 +48,7 @@ package you need to
     apt install ./concordium-testnet-node_1.1.0_amd64.deb
 
   This step will perform automatic database migration, so that the new node will
-  not have to catch up from scratch. After installation is completed the node and
+  not have to catch up from scratch. After installation is completed, the node and
   the collector will be started as before.
 
 Changes to node management in version 1.1.0
