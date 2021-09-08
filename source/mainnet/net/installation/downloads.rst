@@ -130,6 +130,8 @@ Download the block separately to inspect it or to run a node in a custom configu
 
   - SHA256 checksum of the download: ``5fe6a62824d5b0dba6143243e90987ddf3e15cca079f21992de04d078d9ea6dc``
 
+.. _requirements-run-node:
+
 Requirements for running a node
 ===============================
 

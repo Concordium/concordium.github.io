@@ -16,14 +16,10 @@ Once you've created an identity and an initial account, you can create as many a
 .. note::
     You can't import accounts that were created on the Mobile Wallet.
 
-.. contents::
-    :local:
-    :backlinks: none
-
 Prerequisites
 =============
--   A Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger Nano S and install the Concordium Ledger App<install-ledger-app>`
--   An identity and an initial account. See :ref:`Create an identity and an initial account in the Desktop Wallet<install-ledger-app>`
+-   A Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger Nano S and install the Concordium Ledger App<install-ledger-app>`.
+-   An identity and an initial account. See :ref:`Create an identity and an initial account in the Desktop Wallet<install-ledger-app>`.
 
 Create an account
 =================

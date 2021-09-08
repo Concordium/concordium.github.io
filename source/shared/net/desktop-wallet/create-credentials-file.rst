@@ -11,7 +11,7 @@ Create a credentials file
    :depth: 1
 
 
-This topic describes how you create and export a file with credentials. For information about adding more credentials to an account, see :ref:`Add credentials to an account <multi-credentials>`.
+This topic describes how you create and export a file with credentials.  For information about adding more credentials to an account, see :ref:`Add credentials to an account <multi-credentials>`.
 
 Create and export a file with credentials
 =========================================

@@ -90,7 +90,7 @@ When the co-signers have signed the transaction, they return the signed transact
 
 #. Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.
 
-#. Select Browse to file and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select OK. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
+#. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
 
 .. _submit-update-baker:
 
@@ -101,9 +101,9 @@ When you have received and added all the required signatures, you can submit the
 
 #. Review the transaction details carefully to ensure that all information is correct.
 
-#. Select I understand this is the final submission and that it cannot be reverted.
+#. Select **I understand this is the final submission and that it cannot be reverted**.
 
-   If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
+   If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active but still visible in the list of proposals.
 
 #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
 
