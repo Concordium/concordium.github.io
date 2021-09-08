@@ -124,6 +124,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
@@ -141,7 +142,7 @@
 <li class="toctree-l1"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
@@ -169,7 +170,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -317,9 +318,9 @@
 <h2>Receive signatures from co-signers<a class="headerlink" href="#receive-signatures-from-co-signers" title="Permalink to this headline">¶</a></h2>
 <p>When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
 <ol class="arabic simple">
-<li><p>If you left the page with the account transaction, go to Multi-signature Transactions, and then select Your proposed transactions. If you’re still on the same page, go to step 3.</p></li>
+<li><p>If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select <strong>Your proposed transactions</strong>. If you’re still on the page with the account transaction, go to step 3.</p></li>
 <li><p>Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
-<li><p>Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select OK. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
+<li><p>Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
 </ol>
 </div>
 <div class="section" id="submit-the-transaction-to-the-blockchain">
@@ -327,11 +328,11 @@
 <p>When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
 <ol class="arabic">
 <li><p>Review the transaction details carefully to ensure that all information is correct.</p></li>
-<li><p>Select I understand this is the final submission, and that it cannot be reverted.</p>
-<p>If you don’t want to submit the transaction to the chain, you can select Cancel. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
+<li><p>Select <strong>I understand this is the final submission, and that it cannot be reverted</strong>.</p>
+<p>If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
 </li>
-<li><p>Select Submit transaction to chain. The transaction is submitted to the chain and finalized on the Ledger.</p></li>
-<li><p>Select Finish to leave the page.</p></li>
+<li><p>Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the Ledger.</p></li>
+<li><p>Select <strong>Finish</strong> to leave the page.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

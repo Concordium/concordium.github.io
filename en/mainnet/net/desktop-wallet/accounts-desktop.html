@@ -124,6 +124,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
@@ -145,7 +146,7 @@
 <li class="toctree-l1"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
@@ -163,7 +164,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -263,17 +264,16 @@
 <li><p><strong>Shield GTU</strong>: Transfer GTU from your public balance to your shielded balance. See <a class="reference internal" href="shield-gtu-desktop.html#shield-gtu-desktop"><span class="std std-ref">Shield GTU on an account</span></a>.</p></li>
 </ul>
 <p>In addition, you can see the following information about the selected account:</p>
-<ul class="simple">
+<ul>
 <li><p>The <strong>Account Total</strong> shows the total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date.</p></li>
 <li><p>The <strong>Balance</strong> shows the GTU that are at your disposal, the amount of GTU that you’ve staked, and any GTU that are locked in a release schedule. It does not include any shielded amounts.</p></li>
 <li><p>The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked GTU and GTU in a release schedule.</p></li>
-<li><p>The <strong>Shielded balance</strong> shows the amount of GTU that you’ve shielded. The <strong>Balance</strong> is visible to all participants on the Concordium Blockchain, while the <strong>Shielded balance</strong> is visible to you only.</p></li>
-</ul>
+<li><p>The <strong>Shielded balance</strong> shows the amount of GTU that you’ve shielded. The <strong>Balance</strong> is visible to all participants on the Concordium Blockchain, while the <strong>Shielded balance</strong> is visible to you only.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Shielded transfers and Shielded balance is only available on accounts with a single credential. You can’t make shielded transfers on multi-signature accounts.</p>
 </div>
-<ul class="simple">
+</li>
 <li><p><strong>Transfers</strong>: This is a list of the transfers on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you’ll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed.</p></li>
 <li><p><strong>Identity data</strong>: If you chose to reveal attributes, when you created the account, these attributes are visible here. If you created the account without revealing any attributes, there is no information here. Revealed attributes are visible to other participants on the chain.</p></li>
 </ul>

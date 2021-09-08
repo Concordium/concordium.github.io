@@ -124,6 +124,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
@@ -146,7 +147,7 @@
 <li class="toctree-l1"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
@@ -164,7 +165,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -248,9 +249,9 @@
 <span id="create-account-desktop"></span><h1>Create an account in the  Desktop Wallet<a class="headerlink" href="#create-an-account-in-the-desktop-wallet" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#create-an-account" id="id3">Create an account</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id4">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#create-an-account" id="id2">Create an account</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id3">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>Once you’ve created an identity and an initial account, you can create as many accounts as you need.</p>
@@ -258,18 +259,11 @@
 <p class="admonition-title">Note</p>
 <p>You can’t import accounts that were created on the Mobile Wallet.</p>
 </div>
-<div class="contents local topic" id="id1">
-<ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id5">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#create-an-account" id="id6">Create an account</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id7">Support &amp; Feedback</a></p></li>
-</ul>
-</div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>A Ledger hardware wallet with the Concordium Ledger App installed. See <a class="reference internal" href="install-ledger-app.html#install-ledger-app"><span class="std std-ref">Set up the Ledger Nano S and install the Concordium Ledger App</span></a></p></li>
-<li><p>An identity and an initial account. See <a class="reference internal" href="install-ledger-app.html#install-ledger-app"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a></p></li>
+<li><p>A Ledger hardware wallet with the Concordium Ledger App installed. See <a class="reference internal" href="install-ledger-app.html#install-ledger-app"><span class="std std-ref">Set up the Ledger Nano S and install the Concordium Ledger App</span></a>.</p></li>
+<li><p>An identity and an initial account. See <a class="reference internal" href="install-ledger-app.html#install-ledger-app"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a>.</p></li>
 </ul>
 </div>
 <div class="section" id="create-an-account">

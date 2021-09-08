@@ -124,6 +124,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
@@ -141,11 +142,12 @@
 <li class="toctree-l1"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Shield GTU on an account</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#shield-gtu">Shield GTU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unshield-gtu">Unshield GTU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
@@ -163,7 +165,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -247,8 +249,9 @@
 <span id="shield-gtu-desktop"></span><h1>Shield GTU on an account<a class="headerlink" href="#shield-gtu-on-an-account" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#shield-gtu" id="id1">Shield GTU</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id2">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#shield-gtu" id="id2">Shield GTU</a></p></li>
+<li><p><a class="reference internal" href="#unshield-gtu" id="id3">Unshield GTU</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id4">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <div class="section" id="shield-gtu">
@@ -263,6 +266,15 @@
 <li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> and select <strong>Submit</strong>.</p></li>
 <li><p>Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.</p></li>
 <li><p>Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>. When the transaction has been finalized, you can see the shielded balance on the account overview.</p></li>
+</ol>
+</div>
+<div class="section" id="unshield-gtu">
+<span id="id1"></span><h2>Unshield GTU<a class="headerlink" href="#unshield-gtu" title="Permalink to this headline">¶</a></h2>
+<p>The steps to unshield GTU are similar to the ones to shield GTU.</p>
+<ol class="arabic simple">
+<li><p>Select <strong>Shielded Balance</strong> on the relevant account, and then select <strong>Unshield</strong>.</p></li>
+<li><p>Enter the amount of GTU that you want to unshield, and then select <strong>Continue</strong>.</p></li>
+<li><p>Follow steps 4-7 as described above. When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the <strong>Transfers</strong> list.</p></li>
 </ol>
 </div>
 <div class="section" id="support-feedback">

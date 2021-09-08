@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Transactions &mdash; Concordium  documentation</title>
+  <title>Concordium Client transactions &mdash; Concordium  documentation</title>
   
 
   
@@ -124,6 +124,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
@@ -141,7 +142,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create a single signer GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
@@ -159,9 +160,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="concordium-client.html">Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Transactions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mobile-wallet">Mobile Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#command-line-tool">Command-line tool</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concordium Client transactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#transaction-commands">Transaction commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands-for-transferring-gtu">Commands for transferring GTU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -223,7 +224,7 @@
         
           <li><a href="../index.html">Mainnet</a> &raquo;</li>
         
-      <li>Transactions</li>
+      <li>Concordium Client transactions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -244,70 +245,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="transactions">
-<span id="id1"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="concordium-client-transactions">
+<span id="transactions"></span><h1>Concordium Client transactions<a class="headerlink" href="#concordium-client-transactions" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mobile-wallet" id="id2">Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#command-line-tool" id="id3">Command-line tool</a></p>
+<li><p><a class="reference internal" href="#transaction-commands" id="id1">Transaction commands</a></p></li>
+<li><p><a class="reference internal" href="#commands-for-transferring-gtu" id="id2">Commands for transferring GTU</a></p>
 <ul>
-<li><p><a class="reference internal" href="#transfer" id="id4">Transfer</a></p>
+<li><p><a class="reference internal" href="#transfer-gtu" id="id3">Transfer GTU</a></p>
 <ul>
-<li><p><a class="reference internal" href="#example-transferring-25-gtu-from-one-account-to-another" id="id5">Example: Transferring 25 GTU from one account to another</a></p></li>
+<li><p><a class="reference internal" href="#example-transferring-25-gtu-from-one-account-to-another" id="id4">Example: Transferring 25 GTU from one account to another</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#encrypted-transfer" id="id6">Encrypted transfer</a></p></li>
-<li><p><a class="reference internal" href="#shield-an-amount" id="id7">Shield an amount</a></p></li>
-<li><p><a class="reference internal" href="#unshield-an-amount" id="id8">Unshield an amount</a></p></li>
-<li><p><a class="reference internal" href="#transfer-with-schedule" id="id9">Transfer with schedule</a></p></li>
+<li><p><a class="reference internal" href="#make-a-shielded-transfer" id="id5">Make a shielded transfer</a></p></li>
+<li><p><a class="reference internal" href="#shield-an-amount" id="id6">Shield an amount</a></p></li>
+<li><p><a class="reference internal" href="#unshield-an-amount" id="id7">Unshield an amount</a></p></li>
+<li><p><a class="reference internal" href="#transfer-gtu-with-a-schedule" id="id8">Transfer GTU with a  schedule</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>A <em>transaction</em> is an operation which applies some change to the chain.
-Transactions always have one sender <a class="reference internal" href="../resources/glossary.html#glossary-account"><span class="std std-ref">account</span></a> and are signed using the keys of
-this account.</p>
-<p>There are several transaction types: The most basic one is a GTU transfer, which
-moves tokens from the sender account to another account. Other transaction types
-include encrypted transfers, <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">adding a baker</span></a>, and updating keys of accounts
-and bakers.</p>
-<p>Every transaction has a well-defined <em>cost</em>, the value of which depends on the
-transaction type as well as the payload in a way that reflects the computational
-effort of applying the transaction as closely as possible. When the transaction
-is submitted, its cost is deducted from the sender’s account and paid to the
-network as a fee for carrying out the transaction. Cost is measured in the unit
-NRG which corresponds to GTU according to a variable conversion factor
-(currently 1 NRG = 0.0001 GTU). Read more about conversions between GTU, NRG, and Euros in <a class="reference internal" href="query-node.html#exchange-rates"><span class="std std-ref">Exchange rates</span></a>.</p>
-<p>Once a baker receives a transaction from some client, it performs a few basic
-checks to verify that the transaction is eligible for <em>inclusion</em> in a <a class="reference internal" href="../resources/glossary.html#glossary-block"><span class="std std-ref">block</span></a>.
-If any of these checks fail, the transaction is ignored. Included transactions
-which satisfy all further requirements are considered <em>successful</em> and have
-their changes applied to the chain. If something doesn’t check out (for
-instance, the sender attempted to overdraw their account), the transaction is
-still included, but recorded as <em>rejected</em>. A rejected transaction has no effect
-other than deducting its cost from the sender.</p>
-<p>Each account has a <a class="reference internal" href="../resources/glossary.html#glossary-transaction-sequence-number"><span class="std std-ref">sequence number</span></a> associated with it. This number increases
-sequentially with each transaction sent from this account and is recorded into
-the transaction. Transactions with sequence numbers that don’t match the current
-one of the account are not considered eligible for inclusion on the chain. This
-ensures that transactions are included only once and in a specific order.</p>
-<p>Until some block containing a given transaction is <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalized</span></a>, there is no
-guarantee that the transaction is permanent.</p>
-<p>Transfers (both plain and encrypted) can be performed using the Mobile Wallet.
-mobile app, or the <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a> tool. All other transaction types
-can only be done through <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
-<div class="section" id="mobile-wallet">
-<h2>Mobile Wallet<a class="headerlink" href="#mobile-wallet" title="Permalink to this headline">¶</a></h2>
-<p>Once you create <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">an account</span></a> in the <a class="reference internal" href="../mobile-wallet/accounts-transactions.html#guide-account-transactions"><span class="std std-ref">wallet</span></a>, the <strong>SEND</strong> button brings you
-to the screen for doing transfers from the given account. Depending on whether
-you are in the public or shielded balance part of the account the transfer will
-be a plain transfer, or an encrypted transfer.</p>
-</div>
-<div class="section" id="command-line-tool">
-<h2>Command-line tool<a class="headerlink" href="#command-line-tool" title="Permalink to this headline">¶</a></h2>
-<p>All types of transactions can be performed using <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. The
-different transaction types are performed using specialized subcommands:</p>
+<p>You can perform all types of transactions with the <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. To do so, you use specialized subcommands. For an introduction to transactions, see <a class="reference internal" href="../concepts/concepts-transactions.html#transactions-overview"><span class="std std-ref">Transactions overview</span></a>.</p>
+<div class="section" id="transaction-commands">
+<h2>Transaction commands<a class="headerlink" href="#transaction-commands" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -362,12 +323,11 @@ balance to public balance</p></td>
 </tr>
 </tbody>
 </table>
-<p>Each of these commands have a number of parameters specific to them, but share a
-common set of flags and configuration to control how they build transactions.
-Depending on the exact context, the flags are currently all optional:</p>
+<p>Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.</p>
+<p>Depending on the exact context, all flags are currently optional:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--sender</span></code>: Name or address of the transaction’s sender account.
-The name is the one used when <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">importing the account</span></a> (assuming that this
+The name is the one that’s used when you <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">import the account</span></a> (assuming that this
 was done). Defaults to the account name “default”.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--keys</span></code>: A number of sign/verify key-pairs associated with the
 account, used to sign the transaction. The format is shown in the example
@@ -384,32 +344,34 @@ fetched automatically and should only be specified in special cases.</p></li>
 3 signs with keys 0 and 1. If the sender account is imported to the client, and <code class="docutils literal notranslate"><span class="pre">--signers</span></code> is not provided,
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will sign with all keys in the local configuration of the account.</p></li>
 </ul>
-<p>In most cases, it should be sufficient to provide only the <code class="docutils literal notranslate"><span class="pre">--sender</span></code> option
+<p>In most cases, you only need to provide the <code class="docutils literal notranslate"><span class="pre">--sender</span></code> option
 and use the account by name.</p>
-<p>In all cases, the command will display the exact parameters of the transaction
-before sending it, and ask the user to confirm that it matches their intent.
-Just before the transaction is sent the user is asked for the password to access
+<p>In all cases, the command displays the exact parameters of the transaction
+before sending it, and you’re asked to confirm that it matches your intent.
+Just before the transaction is sent, you’re asked for the password to access
 the signing keys.</p>
 <p>Once a transaction has been submitted, the command will continuously poll and
 display its status until it’s been <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalized</span></a>.</p>
+</div>
+<div class="section" id="commands-for-transferring-gtu">
+<h2>Commands for transferring GTU<a class="headerlink" href="#commands-for-transferring-gtu" title="Permalink to this headline">¶</a></h2>
 <p>The commands for transferring GTU (both plain transfers and encrypted transfers)
-are described below.</p>
-<p>The remaining commands are used to add, remove, and configure bakers. Their
-behavior is explained on the guide for <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">becoming a baker</span></a>.</p>
+are described in the following table.</p>
+<p>The add, remove, and configure bakers commands are described in the topic <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">becoming a baker using the Concordium Client</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about a command, invoke it with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag.</p>
+<p>To see more information about a command, invoke it with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag.</p>
 </div>
-<div class="section" id="transfer">
-<h3>Transfer<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h3>
-<p>A transfer is done using the following command:</p>
+<div class="section" id="transfer-gtu">
+<h3>Transfer GTU<a class="headerlink" href="#transfer-gtu" title="Permalink to this headline">¶</a></h3>
+<p>Use the following command for transfers:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu
 </pre></div>
 </div>
 <p>Apart from the generic transaction flags above, the parameters are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: Number of GTU tokens to send.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--receiver</span></code>: Name or address of the receiver account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: number of GTU tokens to send.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--receiver</span></code>: name or address of the receiver account.</p></li>
 </ul>
 <div class="section" id="example-transferring-25-gtu-from-one-account-to-another">
 <h4>Example: Transferring 25 GTU from one account to another<a class="headerlink" href="#example-transferring-25-gtu-from-one-account-to-another" title="Permalink to this headline">¶</a></h4>
@@ -423,8 +385,8 @@ to transfer 25 GTU is:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu --amount <span class="m">25</span> --sender A --receiver B
 </pre></div>
 </div>
-<p>The output will look similar to the following (in the example we assume that the
-sender account A has three transaction signing keys 0, 1, 3).</p>
+<p>The output will look similar to the following. Note that in this example, we assume that the
+sender account A has three transaction signing keys 0, 1, and 3.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sending 25.000000 GTU from &#39;4DY7Kq5vXsNDhEAnj969Fd86g9egi1Htq3YmL2qAU9cXWj2a1y&#39; (A) to &#39;3EmnjMy8AY5zoebNaA3HuVx1UShdW8vh9n1YjJztmSc2jN4K3V&#39; (B).</span>
 <span class="go">Allowing up to 165 NRG to be spent as transaction fee.</span>
 <span class="go">Transaction expires at Sun,  4 Oct 2020 11:13:55 UTC.</span>
@@ -445,22 +407,22 @@ sender account A has three transaction signing keys 0, 1, 3).</p>
 </div>
 </div>
 </div>
-<div class="section" id="encrypted-transfer">
-<h3>Encrypted transfer<a class="headerlink" href="#encrypted-transfer" title="Permalink to this headline">¶</a></h3>
-<p>An encrypted transfer is a transfer from a shielded balance to a shielded
-balance of another account. The command is very similar to a plain transfer</p>
+<div class="section" id="make-a-shielded-transfer">
+<h3>Make a shielded transfer<a class="headerlink" href="#make-a-shielded-transfer" title="Permalink to this headline">¶</a></h3>
+<p>A shielded transfer is a transfer from a shielded balance to a shielded
+balance of another account. The command is very similar to a standard  transfer.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount <span class="m">8</span>
 </pre></div>
 </div>
-<p>This command will</p>
+<p>This command does the following:</p>
 <ul class="simple">
-<li><p>query the chain for the shielded balance of account A from the
-Concordium network</p></li>
-<li><p>decrypt it</p></li>
-<li><p>query the encryption key of account B from the Concordium network</p></li>
-<li><p>and send the transaction.</p></li>
+<li><p>queries the chain for the shielded balance of account A from the
+Concordium network.</p></li>
+<li><p>decrypts it.</p></li>
+<li><p>queries the encryption key of account B from the Concordium network</p></li>
+<li><p>sends the transaction.</p></li>
 </ul>
-<p>The interaction looks as follows.</p>
+<p>The interaction looks like the following:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount <span class="m">8</span>
 <span class="go">Using default energy amount of 30176 NRG.</span>
 <span class="go">Enter password for decrypting the secret encryption key: ...</span>
@@ -483,10 +445,10 @@ Concordium network</p></li>
 </pre></div>
 </div>
 <p>This command has all of the additional options of <code class="docutils literal notranslate"><span class="pre">send-gtu</span></code>, as well as an
-additional flag <code class="docutils literal notranslate"><span class="pre">--index.</span></code> This flag, if given, is used to select which
-<a class="reference internal" href="../resources/glossary.html#glossary-incoming-encrypted-amount"><span class="std std-ref">incoming encrypted amounts</span></a> that will be used as input to the transaction.
-This is best illustrated on an example. <a class="reference internal" href="query-node.html#query-account-state"><span class="std std-ref">Querying an account</span></a> can display the
-list of incoming amounts on account. An output could look as follows</p>
+additional flag <code class="docutils literal notranslate"><span class="pre">--index.</span></code> If given, this flag is used to select which
+<a class="reference internal" href="../resources/glossary.html#glossary-incoming-encrypted-amount"><span class="std std-ref">incoming encrypted amounts</span></a> that will be used as input to the transaction.</p>
+<p>This is illustrated with the following example. <a class="reference internal" href="query-node.html#query-account-state"><span class="std std-ref">Querying an account</span></a> can display the
+list of incoming amounts on account. An output could look like this:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...</span>
 <span class="go">Encrypted balance:</span>
 <span class="go">  Incoming amounts:</span>
@@ -497,24 +459,21 @@ list of incoming amounts on account. An output could look as follows</p>
 <span class="go">...</span>
 </pre></div>
 </div>
-<p>If we were to <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> from the account while supplying index 8,
+<p>If you want to <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> from the account while supplying index 8,
 only the encrypted amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference internal" href="../resources/glossary.html#glossary-self-balance"><span class="std std-ref">self balance</span></a>
-would be used as input of the encrypted transfer.</p>
+will be used as input of the encrypted transfer.</p>
 <p>If the supplied index is out of range <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will refuse to send
 the transaction.</p>
 </div>
 <div class="section" id="shield-an-amount">
 <h3>Shield an amount<a class="headerlink" href="#shield-an-amount" title="Permalink to this headline">¶</a></h3>
 <p>The command to shield an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">account</span>
-<span class="pre">encrypt</span></code>. For example, an interaction to shield 10 GTU on account A looks as
-follows.</p>
-<p>The command is</p>
+<span class="pre">encrypt</span></code>. For example, an interaction to shield 10 GTU on account A looks like the following</p>
+<p>The command is:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account encrypt --amount <span class="m">10</span> --sender A
 </pre></div>
 </div>
-<p>It supports all of the same additional flags as the transfer transaction, apart
-from the <code class="docutils literal notranslate"><span class="pre">--receiver</span></code> since transfer from public to encrypted balance is
-always on the same account. The output looks as follows</p>
+<p>The command supports all of the same additional flags as the transfer transaction, except the <code class="docutils literal notranslate"><span class="pre">--receiver</span></code> since a transfer from a public to a shielded balance is always on the same account. The output looks like the following:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Using default energy amount of 265 NRG.</span>
 <span class="go">Transferring 10.000000 GTU from public to encrypted balance of account &#39;4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ&#39; (A).</span>
 <span class="go">Allowing up to 265 NRG to be spent as transaction fee.</span>
@@ -539,19 +498,19 @@ always on the same account. The output looks as follows</p>
 <h3>Unshield an amount<a class="headerlink" href="#unshield-an-amount" title="Permalink to this headline">¶</a></h3>
 <p>The command to unshield an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is
 <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">decrypt</span></code>. For example, an interaction to unshield 7 GTU on
-account B looks as follows.</p>
-<p>The command is</p>
+account B looks like the following:</p>
+<p>The command is:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account decrypt --sender B --amount <span class="m">7</span>
 </pre></div>
 </div>
-<p>This will</p>
+<p>This</p>
 <ul class="simple">
-<li><p>query the state of account B from the Concordium network</p></li>
-<li><p>decrypt the shielded balance and check that it is sufficient</p></li>
-<li><p>send the transaction</p></li>
+<li><p>queries the state of account B from the Concordium network.</p></li>
+<li><p>decrypts the shielded balance and checks that there is sufficient funds.</p></li>
+<li><p>sends the transaction.</p></li>
 </ul>
-<p>This supports the same optional flags as <code class="docutils literal notranslate"><span class="pre">encrypt</span></code>, with the addition
-of <code class="docutils literal notranslate"><span class="pre">--index</span></code> which has the same meaning as in the
+<p>The command supports the same optional flags as <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> with the addition
+of <code class="docutils literal notranslate"><span class="pre">--index</span></code>, which has the same meaning as in the
 <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> command.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Using default energy amount of 16171 NRG.</span>
 <span class="go">Enter password for decrypting the secret encryption key:</span>
@@ -573,38 +532,38 @@ of <code class="docutils literal notranslate"><span class="pre">--index</span></
 </pre></div>
 </div>
 </div>
-<div class="section" id="transfer-with-schedule">
-<span id="transfer-with-a-schedule"></span><h3>Transfer with schedule<a class="headerlink" href="#transfer-with-schedule" title="Permalink to this headline">¶</a></h3>
-<p>The command to send a transfer of GTU that will be released gradually over a
+<div class="section" id="transfer-gtu-with-a-schedule">
+<span id="transfer-with-a-schedule"></span><h3>Transfer GTU with a  schedule<a class="headerlink" href="#transfer-gtu-with-a-schedule" title="Permalink to this headline">¶</a></h3>
+<p>The command to transfer GTU that will be released gradually according to a
 release schedule with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-gtu-scheduled</span></code>.
-There are two ways of specifying the release schedule, either as regular intervals
-or as an explicit schedule at specific timestamps.</p>
-<p>When specifying the release schedule with regular intervals, the options <code class="docutils literal notranslate"><span class="pre">--amount</span></code>
-, <code class="docutils literal notranslate"><span class="pre">--every</span></code>, <code class="docutils literal notranslate"><span class="pre">--for</span></code> and <code class="docutils literal notranslate"><span class="pre">--starting</span></code> must be provided. For example, sending a transaction from A to B that will:</p>
+There are two ways of specifying the release schedule, either at regular intervals or as an explicit schedule.</p>
 <ul class="simple">
-<li><p>release the same amount every day</p></li>
+<li><p>Use a regular interval schedule to release an equal amount of GTU to a recipient at regular intervals.</p></li>
+<li><p>Use an explicit schedule if you want the intervals between releases to be of different lengths, or if you want to be able to release different amounts of GTU to the recipient at each interval.</p></li>
+</ul>
+<p>When you specify a release schedule with regular intervals, you must provide the options <code class="docutils literal notranslate"><span class="pre">--amount</span></code>
+, <code class="docutils literal notranslate"><span class="pre">--every</span></code>, <code class="docutils literal notranslate"><span class="pre">--for</span></code> and <code class="docutils literal notranslate"><span class="pre">--starting</span></code>. For example, to send a transaction from A to B that:</p>
+<ul class="simple">
+<li><p>releases the same amount every day</p></li>
 <li><p>for 10 days in a row</p></li>
 <li><p>for a total amount of 100 GTU</p></li>
 <li><p>starting on the 10th of February 2021 at 12:00:00 UTC</p></li>
 </ul>
-<p>would be done with the following command:</p>
+<p>use the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-scheduled --amount <span class="m">100</span> --every Day --for <span class="m">10</span> --starting <span class="m">2021</span>-02-10T12:00:00Z --receiver B --sender A
 </pre></div>
 </div>
-<p>When specifying the release schedule explicitly, the option <code class="docutils literal notranslate"><span class="pre">--schedule</span></code> must be used
-which takes a comma-separated list of releases in the form of <code class="docutils literal notranslate"><span class="pre">&lt;amount&gt;</span> <span class="pre">at</span> <span class="pre">&lt;date&gt;</span></code>. For example,
-sending a transaction from A to B that will:</p>
+<p>When you specify an explicit release schedule, you must use the option <code class="docutils literal notranslate"><span class="pre">--schedule</span></code>, which takes a comma-separated list of releases in the form of <code class="docutils literal notranslate"><span class="pre">&lt;amount&gt;</span> <span class="pre">at</span> <span class="pre">&lt;date&gt;</span></code>. For example, to send a transaction from A to B that:</p>
 <ul class="simple">
-<li><p>release 100 on January 1st 2021 at 12:00:00 UTC</p></li>
-<li><p>release 150 on February 15th 2021 at 12:00:00 UTC</p></li>
-<li><p>release 200 on December 31st 2021 at 12:00:00 UTC</p></li>
+<li><p>releases 100 on January 1st 2022 at 12:00:00 UTC</p></li>
+<li><p>releases 150 on February 15th 2022 at 12:00:00 UTC</p></li>
+<li><p>releases 200 on December 31st 2022 at 12:00:00 UTC</p></li>
 </ul>
-<p>would be done with the following command:</p>
+<p>Use the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-scheduled --schedule <span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span> --receiver B --sender A
 </pre></div>
 </div>
-<p>Querying account information of the receiver account afterwards, will show the
-list of releases that are still pending to be released:</p>
+<p>If you query the account information of the recipient account afterwards, it will show the list of releases that are still pending to be released:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show B
 <span class="go">Local name:            B</span>
 <span class="go">Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ</span>
@@ -617,7 +576,7 @@ list of releases that are still pending to be released:</p>
 <span class="go">...</span>
 </pre></div>
 </div>
-<p>The amount that is not yet released is also accounted in the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> field
+<p>The amount that is not yet released is also included in the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> field
 so in this case the account owns <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">GTU</span></code> that don’t belong to any pending
 release schedule.</p>
 </div>
