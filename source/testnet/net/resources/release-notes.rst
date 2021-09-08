@@ -8,6 +8,41 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v6:
+
+Open Testnet v6
+===============
+
+September 14, 2021
+
+Concordium node
+---------------
+
+The Concordium node release implements a protocol update to add memo functionality for simple and shielded transactions. This means that node runners must upgrade their nodes before the new protocol takes effect. Old nodes will stop processing new blocks at that point.
+
+- Added memo functionality for transactions to Protocol
+- Windows support for running Node
+- MAC support for running node
+- MAC ARM M1 support for running Node
+
+Concordium Desktop Wallet
+-------------------------
+
+- Memo functionality
+- Send support e-mail to Notabene with session id on failed id issuance
+- Apple MAC Arm M1 support
+- Account recovery from Ledger
+- Automatic updates
+- Check that node is up to date
+- Transaction view handling more than last 100 transactions
+- Open source
+
+Concordium Mobile Wallet
+------------------------
+
+- Memo functionality
+- Bug fixes
+
 .. _open-testnet-v5-update-4:
 
 Open Testnet v5 Update 4
