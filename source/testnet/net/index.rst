@@ -16,6 +16,7 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/run-node-windows
    guides/deciding-wallet
    guides/overview-desktop
    guides/multisig-transfer
@@ -75,6 +76,7 @@
    references/manage-accounts
    references/transactions
    references/query-node
+   references/node-runner-service-configuration
 
 .. toctree::
    :maxdepth: 1
