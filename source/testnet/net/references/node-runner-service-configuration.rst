@@ -13,7 +13,7 @@ The Concordium Node Runner Service ("service" for short) is configured using a T
 
 The service can be configured to run multiple nodes. Each node has its own section **[node.nodeid]** (where *nodeid* is a different identifier for each node), which defines the settings for that node.
 
-Some settings can be shared among multiple nodes if they are specified in the section **[common]**. If a setting is present in **[common]** but not in **[node.*nodeid*]**, then the value from **[common]** will be used. If it is present in both, then [node.nodeid] takes precedence. Settings that can be set in **[common]** are indicated below by the word "common".
+Some settings can be shared among multiple nodes if they are specified in the section **[common]**. If a setting is present in **[common]** but not in **[node.**\ *nodeid*\ **]**, then the value from **[common]** will be used. If it is present in both, then **[node.**\ *nodeid*\ **]** takes precedence. Settings that can be set in **[common]** are indicated below by the word "common".
 
 Some settings are paths of files or folders on your system. Relative paths are resolved relative to the configuration file itself. (Be aware that ``\`` must be escaped in TOML's basic strings (delimited by ``""``) but not in literal strings (delimited by ``''``).)
 
