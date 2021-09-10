@@ -23,7 +23,7 @@ Some settings are paths of files or folders on your system. Relative paths are r
 name (string; default: nodeid)
 ------------------------------
 
-.. code-block:: console
+.. code-block:: TOML
 
    name = "Mainnet Node"
 
