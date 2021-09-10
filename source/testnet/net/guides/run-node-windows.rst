@@ -146,7 +146,7 @@ View the node log
 
 You can find the node log for testnet here:
 
--  C:\ProgramData\Concordium\Node Runner\testnet\logs
+-  ``C:\ProgramData\Concordium\Node Runner\testnet\logs``
 
 If you specified a different installation folder for the configuration and data, the path might be different.
 
