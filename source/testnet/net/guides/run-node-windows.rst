@@ -9,10 +9,10 @@ Run and manage a node on Windows
    :local:
    :backlinks: none
 
-This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>` or :ref:`Ubuntu <run-node-ubuntu>`.
+This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>` for Linux distributions or :ref:`Ubuntu <run-node-ubuntu>`.
 
 .. Note::
-      Currently, you can only run a Windows node on the testnet.
+      Currently, running a node on Windows is only supported on the testnet.
 
 Prequisites
 ===========
@@ -44,7 +44,7 @@ Install and run a node
 
    - **Start nodes after installation is complete**: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.
 
-   - **Mainnet** or **Testnet**: Select **run a testnet node**.
+   - **Mainnet** or **Testnet**: Clear **Run a mainnet node**, and make sure that **run a testnet node** is selected. Mainnet is the Concordium production blockchain where actual transactions occur, whereas testnet is for test and development.
 
    - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Go to the Testnet dashboard to view the statistics: https://dashboard.testnet.concordium.com/.
 
