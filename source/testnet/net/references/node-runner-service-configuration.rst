@@ -17,8 +17,8 @@ Some settings can be shared among multiple nodes if they are specified in the se
 
 Some settings are paths of files or folders on your system. Relative paths are resolved relative to the configuration file itself. (Be aware that ``\`` must be escaped in TOML's basic strings (delimited by ``""``) but not in literal strings (delimited by ``''``).)
 
-[node.nodeid]
-=============
+[node.\ *nodeid*]
+=================
 
 name (string; default: nodeid)
 ------------------------------
