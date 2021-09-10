@@ -180,10 +180,9 @@ The file is downloaded to your default download location.
 
 #. Add the following line to the [node.testnet] section:
 
-   .. code-block:: console
+   .. code-block:: TOML
 
-      node.args = ['--import-blocks-from',
-      'C:\Downloads\blocks_to_import.mdb']
+      node.args = ['--import-blocks-from', 'C:\Downloads\blocks_to_import.mdb']
 
    Where you replace ``C:\Downloads\blocks_to_import.mdb`` with the full path to the downloaded file. Save the configuration file.
 
