@@ -8,6 +8,29 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v6:
+
+Open Testnet v6
+===============
+
+September 15, 2021
+
+Concordium node
+---------------
+
+The Concordium node release implements a protocol update to add memo functionality for simple and shielded transactions. This means that node runners must upgrade their nodes before the new protocol takes effect. Old nodes will stop processing new blocks at that point.
+
+- Added memo functionality for transactions to Protocol
+- Windows support for running node
+- MAC support for running node
+- MAC ARM M1 support for running node
+
+Concordium Client
+-----------------
+
+- Memo functionality
+
+
 .. _open-testnet-v5-update-4:
 
 Open Testnet v5 Update 4
