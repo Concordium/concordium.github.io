@@ -72,6 +72,7 @@ The node runs as a background service with no user interface. To verify that it�
 
 #. Search for *task* in the **Search** bar, and then select **Task Manager**.
 #. Select the **Details** tab, and verify that the following is running:
+
    - ``node-runner-service.exe``, which is the service.
    - ``concordium-node.exe`` for each node you are running. For example, if you’re running a node on both testnet and mainnet, you’ll see two instances of concordium-node.exe.
    - ``node-collector.exe`` for each node that reports to the network dashboard.
