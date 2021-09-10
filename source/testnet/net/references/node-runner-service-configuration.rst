@@ -11,7 +11,7 @@ Concordium node runner service configuration
 
 The Concordium Node Runner Service ("service" for short) is configured using a TOML file. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.)
 
-The service can be configured to run multiple nodes. Each node has its own section **[node.nodeid]** (where *nodeid* is a different identifier for each node), which defines the settings for that node.
+The service can be configured to run multiple nodes. Each node has its own section **[node.**\ *nodeid*\ **]** (where *nodeid* is a different identifier for each node), which defines the settings for that node.
 
 Some settings can be shared among multiple nodes if they are specified in the section **[common]**. If a setting is present in **[common]** but not in **[node.**\ *nodeid*\ **]**, then the value from **[common]** will be used. If it is present in both, then **[node.**\ *nodeid*\ **]** takes precedence. Settings that can be set in **[common]** are indicated below by the word "common".
 
