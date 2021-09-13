@@ -9,9 +9,10 @@ Run and manage a node on macOS
    :backlinks: none
 
 This guide describes how to run and manage a node on macOS. You can also run a
-node using :ref:`Docker <run-a-node>` for Linux distributions or :ref:`Ubuntu
-<run-node-ubuntu>`.
+node using :ref:`Docker <run-a-node>` for Linux distributions, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
 
+.. Note::
+      Currently, running a node on macOS is only supported on the testnet.
 
 Prerequisites
 =============
@@ -30,16 +31,15 @@ Install and run a node
 #. In the folder where you downloaded the .pkg file, double-click the .pkg file.
    This will open the **Install Concordium Node** program.
 
-#. Click **Allow** to the prompt stating *This package will run a program to
+#. Click **Allow** to the message saying *This package will run a program to
    determine if the software can be installed.*
 
 #. If you already have a version of the node installed, click **OK** to the
-   prompt stating *Previous Installation Detected*.
+   message saying *Previous Installation Detected*.
 
 #. Click **Continue** on the *Introduction* page.
 
-#. Click **Continue** on the *License* page, then **Agree** to the license
-   agreement prompt.
+#. Click **Continue** on the *License* page, and then **Agree** to accept the license agreement.
 
 #. On the *Configuration* page you have the following options for both a
    mainnet and testnet node.
@@ -66,7 +66,7 @@ Install and run a node
      on the network dashboard if the node reports to the network dashboard. *NB:
      You must enter a name for both nodes, even if you only want to run one of them.*
 
-#. Once configured, click **Continue** to get to the *Installation Type* page.
+#. Once configured, click **Continue** to go to the *Installation Type* page.
 
 #. Click **Install** and enter your administrator password. The installer needs
    the password because it installs the node for all users and runs it as a
@@ -120,9 +120,9 @@ Change the node startup settings
 If you want to change whether the node services start automatically, you have
 two options.
 
-- For non-technical users, the easiest option is to reinstall the macOS node and configure it differently.
+- If you're not familiar with using a terminal, the easiest option is to reinstall the macOS node and configure it differently.
 
-- For technical users (familiarity with a terminal required) the following
+- If you're familiar with using a terminal, the following
   options are available:
 
   - Text prefixed with a ``$`` is to be run in a terminal.
@@ -176,9 +176,9 @@ You then have to change the service file for the Concordium Node.
 View node logs
 ==============
 
-The logs can be viewed in one of three ways:
+There are two ways to view the logs:
 
-- With *Console.app* you can start recording logs and view them, but not see
+- With *Console.app* you can start recording logs and view them, but you can't see
   logs from the past.
 
   - Open the application *Console**, click on the **Start** button to begin
@@ -256,5 +256,5 @@ Uninstall a macOS node
 
    - To delete the node and keep the data and keys, click **Yes**.
 
-   - To delete the node *and* data and keys, click **Yes, and delete data**.
+   - To delete the node as well as data and keys, click **Yes, and delete data**.
      (Make sure to back up your keys beforehand).
