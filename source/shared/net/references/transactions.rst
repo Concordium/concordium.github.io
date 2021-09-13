@@ -112,11 +112,11 @@ Apart from the generic transaction flags above, the parameters are:
 -  ``--amount``: number of GTU tokens to send.
 -  ``--receiver``: name or address of the receiver account.
 
-The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>` to the transfer. 
+The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>` to the transfer.
 
 -  ``--memo``: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and appear on chain as a bytestring representing the string.
 -  ``--memo-json``: optional flag for providing a transfer memo as a JSON file. The JSON will be CBOR encoded and appear on chain as a bytestring representing the provided JSON.
--  ``--memo-raw``: optional flag for providing a transfer memo as file with raw bytes. The raw bytes will go directly on chain. 
+-  ``--memo-raw``: optional flag for providing a transfer memo as file with raw bytes. The raw bytes will go directly on chain.
 
 
 Example: Transferring 25 GTU from one account to another
