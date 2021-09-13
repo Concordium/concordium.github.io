@@ -319,6 +319,8 @@ log.roll.pattern
 
 (string; optional)
 
+.. code-block:: TOML
+
    log.roll.pattern = 'node.{}.log.gz'
 
 Pattern for naming rolled logs. This pattern must contain ``{}``, which is replaced by the rolled log index. If the pattern is not specified, a pattern is constructed from **log.path** by adding ``.{}`` before the file extension (or at the end, if none is given).
