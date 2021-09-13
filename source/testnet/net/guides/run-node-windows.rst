@@ -130,11 +130,9 @@ Configure a node as baker
 
 To run a node as baker, you first have to generate baker keys in the desktop wallet and then register the keys on an account. For more information, see, :ref:`Add a baker account in the Desktop Wallet<create-baker-desktop>`. You then have to change the configuration file for the Concordium Node Service.
 
-You register the baker credentials on the testnet. We recommend that you add the baker credentials for the network that you created the credentials on, which in this case is the testnet. Don’t use the same baker credentials on both testnet and mainnet..
+You register the baker credentials on the testnet. We recommend that you add the baker credentials for the network that you created the credentials on, which in this case is the testnet. Don’t use the same baker credentials on both testnet and mainnet.
 
-#. Add the following in the ``[node.testnet]`` section:
-``baker_credentials = 'C:\path\to\baker-credentials.json'``
-replacing ``C:\path\to\baker-credentials.json`` with the full path to the baker credentials file.
+#. Add the following in the ``[node.testnet]`` section: ``baker_credentials = 'C:\path\to\baker-credentials.json'`` replacing ``C:\path\to\baker-credentials.json`` with the full path to the baker credentials file.
 
 #. Stop and restart the node runner service using the **Stop Concordium Service Node** and the **Start Concordium Service Node** shortcuts. Don’t use End task in the Task Manager as it might cause errors.
 
