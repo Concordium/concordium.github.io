@@ -115,7 +115,7 @@ Apart from the generic transaction flags above, the parameters are:
 The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>` to the transfer.
 
 -  ``--memo``: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and included in the memo.
--  ``--memo-json``: optional flag for providing a transfer memo as a JSON file. The JSON will be CBOR encoded and appear on chain as a bytestring representing the provided JSON.
+-  ``--memo-json``: optional flag for providing a transfer memo as a JSON file. The JSON contents of the file will be CBOR encoded and included in the memo.
 -  ``--memo-raw``: optional flag for providing a transfer memo as file with raw bytes. The raw bytes will go directly on chain.
 
 
