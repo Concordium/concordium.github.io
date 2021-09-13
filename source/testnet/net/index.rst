@@ -16,6 +16,7 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/run-node-windows
    guides/run-node-macos
    guides/deciding-wallet
    guides/overview-desktop
@@ -76,6 +77,7 @@
    references/manage-accounts
    references/transactions
    references/query-node
+   references/node-runner-service-configuration
 
 .. toctree::
    :maxdepth: 1
