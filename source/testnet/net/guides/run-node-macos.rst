@@ -170,6 +170,9 @@ You then have to change the service file for the Concordium Node.
 #. Replace ``/full/path/to/baker-credentials.json`` with the full path to the
    baker credentials files.
 
+#. Restart your node by running **Concordium Node Stop Testnet** (if running) and then
+   **Concordium Node Start Testnet**.
+
 View node logs
 ==============
 
@@ -197,6 +200,49 @@ The logs can be viewed in one of three ways:
 
   - You can filter the logs with additional parameters, such as start and end
     date. Enter ``log show --help`` to see the parameters available.
+
+Synchronize a node with the network
+===================================
+
+When you start a node for the first time, it can take a while to synchronize the
+node with the rest of the network, since it has to get all blocks from its
+peers.
+
+You can improve the performance by downloading the blocks before starting the
+node. While it will still take time to process the blocks, it will typically be
+faster than requesting them from peers.
+
+Download the file with the blocks from the following addresses:
+
+-  Testnet: https://catchup.testnet.concordium.com/blocks_to_import.mdb.
+
+The file is downloaded to your default download location.
+
+#. Move the file to the node's data folder:
+
+   .. code-block:: console
+
+      sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
+
+   (replacing ``<username>`` with your actual username).
+
+#. Edit this service file as an administrator: ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist``
+
+#. In the *EnviromentVariables* section of the file add the following::
+
+    <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
+    <string>/Library/Application Support/Concordium Node/Testnet/Data/blocks_to_import.mdb</string>
+
+#. Restart your node by running the application **Concordium Node Stop Testnet** (if running) and then
+   **Concordium Node Start Testnet**.
+
+#. Open the service file again, remove the lines you just added, and then save
+   the file. This ensures that these blocks will not be processed again the next
+   time the node is restarted.
+
+#. Go to the testnet dashboard to monitor when the node has caught up with its
+   peers on the blockchain. You do so by comparing the finalized length of the
+   chain with the length of your node. If they match, your node has caught up.
 
 Uninstall a macOS node
 ======================
