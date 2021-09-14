@@ -15,8 +15,8 @@ Open Testnet v6
 
 September 15, 2021
 
-Concordium node
----------------
+Concordium Node v1.1.1
+----------------------
 
 The Concordium node release implements a protocol update to add memo functionality for simple and shielded transactions. This means that node runners must upgrade their nodes before the new protocol takes effect. Old nodes will stop processing new blocks at that point.
 
@@ -25,8 +25,8 @@ The Concordium node release implements a protocol update to add memo functionali
 - MAC support for running node
 - MAC ARM M1 support for running node
 
-Concordium Client
------------------
+Concordium Client v1.1.1
+------------------------
 
 - Memo functionality
 
