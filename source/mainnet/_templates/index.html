@@ -24,20 +24,58 @@
         <div class="feature">
             <div class="feature-box-mainnet">
                 <a href="{{ pathto('net/index') }}">
-                    <div class="feature-box-header">
+                    <div class="feature-box-header-mainnet">
                         <h1>Mainnet</h1>
                     </div>
                 </a>
-                <h3>How to create an account</h3>
+                <h3>Create an account</h3>
                 <ul class="feature-box-list">
                     <li><a href="{{ pathto('net/installation/downloads') }}">Download a wallet</a></li>
                     <li><a href="{{ pathto('net/desktop-wallet/create-identity-desktop') }}">Create your first account using <br> the Desktop Wallet</a></li>
                     <li><a href="{{ pathto('net/mobile-wallet/get-started') }}">Create your first account using <br> the Mobile Wallet</a></li>
                     <li><a href="{{ pathto('net/desktop-wallet/install-ledger-app') }}">Setup a Ledger Nano S for <br> the Desktop Wallet</a></li>
                 </ul>
+                <h3>Make a transfer</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('net/mobile-wallet/accounts-transactions') }}">Make a transfer with the mobile wallet</a></li>
+                    <li><a href="{{ pathto('net/desktop-wallet/send-gtu-single-desktop') }}">Make a transfer with the desktop wallet</a></li>
                 <h3>Participate in the network</h3>
                 <ul class="feature-box-list">
                     <li><a href="{{ pathto('net/guides/overview-baker-process') }}">Get an overview of the baker process</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-box-testnet">
+                <a href="{{ pathto('en/testnet/net/index') }}">
+                    <div class="feature-box-header-testnet">
+                        <h1>Testnet</h1>
+                    </div>
+                </a>
+                <h3>Create an account</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('en/testnet/net/installation/downloads') }}">Download a wallet</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/desktop-wallet/create-identity-desktop') }}">Create your first account using <br> the Desktop Wallet</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/mobile-wallet/get-started') }}">Create your first account using <br> the Mobile Wallet</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/desktop-wallet/install-ledger-app') }}">Setup a Ledger Nano S for <br> the Desktop Wallet</a></li>
+                </ul>
+                <h3>Make a transfer</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('en/testnet/net/mobile-wallet/accounts-transactions') }}">Make a transfer with the mobile wallet</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/desktop-wallet/send-gtu-single-desktop') }}">Make a transfer with the desktop wallet</a></li>
+                </ul>
+                <h3>Participate in the network</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('en/testnet/net/guides/run-node-windows') }}">Run a node on Windows</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/guides/run-node-macos') }}">Run a node on Mac</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/guides/guides/run-node') }}">Run a node on Linux</a></li>
+                    <li><a href="{{ pathto('en/testnet/net/guides/overview-baker-process') }}">Get an overview of the baker process</a></li>
+                </ul>
+                <h3>Smart Contracts</h3>
+                <ul class="feature-box-list">
+                    <li><a href="{{ pathto('en/testnet/smart-contracts/general/introduction') }}">Get started with smart contracts</a></li>
+                    <li><a href="{{ pathto('en/testnet/smart-contracts/guides/setup-tools') }}">Install the necessary tools</a></li>
+                    <li><a href="{{ pathto('en/testnet/smart-contracts/tutorials/piggy-bank/index') }}">Tutorial: Learn with the piggy bank  <br>  smart contract</a></li>
                 </ul>
             </div>
         </div>
@@ -108,7 +146,22 @@
             overflow: hidden;
         }
 
-        .feature-box-header {
+        .feature-box-testnet {
+            display: flex;
+            flex-direction: column;
+            background-color: #FBFBF9;
+            border-radius: 5px;
+            padding-bottom: 1em;
+            width: 350px;
+            text-align: center;
+            font-family: Lato;
+            border: 1px solid #34838C;
+            border-radius: 15px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .feature-box-header-mainnet {
             width: 100%;
             height: 50px;
             padding-top: 5px;
@@ -117,13 +170,33 @@
             border-bottom: 1px solid #4486AB;
         }
 
-        .feature-box-header:hover {
+        .feature-box-header-testnet {
+            width: 100%;
+            height: 50px;
+            padding-top: 5px;
+            background: #34838C;
+            color: #FFFFFF;
+            border-bottom: 1px solid #34838C;
+        }
+
+        .feature-box-header-mainnet:hover {
             background: #FBFBF9;
             color: #4486AB;
         }
 
+        .feature-box-header-testnet:hover {
+            background: #FBFBF9;
+            color: #34838C;
+        }
+
 
         .feature-box-mainnet h3 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: -2px;
+        }
+
+        .feature-box-testnet h3 {
             text-align: center;
             margin-top: 25px;
             margin-bottom: -2px;
@@ -142,6 +215,11 @@
         .feature-box-mainnet a:hover {
             text-align: center;
             color: #4486AB;
+        }
+
+        .feature-box-testnet a:hover {
+            text-align: center;
+            color: #34838C;
         }
 
         .feature p {
