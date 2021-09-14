@@ -104,7 +104,7 @@ highlight_language = "rust"
 #
 html_theme = "sphinx_rtd_theme"
 
-html_logo = "../shared/_static/concordium-logo.svg"
+html_logo = "../shared/_static/concordium-logo-mainnet.svg"
 html_favicon = "../shared/_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -120,7 +120,7 @@ html_theme_options = {
     'display_version': True,
     'prev_next_buttons_location': None,
     # 'style_external_links': False,
-    'style_nav_header_background': 'black',
+    'style_nav_header_background': '#4486AB',
     # # Toc options
     # 'collapse_navigation': False,
     # 'sticky_navigation': True,
