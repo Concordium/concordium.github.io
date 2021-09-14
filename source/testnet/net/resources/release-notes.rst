@@ -22,7 +22,7 @@ The :ref:`Concordium node release v1.1.1 <downloads>` implements a protocol upda
 
 - Added memo functionality for transactions to Protocol
 - Windows support for running node
-- MAC support for running node
+- Mac support for running node
 - MAC ARM M1 support for running node
 
 Concordium Client v1.1.1
