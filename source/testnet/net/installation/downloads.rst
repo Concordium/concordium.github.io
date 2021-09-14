@@ -11,19 +11,23 @@ Downloads
 
 This topics contains information about where you can download the Concordium tools and Concordium Wallets for |Net|. You can also find out about the hardware requirements for running a node.
 
-Mobile Wallet
-=============
+
+Concordium Mobile Wallet
+========================
 
 The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
-**iOS:**
+iOS
+----
 
 - To get the Concordium Mobile Wallet for Testnet on iOS, you must first install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`_ on your iPhone.
 - With TestFlight installed, follow `this link <https://testflight.apple.com/join/HZRi1WDT>`_ on your iPhone to join our beta.
 
-**Android:**
+Android
+-------
 
 - You can download the Android version of `Concordium Mobile Wallet for Testnet here. <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_
+
 
 Concordium Desktop Wallet
 =========================
@@ -40,6 +44,7 @@ Currently, the Desktop Wallet doesn't support Apple M1 Macs.
    - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.6.deb>`_
    - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.6.rpm>`_
 
+
 Concordium Ledger App
 =====================
 
@@ -48,6 +53,7 @@ Concordium Ledger App
 This version of the Ledger App is the same as the one used for Mainnet, so if you already have that installed, you do not need to install this version.
 
 .. _concordium-node-and-client-download:
+
 
 Concordium Client
 =================
@@ -83,16 +89,25 @@ Download cargo-concordium:
 -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe>`_
 
 
+Concordium Node Distributions
+=============================
+
 Node Debian package
-===================
+-------------------
 To run a node on a server with Ubuntu, you'll need to `download a Debian package <https://distribution.testnet.concordium.com/deb/concordium-node_1.0.1-testnet_amd64.deb>`_.
 
 
-Full suite for running a node using Docker
-===========================================
+Full suite for running a node on Linux using Docker
+---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
 - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.0.1-testnet.tar.gz>`_
+
+Native Windows Node
+-------------------
+
+Native Mac Node
+----------------
 
 .. _requirements-run-node:
 
