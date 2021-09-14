@@ -18,7 +18,7 @@ September 15, 2021
 Concordium Node v1.1.1
 ----------------------
 
-The :ref:`Concordium node release v1.1.1 <downloads>` implements a protocol update to add memo functionality for simple and shielded transactions. This means that node runners must upgrade their nodes before the new protocol takes effect. Old nodes will stop processing new blocks at that point.
+The :ref:`Concordium node release v1.1.1 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers. This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on September 22, 2021. Old nodes will stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
 
 - Added memo functionality for transactions to Protocol
 - Windows support for running node
