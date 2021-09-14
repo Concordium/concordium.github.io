@@ -1,9 +1,9 @@
 
 .. _send-GTU-single-desktop:
 
-=========================================================
-Create a single signer GTU transfer in the Desktop Wallet
-=========================================================
+=========================================
+Create GTU transfer in the Desktop Wallet
+=========================================
 
 .. contents::
     :local:
@@ -13,7 +13,7 @@ Create a single signer GTU transfer in the Desktop Wallet
 Send GTU from an account
 ========================
 
-This topic describes how you can send GTU from an account with only one signer and without a schedule. If you want to learn about sending GTU with a schedule, see :ref:`Create a single signer GTU transfer with a schedule <GTU-single-schedule-desktop>`.
+This topic describes how you can send GTU from an account, when only one participant is required to sign the transfer. If you want to learn about sending GTU with a schedule, see :ref:`Create a single signer GTU transfer with a schedule <GTU-single-schedule-desktop>`.
 
 #. Go to **Accounts** and select the relevant account.
 
@@ -30,4 +30,3 @@ This topic describes how you can send GTU from an account with only one signer a
 #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.
 
 #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**.
-

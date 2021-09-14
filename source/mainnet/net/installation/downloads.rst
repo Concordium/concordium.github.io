@@ -39,7 +39,11 @@ Concordium Desktop Wallet
 
 -  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.6.exe>`_
 
+   -  SHA256 checksum of the download: ``58bceb96a9ff752530260f4b6c7aa4c6397901886ff67b6204a9d1990e8058ea``
+
 -  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.6.dmg>`_
+
+   -  SHA256 checksum of the download: ``53554244918ee58136317c3493d837bda9d633ea2674c4d364563553fc3838e8``
 
 Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
 
@@ -47,9 +51,15 @@ Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
 
    -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.AppImage>`_
 
+      - SHA256 checksum of the download: ``5865abbf3351690c44240e10781b39cf1ab9f7e725cecd5bd23b240a3e748a95``
+
    -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.deb>`_
 
+      - SHA256 checksum of the download: ``20aac964690154bd9afd11c72357b6082cd5437f1d7caa11e3110c606e204da1``
+
    -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.rpm>`_
+
+      - SHA256 checksum of the download: ``2cd5a59b54691b3a33d37ec0789a4adc30893dba6c31fd64fd4cb01d195a270a``
 
 Concordium Ledger App
 =====================
@@ -64,8 +74,11 @@ Download the Concordium Client:
 
 -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.0.1>`_
 
+   - SHA256 checksum of the download: ``bae20cf3bc93dbafc58a7b1eae462375ef3cfba2cc4905bf872735aa8233d98c``
+
 -  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
 
+   - SHA256 checksum of the download: ``4495b0ae1ff6e343f23b57f3544d4a2c73502a3f8b23509ae48025cfffcc18a4``
    - You need to make the client executable by running ``chmod +x
      path/to/concordium-client_1.0.1`` in a terminal. Make sure to provide the
      correct path to the downloaded client.
@@ -73,6 +86,8 @@ Download the Concordium Client:
      settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
 
 -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
+
+   -  SHA256 checksum of the download: ``db3bbce100749f36f7b143d915f573ea28a4dc09011cec35efea73f2165db79f``
 
 
 Cargo-concordium
@@ -114,6 +129,8 @@ Download the block separately to inspect it or to run a node in a custom configu
 - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
   - SHA256 checksum of the download: ``5fe6a62824d5b0dba6143243e90987ddf3e15cca079f21992de04d078d9ea6dc``
+
+.. _requirements-run-node:
 
 Requirements for running a node
 ===============================
