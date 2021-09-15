@@ -405,6 +405,15 @@ sender account must sign the transaction to authorize it. (The exception to this
 is a credential deployment transaction that creates a new account, which does
 not have a sender account.)
 
+.. _glossary-transfer-memo:
+
+Transfer Memo
+=============
+
+Additional data that a user can provide when making a transfer, a shielded transfer or a transfer with schedule.
+The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings,
+numbers and JSON values, but this is not enforced.
+
 .. _glossary-transfer-with-schedule:
 
 Transfer with schedule
