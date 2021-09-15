@@ -111,7 +111,6 @@ Native Windows node
 To run a node on Windows, you need a Windows Installer package.
 
 - `Download the Windows Installer package<https://distribution.concordium.software/windows/Signed/Node-1.1.1.msi>`
--------------------
 
 Native Mac node
 ----------------
