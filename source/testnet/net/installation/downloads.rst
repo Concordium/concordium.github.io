@@ -58,34 +58,34 @@ Concordium Client
 =================
 Download the Concordium Client:
 
--  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.0.1>`_
+-  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0>`_
 
--  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
+-  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.1.1-0>`_.
 
    - You need to make the client executable by running ``chmod +x
-     path/to/concordium-client_1.0.1`` in a terminal. Make sure to provide the
+     path/to/concordium-client_1.1.1-0`` in a terminal. Make sure to provide the
      correct path to the downloaded client.
    - You also need to `grant it permission to run in your Security & Privacy
      settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
 
--  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
+-  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.1.1-0.exe>`_
 
 
 Cargo-concordium
 ================
 Download cargo-concordium:
 
--  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0>`_
+-  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-0>`_
 
--  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0>`_
+-  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-0>`_
 
    - You need to make the tool executable by running ``chmod +x
-     path/to/cargo-concordium_1.0.0`` in a terminal. Make sure to provide the
+     path/to/cargo-concordium_1.0.0-0`` in a terminal. Make sure to provide the
      correct path to the downloaded tool.
    - You also need to `grant it permission to run in your Security & Privacy
      settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
 
--  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe>`_
+-  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-0.exe>`_
 
 
 Concordium node distributions
@@ -95,14 +95,14 @@ Node Debian package
 -------------------
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-node_1.0.1-testnet_amd64.deb>`_.
+- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.1_amd64.deb>`_.
 
 
 Full suite for running a node on Linux using Docker
 ---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.0.1-testnet.tar.gz>`_
+- `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.1.1-testnet.tar.gz>`_
 
 Native Windows node
 ------------------------
