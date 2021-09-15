@@ -89,7 +89,7 @@ Download cargo-concordium:
 -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe>`_
 
 
-Concordium Node Distributions
+Concordium node distributions
 =============================
 
 Node Debian package
