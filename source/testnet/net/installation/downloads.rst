@@ -60,15 +60,9 @@ Download the Concordium Client:
 
 -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0>`_
 
--  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.1.1-0>`_
+-  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_1.1.1-0.zip>`_
 
-   - You need to make the client executable by running ``chmod +x
-     path/to/concordium-client_1.1.1-0`` in a terminal. Make sure to provide the
-     correct path to the downloaded client.
-   - You also need to `grant it permission to run in your Security & Privacy
-     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
-
--  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.1.1-0.exe>`_
+-  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_1.1.1-0.exe>`_
 
 
 Cargo-concordium
@@ -121,7 +115,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/concordium-node-1.1.1.pkg>`_
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 

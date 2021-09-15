@@ -32,7 +32,8 @@ Install and run a node
    This will open the **Install Concordium Node** program.
 
 #. Click **Allow** to the message saying *This package will run a program to
-   determine if the software can be installed.*
+   determine if the software can be installed.* If you have an M1 based Mac, the installer
+   may ask you to install Rosetta, if you haven't already. Click **Install** if that's the case.
 
 #. If you already have a version of the node installed, click **OK** to the
    message saying *Previous Installation Detected*.
