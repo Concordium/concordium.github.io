@@ -26,7 +26,7 @@ iOS
 Android
 -------
 
-- Download the Android version of `Concordium Mobile Wallet for Testnet. <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_
+- `Download the Android version of Concordium Mobile Wallet for Testnet. <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk>`_
 
 
 Concordium Desktop Wallet
@@ -36,14 +36,13 @@ Concordium Desktop Wallet
 
 - `Download the Testnet version of Concordium Desktop Wallet for MacOS. <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.6.dmg>`_
 
-Currently, the Desktop Wallet doesn't support Apple M1 Macs.
-
 - Download the Testnet version of Concordium Desktop Wallet for Linux:
 
    - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.6.AppImage>`_
    - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.6.deb>`_
    - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.1.6.rpm>`_
 
+Currently, the Desktop Wallet doesn't support Apple M1 Macs.
 
 Concordium Ledger App
 =====================
@@ -110,14 +109,14 @@ Native Windows node
 
 To run a node on Windows, you need a Windows Installer package.
 
-- `Download the Windows Installer package<https://distribution.concordium.software/windows/Signed/Node-1.1.1.msi>`
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.1.msi>`_
 
 Native Mac node
 ----------------
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package<https://distribution.concordium.software/macos/concordium-node-1.1.1.pkg>`
+- `Download the macOS installer package <https://distribution.concordium.software/macos/concordium-node-1.1.1.pkg>`_
 
 .. _requirements-run-node:
 
@@ -138,7 +137,6 @@ System requirements
 -  Minimum 16 GB of RAM.
 
 -  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
-
 
 
 *Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
