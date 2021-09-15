@@ -9,7 +9,7 @@ Downloads
    :local:
    :backlinks: none
 
-This topics contains information about where you can download the Concordium tools and Concordium Wallets for |Net|. You can also find out about the hardware requirements for running a node.
+This topic contains information about where you can download the Concordium tools and Concordium Wallets for |Net|. You can also find out about the hardware requirements for running a node.
 
 
 Concordium Mobile Wallet
