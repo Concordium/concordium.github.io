@@ -117,7 +117,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package<https://distribution.concordium.software/macos/concordium-node-1.1.1.pkg>
+- `Download the macOS installer package<https://distribution.concordium.software/macos/concordium-node-1.1.1.pkg>`
 
 .. _requirements-run-node:
 
