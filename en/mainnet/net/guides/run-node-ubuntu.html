@@ -59,7 +59,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
+        <div class="wy-side-nav-search"  style="background: #4486AB" >
           
 
 
@@ -69,7 +69,7 @@
 
           
             
-            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+            <img src="../../_static/concordium-logo-mainnet.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -111,6 +111,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run a node on a server with Ubuntu</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrade-from-version-1-0-1-to-1-1-0">Upgrade from version 1.0.1 to 1.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -249,18 +250,20 @@
 <span id="run-node-ubuntu"></span><h1>Run a node on a server with Ubuntu<a class="headerlink" href="#run-a-node-on-a-server-with-ubuntu" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p>
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#upgrade-from-version-1-0-1-to-1-1-0" id="id2">Upgrade from version 1.0.1 to 1.1.0</a></p>
 <ul>
-<li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id2">Install the Debian package and run a node</a></p></li>
+<li><p><a class="reference internal" href="#changes-to-node-management-in-version-1-1-0" id="id3">Changes to node management in version 1.1.0</a></p></li>
+<li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id4">Install the Debian package and run a node</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#run-a-baker-node-on-ubuntu" id="id3">Run a baker node on Ubuntu</a></p>
+<li><p><a class="reference internal" href="#run-a-baker-node-on-ubuntu" id="id5">Run a baker node on Ubuntu</a></p>
 <ul>
-<li><p><a class="reference internal" href="#configure-the-node-with-baker-keys" id="id4">Configure the node with baker keys</a></p></li>
-<li><p><a class="reference internal" href="#verify-that-a-node-is-a-baker-node" id="id5">Verify that a node is a baker node.</a></p></li>
+<li><p><a class="reference internal" href="#configure-the-node-with-baker-keys" id="id6">Configure the node with baker keys</a></p></li>
+<li><p><a class="reference internal" href="#verify-that-a-node-is-a-baker-node" id="id7">Verify that a node is a baker node.</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id8">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a <a class="reference internal" href="#baker-node-ubuntu"><span class="std std-ref">baker node</span></a>.</p>
@@ -272,9 +275,55 @@
 <li><p>The server must be running around the clock.</p></li>
 <li><p>If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.</p></li>
 </ul>
+</div>
+<div class="section" id="upgrade-from-version-1-0-1-to-1-1-0">
+<h2>Upgrade from version 1.0.1 to 1.1.0<a class="headerlink" href="#upgrade-from-version-1-0-1-to-1-1-0" title="Permalink to this headline">¶</a></h2>
+<p>To upgrade from version <cite>1.0.1</cite> of the <cite>concordium-node</cite> package to version <cite>1.1.0</cite> of the <cite>concordium-mainnet-node</cite> package
+package you need to</p>
+<ol class="arabic">
+<li><p>Remove the existing package</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt remove --purge concordium-node</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node’s configuration and data directories.</p>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Install the new package</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_1.1.0_amd64.deb</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>This step will perform automatic database migration, so that the new node will
+not have to catch up from scratch. After installation is completed, the node and
+the collector will be started as before.</p>
+</div></blockquote>
+<div class="section" id="changes-to-node-management-in-version-1-1-0">
+<h3>Changes to node management in version 1.1.0<a class="headerlink" href="#changes-to-node-management-in-version-1-1-0" title="Permalink to this headline">¶</a></h3>
+<p>There are two main differences from version 1.0.1.</p>
+<ol class="arabic simple">
+<li><p>The services are named <cite>concordium-mainnet-node</cite> and
+<cite>concordium-mainnet-node-collector</cite> instead of <cite>concordium-node</cite> and
+<cite>concordium-node-collector</cite>. This means that all
+<cite>journalctl</cite> and <cite>systemctl</cite> commands must use the new service names. Any
+drop-in files that you may have will need to be moved and updated, e.g., the
+node settings overrride should be renamed from the old
+<cite>/etc/systemd/system/concordium-node.service.d/override.conf</cite> to
+<cite>/etc/systemd/system/concordium-mainnet-node.service.d/override.conf</cite></p></li>
+<li><p>The environment variables that are used to configure the node have been renamed.
+There is no longer a <cite>concordium-node-wrapper</cite> script, instead the  node binary directly supports configuration via environment variables.
+See <a class="reference external" href="https://github.com/Concordium/concordium-node/tree/main/scripts/distribution/ubuntu-packages#configuration-of-the-node">Building .deb packages for Ubuntu distributions README from Concordium</a> for details and the most common environment variables to adjust.</p></li>
+</ol>
+</div>
 <div class="section" id="install-the-debian-package-and-run-a-node">
 <h3>Install the Debian package and run a node<a class="headerlink" href="#install-the-debian-package-and-run-a-node" title="Permalink to this headline">¶</a></h3>
-<p>To run the node, you must install a Debian package. After installation, the <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> and <code class="docutils literal notranslate"><span class="pre">concordium-node-collector</span></code> services will be started.</p>
+<p>To run the node, you must install a Debian package.
+After installation, the <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node</span></code> and <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node-collector</span></code> services will be started.
+The services are also enabled to start automatically on system start.</p>
 <ol class="arabic">
 <li><p>Download the <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Debian package</span></a></p></li>
 <li><p>Install the package:</p>
@@ -285,13 +334,13 @@
 </ol>
 <blockquote>
 <div><p>Where <code class="docutils literal notranslate"><span class="pre">path-to-downloaded-package</span></code> is the location of the downloaded <code class="docutils literal notranslate"><span class="pre">.deb</span></code> file.</p>
-<p>The path should be absolute, e.g., <code class="docutils literal notranslate"><span class="pre">./concordium-node.deb</span></code>, otherwise <code class="docutils literal notranslate"><span class="pre">apt</span></code> will assume that you want to install a package from the registry.</p>
+<p>The path should be absolute, e.g., <code class="docutils literal notranslate"><span class="pre">./concordium-mainnet-node.deb</span></code>, otherwise <code class="docutils literal notranslate"><span class="pre">apt</span></code> will assume that you want to install a package from the registry.</p>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li><p>Enter a <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">name</span></code> when prompted. The node name is visible on the network dashboard. When you have installed the services, the <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> will be running automatically.</p></li>
+<li><p>Enter a <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">name</span></code> when prompted. The node name is visible on the network dashboard. When you have installed the services, the <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node</span></code> will be running automatically.</p></li>
 <li><p>To verify that the node is running, go to the <a class="reference external" href="https://dashboard.mainnet.concordium.software/">Concordium dashboard</a> and look for a node with the name you provided.</p></li>
 </ol>
-<p>The <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node</span></code> service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you want more detailed information about building and maintaining a node, or if your node is not running, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md">Building .deb packages for ubuntu distributions README from Concordium</a></p>
@@ -304,28 +353,30 @@
 <div class="section" id="configure-the-node-with-baker-keys">
 <h3>Configure the node with baker keys<a class="headerlink" href="#configure-the-node-with-baker-keys" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p>Move the JSON file with the baker keys you generated in the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> to the server that’s running the node. Ensure that you have write permissions to the file. Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium/baker-credentials.json</span></code>.</p></li>
+<li><p>Move the JSON file with the baker keys you generated in the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> to the server that’s running the node.
+Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/baker-credentials.json</span></code>.</p></li>
 <li><p>In the terminal, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl edit concordium-node.service</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl edit concordium-mainnet-node.service</span>
 </pre></div>
 </div>
 </li>
 <li><p>Add the following snippet to the opened file (the file is empty the first time you open it):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
 
-<span class="go">Environment=BAKER_CREDENTIALS_FILE=&lt;/var/lib/concordium/baker-credentials.json&gt;</span>
+<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json</span>
+<span class="go">BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json</span>
 </pre></div>
 </div>
-<p>Where you replace the path with the actual location of the file.</p>
+<p>Where you replace the path <cite>/home/user/concordium/baker-credentials.json</cite> with the actual location of the file.</p>
 </li>
 <li><p>Save the edited file.</p></li>
 <li><p>Restart for the changes to take effect. Enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl restart concordium-node.service</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl restart concordium-mainnet-node.service</span>
 </pre></div>
 </div>
 </li>
 <li><p>To verify the node is running, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl status concordium-node</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl status concordium-mainnet-node.service</span>
 </pre></div>
 </div>
 </li>
@@ -333,7 +384,7 @@
 </div>
 <div class="section" id="verify-that-a-node-is-a-baker-node">
 <h3>Verify that a node is a baker node.<a class="headerlink" href="#verify-that-a-node-is-a-baker-node" title="Permalink to this headline">¶</a></h3>
-<p>Two epochs (link) must have elapsed before you can see the baker ID of the node on the dashboard.</p>
+<p>Two <a class="reference internal" href="../resources/glossary.html#glossary"><span class="std std-ref">epochs</span></a> must have elapsed before you can see the baker ID of the node on the dashboard.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to see the status of the node. For more information, see <a class="reference internal" href="../references/concordium-client.html#concordium-client"><span class="std std-ref">Concordium Client</span></a>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetNodeInfo
 

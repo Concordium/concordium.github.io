@@ -59,7 +59,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
+        <div class="wy-side-nav-search"  style="background: #4486AB" >
           
 
 
@@ -69,7 +69,7 @@
 
           
             
-            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+            <img src="../../_static/concordium-logo-mainnet.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -372,6 +372,12 @@ are described in the following table.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: number of GTU tokens to send.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--receiver</span></code>: name or address of the receiver account.</p></li>
+</ul>
+<p>The following flags are for adding a <a class="reference internal" href="../resources/glossary.html#glossary-transfer-memo"><span class="std std-ref">transfer memo</span></a> to the transfer.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--memo</span></code>: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and included in the memo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--memo-json</span></code>: optional flag for providing a transfer memo as a JSON file. The JSON contents of the file will be CBOR encoded and included in the memo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--memo-raw</span></code>: optional flag for providing a transfer memo as is. The contents of the file will be included in the memo as is without any additional encoding.</p></li>
 </ul>
 <div class="section" id="example-transferring-25-gtu-from-one-account-to-another">
 <h4>Example: Transferring 25 GTU from one account to another<a class="headerlink" href="#example-transferring-25-gtu-from-one-account-to-another" title="Permalink to this headline">¶</a></h4>

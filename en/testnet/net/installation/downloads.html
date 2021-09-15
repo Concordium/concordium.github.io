@@ -59,7 +59,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #2980b9" >
+        <div class="wy-side-nav-search"  style="background: #34838C" >
           
 
 
@@ -69,7 +69,7 @@
 
           
             
-            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+            <img src="../../_static/concordium-logo-testnet.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -106,13 +106,12 @@
               <p class="caption"><span class="caption-text">Installation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Downloads</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mobile-wallet">Mobile Wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concordium-mobile-wallet">Concordium Mobile Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#concordium-desktop-wallet">Concordium Desktop Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#concordium-ledger-app">Concordium Ledger App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#concordium-client">Concordium Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cargo-concordium">Cargo-concordium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#node-debian-package">Node Debian package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#full-suite-for-running-a-node-using-docker">Full suite for running a node using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concordium-node-distributions">Concordium node distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requirements-for-running-a-node">Requirements for running a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -122,6 +121,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -173,6 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
@@ -255,43 +257,55 @@
 <span id="id1"></span><h1>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mobile-wallet" id="id3">Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id4">Concordium Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#concordium-ledger-app" id="id5">Concordium Ledger App</a></p></li>
-<li><p><a class="reference internal" href="#concordium-client" id="id6">Concordium Client</a></p></li>
-<li><p><a class="reference internal" href="#cargo-concordium" id="id7">Cargo-concordium</a></p></li>
-<li><p><a class="reference internal" href="#node-debian-package" id="id8">Node Debian package</a></p></li>
-<li><p><a class="reference internal" href="#full-suite-for-running-a-node-using-docker" id="id9">Full suite for running a node using Docker</a></p></li>
-<li><p><a class="reference internal" href="#requirements-for-running-a-node" id="id10">Requirements for running a node</a></p>
+<li><p><a class="reference internal" href="#concordium-mobile-wallet" id="id2">Concordium Mobile Wallet</a></p>
 <ul>
-<li><p><a class="reference internal" href="#system-requirements" id="id11">System requirements</a></p></li>
+<li><p><a class="reference internal" href="#ios" id="id3">iOS</a></p></li>
+<li><p><a class="reference internal" href="#android" id="id4">Android</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id12">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id5">Concordium Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#concordium-ledger-app" id="id6">Concordium Ledger App</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client" id="id7">Concordium Client</a></p></li>
+<li><p><a class="reference internal" href="#cargo-concordium" id="id8">Cargo-concordium</a></p></li>
+<li><p><a class="reference internal" href="#concordium-node-distributions" id="id9">Concordium node distributions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#node-debian-package" id="id10">Node Debian package</a></p></li>
+<li><p><a class="reference internal" href="#full-suite-for-running-a-node-on-linux-using-docker" id="id11">Full suite for running a node on Linux using Docker</a></p></li>
+<li><p><a class="reference internal" href="#native-windows-node" id="id12">Native Windows node</a></p></li>
+<li><p><a class="reference internal" href="#native-mac-node" id="id13">Native Mac node</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#requirements-for-running-a-node" id="id14">Requirements for running a node</a></p>
+<ul>
+<li><p><a class="reference internal" href="#system-requirements" id="id15">System requirements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>This topics contains information about where you can download the Concordium tools and Concordium Wallets for Testnet. You can also find out about the hardware requirements for running a node.</p>
-<div class="section" id="mobile-wallet">
-<h2>Mobile Wallet<a class="headerlink" href="#mobile-wallet" title="Permalink to this headline">¶</a></h2>
+<p>This topic contains information about where you can download the Concordium tools and Concordium Wallets for Testnet. You can also find out about the hardware requirements for running a node.</p>
+<div class="section" id="concordium-mobile-wallet">
+<h2>Concordium Mobile Wallet<a class="headerlink" href="#concordium-mobile-wallet" title="Permalink to this headline">¶</a></h2>
 <p>The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.</p>
-<p><strong>iOS:</strong></p>
+<div class="section" id="ios">
+<h3>iOS<a class="headerlink" href="#ios" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://apps.apple.com/us/app/testflight/id899247664">TestFlight</a> on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.</p></li>
+<li><p>Follow <a class="reference external" href="https://testflight.apple.com/join/HZRi1WDT">this link</a> on your iPhone to join our beta. You must have TestFlight installed.</p></li>
+</ol>
+</div>
+<div class="section" id="android">
+<h3>Android<a class="headerlink" href="#android" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>To get the Concordium Mobile Wallet for Testnet on iOS, you must first install <a class="reference external" href="https://apps.apple.com/us/app/testflight/id899247664">TestFlight</a> on your iPhone.</p></li>
-<li><p>With TestFlight installed, follow <a class="reference external" href="https://testflight.apple.com/join/HZRi1WDT">this link</a> on your iPhone to join our beta.</p></li>
+<li><p><a class="reference external" href="http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk">Download the Android version of Concordium Mobile Wallet for Testnet</a></p></li>
 </ul>
-<p><strong>Android:</strong></p>
-<ul class="simple">
-<li><p>You can download the Android version of <a class="reference external" href="http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.7(46).apk">Concordium Mobile Wallet for Testnet here.</a></p></li>
-</ul>
+</div>
 </div>
 <div class="section" id="concordium-desktop-wallet">
 <h2>Concordium Desktop Wallet<a class="headerlink" href="#concordium-desktop-wallet" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.1.6.exe">Download the Testnet version of Concordium Desktop Wallet for Windows.</a></p></li>
-<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.6.dmg">Download the Testnet version of Concordium Desktop Wallet for MacOS.</a></p></li>
-</ul>
-<p>Currently, the Desktop Wallet doesn’t support Apple M1 Macs.</p>
 <ul>
+<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.1.6.exe">Download the Testnet version of Concordium Desktop Wallet for Windows</a></p></li>
+<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.1.6.dmg">Download the Testnet version of Concordium Desktop Wallet for MacOS</a></p></li>
 <li><p>Download the Testnet version of Concordium Desktop Wallet for Linux:</p>
 <blockquote>
 <div><ul class="simple">
@@ -302,11 +316,12 @@
 </div></blockquote>
 </li>
 </ul>
+<p>Currently, the Desktop Wallet doesn’t support Apple M1 Macs.</p>
 </div>
 <div class="section" id="concordium-ledger-app">
 <h2>Concordium Ledger App<a class="headerlink" href="#concordium-ledger-app" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.2-target-2.0.0.zip">Download the Concordium Ledger App.</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.2-target-2.0.0.zip">Download the Concordium Ledger App</a></p></li>
 </ul>
 <p>This version of the Ledger App is the same as the one used for Mainnet, so if you already have that installed, you do not need to install this version.</p>
 </div>
@@ -314,46 +329,62 @@
 <span id="concordium-node-and-client-download"></span><h2>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">¶</a></h2>
 <p>Download the Concordium Client:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/concordium-client_1.0.1">Download the Concordium Client for Linux</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/concordium-client_1.0.1">Download the Concordium Client for macOS</a>.</p>
-<ul>
-<li><p>You need to make the client executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span>
-<span class="pre">path/to/concordium-client_1.0.1</span></code> in a terminal. Make sure to provide the
-correct path to the downloaded client.</p></li>
-<li><p>You also need to <a class="reference external" href="https://support.apple.com/en-gb/guide/mac-help/mh40616/mac">grant it permission to run in your Security &amp; Privacy
-settings</a>.</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe">Download the Concordium Client for Windows</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0">Download the Concordium Client for Linux</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/concordium-client_1.1.1-0.zip">Download the Concordium Client for macOS</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/concordium-client_1.1.1-0.exe">Download the Concordium Client for Windows</a></p></li>
 </ul>
 </div>
 <div class="section" id="cargo-concordium">
 <h2>Cargo-concordium<a class="headerlink" href="#cargo-concordium" title="Permalink to this headline">¶</a></h2>
 <p>Download cargo-concordium:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0">Download cargo-concordium for Linux</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0">Download cargo-concordium for MacOS</a></p>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-0">Download cargo-concordium for Linux</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-0">Download cargo-concordium for MacOS</a></p>
 <ul>
 <li><p>You need to make the tool executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span>
-<span class="pre">path/to/cargo-concordium_1.0.0</span></code> in a terminal. Make sure to provide the
+<span class="pre">path/to/cargo-concordium_1.0.0-0</span></code> in a terminal. Make sure to provide the
 correct path to the downloaded tool.</p></li>
 <li><p>You also need to <a class="reference external" href="https://support.apple.com/en-gb/guide/mac-help/mh40616/mac">grant it permission to run in your Security &amp; Privacy
 settings</a>.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe">Download cargo-concordium for Windows</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-0.exe">Download cargo-concordium for Windows</a></p></li>
 </ul>
 </div>
+<div class="section" id="concordium-node-distributions">
+<h2>Concordium node distributions<a class="headerlink" href="#concordium-node-distributions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="node-debian-package">
-<h2>Node Debian package<a class="headerlink" href="#node-debian-package" title="Permalink to this headline">¶</a></h2>
-<p>To run a node on a server with Ubuntu, you’ll need to <a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-node_1.0.1-testnet_amd64.deb">download a Debian package</a>.</p>
+<h3>Node Debian package<a class="headerlink" href="#node-debian-package" title="Permalink to this headline">¶</a></h3>
+<p>To run a node on a server with Ubuntu, you need a Debian package.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.1_amd64.deb">Download the Debian package</a></p></li>
+</ul>
+<p>To learn how to run a node with Ubuntu, see <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>.</p>
 </div>
-<div class="section" id="full-suite-for-running-a-node-using-docker">
-<h2>Full suite for running a node using Docker<a class="headerlink" href="#full-suite-for-running-a-node-using-docker" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="full-suite-for-running-a-node-on-linux-using-docker">
+<h3>Full suite for running a node on Linux using Docker<a class="headerlink" href="#full-suite-for-running-a-node-on-linux-using-docker" title="Permalink to this headline">¶</a></h3>
 <p>Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.0.1-testnet.tar.gz">Download the suite for Linux</a></p></li>
+<li><p><a class="reference external" href="https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.1.1-testnet.tar.gz">Download the suite for Linux</a></p></li>
 </ul>
+<p>To learn how to run a node with Docker, see <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
+</div>
+<div class="section" id="native-windows-node">
+<h3>Native Windows node<a class="headerlink" href="#native-windows-node" title="Permalink to this headline">¶</a></h3>
+<p>To run a node on Windows, you need a Windows Installer package.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-1.1.1.msi">Download the Windows Installer package</a></p></li>
+</ul>
+<p>To learn how to run a node on Windows, see <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a></p>
+</div>
+<div class="section" id="native-mac-node">
+<h3>Native Mac node<a class="headerlink" href="#native-mac-node" title="Permalink to this headline">¶</a></h3>
+<p>To run a node on macOS, you need a macOS installer package.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-1.1.1.pkg">Download the macOS installer package</a></p></li>
+</ul>
+<p>To learn how to run a node on Mac, see <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
+</div>
 </div>
 <div class="section" id="requirements-for-running-a-node">
 <span id="requirements-run-node"></span><h2>Requirements for running a node<a class="headerlink" href="#requirements-for-running-a-node" title="Permalink to this headline">¶</a></h2>

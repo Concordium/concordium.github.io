@@ -60,7 +60,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
+        <div class="wy-side-nav-search"  style="background: #4486AB" >
           
 
 
@@ -70,7 +70,7 @@
 
           
             
-            <img src="../../_static/concordium-logo.svg" class="logo" alt="Logo"/>
+            <img src="../../_static/concordium-logo-mainnet.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -204,6 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#staked-amount">Staked Amount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testnet">Testnet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transaction">Transaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transfer-memo">Transfer Memo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transfer-with-schedule">Transfer with schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transaction-sequence-number">Transaction Sequence Number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unshielding">Unshielding</a></li>
@@ -564,6 +565,12 @@ sender account and a <a class="reference internal" href="#glossary-transaction-s
 sender account must sign the transaction to authorize it. (The exception to this
 is a credential deployment transaction that creates a new account, which does
 not have a sender account.)</p>
+</div>
+<div class="section" id="transfer-memo">
+<span id="glossary-transfer-memo"></span><h2>Transfer Memo<a class="headerlink" href="#transfer-memo" title="Permalink to this headline">¶</a></h2>
+<p>Additional data that a user can provide when making a transfer, a shielded transfer or a transfer with schedule.
+The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings,
+numbers and JSON values, but this is not enforced.</p>
 </div>
 <div class="section" id="transfer-with-schedule">
 <span id="glossary-transfer-with-schedule"></span><h2>Transfer with schedule<a class="headerlink" href="#transfer-with-schedule" title="Permalink to this headline">¶</a></h2>

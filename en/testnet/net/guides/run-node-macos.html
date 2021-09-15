@@ -1,0 +1,633 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Run and manage a node on macOS &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deciding between the Desktop Wallet and the Mobile Wallet" href="deciding-wallet.html" />
+    <link rel="prev" title="Run and manage a node on Windows" href="run-node-windows.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #34838C" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo-testnet.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run and manage a node on macOS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-and-run-a-node">Install and run a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verify-that-the-node-is-running">Verify that the node is running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-the-node-startup-settings">Change the node startup settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-a-node-as-a-baker">Configure a node as a baker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-node-logs">View node logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uninstall-a-macos-node">Uninstall a macOS node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-credentials.html">Add credentials to an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-credentials-file.html">Create a credentials file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Make a shielded transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Run and manage a node on macOS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/net/guides/run-node-macos.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-and-manage-a-node-on-macos">
+<span id="run-node-macos"></span><h1>Run and manage a node on macOS<a class="headerlink" href="#run-and-manage-a-node-on-macos" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#install-and-run-a-node" id="id2">Install and run a node</a></p></li>
+<li><p><a class="reference internal" href="#verify-that-the-node-is-running" id="id3">Verify that the node is running</a></p>
+<ul>
+<li><p><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet" id="id4">Connect a node to the Desktop Wallet</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id5">Change the node startup settings</a></p></li>
+<li><p><a class="reference internal" href="#configure-a-node-as-a-baker" id="id6">Configure a node as a baker</a></p></li>
+<li><p><a class="reference internal" href="#view-node-logs" id="id7">View node logs</a></p></li>
+<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id8">Synchronize a node with the network</a></p></li>
+<li><p><a class="reference internal" href="#uninstall-a-macos-node" id="id9">Uninstall a macOS node</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>This guide describes how to run and manage a node on macOS. You can also run a
+node using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a> for Linux distributions, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, running a node on macOS is only supported on the testnet.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Run macOS 10.14 or later.</p></li>
+<li><p>Have the administrator password to your computer.</p></li>
+<li><p>Meet the <a class="reference internal" href="../installation/downloads.html#requirements-run-node"><span class="std std-ref">minimum system requirements</span></a> for running
+a node.</p></li>
+</ul>
+</div>
+<div class="section" id="install-and-run-a-node">
+<h2>Install and run a node<a class="headerlink" href="#install-and-run-a-node" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>, and download the latest macOS installer
+package (.pkg file).</p></li>
+<li><p>In the folder where you downloaded the .pkg file, double-click the .pkg file.
+This will open the <strong>Install Concordium Node</strong> program.</p></li>
+<li><p>Click <strong>Allow</strong> to the message saying <em>This package will run a program to
+determine if the software can be installed.</em> If you have an M1 based Mac, the installer
+may ask you to install Rosetta, if you haven’t already. Click <strong>Install</strong> if that’s the case.</p></li>
+<li><p>If you already have a version of the node installed, click <strong>OK</strong> to the
+message saying <em>Previous Installation Detected</em>.</p></li>
+<li><p>Click <strong>Continue</strong> on the <em>Introduction</em> page.</p></li>
+<li><p>Click <strong>Continue</strong> on the <em>License</em> page, and then <strong>Agree</strong> to accept the license agreement.</p></li>
+<li><p>On the <em>Configuration</em> page you have the following options for both a
+mainnet and testnet node.</p>
+<ul class="simple">
+<li><p><strong>Run a [mainnet/testnet] node at start-up</strong>: When selected, the node runs
+when the system starts. Choose this option when you plan to use the node
+frequently and need it to be up-to-date at short notice. If you don’t
+select this option, you’ll have to start the node manually when required,
+for example, when you want to use the Desktop Wallet or concordium-client.
+If you choose to start the node manually, it might take longer for the node
+to get up-to-date with the blockchain depending on when the node was last
+up-to-date.</p></li>
+<li><p><strong>Start the node after installation is complete</strong>: The node will
+automatically start running after the installation is complete. Do not
+choose this option if you want to make further configuration changes before
+starting the node.</p></li>
+<li><p><strong>Report to the network dashboard</strong>: Select this option if you want to
+publish your node statistics to the relevant dashboard when the node is
+running. E.g. <a class="reference external" href="https://dashboard.testnet.concordium.com/">https://dashboard.testnet.concordium.com/</a> for testnet.</p></li>
+<li><p><strong>Public node name</strong>: Specify the name of your node as you want it to appear
+on the network dashboard if the node reports to the network dashboard. <em>NB:
+You must enter a name for both nodes, even if you only want to run one of them.</em></p></li>
+</ul>
+</li>
+<li><p>Once configured, click <strong>Continue</strong> to go to the <em>Installation Type</em> page.</p></li>
+<li><p>Click <strong>Install</strong> and enter your administrator password. The installer needs
+the password because it installs the node for all users and runs it as a
+system service.</p></li>
+<li><p>Once installed, click <strong>Close</strong>. The following helper-applications are now
+available on your computer (you can view them in the LaunchPad or in the
+<em>/Applications/Concordium Node</em> folder):</p>
+<ul class="simple">
+<li><p><strong>Concordium Node Start Mainnet</strong></p></li>
+<li><p><strong>Concordium Node Stop Mainnet</strong></p></li>
+<li><p><strong>Concordium Node Start Testnet</strong></p></li>
+<li><p><strong>Concordium Node Stop Testnet</strong></p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="verify-that-the-node-is-running">
+<h2>Verify that the node is running<a class="headerlink" href="#verify-that-the-node-is-running" title="Permalink to this headline">¶</a></h2>
+<p>The node runs as a background service with no user interface. To verify that
+it’s running, use the <strong>Activity Monitor</strong>.</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>Activity Monitor</strong> application from the LaunchPad.</p></li>
+<li><p>Look at the list and verify that the following is running:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> for each node you are running. For example, if you’re
+running a node on both testnet and mainnet, you’ll see two instances of
+concordium-node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">node-collector</span></code> for each node that reports to a network dashboard.</p></li>
+</ul>
+</li>
+<li><p>If the node is running properly and reporting to the network dashboard, you
+can see it on the dashboard: <a class="reference external" href="https://dashboard.testnet.concordium.com">https://dashboard.testnet.concordium.com</a>.</p></li>
+</ol>
+<div class="section" id="connect-a-node-to-the-desktop-wallet">
+<h3>Connect a node to the Desktop Wallet<a class="headerlink" href="#connect-a-node-to-the-desktop-wallet" title="Permalink to this headline">¶</a></h3>
+<p>You can also verify that a node is running by connecting it to the Desktop Wallet.</p>
+<ol class="arabic simple">
+<li><p>In the Desktop Wallet, go to <strong>Settings</strong>, and then select <strong>Node settings</strong>.</p></li>
+<li><p>For the testnet version of the Desktop Wallet, you must connect to a testnet node. In the <strong>Address</strong> field, enter <em>127.0.0.1</em> and in the <strong>Port field</strong> enter <em>10001</em>.</p></li>
+<li><p>Select <strong>Set connection</strong>. If the connection works and the node is running properly, there’s a message saying <em>Successfully connected</em>.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="change-the-node-startup-settings">
+<h2>Change the node startup settings<a class="headerlink" href="#change-the-node-startup-settings" title="Permalink to this headline">¶</a></h2>
+<p>If you want to change whether the node services start automatically, you have
+two options.</p>
+<ul>
+<li><p>If you’re not familiar with using a terminal, the easiest option is to reinstall the macOS node and configure it differently.</p></li>
+<li><p>If you’re familiar with using a terminal, the following
+options are available:</p>
+<ul class="simple">
+<li><p>Text prefixed with a <code class="docutils literal notranslate"><span class="pre">$</span></code> is to be run in a terminal.</p></li>
+<li><p>Enable automatic startup of the <em>node</em> by running:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo ln -s <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span> <span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Enable automatic startup of the <em>node-collector</em> by running:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo ln -s <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span> <span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Disable automatic startup of <em>node</em> by running:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Disable automatic startup of <em>node-collector</em> by running:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="configure-a-node-as-a-baker">
+<h2>Configure a node as a baker<a class="headerlink" href="#configure-a-node-as-a-baker" title="Permalink to this headline">¶</a></h2>
+<p>To run a node as baker, you first have to generate baker keys in the desktop
+wallet and then register the keys on an account. For more information, see,
+<a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.
+You then have to change the service file for the Concordium Node.</p>
+<ol class="arabic">
+<li><p>Edit this file as an administrator: <code class="docutils literal notranslate"><span class="pre">/Library/Concordium</span>
+<span class="pre">Node/LaunchDaemons/software.concordium.testnet.node.plist</span></code></p></li>
+<li><p>In the <em>EnviromentVariables</em> section of the file add the following:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">baker</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span>-&gt;
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">full</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">baker</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">/full/path/to/baker-credentials.json</span></code> with the full path to the
+baker credentials files.</p></li>
+<li><p>Restart your node by running <strong>Concordium Node Stop Testnet</strong> (if running) and then
+<strong>Concordium Node Start Testnet</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="view-node-logs">
+<h2>View node logs<a class="headerlink" href="#view-node-logs" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to view the logs:</p>
+<ul class="simple">
+<li><p>With <em>Console.app</em> you can start recording logs and view them, but you can’t see
+logs from the past.</p>
+<ul>
+<li><p>Open the application <em>Console*</em>, click on the <strong>Start</strong> button to begin
+recording logs.</p></li>
+<li><p>In the search bar, enter <code class="docutils literal notranslate"><span class="pre">software.concordium.testnet.node</span></code> and press
+enter.</p></li>
+<li><p>Then click on the small <strong>Any</strong> button in the search bar and select
+<strong>Subsystem</strong> from the list of options.</p></li>
+</ul>
+</li>
+<li><p>With a terminal and <em>log show</em> you can view logs from the past and as they are
+logged.</p>
+<ul>
+<li><p>Open a terminal.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">show</span> <span class="pre">--predicate</span> <span class="pre">'subsystem</span> <span class="pre">==</span>
+<span class="pre">&quot;software.concordium.testnet.node&quot;'</span></code></p></li>
+<li><p>You can filter the logs with additional parameters, such as start and end
+date. Enter <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">show</span> <span class="pre">--help</span></code> to see the parameters available.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="synchronize-a-node-with-the-network">
+<h2>Synchronize a node with the network<a class="headerlink" href="#synchronize-a-node-with-the-network" title="Permalink to this headline">¶</a></h2>
+<p>When you start a node for the first time, it can take a while to synchronize the
+node with the rest of the network, since it has to get all blocks from its
+peers.</p>
+<p>You can improve the performance by downloading the blocks before starting the
+node. While it will still take time to process the blocks, it will typically be
+faster than requesting them from peers.</p>
+<p>Download the file with the blocks from the following addresses:</p>
+<ul class="simple">
+<li><p>Testnet: <a class="reference external" href="https://catchup.testnet.concordium.com/blocks_to_import.mdb">https://catchup.testnet.concordium.com/blocks_to_import.mdb</a>.</p></li>
+</ul>
+<p>The file is downloaded to your default download location.</p>
+<ol class="arabic">
+<li><p>Move the file to the node’s data folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo cp &quot;/Users/&lt;username&gt;/Downloads/blocks_to_import.mdb&quot; &quot;/Library/Application Support/Concordium Node/Testnet/Data&quot;</span>
+</pre></div>
+</div>
+<p>(replacing <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your actual username).</p>
+</li>
+<li><p>Edit this service file as an administrator: <code class="docutils literal notranslate"><span class="pre">/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.testnet.node.plist</span></code></p></li>
+<li><p>In the <em>EnviromentVariables</em> section of the file add the following:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Testnet</span><span class="o">/</span><span class="n">Data</span><span class="o">/</span><span class="n">blocks_to_import</span><span class="p">.</span><span class="n">mdb</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Restart your node by running the application <strong>Concordium Node Stop Testnet</strong> (if running) and then
+<strong>Concordium Node Start Testnet</strong>.</p></li>
+<li><p>Open the service file again, remove the lines you just added, and then save
+the file. This ensures that these blocks will not be processed again the next
+time the node is restarted.</p></li>
+<li><p>Go to the testnet dashboard to monitor when the node has caught up with its
+peers on the blockchain. You do so by comparing the finalized length of the
+chain with the length of your node. If they match, your node has caught up.</p></li>
+</ol>
+</div>
+<div class="section" id="uninstall-a-macos-node">
+<h2>Uninstall a macOS node<a class="headerlink" href="#uninstall-a-macos-node" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Open <em>Spotlight Search</em> by pressing <strong>Cmd + Space</strong> on your keyboard, or by
+clicking the search icon in menu bar.</p></li>
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">Node</span> <span class="pre">Uninstaller</span></code> and open the found application.</p></li>
+<li><p>You now have two options:</p>
+<ul class="simple">
+<li><p>To delete the node and keep the data and keys, click <strong>Yes</strong>.</p></li>
+<li><p>To delete the node as well as data and keys, click <strong>Yes, and delete data</strong>.
+(Make sure to back up your keys beforehand).</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': loadChoice() ? 'granted' : 'denied' });
+gtag('js', new Date());
+gtag('config', 'G-TE81YY48VB', {'anonymize_ip': true});
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+    document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+    if (!document.cookie.includes("cookie-consent=")) {
+        return undefined;
+    }
+    return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+    document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+    storeChoice(true)
+    gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'granted' });
+    removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+    storeChoice(false)
+    removeCookieConsentBanner()
+}
+
+
+</script>
+<div id="cookie-consent" class="consent">
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Disallow</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+<script>
+    const stored = loadChoice();
+    if (stored !== undefined) {
+        removeCookieConsentBanner()
+    }
+</script>
+
+
+</body>
+</html>
