@@ -106,6 +106,7 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.0.1-testnet.tar.gz>`_
 
 Native Windows node
+------------------------
 
 To run a node on Windows, you need a Windows Installer package.
 
