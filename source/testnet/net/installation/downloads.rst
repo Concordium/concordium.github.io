@@ -94,7 +94,9 @@ Concordium Node Distributions
 
 Node Debian package
 -------------------
-To run a node on a server with Ubuntu, you'll need to `download a Debian package <https://distribution.testnet.concordium.com/deb/concordium-node_1.0.1-testnet_amd64.deb>`_.
+To run a node on a server with Ubuntu, you need a Debian package.
+
+- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-node_1.0.1-testnet_amd64.deb>`_.
 
 
 Full suite for running a node on Linux using Docker
