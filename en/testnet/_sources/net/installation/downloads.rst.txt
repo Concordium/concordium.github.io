@@ -89,7 +89,7 @@ Node Debian package
 -------------------
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.1_amd64.deb>`_
+- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.2_amd64.deb>`_
 
 To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -106,7 +106,7 @@ Native Windows node
 
 To run a node on Windows, you need a Windows Installer package.
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.1.msi>`_
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.2.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
 
@@ -115,7 +115,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.1.pkg>`_
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.2.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
