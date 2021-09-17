@@ -97,7 +97,7 @@ Full suite for running a node on Linux using Docker
 ---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.1.1-testnet.tar.gz>`_
+- `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.1.2-testnet.tar.gz>`_
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
