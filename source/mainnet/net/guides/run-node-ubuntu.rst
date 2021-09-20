@@ -92,6 +92,11 @@ The services are also enabled to start automatically on system start.
 
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.mainnet.concordium.software/>`__ and look for a node with the name you provided.
 
+.. Note::
+   If the node is installed fresh you can speed up initial catchup by downloading a batch of blocks and using `Out of band catchup <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md#out-of-band-catchup>`__.
+   Mainnet blocks can be downloaded from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__.
+
+
 The ``concordium-mainnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
 
 .. Note::
