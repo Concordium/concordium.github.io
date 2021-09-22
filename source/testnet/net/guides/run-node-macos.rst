@@ -158,18 +158,25 @@ Configure a node as a baker
 To run a node as baker, you first have to generate baker keys in the desktop
 wallet and then register the keys on an account. For more information, see,
 :ref:`Add a baker account in the Desktop Wallet<create-baker-desktop>`.
-You then have to change the service file for the Concordium Node.
+You then need to move the generated file to a location accessible by the node,
+and finally specify this location in the service file for the Concordium Node.
 
-#. Edit this file as an administrator: ``/Library/Concordium
+#. Move the ``baker-credentials.json`` file to the node's config folder:
+
+   .. code-block:: console
+
+      sudo cp "/path/to/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
+
+   (replacing ``/path/to/baker-credentials.json`` with the actual file path).
+
+#. Edit the service file as an administrator: ``/Library/Concordium
    Node/LaunchDaemons/software.concordium.testnet.node.plist``
+
 #. In the *EnviromentVariables* section of the file add the following::
 
     <!-- Path to the baker credentials file. -->
     <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
-    <string>/full/path/to/baker-credentials.json</string>
-
-#. Replace ``/full/path/to/baker-credentials.json`` with the full path to the
-   baker credentials files.
+    <string>/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json</string>
 
 #. Restart your node by running **Concordium Node Stop Testnet** (if running) and then
    **Concordium Node Start Testnet**.
