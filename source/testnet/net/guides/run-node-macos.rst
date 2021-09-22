@@ -169,7 +169,7 @@ and finally specify this location in the service file for the Concordium Node.
 
    (replacing ``/path/to/baker-credentials.json`` with the actual file path).
 
-#. Edit the service file as an administrator: ``/Library/Concordium
+#. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
    Node/LaunchDaemons/software.concordium.testnet.node.plist``
 
 #. In the *EnviromentVariables* section of the file add the following::
