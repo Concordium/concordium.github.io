@@ -41,7 +41,7 @@ When you submit the transaction to the chain, the following happens:
 
 - Whenever a release takes place, the released amount becomes part of the recipient's disposable amount.
 
-- In the list of transfers on the sender account and on the recipient account, the transfer is identified in parenthesis by **(With schedule)**. You can also view the schedule on the account when you go to **More** and then **Inspect release schedule**. For more information, see :ref:`Overview of accounts <overview-account-desktop>`.
+- In the list of transfers on the sender account and on the recipient account, the transfer is identified in parenthesis by **(With schedule)**. You can also view the schedule on the account when you go to **Change view** and then **Inspect release schedule**. For more information, see :ref:`Overview of accounts <overview-account-desktop>`.
 
 Release schedule types
 ======================

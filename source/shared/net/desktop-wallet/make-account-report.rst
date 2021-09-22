@@ -16,7 +16,7 @@ Create a report of transactions on one or more accounts
 
 #. Go to **Accounts** and select the account you want to create a report for.
 
-#. Select **More**, and then select **Make account report**.
+#. Select **Change view**, and then select **Make account report**.
 
 #. Select the time period that you want the report to cover.
 

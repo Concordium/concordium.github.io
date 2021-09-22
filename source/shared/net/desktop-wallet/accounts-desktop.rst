@@ -19,9 +19,9 @@ This topic describes the information and the tasks that are available on account
 
 The most common tasks on an account are:
 
--  **Send GTU**: Send GTU to a recipient in your address book. See :ref:`Send GTU when only one co-signer is required <send-GTU-single-desktop>`.
+-  **Send**: Send GTU to a recipient in your address book. See :ref:`Create GTU transfer in the Desktop Wallet <send-GTU-single-desktop>`.
 
--  **Shield GTU**: Transfer GTU from your public balance to your shielded balance. See :ref:`Shield GTU on an account <shield-GTU-desktop>`.
+-  **Shield**: Transfer GTU from your public balance to your shielded balance. See :ref:`Shield GTU on an account <shield-GTU-desktop>`.
 
 In addition, you can see the following information about the selected account:
 
@@ -36,23 +36,24 @@ In addition, you can see the following information about the selected account:
    .. Note::
       Shielded transfers and Shielded balance is only available on accounts with a single credential. You can't make shielded transfers on multi-signature accounts.
 
--  **Transfers**: This is a list of the transfers on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed.
+-  **Latest transfers**: This is a list of the 10 latest transfers on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed.
 
--  **Identity data**: If you chose to reveal attributes, when you created the account, these attributes are visible here. If you created the account without revealing any attributes, there is no information here. Revealed attributes are visible to other participants on the chain.
+-  **Account address**: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network.
 
-If you select **More**, you'll see a variety of information about your account and a number of tasks you can perform:
+Change view
+-----------
 
--  **Account address**: Displays the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network.
+When you select **Change view**, you'll see a variety of information about your account and a number of tasks you can perform:
+
+-  **Transaction log**. View a list of transactions on the account. Use **Log filters** to specify which transaction types you want to be displayed in the **Transfers** list. See :ref:`Apply a transaction log filter <transaction-log>`.
+
+-  **Send GTU with a schedule**: Send GTU according to a schedule. See :ref:`Transfer GTU with a schedule <GTU-single-schedule-desktop>`.
 
 -  **Inspect release schedule**: Shows any future GTU releases that are scheduled to be released on your account.
 
-- **Transfer log filters**: Specify whether you want baker, block and finalization awards transfers to be visible in the **Transfers** list.
+- **Export account reports**: Export a file with a list of all transactions on the account. Select **Make account report**, set the relevant filters, and then select **Make account report**. Save the fil as a .csv file.
 
-- **Make account report**: Export a file with a list of all transactions on the account. Select **Make account report**, set the relevant filters, and then select **Make account report**. Save the fil as a .csv file.
-
--  **Credential information**: Shows credentials that are associated with the account. This includes the signature threshold, credential ID's, creation dates, and valid to dates.
-
--  **Send GTU with a schedule**: Send GTU according to a schedule. See :ref:`Create a single signer GTU transfer with a schedule <GTU-single-schedule-desktop>`.
+-  **Credentials and attribute information**: Here you can see all credential ID that are associated with the account and the attributes that are revealed for each credential ID (if any). You can also see the creation dates and valid to dates of the credentials. One or more credentials can be associated with the an account.
 
 -  **Update credentials**: Add new credentials to the account. See :ref:`Add credentials to an account <multi-credentials>`.
 

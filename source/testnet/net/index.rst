@@ -63,6 +63,7 @@
    desktop-wallet/change-baker-stake
    desktop-wallet/change-restake-settings
    desktop-wallet/sign-transaction
+   desktop-wallet/transaction-log-filter
    desktop-wallet/settings-overview
    desktop-wallet/overview-addresses
    desktop-wallet/proposed-transactions

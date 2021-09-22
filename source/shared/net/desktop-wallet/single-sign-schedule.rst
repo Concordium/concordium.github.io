@@ -1,9 +1,9 @@
 
 .. _GTU-single-schedule-desktop:
 
-===================================================
-Create a single signer GTU transfer with a schedule
-===================================================
+============================
+Transfer GTU with a schedule
+============================
 
 .. contents::
     :local:
@@ -30,7 +30,7 @@ schedule and an explicit schedule.
 
 #. Go to **Accounts** and select the relevant account.
 
-#. Select **More**, and then select **Send GTU with a schedule**
+#. Select **Change view**, and then select **Send GTU with a schedule**
 
 #. Enter the amount of GTU that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount.
 
