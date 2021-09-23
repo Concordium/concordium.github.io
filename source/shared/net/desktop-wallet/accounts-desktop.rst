@@ -51,7 +51,7 @@ When you select **Change view**, you'll see a variety of information about your 
 
 -  **Inspect release schedule**: Shows any future GTU releases that are scheduled to be released on your account.
 
-- **Export account reports**: Export a file with a list of all transactions on the account. Select **Make account report**, set the relevant filters, and then select **Make account report**. Save the fil as a .csv file.
+- **Export account reports**: Export a file with a list of all transactions on the account. Set the relevant time period and filters, and then select **Make account report**. Save the export as a .csv file.
 
 -  **Credentials and attribute information**: Here you can see all credential ID that are associated with the account and the attributes that are revealed for each credential ID (if any). You can also see the creation dates and valid to dates of the credentials. One or more credentials can be associated with the an account.
 

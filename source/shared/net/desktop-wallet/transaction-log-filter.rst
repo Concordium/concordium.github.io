@@ -18,9 +18,9 @@ Specify which transactions to show in the transaction log
 
 #. Select **Transaction log**.
 
-#. Select **log filters**.
+#. Select **Filters** in the upper right corner.
 
-#. Specify the date range that you want the log filter to cover
+#. Specify the date range that you want the log filter to cover.
 
 #. Select the transaction types you want displayed in the log.
 
