@@ -57,4 +57,4 @@ When you select **Change view**, you'll see a variety of information about your 
 
 -  **Update credentials**: Add new credentials to the account. See :ref:`Add credentials to an account <multi-credentials>`.
 
--  **Add baker**: Make the account a baker account. See :ref:`See Add a baker account in the Desktop Wallet <create-baker-desktop>`
+-  **Add baker**: Make the account a baker account. See :ref:`See Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
