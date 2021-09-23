@@ -95,7 +95,7 @@ The services are also enabled to start automatically on system start.
 
 3. Enter a ``node name`` when prompted. The node name is visible on the network dashboard. When you have installed the services, the ``concordium-testnet-node`` will be running automatically.
 
-#. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.testnet.concordium.software/>`__ and look for a node with the name you provided.
+#. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.testnet.concordium.com/>`__ and look for a node with the name you provided.
 
 .. Note::
    If the node is installed fresh, you can speed up initial catchup by downloading a batch of blocks and using `Out of band catchup <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md#out-of-band-catchup>`__.

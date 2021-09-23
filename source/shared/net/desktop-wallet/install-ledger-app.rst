@@ -108,6 +108,8 @@ You now have to install a custom certificate on the Ledger to ensure that it tru
 
 #. Enter your PIN.
 
+.. _install-ledger-app-windows:
+
 Install the Concordium Ledger app on Windows
 --------------------------------------------
 
@@ -116,6 +118,16 @@ Install the Concordium Ledger app on Windows
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
 #. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+
+Update the Concordium Ledger app on Windows
+-------------------------------------------
+
+For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
+
+#. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
+
+#. Connect the Ledger to the computer, and then follow steps 1-3 in :ref:`Install the Ledger app on Windows <install-ledger-app-windows>`. You don't have to reinstall the certificate or enter recovery mode.
+
 
 Install Concordium Ledger app on macOS
 ======================================
@@ -184,6 +196,8 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Enter your PIN.
 
+.. _install-ledger-app-macos:
+
 Install the Concordium Ledger app on MacOS
 ---------------------------------------------
 
@@ -196,6 +210,15 @@ Install the Concordium Ledger app on MacOS
 2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
 3. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+
+Update the Concordium Ledger app on macOS
+-------------------------------------------
+
+For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
+
+#. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
+
+#. Connect the Ledger to the computer, and then follow steps 1-3 in :ref:`Install the Ledger app on macOS <install-ledger-app-macos>`. You don't have to reinstall the certificate or enter recovery mode.
 
 Install Concordium Ledger app on Ubuntu
 =======================================
@@ -261,6 +284,8 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. The certificate is installed on the Ledger. Press the right button to navigate through the key, and then press both buttons when the Ledger says **Trust certificate**.
 
+.. _install-ledger-app-ubuntu:
+
 Install the Concordium Ledger app on Ubuntu
 -------------------------------------------
 
@@ -273,3 +298,12 @@ Install the Concordium Ledger app on Ubuntu
 2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
 3. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+
+Update the Concordium Ledger app on Ubuntu
+-------------------------------------------
+
+For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
+
+#. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
+
+#. Connect the Ledger to the computer, and then follow steps 1-3 in :ref:`Install the Ledger app on Ubuntu <install-ledger-app-ubuntu>`. You don't have to reinstall the certificate or enter recovery mode.
