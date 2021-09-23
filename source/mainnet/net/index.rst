@@ -37,9 +37,9 @@
    :maxdepth: 1
    :caption: Concordium Mobile Wallet
 
-   mobile-wallet/get-started
-   mobile-wallet/accounts-transactions
-   mobile-wallet/explore-more
+   mobile-wallet/setup-mobile-wallet
+   mobile-wallet/create-identity
+   mobile-wallet/make-simple-transfer
 
 .. toctree::
    :maxdepth: 1
