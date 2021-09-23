@@ -34,9 +34,9 @@ In addition, you can see the following information about the selected account:
 -  The **Shielded balance** shows the amount of GTU that you've shielded. The **Balance** is visible to all participants on the Concordium Blockchain, while the **Shielded balance** is visible to you only.
 
    .. Note::
-      Shielded transfers and Shielded balance is only available on accounts with a single credential. You can't make shielded transfers on multi-signature accounts.
+      Shielded transfers and Shielded balance is only available on accounts with a single credential. You can't make or receive shielded transfers on multi-signature accounts.
 
--  **Latest transfers**: This is a list of the 10 latest transfers on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed.
+-  **Latest transactions**: This is a list of the 10 latest transactions on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account, they are also applied here.
 
 -  **Account address**: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network.
 
