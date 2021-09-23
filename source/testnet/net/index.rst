@@ -39,9 +39,15 @@
    :maxdepth: 1
    :caption: Concordium Mobile Wallet
 
-   mobile-wallet/get-started
-   mobile-wallet/accounts-transactions
-   mobile-wallet/explore-more
+   mobile-wallet/setup-mobile-wallet
+   mobile-wallet/create-identity
+   mobile-wallet/create-account-mw
+   mobile-wallet/make-simple-transfer-mw
+   mobile-wallet/make-shielded-transfer-mw
+   mobile-wallet/shield-unshield-mw
+   mobile-wallet/export-import-mw
+   mobile-wallet/share-address-mw
+   mobile-wallet/change-passcode-mw
 
 .. toctree::
    :maxdepth: 1
