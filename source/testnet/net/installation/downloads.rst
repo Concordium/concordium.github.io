@@ -69,9 +69,9 @@ Cargo-concordium
 ================
 Download cargo-concordium:
 
--  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-0>`_
+-  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
 
--  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-0>`_
+-  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
 
    - You need to make the tool executable by running ``chmod +x
      path/to/cargo-concordium_1.0.0-0`` in a terminal. Make sure to provide the
@@ -79,7 +79,7 @@ Download cargo-concordium:
    - You also need to `grant it permission to run in your Security & Privacy
      settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
 
--  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-0.exe>`_
+-  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
 
 
 Concordium node distributions
