@@ -1,6 +1,6 @@
 .. _Discord: https://discord.gg/xWmQ5tp
 
-.. _make-simple-transfer:
+.. _make-simple-transfer-mw:
 
 ===============
 Make a transfer

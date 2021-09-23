@@ -39,7 +39,13 @@
 
    mobile-wallet/setup-mobile-wallet
    mobile-wallet/create-identity
-   mobile-wallet/make-simple-transfer
+   mobile-wallet/create-account-mw
+   mobile-wallet/make-simple-transfer-mw
+   mobile-wallet/make-shielded-transfer-mw
+   mobile-wallet/shield-unshield-mw
+   mobile-wallet/export-import-mw
+   mobile-wallet/share-address-mw
+   mobile-wallet/change-passcode-mw
 
 .. toctree::
    :maxdepth: 1
