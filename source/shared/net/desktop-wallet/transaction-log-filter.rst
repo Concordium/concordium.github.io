@@ -24,8 +24,4 @@ Specify which transactions to show in the transaction log
 
 #. Select the transaction types you want displayed in the log.
 
-#. Select **Apply and save**.
-
-#. If you only want to apply the changes temporarily, select **Apply momentarily**. When you leave the log, the log will revert to its previous settings.
-
-#. If you regret the selection, select **Clear filters**.
+#. Select **Apply** if you want to apply the changes temporarily to look up specific transactions. Select **Save** if you want to save the filter until you apply new ones. Select **Clear** if you want to completely remove a filter.
