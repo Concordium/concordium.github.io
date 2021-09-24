@@ -69,6 +69,7 @@
    desktop-wallet/proposed-transactions
    desktop-wallet/make-account-report
    desktop-wallet/send-shielded-amount
+   desktop-wallet/account-recovery
 
 .. toctree::
    :maxdepth: 1
