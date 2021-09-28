@@ -96,7 +96,7 @@ In a terminal:
     $sha256sum |node-deb-package|
     |node-deb-package-checksum|
 
-.. _verification-mainnet-genesis:
+.. _verification-mainnet-genesis-block:
 
 Mainnet genesis block
 =====================
