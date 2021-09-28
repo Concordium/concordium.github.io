@@ -11,7 +11,7 @@ In a terminal:
 .. code-block:: console
     :substitutions:
 
-    $Get-FileHash |cdw-appimage| -Algorithm SHA256
+    $sha256sum |cdw-appimage|
     |cdw-appimage-checksum|
 
 **Verify download with signature**

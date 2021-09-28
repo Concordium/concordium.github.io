@@ -9,7 +9,7 @@ In a terminal:
 .. code-block:: console
     :substitutions:
 
-    $Get-FileHash |cdw-mac| -Algorithm SHA256
+    $shasum -a 256 |cdw-mac|
     |cdw-mac-checksum|
 
 **Verify download with signature**

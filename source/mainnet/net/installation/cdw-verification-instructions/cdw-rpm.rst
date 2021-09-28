@@ -11,7 +11,7 @@ In a terminal:
 .. code-block:: console
     :substitutions:
 
-    $Get-FileHash |cdw-rpm| -Algorithm SHA256
+    $sha256sum |cdw-rpm|
     |cdw-rpm-checksum|
 
 **Verify download with signature**

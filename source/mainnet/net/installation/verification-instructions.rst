@@ -61,22 +61,74 @@ Concordium Client
 Windows
 -------
 
+.. include:: client-verification-instructions/client-windows.rst
+
 .. _verification-client-mac:
 
 MacOS
 -----
+
+.. include:: client-verification-instructions/client-mac.rst
 
 .. _verification-client-linux:
 
 Linux
 -----
 
+.. include:: client-verification-instructions/client-linux.rst
+
 .. _verification-node-debian-package:
 
 Node Debian package
 ===================
 
+**Verify checksum of download**
+
+In a terminal:
+
+#. Navigate to the download.
+#. Then paste the first line of the following block into the terminal.
+#. Verify that the output matches the second line in the block.
+
+.. code-block:: console
+    :substitutions:
+
+    $sha256sum |node-deb-package|
+    |node-deb-package-checksum|
+
 .. _verification-mainnet-genesis:
 
 Mainnet genesis block
 =====================
+
+**Verify checksum of download**
+
+In a terminal:
+
+#. Navigate to the download.
+#. Then paste the first line of the following block into the terminal.
+#. Verify that the output matches the second line in the block.
+
+**Windows**
+
+.. code-block:: console
+    :substitutions:
+
+    $Get-FileHash |mainnet-genesis-block| -Algorithm SHA256
+    |mainnet-genesis-block-checksum|
+
+**MacOS**
+
+.. code-block:: console
+    :substitutions:
+
+    $shasum -a 256 |mainnet-genesis-block|
+    |mainnet-genesis-block-checksum|
+
+**Linux**
+
+.. code-block:: console
+    :substitutions:
+
+    $sha256sum |mainnet-genesis-block|
+    |mainnet-genesis-block-checksum|
