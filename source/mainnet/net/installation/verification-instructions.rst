@@ -53,6 +53,11 @@ RPM
 
 .. include:: cdw-verification-instructions/cdw-rpm.rst
 
+Automatic updates
+-----------------
+
+When the desktop wallet updates itself, it performs the necessary steps to verify both the checksum and signature of the downloaded update. If verification is unsuccessful, the update is rejected.
+
 Concordium Client
 =================
 
