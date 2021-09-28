@@ -50,6 +50,9 @@ extensions = [
     "multidoc"
 ]
 
+# sphinx-prompt must be the first of these two.
+extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
+
 # todo_include_todos = True
 # todo_emit_warnings = True
 # todo_link_only = True
