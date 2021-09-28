@@ -20,67 +20,14 @@ Concordium Desktop Wallet
 Windows
 -------
 
-**Verify checksum of download**
-
-In a terminal:
-
-#. Navigate to the download.
-#. Then paste the first line of the following block into the terminal.
-#. Verify that the output matches the second line in the block.
-
-.. code-block:: console
-    :substitutions:
-
-    $Get-FileHash |cdw-windows| -Algorithm SHA256
-    |cdw-windows-checksum|
-
-**Verify download with signature**
-
-To verify that the downloaded file is indeed officially released by concordium, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.
-
-* Download signature
-* Download public key
-
-With the **signature**, the **public key**, and the **downloaded file** all in the same directory, executing the following steps will verify that the file has been signed by Concordium.
-
-In a terminal:
-
-#. Navigate to the directory containing the assets needed to verify.
-#. Then paste the first line of the following block into the terminal
-#. The command should output **Verified OK** as a result, as inidicated by the second line in the block.
-
-.. code-block:: console
-    :substitutions:
-
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-windows|.sig |cdw-windows|
-    Verified OK
+.. include:: cdw-verification-instructions/cdw-windows.rst
 
 .. _verification-cdw-mac:
 
 MacOS
 -----
 
-**Verify checksum of download**
-
-In a terminal:
-
-#. Navigate to the download.
-#. Then paste the first line of the following block into the terminal.
-#. Verify that the output matches the second line in the block.
-
-.. code-block:: console
-    :substitutions:
-
-    $Get-FileHash |cdw-mac| -Algorithm SHA256
-    |cdw-mac-checksum|
-
-**Verify download with signature**
-
-.. code-block:: console
-    :substitutions:
-
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-mac|.sig |cdw-mac|
-    Verified OK
+.. include:: cdw-verification-instructions/cdw-macos.rst
 
 Linux
 -----
@@ -90,81 +37,21 @@ Linux
 AppImage
 ^^^^^^^^
 
-**Verify checksum of download**
-
-In a terminal:
-
-#. Navigate to the download.
-#. Then paste the first line of the following block into the terminal.
-#. Verify that the output matches the second line in the block.
-
-.. code-block:: console
-    :substitutions:
-
-    $Get-FileHash |cdw-appimage| -Algorithm SHA256
-    |cdw-appimage-checksum|
-
-**Verify download with signature**
-
-.. code-block:: console
-    :substitutions:
-
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-appimage|.sig |cdw-appimage|
-    Verified OK
+.. include:: cdw-verification-instructions/cdw-appimage.rst
 
 .. _verification-cdw-deb:
 
 Debain package
 ^^^^^^^^^^^^^^
 
-**Verify checksum of download**
-
-In a terminal:
-
-#. Navigate to the download.
-#. Then paste the first line of the following block into the terminal.
-#. Verify that the output matches the second line in the block.
-
-.. code-block:: console
-    :substitutions:
-
-    $Get-FileHash |cdw-deb| -Algorithm SHA256
-    |cdw-deb-checksum|
-
-**Verify download with signature**
-
-.. code-block:: console
-    :substitutions:
-
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-deb|.sig |cdw-deb|
-    Verified OK
+.. include:: cdw-verification-instructions/cdw-deb.rst
 
 .. _verification-cdw-rpm:
 
 RPM
 ^^^
 
-**Verify checksum of download**
-
-In a terminal:
-
-#. Navigate to the download.
-#. Then paste the first line of the following block into the terminal.
-#. Verify that the output matches the second line in the block.
-
-.. code-block:: console
-    :substitutions:
-
-    $Get-FileHash |cdw-rpm| -Algorithm SHA256
-    |cdw-rpm-checksum|
-
-**Verify download with signature**
-
-.. code-block:: console
-    :substitutions:
-
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-rpm|.sig |cdw-rpm|
-    Verified OK
+.. include:: cdw-verification-instructions/cdw-rpm.rst
 
 Concordium Client
 =================
