@@ -26,27 +26,34 @@ Create and export a file with credentials
 
 #. Paste the address of the account that you want to add credentials to, and then give the account a name. This is the name that will be shown in your list of accounts.
 
-#. Select **Reveal attributes** if you want any attributes to be public on the blockchain. We recommend that you don't reveal any attributes. Select **Continue**.
+#. Select **Reveal attributes** if you want any attributes to be public on the blockchain. We recommend that you don't reveal any attributes.
 
-#. On the Ledger there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer and enter your PIN on the Ledger.
+#.  Select **Continue**.
+
+#. In the Desktop Wallet there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer and enter your PIN on the Ledger.
 
 #. On the Ledger press both buttons to open the Concordium application. There's a message saying **Concordium is ready**.
 
 #. In the Desktop Wallet, there's a message saying **Ledger Nano S is ready**. Select **Submit**.
 
-#. Press both buttons on the Ledger to confirm the following information: **Export PRF key**, **Export IdCredSec**, and **Publickey**.
+#. #. Press both buttons to confirm the following on the Ledger:
 
-#. Compare the public key on the Ledger with the public key in the Desktop Wallet and make sure they match. Press both buttons to confirm.
+   - Create credential (each credential is assigned a number)
+   - Public key
 
-#. In the Desktop Wallet, select **Continue**.
+#. Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Press both buttons, and then use the right button to navigate through the key.
 
-#. On the Ledger, press both buttons to review the transaction. Verify that the information on the Ledger matches the details in the Desktop Wallet.
+#. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-#. Press both buttons to sign the transaction. In the Desktop Wallet, the account credential summary is displayed.
+#. The Ledger says **Review details**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+
+#. Verify that the account address on the Ledger corresponds to the account address in the Desktop Wallet.
+
+#. The Ledger says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet, the account credential summary is displayed.
 
 #. Select **Export** and navigate to the place on your computer where you want to save the file with the credentials. Make sure that you save the file with the extension .json.
 
-#. Click on the identicon to copy it. Send the file and the copy of the identicon through secure channels to the current owner of the account.
+#. Click on the identicon to copy it. Send the .json file and the copy of the identicon through secure channels to the current owner of the account.
 
 #. Select **Finish**.
 

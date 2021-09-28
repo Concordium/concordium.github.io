@@ -62,7 +62,14 @@ Make a transfer proposal
 
 #. All multi-signature accounts are displayed. Select the relevant sender account from the list of available accounts, and then select **Continue**. If only one account is available, this account will be selected automatically. You'll be able to change the expiry time later in this process. Use the scrollbar if you can't see all the information. Select **Continue**.
 
-#.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. (The amount must also be greater than zero.) In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
+#.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. (The amount must also be greater than zero.) In the **Transaction details** under **Amount**, you can see the estimated fee.
+
+#. Optionally, in **You can enter a memo here**, enter a **Memo** if you want to send a message to the recipient along with the transfer. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
+
+   .. Warning::
+      Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
+
+#. Select **Continue**.
 
 #.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**. You can now set up a release schedule.
 

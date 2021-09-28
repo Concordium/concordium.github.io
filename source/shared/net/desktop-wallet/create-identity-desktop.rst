@@ -34,28 +34,20 @@ Create an initial account
 
 #. In the Desktop Wallet there's a message saying **Ledger Nano S is ready**. Select **Submit**.
 
-#. Press both buttons to confirm the export of the following on the Ledger:
+#. Press both buttons to confirm the following on the Ledger:
 
-   - Export PRF key
-   - Export IdCredSec
+   - Create credential (each credential is assigned a number)
    - Public key
 
-#. Press the right button to review the transaction on the Ledger. Confirm that the following information on Ledger corresponds to the information in the Desktop Wallet:
-
-   - Compare public key
+#. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
 #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-#. The Ledger says **Review transaction**. Use the right button to navigate through the following information and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+#. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-   - Identity Credentials Public (IdCredPub)
-   - Registration ID (RegId).
+# Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
 
-#. Use the right button to navigate through the following information and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
-
-   - Public key
-
-#. The Ledger says **Threshold**. Press the right button. The Ledger says **Sign transaction**. Press both buttons to sign the transaction.
+#. Press the right button, and then press both buttons to sign the identity provider information.
 
 #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
