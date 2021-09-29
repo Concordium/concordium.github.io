@@ -27,4 +27,4 @@ If you choose to update the application, the update process automatically ensure
 Manually updating
 =================
 
-To manually update the desktop wallet, simply go to the :ref:`downloads page<downloads-desktop-wallet>`, to download the latest version.
+To manually update the desktop wallet, go to the :ref:`downloads page<downloads-desktop-wallet>` and download the latest version.
