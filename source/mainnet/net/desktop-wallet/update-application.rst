@@ -1,7 +1,7 @@
 .. _update-application:
 
 ===========================
-Updating the desktop wallet
+Update the desktop wallet
 ===========================
 
 .. contents::
