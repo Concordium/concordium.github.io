@@ -14,7 +14,7 @@ The Desktop Wallet installs updates automatically on **MacOS**, **Windows**, and
 Automatic updates
 =================
 
-When notified about an update being available, you can select either:
+The Desktop Wallet notifies you when an update is available, and you then have the following options:
 
 * **Restart and Install** to install the update, or
 * **Remind me** to be notified again the next time you open the application.
