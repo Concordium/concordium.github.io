@@ -24,7 +24,7 @@ This topic describes how you can send GTU from an account, when only one partici
 #. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
 
 .. Warning::
-    Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
+    Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.
 
 #. Select the recipient and select **Continue**.
 
