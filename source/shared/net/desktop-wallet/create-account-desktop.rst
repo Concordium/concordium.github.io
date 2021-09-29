@@ -55,7 +55,7 @@ Create an account
 
 #. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
 
-#.  Press the right button to verify that the that the anonymity revoker threshold on the Ledger corresponds to the threshold in the Desktop Wallet, and then press both buttons.
+#.  Press the right button to verify that the anonymity revoker threshold on the Ledger corresponds to the threshold in the Desktop Wallet, and then press both buttons.
 
 #. The Ledger says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.
 
