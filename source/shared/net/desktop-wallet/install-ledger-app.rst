@@ -223,7 +223,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
-#. In the folder that you extracted the files to, double-click the ``install.bat`` file.
+#. Run the ``install.sh`` file from the folder that you extracted the files to.
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
 
@@ -317,7 +317,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
-#. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
+#. Run the ``install.sh`` file from the folder that you extracted the files to.
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
 
