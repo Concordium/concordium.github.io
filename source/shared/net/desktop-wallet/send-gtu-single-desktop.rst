@@ -21,6 +21,11 @@ This topic describes how you can send GTU from an account, when only one partici
 
 #. In the right pane, enter the amount of GTU that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account, and you’ll have to change the amount.
 
+#. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
+
+.. Warning::
+    Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.
+
 #. Select the recipient and select **Continue**.
 
 #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.

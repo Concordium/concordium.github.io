@@ -48,6 +48,7 @@
 
    desktop-wallet/install-ledger-app
    desktop-wallet/get-started-desktop
+   desktop-wallet/update-application
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
    desktop-wallet/accounts-desktop

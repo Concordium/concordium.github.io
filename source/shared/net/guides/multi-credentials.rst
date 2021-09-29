@@ -26,11 +26,13 @@ Select an identity and an account
 =================================
 #. Go to the **Multi Signature Transactions** tab, select **Make new proposal**, and then select **Update account credentials**.
 
-#. Select the account whose credentials you want to update. When you look at the **Transaction Details** in the left pane, you can see the current signature threshold and the current number of credentials associated with the account. Select **Continue**.
+#. Select the account whose credentials you want to update. When you look at the **Transaction Details** in the left pane, you can see the current signature threshold and the current number of credentials associated with the account.
 
    If you only want to update the threshold, you can skip the next steps and go to :ref:`Change the signature Threshold <guide-change-signature>`.
 
-#. To add the new credentials, select **Browse to file** in the right pane and then navigate to the location on your computer where you saved the file with the credentials. Select the file and select **Continue**. Alternatively, you can drag and drop the file from its location on the computer and onto the Desktop Wallet. We recommend that you double check the identicon to make sure you are adding the right person’s credentials to the account.
+#. To add the new credentials, select **Browse to file** in the right pane and then navigate to the location on your computer where you saved the file with the credentials. Select the file and select **Open**. Alternatively, you can drag and drop the file from its location on the computer and onto the Desktop Wallet. Verify that the key and the identicon match those of the new custodian. Optionally, you can specify who owns the key.
+
+#. Select **Add Credential to proposal**, and then select **Continue**.
 
 #. Set an **expiry date and time** for your proposal. You must submit proposals to the chain within the last 2 hours up to the expiry date. This means you must set the expiry time so that it’s possible for any co-signers to return their signatures in time.
 
@@ -74,25 +76,19 @@ Option 2: Generate and sign the transaction on the Ledger
 
 #. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
+#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Waiting for the user to finish the process on device**.
 
-#. The Ledger says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account whose credentials you’re updating.
+#. The Ledger says **Review transaction**. Navigate to the right to view **Sender** and the sender address. This is the address of the account whose credentials you’re updating.
 
 #. Continue navigating to the right. When you see **Continue with transaction** press both buttons. The Ledger says **Public-key**, which is the public key of the first of the credentials you are adding to the account. Navigate to the right until you’ve reached the last section of the public key and press both buttons.
 
-#. The Ledger says **Sig threshold** which is the number of signatures that’s currently required to make transactions with the account. Navigate to the right and verify that the following information is correct, and then press both buttons.
+#. The Ledger says **Signature threshold** which is the number of signatures that’s currently required to make transactions with the account. Navigate to the right and verify that the following information is correct, and then press both buttons.
 
-   -  *RegIdCred* (must match of the credentials you added to the proposal)
+   -  *AR threshold*: this is the number of anonymity revokers required to revoke anonymity on the account.
 
-   -  *Identity Provider*
+   -  *Cred. sig. threshold*: this is the number of signatures required to sign transactions on the account.
 
-   -  *Revocation threshold*
-
-#. Verify that the following information is correct, and then press both buttons.
-
-   -  *Valid to* date
-
-   -  *Created at* date
+#. Press both buttons to sign the transaction.
 
 #. Repeat the above steps on the Ledger for each of the credentials you’ve added to the proposal.
 
