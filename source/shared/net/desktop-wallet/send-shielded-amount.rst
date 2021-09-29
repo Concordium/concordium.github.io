@@ -1,7 +1,7 @@
 .. _send-shielded-amount:
 
 ====================================
-Send and receive a shielded transfer
+Send and decrypt a shielded transfer
 ====================================
 
 .. contents::
@@ -73,6 +73,7 @@ Any shielded transfers that you've already decrypted are visible in the shielded
 #. In the Desktop Wallet, select **Decrypt**.
 
 #. On the Ledger, press both buttons to decrypt the amount. In the Desktop Wallet you can now see the amount that you decrypted.
+
 
 
 
