@@ -45,7 +45,7 @@ Create an initial account
 
 #. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-# Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
+#. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
 
 #. Press the right button, and then press both buttons to sign the identity provider information.
 

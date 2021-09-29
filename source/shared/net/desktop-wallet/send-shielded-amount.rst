@@ -57,7 +57,7 @@ When you make a shielded transfer, the amount you transfer is only known to you 
 
 #. Select **Finish**. The transfer is listed in the **Transfers** list.
 
-Receive a shielded amount of GTU
+Decrypt a shielded amount of GTU
 ================================
 
 If you have received a shielded transfer, a shield icon is displayed next to the shielded balance. Before you can see the amount that you've received, you have to decrypt the shielded transaction.
