@@ -33,6 +33,7 @@ The Concordium Mobile Wallet has been verified by NowSecure.
       :target: https://www.nowsecure.com/certified-apps/concordium/
 
 
+.. _downloads-desktop-wallet:
 
 Concordium Desktop Wallet
 =========================
