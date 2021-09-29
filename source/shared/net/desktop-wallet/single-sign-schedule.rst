@@ -32,7 +32,12 @@ schedule and an explicit schedule.
 
 #. Select **Change view**, and then select **Send GTU with a schedule**
 
-#. Enter the amount of GTU that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount.
+#. Enter the amount of GTU that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. You can see the estimated transaction fee of the transfer under **Transaction Details**.
+
+#. Optionally, enter a **Memo** if you want to send a message to the recipient along with the transfer. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
+
+.. Warning::
+    Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
 
 #. Select the recipient and select **Continue**.
 

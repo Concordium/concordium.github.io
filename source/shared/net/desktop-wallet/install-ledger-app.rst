@@ -126,8 +126,13 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
-#. Connect the Ledger to the computer, and then follow steps 1-3 in :ref:`Install the Ledger app on Windows <install-ledger-app-windows>`. You don't have to reinstall the certificate or enter recovery mode.
+#. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
 
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
+
+#. Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says **Uninstall Concordium**. Press the right button to navigate through the identifier until the Ledger says **Confirm action**. Press both buttons to confirm. The Ledger says **Loading, please wait** while it installs the app.
+
+#. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the Ledger app.
 
 Install Concordium Ledger app on macOS
 ======================================
@@ -218,7 +223,13 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
-#. Connect the Ledger to the computer, and then follow steps 1-3 in :ref:`Install the Ledger app on macOS <install-ledger-app-macos>`. You don't have to reinstall the certificate or enter recovery mode.
+#. Run the ``install.sh`` file from the folder that you extracted the files to.
+
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
+
+#. Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says **Uninstall Concordium**. Press the right button to navigate through the identifier until the Ledger says **Confirm action**. Press both buttons to confirm. The Ledger says **Loading, please wait** while it installs the app.
+
+#. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the Ledger app.
 
 Install Concordium Ledger app on Ubuntu
 =======================================
@@ -306,4 +317,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
-#. Connect the Ledger to the computer, and then follow steps 1-3 in :ref:`Install the Ledger app on Ubuntu <install-ledger-app-ubuntu>`. You don't have to reinstall the certificate or enter recovery mode.
+#. Run the ``install.sh`` file from the folder that you extracted the files to.
+
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
+
+#. Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says **Uninstall Concordium**. Press the right button to navigate through the identifier until the Ledger says **Confirm action**. Press both buttons to confirm. The Ledger says **Loading, please wait** while it installs the app.
+
+#. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the Ledger app.
