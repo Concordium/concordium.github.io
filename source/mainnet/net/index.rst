@@ -16,6 +16,9 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/run-node-windows
+   guides/run-node-macos
+   guides/baker-windows
    guides/deciding-wallet
    guides/overview-desktop
    guides/multisig-transfer
