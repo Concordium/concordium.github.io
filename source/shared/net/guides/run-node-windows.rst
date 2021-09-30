@@ -144,7 +144,7 @@ You can find the node logs here:
 
 If you specified a different installation folder for the configuration and data, the path might be different.
 
-The files ``mainnet.log`` and  ``testnet.log`` contain the latest logs, with ``mainnet.0.log`` and ``mainnet.1.log`` containing progressively older logs and the same for ``testnet.0.log`` and ``testnet.1.log``. 
+The files ``mainnet.log`` and  ``testnet.log`` contain the latest logs, with ``mainnet.0.log`` and ``mainnet.1.log`` containing progressively older logs and the same for ``testnet.0.log`` and ``testnet.1.log``.
 
 The log files are rolled when the latest log file exceeds 50 MB. This means that ``mainnet.0.log`` is renamed to ``mainnet.1.log`` (replacing the old file if present), ``mainnet.log`` is renamed to ``mainnet.0.log``, and a new, empty ``testnet.log`` is created.
 

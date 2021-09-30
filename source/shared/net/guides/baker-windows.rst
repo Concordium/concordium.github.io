@@ -27,7 +27,7 @@ Configure a baker node on Windows
 
    You register the baker credentials either on the mainnet or on the testnet. We recommend that you add the baker credentials for the network that you created the credentials on. Don’t use the same baker credentials on both networks.
 
-   -  If you created the credentials in a mainnet version of the Desktop Wallet, add the credentials to ``node.mainnet``. 
+   -  If you created the credentials in a mainnet version of the Desktop Wallet, add the credentials to ``node.mainnet``.
 
    -  If you created credentials in a testnet version of the Desktop Wallet, add the credentials to ``node.testnet``.
 
