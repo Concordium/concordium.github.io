@@ -1,1 +1,1 @@
-.. include:: /../shared/net/guides/run-node-macOS.rst
+.. include:: /../shared/net/guides/run-node-macos.rst
