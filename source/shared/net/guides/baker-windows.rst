@@ -25,7 +25,7 @@ Configure a baker node on Windows
 
 #. Once you've created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open **Configure Concordium Node Service** from the **Start** menu, and select **Yes** when you see the mesage *Do you want to allow this app to make changes to your device?*. The configuration file opens.
 
-#. Add the following in the [node.mainnet] section if the credentials are for ``[node.mainnet]`` or ``[node.testnet]`` section if they are for testnet. Make sure that you add the credentials to the network the account was created on.
+#. Add the following in the ``[node.mainnet]`` section if the credentials are for mainnet, or the ``[node.testnet]`` section if they are for testnet. Make sure that you add the credentials to the network the account was created on.
 
    .. code-block:: console
 
