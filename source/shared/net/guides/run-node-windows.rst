@@ -74,7 +74,7 @@ Verify that the node is running
 The node runs as a background service with no user interface. To verify that it’s running, use the **Task Manager**.
 
 #. Search for *task* in the **Search** bar, and then select **Task Manager**.
-#. Select the **Details** tab, and verify that the following is running:
+#. Select the **Details** tab, and verify that the following are running:
 
    - ``node-runner-service.exe``, which is the service.
    - ``concordium-node.exe`` for each node you are running. For example, if you’re running a node on both testnet and mainnet, you’ll see two instances of concordium-node.exe.
