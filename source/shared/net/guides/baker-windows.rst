@@ -23,11 +23,11 @@ Configure a baker node on Windows
 
 #. Create baker keys and associate them with an account either on mainnet or testnet. We recommend that you do this with the :ref:`Desktop Wallet<create-baker-desktop>`. However, if you want use an account from the mobile wallet as a baker account, you have to use the :ref:`Concordium Client<become-a-baker>`. In the following, the baker keys are referred to as baker-credentials.json.
 
-.. Note::
+   .. Note::
 
       The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.
 
-#. Once you've created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open **Configure Concordium Node Service** from the **Start** menu, and select **Yes** when you see the mesage *Do you want to allow this app to make changes to your device?*. The configuration file opens.
+#. Once you've created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open **Configure Concordium Node Service** from the **Start** menu, and select **Yes** when you see the message *Do you want to allow this app to make changes to your device?*. The configuration file opens.
 
 #. Add the following in the ``[node.mainnet]`` section if the credentials are for mainnet, or the ``[node.testnet]`` section if they are for testnet. Make sure that you add the credentials to the network the account was created on.
 
@@ -41,13 +41,26 @@ Configure a baker node on Windows
 
 #. Stop and restart the node runner service using the **Stop Concordium Service Node** and the **Start Concordium Service Node** shortcuts. Don’t use *End task* in the Task Manager as it might cause errors.
 
-
+View the node log
+=================
    You can find the node logs here:
 
    - Mainnet: ``C:\ProgramData\Concordium\Node Runner\mainnet\logs``
    - Testnet: ``C:\ProgramData\Concordium\Node Runner\testnet\logs``
 
-   For more information on the logs, see :ref:`Run a node on Windows<view-windows-node-log>`.
+Baker node troubleshooting
+--------------------------
+
+If a node fails to start, for example because of a configuration issue, or stops unexpectedly, there will be an Error-level event in the **Event Viewer** that explains why. The following are common error scenarios and possible solutions.
+
+- The node doesn't restart after you've set the credentials in the configuration file. This error can occur when the specified location of the credentials file is incorrect. In the **Event Viewer** an error such as the following might appear. When this happens, change the path in the configuration file.
+
+   .. image:: ../images/run-node/Node-setup-win-10.png
+         :width: 60%
+
+- The node doesn't start baking, and in the log file you see the message *Baker keys are incorrect* repeatedly. It takes 1-2 hours after baker keys have been added to an account for the keys to be eligible for baking. If this problem persists beyond two hours, then the keys likely are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.
+
+For more information on the logs, see :ref:`Run a node on Windows<view-windows-node-log>`.
 
 Other options for running a baker node
 ======================================
