@@ -134,6 +134,8 @@ You can change the mainnet or testnet node configuration with the Configure Conc
 
 For detailed information about all the configuration options, see :ref:`Concordium node runner service configuration <node-runner-service-configuration>`.
 
+.. _view-windows-node-log:
+
 View the node log
 =================
 
@@ -159,7 +161,17 @@ When nodes are stopped or started, this is also recorded in the system event log
    .. image:: ../images/run-node/Node-setup-win-7.png
          :width: 50%
 
-If a node fails to start, for example because of a configuration issue, or stops unexpectedly, there will be an Error-level event in the Event Viewer that explains why.
+Node troubleshooting
+--------------------
+
+If a node fails to start, for example because of a configuration issue, or stops unexpectedly, there will be an Error-level event in the **Event Viewer** that explains why. The following are common error scenarios and possible solutions.
+
+- The nodes doesn't restart after setting the credentials. This error can occur when the specified location of the credentials file is incorrect. In the **Event Viewer** an error such as the following might appear. When this happens, change the path in the configuration file.
+
+   .. image:: ../images/run-node/Node-setup-win-10.png
+         :width: 60%
+
+- The node doesn't start baking, and in the log file you see the message *Baker keys are incorrect* repeatedly. It takes 1-2 hours after baker keys have been added to an account for the keys to be eligible for baking. If this problem persists beyond two hours, then the keys likely are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.
 
 Synchronize a node with the network
 ===================================
@@ -170,7 +182,7 @@ You can improve the performance by downloading the blocks before starting the no
 
 #. Download the file with the blocks from the following addresses:
 
-   - Mainnet: https://dashboard.mainnet.concordium.software/blocks_to_import.mdb
+   - Mainnet: https://catchup.mainnet.concordium.software/blocks_to_import.mdb
    - Testnet: https://catchup.testnet.concordium.com/blocks_to_import.mdb
 
    The file is downloaded to your default download location.
