@@ -102,7 +102,7 @@ You can also verify that a node is running by connecting it to the Desktop Walle
 
 #. In the Desktop Wallet, go to **Settings**, and then select **Node settings**.
 
-   - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter *127.0.01* and in the **Port field** enter *10000*.
+   - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter *127.0.0.1* and in the **Port field** enter *10000*.
 
    - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1* and in the **Port field** enter *10001*.
 
