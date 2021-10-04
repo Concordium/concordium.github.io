@@ -23,6 +23,10 @@ Configure a baker node on Windows
 
 #. Create baker keys and associate them with an account either on mainnet or testnet. We recommend that you do this with the :ref:`Desktop Wallet<create-baker-desktop>`. However, if you want use an account from the mobile wallet as a baker account, you have to use the :ref:`Concordium Client<become-a-baker>`. In the following, the baker keys are referred to as baker-credentials.json.
 
+.. Note::
+
+      The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.
+
 #. Once you've created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open **Configure Concordium Node Service** from the **Start** menu, and select **Yes** when you see the mesage *Do you want to allow this app to make changes to your device?*. The configuration file opens.
 
 #. Add the following in the ``[node.mainnet]`` section if the credentials are for mainnet, or the ``[node.testnet]`` section if they are for testnet. Make sure that you add the credentials to the network the account was created on.
@@ -37,9 +41,6 @@ Configure a baker node on Windows
 
 #. Stop and restart the node runner service using the **Stop Concordium Service Node** and the **Start Concordium Service Node** shortcuts. Don’t use *End task* in the Task Manager as it might cause errors.
 
-   .. Note::
-
-      The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.
 
    You can find the node logs here:
 
