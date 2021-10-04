@@ -29,7 +29,7 @@ Install and run a node
    This will open the **Install Concordium Node** program.
 
 #. Click **Allow** to the message saying *This package will run a program to
-   determine if the software can be installed.* If you have an M1 based Mac, the installer
+   determine if the software can be installed.* If you have a M1 based Mac, the installer
    may ask you to install Rosetta, if you haven't already. Click **Install** if that's the case.
 
 #. If you already have a version of the node installed, click **OK** to the
@@ -42,7 +42,7 @@ Install and run a node
 #. On the *Configuration* page you have the following options for both a
    mainnet and testnet node.
 
-   - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs
+   - **Run a [Mainnet/Testnet] node at start-up**: When selected, the node runs
      when the system starts. Choose this option when you plan to use the node
      frequently and need it to be up-to-date at short notice. If you don’t
      select this option, you’ll have to start the node manually when required,
@@ -56,7 +56,7 @@ Install and run a node
      choose this option if you want to make further configuration changes before
      starting the node.
 
-   -  - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Go to the mainnet or testnet dashboard to view the statistics:
+   - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Go to the mainnet or testnet dashboard to view the statistics:
 
      - https://dashboard.mainnet.concordium.software/
 
@@ -114,11 +114,9 @@ You can also verify that a node is running by connecting it to the Desktop Walle
 
 #. In the Desktop Wallet, go to **Settings**, and then select **Node settings**.
 
-#. In the Desktop Wallet, go to **Settings**, and then select **Node settings**.
+   - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10000``.
 
-   - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter *127.0.01* and in the **Port field** enter *10000*.
-
-   - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1* and in the **Port field** enter *10001*.
+   - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10001``.
 
 #. Select **Set connection**. If the connection works and the node is running properly, there’s a message saying *Successfully connected*.
 
@@ -133,31 +131,63 @@ two options.
 - If you're familiar with using a terminal, the following
   options are available:
 
-  - Text prefixed with a ``$`` is to be run in a terminal.
+  - *NB: Text prefixed with a* ``$`` *is to be run in a terminal.*
 
   - Enable automatic startup of the *node* by running:
 
-  .. code-block:: console
+    - For Mainnet:
 
-     $ sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist" "/Library/LaunchDaemons/"
+      .. code-block:: console
+
+          $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist" "/Library/LaunchDaemons/"
+
+    - For Testnet:
+
+      .. code-block:: console
+
+          $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist" "/Library/LaunchDaemons/"
 
   - Enable automatic startup of the *node-collector* by running:
 
-  .. code-block:: console
+    - For Mainnet:
 
-     $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist" "/Library/LaunchDaemons/"
+      .. code-block:: console
 
-  - Disable automatic startup of *node* by running:
+         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist" "/Library/LaunchDaemons/"
 
-  .. code-block:: console
+    - For Testnet:
 
-     $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node.plist"
+      .. code-block:: console
+
+         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist" "/Library/LaunchDaemons/"
+
+  - Disable automatic startup of the *node* by running:
+
+    - For Mainnet:
+
+      .. code-block:: console
+
+         $sudo rm "/Library/LaunchDaemons/software.concordium.mainnet.node.plist"
+
+    - For Mainnet:
+
+      .. code-block:: console
+
+         $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node.plist"
 
   - Disable automatic startup of *node-collector* by running:
 
-  .. code-block:: console
+    - For Mainnet:
 
-     $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist"
+      .. code-block:: console
+
+         $sudo rm "/Library/LaunchDaemons/software.concordium.mainnet.node-collector.plist"
+
+    - For Mainnet:
+
+      .. code-block:: console
+
+         $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist"
 
 Configure a node as a baker
 ===========================
@@ -168,13 +198,43 @@ wallet and then register the keys on an account. For more information, see,
 You then need to move the generated file to a location accessible by the node,
 and finally specify this location in the service file for the Concordium Node.
 
+.. note::
+   Baker credentials registered on Mainnet will not work with a Testnet node
+   and vice versa.
+
+On Mainnet
+----------
+
 #. Move the ``baker-credentials.json`` file to the node's config folder:
 
    .. code-block:: console
 
-      sudo cp "/path/to/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
+      sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
 
-   (replacing ``/path/to/baker-credentials.json`` with the actual file path).
+   (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for Mainnet).
+
+#. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
+   Node/LaunchDaemons/software.concordium.mainnet.node.plist``
+
+#. In the *EnviromentVariables* section of the file add the following::
+
+    <!-- Path to the baker credentials file. -->
+    <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
+    <string>/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json</string>
+
+#. Restart your node by running **Concordium Node Stop Mainnet** (if running) and then
+   **Concordium Node Start Mainnnet**.
+
+On Testnet
+----------
+
+#. Move the ``baker-credentials.json`` file to the node's config folder:
+
+   .. code-block:: console
+
+      sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
+
+   (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for Testnet).
 
 #. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
    Node/LaunchDaemons/software.concordium.testnet.node.plist``
@@ -196,11 +256,14 @@ There are two ways to view the logs:
 - With *Console.app* you can start recording logs and view them, but you can't see
   logs from the past.
 
-  - Open the application *Console**, click on the **Start** button to begin
+  - Open the application *Console*, click on the **Start** button to begin
     recording logs.
 
-  - In the search bar, enter ``software.concordium.testnet.node`` and press
-    enter.
+  - In the search bar, enter the following and press enter:
+
+    - For Mainnet logs: ``software.concordium.mainnet.node``
+
+    - For Testnet logs: ``software.conordium.testnet.node``
 
   - Then click on the small **Any** button in the search bar and select
     **Subsystem** from the list of options.
@@ -210,8 +273,11 @@ There are two ways to view the logs:
 
   - Open a terminal.
 
-  - Enter ``log show --predicate 'subsystem ==
-    "software.concordium.testnet.node"'``
+  - Use the ``log`` command by entering:
+
+    - For Mainnet logs: ``log show --predicate 'subsystem == "software.concordium.mainnet.node"'``
+
+    - For Testnet logs: ``log show --predicate 'subsystem == "software.concordium.testnet.node"'``
 
   - You can filter the logs with additional parameters, such as start and end
     date. Enter ``log show --help`` to see the parameters available.
@@ -227,35 +293,64 @@ You can improve the performance by downloading the blocks before starting the
 node. While it will still take time to process the blocks, it will typically be
 faster than requesting them from peers.
 
+.. note::
+
+   A block file for Mainnet does not work with a Testnet node and vice versa.
+   Make sure to download the appropriate file for your node.
+
 Download the file with the blocks from the following addresses:
 
--  Testnet: https://catchup.testnet.concordium.com/blocks_to_import.mdb.
+- Mainnet: https://catchup.mainnet.concordium.software/blocks_to_import.mdb
+
+- Testnet: https://catchup.testnet.concordium.com/blocks_to_import.mdb
 
 The file is downloaded to your default download location.
 
 #. Move the file to the node's data folder:
 
-   .. code-block:: console
+   - For Mainnet:
 
-      sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
+     .. code-block:: console
 
-   (replacing ``<username>`` with your actual username).
+        sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Mainnet/Data"
 
-#. Edit this service file as an administrator: ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist``
+     (replacing ``<username>`` with your actual username).
 
-#. In the *EnviromentVariables* section of the file add the following::
+   - For Testnet:
 
-    <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
-    <string>/Library/Application Support/Concordium Node/Testnet/Data/blocks_to_import.mdb</string>
+     .. code-block:: console
 
-#. Restart your node by running the application **Concordium Node Stop Testnet** (if running) and then
-   **Concordium Node Start Testnet**.
+        sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
 
-#. Open the service file again, remove the lines you just added, and then save
+     (replacing ``<username>`` with your actual username).
+
+#. Specify the block file path in the service file:
+
+   - For Mainnet:
+
+     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
+       administrator and add the following in the *EnviromentVariables* section::
+
+       <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
+       <string>/Library/Application Support/Concordium Node/Mainnet/Data/blocks_to_import.mdb</string>
+
+   - For Testnet:
+
+     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
+       administrator and add the following in the *EnviromentVariables* section::
+
+       <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
+       <string>/Library/Application Support/Concordium Node/Testnet/Data/blocks_to_import.mdb</string>
+
+
+#. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
+   **Concordium Node Start [Mainnet/Testnet]**.
+
+#. Open the appropriate service file again, remove the lines you just added, and then save
    the file. This ensures that these blocks will not be processed again the next
    time the node is restarted.
 
-#. Go to the testnet dashboard to monitor when the node has caught up with its
+#. Go to the Mainnet or Testnet dashboard to monitor when the node has caught up with its
    peers on the blockchain. You do so by comparing the finalized length of the
    chain with the length of your node. If they match, your node has caught up.
 
