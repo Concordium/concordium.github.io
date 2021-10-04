@@ -15,7 +15,7 @@ In a terminal:
 
 **Verify download with signature**
 
-To verify that the downloaded file is indeed officially released by concordium, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.
+To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.
 
 * :cdw-sig:`Download signature <exe>`
 * :cdw-pubkey:`Download public key <>`
