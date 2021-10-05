@@ -1,5 +1,8 @@
 .. _run-node-macos:
 
+.. _`mainnet dashboard`: https://dashboard.mainnet.concordium.software/
+.. _`testnet dashboard`: https://dashboard.testnet.concordium.com/
+
 ==============================
 Run and manage a node on macOS
 ==============================
@@ -30,7 +33,7 @@ Install and run a node
 
 #. Click **Allow** to the message saying: *This package will run a program to
    determine if the software can be installed.* If you have a M1 based Mac, the installer
-   might ask you to install Rosetta if you haven't already. Click **Install** if that's the case.
+   might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
 
 #. If you already have a version of the node installed, click **OK** to the
    message saying *Previous Installation Detected*.
@@ -41,6 +44,9 @@ Install and run a node
 
 #. On the *Configuration* page you have the following options for both a
    mainnet and testnet node.
+
+     .. image:: ../../../shared/net/images/run-node/Node-setup-mac-1.png
+         :width: 60%
 
    - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs
      when the system starts. Choose this option when you plan to use the node
@@ -56,11 +62,10 @@ Install and run a node
      choose this option if you want to make further configuration changes before
      starting the node.
 
-   - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Go to the mainnet or testnet dashboard to view the statistics:
-
-     - https://dashboard.mainnet.concordium.software/
-
-     - https://dashboard.testnet.concordium.com/
+   - **Report to the network dashboard**: Select this option if you want to
+     publish your node statistics to the relevant dashboard when the node is
+     running. Deselect this option if you don't want your node displayed on the dashboard.
+     If selected, you can view the statistics at the `mainnet dashboard`_ or the `testnet dashboard`_.
 
    - **Public node name**: Specify the name of your node as you want it to appear
      on the network dashboard if the node reports to the network dashboard.
@@ -100,12 +105,8 @@ it's running, use the **Activity Monitor**.
 
    - ``node-collector`` for each node that reports to a network dashboard.
 
-#. If the node is running properly and reporting to the network dashboard, you
-   can see it on the dashboard:
-
-   - https://dashboard.mainnet.concordium.software/
-
-   - https://dashboard.testnet.concordium.com/
+#. If the node is running properly with reporting to the network dashboard enabled, you
+   can see the name of the node on the `mainnet dashboard`_ or the `testnet dashboard`_.
 
 Connect a node to the Desktop Wallet
 ------------------------------------
