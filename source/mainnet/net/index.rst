@@ -16,6 +16,9 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/run-node-windows
+   guides/run-node-macos
+   guides/baker-windows
    guides/deciding-wallet
    guides/overview-desktop
    guides/multisig-transfer
@@ -47,6 +50,7 @@
 
    desktop-wallet/install-ledger-app
    desktop-wallet/get-started-desktop
+   desktop-wallet/update-application
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
    desktop-wallet/accounts-desktop
