@@ -139,7 +139,7 @@ two options.
 
   .. code-block:: console
 
-     $ sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist" "/Library/LaunchDaemons/"
+     $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist" "/Library/LaunchDaemons/"
 
   - Enable automatic startup of the *node-collector* by running:
 
@@ -237,7 +237,7 @@ The file is downloaded to your default download location.
 
    .. code-block:: console
 
-      sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
+      $sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
 
    (replacing ``<username>`` with your actual username).
 
