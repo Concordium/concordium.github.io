@@ -1,7 +1,7 @@
-.. _run-node-macos:
-
 .. _`mainnet dashboard`: https://dashboard.mainnet.concordium.software/
 .. _`testnet dashboard`: https://dashboard.testnet.concordium.com/
+
+.. _run-node-macos:
 
 ==============================
 Run and manage a node on macOS
