@@ -14,7 +14,7 @@ This topic contains an overview of each task you need to complete to set up and 
 Step 1: Set up the node
 =======================
 
-The Desktop Wallet must be connected to a running node on the Concordium blockchain, so you'll have to run a node using Ubuntu. See :ref:`Run a node on Ubuntu<run-node-ubuntu>`
+The Desktop Wallet must be connected to a running node on the Concordium blockchain, so you'll have to run a node. You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`Docker <run-a-node>` or :ref:`Ubuntu <run-node-ubuntu>` for Linux.
 
 Step 2: Set up the Ledger Nano S
 ================================
