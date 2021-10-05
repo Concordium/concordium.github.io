@@ -212,7 +212,7 @@ On mainnet
 
    .. code-block:: console
 
-      sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
+      $sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
 
    (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for mainnet).
 
@@ -235,7 +235,7 @@ On testnet
 
    .. code-block:: console
 
-      sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
+      $sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
 
    (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for testnet).
 
@@ -315,7 +315,7 @@ The file is downloaded to your default download location.
 
      .. code-block:: console
 
-        sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Mainnet/Data"
+        $sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Mainnet/Data"
 
      (replacing ``<username>`` with your actual username).
 
@@ -323,7 +323,7 @@ The file is downloaded to your default download location.
 
      .. code-block:: console
 
-        sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
+        $sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
 
      (replacing ``<username>`` with your actual username).
 
