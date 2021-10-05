@@ -48,4 +48,6 @@ If you want to view the latest version of the *License notices* and *Terms and c
 
 - On Windows, press **Alt** to display the menu bar, and then in the **Help** menu, choose the document you want to view.
 
+- On Linux, press **Alt** to display the menu bar, and then in the **Help** menu, choose the document you want to view.
+
 - On macOS, select **Help** in the menu bar, and then choose the document you want to view.
