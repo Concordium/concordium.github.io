@@ -76,7 +76,7 @@ and send a ``baker add`` transaction to the network:
 where you replace
 
 - ``<amount-to-stake>`` with the GTU amount for the baker's initial stake
-- ``<concordium-data-dir>`` with any path of your choice. Remember to congigure your node to bake using this path:
+- ``<concordium-data-dir>`` with any path of your choice. Remember to configure your node to bake using this path:
 
   * on Linux: See :ref:`configure Linux node<baker-node-Ubuntu>`.
   * on MacOS: See :ref:`configure MacOS node<configure-baker-macos>`.
