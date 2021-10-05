@@ -23,7 +23,7 @@ Here you specify which node on the blockchain that you want to connect to.
 
 - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10000``.
 
-- If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1* and in the **Port field** enter *10001*.
+- If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter ``127.0.0.1`` and in the **Port field** enter ``10001``.
 
 - Select **Set connection**. If the connection works, there's a message saying **Successfully connected**.
 
