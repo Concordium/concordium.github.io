@@ -69,7 +69,7 @@ Download the Concordium Client:
 
 -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0>`_
 
-   - SHA256 checksum of the download: ``TO BE UPDATED``
+   - SHA256 checksum of the download: ``9753fbcea64a59b8a883a867524b089696a56a9bd5b0a0af95ada3d191ca1cc1``
 
 -  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_1.1.1-0.zip>`_.
 
@@ -100,9 +100,9 @@ Node Debian package
 -------------------
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.2_amd64.deb>`_
+- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.3_amd64.deb>`_
 
-   - SHA256 checksum of the download: ``TO BE UPDATED``
+   - SHA256 checksum of the download: ``8d19d17cf84cb684aa38e0bd9c63529290dd946d4d85cadffdea0d6a03a12226``
 
 To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -120,7 +120,7 @@ Native Windows node
 
 To run a node on Windows, you need a Windows Installer package.
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.2.msi>`_
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.3.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
 
@@ -129,7 +129,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.2.pkg>`_
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.3.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
