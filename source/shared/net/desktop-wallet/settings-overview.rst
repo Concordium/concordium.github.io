@@ -27,7 +27,7 @@ Here you specify which node on the blockchain that you want to connect to.
 
 - Select **Set connection**. If the connection works, there's a message saying **Successfully connected**.
 
-You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`Docker <run-a-node>` or :ref:`Ubuntu <run-node-ubuntu>` for Linux.
+You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux.
 
 Change wallet password
 ==========================
