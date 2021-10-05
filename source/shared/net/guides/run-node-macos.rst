@@ -190,6 +190,8 @@ two options.
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist"
 
+.. _configure-baker-macos:
+
 Configure a node as a baker
 ===========================
 
