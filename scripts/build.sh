@@ -34,6 +34,9 @@ cp -r CLAs "${build_dir}/CLAs"
 printf "Copying 'extra' directory to ${build_dir}\n"
 cp -r extra "${build_dir}/extra"
 
+printf "Adding symlink ${build_dir}/404.html to ${languages[0]}/${versions[0]}/404.html\n"
+ln -sf "${languages[0]}/${versions[0]}/404.html" "${build_dir}/404.html"
+
 for current_version in ${versions[@]}; do
   printf "\nVersion '${current_version}':\n-----------------------------\n"
   export current_version
@@ -44,3 +47,4 @@ for current_version in ${versions[@]}; do
     sphinx-build "${source_dir}/${current_version}" "${build_dir}/${current_language}/${current_version}" -D language="${current_language}" -W
   done
 done
+

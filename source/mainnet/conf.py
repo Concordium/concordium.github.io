@@ -47,6 +47,7 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
+    'notfound.extension',
     "multidoc"
 ]
 
@@ -67,6 +68,8 @@ graphviz_dot_args=[
     "-Efontsize=12",
 ]
 
+# Disable default url prefix "/en/latest/" on every resource.
+notfound_urls_prefix = "/"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../shared/_templates']
