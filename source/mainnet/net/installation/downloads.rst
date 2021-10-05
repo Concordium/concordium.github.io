@@ -12,8 +12,8 @@ Downloads
 
 This topics contains information about where you can download the Concordium Wallets and tools for |Net|. You can also find out about the hardware requirements for running a node.
 
-Mobile Wallet
-=============
+Concordium Mobile Wallet
+========================
 
 The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
@@ -38,17 +38,11 @@ The Concordium Mobile Wallet has been verified by NowSecure.
 Concordium Desktop Wallet
 =========================
 
--  `Download for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.6.exe>`_
+-  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.6.exe>`_
 
-   -  SHA256 checksum of the download: ``58bceb96a9ff752530260f4b6c7aa4c6397901886ff67b6204a9d1990e8058ea``
+-  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.6.dmg>`_
 
--  `Download for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.6.dmg>`_
-
-   -  SHA256 checksum of the download: ``53554244918ee58136317c3493d837bda9d633ea2674c4d364563553fc3838e8``
-
-Currently, the Desktop Wallet doesn't support Apple MacBook Air 2020 M1.
-
--  Download for Linux
+-  Download the Desktop Wallet for Linux:
 
    -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.AppImage>`_
 
@@ -73,31 +67,22 @@ Concordium Client
 =================
 Download the Concordium Client:
 
--  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.0.1>`_
+-  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0>`_
 
-   - SHA256 checksum of the download: ``bae20cf3bc93dbafc58a7b1eae462375ef3cfba2cc4905bf872735aa8233d98c``
+   - SHA256 checksum of the download: ``9753fbcea64a59b8a883a867524b089696a56a9bd5b0a0af95ada3d191ca1cc1``
 
--  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_1.0.1>`_.
+-  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_1.1.1-0.zip>`_.
 
-   - SHA256 checksum of the download: ``4495b0ae1ff6e343f23b57f3544d4a2c73502a3f8b23509ae48025cfffcc18a4``
-   - You need to make the client executable by running ``chmod +x
-     path/to/concordium-client_1.0.1`` in a terminal. Make sure to provide the
-     correct path to the downloaded client.
-   - You also need to `grant it permission to run in your Security & Privacy
-     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
-
--  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_1.0.1.exe>`_
-
-   -  SHA256 checksum of the download: ``db3bbce100749f36f7b143d915f573ea28a4dc09011cec35efea73f2165db79f``
+-  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_1.1.1-0.exe>`_
 
 
 Cargo-concordium
 ================
 Download cargo-concordium:
 
--  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0>`_
+-  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
 
--  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0>`_
+-  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
 
    - You need to make the tool executable by running ``chmod +x
      path/to/cargo-concordium_1.0.0`` in a terminal. Make sure to provide the
@@ -105,22 +90,50 @@ Download cargo-concordium:
    - You also need to `grant it permission to run in your Security & Privacy
      settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
 
--  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0.exe>`_
+-  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
 
+
+Concordium node distributions
+=============================
 
 Node Debian package
-===================
-To run a node on a server with Ubuntu, you'll need to `download a Debian package <https://distribution.mainnet.concordium.software/deb/concordium-node_1.0.1-mainnet_amd64.deb>`_.
+-------------------
+To run a node on a server with Ubuntu, you need a Debian package.
 
-- SHA256 checksum of the download: ``dcb76543e4fb0346242df1d8873bbdf89af6ccbd49ea6b4d315bd1dc4c14a135``
+- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_1.1.3_amd64.deb>`_
+
+   - SHA256 checksum of the download: ``8d19d17cf84cb684aa38e0bd9c63529290dd946d4d85cadffdea0d6a03a12226``
+
+To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
 
-Full suite for running a node using Docker
-=============================================================
+Full suite for running a node on Linux using Docker
+---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-1.0.1-mainnet.tar.gz>`_
+- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-1.1.3-0-mainnet.tar.gz>`_
 
+   - SHA256 checksum of the download: ``1e86ceda79be5bcb84f2615fdcd494fc7bc6e50f5e65c35cf47262e126c3be55``
+
+To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
+
+Native Windows node
+-------------------
+
+To run a node on Windows, you need a Windows Installer package.
+
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.3.msi>`_
+
+To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
+
+Native Mac node
+---------------
+
+To run a node on macOS, you need a macOS installer package.
+
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.3.pkg>`_
+
+To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
 Mainnet genesis block
 =====================
