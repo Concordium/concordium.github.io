@@ -26,11 +26,11 @@ Install and run a node
    package (.pkg file).
 
 #. In the folder where you downloaded the .pkg file, double-click the .pkg file.
-   This will open the **Install Concordium Node** program.
+   The **Install Concordium Node** program opens.
 
-#. Click **Allow** to the message saying *This package will run a program to
+#. Click **Allow** to the message saying: *This package will run a program to
    determine if the software can be installed.* If you have a M1 based Mac, the installer
-   may ask you to install Rosetta, if you haven't already. Click **Install** if that's the case.
+   might ask you to install Rosetta if you haven't already. Click **Install** if that's the case.
 
 #. If you already have a version of the node installed, click **OK** to the
    message saying *Previous Installation Detected*.
@@ -42,11 +42,11 @@ Install and run a node
 #. On the *Configuration* page you have the following options for both a
    mainnet and testnet node.
 
-   - **Run a [Mainnet/Testnet] node at start-up**: When selected, the node runs
+   - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs
      when the system starts. Choose this option when you plan to use the node
      frequently and need it to be up-to-date at short notice. If you don’t
      select this option, you’ll have to start the node manually when required,
-     for example, when you want to use the Desktop Wallet or concordium-client.
+     for example, when you want to use the Desktop Wallet or Concordium Client.
      If you choose to start the node manually, it might take longer for the node
      to get up-to-date with the blockchain depending on when the node was last
      up-to-date.
@@ -63,16 +63,16 @@ Install and run a node
      - https://dashboard.testnet.concordium.com/
 
    - **Public node name**: Specify the name of your node as you want it to appear
-     on the network dashboard if the node reports to the network dashboard. *NB:
-     You must enter a name for both nodes, even if you only want to run one of them.*
+     on the network dashboard if the node reports to the network dashboard.
+     You must enter a name for both nodes, even if you only want to run one of them.
 
-#. Once configured, click **Continue** to go to the *Installation Type* page.
+#. Once configured, click **Continue** to go to the **Installation Type** page.
 
 #. Click **Install** and enter your administrator password. The installer needs
    the password because it installs the node for all users and runs it as a
    system service.
 
-#. Once installed, click **Close**. The following helper-applications are now
+#. Once installed, click **Close**. The following helper applications are now
    available on your computer (you can view them in the LaunchPad or in the
    */Applications/Concordium Node* folder):
 
@@ -131,17 +131,17 @@ two options.
 - If you're familiar with using a terminal, the following
   options are available:
 
-  - *NB: Text prefixed with a* ``$`` *is to be run in a terminal.*
+  - Run text prefixed with a ``$`` in a terminal.
 
   - Enable automatic startup of the *node* by running:
 
-    - For Mainnet:
+    - For mainnet:
 
       .. code-block:: console
 
           $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist" "/Library/LaunchDaemons/"
 
-    - For Testnet:
+    - For testnet:
 
       .. code-block:: console
 
@@ -149,13 +149,13 @@ two options.
 
   - Enable automatic startup of the *node-collector* by running:
 
-    - For Mainnet:
+    - For mainnet:
 
       .. code-block:: console
 
          $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist" "/Library/LaunchDaemons/"
 
-    - For Testnet:
+    - For testnet:
 
       .. code-block:: console
 
@@ -163,13 +163,13 @@ two options.
 
   - Disable automatic startup of the *node* by running:
 
-    - For Mainnet:
+    - For mainnet:
 
       .. code-block:: console
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.mainnet.node.plist"
 
-    - For Mainnet:
+    - For mainnet:
 
       .. code-block:: console
 
@@ -177,13 +177,13 @@ two options.
 
   - Disable automatic startup of *node-collector* by running:
 
-    - For Mainnet:
+    - For mainnet:
 
       .. code-block:: console
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.mainnet.node-collector.plist"
 
-    - For Mainnet:
+    - For mainnet:
 
       .. code-block:: console
 
@@ -199,10 +199,10 @@ You then need to move the generated file to a location accessible by the node,
 and finally specify this location in the service file for the Concordium Node.
 
 .. note::
-   Baker credentials registered on Mainnet will not work with a Testnet node
+   Baker credentials registered on mainnet will not work with a testnet node
    and vice versa.
 
-On Mainnet
+On mainnet
 ----------
 
 #. Move the ``baker-credentials.json`` file to the node's config folder:
@@ -211,7 +211,7 @@ On Mainnet
 
       sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
 
-   (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for Mainnet).
+   (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for mainnet).
 
 #. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
    Node/LaunchDaemons/software.concordium.mainnet.node.plist``
@@ -225,7 +225,7 @@ On Mainnet
 #. Restart your node by running **Concordium Node Stop Mainnet** (if running) and then
    **Concordium Node Start Mainnnet**.
 
-On Testnet
+On testnet
 ----------
 
 #. Move the ``baker-credentials.json`` file to the node's config folder:
@@ -234,7 +234,7 @@ On Testnet
 
       sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
 
-   (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for Testnet).
+   (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for testnet).
 
 #. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
    Node/LaunchDaemons/software.concordium.testnet.node.plist``
@@ -253,17 +253,17 @@ View node logs
 
 There are two ways to view the logs:
 
-- With *Console.app* you can start recording logs and view them, but you can't see
+- With the **Console.app** you can start recording logs and view them, but you can't see
   logs from the past.
 
-  - Open the application *Console*, click on the **Start** button to begin
+  - Open the **Console app**, click on the **Start** button to begin
     recording logs.
 
   - In the search bar, enter the following and press enter:
 
-    - For Mainnet logs: ``software.concordium.mainnet.node``
+    - For mainnet logs: ``software.concordium.mainnet.node``
 
-    - For Testnet logs: ``software.conordium.testnet.node``
+    - For testnet logs: ``software.conordium.testnet.node``
 
   - Then click on the small **Any** button in the search bar and select
     **Subsystem** from the list of options.
@@ -275,9 +275,9 @@ There are two ways to view the logs:
 
   - Use the ``log`` command by entering:
 
-    - For Mainnet logs: ``log show --predicate 'subsystem == "software.concordium.mainnet.node"'``
+    - For mainnet logs: ``log show --predicate 'subsystem == "software.concordium.mainnet.node"'``
 
-    - For Testnet logs: ``log show --predicate 'subsystem == "software.concordium.testnet.node"'``
+    - For testnet logs: ``log show --predicate 'subsystem == "software.concordium.testnet.node"'``
 
   - You can filter the logs with additional parameters, such as start and end
     date. Enter ``log show --help`` to see the parameters available.
@@ -295,7 +295,7 @@ faster than requesting them from peers.
 
 .. note::
 
-   A block file for Mainnet does not work with a Testnet node and vice versa.
+   A block file for mainnet does not work with a testnet node and vice versa.
    Make sure to download the appropriate file for your node.
 
 Download the file with the blocks from the following addresses:
@@ -308,7 +308,7 @@ The file is downloaded to your default download location.
 
 #. Move the file to the node's data folder:
 
-   - For Mainnet:
+   - For mainnet:
 
      .. code-block:: console
 
@@ -316,7 +316,7 @@ The file is downloaded to your default download location.
 
      (replacing ``<username>`` with your actual username).
 
-   - For Testnet:
+   - For testnet:
 
      .. code-block:: console
 
@@ -326,7 +326,7 @@ The file is downloaded to your default download location.
 
 #. Specify the block file path in the service file:
 
-   - For Mainnet:
+   - For mainnet:
 
      - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
        administrator and add the following in the *EnviromentVariables* section::
@@ -334,7 +334,7 @@ The file is downloaded to your default download location.
        <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
        <string>/Library/Application Support/Concordium Node/Mainnet/Data/blocks_to_import.mdb</string>
 
-   - For Testnet:
+   - For testnet:
 
      - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
        administrator and add the following in the *EnviromentVariables* section::
@@ -350,17 +350,16 @@ The file is downloaded to your default download location.
    the file. This ensures that these blocks will not be processed again the next
    time the node is restarted.
 
-#. Go to the Mainnet or Testnet dashboard to monitor when the node has caught up with its
+#. Go to the mainnet or testnet dashboard to monitor when the node has caught up with its
    peers on the blockchain. You do so by comparing the finalized length of the
    chain with the length of your node. If they match, your node has caught up.
 
 Uninstall a macOS node
 ======================
 
-#. Open *Spotlight Search* by pressing **Cmd + Space** on your keyboard, or by
-   clicking the search icon in menu bar.
+#. Press **Cmd + Space** on your keyboard to open **Spotlight Search** or click the Spotlight icon in the menu bar.
 
-#. Search for ``Concordium Node Uninstaller`` and open the found application.
+#. Search for ``Concordium Node Uninstaller`` and open the application that is found.
 
 #. You now have two options:
 
