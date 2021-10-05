@@ -13,7 +13,7 @@ This overview describes the recommended scenario for running a node and becoming
 Step 1: Set up the node
 =======================
 
-The Desktop Wallet must be connected to a running node on the Concordium blockchain, so you'll have to run a node using Ubuntu. See :ref:`Run a node on Ubuntu<run-node-ubuntu>`
+The Desktop Wallet must be connected to a running node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`.
 
 Step 2: Set up the Ledger Nano S
 ================================
@@ -38,4 +38,12 @@ Step 6: Configure the node with the baker keys
 ==============================================
 
 The last step is to configure the running node with the baker keys so the node
-can start baking. See :ref:`Run a baker node on Ubuntu<baker-node-Ubuntu>`.
+can start baking.
+
+- :ref:`On Windows<run-node-windows>`
+
+- :ref:`On macOS<run-node-macos>`
+
+- :ref:`On Ubuntu<baker-node-Ubuntu>`
+
+

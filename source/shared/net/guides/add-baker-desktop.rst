@@ -17,7 +17,8 @@ The process of becoming a baker involves the following:
 #. Register the baker keys with the account.
 #. Start a :ref:`node<run-a-node>` with the baker keys.
 
-This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To learn about running a baker node, see :ref:`Run a node on a server with Ubuntu<run-node-ubuntu>`.
+This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on :ref:`Ubuntu <run-node-ubuntu>`, :ref:`Windows <run-a-node>`, or :ref:`macOS <run-node-macos>`.
+
 
 Prerequisites
 =============
@@ -150,5 +151,3 @@ When you have received and added all the required signatures, you can submit the
 
 .. Warning::
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
-
-To start baking, you now have to start your node with the baker keys. See :ref:`Run a node on a server with Ubuntu<run-node-ubuntu>` for more information about this.
