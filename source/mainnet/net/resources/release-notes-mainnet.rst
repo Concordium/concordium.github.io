@@ -8,6 +8,34 @@ Release notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v6:
+
+Mainnet 2
+=========
+
+October 6, 2021
+
+Concordium Node v1.1.3
+----------------------
+
+The :ref:`Concordium node release v1.1.3 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
+stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
+
+- Added memo functionality for transactions to Protocol
+- Windows support for running a node
+- Mac support for running a node
+- Mac ARM M1 support for running a node
+- Various bug fixes
+
+Concordium Client v1.1.1
+------------------------
+
+:ref:`Concordium Client v1.1.1 <downloads>`
+
+- Added memo functionality for transactions
+
+
 Mainnet 1: Update 2
 ===================
 
