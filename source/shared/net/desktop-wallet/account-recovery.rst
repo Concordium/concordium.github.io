@@ -29,7 +29,7 @@ The keys you use to sign account transactions are attached to credentials, and t
 
 When you create a new identity in the Desktop Wallet, it has an associated number on the Ledger, referred to as the identity index. These indices are used sequentially, so the first identity created from a Ledger uses index *0*, the next uses index *1*, and so forth.
 
-The recovery process takes advantage of that and also checks the indices sequentially. Unfornately the identity process can fail, which could cause an index to be skipped, so the you must determine yourself when the recovery is finished. If you have never had your identity issuance fail, you can stop the recovery when you encounter an unused index.
+The recovery process checks the identities sequentially by using the indices. Unfortunately, the identity issuance process can fail and cause an index to be skipped, and therefore, you must determine yourself when the recovery is finished. If you've never had your identity issuance fail, you can stop the recovery when you encounter an unused index.
 
 For each identity index, the recovery process uses your Ledger device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the chain whether the credentials have been deployed, and which account each credential is attached to. These accounts are added to the Desktop Wallet along with the deployed credentials.
 
