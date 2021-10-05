@@ -3,3 +3,6 @@ __pycache__
 _build
 /source/.vscode/
 BUILDDIR/
+
+### macOS ###
+.DS_Store
