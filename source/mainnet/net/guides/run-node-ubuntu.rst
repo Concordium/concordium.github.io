@@ -27,31 +27,23 @@ Prerequisites
 -  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See :ref:`create-baker-desktop`.
 
 
-Upgrade from version 1.0.1 to 1.1.0
+Upgrade from version 1.0.1 to 1.1.3
 ===================================
 
-To upgrade from version `1.0.1` of the `concordium-node` package to version `1.1.0` of the `concordium-mainnet-node` package
+To upgrade from version `1.0.1` of the `concordium-node` package to version `1.1.3` of the `concordium-mainnet-node` package
 package you need to
 
-1. Remove the existing package
+- Install the new package
 
    .. code-block:: console
 
-    apt remove --purge concordium-node
-
-  This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node's configuration and data directories.
-
-2. Install the new package
-
-   .. code-block:: console
-
-    apt install ./concordium-mainnet-node_1.1.0_amd64.deb
+    apt install ./concordium-mainnet-node_1.1.3_amd64.deb
 
   This step will perform automatic database migration, so that the new node will
   not have to catch up from scratch. After installation is completed, the node and
   the collector will be started as before.
 
-Changes to node management in version 1.1.0
+Changes to node management in version 1.1.3
 -------------------------------------------
 
 There are two main differences from version 1.0.1.

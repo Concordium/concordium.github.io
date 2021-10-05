@@ -18,6 +18,8 @@ Prerequisites
 -  Meet the :ref:`minimum system requirements<requirements-run-node>` for running a node.
 -  :ref:`Run a node on Windows<run-node-windows>`
 
+.. _configure-baker-windows:
+
 Configure a baker node on Windows
 =================================
 
