@@ -30,7 +30,7 @@ Here you specify which node on the blockchain that you want to connect to.
 You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux.
 
 Change wallet password
-==========================
+======================
 
 On the this page, you can update the existing password for the Desktop Wallet, providing that you remember the current password.
 
