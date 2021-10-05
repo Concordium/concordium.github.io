@@ -35,6 +35,32 @@ Concordium Client v1.1.1
 
 - Added memo functionality for transactions
 
+Concordium Desktop Wallet v1.2.0
+--------------------------------
+
+:ref:`Concordium Desktop Wallet v1.2.0 <downloads>`
+
+- Added memo functionality to simple, shielded and scheduled transfers.
+- Automatic updates now supported.
+- Added option to recover lost accounts from Ledger devices.
+- The desktop wallet now shows connected node status in side bar.
+- Added an option to change between two account views.
+- Transaction log can now handle more than 100 transactions and filter functionality has been expanded.
+- Failed identities now show more information, including how to contact support.
+- Apple M1 Macs are now supported through Rosetta.
+- It is now possible to view an account address QR-code in "fullscreen" mode.
+- It is now possible to rename accounts and identities.
+- Added an option to add an address book entry while creating a transfer transaction.
+- Added an introductory screen to set up a node connection for first time users.
+- It is now possible to remove a failed identity.
+- The accounts page has been updated to make it clearer that multi credential accounts are not able to use shielded transactions.
+- Transactions in the 'Transfers' list in the account view are now grouped by dates.
+- Various smaller UI updates.
+- Various smaller bug fixes.
+- The desktop wallet is now open source.
+
+
+
 
 Mainnet 1: Update 2
 ===================
