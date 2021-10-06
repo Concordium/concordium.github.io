@@ -36,7 +36,7 @@ Concordium Client v1.1.1
 - Added memo functionality for transactions
 
 
-Mainnet 1: Alpha Centauri 1.2 
+Mainnet 1: Alpha Centauri 1.2
 =============================
 
 July 28, 2021
