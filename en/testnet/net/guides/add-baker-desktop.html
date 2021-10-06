@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -156,18 +157,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -276,7 +279,7 @@
 <li><p>Register the baker keys with the account.</p></li>
 <li><p>Start a <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">node</span></a> with the baker keys.</p></li>
 </ol>
-<p>This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To learn about running a baker node, see <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>.</p>
+<p>This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>There are a couple of things you must set up in preparation before you can start baking.</p>
@@ -396,7 +399,6 @@ is added to the staked amount on the account by default. However, you can change
 <p class="admonition-title">Warning</p>
 <p>Transactions on the blockchain are permanent. That is, they are irreversible and can’t be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.</p>
 </div>
-<p>To start baking, you now have to start your node with the baker keys. See <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a> for more information about this.</p>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>

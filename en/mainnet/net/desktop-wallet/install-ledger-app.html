@@ -111,6 +111,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -144,6 +147,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-application.html">Update the desktop wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts-desktop.html">Overview of accounts</a></li>
@@ -151,18 +155,20 @@
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -343,11 +349,22 @@
 </ol>
 </div>
 <div class="section" id="install-the-concordium-ledger-app-on-windows">
-<h3>Install the Concordium Ledger app on Windows<a class="headerlink" href="#install-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
+<span id="install-ledger-app-windows"></span><h3>Install the Concordium Ledger app on Windows<a class="headerlink" href="#install-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
 <li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. You can now use the Ledger with the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="update-the-concordium-ledger-app-on-windows">
+<h3>Update the Concordium Ledger app on Windows<a class="headerlink" href="#update-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
+<p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the Ledger app if you haven’t done so already.</p></li>
+<li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>.</p></li>
+<li><p>Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the Ledger says <strong>Confirm action</strong>. Press both buttons to confirm. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the Ledger app.</p></li>
 </ol>
 </div>
 </div>
@@ -407,7 +424,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-concordium-ledger-app-on-macos">
-<h3>Install the Concordium Ledger app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
+<span id="install-ledger-app-macos"></span><h3>Install the Concordium Ledger app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
@@ -418,6 +435,17 @@
 <ol class="arabic simple" start="2">
 <li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. You can now use the Ledger with the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="update-the-concordium-ledger-app-on-macos">
+<h3>Update the Concordium Ledger app on macOS<a class="headerlink" href="#update-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
+<p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the Ledger app if you haven’t done so already.</p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">install.sh</span></code> file from the folder that you extracted the files to.</p></li>
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>.</p></li>
+<li><p>Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the Ledger says <strong>Confirm action</strong>. Press both buttons to confirm. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the Ledger app.</p></li>
 </ol>
 </div>
 </div>
@@ -475,7 +503,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-concordium-ledger-app-on-ubuntu">
-<h3>Install the Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<span id="install-ledger-app-ubuntu"></span><h3>Install the Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
@@ -486,6 +514,17 @@
 <ol class="arabic simple" start="2">
 <li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. You can now use the Ledger with the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="update-the-concordium-ledger-app-on-ubuntu">
+<h3>Update the Concordium Ledger app on Ubuntu<a class="headerlink" href="#update-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the Ledger app if you haven’t done so already.</p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">install.sh</span></code> file from the folder that you extracted the files to.</p></li>
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>.</p></li>
+<li><p>Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the Ledger says <strong>Confirm action</strong>. Press both buttons to confirm. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the Ledger app.</p></li>
 </ol>
 </div>
 </div>

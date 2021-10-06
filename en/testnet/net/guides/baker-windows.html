@@ -1,0 +1,452 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Run a baker node on Windows &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deciding between the Desktop Wallet and the Mobile Wallet" href="deciding-wallet.html" />
+    <link rel="prev" title="Run and manage a node on macOS" href="run-node-macos.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #34838C" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo-testnet.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run a baker node on Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-a-baker-node-on-windows">Configure a baker node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-the-node-log">View the node log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-options-for-running-a-baker-node">Other options for running a baker node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-credentials.html">Add credentials to an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-credentials-file.html">Create a credentials file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+      <li>Run a baker node on Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Concordium/concordium.github.io/blob/testnet/source/net/guides/baker-windows.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-a-baker-node-on-windows">
+<span id="baker-windows"></span><h1>Run a baker node on Windows<a class="headerlink" href="#run-a-baker-node-on-windows" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#configure-a-baker-node-on-windows" id="id2">Configure a baker node on Windows</a></p></li>
+<li><p><a class="reference internal" href="#view-the-node-log" id="id3">View the node log</a></p>
+<ul>
+<li><p><a class="reference internal" href="#baker-node-troubleshooting" id="id4">Baker node troubleshooting</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#other-options-for-running-a-baker-node" id="id5">Other options for running a baker node</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>A baker node is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking two epochs after the transaction has been approved.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Run Windows 10 or later or Windows Server 2019 or later.</p></li>
+<li><p>Meet the <a class="reference internal" href="../installation/downloads.html#requirements-run-node"><span class="std std-ref">minimum system requirements</span></a> for running a node.</p></li>
+<li><p><a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">Run a node on Windows</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="configure-a-baker-node-on-windows">
+<span id="configure-baker-windows"></span><h2>Configure a baker node on Windows<a class="headerlink" href="#configure-a-baker-node-on-windows" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Create baker keys and associate them with an account either on mainnet or testnet. We recommend that you do this with the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a>. However, if you want use an account from the mobile wallet as a baker account, you have to use the <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">Concordium Client</span></a>. In the following, the baker keys are referred to as baker-credentials.json.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.</p>
+</div>
+</li>
+<li><p>Once you’ve created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open <strong>Configure Concordium Node Service</strong> from the <strong>Start</strong> menu, and select <strong>Yes</strong> when you see the message <em>Do you want to allow this app to make changes to your device?</em>. The configuration file opens.</p></li>
+<li><p>Add the following in the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> section if the credentials are for mainnet, or the <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section if they are for testnet. Make sure that you add the credentials to the network the account was created on.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">baker_credentials = &#39;C:\path\to\baker-credentials.json&#39;</span>
+</pre></div>
+</div>
+<p>where you replace <code class="docutils literal notranslate"><span class="pre">C:\path\to\baker-credentials.json</span></code> with the full path to the baker credentials file.</p>
+</li>
+<li><p>Save the file.</p></li>
+<li><p>Stop and restart the node runner service using the <strong>Stop Concordium Service Node</strong> and the <strong>Start Concordium Service Node</strong> shortcuts. Don’t use <em>End task</em> in the Task Manager as it might cause errors.</p></li>
+</ol>
+</div>
+<div class="section" id="view-the-node-log">
+<h2>View the node log<a class="headerlink" href="#view-the-node-log" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>You can find the node logs here:</p>
+<ul class="simple">
+<li><p>Mainnet: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\mainnet\logs</span></code></p></li>
+<li><p>Testnet: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\testnet\logs</span></code></p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="baker-node-troubleshooting">
+<h3>Baker node troubleshooting<a class="headerlink" href="#baker-node-troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>If a node fails to start, for example because of a configuration issue, or stops unexpectedly, there will be an Error-level event in the <strong>Event Viewer</strong> that explains why. The following are common error scenarios and possible solutions.</p>
+<ul>
+<li><p>The node doesn’t restart after you’ve set the credentials in the configuration file. This error can occur when the specified location of the credentials file is incorrect. In the <strong>Event Viewer</strong> an error such as the following might appear. When this happens, change the path in the configuration file.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/Node-setup-win-10.png"><img alt="../../_images/Node-setup-win-10.png" src="../../_images/Node-setup-win-10.png" style="width: 60%;" /></a>
+</div></blockquote>
+</li>
+<li><p>The node doesn’t start baking, and in the log file you see the message <em>Baker keys are incorrect</em> repeatedly. It takes 1-2 hours after baker keys have been added to an account for the keys to be eligible for baking. If this problem persists beyond two hours, then the keys likely are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.</p></li>
+</ul>
+<p>For more information on the logs, see <a class="reference internal" href="run-node-windows.html#view-windows-node-log"><span class="std std-ref">Run a node on Windows</span></a>.</p>
+</div>
+</div>
+<div class="section" id="other-options-for-running-a-baker-node">
+<h2>Other options for running a baker node<a class="headerlink" href="#other-options-for-running-a-baker-node" title="Permalink to this headline">¶</a></h2>
+<p>If you’re not using Windows, you can run a node by using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': loadChoice() ? 'granted' : 'denied' });
+gtag('js', new Date());
+gtag('config', 'G-TE81YY48VB', {'anonymize_ip': true});
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+    document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+    if (!document.cookie.includes("cookie-consent=")) {
+        return undefined;
+    }
+    return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+    document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+    storeChoice(true)
+    gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'granted' });
+    removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+    storeChoice(false)
+    removeCookieConsentBanner()
+}
+
+
+</script>
+<div id="cookie-consent" class="consent">
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Disallow</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+<script>
+    const stored = loadChoice();
+    if (stored !== undefined) {
+        removeCookieConsentBanner()
+    }
+</script>
+
+
+</body>
+</html>

@@ -111,12 +111,15 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run a node on a server with Ubuntu</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upgrade-from-version-1-0-1-to-1-1-0">Upgrade from version 1.0.1 to 1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrade-from-version-1-0-1-to-1-1-3">Upgrade from version 1.0.1 to 1.1.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -142,6 +145,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-application.html">Update the desktop wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
@@ -149,18 +153,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -251,9 +257,9 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#upgrade-from-version-1-0-1-to-1-1-0" id="id2">Upgrade from version 1.0.1 to 1.1.0</a></p>
+<li><p><a class="reference internal" href="#upgrade-from-version-1-0-1-to-1-1-3" id="id2">Upgrade from version 1.0.1 to 1.1.3</a></p>
 <ul>
-<li><p><a class="reference internal" href="#changes-to-node-management-in-version-1-1-0" id="id3">Changes to node management in version 1.1.0</a></p></li>
+<li><p><a class="reference internal" href="#changes-to-node-management-in-version-1-1-3" id="id3">Changes to node management in version 1.1.3</a></p></li>
 <li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id4">Install the Debian package and run a node</a></p></li>
 </ul>
 </li>
@@ -276,34 +282,24 @@
 <li><p>If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.</p></li>
 </ul>
 </div>
-<div class="section" id="upgrade-from-version-1-0-1-to-1-1-0">
-<h2>Upgrade from version 1.0.1 to 1.1.0<a class="headerlink" href="#upgrade-from-version-1-0-1-to-1-1-0" title="Permalink to this headline">¶</a></h2>
-<p>To upgrade from version <cite>1.0.1</cite> of the <cite>concordium-node</cite> package to version <cite>1.1.0</cite> of the <cite>concordium-mainnet-node</cite> package
+<div class="section" id="upgrade-from-version-1-0-1-to-1-1-3">
+<h2>Upgrade from version 1.0.1 to 1.1.3<a class="headerlink" href="#upgrade-from-version-1-0-1-to-1-1-3" title="Permalink to this headline">¶</a></h2>
+<p>To upgrade from version <cite>1.0.1</cite> of the <cite>concordium-node</cite> package to version <cite>1.1.3</cite> of the <cite>concordium-mainnet-node</cite> package
 package you need to</p>
-<ol class="arabic">
-<li><p>Remove the existing package</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt remove --purge concordium-node</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<blockquote>
-<div><p>This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node’s configuration and data directories.</p>
-</div></blockquote>
-<ol class="arabic" start="2">
+<ul>
 <li><p>Install the new package</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_1.1.0_amd64.deb</span>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_1.1.3_amd64.deb</span>
 </pre></div>
 </div>
-</li>
-</ol>
-<blockquote>
-<div><p>This step will perform automatic database migration, so that the new node will
+</div></blockquote>
+<p>This step will perform automatic database migration, so that the new node will
 not have to catch up from scratch. After installation is completed, the node and
 the collector will be started as before.</p>
-</div></blockquote>
-<div class="section" id="changes-to-node-management-in-version-1-1-0">
-<h3>Changes to node management in version 1.1.0<a class="headerlink" href="#changes-to-node-management-in-version-1-1-0" title="Permalink to this headline">¶</a></h3>
+</li>
+</ul>
+<div class="section" id="changes-to-node-management-in-version-1-1-3">
+<h3>Changes to node management in version 1.1.3<a class="headerlink" href="#changes-to-node-management-in-version-1-1-3" title="Permalink to this headline">¶</a></h3>
 <p>There are two main differences from version 1.0.1.</p>
 <ol class="arabic simple">
 <li><p>The services are named <cite>concordium-mainnet-node</cite> and
@@ -340,6 +336,11 @@ The services are also enabled to start automatically on system start.</p>
 <li><p>Enter a <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">name</span></code> when prompted. The node name is visible on the network dashboard. When you have installed the services, the <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node</span></code> will be running automatically.</p></li>
 <li><p>To verify that the node is running, go to the <a class="reference external" href="https://dashboard.mainnet.concordium.software/">Concordium dashboard</a> and look for a node with the name you provided.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the node is installed fresh, you can speed up initial catchup by downloading a batch of blocks and using <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md#out-of-band-catchup">Out of band catchup</a>.
+Mainnet blocks can be downloaded from <a class="reference external" href="https://catchup.mainnet.concordium.software/blocks_to_import.mdb">catchup.mainnet.concordium.software</a>.</p>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node</span></code> service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

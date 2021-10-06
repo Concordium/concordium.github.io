@@ -111,6 +111,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Create a scheduled transfer in the Desktop Wallet</a><ul>
@@ -149,6 +152,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-application.html">Update the desktop wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
@@ -156,18 +160,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -293,7 +299,7 @@ authorize the transaction.</p>
 <li><p>The total amount of GTU is transferred from the sender account to the recipient account. This is one transaction with a single transaction hash.</p></li>
 <li><p>The amount becomes part of the recipient’s account total but not of the recipient’s disposable amount.</p></li>
 <li><p>Whenever a release takes place, the released amount becomes part of the recipient’s disposable amount.</p></li>
-<li><p>In the list of transfers on the sender account and on the recipient account, the transfer is identified in parenthesis by <strong>(With schedule)</strong>. You can also view the schedule on the account when you go to <strong>More</strong> and then <strong>Inspect release schedule</strong>. For more information, see <a class="reference internal" href="../desktop-wallet/accounts-desktop.html#overview-account-desktop"><span class="std std-ref">Overview of accounts</span></a>.</p></li>
+<li><p>In the list of transfers on the sender account and on the recipient account, the transfer is identified in parenthesis by <strong>(With schedule)</strong>. You can also view the schedule on the account when you go to <strong>Change view</strong> and then <strong>Inspect release schedule</strong>. For more information, see <a class="reference internal" href="../desktop-wallet/accounts-desktop.html#overview-account-desktop"><span class="std std-ref">Overview of accounts</span></a>.</p></li>
 </ul>
 </div>
 <div class="section" id="release-schedule-types">
@@ -307,11 +313,18 @@ schedule and an explicit schedule.</p>
 </div>
 <div class="section" id="make-a-transfer-proposal">
 <h2>Make a transfer proposal<a class="headerlink" href="#make-a-transfer-proposal" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Go to <strong>Multi Signature Transactions</strong>, and then select <strong>Make new proposal</strong>. All available transactions are listed in the right pane.</p></li>
 <li><p>Select <strong>Send GTU with a schedule</strong>.</p></li>
 <li><p>All multi-signature accounts are displayed. Select the relevant sender account from the list of available accounts, and then select <strong>Continue</strong>. If only one account is available, this account will be selected automatically. You’ll be able to change the expiry time later in this process. Use the scrollbar if you can’t see all the information. Select <strong>Continue</strong>.</p></li>
-<li><p>In <strong>Amount</strong>, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough GTU in the account and you’ll have to change the amount. (The amount must also be greater than zero.) In the <strong>Transaction details</strong> under <strong>Amount</strong>, you can see the estimated fee. Select <strong>Continue</strong>.</p></li>
+<li><p>In <strong>Amount</strong>, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough GTU in the account and you’ll have to change the amount. (The amount must also be greater than zero.) In the <strong>Transaction details</strong> under <strong>Amount</strong>, you can see the estimated fee.</p></li>
+<li><p>Optionally, in <strong>You can enter a memo here</strong>, enter a <strong>Memo</strong> if you want to send a message to the recipient along with the transfer. Note that there’s a fee associated with sending a memo and the fee depends on the size of the memo in bytes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
+</div>
+</li>
+<li><p>Select <strong>Continue</strong>.</p></li>
 <li><p>Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select <strong>Continue</strong>. You can now set up a release schedule.</p></li>
 <li><p>Set the <strong>Transaction expiry</strong> time. Select <strong>Continue</strong>.</p></li>
 </ol>

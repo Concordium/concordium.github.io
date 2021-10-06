@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Create an account in the Desktop Wallet" href="create-account-desktop.html" />
-    <link rel="prev" title="Set up the Desktop Wallet" href="get-started-desktop.html" />
+    <link rel="prev" title="Update the desktop wallet" href="update-application.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -111,6 +111,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -136,6 +139,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-started-desktop.html">Set up the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-application.html">Update the desktop wallet</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Create an identity and an initial account in the Desktop Wallet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-an-initial-account">Create an initial account</a></li>
@@ -148,18 +152,20 @@
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -274,31 +280,17 @@
 <li><p>Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
 <li><p>In the Desktop Wallet, there’s a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says <strong>Concordium</strong>. The Ledger says <strong>Concordium is ready</strong>.</p></li>
 <li><p>In the Desktop Wallet there’s a message saying <strong>Ledger Nano S is ready</strong>. Select <strong>Submit</strong>.</p></li>
-<li><p>Press both buttons to confirm the export of the following on the Ledger:</p>
+<li><p>Press both buttons to confirm the following on the Ledger:</p>
 <ul class="simple">
-<li><p>Export PRF key</p></li>
-<li><p>Export IdCredSec</p></li>
+<li><p>Create credential (each credential is assigned a number)</p></li>
 <li><p>Public key</p></li>
 </ul>
 </li>
-<li><p>Press the right button to review the transaction on the Ledger. Confirm that the following information on Ledger corresponds to the information in the Desktop Wallet:</p>
-<ul class="simple">
-<li><p>Compare public key</p></li>
-</ul>
-</li>
+<li><p>Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.</p></li>
 <li><p>Press both buttons to confirm, and then in the Desktop Wallet, select <strong>Continue</strong>.</p></li>
-<li><p>The Ledger says <strong>Review transaction</strong>. Use the right button to navigate through the following information and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.</p>
-<ul class="simple">
-<li><p>Identity Credentials Public (IdCredPub)</p></li>
-<li><p>Registration ID (RegId).</p></li>
-</ul>
-</li>
-<li><p>Use the right button to navigate through the following information and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.</p>
-<ul class="simple">
-<li><p>Public key</p></li>
-</ul>
-</li>
-<li><p>The Ledger says <strong>Threshold</strong>. Press the right button. The Ledger says <strong>Sign transaction</strong>. Press both buttons to sign the transaction.</p></li>
+<li><p>The Ledger says <strong>Review identity provider info</strong>. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.</p></li>
+<li><p>Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.</p></li>
+<li><p>Press the right button, and then press both buttons to sign the identity provider information.</p></li>
 <li><p>In the Desktop Wallet, the <strong>New identity</strong> page is displayed. Enter the identity verification information and select <strong>Submit</strong>. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.</p></li>
 <li><p>Select <strong>Finished</strong>. When you’ve created more accounts, you can recognize you initial account by the text <strong>(identity)</strong> next to the name.</p></li>
 </ol>

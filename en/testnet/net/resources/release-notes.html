@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -145,18 +146,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -170,6 +173,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6-update-2">Open Testnet v6 Update 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6-update-1">Open Testnet v6 Update 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6">Open Testnet v6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v5-update-4">Open Testnet v5 Update 4</a></li>
@@ -267,45 +271,54 @@
 <h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#open-testnet-v6-update-1" id="id10">Open Testnet v6 Update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v6" id="id11">Open Testnet v6</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v6-update-2" id="id11">Open Testnet v6 Update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v6-update-1" id="id12">Open Testnet v6 Update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v6" id="id13">Open Testnet v6</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-node-v1-1-1" id="id12">Concordium Node v1.1.1</a></p></li>
-<li><p><a class="reference internal" href="#concordium-client-v1-1-1" id="id13">Concordium Client v1.1.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-node-v1-1-1" id="id14">Concordium Node v1.1.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client-v1-1-1" id="id15">Concordium Client v1.1.1</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-4" id="id14">Open Testnet v5 Update 4</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-4" id="id16">Open Testnet v5 Update 4</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-6" id="id15">Concordium Desktop Wallet v1.1.6</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-6" id="id17">Concordium Desktop Wallet v1.1.6</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-3" id="id16">Open Testnet v5 Update 3</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-3" id="id18">Open Testnet v5 Update 3</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5-for-testnet" id="id17">Concordium Desktop Wallet v1.1.5 for Testnet</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5-for-testnet" id="id19">Concordium Desktop Wallet v1.1.5 for Testnet</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-2" id="id18">Open Testnet v5 Update 2</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-1" id="id19">Open Testnet v5 Update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v5" id="id20">Open Testnet v5</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v4-update-1" id="id21">Open Testnet v4 Update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v4" id="id22">Open Testnet v4</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3-update-2" id="id23">Open Testnet v3 update 2</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3-update-1" id="id24">Open Testnet v3 update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3" id="id25">Open Testnet v3</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v2-update-1" id="id26">Open Testnet v2 update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v2" id="id27">Open Testnet v2</a></p></li>
-<li><p><a class="reference internal" href="#updates" id="id28">Updates</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v1" id="id29">Open Testnet v1</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-2" id="id20">Open Testnet v5 Update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-1" id="id21">Open Testnet v5 Update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v5" id="id22">Open Testnet v5</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v4-update-1" id="id23">Open Testnet v4 Update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v4" id="id24">Open Testnet v4</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3-update-2" id="id25">Open Testnet v3 update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3-update-1" id="id26">Open Testnet v3 update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3" id="id27">Open Testnet v3</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v2-update-1" id="id28">Open Testnet v2 update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v2" id="id29">Open Testnet v2</a></p></li>
+<li><p><a class="reference internal" href="#updates" id="id30">Updates</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v1" id="id31">Open Testnet v1</a></p>
 <ul>
-<li><p><a class="reference internal" href="#features" id="id30">Features</a></p></li>
+<li><p><a class="reference internal" href="#features" id="id32">Features</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#concordium-nodes" id="id31">Concordium Nodes</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id32">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#concordium-nodes" id="id33">Concordium Nodes</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id34">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v6-update-2">
+<span id="id1"></span><h2>Open Testnet v6 Update 2<a class="headerlink" href="#open-testnet-v6-update-2" title="Permalink to this headline">¶</a></h2>
+<p>October 6, 2021</p>
+<p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.3</span></a> is a bugfix release.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-node/blob/1.1.3-1/CHANGELOG.md#concordium-node-113">Changelog</a></p></li>
 </ul>
 </div>
 <div class="section" id="open-testnet-v6-update-1">
-<span id="id1"></span><h2>Open Testnet v6 Update 1<a class="headerlink" href="#open-testnet-v6-update-1" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Open Testnet v6 Update 1<a class="headerlink" href="#open-testnet-v6-update-1" title="Permalink to this headline">¶</a></h2>
 <p>September 17, 2021</p>
 <p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.2</span></a> is a bugfix release.</p>
 <ul class="simple">
@@ -313,7 +326,7 @@
 </ul>
 </div>
 <div class="section" id="open-testnet-v6">
-<span id="id2"></span><h2>Open Testnet v6<a class="headerlink" href="#open-testnet-v6" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Open Testnet v6<a class="headerlink" href="#open-testnet-v6" title="Permalink to this headline">¶</a></h2>
 <p>September 15, 2021</p>
 <div class="section" id="concordium-node-v1-1-1">
 <h3>Concordium Node v1.1.1<a class="headerlink" href="#concordium-node-v1-1-1" title="Permalink to this headline">¶</a></h3>
@@ -334,7 +347,7 @@
 </div>
 </div>
 <div class="section" id="open-testnet-v5-update-4">
-<span id="id3"></span><h2>Open Testnet v5 Update 4<a class="headerlink" href="#open-testnet-v5-update-4" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Open Testnet v5 Update 4<a class="headerlink" href="#open-testnet-v5-update-4" title="Permalink to this headline">¶</a></h2>
 <p>July 28, 2021</p>
 <div class="section" id="concordium-desktop-wallet-v1-1-6">
 <h3>Concordium Desktop Wallet v1.1.6<a class="headerlink" href="#concordium-desktop-wallet-v1-1-6" title="Permalink to this headline">¶</a></h3>
@@ -344,7 +357,7 @@
 </div>
 </div>
 <div class="section" id="open-testnet-v5-update-3">
-<span id="id4"></span><h2>Open Testnet v5 Update 3<a class="headerlink" href="#open-testnet-v5-update-3" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Open Testnet v5 Update 3<a class="headerlink" href="#open-testnet-v5-update-3" title="Permalink to this headline">¶</a></h2>
 <p>July 27, 2021</p>
 <div class="section" id="concordium-desktop-wallet-v1-1-5-for-testnet">
 <h3>Concordium Desktop Wallet v1.1.5 for Testnet<a class="headerlink" href="#concordium-desktop-wallet-v1-1-5-for-testnet" title="Permalink to this headline">¶</a></h3>
@@ -367,7 +380,7 @@
 </div>
 </div>
 <div class="section" id="open-testnet-v5-update-2">
-<span id="id5"></span><h2>Open Testnet v5 Update 2<a class="headerlink" href="#open-testnet-v5-update-2" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Open Testnet v5 Update 2<a class="headerlink" href="#open-testnet-v5-update-2" title="Permalink to this headline">¶</a></h2>
 <p><strong>Concordium Desktop Wallet v1.1.3 for Testnet.</strong></p>
 <p>The Desktop Wallet is available on Testnet for Windows, macOS, and Linux including:</p>
 <ul class="simple">
@@ -378,7 +391,7 @@
 </ul>
 </div>
 <div class="section" id="open-testnet-v5-update-1">
-<span id="id6"></span><h2>Open Testnet v5 Update 1<a class="headerlink" href="#open-testnet-v5-update-1" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>Open Testnet v5 Update 1<a class="headerlink" href="#open-testnet-v5-update-1" title="Permalink to this headline">¶</a></h2>
 <p>June 24th, 2021</p>
 <p><a class="reference external" href="https://developer.concordium.software/en/mainnet/net/installation/downloads.html#downloads" title="(in Concordium)"><span class="xref std std-ref">Concordium Mobile Wallet for iOS v1.0.5.</span></a></p>
 <ul class="simple">
@@ -402,7 +415,7 @@
 </ul>
 </div>
 <div class="section" id="open-testnet-v5">
-<span id="id7"></span><h2>Open Testnet v5<a class="headerlink" href="#open-testnet-v5" title="Permalink to this headline">¶</a></h2>
+<span id="id8"></span><h2>Open Testnet v5<a class="headerlink" href="#open-testnet-v5" title="Permalink to this headline">¶</a></h2>
 <p>May 12th, 2021</p>
 <p>Updated Open Testnet to match Mainnet features including:</p>
 <p><strong>Proof of Stake</strong></p>
@@ -427,14 +440,14 @@
 </ul>
 </div>
 <div class="section" id="open-testnet-v4-update-1">
-<span id="id8"></span><h2>Open Testnet v4 Update 1<a class="headerlink" href="#open-testnet-v4-update-1" title="Permalink to this headline">¶</a></h2>
+<span id="id9"></span><h2>Open Testnet v4 Update 1<a class="headerlink" href="#open-testnet-v4-update-1" title="Permalink to this headline">¶</a></h2>
 <p>January 14th, 2020</p>
 <ul class="simple">
 <li><p>Fixed an issue in the node, where a parameter update transaction could cause the node to crash on restart.</p></li>
 </ul>
 </div>
 <div class="section" id="open-testnet-v4">
-<span id="id9"></span><h2>Open Testnet v4<a class="headerlink" href="#open-testnet-v4" title="Permalink to this headline">¶</a></h2>
+<span id="id10"></span><h2>Open Testnet v4<a class="headerlink" href="#open-testnet-v4" title="Permalink to this headline">¶</a></h2>
 <p>January 13th, 2020</p>
 <p>Smart contracts:</p>
 <ul class="simple">

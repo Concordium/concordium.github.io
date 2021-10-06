@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Address book overview" href="overview-addresses.html" />
-    <link rel="prev" title="Sign a transaction proposal" href="sign-transaction.html" />
+    <link rel="prev" title="Apply a transaction log filter" href="transaction-log-filter.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -145,25 +146,28 @@
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Desktop Wallet settings</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#multi-signature-settings">Multi-signature settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preferences">Preferences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#node-settings">Node settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#change-the-wallet-password">Change the wallet password</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-wallet-password">Change wallet password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recover-existing-accounts">Recover existing accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#terms-and-conditions">Terms and conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -254,35 +258,47 @@
 <span id="overview-settings"></span><h1>Desktop Wallet settings<a class="headerlink" href="#desktop-wallet-settings" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#multi-signature-settings" id="id1">Multi-signature settings</a></p></li>
+<li><p><a class="reference internal" href="#preferences" id="id1">Preferences</a></p></li>
 <li><p><a class="reference internal" href="#node-settings" id="id2">Node settings</a></p></li>
-<li><p><a class="reference internal" href="#change-the-wallet-password" id="id3">Change the wallet password</a></p></li>
-<li><p><a class="reference internal" href="#about" id="id4">About</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id5">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#change-wallet-password" id="id3">Change wallet password</a></p></li>
+<li><p><a class="reference internal" href="#recover-existing-accounts" id="id4">Recover existing accounts</a></p></li>
+<li><p><a class="reference internal" href="#terms-and-conditions" id="id5">Terms and conditions</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>The Desktop Wallet has a number of settings such as password and node settings that you access by going to the <strong>Settings</strong> page.</p>
-<div class="section" id="multi-signature-settings">
-<h2>Multi-signature settings<a class="headerlink" href="#multi-signature-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preferences">
+<h2>Preferences<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h2>
 <p>The Desktop Wallet provides a set of multi-signature transactions called Foundation transactions that only members of the Concordium Foundation can sign.</p>
-<p>These transactions are disabled by default, and if you’re not a member of the Concordium Foundation we strongly recommend that you don’t enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you’ll not be able to sign or submit any of these transactions.</p>
+<p>These transactions are disabled by default, and if you’re not a member of the Concordium Foundation we strongly recommend that you don’t enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you’ll not be able to actually sign or submit any of these transactions.</p>
 </div>
 <div class="section" id="node-settings">
 <h2>Node settings<a class="headerlink" href="#node-settings" title="Permalink to this headline">¶</a></h2>
 <p>Here you specify which node on the blockchain that you want to connect to.</p>
 <ul class="simple">
-<li><p>Enter the <strong>Address</strong> and <strong>Port</strong> of the node, and then select <strong>Set connection</strong>. If the connection works, there’s a message saying <strong>Successfully connected</strong>.</p></li>
+<li><p>If you’re running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the <strong>Address field</strong>, enter <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> and in the <strong>Port field</strong> enter <code class="docutils literal notranslate"><span class="pre">10000</span></code>.</p></li>
+<li><p>If you’re running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the <strong>Address</strong> field, enter <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> and in the <strong>Port field</strong> enter <code class="docutils literal notranslate"><span class="pre">10001</span></code>.</p></li>
+<li><p>Select <strong>Set connection</strong>. If the connection works, there’s a message saying <strong>Successfully connected</strong>.</p></li>
 </ul>
-<p>For more information about running a node, see <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">run a node on ubuntu</span></a>.</p>
+<p>You can run a node using <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, and <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">with Docker</span></a> or <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux.</p>
 </div>
-<div class="section" id="change-the-wallet-password">
-<h2>Change the wallet password<a class="headerlink" href="#change-the-wallet-password" title="Permalink to this headline">¶</a></h2>
-<p>On the this page, you can update the existing password for the desktop wallet, providing that you remember the current password.</p>
-<p>Always create a backup of your Desktop Wallet database to ensure that you can recover your accounts, identities, and addresses if, for example, you lose the password to the Desktop Wallet. For more information, see <a class="reference internal" href="export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a>.</p>
+<div class="section" id="change-wallet-password">
+<h2>Change wallet password<a class="headerlink" href="#change-wallet-password" title="Permalink to this headline">¶</a></h2>
+<p>On the this page, you can update the existing password for the Desktop Wallet, providing that you remember the current password.</p>
+<p>We strongly recommend that you create a backup of your Desktop Wallet database to ensure that you can recover your accounts, identities, and addresses if, for example, you lose the password to the Desktop Wallet. For more information, see <a class="reference internal" href="export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a>.</p>
 </div>
-<div class="section" id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
-<p>Here you can see the most recent version of the <strong>Terms and conditions for Concordium Desktop Wallet</strong>. There’s also a link that takes you to a documentation page that lists all <strong>Desktop Wallet Third Party Licenses</strong>.</p>
+<div class="section" id="recover-existing-accounts">
+<h2>Recover existing accounts<a class="headerlink" href="#recover-existing-accounts" title="Permalink to this headline">¶</a></h2>
+<p>If you lose your accounts, you can recover the accounts by using the Ledger device that you used to create the accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. For more information, see <a class="reference internal" href="account-recovery.html#account-recovery-desktop"><span class="std std-ref">Account recovery</span></a>.</p>
+</div>
+<div class="section" id="terms-and-conditions">
+<h2>Terms and conditions<a class="headerlink" href="#terms-and-conditions" title="Permalink to this headline">¶</a></h2>
+<p>If you want to view the latest version of the <em>License notices</em> and <em>Terms and conditions for the Desktop Wallet</em> do the following.</p>
+<ul class="simple">
+<li><p>On Windows, press <strong>Alt</strong> to display the menu bar, and then in the <strong>Help</strong> menu, choose the document you want to view.</p></li>
+<li><p>On Linux, press <strong>Alt</strong> to display the menu bar, and then in the <strong>Help</strong> menu, choose the document you want to view.</p></li>
+<li><p>On macOS, select <strong>Help</strong> in the menu bar, and then choose the document you want to view.</p></li>
+</ul>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>

@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -154,18 +155,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -268,7 +271,7 @@
 <p>This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain. The guide assumes that you’ll be using the Desktop Wallet in combination with a Ledger Nano S hardware wallet to generate baker key and that you’ll be running the baker node on a server with Ubuntu.</p>
 <div class="section" id="step-1-set-up-the-node">
 <h2>Step 1: Set up the node<a class="headerlink" href="#step-1-set-up-the-node" title="Permalink to this headline">¶</a></h2>
-<p>The Desktop Wallet must be connected to a running node on the Concordium blockchain, so you’ll have to run a node using Ubuntu. See <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on Ubuntu</span></a></p>
+<p>The Desktop Wallet must be connected to a running node on the Concordium blockchain. You can run a node <a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>.</p>
 </div>
 <div class="section" id="step-2-set-up-the-ledger-nano-s">
 <h2>Step 2: Set up the Ledger Nano S<a class="headerlink" href="#step-2-set-up-the-ledger-nano-s" title="Permalink to this headline">¶</a></h2>
@@ -289,7 +292,12 @@
 <div class="section" id="step-6-configure-the-node-with-the-baker-keys">
 <h2>Step 6: Configure the node with the baker keys<a class="headerlink" href="#step-6-configure-the-node-with-the-baker-keys" title="Permalink to this headline">¶</a></h2>
 <p>The last step is to configure the running node with the baker keys so the node
-can start baking. See <a class="reference internal" href="run-node-ubuntu.html#baker-node-ubuntu"><span class="std std-ref">Run a baker node on Ubuntu</span></a>.</p>
+can start baking.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">On Windows</span></a></p></li>
+<li><p><a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">On macOS</span></a></p></li>
+<li><p><a class="reference internal" href="run-node-ubuntu.html#baker-node-ubuntu"><span class="std std-ref">On Ubuntu</span></a></p></li>
+</ul>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>

@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
@@ -150,18 +151,20 @@
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Create a single signer GTU transfer with a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-baker-stake.html">Update the staked amount</a></li>
 <li class="toctree-l1"><a class="reference internal" href="change-restake-settings.html">Update the restake settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transaction-log-filter.html">Apply a transaction log filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="settings-overview.html">Desktop Wallet settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proposed-transactions.html">View transaction proposals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Make a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account-recovery.html">Account recovery</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
@@ -272,11 +275,11 @@
 <div class="section" id="create-an-account">
 <h2>Create an account<a class="headerlink" href="#create-an-account" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Go to <strong>Accounts</strong>. Your initial account is listed.</p></li>
+<li><p>Go to <strong>Accounts</strong>. You can now see all the accounts that you’re the custodian of.</p></li>
 <li><p>Select the plus sign in the upper right corner to create a new account.</p></li>
 <li><p>Enter a name for your new account, and then select <strong>Continue</strong>.</p></li>
 <li><p>Select the identity you want to create the new account from. All available identities are listed in the right pane.</p></li>
-<li><p>Select whether you want to reveal any attributes on the account or not.</p></li>
+<li><p>Select whether you want to reveal any attributes on the account or not. The available attributes depend on the identity provider.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -284,30 +287,21 @@
 </div>
 <ol class="arabic simple">
 <li><p>Select <strong>Submit without revealing attributes</strong>.</p></li>
-<li><p>Connect your Ledger hardware wallet if you haven’t done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
-<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>.</p></li>
+<li><p>Connect your Ledger hardware wallet if you haven’t done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The Ledger says <strong>Concordium is ready</strong>.</p></li>
 <li><p>Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> and select <strong>Submit</strong>.</p></li>
-<li><p>Press both buttons to confirm the export of the following on the Ledger:</p>
+<li><p>Press both buttons to confirm the following on the Ledger:</p>
 <ul class="simple">
-<li><p><em>Export PRF key</em></p></li>
-<li><p><em>Export IdCredSec</em></p></li>
-<li><p><em>Public-key</em></p></li>
+<li><p>Create credential (each credential is assigned a number)</p></li>
+<li><p>Public key</p></li>
 </ul>
 </li>
-<li><p>The Ledger says <strong>Review transaction</strong>. Press both buttons to review. Press the right button to click through and verify all the information, and press both buttons to confirm the information. It’s important the you verify the information for security reasons. The following information is displayed:</p>
-<ul class="simple">
-<li><p>the <em>public key</em></p></li>
-<li><p>the <em>Sig threshold</em></p></li>
-<li><p>the <em>RegidCred</em>,</p></li>
-<li><p>the <em>identity provider</em></p></li>
-<li><p>the <em>revocation threshold</em></p></li>
-<li><p>the <em>valid to date</em></p></li>
-<li><p>the <em>created at date</em></p></li>
-</ul>
-</li>
-<li><p>The Ledger says <strong>Sign transaction</strong>. Press the two buttons to sign the transaction.</p></li>
-<li><p>On the Desktop Wallet you can now see the that the account has been submitted to the blockchain.</p></li>
-<li><p>Select <strong>Finished</strong> when the process is complete. Your new account is now listed along with the other accounts you’re the custodian of.</p></li>
+<li><p>Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Press both buttons, and then use the right button to navigate through the key.</p></li>
+<li><p>Press both buttons to confirm, and then in the Desktop Wallet, select <strong>Continue</strong>.</p></li>
+<li><p>The Ledger says <strong>Review details</strong>. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.</p></li>
+<li><p>Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.</p></li>
+<li><p>Press the right button to verify that the anonymity revoker threshold on the Ledger corresponds to the threshold in the Desktop Wallet, and then press both buttons.</p></li>
+<li><p>The Ledger says <strong>Sign details</strong>. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.</p></li>
+<li><p>Select <strong>Finished</strong>. Your new account is now listed along with the other accounts you’re the custodian of.</p></li>
 </ol>
 </div>
 <div class="section" id="support-feedback">
