@@ -106,6 +106,7 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
 To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
+.. _concordium-docker-package-download:
 
 Full suite for running a node on Linux using Docker
 ---------------------------------------------------
