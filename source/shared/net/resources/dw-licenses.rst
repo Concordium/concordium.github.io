@@ -8,7 +8,7 @@ The following sets forth attribution notices for third party software that may b
 --------------
 @babel/runtime
 --------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -37,7 +37,7 @@ The following sets forth attribution notices for third party software that may b
 -------------
 @electron/get
 -------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -65,7 +65,7 @@ The following sets forth attribution notices for third party software that may b
 ----------------------------------------
 @emotion/is-prop-valid, @emotion/memoize
 ----------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -93,7 +93,7 @@ The following sets forth attribution notices for third party software that may b
 -------------
 @grpc/grpc-js
 -------------
-.. code-block::
+.. code-block:: console
 
    Apache License
                               Version 2.0, January 2004
@@ -301,7 +301,7 @@ The following sets forth attribution notices for third party software that may b
 ------------------------------------------------------------
 @hot-loader/react-dom, react, react-dom, react-is, scheduler
 ------------------------------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -329,7 +329,7 @@ The following sets forth attribution notices for third party software that may b
 ----------------
 @reduxjs/toolkit
 ----------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -357,7 +357,7 @@ The following sets forth attribution notices for third party software that may b
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @sindresorhus/is, electron-is-dev, env-paths, get-stream, got, lowercase-keys, mimic-response, normalize-url, p-cancelable, pify, prepend-http, to-readable-stream, url-parse-lax
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -373,7 +373,7 @@ The following sets forth attribution notices for third party software that may b
 ---------------------------------------
 @szmarczak/http-timer, defer-to-connect
 ---------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -401,7 +401,7 @@ The following sets forth attribution notices for third party software that may b
 --------------------------
 @types/node, @types/semver
 --------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -429,7 +429,7 @@ The following sets forth attribution notices for third party software that may b
 --------
 archiver
 --------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2012-2014 Chris Talkington, contributors.
 
@@ -458,7 +458,7 @@ archiver
 --------------
 archiver-utils
 --------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2015 Chris Talkington.
 
@@ -487,7 +487,7 @@ archiver-utils
 --------
 argparse
 --------
-.. code-block::
+.. code-block:: console
 
    A. HISTORY OF THE SOFTWARE
    ==========================
@@ -748,7 +748,7 @@ argparse
 -----
 async
 -----
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2010-2018 Caolan McMahon
 
@@ -774,7 +774,7 @@ async
 -----------
 async-mutex
 -----------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -802,7 +802,7 @@ async-mutex
 -----
 axios
 -----
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2014-present Matt Zabriskie
 
@@ -828,7 +828,7 @@ axios
 --------------
 balanced-match
 --------------
-.. code-block::
+.. code-block:: console
 
    (MIT)
 
@@ -856,7 +856,7 @@ balanced-match
 ------
 base-x
 ------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -885,7 +885,7 @@ base-x
 ---------
 base64-js
 ---------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -913,7 +913,7 @@ base64-js
 --
 bl
 --
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
    =====================
@@ -933,7 +933,7 @@ bl
 -------
 boolean
 -------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
    Copyright (c) 2014-2020 the native web.
@@ -948,7 +948,7 @@ boolean
 ---------------
 brace-expansion
 ---------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -976,7 +976,7 @@ brace-expansion
 ---------
 bs58check
 ---------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1004,7 +1004,7 @@ bs58check
 ------
 buffer
 ------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1032,7 +1032,7 @@ buffer
 ------------
 buffer-crc32
 ------------
-.. code-block::
+.. code-block:: console
 
    The MIT License
 
@@ -1058,7 +1058,7 @@ buffer-crc32
 -----------
 buffer-from
 -----------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -1086,7 +1086,7 @@ buffer-from
 --------------------------------------
 builder-util-runtime, electron-updater
 --------------------------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1114,7 +1114,7 @@ builder-util-runtime, electron-updater
 ---------------------------------------
 cacheable-request, clone-response, keyv
 ---------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -1142,7 +1142,7 @@ cacheable-request, clone-response, keyv
 --------------
 cbor, nofilter
 --------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1169,7 +1169,7 @@ cbor, nofilter
 ------------------------
 cipher-base, create-hash
 ------------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1197,7 +1197,7 @@ cipher-base, create-hash
 ----
 clsx
 ----
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -1213,7 +1213,7 @@ clsx
 ------------------------------------------
 compress-commons, crc32-stream, zip-stream
 ------------------------------------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2014 Chris Talkington, contributors.
 
@@ -1242,7 +1242,7 @@ compress-commons, crc32-stream, zip-stream
 ------------------------------------
 concat-map, minimist, semver-compare
 ------------------------------------
-.. code-block::
+.. code-block:: console
 
    This software is released under the MIT license:
 
@@ -1267,7 +1267,7 @@ concat-map, minimist, semver-compare
 -------------
 concat-stream
 -------------
-.. code-block::
+.. code-block:: console
 
    The MIT License
 
@@ -1298,7 +1298,7 @@ concat-stream
 ----------------------
 connected-react-router
 ----------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1326,7 +1326,7 @@ connected-react-router
 -------
 core-js
 -------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2014-2021 Denis Pushkarev
 
@@ -1352,7 +1352,7 @@ core-js
 ------------
 core-util-is
 ------------
-.. code-block::
+.. code-block:: console
 
    Copyright Node.js contributors. All rights reserved.
 
@@ -1378,7 +1378,7 @@ core-util-is
 ------
 crc-32
 ------
-.. code-block::
+.. code-block:: console
 
    Copyright (C) 2014-present  SheetJS
 
@@ -1398,7 +1398,7 @@ crc-32
 --------------
 css-line-break
 --------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2017 Niklas von Hertzen
 
@@ -1427,7 +1427,7 @@ css-line-break
 -----
 debug
 -----
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -1452,7 +1452,7 @@ debug
 -------------------
 decompress-response
 -------------------
-.. code-block::
+.. code-block:: console
 
    `The MIT License (MIT)
 
@@ -1480,7 +1480,7 @@ decompress-response
 -----------------
 define-properties
 -----------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1508,7 +1508,7 @@ define-properties
 -----------
 detect-node
 -----------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -1536,7 +1536,7 @@ detect-node
 ---------
 duplexer3
 ---------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2013, Deoxxa Development
    ======================================
@@ -1569,7 +1569,7 @@ duplexer3
 --------
 electron
 --------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2013-2020 GitHub Inc.
 
@@ -1596,7 +1596,7 @@ electron
 --------------------------------------------------------------------------
 electron-debug, escape-string-regexp, get-stream, matcher, serialize-error
 --------------------------------------------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -1612,7 +1612,7 @@ electron-debug, escape-string-regexp, get-stream, matcher, serialize-error
 -----------------------
 electron-is-accelerator
 -----------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -1640,7 +1640,7 @@ electron-is-accelerator
 ----------------------
 electron-localshortcut
 ----------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
    Copyright (c) 2017 Andrea Parodi
@@ -1668,7 +1668,7 @@ electron-localshortcut
 ------------
 electron-log
 ------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1696,7 +1696,7 @@ electron-log
 -----------
 emojis-list
 -----------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1712,7 +1712,7 @@ emojis-list
 ---------
 encodeurl
 ---------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -1741,7 +1741,7 @@ encodeurl
 -------------------------------
 end-of-stream, pump, tar-stream
 -------------------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1769,7 +1769,7 @@ end-of-stream, pump, tar-stream
 ---------
 es6-error
 ---------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1797,7 +1797,7 @@ es6-error
 -----
 exenv
 -----
-.. code-block::
+.. code-block:: console
 
    BSD License
 
@@ -1835,7 +1835,7 @@ exenv
 -------------
 exit-on-epipe
 -------------
-.. code-block::
+.. code-block:: console
 
    Copyright (C) 2015-present SheetJS
 
@@ -1855,7 +1855,7 @@ exit-on-epipe
 -----------
 extract-zip
 -----------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2014 Max Ogden and other contributors
    All rights reserved.
@@ -1885,7 +1885,7 @@ extract-zip
 ----------------
 fast-levenshtein
 ----------------
-.. code-block::
+.. code-block:: console
 
    (MIT License)
 
@@ -1916,7 +1916,7 @@ fast-levenshtein
 ---------
 fd-slicer
 ---------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2014 Andrew Kelley
 
@@ -1944,7 +1944,7 @@ fd-slicer
 ----------------
 follow-redirects
 ----------------
-.. code-block::
+.. code-block:: console
 
    Copyright 2014–present Olivier Lalonde <olalonde@gmail.com>, James Talmage <james@talmage.io>, Ruben Verborgh
 
@@ -1969,7 +1969,7 @@ follow-redirects
 -------------
 framer-motion
 -------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -1997,7 +1997,7 @@ framer-motion
 ---------
 framesync
 ---------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2025,7 +2025,7 @@ framesync
 ------------
 fs-constants
 ------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -2053,7 +2053,7 @@ fs-constants
 --------
 fs-extra
 --------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -2075,7 +2075,7 @@ fs-extra
 -----------
 fs.realpath
 -----------
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -2125,7 +2125,7 @@ fs.realpath
 ----
 glob
 ----
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -2153,7 +2153,7 @@ glob
 ------
 global
 ------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2012 Colingo.
 
@@ -2179,7 +2179,7 @@ global
 -------------------
 global-agent, roarr
 -------------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2019, Gajus Kuizinas (http://gajus.com/)
    All rights reserved.
@@ -2210,7 +2210,7 @@ global-agent, roarr
 ----------------
 global-tunnel-ng
 ----------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2013, GoInstant Inc., a salesforce.com company
    All rights reserved.
@@ -2229,7 +2229,7 @@ global-tunnel-ng
 ----------
 globalthis
 ----------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -2257,7 +2257,7 @@ globalthis
 -----------
 graceful-fs
 -----------
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -2279,7 +2279,7 @@ graceful-fs
 -----------------
 hash-base, md5.js
 -----------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -2307,7 +2307,7 @@ hash-base, md5.js
 ----------
 hey-listen
 ----------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2335,7 +2335,7 @@ hey-listen
 ---------------------------------------
 history, react-router, react-router-dom
 ---------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2363,7 +2363,7 @@ history, react-router, react-router-dom
 -----------------------
 hoist-non-react-statics
 -----------------------
-.. code-block::
+.. code-block:: console
 
    Software License Agreement (BSD License)
    ========================================
@@ -2399,7 +2399,7 @@ hoist-non-react-statics
 -----------
 html2canvas
 -----------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2012 Niklas von Hertzen
 
@@ -2428,7 +2428,7 @@ html2canvas
 --------------------
 http-cache-semantics
 --------------------
-.. code-block::
+.. code-block:: console
 
    Copyright 2016-2018 Kornel Lesiński
 
@@ -2444,7 +2444,7 @@ http-cache-semantics
 -------
 ieee754
 -------
-.. code-block::
+.. code-block:: console
 
    Copyright 2008 Fair Oaks Labs, Inc.
 
@@ -2462,7 +2462,7 @@ ieee754
 -----
 immer
 -----
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2490,7 +2490,7 @@ immer
 ------------------------------
 immutable, regenerator-runtime
 ------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2518,7 +2518,7 @@ immutable, regenerator-runtime
 --------
 inflight
 --------
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -2540,7 +2540,7 @@ inflight
 --------
 inherits
 --------
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -2562,7 +2562,7 @@ inherits
 -----------------------------------------------------------------------------------------
 ini, json-stringify-safe, lru-cache, minimatch, once, proto-list, semver, wrappy, yallist
 -----------------------------------------------------------------------------------------
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -2584,7 +2584,7 @@ ini, json-stringify-safe, lru-cache, minimatch, once, proto-list, semver, wrappy
 ---------
 js-tokens
 ---------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -2612,7 +2612,7 @@ js-tokens
 -------
 js-yaml
 -------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -2640,7 +2640,7 @@ js-yaml
 -----------
 json-buffer
 -----------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2013 Dominic Tarr
 
@@ -2669,7 +2669,7 @@ json-buffer
 -----
 json5
 -----
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2699,7 +2699,7 @@ json5
 --------
 jsonfile
 --------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -2721,7 +2721,7 @@ jsonfile
 ---------------------------------------
 keyboardevent-from-electron-accelerator
 ---------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2749,7 +2749,7 @@ keyboardevent-from-electron-accelerator
 -----------------------
 keyboardevents-areequal
 -----------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -2777,7 +2777,7 @@ keyboardevents-areequal
 ------------
 loader-utils
 ------------
-.. code-block::
+.. code-block:: console
 
    Copyright JS Foundation and other contributors
 
@@ -2804,7 +2804,7 @@ loader-utils
 ------
 lodash
 ------
-.. code-block::
+.. code-block:: console
 
    Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
 
@@ -2858,7 +2858,7 @@ lodash
 -----------------------------------------------------------------------------------------------------------------------------------------------
 lodash.defaults, lodash.difference, lodash.escaperegexp, lodash.flatten, lodash.groupby, lodash.isequalwith, lodash.isplainobject, lodash.union
 -----------------------------------------------------------------------------------------------------------------------------------------------
-.. code-block::
+.. code-block:: console
 
    Copyright jQuery Foundation and other contributors <https://jquery.org/>
 
@@ -2912,7 +2912,7 @@ lodash.defaults, lodash.difference, lodash.escaperegexp, lodash.flatten, lodash.
 --------------
 lodash.isequal
 --------------
-.. code-block::
+.. code-block:: console
 
    Copyright JS Foundation and other contributors <https://js.foundation/>
 
@@ -2966,7 +2966,7 @@ lodash.isequal
 ------------
 loose-envify
 ------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -2994,7 +2994,7 @@ loose-envify
 -----------------------------------------------
 lowercase-keys, object-assign, path-is-absolute
 -----------------------------------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3022,7 +3022,7 @@ lowercase-keys, object-assign, path-is-absolute
 -----------------------------------------
 memoize-one, tiny-invariant, tiny-warning
 -----------------------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3050,7 +3050,7 @@ memoize-one, tiny-invariant, tiny-warning
 -------------------------
 mini-create-react-context
 -------------------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2019-present StringEpsilon <StringEpsilon@gmail.com>
 
@@ -3078,7 +3078,7 @@ mini-create-react-context
 ------
 mkdirp
 ------
-.. code-block::
+.. code-block:: console
 
    Copyright 2010 James Halliday (mail@substack.net)
 
@@ -3106,7 +3106,7 @@ mkdirp
 --
 ms
 --
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3134,7 +3134,7 @@ ms
 -------------
 noble-ed25519
 -------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3162,7 +3162,7 @@ noble-ed25519
 --------------
 normalize-path
 --------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3190,7 +3190,7 @@ normalize-path
 --------
 npm-conf
 --------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3206,7 +3206,7 @@ npm-conf
 -----------
 object-keys
 -----------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3234,7 +3234,7 @@ object-keys
 --------------
 path-to-regexp
 --------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3262,7 +3262,7 @@ path-to-regexp
 ----
 pend
 ----
-.. code-block::
+.. code-block:: console
 
    The MIT License (Expat)
 
@@ -3292,7 +3292,7 @@ pend
 ---------
 popmotion
 ---------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3308,7 +3308,7 @@ popmotion
 ------
 printj
 ------
-.. code-block::
+.. code-block:: console
 
    Copyright (C) 2016-present  SheetJS
 
@@ -3328,7 +3328,7 @@ printj
 -------
 process
 -------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -3357,7 +3357,7 @@ process
 --------------------
 process-nextick-args
 --------------------
-.. code-block::
+.. code-block:: console
 
    # Copyright (c) 2015 Calvin Metcalf
 
@@ -3383,7 +3383,7 @@ process-nextick-args
 --------
 progress
 --------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -3412,7 +3412,7 @@ progress
 --------------
 promise-worker
 --------------
-.. code-block::
+.. code-block:: console
 
    Apache License
                              Version 2.0, January 2004
@@ -3620,7 +3620,7 @@ promise-worker
 -------------------
 prop-types, warning
 -------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3648,7 +3648,7 @@ prop-types, warning
 -----
 qr.js
 -----
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2013 Roman Shtylman
 
@@ -3662,7 +3662,7 @@ qr.js
 ------------
 qrcode.react
 ------------
-.. code-block::
+.. code-block:: console
 
    ISC License
 
@@ -3684,7 +3684,7 @@ qrcode.react
 ---------------
 react-hook-form
 ---------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3712,7 +3712,7 @@ react-hook-form
 ----------------
 react-hot-loader
 ----------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3740,7 +3740,7 @@ react-hot-loader
 -----------------------
 react-lifecycles-compat
 -----------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3768,7 +3768,7 @@ react-lifecycles-compat
 -----------
 react-modal
 -----------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2017 Ryan Florence
 
@@ -3794,7 +3794,7 @@ react-modal
 -------------------------------
 react-redux, redux, redux-thunk
 -------------------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3822,7 +3822,7 @@ react-redux, redux, redux-thunk
 --------------------
 react-singleton-hook
 --------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3850,7 +3850,7 @@ react-singleton-hook
 --------------
 react-to-print
 --------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -3878,7 +3878,7 @@ react-to-print
 ------------
 react-window
 ------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3906,7 +3906,7 @@ react-window
 ----------------------------
 react-window-infinite-loader
 ----------------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -3934,7 +3934,7 @@ react-window-infinite-loader
 ---------------
 readable-stream
 ---------------
-.. code-block::
+.. code-block:: console
 
    Node.js is licensed for use as follows:
 
@@ -3988,7 +3988,7 @@ readable-stream
 ------------
 readdir-glob
 ------------
-.. code-block::
+.. code-block:: console
 
    Apache License
                               Version 2.0, January 2004
@@ -4196,7 +4196,7 @@ readdir-glob
 --------
 reselect
 --------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -4224,7 +4224,7 @@ reselect
 -----------------------------
 resolve-pathname, value-equal
 -----------------------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -4252,7 +4252,7 @@ resolve-pathname, value-equal
 ------------
 responselike
 ------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2017 Luke Childs
 
@@ -4278,7 +4278,7 @@ responselike
 ---------
 ripemd160
 ---------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -4306,7 +4306,7 @@ ripemd160
 -----------
 safe-buffer
 -----------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -4334,7 +4334,7 @@ safe-buffer
 ---
 sax
 ---
-.. code-block::
+.. code-block:: console
 
    The ISC License
 
@@ -4382,7 +4382,7 @@ sax
 ------------------
 seamless-immutable
 ------------------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2016, Richard Feldman
    All rights reserved.
@@ -4416,7 +4416,7 @@ seamless-immutable
 ------
 sha.js
 ------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2013-2018 sha.js contributors
 
@@ -4471,7 +4471,7 @@ sha.js
 ------------
 shallowequal
 ------------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -4499,7 +4499,7 @@ shallowequal
 ----------
 source-map
 ----------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2009-2011, Mozilla Foundation and contributors
    All rights reserved.
@@ -4533,7 +4533,7 @@ source-map
 ------------------
 source-map-support
 ------------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -4561,7 +4561,7 @@ source-map-support
 ----------
 sprintf-js
 ----------
-.. code-block::
+.. code-block:: console
 
    Copyright (c) 2007-present, Alexandru Mărășteanu <hello@alexei.ro>
    All rights reserved.
@@ -4592,7 +4592,7 @@ sprintf-js
 --------------
 string_decoder
 --------------
-.. code-block::
+.. code-block:: console
 
    Node.js is licensed for use as follows:
 
@@ -4646,7 +4646,7 @@ string_decoder
 -----------------
 style-value-types
 -----------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
    Copyright (c) 2018 Popmotion
@@ -4661,7 +4661,7 @@ style-value-types
 ----------
 sumchecker
 ----------
-.. code-block::
+.. code-block:: console
 
    Apache License
                               Version 2.0, January 2004
@@ -4869,7 +4869,7 @@ sumchecker
 -----------------
 symbol-observable
 -----------------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -4898,7 +4898,7 @@ symbol-observable
 -----
 tslib
 -----
-.. code-block::
+.. code-block:: console
 
    Copyright (c) Microsoft Corporation.
 
@@ -4917,7 +4917,7 @@ tslib
 ------
 tunnel
 ------
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
@@ -4945,7 +4945,7 @@ tunnel
 ---------
 type-fest
 ---------
-.. code-block::
+.. code-block:: console
 
    MIT License
 
@@ -4961,7 +4961,7 @@ type-fest
 ----------
 typedarray
 ----------
-.. code-block::
+.. code-block:: console
 
    /*
     Copyright (c) 2010, Linden Research, Inc.
@@ -5003,7 +5003,7 @@ typedarray
 ------------
 universalify
 ------------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -5030,7 +5030,7 @@ universalify
 --------------
 util-deprecate
 --------------
-.. code-block::
+.. code-block:: console
 
    (The MIT License)
 
@@ -5061,7 +5061,7 @@ util-deprecate
 -----
 yauzl
 -----
-.. code-block::
+.. code-block:: console
 
    The MIT License (MIT)
 
