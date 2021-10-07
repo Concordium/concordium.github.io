@@ -8,6 +8,49 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v6-update-3:
+
+Open Testnet v6 Update 3
+========================
+
+Concordium Desktop Wallet v1.2.0
+--------------------------------
+
+:ref:`Concordium Desktop Wallet v1.2.0 <downloads>`
+
+- Added memo functionality to simple, shielded and scheduled transfers.
+- Automatic updates now supported.
+- Added option to recover lost accounts from Ledger devices.
+- The desktop wallet now shows connected node status in side bar.
+- Added an option to change between two account views.
+- Transaction log can now handle more than 100 transactions and filter functionality has been expanded.
+- Failed identities now show more information, including how to contact support.
+- Apple M1 Macs are now supported through Rosetta.
+- It is now possible to view an account address QR-code in "fullscreen" mode.
+- It is now possible to rename accounts and identities.
+- Added an option to add an address book entry while creating a transfer transaction.
+- Added an introductory screen to set up a node connection for first time users.
+- It is now possible to remove a failed identity.
+- The accounts page has been updated to make it clearer that multi credential accounts are not able to use shielded transactions.
+- Transactions in the 'Transfers' list in the account view are now grouped by dates.
+- Various smaller UI updates.
+- Various smaller bug fixes.
+- The desktop wallet is now open source.
+
+Concordium Ledger App v2.0.1
+----------------------------
+
+- Improved state validation to deny instruction changes in multi command transactions.
+- Support building for the Ledger Nano X.
+- Simplified the UI by updating terminology and stopped displaying details that cannot feasibly be verified by a user.
+- Export of private key seeds has been changed so that either the PRF key can be exported alone, or the PRF key and the IdCredSec are exported in a single command.
+- Added support for transactions with memos.
+- Support for the "Add identity provider" update.
+- Support for the "Add anonymity revoker" update.
+- Improved pagination of account addresses and hexadecimal strings, so that pages are split evenly and consistently.
+- Fixed an issue in the add baker UI, where a response could be sent before signing or declining.
+
+
 .. _open-testnet-v6-update-2:
 
 Open Testnet v6 Update 2
