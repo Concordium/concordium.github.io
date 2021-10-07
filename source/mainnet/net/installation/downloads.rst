@@ -38,28 +38,28 @@ The Concordium Mobile Wallet has been verified by NowSecure.
 Concordium Desktop Wallet
 =========================
 
--  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.1.6.exe>`_
+-  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.2.0.exe>`_
 
--  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.1.6.dmg>`_
+-  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.2.0.dmg>`_
 
 -  Download the Desktop Wallet for Linux:
 
-   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.AppImage>`_
+   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.AppImage>`_
 
-      - SHA256 checksum of the download: ``5865abbf3351690c44240e10781b39cf1ab9f7e725cecd5bd23b240a3e748a95``
+      - SHA256 checksum of the download: ``526fc9f3d894eeb2bc49451d5d68dbd092fb3b40699158f3bb8e7693914d89c1``
 
-   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.deb>`_
+   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.deb>`_
 
-      - SHA256 checksum of the download: ``20aac964690154bd9afd11c72357b6082cd5437f1d7caa11e3110c606e204da1``
+      - SHA256 checksum of the download: ``336079466ff09af9db8a8d51274ad111025eca45e4b7b27efd637503acc9e410``
 
-   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.1.6.rpm>`_
+   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.rpm>`_
 
-      - SHA256 checksum of the download: ``2cd5a59b54691b3a33d37ec0789a4adc30893dba6c31fd64fd4cb01d195a270a``
+      - SHA256 checksum of the download: ``e5bf251617b346d6db91a73045dff1ea6ffa7799e01c0e0285f25a8e0f588c07``
 
 Concordium Ledger App
 =====================
 
-`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.2-target-2.0.0.zip>`_
+`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
