@@ -32,27 +32,19 @@ Before running a Concordium node you will need to
 
    -  On *Linux*, allow Docker to be run as a non-root user.
 
-2. Download and extract the :ref:`concordium-node-and-client-download` software.
+2. Download and extract the :ref:`full suite for running a node on Linux<concordium-docker-package-download>`.
 
-Upgrade from Open Testnet
-=========================
+Upgrading from version 1.0.1 to 1.1.3
+=====================================
 
-To upgrade to the current Concordium software for |Net|:
+To upgrade do the following steps after downloading the new version.
 
--  Follow the above steps to :ref:`download<downloads>` the most recent Concordium
-   software.
+1. Run the ``concordium-node-stop`` executable from the unzipped archive and
+   wait for it to terminate. This might take a few seconds.
 
--  Run the ``concordium-node-reset-data`` executable from the unzipped
-   archive.
-
--  The tool will ask:
-
-      *Do you also want to remove saved keys?*
-
-   Accounts that were created for an Open Testnet are not valid on
-   |Net|. Therefore, if you have stored accounts from an Open
-   Testnet we recommend entering **y** which will delete all account
-   keys.
+2. Start the node again by running the ``concordium-node`` executable from the
+   unzipped archive. If your node is already caught up consider using
+   ``--no-block-state-import`` to avoid downloading data you already have.
 
 .. _running-a-node:
 

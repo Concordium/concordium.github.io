@@ -10,8 +10,8 @@ Release notes
 
 .. _open-testnet-v6:
 
-Mainnet 2
-=========
+Mainnet 2: Alpha Centauri 2.0
+==============================
 
 October 6, 2021
 
@@ -62,8 +62,8 @@ Concordium Desktop Wallet v1.2.0
 
 
 
-Mainnet 1: Update 2
-===================
+Mainnet 1: Alpha Centauri 1.2
+=============================
 
 July 28, 2021
 
@@ -72,8 +72,8 @@ Concordium Desktop Wallet v1.1.6
 
 - Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
 
-Mainnet 1: Update 1
-===================
+Mainnet 1: Alpha Centauri 1.1
+==============================
 
 July 27, 2021
 
@@ -95,8 +95,8 @@ Concordium Desktop Wallet v1.1.5
 -  Scheduled transfer release times are now shown as human readable UTC date time strings.
 -  Fixed a UI bug in remove baker transaction.
 
-Mainnet 1: Alpha Centauri
-=========================
+Mainnet 1: Alpha Centauri 1.0
+=============================
 
 June 9, 2021
 

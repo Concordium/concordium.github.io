@@ -8,6 +8,17 @@ Release Notes
    :local:
    :backlinks: none
 
+.. _open-testnet-v6-update-2:
+
+Open Testnet v6 Update 2
+========================
+
+October 6, 2021
+
+The :ref:`Concordium node release v1.1.3 <downloads>` is a bugfix release.
+
+- `Changelog <https://github.com/Concordium/concordium-node/blob/1.1.3-1/CHANGELOG.md#concordium-node-113>`__
+
 .. _open-testnet-v6-update-1:
 
 Open Testnet v6 Update 1
@@ -17,10 +28,7 @@ September 17, 2021
 
 The :ref:`Concordium node release v1.1.2 <downloads>` is a bugfix release.
 
-
-- Changelog_
-
-.. _Changelog: https://github.com/Concordium/concordium-node/blob/1.1.2/CHANGELOG.md#concordium-node-112
+- `Changelog <https://github.com/Concordium/concordium-node/blob/1.1.2/CHANGELOG.md#concordium-node-112>`__
 
 
 .. _open-testnet-v6:
