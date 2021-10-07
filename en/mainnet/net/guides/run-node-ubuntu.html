@@ -286,18 +286,28 @@
 <h2>Upgrade from version 1.0.1 to 1.1.3<a class="headerlink" href="#upgrade-from-version-1-0-1-to-1-1-3" title="Permalink to this headline">¶</a></h2>
 <p>To upgrade from version <cite>1.0.1</cite> of the <cite>concordium-node</cite> package to version <cite>1.1.3</cite> of the <cite>concordium-mainnet-node</cite> package
 package you need to</p>
-<ul>
-<li><p>Install the new package</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_1.1.3_amd64.deb</span>
+<ol class="arabic">
+<li><p>Remove the existing package</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt remove --purge concordium-node</span>
 </pre></div>
 </div>
+</li>
+</ol>
+<blockquote>
+<div><p>This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node’s configuration and data directories.</p>
 </div></blockquote>
-<p>This step will perform automatic database migration, so that the new node will
+<ol class="arabic" start="2">
+<li><p>Install the new package</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_1.1.3_amd64.deb</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>This step will perform automatic database migration, so that the new node will
 not have to catch up from scratch. After installation is completed, the node and
 the collector will be started as before.</p>
-</li>
-</ul>
+</div></blockquote>
 <div class="section" id="changes-to-node-management-in-version-1-1-3">
 <h3>Changes to node management in version 1.1.3<a class="headerlink" href="#changes-to-node-management-in-version-1-1-3" title="Permalink to this headline">¶</a></h3>
 <p>There are two main differences from version 1.0.1.</p>

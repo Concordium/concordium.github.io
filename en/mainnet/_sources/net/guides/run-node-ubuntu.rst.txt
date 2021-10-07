@@ -33,7 +33,15 @@ Upgrade from version 1.0.1 to 1.1.3
 To upgrade from version `1.0.1` of the `concordium-node` package to version `1.1.3` of the `concordium-mainnet-node` package
 package you need to
 
-- Install the new package
+1. Remove the existing package
+
+   .. code-block:: console
+
+    apt remove --purge concordium-node
+
+  This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node's configuration and data directories.
+
+2. Install the new package
 
    .. code-block:: console
 
