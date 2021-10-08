@@ -135,6 +135,16 @@ To run a node on macOS, you need a macOS installer package.
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
+Testnet genesis block
+=====================
+The genesis block is included in node distributions.
+Download the block separately to inspect it or to run a node in a custom configuration.
+
+- `Download the testnet genesis block <https://distribution.testnet.concordium.com/data/genesis.dat>`_
+
+  - SHA256 checksum of the download: ``592a921e8b43185f1726037bf7e23e78a2ea22ced82179a0840d42088e28f44a``
+
+
 .. _requirements-run-node:
 
 Requirements for running a node
