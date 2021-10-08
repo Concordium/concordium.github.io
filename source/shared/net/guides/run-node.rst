@@ -46,6 +46,23 @@ To upgrade do the following steps after downloading the new version.
    unzipped archive. If your node is already caught up consider using
    ``--no-block-state-import`` to avoid downloading data you already have.
 
+.. note::
+   If your node does not show on the network dashboard after upgrading to 1.1.3,
+   it could be that the node was started by the old version of the runner.
+   The old version of the software does not configure the docker container correctly, and this
+   misconfiguration can persist even if you then use the new version.
+   To fix this:
+
+   #. Ensure that you have downloaded and extracted the :ref:`latest version of the software<concordium-docker-package-download>`.
+
+   #. Check the version by running ``concordium-node --help``. It should show 1.1.3.
+
+   #. Stop any running node with ``concordium-node-stop``.
+
+   #. Remove the misconfigured docker container with ``docker rm concordium-client``.
+
+   #. Start the node again with ``concordium-node --no-block-state-import``.
+
 .. _running-a-node:
 
 Running a node
