@@ -125,7 +125,7 @@ html_theme_options = {
     # 'collapse_navigation': False,
     # 'sticky_navigation': True,
     'navigation_depth': 2,
-    # 'includehidden': False,s
+    'includehidden': False,
     # 'titles_only': False
 }
 
