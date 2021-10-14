@@ -90,3 +90,8 @@
    resources/release-notes
    resources/third-party-licenses
    resources/dw-licenses
+
+.. toctree::
+   :hidden:
+
+   guides/guide-ledger
