@@ -21,13 +21,13 @@ Before you start
 
 Before you install the Concordium Ledger App, make sure you’ve completed the following steps:
 
-- You’re running a node on the Concordium blockchain with either :ref:`Windows <run-node-windows>`, :ref:`macOS <run-node-macos>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Docker <run-a-node>`.
+- You’re running a node on the Concordium blockchain with either :ref:`Windows <run-node-windows>`, :ref:`macOS <run-node-macos>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Docker on Linux <run-a-node>`.
 
 - You’ve set up the `Ledger Nano S <https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true>`_ or the `Ledger Nano X <https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true>`_.
 
 - You’ve downloaded `Ledger Live <https://www.ledger.com/ledger-live/download>`_.
 
-.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger Nano S or Nano X, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
+.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger Nano S or Nano X, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys, and you need it to access you accounts if you lose your Ledger device. Make sure that you store it securely.
 
 Install the Desktop Wallet
 ==========================
@@ -36,7 +36,7 @@ Install the Desktop Wallet
 
 #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
-#. In the Desktop Wallet go to **Settings**, and then select **Node settings**.
+#. If this is the first time you're opening the Desktop Wallet, you're asked to connect to a node. If you don't see this message, go to **Settings**, and then select **Node settings**.
 
 #. Enter the **Address** and **Port** of the node you’re running. The address is the network address of the node.
 
@@ -77,27 +77,27 @@ Now that you've set up the Ledger device, you're ready to start using the Deskto
 
 #. Connect your Ledger device to your computer if you haven't done so already and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-#. In the Desktop Wallet, there’s a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**.
+#. In the Desktop Wallet, there’s a message asking you to open the Concordium application on the Ledger. Press both buttons on the Ledger when it says **Concordium**. The Ledger says **Concordium is ready**.
 
-#. In the Desktop Wallet, there’s a message saying the Ledger is ready, depending. Select **Submit**.
+#. In the Desktop Wallet, there’s a message saying the Ledger is ready. Select **Submit**.
 
 #. Press both buttons to confirm the following on the Ledger:
 
    - **Create credential**: the number that is assigned to the credential is displayed.
 
-   - **Public key**: verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
+   - **Public key**: press both buttons to confirm the export of the public key. Next, verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key, and then press both buttons to confirm.
 
 #. In the Desktop Wallet, select **Continue**.
 
 #. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-#. Verify that the **Signature threshold** on the Ledger corresponds to the threshold in the Desktop Wallet.
+#. Verify that the **Signature threshold** on the Ledger corresponds to the threshold in the Desktop Wallet. The signature threshold is the number of signatures needed to sign a transaction.
 
-#. Press the right button, and then press both buttons to sign the identity provider information.
+#. Press the right button. The Ledger says **Sign identity provider info** and then press both buttons to sign the identity provider information.
 
-#. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green checkmark is displayed next to the Concordium logo on the identity.
+#. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider verifies your identity, submits your initial account to the blockchain, and returns your identity to the Desktop Wallet. When the confirmation has been completed, a green check mark is displayed next to the Concordium logo on the identity. Your initial account is then ready for use.
 
-#. Select **Finished**. When you’ve created more accounts, you can recognize your initial account by the text *identity* next to the name.
+#. Select **Finished**. If you create more accounts, you can recognize your initial account by the text *initial* next to the name.
 
 View the account balance
 ========================
@@ -108,11 +108,13 @@ To view the account balance in the Concordium Desktop Wallet do the following:
 
   - **Account Total** shows the total number of GTU on the account
 
-  - **Balance** shows the GTU that are at your disposal, the amount of GTU that you’ve staked, and any GTU that are locked in a release schedule.
+  - **Balance** shows the sum of GTU that are at your disposal, the amount of GTU that you’ve staked, and any GTU that are locked in a release schedule.
+
+    - **At disposal** shows the amount of GTU that is available for use. You can't use GTU that are locked in a :ref:`stake<concepts-baker-stake>` or a :ref:`release schedule<GTU-single-schedule-desktop>`.
+
+    - **Staked** shows the amount of GTU you've staked if you're node is :ref:`baking <baker-concept>` blocks.
 
   - **Shielded balance** shows the amount of GTU that you’ve shielded.
-
-  - **Staked** shows the amount of GTU you've staked if you're node is :ref:`baking <baker-concept>` blocks.
 
     .. image:: ../images/desktop-wallet/account-balance.png
          :width: 60%
@@ -127,6 +129,8 @@ Currently, you don’t have to use the Ledger to receive GTU. To see any transfe
 #. In the Desktop Wallet, go to **Accounts**, and then select the relevant account.
 
 #. In the **Latest transactions** area, you can see all GTU transfers on the account.
+
+#. If you need to share your address with someone, select **Account address**, copy the address or scan the QR code.
 
 How to send GTU
 ===============
