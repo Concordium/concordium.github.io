@@ -1,5 +1,3 @@
-.. _Discord: https://discord.gg/xWmQ5tp
-
 .. _export-import-mw:
 
 =============================================
