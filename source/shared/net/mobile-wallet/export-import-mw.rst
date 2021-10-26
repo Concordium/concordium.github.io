@@ -32,6 +32,13 @@ Export identities, accounts and address book
 
 #. An OS prompt will be shown, letting you choose where to save or send your export. Select an option from the prompt.
 
+|
+
+.. image:: ../images/mobile-wallet/MW58.png
+      :width: 25%
+
+|
+
 Import identities, accounts and address book
 ============================================
 

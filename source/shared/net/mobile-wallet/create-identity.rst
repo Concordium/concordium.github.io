@@ -31,6 +31,17 @@ Create a new identity and initial account
 
 #. Having finished the external third party flow, you will have a pending initial account and identity in your app. The verification or rejection will usually be retrieved from the third party within minutes, but please check back in your app frequently for up to seven days, to retrieve the result.
 
+|
+
+.. image:: ../images/mobile-wallet/MW10.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW11.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW12.png
+      :width: 25%
+
+|
+
 .. Note::
    When your identity and initial account has been verified, we strongly recommend that you make an export. This way, you’ll have a backup in case the database is damaged.
 

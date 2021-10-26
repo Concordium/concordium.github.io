@@ -32,5 +32,17 @@ Create a new identity and initial account
 
 Your new account will now be visible on the Accounts page. It might take a little while for it to finalise on the chain, but it will soon be usable, if not already.
 
+|
+
+.. image:: ../images/mobile-wallet/MW13.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW15.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW19.png
+      :width: 25%
+
+|
+
+
 .. Note::
    Enter the **Balance** or **Shielded balance** of the new account, by pressing the Balance or Shielded balance areas on the account card.

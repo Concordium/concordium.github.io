@@ -12,6 +12,13 @@ The Concordium Mobile wallet is a digital wallet that enables you to create and 
 identities and accounts, and to create transactions such as sending GTU, shielding and unshielding GTU,
 and sending shielded transactions.
 
+You can watch the following video or the guide below.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/DO1cgpQ-w10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+|
 
 Get started
 ===========
@@ -24,11 +31,20 @@ Get started
 
 #. Decide whether or not you want to enable biometrics.
 
+|
+
+.. image:: ../images/mobile-wallet/MW4.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW5.png
+      :width: 25%
+
+|
+
 Request your identity and initial account
 =========================================
 
 Having set up your passcode and possibly biometrics, you must then submit a request for an identity
-and an initial account. This flow will start immediately after setting up for passcode and biometrics.
+and an initial account. This flow will start immediately after setting up the passcode and biometrics.
 
 #. If you don’t have any identities or accounts, select **I want to create my initial account**.
 
@@ -50,6 +66,17 @@ and an initial account. This flow will start immediately after setting up for pa
 #. Having finished the external third party flow, you will have a pending initial account and identity in
    your app. The verification or rejection will usually be retrieved from the third party within minutes, but
    please check back in your app frequently for up to seven days, to retrieve the result.
+
+|
+
+.. image:: ../images/mobile-wallet/MW10.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW11.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW12.png
+      :width: 25%
+
+|
 
 .. Note::
    When your identity and initial account has been verified, we strongly recommend that you make an export.

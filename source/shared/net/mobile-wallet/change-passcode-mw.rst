@@ -24,3 +24,10 @@ Change your passcode
 #. Input a new six-digit passcode, or choose **Use full password instead** if you’d rather have a full password.
 
 #. Choose whether or not to enable biometrics.
+
+|
+
+.. image:: ../images/mobile-wallet/MW58.png
+      :width: 25%
+
+|

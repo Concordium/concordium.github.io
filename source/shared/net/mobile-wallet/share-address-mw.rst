@@ -26,3 +26,14 @@ Share your account address
    - You can press **SHARE** and then share the address via the options in the OS prompt.
 
    - You can press **COPY** to copy the address and then paste it somewhere of your own choosing.
+
+|
+
+.. image:: ../images/mobile-wallet/MW52.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW53.png
+      :width: 25%
+.. image:: ../images/mobile-wallet/MW54.png
+      :width: 25%
+
+|
