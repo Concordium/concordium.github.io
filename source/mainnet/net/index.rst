@@ -46,6 +46,7 @@
    mobile-wallet/export-import-mw
    mobile-wallet/share-address-mw
    mobile-wallet/change-passcode-mw
+   mobile-wallet/inspect-release-schedule-mw
 
 .. toctree::
    :maxdepth: 1
