@@ -34,4 +34,3 @@ Change your passcode
 
 .. Note::
    It is not possible to change your passcode, password or biometrics if you have pending identities or accounts on your phone.
-   
