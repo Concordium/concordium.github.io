@@ -9,10 +9,10 @@ Make a transfer in the mobile wallet
    :backlinks: none
 
 This topic describes how to make a regular GTU transaction from an account in the Mobile Wallet. If you are looking
-for how to make a shielded GTU transfer, you can find the guide here. (TODO: INSERT LINK)
+for how to make a shielded GTU transfer, you can find the guide :ref:`here <make-shielded-transfer-mw>`.
 
 Make a GTU transfer from an account
------------------------------------
+===================================
 
 #. Go to the Accounts page.
 

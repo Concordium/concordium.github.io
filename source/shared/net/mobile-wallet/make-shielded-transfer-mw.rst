@@ -9,13 +9,13 @@ Make a shielded transfer in the Mobile Wallet
    :backlinks: none
 
 This topic describes how to make a shielded GTU transaction from an account in the Mobile Wallet. If you are looking
-for a guide on  how to make a regular GTU transfer, you can find the guide here. (TODO: INSERT LINK)
+for a guide on  how to make a regular GTU transfer, you can find the guide :ref:`here <make-simple-transfer-mw>`.
 
 .. Note::
    A shielded transfer is a transfer between two accounts, where the **amount** of the transfer is encrypted. Sender, receiver and the potential memo will be publicly visible on the blockchain.
 
 Make a shielded GTU transfer from an account
---------------------------------------------
+============================================
 
 #. Go to the Accounts page.
 

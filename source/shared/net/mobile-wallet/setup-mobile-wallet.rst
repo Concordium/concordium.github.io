@@ -14,9 +14,9 @@ and sending shielded transactions.
 
 
 Get started
------------
+===========
 
-#. Install the Mobile Wallet on either an iPhone or an Android phone, see Downloads.
+#. Install the Mobile Wallet on either an iPhone or an Android phone, see :ref:`Downloads <downloads>`.
 
 #. Open the Mobile wallet, read and accept the Terms and Conconditions.
 
@@ -25,7 +25,7 @@ Get started
 #. Decide whether or not you want to enable biometrics.
 
 Request your identity and initial account
------------------------------------------
+=========================================
 
 Having set up your passcode and possibly biometrics, you must then submit a request for an identity
 and an initial account. This flow will start immediately after setting up for passcode and biometrics.

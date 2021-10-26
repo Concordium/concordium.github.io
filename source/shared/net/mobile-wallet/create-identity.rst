@@ -15,7 +15,7 @@ extra identities and initial accounts can be made from the **Identities** page.
    Currently you can’t import accounts and identities created in the Concordium Desktop Wallet in the Mobile Wallet, and vice versa.
 
 Create a new identity and initial account
------------------------------------------
+=========================================
 
 #. Go to the **Identities** page.
 

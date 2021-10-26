@@ -12,7 +12,7 @@ When you created your identity, it came with an initial account. The initial acc
 to the chain by the identity provider. When you already have an identity, you can submit more accounts to the chain with that identity yourself.
 
 Create a new identity and initial account
------------------------------------------
+=========================================
 
 #. Go to the **Accounts** page.
 
