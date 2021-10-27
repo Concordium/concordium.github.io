@@ -41,17 +41,17 @@ Move GTU to the regular balance
 
 #. Go to the **Accounts** page.
 
-#. Select the account you want to transfer GTU from, and press the **Shielded balance** area of the account card.
+#. Tap the account you want to transfer GTU from, and tap the **Shielded balance** area of the account card.
 
-#. Press **UNSHIELD**.
+#. Tap **UNSHIELD**.
 
 #. Enter the amount you want to move to the regular balance.
 
-#. Press **Unshield amount**.
+#. Tap **Unshield amount**.
 
-#. Confirm your choices and press **Unshield amount**.
+#. Confirm your choices and tap **Unshield amount**.
 
-#. Your shielding transaction has now been submitted to the blockchain. Finally, press **Ok, thanks**.
+#. Your shielding transaction has now been submitted to the blockchain. Finally, tap **Ok, thanks**.
 
 The transaction might take a little while to finalise on the blockchain, and you can follow the status in the transaction log.
 Once it has finalized, you can browse to your shielded balance to see the newly shielded amount.
