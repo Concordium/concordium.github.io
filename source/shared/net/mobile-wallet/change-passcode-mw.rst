@@ -19,7 +19,7 @@ Change your passcode
 
 #. Tap **Continue**.
 
-#. Input your old passcode or biometrics.
+#. Enter your old passcode or biometrics.
 
 #. Input a new six-digit passcode, or choose **Use full password instead** if you’d rather have a full password.
 
