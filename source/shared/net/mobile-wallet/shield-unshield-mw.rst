@@ -8,8 +8,8 @@ Move GTU between the two balances
    :local:
    :backlinks: none
 
-Accounts on the Concordium blockchain have two balances, the **Balance** and the **Shielded balance**. Funds can be moved between these
-two balances, via either a shield GTU transaction or an unshield GTU transaction.
+Accounts on the Concordium blockchain have two balances, the **Balance** and the **Shielded balance**. You can move funds between these
+two balances using either a shield GTU transaction or an unshield GTU transaction.
 
 .. Note::
    The amount contained in the Balance is publicly visible, while the amount on the Shielded balance is encrypted and is only visible for
