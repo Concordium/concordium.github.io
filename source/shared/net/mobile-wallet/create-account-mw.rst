@@ -53,4 +53,4 @@ Your new account is now visible on the Accounts page. It might take a little whi
 
 
 .. Note::
-   Enter the **Balance** or **Shielded balance** of the new account, by pressing the Balance or Shielded balance areas on the account card.
+   To access the **Balance** or **Shielded balance** of the new account, tap the Balance or Shielded balance areas on the account card.
