@@ -34,7 +34,7 @@ Create a new identity and initial account
 
    - If you want to reveal some attributes, tap **Reveal account attributes**, select the attributes you want to reveal, and then tap **Submit account**.
 
-#. If you don’t want to reveal any attributes just press **Submit account**.
+#. If you don’t want to reveal any attributes, tap **Submit account**.
 
 #. Finally, press **Ok, thanks**.
 
