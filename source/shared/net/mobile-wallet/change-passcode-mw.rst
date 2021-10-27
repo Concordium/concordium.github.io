@@ -8,7 +8,7 @@ Update your passcode and biometric settings
    :local:
    :backlinks: none
 
-If you want to change your passcode or enable/disable your biometrics, this can be done from the **More** page.
+If you want to change your passcode or enable/disable your biometrics, you can do so from the **More** page.
 
 Change your passcode
 ====================
