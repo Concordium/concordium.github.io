@@ -50,22 +50,20 @@ and an initial account. You do this immediately after setting up the passcode an
 
    - If you already have one or more identities and accounts, you can just import them now.
 
-#. Read the next page in the app, shortly explaining the initial account and identity. Press **Okay, got it**!
+#. Read the next page in the app, shortly explaining the initial account and identity. Tap **Okay, got it**!
 
-#. Enter a name for your initial account. This name will only exist locally in the app, and will only be
-   known by you. You can choose to call it whatever you like. Press **Continue**.
+#. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
 
-#. Enter a name for your identity. Again, this name is only stored locally in the app, and you don’t
-   have to choose your actual name, it can be whatever you like. Press **Continue to identity providers**.
+#. Enter a name for your identity.  Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
 
-#. Select a third party identity provider from the list. This will open an external web flow within the app.
+#. Select a third party identity provider from the list. An external web page opens within the app.
 
-#. Finish the flow as presented by the third party identity provider. They will ask you to provide photos
-   of identification documents and a selfie.
+#. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider.
+   However, they will ask you to provide photos of identification documents and a selfie.
 
-#. Having finished the external third party flow, you will have a pending initial account and identity in
-   your app. The verification or rejection will usually be retrieved from the third party within minutes, but
-   please check back in your app frequently for up to seven days, to retrieve the result.
+#. When you have submitted the information to the identity provider, you will have a pending initial account and identity in your app.
+   The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve
+   the result. The result can be retrieved for up to seven days.
 
 |
 

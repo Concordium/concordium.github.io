@@ -19,8 +19,8 @@ Read the following or watch the video to learn how to create a new account.
 
 |
 
-Create a new identity and initial account
-=========================================
+Create a new account
+====================
 
 #. Go to the **Accounts** page.
 
