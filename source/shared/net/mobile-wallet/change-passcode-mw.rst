@@ -21,7 +21,7 @@ Change your passcode
 
 #. Enter your old passcode or biometrics.
 
-#. Input a new six-digit passcode, or choose **Use full password instead** if you’d rather have a full password.
+#. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather have a full password.
 
 #. Choose whether or not to enable biometrics.
 
