@@ -26,7 +26,7 @@ Create a new identity and initial account
 
 #. Select a third-party identity provider from the list. An external web page opens within the app.
 
-#. Finish the flow as presented by the third party identity provider. They will ask you to provide photos of identification documents and a selfie.
+#. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
 #. Having finished the external third party flow, you will have a pending initial account and identity in your app. The verification or rejection will usually be retrieved from the third party within minutes, but please check back in your app frequently for up to seven days, to retrieve the result.
 
