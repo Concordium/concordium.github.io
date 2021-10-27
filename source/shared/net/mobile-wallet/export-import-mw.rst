@@ -8,8 +8,8 @@ Export or import your identities and accounts
    :local:
    :backlinks: none
 
-We recommend that you backup your identities and accounts by exporting them from the Mobile Wallet. By making an export,
-all your accounts, identities and your address book will be saved in a file you can store in a safe location.
+We recommend that you backup your identities and accounts by exporting them from the Mobile Wallet. This way,
+all your accounts, identities, and your address book are saved in a file you can store in a safe location.
 
 .. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If
