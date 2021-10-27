@@ -30,7 +30,7 @@ Create a new identity and initial account
 
 #. Choose which identity you want to use to create the account.
 
-#. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, we recommend not revealing any.
+#. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, we recommend that you don't reveal any attributes.
 
    - If you want to reveal some attributes press **Reveal account attributes**, select the attributes you want to reveal and then press **Submit account**.
 
