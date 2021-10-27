@@ -8,8 +8,8 @@ Create a new account with an existing identity
    :local:
    :backlinks: none
 
-When you created your identity, it came with an initial account. The initial account is a special account which is submitted
-to the chain by the identity provider. When you already have an identity, you can submit more accounts to the chain with that identity yourself.
+When you created your identity, it came with an initial account. The initial account is a special account that the identity provider submits
+to the chain. When you already have an identity, you can submit more accounts to the chain with that identity yourself.
 
 Read below or watch the video to learn how to create a new account.
 
