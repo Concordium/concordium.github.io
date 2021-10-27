@@ -33,8 +33,8 @@ Move GTU to the shielded balance
 
 #. Your shielding transaction has now been submitted to the blockchain. Finally, tap **Ok, thanks**.
 
-The transaction might take a little while to finalise on the blockchain, and you can follow the status in the transaction log.
-Once it has finalized, you can browse to your shielded balance to see the newly shielded amount.
+The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
 
 Move GTU to the regular balance
 ===============================
