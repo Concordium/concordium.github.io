@@ -45,4 +45,4 @@ Create a new identity and initial account
    When your identity and initial account has been verified, we strongly recommend that you make an export. This way, you’ll have a backup in case the database is damaged.
 
 .. Note::
-   Enter the **Balance** or **Shielded balance** of the new account, by pressing the Balance or Shielded balance areas on the account card.
+   To access the **Balance** or **Shielded balance** of the new account, tap the Balance or Shielded balance areas on the account card.
