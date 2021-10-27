@@ -24,7 +24,7 @@ Create a new identity and initial account
 
 #. Go to the **Accounts** page.
 
-#. Press the **+** in the upper right corner.
+#. Tap the **+** in the upper right corner.
 
 #. Enter a name for your new account. Press **Next**.
 
