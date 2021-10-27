@@ -17,7 +17,7 @@ Change your passcode
 
 #. Select **Update Passcode & Biometrics**.
 
-#. Press **Continue**.
+#. Tap **Continue**.
 
 #. Input your old passcode or biometrics.
 
