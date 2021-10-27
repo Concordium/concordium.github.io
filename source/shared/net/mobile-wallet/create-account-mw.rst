@@ -36,7 +36,7 @@ Create a new identity and initial account
 
 #. If you don’t want to reveal any attributes, tap **Submit account**.
 
-#. Finally, press **Ok, thanks**.
+#. Finally, tap **Ok, thanks**.
 
 Your new account will now be visible on the Accounts page. It might take a little while for it to finalise on the chain, but it will soon be usable, if not already.
 
