@@ -24,7 +24,7 @@ Create a new identity and initial account
 
 #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
 
-#. Select a third party identity provider from the list. This will open an external web flow within the app.
+#. Select a third-party identity provider from the list. An external web page opens within the app.
 
 #. Finish the flow as presented by the third party identity provider. They will ask you to provide photos of identification documents and a selfie.
 
