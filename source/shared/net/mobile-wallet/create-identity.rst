@@ -22,7 +22,7 @@ Create a new identity and initial account
 
 #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
 
-#. Enter a name for your identity. Again, this name is only stored locally in the app, and you don’t have to choose your actual name, it can be whatever you like. Press **Continue to identity providers**.
+#. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
 
 #. Select a third party identity provider from the list. This will open an external web flow within the app.
 
