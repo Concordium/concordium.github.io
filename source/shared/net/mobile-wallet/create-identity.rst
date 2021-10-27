@@ -8,8 +8,7 @@ Create an identity and an initial account in the Mobile Wallet
    :local:
    :backlinks: none
 
-It is possible to submit requests for additional identities and initial accounts in the Mobile Wallet. Submissions to get
-extra identities and initial accounts can be made from the **Identities** page.
+You can submit requests for additional identities and initial accounts in the Mobile Wallet. You do this from the **Identities** page.
 
 .. Warning::
    Currently you can’t import accounts and identities created in the Concordium Desktop Wallet in the Mobile Wallet, and vice versa.
