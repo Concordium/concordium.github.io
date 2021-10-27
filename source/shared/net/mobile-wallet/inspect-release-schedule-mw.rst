@@ -17,11 +17,11 @@ Find and inspect a release schedule
 
 #. Go to the **Accounts** page.
 
-#. Press the balance area of the account which received the transaction with a release schedule.
+#. Tap the balance area of the account that received the transaction with a release schedule.
 
-#. Press the burger menu in the upper right corner.
+#. Tap the burger menu in the upper right corner.
 
-#. Select **Release Schedule**.
+#. Tap **Release Schedule**.
 
 You can now see the coming releases on the account.
 

@@ -21,16 +21,15 @@ Export identities, accounts and address book
 
 #. Go to the **More** page.
 
-#. Select **Export**.
+#. Tap **Export**.
 
-#. Input your biometrics or app passcode.
+#. Enter your biometrics or app passcode.
 
-#. Read through the explanation of the export and press **Continue**.
+#. Read the information about the export and tap **Continue**.
 
-#. Choose a password with a minimum of 6 characters, used to encrypt your export. Be sure to choose a safe password and keep it to yourself,
-   as this can be used to unlock your export, and in turn be used to make transfers from your account. Press **Continue**.
+#. Choose a password with a minimum of 6 characters to encrypt your export. Make sure to choose a secure password and keep it safe. Anyone with the password will be able to unlock the export and make transfers from your account. Tap **Continue**.
 
-#. An OS prompt will be shown, letting you choose where to save or send your export. Select an option from the prompt.
+#. Choose an option for sending or saving the export file such as Mail or Files.
 
 |
 
@@ -42,14 +41,14 @@ Export identities, accounts and address book
 Import identities, accounts and address book
 ============================================
 
-Depending on whether you are using an Android phone or an iPhone, the import process is slightly different.
+Depending on whether you are using an Android phone or an iPhone, the import process differs slightly.
 
 Android
 -------
 
 #. Go to the **More** page.
 
-#. Select **Import**.
+#. Tap **Import**.
 
 #. Use the Android system prompt to browse to your export and select the file.
 
@@ -57,7 +56,7 @@ Android
 
 #. Enter your biometrics or app passcode.
 
-#. Review your import and finish by pressing **Ok, thanks**.
+#. Review your import and tap **Ok, thanks**.
 
 iOS
 ---
@@ -70,4 +69,4 @@ iOS
 
 #. Enter your biometrics or app passcode.
 
-#. Review your import and finish by pressing **Ok, thanks**.
+#. Review your import and tap **Ok, thanks**.

@@ -9,10 +9,10 @@ Set up the Mobile Wallet
    :backlinks: none
 
 The Concordium Mobile wallet is a digital wallet that enables you to create and manage your Concordium
-identities and accounts, and to create transactions such as sending GTU, shielding and unshielding GTU,
+identities and accounts and to create transactions such as sending GTU, shielding and unshielding GTU,
 and sending shielded transactions.
 
-You can watch the following video or the guide below.
+Read the following guide or watch the video to find out how to set up the wallet.
 
 .. raw:: html
 
@@ -27,7 +27,7 @@ Get started
 
 #. Open the Mobile wallet, read and accept the Terms and Conconditions.
 
-#. Create a six-digit passcode. If you would rather use a full password, you can decide to do so as well.
+#. Create a six-digit passcode or use a full password.
 
 #. Decide whether or not you want to enable biometrics.
 
@@ -44,9 +44,9 @@ Request your identity and initial account
 =========================================
 
 Having set up your passcode and possibly biometrics, you must then submit a request for an identity
-and an initial account. This flow will start immediately after setting up the passcode and biometrics.
+and an initial account. You do this immediately after setting up the passcode and biometrics.
 
-#. If you don’t have any identities or accounts, select **I want to create my initial account**.
+#. If you don’t have any identities or accounts, tap **I want to create my initial account**.
 
    - If you already have one or more identities and accounts, you can just import them now.
 

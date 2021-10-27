@@ -8,9 +8,9 @@ Find and share your account address
    :local:
    :backlinks: none
 
-If you need to share your account address with someone, it can be found from the individual account page.
+If you need to share your account address with someone, you can find the address on the individual account page.
 
-Read below or watch the video to learn how to share your account address.
+Read the following or watch the video to learn how to share your account address.
 
 .. raw:: html
 
@@ -23,17 +23,17 @@ Share your account address
 
 #. Go to the **Accounts** page.
 
-#. Press the balance of the account you want to find the address to.
+#. Tap the balance of the account you want to find the address to.
 
-#. Press **ADDRESS**.
+#. Tap **ADDRESS**.
 
 #. Share your address:
 
-   - You can let someone scan your QR code from their installation of the Concordium Mobile Wallet.
+   - You can let someone scan your QR code if they have the Concordium Mobile Wallet installed.
 
-   - You can press **SHARE** and then share the address via the options in the OS prompt.
+   - You can tap **SHARE** and then share the address using one of the share options.
 
-   - You can press **COPY** to copy the address and then paste it somewhere of your own choosing.
+   - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
 |
 

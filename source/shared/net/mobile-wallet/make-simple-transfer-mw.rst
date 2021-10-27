@@ -16,21 +16,21 @@ Make a GTU transfer from an account
 
 #. Go to the Accounts page.
 
-#. Select the Account you want to transfer GTU from, and press the **Balance** area of the account card.
+#. Tap the Account you want to transfer GTU from, and press the **Balance** area of the account card.
 
-#. Press **SEND**.
+#. Tap **SEND**.
 
 #. Enter the amount you want to transfer.
 
-#. Press **Select recipient** to select the recipient of the transfer.
+#. Tap **Select recipient** to select the recipient of the transfer.
 
    - You can either choose a recipient that already exists in your Address Book, or add a new one by selecting the **QR** or **+** symbols in the upper right corner.
 
 #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
 
-#. Finally, press **Send amount**.
+#. Finally, tap **Send amount**.
 
-#. Confirm your choices, and press **Yes, send funds**.
+#. Confirm your choices, and tap **Yes, send funds**.
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
 
