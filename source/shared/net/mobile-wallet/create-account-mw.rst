@@ -32,7 +32,7 @@ Create a new identity and initial account
 
 #. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, we recommend that you don't reveal any attributes.
 
-   - If you want to reveal some attributes press **Reveal account attributes**, select the attributes you want to reveal and then press **Submit account**.
+   - If you want to reveal some attributes, tap **Reveal account attributes**, select the attributes you want to reveal, and then tap **Submit account**.
 
 #. If you don’t want to reveal any attributes just press **Submit account**.
 
