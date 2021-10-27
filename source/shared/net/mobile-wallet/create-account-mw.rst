@@ -38,7 +38,7 @@ Create a new identity and initial account
 
 #. Finally, tap **Ok, thanks**.
 
-Your new account will now be visible on the Accounts page. It might take a little while for it to finalise on the chain, but it will soon be usable, if not already.
+Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
 
 |
 
