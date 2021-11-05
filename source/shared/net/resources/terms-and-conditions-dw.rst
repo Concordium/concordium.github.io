@@ -13,7 +13,7 @@ Effective from May 15th 2021
 Introduction
 ============
 
-Concordium Desktop Wallet is a digital wallet that is offered worldwide by Concordium Software ApS (‘Concordium Software’). 
+Concordium Desktop Wallet is a digital wallet that is offered worldwide by Concordium Software ApS (‘Concordium Software’).
 At `developer.concordium.software <https://developer.concordium.software>`_, you can read about how the wallet works. Concordium
 Software may continually change and/or adjust the functions of Concordium Desktop Wallet. Concordium Software’s terms and conditions apply
 to Concordium Desktop Wallet users worldwide.
@@ -45,7 +45,7 @@ The following is required to register with Concordium Desktop Wallet:
 
 -  Concordium Ledger App.
 
-You must be at least 18 years old to register. 
+You must be at least 18 years old to register.
 
 
 Registering as a Concordium Desktop Wallet user
@@ -57,7 +57,7 @@ Before you can use Concordium Desktop Wallet, you will need to create an initial
 instructions in the app. An identity provider is a third-party supplier and independent of Concordium Software. The Concordium Desktop Wallet stores
 data from the identity provider, but Concordium Software does not, and Concordium Software does not have access to data stored by the Concordium Desktop Wallet.
 
-After you have created the initial account and registered with an identity provider, you can create additional accounts (‘regular accounts’) with which you will be able to carry out transactions. 
+After you have created the initial account and registered with an identity provider, you can create additional accounts (‘regular accounts’) with which you will be able to carry out transactions.
 
 Please note that you can only register one account as the initial account.
 
@@ -78,7 +78,7 @@ You have a duty to ensure that the details you provide are correct and updated a
 personal and may be used only by you. You must not disclose your passwords and PIN codes to others, and you must not write them down, or save them on your
 computer or mobile device. You must not disclose your Ledger Nano S 24-word recovery phrase or PIN code to others or store them digitally on your computer or mobile device.
 
-Concordium Desktop Wallet must not be used for illegal activities or purposes. 
+Concordium Desktop Wallet must not be used for illegal activities or purposes.
 
 You must not use Concordium Desktop Wallet in a way that harasses other Concordium Desktop Wallet users.
 
@@ -89,7 +89,7 @@ To prevent unauthorized use of Concordium Desktop Wallet, you must store your co
 to them. Do not disclose the password or PIN code to third parties.
 
 You are obliged to verify your identity with an identity provider. The identity provider will know the identity of the initial account creator. Your identity
-can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order. 
+can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order.
 
 You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, Ledger recovery phrase, and any other codes you use
 to access the Concordium Desktop Wallet or any information, GTU, or voucher. If you lose access to the Concordium Desktop Wallet, private keys, or identity,
@@ -119,7 +119,7 @@ Changes
 =======
 
 You will be notified on concordium.software if we change the terms and conditions. We may change the terms and conditions without notice. You can read the terms and
-conditions at concordium.software, from which you can also print, download, or email them. 
+conditions at concordium.software, from which you can also print, download, or email them.
 
 If you do not wish to be covered by the new terms and conditions, you must notify us before the new terms and conditions enter into force. If you notify us that you
 do not wish to be covered by the new terms and conditions, we will consider the Concordium Desktop Wallet agreement to be terminated from the date on which the new

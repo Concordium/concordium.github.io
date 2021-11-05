@@ -48,7 +48,7 @@ the instructions in the app. An identity provider is a third-party supplier and 
 stores data from the identity provider, but Concordium Software does not.
 
 After you have created the initial account and registered with an identity provider, you can create additional accounts (‘regular accounts’)
-with which you will be able to carry out transactions. 
+with which you will be able to carry out transactions.
 
 Please note that you can only register one account as the initial account.
 
@@ -67,7 +67,7 @@ Other obligations etc.
 You have a duty to ensure that the details you provide are correct and updated at any given time. Your Concordium Mobile Wallet is personal and may
 be used only by you. You must not disclose your passwords to others, write them down, or save them on your mobile device.
 
-Concordium Mobile Wallet must not be used for illegal activities or purposes. 
+Concordium Mobile Wallet must not be used for illegal activities or purposes.
 
 You must not use Concordium Mobile Wallet in a way that harasses other Concordium Mobile Wallet users.
 
@@ -79,7 +79,7 @@ To prevent unauthorized use of Concordium Mobile Wallet, you must store your mob
 If possible, you should lock your device with a password or keypad lock. Do not disclose the password to third parties.
 
 You are obliged to verify your identity with an identity provider. The identity provider will know the identity of the initial account creator.
-Your identity can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order. 
+Your identity can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order.
 
 You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, and any other codes you use to access the
 Concordium Mobile Wallet or any information, GTU, or voucher. If you lose access to the Mobile Wallet, private keys, or identity, and you have not
