@@ -88,5 +88,7 @@
 
    resources/glossary
    resources/release-notes-mainnet
+   resources/terms-and-conditions-mw
+   resources/terms-and-conditions-dw
    resources/third-party-licenses
    resources/dw-licenses
