@@ -12,7 +12,7 @@ Deciding between the Desktop Wallet and the Mobile Wallet
 Why you need a wallet
 =====================
 
-You need a wallet to interact with the Concordium blockchain and to manage your GTU. Currently, there are two wallets available: the Concordium Desktop Wallet and the Concordium Mobile Wallet. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a wallet to interact with the Concordium blockchain and to manage your GTU. Currently, there are two first party wallets available: the Concordium Desktop Wallet and the Concordium Mobile Wallet. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
 Both the Concordium Desktop Wallet and the Concordium Mobile Wallet are developed by Concordium Software and can only be used to hold :ref:`GTU<glossary-GTU>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
