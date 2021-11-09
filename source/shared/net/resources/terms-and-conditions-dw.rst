@@ -8,7 +8,7 @@ Terms and Conditions for Concordium Desktop Wallet
    :local:
    :backlinks: none
 
-Effective from May 15th 2021
+Effective from November 10th 2021
 
 Introduction
 ============
