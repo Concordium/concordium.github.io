@@ -82,7 +82,7 @@ The following table lists the major features of each wallet.
    *  - Creation and management of single signature accounts
       - Creation and management of single signature accounts
    *  - Creation and management of multi signature accounts
-      - No creation and management of multi signature accounts
+      - N/A
    *  - Creation of identities
       - Creation of identities
    *  - Creation and management of baker accounts
