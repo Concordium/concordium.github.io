@@ -39,7 +39,7 @@ One of the main differences between the two wallets lies in how they store your 
 
 -  The Desktop Wallet stores your private keys on a Ledger that is secured by a PIN code and backed up by a recovery phrase. The private keys never leave the Ledger hardware device, and the Ledger doesn't require internet access, which means you can keep your private keys offline. However, this also means that you need the Ledger to sign the transactions you create in the Desktop Wallet, which makes it less convenient than the Mobile Wallet.
 
-- The Mobile Wallet creates and stores your private keys on the phone. This means it's easier to use because you don't need a Ledger device to make transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet. Also, anyone with access to the mobile wallet can make transfers from the accounts in the mobile wallet.
+- The Mobile Wallet creates and stores your private keys on the phone. This means it's easier to use because you don't need a Ledger device to make transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet.
 
 How to backup a wallet
 ======================
