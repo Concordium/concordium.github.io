@@ -33,6 +33,8 @@ Concordium Mobile Wallet for Android (v. 1.0.16)
 
 -  Various smaller textual updates.
 
+-  Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.
+
 The new version of Concordium Mobile Wallet for iOS is coming soon
 ------------------------------------------------------------------
 
