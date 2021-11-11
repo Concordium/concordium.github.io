@@ -16,6 +16,9 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/run-node-windows
+   guides/run-node-macos
+   guides/baker-windows
    guides/deciding-wallet
    guides/overview-desktop
    guides/multisig-transfer
@@ -54,6 +57,7 @@
 
    desktop-wallet/install-ledger-app
    desktop-wallet/get-started-desktop
+   desktop-wallet/update-application
    desktop-wallet/create-identity-desktop
    desktop-wallet/create-account-desktop
    desktop-wallet/accounts-desktop
@@ -74,7 +78,7 @@
    desktop-wallet/proposed-transactions
    desktop-wallet/make-account-report
    desktop-wallet/send-shielded-amount
-
+   desktop-wallet/account-recovery
 
 .. toctree::
    :maxdepth: 1
@@ -91,5 +95,7 @@
 
    resources/glossary
    resources/release-notes-mainnet
+   resources/terms-and-conditions-mw
+   resources/terms-and-conditions-dw
    resources/third-party-licenses
    resources/dw-licenses

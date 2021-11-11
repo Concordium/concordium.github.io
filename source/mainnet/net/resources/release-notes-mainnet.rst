@@ -8,8 +8,73 @@ Release notes
    :local:
    :backlinks: none
 
-Mainnet 1: Update 2
-===================
+.. _open-testnet-v6:
+
+Mainnet 2: Alpha Centauri 2.0
+==============================
+
+October 6, 2021
+
+Concordium Node v1.1.3
+----------------------
+
+The :ref:`Concordium node release v1.1.3 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
+stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
+
+- Added memo functionality for transactions to Protocol
+- Windows support for running a node
+- Mac support for running a node
+- Mac ARM M1 support for running a node
+- Various bug fixes
+
+Concordium Client v1.1.1
+------------------------
+
+:ref:`Concordium Client v1.1.1 <downloads>`
+
+- Added memo functionality for transactions
+
+Concordium Desktop Wallet v1.2.0
+--------------------------------
+
+:ref:`Concordium Desktop Wallet v1.2.0 <downloads>`
+
+- Added memo functionality to simple, shielded and scheduled transfers.
+- Automatic updates now supported.
+- Added option to recover lost accounts from Ledger devices.
+- The desktop wallet now shows connected node status in side bar.
+- Added an option to change between two account views.
+- Transaction log can now handle more than 100 transactions and filter functionality has been expanded.
+- Failed identities now show more information, including how to contact support.
+- Apple M1 Macs are now supported through Rosetta.
+- It is now possible to view an account address QR-code in "fullscreen" mode.
+- It is now possible to rename accounts and identities.
+- Added an option to add an address book entry while creating a transfer transaction.
+- Added an introductory screen to set up a node connection for first time users.
+- It is now possible to remove a failed identity.
+- The accounts page has been updated to make it clearer that multi credential accounts are not able to use shielded transactions.
+- Transactions in the 'Transfers' list in the account view are now grouped by dates.
+- Various smaller UI updates.
+- Various smaller bug fixes.
+- The desktop wallet is now open source.
+
+Concordium Ledger App v2.0.1
+----------------------------
+
+- Improved state validation to deny instruction changes in multi command transactions.
+- Support building for the Ledger Nano X.
+- Simplified the UI by updating terminology and stopped displaying details that cannot feasibly be verified by a user.
+- Export of private key seeds has been changed so that either the PRF key can be exported alone, or the PRF key and the IdCredSec are exported in a single command.
+- Added support for transactions with memos.
+- Support for the "Add identity provider" update.
+- Support for the "Add anonymity revoker" update.
+- Improved pagination of account addresses and hexadecimal strings, so that pages are split evenly and consistently.
+- Fixed an issue in the add baker UI, where a response could be sent before signing or declining.
+
+
+Mainnet 1: Alpha Centauri 1.2
+=============================
 
 July 28, 2021
 
@@ -18,8 +83,8 @@ Concordium Desktop Wallet v1.1.6
 
 - Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
 
-Mainnet 1: Update 1
-===================
+Mainnet 1: Alpha Centauri 1.1
+==============================
 
 July 27, 2021
 
@@ -41,8 +106,8 @@ Concordium Desktop Wallet v1.1.5
 -  Scheduled transfer release times are now shown as human readable UTC date time strings.
 -  Fixed a UI bug in remove baker transaction.
 
-Mainnet 1: Alpha Centauri
-=========================
+Mainnet 1: Alpha Centauri 1.0
+=============================
 
 June 9, 2021
 
