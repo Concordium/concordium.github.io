@@ -11,7 +11,7 @@ Release notes
 Mainnet 2: Alpha Centauri 2.1
 =============================
 
-November 11th, 2021
+November 16th, 2021
 
 Concordium Mobile Wallet for Android (v. 1.0.16)
 ------------------------------------------------

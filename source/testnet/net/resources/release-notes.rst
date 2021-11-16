@@ -11,7 +11,7 @@ Release Notes
 Open Testnet v6 Update 4
 ========================
 
-November 11th, 2021
+November 16th, 2021
 
 Concordium Mobile Wallet for Android (v. 1.0.16)
 ------------------------------------------------
