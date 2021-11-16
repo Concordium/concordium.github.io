@@ -23,7 +23,7 @@ Concordium Mobile Wallet for Android (v. 1.0.16)
 
 -  Various improvements of the identity issuance flow, account creation and related support options:
 
-      -  Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
+      -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
          containing an issuance reference for better personal support as well as system information of the user for better debugging.
       -  Added a small dialogue to remind user to check for response on new identity requests.
       -  User will now be notified on successful creation of new accounts inside the app.
