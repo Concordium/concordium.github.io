@@ -21,9 +21,9 @@ Concordium Mobile Wallet for Android (v. 1.0.16)
       -  It is now possible to add memos to simple and shielded transactions.
       -  Memos can also be displayed for transfers with release schedule.
 
--  Various improvements of the identity issuance flow, account creation and related support options:
+-  Various improvements of the identity issuance flow, account creation, and related support options:
 
-      -  Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
+      -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
          containing an issuance reference for better personal support as well as system information of the user for better debugging.
       -  Added a small dialogue to remind user to check for response on new identity requests.
       -  User will now be notified on successful creation of new accounts inside the app.
