@@ -115,10 +115,14 @@
 <li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deciding between the Desktop Wallet and the Mobile Wallet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-you-need-a-wallet">Why you need a wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#no-import-of-identities-and-accounts-from-one-wallet-to-another">No import of identities and accounts from one wallet to another</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#which-wallet-is-best-for-you">Which wallet is best for you?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-the-wallets-store-your-private-keys">How the wallets store your private keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-backup-a-wallet">How to backup a wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-are-the-requirements-for-each-wallet">What are the requirements for each wallet?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#why-do-i-need-a-ledger-hardware-device-to-use-the-desktop-wallet">Why do I need a Ledger hardware device to use the Desktop Wallet?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comparison">Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -138,9 +142,16 @@
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">Set up the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-identity.html">Create an identity and an initial account in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-account-mw.html">Create a new account with an existing identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move GTU between the two balances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Export or import your identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
 <ul>
@@ -259,88 +270,115 @@
 <span id="choosing-wallet"></span><h1>Deciding between the Desktop Wallet and the Mobile Wallet<a class="headerlink" href="#deciding-between-the-desktop-wallet-and-the-mobile-wallet" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#which-wallet-is-best-for-you" id="id1">Which wallet is best for you?</a></p></li>
-<li><p><a class="reference internal" href="#what-are-the-requirements-for-each-wallet" id="id2">What are the requirements for each wallet?</a></p></li>
-<li><p><a class="reference internal" href="#why-do-i-need-a-ledger-hardware-device-to-use-the-desktop-wallet" id="id3">Why do I need a Ledger hardware device to use the Desktop Wallet?</a></p></li>
-<li><p><a class="reference internal" href="#comparison" id="id4">Comparison</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id5">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#why-you-need-a-wallet" id="id1">Why you need a wallet</a></p></li>
+<li><p><a class="reference internal" href="#no-import-of-identities-and-accounts-from-one-wallet-to-another" id="id2">No import of identities and accounts from one wallet to another</a></p></li>
+<li><p><a class="reference internal" href="#which-wallet-is-best-for-you" id="id3">Which wallet is best for you?</a></p></li>
+<li><p><a class="reference internal" href="#how-the-wallets-store-your-private-keys" id="id4">How the wallets store your private keys</a></p></li>
+<li><p><a class="reference internal" href="#how-to-backup-a-wallet" id="id5">How to backup a wallet</a></p></li>
+<li><p><a class="reference internal" href="#what-are-the-requirements-for-each-wallet" id="id6">What are the requirements for each wallet?</a></p></li>
+<li><p><a class="reference internal" href="#comparison" id="id7">Comparison</a></p></li>
+<li><p><a class="reference internal" href="#next-steps" id="id8">Next steps</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>You need a wallet to interact with the Concordium blockchain and to manage your GTU. Currently, there are two wallets available: the Concordium Desktop Wallet and the Concordium Mobile Wallet.</p>
-<p>While you can send GTU from one wallet to the other, you can’t import identities and accounts from the Mobile Wallet into the Desktop Wallet. Conversely, you can’t import identities and accounts from the Desktop Wallet into the Mobile Wallet. It’s therefore important that you choose between the wallets before you start creating identities and accounts. This topic describes main differences between the two to help you make an informed decision.</p>
-<p>Both the Concordium Desktop Wallet and the Concordium Mobile Wallet are developed by Concordium Software and can only be used to hold GTU, the native token of the Concordium blockchain.</p>
+<div class="section" id="why-you-need-a-wallet">
+<h2>Why you need a wallet<a class="headerlink" href="#why-you-need-a-wallet" title="Permalink to this headline">¶</a></h2>
+<p>You need a wallet to interact with the Concordium blockchain and to manage your GTU. Currently, there are two first party wallets available: the Concordium Desktop Wallet and the Concordium Mobile Wallet. This topic outlines the major differences that you should be aware of when you decide which wallet to use.</p>
+<p>Both the Concordium Desktop Wallet and the Concordium Mobile Wallet are developed by Concordium Software and can only be used to hold <a class="reference internal" href="../resources/glossary.html#glossary-gtu"><span class="std std-ref">GTU</span></a>, the native token of the Concordium blockchain. You can’t use these wallets for any other cryptocurrencies.</p>
+</div>
+<div class="section" id="no-import-of-identities-and-accounts-from-one-wallet-to-another">
+<h2>No import of identities and accounts from one wallet to another<a class="headerlink" href="#no-import-of-identities-and-accounts-from-one-wallet-to-another" title="Permalink to this headline">¶</a></h2>
+<p>Before you decide which wallet to use, it’s important to know that you can’t import identities and accounts from the Mobile Wallet into the Desktop Wallet. Conversely, you can’t import identities and accounts from the Desktop Wallet into the Mobile Wallet. This is because they handle private keys in different ways as <a class="reference internal" href="#store-private-keys"><span class="std std-ref">described later</span></a> in this topic. It’s therefore essential that you choose between the wallets before you start creating identities and accounts. You can, however, send GTU from one wallet to another.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You are solely responsible for keeping your assets secure    regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.</p>
+<p>You can’t exchange identities and accounts between the Mobile Wallet and the Desktop Wallet.</p>
+</div>
 </div>
 <div class="section" id="which-wallet-is-best-for-you">
 <h2>Which wallet is best for you?<a class="headerlink" href="#which-wallet-is-best-for-you" title="Permalink to this headline">¶</a></h2>
-<p>If you want extra security in the form of a Ledger hardware device, want to create multi-signature transactions, and want to be able to create a baker account, the Desktop Wallet is the right choice.
-If you want to be able to access your accounts on the go, don’t want to run a node, don’t want to depend on a Ledger hardware device, and only need to create standard (single signature) transactions, the Mobile Wallet is the right choice.</p>
+<p>The wallets work on two different environments: the Desktop Wallet on a computer and the Mobile Wallet on a phone. The Mobile Wallet is more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.</p>
+<ul class="simple">
+<li><p><strong>Desktop Wallet</strong>: Choose this wallet if you want extra security in the form of a <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">Ledger</span></a> hardware device, want to create multi-signature transactions, and want to be able to create a baker account.</p></li>
+<li><p><strong>Mobile Wallet</strong>: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the Mobile Wallet, you don’t have to run a node, and you don’t need a Ledger hardware device,</p></li>
+</ul>
+<p>The following provides more details on the differences between the wallets.</p>
+</div>
+<div class="section" id="how-the-wallets-store-your-private-keys">
+<span id="store-private-keys"></span><h2>How the wallets store your private keys<a class="headerlink" href="#how-the-wallets-store-your-private-keys" title="Permalink to this headline">¶</a></h2>
+<p>One of the main differences between the two wallets lies in how they store your private keys.</p>
+<ul class="simple">
+<li><p>The Desktop Wallet stores your private keys on a Ledger that is secured by a PIN code and backed up by a recovery phrase. The private keys never leave the Ledger hardware device, and the Ledger doesn’t require internet access, which means you can keep your private keys offline. However, this also means that you need the Ledger to sign the transactions you create in the Desktop Wallet, which makes it less convenient than the Mobile Wallet.</p></li>
+<li><p>The Mobile Wallet creates and stores your private keys on the phone. This means it’s easier to use because you don’t need a Ledger device to make transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet.</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-backup-a-wallet">
+<h2>How to backup a wallet<a class="headerlink" href="#how-to-backup-a-wallet" title="Permalink to this headline">¶</a></h2>
+<p>We strongly recommend that you make a backup of your wallet regardless of which one you use. Backups are created in different ways in the two wallets.</p>
+<ul class="simple">
+<li><p><strong>Backup of the Desktop Wallet</strong>: You create a backup of your accounts, identities, and addresses by exporting them to a file from the Desktop Wallet. This doesn’t mean that you create a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It’s vital that you keep the recovery phrase safe. For more information, see <a class="reference internal" href="../desktop-wallet/export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a> and <a class="reference internal" href="../desktop-wallet/account-recovery.html#account-recovery-desktop"><span class="std std-ref">Account recovery</span></a>.</p></li>
+<li><p><strong>Backup of the Mobile Wallet</strong>: You create a backup of your accounts, identities, addresses, and private keys by exporting them to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. It’s vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see <a class="reference external" href="https://developer.concordium.software/en/testnet/net/mobile-wallet/explore-more.html#explore-more" title="(in Concordium)"><span class="xref std std-ref">Explore the *More* page in the Mobile Wallet</span></a>.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.</p>
+</div>
 </div>
 <div class="section" id="what-are-the-requirements-for-each-wallet">
 <h2>What are the requirements for each wallet?<a class="headerlink" href="#what-are-the-requirements-for-each-wallet" title="Permalink to this headline">¶</a></h2>
-<p><strong>Mobile Wallet</strong>: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.</p>
-<p><strong>Desktop Wallet</strong>: you’ll need a computer running Windows, macOS or Linux, and you’ll need a Ledger Nano S. You’ll also have to run a node, and your computer must meet the hardware requirements for this. Go to the <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">downloads</span></a> page for more information.</p>
-</div>
-<div class="section" id="why-do-i-need-a-ledger-hardware-device-to-use-the-desktop-wallet">
-<h2>Why do I need a Ledger hardware device to use the Desktop Wallet?<a class="headerlink" href="#why-do-i-need-a-ledger-hardware-device-to-use-the-desktop-wallet" title="Permalink to this headline">¶</a></h2>
-<p>The Ledger provides an extra layer of security. The private key is stored offline on the Ledger and never leaves the device, and you can store the Ledger in a different place than the wallet.  However, this also means that you need the ledger to sign the transactions you create in the Desktop Wallet.</p>
+<ul class="simple">
+<li><p><strong>Mobile Wallet</strong>: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.</p></li>
+<li><p><strong>Desktop Wallet</strong>: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S. You’ll also have to run a node, and your computer must meet the hardware requirements for this.</p></li>
+</ul>
 </div>
 <div class="section" id="comparison">
 <h2>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h2>
 <p>The following table lists the major features of each wallet.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Features</p></th>
-<th class="head"><p>Desktop Wallet</p></th>
-<th class="head"><p>Mobile Wallet</p></th>
+<tr class="row-odd"><th class="head"><p><strong>Desktop Wallet</strong></p></th>
+<th class="head"><p><strong>Mobile Wallet</strong></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Secured by password and biometrics</strong></p></td>
-<td><p>Password</p></td>
-<td><p>Password and biometrics</p></td>
+<tr class="row-even"><td><p>Secured by password</p></td>
+<td><p>Secured by password and biometrics</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Encrypted</strong></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td><p>Encrypted</p></td>
+<td><p>Encrypted</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Create backup of identities and accounts</strong></p></td>
-<td><p>Yes. The backup includes accounts, identities, and the address book.</p></td>
-<td><p>Yes. The backup includes accounts, identities, address book, and account keys.</p></td>
+<tr class="row-even"><td><p>Backup file includes account names and addresses, identities, and the address book. Ledger is needed for a full recovery.</p></td>
+<td><p>Backup file includes accounts, identities, address book, and private keys.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Storage of private keys</strong></p></td>
-<td><p>Stored on the Ledger that is secured by a PIN code and backed up by recovery phrase.</p></td>
-<td><p>Stored in the wallet.</p></td>
+<tr class="row-odd"><td><p>Private keys are stored on the Ledger that is secured by a PIN code and backed up by recovery phrase.</p></td>
+<td><p>Private keys are stored in the wallet.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Create and manage single signature accounts</strong></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
+<tr class="row-even"><td><p>Creation and management of single signature accounts</p></td>
+<td><p>Creation and management of single signature accounts</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Create and manage multi signature accounts</strong></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td><p>Creation and management of multi signature accounts</p></td>
+<td><p>N/A</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Create identities</strong></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
+<tr class="row-even"><td><p>Creation of identities</p></td>
+<td><p>Creation of identities</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Create and manage baker accounts</strong></p></td>
-<td><p>Yes</p></td>
-<td><p>The Concordium Client can be used to manage baker accounts. Rewards are visible in the wallet.</p></td>
+<tr class="row-odd"><td><p>Creation and management of baker accounts</p></td>
+<td><p>The Concordium Client must be used to manage baker accounts. Rewards are visible in the wallet.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Run a node</strong></p></td>
-<td><p>Requirement</p></td>
-<td><p>Not needed</p></td>
+<tr class="row-even"><td><p>Running a node is a requirement</p></td>
+<td><p>Running a node is not needed</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you want to use the Desktop Wallet, <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">download</span></a> and install it on your computer, and then see <a class="reference internal" href="overview-desktop.html#overview-desktop"><span class="std std-ref">Overview of setting up the Desktop Wallet</span></a> for the next steps.</p>
+<p>If you want to use the Mobile Wallet, <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">download</span></a> the app on your mobile phone, and then see <a class="reference external" href="https://developer.concordium.software/en/testnet/net/mobile-wallet/get-started.html#mobile-get-started" title="(in Concordium)"><span class="xref std std-ref">Get started with the Mobile Wallet</span></a> for the next steps.</p>
+<p>If you want to learn more about the Ledger device, go to <a class="reference external" href="https://www.ledger.com">Ledger’s website</a>.</p>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>

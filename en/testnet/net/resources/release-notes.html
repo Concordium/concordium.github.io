@@ -131,9 +131,16 @@
 </ul>
 <p class="caption"><span class="caption-text">Concordium Mobile Wallet</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/get-started.html">Get started with the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/accounts-transactions.html">Get started with accounts and transactions in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/explore-more.html">Explore the <em>More</em> page in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">Set up the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-identity.html">Create an identity and an initial account in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-account-mw.html">Create a new account with an existing identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move GTU between the two balances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Export or import your identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Concordium Desktop Wallet</span></p>
 <ul>
@@ -173,6 +180,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6-update-4">Open Testnet v6 Update 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6-update-3">Open Testnet v6 Update 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6-update-2">Open Testnet v6 Update 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-testnet-v6-update-1">Open Testnet v6 Update 1</a></li>
@@ -274,49 +282,89 @@
 <h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#open-testnet-v6-update-3" id="id12">Open Testnet v6 Update 3</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v6-update-4" id="id12">Open Testnet v6 Update 4</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-2-0" id="id13">Concordium Desktop Wallet v1.2.0</a></p></li>
-<li><p><a class="reference internal" href="#concordium-ledger-app-v2-0-1" id="id14">Concordium Ledger App v2.0.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-mobile-wallet-for-android-v-1-0-16" id="id13">Concordium Mobile Wallet for Android (v. 1.0.16)</a></p></li>
+<li><p><a class="reference internal" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" id="id14">The new version of Concordium Mobile Wallet for iOS is coming soon</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v6-update-2" id="id15">Open Testnet v6 Update 2</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v6-update-1" id="id16">Open Testnet v6 Update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v6" id="id17">Open Testnet v6</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v6-update-3" id="id15">Open Testnet v6 Update 3</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-node-v1-1-1" id="id18">Concordium Node v1.1.1</a></p></li>
-<li><p><a class="reference internal" href="#concordium-client-v1-1-1" id="id19">Concordium Client v1.1.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-2-0" id="id16">Concordium Desktop Wallet v1.2.0</a></p></li>
+<li><p><a class="reference internal" href="#concordium-ledger-app-v2-0-1" id="id17">Concordium Ledger App v2.0.1</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-4" id="id20">Open Testnet v5 Update 4</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v6-update-2" id="id18">Open Testnet v6 Update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v6-update-1" id="id19">Open Testnet v6 Update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v6" id="id20">Open Testnet v6</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-6" id="id21">Concordium Desktop Wallet v1.1.6</a></p></li>
+<li><p><a class="reference internal" href="#concordium-node-v1-1-1" id="id21">Concordium Node v1.1.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client-v1-1-1" id="id22">Concordium Client v1.1.1</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-3" id="id22">Open Testnet v5 Update 3</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-4" id="id23">Open Testnet v5 Update 4</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5-for-testnet" id="id23">Concordium Desktop Wallet v1.1.5 for Testnet</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-6" id="id24">Concordium Desktop Wallet v1.1.6</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-2" id="id24">Open Testnet v5 Update 2</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v5-update-1" id="id25">Open Testnet v5 Update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v5" id="id26">Open Testnet v5</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v4-update-1" id="id27">Open Testnet v4 Update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v4" id="id28">Open Testnet v4</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3-update-2" id="id29">Open Testnet v3 update 2</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3-update-1" id="id30">Open Testnet v3 update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v3" id="id31">Open Testnet v3</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v2-update-1" id="id32">Open Testnet v2 update 1</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v2" id="id33">Open Testnet v2</a></p></li>
-<li><p><a class="reference internal" href="#updates" id="id34">Updates</a></p></li>
-<li><p><a class="reference internal" href="#open-testnet-v1" id="id35">Open Testnet v1</a></p>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-3" id="id25">Open Testnet v5 Update 3</a></p>
 <ul>
-<li><p><a class="reference internal" href="#features" id="id36">Features</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5-for-testnet" id="id26">Concordium Desktop Wallet v1.1.5 for Testnet</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#concordium-nodes" id="id37">Concordium Nodes</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id38">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-2" id="id27">Open Testnet v5 Update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v5-update-1" id="id28">Open Testnet v5 Update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v5" id="id29">Open Testnet v5</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v4-update-1" id="id30">Open Testnet v4 Update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v4" id="id31">Open Testnet v4</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3-update-2" id="id32">Open Testnet v3 update 2</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3-update-1" id="id33">Open Testnet v3 update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v3" id="id34">Open Testnet v3</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v2-update-1" id="id35">Open Testnet v2 update 1</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v2" id="id36">Open Testnet v2</a></p></li>
+<li><p><a class="reference internal" href="#updates" id="id37">Updates</a></p></li>
+<li><p><a class="reference internal" href="#open-testnet-v1" id="id38">Open Testnet v1</a></p>
+<ul>
+<li><p><a class="reference internal" href="#features" id="id39">Features</a></p></li>
 </ul>
+</li>
+<li><p><a class="reference internal" href="#concordium-nodes" id="id40">Concordium Nodes</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id41">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v6-update-4">
+<h2>Open Testnet v6 Update 4<a class="headerlink" href="#open-testnet-v6-update-4" title="Permalink to this headline">¶</a></h2>
+<p>November 16th, 2021</p>
+<div class="section" id="concordium-mobile-wallet-for-android-v-1-0-16">
+<h3>Concordium Mobile Wallet for Android (v. 1.0.16)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v-1-0-16" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Support for the new memo functionality in simple, shielded, and scheduled transfers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is now possible to add memos to simple and shielded transactions.</p></li>
+<li><p>Memos can also be displayed for transfers with release schedule.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Various improvements of the identity issuance flow, account creation and related support options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
+containing an issuance reference for better personal support as well as system information of the user for better debugging.</p></li>
+<li><p>Added a small dialogue to remind user to check for response on new identity requests.</p></li>
+<li><p>User will now be notified on successful creation of new accounts inside the app.</p></li>
+<li><p>Various back-end improvements by the identity provider to make their service more robust.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Various bug fixes.</p></li>
+<li><p>Various smaller textual updates.</p></li>
+<li><p>Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.</p></li>
+</ul>
+</div>
+<div class="section" id="the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">
+<h3>The new version of Concordium Mobile Wallet for iOS is coming soon<a class="headerlink" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="open-testnet-v6-update-3">
 <span id="id1"></span><h2>Open Testnet v6 Update 3<a class="headerlink" href="#open-testnet-v6-update-3" title="Permalink to this headline">¶</a></h2>
@@ -554,7 +602,7 @@ to other mobile devices and restoring from backup.</p></li>
 <li><p>µGTU. The smallest unit has been changed from 10-4 to 10-6.</p></li>
 <li><p>Bulletproofs. The core blockchain has been updated to support use of
 bulletproofs.</p></li>
-<li><p><a class="reference internal" href="../mobile-wallet/accounts-transactions.html#move-an-amount-to-the-shielded-balance"><span class="std std-ref">Encrypted(shielded) amounts and transfers</span></a>. Support for shielded
+<li><p><a class="reference external" href="https://developer.concordium.software/en/mainnet/net/mobile-wallet/accounts-transactions.html#move-an-amount-to-the-shielded-balance" title="(in Concordium)"><span class="xref std std-ref">Encrypted(shielded) amounts and transfers</span></a>. Support for shielded
 transactions has been added to the core blockchain. Support for
 sending and receiving shielded amounts are added to the mobile apps
 and the Concordium client.</p></li>
