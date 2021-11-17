@@ -52,6 +52,8 @@ For details on how to update the Ledger firmware, see `Ledger ‘s guide <https:
 Install Concordium Ledger app on Windows
 ========================================
 
+.. _install-python-pip-windows:
+
 Install Python3 and pip
 -----------------------
 
@@ -124,7 +126,7 @@ Update the Concordium Ledger app on Windows
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
-.. Note:: If you're using a different computer than the one you used when you installed the app, you must install Python3, pip, and the Python tools for ledger (ledgerblue) before updating the app.
+.. Note:: If you're using a different computer than the one you used when you installed the app, you must install Python3, pip, and the Python tools for Ledger (ledgerblue) before updating the app.
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
@@ -223,7 +225,7 @@ Update the Concordium Ledger app on macOS
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
-.. Note:: If you're using a different computer than the one you used when you installed the app, you must install Python3, pip, and the Python tools for ledger (ledgerblue) before updating the app.
+.. Note:: If you're using a different computer than the one you used when you installed the app, you must install Python3, pip, and the Python tools for Ledger (ledgerblue) before updating the app.
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
@@ -319,7 +321,7 @@ Update the Concordium Ledger app on Ubuntu
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
-.. Note:: If you're using a different computer than the one you used when you installed the app, you must install Python3, pip, and the Python tools for ledger (ledgerblue) before updating the app.
+.. Note:: If you're using a different computer than the one you used when you installed the app, you must install Python3, pip, and the Python tools for Ledger (ledgerblue) before updating the app.
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
