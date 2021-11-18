@@ -1,20 +1,17 @@
 .. _export-import-mw:
 
-=============================================
-Export or import your identities and accounts
-=============================================
+=============================================================
+Make a backup of identities and accounts in the Mobile Wallet
+=============================================================
 
 .. contents::
    :local:
    :backlinks: none
 
-We recommend that you backup your identities and accounts by exporting them from the Mobile Wallet. This way,
-all your accounts, identities, and your address book are saved in a file you can store in a safe location.
+To make sure that you have a backup of your accounts, identities, and addresses, we recommend that you export the data from the Mobile Wallet to a file. This way, all your accounts, identities, and your address book are saved in a file you can store in a safe location.
 
 .. Warning::
-   Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If
-   you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and
-   likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
+   Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
 
 Export identities, accounts and address book
 ============================================
@@ -29,7 +26,9 @@ Export identities, accounts and address book
 
 #. Choose a password with a minimum of 6 characters to encrypt your export. Make sure to choose a secure password and keep it safe. Anyone with the password will be able to unlock the export and make transfers from your account. Tap **Continue**.
 
-#. Choose an option for sending or saving the export file such as Mail or Files.
+#. Choose an option for sending or saving the export file such as Mail.
+
+We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets.
 
 |
 
