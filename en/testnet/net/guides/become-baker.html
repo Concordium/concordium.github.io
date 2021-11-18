@@ -144,7 +144,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move GTU between the two balances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Export or import your identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Make a backup of identities and accounts in the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
@@ -158,7 +158,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
@@ -314,7 +314,8 @@ account that will be used to register and manage a baker.</p>
 <div class="section" id="import-the-account">
 <h3>Import the account<a class="headerlink" href="#import-the-account" title="Permalink to this headline">¶</a></h3>
 <p>This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<p>You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/mobile-wallet/explore-more.html#explore-more" title="(in Concordium)"><span class="xref std std-ref">Explore the *More* page in the Mobile Wallet</span></a>.</p>
+<p>bakcups-and-recovery
+You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  <a class="reference internal" href="../mobile-wallet/export-import-mw.html#export-import-mw"><span class="std std-ref">Make a backup of identities and accounts in the Mobile Wallet</span></a>.</p>
 <p>To import an account run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import &lt;path/to/exported/file&gt; --name bakerAccount
 </pre></div>

@@ -148,7 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move GTU between the two balances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Export or import your identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Make a backup of identities and accounts in the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
@@ -163,7 +163,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-gtu-desktop.html">Shield GTU on an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
@@ -288,10 +288,10 @@
 </div>
 <div class="section" id="no-import-of-identities-and-accounts-from-one-wallet-to-another">
 <h2>No import of identities and accounts from one wallet to another<a class="headerlink" href="#no-import-of-identities-and-accounts-from-one-wallet-to-another" title="Permalink to this headline">¶</a></h2>
-<p>Before you decide which wallet to use, it’s important to know that you can’t import identities and accounts from the Mobile Wallet into the Desktop Wallet. Conversely, you can’t import identities and accounts from the Desktop Wallet into the Mobile Wallet. This is because they handle private keys in different ways as <a class="reference internal" href="#store-private-keys"><span class="std std-ref">described later</span></a> in this topic. It’s therefore essential that you choose between the wallets before you start creating identities and accounts. You can, however, send GTU from one wallet to another.</p>
+<p>Before you decide which wallet to use, it’s important to know that you can’t import identities and accounts from the Mobile Wallet into the Desktop Wallet. Conversely, you can’t import identities and accounts from the Desktop Wallet into the Mobile Wallet. This is because they handle private keys in different ways as <a class="reference internal" href="#store-private-keys"><span class="std std-ref">described later</span></a> in this topic. It’s therefore essential that you choose between the wallets before you start creating identities and accounts.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You can’t exchange identities and accounts between the Mobile Wallet and the Desktop Wallet.</p>
+<p>You can’t exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send GTU from one wallet to another.</p>
 </div>
 </div>
 <div class="section" id="which-wallet-is-best-for-you">
@@ -315,9 +315,10 @@
 <h2>How to backup a wallet<a class="headerlink" href="#how-to-backup-a-wallet" title="Permalink to this headline">¶</a></h2>
 <p>We strongly recommend that you make a backup of your wallet regardless of which one you use. Backups are created in different ways in the two wallets.</p>
 <ul class="simple">
-<li><p><strong>Backup of the Desktop Wallet</strong>: You create a backup of your accounts, identities, and addresses by exporting them to a file from the Desktop Wallet. This doesn’t mean that you create a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It’s vital that you keep the recovery phrase safe. For more information, see <a class="reference internal" href="../desktop-wallet/export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a> and <a class="reference internal" href="../desktop-wallet/account-recovery.html#account-recovery-desktop"><span class="std std-ref">Account recovery</span></a>.</p></li>
-<li><p><strong>Backup of the Mobile Wallet</strong>: You create a backup of your accounts, identities, addresses, and private keys by exporting them to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. It’s vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see <a class="reference external" href="https://developer.concordium.software/en/testnet/net/mobile-wallet/explore-more.html#explore-more" title="(in Concordium)"><span class="xref std std-ref">Explore the *More* page in the Mobile Wallet</span></a>.</p></li>
+<li><p><strong>Backup of the Desktop Wallet</strong>: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It’s vital that you keep the recovery phrase safe. For more information, see <a class="reference internal" href="../desktop-wallet/export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a> and <a class="reference internal" href="../desktop-wallet/account-recovery.html#account-recovery-desktop"><span class="std std-ref">Account recovery</span></a>.</p></li>
 </ul>
+<p>bakcups-and-recovery
+- <strong>Backup of the Mobile Wallet</strong>: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It’s also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see <a class="reference internal" href="../mobile-wallet/export-import-mw.html#export-import-mw"><span class="std std-ref">Export or import your identities and accounts</span></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.</p>
@@ -376,9 +377,14 @@
 </div>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
-<p>If you want to use the Desktop Wallet, <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">download</span></a> and install it on your computer, and then see <a class="reference internal" href="overview-desktop.html#overview-desktop"><span class="std std-ref">Overview of setting up the Desktop Wallet</span></a> for the next steps.</p>
-<p>If you want to use the Mobile Wallet, <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">download</span></a> the app on your mobile phone, and then see <a class="reference external" href="https://developer.concordium.software/en/testnet/net/mobile-wallet/get-started.html#mobile-get-started" title="(in Concordium)"><span class="xref std std-ref">Get started with the Mobile Wallet</span></a> for the next steps.</p>
-<p>If you want to learn more about the Ledger device, go to <a class="reference external" href="https://www.ledger.com">Ledger’s website</a>.</p>
+<ul class="simple">
+<li><p>If you want to use the Desktop Wallet, <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">download</span></a> and install it on your computer, and then see <a class="reference internal" href="overview-desktop.html#overview-desktop"><span class="std std-ref">Overview of setting up the Desktop Wallet</span></a> for the next steps.</p></li>
+</ul>
+<p>bakcups-and-recovery
+- If you want to use the Mobile Wallet, <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">download</span></a> the app on your mobile phone, and then see <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html#setup-mobile-wallet"><span class="std std-ref">Set up the Mobile Wallet</span></a> for the next steps.</p>
+<ul class="simple">
+<li><p>If you want to learn more about the Ledger device, go to <a class="reference external" href="https://www.ledger.com">Ledger’s website</a>.</p></li>
+</ul>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>

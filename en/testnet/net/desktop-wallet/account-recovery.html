@@ -137,7 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move GTU between the two balances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Export or import your identities and accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Make a backup of identities and accounts in the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
@@ -151,7 +151,7 @@
 <li class="toctree-l1"><a class="reference internal" href="accounts-desktop.html">Overview of accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shield-gtu-desktop.html">Shield GTU on an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-gtu-single-desktop.html">Create GTU transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Transfer GTU with a schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature GTU transfer in the Desktop Wallet</a></li>
@@ -167,7 +167,8 @@
 <li class="toctree-l1"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Account recovery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#account-recovery-in-the-desktop-wallet">Account recovery in the desktop wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recover-accounts-in-the-desktop-wallet-without-a-backup-file">Recover accounts in the Desktop Wallet without a backup file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-recover-accounts">How to recover accounts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -263,35 +264,43 @@
 <span id="account-recovery-desktop"></span><h1>Account recovery<a class="headerlink" href="#account-recovery" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#account-recovery-in-the-desktop-wallet" id="id1">Account recovery in the desktop wallet</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id2">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#recover-accounts-in-the-desktop-wallet-without-a-backup-file" id="id1">Recover accounts in the Desktop Wallet without a backup file</a></p></li>
+<li><p><a class="reference internal" href="#how-to-recover-accounts" id="id2">How to recover accounts</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id3">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<div class="section" id="account-recovery-in-the-desktop-wallet">
-<h2>Account recovery in the desktop wallet<a class="headerlink" href="#account-recovery-in-the-desktop-wallet" title="Permalink to this headline">¶</a></h2>
-<p>The recovery process is used to recover lost accounts using only the Ledger device that was used to create those accounts.</p>
-<p>You only have to perform a recovery if you have lost the backup of your accounts and identities. To learn more about making backups of your data, see <a class="reference internal" href="export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a>.</p>
-<p>If you’ve lost your Ledger device or the device has stopped working, you can restore the keys in another Ledger device by initializing it with the recovery phrase used for the original device. To learn more about the recovery phrase of a ledger device:
+<div class="section" id="recover-accounts-in-the-desktop-wallet-without-a-backup-file">
+<h2>Recover accounts in the Desktop Wallet without a backup file<a class="headerlink" href="#recover-accounts-in-the-desktop-wallet-without-a-backup-file" title="Permalink to this headline">¶</a></h2>
+<p>If, for some reason, you’ve lost one or more of your accounts in the Desktop Wallet, and you’ve also lost the backup file, you can use the Ledger device to recover those accounts.</p>
+<p>You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet. To learn more about making backups of your data, see <a class="reference internal" href="export-import-desktop.html#export-import-desktop"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a>.</p>
+<p>If you’ve lost your Ledger device or the device has stopped working, you can restore the keys in another Ledger device by by restoring it from the recovery phrase used for the original device. To learn more about the recovery phrase of a Ledger device, see Ledger’s documentation:
 <a class="reference external" href="https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase/">What is a recovery phrase</a> .</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This recovery process only recovers your accounts, not the identities used to create the accounts because they don’t exist on the chain. To learn more about identities, see <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities and accounts</span></a>.
-The names of the accounts and the notes on the credentials are also not recoverable because they are only saved locally.</p>
+<div class="section" id="how-the-recovery-process-works">
+<h3>How the recovery process works<a class="headerlink" href="#how-the-recovery-process-works" title="Permalink to this headline">¶</a></h3>
+<p>When you create a new identity in the Desktop Wallet, a number on the Ledger is associated with the identity. This is called the identity index and there can be more identity indices on a Ledger. These indices are used sequentially, so the first identity created from a Ledger uses index <em>0</em>, the next uses index <em>1</em>, and so on.</p>
+<p>The Ledger stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities and accounts</span></a>.</p>
+<p>Lost identities can’t be recovered because the identity object is not stored on the Ledger. However, you can go through each index on the Ledger where the data to create credentials are stored and use this information to regain access to the accounts related to a given identity.</p>
+<p>For each identity index, the recovery process uses the Ledger device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the blockchain whether the credentials have been deployed, and which account each credential is attached to. These accounts are then added to the Desktop Wallet along with the deployed credentials.</p>
+<p>If all your identity issuances were successful, you can stop the recovery when you encounter an unused index. However, if one of your identity issuance processes failed, this might have caused an index to be skipped. Therefore, you must determine yourself when the recovery is completed.</p>
+<p>The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can’t be recovered because it doesn’t exist on the blockchain. That’s why you can’t create new accounts using these placeholders. Instead, you can request a new identity from an identity provider.</p>
+<p>The names of the accounts and the notes on the credentials are also not recoverable because they are only saved locally.</p>
 </div>
-</div></blockquote>
-<div class="section" id="the-recovery-process">
-<h3>The recovery process<a class="headerlink" href="#the-recovery-process" title="Permalink to this headline">¶</a></h3>
-<p>The keys you use to sign account transactions are attached to credentials, and those credentials each belong to an identity.</p>
-<p>When you create a new identity in the Desktop Wallet, it has an associated number on the Ledger, referred to as the identity index. These indices are used sequentially, so the first identity created from a Ledger uses index <em>0</em>, the next uses index <em>1</em>, and so forth.</p>
-<p>The recovery process checks the identities sequentially by using the indices. Unfortunately, the identity issuance process can fail and cause an index to be skipped, and therefore, you must determine yourself when the recovery is finished. If you’ve never had your identity issuance fail, you can stop the recovery when you encounter an unused index.</p>
-<p>For each identity index, the recovery process uses your Ledger device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the chain whether the credentials have been deployed, and which account each credential is attached to. These accounts are added to the Desktop Wallet along with the deployed credentials.</p>
-<p>The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can’t be recovered because it doesn’t exist on the chain. Therefore you can’t create new accounts using these placeholders.</p>
+<div class="section" id="incomplete-backups">
+<h3>Incomplete backups<a class="headerlink" href="#incomplete-backups" title="Permalink to this headline">¶</a></h3>
+<p>If you have <a class="reference internal" href="export-import-desktop.html#export-import-desktop"><span class="std std-ref">imported</span></a> accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.</p>
 </div>
-<div class="section" id="an-incomplete-backup">
-<h3>An incomplete backup<a class="headerlink" href="#an-incomplete-backup" title="Permalink to this headline">¶</a></h3>
-<p>The recovery also tries to recover accounts on present identities. This is to allow you to recover accounts from an incomplete backup where some of the accounts associated with an identity are missing.</p>
 </div>
+<div class="section" id="how-to-recover-accounts">
+<h2>How to recover accounts<a class="headerlink" href="#how-to-recover-accounts" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>In the <strong>Desktop Wallet</strong>, go to <strong>Settings</strong>, and then select <strong>Recover existing accounts</strong>.</p></li>
+<li><p>Familiarize yourself with the recovery information, and then select <strong>Continue</strong>.</p></li>
+<li><p>Connect the Ledger to the computer if you haven’t done so already, and then select <strong>Submit</strong>.</p></li>
+<li><p>In the Desktop Wallet, there’s a message saying <em>Please allow recovering credentials</em>. The Ledger says <em>Recover credentials</em>. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.</p></li>
+<li><p>When you consider the recovery complete, select <strong>Stop recovery, I found all my accounts</strong>. You then see an overview of all the recovered accounts. If you don’t think the recovery is complete, you can go back and continue the recovery process.</p></li>
+<li><p>To view the recovered accounts, go to <strong>Accounts</strong>. A recovered account doesn’t have the name you originally gave it. Instead the name consists of the first eight digits of the account address. Furthermore, because the identities are not recovered, the accounts show the index number that’s associated with the identity and not the identity itself.</p></li>
+<li><p>To view placeholders for identities, go to <strong>Identities</strong>. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can’t use the placeholders to create new accounts.</p></li>
+</ol>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
