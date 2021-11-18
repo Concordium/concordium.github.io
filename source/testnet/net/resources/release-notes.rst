@@ -342,6 +342,7 @@ October 6th, 2020.
 -  µGTU. The smallest unit has been changed from 10-4 to 10-6.
 -  Bulletproofs. The core blockchain has been updated to support use of
    bulletproofs.
+bakcups-and-recovery
 -  Encrypted(shielded) amounts and transfers: Support for shielded
    transactions has been added to the core blockchain. Support for
    sending and receiving shielded amounts are added to the mobile apps
