@@ -46,7 +46,6 @@ This section provides a brief description of how to import an account using the 
 bakcups-and-recovery
 You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import-mw>`.
 
-
 To import an account run:
 
 .. code-block:: console
