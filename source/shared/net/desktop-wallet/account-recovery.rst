@@ -23,7 +23,7 @@ If you've lost your Ledger device or the device has stopped working, you can res
 How the recovery process works
 ------------------------------
 
-When you create a new identity in the Desktop Wallet, a number on the Ledger is associated with the identity. This is called the identity index and there an be more identity indices on a Ledger. These indices are used sequentially, so the first identity created from a Ledger uses index *0*, the next uses index *1*, and so on.
+When you create a new identity in the Desktop Wallet, a number on the Ledger is associated with the identity. This is called the identity index and there can be more identity indices on a Ledger. These indices are used sequentially, so the first identity created from a Ledger uses index *0*, the next uses index *1*, and so on.
 
 The Ledger stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see :ref:`Identities and accounts <reference-id-accounts>`.
 
@@ -33,7 +33,7 @@ For each identity index, the recovery process uses the Ledger device to calculat
 
 If all your identity issuances were successful, you can stop the recovery when you encounter an unused index. However, if one of your identity issuance processes failed, this might have caused an index to be skipped. Therefore, you must determine yourself when the recovery is completed.
 
-The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can't be recovered because it doesn't exist on the blockchain. Therefore you can't create new accounts using these placeholders.
+The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can't be recovered because it doesn't exist on the blockchain. That's why you can't create new accounts using these placeholders. Instead, you can request a new identity from an identity provider.
 
 The names of the accounts and the notes on the credentials are also not recoverable because they are only saved locally.
 
@@ -53,7 +53,7 @@ How to recover accounts
 
 #. In the Desktop Wallet, there's a message saying *Please allow recovering credentials*. The Ledger says *Recover credentials*. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.
 
-#. When you consider the recovery complete, select **Stop recovery, I found all my accounts**. You then see an overview of alle the recovered accounts. If you don't think the recovery is complete, you can go back and continue the recovery process.
+#. When you consider the recovery complete, select **Stop recovery, I found all my accounts**. You then see an overview of all the recovered accounts. If you don't think the recovery is complete, you can go back and continue the recovery process.
 
 #. To view the recovered accounts, go to **Accounts**. A recovered account doesn't have the name you originally gave it. Instead the name consists of the first eight digits of the account address. Furthermore, because the identities are not recovered, the accounts show the index number that's associated with the identity and not the identity itself.
 
