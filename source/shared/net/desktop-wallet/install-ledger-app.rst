@@ -47,7 +47,7 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. Press both buttons to view the **Secure Element** version. If it says **2.0.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
-For details on how to update the Ledger firmware, see `Ledger ‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_
+For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_
 
 Install Concordium Ledger app on Windows
 ========================================
