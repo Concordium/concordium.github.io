@@ -74,17 +74,17 @@ transaction fees, nor can it be transferred to other accounts.
 
 The relationship between the different balances can be best illustrated on an
 example.\ [#footnote-ignore-fees]_ Suppose that on January 1 the account starts
-with 100 GTU on the public balance. None of it is locked-up or staked.
+with 100 CCD on the public balance. None of it is locked-up or staked.
 
-Then on January 2 the account receives 50 GTU via a :ref:`transfer with
+Then on January 2 the account receives 50 CCD via a :ref:`transfer with
 schedule<glossary-transfer-with-schedule>` with the release scheduled for
-December 31 of the same year. At this point, January 2, the account has 100 GTU
+December 31 of the same year. At this point, January 2, the account has 100 CCD
 at disposal, the rest being locked. If the account tried to transfer more than
-100 GTU the transaction would be rejected.
+100 CCD the transaction would be rejected.
 
-On January 3 the account becomes a baker with the initial stake of 125 GTU.
-This is successful because the total public balance is 150GTU.
-After this the account still has 25 GTU at disposal.
+On January 3 the account becomes a baker with the initial stake of 125 CCD.
+This is successful because the total public balance is 150CCD.
+After this the account still has 25 CCD at disposal.
 
 
 Account sequence number
@@ -120,7 +120,7 @@ The Mobile Wallet
 
 The Mobile Wallet is a smartphone app that allows creation of accounts from
 identities issued by the external identity provider `Notabene`_, as well as
-transfers of GTU from created accounts. It supports both plain and encrypted transfers.
+transfers of CCD from created accounts. It supports both plain and encrypted transfers.
 
 This app can export identities and accounts that the user created.
 
@@ -131,7 +131,7 @@ The Concordium distribution ships with a command-line tool named
 :ref:`concordium-client<concordium_client>`. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
 :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
-imported, the tool can be used to do GTU transfers from the account, as well as
+imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
 

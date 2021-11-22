@@ -16,7 +16,7 @@ Smart contract instances
    - Consider having a picture that explains the relationship between modules and instances.
 
 A **smart contract instance** is a smart contract module together with a
-specific state and an amount of GTU tokens.
+specific state and an amount of CCD tokens.
 Multiple smart contract instances can be created from the same module.
 For example, for an :ref:`auction <auction>` contract, there could be multiple instances, each
 one dedicated to bidding for a specific item and with its own participants.
@@ -68,11 +68,11 @@ State of a smart contract instance
 ==================================
 
 The state of a smart contract instance consists of two parts, the user-defined
-state and the amount of GTU the contract holds, i.e., its *balance*. When
+state and the amount of CCD the contract holds, i.e., its *balance*. When
 referring to state we typically mean only the user-defined state. The reason for
-treating the GTU amount separately is that GTU can only be spent and
+treating the CCD amount separately is that CCD can only be spent and
 received according to rules of the network, e.g., contracts cannot create
-or destroy GTU tokens.
+or destroy CCD tokens.
 
 .. _contract-instances-init-on-chain:
 
@@ -86,7 +86,7 @@ To create a smart contract instance, an account sends a special transaction with
 a reference to the deployed smart contract module and the name of the
 init function to use for instantiation.
 
-The transaction can also include an amount of GTU, which is added to the balance
+The transaction can also include an amount of CCD, which is added to the balance
 of the smart contract instance. A parameter to the function is supplied as part
 of the transaction in the form of an array of bytes.
 
@@ -95,7 +95,7 @@ To summarize, the transaction includes:
 - Reference to the smart contract module.
 - Name of the init function.
 - Parameter to the init function.
-- Amount of GTU for the instance.
+- Amount of CCD for the instance.
 
 The init function can signal that it does not wish to create a new instance
 with those parameters. If the init function accepts the parameters, it sets
@@ -134,7 +134,7 @@ A smart contract can expose zero or more functions for interacting with an
 instance, referred to as *receive functions*.
 
 Just like with init functions, receive functions are triggered using
-transactions, which contain some amount of GTU for the contract and an argument
+transactions, which contain some amount of CCD for the contract and an argument
 to the function in the form of bytes.
 
 To summarize, a transaction for smart-contract interaction includes:
@@ -142,7 +142,7 @@ To summarize, a transaction for smart-contract interaction includes:
 - Address to smart contract instance.
 - Name of the receive function.
 - Parameter to the receive function.
-- Amount of GTU for the instance.
+- Amount of CCD for the instance.
 
 .. _contract-instance-actions:
 
@@ -182,9 +182,9 @@ the host environment on the chain.
 The possible actions that a contract can produce are:
 
 - **Accept** is a primitive action that always succeeds.
-- **Simple transfer** of GTU from the instance to the specified account.
+- **Simple transfer** of CCD from the instance to the specified account.
 - **Send**: invoke receive function of the specified smart contract instance,
-  and optionally transfer some GTU from the sending instance to the receiving
+  and optionally transfer some CCD from the sending instance to the receiving
   instance.
 
 If an action fails to execute, the receive function is reverted, leaving

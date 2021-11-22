@@ -84,9 +84,9 @@ Piggy bank contract
 ===================
 
 The contract we are going to build in this tutorial is going to act as a classic
-piggy bank. Everyone should be able to put money in the form of GTU into it, but only the owner
-can smash it and retrieve the GTU inside. Once the piggy bank has been
-smashed, it should not be possible to add GTU to it.
+piggy bank. Everyone should be able to put money in the form of CCD into it, but only the owner
+can smash it and retrieve the CCD inside. Once the piggy bank has been
+smashed, it should not be possible to add CCD to it.
 
 .. todo::
 
@@ -94,13 +94,13 @@ smashed, it should not be possible to add GTU to it.
 
 The piggy-bank smart contract is going to contain a function for setting up a
 new piggy bank and two functions for updating a piggy bank; one is for everyone
-to use for inserting GTU, the other is for the owner to smash the piggy bank and
+to use for inserting CCD, the other is for the owner to smash the piggy bank and
 prevent further interaction.
 
 Specifying the state
 ====================
 
-To implement a piggy bank we need to keep track of the amount of GTU it holds,
+To implement a piggy bank we need to keep track of the amount of CCD it holds,
 and we need to know whether it has been smashed. The blockchain will take care
 of the first task for us since the chain keeps track of the balance of each smart-contract
 instance. Therefore, we only need to maintain whether the piggy bank has been smashed,
@@ -223,7 +223,7 @@ We have now defined how instances of our smart contract are created, and the
 smart contract is in principle a valid contract.
 However, we would also like to define how to interact with instances of our
 contract.
-Specifically how to add GTU to it and how to smash a piggy bank.
+Specifically how to add CCD to it and how to smash a piggy bank.
 
 A smart contract can expose zero or more functions for interacting with an
 instance.
@@ -271,10 +271,10 @@ various :ref:`actions<action-descriptions>`.
 
 In this contract we will use the **Accept** and **Simple Transfer** actions.
 
-Inserting GTU
+Inserting CCD
 -------------
 
-The first interaction we will specify for our piggy bank is how to insert GTU into it.
+The first interaction we will specify for our piggy bank is how to insert CCD into it.
 We start with defining a receive function as:
 
 .. code-block:: rust
@@ -317,8 +317,8 @@ Furthermore, we can use the |ensure|_ macro for returning early depending on a c
    ensure!(*state == PiggyBankState::Intact);
 
 From this line, we will know that the state of the piggy bank is intact and all
-we have left to do is accept the incoming amount of GTU.
-The GTU balance is maintained by the blockchain, so there is no need for us to
+we have left to do is accept the incoming amount of CCD.
+The CCD balance is maintained by the blockchain, so there is no need for us to
 maintain this in our contract. The contract just needs to produce the **Accept** action
 using the generic ``A`` (more on that below):
 
@@ -339,18 +339,18 @@ So far we have the following definition of the receive function:
        Ok(A::accept())
    }
 
-Our definition of how to add GTU to the piggy bank is almost done, but one important detail is
+Our definition of how to add CCD to the piggy bank is almost done, but one important detail is
 missing.
-If we were to send GTU to the current smart contract, the transaction
+If we were to send CCD to the current smart contract, the transaction
 would be rejected. This is a safety feature of |concordium-std|,
 which, by default, prevents init and receive functions
-from accepting GTU.
+from accepting CCD.
 
-The reason for rejecting GTU by default is to reduce the risk of creating a smart
-contract that accepts GTU without retrieving it: any GTU passed to such a contract
+The reason for rejecting CCD by default is to reduce the risk of creating a smart
+contract that accepts CCD without retrieving it: any CCD passed to such a contract
 would be *inaccessible forever*.
 
-To be able to accept GTU, we have to add the ``payable`` attribute to the |receive| macro.
+To be able to accept CCD, we have to add the ``payable`` attribute to the |receive| macro.
 Now the function is required to
 take an extra argument ``amount: Amount``, which represents the amount that is passed to the receive
 function.
@@ -378,12 +378,12 @@ do not have to do that ourselves, and the ``amount`` is not used by our contract
 Smashing a piggy bank
 ---------------------
 
-Now that we can insert GTU into a piggy bank, we are only left to define how to
+Now that we can insert CCD into a piggy bank, we are only left to define how to
 smash one.
 Just to recap, we only want the owner of the piggy bank (smart contract
 instance) to be able to call this and only if the piggy bank has not already
 been smashed.
-It should set its state to be smashed and transfer all of its GTU to the owner.
+It should set its state to be smashed and transfer all of its CCD to the owner.
 
 Again we use the |receive|_ macro to define the smash function:
 
@@ -444,12 +444,12 @@ owner, meaning we now get to the smashing part:
    *state = PiggyBankState::Smashed
 
 Since the state is a mutable reference, we can simply mutate it to be
-``Smashed``, preventing anyone from inserting any more GTU.
+``Smashed``, preventing anyone from inserting any more CCD.
 
-Lastly we need to empty the piggy bank. To do that, we transfer all the GTU
+Lastly we need to empty the piggy bank. To do that, we transfer all the CCD
 of the smart-contract instance to an account.
 
-To transfer GTU from a smart contract instance we create an
+To transfer CCD from a smart contract instance we create an
 action for a simple transfer, again using the generic ``A``.
 To construct a simple transfer we need to provide the address of the receiving
 account and the amount to be transferred.

@@ -10,7 +10,7 @@ Identities and accounts
 
 
 In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive :ref:`glossary-GTU`) a user must create an *account*.
+send, receive :ref:`glossary-CCD`) a user must create an *account*.
 
 The user will get an :ref:`glossary-initial-account` at the same time as an *identity* has been issued
 by an identity provider. As the initial account is submitted to the chain by the
@@ -107,7 +107,7 @@ multiple parties.
 After step 2 the anonymity revokers can additionally decrypt a value that is
 held by the identity provider and allows the revokers to find all accounts the
 user has created from a given identity. Additionally, this value allows
-anonymity revokers to see the amount of GTUs in the shielded balance of
+anonymity revokers to see the amount of CCDs in the shielded balance of
 de-anonymized accounts.
 
 All of these actions are subject to rules and processes, and only the relevant

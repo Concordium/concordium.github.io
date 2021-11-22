@@ -19,9 +19,9 @@ Transaction commands
 +-------------------------------+-------------------------------------+
 | Command                       | Description                         |
 +===============================+=====================================+
-| ``transaction send-gtu``      | Transfer GTU tokens                 |
+| ``transaction send-gtu``      | Transfer CCD tokens                 |
 +-------------------------------+-------------------------------------+
-| ``transaction                 | Transfer GTU tokens between shielded|
+| ``transaction                 | Transfer CCD tokens between shielded|
 | send-gtu-encrypted``          | balances                            |
 +-------------------------------+-------------------------------------+
 | ``transaction                 | Make a transfer that will be        |
@@ -86,10 +86,10 @@ the signing keys.
 Once a transaction has been submitted, the command will continuously poll and
 display its status until it's been :ref:`finalized<glossary-finalization>`.
 
-Commands for transferring GTU
+Commands for transferring CCD
 =============================
 
-The commands for transferring GTU (both plain transfers and encrypted transfers)
+The commands for transferring CCD (both plain transfers and encrypted transfers)
 are described in the following table.
 
 The add, remove, and configure bakers commands are described in the topic :ref:`becoming a baker using the Concordium Client<become-a-baker>`.
@@ -98,7 +98,7 @@ The add, remove, and configure bakers commands are described in the topic :ref:`
 
    To see more information about a command, invoke it with the ``--help`` flag.
 
-Transfer GTU
+Transfer CCD
 ------------
 
 Use the following command for transfers:
@@ -109,7 +109,7 @@ Use the following command for transfers:
 
 Apart from the generic transaction flags above, the parameters are:
 
--  ``--amount``: number of GTU tokens to send.
+-  ``--amount``: number of CCD tokens to send.
 -  ``--receiver``: name or address of the receiver account.
 
 The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>` to the transfer.
@@ -119,7 +119,7 @@ The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>
 -  ``--memo-raw``: optional flag for providing a transfer memo as is. The contents of the file will be included in the memo as is without any additional encoding.
 
 
-Example: Transferring 25 GTU from one account to another
+Example: Transferring 25 CCD from one account to another
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Accounts:
@@ -128,7 +128,7 @@ Accounts:
 -  B: ``3EmnjMy8AY5zoebNaA3HuVx1UShdW8vh9n1YjJztmSc2jN4K3V``
 
 If the accounts have both been imported under these names, the command
-to transfer 25 GTU is:
+to transfer 25 CCD is:
 
 .. code-block:: console
 
@@ -139,7 +139,7 @@ sender account A has three transaction signing keys 0, 1, and 3.
 
 .. code-block:: console
 
-   Sending 25.000000 GTU from '4DY7Kq5vXsNDhEAnj969Fd86g9egi1Htq3YmL2qAU9cXWj2a1y' (A) to '3EmnjMy8AY5zoebNaA3HuVx1UShdW8vh9n1YjJztmSc2jN4K3V' (B).
+   Sending 25.000000 CCD from '4DY7Kq5vXsNDhEAnj969Fd86g9egi1Htq3YmL2qAU9cXWj2a1y' (A) to '3EmnjMy8AY5zoebNaA3HuVx1UShdW8vh9n1YjJztmSc2jN4K3V' (B).
    Allowing up to 165 NRG to be spent as transaction fee.
    Transaction expires at Sun,  4 Oct 2020 11:13:55 UTC.
    Confirm [yN]: y
@@ -152,7 +152,7 @@ sender account A has three transaction signing keys 0, 1, and 3.
    The transaction will still get processed and may be queried using
      'transaction status 7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd'.
    [13:05:23] Waiting for the transaction to be committed.....
-   Transaction is finalized into block e6912910ccf11a23413771eba395e1655fc86519759a2ce03439be9d5290292a with status "success" and cost 0.011200 GTU (112 NRG).
+   Transaction is finalized into block e6912910ccf11a23413771eba395e1655fc86519759a2ce03439be9d5290292a with status "success" and cost 0.011200 CCD (112 NRG).
    [13:05:27] Waiting for the transaction to be finalized...
    [13:05:27] Transaction finalized.
 
@@ -181,7 +181,7 @@ The interaction looks like the following:
    $concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount 8
    Using default energy amount of 30176 NRG.
    Enter password for decrypting the secret encryption key: ...
-   Transferring 8.000000 GTU from encrypted balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A) to '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
+   Transferring 8.000000 CCD from encrypted balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A) to '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
    Allowing up to 30176 NRG to be spent as transaction fee.
    Transaction expires at Sun,  4 Oct 2020 11:28:47 UTC.
    Confirm [yN]: y
@@ -194,7 +194,7 @@ The interaction looks like the following:
    The transaction will still get processed and may be queried using
      'transaction status af220cdeb5c092847de25e4681515d7d318a98223fc4d1dc9c65bda9f2060b19'.
    [13:20:24] Waiting for the transaction to be committed..............
-   Transaction is finalized into block 552c32da51ca67a6579c1c151ee67440ade5a44f9ca69e13a4a042e7fcc1ee4c with status "success" and cost 3.012300 GTU (30123 NRG).
+   Transaction is finalized into block 552c32da51ca67a6579c1c151ee67440ade5a44f9ca69e13a4a042e7fcc1ee4c with status "success" and cost 3.012300 CCD (30123 NRG).
    [13:20:46] Waiting for the transaction to be finalized...
    [13:20:46] Transaction finalized.
 
@@ -227,7 +227,7 @@ Shield an amount
 ----------------
 
 The command to shield an amount with ``concordium-client`` is ``account
-encrypt``. For example, an interaction to shield 10 GTU on account A looks like the following
+encrypt``. For example, an interaction to shield 10 CCD on account A looks like the following
 
 The command is:
 
@@ -240,7 +240,7 @@ The command supports all of the same additional flags as the transfer transactio
 .. code-block:: console
 
    Using default energy amount of 265 NRG.
-   Transferring 10.000000 GTU from public to encrypted balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A).
+   Transferring 10.000000 CCD from public to encrypted balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A).
    Allowing up to 265 NRG to be spent as transaction fee.
    Transaction expires at Sun,  4 Oct 2020 11:25:02 UTC.
    Confirm [yN]: y
@@ -253,7 +253,7 @@ The command supports all of the same additional flags as the transfer transactio
    The transaction will still get processed and may be queried using
      'transaction status 9a74be8f99e26dfa0c269725205fb63d447c357ea61b8e6e4df8230059ba22f5'.
    [13:15:10] Waiting for the transaction to be committed.....
-   Transaction is finalized into block c12e7772190d1361dc7d59a1cc873906436742e726d12213cb599eb48b97bd2c with status "success" and cost 0.021200 GTU (212 NRG).
+   Transaction is finalized into block c12e7772190d1361dc7d59a1cc873906436742e726d12213cb599eb48b97bd2c with status "success" and cost 0.021200 CCD (212 NRG).
    [13:15:14] Waiting for the transaction to be finalized...
    [13:15:14] Transaction finalized.
 
@@ -261,7 +261,7 @@ Unshield an amount
 ------------------
 
 The command to unshield an amount with ``concordium-client`` is
-``account decrypt``. For example, an interaction to unshield 7 GTU on
+``account decrypt``. For example, an interaction to unshield 7 CCD on
 account B looks like the following:
 
 The command is:
@@ -284,7 +284,7 @@ of ``--index``, which has the same meaning as in the
 
    Using default energy amount of 16171 NRG.
    Enter password for decrypting the secret encryption key:
-   Transferring 7.000000 GTU from encrypted to public balance of account '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
+   Transferring 7.000000 CCD from encrypted to public balance of account '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
    Allowing up to 16171 NRG to be spent as transaction fee.
    Transaction expires at Sun,  4 Oct 2020 11:44:07 UTC.
    Confirm [yN]: y
@@ -296,29 +296,29 @@ of ``--index``, which has the same meaning as in the
    The transaction will still get processed and may be queried using
      'transaction status b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691'.
    [13:34:16] Waiting for the transaction to be committed....
-   Transaction is finalized into block e71a495c47734968214ac22e918f508949b02351b9f188d9b657b648927cf1ab with status "success" and cost 1.611800 GTU (16118 NRG).
+   Transaction is finalized into block e71a495c47734968214ac22e918f508949b02351b9f188d9b657b648927cf1ab with status "success" and cost 1.611800 CCD (16118 NRG).
    [13:34:18] Waiting for the transaction to be finalized...
    [13:34:18] Transaction finalized.
 
 .. _transfer-with-a-schedule:
 
-Transfer GTU with a  schedule
+Transfer CCD with a  schedule
 -----------------------------
 
-The command to transfer GTU that will be released gradually according to a
+The command to transfer CCD that will be released gradually according to a
 release schedule with ``concordium-client`` is ``transaction send-gtu-scheduled``.
 There are two ways of specifying the release schedule, either at regular intervals or as an explicit schedule.
 
--  Use a regular interval schedule to release an equal amount of GTU to a recipient at regular intervals.
+-  Use a regular interval schedule to release an equal amount of CCD to a recipient at regular intervals.
 
--  Use an explicit schedule if you want the intervals between releases to be of different lengths, or if you want to be able to release different amounts of GTU to the recipient at each interval.
+-  Use an explicit schedule if you want the intervals between releases to be of different lengths, or if you want to be able to release different amounts of CCD to the recipient at each interval.
 
 When you specify a release schedule with regular intervals, you must provide the options ``--amount``
 , ``--every``, ``--for`` and ``--starting``. For example, to send a transaction from A to B that:
 
 - releases the same amount every day
 - for 10 days in a row
-- for a total amount of 100 GTU
+- for a total amount of 100 CCD
 - starting on the 10th of February 2021 at 12:00:00 UTC
 
 use the following command:
@@ -346,14 +346,14 @@ If you query the account information of the recipient account afterwards, it wil
    $concordium-client account show B
    Local name:            B
    Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ
-   Balance:               550.000000 GTU
-   Release schedule:      total 450.000000 GTU
-      Fri, 1 Jan 2021 12:00:00 UTC:                100.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
-      Mon, 15 Feb 2021 12:00:00 UTC:               150.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
-      Fri, 31 Dec 2021 12:00:00 UTC:               200.000000 GTU scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
+   Balance:               550.000000 CCD
+   Release schedule:      total 450.000000 CCD
+      Fri, 1 Jan 2021 12:00:00 UTC:                100.000000 CCD scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
+      Mon, 15 Feb 2021 12:00:00 UTC:               150.000000 CCD scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
+      Fri, 31 Dec 2021 12:00:00 UTC:               200.000000 CCD scheduled by the transactions: bab4a6309e9c0fab00cacf31e5de21ff1fed525a2d0b69e033e356b1cfae99eb.
    Nonce:                 1
    ...
 
 The amount that is not yet released is also included in the ``Balance`` field
-so in this case the account owns ``100 GTU`` that don't belong to any pending
+so in this case the account owns ``100 CCD`` that don't belong to any pending
 release schedule.

@@ -17,7 +17,7 @@ according to predefined rules. Their execution is fully transparent, and all
 nodes must agree on what the outcome of execution is based on only publicly
 available information.
 
-A smart contract can receive, hold and send GTU, it is able to observe some
+A smart contract can receive, hold and send CCD, it is able to observe some
 aspects of the chain, and maintain its own state. Smart contracts are always
 executed as a response to **external** actions, e.g., an account sending a
 message. In practice smart contracts will often be a small part of a larger
@@ -44,10 +44,10 @@ Auction smart contract example
 A use case for smart contracts could be for holding an auction; here we program
 the smart contract to accept different bids from anyone and have it keep track
 of the highest bidder.
-When the auction is over, the smart contract sends the winner bid GTU to the seller and all other bids back. The seller then should send the item to the winner.
+When the auction is over, the smart contract sends the winner bid CCD to the seller and all other bids back. The seller then should send the item to the winner.
 
 The smart contract replaces the main role of the auctioneer. The contract itself
-only governs the bidding part, and the on-chain distribution of GTUs. It will
+only governs the bidding part, and the on-chain distribution of CCDs. It will
 likely also need some logic for reimbursing the highest bidder if the seller
 does not fulfil their obligations. This will most likely mean that the contract
 needs to support some notion of proof that the seller has indeed fulfilled their

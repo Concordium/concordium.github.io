@@ -19,19 +19,19 @@ This topic describes the information and the tasks that are available on account
 
 The most common tasks on an account are:
 
--  **Send**: Send GTU to a recipient in your address book. See :ref:`Create GTU transfer in the Desktop Wallet <send-GTU-single-desktop>`.
+-  **Send**: Send CCD to a recipient in your address book. See :ref:`Create CCD transfer in the Desktop Wallet <send-CCD-single-desktop>`.
 
--  **Shield**: Transfer GTU from your public balance to your shielded balance. See :ref:`Shield GTU on an account <shield-GTU-desktop>`.
+-  **Shield**: Transfer CCD from your public balance to your shielded balance. See :ref:`Shield CCD on an account <shield-CCD-desktop>`.
 
 In addition, you can see the following information about the selected account:
 
--  The **Account Total** shows the total number of GTU on the account, which includes the GTU that is available and any staked GTU or shielded GTU. It also includes GTU that is scheduled to be released to your account on a future date.
+-  The **Account Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or shielded CCD. It also includes CCD that is scheduled to be released to your account on a future date.
 
--  The **Balance** shows the GTU that are at your disposal, the amount of GTU that you've staked, and any GTU that are locked in a release schedule. It does not include any shielded amounts.
+-  The **Balance** shows the CCD that are at your disposal, the amount of CCD that you've staked, and any CCD that are locked in a release schedule. It does not include any shielded amounts.
 
--  The **At disposal** amount is the amount you can use for transactions, which excludes staked GTU and GTU in a release schedule.
+-  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
--  The **Shielded balance** shows the amount of GTU that you've shielded. The **Balance** is visible to all participants on the Concordium Blockchain, while the **Shielded balance** is visible to you only.
+-  The **Shielded balance** shows the amount of CCD that you've shielded. The **Balance** is visible to all participants on the Concordium Blockchain, while the **Shielded balance** is visible to you only.
 
    .. Note::
       Shielded transfers and Shielded balance is only available on accounts with a single credential. You can't make or receive shielded transfers on multi-signature accounts.
@@ -47,9 +47,9 @@ When you select **Change view**, you'll see a variety of information about your 
 
 -  **Transaction log**. View a list of transactions on the account. Use **Log filters** to specify which transaction types you want to be displayed in the **Transfers** list. See :ref:`Apply a transaction log filter <transaction-log>`.
 
--  **Send GTU with a schedule**: Send GTU according to a schedule. See :ref:`Transfer GTU with a schedule <GTU-single-schedule-desktop>`.
+-  **Send CCD with a schedule**: Send CCD according to a schedule. See :ref:`Transfer CCD with a schedule <CCD-single-schedule-desktop>`.
 
--  **Inspect release schedule**: Shows any future GTU releases that are scheduled to be released on your account.
+-  **Inspect release schedule**: Shows any future CCD releases that are scheduled to be released on your account.
 
 - **Export account reports**: Export a file with a list of all transactions on the account. Set the relevant time period and filters, and then select **Make account report**. Save the export as a .csv file.
 

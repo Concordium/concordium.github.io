@@ -9,7 +9,7 @@ Set up the Mobile Wallet
    :backlinks: none
 
 The Concordium Mobile wallet is a digital wallet that enables you to create and manage your Concordium
-identities and accounts and to create transactions such as sending GTU, shielding and unshielding GTU,
+identities and accounts and to create transactions such as sending CCD, shielding and unshielding CCD,
 and sending shielded transactions.
 
 Read the following guide or watch the video to find out how to set up the wallet.

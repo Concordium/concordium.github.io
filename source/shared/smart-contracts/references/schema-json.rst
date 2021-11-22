@@ -70,7 +70,7 @@ Example:
 ``Amount``
 ----------
 
-Supplied as a JSON string in micro GTU. Example of 42 GTU:
+Supplied as a JSON string in micro CCD. Example of 42 CCD:
 
 .. code-block:: json
 

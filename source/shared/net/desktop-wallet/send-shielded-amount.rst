@@ -12,12 +12,12 @@ Send and decrypt a shielded transfer
 Prerequisites
 =============
 
--  You must have a shielded amount of GTU on the account you want to make the shielded transfer from. See :ref:`Shield GTU on an account <shield-GTU-desktop>`.
+-  You must have a shielded amount of CCD on the account you want to make the shielded transfer from. See :ref:`Shield CCD on an account <shield-CCD-desktop>`.
 
 .. Note::
    You can't make shielded transfers on multi-signature accounts.
 
-Send a shielded amount of GTU
+Send a shielded amount of CCD
 =============================
 
 When you make a shielded transfer, the amount you transfer is only known to you and the recipient. However, on the blockchain, it's possible to see which accounts are involved in the transfer.
@@ -26,14 +26,14 @@ When you make a shielded transfer, the amount you transfer is only known to you 
 
 #. Select **Shielded balance** on the account.
 
-#. Select **Send**. In **Send shielded funds**, enter the amount of GTU that you want to send.
+#. Select **Send**. In **Send shielded funds**, enter the amount of CCD that you want to send.
 
 #. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
 
 .. Warning::
     Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
 
-#. Select the recipient of the GTU, and then select **Continue**.
+#. Select the recipient of the CCD, and then select **Continue**.
 
 #. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
@@ -57,7 +57,7 @@ When you make a shielded transfer, the amount you transfer is only known to you 
 
 #. Select **Finish**. The transfer is listed in the **Transfers** list.
 
-Decrypt a shielded amount of GTU
+Decrypt a shielded amount of CCD
 ================================
 
 If you have received a shielded transfer, a shield icon is displayed next to the shielded balance. Before you can see the amount that you've received, you have to decrypt the shielded transaction.

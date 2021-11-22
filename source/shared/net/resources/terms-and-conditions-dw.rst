@@ -92,8 +92,8 @@ You are obliged to verify your identity with an identity provider. The identity 
 can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order.
 
 You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, Ledger recovery phrase, and any other codes you use
-to access the Concordium Desktop Wallet or any information, GTU, or voucher. If you lose access to the Concordium Desktop Wallet, private keys, or identity,
-and you have not separately stored a backup of your accounts and the corresponding password(s), you acknowledge and agree that any GTU you have associated with
+to access the Concordium Desktop Wallet or any information, CCD, or voucher. If you lose access to the Concordium Desktop Wallet, private keys, or identity,
+and you have not separately stored a backup of your accounts and the corresponding password(s), you acknowledge and agree that any CCD you have associated with
 that account will become inaccessible.
 
 Term
