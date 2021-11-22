@@ -20,6 +20,13 @@
         </a>
     </div>
 
+    <div class="info-container">
+        <div class="info-text">
+            <h4>Please note</h4>
+            <p>The Concordium native currency has been renamed from GTU to CCD, and the documentation is being updated to reflect this change. Because of this, you might encounter both terms and their respective symbols (Ǥ/Ͼ) in the documentation and software until the update is complete.</p>
+        </div>
+    </div>
+
     <div class="features-container">
         <div class="feature">
             <div class="feature-box-mainnet">
@@ -87,7 +94,7 @@
         </div>
     </div>
 
-    <div class="logo-container">
+    <div class="text-container">
         <h4>New to Concordium? Go to <a href="https://concordium.com/">Concordium.com</a> to learn more about the project.</h4>
     </div>
     <div class="list-container">
@@ -113,6 +120,68 @@
             display: flex;
             flex-direction: column;
             font-family: RobotoSlab;
+        }   
+
+        .info-container {
+	        width: 350px;
+            margin-top: 60px;
+            margin-bottom: -20px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: auto;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            background-color: #FBFBF9;
+            border-radius: 5px;
+            font-family: Lato;
+            border: 1px solid #000000;
+            border-radius: 15px;
+        }
+
+        @media only screen and (min-width: 863px) {
+            .info-container {
+	        width: 730px;
+            margin-top: 60px;
+            margin-bottom: -20px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: auto;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            background-color: #FBFBF9;
+            border-radius: 5px;
+            font-family: Lato;
+            border: 1px solid #000000;
+            border-radius: 15px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+            }
+        }  
+
+        .info-text {
+	        width: 90%;
+            margin: auto;
+            text-align:center;
+            position:relative;
+            font-family: Lato;
+        }
+
+        .info-container h4 {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 2px;
+        }
+
+        .text-container {
+	        height: 100px;
+	        width: 60%;
+            margin-top: 10px;
+            margin-bottom: -30px;
+            margin-right: auto;
+            margin-left: auto;
+            text-align:center;
+            position:relative;
         }
 
         .logo-container {
