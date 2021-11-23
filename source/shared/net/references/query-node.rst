@@ -77,7 +77,7 @@ Example
    $concordium-client account show my-account --encrypted
    Local name:            my-account
    Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
-   Amount:                1026.000000 GTU
+   Amount:                1026.000000 CCD
    Nonce:                 1
    Encryption public key: a820662531d0aac70b3a80dd8a249aa692436097d06da005aec7c56aad17997ec8331d1e4050fd8dced2b92f06277bd5acf72a731dc9fdac7f37c93a7be919d2bfe3fe7a19731b0f764f5cb2d0c1e7aad6f17eb378fb306f27408c9e7ea966d9
 
@@ -93,7 +93,7 @@ Example
 The output shows that the account with the local name ``my-account``
 
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
--  has a balance of 1026 GTU,
+-  has a balance of 1026 CCD,
 -  has :ref:`glossary-transaction-sequence-number` ``1``,
 -  has ``a820662531d...`` as the key for receiving encrypted transfers.
 -  has no :ref:`glossary-incoming-encrypted-amount`.
@@ -129,7 +129,7 @@ Example
 .. code-block:: console
 
    $concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
-   Transaction is finalized into block e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2 with status "success" and cost 0.011200 GTU (112 NRG).
+   Transaction is finalized into block e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2 with status "success" and cost 0.011200 CCD (112 NRG).
 
 Block state
 ===========
@@ -264,7 +264,7 @@ defaulting to the :ref:`best block<glossary-best-block>`.
 Exchange rates
 ==============
 
-Conversion rates between NRG, GTU, and Euros can fluctuate between blocks. To get a best estimate of the current
+Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
 exchange rates, query the chain parameters of the :ref:`best block<glossary-best-block>`:
 
 .. code-block:: console
@@ -274,14 +274,14 @@ exchange rates, query the chain parameters of the :ref:`best block<glossary-best
 You can also add a block hash at the end of the command to query a specific block.
 
 The command returns the information about a block in JSON format. The exchange rates are
-in the ``chainParameters`` section under ``microGTUPerEuro`` and ``euroPerEnergy``:
+in the ``chainParameters`` section under ``microCCDPerEuro`` and ``euroPerEnergy``:
 
 .. code-block:: console
 
     ...
     "chainParameters": {
         ...
-        "microGTUPerEuro": {
+        "microCCDPerEuro": {
             "denominator": 1,
             "numerator": 100 000 000
         },
@@ -291,11 +291,11 @@ in the ``chainParameters`` section under ``microGTUPerEuro`` and ``euroPerEnergy
             "numerator": 1
         }
 
-In this example, conversions between Euros, GTU and NRG are as follows:
+In this example, conversions between Euros, CCD and NRG are as follows:
 
-- 1 EUR = 100 000 000 microGTU = 100 000 000 / 1 000 000 GTU = 100 GTU
+- 1 EUR = 100 000 000 microCCD = 100 000 000 / 1 000 000 CCD = 100 CCD
 - 1 NRG = 10 :sup:`-6` EUR
-- 1 NRG = 10 :sup:`-4` GTU
+- 1 NRG = 10 :sup:`-4` CCD
 
 Conversion changes happen through transactions that update the chain parameters.
 If an update transaction has been posted it will take time to take effect. You can see

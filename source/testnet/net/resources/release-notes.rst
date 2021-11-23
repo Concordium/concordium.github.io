@@ -249,7 +249,7 @@ Rust is the first off-chain high level smart contract language.
 
 The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.
 
-The flow of GTU between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
+The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
 
 
 **Concordium Node**
@@ -339,7 +339,7 @@ October 6th, 2020.
 -  Added import to app. It is now possible to import a file that has
    previously been exported. This enables moving identities and accounts
    to other mobile devices and restoring from backup.
--  µGTU. The smallest unit has been changed from 10-4 to 10-6.
+-  µCCD. The smallest unit has been changed from 10-4 to 10-6.
 -  Bulletproofs. The core blockchain has been updated to support use of
    bulletproofs.
 -  Encrypted(shielded) amounts and transfers: Support for shielded
@@ -446,7 +446,7 @@ This release contains the following main features:
    -  Creating identities
    -  Creating accounts
    -  Making transfers
-   -  Depositing GTU tokens
+   -  Depositing CCD tokens
    -  Exporting identities and accounts
 
 -  A demo Identity service

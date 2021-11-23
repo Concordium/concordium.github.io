@@ -35,7 +35,7 @@ The output should be similar to the following:
    Contract:        my_contract
    Owner:           '4Lh8CPhbL2XEn55RMjKii2XCXngdAC7wRLL2CNjq33EG9TiWxj' (default)
    ModuleReference: 'd121f262f3d34b9737faa5ded2135cf0b994c9c32fe90d7f11fae7cd31441e86'
-   Balance:         0.000000 GTU
+   Balance:         0.000000 CCD
    State:
        {
            "first_field": 0,

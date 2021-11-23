@@ -1,7 +1,7 @@
 .. _shield-unshield-mw:
 
 =================================
-Move GTU between the two balances
+Move CCD between the two balances
 =================================
 
 .. contents::
@@ -9,19 +9,19 @@ Move GTU between the two balances
    :backlinks: none
 
 Accounts on the Concordium blockchain have two balances, the **Balance** and the **Shielded balance**. You can move funds between these
-two balances using either a shield GTU transaction or an unshield GTU transaction.
+two balances using either a shield CCD transaction or an unshield CCD transaction.
 
 .. Note::
    The amount contained in the Balance is publicly visible, while the amount on the Shielded balance is encrypted and is only visible for
    the account holder. Moving funds between the balances is also publicly visible, including the amount. Only shielded transfers between
    two different accounts have their amounts encrypted.
 
-Move GTU to the shielded balance
+Move CCD to the shielded balance
 ================================
 
 #. Go to the **Accounts** page.
 
-#. Tap the account you want to transfer GTU from, and tap the **Balance** area of the account card.
+#. Tap the account you want to transfer CCD from, and tap the **Balance** area of the account card.
 
 #. Tap **SHIELD**.
 
@@ -36,12 +36,12 @@ Move GTU to the shielded balance
 The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
 
-Move GTU to the regular balance
+Move CCD to the regular balance
 ===============================
 
 #. Go to the **Accounts** page.
 
-#. Tap the account you want to transfer GTU from, and tap the **Shielded balance** area of the account card.
+#. Tap the account you want to transfer CCD from, and tap the **Shielded balance** area of the account card.
 
 #. Tap **UNSHIELD**.
 

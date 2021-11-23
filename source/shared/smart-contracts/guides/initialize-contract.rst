@@ -15,7 +15,7 @@ Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`
 contract :ref:`deployed <deploy-module>` in some module on-chain.
 
 Since initializing a smart contract is a transaction, you should also make sure
-to have ``concordium-client`` set up with an account with enough GTU to pay for
+to have ``concordium-client`` set up with an account with enough CCD to pay for
 the transaction.
 
 .. note::
@@ -119,7 +119,7 @@ Common errors are described in the next section.
 
 .. note::
 
-   GTU can also be transferred to a contract instance during initialization
+   CCD can also be transferred to a contract instance during initialization
    using the ``--amount AMOUNT`` parameter.
 
 

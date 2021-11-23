@@ -29,7 +29,7 @@ Rewards are added to the staked amount by default. However, you can choose to re
 Stake and lottery
 -----------------
 
-A baker needs to stake a part of its GTU balance on the baker account. Later, the baker can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the baker.
+A baker needs to stake a part of its CCD balance on the baker account. Later, the baker can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the baker.
 
 .. note::
 

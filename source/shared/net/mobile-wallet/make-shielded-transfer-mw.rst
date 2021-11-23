@@ -8,18 +8,18 @@ Make a shielded transfer in the Mobile Wallet
    :local:
    :backlinks: none
 
-This topic describes how to make a shielded GTU transaction from an account in the Mobile Wallet. If you are looking
-for a guide on  how to make a regular GTU transfer, you can find the guide :ref:`here <make-simple-transfer-mw>`.
+This topic describes how to make a shielded CCD transaction from an account in the Mobile Wallet. If you are looking
+for a guide on  how to make a regular CCD transfer, you can find the guide :ref:`here <make-simple-transfer-mw>`.
 
 .. Note::
    A shielded transfer is a transfer between two accounts, where the **amount** of the transfer is encrypted. The sender, receiver, and potential memo will be publicly visible on the blockchain.
 
-Make a shielded GTU transfer from an account
+Make a shielded CCD transfer from an account
 ============================================
 
 #. Go to the Accounts page.
 
-#. Tap the Account you want to transfer GTU from, and then tap the **Shielded balance** area of the account card.
+#. Tap the Account you want to transfer CCD from, and then tap the **Shielded balance** area of the account card.
 
 #. Tap **SEND**.
 

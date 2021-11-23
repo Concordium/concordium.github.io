@@ -61,9 +61,9 @@
    desktop-wallet/create-account-desktop
    desktop-wallet/accounts-desktop
    desktop-wallet/create-credentials-file
-   desktop-wallet/shield-gtu-desktop
+   desktop-wallet/shield-ccd-desktop
    desktop-wallet/export-import-desktop
-   desktop-wallet/send-gtu-single-desktop
+   desktop-wallet/send-ccd-single-desktop
    desktop-wallet/single-sign-schedule
    desktop-wallet/multisig-simple-transfer
    desktop-wallet/update-baker-keys

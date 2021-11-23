@@ -1,8 +1,8 @@
 
-.. _send-GTU-single-desktop:
+.. _send-CCD-single-desktop:
 
 =========================================
-Create GTU transfer in the Desktop Wallet
+Create CCD transfer in the Desktop Wallet
 =========================================
 
 .. contents::
@@ -10,16 +10,16 @@ Create GTU transfer in the Desktop Wallet
     :backlinks: none
     :depth: 1
 
-Send GTU from an account
+Send CCD from an account
 ========================
 
-This topic describes how you can send GTU from an account, when only one participant is required to sign the transfer. If you want to learn about sending GTU with a schedule, see :ref:`Create a single signer GTU transfer with a schedule <GTU-single-schedule-desktop>`.
+This topic describes how you can send CCD from an account, when only one participant is required to sign the transfer. If you want to learn about sending CCD with a schedule, see :ref:`Create a single signer CCD transfer with a schedule <CCD-single-schedule-desktop>`.
 
 #. Go to **Accounts** and select the relevant account.
 
 #. Select **Send**.
 
-#. In the right pane, enter the amount of GTU that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account, and you’ll have to change the amount.
+#. In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account, and you’ll have to change the amount.
 
 #. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
 

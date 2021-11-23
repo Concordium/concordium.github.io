@@ -8,15 +8,15 @@ Make a transfer in the mobile wallet
    :local:
    :backlinks: none
 
-This topic describes how to make a regular GTU transaction from an account in the Mobile Wallet. If you are looking
-for how to make a shielded GTU transfer, you can find the guide :ref:`here <make-shielded-transfer-mw>`.
+This topic describes how to make a regular CCD transaction from an account in the Mobile Wallet. If you are looking
+for how to make a shielded CCD transfer, you can find the guide :ref:`here <make-shielded-transfer-mw>`.
 
-Make a GTU transfer from an account
+Make a CCD transfer from an account
 ===================================
 
 #. Go to the Accounts page.
 
-#. Tap the Account you want to transfer GTU from, and press the **Balance** area of the account card.
+#. Tap the Account you want to transfer CCD from, and press the **Balance** area of the account card.
 
 #. Tap **SEND**.
 

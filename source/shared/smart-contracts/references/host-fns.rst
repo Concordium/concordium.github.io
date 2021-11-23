@@ -200,10 +200,10 @@ receive function.
 
 .. function:: simple_transfer(addr_bytes, amount) -> i32
 
-   Constructs a simple transfer of GTU action.
+   Constructs a simple transfer of CCD action.
 
    :param i32 addr_bytes: Pointer to the address of the receiver.
-   :param i64 amount: The amount of GTU to send.
+   :param i64 amount: The amount of CCD to send.
    :return: Identifier of the resulting action.
    :rtype: i32
 
@@ -215,7 +215,7 @@ receive function.
    :param i64 addr_subindex: Subindex of the smart contract instance address to send to.
    :param i32 receive_name: Pointer to a memory location containing the name of the receive function to invoke.
    :param i32 receive_name_len: Length of the receive function name. Determines how much memory will be read by the host.
-   :param i64 amount: The amount of GTU to invoke the receive function with.
+   :param i64 amount: The amount of CCD to invoke the receive function with.
    :param i32 parameter: Pointer to a memory location containing the parameters to the receive function.
    :param i32 parameter_len: Length of the parameters.
    :return: Identifier of the resulting action.
