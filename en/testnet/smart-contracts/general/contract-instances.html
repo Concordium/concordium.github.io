@@ -103,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contract-module.html">Smart contract modules</a></li>
@@ -121,11 +121,11 @@
 <li class="toctree-l1"><a class="reference internal" href="resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -136,14 +136,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/simulate-context.html">Simulation contexts</a></li>
@@ -226,7 +226,7 @@
   <div class="section" id="smart-contract-instances">
 <span id="contract-instances"></span><h1>Smart contract instances<a class="headerlink" href="#smart-contract-instances" title="Permalink to this headline">¶</a></h1>
 <p>A <strong>smart contract instance</strong> is a smart contract module together with a
-specific state and an amount of GTU tokens.
+specific state and an amount of CCD tokens.
 Multiple smart contract instances can be created from the same module.
 For example, for an <a class="reference internal" href="introduction.html#auction"><span class="std std-ref">auction</span></a> contract, there could be multiple instances, each
 one dedicated to bidding for a specific item and with its own participants.</p>
@@ -274,11 +274,11 @@ Escrow and Crowdfunding. Each contract has two instances.</span><a class="header
 <div class="section" id="state-of-a-smart-contract-instance">
 <h2>State of a smart contract instance<a class="headerlink" href="#state-of-a-smart-contract-instance" title="Permalink to this headline">¶</a></h2>
 <p>The state of a smart contract instance consists of two parts, the user-defined
-state and the amount of GTU the contract holds, i.e., its <em>balance</em>. When
+state and the amount of CCD the contract holds, i.e., its <em>balance</em>. When
 referring to state we typically mean only the user-defined state. The reason for
-treating the GTU amount separately is that GTU can only be spent and
+treating the CCD amount separately is that CCD can only be spent and
 received according to rules of the network, e.g., contracts cannot create
-or destroy GTU tokens.</p>
+or destroy CCD tokens.</p>
 </div>
 <div class="section" id="instantiating-a-smart-contract-on-chain">
 <span id="contract-instances-init-on-chain"></span><h2>Instantiating a smart contract on-chain<a class="headerlink" href="#instantiating-a-smart-contract-on-chain" title="Permalink to this headline">¶</a></h2>
@@ -287,7 +287,7 @@ instances. Such a function is referred to as the <em>init function</em>.</p>
 <p>To create a smart contract instance, an account sends a special transaction with
 a reference to the deployed smart contract module and the name of the
 init function to use for instantiation.</p>
-<p>The transaction can also include an amount of GTU, which is added to the balance
+<p>The transaction can also include an amount of CCD, which is added to the balance
 of the smart contract instance. A parameter to the function is supplied as part
 of the transaction in the form of an array of bytes.</p>
 <p>To summarize, the transaction includes:</p>
@@ -295,7 +295,7 @@ of the transaction in the form of an array of bytes.</p>
 <li><p>Reference to the smart contract module.</p></li>
 <li><p>Name of the init function.</p></li>
 <li><p>Parameter to the init function.</p></li>
-<li><p>Amount of GTU for the instance.</p></li>
+<li><p>Amount of CCD for the instance.</p></li>
 </ul>
 <p>The init function can signal that it does not wish to create a new instance
 with those parameters. If the init function accepts the parameters, it sets
@@ -330,14 +330,14 @@ state is 16KiB.</p>
 <p>A smart contract can expose zero or more functions for interacting with an
 instance, referred to as <em>receive functions</em>.</p>
 <p>Just like with init functions, receive functions are triggered using
-transactions, which contain some amount of GTU for the contract and an argument
+transactions, which contain some amount of CCD for the contract and an argument
 to the function in the form of bytes.</p>
 <p>To summarize, a transaction for smart-contract interaction includes:</p>
 <ul class="simple">
 <li><p>Address to smart contract instance.</p></li>
 <li><p>Name of the receive function.</p></li>
 <li><p>Parameter to the receive function.</p></li>
-<li><p>Amount of GTU for the instance.</p></li>
+<li><p>Amount of CCD for the instance.</p></li>
 </ul>
 </div>
 <div class="section" id="logging-events">
@@ -364,9 +364,9 @@ the host environment on the chain.</p>
 <p>The possible actions that a contract can produce are:</p>
 <ul class="simple">
 <li><p><strong>Accept</strong> is a primitive action that always succeeds.</p></li>
-<li><p><strong>Simple transfer</strong> of GTU from the instance to the specified account.</p></li>
+<li><p><strong>Simple transfer</strong> of CCD from the instance to the specified account.</p></li>
 <li><p><strong>Send</strong>: invoke receive function of the specified smart contract instance,
-and optionally transfer some GTU from the sending instance to the receiving
+and optionally transfer some CCD from the sending instance to the receiving
 instance.</p></li>
 </ul>
 <p>If an action fails to execute, the receive function is reverted, leaving

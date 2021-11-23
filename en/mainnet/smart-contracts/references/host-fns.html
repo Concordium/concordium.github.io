@@ -103,7 +103,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">General</span></p>
+              <p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/introduction.html">Introduction to smart contracts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/contract-module.html">Smart contract modules</a></li>
@@ -112,11 +112,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/resource-accounting.html">Resource accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/develop-contracts.html">Developing smart contracts in Rust</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/piggy-bank/index.html">The piggy bank smart contract</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contract development guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contract development guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-contract.html">Setting up a smart contract project</a></li>
@@ -127,14 +127,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
 </ul>
-<p class="caption"><span class="caption-text">On-chain guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">On-chain guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/deploy-module.html">Deploy a smart contract module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/initialize-contract.html">Initialize a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/interact-instance.html">Interact with a smart contract instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/inspect-instance.html">Inspect a smart contract instance</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="schema-json.html">Schema JSON representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulate-context.html">Simulation contexts</a></li>
@@ -238,7 +238,7 @@ supplied by a library, such as <a class="reference external" href="https://docs.
 <span id="host-functions-log"></span><h2>Logging events<a class="headerlink" href="#logging-events" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.log_event">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">log_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.log_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">log_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.log_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a log item from an array of bytes.
 If not enough data can be read then this function will trap and abort
 execution of the smart contract.</p>
@@ -265,7 +265,7 @@ execution of the smart contract.</p>
 <h2>Function parameter<a class="headerlink" href="#function-parameter" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_parameter_size">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.get_parameter_size" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_parameter_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the byte size of the parameter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -279,7 +279,7 @@ execution of the smart contract.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_parameter_section">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.get_parameter_section" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_parameter_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a section of the parameter to the given location in Wasm linear memory.
 Return the number of bytes read.
 The location is assumed to contain enough memory to write the requested
@@ -309,7 +309,7 @@ enough bytes available (i.e., if <code class="docutils literal notranslate"><spa
 <span id="host-functions-state"></span><h2>Smart contract instance state<a class="headerlink" href="#smart-contract-instance-state" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.state_size">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.state_size" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the byte size of the contract state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -323,7 +323,7 @@ enough bytes available (i.e., if <code class="docutils literal notranslate"><spa
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.load_state">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">load_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.load_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">load_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.load_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a section of the state to the given location. Return the number of
 bytes written. The location is assumed to contain enough memory to write the
 requested length into. If not, the function will trap and abort execution of
@@ -347,7 +347,7 @@ the contract.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.write_state">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">write_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.write_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">write_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.write_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a section of the memory to the state at a given offset.
 Return the number of bytes written.
 The offset must be less than or equal to the current state size.
@@ -372,7 +372,7 @@ length into.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.resize_state">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">resize_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_size</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.resize_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">resize_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_size</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.resize_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resize state to the new value (truncate if new size is smaller).
 The additional state is initialized to <cite>0</cite>.</p>
 <dl class="field-list simple">
@@ -394,7 +394,7 @@ The additional state is initialized to <cite>0</cite>.</p>
 <p>Functions for reading information about the chain.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_slot_time">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_slot_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">i64</span><a class="headerlink" href="#concordium.get_slot_time" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_slot_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.get_slot_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get time in milliseconds at the beginning of this block.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -412,7 +412,7 @@ The additional state is initialized to <cite>0</cite>.</p>
 <p>Functions for reading identity information.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_policy_section">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_policy_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.get_policy_section" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_policy_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_policy_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a section of the policy to the given location.
 Return the number of bytes read.
 Assumes the location has enough memory to write the requested length into.</p>
@@ -501,7 +501,7 @@ which lead to triggering the receive function.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_receive_self_balance">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_receive_self_balance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">i64</span><a class="headerlink" href="#concordium.get_receive_self_balance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_receive_self_balance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.get_receive_self_balance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current balance of the contract instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -519,7 +519,7 @@ which lead to triggering the receive function.</p>
 receive function.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.accept">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.accept" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.accept" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a accept action, indicating the function was successful.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -533,13 +533,13 @@ receive function.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.simple_transfer">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">simple_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.simple_transfer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Constructs a simple transfer of GTU action.</p>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">simple_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.simple_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a simple transfer of CCD action.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>addr_bytes</strong> (<em>i32</em>) – Pointer to the address of the receiver.</p></li>
-<li><p><strong>amount</strong> (<em>i64</em>) – The amount of GTU to send.</p></li>
+<li><p><strong>amount</strong> (<em>i64</em>) – The amount of CCD to send.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -553,7 +553,7 @@ receive function.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.send">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr_subindex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receive_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receive_name_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_len</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.send" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr_subindex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receive_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receive_name_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_len</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.send" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs an action for sending a message to another smart contract instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -562,7 +562,7 @@ receive function.</p>
 <li><p><strong>addr_subindex</strong> (<em>i64</em>) – Subindex of the smart contract instance address to send to.</p></li>
 <li><p><strong>receive_name</strong> (<em>i32</em>) – Pointer to a memory location containing the name of the receive function to invoke.</p></li>
 <li><p><strong>receive_name_len</strong> (<em>i32</em>) – Length of the receive function name. Determines how much memory will be read by the host.</p></li>
-<li><p><strong>amount</strong> (<em>i64</em>) – The amount of GTU to invoke the receive function with.</p></li>
+<li><p><strong>amount</strong> (<em>i64</em>) – The amount of CCD to invoke the receive function with.</p></li>
 <li><p><strong>parameter</strong> (<em>i32</em>) – Pointer to a memory location containing the parameters to the receive function.</p></li>
 <li><p><strong>parameter_len</strong> (<em>i32</em>) – Length of the parameters.</p></li>
 </ul>
@@ -578,7 +578,7 @@ receive function.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.combine_and">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">combine_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.combine_and" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">combine_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.combine_and" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine two actions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.
 Only run the second if the first succeeds.
 If the given identifiers are not valid, i.e., returned by a previous call to
@@ -601,7 +601,7 @@ one of the <code class="docutils literal notranslate"><span class="pre">actions<
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.combine_or">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">combine_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">i32</span><a class="headerlink" href="#concordium.combine_or" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">combine_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.combine_or" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine two actions using <code class="docutils literal notranslate"><span class="pre">or</span></code>.
 Only runs the second if the first fails.
 If the given identifiers are not valid, i.e., returned by a previous call to
