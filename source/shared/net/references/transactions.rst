@@ -41,10 +41,10 @@ Transaction commands
 | ``account update-keys``       | Update credentials keys for a       |
 |                               | specific credential                 |
 +-------------------------------+-------------------------------------+
-| ``account encrypt``           | Transfer part of the public balance |
+| ``account shield``            | Transfer part of the public balance |
 |                               | to shielded balance                 |
 +-------------------------------+-------------------------------------+
-| ``account decrypt``           | Transfer part of the shielded       |
+| ``account unshield``          | Transfer part of the shielded       |
 |                               | balance to public balance           |
 +-------------------------------+-------------------------------------+
 
