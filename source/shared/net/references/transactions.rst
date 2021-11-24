@@ -227,13 +227,13 @@ Shield an amount
 ----------------
 
 The command to shield an amount with ``concordium-client`` is ``account
-encrypt``. For example, an interaction to shield 10 CCD on account A looks like the following
+shield``. For example, an interaction to shield 10 CCD on account A looks like the following
 
 The command is:
 
 .. code-block:: console
 
-   $concordium-client account encrypt --amount 10 --sender A
+   $concordium-client account shield --amount 10 --sender A
 
 The command supports all of the same additional flags as the transfer transaction, except the ``--receiver`` since a transfer from a public to a shielded balance is always on the same account. The output looks like the following:
 
@@ -261,14 +261,14 @@ Unshield an amount
 ------------------
 
 The command to unshield an amount with ``concordium-client`` is
-``account decrypt``. For example, an interaction to unshield 7 CCD on
+``account unshield``. For example, an interaction to unshield 7 CCD on
 account B looks like the following:
 
 The command is:
 
 .. code-block:: console
 
-   $concordium-client account decrypt --sender B --amount 7
+   $concordium-client account unshield --sender B --amount 7
 
 This
 
@@ -276,7 +276,7 @@ This
 -  decrypts the shielded balance and checks that there is sufficient funds.
 -  sends the transaction.
 
-The command supports the same optional flags as ``encrypt`` with the addition
+The command supports the same optional flags as ``shield`` with the addition
 of ``--index``, which has the same meaning as in the
 ``send-shielded`` command.
 
