@@ -120,9 +120,7 @@ The Desktop Wallet is a digital wallet that enables you to create and manage you
 The Mobile Wallet
 --------------------------------
 
-The Mobile Wallet is a smartphone app that allows creation of accounts from
-identities issued by an external identity provider, as well as
-transfers of CCD from created accounts. It supports both plain and shielded transfers.
+The Mobile Wallet is a digital smartphone wallet, that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
 
 To learn more about the differences between the two wallets, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet<choosing-wallet>`.
 
