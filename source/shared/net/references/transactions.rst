@@ -19,13 +19,13 @@ Transaction commands
 +-------------------------------+-------------------------------------+
 | Command                       | Description                         |
 +===============================+=====================================+
-| ``transaction send``          | Transfer CCD tokens                 |
+| ``transaction send-gtu``      | Transfer CCD tokens                 |
 +-------------------------------+-------------------------------------+
 | ``transaction                 | Transfer CCD tokens between shielded|
-| send-shielded``               | balances                            |
+| send-gtu-encrypted``          | balances                            |
 +-------------------------------+-------------------------------------+
 | ``transaction                 | Make a transfer that will be        |
-| send-scheduled``              | released gradually                  |
+| send-gtu-scheduled``          | released gradually                  |
 +-------------------------------+-------------------------------------+
 | ``baker add``                 | Add a new baker                     |
 +-------------------------------+-------------------------------------+
@@ -41,10 +41,10 @@ Transaction commands
 | ``account update-keys``       | Update credentials keys for a       |
 |                               | specific credential                 |
 +-------------------------------+-------------------------------------+
-| ``account shield``            | Transfer part of the public balance |
+| ``account encrypt``           | Transfer part of the public balance |
 |                               | to shielded balance                 |
 +-------------------------------+-------------------------------------+
-| ``account unshield``          | Transfer part of the shielded       |
+| ``account decrypt``           | Transfer part of the shielded       |
 |                               | balance to public balance           |
 +-------------------------------+-------------------------------------+
 
@@ -105,7 +105,7 @@ Use the following command for transfers:
 
 .. code-block:: console
 
-   $concordium-client transaction send
+   $concordium-client transaction send-gtu
 
 Apart from the generic transaction flags above, the parameters are:
 
@@ -132,7 +132,7 @@ to transfer 25 CCD is:
 
 .. code-block:: console
 
-   $concordium-client transaction send --amount 25 --sender A --receiver B
+   $concordium-client transaction send-gtu-encrypted --amount 25 --sender A --receiver B
 
 The output will look similar to the following. Note that in this example, we assume that the
 sender account A has three transaction signing keys 0, 1, and 3.
@@ -164,7 +164,7 @@ balance of another account. The command is very similar to a standard  transfer.
 
 .. code-block:: console
 
-   $concordium-client transaction send-shielded --sender A --receiver B --amount 8
+   $concordium-client transaction send-gtu-encrypted--sender A --receiver B --amount 8
 
 This command does the following:
 
@@ -178,7 +178,7 @@ The interaction looks like the following:
 
 .. code-block:: console
 
-   $concordium-client transaction send-shielded --sender A --receiver B --amount 8
+   $concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount 8
    Using default energy amount of 30176 NRG.
    Enter password for decrypting the secret encryption key: ...
    Transferring 8.000000 CCD from encrypted balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A) to '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
@@ -198,7 +198,7 @@ The interaction looks like the following:
    [13:20:46] Waiting for the transaction to be finalized...
    [13:20:46] Transaction finalized.
 
-This command has all of the additional options of ``send``, as well as an
+This command has all of the additional options of ``send-gtu``, as well as an
 additional flag ``--index.`` If given, this flag is used to select which
 :ref:`incoming encrypted amounts<glossary-incoming-encrypted-amount>` that will be used as input to the transaction.
 
@@ -216,7 +216,7 @@ list of incoming amounts on account. An output could look like this:
      Self balance: c0000000000000000000...
    ...
 
-If you want to ``send-shielded`` from the account while supplying index 8,
+If you want to ``send-encrypted`` from the account while supplying index 8,
 only the encrypted amount ``8c0faff6739bffc531c5...`` and the :ref:`self balance<glossary-self-balance>`
 will be used as input of the encrypted transfer.
 
@@ -227,13 +227,13 @@ Shield an amount
 ----------------
 
 The command to shield an amount with ``concordium-client`` is ``account
-shield``. For example, an interaction to shield 10 CCD on account A looks like the following
+encrypt``. For example, an interaction to shield 10 CCD on account A looks like the following
 
 The command is:
 
 .. code-block:: console
 
-   $concordium-client account shield --amount 10 --sender A
+   $concordium-client account encrypt --amount 10 --sender A
 
 The command supports all of the same additional flags as the transfer transaction, except the ``--receiver`` since a transfer from a public to a shielded balance is always on the same account. The output looks like the following:
 
@@ -261,14 +261,14 @@ Unshield an amount
 ------------------
 
 The command to unshield an amount with ``concordium-client`` is
-``account unshield``. For example, an interaction to unshield 7 CCD on
+``account decrypt``. For example, an interaction to unshield 7 CCD on
 account B looks like the following:
 
 The command is:
 
 .. code-block:: console
 
-   $concordium-client account unshield --sender B --amount 7
+   $concordium-client account decrypt --sender B --amount 7
 
 This
 
@@ -276,9 +276,9 @@ This
 -  decrypts the shielded balance and checks that there is sufficient funds.
 -  sends the transaction.
 
-The command supports the same optional flags as ``shield`` with the addition
+The command supports the same optional flags as ``encrypt`` with the addition
 of ``--index``, which has the same meaning as in the
-``send-shielded`` command.
+``send-gtu-encrypted`` command.
 
 .. code-block:: console
 
@@ -306,7 +306,7 @@ Transfer CCD with a  schedule
 -----------------------------
 
 The command to transfer CCD that will be released gradually according to a
-release schedule with ``concordium-client`` is ``transaction send-scheduled``.
+release schedule with ``concordium-client`` is ``transaction send--gtu-scheduled``.
 There are two ways of specifying the release schedule, either at regular intervals or as an explicit schedule.
 
 -  Use a regular interval schedule to release an equal amount of CCD to a recipient at regular intervals.
@@ -325,7 +325,7 @@ use the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send-scheduled --amount 100 --every Day --for 10 --starting 2021-02-10T12:00:00Z --receiver B --sender A
+   $concordium-client transaction send-gtu-scheduled --amount 100 --every Day --for 10 --starting 2021-02-10T12:00:00Z --receiver B --sender A
 
 When you specify an explicit release schedule, you must use the option ``--schedule``, which takes a comma-separated list of releases in the form of ``<amount> at <date>``. For example, to send a transaction from A to B that:
 
@@ -337,7 +337,7 @@ Use the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send-scheduled --schedule "100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z" --receiver B --sender A
+   $concordium-client transaction send-gtu-scheduled --schedule "100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z" --receiver B --sender A
 
 If you query the account information of the recipient account afterwards, it will show the list of releases that are still pending to be released:
 
