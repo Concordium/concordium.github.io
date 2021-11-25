@@ -178,7 +178,7 @@ The interaction looks like the following:
 
 .. code-block:: console
 
-   $concordium-client transaction send-shielded --sender A --receiver B --amount 8
+   $concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount 8
    Using default energy amount of 30176 NRG.
    Enter password for decrypting the secret encryption key: ...
    Transferring 8.000000 CCD from encrypted balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A) to '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
