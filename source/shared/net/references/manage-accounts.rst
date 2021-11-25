@@ -115,7 +115,7 @@ Tools
 The Desktop Wallet
 ------------------
 
-The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from you desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
 
 The Mobile Wallet
 --------------------------------
