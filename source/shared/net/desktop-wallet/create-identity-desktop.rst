@@ -16,8 +16,7 @@ Prerequisites
 
 -   A Ledger hardware device that's set up and ready for use.
 
-.. Warning::
-   You can't import accounts and identities created in the Concordium Mobile wallet into the Desktop Wallet.
+.. warning:: You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
 Create an initial account
 =========================
@@ -26,7 +25,7 @@ Create an initial account
 
 #. Enter a name for your identity, and then enter a name for your initial account. Select **Continue**.
 
-#. Select an identity provider. Currently, Notabene is the only one available.
+#. Select an identity provider.
 
 #. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 

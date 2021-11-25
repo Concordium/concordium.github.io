@@ -1,4 +1,3 @@
-.. _Notabene: https://notabene.id
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _managing_accounts:
@@ -53,8 +52,7 @@ Account balances
 
 Each account has two balances, the *public balance* which can be *seen* by every
 member of the Concordium Network, and a :ref:`shielded
-balance<glossary-shielded-balance>`, which is also referred to as *encrypted
-balance*. The shielded balance is only known to the owner of the account. It
+balance<glossary-shielded-balance>`. The shielded balance is only known to the owner of the account. It
 can only be used in :ref:`shielded transfers<glossary-shielded-transfer>` to
 other accounts.
 
@@ -72,8 +70,7 @@ can happen in two ways:
 The locked-up balance can only be staked, but it can not be used for payment of
 transaction fees, nor can it be transferred to other accounts.
 
-The relationship between the different balances can be best illustrated on an
-example.\ [#footnote-ignore-fees]_ Suppose that on January 1 the account starts
+Here's an example that illustrates the relationship between the different balances (in this this explanation, transaction fees are ignored). Suppose that on January 1 the account starts
 with 100 CCD on the public balance. None of it is locked-up or staked.
 
 Then on January 2 the account receives 50 CCD via a :ref:`transfer with
@@ -115,14 +112,19 @@ also be set manually via the option ``--nonce``.
 Tools
 =====
 
+The Desktop Wallet
+------------------
+
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+
 The Mobile Wallet
 --------------------------------
 
-The Mobile Wallet is a smartphone app that allows creation of accounts from
-identities issued by the external identity provider `Notabene`_, as well as
-transfers of CCD from created accounts. It supports both plain and encrypted transfers.
+The Mobile Wallet is a digital smartphone wallet, that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
 
-This app can export identities and accounts that the user created.
+To learn more about the differences between the two wallets, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet<choosing-wallet>`.
+
+.. warning:: You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
 Command-line tool
 -----------------
@@ -133,8 +135,3 @@ Concordium blockchain. It cannot be used to create identities, but it can
 :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
-
-
-.. rubric:: Footnotes
-
-.. [#footnote-ignore-fees] In this explanation we ignore transaction fees.
