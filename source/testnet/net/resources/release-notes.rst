@@ -23,7 +23,7 @@ Concordrium Node v3.0.0
 - Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
 - The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
 
-Concordium-client v3.0.3
+Concordium-client v3.0.4
 ------------------------
 
 - Credentials revealing the newly introduced attribute LEI can be deployed.
