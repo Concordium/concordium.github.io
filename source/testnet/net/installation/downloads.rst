@@ -120,7 +120,7 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 Native Windows node
 ------------------------
 
-To run a node on Windows, you need a Windows Installer package.
+To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
 - `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.0.msi>`_
 
@@ -129,7 +129,7 @@ To learn how to run a node on Windows, see :ref:`Run and manage a node on Window
 Native Mac node
 ----------------
 
-To run a node on macOS, you need a macOS installer package.
+To run a node on macOS, you need a macOS installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
 - `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.0.pkg>`_
 
