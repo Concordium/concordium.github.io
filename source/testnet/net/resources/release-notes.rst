@@ -8,6 +8,46 @@ Release Notes
    :local:
    :backlinks: none
 
+Open Testnet v7
+===============
+
+November 29th 2021
+
+Concordrium Node v3.0.0
+-----------------------
+
+- Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
+- ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
+- Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
+- Faster state queries by avoiding locking the block state file when reading.
+- Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
+- The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
+
+Concordium-client v3.0.3
+------------------------
+
+- Credentials revealing the newly introduced attribute LEI can be deployed.
+- Renamed GTU token to CCD.
+- Renamed ``send-gtu``, ``send-gtu-scheduled`` and ``send-gtu-encrypted`` to ``send``, ``send-scheduled`` and ``send-shielded``.
+- Renamed ``account encrypt``/``decrypt`` to ``account shield``/``unshield``.
+- Added command for generating aliases of an address.
+- Now shows line breaks, tabs etc. in memo transfers (when it's CBOR encoded string), instead of escaping them as ``\n``, ``\t`` etc.
+- Now displays memo as JSON in a more readable way.
+- Added time units to slot duration and epoch duration in consensus status.
+- Updated the ``register-data`` command to register data as CBOR encoded strings or JSON using the new flags ``--string`` and ``--json``. Raw data can still be registered using the new flag ``--raw``.
+- Added ``raw DisconnectPeer``, a counterpart to the existing ``raw ConnectPeer``.
+- Now warning  the user when trying to add a baker with a stake below the minimum threshold.
+- Improved how contract schemas are shown as JSON:
+
+   - Now displays complex types in arrays correctly.
+   - Use angle brackets to indicate placeholders, e.g. ``"<UInt16>"`` instead of ``"UInt16"``.
+- Improved ``module inspect``:
+
+   - Now shows all contracts from a module regardless of whether a schema is included or not.
+   - Now shows the receive methods for contracts as well.
+- Now allows sending transactions where the sender is an account alias.
+
+
 Open Testnet v6 Update 4
 ========================
 
