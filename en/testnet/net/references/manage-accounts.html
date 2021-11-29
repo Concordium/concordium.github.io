@@ -264,14 +264,15 @@
 <span id="managing-accounts"></span><h1>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#account-concepts" id="id2">Account concepts</a></p>
+<li><p><a class="reference internal" href="#account-concepts" id="id1">Account concepts</a></p>
 <ul>
-<li><p><a class="reference internal" href="#account-balances" id="id3">Account balances</a></p></li>
-<li><p><a class="reference internal" href="#account-sequence-number" id="id4">Account sequence number</a></p></li>
+<li><p><a class="reference internal" href="#account-balances" id="id2">Account balances</a></p></li>
+<li><p><a class="reference internal" href="#account-sequence-number" id="id3">Account sequence number</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tools" id="id5">Tools</a></p>
+<li><p><a class="reference internal" href="#tools" id="id4">Tools</a></p>
 <ul>
+<li><p><a class="reference internal" href="#the-desktop-wallet" id="id5">The Desktop Wallet</a></p></li>
 <li><p><a class="reference internal" href="#the-mobile-wallet" id="id6">The Mobile Wallet</a></p></li>
 <li><p><a class="reference internal" href="#command-line-tool" id="id7">Command-line tool</a></p></li>
 </ul>
@@ -312,8 +313,7 @@ The name is resolved to an address before interactions with the node.</p>
 <span id="managing-account-balances"></span><h3>Account balances<a class="headerlink" href="#account-balances" title="Permalink to this headline">¶</a></h3>
 <p>Each account has two balances, the <em>public balance</em> which can be <em>seen</em> by every
 member of the Concordium Network, and a <a class="reference internal" href="../resources/glossary.html#glossary-shielded-balance"><span class="std std-ref">shielded
-balance</span></a>, which is also referred to as <em>encrypted
-balance</em>. The shielded balance is only known to the owner of the account. It
+balance</span></a>. The shielded balance is only known to the owner of the account. It
 can only be used in <a class="reference internal" href="../resources/glossary.html#glossary-shielded-transfer"><span class="std std-ref">shielded transfers</span></a> to
 other accounts.</p>
 <p>The public balance of the account is used for payment of transaction fees,
@@ -328,8 +328,7 @@ balance in order to become a baker</p></li>
 </ul>
 <p>The locked-up balance can only be staked, but it can not be used for payment of
 transaction fees, nor can it be transferred to other accounts.</p>
-<p>The relationship between the different balances can be best illustrated on an
-example.<a class="footnote-reference brackets" href="#footnote-ignore-fees" id="id1">1</a> Suppose that on January 1 the account starts
+<p>Here’s an example that illustrates the relationship between the different balances (in this this explanation, transaction fees are ignored). Suppose that on January 1 the account starts
 with 100 CCD on the public balance. None of it is locked-up or staked.</p>
 <p>Then on January 2 the account receives 50 CCD via a <a class="reference internal" href="../resources/glossary.html#glossary-transfer-with-schedule"><span class="std std-ref">transfer with
 schedule</span></a> with the release scheduled for
@@ -362,12 +361,18 @@ also be set manually via the option <code class="docutils literal notranslate"><
 </div>
 <div class="section" id="tools">
 <h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-desktop-wallet">
+<h3>The Desktop Wallet<a class="headerlink" href="#the-desktop-wallet" title="Permalink to this headline">¶</a></h3>
+<p>The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.</p>
+</div>
 <div class="section" id="the-mobile-wallet">
 <h3>The Mobile Wallet<a class="headerlink" href="#the-mobile-wallet" title="Permalink to this headline">¶</a></h3>
-<p>The Mobile Wallet is a smartphone app that allows creation of accounts from
-identities issued by the external identity provider <a class="reference external" href="https://notabene.id">Notabene</a>, as well as
-transfers of CCD from created accounts. It supports both plain and encrypted transfers.</p>
-<p>This app can export identities and accounts that the user created.</p>
+<p>The Mobile Wallet is a digital smartphone wallet, that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.</p>
+<p>To learn more about the differences between the two wallets, see <a class="reference internal" href="../guides/deciding-wallet.html#choosing-wallet"><span class="std std-ref">Deciding between the Desktop Wallet and the Mobile Wallet</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You can’t exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.</p>
+</div>
 </div>
 <div class="section" id="command-line-tool">
 <h3>Command-line tool<a class="headerlink" href="#command-line-tool" title="Permalink to this headline">¶</a></h3>
@@ -377,12 +382,6 @@ Concordium blockchain. It cannot be used to create identities, but it can
 <a class="reference internal" href="concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import accounts</span></a> exported from the mobile wallets. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other <a class="reference internal" href="transactions.html#transactions"><span class="std std-ref">transaction</span></a> types supported by the Concordium blockchain.</p>
-<p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="footnote-ignore-fees"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>In this explanation we ignore transaction fees.</p>
-</dd>
-</dl>
 </div>
 </div>
 <div class="section" id="support-feedback">

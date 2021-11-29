@@ -295,16 +295,16 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-gtu</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send</span></code></p></td>
 <td><p>Transfer CCD tokens</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span>
-<span class="pre">send-gtu-encrypted</span></code></p></td>
+<span class="pre">send-shielded</span></code></p></td>
 <td><p>Transfer CCD tokens between shielded
 balances</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span>
-<span class="pre">send-gtu-scheduled</span></code></p></td>
+<span class="pre">send-scheduled</span></code></p></td>
 <td><p>Make a transfer that will be
 released gradually</p></td>
 </tr>
@@ -328,11 +328,11 @@ baker</p></td>
 <td><p>Update credentials keys for a
 specific credential</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">encrypt</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">shield</span></code></p></td>
 <td><p>Transfer part of the public balance
 to shielded balance</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">decrypt</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">unshield</span></code></p></td>
 <td><p>Transfer part of the shielded
 balance to public balance</p></td>
 </tr>
@@ -370,7 +370,7 @@ display its status until it’s been <a class="reference internal" href="../reso
 </div>
 <div class="section" id="commands-for-transferring-ccd">
 <h2>Commands for transferring CCD<a class="headerlink" href="#commands-for-transferring-ccd" title="Permalink to this headline">¶</a></h2>
-<p>The commands for transferring CCD (both plain transfers and encrypted transfers)
+<p>The commands for transferring CCD (both plain transfers and shielded transfers)
 are described in the following table.</p>
 <p>The add, remove, and configure bakers commands are described in the topic <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">becoming a baker using the Concordium Client</span></a>.</p>
 <div class="admonition note">
@@ -380,7 +380,7 @@ are described in the following table.</p>
 <div class="section" id="transfer-ccd">
 <h3>Transfer CCD<a class="headerlink" href="#transfer-ccd" title="Permalink to this headline">¶</a></h3>
 <p>Use the following command for transfers:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send
 </pre></div>
 </div>
 <p>Apart from the generic transaction flags above, the parameters are:</p>
@@ -403,7 +403,7 @@ are described in the following table.</p>
 </ul>
 <p>If the accounts have both been imported under these names, the command
 to transfer 25 CCD is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu --amount <span class="m">25</span> --sender A --receiver B
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send --amount <span class="m">25</span> --sender A --receiver B
 </pre></div>
 </div>
 <p>The output will look similar to the following. Note that in this example, we assume that the
@@ -432,7 +432,7 @@ sender account A has three transaction signing keys 0, 1, and 3.</p>
 <h3>Make a shielded transfer<a class="headerlink" href="#make-a-shielded-transfer" title="Permalink to this headline">¶</a></h3>
 <p>A shielded transfer is a transfer from a shielded balance to a shielded
 balance of another account. The command is very similar to a standard  transfer.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount <span class="m">8</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-shielded --sender A --receiver B --amount <span class="m">8</span>
 </pre></div>
 </div>
 <p>This command does the following:</p>
@@ -444,10 +444,10 @@ Concordium network.</p></li>
 <li><p>sends the transaction.</p></li>
 </ul>
 <p>The interaction looks like the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-encrypted --sender A --receiver B --amount <span class="m">8</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-shielded --sender A --receiver B --amount <span class="m">8</span>
 <span class="go">Using default energy amount of 30176 NRG.</span>
 <span class="go">Enter password for decrypting the secret encryption key: ...</span>
-<span class="go">Transferring 8.000000 CCD from encrypted balance of account &#39;4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ&#39; (A) to &#39;47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh&#39; (B).</span>
+<span class="go">Transferring 8.000000 CCD from shielded balance of account &#39;4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ&#39; (A) to &#39;47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh&#39; (B).</span>
 <span class="go">Allowing up to 30176 NRG to be spent as transaction fee.</span>
 <span class="go">Transaction expires at Sun,  4 Oct 2020 11:28:47 UTC.</span>
 <span class="go">Confirm [yN]: y</span>
@@ -465,7 +465,7 @@ Concordium network.</p></li>
 <span class="go">[13:20:46] Transaction finalized.</span>
 </pre></div>
 </div>
-<p>This command has all of the additional options of <code class="docutils literal notranslate"><span class="pre">send-gtu</span></code>, as well as an
+<p>This command has all of the additional options of <code class="docutils literal notranslate"><span class="pre">send</span></code>, as well as an
 additional flag <code class="docutils literal notranslate"><span class="pre">--index.</span></code> If given, this flag is used to select which
 <a class="reference internal" href="../resources/glossary.html#glossary-incoming-encrypted-amount"><span class="std std-ref">incoming encrypted amounts</span></a> that will be used as input to the transaction.</p>
 <p>This is illustrated with the following example. <a class="reference internal" href="query-node.html#query-account-state"><span class="std std-ref">Querying an account</span></a> can display the
@@ -480,23 +480,23 @@ list of incoming amounts on account. An output could look like this:</p>
 <span class="go">...</span>
 </pre></div>
 </div>
-<p>If you want to <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> from the account while supplying index 8,
-only the encrypted amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference internal" href="../resources/glossary.html#glossary-self-balance"><span class="std std-ref">self balance</span></a>
-will be used as input of the encrypted transfer.</p>
+<p>If you want to <code class="docutils literal notranslate"><span class="pre">send-shielded</span></code> from the account while supplying index 8,
+only the shielded amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference internal" href="../resources/glossary.html#glossary-self-balance"><span class="std std-ref">self balance</span></a>
+will be used as input of the shielded transfer.</p>
 <p>If the supplied index is out of range <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will refuse to send
 the transaction.</p>
 </div>
 <div class="section" id="shield-an-amount">
 <h3>Shield an amount<a class="headerlink" href="#shield-an-amount" title="Permalink to this headline">¶</a></h3>
 <p>The command to shield an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">account</span>
-<span class="pre">encrypt</span></code>. For example, an interaction to shield 10 CCD on account A looks like the following</p>
+<span class="pre">shield</span></code>. For example, an interaction to shield 10 CCD on account A looks like the following</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account encrypt --amount <span class="m">10</span> --sender A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account shield --amount <span class="m">10</span> --sender A
 </pre></div>
 </div>
 <p>The command supports all of the same additional flags as the transfer transaction, except the <code class="docutils literal notranslate"><span class="pre">--receiver</span></code> since a transfer from a public to a shielded balance is always on the same account. The output looks like the following:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Using default energy amount of 265 NRG.</span>
-<span class="go">Transferring 10.000000 CCD from public to encrypted balance of account &#39;4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ&#39; (A).</span>
+<span class="go">Transferring 10.000000 CCD from public to shielded balance of account &#39;4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ&#39; (A).</span>
 <span class="go">Allowing up to 265 NRG to be spent as transaction fee.</span>
 <span class="go">Transaction expires at Sun,  4 Oct 2020 11:25:02 UTC.</span>
 <span class="go">Confirm [yN]: y</span>
@@ -518,10 +518,10 @@ the transaction.</p>
 <div class="section" id="unshield-an-amount">
 <h3>Unshield an amount<a class="headerlink" href="#unshield-an-amount" title="Permalink to this headline">¶</a></h3>
 <p>The command to unshield an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is
-<code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">decrypt</span></code>. For example, an interaction to unshield 7 CCD on
+<code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">unshield</span></code>. For example, an interaction to unshield 7 CCD on
 account B looks like the following:</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account decrypt --sender B --amount <span class="m">7</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account unshield --sender B --amount <span class="m">7</span>
 </pre></div>
 </div>
 <p>This</p>
@@ -530,12 +530,12 @@ account B looks like the following:</p>
 <li><p>decrypts the shielded balance and checks that there is sufficient funds.</p></li>
 <li><p>sends the transaction.</p></li>
 </ul>
-<p>The command supports the same optional flags as <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> with the addition
+<p>The command supports the same optional flags as <code class="docutils literal notranslate"><span class="pre">shield</span></code> with the addition
 of <code class="docutils literal notranslate"><span class="pre">--index</span></code>, which has the same meaning as in the
-<code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> command.</p>
+<code class="docutils literal notranslate"><span class="pre">send-shielded</span></code> command.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Using default energy amount of 16171 NRG.</span>
 <span class="go">Enter password for decrypting the secret encryption key:</span>
-<span class="go">Transferring 7.000000 CCD from encrypted to public balance of account &#39;47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh&#39; (B).</span>
+<span class="go">Transferring 7.000000 CCD from shielded to public balance of account &#39;47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh&#39; (B).</span>
 <span class="go">Allowing up to 16171 NRG to be spent as transaction fee.</span>
 <span class="go">Transaction expires at Sun,  4 Oct 2020 11:44:07 UTC.</span>
 <span class="go">Confirm [yN]: y</span>
@@ -556,7 +556,7 @@ of <code class="docutils literal notranslate"><span class="pre">--index</span></
 <div class="section" id="transfer-ccd-with-a-schedule">
 <span id="transfer-with-a-schedule"></span><h3>Transfer CCD with a  schedule<a class="headerlink" href="#transfer-ccd-with-a-schedule" title="Permalink to this headline">¶</a></h3>
 <p>The command to transfer CCD that will be released gradually according to a
-release schedule with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-gtu-scheduled</span></code>.
+release schedule with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-scheduled</span></code>.
 There are two ways of specifying the release schedule, either at regular intervals or as an explicit schedule.</p>
 <ul class="simple">
 <li><p>Use a regular interval schedule to release an equal amount of CCD to a recipient at regular intervals.</p></li>
@@ -571,7 +571,7 @@ There are two ways of specifying the release schedule, either at regular interva
 <li><p>starting on the 10th of February 2021 at 12:00:00 UTC</p></li>
 </ul>
 <p>use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-scheduled --amount <span class="m">100</span> --every Day --for <span class="m">10</span> --starting <span class="m">2021</span>-02-10T12:00:00Z --receiver B --sender A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-scheduled --amount <span class="m">100</span> --every Day --for <span class="m">10</span> --starting <span class="m">2021</span>-02-10T12:00:00Z --receiver B --sender A
 </pre></div>
 </div>
 <p>When you specify an explicit release schedule, you must use the option <code class="docutils literal notranslate"><span class="pre">--schedule</span></code>, which takes a comma-separated list of releases in the form of <code class="docutils literal notranslate"><span class="pre">&lt;amount&gt;</span> <span class="pre">at</span> <span class="pre">&lt;date&gt;</span></code>. For example, to send a transaction from A to B that:</p>
@@ -581,7 +581,7 @@ There are two ways of specifying the release schedule, either at regular interva
 <li><p>releases 200 on December 31st 2022 at 12:00:00 UTC</p></li>
 </ul>
 <p>Use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-gtu-scheduled --schedule <span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span> --receiver B --sender A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-scheduled --schedule <span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span> --receiver B --sender A
 </pre></div>
 </div>
 <p>If you query the account information of the recipient account afterwards, it will show the list of releases that are still pending to be released:</p>
