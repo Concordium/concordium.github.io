@@ -19,7 +19,7 @@ Account
 An addressable store of funds on the blockchain. An account is associated with
 one or more *account keys* that can be used to authorize transactions
 originating from the account, as well as with an :ref:`encryption key<glossary-encryption-key>` that can be
-used to send encrypted transfers to the account. An account is also associated
+used to send shielded transfers to the account. An account is also associated
 with the account holder's :ref:`identity<glossary-identity>`, although this association is encrypted
 for anonymity. This anonymity can only be revoked by anonymity revokers, in
 cooperation with the account's :ref:`identity provider<glossary-identity-provider>`.

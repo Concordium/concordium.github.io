@@ -128,7 +128,7 @@ Display contents
 
 Display the full contents of the persistent configuration. This will display the
 stored keys that are used for signing transactions (under the ``Account Keys``
-section) and the stored key for sending encrypted transfers (under the
+section) and the stored key for sending shielded transfers (under the
 ``Encryption secret key`` section) when they are present.
 
 Example:
