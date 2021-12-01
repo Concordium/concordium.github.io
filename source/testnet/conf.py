@@ -47,7 +47,8 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
-    "multidoc"
+    "multidoc",
+    "sphinx_reredirects"
 ]
 
 # todo_include_todos = True
@@ -265,3 +266,9 @@ linkcheck_request_headers = {
 
 # -- InterSphinx links for linking between document versions ------------------
 intersphinx_mapping = {'mainnet': ('https://developer.concordium.software/en/mainnet/', None)}
+
+# -- Sphinx-reredirects for redirecting old paths to new ones ----------------
+redirects = {
+    "./net/desktop-wallet/send-gtu-single-desktop": "/en/testnet/net/desktop-wallet/send-ccd-single-desktop.html",
+    "./net/desktop-wallet/shield-gtu-desktop": "/en/testnet/net/desktop-wallet/shield-ccd-desktop.html",
+}

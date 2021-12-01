@@ -3,7 +3,7 @@
 .. _create-multisig:
 
 =====================================================================
-Create a multi-signature GTU transfer in the Desktop Wallet
+Create a multi-signature CCD transfer in the Desktop Wallet
 =====================================================================
 
 .. contents::
@@ -11,10 +11,10 @@ Create a multi-signature GTU transfer in the Desktop Wallet
    :backlinks: none
    :depth: 1
 
-Multi-signature GTU transfer
+Multi-signature CCD transfer
 ============================
 
-A multi-signature transfer of GTU is a transaction that
+A multi-signature transfer of CCD is a transaction that
 requires two or more co-signers to sign with their private keys to
 authorize the transaction.
 
@@ -30,11 +30,11 @@ Make a transfer proposal
 
 #.  Go to **Multi Signature Transactions**, and then select **Make new proposal**. All available transactions are listed in the right pane.
 
-#.  Select **Send GTU**.
+#.  Select **Send CCD**.
 
 #. Select the relevant sender account from the list of available accounts, and then select **Continue**. If only one account is available, this account will be selected automatically.
 
-#.  In **Amount**, enter the amount of GTU you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough GTU in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
+#.  In **Amount**, enter the amount of CCD you want to transfer. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. In the **Transaction details** under **Amount**, you can see the estimated fee. Select **Continue**.
 
 #.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**.
 
@@ -76,7 +76,7 @@ Generate and sign the transaction proposal on the Ledger
 
 #.  Select **Generate and sign**.
 
-#. The Ledger says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring GTU from.
+#. The Ledger says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring CCD from.
 
 #. Continue navigating to the right. The Ledger shows the **Amount** you're going to transfer. Navigate to the right. The Ledger says **Recipient** and shows the recipient's address.
 

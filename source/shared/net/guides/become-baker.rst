@@ -15,7 +15,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the Mobile Wallet and acquire GTU.
+#. Create an account in the Mobile Wallet and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -43,7 +43,8 @@ Import the account
 
 This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see :ref:`managing_accounts`.
 
-You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  :ref:`Explore the *More* page in the Mobile Wallet <explore-more>`.
+bakcups-and-recovery
+You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import-mw>`.
 
 To import an account run:
 
@@ -75,7 +76,7 @@ and send a ``baker add`` transaction to the network:
 
 where you replace
 
-- ``<amount-to-stake>`` with the GTU amount for the baker's initial stake
+- ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
 - ``<concordium-data-dir>`` with any path of your choice. Remember to configure your node to bake using this path:
 
   * on Linux: See :ref:`configure Linux node<baker-node-Ubuntu>`.
@@ -149,7 +150,7 @@ offer different degrees of precision in the information displayed.
      ...
 
      Baker: #22
-      - Staked amount: 10.000000 GTU
+      - Staked amount: 10.000000 CCD
       - Restake earnings: yes
      ...
 
@@ -193,7 +194,7 @@ chain as soon as the transaction is included in a block, it can be consulted thr
    ...
 
    Baker: #22
-    - Staked amount: 50.000000 GTU to be updated to 20.000000 GTU at epoch 261  (2020-12-24 12:56:26 UTC)
+    - Staked amount: 50.000000 CCD to be updated to 20.000000 CCD at epoch 261  (2020-12-24 12:56:26 UTC)
     - Restake earnings: yes
 
    ...
@@ -225,7 +226,7 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 
 .. warning::
 
-   The staked amount is *locked*. That is, you can't transfer it or use it for payment. You should take this into account and consider staking an amount that will not be needed in the short term. In particular, to deregister a baker or to modify the staked amount you need to own some non-staked GTU to cover the transaction costs.
+   The staked amount is *locked*. That is, you can't transfer it or use it for payment. You should take this into account and consider staking an amount that will not be needed in the short term. In particular, to deregister a baker or to modify the staked amount you need to own some non-staked CCD to cover the transaction costs.
 
    .. _restake-earnings:
 
@@ -253,7 +254,7 @@ start affecting baking and finalizing power in the epoch after next. The current
    ...
 
    Baker: #22
-    - Staked amount: 50.000000 GTU
+    - Staked amount: 50.000000 CCD
     - Restake earnings: yes
 
    ...
@@ -290,7 +291,7 @@ The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
 finalization committee you will probably have to modify the staked amount
 to reach said threshold. In the |Net|, the staked amount needed to participate
-in the finalization committee is **0.1% of the total amount of existing GTU**.
+in the finalization committee is **0.1% of the total amount of existing CCD**.
 
 Participating in the finalization committee produces rewards on each block that
 is finalized. The rewards are paid to the baker account some time after the
@@ -318,7 +319,7 @@ the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take
    ...
 
    Baker #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)
-    - Staked amount: 20.000000 GTU
+    - Staked amount: 20.000000 CCD
     - Restake earnings: yes
 
    ...

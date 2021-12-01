@@ -15,7 +15,7 @@ that you have a :ref:`smart-contract module<setup-tools>` ready to be deployed.
 
 Since deploying a smart contract module is done in the form of a transaction,
 you will also need to have ``concordium-client`` setup with an account with
-enough GTU to pay for the transaction.
+enough CCD to pay for the transaction.
 
 .. note::
 

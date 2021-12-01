@@ -8,7 +8,36 @@ Release notes
    :local:
    :backlinks: none
 
-.. _open-testnet-v6:
+Mainnet 2: Alpha Centauri 2.1
+=============================
+
+November 16th, 2021
+
+Concordium Mobile Wallet for Android (v. 1.0.16)
+------------------------------------------------
+
+-  Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+      -  It is now possible to add memos to simple and shielded transactions.
+      -  Memos can also be displayed for transfers with release schedule.
+
+-  Various improvements of the identity issuance flow, account creation, and related support options:
+
+      -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
+         containing an issuance reference for better personal support as well as system information of the user for better debugging.
+      -  Added a small dialogue to remind user to check for response on new identity requests.
+      -  User will now be notified on successful creation of new accounts inside the app.
+      -  Various back-end improvements by the identity provider to make their service more robust.
+
+-  Various bug fixes.
+
+-  Various smaller textual updates.
+
+-  Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.
+
+The new version of Concordium Mobile Wallet for iOS is coming soon
+------------------------------------------------------------------
+
 
 Mainnet 2: Alpha Centauri 2.0
 ==============================
@@ -148,7 +177,7 @@ Tokenomics and On-chain Incentivization
 
 The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.
 
-The flow of GTU between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
+The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
 
 Concordium Node
 ---------------

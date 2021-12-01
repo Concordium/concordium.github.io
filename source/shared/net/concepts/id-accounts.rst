@@ -10,7 +10,7 @@ Identities and accounts
 
 
 In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive :ref:`glossary-GTU`) a user must create an *account*.
+send, receive :ref:`glossary-CCD`) a user must create an *account*.
 
 The user will get an :ref:`glossary-initial-account` at the same time as an *identity* has been issued
 by an identity provider. As the initial account is submitted to the chain by the
@@ -46,7 +46,7 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <mobile-get-started>`. The |Net| release presently supports the Notabene identity issuance flow.
+You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. The |Net| release presently supports the Notabene identity issuance flow.
 
 .. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
@@ -107,7 +107,7 @@ multiple parties.
 After step 2 the anonymity revokers can additionally decrypt a value that is
 held by the identity provider and allows the revokers to find all accounts the
 user has created from a given identity. Additionally, this value allows
-anonymity revokers to see the amount of GTUs in the shielded balance of
+anonymity revokers to see the amount of CCDs in the shielded balance of
 de-anonymized accounts.
 
 All of these actions are subject to rules and processes, and only the relevant

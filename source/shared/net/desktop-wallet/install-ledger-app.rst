@@ -47,12 +47,14 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. Press both buttons to view the **Secure Element** version. If it says **2.0.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
-For details on how to update the Ledger firmware, see `Ledger ‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_
+For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_
 
 .. _install-ledger-windows:
 
 Install Concordium Ledger app on Windows
 ========================================
+
+.. _install-python-pip-windows:
 
 Install Python3 and pip
 -----------------------
@@ -126,6 +128,9 @@ Update the Concordium Ledger app on Windows
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
+.. Note::
+    If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-windows>` for Ledger (ledgerblue) before updating the app.
+
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
 #. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
@@ -140,6 +145,8 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 Install Concordium Ledger app on macOS
 ======================================
+
+.. _install-python-pip-macos:
 
 Install Homebrew, Python3, and pip
 ----------------------------------
@@ -225,6 +232,9 @@ Update the Concordium Ledger app on macOS
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
+.. Note::
+    If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for Ledger (ledgerblue) before updating the app.
+
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
 #. Run the ``install.sh`` file from the folder that you extracted the files to.
@@ -242,6 +252,8 @@ Install Concordium Ledger app on Ubuntu
 
 Install Python3 and pip on Ubuntu
 ---------------------------------
+
+.. _install-python-pip-ubuntu:
 
 #. Add udev rules. For more information, see the Linux section in `Ledger ‘s guide Fix connection history <https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues>`_.
 
@@ -320,6 +332,9 @@ Update the Concordium Ledger app on Ubuntu
 -------------------------------------------
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
+
+.. Note::
+    If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-ubuntu>` for Ledger (ledgerblue) before updating the app.
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 

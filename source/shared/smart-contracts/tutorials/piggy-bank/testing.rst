@@ -225,14 +225,14 @@ Run the test to check that it compiles and succeeds.
 
 
 
-Test inserting GTU into a piggy bank
+Test inserting CCD into a piggy bank
 ===========================================
 
 Next we should test the different functions for interacting with a piggy bank.
 This is done in the same way as initializing, except we use |ReceiveContextTest|
 to construct the context.
 
-To test ``piggy_insert`` we also need some amount of GTU and the current state
+To test ``piggy_insert`` we also need some amount of CCD and the current state
 of our smart contract instance:
 
 .. code-block:: rust
@@ -260,11 +260,11 @@ For testing we can represent the actions as a simple tree structure
    by the host environment and is therefore not suitable for unit tests.
 
 Now we need to check if the function succeeded and verify the resulting state and actions.
-In our case the state should remain intact and the function produce only the action for accepting the GTU.
+In our case the state should remain intact and the function produce only the action for accepting the CCD.
 
 .. code-block:: rust
 
-   let actions = actions_result.expect("Inserting GTU results in error.");
+   let actions = actions_result.expect("Inserting CCD results in error.");
 
    assert_eq!(actions, ActionsTree::accept(), "No action should be produced.");
    assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
@@ -281,7 +281,7 @@ The second test becomes:
 
        let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
 
-       let actions = actions_result.expect("Inserting GTU results in error.");
+       let actions = actions_result.expect("Inserting CCD results in error.");
 
        assert_eq!(actions, ActionsTree::accept(), "No action should be produced.");
        assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
@@ -361,7 +361,7 @@ in the previous tests:
 
        let actions_result: ReceiveResult<ActionsTree> = piggy_smash(&ctx, &mut state);
 
-       let actions = actions_result.expect("Inserting GTU results in error.");
+       let actions = actions_result.expect("Inserting CCD results in error.");
        assert_eq!(actions, ActionsTree::simple_transfer(&owner, balance));
        assert_eq!(state, PiggyBankState::Smashed);
    }
@@ -609,7 +609,7 @@ using ``cargo test``.
 
           let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
 
-          let actions = actions_result.expect_report("Inserting GTU results in error.");
+          let actions = actions_result.expect_report("Inserting CCD results in error.");
 
           claim_eq!(actions, ActionsTree::accept(), "No action should be produced.");
           claim_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
@@ -629,7 +629,7 @@ using ``cargo test``.
 
           let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
 
-          let actions = actions_result.expect_report("Inserting GTU results in error.");
+          let actions = actions_result.expect_report("Inserting CCD results in error.");
           claim_eq!(actions, ActionsTree::simple_transfer(&owner, balance));
           claim_eq!(state, PiggyBankState::Smashed);
       }

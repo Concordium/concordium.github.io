@@ -8,6 +8,76 @@ Release Notes
    :local:
    :backlinks: none
 
+Open Testnet v7
+===============
+
+November 29th 2021
+
+Concordrium Node v3.0.0
+-----------------------
+
+- Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
+- ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
+- Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
+- Faster state queries by avoiding locking the block state file when reading.
+- Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
+- The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
+
+Concordium-client v3.0.4
+------------------------
+
+- Credentials revealing the newly introduced attribute LEI can be deployed.
+- Renamed GTU token to CCD.
+- Renamed ``send-gtu``, ``send-gtu-scheduled`` and ``send-gtu-encrypted`` to ``send``, ``send-scheduled`` and ``send-shielded``.
+- Renamed ``account encrypt``/``decrypt`` to ``account shield``/``unshield``.
+- Added command for generating aliases of an address.
+- Now shows line breaks, tabs etc. in memo transfers (when it's CBOR encoded string), instead of escaping them as ``\n``, ``\t`` etc.
+- Now displays memo as JSON in a more readable way.
+- Added time units to slot duration and epoch duration in consensus status.
+- Updated the ``register-data`` command to register data as CBOR encoded strings or JSON using the new flags ``--string`` and ``--json``. Raw data can still be registered using the new flag ``--raw``.
+- Added ``raw DisconnectPeer``, a counterpart to the existing ``raw ConnectPeer``.
+- Now warning  the user when trying to add a baker with a stake below the minimum threshold.
+- Improved how contract schemas are shown as JSON:
+
+   - Now displays complex types in arrays correctly.
+   - Use angle brackets to indicate placeholders, e.g. ``"<UInt16>"`` instead of ``"UInt16"``.
+- Improved ``module inspect``:
+
+   - Now shows all contracts from a module regardless of whether a schema is included or not.
+   - Now shows the receive methods for contracts as well.
+- Now allows sending transactions where the sender is an account alias.
+
+
+Open Testnet v6 Update 4
+========================
+
+November 16th, 2021
+
+Concordium Mobile Wallet for Android (v. 1.0.16)
+------------------------------------------------
+
+-  Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+      -  It is now possible to add memos to simple and shielded transactions.
+      -  Memos can also be displayed for transfers with release schedule.
+
+-  Various improvements of the identity issuance flow, account creation and related support options:
+
+      -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
+         containing an issuance reference for better personal support as well as system information of the user for better debugging.
+      -  Added a small dialogue to remind user to check for response on new identity requests.
+      -  User will now be notified on successful creation of new accounts inside the app.
+      -  Various back-end improvements by the identity provider to make their service more robust.
+
+-  Various bug fixes.
+
+-  Various smaller textual updates.
+
+-  Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.
+
+The new version of Concordium Mobile Wallet for iOS is coming soon
+------------------------------------------------------------------
+
 .. _open-testnet-v6-update-3:
 
 Open Testnet v6 Update 3
@@ -219,7 +289,7 @@ Rust is the first off-chain high level smart contract language.
 
 The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.
 
-The flow of GTU between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
+The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
 
 
 **Concordium Node**
@@ -309,10 +379,10 @@ October 6th, 2020.
 -  Added import to app. It is now possible to import a file that has
    previously been exported. This enables moving identities and accounts
    to other mobile devices and restoring from backup.
--  µGTU. The smallest unit has been changed from 10-4 to 10-6.
+-  µCCD. The smallest unit has been changed from 10-4 to 10-6.
 -  Bulletproofs. The core blockchain has been updated to support use of
    bulletproofs.
--  :ref:`Encrypted(shielded) amounts and transfers <move-an-amount-to-the-shielded-balance>`. Support for shielded
+-  Encrypted(shielded) amounts and transfers: Support for shielded
    transactions has been added to the core blockchain. Support for
    sending and receiving shielded amounts are added to the mobile apps
    and the Concordium client.
@@ -416,7 +486,7 @@ This release contains the following main features:
    -  Creating identities
    -  Creating accounts
    -  Making transfers
-   -  Depositing GTU tokens
+   -  Depositing CCD tokens
    -  Exporting identities and accounts
 
 -  A demo Identity service
