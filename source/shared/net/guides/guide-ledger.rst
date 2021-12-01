@@ -12,9 +12,9 @@ Get started using a Ledger device with the Desktop Wallet
 Introduction
 ============
 
-The Concordium Desktop Wallet is used to manage the Global Transaction Unit (GTU), Concordium’s native cryptocurrency. To use the Desktop Wallet to receive and send GTU, you'll need a Ledger Nano S or Ledger Nano X device and the Concordium Ledger Application. The Ledger adds additional security to your accounts.
+The Concordium Desktop Wallet is used to manage CCD, Concordium’s native token. To use the Desktop Wallet to receive and send CCD, you'll need a Ledger Nano S or Ledger Nano X device and the Concordium Ledger Application. The Ledger adds additional security to your accounts.
 
-This getting started guide walks you through the steps of getting started using the Concordium Desktop Wallet with a Ledger device.
+This guide walks you through the steps of getting started using the Concordium Desktop Wallet with a Ledger device.
 
 Before you start
 ================
@@ -67,7 +67,7 @@ You're now ready to install the Concordium Ledger App on the Ledger device.
 Set up an initial account and an identity
 =========================================
 
-Now that you've set up the Ledger device, you're ready to start using the Desktop Wallet. The first thing you have to do is to set up an :ref:`initial account <glossary-initial-account>` and have an identity provider issue an :ref:`identity <glossary-identity>`.
+Now that you've set up the Ledger device, you're ready to start using the Desktop Wallet. You'll have to set up an :ref:`initial account <glossary-initial-account>` and have an identity provider issue an :ref:`identity <glossary-identity>`.
 
 #. In the Desktop Wallet, go to **Accounts**. A message is displayed saying you don’t have an identity or an initial account yet. Select **Request new**.
 
@@ -106,40 +106,40 @@ To view the account balance in the Concordium Desktop Wallet do the following:
 
 - In the Desktop Wallet, go to **Accounts**, and then select the account whose balance you want to see. You can now see the following account information:
 
-  - **Account Total** shows the total number of GTU on the account
+  - **Account Total** shows the total number of CCD on the account
 
-  - **Balance** shows the sum of GTU that are at your disposal, the amount of GTU that you’ve staked, and any GTU that are locked in a release schedule.
+  - **Balance** shows the sum of CCD that are at your disposal, the amount of CCD that you’ve staked, and any CCD that are locked in a release schedule.
 
-    - **At disposal** shows the amount of GTU that is available for use. You can't use GTU that are locked in a :ref:`stake<concepts-baker-stake>` or a :ref:`release schedule<GTU-single-schedule-desktop>`.
+    - **At disposal** shows the amount of CCD that is available for use. You can't use CCD that are locked in a :ref:`stake<concepts-baker-stake>` or a :ref:`release schedule<CCD-single-schedule-desktop>`.
 
-    - **Staked** shows the amount of GTU you've staked if you're node is :ref:`baking <baker-concept>` blocks.
+    - **Staked** shows the amount of CCD you've staked if you're node is :ref:`baking <baker-concept>` blocks.
 
-  - **Shielded balance** shows the amount of GTU that you’ve shielded.
+  - **Shielded balance** shows the amount of CCD that you’ve shielded.
 
     .. image:: ../images/desktop-wallet/account-balance.png
          :width: 60%
 
 For more information about accounts, see :ref:`Overview of accounts <overview-account-desktop>`.
 
-How to receive GTU
+How to receive CCD
 ==================
 
-Currently, you don’t have to use the Ledger to receive GTU. To see any transfers to your account do the following:
+Currently, you don’t have to use the Ledger to receive CCD. To see any transfers to your account do the following:
 
 #. In the Desktop Wallet, go to **Accounts**, and then select the relevant account.
 
-#. In the **Latest transactions** area, you can see all GTU transfers on the account.
+#. In the **Latest transactions** area, you can see all CCD transfers on the account.
 
 #. If you need to share your address with someone, select **Account address**, copy the address or scan the QR code.
 
-How to send GTU
+How to send CCD
 ===============
 
 #. In the Desktop Wallet, go to **Accounts** and select the relevant account.
 
 #. Select **Send**.
 
-#. Enter the amount of GTU that you want to send.
+#. Enter the amount of CCD that you want to send.
 
 #. Select the recipient and select **Continue**. If you haven't connected the Ledger to your computer, there’s a message saying **Please open the Concordium application on your Ledger**. Connect the Ledger device to the computer and enter your PIN on Ledger.
 
