@@ -35,8 +35,8 @@ Create an initial account
 
 #. Press both buttons to confirm the following on the Ledger:
 
-   - Create credential (each credential is assigned a number)
-   - Public key
+   - Create credential (each credential is assigned a number): : Press the right button and then both buttons to confirm **Accept**.
+   - Public key: Press both buttons to accept.
 
 #. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
