@@ -40,13 +40,7 @@ Concordium Desktop Wallet
 
 -  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.2.0.exe>`_
 
-   - SHA256 checksum of the download: :substitution-code:`|cdw-windows-checksum|`
-   - :ref:`Verification instructions <verification-cdw-windows>`
-
 -  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.2.0.dmg>`_
-
-   - SHA256 checksum of the download: :substitution-code:`|cdw-mac-checksum|`
-   - :ref:`Verification instructions <verification-cdw-mac>`
 
 -  Download the Desktop Wallet for Linux:
    -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.AppImage>`_
