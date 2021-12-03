@@ -42,12 +42,12 @@ Create an account
 
 #. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
 
-#. Press both buttons to confirm the following on the Ledger:
+#. You now have to confirm the following on the Ledger:
 
-   - Create credential (each credential is assigned a number)
-   - Public key
+   - Create credential (each credential is assigned a number): Press the right button and then both buttons to confirm **Accept**.
+   - Public key: Press both buttons to accept.
 
-#. Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Press both buttons, and then use the right button to navigate through the key.
+#. Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
 #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
