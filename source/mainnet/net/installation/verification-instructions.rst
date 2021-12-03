@@ -15,20 +15,6 @@ To find instructions on how to verify the integrity of the file you have downloa
 Concordium Desktop Wallet
 =========================
 
-.. _verification-cdw-windows:
-
-Windows
--------
-
-.. include:: cdw-verification-instructions/cdw-windows.rst
-
-.. _verification-cdw-mac:
-
-MacOS
------
-
-.. include:: cdw-verification-instructions/cdw-macos.rst
-
 Linux
 -----
 
@@ -60,22 +46,6 @@ When the desktop wallet updates itself, it performs the necessary steps to verif
 
 Concordium Client
 =================
-
-.. _verification-client-windows:
-
-Windows
--------
-
-.. include:: client-verification-instructions/client-windows.rst
-
-.. _verification-client-mac:
-
-MacOS
------
-
-.. include:: client-verification-instructions/client-mac.rst
-
-.. _verification-client-linux:
 
 Linux
 -----
