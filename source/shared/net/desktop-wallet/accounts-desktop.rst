@@ -58,3 +58,20 @@ When you select **Change view**, you'll see a variety of information about your 
 -  **Update credentials**: Add new credentials to the account. See :ref:`Add credentials to an account <multi-credentials>`.
 
 -  **Add baker**: Make the account a baker account. See :ref:`See Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
+
+Edit account name
+-----------------
+
+You can edit the name of the account. Click |edit| to edit the account name. Click |save| to save the change.
+
+.. |edit|    image:: ../images/edit.png
+                    :width: 20px
+                    :alt: small square with pencil
+.. |save|    image:: ../images/save.png
+                    :width: 20px
+                    :alt: check mark
+
+Set default account
+-------------------
+
+To make the currently selected account the default account, click the star icon in the lower right corner. Setting this means that this will be the account initially visible when opening the account page.
