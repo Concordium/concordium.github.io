@@ -64,5 +64,3 @@ Create an initial account
 .. |save|    image:: ../images/save.png
                     :width: 20px
                     :alt: check mark
-
-   
