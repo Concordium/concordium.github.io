@@ -19,7 +19,7 @@ smart-contract instance on-chain to inspect.
    how to create an instance :ref:`initialize-contract`.
 
 Since interactions with a smart contract are transactions, you should also make
-sure to have ``concordium-client`` set up with an account with enough GTU to pay
+sure to have ``concordium-client`` set up with an account with enough CCD to pay
 for the transactions.
 
 .. note::
@@ -102,7 +102,7 @@ Common errors are described in the next section.
 
 .. note::
 
-   GTU can also be transferred to a contract during updates using the
+   CCD can also be transferred to a contract during updates using the
    ``--amount AMOUNT`` parameter.
 
 Passing parameters in binary format

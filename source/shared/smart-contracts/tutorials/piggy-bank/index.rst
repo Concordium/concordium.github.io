@@ -17,8 +17,8 @@ The piggy bank smart contract
 
 In this tutorial, we are going to build a simple smart contract modelling a
 piggy bank.
-It should allow any account to insert GTU, and only the owner to smash it,
-taking all of the GTU inside.
+It should allow any account to insert CCD, and only the owner to smash it,
+taking all of the CCD inside.
 
 In the first part, you will learn how to write the very basic piggy bank smart
 contract using the Rust_ programming language.

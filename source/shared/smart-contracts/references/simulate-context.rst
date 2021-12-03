@@ -154,7 +154,7 @@ Example:
 ``selfBalance``
 ---------------
 
-A JSON string with the balance of the smart contract instance in micro GTU.
+A JSON string with the balance of the smart contract instance in micro CCD.
 
 Example:
 

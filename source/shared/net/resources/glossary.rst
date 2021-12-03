@@ -127,8 +127,8 @@ this key is only known to the account holder.
 Encrypted amount
 ================
 
-An amount of :ref:`GTU<glossary-GTU>` that is encrypted with the public key of an account. Only
-the owner of the secret key can determine how many GTUs are contained in the
+An amount of :ref:`CCD<glossary-CCD>` that is encrypted with the public key of an account. Only
+the owner of the secret key can determine how many CCDs are contained in the
 encryption.
 
 .. _glossary-encryption-key:
@@ -164,12 +164,12 @@ Genesis Block
 
 The first :ref:`block<glossary-block>` in a :ref:`chain<glossary-chain>`. The genesis block establishes the starting state of the chain, before any transactions have occurred.
 
-.. _glossary-GTU:
+.. _glossary-CCD:
 
-Global Transaction Unit (GTU)
+Global Transaction Unit (CCD)
 =============================
 
-The currency of the Concordium blockchain. GTU can be used for multiple
+The currency of the Concordium blockchain. CCD can be used for multiple
 purposes:
 
 -  as a form of payment between users via transactions,
@@ -178,8 +178,8 @@ purposes:
 -  as a reward for honest behaviour (e.g. :ref:`baking<glossary-baker>` or :ref:`finalizing<glossary-finalization>`
    blocks on top of the longest chain), to incentivize blockchain users.
 
-The smallest subdivision of GTU is the µGTU (micro GTU), with 1 GTU = 1,000,000
-µGTU. This means that GTU amounts are given with up to six decimal places of
+The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
+µCCD. This means that CCD amounts are given with up to six decimal places of
 precision.
 
 .. _glossary-identity:
@@ -310,7 +310,7 @@ On-chain
 Refers to an an event or activity that is propagated through the Concordium
 network and recorded on the Concordium blockchain. The recording can be explicit
 or implicit as part of the consensus protocol. An example of the former is a
-transaction such as a GTU transfer, an example of the latter are the rewards
+transaction such as a CCD transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
 
 .. _glossary-shielded-balance:
@@ -322,8 +322,8 @@ The part of the balance of an :ref:`account<glossary-account>` that only the own
 see. This is achieved by encrypting transfers to an account with the account's
 :ref:`encryption key<glossary-encryption-key>`. Every participant of the Concordium network can see the
 `ciphertexts`_ of all the transfers, however they provide no information on how
-many GTUs were transferred. The receiver of the transfer can use their secret
-key to decrypt the ciphertexts, and seeing how many GTUs they have received.
+many CCDs were transferred. The receiver of the transfer can use their secret
+key to decrypt the ciphertexts, and seeing how many CCDs they have received.
 
 For technical reasons the shielded balance of the account consists of two parts,
 the "self balance" and the "incoming encrypted amounts".
@@ -419,11 +419,11 @@ numbers and JSON values, but this is not enforced.
 Transfer with schedule
 ======================
 
-A special kind of transfer of GTU that makes the GTU amount available to the
+A special kind of transfer of CCD that makes the CCD amount available to the
 receiver only in a limited way until a specified point in time. The point in
-time is specified as part of a transfer. The GTU are immediately owned by the
+time is specified as part of a transfer. The CCD are immediately owned by the
 receiver account, and the transfer cannot be revoked, but the receiver cannot
-spend the GTU until the specified time.
+spend the CCD until the specified time.
 
 .. _glossary-transaction-sequence-number:
 

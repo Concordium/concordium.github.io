@@ -17,6 +17,9 @@
 
    guides/run-node-ubuntu
    guides/run-node
+   guides/run-node-windows
+   guides/run-node-macos
+   guides/baker-windows
    guides/deciding-wallet
    guides/overview-desktop
    guides/multisig-transfer
@@ -38,9 +41,16 @@
    :maxdepth: 1
    :caption: Concordium Mobile Wallet
 
-   mobile-wallet/get-started
-   mobile-wallet/accounts-transactions
-   mobile-wallet/explore-more
+   mobile-wallet/setup-mobile-wallet
+   mobile-wallet/create-identity
+   mobile-wallet/create-account-mw
+   mobile-wallet/make-simple-transfer-mw
+   mobile-wallet/make-shielded-transfer-mw
+   mobile-wallet/shield-unshield-mw
+   mobile-wallet/export-import-mw
+   mobile-wallet/share-address-mw
+   mobile-wallet/change-passcode-mw
+   mobile-wallet/inspect-release-schedule-mw
 
 .. toctree::
    :maxdepth: 1
@@ -53,9 +63,9 @@
    desktop-wallet/create-account-desktop
    desktop-wallet/accounts-desktop
    desktop-wallet/create-credentials-file
-   desktop-wallet/shield-gtu-desktop
+   desktop-wallet/shield-ccd-desktop
    desktop-wallet/export-import-desktop
-   desktop-wallet/send-gtu-single-desktop
+   desktop-wallet/send-ccd-single-desktop
    desktop-wallet/single-sign-schedule
    desktop-wallet/multisig-simple-transfer
    desktop-wallet/update-baker-keys
@@ -69,7 +79,7 @@
    desktop-wallet/proposed-transactions
    desktop-wallet/make-account-report
    desktop-wallet/send-shielded-amount
-
+   desktop-wallet/account-recovery
 
 .. toctree::
    :maxdepth: 1
@@ -86,5 +96,7 @@
 
    resources/glossary
    resources/release-notes-mainnet
+   resources/terms-and-conditions-mw
+   resources/terms-and-conditions-dw
    resources/third-party-licenses
    resources/dw-licenses

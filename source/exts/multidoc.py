@@ -49,10 +49,13 @@ def html_page_context(app, pagename, templatename, context, doctree):
                 collapse = collapse,
                 includehidden = includehidden,
                 titles_only = titles_only)
-            if result == None:
-                result = toc
-            else:
-                result.extend(toc)
+            # Ensure the table of content is not hidden
+            if toc is not None:
+                # Append the table of content to be rendered
+                if result == None:
+                    result = toc
+                else:
+                    result.extend(toc)
         env.resolve_references(result, pagename, app.builder)
         return app.builder.render_partial(result)['fragment']
 

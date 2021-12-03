@@ -16,10 +16,10 @@ linkcheck-testnet:
 	@$(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)/testnet" "$(BUILDDIR)/testnet"
 
 dev-mainnet:
-	sphinx-autobuild "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet"
+	sphinx-autobuild "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet" --watch "$(SOURCEDIR)/shared"
 
 dev-testnet:
-	sphinx-autobuild "$(SOURCEDIR)/testnet" "$(BUILDDIR)/testnet"
+	sphinx-autobuild "$(SOURCEDIR)/testnet" "$(BUILDDIR)/testnet" --watch "$(SOURCEDIR)/shared"
 
 lint:
 	doc8 "$(SOURCEDIR)"

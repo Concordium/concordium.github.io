@@ -9,7 +9,7 @@ Address book overview
     :backlinks: none
     :depth: 1
 
-The address book is where you can see all addresses of accounts that you've created in or imported into the Desktop Wallet. In addition, you have the option of adding accounts, for example, if you want to send GTU from the desktop wallet to addresses on the mobile wallet.
+The address book is where you can see all addresses of accounts that you've created in or imported into the Desktop Wallet. In addition, you have the option of adding accounts, for example, if you want to send CCD from the desktop wallet to addresses on the mobile wallet.
 
 - When you select a recipient, the recipient's account address is displayed as well as any notes that you’ve added.
 

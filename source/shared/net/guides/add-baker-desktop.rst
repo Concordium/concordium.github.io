@@ -15,9 +15,10 @@ The process of becoming a baker involves the following:
 
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
-#. Start a :ref:`node<run-a-node>` with the baker keys.
+#. Start a :ref:`node <run-node-windows>` with the baker keys.
 
-This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To learn about running a baker node, see :ref:`Run a node on a server with Ubuntu<run-node-ubuntu>`.
+This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on :ref:`Ubuntu <run-node-ubuntu>`, :ref:`Windows <run-a-node>`, or :ref:`macOS <run-node-macos>`.
+
 
 Prerequisites
 =============
@@ -28,7 +29,7 @@ There are a couple of things you must set up in preparation before you can start
 - Download and install the Desktop Wallet.
 - Set up an initial account and an identity.
 - Set up a new account that you'll be using as baker account.
-- Verify that the account balance has the required amount of GTU.
+- Verify that the account balance has the required amount of CCD.
 
 Select an account to add as baker account
 =========================================
@@ -40,7 +41,7 @@ Select an account to add as baker account
 Stake an amount
 ===============
 
-You need to stake an amount of GTU on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
+You need to stake an amount of CCD on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
 
 #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to bake the next block.
 
@@ -49,7 +50,7 @@ You need to stake an amount of GTU on the account that you want to add as baker 
 
    -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-#. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the GTU are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
+#. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the CCD are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
 
 #. Select **Generate keys**. The baker keys are generated and the public keys are displayed in the left pane. There are three public keys:
 
@@ -150,5 +151,3 @@ When you have received and added all the required signatures, you can submit the
 
 .. Warning::
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
-
-To start baking, you now have to start your node with the baker keys. See :ref:`Run a node on a server with Ubuntu<run-node-ubuntu>` for more information about this.

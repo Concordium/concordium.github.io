@@ -279,14 +279,14 @@ Don't panic
 Avoid creating black holes
 --------------------------
 
-A smart contract is not required to use the amount of GTU send to it, and by
+A smart contract is not required to use the amount of CCD send to it, and by
 default a smart contract does not define any behavior for emptying the balance
-of an instance, in case someone were to send some GTU.
-These GTU would then be forever *lost*, and there would be no way to recover
+of an instance, in case someone were to send some CCD.
+These CCD would then be forever *lost*, and there would be no way to recover
 them.
 
-Therefore it is good practice for smart contracts that are not dealing with GTU,
-to ensure the sent amount of GTU is zero and reject any invocations which are
+Therefore it is good practice for smart contracts that are not dealing with CCD,
+to ensure the sent amount of CCD is zero and reject any invocations which are
 not.
 
 Move heavy calculations off-chain
