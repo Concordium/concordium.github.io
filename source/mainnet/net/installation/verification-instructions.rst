@@ -47,6 +47,8 @@ When the desktop wallet updates itself, it performs the necessary steps to verif
 Concordium Client
 =================
 
+.. _verification-client-linux:
+
 Linux
 -----
 
