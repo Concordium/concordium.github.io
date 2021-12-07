@@ -9,6 +9,7 @@
    :caption: Installation
 
    installation/downloads
+   installation/verification-instructions
 
 .. toctree::
    :maxdepth: 1
