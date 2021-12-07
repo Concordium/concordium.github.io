@@ -21,13 +21,13 @@ To verify that the downloaded file is an official Concordium release, you can ve
 * :cdw-sig:`Download signature <deb>`
 * :cdw-pubkey:`Download public key <>`
 
-With the **signature**, the **public key**, and the **downloaded file** all in the same directory, executing the following steps will verify that the file has been signed by Concordium.
+With the **signature**, the **public key**, and the **downloaded file** all in the same directory, execute the following steps to verify that the file has been signed by Concordium.
 
 In a terminal:
 
 #. Navigate to the directory containing the assets needed to verify.
 #. Then paste the first line of the following block into the terminal
-#. The command should output **Verified OK** as a result, as inidicated by the second line in the block.
+#. The command outputs **Verified OK** as a result, as inidicated by the second line in the block.
 
 .. code-block:: console
     :substitutions:

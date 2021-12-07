@@ -10,7 +10,7 @@ Verification instructions
    :backlinks: none
    :depth: 2
 
-To find instructions on how to verify the integrity of the file you have downloaded, navigate to the respective section, which will outline the steps needed for that specific file.
+To find instructions on how to verify the integrity of the file you have downloaded, navigate to the respective section that outlines the steps needed for that specific file.
 
 Concordium Desktop Wallet
 =========================
