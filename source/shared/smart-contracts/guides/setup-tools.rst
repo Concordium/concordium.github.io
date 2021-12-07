@@ -4,7 +4,7 @@
 Install tools for development
 =============================
 
-Before we can start developing smart contracts, we need to setup the
+Before you can start developing smart contracts, you need to setup the
 environment.
 
 Rust and Cargo
@@ -32,7 +32,14 @@ It can be used for :ref:`compiling<compile-module>` and
    Add links for testing and schemas.
 
 Cargo Concordium is distributed as part of the :ref:`Concordium software<downloads>` package.
-The tool should be placed in your PATH.
+The tool should be placed in your PATH. This can be achieved by either:
+
+* Moving the executable to a folder that is already on your PATH, for example ``C:\Users\<your-username>\.cargo\bin\`` (replacing <your-username> with your actual username).
+* Or, by adding its current location to your PATH environment.
+
+Once cargo-concordium.exe is on your path, you can invoke it with ``cargo concordium`` in the terminal.
+
+If you are running MacOS, you need to make the tool executable by running ``chmod +x path/to/cargo-concordium_1.0.0-0`` in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  `Security & Privacy settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_ .
 
 For a description of how to use the Cargo Concordium run:
 
