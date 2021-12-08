@@ -182,6 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
@@ -299,7 +300,7 @@
 <div class="section" id="upgrade-from-version-1-0-1-to-1-1-2">
 <h2>Upgrade from version 1.0.1 to 1.1.2<a class="headerlink" href="#upgrade-from-version-1-0-1-to-1-1-2" title="Permalink to this headline">¶</a></h2>
 <p>To upgrade from version <cite>1.0.1</cite> of the <cite>concordium-node</cite> package to version <cite>1.1.2</cite> of the <cite>concordium-testnet-node</cite> package
-package you need to</p>
+package you need to do the following:</p>
 <ol class="arabic">
 <li><p>Remove the existing package</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt remove --purge concordium-node</span>
@@ -308,7 +309,7 @@ package you need to</p>
 </li>
 </ol>
 <blockquote>
-<div><p>This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node’s configuration and data directories.</p>
+<div><p>This stops the node and removes all the installed files, but keeps the database files and any files you might have added to the node’s configuration and data directories.</p>
 </div></blockquote>
 <ol class="arabic" start="2">
 <li><p>Install the new package</p>
@@ -318,29 +319,27 @@ package you need to</p>
 </li>
 </ol>
 <blockquote>
-<div><p>This step will perform automatic database migration, so that the new node will
-not have to catch up from scratch. After installation is completed, the node and
-the collector will be started as before.</p>
+<div><p>This step performs automatic database migration, so that the new node doesn’t
+have to catch up from scratch. After installation is completed, the node and
+the collector are started as before.</p>
 </div></blockquote>
 <div class="section" id="changes-to-node-management-in-version-1-1-2">
 <h3>Changes to node management in version 1.1.2<a class="headerlink" href="#changes-to-node-management-in-version-1-1-2" title="Permalink to this headline">¶</a></h3>
-<p>There are two main differences from version 1.0.1.</p>
+<p>These are the key changes in version 1.1.2.</p>
 <ol class="arabic simple">
 <li><p>The services are named <cite>concordium-testnet-node</cite> and
 <cite>concordium-testnet-node-collector</cite> instead of <cite>concordium-node</cite> and
 <cite>concordium-node-collector</cite>. This means that all
-<cite>journalctl</cite> and <cite>systemctl</cite> commands must use the new service names. Any
-drop-in files that you may have will need to be moved and updated, e.g., the
-node settings overrride should be renamed from the old
+<cite>journalctl</cite> and <cite>systemctl</cite> commands must use the new service names. You’ll have to move and update any drop-in files that you might have, so for example, you’ll have to rename the
+node settings override from
 <cite>/etc/systemd/system/concordium-node.service.d/override.conf</cite> to
 <cite>/etc/systemd/system/concordium-testnet-node.service.d/override.conf</cite></p></li>
 <li><p>The environment variables that are used to configure the node have been renamed.
 There is no longer a <cite>concordium-node-wrapper</cite> script, instead the  node binary directly supports configuration via environment variables.
 See <a class="reference external" href="https://github.com/Concordium/concordium-node/tree/main/scripts/distribution/ubuntu-packages#configuration-of-the-node">Building .deb packages for Ubuntu distributions README from Concordium</a> for details and the most common environment variables to adjust.</p></li>
 <li><p>The default GRPC port has been changed from <cite>10000</cite> to <cite>10001</cite> so that the
-testnet node may run alongside the mainnet node. Analogously, the node’s
-default incoming connection listening port has been changed from <cite>8888</cite> to
-<cite>8889</cite>. These defaults can be changed via <cite>systemctl edit concordium-testnet-node</cite> as before.</p></li>
+testnet node can run alongside the mainnet node. Use <code class="docutils literal notranslate"><span class="pre">--listen-grpc-port</span></code> to set the port.</p></li>
+<li><p>The node’s default incoming connection listening port has been changed from <cite>8888</cite> to <cite>8889</cite>. These defaults can be changed via <cite>systemctl edit concordium-testnet-node</cite> as before.</p></li>
 </ol>
 </div>
 </div>
@@ -355,9 +354,7 @@ package you need to</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>This step will perform automatic database migration, so that the new node will
-not have to catch up from scratch. After installation is completed, the node and
-the collector will be started as before.</p>
+<p>This step performs automatic database migration, so that the new node doesn’t have to catch up from scratch. After installation is completed, the node and the collector are started as before.</p>
 </li>
 </ul>
 <div class="section" id="install-the-debian-package-and-run-a-node">

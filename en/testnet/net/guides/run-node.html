@@ -185,6 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
@@ -407,7 +408,8 @@ used by the node are as follows:</p>
 <code class="docutils literal notranslate"><span class="pre">--listen-node-port</span></code></p></li>
 <li><p>8082, the port used by middleware, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-middleware-port</span></code></p></li>
 <li><p>8099, the port used by the node dashboard, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-dashboard-port</span></code></p></li>
-<li><p>10000, the gRPC port, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-grpc-port</span></code></p></li>
+<li><p>10000, the gRPC port for mainnet, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-grpc-port</span></code></p></li>
+<li><p>10001, the gRPC port for testnet, which can be set with <code class="docutils literal notranslate"><span class="pre">--listen-grpc-port</span></code></p></li>
 </ul>
 <p>An additional mapping is the gRPC token, which defaults to <code class="docutils literal notranslate"><span class="pre">rpcadmin</span></code>, and can
 be set with <code class="docutils literal notranslate"><span class="pre">--rpc-server-token</span></code>.</p>
@@ -415,17 +417,16 @@ be set with <code class="docutils literal notranslate"><span class="pre">--rpc-s
 stopped (<a class="reference internal" href="#stop-a-node"><span class="std std-ref">Stopping the node</span></a>), reset, and started again. To reset the container either use
 <code class="docutils literal notranslate"><span class="pre">concordium-node-reset-data</span></code> or run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">concordium-client</span></code> in
 a terminal.</p>
-<p>We <em>strongly recommend</em> that your firewall should be configured to only
+<p>We strongly recommend that you configure your firewall to only
 allow public connections on port 8888 (the peer-to-peer networking
-port). Someone with access to the other ports may be able to take
+port). Someone with access to the other ports might be able to take
 control of your node or accounts you have saved on the node.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Docker makes changes to the <a class="reference external" href="https://en.wikipedia.org/wiki/Iptables">iptable</a> on Linux, which means that it is not
 easy to block ports in practice.
 This is especially a problem <a class="reference external" href="https://github.com/chaifeng/ufw-docker#problem">when using UFW</a>.
-The gRPC port is currently not considered secure, and we, therefore,
-<em>strongly recommend</em> changing the default gRPC token via the
+Because the gRPC port is currently not considered secure, we strongly recommend changing the default gRPC token via the
 <code class="docutils literal notranslate"><span class="pre">--rpc-server-token</span></code> flag when running a node.
 This will provide reasonable security if the token is only ever used through
 a secure channel.</p>

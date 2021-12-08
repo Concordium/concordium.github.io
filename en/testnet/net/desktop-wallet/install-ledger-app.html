@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
@@ -321,21 +322,22 @@
 <li><p>Select <strong>Python 3.9</strong>, and then select <strong>Install</strong>.</p>
 <p>Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying <strong>Python 3.9 just got installed</strong>.</p>
 </li>
+<li><p>To install Python tools for the Ledger Nano S, enter</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Restart your computer, and then confirm that Python and Pip were installed.</p>
+<ol class="arabic">
 <li><p>In the <strong>Start</strong> menu, type <em>PowerShell</em> and select <strong>Windows PowerShell</strong>. The command-line window opens.</p></li>
 <li><p>To confirm that Python3 was installed, enter</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python3 --version</span>
 </pre></div>
 </div>
 </li>
-</ol>
-<ol class="arabic" start="6">
 <li><p>To confirm that the package manager named pip is installed, enter</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip --version</span>
-</pre></div>
-</div>
-</li>
-<li><p>To install Python tools for the Ledger Nano S, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
 </pre></div>
 </div>
 </li>
@@ -370,12 +372,12 @@
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you’re using a different computer than the one you used when you installed the app, you must <a class="reference internal" href="#install-python-pip-windows"><span class="std std-ref">install Python3, pip, and the Python tools</span></a> for Ledger (ledgerblue) before updating the app.</p>
+<p>Before updating, verify that you have <a class="reference internal" href="#install-python-pip-windows"><span class="std std-ref">installed Python3, pip, and the Python tools</span></a> for Ledger (ledgerblue) before updating the app.</p>
 </div>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the Ledger app if you haven’t done so already.</p></li>
 <li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
-<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>.</p></li>
+<li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons.</p></li>
 <li><p>Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the Ledger says <strong>Confirm action</strong>. Press both buttons to confirm. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The Ledger says <strong>Concordium</strong>. Press both buttons. The Ledger says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the Ledger app.</p></li>
 </ol>

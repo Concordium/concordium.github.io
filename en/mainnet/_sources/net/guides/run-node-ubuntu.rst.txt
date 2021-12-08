@@ -39,7 +39,7 @@ package you need to
 
     apt remove --purge concordium-node
 
-  This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node's configuration and data directories.
+  This stops the node and removes all the installed files, but keeps the database files and any files you might have added to the node's configuration and data directories.
 
 2. Install the new package
 
@@ -47,9 +47,8 @@ package you need to
 
     apt install ./concordium-mainnet-node_1.1.3_amd64.deb
 
-  This step will perform automatic database migration, so that the new node will
-  not have to catch up from scratch. After installation is completed, the node and
-  the collector will be started as before.
+  This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and
+  the collector are started as before.
 
 Changes to node management in version 1.1.3
 -------------------------------------------
@@ -59,9 +58,8 @@ There are two main differences from version 1.0.1.
 1. The services are named `concordium-mainnet-node` and
    `concordium-mainnet-node-collector` instead of `concordium-node` and
    `concordium-node-collector`. This means that all
-   `journalctl` and `systemctl` commands must use the new service names. Any
-   drop-in files that you may have will need to be moved and updated, e.g., the
-   node settings overrride should be renamed from the old
+   `journalctl` and `systemctl` commands must use the new service names. You'll have to move and update any drop-in files that you might have, so for example, you'll have to rename the
+   node settings override from
    `/etc/systemd/system/concordium-node.service.d/override.conf` to
    `/etc/systemd/system/concordium-mainnet-node.service.d/override.conf`
 
