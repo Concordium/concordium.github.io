@@ -21,11 +21,11 @@ Create an enterprise identity
 
 #. Download the ``enterprise-identities`` tools for your platform.
 
-   - `Linux <https://distribution.concordium.software/tools/linux/enterprise-identities.tar.gz>`_
+   - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities.tar.gz>`_
 
-   - `Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities.zip>`_
+   - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities.zip>`_
 
-   - `MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities.zip>`_
+   - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities.zip>`_
 
 #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
