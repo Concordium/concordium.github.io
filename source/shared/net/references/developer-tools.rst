@@ -1,7 +1,7 @@
 .. _developer-tools:
 
 ===============
-Developer Tools
+Auxiliary Tools
 ===============
 
 .. contents::
@@ -12,11 +12,11 @@ Developer Tools
 Decrypt encrypted output
 ========================
 
-Some Concordium tools, such as the Mobile Wallet, sometimes produce encrypted output. These files can be decrypted and inspected using the **utils** tool . You can download the tool from **reference here**.
+Some Concordium tools, such as the Mobile Wallet, sometimes produce encrypted output. These files can be decrypted and inspected using the **utils** tool . You can download the tool from :ref:`Installation downloads <downloads>`.
 
 To encrypt, enter:
 
-``utils encrypt --in input.blah --out output.json``
+``utils encrypt --in input.example --out output.json``
 
 where ``--in ...`` is the file to encrypt, and ``--out`` is the file where encrypted data will be written.
 
@@ -28,8 +28,8 @@ The code example above results in the following interaction:
 
 To decrypt, enter:
 
-``utils decrypt --in output.json --out decrypted.blah``
+``utils decrypt --in output.json --out decrypted.example``
 
-Enter password to decrypt with, writing output to **decrypted.blah**.
+Enter password to decrypt with, writing output to **decrypted.example**.
 
 where ``--in ...`` is the encrypted file, and ``--out`` is the decryption.
