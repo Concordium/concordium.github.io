@@ -165,6 +165,17 @@ System requirements
 
 -  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
 
+Developer tools
+===============
 
+Developer tools are a collection of tools that can be used by developers to perform actions as needed.
+
+- `Download the Encrypt/decrypt tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
+
+- `Download the Encrypt/decrypt tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
+
+- `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
+
+For information about how to use the encrypt/decrypt tool, see :ref:`Developer tools  <developer-tools>`.
 
 *Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
