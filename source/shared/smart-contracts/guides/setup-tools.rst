@@ -38,7 +38,7 @@ The tool should be placed in your PATH. This can be achieved by either:
 * Moving the executable to a folder that is already on your PATH, for example ``%HOMEPATH%\.cargo\bin\`` for Windows, and ``$HOME/.cargo/bin`` for MacOS/Linux.
 * Or, by adding its current location to your PATH environment.
 
-If you are running MacOS, you need to make the tool executable by running ``chmod +x path/to/cargo-concordium` in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  `Security & Privacy settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_ .
+If you are running MacOS, you need to make the tool executable by running ``chmod +x path/to/cargo-concordium`` in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  `Security & Privacy settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_ .
 
 Once cargo-concordium.exe is on your path, you can invoke it with ``cargo concordium`` in the terminal.
 
