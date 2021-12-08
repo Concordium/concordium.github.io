@@ -55,6 +55,6 @@ Create an enterprise identity
 Support for enterprise identity creation
 ========================================
 
-If you experience issues with steps 1, 2,3,4, or 6, please contact Concordium’s technical support via support@concordium.software.com.
+If you experience issues with steps 1, 2,3,4, or 6, please contact Concordium’s technical support via support@concordium.software.
 
 If you experience issues with step 5, identity verification, please contact Notabene via ania@notabene.id.
