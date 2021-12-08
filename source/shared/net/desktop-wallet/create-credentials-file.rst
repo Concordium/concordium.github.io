@@ -36,10 +36,10 @@ Create and export a file with credentials
 
 #. In the Desktop Wallet, there's a message saying **Ledger Nano S is ready**. Select **Submit**.
 
-#. #. Press both buttons to confirm the following on the Ledger:
+#. Press both buttons to confirm the following on the Ledger:
 
-   - Create credential (each credential is assigned a number)
-   - Public key
+   - Create credential (each credential is assigned a number): Press the right button and then both buttons to confirm **Accept**.
+   - Public key: Press both buttons to accept.
 
 #. Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Press both buttons, and then use the right button to navigate through the key.
 
