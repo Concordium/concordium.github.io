@@ -88,6 +88,7 @@
    references/transactions
    references/query-node
    references/node-runner-service-configuration
+   references/developer-tools
 
 .. toctree::
    :maxdepth: 1
