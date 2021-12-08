@@ -87,13 +87,9 @@ Download cargo-concordium:
 
 -  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
 
-   - You need to make the tool executable by running ``chmod +x
-     path/to/cargo-concordium_1.0.0`` in a terminal. Make sure to provide the
-     correct path to the downloaded tool.
-   - You also need to `grant it permission to run in your Security & Privacy
-     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
-
 -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
+
+For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
 
 
 Concordium node distributions
