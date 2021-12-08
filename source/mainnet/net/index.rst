@@ -9,6 +9,7 @@
    :caption: Installation
 
    installation/downloads
+   installation/verification-instructions
 
 .. toctree::
    :maxdepth: 1
@@ -88,6 +89,7 @@
    references/manage-accounts
    references/transactions
    references/query-node
+   references/developer-tools
 
 .. toctree::
    :maxdepth: 1

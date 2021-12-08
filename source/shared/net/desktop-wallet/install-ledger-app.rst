@@ -65,6 +65,14 @@ Install Python3 and pip
 
    Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3.9 just got installed**.
 
+#. To install Python tools for the Ledger Nano S, enter
+
+   .. code-block:: console
+
+      pip3 install ledgerblue
+
+Restart your computer, and then confirm that Python and Pip were installed.
+
 #. In the **Start** menu, type *PowerShell* and select **Windows PowerShell**. The command-line window opens.
 
 #. To confirm that Python3 was installed, enter
@@ -73,17 +81,11 @@ Install Python3 and pip
 
       Python3 --version
 
-6. To confirm that the package manager named pip is installed, enter
+#. To confirm that the package manager named pip is installed, enter
 
    .. code-block:: console
 
       pip --version
-
-7. To install Python tools for the Ledger Nano S, enter
-
-   .. code-block:: console
-
-      pip3 install ledgerblue
 
 Install the custom certificate on Windows
 -----------------------------------------
@@ -127,13 +129,13 @@ Update the Concordium Ledger app on Windows
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
 .. Note::
-    If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-windows>` for Ledger (ledgerblue) before updating the app.
+    Before updating, verify that you have :ref:`installed Python3, pip, and the Python tools <install-python-pip-windows>` for Ledger (ledgerblue) before updating the app.
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
 
 #. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
 
-#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons.
 
 #. Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says **Uninstall Concordium**. Press the right button to navigate through the identifier until the Ledger says **Confirm action**. Press both buttons to confirm. The Ledger says **Loading, please wait** while it installs the app.
 
