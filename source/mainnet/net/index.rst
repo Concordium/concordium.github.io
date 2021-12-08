@@ -89,6 +89,7 @@
    references/manage-accounts
    references/transactions
    references/query-node
+   references/developer-tools
 
 .. toctree::
    :maxdepth: 1
