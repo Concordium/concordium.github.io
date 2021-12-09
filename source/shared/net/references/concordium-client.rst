@@ -284,6 +284,19 @@ The ``--name`` option selects which account to import and imports it with this
 name. If it's omitted, all accounts in the file are imported under their
 existing names.
 
+Generate account aliases 
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: console
+
+   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
+
+This generates the output:
+
+.. code-block:: console
+
+   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+
 Shell completion
 ================
 
