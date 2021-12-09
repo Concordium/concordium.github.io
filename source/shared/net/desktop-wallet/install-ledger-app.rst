@@ -59,15 +59,12 @@ Certificate update after firmware update
 
 If you already have a version of the Concordium Ledger certificate and app installed, check your firmware version.
 
-If you have firmware 2.0.0 already and do not yet have access to 2.1.0, you only need to download and update the 2.0.0 version of Concordium Ledger app. It is not necessary to update the certificate.
-If you have firmware 2.0.0 and have the possibility to update to 2.1.0, you can. Make sure to get the appropriate version of the Ledger app for your firmware. It should not be necessary to update the certificate if you had 2.0.0 previously. 
+* If you have firmware 2.0.0 already and do not yet have access to 2.1.0, you only need to download and update the 2.0.0 version of Concordium Ledger app. It is not necessary to update the certificate.
+* If you have firmware 2.0.0 and have the possibility to update to 2.1.0, you can. Make sure to get the appropriate version of the Ledger app for your firmware. It should not be necessary to update the certificate if you had 2.0.0 previously. 
 
 **Link to install certificate for windows**
 **Link to install certificate for macOS**
 **Link to install certificate for x**
-
-.. Note::
-   After updating to the new firmware and running the loadcertificate script, step 9 of https://developer.concordium.software/en/testnet/net/desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-windows might not execute. To solve this, run ``python3 -m ledgerblue.resetCustomCA --targetId 0x31100004`` where ``targetId`` is the ID of your certificate(?). Then the loadcertificate and install scripts will work as expected.
 
 Install Concordium Ledger app on Windows
 ========================================
