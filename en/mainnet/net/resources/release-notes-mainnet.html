@@ -123,6 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/enterprise-identities.html">Enterprise identity creation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul>
@@ -182,6 +183,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mainnet-3-alpha-centauri-3-0">Mainnet 3: Alpha Centauri 3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mainnet-2-alpha-centauri-2-2">Mainnet 2: Alpha Centauri 2.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mainnet-2-alpha-centauri-2-1">Mainnet 2: Alpha Centauri 2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mainnet-2-alpha-centauri-2-0">Mainnet 2: Alpha Centauri 2.0</a></li>
@@ -270,50 +272,92 @@
 <span id="mainnet-release-notes"></span><h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mainnet-2-alpha-centauri-2-2" id="id1">Mainnet 2: Alpha Centauri 2.2</a></p>
+<li><p><a class="reference internal" href="#mainnet-3-alpha-centauri-3-0" id="id1">Mainnet 3: Alpha Centauri 3.0</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-mobile-wallet-for-ios-v1-1-27" id="id2">Concordium Mobile Wallet for iOS v1.1(27)</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client-v3-0-4" id="id2">Concordium Client v3.0.4</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mainnet-2-alpha-centauri-2-1" id="id3">Mainnet 2: Alpha Centauri 2.1</a></p>
+<li><p><a class="reference internal" href="#mainnet-2-alpha-centauri-2-2" id="id3">Mainnet 2: Alpha Centauri 2.2</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-mobile-wallet-for-android-v-1-0-16" id="id4">Concordium Mobile Wallet for Android (v. 1.0.16)</a></p></li>
-<li><p><a class="reference internal" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" id="id5">The new version of Concordium Mobile Wallet for iOS is coming soon</a></p></li>
+<li><p><a class="reference internal" href="#concordium-mobile-wallet-for-ios-v1-1-27" id="id4">Concordium Mobile Wallet for iOS v1.1(27)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mainnet-2-alpha-centauri-2-0" id="id6">Mainnet 2: Alpha Centauri 2.0</a></p>
+<li><p><a class="reference internal" href="#mainnet-2-alpha-centauri-2-1" id="id5">Mainnet 2: Alpha Centauri 2.1</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-node-v1-1-3" id="id7">Concordium Node v1.1.3</a></p></li>
-<li><p><a class="reference internal" href="#concordium-client-v1-1-1" id="id8">Concordium Client v1.1.1</a></p></li>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-2-0" id="id9">Concordium Desktop Wallet v1.2.0</a></p></li>
-<li><p><a class="reference internal" href="#concordium-ledger-app-v2-0-1" id="id10">Concordium Ledger App v2.0.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-mobile-wallet-for-android-v-1-0-16" id="id6">Concordium Mobile Wallet for Android (v. 1.0.16)</a></p></li>
+<li><p><a class="reference internal" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" id="id7">The new version of Concordium Mobile Wallet for iOS is coming soon</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri-1-2" id="id11">Mainnet 1: Alpha Centauri 1.2</a></p>
+<li><p><a class="reference internal" href="#mainnet-2-alpha-centauri-2-0" id="id8">Mainnet 2: Alpha Centauri 2.0</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-6" id="id12">Concordium Desktop Wallet v1.1.6</a></p></li>
+<li><p><a class="reference internal" href="#concordium-node-v1-1-3" id="id9">Concordium Node v1.1.3</a></p></li>
+<li><p><a class="reference internal" href="#concordium-client-v1-1-1" id="id10">Concordium Client v1.1.1</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-2-0" id="id11">Concordium Desktop Wallet v1.2.0</a></p></li>
+<li><p><a class="reference internal" href="#concordium-ledger-app-v2-0-1" id="id12">Concordium Ledger App v2.0.1</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri-1-1" id="id13">Mainnet 1: Alpha Centauri 1.1</a></p>
+<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri-1-2" id="id13">Mainnet 1: Alpha Centauri 1.2</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5" id="id14">Concordium Desktop Wallet v1.1.5</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-6" id="id14">Concordium Desktop Wallet v1.1.6</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri-1-0" id="id15">Mainnet 1: Alpha Centauri 1.0</a></p>
+<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri-1-1" id="id15">Mainnet 1: Alpha Centauri 1.1</a></p>
 <ul>
-<li><p><a class="reference internal" href="#proof-of-stake" id="id16">Proof of Stake</a></p></li>
-<li><p><a class="reference internal" href="#two-layer-consensus-protocol" id="id17">Two Layer Consensus Protocol</a></p></li>
-<li><p><a class="reference internal" href="#built-in-idlayer" id="id18">Built in IDLayer</a></p></li>
-<li><p><a class="reference internal" href="#smart-contracts" id="id19">Smart Contracts</a></p></li>
-<li><p><a class="reference internal" href="#tokenomics-and-on-chain-incentivization" id="id20">Tokenomics and On-chain Incentivization</a></p></li>
-<li><p><a class="reference internal" href="#concordium-node" id="id21">Concordium Node</a></p></li>
-<li><p><a class="reference internal" href="#mobile-wallet" id="id22">Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#desktop-wallet" id="id23">Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#source-code" id="id24">Source Code</a></p></li>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet-v1-1-5" id="id16">Concordium Desktop Wallet v1.1.5</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id25">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#mainnet-1-alpha-centauri-1-0" id="id17">Mainnet 1: Alpha Centauri 1.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#proof-of-stake" id="id18">Proof of Stake</a></p></li>
+<li><p><a class="reference internal" href="#two-layer-consensus-protocol" id="id19">Two Layer Consensus Protocol</a></p></li>
+<li><p><a class="reference internal" href="#built-in-idlayer" id="id20">Built in IDLayer</a></p></li>
+<li><p><a class="reference internal" href="#smart-contracts" id="id21">Smart Contracts</a></p></li>
+<li><p><a class="reference internal" href="#tokenomics-and-on-chain-incentivization" id="id22">Tokenomics and On-chain Incentivization</a></p></li>
+<li><p><a class="reference internal" href="#concordium-node" id="id23">Concordium Node</a></p></li>
+<li><p><a class="reference internal" href="#mobile-wallet" id="id24">Mobile Wallet</a></p></li>
+<li><p><a class="reference internal" href="#desktop-wallet" id="id25">Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#source-code" id="id26">Source Code</a></p></li>
 </ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id27">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<div class="section" id="mainnet-3-alpha-centauri-3-0">
+<h2>Mainnet 3: Alpha Centauri 3.0<a class="headerlink" href="#mainnet-3-alpha-centauri-3-0" title="Permalink to this headline">¶</a></h2>
+<p>December 10, 2021</p>
+<div class="section" id="concordium-client-v3-0-4">
+<h3>Concordium Client v3.0.4<a class="headerlink" href="#concordium-client-v3-0-4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Credentials revealing the newly introduced attribute LEI can be deployed.</p></li>
+<li><p>Renamed GTU token to CCD.</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">send-gtu</span></code>, <code class="docutils literal notranslate"><span class="pre">send-gtu-scheduled</span></code> and <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> to <code class="docutils literal notranslate"><span class="pre">send</span></code>, <code class="docutils literal notranslate"><span class="pre">send-scheduled</span></code> and <code class="docutils literal notranslate"><span class="pre">send-shielded</span></code>.</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">encrypt</span></code>/<code class="docutils literal notranslate"><span class="pre">decrypt</span></code> to <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">shield</span></code>/<code class="docutils literal notranslate"><span class="pre">unshield</span></code>.</p></li>
+<li><p>Added command for generating aliases of an address.</p></li>
+<li><p>Now shows line breaks, tabs etc. in memo transfers (when it’s CBOR encoded string), instead of escaping them as <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\t</span></code> etc.</p></li>
+<li><p>Now displays memo as JSON in a more readable way.</p></li>
+<li><p>Added time units to slot duration and epoch duration in consensus status.</p></li>
+<li><p>Updated the <code class="docutils literal notranslate"><span class="pre">register-data</span></code> command to register data as CBOR encoded strings or JSON using the new flags <code class="docutils literal notranslate"><span class="pre">--string</span></code> and <code class="docutils literal notranslate"><span class="pre">--json</span></code>. Raw data can still be registered using the new flag <code class="docutils literal notranslate"><span class="pre">--raw</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">DisconnectPeer</span></code>, a counterpart to the existing <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">ConnectPeer</span></code>.</p></li>
+<li><p>Now warning  the user when trying to add a baker with a stake below the minimum threshold.</p></li>
+<li><p>Improved how contract schemas are shown as JSON:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Now displays complex types in arrays correctly.</p></li>
+<li><p>Use angle brackets to indicate placeholders, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;&lt;UInt16&gt;&quot;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&quot;UInt16&quot;</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Improved <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">inspect</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Now shows all contracts from a module regardless of whether a schema is included or not.</p></li>
+<li><p>Now shows the receive methods for contracts as well.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Now allows sending transactions where the sender is an account alias.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="mainnet-2-alpha-centauri-2-2">
 <h2>Mainnet 2: Alpha Centauri 2.2<a class="headerlink" href="#mainnet-2-alpha-centauri-2-2" title="Permalink to this headline">¶</a></h2>

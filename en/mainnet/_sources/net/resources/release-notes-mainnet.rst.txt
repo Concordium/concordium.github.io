@@ -8,6 +8,37 @@ Release notes
    :local:
    :backlinks: none
 
+
+Mainnet 3: Alpha Centauri 3.0
+==============================
+
+December 10, 2021
+
+Concordium Client v3.0.4
+------------------------
+
+- Credentials revealing the newly introduced attribute LEI can be deployed.
+- Renamed GTU token to CCD.
+- Renamed ``send-gtu``, ``send-gtu-scheduled`` and ``send-gtu-encrypted`` to ``send``, ``send-scheduled`` and ``send-shielded``.
+- Renamed ``account encrypt``/``decrypt`` to ``account shield``/``unshield``.
+- Added command for generating aliases of an address.
+- Now shows line breaks, tabs etc. in memo transfers (when it's CBOR encoded string), instead of escaping them as ``\n``, ``\t`` etc.
+- Now displays memo as JSON in a more readable way.
+- Added time units to slot duration and epoch duration in consensus status.
+- Updated the ``register-data`` command to register data as CBOR encoded strings or JSON using the new flags ``--string`` and ``--json``. Raw data can still be registered using the new flag ``--raw``.
+- Added ``raw DisconnectPeer``, a counterpart to the existing ``raw ConnectPeer``.
+- Now warning  the user when trying to add a baker with a stake below the minimum threshold.
+- Improved how contract schemas are shown as JSON:
+
+   - Now displays complex types in arrays correctly.
+   - Use angle brackets to indicate placeholders, e.g. ``"<UInt16>"`` instead of ``"UInt16"``.
+- Improved ``module inspect``:
+
+   - Now shows all contracts from a module regardless of whether a schema is included or not.
+   - Now shows the receive methods for contracts as well.
+- Now allows sending transactions where the sender is an account alias.
+
+
 Mainnet 2: Alpha Centauri 2.2
 =============================
 
@@ -32,6 +63,7 @@ Concordium Mobile Wallet for iOS v1.1(27)
 
 - Various bug fixes.
 - Various smaller textual updates.
+
 
 Mainnet 2: Alpha Centauri 2.1
 =============================
