@@ -94,7 +94,7 @@ Install Python3 and pip
 
    .. code-block:: console
 
-      pip3 install ledgerblue
+      pip install ledgerblue
 
 Install the custom certificate on Windows
 -----------------------------------------
