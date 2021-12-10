@@ -84,13 +84,13 @@ Install Python3 and pip
 
       Python3 --version
 
-6. To confirm that the package manager named pip is installed, enter
+#. To confirm that the package manager named pip is installed, enter
 
    .. code-block:: console
 
-      pip --version
+      pip3 --version
 
-7. To install Python tools for the Ledger Nano S, enter
+#. If not installed, to install Python tools for the Ledger Nano S, enter
 
    .. code-block:: console
 
