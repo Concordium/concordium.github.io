@@ -90,7 +90,7 @@ Install Python3 and pip
 
       pip3 --version
 
-#. If not installed, to install Python tools for the Ledger Nano S, enter
+#. To install Python tools for the Ledger Nano S, enter
 
    .. code-block:: console
 
