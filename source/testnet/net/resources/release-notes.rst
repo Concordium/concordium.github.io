@@ -18,6 +18,7 @@ Concordium Mobile Wallet for iOS v1.1(27)
 
 - Changed GTU/Ǥ naming to CCD/Ͼ.
 - Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
    - It is now possible to add memos to simple and shielded transfers.
    - Memos can also be displayed for transfers with a release schedule.
 

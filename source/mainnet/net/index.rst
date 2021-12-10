@@ -28,6 +28,7 @@
    guides/become-baker
    guides/overview-shared-accounts
    guides/multi-credentials
+   guides/enterprise-identities
 
 .. toctree::
    :maxdepth: 1

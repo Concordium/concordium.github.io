@@ -8,6 +8,7 @@ Release notes
    :local:
    :backlinks: none
 
+
 Mainnet 3: Alpha Centauri 3.0
 ==============================
 
@@ -36,6 +37,32 @@ Concordium Client v3.0.4
    - Now shows all contracts from a module regardless of whether a schema is included or not.
    - Now shows the receive methods for contracts as well.
 - Now allows sending transactions where the sender is an account alias.
+
+
+Mainnet 2: Alpha Centauri 2.2
+=============================
+
+December 9, 2021
+
+Concordium Mobile Wallet for iOS v1.1(27)
+-------------------------------------------
+
+- Changed GTU/Ǥ naming to CCD/Ͼ.
+- Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+   - It is now possible to add memos to simple and shielded transfers.
+   - Memos can also be displayed for transfers with a release schedule.
+
+- Various improvements of the identity issuance flow, account creation and related support options.
+
+   - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
+   - Added a small dialogue to remind the user to check for a response on new identity requests.
+   - Users will now be notified on successful creation of new accounts inside the app.
+   - Various back-end improvements by the identity provider to make their service more robust.
+   - Various improvements to make the identity issuance and account creation flow more robust.
+
+- Various bug fixes.
+- Various smaller textual updates.
 
 
 Mainnet 2: Alpha Centauri 2.1
