@@ -55,7 +55,9 @@ Currently, the Desktop Wallet doesn't support Apple M1 Macs.
 Concordium Ledger App
 =====================
 
-- `Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
+
+  - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
+  - `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
 
 This version of the Ledger App is the same as the one used for Mainnet, so if you already have that installed, you do not need to install this version.
 
