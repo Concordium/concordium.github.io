@@ -213,8 +213,8 @@ A more complex smart contract would take a parameter, and check during
 initialization that everything is set up as expected, but more about this
 later.
 
-.. [#valid-name] The contract name and function name is only allowed to consist of ASCII alphanumeric or
-   punctuation characters, and is not allowed to contain the ``.`` symbol. The function name is limited to 100 bytes.
+.. [#valid-name] The **contract name** is only allowed to consist of ASCII alphanumeric or
+   punctuation characters, and is not allowed to contain the ``.`` symbol. The **function name** is limited to 100 bytes and is only allowed to consist of ASCII alphanumeric or punctuation characters.
 
 Define interaction with piggy banks
 ===================================
