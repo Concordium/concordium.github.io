@@ -15,7 +15,7 @@ The process of becoming a baker involves the following:
 
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
-#. Start a :ref:`node<run-a-node>` with the baker keys.
+#. Start a :ref:`node <run-node-windows>` with the baker keys.
 
 This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on :ref:`Ubuntu <run-node-ubuntu>`, :ref:`Windows <run-a-node>`, or :ref:`macOS <run-node-macos>`.
 

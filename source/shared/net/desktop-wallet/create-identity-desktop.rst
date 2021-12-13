@@ -35,8 +35,8 @@ Create an initial account
 
 #. Press both buttons to confirm the following on the Ledger:
 
-   - Create credential (each credential is assigned a number)
-   - Public key
+   - Create credential (each credential is assigned a number): : Press the right button and then both buttons to confirm **Accept**.
+   - Public key: Press both buttons to accept.
 
 #. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
@@ -54,3 +54,13 @@ Create an initial account
 
 .. Note::
    When you've created your identity and account, we strongly recommend that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
+
+.. Note::
+   You can change the name of an identity after it has been created. Go to the Identities page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
+
+.. |edit|    image:: ../images/edit.png
+                    :width: 20px
+                    :alt: small square with pencil
+.. |save|    image:: ../images/save.png
+                    :width: 20px
+                    :alt: check mark

@@ -83,14 +83,9 @@ Download cargo-concordium:
 
 -  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
 
-   - You need to make the tool executable by running ``chmod +x
-     path/to/cargo-concordium_1.0.0-0`` in a terminal. Make sure to provide the
-     correct path to the downloaded tool.
-   - You also need to `grant it permission to run in your Security & Privacy
-     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
-
 -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
 
+For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
 
 Concordium node distributions
 =============================
@@ -165,5 +160,20 @@ System requirements
 
 -  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
 
+Auxiliary tools
+===============
+
+Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
+
+Encrypt/decrypt tool
+--------------------
+
+- `Download the Encrypt/decrypt tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
+
+- `Download the Encrypt/decrypt tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
+
+- `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
+
+For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools  <developer-tools>`.
 
 *Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
