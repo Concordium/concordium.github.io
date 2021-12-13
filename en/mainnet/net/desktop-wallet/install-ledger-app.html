@@ -302,7 +302,7 @@
 <p class="admonition-title">Warning</p>
 <p>Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.</p>
 </div>
-<p>Once you’ve set up the Ledger, you must check that it’s running the proper firmware version. The Concordium Ledger App currently only supports Ledger firmware version 2.0.0.</p>
+<p>Once you’ve set up the Ledger, you must check that it’s running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0.</p>
 <div class="section" id="update-the-ledger-nano-s-firmware">
 <h3>Update the Ledger Nano S firmware<a class="headerlink" href="#update-the-ledger-nano-s-firmware" title="Permalink to this headline">¶</a></h3>
 <p>To find out which firmware version the Ledger is running, do the following:</p>
@@ -311,7 +311,18 @@
 <li><p>Press the right button to navigate to <strong>Firmware version</strong>.</p></li>
 <li><p>Press both buttons to view the <strong>Secure Element</strong> version. If it says <strong>2.0.0</strong>, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.</p></li>
 </ol>
-<p>For details on how to update the Ledger firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">Ledger‘s guide</a></p>
+<p>For details on how to update the Ledger firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">Ledger‘s guide</a>.</p>
+<p>Once you have updated the firmware version, you can download the version of the Ledger app that is appropriate for your firmware at <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a version of the Ledger app for devices with firmware 2.0.0 and a version for devices with firmware 2.1.0. Make sure you choose the correct app version. Follow the instructions below to update your app:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#update-app-windows"><span class="std std-ref">Update the Concordium Ledger app on Windows</span></a></p></li>
+<li><p><a class="reference internal" href="#update-app-macos"><span class="std std-ref">Update the Concordium Ledger app on macOS</span></a></p></li>
+<li><p><a class="reference internal" href="#update-app-ubuntu"><span class="std std-ref">Update the Concordium Ledger app on Ubuntu</span></a></p></li>
+</ul>
+</div>
+<p>It should not be necessary to update the certificate.</p>
 </div>
 </div>
 <div class="section" id="install-concordium-ledger-app-on-windows">
@@ -324,11 +335,6 @@
 <li><p>Select <strong>Python 3.9</strong>, and then select <strong>Install</strong>.</p>
 <p>Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying <strong>Python 3.9 just got installed</strong>.</p>
 </li>
-<li><p>To install Python tools for the Ledger Nano S, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
-</pre></div>
-</div>
-</li>
 </ol>
 <p>Restart your computer, and then confirm that Python and Pip were installed.</p>
 <ol class="arabic">
@@ -340,6 +346,11 @@
 </li>
 <li><p>To confirm that the package manager named pip is installed, enter</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip --version</span>
+</pre></div>
+</div>
+</li>
+<li><p>To install Python tools for the Ledger Nano S, enter</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install ledgerblue</span>
 </pre></div>
 </div>
 </li>
@@ -370,7 +381,7 @@
 </ol>
 </div>
 <div class="section" id="update-the-concordium-ledger-app-on-windows">
-<h3>Update the Concordium Ledger app on Windows<a class="headerlink" href="#update-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
+<span id="update-app-windows"></span><h3>Update the Concordium Ledger app on Windows<a class="headerlink" href="#update-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -455,7 +466,7 @@
 </ol>
 </div>
 <div class="section" id="update-the-concordium-ledger-app-on-macos">
-<h3>Update the Concordium Ledger app on macOS<a class="headerlink" href="#update-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
+<span id="update-app-macos"></span><h3>Update the Concordium Ledger app on macOS<a class="headerlink" href="#update-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -538,7 +549,7 @@
 </ol>
 </div>
 <div class="section" id="update-the-concordium-ledger-app-on-ubuntu">
-<h3>Update the Concordium Ledger app on Ubuntu<a class="headerlink" href="#update-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<span id="update-app-ubuntu"></span><h3>Update the Concordium Ledger app on Ubuntu<a class="headerlink" href="#update-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
