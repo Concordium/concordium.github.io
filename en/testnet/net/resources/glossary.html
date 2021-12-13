@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#credential">Credential</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#credential-holder">Credential holder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#decryption-key">Decryption key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#encrypted-amount">Encrypted amount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shielded-amount">Shielded amount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#encryption-key">Encryption key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#epoch">Epoch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#finalization">Finalization</a></li>
@@ -311,7 +311,7 @@ below.</p>
 <p>An addressable store of funds on the blockchain. An account is associated with
 one or more <em>account keys</em> that can be used to authorize transactions
 originating from the account, as well as with an <a class="reference internal" href="#glossary-encryption-key"><span class="std std-ref">encryption key</span></a> that can be
-used to send encrypted transfers to the account. An account is also associated
+used to send shielded transfers to the account. An account is also associated
 with the account holder’s <a class="reference internal" href="#glossary-identity"><span class="std std-ref">identity</span></a>, although this association is encrypted
 for anonymity. This anonymity can only be revoked by anonymity revokers, in
 cooperation with the account’s <a class="reference internal" href="#glossary-identity-provider"><span class="std std-ref">identity provider</span></a>.</p>
@@ -381,8 +381,8 @@ anonymity revokers in concert with the identity provider to find the owner.</p>
 <p>Dual to <a class="reference internal" href="#glossary-encryption-key"><span class="std std-ref">encryption key</span></a>. In contrast to the encryption key, which is public,
 this key is only known to the account holder.</p>
 </div>
-<div class="section" id="encrypted-amount">
-<span id="glossary-encrypted-amount"></span><h2>Encrypted amount<a class="headerlink" href="#encrypted-amount" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shielded-amount">
+<span id="glossary-shielded-amount"></span><h2>Shielded amount<a class="headerlink" href="#shielded-amount" title="Permalink to this headline">¶</a></h2>
 <p>An amount of <a class="reference internal" href="#glossary-ccd"><span class="std std-ref">CCD</span></a> that is encrypted with the public key of an account. Only
 the owner of the secret key can determine how many CCDs are contained in the
 encryption.</p>
@@ -390,7 +390,7 @@ encryption.</p>
 <div class="section" id="encryption-key">
 <span id="glossary-encryption-key"></span><h2>Encryption key<a class="headerlink" href="#encryption-key" title="Permalink to this headline">¶</a></h2>
 <p>An <a class="reference external" href="https://en.wikipedia.org/wiki/ElGamal_encryption">ElGamal</a> public key associated to an account which is used to encrypt all
-<a class="reference internal" href="#glossary-encrypted-amount"><span class="std std-ref">encrypted amounts</span></a> on the account.</p>
+<a class="reference internal" href="#glossary-shielded-amount"><span class="std std-ref">shielded amounts</span></a> on the account.</p>
 </div>
 <div class="section" id="epoch">
 <span id="glossary-epoch"></span><h2>Epoch<a class="headerlink" href="#epoch" title="Permalink to this headline">¶</a></h2>
@@ -527,18 +527,18 @@ see. This is achieved by encrypting transfers to an account with the account’s
 many CCDs were transferred. The receiver of the transfer can use their secret
 key to decrypt the ciphertexts, and seeing how many CCDs they have received.</p>
 <p>For technical reasons the shielded balance of the account consists of two parts,
-the “self balance” and the “incoming encrypted amounts”.</p>
+the “self balance” and the “incoming shielded amounts”.</p>
 <div class="section" id="self-balance">
 <span id="glossary-self-balance"></span><h3>Self balance<a class="headerlink" href="#self-balance" title="Permalink to this headline">¶</a></h3>
-<p>This is a single encrypted amount that is updated each time the account performs
-and encrypted transfer, <a class="reference internal" href="#glossary-shielding"><span class="std std-ref">shielding</span></a>, or <a class="reference internal" href="#glossary-unshielding"><span class="std std-ref">unshielding</span></a>. Only the account itself
+<p>This is a single shielded amount that is updated each time the account performs
+a shielded transfer, <a class="reference internal" href="#glossary-shielding"><span class="std std-ref">shielding</span></a>, or <a class="reference internal" href="#glossary-unshielding"><span class="std std-ref">unshielding</span></a>. Only the account itself
 can update this value.</p>
 </div>
-<div class="section" id="incoming-encrypted-amount">
-<span id="glossary-incoming-encrypted-amount"></span><h3>Incoming encrypted amount<a class="headerlink" href="#incoming-encrypted-amount" title="Permalink to this headline">¶</a></h3>
-<p>This is a list of encrypted amounts that is extended each time an account
-receives an encrypted transfer. When the account makes an encrypted transfer it
-can use a number of encrypted amounts from this list as inputs to the transfer.</p>
+<div class="section" id="incoming-shielded-amount">
+<span id="glossary-incoming-shielded-amount"></span><h3>Incoming shielded amount<a class="headerlink" href="#incoming-shielded-amount" title="Permalink to this headline">¶</a></h3>
+<p>This is a list of shielded amounts that is extended each time an account
+receives an shielded transfer. When the account makes a shielded transfer it
+can use a number of shielded amounts from this list as inputs to the transfer.</p>
 </div>
 </div>
 <div class="section" id="shielded-transfer">

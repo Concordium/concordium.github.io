@@ -361,20 +361,20 @@ can also decrypt the shielded balance.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code>: Address or local name of the account (if not provided,
 will show the account with the local alias <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span></code>: Full hash of target block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--encrypted</span></code>: Show the <a class="reference internal" href="../resources/glossary.html#glossary-shielded-balance"><span class="std std-ref">Shielded balance</span></a> (explained below).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--decrypt-encrypted</span></code>: Show the shielded balance and decrypt it
+<li><p><code class="docutils literal notranslate"><span class="pre">--shielded</span></code>: Show the <a class="reference internal" href="../resources/glossary.html#glossary-shielded-balance"><span class="std std-ref">Shielded balance</span></a> (explained below).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--reveal-shielded</span></code>: Show the shielded balance and reveal it
 (explained below).</p></li>
 </ul>
 <div class="section" id="id1">
 <h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show my-account --encrypted
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show my-account --shielded
 <span class="go">Local name:            my-account</span>
 <span class="go">Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG</span>
 <span class="go">Amount:                1026.000000 CCD</span>
 <span class="go">Nonce:                 1</span>
 <span class="go">Encryption public key: a820662531d0aac70b3a80dd8a249aa692436097d06da005aec7c56aad17997ec8331d1e4050fd8dced2b92f06277bd5acf72a731dc9fdac7f37c93a7be919d2bfe3fe7a19731b0f764f5cb2d0c1e7aad6f17eb378fb306f27408c9e7ea966d9</span>
 
-<span class="go">Encrypted balance:</span>
+<span class="go">Shielded balance:</span>
 <span class="go">  Incoming amounts: []</span>
 <span class="go">  Self balance: a9d35bf62442aabad72c...</span>
 
@@ -389,15 +389,15 @@ will show the account with the local alias <code class="docutils literal notrans
 <li><p>has address <code class="docutils literal notranslate"><span class="pre">2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG</span></code>,</p></li>
 <li><p>has a balance of 1026 CCD,</p></li>
 <li><p>has <a class="reference internal" href="../resources/glossary.html#glossary-transaction-sequence-number"><span class="std std-ref">Transaction Sequence Number</span></a> <code class="docutils literal notranslate"><span class="pre">1</span></code>,</p></li>
-<li><p>has <code class="docutils literal notranslate"><span class="pre">a820662531d...</span></code> as the key for receiving encrypted transfers.</p></li>
-<li><p>has no <a class="reference internal" href="../resources/glossary.html#glossary-incoming-encrypted-amount"><span class="std std-ref">Incoming encrypted amount</span></a>.</p></li>
+<li><p>has <code class="docutils literal notranslate"><span class="pre">a820662531d...</span></code> as the key for receiving shielded transfers.</p></li>
+<li><p>has no <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/resources/glossary.html#glossary-incoming-encrypted-amount" title="(in Concordium)"><span>Incoming encrypted amount</span></a>.</p></li>
 <li><p>has a <a class="reference internal" href="../resources/glossary.html#glossary-self-balance"><span class="std std-ref">Self balance</span></a> of <code class="docutils literal notranslate"><span class="pre">a9d35bf62442aabad72c...</span></code>. By default this
 only shows the first 20 characters of the encrypted amount. With a
 <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag the full encryption is shown.</p></li>
 </ul>
 <p>Furthermore, the account’s credential reveals no attributes from the <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">Identity</span></a>
 that the account is derived from, and expires at the end of September 2021.</p>
-<p>If the flag <code class="docutils literal notranslate"><span class="pre">--decrypt-encrypted</span></code> is provided, each of the encrypted amounts
+<p>If the flag <code class="docutils literal notranslate"><span class="pre">--reveal-shielded</span></code> is provided, each of the shielded amounts
 will be decrypted and the decryption shown. Note that for this operation to
 succeed, the private decryption key of the account must be available in the
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration. The user is asked for the password for
