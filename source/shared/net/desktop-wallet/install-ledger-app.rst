@@ -34,7 +34,7 @@ The Ledger Nano S will generate the unique 24-word recovery phrase that is used 
 
 .. Warning:: Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
-Once you've set up the Ledger, you must check that it's running the proper firmware version. The Concordium Ledger App currently only supports Ledger firmware version 2.0.0.
+Once you've set up the Ledger, you must check that it's running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0.
 
 Update the Ledger Nano S firmware
 ---------------------------------
@@ -47,7 +47,18 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. Press both buttons to view the **Secure Element** version. If it says **2.0.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
-For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_
+For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_.
+
+Once you have updated the firmware version, you can download the version of the Ledger app that is appropriate for your firmware at :ref:`Downloads <downloads>`.
+
+.. Note::
+   There is a version of the Ledger app for devices with firmware 2.0.0 and a version for devices with firmware 2.1.0. Make sure you choose the correct app version. Follow the instructions below to update your app:
+
+   * :ref:`update-app-windows`
+   * :ref:`update-app-macos`
+   * :ref:`update-app-ubuntu`
+
+It should not be necessary to update the certificate.
 
 Install Concordium Ledger app on Windows
 ========================================
@@ -65,12 +76,6 @@ Install Python3 and pip
 
    Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3.9 just got installed**.
 
-#. To install Python tools for the Ledger Nano S, enter
-
-   .. code-block:: console
-
-      pip3 install ledgerblue
-
 Restart your computer, and then confirm that Python and Pip were installed.
 
 #. In the **Start** menu, type *PowerShell* and select **Windows PowerShell**. The command-line window opens.
@@ -86,6 +91,12 @@ Restart your computer, and then confirm that Python and Pip were installed.
    .. code-block:: console
 
       pip --version
+
+#. To install Python tools for the Ledger Nano S, enter
+
+   .. code-block:: console
+
+      pip install ledgerblue
 
 Install the custom certificate on Windows
 -----------------------------------------
@@ -122,6 +133,8 @@ Install the Concordium Ledger app on Windows
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
 #. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+
+.. _update-app-windows:
 
 Update the Concordium Ledger app on Windows
 -------------------------------------------
@@ -225,6 +238,8 @@ Install the Concordium Ledger app on MacOS
 
 3. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
 
+.. _update-app-macos:
+
 Update the Concordium Ledger app on macOS
 -------------------------------------------
 
@@ -323,6 +338,8 @@ Install the Concordium Ledger app on Ubuntu
 2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
 3. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+
+.. _update-app-ubuntu:
 
 Update the Concordium Ledger app on Ubuntu
 -------------------------------------------

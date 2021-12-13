@@ -96,7 +96,7 @@ The output shows that the account with the local name ``my-account``
 -  has a balance of 1026 CCD,
 -  has :ref:`glossary-transaction-sequence-number` ``1``,
 -  has ``a820662531d...`` as the key for receiving shielded transfers.
--  has no :ref:`glossary-incoming-encrypted-amount`.
+-  has no :ref:`glossary-incoming-shielded-amount`.
 -  has a :ref:`glossary-self-balance` of ``a9d35bf62442aabad72c...``. By default this
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
