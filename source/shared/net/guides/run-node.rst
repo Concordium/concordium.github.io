@@ -143,7 +143,8 @@ used by the node are as follows:
    ``--listen-node-port``
 -  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
 -  8099, the port used by the node dashboard, which can be set with ``--listen-dashboard-port``
--  10000, the gRPC port, which can be set with ``--listen-grpc-port``
+-  10000, the gRPC port for mainnet, which can be set with ``--listen-grpc-port``
+-  10001, the gRPC port for testnet, which can be set with ``--listen-grpc-port``
 
 An additional mapping is the gRPC token, which defaults to ``rpcadmin``, and can
 be set with ``--rpc-server-token``.
@@ -153,9 +154,9 @@ stopped (:ref:`stop-a-node`), reset, and started again. To reset the container e
 ``concordium-node-reset-data`` or run ``docker rm concordium-client`` in
 a terminal.
 
-We *strongly recommend* that your firewall should be configured to only
+We strongly recommend that you configure your firewall to only
 allow public connections on port 8888 (the peer-to-peer networking
-port). Someone with access to the other ports may be able to take
+port). Someone with access to the other ports might be able to take
 control of your node or accounts you have saved on the node.
 
 .. warning::
@@ -164,8 +165,7 @@ control of your node or accounts you have saved on the node.
    easy to block ports in practice.
    This is especially a problem `when using UFW
    <https://github.com/chaifeng/ufw-docker#problem>`_.
-   The gRPC port is currently not considered secure, and we, therefore,
-   *strongly recommend* changing the default gRPC token via the
+   Because the gRPC port is currently not considered secure, we strongly recommend changing the default gRPC token via the
    ``--rpc-server-token`` flag when running a node.
    This will provide reasonable security if the token is only ever used through
    a secure channel.

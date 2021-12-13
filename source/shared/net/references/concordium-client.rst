@@ -1,3 +1,5 @@
+
+.. include:: ../../variables.rst
 .. _framework: https://github.com/pcapriotti/optparse-applicative#user-content-bash-zsh-and-fish-completions
 .. _Discord: https://discord.com/invite/xWmQ5tp
 .. _IP address: https://en.wikipedia.org/wiki/IP_address
@@ -128,7 +130,7 @@ Display contents
 
 Display the full contents of the persistent configuration. This will display the
 stored keys that are used for signing transactions (under the ``Account Keys``
-section) and the stored key for sending encrypted transfers (under the
+section) and the stored key for sending shielded transfers (under the
 ``Encryption secret key`` section) when they are present.
 
 Example:
@@ -301,4 +303,5 @@ Replace ``--bash-completion-script`` by ``--zsh-completion-script`` or
 
 See the documentation of the `framework`_ used to implement the command
 structure of ``concordium-client`` for more details.
+
 
