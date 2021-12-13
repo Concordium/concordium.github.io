@@ -92,14 +92,11 @@ Restart your computer, and then confirm that Python and Pip were installed.
 
       pip --version
 
-<<<<<<< HEAD
 #. To install Python tools for the Ledger Nano S, enter
 
    .. code-block:: console
 
       pip install ledgerblue
-=======
->>>>>>> 0f7aa2b3963d55d874ea47533ecc0b700a612ec7
 
 Install the custom certificate on Windows
 -----------------------------------------
