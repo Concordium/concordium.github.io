@@ -88,13 +88,13 @@ Install Python3 and pip
 
    .. code-block:: console
 
-      pip3 --version
+      pip --version
 
 #. To install Python tools for the Ledger Nano S, enter
 
    .. code-block:: console
 
-      pip3 install ledgerblue
+      pip install ledgerblue
 
 Install the custom certificate on Windows
 -----------------------------------------
