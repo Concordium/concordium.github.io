@@ -200,7 +200,7 @@ The interaction looks like the following:
 
 This command has all of the additional options of ``send``, as well as an
 additional flag ``--index.`` If given, this flag is used to select which
-:ref:`incoming encrypted amounts<glossary-incoming-encrypted-amount>` that will be used as input to the transaction.
+:ref:`incoming shielded amounts<glossary-incoming-shielded-amount>` that will be used as input to the transaction.
 
 This is illustrated with the following example. :ref:`Querying an account<query-account-state>` can display the
 list of incoming amounts on account. An output could look like this:
