@@ -15,7 +15,7 @@ This topic contains information about where you can download the Concordium tool
 Concordium Mobile Wallet
 ========================
 
-The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
+The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
 iOS
 ----
@@ -36,7 +36,7 @@ Concordium Desktop Wallet
 
 - `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.2.0.dmg>`_
 
-- Download the Testnet version of Concordium Desktop Wallet for Linux:
+- Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
    - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.AppImage>`_
 
@@ -50,7 +50,6 @@ Concordium Desktop Wallet
 
       - SHA256 checksum of the download: ``21f057c487e95fff86826a5dc405fe5b0012d24bb3f6d4b6a6e7ab0f09ca3227``
 
-Currently, the Desktop Wallet doesn't support Apple M1 Macs.
 
 Concordium Ledger App
 =====================
@@ -156,7 +155,7 @@ If you use a laptop in combination with Docker, sleep mode can cause problems wi
 System requirements
 -------------------
 
--  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen 5000 series or Intel Core 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
+-  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen™ 5000 series or Intel® Core™ 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
 
 -  Minimum 16 GB of RAM.
 
@@ -177,5 +176,3 @@ Encrypt/decrypt tool
 - `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
 For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools  <developer-tools>`.
-
-*Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
