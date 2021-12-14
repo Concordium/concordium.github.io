@@ -4,10 +4,10 @@
 Third-party Software and Hardware Notices
 =========================================
 
-Required notices for open source or other separately licensed software and hardware products or components referenced by or distributed in this product are identified below. 
+Required notices for open source or other separately licensed software and hardware products or components referenced by or distributed in this product are identified below.
 
 * Apple® is a trademark of Apple Inc., registered in the U.S. and other countries.
-* Android is a trademark of Google LLC. 
+* Android is a trademark of Google LLC.
 * Google Play and the Google Play logo are trademarks of Google LLC.
 * Ubuntu is a registered trademark of Canonical Ltd.
 * Debian is a trademark owned by Software in the Public Interest, Inc.
