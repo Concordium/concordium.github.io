@@ -16,7 +16,7 @@ December 13, 2021
 
 Concordium Ledger App v2.0.3
 ----------------------------
-- Requires Ledger Nano S firmware version 2.1.0.
+- Supports Ledger Nano S firmware version 2.1.0.
 - Removed references to GTU in the UI.
 - An acceptance step has been added to the export of private key seeds.
 
