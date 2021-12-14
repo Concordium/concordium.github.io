@@ -65,8 +65,8 @@ can also decrypt the shielded balance.
 -  ``ACCOUNT``: Address or local name of the account (if not provided,
    will show the account with the local alias ``"default"``).
 -  ``BLOCK``: Full hash of target block. Defaults to the current :ref:`glossary-best-block`.
--  ``--encrypted``: Show the :ref:`glossary-shielded-balance` (explained below).
--  ``--decrypt-encrypted``: Show the shielded balance and decrypt it
+-  ``--shielded``: Show the :ref:`glossary-shielded-balance` (explained below).
+-  ``--reveal-shielded``: Show the shielded balance and reveal it
    (explained below).
 
 Example
@@ -74,14 +74,14 @@ Example
 
 .. code-block:: console
 
-   $concordium-client account show my-account --encrypted
+   $concordium-client account show my-account --shielded
    Local name:            my-account
    Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    Amount:                1026.000000 CCD
    Nonce:                 1
    Encryption public key: a820662531d0aac70b3a80dd8a249aa692436097d06da005aec7c56aad17997ec8331d1e4050fd8dced2b92f06277bd5acf72a731dc9fdac7f37c93a7be919d2bfe3fe7a19731b0f764f5cb2d0c1e7aad6f17eb378fb306f27408c9e7ea966d9
 
-   Encrypted balance:
+   Shielded balance:
      Incoming amounts: []
      Self balance: a9d35bf62442aabad72c...
 
@@ -95,8 +95,8 @@ The output shows that the account with the local name ``my-account``
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
 -  has a balance of 1026 CCD,
 -  has :ref:`glossary-transaction-sequence-number` ``1``,
--  has ``a820662531d...`` as the key for receiving encrypted transfers.
--  has no :ref:`glossary-incoming-encrypted-amount`.
+-  has ``a820662531d...`` as the key for receiving shielded transfers.
+-  has no :ref:`glossary-incoming-shielded-amount`.
 -  has a :ref:`glossary-self-balance` of ``a9d35bf62442aabad72c...``. By default this
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
@@ -104,7 +104,7 @@ The output shows that the account with the local name ``my-account``
 Furthermore, the account's credential reveals no attributes from the :ref:`glossary-identity`
 that the account is derived from, and expires at the end of September 2021.
 
-If the flag ``--decrypt-encrypted`` is provided, each of the encrypted amounts
+If the flag ``--reveal-shielded`` is provided, each of the shielded amounts
 will be decrypted and the decryption shown. Note that for this operation to
 succeed, the private decryption key of the account must be available in the
 ``concordium-client`` configuration. The user is asked for the password for
@@ -301,4 +301,5 @@ Conversion changes happen through transactions that update the chain parameters.
 If an update transaction has been posted it will take time to take effect. You can see
 whether updates to the chain parameters are being processed by looking for attributes
 that are prefixed with ``pending`` in the result of the above query.
+
 
