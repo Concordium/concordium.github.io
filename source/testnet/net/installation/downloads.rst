@@ -50,8 +50,6 @@ Concordium Desktop Wallet
 
       - SHA256 checksum of the download: ``21f057c487e95fff86826a5dc405fe5b0012d24bb3f6d4b6a6e7ab0f09ca3227``
 
-Currently, the Desktop Wallet doesn't support Apple M1 Macs.
-
 Concordium Ledger App
 =====================
 
