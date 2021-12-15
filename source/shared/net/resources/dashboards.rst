@@ -11,7 +11,7 @@ Dashboards and Status Pages
 Dashboard pages
 ===============
 
-To open the dashboards, click the link for the **Mainnet dashboard and block explorer** or **Testnet dashboard and block explorer**. 
+To open the dashboards, click the link for the **Mainnet dashboard and block explorer** or **Testnet dashboard and block explorer**.
 
 .. Note::
     You may need to adjust your display resolution to be able to view all columns in the table on the dashboard. Alternatively, use the zoom function in your browser to zoom in and out.
@@ -38,9 +38,9 @@ The **Network** dashboard page shows the statistics for the chain and the partic
 The tiles at the top show overall statistics. Due to the nature of this information, it is difficult to validate. Therefore, this information may not be fully accurate.
 
 * **Active nodes:** number of currently active nodes.
-* **Last block:** time since last block 
+* **Last block:** time since last block
 * **Last finalization:** time since last finalization occurred.
-* **Total Length:** Current total length (number of blocks) of the chain 
+* **Total Length:** Current total length (number of blocks) of the chain
 * **Finalized Length:** Current finalized length (number of finalized blocks) of the chain.
 * **Block time:** Average time between verified blocks.
 * **Finalization time:** Average time between completed finalizations.
