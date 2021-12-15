@@ -12,6 +12,14 @@ Release notes
 Mainnet 3: Alpha Centauri 3.0
 ==============================
 
+December 13, 2021
+
+Concordium Ledger App v2.0.3
+----------------------------
+- Supports Ledger Nano S firmware version 2.1.0.
+- Removed references to GTU in the UI.
+- An acceptance step has been added to the export of private key seeds.
+
 December 10, 2021
 
 Concordium Client v3.0.4
