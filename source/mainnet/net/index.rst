@@ -97,6 +97,7 @@
    :caption: Resources
 
    resources/glossary
+   resources/dashboards
    resources/release-notes-mainnet
    resources/terms-and-conditions-mw
    resources/terms-and-conditions-dw
