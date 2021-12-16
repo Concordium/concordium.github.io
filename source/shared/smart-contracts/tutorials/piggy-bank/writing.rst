@@ -214,7 +214,7 @@ initialization that everything is set up as expected, but more about this
 later.
 
 .. [#valid-name] The **contract name** is only allowed to consist of ASCII alphanumeric or
-   punctuation characters, and is not allowed to contain the ``.`` symbol. The **function name** is limited to 100 bytes and is only allowed to consist of ASCII alphanumeric or punctuation characters.
+   punctuation characters, and is not allowed to contain the ``.`` symbol. The **function name** is only allowed to consist of ASCII alphanumeric or punctuation characters. The **function name** together with **contract name** must not exceed 99 characters.
 
 Define interaction with piggy banks
 ===================================
