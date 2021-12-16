@@ -27,11 +27,10 @@ Prerequisites
 -  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See :ref:`create-baker-desktop`.
 
 
-Upgrade from version 1.0.1 to 1.1.3
+Upgrade from version 1.1.3 to 3.0.0
 ===================================
 
-To upgrade from version `1.0.1` of the `concordium-node` package to version `1.1.3` of the `concordium-mainnet-node` package
-package you need to
+To upgrade from version `1.1.3` of the `concordium-node` package to version `3.0.0` of the `concordium-mainnet-node` package you need to:
 
 1. Remove the existing package
 
@@ -45,27 +44,10 @@ package you need to
 
    .. code-block:: console
 
-    apt install ./concordium-mainnet-node_1.1.3_amd64.deb
+    apt install ./concordium-mainnet-node_3.0.0_amd64.deb
 
   This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and
   the collector are started as before.
-
-Changes to node management in version 1.1.3
--------------------------------------------
-
-There are two main differences from version 1.0.1.
-
-1. The services are named `concordium-mainnet-node` and
-   `concordium-mainnet-node-collector` instead of `concordium-node` and
-   `concordium-node-collector`. This means that all
-   `journalctl` and `systemctl` commands must use the new service names. You'll have to move and update any drop-in files that you might have, so for example, you'll have to rename the
-   node settings override from
-   `/etc/systemd/system/concordium-node.service.d/override.conf` to
-   `/etc/systemd/system/concordium-mainnet-node.service.d/override.conf`
-
-2. The environment variables that are used to configure the node have been renamed.
-   There is no longer a `concordium-node-wrapper` script, instead the  node binary directly supports configuration via environment variables.
-   See `Building .deb packages for Ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/tree/main/scripts/distribution/ubuntu-packages#configuration-of-the-node>`__ for details and the most common environment variables to adjust.
 
 Install the Debian package and run a node
 -----------------------------------------
