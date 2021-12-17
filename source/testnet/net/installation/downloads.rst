@@ -32,21 +32,21 @@ Android
 Concordium Desktop Wallet
 =========================
 
-- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.2.0.exe>`_
+- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.3.0.exe>`_
 
-- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.2.0.dmg>`_
+- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.3.0.dmg>`_
 
 - Download the Testnet version of Concordium Desktop Wallet for Linux:
 
-   - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.AppImage>`_
+   - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.0.AppImage>`_
 
       - SHA256 checksum of the download: ``f699430654081a842ed8841c0806c423353e77d2adc294cc801503ae589f7a41``
 
-   - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.deb>`_
+   - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.0.deb>`_
 
       - SHA256 checksum of the download: ``f8cdb56590d7a36c8d275ee5ac7dbb2056eeccc6626f4901b6c3dba86c729e95``
 
-   - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.rpm>`_
+   - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.0.rpm>`_
 
       - SHA256 checksum of the download: ``21f057c487e95fff86826a5dc405fe5b0012d24bb3f6d4b6a6e7ab0f09ca3227``
 
