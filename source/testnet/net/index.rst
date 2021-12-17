@@ -100,4 +100,5 @@
    resources/terms-and-conditions-mw
    resources/terms-and-conditions-dw
    resources/third-party-licenses
+   resources/third-party-notices
    resources/dw-licenses

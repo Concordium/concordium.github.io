@@ -11,6 +11,28 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+December 17, 2021
+
+Concordium Desktop Wallet v1.3.0
+--------------------------------
+- Added a GTU drop option for testnet.
+- In the case of a failed identity, the error details received from the identity provider are now displayed to the user.
+- Added UI flows for baker transactions for single signer accounts.
+- Auxiliary data in an Update Protocol transaction is now optional.
+- Updated terms and conditions.
+- Updated UI to reflect the rename of GTU to CCD, meaning anywhere tokens were referred to as GTU, it now says CCD. The GTU icon has also been replaced with the icon representing CCD.
+- Datetimes are now selected with a date picker from a calendar.
+- Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
+- Failed database migrations errors are now shown correctly to the user.
+
+December 13, 2021
+
+Concordium Ledger App v2.0.3
+----------------------------
+- Supports Ledger Nano S firmware version 2.1.0.
+- Removed references to GTU in the UI.
+- An acceptance step has been added to the export of private key seeds.
+
 December 7, 2021
 
 Concordium Mobile Wallet for iOS v1.1(27)
