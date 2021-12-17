@@ -59,7 +59,7 @@ Generate the transaction without signing
 #. Select **Generate without signing**. You can now export the proposal.
 
 Generate and sign the transaction on the Ledger
---------------------------------------------------
+-----------------------------------------------
 
 #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
@@ -77,7 +77,7 @@ Generate and sign the transaction on the Ledger
 In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-restake-change>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
 Export a transaction proposal
--------------------------------------------------------
+-----------------------------
 
 If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
 
