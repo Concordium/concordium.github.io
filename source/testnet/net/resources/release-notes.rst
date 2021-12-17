@@ -29,7 +29,7 @@ Concordium Mobile Wallet for Android v1.0.22
 --------------------------------------------
 
 - Changed naming from GTU to CCD.
-- Various bug fixes
+- Various bug fixes.
 
 December 13, 2021
 
