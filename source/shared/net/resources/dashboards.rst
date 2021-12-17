@@ -11,7 +11,7 @@ Dashboards and Status Pages
 Dashboard pages
 ===============
 
-To open the dashboards, click the link for the  `**Mainnet dashboard and block explorer** <https://dashboard.mainnet.concordium.software/>`_ or `**Testnet dashboard and block explorer** <https://dashboard.testnet.concordium.software/>`_.
+To open the dashboards, click the link for the  `Mainnet dashboard and block explorer <https://dashboard.mainnet.concordium.software/>`_ or `Testnet dashboard and block explorer <https://dashboard.testnet.concordium.com/>`_.
 
 .. Note::
     You may need to adjust your display resolution to be able to view all columns in the table on the dashboard. Alternatively, use the zoom function in your browser to zoom in and out.
