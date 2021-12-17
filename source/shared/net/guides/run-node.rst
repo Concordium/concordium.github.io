@@ -34,7 +34,7 @@ Before running a Concordium node you will need to
 
 2. Download and extract the :ref:`full suite for running a node on Linux<concordium-docker-package-download>`.
 
-Upgrading from version 1.0.1 to 1.1.3
+Upgrading from version 1.1.3 to 3.0.0
 =====================================
 
 To upgrade do the following steps after downloading the new version.
@@ -47,7 +47,7 @@ To upgrade do the following steps after downloading the new version.
    ``--no-block-state-import`` to avoid downloading data you already have.
 
 .. note::
-   If your node does not show on the network dashboard after upgrading to 1.1.3,
+   If your node does not show on the network dashboard after upgrading to 3.0.0,
    it could be that the node was started by the old version of the runner.
    The old version of the software does not configure the docker container correctly, and this
    misconfiguration can persist even if you then use the new version.
@@ -55,7 +55,7 @@ To upgrade do the following steps after downloading the new version.
 
    #. Ensure that you have downloaded and extracted the :ref:`latest version of the software<concordium-docker-package-download>`.
 
-   #. Check the version by running ``concordium-node --help``. It should show 1.1.3.
+   #. Check the version by running ``concordium-node --help``. It should show 3.0.0.
 
    #. Stop any running node with ``concordium-node-stop``.
 
