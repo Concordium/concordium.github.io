@@ -11,7 +11,7 @@ Dashboards and Status Pages
 Dashboard pages
 ===============
 
-To open the dashboards, click the link for the **Mainnet dashboard and block explorer** or **Testnet dashboard and block explorer**.
+To open the dashboards, click the link for the  `**Mainnet dashboard and block explorer** <https://dashboard.mainnet.concordium.software/>`_ or `**Testnet dashboard and block explorer** <https://dashboard.testnet.concordium.software/>`_.
 
 .. Note::
     You may need to adjust your display resolution to be able to view all columns in the table on the dashboard. Alternatively, use the zoom function in your browser to zoom in and out.
@@ -48,7 +48,7 @@ The tiles at the top show overall statistics. Due to the nature of this informat
 The table below the tiles shows details per participant in the chain. You can also click on a participant name to see details.
 
 * **Name:** participant name
-* **Baker:** if the participant is a baker, number of baked blocks
+* **Baker:** if the participant is a baker, baker ID
 * **Uptime:** amount of uptime in minutes (m), days (d), hours (h), months (mon), or years (y)
 * **Client:** client version the participant is running
 * **Avg ping:** average ping time between the peers of the participant
@@ -90,7 +90,7 @@ Once the transaction lookup is complete, you see the transaction information.
 Status pages
 ============
 
-Both Mainnet and Testnet have a status page. The status page shows incidents and planned outages. To open the status page, click the link for the Mainnet status page or Testnet status page.
+Both Mainnet and Testnet have a status page. The status page shows incidents and planned outages. To open the status page, click the link for the `Mainnet status page <https://status.mainnet.concordium.software/>`_ or `Testnet status page <https://status.testnet.concordium.software/>`_.
 
 .. image:: ../images/dashboards/db-status-page.png
 
