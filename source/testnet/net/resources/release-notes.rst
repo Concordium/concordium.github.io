@@ -25,6 +25,12 @@ Concordium Desktop Wallet v1.3.0
 - Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
 - Failed database migrations errors are now shown correctly to the user.
 
+Concordium Mobile Wallet for Android v1.0.22
+--------------------------------------------
+
+- Changed naming from GTU to CCD.
+- Various bug fixes.
+
 December 13, 2021
 
 Concordium Ledger App v2.0.3
