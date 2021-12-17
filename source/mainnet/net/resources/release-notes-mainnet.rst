@@ -26,8 +26,8 @@ Concordium Desktop Wallet v1.3.0
 - Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
 - Failed database migrations errors are now shown correctly to the user.
 
-Concordrium Node v3.0.0
------------------------
+Concordium Node v3.0.0
+----------------------
 
 - Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
 - ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
