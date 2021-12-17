@@ -9,12 +9,12 @@
 .. |cdw-rpm-checksum| replace:: a8b348c0141f39c50364436718107b8da17ce106ea32d0b0602d96c650ee9277
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_1.1.1-0
-.. |client-linux-checksum| replace:: 9753fbcea64a59b8a883a867524b089696a56a9bd5b0a0af95ada3d191ca1cc1
+.. |client-linux| replace:: concordium-client_3.0.4-0
+.. |client-linux-checksum| replace:: 6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8
 
 .. Node debian package verification variables
-.. |node-deb-package| replace:: concordium-node_1.1.3_amd64.deb
-.. |node-deb-package-checksum| replace:: 76254c341e1db5f3ee21d2058ec6802685bd5d0aaa3b3f5fd2a9cccdc63ddec4
+.. |node-deb-package| replace:: concordium-mainnet-node_3.0.0_amd64.deb
+.. |node-deb-package-checksum| replace:: 5f9acd862974be1c31c0b7a61aee5536146b3b45a9b492014d21a3a62c3bbfb3
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
