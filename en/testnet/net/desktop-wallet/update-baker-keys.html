@@ -157,13 +157,8 @@
 <li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature CCD transfer in the Desktop Wallet</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Update baker keys in the Desktop Wallet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#select-an-account">Select an account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-the-transaction">Generate the Transaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the Ledger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#export-a-transaction-proposal">Export a transaction proposal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-baker-keys-single-signature-account">Update baker keys (Single-signature account)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-an-account-multi-signature-account">Select an account (Multi-signature account)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -191,10 +186,12 @@
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dashboards.html">Dashboards and Status Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-mw.html">Terms and Conditions for Concordium Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-dw.html">Terms and Conditions for Concordium Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-notices.html">Third-party Software and Hardware Notices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
 </ul>
 
@@ -272,14 +269,18 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#select-an-account" id="id2">Select an account</a></p></li>
-<li><p><a class="reference internal" href="#generate-the-transaction" id="id3">Generate the Transaction</a></p></li>
-<li><p><a class="reference internal" href="#generate-the-transaction-without-signing" id="id4">Generate the transaction without signing</a></p></li>
-<li><p><a class="reference internal" href="#generate-and-sign-the-transaction-on-the-ledger" id="id5">Generate and sign the transaction on the Ledger</a></p></li>
-<li><p><a class="reference internal" href="#export-a-transaction-proposal" id="id6">Export a transaction proposal</a></p></li>
-<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id7">Receive signatures from co-signers</a></p></li>
-<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id8">Submit the transaction to the blockchain</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#update-baker-keys-single-signature-account" id="id2">Update baker keys (Single-signature account)</a></p></li>
+<li><p><a class="reference internal" href="#select-an-account-multi-signature-account" id="id3">Select an account (Multi-signature account)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#generate-the-transaction" id="id4">Generate the Transaction</a></p></li>
+<li><p><a class="reference internal" href="#generate-the-transaction-without-signing" id="id5">Generate the transaction without signing</a></p></li>
+<li><p><a class="reference internal" href="#generate-and-sign-the-transaction-on-the-ledger" id="id6">Generate and sign the transaction on the Ledger</a></p></li>
+<li><p><a class="reference internal" href="#export-a-transaction-proposal" id="id7">Export a transaction proposal</a></p></li>
+<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id8">Receive signatures from co-signers</a></p></li>
+<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id9">Submit the transaction to the blockchain</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>If for some reason you lose the public baker keys, we recommend that you update the keys and configure the baker node with the new keys.</p>
@@ -290,8 +291,26 @@
 <li><p>Set up a Ledger hardware wallet.</p></li>
 </ul>
 </div>
-<div class="section" id="select-an-account">
-<h2>Select an account<a class="headerlink" href="#select-an-account" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="update-baker-keys-single-signature-account">
+<h2>Update baker keys (Single-signature account)<a class="headerlink" href="#update-baker-keys-single-signature-account" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Go to <strong>Accounts</strong>, select the account whose baker keys you want to update, change the view to the detailed view, and select <strong>Update baker keys</strong>.</p></li>
+<li><p>You have to export the baker credentials so that you can restart the node with the new baker keys. Select <strong>Export baker credentials</strong>. If you’re running Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong> and navigate to the place on your computer where you want to save the file.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
+<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> in the Desktop Wallet and click <strong>Submit</strong>.</p></li>
+<li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. The Ledger device says <strong>Update baker keys</strong>. Navigate to the right.</p></li>
+<li><p>The Ledger device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger device says <strong>Concordium is ready</strong>.</p></li>
+<li><p>In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="select-an-account-multi-signature-account">
+<h2>Select an account (Multi-signature account)<a class="headerlink" href="#select-an-account-multi-signature-account" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Go to <strong>Multi Signature Transactions</strong>, and select <strong>Make new proposal</strong>, and then select <strong>Update Baker Keys</strong>.</p></li>
 <li><p>Select the <strong>Account</strong> whose baker keys you want to update, and then select <strong>Continue</strong>. Only baker accounts are listed.</p></li>
@@ -304,9 +323,8 @@
 <p class="admonition-title">Warning</p>
 <p>This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else make sure to do so through a secure channel.</p>
 </div>
-</div>
 <div class="section" id="generate-the-transaction">
-<h2>Generate the Transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h2>
+<h3>Generate the Transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h3>
 <p>There are two ways that you can generate the transaction:</p>
 <ul class="simple">
 <li><p>Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
@@ -315,14 +333,14 @@
 <p>In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
 </div>
 <div class="section" id="generate-the-transaction-without-signing">
-<h2>Generate the transaction without signing<a class="headerlink" href="#generate-the-transaction-without-signing" title="Permalink to this headline">¶</a></h2>
+<h3>Generate the transaction without signing<a class="headerlink" href="#generate-the-transaction-without-signing" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
 <li><p>Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
 </ol>
 </div>
 <div class="section" id="generate-and-sign-the-transaction-on-the-ledger">
-<h2>Generate and sign the transaction on the Ledger<a class="headerlink" href="#generate-and-sign-the-transaction-on-the-ledger" title="Permalink to this headline">¶</a></h2>
+<h3>Generate and sign the transaction on the Ledger<a class="headerlink" href="#generate-and-sign-the-transaction-on-the-ledger" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>If you haven’t connected the Ledger, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
 <li><p>Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong>. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying Ledger Nano S is ready.</p></li>
@@ -337,7 +355,7 @@
 <p>In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can <a class="reference internal" href="#submit-update-baker"><span class="std std-ref">submit the transaction to the chain</span></a>. Otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
 </div>
 <div class="section" id="export-a-transaction-proposal">
-<h2>Export a transaction proposal<a class="headerlink" href="#export-a-transaction-proposal" title="Permalink to this headline">¶</a></h2>
+<h3>Export a transaction proposal<a class="headerlink" href="#export-a-transaction-proposal" title="Permalink to this headline">¶</a></h3>
 <p>If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
 <ol class="arabic simple">
 <li><p>In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
@@ -346,7 +364,7 @@
 </ol>
 </div>
 <div class="section" id="receive-signatures-from-co-signers">
-<h2>Receive signatures from co-signers<a class="headerlink" href="#receive-signatures-from-co-signers" title="Permalink to this headline">¶</a></h2>
+<h3>Receive signatures from co-signers<a class="headerlink" href="#receive-signatures-from-co-signers" title="Permalink to this headline">¶</a></h3>
 <p>When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
 <ol class="arabic simple">
 <li><p>If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select <strong>Your proposed transactions</strong>.</p></li>
@@ -355,7 +373,7 @@
 </ol>
 </div>
 <div class="section" id="submit-the-transaction-to-the-blockchain">
-<span id="submit-update-baker"></span><h2>Submit the transaction to the blockchain<a class="headerlink" href="#submit-the-transaction-to-the-blockchain" title="Permalink to this headline">¶</a></h2>
+<span id="submit-update-baker"></span><h3>Submit the transaction to the blockchain<a class="headerlink" href="#submit-the-transaction-to-the-blockchain" title="Permalink to this headline">¶</a></h3>
 <p>When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
 <ol class="arabic">
 <li><p>Review the transaction details carefully to ensure that all information is correct.</p></li>
@@ -368,6 +386,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Transactions on the blockchain can’t be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review the transaction before you submit it.</p>
+</div>
 </div>
 </div>
 <div class="section" id="support-feedback">

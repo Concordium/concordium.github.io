@@ -158,13 +158,8 @@
 <li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Update the staked amount</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#change-the-staked-amount">Change the staked amount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-the-transaction">Generate the transaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the Ledger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#export-proposal">Export proposal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-the-staked-amount-single-signature-account">Change the staked amount (Single-signature account)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-the-staked-amount-multi-signature-account">Change the staked amount (Multi-signature account)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
@@ -190,10 +185,12 @@
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dashboards.html">Dashboards and Status Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-mw.html">Terms and Conditions for Concordium Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-dw.html">Terms and Conditions for Concordium Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-notices.html">Third-party Software and Hardware Notices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
 </ul>
 
@@ -270,29 +267,44 @@
 <span id="change-baker-stake"></span><h1>Update the staked amount<a class="headerlink" href="#update-the-staked-amount" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#change-the-staked-amount" id="id1">Change the staked amount</a></p></li>
-<li><p><a class="reference internal" href="#generate-the-transaction" id="id2">Generate the transaction</a></p></li>
-<li><p><a class="reference internal" href="#generate-the-transaction-without-signing" id="id3">Generate the transaction without signing</a></p></li>
-<li><p><a class="reference internal" href="#generate-and-sign-the-transaction-on-the-ledger" id="id4">Generate and sign the transaction on the Ledger</a></p></li>
-<li><p><a class="reference internal" href="#export-proposal" id="id5">Export proposal</a></p></li>
-<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id6">Receive signatures from co-signers</a></p></li>
-<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id7">Submit the transaction to the blockchain</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id8">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#change-the-staked-amount-single-signature-account" id="id1">Change the staked amount (Single-signature account)</a></p></li>
+<li><p><a class="reference internal" href="#change-the-staked-amount-multi-signature-account" id="id2">Change the staked amount (Multi-signature account)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#generate-the-transaction" id="id3">Generate the transaction</a></p></li>
+<li><p><a class="reference internal" href="#generate-the-transaction-without-signing" id="id4">Generate the transaction without signing</a></p></li>
+<li><p><a class="reference internal" href="#generate-and-sign-the-transaction-on-the-ledger" id="id5">Generate and sign the transaction on the Ledger</a></p></li>
+<li><p><a class="reference internal" href="#export-proposal" id="id6">Export proposal</a></p></li>
+<li><p><a class="reference internal" href="#receive-signatures-from-co-signers" id="id7">Receive signatures from co-signers</a></p></li>
+<li><p><a class="reference internal" href="#submit-the-transaction-to-the-blockchain" id="id8">Submit the transaction to the blockchain</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>You can change the <a class="reference internal" href="../concepts/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a baker account except during a cool-down period. If you increase the stake, the new stake will be applied after two <a class="reference internal" href="../resources/glossary.html#glossary-epoch"><span class="std std-ref">epochs</span></a>, which corresponds to two hours. However, if you decrease the stake, there is a cool-down period before the new stake is applied. The cool down period is 7 days, which corresponds to 168 epochs. During this period, you’ll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance.</p>
+<p>You can change the <a class="reference internal" href="../concepts/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a baker account except during a cool-down period. If you increase the stake, the new stake will be applied after two <a class="reference internal" href="../resources/glossary.html#glossary-epoch"><span class="std std-ref">epochs</span></a>, which corresponds to two hours. However, if you decrease the stake, there is a cool-down period before the new stake is applied. The cool-down period is 7 days, which corresponds to 168 epochs. During this period, you’ll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance.</p>
 <p>When you change the stake it can influence your chance of being selected to bake a block and receive baker rewards and of being included in the <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalization</span></a> committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a blocks and of being included in the finalization committee.</p>
-<div class="section" id="change-the-staked-amount">
-<h2>Change the staked amount<a class="headerlink" href="#change-the-staked-amount" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="change-the-staked-amount-single-signature-account">
+<h2>Change the staked amount (Single-signature account)<a class="headerlink" href="#change-the-staked-amount-single-signature-account" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Go to <strong>Accounts</strong>, select the account whose baker stake you want to change, change the view to the detailed view, and select <strong>Update baker stake</strong>.</p></li>
+<li><p>Enter the new amount that you want to stake and select <strong>Continue</strong>.</p></li>
+<li><p>A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
+<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
+<li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. The Ledger device says <strong>Update stake to</strong> and then the amount you’re going to update the stake to. Navigate to the right.</p></li>
+<li><p>The Ledger device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger device says <strong>Concordium is ready</strong>.</p></li>
+<li><p>In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="change-the-staked-amount-multi-signature-account">
+<h2>Change the staked amount (Multi-signature account)<a class="headerlink" href="#change-the-staked-amount-multi-signature-account" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Update baker stake</strong>.</p></li>
 <li><p>Select the account whose baker stake you want to change.</p></li>
 <li><p>Enter the new amount that you want to stake and select <strong>Continue</strong>.</p></li>
 <li><p>Set an expiry date and time for your proposal. You must submit the proposals to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.</p></li>
 </ol>
-</div>
 <div class="section" id="generate-the-transaction">
-<h2>Generate the transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h2>
+<h3>Generate the transaction<a class="headerlink" href="#generate-the-transaction" title="Permalink to this headline">¶</a></h3>
 <p>There are two ways that you can generate the transaction:</p>
 <ul class="simple">
 <li><p>Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
@@ -301,14 +313,14 @@
 <p>In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
 </div>
 <div class="section" id="generate-the-transaction-without-signing">
-<h2>Generate the transaction without signing<a class="headerlink" href="#generate-the-transaction-without-signing" title="Permalink to this headline">¶</a></h2>
+<h3>Generate the transaction without signing<a class="headerlink" href="#generate-the-transaction-without-signing" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
 <li><p>Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
 </ol>
 </div>
 <div class="section" id="generate-and-sign-the-transaction-on-the-ledger">
-<h2>Generate and sign the transaction on the Ledger<a class="headerlink" href="#generate-and-sign-the-transaction-on-the-ledger" title="Permalink to this headline">¶</a></h2>
+<h3>Generate and sign the transaction on the Ledger<a class="headerlink" href="#generate-and-sign-the-transaction-on-the-ledger" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>If you haven’t connected the Ledger, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
 <li><p>Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong>. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying Ledger Nano S is ready.</p></li>
@@ -323,7 +335,7 @@
 <p>In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can <a class="reference internal" href="#submit-stake-change"><span class="std std-ref">submit the transaction to the chain</span></a>, otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
 </div>
 <div class="section" id="export-proposal">
-<h2>Export proposal<a class="headerlink" href="#export-proposal" title="Permalink to this headline">¶</a></h2>
+<h3>Export proposal<a class="headerlink" href="#export-proposal" title="Permalink to this headline">¶</a></h3>
 <p>If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
 <ol class="arabic simple">
 <li><p>In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
@@ -332,7 +344,7 @@
 </ol>
 </div>
 <div class="section" id="receive-signatures-from-co-signers">
-<h2>Receive signatures from co-signers<a class="headerlink" href="#receive-signatures-from-co-signers" title="Permalink to this headline">¶</a></h2>
+<h3>Receive signatures from co-signers<a class="headerlink" href="#receive-signatures-from-co-signers" title="Permalink to this headline">¶</a></h3>
 <p>When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
 <ol class="arabic simple">
 <li><p>If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
@@ -341,7 +353,7 @@
 </ol>
 </div>
 <div class="section" id="submit-the-transaction-to-the-blockchain">
-<span id="submit-stake-change"></span><h2>Submit the transaction to the blockchain<a class="headerlink" href="#submit-the-transaction-to-the-blockchain" title="Permalink to this headline">¶</a></h2>
+<span id="submit-stake-change"></span><h3>Submit the transaction to the blockchain<a class="headerlink" href="#submit-the-transaction-to-the-blockchain" title="Permalink to this headline">¶</a></h3>
 <p>When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
 <ol class="arabic">
 <li><p>Review the transaction details carefully to ensure that all information is correct.</p></li>
@@ -354,6 +366,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Transactions on the blockchain can’t be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review that you have entered the correct amount to stake.</p>
+</div>
 </div>
 </div>
 <div class="section" id="support-feedback">
