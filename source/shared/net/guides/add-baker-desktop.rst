@@ -7,7 +7,7 @@ Add a baker account in the Desktop Wallet
 .. contents::
     :local:
     :backlinks: none
-    :depth: 1
+    :depth: 2
 
 A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking two :ref:`epochs <glossary-epoch>` after the transaction has been approved.
 
@@ -31,15 +31,45 @@ There are a couple of things you must set up in preparation before you can start
 - Set up a new account that you'll be using as baker account.
 - Verify that the account balance has the required amount of CCD.
 
+Add baker (Single-signature account)
+====================================
+
+#. Go to **Accounts**, select the account you want to add as baker account, change the view to the detailed view, and select **Add baker**.
+
+#. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
+
+   Baker accounts receive a reward when they have baked a block, and the reward
+   is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+
+   -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+
+#. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+
+.. Warning::
+      This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+
+4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+
+#. On the Ledger device, a message says **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet.
+
+#. When the Ledger device says **Sign transaction**, press both buttons to confirm the transaction. The Ledger device says **Concordium is ready**.
+
+#. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+
+Add baker (Multi-signature account)
+===================================
+
 Select an account to add as baker account
-=========================================
+-----------------------------------------
 
 #. Go to the **Multi Signature Transactions** tab, and then select **Add Baker**.
 
 #. Select the account you want to add as baker account, and then select **Continue**.
 
 Stake an amount
-===============
+---------------
 
 You need to stake an amount of CCD on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
 
@@ -61,7 +91,7 @@ You need to stake an amount of CCD on the account that you want to add as baker 
 #. Select **Continue** to generate the transaction.
 
 Generate the transaction
-========================
+------------------------
 
 There are two ways that you can generate the transaction:
 
@@ -74,7 +104,7 @@ In combination, these two options enable organizations to distribute the respons
 .. _generate-without-sign:
 
 Generate the transaction without signing
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
@@ -83,7 +113,7 @@ Generate the transaction without signing
 .. _generate-sign:
 
 Generate and sign the transaction on the Ledger
------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
@@ -103,7 +133,7 @@ Generate and sign the transaction on the Ledger
     .. _export-baker-credentials:
 
 Export baker credentials
-========================
+------------------------
 
 #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file.
 
@@ -113,7 +143,7 @@ Export baker credentials
     This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
 Export a transaction proposal
-=============================
+-----------------------------
 If more than one signature is needed to sign off on the baker account proposal, you must share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain.
 
 #. In the Desktop Wallet, select **Export transaction proposal**.
@@ -123,7 +153,7 @@ If more than one signature is needed to sign off on the baker account proposal, 
 #. Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Optionally, you can also send a copy of the identicon through a secure channel that is different from the one used to send the file.
 
 Receive signatures from co-signers
-==================================
+----------------------------------
 
 When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
 
@@ -136,7 +166,7 @@ When the co-signers have signed the transaction, they return the signed transact
 .. _submit-transaction:
 
 Submit the transaction to the blockchain
-========================================
+----------------------------------------
 When you have received and added all the required signatures, you can submit the transaction to the blockchain.
 
 #. Review the transaction details carefully to ensure that all information is correct.
