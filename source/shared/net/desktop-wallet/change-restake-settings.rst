@@ -21,7 +21,7 @@ Change restake settings (Single-signature account)
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on Ledger device.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message  **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
 #. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. The Ledger either says **Restake earnings Yes** or **Restake earnings No**, depending on what you've selected. Navigate to the right.
 

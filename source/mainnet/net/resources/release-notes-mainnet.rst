@@ -12,6 +12,36 @@ Release notes
 Mainnet 3: Alpha Centauri 3.0
 ==============================
 
+December 17, 2021
+
+Concordium Desktop Wallet v1.3.0
+--------------------------------
+- Updated the default node configuration to point to concordiumwalletnode.com.
+- In the case of a failed identity, the error details received from the identity provider are now displayed to the user.
+- Added UI flows for baker transactions for single signer accounts.
+- Auxiliary data in an Update Protocol transaction is now optional.
+- Updated terms and conditions.
+- Updated UI to reflect the rename of GTU to CCD, meaning anywhere tokens were referred to as GTU, it now says CCD. The GTU icon has also been replaced with the icon representing CCD.
+- Datetimes are now selected with a date picker from a calendar.
+- Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
+- Failed database migrations errors are now shown correctly to the user.
+
+Concordrium Node v3.0.0
+-----------------------
+
+- Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
+- ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
+- Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
+- Faster state queries by avoiding locking the block state file when reading.
+- Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
+- The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
+
+Concordium Mobile Wallet for Android v1.0.22
+--------------------------------------------
+
+- Changed naming from GTU to CCD.
+- Various bug fixes.
+
 December 13, 2021
 
 Concordium Ledger App v2.0.3

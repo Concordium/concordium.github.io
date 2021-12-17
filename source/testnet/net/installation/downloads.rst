@@ -26,29 +26,29 @@ iOS
 Android
 -------
 
-- `Download the Android version of Concordium Mobile Wallet for Testnet <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.16(55).apk>`_
+- `Download the Android version of Concordium Mobile Wallet for Testnet <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.22(61).apk>`_
 
 
 Concordium Desktop Wallet
 =========================
 
-- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.2.0.exe>`_
+- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.3.0.exe>`_
 
-- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.2.0.dmg>`_
+- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.3.0.dmg>`_
 
 - Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-   - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.AppImage>`_
+   - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.0.AppImage>`_
 
-      - SHA256 checksum of the download: ``f699430654081a842ed8841c0806c423353e77d2adc294cc801503ae589f7a41``
+      - SHA256 checksum of the download: ``cdab04e41fd0fb9beacdc8e82fb19470b34936a945280a8cb91ba693ad04f620``
 
-   - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.deb>`_
+   - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.0.deb>`_
 
-      - SHA256 checksum of the download: ``f8cdb56590d7a36c8d275ee5ac7dbb2056eeccc6626f4901b6c3dba86c729e95``
+      - SHA256 checksum of the download: ``cf3bc60a3fdf4b73595052bdf40e0857adf9f85500dc76dee64526ac648038cb``
 
-   - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.2.0.rpm>`_
+   - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.0.rpm>`_
 
-      - SHA256 checksum of the download: ``21f057c487e95fff86826a5dc405fe5b0012d24bb3f6d4b6a6e7ab0f09ca3227``
+      - SHA256 checksum of the download: ``a0542d841f9ad18b85cfe6de669186d56afe304b18e0392541df084f93466b08``
 
 
 Concordium Ledger App

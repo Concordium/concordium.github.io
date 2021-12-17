@@ -95,6 +95,7 @@
    :caption: Resources
 
    resources/glossary
+   resources/dashboards
    resources/release-notes
    resources/terms-and-conditions-mw
    resources/terms-and-conditions-dw
