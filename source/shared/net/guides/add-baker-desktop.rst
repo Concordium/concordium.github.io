@@ -36,25 +36,25 @@ Add baker (Single-signature account)
 
 #. Go to **Accounts**, select the account you want to add as baker account, change the view to the detailed view, and select **Add baker**.
 
-#. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to bake the next block.
+#. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
 
    Baker accounts receive a reward when they have baked a block, and the reward
    is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
    -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-#. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+#. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
 .. Warning::
-      This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+      This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet.
+#. On the Ledger device, a message says **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet.
 
-#. When the Ledger says **Sign transaction**, press both buttons to confirm the transaction. The Ledger says **Concordium is ready**.
+#. When the Ledger device says **Sign transaction**, press both buttons to confirm the transaction. The Ledger device says **Concordium is ready**.
 
 #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
