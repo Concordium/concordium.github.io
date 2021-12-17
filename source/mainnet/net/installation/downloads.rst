@@ -43,6 +43,7 @@ Concordium Desktop Wallet
 -  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.3.0.dmg>`_
 
 -  Download the Desktop Wallet for Linux®:
+
    -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.AppImage>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
