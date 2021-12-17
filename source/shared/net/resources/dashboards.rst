@@ -1,8 +1,8 @@
 .. _dashboards:
 
-=================================================
+===========================
 Dashboards and Status Pages
-=================================================
+===========================
 
 .. contents::
    :local:
@@ -90,7 +90,7 @@ Once the transaction lookup is complete, you see the transaction information.
 Status pages
 ============
 
-Both Mainnet and Testnet have a status page.The status page shows incidents and planned outages. To open the status page, click the link for the Mainnet status page or Testnet status page.
+Both Mainnet and Testnet have a status page. The status page shows incidents and planned outages. To open the status page, click the link for the Mainnet status page or Testnet status page.
 
 .. image:: ../images/dashboards/db-status-page.png
 
