@@ -25,9 +25,9 @@ Set up the Desktop Wallet
 
 #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
-#. In the Desktop Wallet go to **Settings**, select **Multi signature settings**, and then select **Node settings**.
+#. In the Desktop Wallet go to **Settings** and then select **Node settings**.
 
-#. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
+#. The Virtual Hive node is inserted by default, but you can change this to any other node that you prefer. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
 
 #. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
 
