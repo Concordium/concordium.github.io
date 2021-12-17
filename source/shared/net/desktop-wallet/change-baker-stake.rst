@@ -7,14 +7,31 @@ Update the staked amount
 .. contents::
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
 
 You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account except during a cool-down period. If you increase the stake, the new stake will be applied after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. However, if you decrease the stake, there is a cool-down period before the new stake is applied. The cool down period is 7 days, which corresponds to 168 epochs. During this period, you'll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance.
 
 When you change the stake it can influence your chance of being selected to bake a block and receive baker rewards and of being included in the :ref:`finalization <glossary-finalization>` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a blocks and of being included in the finalization committee.
 
-Change the staked amount
-========================
+Change the staked amount (Single-signature account)
+===================================================
+
+#. Go to **Accounts**, select the account whose baker stake you want to change, change the view to the detailed view, and select **Update baker stake**.
+
+#. Enter the new amount that you want to stake and select **Continue**.
+
+#. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+
+#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct, and navigate to the right. The Ledger says **Update stake to** and then the amount you're going to update the stake to. Navigate to the right.
+
+#. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
+
+#. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+
+Change the staked amount (Multi-signature account)
+===================================================
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
 
@@ -25,7 +42,7 @@ Change the staked amount
 #. Set an expiry date and time for your proposal. You must submit the proposals to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
 Generate the transaction
-========================
+------------------------
 
 There are two ways that you can generate the transaction:
 
@@ -36,14 +53,14 @@ There are two ways that you can generate the transaction:
 In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
 
 Generate the transaction without signing
-=========================================
+-----------------------------------------
 
 #. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
 
 #. Select **Generate without signing**. You can now export the proposal.
 
 Generate and sign the transaction on the Ledger
-===============================================
+-----------------------------------------------
 
 #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
@@ -61,7 +78,7 @@ Generate and sign the transaction on the Ledger
 In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-stake-change>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
 Export proposal
-===============
+---------------
 
 If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
 
@@ -72,7 +89,7 @@ If more than one signature is needed to sign off on the proposal, you have to sh
 #. You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.
 
 Receive signatures from co-signers
-===================================
+-----------------------------------
 
 When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
 
@@ -85,7 +102,7 @@ When the co-signers have signed the transaction, they return the signed transact
 .. _submit-stake-change:
 
 Submit the transaction to the blockchain
-========================================
+----------------------------------------
 
 When you have received and added all the required signatures, you can submit the transaction to the blockchain.
 
