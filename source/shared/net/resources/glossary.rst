@@ -19,7 +19,7 @@ Account
 An addressable store of funds on the blockchain. An account is associated with
 one or more *account keys* that can be used to authorize transactions
 originating from the account, as well as with an :ref:`encryption key<glossary-encryption-key>` that can be
-used to send encrypted transfers to the account. An account is also associated
+used to send shielded transfers to the account. An account is also associated
 with the account holder's :ref:`identity<glossary-identity>`, although this association is encrypted
 for anonymity. This anonymity can only be revoked by anonymity revokers, in
 cooperation with the account's :ref:`identity provider<glossary-identity-provider>`.
@@ -129,9 +129,9 @@ Decryption key
 Dual to :ref:`encryption key<glossary-encryption-key>`. In contrast to the encryption key, which is public,
 this key is only known to the account holder.
 
-.. _glossary-encrypted-amount:
+.. _glossary-shielded-amount:
 
-Encrypted amount
+Shielded amount
 ================
 
 An amount of :ref:`CCD<glossary-CCD>` that is encrypted with the public key of an account. Only
@@ -144,7 +144,7 @@ Encryption key
 ==============
 
 An `ElGamal`_ public key associated to an account which is used to encrypt all
-:ref:`encrypted amounts<glossary-encrypted-amount>` on the account.
+:ref:`shielded amounts<glossary-shielded-amount>` on the account.
 
 .. _glossary-epoch:
 
@@ -333,25 +333,25 @@ many CCDs were transferred. The receiver of the transfer can use their secret
 key to decrypt the ciphertexts, and seeing how many CCDs they have received.
 
 For technical reasons the shielded balance of the account consists of two parts,
-the "self balance" and the "incoming encrypted amounts".
+the "self balance" and the "incoming shielded amounts".
 
 .. _glossary-self-balance:
 
 Self balance
 ^^^^^^^^^^^^
 
-This is a single encrypted amount that is updated each time the account performs
-and encrypted transfer, :ref:`shielding<glossary-shielding>`, or :ref:`unshielding<glossary-unshielding>`. Only the account itself
+This is a single shielded amount that is updated each time the account performs
+a shielded transfer, :ref:`shielding<glossary-shielding>`, or :ref:`unshielding<glossary-unshielding>`. Only the account itself
 can update this value.
 
-.. _glossary-incoming-encrypted-amount:
+.. _glossary-incoming-shielded-amount:
 
-Incoming encrypted amount
+Incoming shielded amount
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is a list of encrypted amounts that is extended each time an account
-receives an encrypted transfer. When the account makes an encrypted transfer it
-can use a number of encrypted amounts from this list as inputs to the transfer.
+This is a list of shielded amounts that is extended each time an account
+receives an shielded transfer. When the account makes a shielded transfer it
+can use a number of shielded amounts from this list as inputs to the transfer.
 
 .. _glossary-shielded-transfer:
 
@@ -459,3 +459,4 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
+

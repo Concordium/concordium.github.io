@@ -26,69 +26,18 @@ Prerequisites
 
 -  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See :ref:`create-baker-desktop`.
 
-
-Upgrade from version 1.0.1 to 1.1.2
+Upgrade from version 1.1.3 to 3.0.0
 ===================================
 
-To upgrade from version `1.0.1` of the `concordium-node` package to version `1.1.2` of the `concordium-testnet-node` package
-package you need to
-
-1. Remove the existing package
-
-   .. code-block:: console
-
-    apt remove --purge concordium-node
-
-  This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node's configuration and data directories.
-
-2. Install the new package
-
-   .. code-block:: console
-
-    apt install ./concordium-testnet-node_1.1.2_amd64.deb
-
-  This step will perform automatic database migration, so that the new node will
-  not have to catch up from scratch. After installation is completed, the node and
-  the collector will be started as before.
-
-Changes to node management in version 1.1.2
--------------------------------------------
-
-There are two main differences from version 1.0.1.
-
-1. The services are named `concordium-testnet-node` and
-   `concordium-testnet-node-collector` instead of `concordium-node` and
-   `concordium-node-collector`. This means that all
-   `journalctl` and `systemctl` commands must use the new service names. Any
-   drop-in files that you may have will need to be moved and updated, e.g., the
-   node settings overrride should be renamed from the old
-   `/etc/systemd/system/concordium-node.service.d/override.conf` to
-   `/etc/systemd/system/concordium-testnet-node.service.d/override.conf`
-
-2. The environment variables that are used to configure the node have been renamed.
-   There is no longer a `concordium-node-wrapper` script, instead the  node binary directly supports configuration via environment variables.
-   See `Building .deb packages for Ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/tree/main/scripts/distribution/ubuntu-packages#configuration-of-the-node>`__ for details and the most common environment variables to adjust.
-
-3. The default GRPC port has been changed from `10000` to `10001` so that the
-   testnet node may run alongside the mainnet node. Analogously, the node's
-   default incoming connection listening port has been changed from `8888` to
-   `8889`. These defaults can be changed via `systemctl edit concordium-testnet-node` as before.
-
-Upgrade from version 1.1.2 to 1.1.3
-===================================
-
-To upgrade from version `1.1.2` of the `concordium-node` package to version `1.1.3` of the `concordium-testnet-node` package
-package you need to
+To upgrade from version `1.1.3` of the `concordium-node` package to version `3.0.0` of the `concordium-testnet-node` package you need to:
 
 - Install the new package
 
    .. code-block:: console
 
-    apt install ./concordium-testnet-node_1.1.3_amd64.deb
+    apt install ./concordium-testnet-node_3.0.0_amd64.deb
 
-  This step will perform automatic database migration, so that the new node will
-  not have to catch up from scratch. After installation is completed, the node and
-  the collector will be started as before.
+  This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and the collector are started as before.
 
 Install the Debian package and run a node
 -----------------------------------------

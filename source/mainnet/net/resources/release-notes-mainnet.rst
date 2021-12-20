@@ -8,6 +8,101 @@ Release notes
    :local:
    :backlinks: none
 
+
+Mainnet 3: Alpha Centauri 3.0
+==============================
+
+December 17, 2021
+
+Concordium Desktop Wallet v1.3.0
+--------------------------------
+- Updated the default node configuration to point to concordiumwalletnode.com.
+- In the case of a failed identity, the error details received from the identity provider are now displayed to the user.
+- Added UI flows for baker transactions for single signer accounts.
+- Auxiliary data in an Update Protocol transaction is now optional.
+- Updated terms and conditions.
+- Updated UI to reflect the rename of GTU to CCD, meaning anywhere tokens were referred to as GTU, it now says CCD. The GTU icon has also been replaced with the icon representing CCD.
+- Datetimes are now selected with a date picker from a calendar.
+- Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
+- Failed database migrations errors are now shown correctly to the user.
+
+Concordium Node v3.0.0
+----------------------
+
+- Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
+- ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
+- Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
+- Faster state queries by avoiding locking the block state file when reading.
+- Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
+- The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
+
+Concordium Mobile Wallet for Android v1.0.22
+--------------------------------------------
+
+- Changed naming from GTU to CCD.
+- Various bug fixes.
+
+December 13, 2021
+
+Concordium Ledger App v2.0.3
+----------------------------
+- Supports Ledger Nano S firmware version 2.1.0.
+- Removed references to GTU in the UI.
+- An acceptance step has been added to the export of private key seeds.
+
+December 10, 2021
+
+Concordium Client v3.0.4
+------------------------
+
+- Credentials revealing the newly introduced attribute LEI can be deployed.
+- Renamed GTU token to CCD.
+- Renamed ``send-gtu``, ``send-gtu-scheduled`` and ``send-gtu-encrypted`` to ``send``, ``send-scheduled`` and ``send-shielded``.
+- Renamed ``account encrypt``/``decrypt`` to ``account shield``/``unshield``.
+- Added command for generating aliases of an address.
+- Now shows line breaks, tabs etc. in memo transfers (when it's CBOR encoded string), instead of escaping them as ``\n``, ``\t`` etc.
+- Now displays memo as JSON in a more readable way.
+- Added time units to slot duration and epoch duration in consensus status.
+- Updated the ``register-data`` command to register data as CBOR encoded strings or JSON using the new flags ``--string`` and ``--json``. Raw data can still be registered using the new flag ``--raw``.
+- Added ``raw DisconnectPeer``, a counterpart to the existing ``raw ConnectPeer``.
+- Now warning  the user when trying to add a baker with a stake below the minimum threshold.
+- Improved how contract schemas are shown as JSON:
+
+   - Now displays complex types in arrays correctly.
+   - Use angle brackets to indicate placeholders, e.g. ``"<UInt16>"`` instead of ``"UInt16"``.
+- Improved ``module inspect``:
+
+   - Now shows all contracts from a module regardless of whether a schema is included or not.
+   - Now shows the receive methods for contracts as well.
+- Now allows sending transactions where the sender is an account alias.
+
+
+Mainnet 2: Alpha Centauri 2.2
+=============================
+
+December 9, 2021
+
+Concordium Mobile Wallet for iOS v1.1(27)
+-------------------------------------------
+
+- Changed GTU/Ǥ naming to CCD/Ͼ.
+- Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+   - It is now possible to add memos to simple and shielded transfers.
+   - Memos can also be displayed for transfers with a release schedule.
+
+- Various improvements of the identity issuance flow, account creation and related support options.
+
+   - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
+   - Added a small dialogue to remind the user to check for a response on new identity requests.
+   - Users will now be notified on successful creation of new accounts inside the app.
+   - Various back-end improvements by the identity provider to make their service more robust.
+   - Various improvements to make the identity issuance and account creation flow more robust.
+
+- Various bug fixes.
+- Various smaller textual updates.
+
+
 Mainnet 2: Alpha Centauri 2.1
 =============================
 

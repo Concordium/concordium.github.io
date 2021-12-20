@@ -15,9 +15,9 @@ This topics contains information about where you can download the Concordium Wal
 Concordium Mobile Wallet
 ========================
 
-The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
+The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
-You can find Concordium Mobile Wallet on App Store and Google Play.
+You can find Concordium Mobile Wallet on App Store and on Google Play.
 
 .. image:: ../images/mobile-wallet/app-store-badge.svg
    :width: 23%
@@ -38,28 +38,32 @@ The Concordium Mobile Wallet has been verified by NowSecure.
 Concordium Desktop Wallet
 =========================
 
--  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.2.0.exe>`_
+-  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.3.0.exe>`_
 
--  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.2.0.dmg>`_
+-  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.3.0.dmg>`_
 
--  Download the Desktop Wallet for Linux:
+-  Download the Desktop Wallet for Linux®:
 
-   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.AppImage>`_
+   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.AppImage>`_
 
-      - SHA256 checksum of the download: ``526fc9f3d894eeb2bc49451d5d68dbd092fb3b40699158f3bb8e7693914d89c1``
+      - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
+      - :ref:`Verification instructions <verification-cdw-appimage>`
 
-   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.deb>`_
+   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.deb>`_
 
-      - SHA256 checksum of the download: ``336079466ff09af9db8a8d51274ad111025eca45e4b7b27efd637503acc9e410``
+      - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
+      - :ref:`Verification instructions <verification-cdw-deb>`
 
-   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.rpm>`_
+   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.rpm>`_
 
-      - SHA256 checksum of the download: ``e5bf251617b346d6db91a73045dff1ea6ffa7799e01c0e0285f25a8e0f588c07``
+      - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
+      - :ref:`Verification instructions <verification-cdw-rpm>`
 
 Concordium Ledger App
 =====================
 
-`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
+  - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
+  - `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
@@ -67,13 +71,14 @@ Concordium Client
 =================
 Download the Concordium Client:
 
--  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0>`_
+-  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
 
-   - SHA256 checksum of the download: ``9753fbcea64a59b8a883a867524b089696a56a9bd5b0a0af95ada3d191ca1cc1``
+   - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
+   - :ref:`Verification instructions <verification-client-linux>`
 
--  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_1.1.1-0.zip>`_.
+-  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_.
 
--  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_1.1.1-0.exe>`_
+-  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
 
 
 Cargo-concordium
@@ -84,13 +89,9 @@ Download cargo-concordium:
 
 -  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
 
-   - You need to make the tool executable by running ``chmod +x
-     path/to/cargo-concordium_1.0.0`` in a terminal. Make sure to provide the
-     correct path to the downloaded tool.
-   - You also need to `grant it permission to run in your Security & Privacy
-     settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_.
-
 -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
+
+For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
 
 
 Concordium node distributions
@@ -100,9 +101,10 @@ Node Debian package
 -------------------
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_1.1.3_amd64.deb>`_
+- `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.0_amd64.deb>`_
 
-   - SHA256 checksum of the download: ``76254c341e1db5f3ee21d2058ec6802685bd5d0aaa3b3f5fd2a9cccdc63ddec4``
+   - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
+   - :ref:`Verification instructions <verification-node-debian-package>`
 
 To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -112,9 +114,9 @@ Full suite for running a node on Linux using Docker
 ---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-1.1.3-0-mainnet.tar.gz>`_
+- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.0-0-mainnet.tar.gz>`_
 
-   - SHA256 checksum of the download: ``1e86ceda79be5bcb84f2615fdcd494fc7bc6e50f5e65c35cf47262e126c3be55``
+   - SHA256 checksum of the download: ``897ef39807eb449945b0498def00ca14d2762be8f9d206a62f1d9cd97f2beec0``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
@@ -123,7 +125,7 @@ Native Windows node
 
 To run a node on Windows, you need a Windows Installer package.
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.3.msi>`_
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.0.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
 
@@ -132,7 +134,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.3.pkg>`_
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
@@ -143,7 +145,8 @@ Download the block separately to inspect it or to run a node in a custom configu
 
 - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
-  - SHA256 checksum of the download: ``5fe6a62824d5b0dba6143243e90987ddf3e15cca079f21992de04d078d9ea6dc``
+  - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
+  - :ref:`Verification instructions <verification-mainnet-genesis-block>`
 
 .. _requirements-run-node:
 
@@ -159,12 +162,24 @@ If you use a laptop in combination with Docker, sleep mode can cause problems wi
 System requirements
 -------------------
 
--  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen 5000 series or Intel Core 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
+-  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen™ 5000 series or Intel® Core™ 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
 
 -  Minimum 16 GB of RAM.
 
 -  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
 
+Auxiliary tools
+===============
 
+Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
 
-*Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
+Encrypt/decrypt tool
+--------------------
+
+- `Download the Encrypt/decrypt tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
+
+- `Download the Encrypt/decrypt tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
+
+- `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
+
+For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools  <developer-tools>`.

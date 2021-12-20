@@ -9,6 +9,7 @@
    :caption: Installation
 
    installation/downloads
+   installation/verification-instructions
 
 .. toctree::
    :maxdepth: 1
@@ -27,6 +28,7 @@
    guides/become-baker
    guides/overview-shared-accounts
    guides/multi-credentials
+   guides/enterprise-identities
 
 .. toctree::
    :maxdepth: 1
@@ -88,14 +90,17 @@
    references/manage-accounts
    references/transactions
    references/query-node
+   references/developer-tools
 
 .. toctree::
    :maxdepth: 1
    :caption: Resources
 
    resources/glossary
+   resources/dashboards
    resources/release-notes-mainnet
    resources/terms-and-conditions-mw
    resources/terms-and-conditions-dw
    resources/third-party-licenses
+   resources/third-party-notices
    resources/dw-licenses

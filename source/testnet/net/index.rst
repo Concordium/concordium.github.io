@@ -88,14 +88,17 @@
    references/transactions
    references/query-node
    references/node-runner-service-configuration
+   references/developer-tools
 
 .. toctree::
    :maxdepth: 1
    :caption: Resources
 
    resources/glossary
+   resources/dashboards
    resources/release-notes
    resources/terms-and-conditions-mw
    resources/terms-and-conditions-dw
    resources/third-party-licenses
+   resources/third-party-notices
    resources/dw-licenses

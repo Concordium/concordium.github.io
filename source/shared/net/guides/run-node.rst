@@ -34,7 +34,7 @@ Before running a Concordium node you will need to
 
 2. Download and extract the :ref:`full suite for running a node on Linux<concordium-docker-package-download>`.
 
-Upgrading from version 1.0.1 to 1.1.3
+Upgrading from version 1.1.3 to 3.0.0
 =====================================
 
 To upgrade do the following steps after downloading the new version.
@@ -47,7 +47,7 @@ To upgrade do the following steps after downloading the new version.
    ``--no-block-state-import`` to avoid downloading data you already have.
 
 .. note::
-   If your node does not show on the network dashboard after upgrading to 1.1.3,
+   If your node does not show on the network dashboard after upgrading to 3.0.0,
    it could be that the node was started by the old version of the runner.
    The old version of the software does not configure the docker container correctly, and this
    misconfiguration can persist even if you then use the new version.
@@ -55,7 +55,7 @@ To upgrade do the following steps after downloading the new version.
 
    #. Ensure that you have downloaded and extracted the :ref:`latest version of the software<concordium-docker-package-download>`.
 
-   #. Check the version by running ``concordium-node --help``. It should show 1.1.3.
+   #. Check the version by running ``concordium-node --help``. It should show 3.0.0.
 
    #. Stop any running node with ``concordium-node-stop``.
 
@@ -143,7 +143,8 @@ used by the node are as follows:
    ``--listen-node-port``
 -  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
 -  8099, the port used by the node dashboard, which can be set with ``--listen-dashboard-port``
--  10000, the gRPC port, which can be set with ``--listen-grpc-port``
+-  10000, the gRPC port for mainnet, which can be set with ``--listen-grpc-port``
+-  10001, the gRPC port for testnet, which can be set with ``--listen-grpc-port``
 
 An additional mapping is the gRPC token, which defaults to ``rpcadmin``, and can
 be set with ``--rpc-server-token``.
@@ -153,9 +154,9 @@ stopped (:ref:`stop-a-node`), reset, and started again. To reset the container e
 ``concordium-node-reset-data`` or run ``docker rm concordium-client`` in
 a terminal.
 
-We *strongly recommend* that your firewall should be configured to only
+We strongly recommend that you configure your firewall to only
 allow public connections on port 8888 (the peer-to-peer networking
-port). Someone with access to the other ports may be able to take
+port). Someone with access to the other ports might be able to take
 control of your node or accounts you have saved on the node.
 
 .. warning::
@@ -164,8 +165,7 @@ control of your node or accounts you have saved on the node.
    easy to block ports in practice.
    This is especially a problem `when using UFW
    <https://github.com/chaifeng/ufw-docker#problem>`_.
-   The gRPC port is currently not considered secure, and we, therefore,
-   *strongly recommend* changing the default gRPC token via the
+   Because the gRPC port is currently not considered secure, we strongly recommend changing the default gRPC token via the
    ``--rpc-server-token`` flag when running a node.
    This will provide reasonable security if the token is only ever used through
    a secure channel.

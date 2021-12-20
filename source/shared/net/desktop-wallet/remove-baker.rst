@@ -7,12 +7,30 @@ Remove a baker account
 .. contents::
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
 
-Remove a baker
-==============
 
-If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. When you've removed the baker, we recommend that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
+If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 :ref:`epochs <glossary-epoch>`. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
+
+Remove a baker (Single-signature account)
+=========================================
+
+#. Go to **Accounts**, select the account that you no longer want to be a baker account, change the view to the detailed view, and select **Remove baker**.
+
+#. The cool-down period is displayed. Select **Continue**.
+
+#. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+
+#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct, and navigate to the right. The Ledger device says **Remove baker from pool**. Navigate to the right.
+
+#. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+
+#. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+
+Remove a baker (Multi-signature account)
+========================================
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Remove baker**.
 
@@ -21,7 +39,7 @@ If you remove a baker in the desktop wallet, the node that is configured with th
 #. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
 
 Generate the transaction
-========================
+------------------------
 
 There are two ways that you can generate the transaction:
 
@@ -32,14 +50,14 @@ There are two ways that you can generate the transaction:
 In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
 
 Generate the transaction without signing
-=========================================
+-----------------------------------------
 
 #. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
 
 #. Select **Generate without signing**. You can now export the proposal.
 
 Generate and sign the transaction on the Ledger
-===============================================
+-----------------------------------------------
 
 #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
@@ -57,7 +75,7 @@ Generate and sign the transaction on the Ledger
 In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-remove-baker>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
 Export proposal
-===============
+---------------
 
 If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
 
@@ -68,7 +86,7 @@ If more than one signature is needed to sign off on the proposal, you have to sh
 #. You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.
 
 Receive signatures from co-signers
-===================================
+-----------------------------------
 
 When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
 
@@ -81,7 +99,7 @@ When the co-signers have signed the transaction, they return the signed transact
 .. _submit-remove-baker:
 
 Submit the transaction to the blockchain
-========================================
+----------------------------------------
 
 When you have received and added all the required signatures, you can submit the transaction to the blockchain.
 

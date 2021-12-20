@@ -46,10 +46,19 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.extlinks",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
     "multidoc",
     "sphinx_reredirects"
 ]
+
+# sphinx-prompt must be the first of these two.
+extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
+
+extlinks = {
+    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
+    'cdw-sig': ('https://github.com/Concordium/concordium-desktop-wallet/releases/download/v1.1.6/concordium-desktop-wallet-1.1.6.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+}
 
 # todo_include_todos = True
 # todo_emit_warnings = True

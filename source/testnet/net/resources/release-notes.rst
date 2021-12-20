@@ -8,6 +8,59 @@ Release Notes
    :local:
    :backlinks: none
 
+Open Testnet v7 Update 1
+========================
+
+December 17, 2021
+
+Concordium Desktop Wallet v1.3.0
+--------------------------------
+- Added a GTU drop option for testnet.
+- In the case of a failed identity, the error details received from the identity provider are now displayed to the user.
+- Added UI flows for baker transactions for single signer accounts.
+- Auxiliary data in an Update Protocol transaction is now optional.
+- Updated terms and conditions.
+- Updated UI to reflect the rename of GTU to CCD, meaning anywhere tokens were referred to as GTU, it now says CCD. The GTU icon has also been replaced with the icon representing CCD.
+- Datetimes are now selected with a date picker from a calendar.
+- Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
+- Failed database migrations errors are now shown correctly to the user.
+
+Concordium Mobile Wallet for Android v1.0.22
+--------------------------------------------
+
+- Changed naming from GTU to CCD.
+- Various bug fixes.
+
+December 13, 2021
+
+Concordium Ledger App v2.0.3
+----------------------------
+- Supports Ledger Nano S firmware version 2.1.0.
+- Removed references to GTU in the UI.
+- An acceptance step has been added to the export of private key seeds.
+
+December 7, 2021
+
+Concordium Mobile Wallet for iOS v1.1(27)
+-------------------------------------------
+
+- Changed GTU/Ǥ naming to CCD/Ͼ.
+- Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+   - It is now possible to add memos to simple and shielded transfers.
+   - Memos can also be displayed for transfers with a release schedule.
+
+- Various improvements of the identity issuance flow, account creation and related support options.
+
+   - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
+   - Added a small dialogue to remind the user to check for a response on new identity requests.
+   - Users will now be notified on successful creation of new accounts inside the app.
+   - Various back-end improvements by the identity provider to make their service more robust.
+   - Various improvements to make the identity issuance and account creation flow more robust.
+
+- Various bug fixes.
+- Various smaller textual updates.
+
 Open Testnet v7
 ===============
 
