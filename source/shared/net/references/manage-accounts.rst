@@ -119,7 +119,7 @@ This allows each account to have aliases for different uses and creates a kind o
 
 Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account's canonical address.
 
-To generate aliases, enter:
+To show aliases, enter:
 
 .. code-block:: console
 
