@@ -26,7 +26,7 @@ iOS
 Android
 -------
 
-- `Download the Android version of Concordium Mobile Wallet for Testnet <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.16(55).apk>`_
+- `Download the Android version of Concordium Mobile Wallet for Testnet <http://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.0.22(61).apk>`_
 
 
 Concordium Desktop Wallet
