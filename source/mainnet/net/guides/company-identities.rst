@@ -1,7 +1,7 @@
-.. _enterprise-identities:
+.. company-identities:
 
 ============================
-Enterprise identity creation
+Company identity creation
 ============================
 
 .. contents::
@@ -9,17 +9,17 @@ Enterprise identity creation
     :backlinks: none
     :depth: 1
 
-What is an enterprise identity
+What is a company identity
 ==============================
 
-An enterprise identity is for enterprises that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Enterprise identities are therefore issued with documents that identify the enterprise and not an individual. Enterprise identities are only relevant for a few enterprises such as crypto exchanges.
+A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
-You can't use the Desktop Wallet or the Mobile Wallet to create an enterprise identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). This guide describes how you create an enterprise identity.
+You can't use the Desktop Wallet or the Mobile Wallet to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). This guide describes how you create a company identity.
 
-Create an enterprise identity
+Create a company identity
 =============================
 
-#. Download the ``enterprise-identities`` tools for your platform.
+#. Download the tools for your platform.
 
    - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities.tar.gz>`_
       - SHA256 checksum of the download: ``b9981c542f46e92dd05e8b3e9bf46684e9de364bd331cd6fa8db98ed99b4df84``
@@ -58,9 +58,9 @@ Create an enterprise identity
 
 #. To create additional accounts from the identity object returned by Notabene, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-an-identity-object>`_. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
 
-Support for enterprise identity creation
+Support for company identity creation
 ========================================
 
-If you experience issues with steps 1, 2,3,4, or 6, please contact Concordium’s technical support via support@concordium.software.
+If you experience issues with steps 1, 2, 3, 4, or 6, please contact Concordium’s technical support via support@concordium.software.
 
 If you experience issues with step 5, identity verification, please contact Notabene via ania@notabene.id.
