@@ -124,7 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/enterprise-identities.html">Enterprise identity creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/company-identities.html">Company identity creation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul>
@@ -184,6 +184,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary of Concordium Terms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#account">Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alias">Alias</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#attributes">Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#baker">Baker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#best-block">Best block</a></li>
@@ -320,8 +321,12 @@ with the account holder’s <a class="reference internal" href="#glossary-identi
 for anonymity. This anonymity can only be revoked by anonymity revokers, in
 cooperation with the account’s <a class="reference internal" href="#glossary-identity-provider"><span class="std std-ref">identity provider</span></a>.</p>
 </div>
+<div class="section" id="alias">
+<span id="glossary-attribute"></span><h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline">¶</a></h2>
+<p>A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
+</div>
 <div class="section" id="attributes">
-<span id="glossary-attribute"></span><h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<span id="glossary-alias"></span><h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <p>User data, such as date of birth or country of residence, that is associated
 with a user <a class="reference internal" href="#glossary-identity"><span class="std std-ref">identity</span></a>. Users can choose which attributes should be revealed in
 each of their accounts.</p>

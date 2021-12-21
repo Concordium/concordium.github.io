@@ -285,12 +285,13 @@
 <li><p><a class="reference internal" href="#update-keys-of-an-account" id="id11">Update keys of an account</a></p></li>
 <li><p><a class="reference internal" href="#remove-keys-of-an-account" id="id12">Remove keys of an account</a></p></li>
 <li><p><a class="reference internal" href="#import-accounts-and-keys-from-the-wallet-apps" id="id13">Import accounts and keys from the Wallet apps</a></p></li>
+<li><p><a class="reference internal" href="#show-account-aliases" id="id14">Show account aliases</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#shell-completion" id="id14">Shell completion</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id15">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#shell-completion" id="id15">Shell completion</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>The Concordium distribution ships with a CLI tool named <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
@@ -523,6 +524,16 @@ Mobile Wallet.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">--name</span></code> option selects which account to import and imports it with this
 name. If it’s omitted, all accounts in the file are imported under their
 existing names.</p>
+</div>
+<div class="section" id="show-account-aliases">
+<h4>Show account aliases<a class="headerlink" href="#show-account-aliases" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias <span class="m">17</span>
+</pre></div>
+</div>
+<p>This generates the output:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

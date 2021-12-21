@@ -271,16 +271,17 @@
 <ul>
 <li><p><a class="reference internal" href="#account-balances" id="id2">Account balances</a></p></li>
 <li><p><a class="reference internal" href="#account-sequence-number" id="id3">Account sequence number</a></p></li>
+<li><p><a class="reference internal" href="#account-aliases" id="id4">Account aliases</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tools" id="id4">Tools</a></p>
+<li><p><a class="reference internal" href="#tools" id="id5">Tools</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-desktop-wallet" id="id5">The Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#the-mobile-wallet" id="id6">The Mobile Wallet</a></p></li>
-<li><p><a class="reference internal" href="#command-line-tool" id="id7">Command-line tool</a></p></li>
+<li><p><a class="reference internal" href="#the-desktop-wallet" id="id6">The Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#the-mobile-wallet" id="id7">The Mobile Wallet</a></p></li>
+<li><p><a class="reference internal" href="#command-line-tool" id="id8">Command-line tool</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id8">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>An account on the Concordium blockchain is owned by one or more <a class="reference internal" href="../resources/glossary.html#glossary-credential-holder"><span class="std std-ref">credential holders</span></a> and consists of two parts: The <a class="reference internal" href="../resources/glossary.html#glossary-on-chain"><span class="std std-ref">on-chain</span></a> part, which is publicly visible and maintained by the bakers, and the <a class="reference internal" href="../resources/glossary.html#glossary-off-chain"><span class="std std-ref">off-chain</span></a> part.</p>
@@ -360,6 +361,22 @@ address is provided, <code class="docutils literal notranslate"><span class="pre
 <p>The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tracks the sequence number automatically, but it can
 also be set manually via the option <code class="docutils literal notranslate"><span class="pre">--nonce</span></code>.</p>
+</div>
+<div class="section" id="account-aliases">
+<h3>Account aliases<a class="headerlink" href="#account-aliases" title="Permalink to this headline">¶</a></h3>
+<p>In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
+matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
+<p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
+<p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account’s canonical address.</p>
+<p>To show aliases, enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias <span class="m">17</span>
+</pre></div>
+</div>
+<p>This generates the output:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="tools">
