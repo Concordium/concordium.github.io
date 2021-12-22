@@ -23,11 +23,28 @@ Prerequisites
 Configure a baker node on Windows
 =================================
 
-#. Create baker keys and associate them with an account either on mainnet or testnet. We recommend that you do this with the :ref:`Desktop Wallet<create-baker-desktop>`. However, if you want use an account from the mobile wallet as a baker account, you have to use the :ref:`Concordium Client<become-a-baker>`. In the following, the baker keys are referred to as baker-credentials.json.
+#. Create baker keys and associate them with an account either on mainnet or testnet. Doing this with the :ref:`Desktop Wallet<create-baker-desktop>` is recommended. However, if you want use an account from the mobile wallet as a baker account, you have to use the :ref:`Concordium Client<become-a-baker>`, in partiuclar the commands:
+
+   .. code-block:: console
+
+     concordium-client baker generate-keys <keys-file>.json
+
+   and 
+
+ 
+   .. code-block:: console
+
+     concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+
+   In the following, the baker keys are referred to as baker-credentials.json.
 
    .. Note::
 
       The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.
+
+
+   .. Warning::
+     Do not edit the name or contents of the baker-credentials.json file.
 
 #. Once you've created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open **Configure Concordium Node Service** from the **Start** menu, and select **Yes** when you see the message *Do you want to allow this app to make changes to your device?*. The configuration file opens.
 
