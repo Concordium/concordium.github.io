@@ -284,4 +284,3 @@ redirects = {
 
 # -- Tags that enables the .. only option ----------------
 tags.add('mainnet')
-}
