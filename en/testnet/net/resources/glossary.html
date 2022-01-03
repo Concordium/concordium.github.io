@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#best-chain">Best chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#block">Block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#catch-up">Catch-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ccd">CCD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chain">Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#consensus">Consensus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#credential">Credential</a></li>
@@ -199,7 +200,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#epoch">Epoch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#finalization">Finalization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#genesis-block">Genesis Block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#global-transaction-unit-ccd">Global Transaction Unit (CCD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#glossary-identity">Identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#glossary-identity-issuer">Identity Issuer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#glossary-identity-object">Identity Object</a></li>
@@ -360,6 +360,21 @@ baker created the block, and that the baker was entitled to do so.</p>
 <p>The mechanism by which a node receive messages that may have been missed, for
 instance because the node was offline when it was sent.</p>
 </div>
+<div class="section" id="ccd">
+<span id="glossary-ccd"></span><h2>CCD<a class="headerlink" href="#ccd" title="Permalink to this headline">¶</a></h2>
+<p>CCD is the currency of the Concordium blockchain. CCD can be used for multiple
+purposes:</p>
+<ul class="simple">
+<li><p>as a form of payment between users via transactions,</p></li>
+<li><p>as a payment for executing smart contracts,</p></li>
+<li><p>as a store of value,</p></li>
+<li><p>as a reward for honest behaviour (e.g. <a class="reference internal" href="#glossary-baker"><span class="std std-ref">baking</span></a> or <a class="reference internal" href="#glossary-finalization"><span class="std std-ref">finalizing</span></a>
+blocks on top of the longest chain), to incentivize blockchain users.</p></li>
+</ul>
+<p>The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
+µCCD. This means that CCD amounts are given with up to six decimal places of
+precision.</p>
+</div>
 <div class="section" id="chain">
 <span id="glossary-chain"></span><h2>Chain<a class="headerlink" href="#chain" title="Permalink to this headline">¶</a></h2>
 <p>A sequence of <a class="reference internal" href="#glossary-block"><span class="std std-ref">blocks</span></a>, starting from the <a class="reference internal" href="#glossary-genesis-block"><span class="std std-ref">genesis block</span></a>, in which each
@@ -414,21 +429,6 @@ authoritative <a class="reference internal" href="#glossary-chain"><span class="
 <div class="section" id="genesis-block">
 <span id="glossary-genesis-block"></span><h2>Genesis Block<a class="headerlink" href="#genesis-block" title="Permalink to this headline">¶</a></h2>
 <p>The first <a class="reference internal" href="#glossary-block"><span class="std std-ref">block</span></a> in a <a class="reference internal" href="#glossary-chain"><span class="std std-ref">chain</span></a>. The genesis block establishes the starting state of the chain, before any transactions have occurred.</p>
-</div>
-<div class="section" id="global-transaction-unit-ccd">
-<span id="glossary-ccd"></span><h2>Global Transaction Unit (CCD)<a class="headerlink" href="#global-transaction-unit-ccd" title="Permalink to this headline">¶</a></h2>
-<p>The currency of the Concordium blockchain. CCD can be used for multiple
-purposes:</p>
-<ul class="simple">
-<li><p>as a form of payment between users via transactions,</p></li>
-<li><p>as a payment for executing smart contracts,</p></li>
-<li><p>as a store of value,</p></li>
-<li><p>as a reward for honest behaviour (e.g. <a class="reference internal" href="#glossary-baker"><span class="std std-ref">baking</span></a> or <a class="reference internal" href="#glossary-finalization"><span class="std std-ref">finalizing</span></a>
-blocks on top of the longest chain), to incentivize blockchain users.</p></li>
-</ul>
-<p>The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
-µCCD. This means that CCD amounts are given with up to six decimal places of
-precision.</p>
 </div>
 <div class="section" id="glossary-identity">
 <span id="identity"></span><h2>Identity<a class="headerlink" href="#glossary-identity" title="Permalink to this headline">¶</a></h2>

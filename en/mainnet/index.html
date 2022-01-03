@@ -24,12 +24,14 @@
         </a>
     </div>
 
-    <div class="info-container">
+<!-- This can used to add a notification at the top of the landing page --
+     <div class="info-container">
         <div class="info-text">
             <h4>Please note</h4>
             <p>The Concordium native currency has been renamed from GTU to CCD, and the documentation and software is being updated to reflect this change. Because of this, you might encounter both terms and their respective symbols (Ǥ/Ͼ) in the documentation and software until the update is complete.</p>
         </div>
     </div>
+--> 
 
     <div class="features-container">
         <div class="feature">
@@ -58,6 +60,12 @@
                     <li><a href="net/guides/run-node.html">Run a node on Linux (Docker)</a></li>
                     <li><a href="net/guides/run-node-ubuntu.html">Run a node on Ubuntu</a></li>
                     <li><a href="net/guides/overview-baker-process.html">Get an overview of the baker process</a></li>
+                </ul>
+                <h3>Smart Contracts</h3>
+                <ul class="feature-box-list">
+                    <li><a href="smart-contracts/general/introduction.html">Get started with smart contracts</a></li>
+                    <li><a href="smart-contracts/guides/setup-tools.html">Install the necessary tools</a></li>
+                    <li><a href="smart-contracts/tutorials/piggy-bank/index.html">Tutorial: Learn with the piggy bank  <br>  smart contract</a></li>
                 </ul>
             </div>
         </div>
@@ -124,6 +132,7 @@
             display: flex;
             flex-direction: column;
             font-family: RobotoSlab;
+            overflow: visible;
         }   
 
         .info-container {
@@ -211,6 +220,10 @@
             text-align:center;
             position:relative;
             font-family: Lato;
+        }
+
+        .list-container ul {
+            padding-bottom: 50px;
         }
 
         .list-container ul li {
