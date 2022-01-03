@@ -86,24 +86,7 @@ Catch-up
 The mechanism by which a node receive messages that may have been missed, for
 instance because the node was offline when it was sent.
 
-.. _glossary-chain:
-
-Chain
-=====
-
-A sequence of :ref:`blocks<glossary-block>`, starting from the :ref:`genesis block<glossary-genesis-block>`, in which each
-successive block points to the predecessor. There may be multiple valid chains,
-and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is authoritative.
-
-.. _glossary-consensus:
-
-Consensus
-=========
-
-The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
-order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary-finalization>`.
-
-.. _glossary-CCD
+.. _glossary-ccd:
 
 CCD
 ===
@@ -120,6 +103,23 @@ purposes:
 The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
 µCCD. This means that CCD amounts are given with up to six decimal places of
 precision.
+
+.. _glossary-chain:
+
+Chain
+=====
+
+A sequence of :ref:`blocks<glossary-block>`, starting from the :ref:`genesis block<glossary-genesis-block>`, in which each
+successive block points to the predecessor. There may be multiple valid chains,
+and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is authoritative.
+
+.. _glossary-consensus:
+
+Consensus
+=========
+
+The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
+order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary-finalization>`.
 
 .. _glossary-credential:
 

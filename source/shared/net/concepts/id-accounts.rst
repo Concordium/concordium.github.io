@@ -10,7 +10,7 @@ Identities and accounts
 
 
 In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive :ref:`glossary-CCD`) a user must create an *account*.
+send, receive :ref:'glossary-ccd') a user must create an *account*.
 
 The user will get an :ref:`glossary-initial-account` at the same time as an *identity* has been issued
 by an identity provider. As the initial account is submitted to the chain by the
