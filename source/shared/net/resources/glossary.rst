@@ -86,6 +86,24 @@ Catch-up
 The mechanism by which a node receive messages that may have been missed, for
 instance because the node was offline when it was sent.
 
+.. _glossary-ccd:
+
+CCD
+===
+
+CCD is the currency of the Concordium blockchain. CCD can be used for multiple
+purposes:
+
+-  as a form of payment between users via transactions,
+-  as a payment for executing smart contracts,
+-  as a store of value,
+-  as a reward for honest behaviour (e.g. :ref:`baking<glossary-baker>` or :ref:`finalizing<glossary-finalization>`
+   blocks on top of the longest chain), to incentivize blockchain users.
+
+The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
+µCCD. This means that CCD amounts are given with up to six decimal places of
+precision.
+
 .. _glossary-chain:
 
 Chain
@@ -170,24 +188,6 @@ Genesis Block
 =============
 
 The first :ref:`block<glossary-block>` in a :ref:`chain<glossary-chain>`. The genesis block establishes the starting state of the chain, before any transactions have occurred.
-
-.. _glossary-CCD:
-
-Global Transaction Unit (CCD)
-=============================
-
-The currency of the Concordium blockchain. CCD can be used for multiple
-purposes:
-
--  as a form of payment between users via transactions,
--  as a payment for executing smart contracts,
--  as a store of value,
--  as a reward for honest behaviour (e.g. :ref:`baking<glossary-baker>` or :ref:`finalizing<glossary-finalization>`
-   blocks on top of the longest chain), to incentivize blockchain users.
-
-The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
-µCCD. This means that CCD amounts are given with up to six decimal places of
-precision.
 
 .. _glossary-identity:
 
