@@ -41,8 +41,9 @@ Create a new identity and initial account
 
 |
 
-.. Note::
-   When your identity and initial account has been verified, we strongly recommend that you make an export. This way, you’ll have a backup in case the database is damaged.
+.. Warning::
+   **Warning: Backup is essential. If you lose your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
+   **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
 
 .. Note::
    To access the **Balance** or **Shielded balance** of the new account, tap the Balance or Shielded balance areas on the account card.
