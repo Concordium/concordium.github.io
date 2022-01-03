@@ -11,6 +11,12 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+January 3, 2022
+
+Concordium Node v3.0.1
+----------------------
+- Fixed a starvation bug in some cases of parallel node queries.
+
 December 17, 2021
 
 Concordium Desktop Wallet v1.3.0
