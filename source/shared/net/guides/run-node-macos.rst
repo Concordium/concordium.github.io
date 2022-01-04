@@ -219,7 +219,7 @@ On mainnet
 #. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
    Node/LaunchDaemons/software.concordium.mainnet.node.plist``
 
-#. Underneath the `<dict>` tag in the *EnviromentVariables* section of the file add the following::
+#. Underneath the ``<dict>`` tag in the *EnviromentVariables* section of the file add the following::
 
     <!-- Path to the baker credentials file. -->
     <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
