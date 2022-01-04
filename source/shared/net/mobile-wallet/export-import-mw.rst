@@ -11,6 +11,10 @@ Make a backup of identities and accounts in the Mobile Wallet
 To make sure that you have a backup of your accounts, identities, and addresses, we recommend that you export the data from the Mobile Wallet to a file. This way, all your accounts, identities, and your address book are saved in a file you can store in a safe location.
 
 .. Warning::
+   **Warning: Backup is essential. If you lose your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
+   **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
+
+.. Note::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
 
 Export identities, accounts and address book
@@ -32,8 +36,9 @@ We strongly recommend that you store the backup file in a safe location and not 
 
 |
 
-.. image:: ../images/mobile-wallet/MW58.png
-      :width: 25%
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/YTpap-jZrMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 |
 
