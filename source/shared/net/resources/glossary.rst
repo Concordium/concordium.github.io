@@ -21,17 +21,24 @@ one or more *account keys* that can be used to authorize transactions
 originating from the account, as well as with an :ref:`encryption key<glossary-encryption-key>` that can be
 used to send shielded transfers to the account. An account is also associated
 with the account holder's :ref:`identity<glossary-identity>`, although this association is encrypted
-for anonymity. This anonymity can only be revoked by anonymity revokers, in
+for anonymity. This anonymity can only be revoked by :ref:`anonymity revokers<glossary-anonymity-revoker>`, in
 cooperation with the account's :ref:`identity provider<glossary-identity-provider>`.
 
-.. _glossary-attribute:
+.. _glossary-alias:
 
 Alias
 =====
 
 A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
-.. _glossary-alias:
+.. _glossary-anonymity-revoker
+
+Anonymity revoker
+=================
+
+An authority who has power to know the identity of a participant. The anonymity revokers and :ref:`identity provider<glossary-identity-provider>` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+
+.. _glossary-attribute:
 
 Attributes
 ==========
@@ -78,6 +85,13 @@ ledger. Each block has a :ref:`slot time<glossary-slot>` that records when it wa
 also contains information relating to consensus, for instance establishing which
 baker created the block, and that the baker was entitled to do so.
 
+.. _glossary-branch:
+
+Branch
+======
+
+Insert definition here.
+
 .. _glossary-catch-up:
 
 Catch-up
@@ -102,6 +116,13 @@ Consensus
 
 The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
 order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary-finalization>`.
+
+.. _glossary-cool-down-period:
+
+Cool-down period
+================
+
+A period of time during which transactions are frozen. Examples of when cool-down periods apply include removing a baker and updating stake. (Is a cool-down period always two epochs?)
 
 .. _glossary-credential:
 
@@ -129,15 +150,6 @@ Decryption key
 Dual to :ref:`encryption key<glossary-encryption-key>`. In contrast to the encryption key, which is public,
 this key is only known to the account holder.
 
-.. _glossary-shielded-amount:
-
-Shielded amount
-================
-
-An amount of :ref:`CCD<glossary-CCD>` that is encrypted with the public key of an account. Only
-the owner of the secret key can determine how many CCDs are contained in the
-encryption.
-
 .. _glossary-encryption-key:
 
 Encryption key
@@ -162,7 +174,7 @@ Finalization
 ============
 
 The process by which a block is marked to be "finalized", i.e. part of the
-authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted periodically by the bakers with :ref:`staked amount<glossary-staked-amount>` at least 0.1% of the total stake in the system.
+authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted periodically by the bakers with :ref:`staked amount<glossary-staked-amount>` at least 0.1% of the total amount of existing CCD.
 
 .. _glossary-genesis-block:
 
@@ -320,6 +332,15 @@ or implicit as part of the consensus protocol. An example of the former is a
 transaction such as a CCD transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
 
+.. _glossary-shielded-amount:
+
+Shielded amount
+================
+
+An amount of :ref:`CCD<glossary-CCD>` that is encrypted with the public key of an account. Only
+the owner of the secret key can determine how many CCDs are contained in the
+encryption.
+
 .. _glossary-shielded-balance:
 
 Shielded balance
@@ -387,7 +408,7 @@ winner.
 Staked Amount
 =============
 
-:ref:`bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
+:ref:`Bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
 staked remains locked while staked and cannot be transferred or moved in any
 way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
 
@@ -459,4 +480,3 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
-
