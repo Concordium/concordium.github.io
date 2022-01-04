@@ -51,7 +51,7 @@ When considering the rewards and other baking-related concepts, the concept of a
 
 Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>` (we need to describe what a branch is), each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
 
-A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 epochs. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance. 
+A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 epochs. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance.
 
 Finalization
 ============
