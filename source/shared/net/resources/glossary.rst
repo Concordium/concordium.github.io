@@ -31,7 +31,7 @@ Alias
 
 A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
-.. _glossary-anonymity-revoker
+.. _glossary-anonymity-revoker:
 
 Anonymity revoker
 =================
