@@ -281,3 +281,6 @@ redirects = {
     "./net/desktop-wallet/send-gtu-single-desktop": "/en/mainnet/net/desktop-wallet/send-ccd-single-desktop.html",
     "./net/desktop-wallet/shield-gtu-desktop": "/en/mainnet/net/desktop-wallet/shield-ccd-desktop.html",
 }
+
+# -- Tags that enables the .. only option ----------------
+tags.add('mainnet')
