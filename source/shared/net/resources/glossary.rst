@@ -140,7 +140,7 @@ order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glo
 Cool-down period
 ================
 
-A period of time during which transactions are frozen. Examples of when cool-down periods apply include removing a baker and updating stake. (Is a cool-down period always two epochs?)
+A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a baker and updating stake. The length of a cool-down period varies between transactions.
 
 .. _glossary-credential:
 
@@ -159,6 +159,13 @@ Credential holder
 =================
 
 The user holding a credential. An account is owned by one or more credential holders.
+
+.. _glossary-cryptographic-proof
+
+Cryptographic proof
+===================
+
+A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a zero-knowledge proof.
 
 .. _glossary-decryption-key:
 
@@ -471,6 +478,14 @@ Unshielding
 
 The action of transferring a part of the :ref:`shielded balance<glossary-shielded-balance>` to the public
 balance.
+
+.. _glossary-user-identity-certificate
+
+User identity certificate
+=========================
+
+Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
+The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
 .. _glossary-winning-probability:
 

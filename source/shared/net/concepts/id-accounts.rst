@@ -15,7 +15,7 @@ Before you can use the Concordium Platform, an identity provider must verify and
 About identities
 ----------------
 
-Identities are issued by an identity provider. There is a registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain. Concordium Foundation will maintain the list in the beginning.
+Identities are issued by an identity provider. There is a registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain. (Do we want to tell users how to find this?) Concordium Foundation will maintain the list in the beginning.
 
 .. Note::
 
@@ -51,28 +51,29 @@ You can create identities in the :ref:`Desktop Wallet <create-initial-account-de
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
+Upon verification of the user's identification documents and attributes, the Identity provider issues a :ref:`user identity certificate<glossary-user-identity-certificate>`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
+
 The purpose of having an identity is to facilitate regulatory compliance. However, your privacy is still protected. Your identity is not visible on the blockchain, and the identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`.
 
 About accounts
 ==============
 
 The user gets an :ref:`glossary-initial-account` at the same time as an *identity* has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the
-identity provider, the identity provider knows the owner of the initial account. For this reason, the user may not want to use the initial account and create a regular account instead.
-
-The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity*
-which is issued :ref:`glossary-off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
-
-Once you have an identity, you can use it to create more accounts. The creation of an account is an :ref:`glossary-on-chain` action that requires sending a transaction to a node that participates in the Concordium network. The input to the transaction is a *credential*, which contains a number of cryptographic proofs, as well as a selection of attributes the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
+identity provider, the identity provider knows the owner of the initial account. For this reason, the user may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity. 
 
 The user additionally creates account keys for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
 are valid for the user and stores them locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period and users can obtain new certificates
-in connection with updated identity verification by an identity provider. While the identity provider can link the initial account to the user, nobody else can. Based on
-the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the anonymity revokers and the identity provider are
-involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account.
+in connection with updated identity verification by an identity provider.
 
-Once a user has acquired a user identity certificate from an identity provider, they can create more accounts on the Concordium Platform. This is typically done using an app or wallet that guides users through the account creation process.
+Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the anonymity revokers and the identity provider are
+involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :ref:`glossary-off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
+
+Once you have an identity and a user identity certifcate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an app or wallet that guides users through the account creation process. The creation of an account is an :ref:`glossary-on-chain` action that requires sending a transaction to a node that participates in the Concordium network. The input to the transaction is a *credential*, which contains a number of :ref:`cryptographic proofs<glossary-cryptographic-proof>`, as well as a selection of attributes the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
+
+An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping 
+all other activity anonymous.
 
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
@@ -96,7 +97,7 @@ of risk in the transaction.
 Revoking anonymity
 ==================
 
-The identity of a user can only be revealed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant anonymity revokers and identity provider can the real-world identity of a user be revealed and only to the extent set out in the order.
+The identity of a user can only be revealed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant anonymity revokers and identity provider can the real-world identity of a user be revealed and only to the extent set out in the order.
 
 When legally obliged, the anonymity revokers and identity provider work together to determine the owner of an account and determine which accounts belong to the same owner. Anonymity revocation is a multi-stage process requiring cooperation of multiple parties.
 
