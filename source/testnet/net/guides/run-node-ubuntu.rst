@@ -83,9 +83,9 @@ Concordium network. It will be able to send transactions and,
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections. Depending on your network and
+on port ``8888`` for inbound connections on Mainnet and on port ``8889`` for inbount connections on Testnet. Depending on your network and
 platform configuration you will either need to forward an external port
-to ``8888`` on your router, open it in your firewall, or both. The
+to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
 .. _baker-node-Ubuntu:
