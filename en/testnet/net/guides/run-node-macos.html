@@ -116,6 +116,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-and-run-a-node">Install and run a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#verify-that-the-node-is-running">Verify that the node is running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#change-the-node-startup-settings">Change the node startup settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configure-a-node-as-a-baker">Configure a node as a baker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#view-node-logs">View node logs</a></li>
@@ -280,17 +281,18 @@
 <li><p><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet" id="id4">Connect a node to the Desktop Wallet</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id5">Change the node startup settings</a></p></li>
-<li><p><a class="reference internal" href="#configure-a-node-as-a-baker" id="id6">Configure a node as a baker</a></p>
+<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id5">Enabling inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id6">Change the node startup settings</a></p></li>
+<li><p><a class="reference internal" href="#configure-a-node-as-a-baker" id="id7">Configure a node as a baker</a></p>
 <ul>
-<li><p><a class="reference internal" href="#on-mainnet" id="id7">On mainnet</a></p></li>
-<li><p><a class="reference internal" href="#on-testnet" id="id8">On testnet</a></p></li>
+<li><p><a class="reference internal" href="#on-mainnet" id="id8">On mainnet</a></p></li>
+<li><p><a class="reference internal" href="#on-testnet" id="id9">On testnet</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#view-node-logs" id="id9">View node logs</a></p></li>
-<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id10">Synchronize a node with the network</a></p></li>
-<li><p><a class="reference internal" href="#uninstall-a-macos-node" id="id11">Uninstall a macOS node</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id12">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#view-node-logs" id="id10">View node logs</a></p></li>
+<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id11">Synchronize a node with the network</a></p></li>
+<li><p><a class="reference internal" href="#uninstall-a-macos-node" id="id12">Uninstall a macOS node</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id13">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This guide describes how to run and manage a node on macOS. You can also run a
@@ -391,6 +393,21 @@ can see the name of the node on the <a class="reference external" href="https://
 <li><p>Select <strong>Set connection</strong>. If the connection works and the node is running properly, there’s a message saying <em>Successfully connected</em>.</p></li>
 </ol>
 </div>
+</div>
+<div class="section" id="enabling-inbound-connections">
+<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<p>If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>However you can also make your node an even better network participant
+by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on Mainnet and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbount connections on Testnet. Depending on your network and
+platform configuration you will either need to forward an external port
+to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
+details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="change-the-node-startup-settings">
 <h2>Change the node startup settings<a class="headerlink" href="#change-the-node-startup-settings" title="Permalink to this headline">¶</a></h2>

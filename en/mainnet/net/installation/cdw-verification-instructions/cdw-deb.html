@@ -270,7 +270,7 @@
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-desktop-wallet/releases/download/v1.1.6/concordium-desktop-wallet-1.1.6.deb.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.deb.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -278,12 +278,13 @@
 <ol class="arabic simple">
 <li><p>Navigate to the directory containing the assets needed to verify.</p></li>
 <li><p>Then paste the first line of the following block into the terminal</p></li>
-<li><p>The command outputs <strong>Verified OK</strong> as a result, as inidicated by the second line in the block.</p></li>
+<li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl dgst -sha256 -verify cdw-public.pem -signature <span class="p">|</span>cdw-deb<span class="p">|</span>.sig <span class="p">|</span>cdw-deb<span class="p">|</span>
-<span class="go">Verified OK</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in <span class="p">|</span>cdw-deb<span class="p">|</span> -sigfile <span class="p">|</span>cdw-deb<span class="p">|</span>.sig
+<span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
+<p>Note that this only works for openssl version 3.0.0 and up.</p>
 <div class="section" id="support-feedback">
 <h1>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h1>
 <p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>

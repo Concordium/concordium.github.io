@@ -308,7 +308,7 @@
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-desktop-wallet/releases/download/v1.1.6/concordium-desktop-wallet-1.1.6.AppImage.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.AppImage.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -316,12 +316,13 @@
 <ol class="arabic simple">
 <li><p>Navigate to the directory containing the assets needed to verify.</p></li>
 <li><p>Then paste the first line of the following block into the terminal</p></li>
-<li><p>The command outputs <strong>Verified OK</strong> as a result, as inidicated by the second line in the block.</p></li>
+<li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl dgst -sha256 -verify cdw-public.pem -signature concordium-desktop-wallet-1.3.0.AppImage.sig concordium-desktop-wallet-1.3.0.AppImage
-<span class="go">Verified OK</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in concordium-desktop-wallet-1.3.0.AppImage -sigfile concordium-desktop-wallet-1.3.0.AppImage.sig
+<span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
+<p>Note that this only works for openssl version 3.0.0 and up.</p>
 </div>
 <div class="section" id="debain-package">
 <span id="verification-cdw-deb"></span><h4>Debain package<a class="headerlink" href="#debain-package" title="Permalink to this headline">¶</a></h4>
@@ -339,7 +340,7 @@
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-desktop-wallet/releases/download/v1.1.6/concordium-desktop-wallet-1.1.6.deb.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.deb.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -347,12 +348,13 @@
 <ol class="arabic simple">
 <li><p>Navigate to the directory containing the assets needed to verify.</p></li>
 <li><p>Then paste the first line of the following block into the terminal</p></li>
-<li><p>The command outputs <strong>Verified OK</strong> as a result, as inidicated by the second line in the block.</p></li>
+<li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl dgst -sha256 -verify cdw-public.pem -signature concordium-desktop-wallet-1.3.0.deb.sig concordium-desktop-wallet-1.3.0.deb
-<span class="go">Verified OK</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in concordium-desktop-wallet-1.3.0.deb -sigfile concordium-desktop-wallet-1.3.0.deb.sig
+<span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
+<p>Note that this only works for openssl version 3.0.0 and up.</p>
 </div>
 <div class="section" id="rpm">
 <span id="verification-cdw-rpm"></span><h4>RPM<a class="headerlink" href="#rpm" title="Permalink to this headline">¶</a></h4>
@@ -370,7 +372,7 @@
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-desktop-wallet/releases/download/v1.1.6/concordium-desktop-wallet-1.1.6.rpm.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.rpm.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -378,12 +380,13 @@
 <ol class="arabic simple">
 <li><p>Navigate to the directory containing the assets needed to verify.</p></li>
 <li><p>Then paste the first line of the following block into the terminal</p></li>
-<li><p>The command outputs <strong>Verified OK</strong> as a result, as inidicated by the second line in the block.</p></li>
+<li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl dgst -sha256 -verify cdw-public.pem -signature concordium-desktop-wallet-1.3.0.rpm.sig concordium-desktop-wallet-1.3.0.rpm
-<span class="go">Verified OK</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in concordium-desktop-wallet-1.3.0.rpm -sigfile concordium-desktop-wallet-1.3.0.rpm.sig
+<span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
+<p>Note that this only works for openssl version 3.0.0 and up.</p>
 </div>
 </div>
 <div class="section" id="automatic-updates">
@@ -417,8 +420,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum concordium-mainnet-node_3.0.0_amd64.deb
-<span class="go">5f9acd862974be1c31c0b7a61aee5536146b3b45a9b492014d21a3a62c3bbfb3</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum concordium-mainnet-node_3.0.1_amd64.deb
+<span class="go">19e3b27fcac5f5a8012ffff0ec13a4c80350e1d99afb4022bcd49929527667a7</span>
 </pre></div>
 </div>
 </div>

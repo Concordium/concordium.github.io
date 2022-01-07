@@ -115,6 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prequisites">Prequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-and-run-a-node">Install and run a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#verify-that-the-node-is-running">Verify that the node is running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet">Connect a node to the Desktop Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#change-the-node-startup-settings">Change the node startup settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configure-the-concordium-node-runner-service">Configure the Concordium Node Runner Service</a></li>
@@ -277,13 +278,14 @@
 <li><p><a class="reference internal" href="#prequisites" id="id1">Prequisites</a></p></li>
 <li><p><a class="reference internal" href="#install-and-run-a-node" id="id2">Install and run a node</a></p></li>
 <li><p><a class="reference internal" href="#verify-that-the-node-is-running" id="id3">Verify that the node is running</a></p></li>
-<li><p><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet" id="id4">Connect a node to the Desktop Wallet</a></p></li>
-<li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id5">Change the node startup settings</a></p></li>
-<li><p><a class="reference internal" href="#configure-the-concordium-node-runner-service" id="id6">Configure the Concordium Node Runner Service</a></p></li>
-<li><p><a class="reference internal" href="#view-the-node-log" id="id7">View the node log</a></p></li>
-<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id8">Synchronize a node with the network</a></p></li>
-<li><p><a class="reference internal" href="#uninstall-a-node-running-on-windows" id="id9">Uninstall a node running on Windows</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id4">Enabling inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet" id="id5">Connect a node to the Desktop Wallet</a></p></li>
+<li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id6">Change the node startup settings</a></p></li>
+<li><p><a class="reference internal" href="#configure-the-concordium-node-runner-service" id="id7">Configure the Concordium Node Runner Service</a></p></li>
+<li><p><a class="reference internal" href="#view-the-node-log" id="id8">View the node log</a></p></li>
+<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id9">Synchronize a node with the network</a></p></li>
+<li><p><a class="reference internal" href="#uninstall-a-node-running-on-windows" id="id10">Uninstall a node running on Windows</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id11">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
@@ -364,6 +366,21 @@
 </ul>
 </li>
 </ol>
+</div>
+<div class="section" id="enabling-inbound-connections">
+<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<p>If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>However you can also make your node an even better network participant
+by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on Mainnet and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbount connections on Testnet. Depending on your network and
+platform configuration you will either need to forward an external port
+to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
+details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="connect-a-node-to-the-desktop-wallet">
 <h2>Connect a node to the Desktop Wallet<a class="headerlink" href="#connect-a-node-to-the-desktop-wallet" title="Permalink to this headline">¶</a></h2>

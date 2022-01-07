@@ -112,6 +112,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run a node on a server with Ubuntu</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#upgrade-from-version-1-1-3-to-3-0-0">Upgrade from version 1.1.3 to 3.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -274,13 +275,14 @@
 <li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id3">Install the Debian package and run a node</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#run-a-baker-node-on-ubuntu" id="id4">Run a baker node on Ubuntu</a></p>
+<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id4">Enabling inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#run-a-baker-node-on-ubuntu" id="id5">Run a baker node on Ubuntu</a></p>
 <ul>
-<li><p><a class="reference internal" href="#configure-the-node-with-baker-keys" id="id5">Configure the node with baker keys</a></p></li>
-<li><p><a class="reference internal" href="#verify-that-a-node-is-a-baker-node" id="id6">Verify that a node is a baker node.</a></p></li>
+<li><p><a class="reference internal" href="#configure-the-node-with-baker-keys" id="id6">Configure the node with baker keys</a></p></li>
+<li><p><a class="reference internal" href="#verify-that-a-node-is-a-baker-node" id="id7">Verify that a node is a baker node.</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#support-feedback" id="id7">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id8">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a <a class="reference internal" href="#baker-node-ubuntu"><span class="std std-ref">baker node</span></a>.</p>
@@ -338,6 +340,21 @@ Testnet blocks can be downloaded from <a class="reference external" href="https:
 <p>If you want more detailed information about building and maintaining a node, or if your node is not running, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md">Building .deb packages for ubuntu distributions README from Concordium</a></p>
 </div>
 </div>
+</div>
+<div class="section" id="enabling-inbound-connections">
+<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<p>If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>However you can also make your node an even better network participant
+by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on Mainnet and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbount connections on Testnet. Depending on your network and
+platform configuration you will either need to forward an external port
+to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
+details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="run-a-baker-node-on-ubuntu">
 <span id="baker-node-ubuntu"></span><h2>Run a baker node on Ubuntu<a class="headerlink" href="#run-a-baker-node-on-ubuntu" title="Permalink to this headline">¶</a></h2>
