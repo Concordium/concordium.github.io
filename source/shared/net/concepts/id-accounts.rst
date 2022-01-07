@@ -53,6 +53,8 @@ Identity issuance requires *Identity Verification*, which is the process of veri
 
 Upon verification of the user's identification documents and attributes, the Identity provider issues a :ref:`user identity certificate<glossary-user-identity-certificate>`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
 
+.. image:: ../images/identity-creation.png
+
 The purpose of having an identity is to facilitate regulatory compliance. However, your privacy is still protected. Your identity is not visible on the blockchain, and the identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`.
 
 About accounts
