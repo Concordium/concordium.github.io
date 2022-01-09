@@ -11,7 +11,7 @@ The Desktop Wallet also supports storing of your private keys on a hardware devi
 Prerequisites
 =============
 
--  :ref:`Run a node <run-node-ubuntu>` on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and post transaction.
+-  Connect to (or :ref:`run a node <run-node-ubuntu>`) on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and post transaction.
 
 -  Set up a :ref:`Ledger Nano S hardware device and install the Concordium Ledger App <install-Ledger-app>`.
 
