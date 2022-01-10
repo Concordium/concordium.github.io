@@ -11,6 +11,11 @@ Release notes
 
 Mainnet 3: Alpha Centauri 3.0
 ==============================
+January 7, 2022
+
+Concordium Node v3.0.1
+----------------------
+- Fixed a starvation bug in some cases of parallel node queries.
 
 December 17, 2021
 

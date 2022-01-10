@@ -27,10 +27,12 @@ In a terminal:
 
 #. Navigate to the directory containing the assets needed to verify.
 #. Then paste the first line of the following block into the terminal
-#. The command outputs **Verified OK** as a result, as inidicated by the second line in the block.
+#. The command outputs **Signature Verified Successfully** as a result, as inidicated by the second line in the block.
 
 .. code-block:: console
     :substitutions:
 
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-rpm|.sig |cdw-rpm|
-    Verified OK
+    $openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in |cdw-rpm| -sigfile |cdw-rpm|.sig
+    Signature Verified Successfully
+
+Note that this only works for openssl version 3.0.0 and up.

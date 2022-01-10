@@ -101,7 +101,7 @@ Node Debian package
 -------------------
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.0_amd64.deb>`_
+- `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.1_amd64.deb>`_
 
    - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
    - :ref:`Verification instructions <verification-node-debian-package>`
@@ -114,9 +114,9 @@ Full suite for running a node on Linux using Docker
 ---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.0-0-mainnet.tar.gz>`_
+- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.1-0-mainnet.tar.gz>`_
 
-   - SHA256 checksum of the download: ``897ef39807eb449945b0498def00ca14d2762be8f9d206a62f1d9cd97f2beec0``
+   - SHA256 checksum of the download: ``9939f3f002a899645d3698488e5d99c9683a475f4d33197f8cab70a9cb39f2b3``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
@@ -125,7 +125,7 @@ Native Windows node
 
 To run a node on Windows, you need a Windows Installer package.
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.0.msi>`_
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.1.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
 
@@ -134,7 +134,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.0.pkg>`_
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
