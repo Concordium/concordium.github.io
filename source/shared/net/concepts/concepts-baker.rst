@@ -45,7 +45,7 @@ The same stake is used when calculating whether a baker is included in the :ref:
 
 Time concepts
 -------------
-The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`slots <glossary-slot>`. 
+The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`slots <glossary-slot>`.
 
 .. image:: ../images/concepts/epochs-slots.png
    :alt: timeline showing how 14400 slots make up one epoch
