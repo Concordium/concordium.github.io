@@ -160,7 +160,7 @@ Credential holder
 
 The user holding a credential. An account is owned by one or more credential holders.
 
-.. _glossary-cryptographic-proof
+.. _glossary-cryptographic-proof:
 
 Cryptographic proof
 ===================
@@ -479,7 +479,7 @@ Unshielding
 The action of transferring a part of the :ref:`shielded balance<glossary-shielded-balance>` to the public
 balance.
 
-.. _glossary-user-identity-certificate
+.. _glossary-user-identity-certificate:
 
 User identity certificate
 =========================

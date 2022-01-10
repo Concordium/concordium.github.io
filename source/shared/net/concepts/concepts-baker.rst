@@ -44,14 +44,20 @@ To be chosen for baking a block, the baker must take part in a
 The same stake is used when calculating whether a baker is included in the :ref:`finalization <glossary-finalization>` committee or not.
 
 Time concepts
-----------------
-The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`slots <glossary-slot>`. (insert illustration)
+-------------
+The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`slots <glossary-slot>`. 
+
+.. image:: ../images/concepts/epochs-slots.png
+   :alt: timeline showing how 14400 slots make up one epoch
 
 When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
 
 Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>` (we need to describe what a branch is), each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
 
-A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 epochs. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance. (insert illustration)
+A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake in the desktop wallet, the stake will be decreased after a cool-down period. The cool-down period is 2 epochs. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance.
+
+.. image:: ../images/concepts/cooldown-period.png
+   :alt: timeline showing example cool-down period of two epochs
 
 Finalization
 ============

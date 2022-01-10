@@ -13,14 +13,14 @@ To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker 
 Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.
 
 About identities
-----------------
+================
 
 Identities are issued by an identity provider. There is a registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain. (Do we want to tell users how to find this?) Concordium Foundation will maintain the list in the beginning.
 
 .. Note::
 
    It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
-   Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see :ref:`Company identity creation<company-identities>`.
+   Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see :ref:`company-identities`.
 
 While identities facilitate compliance with relevant regulations, they also allow users to be represented on-chain in a way that protects the users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver.
 
@@ -30,7 +30,7 @@ Every account on the chain must be derived from an identity that is verified and
 the account's identity.
 
 Attributes
-^^^^^^^^^^
+----------
 
 Each identity contains a number of cryptographic values and a number of
 user-chosen attributes, such as nationality or country of residence. These
@@ -42,7 +42,7 @@ identity to create accounts.
 You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all, and your anonymity against the general public is maintained.
 
 Obtain an identity
-^^^^^^^^^^^^^^^^^^
+------------------
 
 You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action. The |Net| release presently supports the Notabene identity issuance flow. (Is this still true?)
 
@@ -53,7 +53,8 @@ Identity issuance requires *Identity Verification*, which is the process of veri
 
 Upon verification of the user's identification documents and attributes, the Identity provider issues a :ref:`user identity certificate<glossary-user-identity-certificate>`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
 
-.. image:: ../images/identity-creation.png
+.. image:: ../images/concepts/identity-creation.png
+   :alt: graphic drawing showing how the user interacts with the identity provider
 
 The purpose of having an identity is to facilitate regulatory compliance. However, your privacy is still protected. Your identity is not visible on the blockchain, and the identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`.
 
@@ -61,7 +62,7 @@ About accounts
 ==============
 
 The user gets an :ref:`glossary-initial-account` at the same time as an *identity* has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the
-identity provider, the identity provider knows the owner of the initial account. For this reason, the user may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity. 
+identity provider, the identity provider knows the owner of the initial account. For this reason, the user may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
 The user additionally creates account keys for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
 are valid for the user and stores them locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
@@ -74,8 +75,11 @@ involved. This gives a user a way to create accounts with an additional layer of
 
 Once you have an identity and a user identity certifcate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an app or wallet that guides users through the account creation process. The creation of an account is an :ref:`glossary-on-chain` action that requires sending a transaction to a node that participates in the Concordium network. The input to the transaction is a *credential*, which contains a number of :ref:`cryptographic proofs<glossary-cryptographic-proof>`, as well as a selection of attributes the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
 
-An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping 
+An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
 all other activity anonymous.
+
+.. image:: ../images/concepts/account-creation.png
+   :alt: graphic drawing showing how user creates accounts
 
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
@@ -107,7 +111,8 @@ Each account has an encryption of a specific user identifier. This number can be
 
 After the authorities have identified an on-chain transaction or account they would like to investigate, in order to reveal the real-world identity of a user, the following process must be followed:
 
-.. image:: ../images/anonymity-revocation.png
+.. image:: ../images/concepts/anonymity-revocation.png
+   :alt: graphic showing anonymity revocation process
 
 1. The qualified authority must identify the anonymity revokers and identity provider associated with the account they would like to deanonymize and present them with an official order.
 2. Per the terms of the official order, the anonymity revokers inspect and decrypt the available on-chain data for the user.
