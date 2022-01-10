@@ -11,6 +11,12 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+January 10, 2022
+
+Concordium Desktop Wallet v1.3.1
+--------------------------------
+- Fixed identity issuance with DTS.
+
 January 3, 2022
 
 Concordium Node v3.0.1
