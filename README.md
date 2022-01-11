@@ -257,7 +257,7 @@ Use the variables by:
 
 ### Images
 
-Save any images that you add in the images folder in Shared as well as in the Images folder under mainnet and testnet. Create sub-folders as needed to store images.
+Save any images that you add in the Images folder under mainnet and testnet. Create sub-folders as needed to store images.
 
 ## License
 
