@@ -11,7 +11,7 @@ Make a backup of identities and accounts in the Mobile Wallet
 To make sure that you have a backup of your accounts, identities, and addresses, we recommend that you export the data from the Mobile Wallet to a file. This way, all your accounts, identities, and your address book are saved in a file you can store in a safe location.
 
 .. Warning::
-   **Warning: Backup is essential. If you lose your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
+   **Warning: Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
    **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
 
 .. Note::
@@ -19,6 +19,9 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
 Export identities, accounts and address book
 ============================================
+
+.. Warning::
+   The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will NOT include your account keys and may result in you losing access to your accounts.
 
 #. Go to the **More** page.
 
@@ -32,7 +35,7 @@ Export identities, accounts and address book
 
 #. Choose an option for sending or saving the export file such as Mail.
 
-We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets.
+Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets.
 
 |
 
