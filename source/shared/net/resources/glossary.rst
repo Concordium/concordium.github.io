@@ -487,6 +487,13 @@ User identity certificate
 Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
 The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
+.. _glossary-wallet:
+
+Wallet
+======
+
+A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts.
+
 .. _glossary-winning-probability:
 
 Winning probability
