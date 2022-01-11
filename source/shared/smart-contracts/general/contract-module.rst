@@ -121,7 +121,7 @@ contracts, we associate the functions using a naming scheme:
   name for the function. Same as for the init function, the contract name is not allowed
   to contain the ``.`` symbol.
 
-..note::
+.. note::
 
    The function name is limited to 100 bytes. The whole function name must be ASCII alphanumeric and punctuation, not just the contract name.
 
