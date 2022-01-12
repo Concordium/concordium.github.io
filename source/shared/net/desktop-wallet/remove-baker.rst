@@ -12,6 +12,11 @@ Remove a baker account
 
 If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 :ref:`epochs <glossary-epoch>`. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
 
+.. Note::
+   All transactions and transactions cost a fee, including shielding and unshielding transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
+   The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
+   You can see the fee in the transaction log.
+
 Remove a baker (Single-signature account)
 =========================================
 
