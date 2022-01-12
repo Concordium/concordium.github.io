@@ -11,8 +11,9 @@ Make a backup of identities and accounts in the Mobile Wallet
 To make sure that you have a backup of your accounts, identities, and addresses, we recommend that you export the data from the Mobile Wallet to a file. This way, all your accounts, identities, and your address book are saved in a file you can store in a safe location.
 
 .. Warning::
-   **Warning: Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
+   **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
    **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
+   For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import-mw>`.
 
 .. Note::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
@@ -21,7 +22,7 @@ Export identities, accounts and address book
 ============================================
 
 .. Warning::
-   The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will NOT include your account keys and may result in you losing access to your accounts.
+   The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will **NOT** include your account keys and may result in you losing access to your accounts.
 
 #. Go to the **More** page.
 

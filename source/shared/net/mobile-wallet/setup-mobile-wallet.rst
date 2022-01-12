@@ -12,7 +12,7 @@ The Concordium Mobile wallet is a digital wallet that enables you to create and 
 identities and accounts and to create transactions such as sending CCD, shielding and unshielding CCD,
 and sending shielded transactions.
 
-Read the following guide or watch the video to find out how to set up the wallet.
+Read the following guide or watch the video to learn how to set up the wallet.
 
 .. raw:: html
 
@@ -23,7 +23,7 @@ Read the following guide or watch the video to find out how to set up the wallet
 Get started
 ===========
 
-#. Install the Mobile Wallet on either an iPhone or an Android phone, see :ref:`Downloads <downloads>`.
+#. Install the Mobile Wallet on either an iPhone or an Android phone. See :ref:`Downloads <downloads>`.
 
 #. Open the Mobile wallet, read and accept the Terms and Conconditions.
 
@@ -77,9 +77,9 @@ and an initial account. You do this immediately after setting up the passcode an
 |
 
 .. Warning::
-   **Warning: When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
+   **When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
    **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
+   For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import-mw>`.
 
 .. Note::
-   Enter the **Balance** or **Shielded balance** of the new account, by pressing the Balance or Shielded balance
-   areas on the account card.
+   To access the **Balance** or **Shielded balance** of the new account, tap the Balance or Shielded balance areas on the account card.
