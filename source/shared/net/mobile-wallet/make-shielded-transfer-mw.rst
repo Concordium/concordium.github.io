@@ -16,7 +16,7 @@ for a guide on  how to make a regular CCD transfer, you can find the guide :ref:
 
 .. Warning::
    Do not shield all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
-   
+
 Make a shielded CCD transfer from an account
 ============================================
 
