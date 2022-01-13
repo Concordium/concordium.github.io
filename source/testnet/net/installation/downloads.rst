@@ -40,15 +40,15 @@ Concordium Desktop Wallet
 
    - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.AppImage>`_
 
-      - SHA256 checksum of the download: ``80da238ee1ef92894ed53ad21690275afb9dd46c20a5c31465ccbcfce093f038``
+      - SHA256 checksum of the download: ``59dc17c2cf47dfff8c60c0c662b7145cd08a10fcb44d1fa367ff62afa57e35c4``
 
    - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.deb>`_
 
-      - SHA256 checksum of the download: ``75932733e930a0632a27d88adeaf3275001e3a5e357a1ae4b801946523812276``
+      - SHA256 checksum of the download: ``2bcd2f29498d5de58c049525b44508b675b4ef9afebd0d01052c555e7ee09b30``
 
    - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.rpm>`_
 
-      - SHA256 checksum of the download: ``c08c8e48f060b1f19a7642c1d0c7337393ebf16451ed644b24f979fa7c9e91fe``
+      - SHA256 checksum of the download: ``152885940a03502d63e5a052805f5d1a2a3252e3df18a9f719641b8f7bc4b3ef``
 
 
 Concordium Ledger App
