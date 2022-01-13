@@ -14,6 +14,9 @@ for a guide on  how to make a regular CCD transfer, you can find the guide :ref:
 .. Note::
    A shielded transfer is a transfer between two accounts, where the **amount** of the transfer is encrypted. The sender, receiver, and potential memo will be publicly visible on the blockchain.
 
+.. Warning::
+   Do not shield or transfer all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
+
 Make a shielded CCD transfer from an account
 ============================================
 
@@ -49,6 +52,6 @@ Your transaction is now submitted to the chain. It might take a little while for
 |
 
 .. Note::
-   All transactions and transactions cost a fee, including shielding and unshielding transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
+   All transfers and transactions cost a fee, including shielding and unshielding transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
