@@ -11,6 +11,9 @@ Move CCD between the two balances
 Accounts on the Concordium blockchain have two balances, the **Balance** and the **Shielded balance**. You can move funds between these
 two balances using either a shield CCD transaction or an unshield CCD transaction.
 
+.. Warning::
+   Do not shield all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
+
 .. Note::
    The amount contained in the Balance is publicly visible, while the amount on the Shielded balance is encrypted and is only visible for
    the account holder. Moving funds between the balances is also publicly visible, including the amount. Only shielded transfers between
