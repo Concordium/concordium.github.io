@@ -16,6 +16,7 @@ In a terminal:
 
 **Verify download with signature**
 
+
 To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.
 
 * :cdw-sig:`Download signature <AppImage>`
@@ -27,10 +28,12 @@ In a terminal:
 
 #. Navigate to the directory containing the assets needed to verify.
 #. Then paste the first line of the following block into the terminal
-#. The command outputs **Verified OK** as a result, as inidicated by the second line in the block.
+#. The command outputs **Signature Verified Successfully** as a result, as inidicated by the second line in the block.
 
 .. code-block:: console
     :substitutions:
 
-    $openssl dgst -sha256 -verify cdw-public.pem -signature |cdw-appimage|.sig |cdw-appimage|
-    Verified OK
+    $openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in |cdw-appimage| -sigfile |cdw-appimage|.sig
+    Signature Verified Successfully
+
+Note that this only works for openssl version 3.0.0 and up.
