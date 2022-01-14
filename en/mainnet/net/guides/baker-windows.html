@@ -252,10 +252,6 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            
-              <a href="https://github.com/Concordium/concordium.github.io/blob/mainnet/source/net/guides/baker-windows.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
         
       </li>
     
@@ -294,10 +290,22 @@
 <div class="section" id="configure-a-baker-node-on-windows">
 <span id="configure-baker-windows"></span><h2>Configure a baker node on Windows<a class="headerlink" href="#configure-a-baker-node-on-windows" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>Create baker keys and associate them with an account either on mainnet or testnet. We recommend that you do this with the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a>. However, if you want use an account from the mobile wallet as a baker account, you have to use the <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">Concordium Client</span></a>. In the following, the baker keys are referred to as baker-credentials.json.</p>
+<li><p>Create baker keys and associate them with an account either on mainnet or testnet. Doing this with the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> is recommended. However, if you want use an account from the mobile wallet as a baker account, you have to use the <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">Concordium Client</span></a>, in partiuclar the commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client baker generate-keys &lt;keys-file&gt;.json</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json</span>
+</pre></div>
+</div>
+<p>In the following, the baker keys are referred to as baker-credentials.json.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not edit the name or contents of the baker-credentials.json file.</p>
 </div>
 </li>
 <li><p>Once you’ve created the baker account and exported the baker credentials, you have to change the configuration file for the Concordium Node Service. Open <strong>Configure Concordium Node Service</strong> from the <strong>Start</strong> menu, and select <strong>Yes</strong> when you see the message <em>Do you want to allow this app to make changes to your device?</em>. The configuration file opens.</p></li>
