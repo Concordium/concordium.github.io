@@ -74,6 +74,23 @@ The ``concordium-mainnet-node`` service that you just installed will be running 
 .. Note::
    If you want more detailed information about building and maintaining a node, or if your node is not running, see the `Building .deb packages for ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md>`__
 
+Enabling inbound connections
+============================
+
+If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+:ref:`if so configured<become-a-baker>`, to bake and finalize.
+
+However you can also make your node an even better network participant
+by enabling inbound connections. By default, ``concordium-node`` listens
+on port ``8888`` for inbound connections on Mainnet and on port ``8889`` for inbount connections on Testnet. Depending on your network and
+platform configuration you will either need to forward an external port
+to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
+details of how this is done will depend on your configuration.
+
 .. _baker-node-Ubuntu:
 
 Run a baker node on Ubuntu
