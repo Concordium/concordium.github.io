@@ -60,6 +60,6 @@ Every transaction has a well-defined *fee*, and the fee of each transaction depe
 
 The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
 
-You can see the fee in the transaction log.    
+You can see the fee in the transaction log.
 
 .. |check|  unicode:: U+2713 .. CHECKMARK

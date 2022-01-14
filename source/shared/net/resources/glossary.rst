@@ -492,7 +492,7 @@ The user identity certificate includes attributes such as name, age, and nationa
 Wallet
 ======
 
-A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. 
+A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts.
 
 .. _glossary-winning-probability:
 
