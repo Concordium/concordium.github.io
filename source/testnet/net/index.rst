@@ -35,6 +35,7 @@
    concepts/id-accounts
    concepts/concepts-baker
    concepts/concepts-transactions
+   concepts/concepts-backup
 
 .. toctree::
    :maxdepth: 1

@@ -22,7 +22,7 @@ Baker account
 
 Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker's account after some time. The baker account also receives an award after each :ref:`epoch <glossary-epoch>`. The reward per block is determined by the contents of the block, and is usually lower than the reward that is paid after.
 
-The account can be viewed either in the Desktop Wallet or the Mobile Wallet depending on where the account was created.
+The account can be viewed either in the Desktop Wallet or the Mobile Wallet, depending on where the account was created.
 
 Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.
 
@@ -38,7 +38,7 @@ A baker needs to stake a part of its CCD balance on the baker account. Later, th
    If an account owns an amount that was transferred with a release schedule,
    the amount can be staked even if it hasn't been released yet.
 
-To be chosen for baking a block, the baker must take part in a
+To be chosen to bake a block, the baker must take part in a
 *lottery*. The greater the baker's stake, the greater the baker's chance of winning the lottery and being selected to bake a block.
 
 The same stake is used when calculating whether a baker is included in the :ref:`finalization <glossary-finalization>` committee or not.
@@ -61,13 +61,13 @@ A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time
 
 Finalization
 ============
-Finalization is a unique feature of the Concordium blockchain. (Need something vaguely marketing-y here.)
+Finalization is a unique feature of the Concordium blockchain, in that it ensures that baked blocks become finalized as quickly as possible and with 100% certainty. 
 
 What is finalization?
 ---------------------
 
-Finalization is the process by which a block is marked to be “finalized”, i.e. part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted periodically (how periodically?) by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD.
-Finalization is the voting process performed by nodes in the finalization committee that finalizes a block when a sufficiently big number of members of the committee have received the block and agree on its outcome. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
+Finalization is the voting process by which a block is marked to be “finalized”, i.e. part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically (how periodically?) by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD, known as the Finalization committee.
+When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
 Finalization committee
 ----------------------

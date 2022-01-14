@@ -20,14 +20,11 @@ Identities are issued by an identity provider. There is a registry of selected i
 .. Note::
 
    It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
-   Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see :ref:`company-identities`.
+   Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see :ref:`Company identity creation<company-identities>`.
 
-While identities facilitate compliance with relevant regulations, they also allow users to be represented on-chain in a way that protects the users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver.
+While identities facilitate compliance with relevant regulations, they also allow users to be represented on-chain in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`. Anonymity revocation can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more anonymity revokers and the identity provider who issued the account's identity.
 
-Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the anonymity revokers are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called attributes and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction.
-
-:ref:`Anonymity revocation<revoking-anomity>` can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more anonymity revokers and the identity provider who issued
-the account's identity.
+Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the anonymity revokers are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called :ref:`attributes<glossary-attribute>` and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction.
 
 Attributes
 ----------
@@ -39,24 +36,36 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all, and your anonymity against the general public is maintained.
+You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity.
+
+Benefits of revealing attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Every account on the chain must be derived from an identity that is verified and
+signed by an approved identity provider. It is publicly visible which identity
+provider issued an identity for an account and who the anonymity revokers are
+for the account and the identity. In addition to this basic information which
+enables regulatory compliance, an account owner can choose to publicly reveal
+other values on their account, such as their nationality or country of
+residence. Since this information is publicly accessible, anybody can check it
+before interacting with an account. Moreover, being able to see who issued the
+identity enables whoever wishes to interact with an account to judge the level
+of risk in the transaction.
 
 Obtain an identity
 ------------------
 
-You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action. The |Net| release presently supports the Notabene identity issuance flow. (Is this still true?)
+You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
 
-Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
+Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
 Upon verification of the user's identification documents and attributes, the Identity provider issues a :ref:`user identity certificate<glossary-user-identity-certificate>`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
 
 .. image:: ../images/concepts/identity-creation.png
    :alt: graphic drawing showing how the user interacts with the identity provider
-
-The purpose of having an identity is to facilitate regulatory compliance. However, your privacy is still protected. Your identity is not visible on the blockchain, and the identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`.
 
 About accounts
 ==============
@@ -84,19 +93,7 @@ all other activity anonymous.
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Benefits of revealing attributes
---------------------------------
-
-Every account on the chain must be derived from an identity that is verified and
-signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the anonymity revokers are
-for the account and the identity. In addition to this basic information which
-enables regulatory compliance, an account owner can choose to publicly reveal
-other values on their account, such as their nationality or country of
-residence. Since this information is publicly accessible, anybody can check it
-before interacting with an account. Moreover, being able to see who issued the
-identity enables whoever wishes to interact with an account to judge the level
-of risk in the transaction.
+Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 .. _revoking-anomity:
 
