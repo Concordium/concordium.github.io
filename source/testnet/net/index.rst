@@ -81,14 +81,13 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: References
+   :caption: Concordium client
 
    references/concordium-client
    references/manage-accounts
    references/transactions
    references/query-node
    references/node-runner-service-configuration
-   references/developer-tools
 
 .. toctree::
    :maxdepth: 1
@@ -97,6 +96,7 @@
    resources/glossary
    resources/dashboards
    resources/release-notes
+   resources/developer-tools
    resources/terms-and-conditions-mw
    resources/terms-and-conditions-dw
    resources/third-party-licenses
