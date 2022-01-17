@@ -9,8 +9,16 @@ Release notes
    :backlinks: none
 
 
+
 Mainnet 3: Alpha Centauri 3.0
 ==============================
+January 13, 2022
+
+Concordium Desktop Wallet v1.3.1
+--------------------------------
+-   Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.
+-   Fixed identity issuance with DTS.
+
 January 7, 2022
 
 Concordium Node v3.0.1

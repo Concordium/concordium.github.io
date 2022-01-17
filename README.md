@@ -255,6 +255,10 @@ Use the variables by:
   `../../variables.rst`.
 - Then using the variable net, for example `|Net|`.
 
+### Images
+
+Save any images that you add in the Images folder under mainnet and testnet. Create sub-folders as needed to store images.
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].

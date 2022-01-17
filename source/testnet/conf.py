@@ -146,12 +146,14 @@ Support & Feedback
 If you have questions or feedback, join us on `Discourse <https://support.concordium.software/>`_, or contact us at support@concordium.software.
 """
 
+html_show_sourcelink = False
 
 html_context = {
     "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
     "github_version": current_version,
+    "display_github": False,
     "conf_py_path": "/source/",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
