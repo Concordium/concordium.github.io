@@ -93,20 +93,11 @@ to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
 validate transactions.
 
-The sequence number can be looked up from an up to date node by running
-
-.. code-block:: console
-
-   $concordium-client account show [ACCOUNT]
-
-where ``[ACCOUNT]`` is an optional argument that is either an address of an
-account or the name of an account chosen when importing the account. If no
-address is provided, ``concordium-client`` will use the account name
-``default``.
+You can :ref:`look up the sequence number<account-seqno>` from an up to date node using Concordium Client.
 
 The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
-also be set manually via the option ``--nonce``.
+also be set manually.
 
 Account aliases
 ---------------
@@ -119,17 +110,7 @@ This allows each account to have aliases for different uses and creates a kind o
 
 Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account's canonical address.
 
-To show aliases, enter:
-
-.. code-block:: console
-
-   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
-
-This generates the output:
-
-.. code-block:: console
-
-   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+To show aliases, :ref:`run a transaction in Concordium Cient<account-aliases>`.
 
 Tools
 =====
