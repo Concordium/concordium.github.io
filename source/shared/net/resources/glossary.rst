@@ -127,6 +127,14 @@ A sequence of :ref:`blocks<glossary-block>`, starting from the :ref:`genesis blo
 successive block points to the predecessor. There may be multiple valid chains,
 and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is authoritative.
 
+.. _glossary-concordium-client:
+
+Concordium client
+=================
+
+A command-line tool that ships with the Concordium distribution. 
+It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been imported, Concordium client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
+
 .. _glossary-consensus:
 
 Consensus
@@ -492,7 +500,17 @@ The user identity certificate includes attributes such as name, age, and nationa
 Wallet
 ======
 
-A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts.
+A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has two wallet types.
+
+The Desktop Wallet
+^^^^^^^^^^^^^^^^^^
+
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+
+The Mobile Wallet
+^^^^^^^^^^^^^^^^^
+
+The Mobile Wallet is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
 
 .. _glossary-winning-probability:
 

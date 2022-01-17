@@ -55,8 +55,10 @@ Upgrade
 -------
 
 .. only:: mainnet
+
    Ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<mainnet-release-notes>`.
 .. only:: testnet
+
    Ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<testnet-release-notes>`.
 
 Backup

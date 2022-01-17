@@ -62,4 +62,6 @@ The fee will always be deducted from the **Balance** of the account, so it is im
 
 You can see the fee in the transaction log.
 
+.. include:: ../snippets/tools.rst
+
 .. |check|  unicode:: U+2713 .. CHECKMARK
