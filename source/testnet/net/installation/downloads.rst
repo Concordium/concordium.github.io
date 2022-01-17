@@ -95,9 +95,9 @@ Node Debian package
 -------------------
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.0_amd64.deb>`_
+- `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.1_amd64.deb>`_
 
-   - SHA256 checksum of the download: ``183bcb5a0d7da56e1f1998215955f6b685623f4c828bb4843a811b285da716b7``
+   - SHA256 checksum of the download: ``ad8ef5c95e35266f2e807788c599f5f163fe83cb3b4de4672cb071c279978dc3``
 
 To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -107,9 +107,9 @@ Full suite for running a node on Linux using Docker
 ---------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-1.1.3-2-testnet.tar.gz>`_
+- `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.1-0-testnet.tar.gz>`_
 
-   - SHA256 checksum of the download: ``ab60fb80db4401604cd6d7bfa04013cb7d16debb8ad30ee813f1a4029529ed0b``
+   - SHA256 checksum of the download: ``3c3ba7b6dabcd3431deecfc08b7455c5ee64df49ba799e87061e3a5ed48c55da``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
@@ -118,7 +118,7 @@ Native Windows node
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.0.msi>`_
+- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.1.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
 
@@ -127,7 +127,7 @@ Native Mac node
 
 To run a node on macOS, you need a macOS installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.0.pkg>`_
+- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
