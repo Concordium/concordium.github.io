@@ -10,6 +10,7 @@
 
    installation/downloads
 
+
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
@@ -42,7 +43,6 @@
    references/transactions
    references/query-node
    references/node-runner-service-configuration
-   references/developer-tools
 
 .. toctree::
    :maxdepth: 1
@@ -67,5 +67,6 @@
    :caption: Resources
 
    resources/dashboards
+   references/developer-tools   
    resources/release-notes
    resources/legal

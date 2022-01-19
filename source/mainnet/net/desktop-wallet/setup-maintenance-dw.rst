@@ -22,5 +22,6 @@ the Desktop Wallet.
    ../guides/overview-shared-accounts
    settings-overview
    overview-addresses
+   update-application
    make-account-report
    account-recovery
