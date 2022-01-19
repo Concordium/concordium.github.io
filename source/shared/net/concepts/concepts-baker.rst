@@ -52,7 +52,7 @@ The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :
 
 When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
 
-Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>` (we need to describe what a branch is), each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
+Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>`, each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
 
 A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake in the desktop wallet, the stake will be decreased after a cool-down period. The cool-down period is 2 epochs. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance.
 
@@ -66,7 +66,7 @@ Finalization is a unique feature of the Concordium blockchain, in that it ensure
 What is finalization?
 ---------------------
 
-Finalization is the voting process by which a block is marked to be “finalized”, i.e. part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically (how periodically?) by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD, known as the Finalization committee.
+Finalization is the voting process by which a block is marked to be “finalized”, i.e. part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD, known as the Finalization committee.
 When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
 Finalization committee
