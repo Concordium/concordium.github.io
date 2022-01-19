@@ -132,7 +132,7 @@ and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is
 Concordium client
 =================
 
-A command-line tool that ships with the Concordium distribution. 
+A command-line tool that ships with the Concordium distribution.
 It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been imported, Concordium client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
 .. _glossary-consensus:
