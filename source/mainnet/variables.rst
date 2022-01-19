@@ -1,12 +1,12 @@
 .. |Net| replace:: Mainnet
 
 .. Desktop wallet verification variables
-.. |cdw-appimage| replace:: concordium-desktop-wallet-1.3.0.AppImage
-.. |cdw-appimage-checksum| replace:: 6660da7cbc16772ab8cf2986f4775ce62c4d60140043fca124e5cc93f4d98fab
-.. |cdw-deb| replace:: concordium-desktop-wallet-1.3.0.deb
-.. |cdw-deb-checksum| replace:: 6bbd1f9ee2b10277aed88743a8c916317619e1d6678cab23a936f0d0a047f1f6
-.. |cdw-rpm| replace:: concordium-desktop-wallet-1.3.0.rpm
-.. |cdw-rpm-checksum| replace:: a8b348c0141f39c50364436718107b8da17ce106ea32d0b0602d96c650ee9277
+.. |cdw-appimage| replace:: concordium-desktop-wallet-1.3.1.AppImage
+.. |cdw-appimage-checksum| replace:: b67b15f51ba02bae25b1381906b9bc888d245013bf2bee84939a575e4b0c004b
+.. |cdw-deb| replace:: concordium-desktop-wallet-1.3.1.deb
+.. |cdw-deb-checksum| replace:: f561780366662c26ad2518920aedade352d39e5a44e3fe3ea5e6bd86e6407b1b
+.. |cdw-rpm| replace:: concordium-desktop-wallet-1.3.1.rpm
+.. |cdw-rpm-checksum| replace:: c476bee4e213fb629ebbab53fa80bc211fea9adea77711f337e663bea0573717
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_3.0.4-0
