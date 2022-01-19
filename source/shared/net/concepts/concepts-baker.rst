@@ -74,4 +74,4 @@ Finalization committee
 
 The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD. This specifically implies that in order to participate in the finalization committee you will probably have to modify the staked amount to reach the threshold.
 
-Participating in the finalization committee produces rewards on each block that is finalized. The rewards are paid to the baker account some time (when?) after the block is finalized. (Presumably these rewards are handled in the same way as baking rewards, i.e. automatically added to the staked amount?)
+Participating in the finalization committee produces rewards on each block that is finalized. The rewards are paid to the baker account some time after the block is finalized.
