@@ -39,7 +39,6 @@
    :caption: Concordium Client
 
    references/concordium-client
-   references/manage-accounts
    references/transactions
    references/query-node
    references/node-runner-service-configuration

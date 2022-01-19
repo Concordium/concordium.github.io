@@ -17,6 +17,8 @@ Because the Concordium Mobile Wallet does not use a seed phrase, your backup fil
 
 If you set up a new phone and transfer the wallet, you will lose the private keys; they can only be recovered from the pre-exported backup file.
 
+Account keys are not stored in the cloud, only on the device itself in order to protect your security.
+
 A new backup file should be exported EVERY time a new account is made, otherwise keys for the account can´t be recovered.
 
 How it works
@@ -27,7 +29,7 @@ The Concordium Mobile Wallet provides built-in functionality to export wallet ba
 .. Warning:
    Concordium strongly urges you to backup your account keys using the export function in the wallet whenever a new account has been created. The wallet backup as well as the export password must be stored securely. You cannot recover your accounts without a wallet backup and its passcode.
 
-Even if you have access to the wallet, the keys to the accounts on the wallet may be missing, in which case you don’t have access to the CCDs. The following describes how you can check if you have the necessary keys and access to your accounts.
+Even if you have access to the wallet and can see the accounts after a phone restoration operation or similar action, the keys to the accounts on the wallet may be missing, in which case you don’t have access to the CCDs. The following describes how you can check if you have the necessary keys and access to your accounts.
 
 How to check that you have your account keys
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -56,10 +58,10 @@ Upgrade
 
 .. only:: mainnet
 
-   Ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<mainnet-release-notes>`.
+   Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<mainnet-release-notes>`.
 .. only:: testnet
 
-   Ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<testnet-release-notes>`.
+   Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<testnet-release-notes>`.
 
 Backup
 ------
