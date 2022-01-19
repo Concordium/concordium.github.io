@@ -4,7 +4,7 @@
 Setup and Maintenance
 =====================
 
-The following links describe how to get started with Desktop Wallet and how to perform maintenance for 
+The following links describe how to get started with Desktop Wallet and how to perform maintenance for
 the Desktop Wallet.
 
 .. toctree::
