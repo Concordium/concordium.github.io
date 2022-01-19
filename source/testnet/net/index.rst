@@ -67,6 +67,6 @@
    :caption: Resources
 
    resources/dashboards
-   references/developer-tools   
+   references/developer-tools
    resources/release-notes
    resources/legal
