@@ -1,21 +1,21 @@
 .. _reference-id-accounts:
 
-=======================
-Identities and accounts
-=======================
+==========
+Identities
+==========
 
 .. contents::
    :local:
    :backlinks: none
 
-To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
 
 Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.
 
 About identities
 ================
 
-Identities are issued by an identity provider. There is a registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain. (Do we want to tell users how to find this?) Concordium Foundation will maintain the list in the beginning.
+Identities are issued by an identity provider. There is a :ref:`registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain<identity-commands>`. Concordium Foundation will maintain the list in the beginning.
 
 .. Note::
 
@@ -24,7 +24,7 @@ Identities are issued by an identity provider. There is a registry of selected i
 
 While identities facilitate compliance with relevant regulations, they also allow users to be represented on-chain in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`. Anonymity revocation can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more anonymity revokers and the identity provider who issued the account's identity.
 
-Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the anonymity revokers are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called :ref:`attributes<glossary-attribute>` and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction.
+Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the anonymity revokers are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called :ref:`attributes<glossary-attribute>` and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction. If you choose to reveal attributes, you should have a good reason to do so. The general recommendation is not to reveal attributes.
 
 Attributes
 ----------
@@ -36,21 +36,7 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity.
-
-Benefits of revealing attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Every account on the chain must be derived from an identity that is verified and
-signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the anonymity revokers are
-for the account and the identity. In addition to this basic information which
-enables regulatory compliance, an account owner can choose to publicly reveal
-other values on their account, such as their nationality or country of
-residence. Since this information is publicly accessible, anybody can check it
-before interacting with an account. Moreover, being able to see who issued the
-identity enables whoever wishes to interact with an account to judge the level
-of risk in the transaction.
+You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity, which is the general recommendation.
 
 Obtain an identity
 ------------------
