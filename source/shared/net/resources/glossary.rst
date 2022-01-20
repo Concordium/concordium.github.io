@@ -90,7 +90,8 @@ baker created the block, and that the baker was entitled to do so.
 Branch
 ======
 
-Insert definition here.
+A chain of blocks that has split from the main chain. All branches have the potential to become
+the main chain. The Chain selection rule determines which branch is the best chain.
 
 .. _glossary-catch-up:
 
@@ -126,6 +127,19 @@ Chain
 A sequence of :ref:`blocks<glossary-block>`, starting from the :ref:`genesis block<glossary-genesis-block>`, in which each
 successive block points to the predecessor. There may be multiple valid chains,
 and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is authoritative.
+
+.. _glossary-chain-selection-rule:
+
+Chain selection rule
+====================
+
+A rule that selects the best chain based on the following criteria:
+
+- chain with the most finalized blocks
+- longest chain
+- which last block has the earliest slot in the chains
+- which last block has the largest block luck in the chains
+- which last block has the largest hash in the chains.
 
 .. _glossary-concordium-client:
 

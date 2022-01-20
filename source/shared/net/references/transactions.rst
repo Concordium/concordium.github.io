@@ -47,8 +47,13 @@ Transaction commands
 | ``account unshield``          | Transfer part of the shielded       |
 |                               | balance to public balance           |
 +-------------------------------+-------------------------------------+
-| ``account show``              | Show account information. See       |
-|                               | below for specific information.     |
+| ``account show``              | Show account information.           |
+|                               | :ref:`See below for specific        |
+|                               | information<account-commands>`.     |
++-------------------------------+-------------------------------------+
+| ``identity show``             | Show identity information.          |
+|                               | :ref:`See below for specific        |
+|                               | information<identity-commands>`.    |
 +-------------------------------+-------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
@@ -88,6 +93,8 @@ the signing keys.
 
 Once a transaction has been submitted, the command will continuously poll and
 display its status until it's been :ref:`finalized<glossary-finalization>`.
+
+.. _account-commands:
 
 Commands for showing account information
 ========================================
@@ -142,6 +149,25 @@ This generates the output:
 .. code-block:: console
 
    The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+
+.. _identity-commands:
+
+Commands for showing identity information
+=========================================
+
+.. identity-providers:
+
+To show the identity providers authorized by Concordium, enter:
+
+.. code-block:: console
+
+   $concordium-client identity show identity-providers
+
+To show the anonymity revokers, enter:
+
+.. code-block:: console
+
+   $concordium-client identity show anonymity-revokers
 
 Commands for transferring CCD
 =============================
