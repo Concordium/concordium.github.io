@@ -40,7 +40,7 @@
 
    references/concordium-client
    references/transactions
-   references/query-node  
+   references/query-node
 
 .. toctree::
    :maxdepth: 1
