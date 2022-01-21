@@ -157,7 +157,7 @@ Commands for showing identity information
 
 .. identity-providers:
 
-To show the identity providers authorized by Concordium, enter:
+To show the identity providers authorized by Concordium and a URL, enter:
 
 .. code-block:: console
 
