@@ -1,5 +1,6 @@
-.. _Dashboard: https://dashboard.testnet.concordium.com/
 .. _testnet-release-notes:
+.. _Dashboard: https://dashboard.testnet.concordium.com/
+
 
 =============
 Release Notes
