@@ -19,7 +19,7 @@ You can make transactions using either the Desktop Wallet, the Mobile Wallet, or
 +============================+===============+================+===================+
 | Send CCD                   | |check|       | |check|        | |check|           |
 +----------------------------+---------------+----------------+-------------------+
-| Send CCD with a schedule   | |check|       | |check|        | |check|           |
+| Send CCD with a schedule   |               | |check|        | |check|           |
 +----------------------------+---------------+----------------+-------------------+
 | Shield CCD                 | |check|       | |check|        | |check|           |
 +----------------------------+---------------+----------------+-------------------+
