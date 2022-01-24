@@ -56,7 +56,7 @@ Upon verification of the user's identification documents and attributes, the Ide
 About accounts
 ==============
 
-For information about accounts, see :ref:`Accounts<managing-accounts>`.
+For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
 Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
