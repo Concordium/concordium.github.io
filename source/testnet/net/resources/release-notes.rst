@@ -1,6 +1,5 @@
-.. _testnet-release-notes:
 .. _Dashboard: https://dashboard.testnet.concordium.com/
-
+.. _testnet-release-notes:
 
 =============
 Release Notes
@@ -17,7 +16,7 @@ January 10, 2022
 
 Concordium Desktop Wallet v1.3.1
 --------------------------------
-- Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.
+- Fixed lksjhfglskjdfhg issue that caused the wallet to crash when inspecting identities with missing date attributes.
 - Fixed identity issuance with DTS.
 
 January 3, 2022
