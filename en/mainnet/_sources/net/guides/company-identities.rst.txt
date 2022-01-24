@@ -1,4 +1,4 @@
-.. company-identities:
+.. _company-identities:
 
 ============================
 Company identity creation

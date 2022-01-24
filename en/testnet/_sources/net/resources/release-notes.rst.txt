@@ -1,4 +1,4 @@
-.. _Dashboard: https://dashboard.testnet.concordium.com/
+.. _testnet-release-notes:
 
 =============
 Release Notes
@@ -556,7 +556,7 @@ This release contains the following main features:
    -  Exporting identities and accounts
 
 -  A demo Identity service
--  A Network `Dashboard`_
+-  A Network `Dashboard <https://dashboard.testnet.concordium.com>`_
 
 Concordium Nodes
 ================

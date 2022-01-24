@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Make an account report" href="make-account-report.html" />
-    <link rel="prev" title="Address book overview" href="overview-addresses.html" />
+    <link rel="next" title="Send and decrypt a shielded transfer" href="send-shielded-amount.html" />
+    <link rel="prev" title="Apply a transaction log filter" href="transaction-log-filter.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -107,90 +107,62 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts.html">Concordium Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-maintenance-mw.html">Setup and Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/transfers-mw.html">Transfers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup-maintenance-dw.html">Setup and Maintenance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="transfers-dw.html">Transfers and Transactions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="shield-ccd-desktop.html">Shield CCD on an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send-ccd-single-desktop.html">Create CCD transfer in the Desktop Wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-sign-schedule.html">Transfer CCD with a schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature CCD transfer in the Desktop Wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transaction-log-filter.html">Apply a transaction log filter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">View transaction proposals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfers-dw.html#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="baking-dw.html">Baking in the Desktop Wallet</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Baking</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/id-accounts.html">Identities and accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">Set up the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-identity.html">Create an identity and an initial account in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-account-mw.html">Create a new account with an existing identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move CCD between the two balances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Make a backup of identities and accounts in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Desktop Wallet</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-started-desktop.html">Set up the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accounts-desktop.html">Overview of accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shield-ccd-desktop.html">Shield CCD on an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-ccd-single-desktop.html">Create CCD transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="single-sign-schedule.html">Transfer CCD with a schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multisig-simple-transfer.html">Create a multi-signature CCD transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remove-baker.html">Remove a baker account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="change-baker-stake.html">Update the staked amount</a></li>
-<li class="toctree-l1"><a class="reference internal" href="change-restake-settings.html">Update the restake settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sign-transaction.html">Sign a transaction proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transaction-log-filter.html">Apply a transaction log filter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="settings-overview.html">Desktop Wallet settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">View transaction proposals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#view-a-list-of-multi-signature-proposals">View a list of multi-signature proposals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="account-recovery.html">Account recovery</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baking-dw.html">Baking in the Desktop Wallet</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/dashboards.html">Dashboards and Status Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-mw.html">Terms and Conditions for Concordium Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-dw.html">Terms and Conditions for Concordium Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-notices.html">Third-party Software and Hardware Notices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/legal.html">Legal</a></li>
 </ul>
 
             
@@ -240,6 +212,8 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+          <li><a href="transfers-dw.html">Transfers and Transactions</a> &raquo;</li>
         
       <li>View transaction proposals</li>
     

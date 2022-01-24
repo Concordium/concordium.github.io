@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Identities and accounts &mdash; Concordium  documentation</title>
+  <title>Identities &mdash; Concordium  documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bakers" href="concepts-baker.html" />
-    <link rel="prev" title="Overview of shared accounts with multiple credentials" href="../guides/overview-shared-accounts.html" />
+    <link rel="next" title="Accounts" href="../references/manage-accounts.html" />
+    <link rel="prev" title="Concordium Concepts" href="concepts.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -107,93 +107,58 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="concepts.html">Concordium Concepts</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Identities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html">Transactions overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Bakers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-maintenance-mw.html">Setup and Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/transfers-mw.html">Transfers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/setup-maintenance-dw.html">Setup and Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transfers-dw.html">Transfers and Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Baking</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Identities and accounts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#obtaining-an-identity">Obtaining an identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-an-account">Creating an account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#benefits">Benefits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#revoking-anonymity">Revoking anonymity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="concepts-baker.html">Bakers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts-transactions.html">Transactions overview</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">Set up the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-identity.html">Create an identity and an initial account in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/create-account-mw.html">Create a new account with an existing identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/make-shielded-transfer-mw.html">Make a shielded transfer in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/shield-unshield-mw.html">Move CCD between the two balances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/export-import-mw.html">Make a backup of identities and accounts in the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Desktop Wallet</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/get-started-desktop.html">Set up the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/accounts-desktop.html">Overview of accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/create-credentials-file.html">Create a credentials file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/shield-ccd-desktop.html">Shield CCD on an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/export-import-desktop.html">Make a backup of identities, accounts, and addresses in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-ccd-single-desktop.html">Create CCD transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">Transfer CCD with a schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">Create a multi-signature CCD transfer in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/remove-baker.html">Remove a baker account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-baker-stake.html">Update the staked amount</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/change-restake-settings.html">Update the restake settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/sign-transaction.html">Sign a transaction proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">Apply a transaction log filter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/settings-overview.html">Desktop Wallet settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/overview-addresses.html">Address book overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/make-account-report.html">Make an account report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/send-shielded-amount.html">Send and decrypt a shielded transfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/account-recovery.html">Account recovery</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/dashboards.html">Dashboards and Status Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-mw.html">Terms and Conditions for Concordium Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/terms-and-conditions-dw.html">Terms and Conditions for Concordium Desktop Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-licenses.html">Third Party Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/third-party-notices.html">Third-party Software and Hardware Notices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/dw-licenses.html">Concordium Desktop Wallet Third Party Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/legal.html">Legal</a></li>
 </ul>
 
             
@@ -244,7 +209,9 @@
         
           <li><a href="../index.html">Testnet</a> &raquo;</li>
         
-      <li>Identities and accounts</li>
+          <li><a href="concepts.html">Concordium Concepts</a> &raquo;</li>
+        
+      <li>Identities</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -262,107 +229,68 @@
            <div itemprop="articleBody">
             
   <div class="section" id="reference-id-accounts">
-<span id="identities-and-accounts"></span><h1>Identities and accounts<a class="headerlink" href="#reference-id-accounts" title="Permalink to this headline">¶</a></h1>
+<span id="identities"></span><h1>Identities<a class="headerlink" href="#reference-id-accounts" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#obtaining-an-identity" id="id1">Obtaining an identity</a></p></li>
-<li><p><a class="reference internal" href="#creating-an-account" id="id2">Creating an account</a></p></li>
-<li><p><a class="reference internal" href="#benefits" id="id3">Benefits</a></p></li>
-<li><p><a class="reference internal" href="#revoking-anonymity" id="id4">Revoking anonymity</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id5">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#about-identities" id="id1">About identities</a></p>
+<ul>
+<li><p><a class="reference internal" href="#attributes" id="id2">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#obtain-an-identity" id="id3">Obtain an identity</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#about-accounts" id="id4">About accounts</a></p></li>
+<li><p><a class="reference internal" href="#revoking-anonymity" id="id5">Revoking anonymity</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
-<p>In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive <a class="reference internal" href="../resources/glossary.html#glossary-ccd"><span class="std std-ref">CCD</span></a>) a user must create an <em>account</em>.</p>
-<p>The user will get an <a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> at the same time as an <em>identity</em> has been issued
-by an identity provider. As the initial account is submitted to the chain by the
-identity provider, said identity provider will know the owner of the initial account. For this
-reason, the user may consider not using the initial account, and create a regular account instead.</p>
-<p>Regular accounts’ owner is not known to the identity providers, or any other single entity. To facilitate
-compliance with relevant regulations, a regular account can only be created from an <em>identity</em>
-which is issued <a class="reference internal" href="../resources/glossary.html#glossary-off-chain"><span class="std std-ref">Off-chain</span></a> by an Identity provider. While an account
-has to be created from an identity, the user’s privacy is still protected, and the
-account owner’s identity can only be revealed via the process of <a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>,
-which can only happen under stringent regulations, such as upon a court order. In
-particular, a key feature of the design of identities and accounts is that the identity
-provider cannot reveal the identity of an account on their own.</p>
-<p>Anonymity revocation can only happen in exceptional circumstances (e.g., if
-authorities have detected suspicious activity on the account) and requires
-action by one or more anonymity revokers and the identity provider who issued
-the account’s identity.</p>
-<div class="section" id="obtaining-an-identity">
-<h2>Obtaining an identity<a class="headerlink" href="#obtaining-an-identity" title="Permalink to this headline">¶</a></h2>
-<p>Identities are issued by an identity provider. There is a registry of approved
-identity providers publicly accessible from the Concordium blockchain, with
-their contact information. Concordium Foundation will maintain the list in the
-beginning.</p>
-<p>Each identity contains a number of cryptographic values, and a number of
+<p>Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive <a class="reference internal" href="../resources/glossary.html#glossary-ccd"><span class="std std-ref">CCD</span></a> or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.</p>
+<p>Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.</p>
+<div class="section" id="about-identities">
+<h2>About identities<a class="headerlink" href="#about-identities" title="Permalink to this headline">¶</a></h2>
+<p>Identities are issued by an identity provider. There is a <a class="reference internal" href="../references/transactions.html#identity-commands"><span class="std std-ref">registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain</span></a>. Concordium Foundation will maintain the list in the beginning.</p>
+<p>While identities facilitate compliance with relevant regulations, they also allow users to be represented on-chain in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of <a class="reference internal" href="#revoke-anomity"><span class="std std-ref">anonymity revocation</span></a>. Anonymity revocation can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more anonymity revokers and the identity provider who issued the account’s identity.</p>
+<p>Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the anonymity revokers are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called <a class="reference internal" href="../resources/glossary.html#glossary-attribute"><span class="std std-ref">attributes</span></a> and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction. If you choose to reveal attributes, you should have a good reason to do so. The general recommendation is not to reveal attributes.</p>
+<div class="section" id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<p>Each identity contains a number of cryptographic values and a number of
 user-chosen attributes, such as nationality or country of residence. These
 attributes are certified by the identity provider. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.</p>
-<p>You can create identities in the <a class="reference internal" href="../desktop-wallet/create-identity-desktop.html#create-initial-account-desktop"><span class="std std-ref">Desktop Wallet</span></a> or in the <a class="reference internal" href="../mobile-wallet/create-identity.html#create-identity"><span class="std std-ref">Mobile Wallet</span></a>.</p>
+<p>You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity, which is the general recommendation.</p>
+</div>
+<div class="section" id="obtain-an-identity">
+<h3>Obtain an identity<a class="headerlink" href="#obtain-an-identity" title="Permalink to this headline">¶</a></h3>
+<p>You can create identities in the <a class="reference internal" href="../desktop-wallet/create-identity-desktop.html#create-initial-account-desktop"><span class="std std-ref">Desktop Wallet</span></a> or in the <a class="reference internal" href="../mobile-wallet/create-identity.html#create-identity"><span class="std std-ref">Mobile Wallet</span></a>. Identity creation is an <a class="reference internal" href="../resources/glossary.html#glossary-off-chain"><span class="std std-ref">off chain</span></a> action.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.</p>
 </div>
-<p>Identity issuance requires <em>Identity Verification</em>, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs, scans of identification documents (e.g., passport), etc. Identity verification also checks that the user-chosen attributes are valid for the user.</p>
+<p>Identity issuance requires <em>Identity Verification</em>, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.</p>
+<p>Upon verification of the user’s identification documents and attributes, the Identity provider issues a <a class="reference internal" href="../resources/glossary.html#glossary-user-identity-certificate"><span class="std std-ref">user identity certificate</span></a>. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.</p>
+<img alt="graphic drawing showing how the user interacts with the identity provider" src="../../_images/identity-creation.png" />
 </div>
-<div class="section" id="creating-an-account">
-<h2>Creating an account<a class="headerlink" href="#creating-an-account" title="Permalink to this headline">¶</a></h2>
-<p>Once a user has an identity, they can use it to create a number of accounts, besides the
-<a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> created by the identity provider upon creating the identity. In
-contrast to obtaining an identity, opening an account is an <a class="reference internal" href="../resources/glossary.html#glossary-on-chain"><span class="std std-ref">On-chain</span></a> action
-and requires sending a transaction to a node participating in the Concordium
-network. The input to the transaction is a <em>credential</em> which contains a number
-of cryptographic proofs, as well as a selection of attributes the user wishes to
-reveal publicly. The proofs establish that the attributes the user revealed
-publicly are the ones approved by the identity provider. The proofs reveal no
-other information. In particular, the identity provider itself cannot determine
-the owner of the account. (Revealing the owner is only possible through
-<a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>, which requires the identity provider and anonymity
-revokers to act together.) Note that revealing attributes publicly is completely
-optional. The benefit gained from revealing attributes is that other users may
-decide whether to trust the account based on the publicly available information.</p>
 </div>
-<div class="section" id="benefits">
-<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">¶</a></h2>
-<p>Every account on the chain must be derived from an identity that is verified and
-signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account, and who the anonymity revokers are
-for the account and the identity. In addition to this basic information which
-enables regulatory compliance, an account owner can choose to publicly reveal
-other values on their account, such as their nationality or country of
-residence. Since this information is publicly accessible anybody can check it
-before interacting with an account. Moreover, being able to see who issued the
-identity enables whoever wishes to interact with an account to judge the level
-of risk in the transaction.</p>
+<div class="section" id="about-accounts">
+<h2>About accounts<a class="headerlink" href="#about-accounts" title="Permalink to this headline">¶</a></h2>
+<p>For information about accounts, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
+<p>Any time you create a new account, you should make a <a class="reference internal" href="concepts-backup.html#backup"><span class="std std-ref">backup</span></a>. Backups protect your account keys, ensuring that you do not lose access to your CCDs.</p>
 </div>
 <div class="section" id="revoking-anonymity">
-<span id="revoking-anomity"></span><h2>Revoking anonymity<a class="headerlink" href="#revoking-anonymity" title="Permalink to this headline">¶</a></h2>
-<p>When necessary, the anonymity revokers and identity provider can work together
-to determine the owner of an account and determine which accounts belong to the
-same owner. (They should only do so when legally obliged to, such as by a court
-order.) Anonymity revocation is a two-stage process requiring cooperation of
-multiple parties.</p>
+<span id="revoke-anomity"></span><h2>Revoking anonymity<a class="headerlink" href="#revoking-anonymity" title="Permalink to this headline">¶</a></h2>
+<p>The identity of a user can only be revealed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant anonymity revokers and identity provider can the real-world identity of a user be revealed and only to the extent set out in the order.</p>
+<p>When legally obliged, the anonymity revokers and identity provider work together to determine the owner of an account and determine which accounts belong to the same owner. Anonymity revocation is a multi-stage process requiring cooperation of multiple parties.</p>
+<p>Each account has an encryption of a specific user identifier. This number can be decrypted by a sufficient number of the anonymity revokers working together. The set of anonymity revokers and the number of them required to decrypt the user identifier are determined when the identity is issued.</p>
+<p>After the authorities have identified an on-chain transaction or account they would like to investigate, in order to reveal the real-world identity of a user, the following process must be followed:</p>
+<img alt="graphic showing anonymity revocation process" src="../../_images/anonymity-revocation.png" />
 <ol class="arabic simple">
-<li><p>Each account has an encryption of a specific <em>user identifier</em>. This
-number can be decrypted by sufficiently many of the anonymity revokers
-working together. (The set of anonymity revokers and the number of them
-required to decrypt the user identifier are determined when the identity is
-issued.)</p></li>
-<li><p>Once the user identifier is decrypted the identity provider can look
-up the real-life identity of the owner of the account.</p></li>
+<li><p>The qualified authority must identify the anonymity revokers and identity provider associated with the account they would like to deanonymize and present them with an official order.</p></li>
+<li><p>Per the terms of the official order, the anonymity revokers inspect and decrypt the available on-chain data for the user.</p></li>
+<li><p>The anonymity revokers extract the unique user identifier from the collected data.</p></li>
+<li><p>With this unique user identifier, the qualified authority can work with the relevant identity provider to retrieve the real-world identity of the user. The anonymity revokers can also decrypt a value that is held by the identity provider and allows the revokers to find all accounts the user has created from a given identity. Additionally, this value allows anonymity revokers to see the amount of CCDs in the shielded balance of deanonymized accounts.</p></li>
 </ol>
-<p>After step 2 the anonymity revokers can additionally decrypt a value that is
-held by the identity provider and allows the revokers to find all accounts the
-user has created from a given identity. Additionally, this value allows
-anonymity revokers to see the amount of CCDs in the shielded balance of
-de-anonymized accounts.</p>
-<p>All of these actions are subject to rules and processes, and only the relevant
-entities learn any information about the account owner. No information is
-publicly revealed.</p>
+<p>All of these actions are subject to rules and processes, and only the relevant entities learn any information about the account owner. No information is publicly revealed.</p>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
