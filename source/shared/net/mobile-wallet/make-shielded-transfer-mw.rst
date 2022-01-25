@@ -15,6 +15,7 @@ for a guide on  how to make a regular CCD transfer, you can find the guide :ref:
    A shielded transfer is a transfer between two accounts, where the **amount** of the transfer is encrypted. The sender, receiver, and potential memo will be publicly visible on the blockchain.
 
 .. Warning::
+
    Do not shield or transfer all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
 
 Make a shielded CCD transfer from an account
