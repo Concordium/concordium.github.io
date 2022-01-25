@@ -13,6 +13,11 @@ Concordium Client transactions
 
 You can perform all types of transactions with the :ref:`concordium-client<concordium_client>`. To do so, you use specialized subcommands. For an introduction to transactions, see :ref:`Transactions overview <transactions-overview>`.
 
+.. Note::
+   All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
+   The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
+   You can see the fee in the transaction log.
+
 Transaction commands
 ====================
 
@@ -46,6 +51,14 @@ Transaction commands
 +-------------------------------+-------------------------------------+
 | ``account unshield``          | Transfer part of the shielded       |
 |                               | balance to public balance           |
++-------------------------------+-------------------------------------+
+| ``account show``              | Show account information.           |
+|                               | :ref:`See below for specific        |
+|                               | information<account-commands>`.     |
++-------------------------------+-------------------------------------+
+| ``identity show``             | Show identity information.          |
+|                               | :ref:`See below for specific        |
+|                               | information<identity-commands>`.    |
 +-------------------------------+-------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
@@ -85,6 +98,81 @@ the signing keys.
 
 Once a transaction has been submitted, the command will continuously poll and
 display its status until it's been :ref:`finalized<glossary-finalization>`.
+
+.. _account-commands:
+
+Commands for showing account information
+========================================
+
+.. _account-seqno:
+
+Account sequence number
+-----------------------
+
+Each account on the Concordium blockchain has a :ref:`sequence number<glossary-transaction-sequence-number>` and each
+transaction signed by the account must have a sequence number. For a transaction
+to be considered valid its sequence number must be the next available one for
+the account. The sequence number is maintained by all the bakers in order to
+validate transactions.
+
+The sequence number can be looked up from an up to date node by running
+
+.. code-block:: console
+
+   $concordium-client account show [ACCOUNT]
+
+where ``[ACCOUNT]`` is an optional argument that is either an address of an
+account or the name of an account chosen when importing the account. If no
+address is provided, ``concordium-client`` will use the account name
+``default``.
+
+The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+``concordium-client`` tracks the sequence number automatically, but it can
+also be set manually via the option ``--nonce``.
+
+.. _account-aliases:
+
+Account aliases
+---------------
+
+In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
+matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
+
+This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
+
+Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account's canonical address.
+
+To show aliases, enter:
+
+.. code-block:: console
+
+   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
+
+This generates the output:
+
+.. code-block:: console
+
+   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+
+.. _identity-commands:
+
+Commands for showing identity information
+=========================================
+
+.. identity-providers:
+
+To show the identity providers authorized by Concordium and a URL, enter:
+
+.. code-block:: console
+
+   $concordium-client identity show identity-providers
+
+To show the anonymity revokers, enter:
+
+.. code-block:: console
+
+   $concordium-client identity show anonymity-revokers
 
 Commands for transferring CCD
 =============================
@@ -302,7 +390,7 @@ of ``--index``, which has the same meaning as in the
 
 .. _transfer-with-a-schedule:
 
-Transfer CCD with a  schedule
+Transfer CCD with a schedule
 -----------------------------
 
 The command to transfer CCD that will be released gradually according to a

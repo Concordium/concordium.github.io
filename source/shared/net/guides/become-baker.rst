@@ -91,6 +91,9 @@ where you replace
    Choose **not** to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
    If this is a hard requirement for you then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
 
+.. Warning::
+   Do not stake all of your funds or you will not have enough funds to cover transaction fees.
+
 Provide a ``--no-restake`` flag to avoid automatically adding the
 rewards to the staked amount on the baker. Read more about this behavior in the section :ref:`Restake earnings<restake-earnings>`.
 

@@ -57,7 +57,7 @@ extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
 extlinks = {
     'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
-    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.0.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
 }
 
 # todo_include_todos = True

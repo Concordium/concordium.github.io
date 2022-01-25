@@ -10,21 +10,35 @@ Transactions overview
 
 A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :ref:`account<glossary-account>` and is signed using the keys of this account.
 
-The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain:
-
-- Send CCD
-- Send CCD with a schedule
-- Shield CCD
-- Unshield CCD
-- Make shielded transfer
-- Add baker
-- Remove baker
-- Update baker stake
-- Update restake earnings
-- Update baker keys
-- Update account credentials
+The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
 You can make transactions using either the Desktop Wallet, the Mobile Wallet, or the Concordium Client. Note that the Mobile Wallet doesn’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
+
++----------------------------+---------------+----------------+-------------------+
+|                            | Mobile Wallet | Desktop Wallet | Concordium Client |
++============================+===============+================+===================+
+| Send CCD                   | |check|       | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Send CCD with a schedule   |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Shield CCD                 | |check|       | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Unshield CCD               | |check|       | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Make shielded transfer     | |check|       | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Add baker                  |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Remove baker               |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Update baker stake         |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Update restake earnings    |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Update baker keys          |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
+| Update account credentials |               | |check|        | |check|           |
++----------------------------+---------------+----------------+-------------------+
 
 - Mobile Wallet: supports send CCD, shield CCD, and unshield CCD.
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
@@ -42,4 +56,12 @@ There’s a :ref:`sequence number<glossary-transaction-sequence-number>` associa
 Transaction fees
 =================
 
-Every transaction has a well-defined *fee*, and the fee of each transaction depends on the transaction type. When the transaction is submitted to the chain, the fee is deducted from the sender's account and paid to the Concordium network as a fee for carrying out the transaction. The fee is measured in the unit NRG which corresponds to CCD according to a variable conversion factor (currently 1 NRG = 0.0001 CCD). Read more about conversions between CCD, NRG, and Euros in :ref:`exchange-rates`.
+Every transaction has a well-defined *fee*, and the fee of each transaction depends on the transaction type. When the transaction is submitted to the chain, the fee is deducted from the sender's account and paid to the Concordium network as a fee for carrying out the transaction. The fee is measured in the unit NRG which corresponds to CCD according to a variable conversion factor (currently 1 NRG = 0.0001 CCD). The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. Read more about conversions between CCD, NRG, and Euros in :ref:`exchange-rates`.
+
+The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
+
+You can see the fee in the transaction log.
+
+.. include:: ../snippets/tools.rst
+
+.. |check|  unicode:: U+2713 .. CHECKMARK
