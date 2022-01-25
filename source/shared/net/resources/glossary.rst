@@ -21,17 +21,24 @@ one or more *account keys* that can be used to authorize transactions
 originating from the account, as well as with an :ref:`encryption key<glossary-encryption-key>` that can be
 used to send shielded transfers to the account. An account is also associated
 with the account holder's :ref:`identity<glossary-identity>`, although this association is encrypted
-for anonymity. This anonymity can only be revoked by anonymity revokers, in
+for anonymity. This anonymity can only be revoked by :ref:`anonymity revokers<glossary-anonymity-revoker>`, in
 cooperation with the account's :ref:`identity provider<glossary-identity-provider>`.
 
-.. _glossary-attribute:
+.. _glossary-alias:
 
 Alias
 =====
 
 A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
-.. _glossary-alias:
+.. _glossary-anonymity-revoker:
+
+Anonymity revoker
+=================
+
+An authority who has power to know the identity of a participant. The anonymity revokers and :ref:`identity provider<glossary-identity-provider>` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+
+.. _glossary-attribute:
 
 Attributes
 ==========
@@ -78,6 +85,14 @@ ledger. Each block has a :ref:`slot time<glossary-slot>` that records when it wa
 also contains information relating to consensus, for instance establishing which
 baker created the block, and that the baker was entitled to do so.
 
+.. _glossary-branch:
+
+Branch
+======
+
+A chain of blocks that has split from the main chain. All branches have the potential to become
+the main chain. The Chain selection rule determines which branch is the best chain.
+
 .. _glossary-catch-up:
 
 Catch-up
@@ -113,6 +128,27 @@ A sequence of :ref:`blocks<glossary-block>`, starting from the :ref:`genesis blo
 successive block points to the predecessor. There may be multiple valid chains,
 and the :ref:`consensus<glossary-consensus>` protocol establishes which chain is authoritative.
 
+.. _glossary-chain-selection-rule:
+
+Chain selection rule
+====================
+
+A rule that selects the best chain based on the following criteria:
+
+- chain with the most finalized blocks
+- longest chain
+- which last block has the earliest slot in the chains
+- which last block has the largest block luck in the chains
+- which last block has the largest hash in the chains.
+
+.. _glossary-concordium-client:
+
+Concordium client
+=================
+
+A command-line tool that ships with the Concordium distribution.
+It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been imported, Concordium client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
+
 .. _glossary-consensus:
 
 Consensus
@@ -120,6 +156,13 @@ Consensus
 
 The process by which nodes agree which :ref:`transaction<glossary-transaction>` have occurred and in what
 order. This consists of :ref:`baking<glossary-baker>` and :ref:`finalization<glossary-finalization>`.
+
+.. _glossary-cool-down-period:
+
+Cool-down period
+================
+
+A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a baker and updating stake. The length of a cool-down period varies between transactions.
 
 .. _glossary-credential:
 
@@ -139,6 +182,13 @@ Credential holder
 
 The user holding a credential. An account is owned by one or more credential holders.
 
+.. _glossary-cryptographic-proof:
+
+Cryptographic proof
+===================
+
+A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a zero-knowledge proof.
+
 .. _glossary-decryption-key:
 
 Decryption key
@@ -146,15 +196,6 @@ Decryption key
 
 Dual to :ref:`encryption key<glossary-encryption-key>`. In contrast to the encryption key, which is public,
 this key is only known to the account holder.
-
-.. _glossary-shielded-amount:
-
-Shielded amount
-================
-
-An amount of :ref:`CCD<glossary-CCD>` that is encrypted with the public key of an account. Only
-the owner of the secret key can determine how many CCDs are contained in the
-encryption.
 
 .. _glossary-encryption-key:
 
@@ -320,6 +361,15 @@ or implicit as part of the consensus protocol. An example of the former is a
 transaction such as a CCD transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
 
+.. _glossary-shielded-amount:
+
+Shielded amount
+================
+
+An amount of :ref:`CCD<glossary-CCD>` that is encrypted with the public key of an account. Only
+the owner of the secret key can determine how many CCDs are contained in the
+encryption.
+
 .. _glossary-shielded-balance:
 
 Shielded balance
@@ -387,7 +437,7 @@ winner.
 Staked Amount
 =============
 
-:ref:`bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
+:ref:`Bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
 staked remains locked while staked and cannot be transferred or moved in any
 way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
 
@@ -451,6 +501,31 @@ Unshielding
 The action of transferring a part of the :ref:`shielded balance<glossary-shielded-balance>` to the public
 balance.
 
+.. _glossary-user-identity-certificate:
+
+User identity certificate
+=========================
+
+Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
+The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
+
+.. _glossary-wallet:
+
+Wallet
+======
+
+A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has two wallet types.
+
+The Desktop Wallet
+^^^^^^^^^^^^^^^^^^
+
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+
+The Mobile Wallet
+^^^^^^^^^^^^^^^^^
+
+The Mobile Wallet is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
+
 .. _glossary-winning-probability:
 
 Winning probability
@@ -459,4 +534,3 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
-

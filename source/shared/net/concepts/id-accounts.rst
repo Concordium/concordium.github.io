@@ -1,115 +1,65 @@
 .. _reference-id-accounts:
 
-=======================
-Identities and accounts
-=======================
+==========
+Identities
+==========
 
 .. contents::
    :local:
    :backlinks: none
 
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
 
-In order to be an active participant on the Concordium blockchain (e.g., hold,
-send, receive :ref:`CCD<glossary-ccd>`) a user must create an *account*.
+Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.
 
-The user will get an :ref:`glossary-initial-account` at the same time as an *identity* has been issued
-by an identity provider. As the initial account is submitted to the chain by the
-identity provider, said identity provider will know the owner of the initial account. For this
-reason, the user may consider not using the initial account, and create a regular account instead.
+About identities
+================
 
-Regular accounts' owner is not known to the identity providers, or any other single entity. To facilitate
-compliance with relevant regulations, a regular account can only be created from an *identity*
-which is issued :ref:`glossary-off-chain` by an Identity provider. While an account
-has to be created from an identity, the user's privacy is still protected, and the
-account owner's identity can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`,
-which can only happen under stringent regulations, such as upon a court order. In
-particular, a key feature of the design of identities and accounts is that the identity
-provider cannot reveal the identity of an account on their own.
+Identities are issued by an identity provider. There is a :ref:`registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain<identity-commands>`. Concordium Foundation will maintain the list in the beginning.
 
-Anonymity revocation can only happen in exceptional circumstances (e.g., if
-authorities have detected suspicious activity on the account) and requires
-action by one or more anonymity revokers and the identity provider who issued
-the account's identity.
+.. only:: mainnet
 
-Obtaining an identity
-=====================
+   It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
+   Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.
 
-Identities are issued by an identity provider. There is a registry of approved
-identity providers publicly accessible from the Concordium blockchain, with
-their contact information. Concordium Foundation will maintain the list in the
-beginning.
+While identities facilitate compliance with relevant regulations, they also allow users to be represented on-chain in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of :ref:`anonymity revocation<revoke-anomity>`. Anonymity revocation can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more anonymity revokers and the identity provider who issued the account's identity.
 
-Each identity contains a number of cryptographic values, and a number of
+Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the anonymity revokers are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called :ref:`attributes<glossary-attribute>` and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction. If you choose to reveal attributes, you should have a good reason to do so. The general recommendation is not to reveal attributes.
+
+Attributes
+----------
+
+Each identity contains a number of cryptographic values and a number of
 user-chosen attributes, such as nationality or country of residence. These
 attributes are certified by the identity provider. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. The |Net| release presently supports the Notabene identity issuance flow.
+You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity, which is the general recommendation.
+
+Obtain an identity
+------------------
+
+You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
 
-Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This will typically involve taking photographs, scans of identification documents (e.g., passport), etc. Identity verification also checks that the user-chosen attributes are valid for the user.
+Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
-Creating an account
-===================
+Upon verification of the user's identification documents and attributes, the Identity provider issues a :ref:`user identity certificate<glossary-user-identity-certificate>`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
 
-Once a user has an identity, they can use it to create a number of accounts, besides the
-:ref:`glossary-initial-account` created by the identity provider upon creating the identity. In
-contrast to obtaining an identity, opening an account is an :ref:`glossary-on-chain` action
-and requires sending a transaction to a node participating in the Concordium
-network. The input to the transaction is a *credential* which contains a number
-of cryptographic proofs, as well as a selection of attributes the user wishes to
-reveal publicly. The proofs establish that the attributes the user revealed
-publicly are the ones approved by the identity provider. The proofs reveal no
-other information. In particular, the identity provider itself cannot determine
-the owner of the account. (Revealing the owner is only possible through
-:ref:`anonymity revocation<revoking-anomity>`, which requires the identity provider and anonymity
-revokers to act together.) Note that revealing attributes publicly is completely
-optional. The benefit gained from revealing attributes is that other users may
-decide whether to trust the account based on the publicly available information.
+.. image:: ../images/concepts/identity-creation.png
+   :alt: graphic drawing showing how the user interacts with the identity provider
 
-Benefits
-========
+About accounts
+==============
 
-Every account on the chain must be derived from an identity that is verified and
-signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account, and who the anonymity revokers are
-for the account and the identity. In addition to this basic information which
-enables regulatory compliance, an account owner can choose to publicly reveal
-other values on their account, such as their nationality or country of
-residence. Since this information is publicly accessible anybody can check it
-before interacting with an account. Moreover, being able to see who issued the
-identity enables whoever wishes to interact with an account to judge the level
-of risk in the transaction.
+For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
-.. _revoking-anomity:
+Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
-Revoking anonymity
-==================
+.. _revoke-anomity:
 
-When necessary, the anonymity revokers and identity provider can work together
-to determine the owner of an account and determine which accounts belong to the
-same owner. (They should only do so when legally obliged to, such as by a court
-order.) Anonymity revocation is a two-stage process requiring cooperation of
-multiple parties.
-
-1. Each account has an encryption of a specific *user identifier*. This
-   number can be decrypted by sufficiently many of the anonymity revokers
-   working together. (The set of anonymity revokers and the number of them
-   required to decrypt the user identifier are determined when the identity is
-   issued.)
-2. Once the user identifier is decrypted the identity provider can look
-   up the real-life identity of the owner of the account.
-
-After step 2 the anonymity revokers can additionally decrypt a value that is
-held by the identity provider and allows the revokers to find all accounts the
-user has created from a given identity. Additionally, this value allows
-anonymity revokers to see the amount of CCDs in the shielded balance of
-de-anonymized accounts.
-
-All of these actions are subject to rules and processes, and only the relevant
-entities learn any information about the account owner. No information is
-publicly revealed.
+.. include:: ../snippets/revoking-anonymity.rst
