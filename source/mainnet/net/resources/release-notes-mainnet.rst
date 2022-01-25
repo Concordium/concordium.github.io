@@ -11,6 +11,15 @@ Release notes
 
 Mainnet 3: Alpha Centauri 3.0
 ==============================
+
+January 25, 2022
+
+Concordium Mobile Wallet for Android v1.0.23
+--------------------------------------------
+
+- Changed name of export file to concordium-backup.concordiumwallet.
+- Added prompts and dialogs to remind users to back up.
+
 January 7, 2022
 
 Concordium Node v3.0.1

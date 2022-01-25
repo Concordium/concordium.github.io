@@ -11,6 +11,14 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+January 25, 2022
+
+Concordium Mobile Wallet for Android v1.0.23
+--------------------------------------------
+
+- Changed name of export file to concordium-backup.concordiumwallet.
+- Added prompts and dialogs to remind users to back up.
+
 January 3, 2022
 
 Concordium Node v3.0.1
