@@ -14,12 +14,13 @@ You can change the :ref:`staked amount <concepts-baker-stake>` on a baker accoun
 When you change the stake it can influence your chance of being selected to bake a block and receive baker rewards and of being included in the :ref:`finalization <glossary-finalization>` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a blocks and of being included in the finalization committee.
 
 .. Note::
-   All transfers and transactions cost a fee, including shielding and unshielding transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
-   The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
-   You can see the fee in the transaction log.
 
+   All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
+   The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
+   You can see the fee in the transaction log.
+   
 .. Warning::
-   Do not stake all of your funds or you will not have enough funds to cover transaction fees.
+   Make sure you have enough funds in your disposable balance to cover transaction fees.
 
 Change the staked amount (Single-signature account)
 ===================================================
