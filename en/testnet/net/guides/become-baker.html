@@ -317,6 +317,10 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 Choose <strong>not</strong> to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
 If this is a hard requirement for you then you need to run the <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">debian package</span></a> and configure it appropriately.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
+</div>
 <p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the
 rewards to the staked amount on the baker. Read more about this behavior in the section <a class="reference internal" href="#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
 <p>To start the node with these baker keys and bake blocks, you
