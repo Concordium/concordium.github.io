@@ -120,7 +120,7 @@ Configure the node with baker keys
       BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
 
    Where you replace the path `/home/user/concordium/baker-credentials.json` with the actual location of the file.
-   
+
 .. Note::
    The path `%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/` is the default path to the baker's state directory, where `9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478` is the genesis hash.
 
