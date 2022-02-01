@@ -332,12 +332,18 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 <li><p>Add the following snippet to the opened file (the file is empty the first time you open it):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
 
-<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json</span>
-<span class="go">BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json</span>
+<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json</span>
+<span class="go">BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json</span>
 </pre></div>
 </div>
 <p>Where you replace the path <cite>/home/user/concordium/baker-credentials.json</cite> with the actual location of the file.</p>
 </li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The path <cite>%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/</cite> is the default path to the baker’s state directory, where <cite>b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d</cite> is the testnet genesis hash.</p>
+</div>
+<ol class="arabic">
 <li><p>Save the edited file.</p></li>
 <li><p>Restart for the changes to take effect. Enter:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl restart concordium-testnet-node.service</span>
