@@ -11,6 +11,14 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+February 1, 2022
+
+Concordium Mobile Wallet for iOS v1.2(33)
+-----------------------------------------
+
+- Changed name of export file to ``concordium-backup.concordiumwallet``.
+- Added prompts and dialogs to remind users to back up.
+
 January 25, 2022
 
 Concordium Mobile Wallet for Android v1.2.6
