@@ -162,37 +162,17 @@ Install Concordium Ledger app on macOS
 Install Homebrew, Python3, and pip
 ----------------------------------
 
-#. Open the Terminal application. Click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
+#. To open the Terminal application, click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
 
-#. Install the package manager Homebrew. Copy the following line into the Terminal and press enter.
+#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-   .. code-block:: console
-
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-2. Install Python3 and Pip3 to manage (alternatively use pyenv if you need multiple python versions). Copy the following line into the Terminal and press enter:
+#. To install all of the dependency installations necessary, including Homebrew, Python3, Pip3, libusb, libjpeg, and ledgerblue, copy the following into the Terminal and press Enter:
 
    .. code-block:: console
 
-      brew install python@3.9
+      brew install python@3.9 libusb libjpeg && pip3 install ledgerblue
 
-3. Install libusb. Copy the following line into the Terminal and press enter:
-
-   .. code-block:: console
-
-      brew install libusb
-
-4. If you have Mac with an M1 or similar Apple Silicon CPU, install:
-
-   .. code-block:: console
-
-      brew install libjpeg
-
-5. Install ledgerblue:
-
-   .. code-block:: console
-
-      pip3 install ledgerblue
+   You can use pyenv if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
 
 Install the custom certificate using macOS
 ------------------------------------------
@@ -211,7 +191,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Enter your PIN code.
 
-   Load the certificate onto the Ledger by running the following script from the extracted folder:
+#. To open the Terminal application, click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
+
+#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
+
+#. Load the certificate onto the Ledger by running the following script from the extracted folder:
 
    .. code-block:: console
 
@@ -227,6 +211,10 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 Install the Concordium Ledger app on MacOS
 ---------------------------------------------
+
+#. To open the Terminal application, click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
+
+#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
 #. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
 
@@ -249,6 +237,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
     If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for Ledger (ledgerblue) before updating the app.
 
 #. :ref:`Download <downloads>` the latest version of the Ledger app if you haven't done so already.
+
+#. To open the Terminal application, click the **Launchpad** icon in the **Dock**, type *Terminal* in the search field, then select **Terminal**.
+
+#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
 #. Run the ``install.sh`` file from the folder that you extracted the files to.
 
