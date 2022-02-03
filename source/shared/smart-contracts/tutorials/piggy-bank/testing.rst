@@ -238,7 +238,7 @@ of our smart contract instance:
 .. code-block:: rust
 
    let ctx = ReceiveContextTest::empty();
-   let amount = Amount::from_micro_gtu(100);
+   let amount = Amount::from_micro_ccd(100);
    let mut state = PiggyBankState::Intact;
 
 When calling ``piggy_insert`` we get back a result with actions, instead of an
