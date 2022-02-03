@@ -31,7 +31,7 @@ Install/upgrade and run a node
    - The node name (replaced by what you enter during installation)
    - Baker credentials location, if you are a baker
    - Any other changes, such as ports, grpc passwords, etc.
-   
+
    You can choose to back up the service (config) file before upgrading, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
 #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer

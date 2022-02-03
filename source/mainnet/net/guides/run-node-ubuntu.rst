@@ -78,7 +78,7 @@ details of how this is done will depend on your configuration.
 
 .. _upgrade-node-Ubuntu:
 
-Upgrade version 
+Upgrade version
 ===============
 
 To upgrade to a newer version of the `concordium-mainnet-node` package you need to:

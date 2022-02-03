@@ -39,10 +39,10 @@ But because of the error it might look like this:
 To fix this error, do the following:
 
 #. Stop any memory heavy applications that are running.
-#. Stop the node. 
-#. Locate the state directory for your mainnet node. The state directory for your mainnet node can be found at /var/lib/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/data/database-v4 (unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the treestate-... and blockstate-...dat directories and files are. 
+#. Stop the node.
+#. Locate the state directory for your mainnet node. The state directory for your mainnet node can be found at /var/lib/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/data/database-v4 (unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the treestate-... and blockstate-...dat directories and files are.
 #. Delete the offending file.
-#. Restart the node. 
+#. Restart the node.
 
 Node crash or database corruption
 =================================
