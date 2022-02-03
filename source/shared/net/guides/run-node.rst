@@ -63,6 +63,9 @@ The tool will now download the Concordium Client image and load it into
 Docker. The client will launch and start outputting logging information
 about the operation of the node.
 
+.. Note::
+   To upgrade you have to restart the node. The tool automatically checks for the newest version.
+
 Seeing your node on the dashboard
 =================================
 

@@ -226,7 +226,7 @@ Uninstall a node running on Windows
 
 #. Select **Modify**, and then in the **Node Setup Wizard** select **Next**.
 
-#. Select **Remove**. If you plan to remove the node permanently, select **Remove node data folder**. to remove all files and subfolders in the folder. Don’t select this option if you are only removing the node to perform an upgrade or otherwise want to keep the data, logs, or any other files in the data folder.
+#. Select **Remove**. If you plan to remove the node permanently, select **Remove node data folder** to remove all files and subfolders in the folder. Don’t select this option if you are only removing the node to perform an upgrade or otherwise want to keep the data, logs, or any other files in the data folder.
 
 #. Select **Next**, and then select **Remove**.
 
