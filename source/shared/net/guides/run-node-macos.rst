@@ -22,8 +22,17 @@ Prerequisites
 - Meet the :ref:`minimum system requirements<requirements-run-node>` for running
   a node.
 
-Install and run a node
-======================
+Install/upgrade and run a node
+==============================
+
+.. Note::
+   If you are upgrading a node to a newer version, the upgrade overwrites the service (config) file. This will be:
+
+   - The node name (replaced by what you enter during installation)
+   - Baker credentials location, if you are a baker
+   - Any other changes, such as ports, grpc passwords, etc.
+   
+   You can choose to back up the service (config) file before upgrading, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
 #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer
    package (.pkg file).
@@ -33,7 +42,11 @@ Install and run a node
 
 #. Click **Allow** to the message saying: *This package will run a program to
    determine if the software can be installed.* If you have a M1 based Mac, the installer
-   might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
+   might `ask you to install #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer
+   package (.pkg file).
+
+#. In the folder where you downloaded the .pkg file, double-click the .pkg file.
+   The **Install Concordium Node** program opens.Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
 
 #. If you already have a version of the node installed, click **OK** to the
    message saying *Previous Installation Detected*.
@@ -121,8 +134,8 @@ You can also verify that a node is running by connecting it to the Desktop Walle
 
 #. Select **Set connection**. If the connection works and the node is running properly, there’s a message saying *Successfully connected*.
 
-Enabling inbound connections
-============================
+Enable inbound connections
+==========================
 
 If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
@@ -133,10 +146,12 @@ Concordium network. It will be able to send transactions and,
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections on Mainnet and on port ``8889`` for inbount connections on Testnet. Depending on your network and
+on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and
 platform configuration you will either need to forward an external port
 to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
+
+.. _change-node-settings:
 
 Change the node startup settings
 ================================

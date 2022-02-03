@@ -34,39 +34,10 @@ Before running a Concordium node you will need to
 
 2. Download and extract the :ref:`full suite for running a node on Linux<concordium-docker-package-download>`.
 
-Upgrading from version 1.1.3 to 3.0.0
-=====================================
-
-To upgrade do the following steps after downloading the new version.
-
-1. Run the ``concordium-node-stop`` executable from the unzipped archive and
-   wait for it to terminate. This might take a few seconds.
-
-2. Start the node again by running the ``concordium-node`` executable from the
-   unzipped archive. If your node is already caught up consider using
-   ``--no-block-state-import`` to avoid downloading data you already have.
-
-.. note::
-   If your node does not show on the network dashboard after upgrading to 3.0.0,
-   it could be that the node was started by the old version of the runner.
-   The old version of the software does not configure the docker container correctly, and this
-   misconfiguration can persist even if you then use the new version.
-   To fix this:
-
-   #. Ensure that you have downloaded and extracted the :ref:`latest version of the software<concordium-docker-package-download>`.
-
-   #. Check the version by running ``concordium-node --help``. It should show 3.0.0.
-
-   #. Stop any running node with ``concordium-node-stop``.
-
-   #. Remove the misconfigured docker container with ``docker rm concordium-client``.
-
-   #. Start the node again with ``concordium-node --no-block-state-import``.
-
 .. _running-a-node:
 
-Running a node
-==============
+Running/upgrading a node
+========================
 
 To start running a client that will join the |Net| follow these
 steps:
@@ -115,8 +86,8 @@ blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.
 
 
-Enabling inbound connections
-============================
+Enable inbound connections
+==========================
 
 If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
@@ -127,9 +98,9 @@ Concordium network. It will be able to send transactions and,
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections. Depending on your network and
+on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and
 platform configuration you will either need to forward an external port
-to ``8888`` on your router, open it in your firewall, or both. The
+to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
 Configuring ports and tokens
@@ -154,7 +125,7 @@ stopped (:ref:`stop-a-node`), reset, and started again. To reset the container e
 ``concordium-node-reset-data`` or run ``docker rm concordium-client`` in
 a terminal.
 
-We strongly recommend that you configure your firewall to only
+It is strongly recommended that you configure your firewall to only
 allow public connections on port 8888 (the peer-to-peer networking
 port). Someone with access to the other ports might be able to take
 control of your node or accounts you have saved on the node.
@@ -172,8 +143,8 @@ control of your node or accounts you have saved on the node.
 
 .. _stop-a-node:
 
-Stopping the node
-=================
+Stop the node
+=============
 
 To stop the node, press **CTRL+c**, and wait for the node to do a clean
 shutdown.
