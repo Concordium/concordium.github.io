@@ -21,7 +21,7 @@ A node crash or database corruption is the problem if:
 
 The solution is to delete the relevant portion of the database.
 
-The database directory should contain matching pairs of ``blockstate-$i.dat`` and ``treestate-$i`` files for some number of consecutive i's starting at 0.
+The database directory should contain matching pairs of ``blockstate-$i.dat`` and ``treestate-$i`` files for some number of consecutive i's starting at 0. The number of the files differs depending on which protocol version is current.
 
 .. code-block:: console
 

@@ -19,29 +19,29 @@ Your node state directory should look something like this:
 
 .. code-block:: console
 
-   -rw-r--r-- 1 concordium-mainnet-node concordium-mainnet-node 3.5G Nov 19 23:32 blockstate-0.dat
-   -rw-r--r-- 1 concordium-mainnet-node concordium-mainnet-node 2.3G Dec  6 12:00 blockstate-1.dat
-   -rw-r--r-- 1 concordium-mainnet-node concordium-mainnet-node 1.3G Jan 19 08:17 blockstate-2.dat
-   drwxr-xr-x 2 concordium-mainnet-node concordium-mainnet-node 4.0K Nov 19 16:55 treestate-0
-   drwxr-xr-x 2 concordium-mainnet-node concordium-mainnet-node 4.0K Nov 19 23:32 treestate-1
-   drwxr-xr-x 2 concordium-mainnet-node concordium-mainnet-node 4.0K Dec  6 12:00 treestate-2
+   blockstate-0.dat
+   blockstate-1.dat
+   blockstate-2.dat
+   treestate-0
+   treestate-1
+   treestate-2
 
 But because of the error it might look like this:
 
 .. code-block:: console
 
-   -rw-r--r-- 1 concordium-mainnet-node concordium-mainnet-node 3.5G Nov 19 23:32 blockstate-0.dat
-   -rw-r--r-- 1 concordium-mainnet-node concordium-mainnet-node 2.3G Dec  6 12:00 blockstate-1.dat
-   -rw-r--r-- 1 concordium-mainnet-node concordium-mainnet-node 1.3G Jan 19 08:17 blockstate-2.dat
-   drwxr-xr-x 2 concordium-mainnet-node concordium-mainnet-node 4.0K Nov 19 16:55 treestate-0
-   drwxr-xr-x 2 concordium-mainnet-node concordium-mainnet-node 4.0K Nov 19 23:32 treestate-1
+   blockstate-0.dat
+   blockstate-1.dat
+   blockstate-2.dat
+   treestate-0
+   treestate-1
 
 To fix this error, do the following:
 
 #. Stop any memory heavy applications that are running.
 #. Stop the node.
 #. Locate the state directory for your mainnet node. The state directory for your mainnet node can be found at /var/lib/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/data/database-v4 (unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the treestate-... and blockstate-...dat directories and files are.
-#. Delete the offending file.
+#. Delete the offending file. In the example above, you delete the blockstate2.dat file since it has no matching treestate file.
 #. Restart the node.
 
 Node crash or database corruption
@@ -55,7 +55,7 @@ A node crash or database corruption is the problem if:
 
 The solution is to delete the relevant portion of the database.
 
-The database directory should contain matching pairs of ``blockstate-$i.dat`` and ``treestate-$i`` files for some number of consecutive i's starting at 0.
+The database directory should contain matching pairs of ``blockstate-$i.dat`` and ``treestate-$i`` files for some number of consecutive i's starting at 0. The number of the files differs depending on which protocol version is current.
 
 .. code-block:: console
 
