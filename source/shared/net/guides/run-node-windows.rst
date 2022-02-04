@@ -19,8 +19,13 @@ Prequisites
 -  Run Windows 10 or later or Windows Server 2019 or later.
 -  Meet the :ref:`minimum system requirements<requirements-run-node>` for running a node.
 
-Install and run a node
-======================
+Install/upgrade and run a node
+==============================
+
+.. Note::
+   If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See :ref:`verify-running-node` for details about how to do this.
+
+   Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`configure-node` for information about how to change the service configuration settings.
 
 #. Go to :ref:`Downloads<downloads>`, and download the latest Windows Installer package (.msi file).
 
@@ -28,7 +33,7 @@ Install and run a node
 
 #. Accept the terms of the End-User License Agreement and select **Next**.
 
-#. Set the **Destination** folders.
+#. Set the **Destination** folders. The default is C:\ProgramData\Concordium\Node Runner.
 
    - In **Install Concordium Node to**, specify where to store the executable code.
 
@@ -68,6 +73,8 @@ Install and run a node
      .. image:: ../images/run-node/Node-setup-win-3.png
          :width: 50%
 
+.. _verify-running-node:
+
 Verify that the node is running
 ===============================
 
@@ -94,8 +101,8 @@ The node runs as a background service with no user interface. To verify that it�
 
    - https://dashboard.testnet.concordium.com/
 
-Enabling inbound connections
-============================
+Enable inbound connections
+==========================
 
 If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
@@ -106,7 +113,7 @@ Concordium network. It will be able to send transactions and,
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections on Mainnet and on port ``8889`` for inbount connections on Testnet. Depending on your network and
+on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and
 platform configuration you will either need to forward an external port
 to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
@@ -141,8 +148,10 @@ If you want to change whether the node runner service starts automatically, you 
 
 #. On the **General** tab, select the relevant **Startup type** from the list, and then select **OK** or **Apply**.
 
-Configure the Concordium Node Runner Service
-============================================
+.. _configure-node:
+
+Configure the Concordium Node Service
+=====================================
 
 You can change the mainnet or testnet node configuration with the Configure Concordium Node Service.
 
@@ -217,7 +226,7 @@ Uninstall a node running on Windows
 
 #. Select **Modify**, and then in the **Node Setup Wizard** select **Next**.
 
-#. Select **Remove**. If you plan to remove the node permanently, we recommend that you select **Remove node data folder**. This removes all files and subfolders in the folder. Don’t select this option if you are only removing the node to perform an upgrade or otherwise want to keep the data, logs, or any other files in the data folder.
+#. Select **Remove**. If you plan to remove the node permanently, select **Remove node data folder** to remove all files and subfolders in the folder. Don’t select this option if you are only removing the node to perform an upgrade or otherwise want to keep the data, logs, or any other files in the data folder.
 
 #. Select **Next**, and then select **Remove**.
 

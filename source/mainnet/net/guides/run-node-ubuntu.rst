@@ -26,23 +26,8 @@ Prerequisites
 
 -  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See :ref:`create-baker-desktop`.
 
-
-Upgrade from version 1.1.3 to 3.0.0
-===================================
-
-To upgrade from version `1.1.3` of the `concordium-node` package to version `3.0.0` of the `concordium-mainnet-node` package you need to:
-
-#. Install the new package
-
-   .. code-block:: console
-
-    apt install ./concordium-mainnet-node_3.0.0_amd64.deb
-
-  This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and
-  the collector are started as before.
-
 Install the Debian package and run a node
------------------------------------------
+=========================================
 
 To run the node, you must install a Debian package.
 After installation, the ``concordium-mainnet-node`` and ``concordium-mainnet-node-collector`` services will be started.
@@ -74,8 +59,8 @@ The ``concordium-mainnet-node`` service that you just installed will be running 
 .. Note::
    If you want more detailed information about building and maintaining a node, or if your node is not running, see the `Building .deb packages for ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md>`__
 
-Enabling inbound connections
-============================
+Enable inbound connections
+==========================
 
 If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
@@ -86,10 +71,26 @@ Concordium network. It will be able to send transactions and,
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections on Mainnet and on port ``8889`` for inbount connections on Testnet. Depending on your network and
-platform configuration you will either need to forward an external port
-to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
+on port ``8888`` for inbound connections on **Mainnet**. Depending on your network and
+platform configuration you will need to forward an external port
+to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
+
+.. _upgrade-node-Ubuntu:
+
+Upgrade version
+===============
+
+To upgrade to a newer version of the `concordium-mainnet-node` package you need to:
+
+#. Install the new package
+
+   .. code-block:: console
+
+    apt install ./concordium-mainnet-node_(version)_amd64.deb
+
+  This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and
+  the collector are started as before.
 
 .. _baker-node-Ubuntu:
 
