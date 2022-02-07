@@ -26,13 +26,7 @@ Install/upgrade and run a node
 ==============================
 
 .. Note::
-   If you are upgrading a node to a newer version, the upgrade overwrites the service (config) file. This will be:
-
-   - The node name (replaced by what you enter during installation)
-   - Baker credentials location, if you are a baker
-   - Any other changes, such as ports, grpc passwords, etc.
-
-   You can choose to back up the service (config) file before upgrading, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+   If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
 #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer
    package (.pkg file).
@@ -42,11 +36,7 @@ Install/upgrade and run a node
 
 #. Click **Allow** to the message saying: *This package will run a program to
    determine if the software can be installed.* If you have a M1 based Mac, the installer
-   might `ask you to install #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer
-   package (.pkg file).
-
-#. In the folder where you downloaded the .pkg file, double-click the .pkg file.
-   The **Install Concordium Node** program opens.Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
+   might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
 
 #. If you already have a version of the node installed, click **OK** to the
    message saying *Previous Installation Detected*.
