@@ -47,10 +47,10 @@
    :maxdepth: 1
    :caption: Run a node
 
-   guides/run-node-ubuntu
-   guides/run-node
-   guides/run-node-windows
-   guides/run-node-macos
+   nodes/ubuntu
+   nodes/docker
+   nodes/windows
+   nodes/macos
 
 .. toctree::
    :maxdepth: 1
