@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Overview of the baker process" href="overview-baker-process.html" />
-    <link rel="prev" title="Run and manage a node on Windows" href="run-node-windows.html" />
+    <link rel="next" title="Troubleshoot a node on MacOS" href="../nodes/troubleshoot-macos.html" />
+    <link rel="prev" title="MacOS nodes" href="../nodes/macos.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -133,20 +133,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Run and manage a node on macOS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-and-run-a-node">Install and run a node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verify-that-the-node-is-running">Verify that the node is running</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#change-the-node-startup-settings">Change the node startup settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configure-a-node-as-a-baker">Configure a node as a baker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#view-node-logs">View node logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uninstall-a-macos-node">Uninstall a macOS node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/ubuntu.html">Ubuntu nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/docker.html">Docker nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/windows.html">Windows nodes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../nodes/macos.html">MacOS nodes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run and manage a node on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/macos.html#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
 </ul>
@@ -213,6 +206,8 @@
         
           <li><a href="../index.html">Mainnet</a> &raquo;</li>
         
+          <li><a href="../nodes/macos.html">MacOS nodes</a> &raquo;</li>
+        
       <li>Run and manage a node on macOS</li>
     
     
@@ -235,13 +230,13 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#install-and-run-a-node" id="id2">Install and run a node</a></p></li>
+<li><p><a class="reference internal" href="#install-upgrade-and-run-a-node" id="id2">Install/upgrade and run a node</a></p></li>
 <li><p><a class="reference internal" href="#verify-that-the-node-is-running" id="id3">Verify that the node is running</a></p>
 <ul>
 <li><p><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet" id="id4">Connect a node to the Desktop Wallet</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id5">Enabling inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#enable-inbound-connections" id="id5">Enable inbound connections</a></p></li>
 <li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id6">Change the node startup settings</a></p></li>
 <li><p><a class="reference internal" href="#configure-a-node-as-a-baker" id="id7">Configure a node as a baker</a></p>
 <ul>
@@ -266,8 +261,12 @@ node using <a class="reference internal" href="run-node.html#run-a-node"><span c
 a node.</p></li>
 </ul>
 </div>
-<div class="section" id="install-and-run-a-node">
-<h2>Install and run a node<a class="headerlink" href="#install-and-run-a-node" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-upgrade-and-run-a-node">
+<h2>Install/upgrade and run a node<a class="headerlink" href="#install-upgrade-and-run-a-node" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See <a class="reference internal" href="#change-node-settings"><span class="std std-ref">Change the node startup settings</span></a> for information about how to change the service configuration settings. See <a class="reference internal" href="#configure-baker-macos"><span class="std std-ref">Configure a node as a baker</span></a> for information about how to set the location of baker credentials.</p>
+</div>
 <ol class="arabic">
 <li><p>Go to <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>, and download the latest macOS installer
 package (.pkg file).</p></li>
@@ -354,8 +353,8 @@ can see the name of the node on the <a class="reference external" href="https://
 </ol>
 </div>
 </div>
-<div class="section" id="enabling-inbound-connections">
-<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enable-inbound-connections">
+<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">¶</a></h2>
 <p>If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
@@ -364,13 +363,13 @@ Concordium network. It will be able to send transactions and,
 <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
 <p>However you can also make your node an even better network participant
 by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
-on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on Mainnet and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbount connections on Testnet. Depending on your network and
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and
 platform configuration you will either need to forward an external port
 to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="change-the-node-startup-settings">
-<h2>Change the node startup settings<a class="headerlink" href="#change-the-node-startup-settings" title="Permalink to this headline">¶</a></h2>
+<span id="change-node-settings"></span><h2>Change the node startup settings<a class="headerlink" href="#change-the-node-startup-settings" title="Permalink to this headline">¶</a></h2>
 <p>If you want to change whether the node services start automatically, you have
 two options.</p>
 <ul>

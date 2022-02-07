@@ -151,10 +151,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/run-node.html">Run a node with Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/ubuntu.html">Ubuntu nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/docker.html">Docker nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/windows.html">Windows nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/macos.html">MacOS nodes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Baking</span></p>
 <ul>
@@ -242,12 +242,12 @@
 <span id="install-ledger-app"></span><h1>Set up the Ledger Nano S and install the Concordium Ledger App<a class="headerlink" href="#set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#set-up-the-ledger-nano-s" id="id2">Set up the Ledger Nano S</a></p></li>
-<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-windows" id="id3">Install Concordium Ledger app on Windows</a></p></li>
-<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-macos" id="id4">Install Concordium Ledger app on macOS</a></p></li>
-<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-ubuntu" id="id5">Install Concordium Ledger app on Ubuntu</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id6">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#prerequisites" id="id4">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#set-up-the-ledger-nano-s" id="id5">Set up the Ledger Nano S</a></p></li>
+<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-windows" id="id6">Install Concordium Ledger app on Windows</a></p></li>
+<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-macos" id="id7">Install Concordium Ledger app on macOS</a></p></li>
+<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-ubuntu" id="id8">Install Concordium Ledger app on Ubuntu</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.</p>
@@ -373,33 +373,18 @@
 <div class="section" id="install-homebrew-python3-and-pip">
 <span id="install-python-pip-macos"></span><h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p>Open the Terminal application. Click the <strong>Launchpad</strong> icon in the <strong>Dock</strong>, type <em>Terminal</em> in the search field, then select <strong>Terminal</strong>.</p></li>
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
 <li><p>Install the package manager Homebrew. Copy the following line into the Terminal and press enter.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
 </pre></div>
 </div>
 </li>
-</ol>
-<ol class="arabic" start="2">
-<li><p>Install Python3 and Pip3 to manage (alternatively use pyenv if you need multiple python versions). Copy the following line into the Terminal and press enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install python@3.9</span>
+<li><p>To install all other dependency installations necessary, including Python3, Pip3, libusb, libjpeg, and ledgerblue, copy the following into the Terminal and press Enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install python@3.9 libusb libjpeg &amp;&amp; pip3 install ledgerblue</span>
 </pre></div>
 </div>
-</li>
-<li><p>Install libusb. Copy the following line into the Terminal and press enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install libusb</span>
-</pre></div>
-</div>
-</li>
-<li><p>If you have Mac with an M1 or similar Apple Silicon CPU, install:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install libjpeg</span>
-</pre></div>
-</div>
-</li>
-<li><p>Install ledgerblue:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
-</pre></div>
-</div>
+<p>You can use pyenv if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.</p>
 </li>
 </ol>
 </div>
@@ -412,8 +397,10 @@
 <li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
 <li><p>Disconnect the Ledger from your computer.</p></li>
 <li><p>Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says <strong>recovery mode</strong>.</p></li>
-<li><p>Enter your PIN code.</p>
-<p>Load the certificate onto the Ledger by running the following script from the extracted folder:</p>
+<li><p>Enter your PIN code.</p></li>
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Load the certificate onto the Ledger by running the following script from the extracted folder:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./loadcertificate.sh</span>
 </pre></div>
 </div>
@@ -426,6 +413,8 @@
 <div class="section" id="install-the-concordium-ledger-app-on-macos">
 <span id="install-ledger-app-macos"></span><h3>Install the Concordium Ledger app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
 <li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
 </pre></div>
@@ -446,6 +435,8 @@
 </div>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the Ledger app if you haven’t done so already.</p></li>
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
 <li><p>Run the <code class="docutils literal notranslate"><span class="pre">install.sh</span></code> file from the folder that you extracted the files to.</p></li>
 <li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>.</p></li>
 <li><p>Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the Ledger says <strong>Confirm action</strong>. Press both buttons to confirm. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>

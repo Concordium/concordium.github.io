@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Run a node with Docker" href="run-node.html" />
-    <link rel="prev" title="Querying a node" href="../references/query-node.html" />
+    <link rel="next" title="Troubleshoot a node on a server with Ubuntu" href="../nodes/troubleshoot-ubuntu.html" />
+    <link rel="prev" title="Ubuntu nodes" href="../nodes/ubuntu.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -133,17 +133,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Run a node on a server with Ubuntu</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upgrade-from-version-1-1-3-to-3-0-0">Upgrade from version 1.1.3 to 3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../nodes/ubuntu.html">Ubuntu nodes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-ubuntu.html">Troubleshoot a node on a server with Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/ubuntu.html#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/docker.html">Docker nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/windows.html">Windows nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/macos.html">MacOS nodes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Baking</span></p>
 <ul>
@@ -208,6 +206,8 @@
         
           <li><a href="../index.html">Mainnet</a> &raquo;</li>
         
+          <li><a href="../nodes/ubuntu.html">Ubuntu nodes</a> &raquo;</li>
+        
       <li>Run a node on a server with Ubuntu</li>
     
     
@@ -230,12 +230,9 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#upgrade-from-version-1-1-3-to-3-0-0" id="id2">Upgrade from version 1.1.3 to 3.0.0</a></p>
-<ul>
-<li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id3">Install the Debian package and run a node</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id4">Enabling inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#install-the-debian-package-and-run-a-node" id="id2">Install the Debian package and run a node</a></p></li>
+<li><p><a class="reference internal" href="#enable-inbound-connections" id="id3">Enable inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#upgrade-version" id="id4">Upgrade version</a></p></li>
 <li><p><a class="reference internal" href="#run-a-baker-node-on-ubuntu" id="id5">Run a baker node on Ubuntu</a></p>
 <ul>
 <li><p><a class="reference internal" href="#configure-the-node-with-baker-keys" id="id6">Configure the node with baker keys</a></p></li>
@@ -255,22 +252,8 @@
 <li><p>If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.</p></li>
 </ul>
 </div>
-<div class="section" id="upgrade-from-version-1-1-3-to-3-0-0">
-<h2>Upgrade from version 1.1.3 to 3.0.0<a class="headerlink" href="#upgrade-from-version-1-1-3-to-3-0-0" title="Permalink to this headline">¶</a></h2>
-<p>To upgrade from version <cite>1.1.3</cite> of the <cite>concordium-node</cite> package to version <cite>3.0.0</cite> of the <cite>concordium-mainnet-node</cite> package you need to:</p>
-<ol class="arabic">
-<li><p>Install the new package</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_3.0.0_amd64.deb</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<blockquote>
-<div><p>This step performs automatic database migration, so that the new node doesn’t have to catch up from scratch. After installation is completed, the node and
-the collector are started as before.</p>
-</div></blockquote>
 <div class="section" id="install-the-debian-package-and-run-a-node">
-<h3>Install the Debian package and run a node<a class="headerlink" href="#install-the-debian-package-and-run-a-node" title="Permalink to this headline">¶</a></h3>
+<h2>Install the Debian package and run a node<a class="headerlink" href="#install-the-debian-package-and-run-a-node" title="Permalink to this headline">¶</a></h2>
 <p>To run the node, you must install a Debian package.
 After installation, the <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node</span></code> and <code class="docutils literal notranslate"><span class="pre">concordium-mainnet-node-collector</span></code> services will be started.
 The services are also enabled to start automatically on system start.</p>
@@ -301,9 +284,8 @@ Mainnet blocks can be downloaded from <a class="reference external" href="https:
 <p>If you want more detailed information about building and maintaining a node, or if your node is not running, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md">Building .deb packages for ubuntu distributions README from Concordium</a></p>
 </div>
 </div>
-</div>
-<div class="section" id="enabling-inbound-connections">
-<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enable-inbound-connections">
+<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">¶</a></h2>
 <p>If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
@@ -312,10 +294,25 @@ Concordium network. It will be able to send transactions and,
 <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
 <p>However you can also make your node an even better network participant
 by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
-on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on Mainnet and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbount connections on Testnet. Depending on your network and
-platform configuration you will either need to forward an external port
-to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong>. Depending on your network and
+platform configuration you will need to forward an external port
+to <code class="docutils literal notranslate"><span class="pre">8888</span></code> on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.</p>
+</div>
+<div class="section" id="upgrade-version">
+<span id="upgrade-node-ubuntu"></span><h2>Upgrade version<a class="headerlink" href="#upgrade-version" title="Permalink to this headline">¶</a></h2>
+<p>To upgrade to a newer version of the <cite>concordium-mainnet-node</cite> package you need to:</p>
+<ol class="arabic">
+<li><p>Install the new package</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_(version)_amd64.deb</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>This step performs automatic database migration, so that the new node doesn’t have to catch up from scratch. After installation is completed, the node and
+the collector are started as before.</p>
+</div></blockquote>
 </div>
 <div class="section" id="run-a-baker-node-on-ubuntu">
 <span id="baker-node-ubuntu"></span><h2>Run a baker node on Ubuntu<a class="headerlink" href="#run-a-baker-node-on-ubuntu" title="Permalink to this headline">¶</a></h2>

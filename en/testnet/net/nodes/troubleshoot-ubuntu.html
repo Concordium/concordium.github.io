@@ -1,0 +1,420 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Troubleshoot a node on a server with Ubuntu &mdash; Concordium  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Docker nodes" href="docker.html" />
+    <link rel="prev" title="Run a node on a server with Ubuntu" href="../guides/run-node-ubuntu.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #34838C" >
+          
+
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/concordium-logo-testnet.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+<nav class="sidebar-top-menu">
+    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Testnet</a>
+    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
+</nav>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts.html">Concordium Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-maintenance-mw.html">Setup and Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/transfers-mw.html">Transfers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Desktop Wallet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/setup-maintenance-dw.html">Setup and Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/transfers-dw.html">Transfers and Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concordium Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ubuntu.html">Ubuntu nodes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guides/run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Troubleshoot a node on a server with Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu.html#support-feedback">Support &amp; Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows.html">Windows nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macos.html">MacOS nodes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Baking</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/dashboards.html">Dashboards and Status Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/legal.html">Legal</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Concordium</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Testnet</a> &raquo;</li>
+        
+          <li><a href="ubuntu.html">Ubuntu nodes</a> &raquo;</li>
+        
+      <li>Troubleshoot a node on a server with Ubuntu</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshoot-a-node-on-a-server-with-ubuntu">
+<span id="troubleshoot-node-ubuntu"></span><h1>Troubleshoot a node on a server with Ubuntu<a class="headerlink" href="#troubleshoot-a-node-on-a-server-with-ubuntu" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#database-invariant-violation-error" id="id1">Database invariant violation error</a></p></li>
+<li><p><a class="reference internal" href="#node-crash-or-database-corruption" id="id2">Node crash or database corruption</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id3">Support &amp; Feedback</a></p></li>
+</ul>
+</div>
+<p>This guide describes how to troubleshoot a node on the Concordium network from a server with Ubuntu.</p>
+<div class="section" id="database-invariant-violation-error">
+<h2>Database invariant violation error<a class="headerlink" href="#database-invariant-violation-error" title="Permalink to this headline">¶</a></h2>
+<p>This error occurs due to the node running out of memory during the protocol update, which is more memory intensive than normal operation.</p>
+<p>Your node state directory should look something like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blockstate-0.dat</span>
+<span class="go">blockstate-1.dat</span>
+<span class="go">blockstate-2.dat</span>
+<span class="go">treestate-0</span>
+<span class="go">treestate-1</span>
+<span class="go">treestate-2</span>
+</pre></div>
+</div>
+<p>But because of the error it might look like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blockstate-0.dat</span>
+<span class="go">blockstate-1.dat</span>
+<span class="go">blockstate-2.dat</span>
+<span class="go">treestate-0</span>
+<span class="go">treestate-1</span>
+</pre></div>
+</div>
+<p>To fix this error, do the following:</p>
+<ol class="arabic simple">
+<li><p>Stop any memory heavy applications that are running.</p></li>
+<li><p>Stop the node.</p></li>
+<li><p>Locate the state directory for your mainnet node. The state directory for your mainnet node can be found at /var/lib/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/data/database-v4 (unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the treestate-… and blockstate-…dat directories and files are.</p></li>
+<li><p>Delete the offending file. In the example above, you delete the blockstate2.dat file since it has no matching treestate file.</p></li>
+<li><p>Restart the node.</p></li>
+</ol>
+</div>
+<div class="section" id="node-crash-or-database-corruption">
+<h2>Node crash or database corruption<a class="headerlink" href="#node-crash-or-database-corruption" title="Permalink to this headline">¶</a></h2>
+<p>A node crash or database corruption is the problem if:</p>
+<ul class="simple">
+<li><p>the node fails to start</p></li>
+<li><p>the node is in a restart loop with an error message about database corruption</p></li>
+<li><p>or you get a “too few bytes” message.</p></li>
+</ul>
+<p>The solution is to delete the relevant portion of the database.</p>
+<p>The database directory should contain matching pairs of <code class="docutils literal notranslate"><span class="pre">blockstate-$i.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">treestate-$i</span></code> files for some number of consecutive i’s starting at 0. The number of the files differs depending on which protocol version is current.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blockstate-0.dat</span>
+<span class="go">blockstate-1.dat</span>
+<span class="go">blockstate-2.dat</span>
+<span class="go">treestate-0</span>
+<span class="go">treestate-1</span>
+<span class="go">treestate-2</span>
+</pre></div>
+</div>
+<p>To resolve a crash or non-starting node, delete files, starting at the largest <code class="docutils literal notranslate"><span class="pre">i</span></code>, until the node starts or until there are no more files in the directory.</p>
+<ul class="simple">
+<li><p>If only one of <code class="docutils literal notranslate"><span class="pre">treestate-i</span></code> or <code class="docutils literal notranslate"><span class="pre">blockstate-$i.dat</span></code> files exists, delete the other and try starting the node.</p></li>
+<li><p>Otherwise delete both files of the <code class="docutils literal notranslate"><span class="pre">treestate-$i</span></code> and <code class="docutils literal notranslate"><span class="pre">blockstate-$i.dat</span></code> pair and try starting the node.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The database is only accessible to specific users.</p>
+</div>
+</div>
+<div class="section" id="support-feedback">
+<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
+</a>
+
+    <p>
+        &#169; Copyright 2021, Concordium Software ApS.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: testnet
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd><a href="/en/mainnet/">mainnet</a></dd>
+      <dd><a href="/en/testnet/">testnet</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': loadChoice() ? 'granted' : 'denied' });
+gtag('js', new Date());
+gtag('config', 'G-TE81YY48VB', {'anonymize_ip': true});
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+    document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+    if (!document.cookie.includes("cookie-consent=")) {
+        return undefined;
+    }
+    return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+    document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+    storeChoice(true)
+    gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'granted' });
+    removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+    storeChoice(false)
+    removeCookieConsentBanner()
+}
+
+
+</script>
+<div id="cookie-consent" class="consent">
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Disallow</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+<script>
+    const stored = loadChoice();
+    if (stored !== undefined) {
+        removeCookieConsentBanner()
+    }
+</script>
+
+
+</body>
+</html>

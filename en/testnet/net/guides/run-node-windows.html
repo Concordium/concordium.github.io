@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Run and manage a node on macOS" href="run-node-macos.html" />
-    <link rel="prev" title="Run a node with Docker" href="run-node.html" />
+    <link rel="next" title="Troubleshoot a node running on Windows" href="../nodes/troubleshoot-windows.html" />
+    <link rel="prev" title="Windows nodes" href="../nodes/windows.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -133,23 +133,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-node.html">Run a node with Docker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Run and manage a node on Windows</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prequisites">Prequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-and-run-a-node">Install and run a node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verify-that-the-node-is-running">Verify that the node is running</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet">Connect a node to the Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#change-the-node-startup-settings">Change the node startup settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configure-the-concordium-node-runner-service">Configure the Concordium Node Runner Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#view-the-node-log">View the node log</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uninstall-a-node-running-on-windows">Uninstall a node running on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/ubuntu.html">Ubuntu nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/docker.html">Docker nodes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../nodes/windows.html">Windows nodes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run and manage a node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-windows.html">Troubleshoot a node running on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/windows.html#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/macos.html">MacOS nodes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Baking</span></p>
 <ul>
@@ -214,6 +206,8 @@
         
           <li><a href="../index.html">Testnet</a> &raquo;</li>
         
+          <li><a href="../nodes/windows.html">Windows nodes</a> &raquo;</li>
+        
       <li>Run and manage a node on Windows</li>
     
     
@@ -236,12 +230,12 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#prequisites" id="id1">Prequisites</a></p></li>
-<li><p><a class="reference internal" href="#install-and-run-a-node" id="id2">Install and run a node</a></p></li>
+<li><p><a class="reference internal" href="#install-upgrade-and-run-a-node" id="id2">Install/upgrade and run a node</a></p></li>
 <li><p><a class="reference internal" href="#verify-that-the-node-is-running" id="id3">Verify that the node is running</a></p></li>
-<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id4">Enabling inbound connections</a></p></li>
+<li><p><a class="reference internal" href="#enable-inbound-connections" id="id4">Enable inbound connections</a></p></li>
 <li><p><a class="reference internal" href="#connect-a-node-to-the-desktop-wallet" id="id5">Connect a node to the Desktop Wallet</a></p></li>
 <li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id6">Change the node startup settings</a></p></li>
-<li><p><a class="reference internal" href="#configure-the-concordium-node-runner-service" id="id7">Configure the Concordium Node Runner Service</a></p></li>
+<li><p><a class="reference internal" href="#configure-the-concordium-node-service" id="id7">Configure the Concordium Node Service</a></p></li>
 <li><p><a class="reference internal" href="#view-the-node-log" id="id8">View the node log</a></p></li>
 <li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id9">Synchronize a node with the network</a></p></li>
 <li><p><a class="reference internal" href="#uninstall-a-node-running-on-windows" id="id10">Uninstall a node running on Windows</a></p></li>
@@ -257,13 +251,18 @@
 <li><p>Meet the <a class="reference internal" href="../installation/downloads.html#requirements-run-node"><span class="std std-ref">minimum system requirements</span></a> for running a node.</p></li>
 </ul>
 </div>
-<div class="section" id="install-and-run-a-node">
-<h2>Install and run a node<a class="headerlink" href="#install-and-run-a-node" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-upgrade-and-run-a-node">
+<h2>Install/upgrade and run a node<a class="headerlink" href="#install-upgrade-and-run-a-node" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p>
+<p>Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See <a class="reference internal" href="#configure-node"><span class="std std-ref">Configure the Concordium Node Service</span></a> for information about how to change the service configuration settings.</p>
+</div>
 <ol class="arabic">
 <li><p>Go to <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>, and download the latest Windows Installer package (.msi file).</p></li>
 <li><p>In the folder where you downloaded the .msi file, double-click the .msi file. The <strong>Concordium Node Setup Wizard</strong> opens. Select <strong>Next</strong>. If you see a message saying <em>Windows protected your PC</em>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
 <li><p>Accept the terms of the End-User License Agreement and select <strong>Next</strong>.</p></li>
-<li><p>Set the <strong>Destination</strong> folders.</p>
+<li><p>Set the <strong>Destination</strong> folders. The default is C:ProgramDataConcordiumNode Runner.</p>
 <ul>
 <li><p>In <strong>Install Concordium Node to</strong>, specify where to store the executable code.</p></li>
 <li><p>In <strong>Install Concordium Node configuration and data to</strong>, specify where to store the node configuration and the blockchain databases and logs. Choose a drive that has sufficient space to accommodate the database and is sufficiently fast. For more information, see <a class="reference internal" href="../installation/downloads.html#requirements-run-node"><span class="std std-ref">Requirements for running a node</span></a>.</p>
@@ -301,7 +300,7 @@
 </ol>
 </div>
 <div class="section" id="verify-that-the-node-is-running">
-<h2>Verify that the node is running<a class="headerlink" href="#verify-that-the-node-is-running" title="Permalink to this headline">¶</a></h2>
+<span id="verify-running-node"></span><h2>Verify that the node is running<a class="headerlink" href="#verify-that-the-node-is-running" title="Permalink to this headline">¶</a></h2>
 <p>The node runs as a background service with no user interface. To verify that it’s running, use the <strong>Task Manager</strong>.</p>
 <ol class="arabic">
 <li><p>Search for <em>task</em> in the <strong>Search</strong> bar, and then select <strong>Task Manager</strong>.</p></li>
@@ -327,8 +326,8 @@
 </li>
 </ol>
 </div>
-<div class="section" id="enabling-inbound-connections">
-<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enable-inbound-connections">
+<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">¶</a></h2>
 <p>If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
@@ -337,7 +336,7 @@ Concordium network. It will be able to send transactions and,
 <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
 <p>However you can also make your node an even better network participant
 by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
-on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on Mainnet and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbount connections on Testnet. Depending on your network and
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and
 platform configuration you will either need to forward an external port
 to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.</p>
@@ -368,8 +367,8 @@ details of how this is done will depend on your configuration.</p>
 <li><p>On the <strong>General</strong> tab, select the relevant <strong>Startup type</strong> from the list, and then select <strong>OK</strong> or <strong>Apply</strong>.</p></li>
 </ol>
 </div>
-<div class="section" id="configure-the-concordium-node-runner-service">
-<h2>Configure the Concordium Node Runner Service<a class="headerlink" href="#configure-the-concordium-node-runner-service" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configure-the-concordium-node-service">
+<span id="configure-node"></span><h2>Configure the Concordium Node Service<a class="headerlink" href="#configure-the-concordium-node-service" title="Permalink to this headline">¶</a></h2>
 <p>You can change the mainnet or testnet node configuration with the Configure Concordium Node Service.</p>
 <ul class="simple">
 <li><p>Search for <em>configure concordium node</em> in the <strong>Search</strong> bar, and then select <strong>Configure Concordium Node Service</strong>. If you see a message saying <em>Do you want to allow this app to make changes to your device?</em>, select <strong>Yes</strong>. The configuration file opens in Notepad.</p></li>
@@ -425,7 +424,7 @@ details of how this is done will depend on your configuration.</p>
 <li><p>In the <strong>Search</strong> bar, enter <em>add</em>, and then select <strong>Add or Remove Programs</strong>.</p></li>
 <li><p>Under <strong>Apps &amp; features</strong>, search for <em>Concordium</em>, and then select <em>Concordium Node</em>.</p></li>
 <li><p>Select <strong>Modify</strong>, and then in the <strong>Node Setup Wizard</strong> select <strong>Next</strong>.</p></li>
-<li><p>Select <strong>Remove</strong>. If you plan to remove the node permanently, we recommend that you select <strong>Remove node data folder</strong>. This removes all files and subfolders in the folder. Don’t select this option if you are only removing the node to perform an upgrade or otherwise want to keep the data, logs, or any other files in the data folder.</p></li>
+<li><p>Select <strong>Remove</strong>. If you plan to remove the node permanently, select <strong>Remove node data folder</strong> to remove all files and subfolders in the folder. Don’t select this option if you are only removing the node to perform an upgrade or otherwise want to keep the data, logs, or any other files in the data folder.</p></li>
 <li><p>Select <strong>Next</strong>, and then select <strong>Remove</strong>.</p></li>
 <li><p>If the service is running, when you uninstall it you’ll see a message saying that the system has to restart to update files and services.  Select <strong>OK</strong>. (If the service is not running, you’ll not see this message).  If you see a message saying <em>Do you want to allow this app from an unknown publisher to make changes to your device?</em>, select <strong>Yes</strong>.</p></li>
 <li><p>Select <strong>Finish</strong>, to complete the removal of the Concordium node.</p></li>

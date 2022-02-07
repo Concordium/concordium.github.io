@@ -367,7 +367,7 @@ to construct the context.</p>
 <p>To test <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> we also need some amount of CCD and the current state
 of our smart contract instance:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_gtu</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
 <span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>

@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Run and manage a node on Windows" href="run-node-windows.html" />
-    <link rel="prev" title="Run a node on a server with Ubuntu" href="run-node-ubuntu.html" />
+    <link rel="next" title="Troubleshoot a node on a server with Docker" href="../nodes/troubleshoot-docker.html" />
+    <link rel="prev" title="Docker nodes" href="../nodes/docker.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -133,20 +133,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="run-node-ubuntu.html">Run a node on a server with Ubuntu</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Run a node with Docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#before-you-begin">Before you begin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upgrading-from-version-1-1-3-to-3-0-0">Upgrading from version 1.1.3 to 3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-a-node">Running a node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#seeing-your-node-on-the-dashboard">Seeing your node on the dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enabling-inbound-connections">Enabling inbound connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#stopping-the-node">Stopping the node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#retrieve-node-logs">Retrieve node logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/ubuntu.html">Ubuntu nodes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../nodes/docker.html">Docker nodes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run a node with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-docker.html">Troubleshoot a node on a server with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/docker.html#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Run and manage a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/windows.html">Windows nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/macos.html">MacOS nodes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Baking</span></p>
 <ul>
@@ -211,6 +206,8 @@
         
           <li><a href="../index.html">Mainnet</a> &raquo;</li>
         
+          <li><a href="../nodes/docker.html">Docker nodes</a> &raquo;</li>
+        
       <li>Run a node with Docker</li>
     
     
@@ -232,22 +229,21 @@
 <span id="run-a-node"></span><h1>Run a node with Docker<a class="headerlink" href="#run-a-node-with-docker" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#before-you-begin" id="id3">Before you begin</a></p></li>
-<li><p><a class="reference internal" href="#upgrading-from-version-1-1-3-to-3-0-0" id="id4">Upgrading from version 1.1.3 to 3.0.0</a></p></li>
-<li><p><a class="reference internal" href="#running-a-node" id="id5">Running a node</a></p></li>
-<li><p><a class="reference internal" href="#seeing-your-node-on-the-dashboard" id="id6">Seeing your node on the dashboard</a></p>
+<li><p><a class="reference internal" href="#before-you-begin" id="id2">Before you begin</a></p></li>
+<li><p><a class="reference internal" href="#running-upgrading-a-node" id="id3">Running/upgrading a node</a></p></li>
+<li><p><a class="reference internal" href="#seeing-your-node-on-the-dashboard" id="id4">Seeing your node on the dashboard</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id7">Network dashboard</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id5">Network dashboard</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#enabling-inbound-connections" id="id8">Enabling inbound connections</a></p>
+<li><p><a class="reference internal" href="#enable-inbound-connections" id="id6">Enable inbound connections</a></p>
 <ul>
-<li><p><a class="reference internal" href="#configuring-ports-and-tokens" id="id9">Configuring ports and tokens</a></p></li>
+<li><p><a class="reference internal" href="#configuring-ports-and-tokens" id="id7">Configuring ports and tokens</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#stopping-the-node" id="id10">Stopping the node</a></p></li>
-<li><p><a class="reference internal" href="#retrieve-node-logs" id="id11">Retrieve node logs</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id12">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#stop-the-node" id="id8">Stop the node</a></p></li>
+<li><p><a class="reference internal" href="#retrieve-node-logs" id="id9">Retrieve node logs</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id10">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>In this guide, you learn how to run a node on your Linux computer that
@@ -274,34 +270,8 @@ machine.</p></li>
 <li><p>Download and extract the <a class="reference internal" href="../installation/downloads.html#concordium-docker-package-download"><span class="std std-ref">full suite for running a node on Linux</span></a>.</p></li>
 </ol>
 </div>
-<div class="section" id="upgrading-from-version-1-1-3-to-3-0-0">
-<h2>Upgrading from version 1.1.3 to 3.0.0<a class="headerlink" href="#upgrading-from-version-1-1-3-to-3-0-0" title="Permalink to this headline">¶</a></h2>
-<p>To upgrade do the following steps after downloading the new version.</p>
-<ol class="arabic simple">
-<li><p>Run the <code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable from the unzipped archive and
-wait for it to terminate. This might take a few seconds.</p></li>
-<li><p>Start the node again by running the <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> executable from the
-unzipped archive. If your node is already caught up consider using
-<code class="docutils literal notranslate"><span class="pre">--no-block-state-import</span></code> to avoid downloading data you already have.</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If your node does not show on the network dashboard after upgrading to 3.0.0,
-it could be that the node was started by the old version of the runner.
-The old version of the software does not configure the docker container correctly, and this
-misconfiguration can persist even if you then use the new version.
-To fix this:</p>
-<ol class="arabic simple">
-<li><p>Ensure that you have downloaded and extracted the <a class="reference internal" href="../installation/downloads.html#concordium-docker-package-download"><span class="std std-ref">latest version of the software</span></a>.</p></li>
-<li><p>Check the version by running <code class="docutils literal notranslate"><span class="pre">concordium-node</span> <span class="pre">--help</span></code>. It should show 3.0.0.</p></li>
-<li><p>Stop any running node with <code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code>.</p></li>
-<li><p>Remove the misconfigured docker container with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">concordium-client</span></code>.</p></li>
-<li><p>Start the node again with <code class="docutils literal notranslate"><span class="pre">concordium-node</span> <span class="pre">--no-block-state-import</span></code>.</p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="running-a-node">
-<span id="id1"></span><h2>Running a node<a class="headerlink" href="#running-a-node" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="running-upgrading-a-node">
+<span id="running-a-node"></span><h2>Running/upgrading a node<a class="headerlink" href="#running-upgrading-a-node" title="Permalink to this headline">¶</a></h2>
 <p>To start running a client that will join the Mainnet follow these
 steps:</p>
 <ol class="arabic simple">
@@ -325,6 +295,10 @@ node to catch-up with the Concordium network.</strong></p></li>
 <p>The tool will now download the Concordium Client image and load it into
 Docker. The client will launch and start outputting logging information
 about the operation of the node.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To upgrade you have to restart the node. The tool automatically checks for the newest version.</p>
+</div>
 </div>
 <div class="section" id="seeing-your-node-on-the-dashboard">
 <h2>Seeing your node on the dashboard<a class="headerlink" href="#seeing-your-node-on-the-dashboard" title="Permalink to this headline">¶</a></h2>
@@ -333,8 +307,8 @@ about the operation of the node.</p>
 <li><p>see your node on the <a class="reference external" href="https://dashboard.mainnet.concordium.software/">Network Dashboard</a></p></li>
 <li><p><a class="reference internal" href="../references/query-node.html#testnet-query-node"><span class="std std-ref">query</span></a> information about blocks, transactions, and accounts</p></li>
 </ul>
-<div class="section" id="id2">
-<h3>Network dashboard<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Network dashboard<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>It will take the client a while to catch up with the state of the
 Concordium blockchain. This involves, for example, downloading
 information about all the blocks in the chain.</p>
@@ -346,8 +320,8 @@ blocks in the longest chain in the network) which is displayed at the
 top of the dashboard.</p>
 </div>
 </div>
-<div class="section" id="enabling-inbound-connections">
-<h2>Enabling inbound connections<a class="headerlink" href="#enabling-inbound-connections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enable-inbound-connections">
+<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">¶</a></h2>
 <p>If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
@@ -356,9 +330,9 @@ Concordium network. It will be able to send transactions and,
 <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
 <p>However you can also make your node an even better network participant
 by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
-on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections. Depending on your network and
+on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and
 platform configuration you will either need to forward an external port
-to <code class="docutils literal notranslate"><span class="pre">8888</span></code> on your router, open it in your firewall, or both. The
+to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.</p>
 <div class="section" id="configuring-ports-and-tokens">
 <h3>Configuring ports and tokens<a class="headerlink" href="#configuring-ports-and-tokens" title="Permalink to this headline">¶</a></h3>
@@ -376,10 +350,10 @@ used by the node are as follows:</p>
 <p>An additional mapping is the gRPC token, which defaults to <code class="docutils literal notranslate"><span class="pre">rpcadmin</span></code>, and can
 be set with <code class="docutils literal notranslate"><span class="pre">--rpc-server-token</span></code>.</p>
 <p>When changing the mappings above the docker container must be
-stopped (<a class="reference internal" href="#stop-a-node"><span class="std std-ref">Stopping the node</span></a>), reset, and started again. To reset the container either use
+stopped (<a class="reference internal" href="#stop-a-node"><span class="std std-ref">Stop the node</span></a>), reset, and started again. To reset the container either use
 <code class="docutils literal notranslate"><span class="pre">concordium-node-reset-data</span></code> or run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">concordium-client</span></code> in
 a terminal.</p>
-<p>We strongly recommend that you configure your firewall to only
+<p>It is strongly recommended that you configure your firewall to only
 allow public connections on port 8888 (the peer-to-peer networking
 port). Someone with access to the other ports might be able to take
 control of your node or accounts you have saved on the node.</p>
@@ -395,8 +369,8 @@ a secure channel.</p>
 </div>
 </div>
 </div>
-<div class="section" id="stopping-the-node">
-<span id="stop-a-node"></span><h2>Stopping the node<a class="headerlink" href="#stopping-the-node" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stop-the-node">
+<span id="stop-a-node"></span><h2>Stop the node<a class="headerlink" href="#stop-the-node" title="Permalink to this headline">¶</a></h2>
 <p>To stop the node, press <strong>CTRL+c</strong>, and wait for the node to do a clean
 shutdown.</p>
 <p>If you accidentally close the window without explicitly shutting down
