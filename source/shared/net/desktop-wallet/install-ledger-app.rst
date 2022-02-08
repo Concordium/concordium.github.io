@@ -166,19 +166,23 @@ Install Homebrew, Python3, and pip
 
 #. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-#. Install the package manager Homebrew. Copy the following line into the Terminal and press enter.
+#. Install the package manager `Homebrew<https://brew.sh/>`; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
 
    .. code-block:: console
 
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#. To install all other dependency installations necessary, including Python3, Pip3, libusb, libjpeg, and ledgerblue, copy the following into the Terminal and press Enter:
+#. To install Python3, Pip3, `libusb<https://libusb.info/>`, and `libjpeg<http://libjpeg.sourceforge.net/>`, copy the following into the Terminal and press Enter:
 
    .. code-block:: console
 
-      brew install python@3.9 libusb libjpeg && pip3 install ledgerblue
+      brew install python@3.9 libusb libjpeg
 
-   You can use pyenv if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
+   You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.   
+
+#. To install ledgerblue, copy the following into the Terminal and press Enter:
+
+      pip3 install ledgerblue
 
 Install the custom certificate using macOS
 ------------------------------------------
