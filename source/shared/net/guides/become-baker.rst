@@ -329,7 +329,7 @@ To start the node with these baker keys and bake blocks, you
 first need to shut down the current running node. To do this, either press ``Ctrl + C`` on the terminal where the node is running or use the
 ``concordium-node-stop`` executable.
 
-When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``. 
+When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``.
 
 Remove a baker
 ==============
