@@ -178,7 +178,7 @@ Install Homebrew, Python3, and pip
 
       brew install python@3.9 libusb libjpeg
 
-   You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.   
+   You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
 
 #. To install ledgerblue, copy the following into the Terminal and press Enter:
 
