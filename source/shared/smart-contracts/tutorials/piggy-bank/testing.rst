@@ -58,9 +58,9 @@ Testing the piggy bank smart contract
 
 This is the second :ref:`part of a tutorial<piggy-bank>` on smart contract
 development.
-So far we have written a piggy bank smart contract in the Rust_ programming
+So far you have written a piggy bank smart contract in the Rust_ programming
 language.
-This part will focus on how we can write unit test for our piggy bank smart
+This part will focus on how you can write unit tests for your piggy bank smart
 contract and how to setup and locally simulate an invocation of a smart
 contract.
 
@@ -80,24 +80,27 @@ contract.
 Preparation
 ===========
 
-Before we start, make sure to have the necessary tooling for building Rust
+Before you start, make sure to have the necessary tooling to build Rust
 contracts.
-The guide :ref:`setup-tools` will show you how to do this.
-Also, make sure to have a text editor setup for writing Rust.
+The guide :ref:`setup-tools` shows you how to do this.
+Also, make sure to have a text editor setup to write Rust.
 
-Since we are going to extend the smart contract code written in the previous
-part, either follow the previous part or copy the resulting code from there.
+Additionally, to run the tests you need to:
 
-.. todo::
+- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
+- :ref:`create an account for testnet<create-account-desktop>`. The account will need some CCD to run tests.
+- :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
+- :ref:`deploy the smart contract to your local testnet node<deploy-module>`.
 
-   Add link to 'here' for the code from the previous part.
+Since you are going to extend the smart contract code written in the :ref:`previous
+part<piggy-bank-writing>`, either follow the previous part or copy the resulting code from there.
 
-We are now ready for writing unit tests for our smart contract!
+You are now ready to write unit tests for your smart contract!
 
-Adding a test module
-========================
+Add a test module
+=================
 
-Since a smart contract module is written as a Rust library, we can test it as
+Since a smart contract module is written as a Rust library, you can test it as
 one would test any library and write unit-tests as part of the Rust module.
 
 At the bottom of the ``lib.rs`` file containing our code, make sure you have the
@@ -113,15 +116,15 @@ following starting point:
 
    }
 
-This is our test module, which is a common pattern for writing unit tests in
-Rust, so we will not spend time on explaining any of the above code.
+This is your test module, which is a common pattern for writing unit tests in
+Rust, so the above code will not be explained here.
 
-We test the contract functions just as if they were regular functions, by
-calling the functions we have annotated with |init|_ and |receive|_.
+Test the contract functions just as if they were regular functions by
+calling the functions you have annotated with |init|_ and |receive|_.
 
-But in order to call them, we will need to first construct the arguments.
+But in order to call them, you will need to first construct the arguments.
 Luckily |concordium-std|_ contains a submodule |test_infrastructure|_ with
-stubs for this, so let us first bring everything from the submodule into scope.
+stubs for this, so first bring everything from the submodule into scope.
 
 .. code-block:: rust
    :emphasize-lines: 4
@@ -133,12 +136,12 @@ stubs for this, so let us first bring everything from the submodule into scope.
 
    }
 
-Now we can start adding tests to this module.
+Now you can start adding tests to this module.
 
 Testing instantiation of a piggy bank
 =====================================
 
-The first test we add is to verify a piggy bank is set up with the correct
+The first test to add is to verify a piggy bank is set up with the correct
 state.
 
 .. code-block:: rust
@@ -148,9 +151,9 @@ state.
       todo!("Implement")
    }
 
-As mentioned above, we test the initialization by calling the function
+As mentioned above, you test the initialization by calling the function
 ``piggy_init`` directly.
-To construct its argument for, we use |InitContextTest|_, which provides a
+To construct its argument for, you use |InitContextTest|_ which provides a
 placeholder for the context.
 
 .. code-block:: rust
@@ -159,27 +162,27 @@ placeholder for the context.
 
 Just as the name suggests, the test context is empty and if any of the getter
 functions are called, it will make sure to fail the test, which should be fine
-for now, since our piggy bank is not reading anything from the context.
+for now since the piggy bank is not reading anything from the context.
 
 .. note::
 
-   As we will see later with the |ReceiveContextTest|_, these placeholders have
+   As you will see later with the |ReceiveContextTest|_, these placeholders have
    setter functions, allowing us to partially specify the context.
 
-Now we can call ``piggy_init`` and get a result containing the initial state.
+Now you can call ``piggy_init`` and get a result containing the initial state.
 
 .. code-block:: rust
 
    let state_result = piggy_init(&ctx);
 
-First of all we want the test to fail, if our contract did not result in an
+First, you want the test to fail if the contract did not result in an
 initial state:
 
 .. code-block:: rust
 
        let state = state_result.expect("Contract initialization results in error.");
 
-Next we assert the state is correctly set to ``Intact``:
+Next you assert the state is correctly set to ``Intact``:
 
 .. code-block:: rust
 
@@ -189,7 +192,7 @@ Next we assert the state is correctly set to ``Intact``:
       "Piggy bank state should be intact after initialization."
    );
 
-Putting it all together we end up with the following test for initializing a
+Putting it all together, you end up with the following test for initializing a
 piggy bank:
 
 .. code-block:: rust
@@ -226,14 +229,14 @@ Run the test to check that it compiles and succeeds.
 
 
 Test inserting CCD into a piggy bank
-===========================================
+====================================
 
-Next we should test the different functions for interacting with a piggy bank.
-This is done in the same way as initializing, except we use |ReceiveContextTest|
+Next you should test the different functions for interacting with a piggy bank.
+This is done in the same way as initializing, except you use |ReceiveContextTest|
 to construct the context.
 
-To test ``piggy_insert`` we also need some amount of CCD and the current state
-of our smart contract instance:
+To test ``piggy_insert`` you also need some amount of CCD and the current state
+of your smart contract instance:
 
 .. code-block:: rust
 
@@ -241,16 +244,16 @@ of our smart contract instance:
    let amount = Amount::from_micro_ccd(100);
    let mut state = PiggyBankState::Intact;
 
-When calling ``piggy_insert`` we get back a result with actions, instead of an
-initial state as with ``piggy_init``. But we will need to help the compiler
+When calling ``piggy_insert`` you get back a result with actions instead of an
+initial state as with ``piggy_init``. But you will need to help the compiler
 infer which type to use for the generic ``A`` implementing |HasActions|_, so
-we add the result type ``ReceiveResult<ActionsTree>``:
+add the result type ``ReceiveResult<ActionsTree>``:
 
 .. code-block:: rust
 
    let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
 
-For testing we can represent the actions as a simple tree structure
+For testing you can represent the actions as a simple tree structure
 |ActionsTree|_, making it easy to inspect.
 
 .. note::
@@ -259,8 +262,8 @@ For testing we can represent the actions as a simple tree structure
    the smart contract module. This representation depends on functions supplied
    by the host environment and is therefore not suitable for unit tests.
 
-Now we need to check if the function succeeded and verify the resulting state and actions.
-In our case the state should remain intact and the function produce only the action for accepting the CCD.
+Now you need to check if the function succeeded and verify the resulting state and actions.
+In this case the state should remain intact and the function produce only the action for accepting the CCD.
 
 .. code-block:: rust
 
@@ -287,29 +290,29 @@ The second test becomes:
        assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
    }
 
-Again we should verify everything compiles and the tests succeeds using ``cargo
+Again you should verify everything compiles and the tests succeeds using ``cargo
 test``.
 
-Next we could add a test, checking that inserting into a piggy bank with state
-``Smashed`` results in an error, but we have been through everything needed to
-do this, and we therefore leave as an exercise for the reader.
+Next you could add a test to check that inserting into a piggy bank with state
+``Smashed`` results in an error. You have been through everything needed to
+do this, and can do this exercise on your own.
 
 Test smashing a piggy bank
 ==========================
 
-Testing ``piggy_smash`` will follow the same pattern, but this time we will need
-to populate the context, since this function uses the context for getting the
-contract owner, the sender of the message triggering the function and the
+Testing ``piggy_smash`` will follow the same pattern, but this time you will need
+to populate the context since this function uses the context for getting the
+contract owner, the sender of the message triggering the function, and the
 balance of contract.
 
-If we just supply the function with an empty context it will fail, so instead we
+If you only supply the function with an empty context it will fail, so instead
 define the context as mutable:
 
 .. code-block:: rust
 
    let mut ctx = ReceiveContextTest::empty();
 
-We create an |AccountAddress|_ to represent the owner and use the setter
+Create an |AccountAddress|_ to represent the owner and use the setter
 |set_owner| implemented on |ReceiveContextTest|_:
 
 .. code-block:: rust
@@ -319,13 +322,13 @@ We create an |AccountAddress|_ to represent the owner and use the setter
 
 .. note::
 
-   Notice we created the account address using an array of 32 bytes, which is
+   Notice you created the account address using an array of 32 bytes, which is
    how account addresses are represented on the Concordium blockchain.
    These byte arrays can also be represented as a base58check encoding, but for
    testing it is usually more convenient to specify addresses directly in bytes.
 
-Next we set the sender to be the same address as the owner using |set_sender|_.
-Since the sender can be a contract instance as well, we must wrap the owner
+Next set the sender to be the same address as the owner using |set_sender|_.
+Since the sender can be a contract instance as well, you must wrap the owner
 address in the |Address|_ type:
 
 .. code-block:: rust
@@ -333,7 +336,7 @@ address in the |Address|_ type:
    let sender = Address::Account(owner);
    ctx.set_sender(sender);
 
-Lastly we will need to set the current balance of the piggy bank instance, using
+Lastly, you need to set the current balance of the piggy bank instance using
 |set_self_balance|_.
 
 .. code-block:: rust
@@ -341,8 +344,8 @@ Lastly we will need to set the current balance of the piggy bank instance, using
    let balance = Amount::from_micro_gtu(100);
    ctx.set_self_balance(balance);
 
-Now that we have the test context setup, we call the contract function
-``piggy_smash`` and inspect the resulting action tree and state just like we did
+Now that you have the test context setup, call the contract function
+``piggy_smash`` and inspect the resulting action tree and state as you did
 in the previous tests:
 
 .. code-block:: rust
@@ -366,12 +369,12 @@ in the previous tests:
        assert_eq!(state, PiggyBankState::Smashed);
    }
 
-Ensure everything compiles and the tests succeeds using ``cargo test``.
+Ensure everything compiles and the test succeeds using ``cargo test``.
 
 Testing cause of rejection
 ==========================
 
-We want to test that our piggy bank rejects in certain contexts, for example
+You want to test that the piggy bank rejects in certain contexts, for example
 when someone besides the owner of the smart contract tries to smash it.
 
 The test should:
@@ -403,13 +406,13 @@ The test could look like this:
    }
 
 One thing to notice is that the test is not ensuring *why* the contract
-rejected, our piggy bank might reject for a wrong reason, and this would be a
+rejected; your piggy bank might reject for a wrong reason and this would be a
 bug.
-This is probably fine for a simple smart contract like our piggy bank, but for a
+This is probably fine for a simple smart contract like your piggy bank, but for a
 smart contract with more complex logic and many reasons for rejecting, it would
-be better if we tested this as well.
+be better if you tested this as well.
 
-To solve this we introduce a ``SmashError`` enum , to represent the different
+To solve this, introduce a ``SmashError`` enum  to represent the different
 reasons for rejection:
 
 .. code-block:: rust
@@ -425,7 +428,7 @@ reasons for rejection:
    For more information about custom errors and deriving ``Reject``, see :ref:`custom-errors`.
 
 
-To use this error type; the function ``piggy_smash`` should return ``Result<A,
+To use this error type, the function ``piggy_smash`` should return ``Result<A,
 SmashError>`` instead of ``ReceiveResult<A>``:
 
 .. code-block:: rust
@@ -439,7 +442,7 @@ SmashError>`` instead of ``ReceiveResult<A>``:
       // ...
    }
 
-and we also have to supply the |ensure| macros with a second argument, which is
+and you also have to supply the |ensure| macros with a second argument, which is
 the error to produce:
 
 .. code-block:: rust
@@ -462,7 +465,7 @@ the error to produce:
        Ok(A::simple_transfer(&owner, balance))
    }
 
-Since the return type have changed for the ``piggy_smash`` function, we have to
+Since the return type has changed for the ``piggy_smash`` function, you have to
 change the type in the tests as well:
 
 .. code-block:: rust
@@ -486,7 +489,7 @@ change the type in the tests as well:
        // ...
    }
 
-We can now check which error was produced in the test:
+You can now check which error was produced in the test:
 
 .. code-block:: rust
    :emphasize-lines: 15-16
@@ -509,23 +512,23 @@ We can now check which error was produced in the test:
        assert_eq!(err, SmashError::NotOwner, "Expected to fail with error NotOwner")
    }
 
-We leave it up to the reader to test, whether smashing a piggy bank, that have
+It is up to the reader to test whether smashing a piggy bank that has
 already been smashed results in the correct error.
 
 Compiling and running tests in Wasm
 ===================================
 
-When running ``cargo test`` our contract module and tests are compiled targeting
+When running ``cargo test`` your contract module and tests are compiled targeting
 your native platform, but on the Concordium blockchain a smart contract module
 is in Wasm.
 Therefore it is preferable to compile the tests targeting Wasm and run the tests
 using a Wasm interpreter instead.
-Lucky for us, the ``cargo-concordium`` tool contains such an interpreter, and
+Luckily, the ``cargo-concordium`` tool contains such an interpreter, and
 it is the same interpreter shipped with the official nodes on the Concordium
 blockchain.
 
-Before we can run our tests in Wasm, we have to replace ``#[cfg(test)]`` at the
-top of our test module with |concordium_cfg_test|_ and all the ``#[test]``
+Before you can run tests in Wasm, you have to replace ``#[cfg(test)]`` at the
+top of your test module with |concordium_cfg_test|_ and all the ``#[test]``
 macros with |concordium_test|_.
 
 .. code-block:: rust
@@ -559,21 +562,21 @@ macros with |concordium_test|_.
        }
    }
 
-We will also need to modify our tests a bit. Usually a test in Rust_ is failed
+You also need to modify the tests a bit. Usually a test in Rust_ is failed
 by panicking with an error message, but when compiling to Wasm this error
 message is lost.
-Instead we need generate code reporting the error back to the host, who is
-running the Wasm, and to do so, |concordium-std| provides replacements:
+Instead you need generate code reporting the error back to the host who is
+running the Wasm. To do so, |concordium-std| provides replacements:
 
-- A call to ``panic!`` should be replace with |fail|_.
+- A call to ``panic!`` should be replaced with |fail|_.
 - The ``expect`` and ``expect_err`` function should be replaced with
   |expect_report|_ and |expect_err_report|_.
-- ``assert`` and ``assert_eq`` should be replace with |claim|_ and |claim_eq|_
+- ``assert`` and ``assert_eq`` should be replaced with |claim|_ and |claim_eq|_
   respectively.
 
-All of these macros are wrappers, which behaves the same as their counterpart
-except when we build our smart contract for testing in Wasm using
-``cargo-concordium``. This means we can still run tests for targeting native
+All of these macros are wrappers, which behave the same as their counterpart
+except when you build your smart contract for testing in Wasm using
+``cargo-concordium``. This means you can still run tests for targeting native
 using ``cargo test``.
 
 .. code-block:: rust
@@ -659,21 +662,21 @@ Compiling and running the tests in Wasm can be done using:
 
    $cargo concordium test
 
-This will make a special test build of our smart contract module exporting all
-of our tests as functions and it will then run each of these functions catching
+This will make a special test build of your smart contract module, exporting all
+of your tests as functions, and it will then run each of these functions catching
 the reported errors.
 
 Simulating the piggy bank
 =========================
 
-So far the tests we have written are in Rust_ and have to be compiled alongside
-the smart contract module in a test build, which is fine for unit testing, but
-this test build is not the actual module that we intend to deploy on the
+So far the tests you have written are in Rust_ and have to be compiled alongside
+the smart contract module in a test build. This is fine for unit testing, but
+this test build is not the actual module that you intend to deploy on the
 Concordium blockchain.
 
-We should also test the smart contract wasm module meant for deployment, and we
+You should also test the smart contract wasm module meant for deployment, and you
 can use the simulate feature of ``cargo-concordium``. It takes a smart contract
 wasm module and uses the Wasm interpreter to run a smart contract function in a
-given context.
+given context. For a reference of the context, see :ref:`simulate-context`.
 
-For more on how to do this: check out the guide :ref:`local-simulate`.
+For more on how to run simulations, see :ref:`local-simulate`.
