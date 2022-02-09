@@ -323,7 +323,7 @@ Then run the transaction:
 ``--sender`` is the name or address of the transaction's sender account. The name is the one that's used when you :ref:`import the account<concordium-client-import-accounts-keys>` (assuming that this
 was done). It defaults to the account name "default".
 
-If you want to keep the baker-credentials.json output file in the same location as your other Concordium files, you can omit ``<concordium-data-dir>/``.
+If you want to keep the ``baker-credentials.json`` output file in the same location as your other Concordium files, you can omit ``<concordium-data-dir>/``.
 
 To start the node with these baker keys and bake blocks, you
 first need to shut down the current running node. To do this, either press ``Ctrl + C`` on the terminal where the node is running or use the
