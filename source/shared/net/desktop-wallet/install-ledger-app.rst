@@ -182,6 +182,8 @@ Install Homebrew, Python3, and pip
 
 #. To install ledgerblue, copy the following into the Terminal and press Enter:
 
+   .. code-block:: console
+
       pip3 install ledgerblue
 
 Install the custom certificate using macOS
