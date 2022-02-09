@@ -11,6 +11,13 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+February 10, 2022
+
+Concordium Mobile Wallet for iOS v1.3(34)
+-----------------------------------------
+
+- Fixed a bug related to import of backup files.
+
 February 1, 2022
 
 Concordium Mobile Wallet for iOS v1.2(33)
