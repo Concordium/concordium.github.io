@@ -254,7 +254,12 @@ When you update your Ledger, it removes the apps but not the certificates. So yo
 
 #. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-#. Run the ``./install.sh`` file from the folder that you extracted the files to.
+#. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
+
+   .. code-block:: console
+
+      ./install.sh
+
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
 
