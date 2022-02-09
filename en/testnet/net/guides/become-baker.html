@@ -242,10 +242,11 @@
 <li><p><a class="reference internal" href="#update-the-staked-amount" id="id12">Update the staked amount</a></p></li>
 <li><p><a class="reference internal" href="#restake-the-earnings" id="id13">Restake the earnings</a></p></li>
 <li><p><a class="reference internal" href="#finalization" id="id14">Finalization</a></p></li>
+<li><p><a class="reference internal" href="#update-baker-keys" id="id15">Update baker keys</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#remove-a-baker" id="id15">Remove a baker</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id16">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#remove-a-baker" id="id16">Remove a baker</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id17">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This guide takes you through the steps involved in upgrading your node to a baker node and managing the node using the Concordium Client.</p>
@@ -260,7 +261,7 @@
 is added to the chain, the baker of the node will receive a reward.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this section we will use the name <code class="docutils literal notranslate"><span class="pre">bakerAccount</span></code> as the name of the
+<p>In this section the name <code class="docutils literal notranslate"><span class="pre">bakerAccount</span></code> indicates the name of the
 account that will be used to register and manage a baker.</p>
 </div>
 <div class="section" id="prerequisites">
@@ -271,14 +272,17 @@ account that will be used to register and manage a baker.</p>
 <li><p>Export the JSON file with the account information</p></li>
 <li><p>Install the Concordium Client</p></li>
 </ul>
+<p>For general information about baking concepts, see <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">Bakers</span></a>.</p>
 </div>
 <div class="section" id="start-baking">
 <h2>Start baking<a class="headerlink" href="#start-baking" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="import-the-account">
 <h3>Import the account<a class="headerlink" href="#import-the-account" title="Permalink to this headline">¶</a></h3>
-<p>This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<p>bakcups-and-recovery
-You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  <a class="reference internal" href="../mobile-wallet/export-import-mw.html#export-import-mw"><span class="std std-ref">Make a backup of identities and accounts in the Mobile Wallet</span></a>.</p>
+<p>This section provides a brief description of how to import an account using the Concordium Client.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see <a class="reference internal" href="../mobile-wallet/export-import-mw.html#export-import-mw"><span class="std std-ref">Make a backup of identities and accounts in the Mobile Wallet</span></a>.</p>
+</div>
 <p>To import an account run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import &lt;path/to/exported/file&gt; --name bakerAccount
 </pre></div>
@@ -314,8 +318,8 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will offer to encrypt the generated <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code> file.
-Choose <strong>not</strong> to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
-If this is a hard requirement for you then you need to run the <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">debian package</span></a> and configure it appropriately.</p>
+Choose <strong>not</strong> to encrypt it since Concordium does not support easily starting a baker with encrypted baker credentials.
+If this is a firm requirement for you, then you need to run the <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">debian package</span></a> and configure it appropriately.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -553,7 +557,7 @@ the <code class="docutils literal notranslate"><span class="pre">baker</span> <s
 <p>Finalization is the voting process performed by nodes in the <em>finalization
 committee</em> that <em>finalizes</em> a block when a sufficiently big number of members of the committee have received the block and agree on its outcome. Newer blocks
 must have the finalized block as an ancestor to ensure the integrity of the
-chain. For more information about this process, see the <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalization</span></a>.</p>
+chain. For more information about this process, see <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalization</span></a>.</p>
 <p>The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
 finalization committee you will probably have to modify the staked amount
@@ -562,6 +566,25 @@ in the finalization committee is <strong>0.1% of the total amount of existing CC
 <p>Participating in the finalization committee produces rewards on each block that
 is finalized. The rewards are paid to the baker account some time after the
 block is finalized.</p>
+</div>
+<div class="section" id="update-baker-keys">
+<h3>Update baker keys<a class="headerlink" href="#update-baker-keys" title="Permalink to this headline">¶</a></h3>
+<p>If it is necessary to update your baker keys, you need to first generate new baker keys. To create a fresh set of keys run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker generate-keys &lt;keys-file&gt;.json
+</pre></div>
+</div>
+<p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">file</span></code>.</p>
+<p>Then run the transaction:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker set-key &lt;keys-file&gt;.json --sender &lt;account&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">--sender</span></code> is the name or address of the transaction’s sender account. The name is the one that’s used when you <a class="reference internal" href="../references/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import the account</span></a> (assuming that this
+was done). It defaults to the account name “default”.</p>
+<p>If you want to keep the <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code> output file in the same location as your other Concordium files, you can omit <code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;/</span></code>.</p>
+<p>To start the node with these baker keys and bake blocks, you
+first need to shut down the current running node. To do this, either press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or use the
+<code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable.</p>
+<p>When you’ve placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>.</p>
 </div>
 </div>
 <div class="section" id="remove-a-baker">

@@ -29,8 +29,8 @@ Android
 - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_1.2.6(69).apk>`_
 
 
-Concordium Desktop Wallet
-=========================
+Concordium Desktop Wallet v1.3.1
+================================
 
 - `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.3.1.exe>`_
 
@@ -63,8 +63,9 @@ This version of the Ledger App is the same as the one used for Mainnet, so if yo
 .. _concordium-node-and-client-download:
 
 
-Concordium Client
-=================
+Concordium Client v3.0.4
+========================
+
 Download the Concordium Client:
 
 -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
@@ -76,8 +77,9 @@ Download the Concordium Client:
 -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
 
 
-Cargo-concordium
-================
+Cargo-concordium v1.0.0-2
+=========================
+
 Download cargo-concordium:
 
 -  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
@@ -88,8 +90,8 @@ Download cargo-concordium:
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
 
-Concordium node distributions
-=============================
+Concordium node distributions v3.0.1
+====================================
 
 Node Debian package
 -------------------
@@ -166,8 +168,8 @@ Auxiliary tools
 
 Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
 
-Encrypt/decrypt tool
---------------------
+Encrypt/decrypt tool v1.0.0
+---------------------------
 
 - `Download the Encrypt/decrypt tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
 
