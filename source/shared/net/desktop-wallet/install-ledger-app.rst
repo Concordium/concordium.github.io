@@ -245,7 +245,7 @@ Update/reinstall the Concordium Ledger app on macOS
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
-When you update your Ledger, it removes the apps but not the certificates. So you do not need to do anything about the certificate.
+When you update your Ledger, it should not be necessary to update the certificate.
 
 .. Note::
     If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for Ledger (ledgerblue) before updating the app.
