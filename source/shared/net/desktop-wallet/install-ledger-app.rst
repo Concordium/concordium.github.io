@@ -166,7 +166,7 @@ Install Homebrew, Python3, and pip
 
 #. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-#. Install the package manager `Homebrew<https://brew.sh/>`; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
+#. Install the package manager `Homebrew <https://brew.sh/>`_; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
 
    .. code-block:: console
 
