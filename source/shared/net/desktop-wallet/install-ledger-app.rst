@@ -172,7 +172,7 @@ Install Homebrew, Python3, and pip
 
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#. To install Python3, Pip3, `libusb<https://libusb.info/>`, and `libjpeg<http://libjpeg.sourceforge.net/>`, copy the following into the Terminal and press Enter:
+#. To install Python3, Pip3, `libusb <https://libusb.info/>`_, and `libjpeg <http://libjpeg.sourceforge.net/>`_, copy the following into the Terminal and press Enter:
 
    .. code-block:: console
 
