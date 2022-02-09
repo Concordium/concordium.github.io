@@ -232,16 +232,18 @@ Install the Concordium Ledger app on MacOS
 
       ./install.sh
 
-2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
-3. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+#. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
 
 .. _update-app-macos:
 
-Update the Concordium Ledger app on macOS
--------------------------------------------
+Update/reinstall the Concordium Ledger app on macOS
+---------------------------------------------------
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
+
+When you update your Ledger, it removes the apps but not the certificates. So you do not need to do anything about the certificate.
 
 .. Note::
     If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for Ledger (ledgerblue) before updating the app.
@@ -252,7 +254,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-#. Run the ``install.sh`` file from the folder that you extracted the files to.
+#. Run the ``./install.sh`` file from the folder that you extracted the files to.
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
 
