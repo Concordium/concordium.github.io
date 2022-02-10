@@ -85,7 +85,7 @@ included in a block. This transaction, as every other transaction, has an
 associated cost. The cost is based on the size of the bytecode and is charged
 for both checking validity of the module and on-chain storage.
 
-The deployment itself does not execute
+The deployment itself does not execute a
 smart contract. To execute, a user must first create an *instance* of a contract.
 
 .. seealso::
