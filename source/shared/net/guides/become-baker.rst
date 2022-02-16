@@ -25,7 +25,7 @@ is added to the chain, the baker of the node will receive a reward.
 
 .. note::
 
-   In this section we will use the name ``bakerAccount`` as the name of the
+   In this section the name ``bakerAccount`` indicates the name of the
    account that will be used to register and manage a baker.
 
 Prerequisites
@@ -35,16 +35,19 @@ Prerequisites
 -  Export the JSON file with the account information
 -  Install the Concordium Client
 
+For general information about baking concepts, see :ref:`baker-concept`.
+
 Start baking
 ============
 
 Import the account
 ------------------
 
-This section provides a brief description of how to import an account using the Concordium Client. For a complete description, see :ref:`managing_accounts`.
+This section provides a brief description of how to import an account using the Concordium Client.
 
-bakcups-and-recovery
-You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see  :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import-mw>`.
+.. Note::
+
+   You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import-mw>`.
 
 To import an account run:
 
@@ -88,8 +91,8 @@ where you replace
 .. warning::
 
    ``concordium-client`` will offer to encrypt the generated ``baker-credentials.json`` file.
-   Choose **not** to encrypt it since we do not support easily starting a baker with encrypted baker credentials.
-   If this is a hard requirement for you then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
+   Choose **not** to encrypt it since Concordium does not support easily starting a baker with encrypted baker credentials.
+   If this is a firm requirement for you, then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
 
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
@@ -288,7 +291,7 @@ Finalization
 Finalization is the voting process performed by nodes in the *finalization
 committee* that *finalizes* a block when a sufficiently big number of members of the committee have received the block and agree on its outcome. Newer blocks
 must have the finalized block as an ancestor to ensure the integrity of the
-chain. For more information about this process, see the :ref:`finalization<glossary-finalization>`.
+chain. For more information about this process, see :ref:`finalization<glossary-finalization>`.
 
 The finalization committee is formed by the bakers that have a certain staked
 amount. This specifically implies that in order to participate in the
@@ -299,6 +302,34 @@ in the finalization committee is **0.1% of the total amount of existing CCD**.
 Participating in the finalization committee produces rewards on each block that
 is finalized. The rewards are paid to the baker account some time after the
 block is finalized.
+
+Update baker keys
+-----------------
+
+If it is necessary to update your baker keys, you need to first generate new baker keys. To create a fresh set of keys run:
+
+.. code-block:: console
+
+   $concordium-client baker generate-keys <keys-file>.json
+
+You can choose an arbitrary name for the ``keys file``.
+
+Then run the transaction:
+
+.. code-block:: console
+
+   $concordium-client baker set-key <keys-file>.json --sender <account> --out <concordium-data-dir>/baker-credentials.json
+
+``--sender`` is the name or address of the transaction's sender account. The name is the one that's used when you :ref:`import the account<concordium-client-import-accounts-keys>` (assuming that this
+was done). It defaults to the account name "default".
+
+If you want to keep the ``baker-credentials.json`` output file in the same location as your other Concordium files, you can omit ``<concordium-data-dir>/``.
+
+To start the node with these baker keys and bake blocks, you
+first need to shut down the current running node. To do this, either press ``Ctrl + C`` on the terminal where the node is running or use the
+``concordium-node-stop`` executable.
+
+When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``.
 
 Remove a baker
 ==============
