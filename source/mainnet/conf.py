@@ -49,7 +49,9 @@ extensions = [
     "sphinx.ext.extlinks",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
     "multidoc",
-    "sphinx_reredirects"
+    "sphinx_reredirects",
+    # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
+    "sphinx_copybutton"
 ]
 
 # sphinx-prompt must be the first of these two.
