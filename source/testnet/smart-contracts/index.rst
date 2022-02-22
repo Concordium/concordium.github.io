@@ -8,7 +8,6 @@
    general/contract-module
    general/contract-instances
    general/contract-schema
-   general/resource-accounting
    general/develop-contracts
 
 .. toctree::
