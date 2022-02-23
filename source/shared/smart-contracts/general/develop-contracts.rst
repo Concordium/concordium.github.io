@@ -264,10 +264,7 @@ Best practices
 ==============
 .. todo::
 
-    Don't panic
-    -----------
-
-   Use trap instead.
+     Add H3 for Don't panic, Use trap instead.
 
 Avoid creating black holes
 --------------------------
@@ -284,8 +281,7 @@ not.
 
 .. todo::
 
-    Move heavy calculations off-chain
-    ---------------------------------
+    Add H3 for Move heavy calculations off-chain
 
 
 .. _Rust: https://www.rust-lang.org/
