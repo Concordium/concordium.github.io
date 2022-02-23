@@ -166,19 +166,25 @@ Install Homebrew, Python3, and pip
 
 #. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-#. Install the package manager Homebrew. Copy the following line into the Terminal and press enter.
+#. Install the package manager `Homebrew <https://brew.sh/>`_; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
 
    .. code-block:: console
 
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#. To install all other dependency installations necessary, including Python3, Pip3, libusb, libjpeg, and ledgerblue, copy the following into the Terminal and press Enter:
+#. To install Python3, Pip3, `libusb <https://libusb.info/>`_, and `libjpeg <http://libjpeg.sourceforge.net/>`_, copy the following into the Terminal and press Enter:
 
    .. code-block:: console
 
-      brew install python@3.9 libusb libjpeg && pip3 install ledgerblue
+      brew install python@3.9 libusb libjpeg
 
-   You can use pyenv if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
+   You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
+
+#. To install ledgerblue, copy the following into the Terminal and press Enter:
+
+   .. code-block:: console
+
+      pip3 install ledgerblue
 
 Install the custom certificate using macOS
 ------------------------------------------
@@ -228,16 +234,18 @@ Install the Concordium Ledger app on MacOS
 
       ./install.sh
 
-2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
+#. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
-3. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
+#. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. You can now use the Ledger with the Desktop Wallet.
 
 .. _update-app-macos:
 
-Update the Concordium Ledger app on macOS
--------------------------------------------
+Update/reinstall the Concordium Ledger app on macOS
+---------------------------------------------------
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
+
+When you update your Ledger, it should not be necessary to update the certificate.
 
 .. Note::
     If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for Ledger (ledgerblue) before updating the app.
@@ -248,7 +256,12 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
 
-#. Run the ``install.sh`` file from the folder that you extracted the files to.
+#. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
+
+   .. code-block:: console
+
+      ./install.sh
+
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**.
 
