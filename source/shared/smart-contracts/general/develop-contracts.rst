@@ -258,14 +258,7 @@ recommend using ``cargo-concordium`` to build smart contracts.
 
 .. todo::
 
-    Testing smart contracts
-    =======================
-
-    Unit tests with stubs
-    ---------------------
-
-    Simulate contract calls
-    -----------------------
+    Add H2 for Testing smart contracts with H3s for Unit tests with stubs and Simulate contract calls
 
 Best practices
 ==============
