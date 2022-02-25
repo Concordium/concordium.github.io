@@ -6,6 +6,9 @@ Before contributing please read and follow the principles outlined in
 - the [Divio documentation guide](https://documentation.divio.com/)
 - our [style guide](#style-guide).
 
+Other good documentation references include:
+- the [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
+- the [Google developer documentation style guide](https://developers.google.com/style)
 The documentation is written in reStructuredText ([Link to the
 basics](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)).
 
@@ -169,7 +172,8 @@ The `source/mainnet` directory contains documentation for the current Mainnet, a
 
 ### Language
 
-* For a user guide, prefer **second person** and **imperative** ("click on X").
+* For a user guide, use **second person** ("you")
+* Structure sentences, especially numbered procedures, using the **imperative** ("click on X").
 * Keep sentences **short**.
 * Prefer **present** continuous ("is") over future ("will be").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
