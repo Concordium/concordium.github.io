@@ -9,7 +9,6 @@ Before contributing please read and follow the principles outlined in
 Other good documentation references include:
 - the [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
 - the [Google developer documentation style guide](https://developers.google.com/style)
-- 
 The documentation is written in reStructuredText ([Link to the
 basics](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)).
 
