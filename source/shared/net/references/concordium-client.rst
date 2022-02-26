@@ -296,7 +296,7 @@ Show account aliases
 
 .. code-block:: console
 
-   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
+   $concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
 
 This generates the output:
 

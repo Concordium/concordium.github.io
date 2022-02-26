@@ -84,19 +84,19 @@ Restart your computer, and then confirm that Python and Pip were installed.
 
    .. code-block:: console
 
-      Python3 --version
+      $Python3 --version
 
 #. To confirm that the package manager named pip is installed, enter
 
    .. code-block:: console
 
-      pip --version
+      $pip --version
 
 #. To install Python tools for the Ledger Nano S, enter
 
    .. code-block:: console
 
-      pip install ledgerblue
+      $pip install ledgerblue
 
 Install the custom certificate on Windows
 -----------------------------------------
@@ -170,13 +170,13 @@ Install Homebrew, Python3, and pip
 
    .. code-block:: console
 
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      $/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 #. To install Python3, Pip3, `libusb <https://libusb.info/>`_, and `libjpeg <http://libjpeg.sourceforge.net/>`_, copy the following into the Terminal and press Enter:
 
    .. code-block:: console
 
-      brew install python@3.9 libusb libjpeg
+      $brew install python@3.9 libusb libjpeg
 
    You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
 
@@ -184,7 +184,7 @@ Install Homebrew, Python3, and pip
 
    .. code-block:: console
 
-      pip3 install ledgerblue
+      $pip3 install ledgerblue
 
 Install the custom certificate using macOS
 ------------------------------------------
@@ -211,7 +211,7 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
    .. code-block:: console
 
-      ./loadcertificate.sh
+      $./loadcertificate.sh
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
@@ -232,7 +232,7 @@ Install the Concordium Ledger app on MacOS
 
    .. code-block:: console
 
-      ./install.sh
+      $./install.sh
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
@@ -281,32 +281,32 @@ Install Python3 and pip on Ubuntu
 
    .. code-block:: console
 
-      wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+      $wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
 
 
 2. Install python3:
 
    .. code-block:: console
 
-      sudo apt-get install python3
+      $sudo apt-get install python3
 
 3. Install pip:
 
    .. code-block:: console
 
-      sudo apt-get install python3-pip
+      $sudo apt-get install python3-pip
 
 4. Install
 
    .. code-block:: console
 
-      sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
+      $sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
 
 5. Install ledgerblue:
 
    .. code-block:: console
 
-      sudo pip3 install ledgerblue
+      $sudo pip3 install ledgerblue
 
 Install the custom certificate on Ubuntu
 ----------------------------------------
@@ -329,7 +329,7 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
    .. code-block:: console
 
-      ./loadcertificate.sh
+      $./loadcertificate.sh
 
 #. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
@@ -344,7 +344,7 @@ Install the Concordium Ledger app on Ubuntu
 
    .. code-block:: console
 
-      ./install.sh
+      $./install.sh
 
 2. The Ledger says **Deny unsafe manager**. Press the right button to navigate through the public key until the Ledger says **Allow unsafe manager**. Press both buttons. The Ledger says **Loading, please wait** while it installs the app.
 
