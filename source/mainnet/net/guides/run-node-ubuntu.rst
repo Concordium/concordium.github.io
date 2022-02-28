@@ -39,7 +39,7 @@ The services are also enabled to start automatically on system start.
 
    .. code-block:: console
 
-    sudo apt install /path-to-downloaded-package
+    $sudo apt install /path-to-downloaded-package
 
   Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
 
@@ -87,7 +87,7 @@ To upgrade to a newer version of the `concordium-mainnet-node` package you need 
 
    .. code-block:: console
 
-    apt install ./concordium-mainnet-node_(version)_amd64.deb
+    $apt install ./concordium-mainnet-node_(version)_amd64.deb
 
   This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and
   the collector are started as before.
@@ -109,7 +109,7 @@ Configure the node with baker keys
 
    .. code-block:: console
 
-      sudo systemctl edit concordium-mainnet-node.service
+      $sudo systemctl edit concordium-mainnet-node.service
 
 #. Add the following snippet to the opened file (the file is empty the first time you open it):
 
@@ -131,13 +131,13 @@ Configure the node with baker keys
 
    .. code-block:: console
 
-      sudo systemctl restart concordium-mainnet-node.service
+      $sudo systemctl restart concordium-mainnet-node.service
 
 #. To verify the node is running, enter:
 
    .. code-block:: console
 
-      sudo systemctl status concordium-mainnet-node.service
+      $sudo systemctl status concordium-mainnet-node.service
 
 Verify that a node is a baker node.
 -----------------------------------
