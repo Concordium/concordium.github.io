@@ -86,7 +86,7 @@ You must export the account keys of the account you will use as your baker accou
 Step 4: Download and run Concordium Client
 ------------------------------------------
 
-Go to :ref:`downloads` to download the latest version of Concordium Client for your operating system. Once you have downloaded it, you need to run it. 
+Go to :ref:`downloads` to download the latest version of Concordium Client for your operating system. Once you have downloaded it, you need to run it.
 
 Step 5: Import Mobile Wallet account using Concordium Client
 ------------------------------------------------------------
