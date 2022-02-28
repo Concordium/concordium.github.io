@@ -11,7 +11,7 @@ Run a baker node on macOS
    :local:
    :backlinks: none
 
-This guide describes how to configure and manage baking on a macOS node. 
+This guide describes how to configure and manage baking on a macOS node.
 
 Prerequisites
 =============
@@ -23,7 +23,7 @@ Configure a node as a baker
 ===========================
 
 To run a node as baker, you first have to generate baker keys and then register the keys on an account. Depending on whether you are using Desktop Wallet or Mobile Wallet, the process to generate baker keys differs.
-For information about the process for each type of wallet, see :ref:`overview-baker`. 
+For information about the process for each type of wallet, see :ref:`overview-baker`.
 You then need to move the generated baker keys file to a location accessible by the node,
 and finally specify this location in the service file for the Concordium Node.
 
