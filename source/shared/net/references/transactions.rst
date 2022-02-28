@@ -32,16 +32,26 @@ Transaction commands
 | ``transaction                 | Make a transfer that will be        |
 | send-scheduled``              | released gradually                  |
 +-------------------------------+-------------------------------------+
-| ``baker add``                 | Add a new baker                     |
+| ``baker add``                 | Add a new baker. For more           |
+|                               | information, see                    |
+|                               | :ref:`become-a-baker`.              |
 +-------------------------------+-------------------------------------+
-| ``baker remove``              | Remove a baker                      |
+| ``baker remove``              | Remove a baker. For more            |
+|                               | information, see                    |
+|                               | :ref:`become-a-baker`.              |
 +-------------------------------+-------------------------------------+
-| ``baker update-stake``        | Update the staked amount of a baker |
+| ``baker update-stake``        | Update the staked amount of a baker.|
+|                               | For more information, see           |
+|                               | :ref:`become-a-baker`.              |
 +-------------------------------+-------------------------------------+
 | ``baker update-restake``      | Update the restaking switch of a    |
-|                               | baker                               |
+|                               | baker.                              |
+|                               | For more information, see           |
+|                               | :ref:`become-a-baker`.              |
 +-------------------------------+-------------------------------------+
-| ``baker set-key``             | Update the keys of a baker          |
+| ``baker set-key``             | Update the keys of a baker.         |
+|                               | For more information, see           |
+|                               | :ref:`become-a-baker`.              |
 +-------------------------------+-------------------------------------+
 | ``account update-keys``       | Update credentials keys for a       |
 |                               | specific credential                 |
@@ -147,7 +157,7 @@ To show aliases, enter:
 
 .. code-block:: console
 
-   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
+   $concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
 
 This generates the output:
 

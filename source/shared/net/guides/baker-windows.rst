@@ -27,13 +27,13 @@ Configure a baker node on Windows
 
    .. code-block:: console
 
-     concordium-client baker generate-keys <keys-file>.json
+     $concordium-client baker generate-keys <keys-file>.json
 
    and
 
    .. code-block:: console
 
-     concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+     $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
 
    In the following, the baker keys are referred to as baker-credentials.json.
 
