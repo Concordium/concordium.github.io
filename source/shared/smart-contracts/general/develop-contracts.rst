@@ -256,25 +256,15 @@ recommend using ``cargo-concordium`` to build smart contracts.
    For instructions on how to build using ``cargo-concordium`` see
    :ref:`compile-module`.
 
+.. todo::
 
-Testing smart contracts
-=======================
-
-Unit tests with stubs
----------------------
-
-Simulate contract calls
------------------------
+    Add H2 for Testing smart contracts with H3s for Unit tests with stubs and Simulate contract calls
 
 Best practices
 ==============
-
-Don't panic
------------
-
 .. todo::
 
-   Use trap instead.
+     Add H3 for Don't panic, Use trap instead.
 
 Avoid creating black holes
 --------------------------
@@ -289,8 +279,9 @@ Therefore it is good practice for smart contracts that are not dealing with CCD,
 to ensure the sent amount of CCD is zero and reject any invocations which are
 not.
 
-Move heavy calculations off-chain
----------------------------------
+.. todo::
+
+    Add H3 for Move heavy calculations off-chain
 
 
 .. _Rust: https://www.rust-lang.org/
