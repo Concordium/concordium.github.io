@@ -78,7 +78,9 @@ graphviz_dot_args=[
     "-Efontname="+graphviz_fontname,
     "-Efontsize=12",
 ]
-
+# Options for copybutton behavior
+copybutton_prompt_text = "$"
+copybutton_line_continuation_character = "\\"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../shared/_templates']

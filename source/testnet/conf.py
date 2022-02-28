@@ -73,6 +73,9 @@ graphviz_dot_args=[
 # sphinx-prompt must be the first of these two.
 extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
+# Options for copybutton behavior
+copybutton_prompt_text = "$"
+copybutton_line_continuation_character = "\\"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../shared/_templates']
