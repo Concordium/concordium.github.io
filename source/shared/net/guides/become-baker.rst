@@ -40,6 +40,8 @@ For general information about baking concepts, see :ref:`baker-concept`.
 Start baking
 ============
 
+.. _import-baker-account:
+
 Import the account
 ------------------
 
@@ -58,6 +60,8 @@ To import an account run:
 ``concordium-client`` asks for a password to decrypt the exported file and
 import all accounts. The same password will be used for encrypting the
 transaction signing keys and the encrypted transfers key.
+
+.. _create-register-baker-keys:
 
 Create and register baker keys
 ------------------------------
@@ -80,11 +84,17 @@ and send a ``baker add`` transaction to the network:
 where you replace
 
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``<concordium-data-dir>`` with any path of your choice. Remember to configure your node to bake using this path:
+- ``<concordium-data-dir>`` with:
 
-  * on Linux: See :ref:`configure Linux node<baker-node-Ubuntu>`.
-  * on MacOS: See :ref:`configure MacOS node<configure-baker-macos>`.
+  * on Linux and MacOS: ``~/.local/share/concordium``
+  * on Windows: ``%LOCALAPPDATA%\\concordium``.
+  
+  Remember to configure your node to bake using this path:
+
+  * on Linux: See :ref:`configure Linux node<baking-docker>`.
+  * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
   * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
+  * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
 
 (Keep the output file name as ``baker-credentials.json``).
 

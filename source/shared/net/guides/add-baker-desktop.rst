@@ -17,7 +17,7 @@ The process of becoming a baker involves the following:
 #. Register the baker keys with the account.
 #. Start a :ref:`node <run-node-windows>` with the baker keys.
 
-This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on :ref:`Ubuntu <run-node-ubuntu>`, :ref:`Windows <run-a-node>`, or :ref:`macOS <run-node-macos>`.
+This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on :ref:`Ubuntu <run-node-ubuntu>`, :ref:`Windows <run-node-windows>`, :ref:`Docker/Linux <run-a-node>`, or :ref:`macOS <run-node-macos>`.
 
 
 Prerequisites
@@ -36,6 +36,10 @@ There are a couple of things you must set up in preparation before you can start
    All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
    You can see the fee in the transaction log.
+
+.. Note::
+
+   A Single-signature account is an account with only one credential holder. A Multi-signature account is an account where multiple individuals are credential holders and all credential holders must sign transactions on the account. For more information about multi-signature accounts, see :ref:`overview-shared-accounts`.
 
 Add baker (Single-signature account)
 ====================================

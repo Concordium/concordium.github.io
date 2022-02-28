@@ -144,6 +144,11 @@ control of your node or accounts you have saved on the node.
    This will provide reasonable security if the token is only ever used through
    a secure channel.
 
+Run a baker node on Docker
+==========================
+
+For information about how to configure a node to run as a baker, see :ref:`baking-docker`.
+
 .. _stop-a-node:
 
 Stop the node
