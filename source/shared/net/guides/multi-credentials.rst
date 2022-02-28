@@ -22,6 +22,8 @@ Prerequisites
 
 -  Receive and save one or more files with the credentials that you want to associate with the account. For more information, see :ref:`Create a file with credentials <create-credentials-file>`.
 
+:ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
+
 Select an identity and an account
 =================================
 #. Go to the **Multi Signature Transactions** tab, select **Make new proposal**, and then select **Update account credentials**.
