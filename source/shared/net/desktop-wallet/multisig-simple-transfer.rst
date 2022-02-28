@@ -1,10 +1,9 @@
 
-
 .. _create-multisig:
 
-=====================================================================
+===========================================================
 Create a multi-signature CCD transfer in the Desktop Wallet
-=====================================================================
+===========================================================
 
 .. contents::
    :local:
@@ -23,7 +22,11 @@ Prerequisites
 
 -  Set up an :ref:`identity and an account <create-initial-account-desktop>`.
 
+-  Set up an :ref:`account with multiple credentials <multi-credentials>`
+
 -  Set up a :ref:`Ledger Nano S hardware device identity <install-Ledger-app>`.
+
+:ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
 
 .. Note::
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
