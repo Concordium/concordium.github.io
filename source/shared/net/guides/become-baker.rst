@@ -88,7 +88,7 @@ where you replace
 
   * on Linux and MacOS: ``~/.local/share/concordium``
   * on Windows: ``%LOCALAPPDATA%\\concordium``.
-  
+
   Remember to configure your node to bake using this path:
 
   * on Linux: See :ref:`configure Linux node<baking-docker>`.
