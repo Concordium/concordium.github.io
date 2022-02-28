@@ -39,7 +39,7 @@ The services are also enabled to start automatically on system start.
 
    .. code-block:: console
 
-    sudo apt install /path-to-downloaded-package
+    $sudo apt install /path-to-downloaded-package
 
   Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
 
@@ -86,7 +86,7 @@ To upgrade to a newer version of the `concordium-testnet-node` package you need 
 
    .. code-block:: console
 
-    apt install ./concordium-testnet-node_(version)_amd64.deb
+    $apt install ./concordium-testnet-node_(version)_amd64.deb
 
   This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and the collector are started as before.
 
