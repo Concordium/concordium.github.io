@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
 
   
   
@@ -40,6 +41,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -311,17 +314,17 @@
 <ol class="arabic">
 <li><p>In the <strong>Start</strong> menu, type <em>PowerShell</em> and select <strong>Windows PowerShell</strong>. The command-line window opens.</p></li>
 <li><p>To confirm that Python3 was installed, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python3 --version</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>Python3 --version
 </pre></div>
 </div>
 </li>
 <li><p>To confirm that the package manager named pip is installed, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip --version</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip --version
 </pre></div>
 </div>
 </li>
 <li><p>To install Python tools for the Ledger Nano S, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install ledgerblue</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip install ledgerblue
 </pre></div>
 </div>
 </li>
@@ -375,18 +378,18 @@
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
 <li><p>Install the package manager <a class="reference external" href="https://brew.sh/">Homebrew</a>; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>To install Python3, Pip3, <a class="reference external" href="https://libusb.info/">libusb</a>, and <a class="reference external" href="http://libjpeg.sourceforge.net/">libjpeg</a>, copy the following into the Terminal and press Enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install python@3.9 libusb libjpeg</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>brew install python@3.9 libusb libjpeg
 </pre></div>
 </div>
 <p>You can use <cite>pyenv&lt;https://github.com/pyenv/pyenv&gt;</cite> if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.</p>
 </li>
 <li><p>To install ledgerblue, copy the following into the Terminal and press Enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install ledgerblue</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip3 install ledgerblue
 </pre></div>
 </div>
 </li>
@@ -405,7 +408,7 @@
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
 <li><p>Load the certificate onto the Ledger by running the following script from the extracted folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./loadcertificate.sh</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./loadcertificate.sh
 </pre></div>
 </div>
 </li>
@@ -420,7 +423,7 @@
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
 <li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
 </pre></div>
 </div>
 </li>
@@ -457,29 +460,29 @@
 <h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic" id="install-python-pip-ubuntu">
 <li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">Ledger ‘s guide Fix connection history</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh <span class="p">|</span> sudo bash
 </pre></div>
 </div>
 </li>
 </ol>
 <ol class="arabic" start="2">
 <li><p>Install python3:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install python3</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install python3
 </pre></div>
 </div>
 </li>
 <li><p>Install pip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install python3-pip</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install python3-pip
 </pre></div>
 </div>
 </li>
 <li><p>Install</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
 </pre></div>
 </div>
 </li>
 <li><p>Install ledgerblue:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo pip3 install ledgerblue</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo pip3 install ledgerblue
 </pre></div>
 </div>
 </li>
@@ -496,7 +499,7 @@
 <li><p>Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says <strong>recovery mode</strong>.</p></li>
 <li><p>Enter your PIN code.</p></li>
 <li><p>Run the following script from the folder you extracted the files to:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./loadcertificate.sh</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./loadcertificate.sh
 </pre></div>
 </div>
 </li>
@@ -508,7 +511,7 @@
 <span id="install-ledger-app-ubuntu"></span><h3>Install the Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
 </pre></div>
 </div>
 </li>
@@ -554,7 +557,7 @@
 </a>
 
     <p>
-        &#169; Copyright 2021, Concordium Software ApS.
+        &#169; Copyright 2021 - 2022, Concordium Software ApS.
 
     </p>
   </div>

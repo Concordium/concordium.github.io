@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
 
   
   
@@ -40,6 +41,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -113,7 +116,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Developing smart contracts in Rust</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#writing-a-smart-contract-using-concordium-std">Writing a smart contract using <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-a-smart-contract-module-with-cargo-concordium">Building a smart contract module with <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#testing-smart-contracts">Testing smart contracts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#best-practices">Best practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -414,20 +416,8 @@ recommend using <code class="docutils literal notranslate"><span class="pre">car
 <a class="reference internal" href="../guides/compile-module.html#compile-module"><span class="std std-ref">Compile a Rust smart contract module</span></a>.</p>
 </div>
 </div>
-<div class="section" id="testing-smart-contracts">
-<h2>Testing smart contracts<a class="headerlink" href="#testing-smart-contracts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="unit-tests-with-stubs">
-<h3>Unit tests with stubs<a class="headerlink" href="#unit-tests-with-stubs" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="simulate-contract-calls">
-<h3>Simulate contract calls<a class="headerlink" href="#simulate-contract-calls" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
 <div class="section" id="best-practices">
 <h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="don-t-panic">
-<h3>Don’t panic<a class="headerlink" href="#don-t-panic" title="Permalink to this headline">¶</a></h3>
-</div>
 <div class="section" id="avoid-creating-black-holes">
 <h3>Avoid creating black holes<a class="headerlink" href="#avoid-creating-black-holes" title="Permalink to this headline">¶</a></h3>
 <p>A smart contract is not required to use the amount of CCD send to it, and by
@@ -438,9 +428,6 @@ them.</p>
 <p>Therefore it is good practice for smart contracts that are not dealing with CCD,
 to ensure the sent amount of CCD is zero and reject any invocations which are
 not.</p>
-</div>
-<div class="section" id="move-heavy-calculations-off-chain">
-<h3>Move heavy calculations off-chain<a class="headerlink" href="#move-heavy-calculations-off-chain" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="support-feedback">
@@ -463,7 +450,7 @@ not.</p>
 </a>
 
     <p>
-        &#169; Copyright 2021, Concordium Software ApS.
+        &#169; Copyright 2021 - 2022, Concordium Software ApS.
 
     </p>
   </div>

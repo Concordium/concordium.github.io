@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
 
   
   
@@ -40,6 +41,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -263,7 +266,7 @@
 <h2>Service cannot run after editing service (config) file<a class="headerlink" href="#service-cannot-run-after-editing-service-config-file" title="Permalink to this headline">¶</a></h2>
 <p>When configuring your node to be a baker on Mac, you need to edit the service file (which is owned by root). One way to edit it is to change the ownership to your user and then edit it. But then you cannot run the service.</p>
 <p>To see if this is your problem, try to load the service manually:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo launchctl load /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo launchctl load /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
 </pre></div>
 </div>
 <p>If your file ownership has changed, you will see the following:</p>
@@ -272,7 +275,7 @@
 </pre></div>
 </div>
 <p>To resolve the issue, change the file ownership back to root.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo chown root /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo chown root /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
 </pre></div>
 </div>
 </div>
@@ -296,7 +299,7 @@
 </a>
 
     <p>
-        &#169; Copyright 2021, Concordium Software ApS.
+        &#169; Copyright 2021 - 2022, Concordium Software ApS.
 
     </p>
   </div>

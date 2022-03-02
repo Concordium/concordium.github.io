@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
 
   
   
@@ -40,6 +41,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -253,11 +256,11 @@
 <span id="configure-baker-windows"></span><h2>Configure a baker node on Windows<a class="headerlink" href="#configure-a-baker-node-on-windows" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Create baker keys and associate them with an account either on mainnet or testnet. Doing this with the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> is recommended. However, if you want use an account from the mobile wallet as a baker account, you have to use the <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">Concordium Client</span></a>, in partiuclar the commands:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client baker generate-keys &lt;keys-file&gt;.json</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker generate-keys &lt;keys-file&gt;.json
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
 <p>In the following, the baker keys are referred to as baker-credentials.json.</p>
@@ -328,7 +331,7 @@
 </a>
 
     <p>
-        &#169; Copyright 2021, Concordium Software ApS.
+        &#169; Copyright 2021 - 2022, Concordium Software ApS.
 
     </p>
   </div>

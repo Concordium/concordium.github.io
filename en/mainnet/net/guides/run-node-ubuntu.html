@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
 
   
   
@@ -40,6 +41,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -260,7 +263,7 @@ The services are also enabled to start automatically on system start.</p>
 <ol class="arabic">
 <li><p>Download the <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Debian package</span></a></p></li>
 <li><p>Install the package:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt install /path-to-downloaded-package</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt install /path-to-downloaded-package
 </pre></div>
 </div>
 </li>
@@ -304,7 +307,7 @@ details of how this is done will depend on your configuration.</p>
 <p>To upgrade to a newer version of the <cite>concordium-mainnet-node</cite> package you need to:</p>
 <ol class="arabic">
 <li><p>Install the new package</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt install ./concordium-mainnet-node_(version)_amd64.deb</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>apt install ./concordium-mainnet-node_<span class="o">(</span>version<span class="o">)</span>_amd64.deb
 </pre></div>
 </div>
 </li>
@@ -323,7 +326,7 @@ the collector are started as before.</p>
 <li><p>Move the JSON file with the baker keys you generated in the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> to the server that’s running the node.
 Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/baker-credentials.json</span></code>.</p></li>
 <li><p>In the terminal, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl edit concordium-mainnet-node.service</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl edit concordium-mainnet-node.service
 </pre></div>
 </div>
 </li>
@@ -344,12 +347,12 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 <ol class="arabic">
 <li><p>Save the edited file.</p></li>
 <li><p>Restart for the changes to take effect. Enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl restart concordium-mainnet-node.service</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl restart concordium-mainnet-node.service
 </pre></div>
 </div>
 </li>
 <li><p>To verify the node is running, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo systemctl status concordium-mainnet-node.service</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl status concordium-mainnet-node.service
 </pre></div>
 </div>
 </li>
@@ -394,7 +397,7 @@ epochs have elapsed.</p>
 </a>
 
     <p>
-        &#169; Copyright 2021, Concordium Software ApS.
+        &#169; Copyright 2021 - 2022, Concordium Software ApS.
 
     </p>
   </div>
