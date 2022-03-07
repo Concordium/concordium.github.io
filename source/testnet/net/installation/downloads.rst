@@ -20,7 +20,7 @@ The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wal
 .. Note::
 
    The Concordium Mobile Wallet is not supported on tablet devices.
-   
+
 iOS
 ----
 

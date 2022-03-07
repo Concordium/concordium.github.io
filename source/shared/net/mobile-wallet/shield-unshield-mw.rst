@@ -30,7 +30,7 @@ Move CCD to the shielded balance
 
 #. Tap **Show shielded balance on account name**. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
 
-#. Tap **Shield**. 
+#. Tap **Shield**.
 
 #. Enter the amount you want to move to the shielded balance.
 
