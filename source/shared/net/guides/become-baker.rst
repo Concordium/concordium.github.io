@@ -89,7 +89,7 @@ where you replace
    .. Note::
 
       For a node on Docker, the ``<concordium-data-dir>`` must use the following paths:
-   
+
       * on Linux and MacOS: ``~/.local/share/concordium``
       * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
