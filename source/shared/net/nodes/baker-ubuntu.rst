@@ -32,7 +32,7 @@ Configure the node with baker keys
 
    .. code-block:: console
 
-      sudo systemctl edit concordium-mainnet-node.service
+      $sudo systemctl edit concordium-mainnet-node.service
 
 #. Add the following snippet to the opened file (the file is empty the first time you open it):
 
