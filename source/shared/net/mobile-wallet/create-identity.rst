@@ -10,7 +10,7 @@ Create an identity and an initial account in the Mobile Wallet
 
 You can submit requests for additional :ref:`identities<glossary-identity>` and :ref:`initial accounts<glossary-initial-account>` in the Mobile Wallet. You do this from the **Identities** page.
 
-To learn more about identities and accounts, see :ref:`<reference-id-accounts>` and :ref:`<managing_accounts>`.
+To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. Warning::
    Currently you can’t import accounts and identities created in the Concordium Desktop Wallet in the Mobile Wallet, and vice versa.
