@@ -10,10 +10,13 @@ Update your passcode and biometric settings
 
 If you want to change your passcode or enable/disable your biometrics, you can do so from the **More** page.
 
+.. Note::
+   You can't change your passcode, password, or biometrics if you have pending identities or accounts on your phone.
+
 Change your passcode
 ====================
 
-#. Go to the **More** page.
+#. Go to the |morepage| page.
 
 #. Select **Update Passcode & Biometrics**.
 
@@ -21,7 +24,7 @@ Change your passcode
 
 #. Enter your old passcode or biometrics.
 
-#. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather have a full password.
+#. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
 
 #. Choose whether or not to enable biometrics.
 
@@ -32,5 +35,5 @@ Change your passcode
 
 |
 
-.. Note::
-   You can't change your passcode, password, or biometrics if you have pending identities or accounts on your phone.
+.. |morepage| image:: ../images/more-ellipsis.png
+             :alt: Three dots button

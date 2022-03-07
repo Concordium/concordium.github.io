@@ -8,7 +8,7 @@ Find and share your account address
    :local:
    :backlinks: none
 
-If you need to share your account address with someone, you can find the address on the individual account page.
+If you need to share your account address with someone, you can find the address on the account page.
 
 Read the following or watch the video to learn how to share your account address.
 
@@ -23,9 +23,7 @@ Share your account address
 
 #. Go to the **Accounts** page.
 
-#. Tap the balance of the account you want to find the address to.
-
-#. Tap **ADDRESS**.
+#. On the account you want to find the address to tap **RECEIVE**.
 
 #. Share your address:
 

@@ -19,21 +19,21 @@ Make a CCD transfer from an account
 
 #. Go to the Accounts page.
 
-#. Tap the Account you want to transfer CCD from, and press the **Balance** area of the account card.
-
-#. Tap **SEND**.
+#. Tap **SEND** on the account from which you want to send CCD.
 
 #. Enter the amount you want to transfer.
 
-#. Tap **Select recipient** to select the recipient of the transfer.
+#. In **Paste recipient address** select the recipient of the transfer.
 
-   - You can either choose a recipient that already exists in your Address Book, or add a new one by selecting the **QR** or **+** symbols in the upper right corner.
+   - You can either choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
 
-#. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
+#. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
 
 #. Finally, tap **Send amount**.
 
-#. Confirm your choices, and tap **Yes, send funds**.
+#. Confirm your choices, and tap **Send funds**.
+
+#. Tap **Finish**.
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
 

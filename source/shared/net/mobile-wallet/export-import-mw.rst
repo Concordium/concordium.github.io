@@ -24,9 +24,9 @@ Export identities, accounts and address book
 .. Warning::
    The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will **NOT** include your account keys and may result in you losing access to your accounts.
 
-#. Go to the **More** page.
+#. Go to the |morepage| page.
 
-#. Tap **Export**.
+#. Tap **Make backup**.
 
 #. Enter your biometrics or app passcode.
 
@@ -34,9 +34,9 @@ Export identities, accounts and address book
 
 #. Choose a password with a minimum of 6 characters to encrypt your export. Make sure to choose a secure password and keep it safe. Anyone with the password will be able to unlock the export and make transfers from your account. Tap **Continue**.
 
-#. Choose an option for sending or saving the export file such as Mail.
+#. Choose an option for sending or saving the export file, such as Mail.
 
-Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets.
+Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. Concordium is not able to recover backup passwords.
 
 |
 
@@ -46,15 +46,15 @@ Concordium strongly recommends that you store the backup file in a safe location
 
 |
 
-Import identities, accounts and address book
-============================================
+Import identities, accounts, and address book
+=============================================
 
 Depending on whether you are using an Android phone or an iPhone, the import process differs slightly.
 
 Android
 -------
 
-#. Go to the **More** page.
+#. Go to the |morepage| page.
 
 #. Tap **Import**.
 
@@ -78,3 +78,6 @@ iOS
 #. Enter your biometrics or app passcode.
 
 #. Review your import and tap **Ok, thanks**.
+
+.. |morepage| image:: ../images/more-ellipsis.png
+             :alt: Three dots button

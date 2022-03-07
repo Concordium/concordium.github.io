@@ -17,6 +17,10 @@ Concordium Mobile Wallet
 
 The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
 
+.. Note::
+
+   The Concordium Mobile Wallet is not supported on tablet devices.
+
 You can find Concordium Mobile Wallet on App Store and on Google Play.
 
 .. image:: ../images/mobile-wallet/app-store-badge.svg

@@ -8,7 +8,9 @@ Create an identity and an initial account in the Mobile Wallet
    :local:
    :backlinks: none
 
-You can submit requests for additional identities and initial accounts in the Mobile Wallet. You do this from the **Identities** page.
+You can submit requests for additional :ref:`identities<glossary-identity>` and :ref:`initial accounts<glossary-initial-account>` in the Mobile Wallet. You do this from the **Identities** page.
+
+To learn more about identities and accounts, see :ref:`<reference-id-accounts>` and :ref:`<managing_accounts>`.
 
 .. Warning::
    Currently you can’t import accounts and identities created in the Concordium Desktop Wallet in the Mobile Wallet, and vice versa.
@@ -47,4 +49,4 @@ Create a new identity and initial account
    For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import-mw>`.
 
 .. Note::
-   To access the **Balance** or **Shielded balance** of the new account, tap the Balance or Shielded balance areas on the account card.
+   To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
