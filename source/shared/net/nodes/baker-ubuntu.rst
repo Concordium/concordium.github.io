@@ -60,7 +60,7 @@ Configure the node with baker keys
 
    .. code-block:: console
 
-      sudo systemctl status concordium-mainnet-node.service
+      $sudo systemctl status concordium-mainnet-node.service
 
 Verify that a node is a baker node.
 -----------------------------------
