@@ -217,6 +217,12 @@ You can improve the performance by downloading the blocks before starting the no
 
 #. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. You do so by comparing the finalized length of the chain with the length of your node. If they match, your node has caught up.
 
+
+Baking on a Windows node
+========================
+
+For information about baking on a Windows node, see :ref:`baker-windows`.
+
 Uninstall a node running on Windows
 ===================================
 
