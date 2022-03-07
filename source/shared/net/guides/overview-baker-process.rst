@@ -12,7 +12,7 @@ Baking is possible with both Mobile Wallet and Desktop Wallet, however the proce
 
 .. Note::
 
-   If you plan to be a baker, Concordium recommends using the Desktop Wallet since it uses a Ledger hardware device in combination with the wallet to keep your funds secure.
+   If you plan to be a baker, Concordium recommends using the Desktop Wallet.
 
 Baking with Desktop Wallet
 ==========================
