@@ -22,8 +22,8 @@ Run a baker node on Ubuntu
 
 The following steps show you how to run a node as a :ref:`baker <baker-concept>` on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a baker node also participates in the lottery and produces its own blocks. If the stake is high enough the baker node also participates in finalization.
 
-Configure the node with baker keys
-----------------------------------
+Configure the node with baker keys on Mainnet
+---------------------------------------------
 
 #. Move the JSON file with the baker keys you generated to the server that's running the node.
    Store it, for example, in ``/home/user/concordium/baker-credentials.json``.
@@ -61,6 +61,46 @@ Configure the node with baker keys
    .. code-block:: console
 
       $sudo systemctl status concordium-mainnet-node.service
+
+Configure the node with baker keys on Testnet
+---------------------------------------------
+
+#. Move the JSON file with the baker keys you generated to the server that's running the node.
+   Store it, for example, in ``/home/user/concordium/baker-credentials.json``.
+
+#. In the terminal, enter:
+
+   .. code-block:: console
+
+      $sudo systemctl edit concordium-testnet-node.service
+
+#. Add the following snippet to the opened file (the file is empty the first time you open it):
+
+   .. code-block:: console
+
+      [Service]
+
+      Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json
+      BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json
+
+   Where you replace the path `/home/user/concordium/baker-credentials.json` with the actual location of the file.
+
+.. Note::
+   The path `%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/` is the default path to the baker's state directory, where `9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478` is the genesis hash.
+
+#. Save the edited file.
+
+#. Restart the node for the changes to take effect. Enter:
+
+   .. code-block:: console
+
+      $sudo systemctl restart concordium-testnet-node.service
+
+#. To verify the node is running, enter:
+
+   .. code-block:: console
+
+      $sudo systemctl status concordium-testnet-node.service
 
 Verify that a node is a baker node.
 -----------------------------------
