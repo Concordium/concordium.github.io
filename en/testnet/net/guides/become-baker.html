@@ -153,6 +153,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-macos.html">Run a baker node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-ubuntu.html">Run a baker node on Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-docker.html">Run a baker node on Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
@@ -280,7 +283,7 @@ account that will be used to register and manage a baker.</p>
 <div class="section" id="start-baking">
 <h2>Start baking<a class="headerlink" href="#start-baking" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="import-the-account">
-<h3>Import the account<a class="headerlink" href="#import-the-account" title="Permalink to this headline">¶</a></h3>
+<span id="import-baker-account"></span><h3>Import the account<a class="headerlink" href="#import-the-account" title="Permalink to this headline">¶</a></h3>
 <p>This section provides a brief description of how to import an account using the Concordium Client.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -295,7 +298,7 @@ import all accounts. The same password will be used for encrypting the
 transaction signing keys and the encrypted transfers key.</p>
 </div>
 <div class="section" id="create-and-register-baker-keys">
-<h3>Create and register baker keys<a class="headerlink" href="#create-and-register-baker-keys" title="Permalink to this headline">¶</a></h3>
+<span id="create-register-baker-keys"></span><h3>Create and register baker keys<a class="headerlink" href="#create-and-register-baker-keys" title="Permalink to this headline">¶</a></h3>
 <p>Each account has a unique baker ID that is used when registering its baker. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the baker keys file to the node so that it can use the baker keys to create blocks. The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will automatically fill this field when performing the following operations.</p>
 <p>To create a fresh set of keys run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker generate-keys &lt;keys-file&gt;.json
@@ -307,13 +310,25 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 </pre></div>
 </div>
 <p>where you replace</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice. Remember to configure your node to bake using this path:</p>
 <ul>
-<li><p>on Linux: See <a class="reference internal" href="run-node-ubuntu.html#baker-node-ubuntu"><span class="std std-ref">configure Linux node</span></a>.</p></li>
-<li><p>on MacOS: See <a class="reference internal" href="run-node-macos.html#configure-baker-macos"><span class="std std-ref">configure MacOS node</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a node on Docker, the <code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> must use the following paths:</p>
+<ul class="simple">
+<li><p>on Linux and MacOS: <code class="docutils literal notranslate"><span class="pre">~/.local/share/concordium</span></code></p></li>
+<li><p>on Windows: <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%\\concordium</span></code>.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p>Remember to configure your node to bake using this path:</p>
+<ul class="simple">
+<li><p>on Linux: See <a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">configure Linux node</span></a>.</p></li>
+<li><p>on MacOS: See <a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">configure MacOS node</span></a>.</p></li>
 <li><p>on Windows: See <a class="reference internal" href="baker-windows.html#configure-baker-windows"><span class="std std-ref">configure Windows node</span></a>.</p></li>
+<li><p>on Ubuntu: See <a class="reference internal" href="../nodes/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">configure Ubuntu node</span></a>.</p></li>
 </ul>
 </li>
 </ul>

@@ -151,6 +151,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-macos.html">Run a baker node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-ubuntu.html">Run a baker node on Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-docker.html">Run a baker node on Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
@@ -266,7 +269,7 @@
 <h2>Service cannot run after editing service (config) file<a class="headerlink" href="#service-cannot-run-after-editing-service-config-file" title="Permalink to this headline">¶</a></h2>
 <p>When configuring your node to be a baker on Mac, you need to edit the service file (which is owned by root). One way to edit it is to change the ownership to your user and then edit it. But then you cannot run the service.</p>
 <p>To see if this is your problem, try to load the service manually:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo launchctl load /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo launchctl load <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
 </pre></div>
 </div>
 <p>If your file ownership has changed, you will see the following:</p>
@@ -275,7 +278,7 @@
 </pre></div>
 </div>
 <p>To resolve the issue, change the file ownership back to root.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo chown root /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo chown root <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
 </pre></div>
 </div>
 </div>

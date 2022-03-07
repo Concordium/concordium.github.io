@@ -151,6 +151,9 @@
 <li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker using the Concordium Client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-macos.html">Run a baker node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-ubuntu.html">Run a baker node on Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-docker.html">Run a baker node on Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
@@ -241,16 +244,11 @@
 </li>
 <li><p><a class="reference internal" href="#enable-inbound-connections" id="id5">Enable inbound connections</a></p></li>
 <li><p><a class="reference internal" href="#change-the-node-startup-settings" id="id6">Change the node startup settings</a></p></li>
-<li><p><a class="reference internal" href="#configure-a-node-as-a-baker" id="id7">Configure a node as a baker</a></p>
-<ul>
-<li><p><a class="reference internal" href="#on-mainnet" id="id8">On mainnet</a></p></li>
-<li><p><a class="reference internal" href="#on-testnet" id="id9">On testnet</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#view-node-logs" id="id10">View node logs</a></p></li>
-<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id11">Synchronize a node with the network</a></p></li>
-<li><p><a class="reference internal" href="#uninstall-a-macos-node" id="id12">Uninstall a macOS node</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id13">Support &amp; Feedback</a></p></li>
+<li><p><a class="reference internal" href="#configure-a-node-as-a-baker" id="id7">Configure a node as a baker</a></p></li>
+<li><p><a class="reference internal" href="#view-node-logs" id="id8">View node logs</a></p></li>
+<li><p><a class="reference internal" href="#synchronize-a-node-with-the-network" id="id9">Synchronize a node with the network</a></p></li>
+<li><p><a class="reference internal" href="#uninstall-a-macos-node" id="id10">Uninstall a macOS node</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id11">Support &amp; Feedback</a></p></li>
 </ul>
 </div>
 <p>This guide describes how to run and manage a node on macOS. You can also run a
@@ -443,60 +441,7 @@ options are available:</p>
 </div>
 <div class="section" id="configure-a-node-as-a-baker">
 <span id="configure-baker-macos"></span><h2>Configure a node as a baker<a class="headerlink" href="#configure-a-node-as-a-baker" title="Permalink to this headline">¶</a></h2>
-<p>To run a node as baker, you first have to generate baker keys in the desktop
-wallet and then register the keys on an account. For more information, see,
-<a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.
-You then need to move the generated file to a location accessible by the node,
-and finally specify this location in the service file for the Concordium Node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Baker credentials registered on mainnet will not work with a testnet node
-and vice versa.</p>
-</div>
-<div class="section" id="on-mainnet">
-<h3>On mainnet<a class="headerlink" href="#on-mainnet" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p>Move the <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code> file to the node’s config folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo cp <span class="s2">&quot;/path/to/mainnet/baker-credentials.json&quot;</span> <span class="s2">&quot;/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json&quot;</span>
-</pre></div>
-</div>
-<p>(replacing <code class="docutils literal notranslate"><span class="pre">/path/to/mainnet/baker-credentials.json</span></code> with the actual file path to your baker credentials for mainnet).</p>
-</li>
-<li><p>Edit the service file as an administrator. The service file is found here: <code class="docutils literal notranslate"><span class="pre">/Library/Concordium</span>
-<span class="pre">Node/LaunchDaemons/software.concordium.mainnet.node.plist</span></code></p></li>
-<li><p>Underneath the <code class="docutils literal notranslate"><span class="pre">&lt;dict&gt;</span></code> tag in the <em>EnviromentVariables</em> section of the file add the following:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">baker</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span>-&gt;
-<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Mainnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">baker</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>Restart your node by running <strong>Concordium Node Stop Mainnet</strong> (if running) and then
-<strong>Concordium Node Start Mainnnet</strong>.</p></li>
-</ol>
-</div>
-<div class="section" id="on-testnet">
-<h3>On testnet<a class="headerlink" href="#on-testnet" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p>Move the <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code> file to the node’s config folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo cp <span class="s2">&quot;/path/to/testnet/baker-credentials.json&quot;</span> <span class="s2">&quot;/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json&quot;</span>
-</pre></div>
-</div>
-<p>(replacing <code class="docutils literal notranslate"><span class="pre">/path/to/testnet/baker-credentials.json</span></code> with the actual file path to your baker credentials for testnet).</p>
-</li>
-<li><p>Edit the service file as an administrator. The service file is found here: <code class="docutils literal notranslate"><span class="pre">/Library/Concordium</span>
-<span class="pre">Node/LaunchDaemons/software.concordium.testnet.node.plist</span></code></p></li>
-<li><p>In the <em>EnviromentVariables</em> section of the file add the following:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">baker</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span>-&gt;
-<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Testnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">baker</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>Restart your node by running <strong>Concordium Node Stop Testnet</strong> (if running) and then
-<strong>Concordium Node Start Testnet</strong>.</p></li>
-</ol>
-</div>
+<p>For information about baking on a MacOS node, see <a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">Run a baker node on macOS</span></a>.</p>
 </div>
 <div class="section" id="view-node-logs">
 <h2>View node logs<a class="headerlink" href="#view-node-logs" title="Permalink to this headline">¶</a></h2>
