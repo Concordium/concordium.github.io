@@ -39,7 +39,7 @@ There are a couple of things you must set up in preparation before you can start
 
 .. Note::
 
-   A Single-signature account is an account with only one credential holder. A Multi-signature account is an account where multiple individuals are credential holders and all credential holders must sign transactions on the account. For more information about multi-signature accounts, see :ref:`overview-shared-accounts`.
+   A Single-signature account is an account with only one credential holder. A Multi-signature account is an account where multiple individuals are credential holders and a certain number of credential holders must sign transactions on the account. For more information about multi-signature accounts, see :ref:`overview-shared-accounts`.
 
 Add baker (Single-signature account)
 ====================================
