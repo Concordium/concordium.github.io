@@ -84,7 +84,7 @@ and send a ``baker add`` transaction to the network:
 where you replace
 
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``<concordium-data-dir>`` with any path of your choice. 
+- ``<concordium-data-dir>`` with any path of your choice.
 
    .. Note::
 
