@@ -54,7 +54,7 @@ Configure the node with baker keys
 
    .. code-block:: console
 
-      sudo systemctl restart concordium-mainnet-node.service
+      $sudo systemctl restart concordium-mainnet-node.service
 
 #. To verify the node is running, enter:
 
