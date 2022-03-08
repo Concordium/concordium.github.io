@@ -40,7 +40,7 @@ goto end
 sphinx-autobuild %SOURCEDIR%\testnet %BUILDDIR%\testnet
 goto end
 
-:smart-contracts-v0
+:dev-smart-contracts-v0
 sphinx-autobuild %SOURCEDIR%\smart-contracts-v0 %BUILDDIR%\smart-contracts-v0
 goto end
 
