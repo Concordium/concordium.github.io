@@ -85,3 +85,8 @@
 .consent a:active {
     color: #d9d9d9;
 }
+
+/* Change the highlight color used in code-snippets. This makes them stand out more. */
+.highlight .hll {
+    background-color: #ccddcc;
+}
