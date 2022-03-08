@@ -18,6 +18,8 @@
 .. |matches_account| replace:: ``matches_account``
 .. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
+.. _StateBuilder: https://docs.rs/concordium-std/latest/concordium_std/struct.StateBuilder.html
+.. |StateBuilder| replace:: ``StateBuilder``
 
 .. _piggy-bank-writing:
 
@@ -56,7 +58,7 @@ Follow the guide :ref:`setup-contract` and return to this point afterwards.
 For testing, you will need the following:
 
 - set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
-- :ref:`create an account for testnet<create-account-desktop>`
+- :ref:`create an account for testnet<create-identity>`
 - :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
 
 You are now ready to write a smart contract for the Concordium blockchain!
@@ -124,6 +126,10 @@ When using the |concordium-std|_ library, this all boils down to your type
 for the contract state having to implement the |Serialize|_ trait exposed by
 |concordium-std|_.
 
+.. todo::
+
+   Consider mentioning the caveat with DeserialWithState.
+
 Luckily the library already contains implementations for most of the primitives
 and standard types in Rust_, and a `procedural macro for deriving`_
 |Serialize|_ for most cases of enums and structs:
@@ -179,7 +185,10 @@ This allows you to create a new piggy bank as follows:
 .. code-block:: rust
 
    #[init(contract = "PiggyBank")]
-   fn piggy_init(_ctx: &impl HasInitContext) -> InitResult<PiggyBankState> {
+   fn piggy_init<S: HasState>(
+       _ctx: &impl HasInitContext,
+       _state_builder: &mut StateBuilder<S>,
+   ) -> InitResult<PiggyBankState> {
        Ok(PiggyBankState::Intact)
    }
 
@@ -196,10 +205,15 @@ contracts in your module.
 
    #[init(contract = "PiggyBank")]
 
-The init function takes a single argument, ``ctx: &impl HasInitContext``,
-which is a zero-sized struct with a number of getter functions for accessing
-information about the current context, such as the account that invoked this contract, the
-supplied arguments and information about the state of the blockchain.
+The init function takes two arguments:
+
+- ``ctx: &impl HasInitContext``, which is a zero-sized struct with a number of
+  getter functions for accessing information about the current context, such as
+  the account that invoked this contract, the supplied arguments and information about the state of the blockchain
+- ``state_builder: &mut StateBuilder<S: HasState>``, which has functions for creating
+  sets, maps, and boxes that effectively utilize the way contract state is
+  stored on the chain. It is parameterized by ``S: HasState`` to enable mocking
+  the state, as we shall see in part two of this tutorial.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
 alias for ``Result<PiggyBankState, Reject>``. The returned state is serialized
@@ -227,14 +241,18 @@ contract, specifically how to add CCD to it and how to smash a piggy bank.
 
 A smart contract can expose zero or more functions for interacting with an
 instance.
-These functions are called receive functions. They can read and
-write to the state of the instance, read the state of the blockchain and
-return a description of actions to be executed on-chain.
+These functions are called receive functions.
+They can access the state of the instance and the blockchain and perform
+actions, such as transferring CCD to an account or invoking another contract instance.
+Receive functions are immutable/readonly by default, which means that they
+cannot mutate the state.
+We will look at mutable receive methods when it's time to implement smashing the piggy bank.
 
 .. note::
 
    For a Rust_ developer, receive functions are like methods with
-   a mutable reference to `self`.
+   a reference to `self`. The reference is immutable by default, and mutable for
+   mutable receive functions.
 
    A continuation of the analogy to object-oriented programming:
    receive functions correspond to object methods.
@@ -245,17 +263,17 @@ The ``#[receive(...)]`` macro
 In Rust, receive functions can be specified using the procedural macro
 |receive|_, which, like |init|_, is used to annotate a function and sets up an
 external function and supplies you with an interface for accessing the context.
-But, unlike the |init|_ macro, the function for |receive|_ is also supplied with
-a mutable reference to the current state of the instance:
+But, unlike the |init|_ macro, the function for |receive|_ is supplied with
+a reference to the host (through which you can access the state of the instance):
 
 .. code-block:: rust
 
    #[receive(contract = "MyContract", name = "some_interaction")]
-   fn some_receive<A: HasActions>(
+   fn some_receive<S: HasState>(
        ctx: &impl HasReceiveContext,
-       state: &mut MyContractState,
-   ) -> ReceiveResult<A> {
-      todo!("Implement")
+       host: &impl HasHost<MyState, StateType = S>,
+   ) -> ReceiveResult<MyReturnValue> {
+       todo!()
    }
 
 The ``contract`` attribute supplies the name of the contract to the macro.
@@ -264,12 +282,14 @@ This name should match the name in the corresponding attribute in |init|_
 particular receive function using ``name``. The name and contract attributes
 each have to be unique within a smart contract module.
 
-The return type of the function is ``ReceiveResult<A>``, which is an alias for
-``Result<A, Reject>``.
-Here, ``A`` implements |HasActions|, which exposes functions for creating
-various :ref:`actions<action-descriptions>`.
+The return type of the function is ``ReceiveResult<MyReturnValue>``, which is an alias for
+``Result<MyReturnValue, Reject>``.
+When and how return values should be used is explained later.
+In this contract you will use ``()`` as the return value.
 
-In this contract you will use the **Accept** and **Simple Transfer** actions.
+.. todo::
+
+   Explain return values somewhere. Perhaps not in the tutorial.
 
 Inserting CCD
 -------------
@@ -280,11 +300,11 @@ You start by defining a receive function as:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<A: HasActions>(
+   fn piggy_insert<S: HasState>(
        _ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       todo!("Implement")
+       host: &impl HasHost<PiggyBankState, StateType = S>,
+   ) -> ReceiveResult<()> {
+       todo!()
    }
 
 Make sure that the contract name matches the one you use for the |init|_ macro,
@@ -297,7 +317,7 @@ smart contract should reject any messages if the piggy bank is smashed:
 
 .. code-block:: rust
 
-   if *state == PiggyBankState::Smashed {
+   if *host.state() == PiggyBankState::Smashed {
       return Err(Reject::default());
    }
 
@@ -306,7 +326,7 @@ Rust_ in general, |concordium-std| exposes a |bail|_ macro:
 
 .. code-block:: rust
 
-   if *state == PiggyBankState::Smashed {
+   if *host.state() == PiggyBankState::Smashed {
       bail!();
    }
 
@@ -314,29 +334,29 @@ Furthermore, you can use the |ensure|_ macro for returning early depending on a 
 
 .. code-block:: rust
 
-   ensure!(*state == PiggyBankState::Intact);
+   ensure!(*host.state() == PiggyBankState::Intact);
 
 From this line, you will know that the state of the piggy bank is intact and all
 you have left to do is accept the incoming amount of CCD.
 The CCD balance is maintained by the blockchain, so there is no need for you to
-maintain this in your contract. The contract just needs to produce the **Accept** action
-using the generic ``A`` (more on that below):
+maintain this in your contract. The contract just needs to produce return value
+empty return value:
 
 .. code-block:: rust
 
-   Ok(A::accept())
+   Ok(())
 
 So far you have the following definition of the receive function:
 
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<A: HasActions>(
+   fn piggy_insert<S: HasState>(
        _ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       ensure!(*state == PiggyBankState::Intact);
-       Ok(A::accept())
+       host: &impl HasHost<PiggyBankState, StateType = S>,
+   ) -> ReceiveResult<()> {
+       ensure!(*host.state() == PiggyBankState::Intact);
+       Ok(())
    }
 
 The definition of how to add CCD to the piggy bank is almost done, but one important detail is

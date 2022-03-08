@@ -36,14 +36,14 @@ The next step is to add ``concordium-std`` as a dependency.
 It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.
 
-The library is added by opening ``Cargo.toml`` and adding the line
+To add the library, open ``Cargo.toml`` and add the line
 ``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
 the ``[dependencies]`` section::
 
    [dependencies]
-   concordium-std = "0.4"
+   concordium-std = "3.0"
 
-The crate documentation can be found on docs.rs_.
+The crate documentation is on docs.rs_.
 
 .. note::
 
