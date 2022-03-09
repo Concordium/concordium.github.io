@@ -58,7 +58,9 @@ Move CCD to the regular balance
 
 #. Go to the **Accounts** page.
 
-#. Tap the account you want to transfer CCD from or tap |moredetails|, and tap the **Shielded balance** area of the account card.
+#. Tap the account you want to unshield CCD on or tap |moredetails| on the account card.
+
+#. If the Shielded balance is already shown, press the Shielded balance tab.
 
    - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner.
 
