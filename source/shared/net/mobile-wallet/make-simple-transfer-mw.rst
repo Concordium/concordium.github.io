@@ -17,11 +17,19 @@ for how to make a shielded CCD transfer, you can find the guide :ref:`here <make
 Make a CCD transfer from an account
 ===================================
 
-#. Go to the Accounts page.
+#. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD.
 
-#. Tap **SEND** on the account from which you want to send CCD.
+   -or-
+
+   With an individual account's transaction overview displayed, tap **SEND**.
+
+   .. image:: ../images/mobile-wallet/MW22.png
+      :width: 25%
 
 #. Enter the amount you want to transfer.
+
+   .. image:: ../images/mobile-wallet/MW23.png
+      :width: 25%
 
 #. In **Paste recipient address** select the recipient of the transfer.
 
@@ -29,22 +37,22 @@ Make a CCD transfer from an account
 
 #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
 
-#. Finally, tap **Send amount**.
+#. Tap **Send amount**.
+
+   .. image:: ../images/mobile-wallet/MW26.png
+      :width: 25%
 
 #. Confirm your choices, and tap **Send funds**.
 
+   .. image:: ../images/mobile-wallet/MW27.png
+      :width: 25%
+
 #. Tap **Finish**.
 
+   .. image:: ../images/mobile-wallet/MW28.png
+      :width: 25%
+
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
-
-|
-
-.. image:: ../images/mobile-wallet/MW66.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW67.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW68.png
-      :width: 25%
 
 .. Note::
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.

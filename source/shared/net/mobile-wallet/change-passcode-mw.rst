@@ -20,6 +20,9 @@ Change your passcode
 
 #. Select **Update Passcode & Biometrics**.
 
+   .. image:: ../images/mobile-wallet/MW58.png
+      :width: 25%
+
 #. Tap **Continue**.
 
 #. Enter your old passcode or biometrics.
@@ -27,13 +30,6 @@ Change your passcode
 #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
 
 #. Choose whether or not to enable biometrics.
-
-|
-
-.. image:: ../images/mobile-wallet/MW58.png
-      :width: 25%
-
-|
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

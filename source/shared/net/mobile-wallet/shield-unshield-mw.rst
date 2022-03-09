@@ -26,19 +26,29 @@ Move CCD to the shielded balance
 
 #. Tap the **Balance** area of the account you want to transfer CCD from or tap |moredetails|.
 
-#. If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner.
+   - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
-#. Tap **Show shielded balance on account name**. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+#. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+
+      .. image:: ../images/mobile-wallet/MW32.png
+         :width: 25%
 
 #. Tap **Shield**.
 
 #. Enter the amount you want to move to the shielded balance.
 
-#. Tap **Shield amount**.
+      .. image:: ../images/mobile-wallet/MW33.png
+         :width: 25%
 
-#. Confirm your choices and Tap **Shield amount**.
+#. Confirm your choices and tap **Shield amount**.
+
+      .. image:: ../images/mobile-wallet/MW35.png
+         :width: 25%
 
 #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
+
+      .. image:: ../images/mobile-wallet/MW76.png
+         :width: 25%
 
 The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
@@ -50,19 +60,34 @@ Move CCD to the regular balance
 
 #. Tap the account you want to transfer CCD from or tap |moredetails|, and tap the **Shielded balance** area of the account card.
 
-   #. If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner.
+   - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner.
 
-   #. Tap **Show shielded balance on account name**. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+   - Tap **Show shielded balance on account name**. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
 
 #. Tap **UNSHIELD**.
 
+   .. image:: ../images/mobile-wallet/MW47.png
+      :width: 25%
+
 #. Enter the amount you want to move to the regular balance.
+
+   .. image:: ../images/mobile-wallet/MW48.png
+      :width: 25%
 
 #. Tap **Unshield amount**.
 
+   .. image:: ../images/mobile-wallet/MW49.png
+      :width: 25%
+
 #. Confirm your choices and tap **Unshield amount**.
 
+   .. image:: ../images/mobile-wallet/MW50.png
+      :width: 25%
+
 #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
+
+   .. image:: ../images/mobile-wallet/MW51.png
+      :width: 25%
 
 The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.

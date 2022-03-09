@@ -28,30 +28,33 @@ Create a new account
 
 #. Tap the **+** in the upper right corner.
 
+   .. image:: ../images/mobile-wallet/MW13.png
+      :width: 25%
+
 #. Enter a name for your new account. Tap **Next**.
 
+   .. image:: ../images/mobile-wallet/MW15.png
+      :width: 25%
+
 #. Tap the identity you want to use to create the account.
+
+   .. image:: ../images/mobile-wallet/MW16.png
+      :width: 25%
 
 #. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, it is recommended not to reveal any attributes.
 
    - If you want to reveal some attributes, tap **Reveal account attributes**, select the attributes you want to reveal, and then tap **Submit account**.
+   - If you don’t want to reveal any attributes, tap **Submit account**.
 
-#. If you don’t want to reveal any attributes, tap **Submit account**.
+      .. image:: ../images/mobile-wallet/MW17.png
+         :width: 25%
 
 #. Finally, tap **Ok, thanks**.
 
+   .. image:: ../images/mobile-wallet/MW19.png
+      :width: 25%
+
 Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
-
-|
-
-.. image:: ../images/mobile-wallet/MW13.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW15.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW19.png
-      :width: 25%
-
-|
 
 .. Warning::
    **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**

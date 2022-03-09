@@ -24,9 +24,7 @@ Export identities, accounts and address book
 .. Warning::
    The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will **NOT** include your account keys and may result in you losing access to your accounts.
 
-#. Go to the |morepage| page.
-
-#. Tap **Make backup**.
+#. Tap **Backup** in the lower left corner.
 
 #. Enter your biometrics or app passcode.
 

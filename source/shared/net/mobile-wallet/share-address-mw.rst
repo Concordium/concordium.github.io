@@ -25,6 +25,9 @@ Share your account address
 
 #. On the account you want to find the address to tap **RECEIVE**.
 
+   .. image:: ../images/mobile-wallet/MW13.png
+      :width: 25%
+
 #. Share your address:
 
    - You can let someone scan your QR code if they have the Concordium Mobile Wallet installed.
@@ -33,13 +36,5 @@ Share your account address
 
    - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
-|
-
-.. image:: ../images/mobile-wallet/MW52.png
+   .. image:: ../images/mobile-wallet/MW54.png
       :width: 25%
-.. image:: ../images/mobile-wallet/MW53.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW54.png
-      :width: 25%
-
-|

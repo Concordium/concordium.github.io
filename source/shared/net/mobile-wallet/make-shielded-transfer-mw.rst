@@ -31,28 +31,33 @@ Make a shielded CCD transfer from an account
 
 #. Tap **SEND**.
 
+   .. image:: ../images/mobile-wallet/MW37.png
+      :width: 25%
+
 #. Enter the amount you want to transfer.
 
 #. In **Paste receipient address**, enter the receipient address for the receipient of the transfer.
 
    - You can either choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
 
+#. Tap **Send Amount**.
+
+      .. image:: ../images/mobile-wallet/MW42.png
+         :width: 25%
+
 #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
 
-#. Finally, tap **Send amount**.
+#. Finally, tap **Send shielded amount**.
 
-#. Confirm your choices, and tap **Send funds**.
+   .. image:: ../images/mobile-wallet/MW43.png
+      :width: 25%
+
+#. The transaction is subbmitted; tap **Ok, thanks**.
+
+   .. image:: ../images/mobile-wallet/MW44.png
+      :width: 25%
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
-
-|
-
-.. image:: ../images/mobile-wallet/MW69.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW70.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW71.png
-      :width: 25%
 
 .. Note::
 

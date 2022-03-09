@@ -19,18 +19,20 @@ Find and inspect a release schedule
 
 #. Tap the balance area of the account that received the transaction with a release schedule or tap |moredetails|.
 
+   .. image:: ../images/mobile-wallet/MW32.png
+      :width: 25%
+
 #. Tap the |hamburger| menu in the upper right corner.
 
 #. Tap **Release Schedule**.
+
+   .. image:: ../images/mobile-wallet/MW56.png
+      :width: 25%
 
 You can now see the coming releases on the account.
 
 |
 
-.. image:: ../images/mobile-wallet/MW55.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW56.png
-      :width: 25%
 .. image:: ../images/mobile-wallet/MW57.png
       :width: 25%
 
