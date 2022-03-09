@@ -31,19 +31,19 @@ Step 1
 ------
 
 A user creates the account that's going to be used as a shared account.
-See, :ref:`Create an account in the Desktop Wallet <create-account-desktop>`.
+See :ref:`Create an account in the Desktop Wallet <create-account-desktop>`.
 
 Step 2
 ------
 
-The account owner shares the account address with the user or users whose credentials are going to be added to the account. See, :ref:`Address book overview <overview-addresses>`.
+The account owner shares the account address with the user or users whose credentials are going to be added to the account. See :ref:`Address book overview <overview-addresses>`.
 
 Step 3
 ------
 
-The users whose credentials are going to be added to the shared account generates a file with credentials that are associated with the account. The user sends the file to the initial account owner. See, :ref:`Create a credentials file <create-credentials-file>`
+The users whose credentials are going to be added to the shared account generates a file with credentials that are associated with the account. The user sends the file to the initial account owner. See :ref:`Create a credentials file <create-credentials-file>`
 
 Step 4
 ------
 
-The initial account owner imports the file and adds the credentials to the account. If needed, the user changes the signature threshold. See, :ref:`Add credentials to an account <multi-credentials>`.
+The initial account owner imports the file and adds the credentials to the account. If needed, the user changes the signature threshold. See :ref:`Add credentials to an account <multi-credentials>`.
