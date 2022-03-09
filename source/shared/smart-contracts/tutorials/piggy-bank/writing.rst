@@ -339,8 +339,7 @@ Furthermore, you can use the |ensure|_ macro for returning early depending on a 
 From this line, you will know that the state of the piggy bank is intact and all
 you have left to do is accept the incoming amount of CCD.
 The CCD balance is maintained by the blockchain, so there is no need for you to
-maintain this in your contract. The contract just needs to produce return value
-empty return value:
+maintain this in your contract. The contract just needs to produce an empty return value:
 
 .. code-block:: rust
 
@@ -376,16 +375,16 @@ take an extra argument ``amount: Amount``, which represents the amount that is p
 function.
 
 .. code-block:: rust
-   :emphasize-lines: 1, 4
+   :emphasize-lines: 1, 5
 
    #[receive(contract = "PiggyBank", name = "insert", payable)]
-   fn piggy_insert<A: HasActions>(
+   fn piggy_insert<S: HasState>(
        _ctx: &impl HasReceiveContext,
+       host: &impl HasHost<PiggyBankState, StateType = S>,
        _amount: Amount,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       ensure!(*state == PiggyBankState::Intact);
-       Ok(A::accept())
+   ) -> ReceiveResult<()> {
+       ensure!(*host.state() == PiggyBankState::Intact);
+       Ok(())
    }
 
 As mentioned above, since the blockchain is maintaining the balance of our smart contract, you
@@ -398,11 +397,10 @@ do not have to do that yourself, and the ``amount`` is not used by your contract
 Smashing a piggy bank
 ---------------------
 
-Now that you can insert CCD into a piggy bank, you are only left to define how to
+Now that you can insert CCD into a piggy bank, you only need to define how to
 smash one.
 Remember, you only want the owner of the piggy bank (smart contract
-instance) to be able to call this and only if the piggy bank has not already
-been smashed.
+instance) to be able to smash it and only if it isn't already smashed.
 It should set its state to be smashed and transfer all of its CCD to the owner.
 
 Again you use the |receive|_ macro to define the smash function:
@@ -410,11 +408,11 @@ Again you use the |receive|_ macro to define the smash function:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<A: HasActions>(
+   fn piggy_smash<S: HasState>(
        ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       todo!("Implement")
+       host: &impl HasHost<PiggyBankState, StateType = S>,
+   ) -> ReceiveResult<()> {
+       todo!()
    }
 
 Ensure that the contract name matches the one of your smart contract and name this function ``smash``.
@@ -453,61 +451,79 @@ Next ensure that the state of the piggy bank is ``Intact``, just like previously
 
 .. code-block:: rust
 
-   ensure!(*state == PiggyBankState::Intact);
+   ensure!(*host.state() == PiggyBankState::Intact);
 
 At this point you know the piggy bank is still intact and the sender is the
-owner, meaning you now get to the smashing part:
+owner, meaning you now get to the smashing part.
+But there is one problem.
+The state is immutable, so we first need to make the receive function mutable by
+adding the ``mutable`` attribute to the |receive| macro.
+
+.. code-block:: rust
+   :emphasize-lines: 1, 4
+
+   #[receive(contract = "PiggyBank", name = "smash", mutable)]
+   fn piggy_smash<S: HasState>(
+       ctx: &impl HasReceiveContext,
+       host: &mut impl HasHost<PiggyBankState, StateType = S>,
+   ) -> ReceiveResult<()> {
+       todo!()
+   }
+
+This gives us a mutable reference to the ``host``, through which we can access
+the mutable state with the ``state_mut()`` function. We then set the state to
+``Smashed``, preventing further insertions of CCD:
 
 .. code-block:: rust
 
-   *state = PiggyBankState::Smashed
-
-Since the state is a mutable reference, you can simply mutate it to be
-``Smashed``, preventing anyone from inserting any more CCD.
+   *host.state_mut() = PiggyBankState::Smashed;
 
 Lastly you need to empty the piggy bank. To do that, transfer all the CCD
 of the smart-contract instance to an account.
 
-To transfer CCD from a smart contract instance you create an
-action for a simple transfer, again using the generic ``A``.
-To construct a simple transfer you need to provide the address of the receiving
-account and the amount to be transferred.
+To transfer CCD from a smart contract instance you use the ``invoke_transfer``
+method on the host. For this, you need to provide the address of the receiving
+account and the amount to transfer.
 In this case the receiver is the owner of the piggy bank and the amount is the
 entire balance of the piggy bank.
 
-The context has a getter function for reading
+The host has a getter function for reading
 the current balance of the smart contract instance, which is called
 |self_balance|_:
 
 .. code-block:: rust
 
-   let balance = ctx.self_balance();
+   let balance = host.self_balance();
 
 You already have a variable with the address of the contract owner, so you can
-construct and return the action for a simple transfer:
+use that for invoking the transfer:
 
 .. code-block:: rust
 
-   Ok(A::simple_transfer(&owner, balance))
+   Ok(hpst.invoke_transfer(&owner, balance)?)
+
+A transfer can fail in two ways, either your contract has insufficient funds, or
+the receiver account does not exist. Neither can occur in this contract, so we
+can propagate the error out with the ``?`` operator.
 
 The final definition of the "smash" receive function is then:
 
 .. code-block:: rust
 
-   #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<A: HasActions>(
+   #[receive(contract = "PiggyBank", name = "smash", mutable)]
+   fn piggy_smash<S: HasState>(
        ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
+       host: &mut impl HasHost<PiggyBankState, StateType = S>,
+   ) -> ReceiveResult<()> {
        let owner = ctx.owner();
        let sender = ctx.sender();
        ensure!(sender.matches_account(&owner));
-       ensure!(*state == PiggyBankState::Intact);
+       ensure!(*host.state() == PiggyBankState::Intact);
 
-       *state = PiggyBankState::Smashed;
+       *host.state_mut() = PiggyBankState::Smashed;
 
-       let balance = ctx.self_balance();
-       Ok(A::simple_transfer(&owner, balance))
+       let balance = host.self_balance();
+       Ok(host.invoke_transfer(&owner, balance)?)
    }
 
 .. .. note::
