@@ -8,18 +8,14 @@
 .. |init| replace:: ``#[init]``
 .. _receive: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html
 .. |receive| replace:: ``#[receive]``
-.. _HasActions: https://docs.rs/concordium-std/latest/concordium_std/trait.HasAction.html
-.. |HasActions| replace:: ``HasActions``
 .. _bail: https://docs.rs/concordium-std/latest/concordium_std/macro.bail.html
 .. |bail| replace:: ``bail!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
 .. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account
 .. |matches_account| replace:: ``matches_account``
-.. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance
+.. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
-.. _StateBuilder: https://docs.rs/concordium-std/latest/concordium_std/struct.StateBuilder.html
-.. |StateBuilder| replace:: ``StateBuilder``
 
 .. _piggy-bank-writing:
 
@@ -284,12 +280,13 @@ each have to be unique within a smart contract module.
 
 The return type of the function is ``ReceiveResult<MyReturnValue>``, which is an alias for
 ``Result<MyReturnValue, Reject>``.
-When and how return values should be used is explained later.
 In this contract you will use ``()`` as the return value.
+`This guide <return-values>`_ explains how and when to use other types for
+return values.
 
 .. todo::
 
-   Explain return values somewhere. Perhaps not in the tutorial.
+   Explain return values in a guide and update the link above.
 
 Inserting CCD
 -------------
@@ -321,7 +318,7 @@ smart contract should reject any messages if the piggy bank is smashed:
       return Err(Reject::default());
    }
 
-Since returning early is a common pattern when writing smart contracts and in
+Since returning early is a common pattern when writing smart contracts, and in
 Rust_ in general, |concordium-std| exposes a |bail|_ macro:
 
 .. code-block:: rust
@@ -366,7 +363,7 @@ which, by default, prevents init and receive functions
 from accepting CCD.
 
 The reason for rejecting CCD by default is to reduce the risk of creating a smart
-contract that accepts CCD without retrieving it: any CCD passed to such a contract
+contract that accepts CCD without the ability of retrieving it again: any CCD passed to such a contract
 would be *inaccessible forever*.
 
 To be able to accept CCD, you have to add the ``payable`` attribute to the |receive| macro.
@@ -447,7 +444,7 @@ an account address that is equal to the owner:
 
    ensure!(sender.matches_account(&owner));
 
-Next ensure that the state of the piggy bank is ``Intact``, just like previously:
+Next, ensure that the state of the piggy bank is ``Intact``, just like previously:
 
 .. code-block:: rust
 
@@ -467,27 +464,32 @@ adding the ``mutable`` attribute to the |receive| macro.
        ctx: &impl HasReceiveContext,
        host: &mut impl HasHost<PiggyBankState, StateType = S>,
    ) -> ReceiveResult<()> {
+       let owner = ctx.owner();
+       let sender = ctx.sender();
+       ensure!(sender.matches_account(&owner));
+       ensure!(*host.state() == PiggyBankState::Intact);
+
        todo!()
    }
 
 This gives us a mutable reference to the ``host``, through which we can access
-the mutable state with the ``state_mut()`` function. We then set the state to
+the mutable state with the ``state_mut`` function. We then set the state to
 ``Smashed``, preventing further insertions of CCD:
 
 .. code-block:: rust
 
    *host.state_mut() = PiggyBankState::Smashed;
 
-Lastly you need to empty the piggy bank. To do that, transfer all the CCD
+Lastly, you need to empty the piggy bank. To do that, transfer all the CCD
 of the smart-contract instance to an account.
 
 To transfer CCD from a smart contract instance you use the ``invoke_transfer``
-method on the host. For this, you need to provide the address of the receiving
+method on the ``host``. For this, you need to provide the address of the receiving
 account and the amount to transfer.
 In this case the receiver is the owner of the piggy bank and the amount is the
 entire balance of the piggy bank.
 
-The host has a getter function for reading
+The ``host`` has a getter function for reading
 the current balance of the smart contract instance, which is called
 |self_balance|_:
 
