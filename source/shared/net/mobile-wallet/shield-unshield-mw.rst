@@ -100,7 +100,7 @@ Once it has been finalized, you can browse to your shielded balance to see the n
 
 .. Note::
 
-   You can hide the shielded balance when finished to prevent accidental shielding or to protect your privacy. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view.
+   You can hide the shielded balance when finished to prevent accidental shielding. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
