@@ -28,7 +28,7 @@ Move CCD to the shielded balance
 
    - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
-#. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+#. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
 
       .. image:: ../images/mobile-wallet/MW32.png
          :width: 25%
@@ -60,9 +60,9 @@ Move CCD to the regular balance
 
 #. Tap the account you want to transfer CCD from or tap |moredetails|, and tap the **Shielded balance** area of the account card.
 
-   - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner.
+   - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
-   - Tap **Show shielded balance on account name**. Now the Account card contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+#. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
 #. Tap **UNSHIELD**.
 
