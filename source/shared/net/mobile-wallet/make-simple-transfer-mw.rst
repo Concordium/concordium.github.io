@@ -33,7 +33,7 @@ Make a CCD transfer from an account
 
 #. In **Paste recipient address** you can paste the recipient address.
 
-   - You can either choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
+   - You can also choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
 
 #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
 
