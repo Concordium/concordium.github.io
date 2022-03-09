@@ -31,7 +31,7 @@ Make a CCD transfer from an account
    .. image:: ../images/mobile-wallet/MW23.png
       :width: 25%
 
-#. In **Paste recipient address** select the recipient of the transfer.
+#. In **Paste recipient address** you can paste the recipient address.
 
    - You can either choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
 
