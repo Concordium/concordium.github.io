@@ -36,7 +36,7 @@ Make a shielded CCD transfer from an account
 
 #. Enter the amount you want to transfer.
 
-#. In **Paste receipient address**, enter the receipient address for the receipient of the transfer.
+#. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
 
    - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
 
