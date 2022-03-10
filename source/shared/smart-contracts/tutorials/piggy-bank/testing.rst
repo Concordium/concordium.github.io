@@ -476,7 +476,7 @@ and you also have to supply the |ensure| macros with a second argument, which is
 the error to produce:
 
 .. code-block:: rust
-   :emphasize-lines: 9, 10
+   :emphasize-lines: 9, 10, 16
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
    fn piggy_smash<S: HasState>(
