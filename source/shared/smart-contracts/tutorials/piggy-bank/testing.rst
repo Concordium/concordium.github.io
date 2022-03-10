@@ -85,13 +85,6 @@ contracts.
 The guide :ref:`setup-tools` shows you how to do this.
 Also, make sure to have a text editor setup to write Rust.
 
-Additionally, to run the tests you need to:
-
-- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
-- :ref:`create an account for testnet<create-account-desktop>`. The account will need some CCD to run tests.
-- :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
-- :ref:`deploy the smart contract to your local testnet node<deploy-module>`.
-
 Since you are going to extend the smart contract code written in the :ref:`previous
 part<piggy-bank-writing>`, either follow the previous part or copy the resulting code from there.
 

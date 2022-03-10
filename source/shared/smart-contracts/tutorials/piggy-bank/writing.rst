@@ -51,12 +51,6 @@ Also, make sure to have a text editor for writing Rust.
 You also need to set up a new smart contract project.
 Follow the guide :ref:`setup-contract` and return to this point afterwards.
 
-For testing, you will need the following:
-
-- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
-- :ref:`create an account for testnet<create-identity>`
-- :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
-
 You are now ready to write a smart contract for the Concordium blockchain!
 
 Bring in the standard library
