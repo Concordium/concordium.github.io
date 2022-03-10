@@ -16,6 +16,10 @@
 .. |matches_account| replace:: ``matches_account``
 .. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
+.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
+.. |invoke_transfer| replace:: ``invoke_transfer``
+.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-state
+.. |mutable| replace:: ``mutable``
 
 .. _piggy-bank-writing:
 
@@ -35,10 +39,6 @@ Rust_ programming language using the |concordium-std| library.
 .. contents::
    :local:
    :backlinks: None
-
-.. todo::
-
-   Link the repo with the final code.
 
 Preparation
 ===========
@@ -448,7 +448,7 @@ At this point you know the piggy bank is still intact and the sender is the
 owner, meaning you now get to the smashing part.
 But there is one problem.
 The state is immutable, so we first need to make the receive function mutable by
-adding the ``mutable`` attribute to the |receive| macro.
+adding the |mutable|_ attribute to the |receive| macro.
 
 .. code-block:: rust
    :emphasize-lines: 1, 4
@@ -477,7 +477,7 @@ the mutable state with the ``state_mut`` function. We then set the state to
 Lastly, you need to empty the piggy bank. To do that, transfer all the CCD
 of the smart-contract instance to an account.
 
-To transfer CCD from a smart contract instance you use the ``invoke_transfer``
+To transfer CCD from a smart contract instance you use the |invoke_transfer|_
 method on the ``host``. For this, you need to provide the address of the receiving
 account and the amount to transfer.
 In this case the receiver is the owner of the piggy bank and the amount is the
