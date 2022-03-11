@@ -36,14 +36,6 @@ Export identities, accounts and address book
 
 Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. Concordium is not able to recover backup passwords.
 
-|
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/YTpap-jZrMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-|
-
 Import identities, accounts, and address book
 =============================================
 
@@ -54,7 +46,7 @@ Android
 
 #. Go to the |morepage| page.
 
-#. Tap **Import**.
+#. Tap **Restore Backup**.
 
 #. Use the Android system prompt to browse to your export and select the file.
 

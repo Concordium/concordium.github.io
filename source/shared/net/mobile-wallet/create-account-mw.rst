@@ -13,14 +13,6 @@ to the chain. When you already have an identity, you can submit more :ref:`accou
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
-Read the following or watch the video to learn how to create a new account.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/gtDXnuoMOes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-|
-
 Create a new account
 ====================
 

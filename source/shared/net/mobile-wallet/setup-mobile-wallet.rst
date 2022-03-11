@@ -14,13 +14,7 @@ and sending :ref:`shielded transactions<glossary-shielded-transfer>`.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
-Read the following guide or watch the video to learn how to set up the wallet.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/DO1cgpQ-w10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-|
+Read the following guide to learn how to set up the wallet.
 
 Get started
 ===========

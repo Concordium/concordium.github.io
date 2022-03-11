@@ -10,13 +10,7 @@ Find and share your account address
 
 If you need to share your account address with someone, you can find the address on the account page.
 
-Read the following or watch the video to learn how to share your account address.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/ldSitbxrsjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-|
+Read the following to learn how to share your account address.
 
 Share your account address
 ==========================

@@ -33,7 +33,7 @@ Move CCD to the shielded balance
       .. image:: ../images/mobile-wallet/MW32.png
          :width: 25%
 
-#. Tap **Shield**.
+#. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
 
 #. Enter the amount you want to move to the shielded balance.
 
@@ -62,7 +62,7 @@ Move CCD to the regular balance
 
 #. If the Shielded balance is already shown, press the Shielded balance tab.
 
-   - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+   - If the **Shield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
 #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 

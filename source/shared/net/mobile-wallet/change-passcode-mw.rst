@@ -11,7 +11,7 @@ Update your passcode and biometric settings
 If you want to change your passcode or enable/disable your biometrics, you can do so from the **More** page.
 
 .. Note::
-   You can't change your passcode, password, or biometrics if you have pending identities or accounts on your phone.
+   You can't change your passcode, password, or biometrics if you have pending identities or accounts in your wallet.
 
 Change your passcode
 ====================

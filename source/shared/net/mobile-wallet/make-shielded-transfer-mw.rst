@@ -25,9 +25,9 @@ Make a shielded CCD transfer from an account
 
 #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
 
-   - If shielding is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for account name**.
+   - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for _your account name_**.
 
-#. Tap the **Shielded balance** area of the account card.
+#. Tap the **Shielded balance** tab of the totals area.
 
 #. Tap **SEND**.
 
