@@ -4,17 +4,6 @@
 Smart contract instances
 ========================
 
-.. todo::
-
-   - Clarify how instances relate to smart contracts relate to modules
-     (e.g., right now it says that an instance is a module + state but the
-     picture below shows instances as contracts + state).
-   - Decide how exactly we should define smart-contract modules (as its own concept
-     or as Wasm modules), and whether we should talk about them at all.
-   - Decide whether we should have a concrete code example, and whether it should
-     be in Wasm or Rust or perhaps pseudocode.
-   - Consider having a picture that explains the relationship between modules and instances.
-
 A **smart contract instance** is a smart contract module together with a
 specific state and an amount of CCD tokens.
 Multiple smart contract instances can be created from the same module.
@@ -113,19 +102,16 @@ Instance state
 ==============
 
 Every smart contract instance holds its own state which is represented on-chain
-as an array of bytes. The instance uses functions provided by the host
-environment to read, write and resize the state.
+as a `prefix tree <https://en.wikipedia.org/wiki/Trie>`_, where nodes in the
+tree can have data in the form of a byte array.
+The instance uses functions provided by the host environment to create, delete,
+and find nodes in the tree.
+The host also provides functions for reading, writing and resizing the bytearray
+held by a particular node in the tree.
 
 .. seealso::
 
    See :ref:`host-functions-state` for a reference of these functions.
-
-Smart contract state is limited in size. Currently the limit on smart contract
-state is 16KiB.
-
-.. seealso::
-
-   Check out :ref:`resource-accounting` for more on this.
 
 Interacting with an instance
 ============================
@@ -149,14 +135,9 @@ To summarize, a transaction for smart-contract interaction includes:
 Logging events
 ==============
 
-.. todo::
-
-   Explain what events are and why they are useful.
-   Rephrase/clarify "monitor for events".
-
 Events can be logged during the execution of smart contract functions. This is
 the case for both init and receive functions. The logs are designed for
-off-chain use, so that actors outside of the chain can monitor for events and
+off-chain use, so that actors outside of the chain can monitor the events and
 react to them. Logs are not accessible to smart contracts, or any other actor on
 the chain. Events can be logged using a function supplied by the host
 environment.
@@ -171,75 +152,19 @@ Logging an event has an associated cost, similar to the cost of writing to the
 contract's state. In most cases it would only make sense to log a few bytes to
 reduce cost.
 
-.. _action-descriptions:
+Invoking actions
+================
 
-Action descriptions
-===================
+A receive function can use the host environment to invoke two types of actions during its execution.
+The possible actions that a contract can perform are:
 
-A receive function returns a *description of actions* to be executed by
-the host environment on the chain.
-
-The possible actions that a contract can produce are:
-
-- **Accept** is a primitive action that always succeeds.
-- **Simple transfer** of CCD from the instance to the specified account.
-- **Send**: invoke receive function of the specified smart contract instance,
+- **invoke_transfer**: transfer CCD from the instance to the specified account.
+- **invoke_contract**: invoke receive function of the specified smart contract instance,
   and optionally transfer some CCD from the sending instance to the receiving
   instance.
 
-If an action fails to execute, the receive function is reverted, leaving
-the state and the balance of the instance unchanged. However,
-
-- the transaction that triggers the (unsuccessful) receive function is still added to the chain, and
-- the transaction cost, including the cost of executing the failed action,
-  is deducted from the sending account.
-
-Processing multiple action descriptions
----------------------------------------
-
-You can chain action descriptions using the **and** combinator.
-An action-description sequence ``A`` **and** ``B``
-
-1) Executes ``A``.
-2) If ``A`` succeeds, executes ``B``.
-3) If ``B`` fails the whole action sequence fails (and the result of ``A`` is reverted).
-
-Handling errors
----------------
-
-Use the **or** combinator to execute an action in case that a previous action fails.
-An action description ``A`` **or** ``B``
-
-1) Executes ``A``.
-2) If ``A`` succeeds, stops executing.
-3) If ``A`` fails, executes ``B``.
-
-.. graphviz::
-   :align: center
-   :caption: Example of an action description, which tries to transfer to Alice
-             and then Bob, if any of these fails, it will try to transfer to
-             Charlie instead.
-
-   digraph G {
-       node [color=transparent]
-       or1 [label = "Or"];
-       and1 [label = "And"];
-       transA [label = "Transfer x to Alice"];
-       transB [label = "Transfer y to Bob"];
-       transC [label = "Transfer z to Charlie"];
-
-       or1 -> and1;
-       and1 -> transA;
-       and1 -> transB;
-       or1 -> transC;
-   }
-
-.. seealso::
-
-   See :ref:`host-functions-actions` for a reference of how to create the
-   actions.
-
-The whole action tree is executed **atomically**, and either leads to updates
-to all the relevant instances and accounts, or, in case of rejection, to payment
-for execution, but no other changes. The account which sent the initiating
-transaction pays for the execution of the entire tree.
+If an action fails, it returns an error, which the instance can choose to
+handle, and the state and balance of the instance remains unchanged.
+The account which sent the initiating transaction pays for the execution of the
+entire receive function.
+Including the cost of failed actions.

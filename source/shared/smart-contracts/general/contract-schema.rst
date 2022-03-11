@@ -18,7 +18,7 @@ Smart contract schemas
 
 A smart contract schema is a description of how to represent bytes in a more
 structured representation. It can be used by external tools when displaying the
-state of a smart contract instance and for specifying parameters using a
+return value of a receive function and for specifying parameters using a
 structured representation, such as JSON.
 
 .. seealso::
@@ -43,9 +43,10 @@ The serialization is optimized for efficiency, rather than human readability.
 Usually these bytes have structure and this structure is known to the smart
 contract as part of the contract functions, but outside of these functions it
 can be difficult to make sense of the bytes. This is especially the case when
-inspecting a complex state of a contract instance or when passing complex
-parameters to a smart contract function. In the latter case, the bytes should
-either be serialized from structured data or written manually.
+inspecting a complex return value from or passing a complex parameters to a
+smart contract function.
+In the latter case, the bytes should either be serialized from structured data
+or written manually.
 
 The solution for avoiding manual parsing of bytes is to capture this information
 in a *smart contract schema*, which describes how to make structure from the
@@ -55,7 +56,8 @@ bytes, and can be used by external tools.
 
    The ``concordium-client`` tool can use a schema to
    :ref:`serialize JSON parameters<init-passing-parameter-json>`
-   and to deserialize the state of contract instances to JSON.
+   and to deserialize the return values of smart contract functions when using
+   the ``contract invoke`` functionality.
 
 The schema is then either embedded into a smart contract module that is deployed
 to the chain, or is written to a file and passed around off-chain.
@@ -70,8 +72,8 @@ Embedding the schema into the smart contract module distributes the schema
 together with the contract ensuring the correct schema is being used and also
 allows anyone to use it directly. The downside is that the smart contract module
 becomes bigger in size and therefore more expensive to deploy.
-But unless the smart contract uses very complex types for the state and
-parameters, the size of the schema is likely to be negligible compared to the
+But unless the smart contract uses very complex types for the parameters and
+return values, the size of the schema is likely to be negligible compared to the
 size of the smart contract itself.
 
 Having the schema in a separate file allows you to have the schema without
@@ -92,13 +94,12 @@ The schema format
 A schema can contain
 
 - structure information for a smart contract module
-- description of smart-contract state
-- parameters for init and receive functions of a smart contract.
+- parameters and return values for init and receive functions of a smart contract.
 
 Each of these descriptions is referred to as a *schema type*. Schema types are always
 optional to include in a schema.
 
-Currently the supported schema types are inspired by what is commonly used in
+Currently, the supported schema types are inspired by what is commonly used in
 the Rust programming language:
 
 .. code-block:: rust
@@ -166,6 +167,6 @@ This allows Wasm modules to include a named section of bytes, which does not
 affect the semantics of running the Wasm module.
 
 All schemas are collected and added in one custom section named
-``concordium-schema-v1``.
+``concordium-schema-v2``.
 This collection is a list of pairs, containing the name of the contract encoded
 in UTF-8 and the contract schema bytes.

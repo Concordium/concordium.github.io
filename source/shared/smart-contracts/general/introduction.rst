@@ -62,8 +62,8 @@ Smart contracts are a very exciting technology and people are still finding new
 ways to take advantage of them.
 However, there are some cases where smart contracts are not a good solution.
 
-One of the key advantages of smart contracts are the trust in the code
-execution, and to achieve this a large number of nodes in the blockchain network
+One of the key advantages of smart contracts is the trust in the code
+execution, and to achieve this, a large number of nodes in the blockchain network
 have to execute the same code and ensure agreement of the result.
 Naturally, this becomes expensive compared to running the same code on one node
 in some cloud service.

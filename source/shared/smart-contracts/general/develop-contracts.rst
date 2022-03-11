@@ -18,7 +18,7 @@
 Developing smart contracts in Rust
 ==================================
 
-On the concordium blockchain smart contracts are deployed as Wasm modules, but
+On the Concordium blockchain smart contracts are deployed as Wasm modules, but
 Wasm is designed primarily as a compilation target and is not convenient to
 write by hand.
 Instead we can write our smart contracts in the Rust_ programming language, which
@@ -70,49 +70,55 @@ Here is an example of a smart contract that implements a counter:
    type State = u32;
 
    #[init(contract = "counter")]
-   fn counter_init(
+   fn counter_init<S: HasState>(
        _ctx: &impl HasInitContext,
+       _state_builder: &mut StateBuilder<S>,
    ) -> InitResult<State> {
        let state = 0;
        Ok(state)
    }
 
-   #[receive(contract = "counter", name = "increment")]
-   fn contract_receive<A: HasActions>(
+   #[receive(contract = "counter", name = "increment", mutable)]
+   fn contract_receive<A: HasState>(
        ctx: &impl HasReceiveContext,
-       state: &mut State,
-   ) -> ReceiveResult<A> {
+       host: &mut impl HasHost<State, StateType = S>,
+   ) -> ReceiveResult<()> {
        ensure!(ctx.sender().matches_account(&ctx.owner()); // Only the owner can increment
-       *state += 1;
-       Ok(A::accept())
+       *host.state_mut() += 1;
+       Ok(())
    }
 
 There are a number of things to notice:
 
 .. todo::
 
-   - Write up the requirements in an easier to read way (e.g., split up paragraphs into sub-bullets).
    - These requirements should be part of a specification that is written up somewhere,
      i.e., not just as part of this example.
 
 - The type of the functions:
 
-  * An init function must be of type ``&impl HasInitContext -> InitResult<MyState>``
-    where ``MyState`` is a type that implements the ``Serialize`` trait.
-  * A receive function must take a ``A: HasActions`` type parameter,
-    a ``&impl HasReceiveContext`` and a ``&mut MyState`` parameter, and return
-    a ``ReceiveResult<A>``.
+  * An init function must be of type ``(&impl HasInitContext, &mut StateBuilder) -> InitResult<MyState>``
+    where ``MyState`` is a type that implements the ``Serialize`` [#serialize]_ trait.
+  * A receive function is immutable by default and must take a ``S: HasState`` type parameter,
+    a ``&impl HasReceiveContext`` and a ``&impl HasHost<MyState, StateType = S>`` parameter, and return
+    a ``ReceiveResult<MyReturnValue>``, where ``MyReturnValue`` is type that
+    implements ``Serialize``.
+  * A receive function can be made mutable by adding the ``mutable`` attribute,
+    in which case the hos parameter becomes mutable: ``&mut impl
+    HasHost<MyState, StateType = S>``. The other types and requirements remain
+    unchanged as compared to the immutable receive functions.
 
 - The annotation ``#[init(contract = "counter")]`` marks the function it is
   applied to as the init function of the contract named ``counter``.
   Concretely, this means that behind the scenes this macro generates an exported
   function with the required signature and name ``init_counter``.
 
-- ``#[receive(contract = "counter", name = "increment")]`` deserializes and
+- ``#[receive(contract = "counter", name = "increment", mutable)]`` deserializes and
   supplies the state to be manipulated directly.
   Behind the scenes this annotation also generates an exported function with name
   ``counter.increment`` that has the required signature, and does all of the
   boilerplate of deserializing the state into the required type ``State``.
+  Mutable receive functions also serialize and save the state once the function finishes.
 
 .. note::
 
@@ -126,21 +132,30 @@ There are a number of things to notice:
    - Describe low-level
    - Introduce the concept of host functions before using them in the note above
 
+.. [#serialize] If the state contains one or more of the types |StateBox|_,
+                |StateMap|_, or |StateSet|_, it should implement ``Serial``
+                and ``DeserialWithState`` instead. The difference is the
+                deserialization, where ``Serialize`` is a combination of the
+                traits ``Serial`` and ``Deserial``. The ``State*`` types are
+                types that utilize the tree structure of the state for efficiency.
+
 
 Serializable state and parameters
 ---------------------------------
 
-.. todo:: Clarify what it means that the state is exposed similarly to ``File``;
-   preferably, without referring to ``File``.
+On-chain, the state of an instance is represented as a `prefix tree
+<https://en.wikipedia.org/wiki/Trie>`_, where nodes in the tree can have data in the
+form of a byte array. 
+The instance uses functions provided by the host environment to create, delete,
+and find nodes in the tree.
+The host also provides functions for reading, writing and resizing the bytearray
+held by a particular node in the tree.
 
-On-chain, the state of an instance is represented as a byte array and exposed
-in a similar interface as the ``File`` interface of the Rust standard library.
-
-This can be done using the ``Serialize`` trait which contains (de-)serialization
-functions.
-
-The ``concordium_std`` crate includes this trait and implementations for
-most types in the Rust standard library.
+In the common case, the complete contract state is stored in the root node of
+the state tree. For this to work, the state must implement the
+``Serialize`` trait which contains (de-)serialization functions.
+The ``concordium_std`` crate includes this trait and implementations for most
+types in the Rust standard library.
 It also includes macros for deriving the trait for user-defined structs and
 enums.
 
@@ -153,7 +168,30 @@ enums.
        ...
    }
 
-The same is necessary for parameters to init and receive functions.
+For contracts that maintain a large state, it is often beneficial to split the
+state into multiple nodes in the state tree.
+``concordium_std`` crate provides ergonomic types for this purpose, namely |StateBox|_, |StateMap|_, and
+|StateSet|_.
+Which provide an interface similar to that of a pointer(``Box``), map, and set.
+For technical reasons, these three types cannot implement ``Serialize``, but
+they *do* implement ``Serial`` and ``DeserialWithState``.
+``concordium_std`` also has a macros for deriving these two types for
+user-defined structs and enums.
+
+.. code-block:: rust
+
+   use concordium_std::*;
+
+   #[derive(Serial, DeserialWithState)]
+   #[concordium(state_parameter = S)]
+   struct MyState<S, T> {
+       a: StateBox<String, S>,
+       b: Vec<T>,
+       ...
+   }
+
+Parameters to init and receive functions must also implement ``Serialize`` in
+the same way.
 
 .. note::
 
@@ -165,8 +203,7 @@ The same is necessary for parameters to init and receive functions.
 Working with parameters
 -----------------------
 
-Parameters to the init and receive functions are, like the instance
-state, represented as byte arrays.
+Parameters to the init and receive functions are represented as byte arrays.
 While the byte arrays can be used directly, they can also be deserialized into
 structured data.
 
@@ -177,7 +214,7 @@ As an example, see the following contract in which the parameter
 ``ReceiveParameter`` is deserialized on the highlighted line:
 
 .. code-block:: rust
-   :emphasize-lines: 24
+   :emphasize-lines: 25
 
    use concordium_std::*;
 
@@ -190,23 +227,24 @@ As an example, see the following contract in which the parameter
    }
 
    #[init(contract = "parameter_example")]
-   fn init(
+   fn init<S: HasState>(
        _ctx: &impl HasInitContext,
+       _state_builder: &mut StateBuilder,
    ) -> InitResult<State> {
        let initial_state = 0;
        Ok(initial_state)
    }
 
-   #[receive(contract = "parameter_example", name = "receive")]
-   fn receive<A: HasActions>(
+   #[receive(contract = "parameter_example", name = "receive", mutable)]
+   fn receive<S: HasState>(
        ctx: &impl HasReceiveContext,
-       state: &mut State,
-   ) -> ReceiveResult<A> {
+       host: &mut impl HasHost<State, StateType = S>,
+   ) -> ReceiveResult<()> {
        let parameter: ReceiveParameter = ctx.parameter_cursor().get()?;
        if parameter.should_add {
-           *state += parameter.value;
+           *host.state_mut() += parameter.value;
        }
-       Ok(A::accept())
+       Ok(())
    }
 
 The receive function above is inefficient in that it deserializes the
@@ -218,19 +256,19 @@ parameter using the `Read`_ trait:
 .. code-block:: rust
    :emphasize-lines: 7, 10
 
-   #[receive(contract = "parameter_example", name = "receive_optimized")]
-   fn receive_optimized<A: HasActions>(
+   #[receive(contract = "parameter_example", name = "receive_optimized", mutable)]
+   fn receive_optimized<S: HasState>(
        ctx: &impl HasReceiveContext,
-       state: &mut State,
-   ) -> ReceiveResult<A> {
+       host: &mut impl HasHost<State, StateType = S>,
+   ) -> ReceiveResult<()> {
        let mut cursor = ctx.parameter_cursor();
        let should_add: bool = cursor.read_u8()? != 0;
        if should_add {
            // Only decode the value if it is needed.
            let value: u32 = cursor.read_u32()?;
-           *state += value;
+           *host.state_mut() += value;
        }
-       Ok(A::accept())
+       Ok(())
    }
 
 Notice that the ``value`` is only deserialized if ``should_add`` is
@@ -278,6 +316,11 @@ them.
 Therefore it is good practice for smart contracts that are not dealing with CCD,
 to ensure the sent amount of CCD is zero and reject any invocations which are
 not.
+Using the ``#[init(...)]`` and ``#[receive(...)]`` macros will help you in this
+endeavour, as they will make the function panic if it receives a non-zero amount
+of CCD.
+To enable receiving CCD for a function, use the |payable|_ attribute in the
+macro, i.e.: ``#[init(..., payable)]`` and ``#[receive(..., payable)]``.
 
 .. todo::
 
@@ -291,3 +334,11 @@ not.
 .. _Get: https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html
 .. _Read: https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html
 .. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std/
+.. _StateBox: https://docs.rs/concordium-std/latest/concordium_std/struct.StateBox.html
+.. |StateBox| replace:: ``StateBox``
+.. _StateMap: https://docs.rs/concordium-std/latest/concordium_std/struct.StateMap.html
+.. |StateMap| replace:: ``StateMap``
+.. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
+.. |StateSet| replace:: ``StateSet``
+.. _payable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.init.html#payable-make-function-accept-an-amount-of-ccd..
+.. |payable| replace:: ``payable``
