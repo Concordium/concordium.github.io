@@ -279,7 +279,7 @@ The second test becomes:
    #[test]
    fn test_insert_intact() {
        let ctx = ReceiveContextTest::empty();
-       let amount = Amount::from_micro_gtu(100);
+       let amount = Amount::from_micro_ccd(100);
        let mut state = PiggyBankState::Intact;
 
        let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
@@ -357,7 +357,7 @@ in the previous tests:
        ctx.set_owner(owner);
        let sender = Address::Account(owner);
        ctx.set_sender(sender);
-       let balance = Amount::from_micro_gtu(100);
+       let balance = Amount::from_micro_ccd(100);
        ctx.set_self_balance(balance);
 
        let mut state = PiggyBankState::Intact;
@@ -395,7 +395,7 @@ The test could look like this:
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
-       let balance = Amount::from_micro_gtu(100);
+       let balance = Amount::from_micro_ccd(100);
        ctx.set_self_balance(balance);
 
        let mut state = PiggyBankState::Intact;
@@ -501,7 +501,7 @@ You can now check which error was produced in the test:
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
-       let balance = Amount::from_micro_gtu(100);
+       let balance = Amount::from_micro_ccd(100);
        ctx.set_self_balance(balance);
 
        let mut state = PiggyBankState::Intact;
@@ -607,7 +607,7 @@ using ``cargo test``.
       #[concordium_test]
       fn test_insert_intact() {
           let ctx = ReceiveContextTest::empty();
-          let amount = Amount::from_micro_gtu(100);
+          let amount = Amount::from_micro_ccd(100);
           let mut state = PiggyBankState::Intact;
 
           let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
@@ -625,7 +625,7 @@ using ``cargo test``.
           ctx.set_owner(owner);
           let sender = Address::Account(owner);
           ctx.set_sender(sender);
-          let balance = Amount::from_micro_gtu(100);
+          let balance = Amount::from_micro_ccd(100);
           ctx.set_self_balance(balance);
 
           let mut state = PiggyBankState::Intact;
@@ -644,7 +644,7 @@ using ``cargo test``.
           ctx.set_owner(owner);
           let sender = Address::Account(AccountAddress([1u8; 32]));
           ctx.set_sender(sender);
-          let balance = Amount::from_micro_gtu(100);
+          let balance = Amount::from_micro_ccd(100);
           ctx.set_self_balance(balance);
 
           let mut state = PiggyBankState::Intact;
