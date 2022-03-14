@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Concordium Concepts &mdash; Concordium  documentation</title>
+  <title>Company identity creation &mdash; Concordium  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Identities" href="id-accounts.html" />
-    <link rel="prev" title="Downloads" href="../installation/downloads.html" />
+    <link rel="next" title="Deciding between the Desktop Wallet and the Mobile Wallet" href="deciding-wallet.html" />
+    <link rel="prev" title="Bakers" href="../concepts/concepts-baker.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -112,17 +112,17 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Concordium Concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="id-accounts.html">Identities</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../concepts/concepts.html">Concordium Concepts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../concepts/id-accounts.html">Identities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-backup.html">Backup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html">Transactions overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Bakers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/company-identities.html">Company identity creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#support-feedback">Support &amp; Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/concepts-backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/concepts-transactions.html">Transactions overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/concepts-baker.html">Bakers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Company identity creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/concepts.html#support-feedback">Support &amp; Feedback</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
@@ -152,9 +152,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Baking</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-baker-process.html">Overview of the baker process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="become-baker.html">Become a baker using the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baker-windows.html">Run a baker node on Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodes/baker-macos.html">Run a baker node on macOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodes/baker-ubuntu.html">Run a baker node on Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodes/baker-docker.html">Run a baker node on Docker</a></li>
@@ -216,7 +216,9 @@
         
           <li><a href="../index.html">Testnet</a> &raquo;</li>
         
-      <li>Concordium Concepts</li>
+          <li><a href="../concepts/concepts.html">Concordium Concepts</a> &raquo;</li>
+        
+      <li>Company identity creation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,18 +235,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="concordium-concepts">
-<h1>Concordium Concepts<a class="headerlink" href="#concordium-concepts" title="Permalink to this headline">¶</a></h1>
-<p>The following topics describe basic concepts of the Concordium Platform.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts-backup.html">Backup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts-transactions.html">Transactions overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts-baker.html">Bakers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/company-identities.html">Company identity creation</a></li>
+  <div class="section" id="company-identity-creation">
+<span id="company-identities"></span><h1>Company identity creation<a class="headerlink" href="#company-identity-creation" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#what-is-a-company-identity" id="id1">What is a company identity</a></p></li>
+<li><p><a class="reference internal" href="#create-a-company-identity" id="id2">Create a company identity</a></p></li>
+<li><p><a class="reference internal" href="#support-for-company-identity-creation" id="id3">Support for company identity creation</a></p></li>
+<li><p><a class="reference internal" href="#support-feedback" id="id4">Support &amp; Feedback</a></p></li>
 </ul>
+</div>
+<div class="section" id="what-is-a-company-identity">
+<h2>What is a company identity<a class="headerlink" href="#what-is-a-company-identity" title="Permalink to this headline">¶</a></h2>
+<p>A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don’t want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.</p>
+<p>You can’t use the Desktop Wallet or the Mobile Wallet to create a company identity. You need to use a set of command-line tools, and you need to contact Concordium Technical Support. This guide describes how you create a company identity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The process below is valid only for <strong>testnet</strong>.</p>
+</div>
+</div>
+<div class="section" id="create-a-company-identity">
+<h2>Create a company identity<a class="headerlink" href="#create-a-company-identity" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download the <a class="reference external" href="https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip">tools</a>.</p></li>
+<li><p>Extract the files in the bundle to the same location on your computer. The bundle contains the following files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cryptographic-parameters-testnet.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ars-testnet.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ip-info-testnet.json</span></code> (public keys of the identity provider)</p></li>
+</ul>
+</li>
+<li><p>Download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for your platform.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference external" href="https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0">Linux</a></dt><dd><ul>
+<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe">Windows</a></dt><dd><ul>
+<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">f6cafdd472b02ead818cc0f463a4cf40053dda33a824a2dfed816744a48a579c</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip">MacOS</a></dt><dd><ul>
+<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">3173cbe28373d9a787978b236aefdaa20d129496b61e545ed7369d8922e10d05</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-request-for-the-identity-objectinstructions">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Test company identity”. Store the auxiliary output securely.</p></li>
+<li><p>When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>. Concordium also creates the initial account.</p></li>
+<li><p>To create additional accounts from the identity object returned by Concordium, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-an-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
+</ol>
+</div>
+<div class="section" id="support-for-company-identity-creation">
+<h2>Support for company identity creation<a class="headerlink" href="#support-for-company-identity-creation" title="Permalink to this headline">¶</a></h2>
+<p>If you experience issues, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
 </div>
 <div class="section" id="support-feedback">
 <h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
