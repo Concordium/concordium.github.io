@@ -17,11 +17,10 @@ for how to make a shielded CCD transfer, you can find the guide :ref:`here <make
 Make a CCD transfer from an account
 ===================================
 
-#. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD.
+#. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap **SEND**.
 
-   -or-
-
-   With an individual account's transaction overview displayed, tap **SEND**.
+   .. image:: ../images/mobile-wallet/MW13.png
+      :width: 25%
 
    .. image:: ../images/mobile-wallet/MW22.png
       :width: 25%
