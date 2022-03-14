@@ -40,10 +40,23 @@ To simulate the instantiation of a smart contract instance using
                                --parameter-bin parameter.bin \
                                --out-bin state.bin
 
+.. note::
+
+   If using :ref:`contract schemas<build-schema>`, it is possible to pass
+   the parameter as JSON instead of binary by using the ``--parameter-json`` flag.
+
 ``init-context.json`` (used with the ``--context`` parameter) is a file that
 contains context information such as the current state of the chain, the
 sender of the transaction, and which account invoked this function.
-An example of this context could be:
+It is only necessary to specify the fields that your contract function actually
+uses.
+``cargo-concordium`` returns an error if the function tries to access an
+unspecified context field.
+An example of a fully specified init context could be:
+
+.. todo::
+
+   TODO: senderPolicies is not optional at the moment.
 
 .. code-block:: json
 
@@ -80,12 +93,20 @@ To simulate an update to a contract smart contract instance using
                                  --parameter-bin parameter.bin \
                                  --state-bin state-in.bin \
                                  --out-bin state-out.bin
+.. note::
+
+   If using :ref:`contract schemas<build-schema>`, it is possible to pass
+   the parameter as JSON instead of binary by using the ``--parameter-json`` flag.
 
 ``receive-context.json`` (used with the ``--context`` parameter) is a file that
 contains context information such as the current state of the chain, the
 sender of the transaction, which account invoked this function, and which
 account or address that sent the current message.
-An example of this context could be:
+It is only necessary to specify the fields that your contract function actually
+uses.
+``cargo-concordium`` returns an error if the function tries to access an
+unspecified context field.
+An example of a fully specified receive context could be:
 
 .. code-block:: json
 
