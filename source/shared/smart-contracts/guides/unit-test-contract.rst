@@ -57,28 +57,25 @@ If the contract functions are written using ``#[init(..)]`` or
 
    use concordium_std::*;
 
-   #[init(contract = "my_contract", payable, enable_logger)]
-   fn contract_init(
-      ctx: &impl HasInitContext<()>,
-      amount: Amount,
-      logger: &mut impl HasLogger,
+   #[init(contract = "my_contract")]
+   fn contract_init<S: HasState>(
+      ctx: &impl HasInitContext,
+      state_builder: &mut StateBuilder<S>,
    ) -> InitResult<State> { ... }
 
-   #[receive(contract = "my_contract", name = "my_receive", payable, enable_logger)]
-   fn contract_receive<A: HasActions>(
-      ctx: &impl HasReceiveContext<()>,
-      amount: Amount,
-      logger: &mut impl HasLogger,
-      state: &mut State,
-   ) -> ReceiveResult<A> { ... }
+   #[receive(contract = "my_contract", name = "my_receive")]
+   fn contract_receive<S: HasState>(
+      ctx: &impl HasReceiveContext,
+      host: &impl HasHost<State, StateType = S>,
+   ) -> ReceiveResult<MyReturnValue> { ... }
 
-Testing stubs for the function arguments can be found in a submodule of
-``concordium-std`` called ``test_infrastructure``.
+Testing stubs for the function arguments can be found in a submodule of |concordium_std|_ called |test_infrastructure|_.
+
 
 .. seealso::
 
    For more information and examples see the crate documentation of
-   concordium-std.
+   |concordium_std|_.
 
 .. todo::
 
@@ -146,6 +143,7 @@ for ``concordium-std`` and uses the test runner from ``cargo-concordium``.
    failing the test.
    Both are part of ``concordium-std``.
 
-.. todo::
-
-   Use link concordium-std: docs.rs/concordium-std when crate is published.
+.. |test_infrastructure| replace:: ``test_infrastructure``
+.. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
+.. |concordium_std| replace:: ``concordium_std``
+.. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std

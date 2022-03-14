@@ -57,8 +57,13 @@ This uses Cargo_ for building, but runs further optimizations on the result.
 Removing host information from build
 ====================================
 
-The compiled Wasm module can contain information from the host machine building
+In some, older, versions of Cargo, the compiled Wasm module can contain information from the host machine building
 the binary; information such as the absolute path of the ``.cargo`` directory.
+
+.. note ::
+
+   Cargo version ``1.53`` and higher does not seem to include the host
+   information. So this section only applies to older versions of Cargo.
 
 For most people this is not sensitive information, but it is important to be
 aware of it.
