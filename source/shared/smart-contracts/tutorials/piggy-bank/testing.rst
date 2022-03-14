@@ -92,7 +92,7 @@ Also, make sure to have a text editor setup to write Rust.
 Since you are going to extend the smart contract code written in the :ref:`previous
 part<piggy-bank-writing>`, either follow the previous part or copy the complete
 example code for part 1 from `GitHub
-<https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs>`_.
+<https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs>`__.
 
 You are now ready to write unit tests for your smart contract!
 
