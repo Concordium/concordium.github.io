@@ -45,9 +45,9 @@ Create a company identity
       - SHA256 checksum of the download: ``3173cbe28373d9a787978b236aefdaa20d129496b61e545ed7369d8922e10d05``
 
 
-#. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-request-for-the-identity-objectinstructions>`_. Email the ``request.json`` output file to support@concordium.software. Store the auxiliary output securely.
+#. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-request-for-the-identity-objectinstructions>`_. Email the ``request.json`` output file to support@concordium.software with the subject line "Test company identity". Store the auxiliary output securely.
 
-#. When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named ``id-object.json``.
+#. When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named ``id-object.json``. Concordium also creates the initial account.
 
 #. To create additional accounts from the identity object returned by Concordium, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-an-identity-object>`_. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
 
