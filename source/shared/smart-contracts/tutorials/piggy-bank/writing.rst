@@ -175,7 +175,7 @@ This allows you to create a new piggy bank as follows:
 .. code-block:: rust
 
    #[init(contract = "PiggyBank")]
-   fn piggy_init<S: HasState>(
+   fn piggy_init<S: HasStateApi>(
        _ctx: &impl HasInitContext,
        _state_builder: &mut StateBuilder<S>,
    ) -> InitResult<PiggyBankState> {
@@ -200,9 +200,9 @@ The init function takes two arguments:
 - ``ctx: &impl HasInitContext``, which is a zero-sized struct with a number of
   getter functions for accessing information about the current context, such as
   the account that invoked this contract, the supplied arguments and information about the state of the blockchain
-- ``state_builder: &mut StateBuilder<S: HasState>``, which has functions for creating
+- ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating
   sets, maps, and boxes that effectively utilize the way contract state is
-  stored on the chain. It is parameterized by ``S: HasState`` to enable mocking
+  stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
   the state, as we shall see in part two of this tutorial.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
@@ -259,9 +259,9 @@ a reference to the host (through which you can access the state of the instance)
 .. code-block:: rust
 
    #[receive(contract = "MyContract", name = "some_interaction")]
-   fn some_receive<S: HasState>(
+   fn some_receive<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &impl HasHost<MyState, StateType = S>,
+       host: &impl HasHost<MyState, StateApiType = S>,
    ) -> ReceiveResult<MyReturnValue> {
        todo!()
    }
@@ -291,9 +291,9 @@ You start by defining a receive function as:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<S: HasState>(
+   fn piggy_insert<S: HasStateApi>(
        _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateType = S>,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> ReceiveResult<()> {
        todo!()
    }
@@ -341,9 +341,9 @@ So far you have the following definition of the receive function:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<S: HasState>(
+   fn piggy_insert<S: HasStateApi>(
        _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateType = S>,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> ReceiveResult<()> {
        ensure!(*host.state() == PiggyBankState::Intact);
        Ok(())
@@ -369,9 +369,9 @@ function.
    :emphasize-lines: 1, 5
 
    #[receive(contract = "PiggyBank", name = "insert", payable)]
-   fn piggy_insert<S: HasState>(
+   fn piggy_insert<S: HasStateApi>(
        _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateType = S>,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
        _amount: Amount,
    ) -> ReceiveResult<()> {
        ensure!(*host.state() == PiggyBankState::Intact);
@@ -399,9 +399,9 @@ Again you use the |receive|_ macro to define the smash function:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<S: HasState>(
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateType = S>,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> ReceiveResult<()> {
        todo!()
    }
@@ -454,9 +454,9 @@ adding the |mutable|_ attribute to the |receive| macro.
    :emphasize-lines: 1, 4
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasState>(
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateType = S>,
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> ReceiveResult<()> {
        let owner = ctx.owner();
        let sender = ctx.sender();
@@ -507,9 +507,9 @@ The final definition of the "smash" receive function is then:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasState>(
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateType = S>,
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> ReceiveResult<()> {
        let owner = ctx.owner();
        let sender = ctx.sender();

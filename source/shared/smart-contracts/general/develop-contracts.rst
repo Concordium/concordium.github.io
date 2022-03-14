@@ -70,7 +70,7 @@ Here is an example of a smart contract that implements a counter:
    type State = u32;
 
    #[init(contract = "counter")]
-   fn counter_init<S: HasState>(
+   fn counter_init<S: HasStateApi>(
        _ctx: &impl HasInitContext,
        _state_builder: &mut StateBuilder<S>,
    ) -> InitResult<State> {
@@ -79,9 +79,9 @@ Here is an example of a smart contract that implements a counter:
    }
 
    #[receive(contract = "counter", name = "increment", mutable)]
-   fn contract_receive<A: HasState>(
+   fn contract_receive<A: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State, StateType = S>,
+       host: &mut impl HasHost<State, StateApiType = S>,
    ) -> ReceiveResult<()> {
        ensure!(ctx.sender().matches_account(&ctx.owner()); // Only the owner can increment
        *host.state_mut() += 1;
@@ -99,13 +99,13 @@ There are a number of things to notice:
 
   * An init function must be of type ``(&impl HasInitContext, &mut StateBuilder) -> InitResult<MyState>``
     where ``MyState`` is a type that implements the ``Serialize`` [#serialize]_ trait.
-  * A receive function is immutable by default and must take a ``S: HasState`` type parameter,
-    a ``&impl HasReceiveContext`` and a ``&impl HasHost<MyState, StateType = S>`` parameter, and return
+  * A receive function is immutable by default and must take a ``S: HasStateApi`` type parameter,
+    a ``&impl HasReceiveContext`` and a ``&impl HasHost<MyState, StateApiType = S>`` parameter, and return
     a ``ReceiveResult<MyReturnValue>``, where ``MyReturnValue`` is type that
     implements ``Serialize``.
   * A receive function can be made mutable by adding the ``mutable`` attribute,
     in which case the hos parameter becomes mutable: ``&mut impl
-    HasHost<MyState, StateType = S>``. The other types and requirements remain
+    HasHost<MyState, StateApiType = S>``. The other types and requirements remain
     unchanged as compared to the immutable receive functions.
 
 - The annotation ``#[init(contract = "counter")]`` marks the function it is
@@ -227,7 +227,7 @@ As an example, see the following contract in which the parameter
    }
 
    #[init(contract = "parameter_example")]
-   fn init<S: HasState>(
+   fn init<S: HasStateApi>(
        _ctx: &impl HasInitContext,
        _state_builder: &mut StateBuilder,
    ) -> InitResult<State> {
@@ -236,9 +236,9 @@ As an example, see the following contract in which the parameter
    }
 
    #[receive(contract = "parameter_example", name = "receive", mutable)]
-   fn receive<S: HasState>(
+   fn receive<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State, StateType = S>,
+       host: &mut impl HasHost<State, StateApiType = S>,
    ) -> ReceiveResult<()> {
        let parameter: ReceiveParameter = ctx.parameter_cursor().get()?;
        if parameter.should_add {
@@ -257,9 +257,9 @@ parameter using the `Read`_ trait:
    :emphasize-lines: 7, 10
 
    #[receive(contract = "parameter_example", name = "receive_optimized", mutable)]
-   fn receive_optimized<S: HasState>(
+   fn receive_optimized<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State, StateType = S>,
+       host: &mut impl HasHost<State, StateApiType = S>,
    ) -> ReceiveResult<()> {
        let mut cursor = ctx.parameter_cursor();
        let should_add: bool = cursor.read_u8()? != 0;

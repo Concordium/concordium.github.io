@@ -58,15 +58,15 @@ If the contract functions are written using ``#[init(..)]`` or
    use concordium_std::*;
 
    #[init(contract = "my_contract")]
-   fn contract_init<S: HasState>(
+   fn contract_init<S: HasStateApi>(
       ctx: &impl HasInitContext,
       state_builder: &mut StateBuilder<S>,
    ) -> InitResult<State> { ... }
 
    #[receive(contract = "my_contract", name = "my_receive")]
-   fn contract_receive<S: HasState>(
+   fn contract_receive<S: HasStateApi>(
       ctx: &impl HasReceiveContext,
-      host: &impl HasHost<State, StateType = S>,
+      host: &impl HasHost<State, StateApiType = S>,
    ) -> ReceiveResult<MyReturnValue> { ... }
 
 Testing stubs for the function arguments can be found in a submodule of |concordium_std|_ called |test_infrastructure|_.

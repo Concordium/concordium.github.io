@@ -13,31 +13,31 @@
 .. |init| replace:: ``#[init]``
 .. _receive: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html
 .. |receive| replace:: ``#[receive]``
-.. _InitContextTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.InitContextTest.html
-.. |InitContextTest| replace:: ``InitContextTest``
-.. _ReceiveContextTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html
-.. |ReceiveContextTest| replace:: ``ReceiveContextTest``
-.. _HostTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.HostTest.html
-.. |HostTest| replace:: ``HostTest``
-.. _StateBuilderTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.StateBuilderTest.html
-.. |StateBuilderTest| replace:: ``StateBuilderTest``
+.. _TestInitContext: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestInitContext.html
+.. |TestInitContext| replace:: ``TestInitContext``
+.. _TestReceiveContext: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html
+.. |TestReceiveContext| replace:: ``TestReceiveContext``
+.. _TestHost: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html
+.. |TestHost| replace:: ``TestHost``
+.. _TestStateBuilder: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestStateBuilder.html
+.. |TestStateBuilder| replace:: ``TestStateBuilder``
 .. _HasInitContext: https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html
 .. |HasInitContext| replace:: ``HasInitContext``
-.. _HasState: https://docs.rs/concordium-std/latest/concordium_std/trait.HasState.html
-.. |HasState| replace:: ``HasState``
+.. _HasStateApi: https://docs.rs/concordium-std/latest/concordium_std/trait.HasStateApi.html
+.. |HasStateApi| replace:: ``HasStateApi``
 .. _AccountAddress: https://docs.rs/concordium-std/latest/concordium_std/struct.AccountAddress.html
 .. |AccountAddress| replace:: ``AccountAddress``
-.. _set_owner: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_owner
+.. _set_owner: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html#method.set_owner
 .. |set_owner| replace:: ``set_owner``
 .. _Address: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html
 .. |Address| replace:: ``Address``
-.. _set_sender: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender
+.. _set_sender: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html#method.set_sender
 .. |set_sender| replace:: ``set_sender``
-.. _set_self_balance: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.HostTest.html#method.set_self_balance
+.. _set_self_balance: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.set_self_balance
 .. |set_self_balance| replace:: ``set_self_balance``
 .. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
 .. |invoke_transfer| replace:: ``invoke_transfer``
-.. _get_transfers: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.HostTest.html#method.get_transfers
+.. _get_transfers: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.get_transfers
 .. |get_transfers| replace:: ``get_transfers``
 .. _concordium_cfg_test: https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_cfg_test.html
 .. |concordium_cfg_test| replace:: ``#[concordium_cfg_test]``
@@ -150,15 +150,15 @@ state.
 
 As mentioned above, you test the initialization by calling the function
 ``piggy_init`` directly.
-To construct its arguments, you use |InitContextTest|_, which provides a
-placeholder for the context, and |StateBuilderTest|_, which provides a
+To construct its arguments, you use |TestInitContext|_, which provides a
+placeholder for the context, and |TestStateBuilder|_, which provides a
 state builder for the test state. While the contract doesn't use the state
 builder, it still needs the argument supplied.
 
 .. code-block:: rust
 
-   let ctx = InitContextTest::empty();
-   let mut state_builder = StateBuilderTest::new();
+   let ctx = TestInitContext::empty();
+   let mut state_builder = TestStateBuilder::new();
 
 Just as the name suggests, the test context is empty and if any of the getter
 functions are called, it will make sure to fail the test, which should be fine
@@ -166,7 +166,7 @@ for now since the piggy bank is not reading anything from the context.
 
 .. note::
 
-   As you will see later with the |ReceiveContextTest|_, these placeholders have
+   As you will see later with the |TestReceiveContext|_, these placeholders have
    setter functions, allowing us to partially specify the context.
 
 Now you can call ``piggy_init`` and get a result containing the initial state.
@@ -206,8 +206,8 @@ piggy bank:
 
        #[test]
        fn test_init() {
-           let ctx = InitContextTest::empty();
-           let mut state_builder = StateBuilderTest::new();
+           let ctx = TestInitContext::empty();
+           let mut state_builder = TestStateBuilder::new();
 
            let state_result = piggy_init(&ctx, &mut state_builder);
 
@@ -233,15 +233,15 @@ Test inserting CCD into a piggy bank
 Next, you should test the different functions for interacting with a piggy bank.
 This works similarly to how you test init functions, in that we construct test
 versions of the arguments.
-For receive functions that means constructing |ReceiveContextTest|_ and
-|HostTest|_, the latter of which expects the initial contract state.
+For receive functions that means constructing |TestReceiveContext|_ and
+|TestHost|_, the latter of which expects the initial contract state.
 
 To test ``piggy_insert`` you also need to provide some amount of CCD:
 
 .. code-block:: rust
 
-   let ctx = ReceiveContextTest::empty();
-   let host = HostTest::new(PiggyBankState::Intact);
+   let ctx = TestReceiveContext::empty();
+   let host = TestHost::new(PiggyBankState::Intact);
    let amount = Amount::from_micro_ccd(100);
 
 When calling ``piggy_insert`` you get back a result with a return value as
@@ -283,8 +283,8 @@ The second test becomes:
 
    #[test]
    fn test_insert_intact() {
-       let ctx = ReceiveContextTest::empty();
-       let host = HostTest::new(PiggyBankState::Intact);
+       let ctx = TestReceiveContext::empty();
+       let host = TestHost::new(PiggyBankState::Intact);
        let amount = Amount::from_micro_gtu(100);
 
        let result = piggy_insert(&ctx, &host, amount);
@@ -312,10 +312,10 @@ define the context as mutable:
 
 .. code-block:: rust
 
-   let mut ctx = ReceiveContextTest::empty();
+   let mut ctx = TestReceiveContext::empty();
 
 Create an |AccountAddress|_ to represent the owner and use the setter
-|set_owner| implemented on |ReceiveContextTest|_:
+|set_owner| implemented on |TestReceiveContext|_:
 
 .. code-block:: rust
 
@@ -338,12 +338,12 @@ address in the |Address|_ type:
    let sender = Address::Account(owner);
    ctx.set_sender(sender);
 
-Lastly, you need to create a |HostTest|_ with the state and set the balance of the piggy bank
+Lastly, you need to create a |TestHost|_ with the state and set the balance of the piggy bank
 instance using |set_self_balance|_.
 
 .. code-block:: rust
 
-   let mut host = HostTest::new(PiggyBankState::Intact);
+   let mut host = TestHost::new(PiggyBankState::Intact);
    let balance = Amount::from_micro_gtu(100);
    host.set_self_balance(balance);
 
@@ -360,7 +360,7 @@ in the previous tests.
 
 You should also test whether the contract transferred all of its CCD to the
 owner.
-|HostTest|_ has a number of helper functions for checking the results of
+|TestHost|_ has a number of helper functions for checking the results of
 actions it performed.
 This includes the |get_transfers|_ function, which returns a list of
 transactions in the form of ``(AccountAddress, Amount)`` pairs.
@@ -380,12 +380,12 @@ The complete third test thus becomes:
 
    #[test]
    fn test_smash_intact() {
-       let mut ctx = ReceiveContextTest::empty();
+       let mut ctx = TestReceiveContext::empty();
        let owner = AccountAddress([0u8; 32]);
        ctx.set_owner(owner);
        let sender = Address::Account(owner);
        ctx.set_sender(sender);
-       let mut host = HostTest::new(PiggyBankState::Intact);
+       let mut host = TestHost::new(PiggyBankState::Intact);
        let balance = Amount::from_micro_gtu(100);
        host.set_self_balance(balance);
 
@@ -421,12 +421,12 @@ The test could look like this:
 
    #[test]
    fn test_smash_intact_not_owner() {
-       let mut ctx = ReceiveContextTest::empty();
+       let mut ctx = TestReceiveContext::empty();
        let owner = AccountAddress([0u8; 32]);
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
-       let mut host = HostTest::new(PiggyBankState::Intact);
+       let mut host = TestHost::new(PiggyBankState::Intact);
        let balance = Amount::from_micro_gtu(100);
        host.set_self_balance(balance);
 
@@ -465,9 +465,9 @@ SmashError>`` instead of ``ReceiveResult<A>``:
    :emphasize-lines: 5
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasState>(
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateType = S>,
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> Result<(), SmashError> {
       // ...
    }
@@ -479,9 +479,9 @@ the error to produce:
    :emphasize-lines: 9, 10, 16
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasState>(
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateType = S>,
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
    ) -> Result<(), SmashError> {
        let owner = ctx.owner();
        let sender = ctx.sender();
@@ -511,12 +511,12 @@ You can now check which error was produced in the test:
 
    #[test]
    fn test_smash_intact_not_owner() {
-       let mut ctx = ReceiveContextTest::empty();
+       let mut ctx = TestReceiveContext::empty();
        let owner = AccountAddress([0u8; 32]);
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
-       let mut host = HostTest::new(PiggyBankState::Intact);
+       let mut host = TestHost::new(PiggyBankState::Intact);
        let balance = Amount::from_micro_gtu(100);
        host.set_self_balance(balance);
 
@@ -609,8 +609,8 @@ using ``cargo test``.
 
       #[concordium_test]
       fn test_init() {
-          let ctx = InitContextTest::empty();
-          let mut state_builder = StateBuilderTest::new();
+          let ctx = TestInitContext::empty();
+          let mut state_builder = TestStateBuilder::new();
 
           let state_result = piggy_init(&ctx, &mut state_builder);
 
@@ -625,8 +625,8 @@ using ``cargo test``.
 
       #[concordium_test]
       fn test_insert_intact() {
-          let ctx = ReceiveContextTest::empty();
-          let host = HostTest::new(PiggyBankState::Intact);
+          let ctx = TestReceiveContext::empty();
+          let host = TestHost::new(PiggyBankState::Intact);
           let amount = Amount::from_micro_ccd(100);
 
           let result = piggy_insert(&ctx, &host, amount);
@@ -636,12 +636,12 @@ using ``cargo test``.
 
       #[concordium_test]
       fn test_smash_intact() {
-          let mut ctx = ReceiveContextTest::empty();
+          let mut ctx = TestReceiveContext::empty();
           let owner = AccountAddress([0u8; 32]);
           ctx.set_owner(owner);
           let sender = Address::Account(owner);
           ctx.set_sender(sender);
-          let mut host = HostTest::new(PiggyBankState::Intact);
+          let mut host = TestHost::new(PiggyBankState::Intact);
           let balance = Amount::from_micro_ccd(100);
           host.set_self_balance(balance);
 
@@ -658,12 +658,12 @@ using ``cargo test``.
 
       #[concordium_test]
       fn test_smash_intact_not_owner() {
-          let mut ctx = ReceiveContextTest::empty();
+          let mut ctx = TestReceiveContext::empty();
           let owner = AccountAddress([0u8; 32]);
           ctx.set_owner(owner);
           let sender = Address::Account(AccountAddress([1u8; 32]));
           ctx.set_sender(sender);
-          let mut host = HostTest::new(PiggyBankState::Intact);
+          let mut host = TestHost::new(PiggyBankState::Intact);
           let balance = Amount::from_micro_ccd(100);
           host.set_self_balance(balance);
 
