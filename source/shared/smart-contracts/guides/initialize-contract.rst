@@ -95,7 +95,6 @@ If successful, the output should be similar to the following:
    Contract successfully initialized with address: {"index":0,"subindex":0}
 
 Otherwise, an error describing the problem is displayed.
-Common errors are described in the next section.
 
 .. note::
 

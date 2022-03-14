@@ -42,7 +42,8 @@ run the following command:
 
    $concordium-client contract update 0 --func my_receive --energy 1000
 
-If successful, the output should be similar to the following:
+If successful, the output should be similar to the following.
+As you can see, the subindex defaults to ``0``:
 
 .. code-block:: console
 
@@ -77,7 +78,6 @@ If successful, the output should be similar to the following:
    Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_parameter_receive'.
 
 Otherwise, an error describing the problem is displayed.
-Common errors are described in the next section.
 
 .. seealso::
 
