@@ -131,8 +131,3 @@ If successful, the output should be similar to the following:
 
    For information on how to work with parameters in smart contracts, see
    :ref:`working-with-parameters`.
-
-.. _parameter_cursor():
-   https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html#tymethod.parameter_cursor
-.. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
-.. _read(): https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html#method.read_u8
