@@ -8,10 +8,6 @@ This guide will show you, how to interact with a smart contract instance, which
 means triggering a receive function that, possibly, updates the state of the
 instance.
 
-.. todo::
-
-   TODO: Should also explain contract invoke (view functions)
-
 Preparation
 ===========
 
@@ -40,14 +36,14 @@ run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --func my_receive --energy 1000
+   $concordium-client contract update 0 --entrypoint my_receive --energy 1000
 
 If successful, the output should be similar to the following.
 As you can see, the subindex defaults to ``0``:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_receive'.
+   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
 
 Passing parameters in JSON format
 ---------------------------------
@@ -67,7 +63,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --func my_parameter_receive \
+   $concordium-client contract update 0 --entrypoint my_parameter_receive \
             --energy 1000 \
             --parameter-json my_parameter.json
 
@@ -75,7 +71,7 @@ If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_parameter_receive'.
+   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_parameter_receive'.
 
 Otherwise, an error describing the problem is displayed.
 
@@ -121,7 +117,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --func my_parameter_receive \
+   $concordium-client contract update 0 --entrypoint my_parameter_receive \
             --energy 1000 \
             --parameter-bin my_parameter.bin
 
@@ -129,7 +125,7 @@ If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_parameter_receive'.
+   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_parameter_receive'.
 
 .. seealso::
 

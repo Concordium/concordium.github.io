@@ -39,7 +39,7 @@ with name account-name, run the following command:
 
    When deploying a smart contract module built using ``cargo-concordium``
    version < 2, or built directly with ``cargo``, it is necessary to
-   specify the smart contract version with the ``--wasm-version [0, v0, V0, 1,
+   specify the smart contract version with the ``--contract-version [0, v0, V0, 1,
    v1, V1]`` option.
 
 If successful, the output should be similar to the following:
