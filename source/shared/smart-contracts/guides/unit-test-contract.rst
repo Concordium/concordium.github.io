@@ -42,6 +42,7 @@ There are a number of subtle differences between platforms, which can change the
 behaviour of a contract.
 One difference is regarding the size of pointers, where `Wasm32` uses four bytes
 as opposed to eight, which is common for most platforms.
+To learn how to test in `Wasm32`, see :ref:`tests_in_wasm`.
 
 Writing unit tests
 ==================
@@ -69,17 +70,55 @@ If the contract functions are written using ``#[init(..)]`` or
       host: &impl HasHost<State, StateApiType = S>,
    ) -> ReceiveResult<MyReturnValue> { ... }
 
-Testing stubs for the function arguments can be found in a submodule of |concordium_std|_ called |test_infrastructure|_.
+   #[cfg(test)]
+   mod test {
+       use super::*;
+       use concordium_std::test_infrastructure::*;
 
+       #[test]
+       fn some_init_test() {
+           // Create a test context.
+           let mut ctx = TestInitContext::empty();
+           // Set the fields that your init method accesses.
+           ctx.set_init_origin(AccountAddress([0; 32]));
+           // Create a test state builder.
+           let mut state_builder = TestStateBuilder::new();
+
+           // Call the init method.
+           let result = contract_init(&ctx, &mut state_builder);
+
+           // Assert properties.
+           assert_eq!(result, Ok(State));
+       }
+
+       #[test]
+       fn some_receive_test() {
+           // Create a test context.
+           let mut ctx = TestReceiveContext::empty();
+           // Set the fields that your receive method accesses.
+           ctx.set_self_address(ContractAddress{ index: 0, subindex: 0 });
+           // Create a test host with state.
+           let host = TestHost::new(State::new());
+
+           // Call the receive method.
+           let result = contract_receive(&ctx, &host);
+
+           // Make assertions.
+           assert_eq!(result, Ok(MyReturnValue::new()));
+           assert_eq!(host.get_transfers(), []); // No transfers occured.
+       }
+   }
+
+
+The submodule |test_infrastructure|_ of |concordium_std|_ contains a number of
+test stubs, including the ones shown in the example, e.g., ``TestHost`` and ``TestInitContext``.
 
 .. seealso::
 
    For more information and examples see the crate documentation of
    |concordium_std|_.
 
-.. todo::
-
-   Show more of how to write the unit test
+.. _tests_in_wasm:
 
 Running tests in Wasm
 =====================
