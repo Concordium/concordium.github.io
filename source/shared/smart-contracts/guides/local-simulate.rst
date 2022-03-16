@@ -87,7 +87,7 @@ To simulate an update to a contract smart contract instance using
 
    $cargo concordium run update --module contract.wasm \
                                  --contract "my_contract" \
-                                 --func "some_receive" \
+                                 --entrypoint "some_receive" \
                                  --context receive-context.json \
                                  --amount 123456.789 \
                                  --parameter-bin parameter.bin \
