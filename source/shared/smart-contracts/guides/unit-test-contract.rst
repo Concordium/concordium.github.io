@@ -129,13 +129,13 @@ To test receive methods that invoke contracts with
 the invoked contract. The |test_infrastructure|_ has a number of helpers for
 mocking contracts.
 
-To set up any mock entrypoint, use the |setup_mock_entrypoint|_ method from |TestHost|_.
+To set up a mock entrypoint, use the |setup_mock_entrypoint|_ method from |TestHost|_.
 It expects a ``ContractAddress`` and an ``OwnedEntrypointName`` to specify which
 entrypoint on which contract you are mocking.
 It also expects a ``MockFn``, which you can create in several different ways.
 
 The simplest way to create a ``MockFn`` is with ``returning_ok``, which creates
-a mock function that returns the same value ``Ok(..)`` value every time:
+a mock function that returns the same ``Ok(..)`` value every time:
 
 .. code-block:: rust
    :emphasize-lines: 14
@@ -159,7 +159,7 @@ a mock function that returns the same value ``Ok(..)`` value every time:
    }
 
 For returning the same error every time, use the ``returning_err``.
-This should also be used to test missing contracts or entrypoints, as invoking
+Use this to test missing contracts or entrypoints, as invoking
 entrypoints, for which no mock has been set up, results in a runtime error:
 
 .. code-block:: rust
@@ -179,7 +179,7 @@ entrypoints, for which no mock has been set up, results in a runtime error:
 .. note::
 
     The ``returning_err`` method is generic, because
-    ``CallContractError<ReturnValueType>`` also is generic and can return a value
+    ``CallContractError<ReturnValueType>`` is generic and can return a value
     with its logic error:
 
     .. code-block:: rust
@@ -198,15 +198,18 @@ entrypoints, for which no mock has been set up, results in a runtime error:
            ...
 
 For more advanced types of mocks, use ``MockFn::new_v1``, ``MockFn::new_v0``, or
-``MockFn::new``. Each of the which take a closure that has access to the
-parameter and amount used when invoking, but also the balance and state of the
-*invoking* contract. The methods differ in what the closure should return. V0
-contracts do not have a return value, whereas V1 contracts always do.
-Here is a simple example of a mocked entrypoint which only uses the parameter
-and amount. For simplicity it just traps if the input is not as expected:
+``MockFn::new``.
+Each of the which take a closure that has access to the parameter and amount
+used in ``invoke_contract(.., parameter, .., amount)``, but also the balance and
+state of contract you are testing.
+The methods differ in what the closure should return.
+V0 contracts do not have a return value, whereas V1 contracts always do.
+
+Here is a example of a mocked entrypoint that only uses the parameter
+and amount. For simplicity, it just traps if the input is not as expected:
 
 .. code-block:: rust
-   :emphasize-lines: 10-21
+   :emphasize-lines: 10-23
 
        ...
        let mut host = TestHost::new(State::new());
@@ -227,49 +230,100 @@ and amount. For simplicity it just traps if the input is not as expected:
                    return Err(CallContractError::Trap),
                }
 
-               Ok((false, n + 1))
+               let state_modified = false; // Mock did not modify the state.
+
+               Ok((state_modified, n + 1))
            }),
        );
        ...
 
-To test contracts that invoke itself, either directly or indirectly (``A`` calls
+To test contracts that invoke itself, either directly or indirectly (e.g., ``A`` calls
 ``B`` which then calls ``A``, or with even more indirections), use the
-state and balance fields.
+state and balance fields:
 
 .. code-block:: rust
-   :emphasize-lines: 10-21
+   :emphasize-lines: 2-7, 11-24
 
        ...
+       let mut ctx = TestReceiveContext::empty();
+       let self_address = ContractAddress {
+           index:    0,
+           subindex: 0,
+       };
+       ctx.set_self_address(self_address);
+
        let mut host = TestHost::new(State::new());
 
+       // Meant to mock calls to the contract itself, where amounts sent
+       // don't leave the contract and each call increments a counter.
        host.setup_mock_entrypoint(
-           ContractAddress {
-               index:    1,
-               subindex: 0,
-           },
-           OwnedEntrypointName::new_unchecked("some_receive_method".to_string()),
-           MockFn::new_v1(|parameter, amount, _balance, _state: &mut State| {
-               let n: u64 = match from_bytes(parameter.0) {
-                    Ok(n) => n,
-                    Err(_) => return Err(CallContractError::Trap),
-               };
+           self_address,
+           OwnedEntrypointName::new_unchecked("self_receive".to_string()),
+           MockFn::new_v1(|_parameter, amount, balance, state: &mut State| {
 
-               if amount.micro_ccd < 100 {
-                   return Err(CallContractError::Trap),
-               }
+               *balance += amount;
+               state.counter += 1;
 
-               Ok((false, n + 1))
+               let state_modified = true; // Mock _did_ modify the state.
+
+               Ok((state_modified, ()))
            }),
        );
        ...
 
-TODO
+.. todo::
+
+   TODO: Explain reentrancy with counter-notify contract.
+
+   TODO: Consider explaining the details about ``host.set_self_balance`` (that
+   it has to be current_balance + incoming amount).
+
+   TODO: Consider moving the testing in wasm section up and using claim/claim_eq
+   in the other examples instead of assert/assert_eq.
+
 
 
 Testing transfers
 =================
 
-TODO
+|TestHost|_ has a three helper methods to useful when testing that the correct
+``invoke_transfer``'s has occurred.
+
+Use ``transfer_occurred`` to check for specific transfers:
+
+.. code-block:: rust
+   :emphasize-lines: 8
+
+   // Contract code + general test setup
+
+   #[test]
+   fn test_transfer() {
+       ...
+       let receiver = AccountAddress([0;32]);
+       let amount = Amount::from_ccd(10);
+       assert!(host.transfer_occurred(&receiver, amount));
+   }
+
+Use ``get_transfers`` to get a sorted list of all transfers that occurred:
+
+.. code-block:: rust
+   :emphasize-lines: 4
+
+        let receiver0 = AccountAddress([0;32]);
+        let receiver1 = AccountAddress([1;32]);
+        let amount = Amount::from_ccd(10);
+        assert_eq!(host.get_transfers(), [(receiver0, amount), (receiver1, amount)]);
+
+Use ``get_transfers_to`` to get a sorted list of all transfers to a specific
+account:
+
+.. code-block:: rust
+   :emphasize-lines: 4
+
+        let receiver0 = AccountAddress([0;32]);
+        let amount0 = Amount::from_ccd(10);
+        let amount1 = Amount::from_ccd(20);
+        assert_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
 
 
 .. _tests_in_wasm:
