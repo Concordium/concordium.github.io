@@ -33,7 +33,7 @@ To simulate the instantiation of a smart contract instance using
 
 .. code-block:: console
 
-   $cargo concordium run init --module contract.wasm \
+   $cargo concordium run init --module contract.wasm.v1 \
                                --contract "my_contract" \
                                --context init-context.json \
                                --amount 123456.789 \
@@ -85,7 +85,7 @@ To simulate an update to a contract smart contract instance using
 
 .. code-block:: console
 
-   $cargo concordium run update --module contract.wasm \
+   $cargo concordium run update --module contract.wasm.v1 \
                                  --contract "my_contract" \
                                  --entrypoint "some_receive" \
                                  --context receive-context.json \

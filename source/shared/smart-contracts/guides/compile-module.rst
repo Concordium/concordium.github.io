@@ -72,7 +72,7 @@ On Linux the paths can be inspected by running:
 
 .. code-block:: console
 
-   strings contract.wasm | grep /home/
+   strings contract.wasm.v1 | grep /home/
 
 .. rubric:: The solution
 
