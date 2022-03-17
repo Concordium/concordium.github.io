@@ -88,7 +88,7 @@ If the contract functions are written using ``#[init(..)]`` or
            let result = contract_init(&ctx, &mut state_builder);
 
            // Assert properties.
-           assert_eq!(result, Ok(State));
+           assert_eq!(result, Ok(State::new()));
        }
 
        #[test]
@@ -117,6 +117,160 @@ test stubs, including the ones shown in the example, e.g., ``TestHost`` and ``Te
 
    For more information and examples see the crate documentation of
    |concordium_std|_.
+
+
+.. _testing_contract_invocations:
+
+Testing contract invocations with mocks
+=======================================
+
+To test receive methods that invoke contracts with
+``host.invoke_contract(...)``, you should set up mocking functions that act as
+the invoked contract. The |test_infrastructure|_ has a number of helpers for
+mocking contracts.
+
+To set up any mock entrypoint, use the |setup_mock_entrypoint|_ method from |TestHost|_.
+It expects a ``ContractAddress`` and an ``OwnedEntrypointName`` to specify which
+entrypoint on which contract you are mocking.
+It also expects a ``MockFn``, which you can create in several different ways.
+
+The simplest way to create a ``MockFn`` is with ``returning_ok``, which creates
+a mock function that returns the same value ``Ok(..)`` value every time:
+
+.. code-block:: rust
+   :emphasize-lines: 14
+
+   // Contract code + general test setup
+
+   #[test]
+   fn mock_test_return_ok() {
+       ...
+       let mut host = TestHost::new(State::new());
+
+       host.setup_mock_entrypoint(
+           ContractAddress {
+               index:    1,
+               subindex: 0,
+           },
+           OwnedEntrypointName::new_unchecked("some_receive_method".to_string()),
+           MockFn::returning_ok(42u8),
+       );
+       ...
+   }
+
+For returning the same error every time, use the ``returning_err``.
+This should also be used to test missing contracts or entrypoints, as invoking
+entrypoints, for which no mock has been set up, results in a runtime error:
+
+.. code-block:: rust
+   :emphasize-lines: 8
+
+       ...
+       host.setup_mock_entrypoint(
+           ContractAddress {
+               index:    1,
+               subindex: 0,
+           },
+           OwnedEntrypointName::new_unchecked("some_receive_method".to_string()),
+           MockFn::returning_err::<()>(CallContractError::MissingContract),
+       );
+       ...
+
+.. note::
+
+    The ``returning_err`` method is generic, because
+    ``CallContractError<ReturnValueType>`` also is generic and can return a value
+    with its logic error:
+
+    .. code-block:: rust
+       :emphasize-lines: 8-9
+
+           ...
+           host.setup_mock_entrypoint(
+               ContractAddress {
+                   index:    1,
+                   subindex: 0,
+               },
+               OwnedEntrypointName::new_unchecked("some_receive_method".to_string()),
+               MockFn::returning_err::<String>(CallContractError::LogicReject{
+               reason: -1, return_value: "Something went wrong!".to_string()}),
+           );
+           ...
+
+For more advanced types of mocks, use ``MockFn::new_v1``, ``MockFn::new_v0``, or
+``MockFn::new``. Each of the which take a closure that has access to the
+parameter and amount used when invoking, but also the balance and state of the
+*invoking* contract. The methods differ in what the closure should return. V0
+contracts do not have a return value, whereas V1 contracts always do.
+Here is a simple example of a mocked entrypoint which only uses the parameter
+and amount. For simplicity it just traps if the input is not as expected:
+
+.. code-block:: rust
+   :emphasize-lines: 10-21
+
+       ...
+       let mut host = TestHost::new(State::new());
+
+       host.setup_mock_entrypoint(
+           ContractAddress {
+               index:    1,
+               subindex: 0,
+           },
+           OwnedEntrypointName::new_unchecked("some_receive_method".to_string()),
+           MockFn::new_v1(|parameter, amount, _balance, _state: &mut State| {
+               let n: u64 = match from_bytes(parameter.0) {
+                    Ok(n) => n,
+                    Err(_) => return Err(CallContractError::Trap),
+               };
+
+               if amount.micro_ccd < 100 {
+                   return Err(CallContractError::Trap),
+               }
+
+               Ok((false, n + 1))
+           }),
+       );
+       ...
+
+To test contracts that invoke itself, either directly or indirectly (``A`` calls
+``B`` which then calls ``A``, or with even more indirections), use the
+state and balance fields.
+
+.. code-block:: rust
+   :emphasize-lines: 10-21
+
+       ...
+       let mut host = TestHost::new(State::new());
+
+       host.setup_mock_entrypoint(
+           ContractAddress {
+               index:    1,
+               subindex: 0,
+           },
+           OwnedEntrypointName::new_unchecked("some_receive_method".to_string()),
+           MockFn::new_v1(|parameter, amount, _balance, _state: &mut State| {
+               let n: u64 = match from_bytes(parameter.0) {
+                    Ok(n) => n,
+                    Err(_) => return Err(CallContractError::Trap),
+               };
+
+               if amount.micro_ccd < 100 {
+                   return Err(CallContractError::Trap),
+               }
+
+               Ok((false, n + 1))
+           }),
+       );
+       ...
+
+TODO
+
+
+Testing transfers
+=================
+
+TODO
+
 
 .. _tests_in_wasm:
 
@@ -186,3 +340,7 @@ for ``concordium-std`` and uses the test runner from ``cargo-concordium``.
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
 .. |concordium_std| replace:: ``concordium_std``
 .. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std
+.. _TestHost: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html
+.. |TestHost| replace:: ``TestHost``
+.. _setup_mock_entrypoint: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.setup_mock_entrypoint
+.. |setup_mock_entrypoint| replace:: ``setup_mock_entrypoint``
