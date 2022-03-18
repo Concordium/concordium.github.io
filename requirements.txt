@@ -34,3 +34,4 @@ stevedore==3.3.0
 tornado==6.1
 urllib3==1.26.5
 sphinx-copybutton==0.5.0
+sphinx-toolbox==2.18.0

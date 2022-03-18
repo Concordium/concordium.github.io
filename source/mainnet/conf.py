@@ -51,7 +51,8 @@ extensions = [
     "multidoc",
     "sphinx_reredirects",
     # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    'sphinx_toolbox.collapse'
 ]
 
 # sphinx-prompt must be the first of these two.
