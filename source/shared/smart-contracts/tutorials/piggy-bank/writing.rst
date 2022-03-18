@@ -496,7 +496,7 @@ use that for invoking the transfer:
 
 .. code-block:: rust
 
-   Ok(hpst.invoke_transfer(&owner, balance)?)
+   Ok(host.invoke_transfer(&owner, balance)?)
 
 A transfer can fail in two ways, either your contract has insufficient funds, or
 the receiver account does not exist. Neither can occur in this contract, so we

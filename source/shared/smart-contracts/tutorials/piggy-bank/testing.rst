@@ -285,7 +285,7 @@ The second test becomes:
    fn test_insert_intact() {
        let ctx = TestReceiveContext::empty();
        let host = TestHost::new(PiggyBankState::Intact);
-       let amount = Amount::from_micro_gtu(100);
+       let amount = Amount::from_micro_ccd(100);
 
        let result = piggy_insert(&ctx, &host, amount);
 
@@ -344,7 +344,7 @@ instance using |set_self_balance|_.
 .. code-block:: rust
 
    let mut host = TestHost::new(PiggyBankState::Intact);
-   let balance = Amount::from_micro_gtu(100);
+   let balance = Amount::from_micro_ccd(100);
    host.set_self_balance(balance);
 
 Now that you have the test context setup, call the contract function
@@ -386,7 +386,7 @@ The complete third test thus becomes:
        let sender = Address::Account(owner);
        ctx.set_sender(sender);
        let mut host = TestHost::new(PiggyBankState::Intact);
-       let balance = Amount::from_micro_gtu(100);
+       let balance = Amount::from_micro_ccd(100);
        host.set_self_balance(balance);
 
        let result = piggy_smash(&ctx, &mut host);
@@ -427,7 +427,7 @@ The test could look like this:
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
        let mut host = TestHost::new(PiggyBankState::Intact);
-       let balance = Amount::from_micro_gtu(100);
+       let balance = Amount::from_micro_ccd(100);
        host.set_self_balance(balance);
 
        let result = piggy_smash(&ctx, &mut host);
@@ -517,7 +517,7 @@ You can now check which error was produced in the test:
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
        let mut host = TestHost::new(PiggyBankState::Intact);
-       let balance = Amount::from_micro_gtu(100);
+       let balance = Amount::from_micro_ccd(100);
        host.set_self_balance(balance);
 
        let result = piggy_smash(&ctx, &mut host);
