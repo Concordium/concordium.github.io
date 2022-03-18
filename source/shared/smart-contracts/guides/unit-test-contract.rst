@@ -271,16 +271,23 @@ state and balance fields:
        );
        ...
 
+.. warning::
+
+   You should watch out for *reentrancy problems*, which can occur when calls to
+   ``invoke_contract`` end up updating the state of your own contract.
+
+   .. code-block:: rust
+
+      let state_copy = *host.state();
+      host.invoke_contract(...);
+
+      // *host.state() and state_copy might not be equal any more due to reentrancy.
+      do_something_with(state_copy);
+
 .. todo::
-
-   TODO: Explain reentrancy with counter-notify contract.
-
-   TODO: Consider explaining the details about ``host.set_self_balance`` (that
-   it has to be current_balance + incoming amount).
 
    TODO: Consider moving the testing in wasm section up and using claim/claim_eq
    in the other examples instead of assert/assert_eq.
-
 
 
 Testing transfers
