@@ -89,7 +89,8 @@ smashed, it should not be possible to add CCD to it.
 The piggy-bank smart contract is going to contain a function for setting up a
 new piggy bank and two functions for updating a piggy bank; one is for everyone
 to use for inserting CCD, the other is for the owner to smash the piggy bank and
-prevent further interaction.
+prevent further interaction. It will also contain a method for everyone to view
+the current state and balance of the piggy bank.
 
 Specifying the state
 ====================
@@ -132,12 +133,13 @@ and standard types in Rust_, and a `procedural macro for deriving`_
        Smashed,
    }
 
-Later in this tutorial, you will also need to check the state for equality, so you also
-derive the trait implementation for ``PartialEq`` and ``Eq``:
+Later in this tutorial, you will also need to check the state for equality and
+return a copy of the state, so you also derive the trait implementation for
+``PartialEq``, ``Eq``, ``Clone``, and ``Copy``:
 
 .. code-block:: rust
 
-   #[derive(Serialize, PartialEq, Eq, Debug)]
+   #[derive(Serialize, PartialEq, Eq, Debug, Clone, Copy)]
    enum PiggyBankState {
        Intact,
        Smashed,
@@ -388,7 +390,7 @@ do not have to do that yourself, and the ``amount`` is not used by your contract
 Smashing a piggy bank
 ---------------------
 
-Now that you can insert CCD into a piggy bank, you only need to define how to
+Now that you can insert CCD into a piggy bank, you also need to define how to
 smash one.
 Remember, you only want the owner of the piggy bank (smart contract
 instance) to be able to smash it and only if it isn't already smashed.
@@ -448,7 +450,7 @@ At this point you know the piggy bank is still intact and the sender is the
 owner, meaning you now get to the smashing part.
 But there is one problem.
 The state is immutable, so we first need to make the receive function mutable by
-adding the |mutable|_ attribute to the |receive| macro.
+adding the |mutable|_ attribute to the |receive|_ macro.
 
 .. code-block:: rust
    :emphasize-lines: 1, 4
@@ -527,6 +529,38 @@ The final definition of the "smash" receive function is then:
    worry about the usual problems when dealing with mutable state. Problems
    such as race conditions, but the semantics of smart contracts require the
    execution to be atomic in order to reach consensus.
+
+Viewing the state
+-----------------
+
+Now that you can smash and insert CCD into a piggy bank, you can add a way to
+check the current state and balance of the piggy bank.
+This is what the return values of receive methods are for:
+
+.. code-block:: rust
+   :emphasize-lines: 5, 8
+
+   #[receive(contract = "PiggyBank", name = "view")]
+   fn piggy_view<S: HasStateApi>(
+       _ctx: &impl HasReceiveContext,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<(PiggyBankState, Amount)> {
+       let current_state = *host.state();
+       let current_balance = host.self_balance();
+       Ok((current_state, current_balance))
+   }
+
+The ``piggy_view`` method gets a copy of the state and the balance and returns
+it as a tuple of type ``(PiggyBankState, Amount)``, which is also specified in
+the return type.
+
+A more complex smart contract might have multiple view functions that return
+different parts of the state or return a value computed from the state.
+
+.. note::
+
+   To view return values of a contract instance on the chain, see the guide :ref:`invoke-instance`.
+
 
 You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:
 

@@ -38,6 +38,7 @@
    guides/initialize-contract
    guides/interact-instance
    guides/inspect-instance
+   guides/invoke-instance
 
 .. toctree::
    :maxdepth: 1

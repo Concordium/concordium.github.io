@@ -402,6 +402,10 @@ The complete third test thus becomes:
 
 Ensure everything compiles and the test succeeds using ``cargo test``.
 
+Next, you could add a test to check that the ``piggy_view`` method returns the
+correct state and balance. Again, you have been through everything needed to do
+this, and can do this exercise on your own.
+
 Testing cause of rejection
 ==========================
 

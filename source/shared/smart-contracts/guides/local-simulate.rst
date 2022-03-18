@@ -54,10 +54,6 @@ uses.
 unspecified context field.
 An example of a fully specified init context could be:
 
-.. todo::
-
-   TODO: senderPolicies is not optional at the moment.
-
 .. code-block:: json
 
    {
