@@ -102,13 +102,13 @@ To watch the doc files and automate the build run:
 ```
 make dev-mainnet
 ```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 **Testnet**
 ```
 make dev-testnet
 ```
-and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
+and navigate to [localhost:8000/testnet](http://localhost:8000/net).
 
 
 Before committing, make sure to run the linter and fix all the errors reported:
@@ -124,13 +124,13 @@ make lint
 ```
 make.bat dev-mainnet
 ```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 **Testnet**
 ```
 make.bat dev-testnet
 ```
-and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
+and navigate to [localhost:8000/testnet](http://localhost:8000/net).
 
 
 Before committing, make sure to try to build and fix any warnings that are reported.
