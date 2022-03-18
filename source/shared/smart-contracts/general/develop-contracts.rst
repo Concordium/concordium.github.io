@@ -145,7 +145,7 @@ Serializable state and parameters
 
 On-chain, the state of an instance is represented as a `prefix tree
 <https://en.wikipedia.org/wiki/Trie>`_, where nodes in the tree can have data in the
-form of a byte array. 
+form of a byte array.
 The instance uses functions provided by the host environment to create, delete,
 and find nodes in the tree.
 The host also provides functions for reading, writing and resizing the bytearray
