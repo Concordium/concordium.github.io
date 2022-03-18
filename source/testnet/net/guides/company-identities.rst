@@ -23,7 +23,18 @@ You can't use the Desktop Wallet or the Mobile Wallet to create a company identi
 Create a company identity
 =========================
 
-#. Download the `tools <https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip>`_.
+#. Download the tools for your platform.
+
+   - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities.tar.gz>`_
+      - SHA256 checksum of the download: ``b9981c542f46e92dd05e8b3e9bf46684e9de364bd331cd6fa8db98ed99b4df84``
+
+   - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities.zip>`_
+      - SHA256 checksum of the download: ``4a13eec29b6c7fc8214555c6b13e431c20df449bfd11e1a2f26b6a6e91a03957``
+
+   - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities.zip>`_
+      - SHA256 checksum of the download: ``242a0ff19f84c91ec0c1a3c7696718eee61f144a73a3700d8969f3531384ad6e``
+
+#. Download the testnet-specific `configuration files <https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip>`_.
 
 #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
