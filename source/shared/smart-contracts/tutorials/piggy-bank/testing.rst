@@ -532,10 +532,9 @@ You can now check which error was produced in the test:
 It is up to the reader to test whether smashing a piggy bank that has
 already been smashed results in the correct error.
 
-.. todo::
+.. seealso::
 
-   TODO: Link to documentation about more advanced testing including
-   make_account_missing and MockFn.
+   For more information on unit testing, see :ref:`unit-test-contract`.
 
 Compiling and running tests in Wasm
 ===================================

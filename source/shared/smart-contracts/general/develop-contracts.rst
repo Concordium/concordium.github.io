@@ -139,6 +139,7 @@ There are a number of things to notice:
                 traits ``Serial`` and ``Deserial``. The ``State*`` types are
                 types that utilize the tree structure of the state for efficiency.
 
+.. _serialize-state-and-parameters:
 
 Serializable state and parameters
 ---------------------------------

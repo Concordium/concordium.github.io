@@ -82,10 +82,6 @@ piggy bank. Everyone should be able to put money in the form of CCD into it, but
 can smash it and retrieve the CCD inside. Once the piggy bank has been
 smashed, it should not be possible to add CCD to it.
 
-.. todo::
-
-   Add image of piggy bank.
-
 The piggy-bank smart contract is going to contain a function for setting up a
 new piggy bank and two functions for updating a piggy bank; one is for everyone
 to use for inserting CCD, the other is for the owner to smash the piggy bank and
@@ -114,12 +110,8 @@ being intact and one for it being smashed:
 Since the state of your smart contract is going to be stored on the blockchain,
 you need to specify how the contract state should be serialized.
 When using the |concordium-std|_ library, this all boils down to your type
-for the contract state having to implement the |Serialize|_ trait exposed by
+for the contract state having to implement the |Serialize|_ [#s]_ trait exposed by
 |concordium-std|_.
-
-.. todo::
-
-   Consider mentioning the caveat with DeserialWithState.
 
 Luckily the library already contains implementations for most of the primitives
 and standard types in Rust_, and a `procedural macro for deriving`_
@@ -145,6 +137,9 @@ return a copy of the state, so you also derive the trait implementation for
        Smashed,
    }
 
+.. [#s] In certain cases, the ``Serial`` and ``DeserialWithState``
+        traits are needed instead of ``Serialize``. See
+        :ref:`serialize-state-and-parameters` for more information.
 
 Set up a piggy bank
 ===================
@@ -276,13 +271,8 @@ each have to be unique within a smart contract module.
 
 The return type of the function is ``ReceiveResult<MyReturnValue>``, which is an alias for
 ``Result<MyReturnValue, Reject>``.
-In this contract you will use ``()`` as the return value.
-`This guide <return-values>`_ explains how and when to use other types for
-return values.
-
-.. todo::
-
-   Explain return values in a guide and update the link above.
+You will learn more about return values when implementing a view function for
+the piggy bank.
 
 Inserting CCD
 -------------
