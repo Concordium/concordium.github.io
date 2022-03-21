@@ -38,16 +38,16 @@ flags are supported by all ``concordium-client`` commands.
    You can see the fee in the transaction log.
 
 .. Note::
-   It is presumed that the reader has some basic knowledge about executing commands from a Terminal window or similar.
+   It is presumed that the reader has some basic knowledge about executing commands from a command line using Terminal, Power Shell, or similar tools.
    
 Run Concordium Client
 =====================
 
-If the ``concordium client`` is run outside of a terminal, then it creates a terminal window. But the window is closed as soon as the client exits. To run the concordium client at the terminal, you have to specify its full path (unless you are in the same directory) and the file name, including the version number.
+Run Concordium Client from the command line. On MacOS or Linux, the command line can be access with the Terminal application. On Windows, the Power Shell or Command Prompt application can be used. If you run it outside of the command line (e.g., by double clicking in Windows Explorer) then the concordium client will exit immediately without doing anything useful.
 
-For example, assuming that you saved the ``concordium-client_3.0.4-0.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_3.0.4-0.exe``. So you enter the full path at the prompt in the terminal.
+To run the Concordium Client, you have to specify its full path (unless you are in the same directory) and the file name, including the version number. For example, assuming that you saved the ``concordium-client_3.0.4-0.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_3.0.4-0.exe``. So you enter the full path at the prompt in the terminal.
 
-When running commands for the concordium client in the terminal, replace concordium-client with ``C:\Users\User\Downloads\concordium-client_<version>.exe`` as in the following example:
+When running commands for the Concordium Client in the terminal, replace concordium-client with ``C:\Users\User\Downloads\concordium-client_<version>.exe`` as in the following example:
 
 .. code-block:: console
 
