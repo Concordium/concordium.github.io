@@ -39,7 +39,7 @@ flags are supported by all ``concordium-client`` commands.
 
 .. Note::
    It is presumed that the reader has some basic knowledge about executing commands from a command line using Terminal, Power Shell, or similar tools.
-   
+
 Run Concordium Client
 =====================
 
