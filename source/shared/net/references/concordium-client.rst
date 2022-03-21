@@ -58,7 +58,7 @@ When running commands for the Concordium Client in the terminal, replace concord
    To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.concordiuwallet is saved. If not, you have to specify the full path to the file, for example:
 
    .. code-block:: console
-   
+
       C:\Users\User\Downloads\concordium-client_3.0.4-0.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name bakerAccount
 
 Commands and help
