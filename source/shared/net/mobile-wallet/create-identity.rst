@@ -8,7 +8,9 @@ Create an identity and an initial account in the Mobile Wallet
    :local:
    :backlinks: none
 
-You can submit requests for additional identities and initial accounts in the Mobile Wallet. You do this from the **Identities** page.
+You can submit requests for additional :ref:`identities<glossary-identity>` and :ref:`initial accounts<glossary-initial-account>` in the Mobile Wallet. You do this from the **Identities** page.
+
+To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. Warning::
    Currently you can’t import accounts and identities created in the Concordium Desktop Wallet in the Mobile Wallet, and vice versa.
@@ -16,7 +18,9 @@ You can submit requests for additional identities and initial accounts in the Mo
 Create a new identity and initial account
 =========================================
 
-#. Go to the **Identities** page.
+#. Go to the |morepage| page.
+
+#. Tap **Your identity cards** page.
 
 #. Tap the **+** in the upper right corner.
 
@@ -24,22 +28,20 @@ Create a new identity and initial account
 
 #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
 
+   .. image:: ../images/mobile-wallet/MW10.png
+      :width: 25%
+
 #. Select a third-party identity provider from the list. An external web page opens within the app.
+
+   .. image:: ../images/mobile-wallet/MW11.png
+      :width: 25%
 
 #. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
 #. When you have submitted the information to the identity provider, you will have a pending initial account and identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
 
-|
-
-.. image:: ../images/mobile-wallet/MW10.png
+   .. image:: ../images/mobile-wallet/MW12.png
       :width: 25%
-.. image:: ../images/mobile-wallet/MW11.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW12.png
-      :width: 25%
-
-|
 
 .. Warning::
    **When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
@@ -47,4 +49,7 @@ Create a new identity and initial account
    For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import-mw>`.
 
 .. Note::
-   To access the **Balance** or **Shielded balance** of the new account, tap the Balance or Shielded balance areas on the account card.
+   To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
+
+.. |morepage| image:: ../images/more-ellipsis.png
+             :alt: Three dots button

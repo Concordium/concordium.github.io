@@ -17,34 +17,41 @@ for how to make a shielded CCD transfer, you can find the guide :ref:`here <make
 Make a CCD transfer from an account
 ===================================
 
-#. Go to the Accounts page.
+#. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap **SEND**.
 
-#. Tap the Account you want to transfer CCD from, and press the **Balance** area of the account card.
+   .. image:: ../images/mobile-wallet/MW13.png
+      :width: 25%
 
-#. Tap **SEND**.
+   .. image:: ../images/mobile-wallet/MW22.png
+      :width: 25%
 
 #. Enter the amount you want to transfer.
 
-#. Tap **Select recipient** to select the recipient of the transfer.
+   .. image:: ../images/mobile-wallet/MW23.png
+      :width: 25%
 
-   - You can either choose a recipient that already exists in your Address Book, or add a new one by selecting the **QR** or **+** symbols in the upper right corner.
+#. In **Paste recipient address** you can paste the recipient address.
 
-#. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
+   - You can also choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
 
-#. Finally, tap **Send amount**.
+#. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
 
-#. Confirm your choices, and tap **Yes, send funds**.
+#. Tap **Send amount**.
+
+   .. image:: ../images/mobile-wallet/MW26.png
+      :width: 25%
+
+#. Confirm your choices, and tap **Send funds**.
+
+   .. image:: ../images/mobile-wallet/MW27.png
+      :width: 25%
+
+#. Tap **Finish**.
+
+   .. image:: ../images/mobile-wallet/MW28.png
+      :width: 25%
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
-
-|
-
-.. image:: ../images/mobile-wallet/MW66.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW67.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW68.png
-      :width: 25%
 
 .. Note::
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
