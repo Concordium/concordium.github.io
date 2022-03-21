@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Move CCD between the two balances" href="shield-unshield-mw.html" />
+    <link rel="next" title="Shield and unshield CCD" href="shield-unshield-mw.html" />
     <link rel="prev" title="Make a transfer in the mobile wallet" href="make-simple-transfer-mw.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -123,7 +123,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="transfers-mw.html">Transfers</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="make-simple-transfer-mw.html">Make a transfer in the mobile wallet</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Make a shielded transfer in the Mobile Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shield-unshield-mw.html">Move CCD between the two balances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield-unshield-mw.html">Shield and unshield CCD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transfers-mw.html#support-feedback">Support &amp; Feedback</a></li>
 </ul>
@@ -253,27 +253,37 @@ for a guide on  how to make a regular CCD transfer, you can find the guide <a cl
 </div>
 <div class="section" id="make-a-shielded-ccd-transfer-from-an-account">
 <h2>Make a shielded CCD transfer from an account<a class="headerlink" href="#make-a-shielded-ccd-transfer-from-an-account" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Go to the Accounts page.</p></li>
-<li><p>Tap the Account you want to transfer CCD from, and then tap the <strong>Shielded balance</strong> area of the account card.</p></li>
-<li><p>Tap <strong>SEND</strong>.</p></li>
-<li><p>Enter the amount you want to transfer.</p></li>
-<li><p>Tap <strong>Select recipient</strong> to select the recipient of the transfer.</p>
+<li><p>Tap the Account you want to transfer CCD from or tap <img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" /> for the account.</p>
 <ul class="simple">
-<li><p>You can either choose a recipient that already exists in your Address Book, or add a new one by selecting the <strong>QR</strong> or <strong>+</strong> symbols in the upper right corner.</p></li>
+<li><p>If the shielded balance is hidden for the account, go to the <img alt="Three horizontal lines" src="../../_images/hamburger.png" /> menu in the upper right corner and tap <strong>Show shielded balance for _your account name_</strong>.</p></li>
 </ul>
 </li>
+<li><p>Tap the <strong>Shielded balance</strong> tab of the totals area.</p></li>
+<li><p>Tap <strong>SEND</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/MW37.png"><img alt="../../_images/MW37.png" src="../../_images/MW37.png" style="width: 25%;" /></a>
+</li>
+<li><p>Enter the amount you want to transfer.</p></li>
+<li><p>In <strong>Paste recipient address</strong>, enter the recipient address for the recipient of the transfer.</p>
+<ul class="simple">
+<li><p>You can also choose a recipient that already exists in your <strong>Address Book</strong>, or add a new one by tapping  <strong>Scan QR</strong>.</p></li>
+</ul>
+</li>
+<li><p>Tap <strong>Send Amount</strong>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/MW42.png"><img alt="../../_images/MW42.png" src="../../_images/MW42.png" style="width: 25%;" /></a>
+</div></blockquote>
+</li>
 <li><p><em>Optional</em>: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.</p></li>
-<li><p>Finally, tap <strong>Send amount</strong>.</p></li>
-<li><p>Confirm your choices, and tap <strong>Yes, send funds</strong>.</p></li>
+<li><p>Finally, tap <strong>Send shielded amount</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/MW43.png"><img alt="../../_images/MW43.png" src="../../_images/MW43.png" style="width: 25%;" /></a>
+</li>
+<li><p>The transaction is subbmitted; tap <strong>Ok, thanks</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/MW44.png"><img alt="../../_images/MW44.png" src="../../_images/MW44.png" style="width: 25%;" /></a>
+</li>
 </ol>
 <p>Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference internal image-reference" href="../../_images/MW69.png"><img alt="../../_images/MW69.png" src="../../_images/MW69.png" style="width: 25%;" /></a>
-<a class="reference internal image-reference" href="../../_images/MW70.png"><img alt="../../_images/MW70.png" src="../../_images/MW70.png" style="width: 25%;" /></a>
-<a class="reference internal image-reference" href="../../_images/MW71.png"><img alt="../../_images/MW71.png" src="../../_images/MW71.png" style="width: 25%;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All transfers and transactions cost a fee, including shielding and unshielding transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
