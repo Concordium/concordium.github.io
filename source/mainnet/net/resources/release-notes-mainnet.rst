@@ -16,7 +16,7 @@ Mainnet 3: Alpha Centauri 3.0
 March 22, 2022
 
 Concordium Mobile Wallet for Android v2.0.0(75)
--------------------------------------------
+-----------------------------------------------
 
 Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.
 
