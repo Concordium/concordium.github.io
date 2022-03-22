@@ -13,6 +13,27 @@ Release notes
 Mainnet 3: Alpha Centauri 3.0
 ==============================
 
+March 22, 2022
+
+Concordium Mobile Wallet for Android v2.0.0(75)
+-----------------------------------------------
+
+Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.
+
+The simplified UI involves:
+
+- Redesigned account cards with Send, Receive and More options.
+
+- Updated simple and shielded transaction flows:
+
+   - It is now possible to paste recipient addresses directly, without having to add them to the address book first.
+
+   - A “Send all” button has been added.
+
+- The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.
+
+- The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.
+
 March 21, 2022
 
 Concordium Mobile Wallet for iOS v2.0.0(38)
