@@ -36,7 +36,7 @@ Select an identity and an account
 
 #. Select **Add Credential to proposal**, and then select **Continue**.
 
-#. Set an **expiry date and time** for your proposal. You must submit proposals to the chain within the last 2 hours up to the expiry date. This means you must set the expiry time so that it’s possible for any co-signers to return their signatures in time.
+#. Set an **expiry date and time** for your proposal. You must set the expiry time so that it’s possible for any co-signers to return their signatures in time.
 
 .. _guide-change-signature:
 

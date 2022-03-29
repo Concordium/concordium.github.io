@@ -44,7 +44,7 @@ Select an account (Multi-signature account)
 
 #. Select the **Account** whose baker keys you want to update, and then select **Continue**. Only baker accounts are listed.
 
-#. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Generate keys**.
+#. Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select **Generate keys**.
 
    The baker keys are generated and you can view the transaction details in the left pane. You can see the identity, the account, and the expiry time of the transaction. You can also see the public baker keys.
 

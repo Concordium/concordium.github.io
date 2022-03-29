@@ -73,10 +73,7 @@ Make a transfer proposal
 
 #.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**. You can now set up a release schedule.
 
-#. Set the **Transaction expiry** time. Select **Continue**.
-
-.. Note::
-   You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It's important that you leave enough time for the co-signers to return their signatures in time.
+#. Set the **Transaction expiry** time, leaving enough time for the co-signers to return their signatures in time. Select **Continue**.
 
 Add a release schedule
 ======================
@@ -101,9 +98,7 @@ Option 1: Create a regular interval schedule
 
 #.  When the schedule is complete, select **Continue**.
 
-#. Set the **Transaction expiry time** and then select **Continue**. You can see the release schedule under **Transaction Details**, and you can :ref:`generate the transaction <multisig-schedule-generate>`.
-
-You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It’s important that you leave enough time for the co-signers to return their signatures in time.
+#. Set the **Transaction expiry time**, leaving enough time for the co-signers to return their signatures in time, and then select **Continue**. You can see the release schedule under **Transaction Details**, and you can :ref:`generate the transaction <multisig-schedule-generate>`.
 
 .. _multisig-schedule-explicit:
 
@@ -124,7 +119,7 @@ Option 2: Create an explicit schedule
 
 #. When the schedule is complete, select **Continue**.
 
-#. Set the **Transaction expiry time** and then select **Continue**. You can see the release schedule under **Transaction Details**, and you can :ref:`generate the transaction <multisig-schedule-generate>`.
+#. Set the **Transaction expiry time**, leaving enough time for the co-signers to return their signatures in time, and then select **Continue**. You can see the release schedule under **Transaction Details**, and you can :ref:`generate the transaction <multisig-schedule-generate>`.
 
 .. _multisig-schedule-generate:
 
