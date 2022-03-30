@@ -55,3 +55,25 @@ Return custom errors, as you would with any other error type:
        _ctx: &impl HasReceiveContext<()>,
        _state: &mut State,
    ) -> Result<A, MyError> { Err(MyError::ErrTwo) }
+
+Standard error codes
+====================
+
+The following standard error codes exist:
+
+=========================================== ===========================
+Variant                                     Error code
+=========================================== ===========================
+()	                                         i32::MIN + 1 (-2147483647)
+ParseError	                                i32::MIN + 2 (-2147483646)
+LogError::Full	                             i32::MIN + 3 (-2147483645)
+LogError::Malformed	                       i32::MIN + 4 (-2147483644)
+NewContractNameError:://! MissingInitPrefix i32::MIN + 5 (-2147483643)
+NewContractNameError::TooLong	              i32::MIN + 6 (-2147483642)
+NewContractNameError::ContainsDot	        i32::MIN + 9 (-2147483639)
+NewContractNameError::InvalidCharacters     i32::MIN + 10 (-2147483638)
+NewReceiveNameError::MissingDotSeparator	  i32::MIN + 7 (-2147483641)
+NewReceiveNameError::TooLong	              i32::MIN + 8 (-2147483640)
+NewReceiveNameError::InvalidCharacters	     i32::MIN + 11 (-2147483637)
+NotPayableError                             i32::MIN + 12 (-2147483636)
+=========================================== ===========================
