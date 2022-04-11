@@ -4,6 +4,10 @@
 Unit test a contract in Rust
 ============================
 
+.. contents::
+   :local:
+   :backlinks: none
+
 This guide will show you how to write unit tests for a smart contract written in
 Rust.
 For testing a smart contract Wasm module, see :ref:`local-simulate`.
@@ -38,11 +42,75 @@ This kind of testing can be useful in initial development and for testing
 functional correctness.
 For comprehensive testing, it is important to involve the target platform, i.e.,
 `Wasm32`.
-There are a number of subtle differences between platforms, which can change the
-behaviour of a contract.
-One difference is regarding the size of pointers, where `Wasm32` uses four bytes
-as opposed to eight, which is common for most platforms.
-To learn how to test in `Wasm32`, see :ref:`tests_in_wasm`.
+
+.. _tests_in_wasm:
+
+Running tests in Wasm
+=====================
+
+Compiling the tests to native machine code is sufficient for most cases, but it
+is also possible to compile the tests to Wasm and run them using the exact
+interpreter that is used by the nodes.
+This makes the test environment closer to the run environment on-chain and could
+in some cases catch more bugs.
+One notable difference between different environments is regarding the size of
+pointers, where `Wasm32` uses four bytes as opposed to eight, which is common
+for most platforms.
+
+The development tool ``cargo-concordium`` includes a test runner for Wasm, which
+uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
+
+.. seealso::
+
+   For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
+
+The unit test have to be annotated with ``#[concordium_test]`` instead of
+``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
+
+.. code-block:: rust
+
+   // contract code
+   ...
+
+   #[concordium_cfg_test]
+   mod test {
+
+       #[concordium_test]
+       fn some_test() { ... }
+
+       #[concordium_test]
+       fn another_test() { ... }
+   }
+
+The ``#[concordium_test]`` macro sets up our tests to be run in Wasm, when
+``concordium-std`` is compiled with the ``wasm-test`` feature, and otherwise
+falls back to behave just like ``#[test]``, meaning it is still possible to run
+unit tests targeting native code using ``cargo test``.
+
+Similarly the macro ``#[concordium_cfg_test]`` includes our module when build
+``concordium-std`` with ``wasm-test`` otherwise behaves like ``#[test]``,
+allowing us to control when to include tests in the build.
+
+Tests can now be build and run using:
+
+.. code-block:: console
+
+   $cargo concordium test
+
+This command compiles the tests for Wasm with the ``wasm-test`` feature enabled
+for ``concordium-std`` and uses the test runner from ``cargo-concordium``.
+
+.. warning::
+
+   Error messages from ``panic!``, and therefore also the different variations
+   of ``assert!``, are *not* shown when compiling to Wasm.
+
+   Instead use ``fail!`` and the ``claim!`` variants to do assertions when
+   testing, as these reports back the error messages to the test runner *before*
+   failing the test.
+   Both are part of ``concordium-std``.
+
+   The remainder of this guide will use the ``claim!`` variants for assertions.
 
 Writing unit tests
 ==================
@@ -88,7 +156,7 @@ If the contract functions are written using ``#[init(..)]`` or
            let result = contract_init(&ctx, &mut state_builder);
 
            // Assert properties.
-           assert_eq!(result, Ok(State::new()));
+           claim_eq!(result, Ok(State::new()));
        }
 
        #[test]
@@ -98,14 +166,14 @@ If the contract functions are written using ``#[init(..)]`` or
            // Set the fields that your receive method accesses.
            ctx.set_self_address(ContractAddress{ index: 0, subindex: 0 });
            // Create a test host with state.
-           let host = TestHost::new(State::new());
+           let host = TestHost::new(State::new(), TestStateBuilder::new());
 
            // Call the receive method.
            let result = contract_receive(&ctx, &host);
 
            // Make assertions.
-           assert_eq!(result, Ok(MyReturnValue::new()));
-           assert_eq!(host.get_transfers(), []); // No transfers occured.
+           claim_eq!(result, Ok(MyReturnValue::new()));
+           claim_eq!(host.get_transfers(), []); // No transfers occured.
        }
    }
 
@@ -145,7 +213,7 @@ a mock function that returns the same ``Ok(..)`` value every time:
    #[test]
    fn mock_test_return_ok() {
        ...
-       let mut host = TestHost::new(State::new());
+       let mut host = TestHost::new(State::new(), TestStateBuilder::new());
 
        host.setup_mock_entrypoint(
            ContractAddress {
@@ -212,7 +280,7 @@ and amount. For simplicity, it just traps if the input is not as expected:
    :emphasize-lines: 10-23
 
        ...
-       let mut host = TestHost::new(State::new());
+       let mut host = TestHost::new(State::new(), TestStateBuilder::new());
 
        host.setup_mock_entrypoint(
            ContractAddress {
@@ -252,7 +320,7 @@ state and balance fields:
        };
        ctx.set_self_address(self_address);
 
-       let mut host = TestHost::new(State::new());
+       let mut host = TestHost::new(State::new(), TestStateBuilder::new());
 
        // Meant to mock calls to the contract itself, where amounts sent
        // don't leave the contract and each call increments a counter.
@@ -284,12 +352,6 @@ state and balance fields:
       // *host.state() and state_copy might not be equal any more due to reentrancy.
       do_something_with(state_copy);
 
-.. todo::
-
-   TODO: Consider moving the testing in wasm section up and using claim/claim_eq
-   in the other examples instead of assert/assert_eq.
-
-
 Testing transfers
 =================
 
@@ -308,7 +370,7 @@ Use ``transfer_occurred`` to check for specific transfers:
        ...
        let receiver = AccountAddress([0;32]);
        let amount = Amount::from_ccd(10);
-       assert!(host.transfer_occurred(&receiver, amount));
+       claim!(host.transfer_occurred(&receiver, amount));
    }
 
 Use ``get_transfers`` to get a sorted list of all transfers that occurred:
@@ -319,7 +381,7 @@ Use ``get_transfers`` to get a sorted list of all transfers that occurred:
         let receiver0 = AccountAddress([0;32]);
         let receiver1 = AccountAddress([1;32]);
         let amount = Amount::from_ccd(10);
-        assert_eq!(host.get_transfers(), [(receiver0, amount), (receiver1, amount)]);
+        claim_eq!(host.get_transfers(), [(receiver0, amount), (receiver1, amount)]);
 
 Use ``get_transfers_to`` to get a sorted list of all transfers to a specific
 account:
@@ -330,72 +392,8 @@ account:
         let receiver0 = AccountAddress([0;32]);
         let amount0 = Amount::from_ccd(10);
         let amount1 = Amount::from_ccd(20);
-        assert_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
+        claim_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
 
-
-.. _tests_in_wasm:
-
-Running tests in Wasm
-=====================
-
-Compiling the tests to native machine code is sufficient for most cases, but it
-is also possible to compile the tests to Wasm and run them using the exact
-interpreter that is used by the nodes.
-This makes the test environment closer to the run environment on-chain and could
-in some cases catch more bugs.
-
-The development tool ``cargo-concordium`` includes a test runner for Wasm, which
-uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
-
-.. seealso::
-
-   For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
-
-The unit test have to be annotated with ``#[concordium_test]`` instead of
-``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
-
-.. code-block:: rust
-
-   // contract code
-   ...
-
-   #[concordium_cfg_test]
-   mod test {
-
-       #[concordium_test]
-       fn some_test() { ... }
-
-       #[concordium_test]
-       fn another_test() { ... }
-   }
-
-The ``#[concordium_test]`` macro sets up our tests to be run in Wasm, when
-``concordium-std`` is compiled with the ``wasm-test`` feature, and otherwise
-falls back to behave just like ``#[test]``, meaning it is still possible to run
-unit tests targeting native code using ``cargo test``.
-
-Similarly the macro ``#[concordium_cfg_test]`` includes our module when build
-``concordium-std`` with ``wasm-test`` otherwise behaves like ``#[test]``,
-allowing us to control when to include tests in the build.
-
-Tests can now be build and run using:
-
-.. code-block:: console
-
-   $cargo concordium test
-
-This command compiles the tests for Wasm with the ``wasm-test`` feature enabled
-for ``concordium-std`` and uses the test runner from ``cargo-concordium``.
-
-.. warning::
-
-   Error messages from ``panic!``, and therefore also the different variations
-   of ``assert!``, are *not* shown when compiling to Wasm.
-
-   Instead use ``fail!`` and the ``claim!`` variants to do assertions when
-   testing, as these reports back the error messages to the test runner *before*
-   failing the test.
-   Both are part of ``concordium-std``.
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure

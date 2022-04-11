@@ -54,6 +54,11 @@ The crate documentation is on docs.rs_.
       [dependencies]
       concordium-std = { path = "./path/to/concordium-std" }
 
+.. seealso::
+
+   It is possible to build smart contracts without the use for Rust's ``std``.
+   For more information, see :ref:`no-std`.
+
 .. _Rust: https://www.rust-lang.org/
 .. _Cargo: https://doc.rust-lang.org/cargo/
 .. _rustup: https://rustup.rs/

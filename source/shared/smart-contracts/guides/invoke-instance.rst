@@ -4,11 +4,13 @@
 Invoke a smart contract instance
 ================================
 
-This guide will show you, how to invoke with a smart contract instance, which
+This guide will show you, how to invoke a smart contract instance, which
 means triggering a receive function and viewing its return value. Invoking an
 instance is *not a transaction* and it *does not change the state of a contract*.
-Invoking can useful to either view information about the instance or to test
+Invoking can be useful to either view information about the instance or to test
 a receive method before running an update.
+The view functions are regular receive functions, which return information about
+the contract. Ideally with schemas on the return values.
 
 Preparation
 ===========
@@ -44,13 +46,16 @@ As you can see, the subindex defaults to ``0``:
 
 .. note::
 
-   By default the invocation is sent by a fictional account with address ``0``.
-   This account has sufficient funds to "pay" for the invocation, but no funds will
-   be withdrawn when invoking, no matter the sender used, as it is not a transaction.
-   However, when specifying a custom sender account or contract, these must have
-   sufficient funds to "pay" for the invocation. This design allows you to try
-   invoking an entrypoint with your own account or contract for free to ensure that the
-   result is as expected before pay for the transaction on chain.
+   By default the invocation is sent by a fictional account with address ``00000000000000000000000000000000``.
+   This account has an unbounded funds.
+   However, when specifying a custom sender account or contract, both of which must
+   exist on the chain, these must have
+   sufficient funds to cover the transfer that will be made to the contract.
+   Please note, that no funds will be withdrawn on the account or contract, as
+   it is not a transaction.
+   This design allows you to try invoking an entrypoint with your own account or
+   contract for free to ensure that the result is as expected before pay for the
+   transaction on chain.
 
 Use the ``invoker-account`` parameter to invoke an entrypoint with a specific
 sender account:

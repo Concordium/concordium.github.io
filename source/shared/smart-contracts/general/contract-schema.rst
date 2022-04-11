@@ -45,7 +45,7 @@ contract as part of the contract functions, but outside of these functions it
 can be difficult to make sense of the bytes. This is especially the case when
 inspecting a complex return value from or passing a complex parameters to a
 smart contract function.
-In the latter case, the bytes should either be serialized from structured data
+In the latter case, the byte array should either be serialized from structured data
 or written manually.
 
 The solution for avoiding manual parsing of bytes is to capture this information

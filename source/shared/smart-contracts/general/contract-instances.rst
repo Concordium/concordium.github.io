@@ -130,8 +130,6 @@ To summarize, a transaction for smart-contract interaction includes:
 - Parameter to the receive function.
 - Amount of CCD for the instance.
 
-.. _contract-instance-actions:
-
 Logging events
 ==============
 
@@ -152,19 +150,22 @@ Logging an event has an associated cost, similar to the cost of writing to the
 contract's state. In most cases it would only make sense to log a few bytes to
 reduce cost.
 
-Invoking actions
-================
+.. _contract-instance-operations:
 
-A receive function can use the host environment to invoke two types of actions during its execution.
-The possible actions that a contract can perform are:
+Invoking operations
+===================
 
-- **invoke_transfer**: transfer CCD from the instance to the specified account.
+A receive function can use the host environment to invoke two types of
+operations during its execution.
+The possible operations that a contract can perform are:
+
+- **invoke_transfer**: transfer CCD from the instance to the specified *account*.
 - **invoke_contract**: invoke receive function of the specified smart contract instance,
   and optionally transfer some CCD from the sending instance to the receiving
   instance.
 
-If an action fails, it returns an error, which the instance can choose to
-handle, and the state and balance of the instance remains unchanged.
+If an operations fails, it returns an error, which the instance can choose to
+handle, and the state and balance of the instance remain unchanged.
 The account which sent the initiating transaction pays for the execution of the
 entire receive function.
-Including the cost of failed actions.
+Including the cost of failed operations.

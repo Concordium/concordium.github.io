@@ -491,8 +491,10 @@ use that for invoking the transfer:
    Ok(host.invoke_transfer(&owner, balance)?)
 
 A transfer can fail in two ways, either your contract has insufficient funds, or
-the receiver account does not exist. Neither can occur in this contract, so we
-can propagate the error out with the ``?`` operator.
+the receiver account does not exist. Neither can occur in this contract. This is
+because it tries to transfer its own balance, and because a contract always has
+a valid owner.The code propagates the error out with the ``?``, which will
+become useful when testing the contract.
 
 The final definition of the "smash" receive function is then:
 

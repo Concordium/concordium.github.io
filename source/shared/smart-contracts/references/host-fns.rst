@@ -78,7 +78,7 @@ Smart contract instance state
     :param i32 key_start: Pointer to a key, represented as a bytearray in the Wasm
                           memory.
     :param i32 key_length: The length of the key.
-    :return: The return value is either ``2^64`` if creating the entry failed
+    :return: The return value is either ``2^64 - 1`` if creating the entry failed
              because of an iterator lock on the part of the tree, or else the
              first bit is ``0``, and the remaining bits are an *entry
              identifier* that maybe used in subsequent state-related calls.
@@ -91,7 +91,7 @@ Smart contract instance state
     :param i32 key_start: Pointer to key, represented as a bytearray in the Wasm
                           memory.
     :param i32 key_length: The length of the key.
-    :return: The return value is either ``2^64`` if creating the entry failed
+    :return: The return value is either ``2^64 - 1`` if creating the entry failed
              because of an iterator lock on the part of the tree, or else the
              first bit is ``0``, and the remaining bits are an *entry
              identifier* that maybe used in any of the entry calls.
@@ -173,7 +173,7 @@ Smart contract instance state
    Get the length of the key that the irator is currently pointing at.
 
    :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
-   :return: ``2^64`` if the iterator does not exist. Otherwise, it returns the
+   :return: ``2^64 - `` if the iterator does not exist. Otherwise, it returns the
             length of the key in bytes.
    :rtype: i32
 
@@ -190,7 +190,7 @@ Smart contract instance state
                      section be written to.
    :param i32 length: Number of bytes to read from the key.
    :param i32 offset: Starting offset in the key bytes.
-   :return: ``2^64`` if the iterator does not exist. Otherwise, it returns the
+   :return: ``2^64 - 1`` if the iterator does not exist. Otherwise, it returns the
             length of the key in bytes.
    :rtype: i32
 
@@ -199,7 +199,7 @@ Smart contract instance state
    Get the byte size of the entry.
 
    :param entry i64: Entry identifier.
-   :return: Byte size of the entry. Or ``2^32`` if the entry does not exist.
+   :return: Byte size of the entry. Or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
 .. function:: state_entry_read(entry, location, length, offset) -> i32
@@ -213,7 +213,7 @@ Smart contract instance state
    :param i32 location: Pointer to write location in Wasm linear memory.
    :param i32 length: Number of bytes to read.
    :param i32 offset: Starting offset in the entry bytes.
-   :return: The number of read bytes. Or ``2^32`` if the entry does not exist.
+   :return: The number of read bytes. Or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
 .. function:: state_entry_write(entry, location, length, offset) -> i32
@@ -226,18 +226,18 @@ Smart contract instance state
    :param i32 location: Pointer to read location in Wasm linear memory.
    :param i32 length: Number of bytes to write.
    :param i32 offset: Starting offset in the entry bytes.
-   :return: The number of written bytes. Or ``2^32`` if the entry does not exist.
+   :return: The number of written bytes. Or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
 .. function:: state_entry_resize(entry, new_size) -> i32
 
    Resize entry to the new value (truncate if new size is smaller).
-   Initializes the additional bytes to ``0``.
+   If the new size is bigger, the additional state is initialized with ``0``.
 
    :param i64 entry: Entry identifier.
    :param i32 new_size: New size of contract entry in bytes.
    :return: ``0`` if this was unsuccessful (new entry too big), ``1`` if
-            successful, or ``2^32`` if the entry does not exist.
+            successful, or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
 .. _host_function_chain_getters:
@@ -346,6 +346,24 @@ Functions only accessible for smart contract receive functions.
 
    :return: Current balance of the contract instance.
    :rtype: i64
+
+.. function:: get_receive_entrypoint_size() -> i32
+
+   Get the size of the entrypoint that was named. See ``get_receive_entrypoint``
+   for more information on the use of this host function.
+
+   :return: The size of the entrypoint that was named.
+   :rtype: i32
+
+.. function:: get_receive_entrypoint(start)
+
+   Write the receive entrypoint name into the given location.
+   It is assumed that the location contains enough space to write the name.
+   For regular receive methods, the entrypoint name will always be the same as
+   the receive method's entrypoint name. But for fallback entrypoints, it might
+   differ.
+
+   :param i32 start: Pointer to the location to put th entrypoint name.
 
 .. _concordium-std: https://docs.rs/concordium-std/latest/concordium_std/
 .. _state_iterate_prefix: #concordium.state_iterate_prefix
