@@ -29,6 +29,7 @@
    guides/local-simulate
    guides/build-schema
    guides/no-std
+   guides/fallback-entrypoints
 
 .. toctree::
    :maxdepth: 1
