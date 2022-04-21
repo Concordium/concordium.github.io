@@ -115,7 +115,7 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 
 - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.2-0-testnet.tar.gz>`_
 
-   - SHA256 checksum of the download: ``3c3ba7b6dabcd3431deecfc08b7455c5ee64df49ba799e87061e3a5ed48c55da``
+   - SHA256 checksum of the download: ``05b4922b201015043d8bda7a3dce151e04897a122d77f1e03d72c2dbdbe1a29d``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
