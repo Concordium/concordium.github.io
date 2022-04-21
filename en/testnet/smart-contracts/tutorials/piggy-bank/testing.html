@@ -460,7 +460,7 @@ address in the <a class="reference external" href="https://docs.rs/concordium-st
 </div>
 <p>Lastly, you need to set the current balance of the piggy bank instance using
 <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance"><code class="docutils literal notranslate"><span class="pre">set_self_balance</span></code></a>.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_gtu</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
 <span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
