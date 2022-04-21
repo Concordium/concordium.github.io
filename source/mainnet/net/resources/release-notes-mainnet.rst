@@ -13,6 +13,12 @@ Release notes
 Mainnet 3: Alpha Centauri 3.0
 ==============================
 
+April 21, 2022
+
+Concordium Node v3.0.2
+----------------------
+- Fixed a security vulnerability in the network layer that could be used to crash the node, causing a denial of service.
+
 March 22, 2022
 
 Concordium Mobile Wallet for Android v2.0.0(75)
