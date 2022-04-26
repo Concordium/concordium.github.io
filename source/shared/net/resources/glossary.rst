@@ -55,6 +55,13 @@ Baker
 A node that participates in the production of :ref:`blocks<glossary-block>`, referred to as
 *baking*.
 
+.. _glossary-baker-pool:
+
+Baker pool
+==========
+
+A collection of stake by a baker and delegators who choose to stake funds for baking with that baker in order to increase probability of being selected to bake a block and thus earn rewards. The baker takes a commission on rewards paid to delegators.
+
 .. _glossary-best-block:
 
 Best block
@@ -118,6 +125,13 @@ purposes:
 The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
 µCCD. This means that CCD amounts are given with up to six decimal places of
 precision.
+
+.. _glossary-ccdscan:
+
+CCDScan
+=======
+
+CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. Often used to research bakers and pools before deciding to delegate funds to a particular pool.
 
 .. _glossary-chain:
 
@@ -196,6 +210,13 @@ Decryption key
 
 Dual to :ref:`encryption key<glossary-encryption-key>`. In contrast to the encryption key, which is public,
 this key is only known to the account holder.
+
+.. _glossary-delegate:
+
+Delegate
+========
+
+The action of giving a baker the right to stake an amount of CCD from you in order to increase probability of baking a block and earning rewards. Delegators earn rewards, minus a commission to the baker, on delegated stake.
 
 .. _glossary-encryption-key:
 
@@ -360,6 +381,13 @@ network and recorded on the Concordium blockchain. The recording can be explicit
 or implicit as part of the consensus protocol. An example of the former is a
 transaction such as a CCD transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
+
+.. _glossary-passive-delegation:
+
+Passive delegation
+==================
+
+A form of delegation where delegators can allocate stake to distribute among all pools. It is not associated with a specific baker. You earn lower rewards when delegating to to passive delegation than if you delegated to a specific baker pool. But passive delegation is not affected by poor performance of a single baker.
 
 .. _glossary-shielded-amount:
 

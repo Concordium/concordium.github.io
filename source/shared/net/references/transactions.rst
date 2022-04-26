@@ -70,6 +70,10 @@ Transaction commands
 |                               | :ref:`See below for specific        |
 |                               | information<identity-commands>`.    |
 +-------------------------------+-------------------------------------+
+| ``delegator configure``       | Add, configure, and remove          |
+|                               | delegation. :ref:`See below for     |
+|                               | information<delegation-commands>`.  |
++-------------------------------+-------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
 
@@ -455,3 +459,38 @@ If you query the account information of the recipient account afterwards, it wil
 The amount that is not yet released is also included in the ``Balance`` field
 so in this case the account owns ``100 CCD`` that don't belong to any pending
 release schedule.
+
+.. _delegation-commands:
+
+Commands for delegation
+=======================
+
+Add delegation
+--------------
+
+The command to add delegation with ``concordium-client`` is
+``delegator add``. For example, an interaction to add delegation on an account looks like the following:
+
+The command is:
+
+.. code-block:: console
+
+   $concordium-client delegator add --capital 5000 --restake 0 --baker 12345
+
+The command has the following optional arguments:
+
+- ``--capital`` is an amount of CCD you intend to delegate
+- ``--restake`` can be set to either 0 or 1 (which is which?) to not restake earnings or restake earnings
+- ``--baker`` is the baker pool ID or L-pool if delegating to the lockup pool.
+
+Configure or change delegation
+------------------------------
+
+The command to add delegation with ``concordium-client`` is
+``delegator configure``. The command has the same arguments as ``delegator add``.
+
+Stop delegation
+---------------
+
+The command to add delegation with ``concordium-client`` is
+``delegator remove``. The command has the same arguments as ``delegator add``?

@@ -7,10 +7,6 @@
 Become a baker using the Concordium Client
 ==========================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide takes you through the steps involved in upgrading your node to a baker node and managing the node using the Concordium Client.
 
 The process of becoming a baker involves the following:
@@ -330,6 +326,26 @@ first need to shut down the current running node. To do this, either press ``Ctr
 ``concordium-node-stop`` executable.
 
 When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``.
+
+Configure a baker
+=================
+
+Use ``baker configure`` to configure a baker and open a baker pool. The following is an example of how ``configure baker`` might be used:
+
+.. code-block:: console
+
+   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for none --delegation-transaction-fee-commission 5.0e-2 --delegation-baking-commission 5.0e-2 --delegation-finalization-commission 1.0 --baker-url baker-url.json --keys-in baker-keys-new.json --keys-out baker-creds-new.json
+
+Configure baker has the following optional arguments:
+
+- ``--sender`` is the name or address of the baker account.
+- ``--capital`` is an amount of CCD that is the intended equity capital of the baker
+- ``--restake`` determines whether earnings are restaked or not. 0 is for ??? and 1 is for ???
+- ``--open-delegation`` sets whether the baker's pool is optn for delegators. Options are: for none, open, ???
+- ``--signatureVerifyKey`` is the public key for verifying signed blocks and finalization messages, with a proof of knowledge of the secret key
+- ``--electionVerifyKey`` is the public key for the baker’s verifiable random function, with a proof of knowledge of the secret key
+- ``--aggregationVerifyKey`` is the public key for verifying the baker’s signature in the aggregate signature scheme, with a proof of knowledge of the secret key
+- ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
 
 Remove a baker
 ==============

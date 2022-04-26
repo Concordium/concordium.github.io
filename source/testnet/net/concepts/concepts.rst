@@ -14,3 +14,4 @@ The following topics describe basic concepts of the Concordium Platform.
    concepts-backup
    concepts-transactions
    concepts-baker
+   concepts-delegation
