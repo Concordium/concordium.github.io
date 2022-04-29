@@ -46,7 +46,7 @@ contracts will be run by bakers in the network who do not necessarily trust
 the code.
 
 Wasm is a low-level language and it is impractical to write by hand. Instead, one
-can write smart contracts in a more high-level language, which is then
+can write smart contracts in a more high-level language that is then
 compiled to Wasm.
 
 .. _wasm-limitations:

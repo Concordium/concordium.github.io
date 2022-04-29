@@ -196,11 +196,11 @@ The init function takes two arguments:
 
 - ``ctx: &impl HasInitContext``, which is a zero-sized struct with a number of
   getter functions for accessing information about the current context, such as
-  the account that invoked this contract, the supplied arguments and information about the state of the blockchain
+  the account that invoked this contract, the supplied arguments, and information about the state of the blockchain
 - ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating
   sets, maps, and boxes that effectively utilize the way contract state is
   stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
-  the state, as we shall see in part two of this tutorial.
+  the state, as you will see in part two of this tutorial.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
 alias for ``Result<PiggyBankState, Reject>``. The returned state is serialized
@@ -233,7 +233,7 @@ They can access the state of the instance and the blockchain and perform
 actions, such as transferring CCD to an account or invoking another contract instance.
 Receive functions are immutable/readonly by default, which means that they
 cannot mutate the state.
-We will look at mutable receive methods when it's time to implement smashing the piggy bank.
+You will look at mutable receive methods when it's time to implement smashing the piggy bank.
 
 .. note::
 
@@ -349,7 +349,7 @@ which, by default, prevents init and receive functions
 from accepting CCD.
 
 The reason for rejecting CCD by default is to reduce the risk of creating a smart
-contract that accepts CCD without the ability of retrieving it again: any CCD passed to such a contract
+contract that accepts CCD without the ability to retrieve it again; any CCD passed to such a contract
 would be *inaccessible forever*.
 
 To be able to accept CCD, you have to add the ``payable`` attribute to the |receive| macro.
@@ -439,7 +439,7 @@ Next, ensure that the state of the piggy bank is ``Intact``, just like previousl
 At this point you know the piggy bank is still intact and the sender is the
 owner, meaning you now get to the smashing part.
 But there is one problem.
-The state is immutable, so we first need to make the receive function mutable by
+The state is immutable, so you first need to make the receive function mutable by
 adding the |mutable|_ attribute to the |receive|_ macro.
 
 .. code-block:: rust
@@ -458,8 +458,8 @@ adding the |mutable|_ attribute to the |receive|_ macro.
        todo!()
    }
 
-This gives us a mutable reference to the ``host``, through which we can access
-the mutable state with the ``state_mut`` function. We then set the state to
+This gives you a mutable reference to the ``host``, through which you can access
+the mutable state with the ``state_mut`` function. You then set the state to
 ``Smashed``, preventing further insertions of CCD:
 
 .. code-block:: rust
@@ -484,7 +484,7 @@ the current balance of the smart contract instance, which is called
    let balance = host.self_balance();
 
 You already have a variable with the address of the contract owner, so you can
-use that for invoking the transfer:
+use that to invoke the transfer:
 
 .. code-block:: rust
 
@@ -493,7 +493,7 @@ use that for invoking the transfer:
 A transfer can fail in two ways, either your contract has insufficient funds, or
 the receiver account does not exist. Neither can occur in this contract. This is
 because it tries to transfer its own balance, and because a contract always has
-a valid owner.The code propagates the error out with the ``?``, which will
+a valid owner. The code propagates the error out with the ``?``, which will
 become useful when testing the contract.
 
 The final definition of the "smash" receive function is then:

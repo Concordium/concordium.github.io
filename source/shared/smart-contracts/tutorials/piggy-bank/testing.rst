@@ -272,7 +272,7 @@ However, there is no way for the immutable receive method ``piggy_insert`` to
 mutate the state.
 Trying to do so would result in an error from the Rust compiler.
 By using immutable receive functions, it is possible to rule out certain error
-cases at compile time, which means that we do not need tests for these
+cases at compile time, which means that you do not need tests for these
 scenarios.
 Along with performance, those are the two primary reasons for not making your
 receive methods |mutable|_ unless strictly necessary.
@@ -502,10 +502,10 @@ the error to produce:
    }
 
 The |invoke_transfer| fails if the account does not exist, or if the contract
-has insufficient funds. Neither case can occur in our contract since contracts
+has insufficient funds. Neither case can occur in the contract since contracts
 always have a valid owner and the amount it sends is the ``self_balance``. But
 you should still be able to represent this error and distinguish it from the two
-other error kinds.
+other error types.
 
 
 You can now check which error was produced in the test:

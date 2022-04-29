@@ -4,13 +4,13 @@
 Invoke a smart contract instance
 ================================
 
-This guide will show you, how to invoke a smart contract instance, which
+This guide explains how to invoke a smart contract instance, which
 means triggering a receive function and viewing its return value. Invoking an
 instance is *not a transaction* and it *does not change the state of a contract*.
 Invoking can be useful to either view information about the instance or to test
 a receive method before running an update.
-The view functions are regular receive functions, which return information about
-the contract. Ideally with schemas on the return values.
+The view functions are regular receive functions that return information about
+the contract, ideally with schemas on the return values.
 
 Preparation
 ===========
@@ -27,7 +27,7 @@ Invocation
 ==========
 
 To invoke an instance with address index ``0`` using the parameterless
-entrypoint ``my_receive`` run the following command:
+entrypoint ``my_receive``, run the following command:
 
 .. code-block:: console
 
@@ -46,12 +46,12 @@ As you can see, the subindex defaults to ``0``:
 
 .. note::
 
-   By default the invocation is sent by a fictional account with address ``00000000000000000000000000000000``.
-   This account has an unbounded funds.
+   By default, the invocation is sent by a fictional account with address ``00000000000000000000000000000000``.
+   This account has unbounded funds.
    However, when specifying a custom sender account or contract, both of which must
    exist on the chain, these must have
    sufficient funds to cover the transfer that will be made to the contract.
-   Please note, that no funds will be withdrawn on the account or contract, as
+   Please note that no funds will be withdrawn on the account or contract as
    it is not a transaction.
    This design allows you to try invoking an entrypoint with your own account or
    contract for free to ensure that the result is as expected before pay for the

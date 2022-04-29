@@ -106,7 +106,7 @@ as a `prefix tree <https://en.wikipedia.org/wiki/Trie>`_, where nodes in the
 tree can have data in the form of a byte array.
 The instance uses functions provided by the host environment to create, delete,
 and find nodes in the tree.
-The host also provides functions for reading, writing and resizing the bytearray
+The host also provides functions for reading, writing, and resizing the byte array
 held by a particular node in the tree.
 
 .. seealso::

@@ -24,7 +24,7 @@ Setup the contract for a schema
 In order to build a contract schema, we first have to prepare our smart
 contract for building the schema.
 
-We can choose which parts of our smart contract to included in the schema.
+You can choose which parts of the smart contract to include in the schema.
 For each init function, you can choose to include a schema for the parameter.
 And for each receive function, you can choose to include a schema for the parameter,
 the return value, or both.

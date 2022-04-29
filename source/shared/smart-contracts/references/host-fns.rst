@@ -93,7 +93,7 @@ Smart contract instance state
     :param i32 key_length: The length of the key.
     :return: The return value is either ``2^64 - 1`` if creating the entry failed
              because of an iterator lock on the part of the tree, or else the
-             first bit is ``0``, and the remaining bits are an *entry
+             first bit is ``0`` and the remaining bits are an *entry
              identifier* that maybe used in any of the entry calls.
     :rtype: i64
 
@@ -101,7 +101,7 @@ Smart contract instance state
 
     Delete the entry.
 
-    :param i32 key_start: Pointer to a key, represented as a bytearray in the Wasm
+    :param i32 key_start: Pointer to a key, represented as a byte array in the Wasm
                           memory.
     :param i32 key_length: The length of the key.
     :return: Returns ``0`` if the part of the tree this entry was in is *locked*
@@ -116,7 +116,7 @@ Smart contract instance state
     Delete a prefix in the tree, that is, delete all parts of the tree that have
     the given key as a prefix.
 
-    :param i32 key_start: Pointer to a key, represented as a bytearray in the Wasm
+    :param i32 key_start: Pointer to a key, represented as a byte array in the Wasm
                           memory.
     :param i32 key_length: The length of the key.
     :return: Returns ``0`` if the tree is *locked*
@@ -133,7 +133,7 @@ Smart contract instance state
     the tree that has the given prefix**. Locking means that no
     deletions or insertions of entries may occur in that subtree.
 
-    :param i32 key_start: Pointer to a prefix, represented as a bytearray in the Wasm
+    :param i32 key_start: Pointer to a prefix, represented as a byte array in the Wasm
                           memory.
     :param i32 key_length: The length of the prefix.
     :return: Returns all 1 bits if too many iterators already exist with this key.
@@ -170,7 +170,7 @@ Smart contract instance state
 
 .. function:: state_iterator_key_size(iterator) -> i32
 
-   Get the length of the key that the irator is currently pointing at.
+   Get the length of the key that the iterator is currently pointing at.
 
    :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
    :return: ``2^64 - `` if the iterator does not exist. Otherwise, it returns the
@@ -186,7 +186,7 @@ Smart contract instance state
    first node returned by the iterator.
 
    :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
-   :param i32 start: A pointer to a location in the wasm memory where the key
+   :param i32 start: A pointer to a location in the Wasm memory where the key
                      section be written to.
    :param i32 length: Number of bytes to read from the key.
    :param i32 offset: Starting offset in the key bytes.
@@ -288,7 +288,7 @@ Functions only accessible for smart contract receive functions.
 
 .. function:: invoke(tag, start, length) -> i64
 
-   Invoke a host instruction, which is either a *transfer to an account* or a *call to a
+   Invoke a host instruction which is either a *transfer to an account* or a *call to a
    contract*.
 
    :param i32 tag: ``0`` for transfer to an account or ``1`` for call to a contract.

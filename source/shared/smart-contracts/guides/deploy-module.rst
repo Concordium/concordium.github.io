@@ -37,7 +37,7 @@ with name account-name, run the following command:
 
    The ``--sender`` option can be omitted if the account "default" is to be used. For brevity, we will do so in the following.
 
-   Modules built with ``cargo-concordium`` (version 2+) will get a suffix corresponding to
+   Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
    the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
    ``my_module.wasm.v1`` for V1 contracts.
 

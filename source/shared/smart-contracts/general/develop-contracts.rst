@@ -103,8 +103,8 @@ There are a number of things to notice:
     a ``&impl HasReceiveContext``, and a ``&impl HasHost<MyState, StateApiType = S>`` parameter, and return
     a ``ReceiveResult<MyReturnValue>``, where ``MyReturnValue`` is type that
     implements ``Serialize``.
-  * A receive function can be allowed to mutate the state, by adding the
-    ``mutable`` attribute. In which case the hos parameter becomes mutable: ``&mut impl
+  * A receive function can be allowed to mutate the state by adding the
+    ``mutable`` attribute, in which case the host parameter becomes mutable: ``&mut impl
     HasHost<MyState, StateApiType = S>``. The other types and requirements remain
     unchanged as compared to the immutable receive functions.
 
@@ -155,7 +155,7 @@ On-chain, the state of an instance is represented as a `prefix tree
 form of a byte array.
 The instance uses functions provided by the host environment to create, delete,
 and find nodes in the tree.
-The host also provides functions for reading, writing and resizing the bytearray
+The host also provides functions for reading, writing, and resizing the byte array
 held by a particular node in the tree.
 
 For simple contracts, the complete contract state is stored in the root node of
@@ -327,7 +327,7 @@ Using the ``#[init(...)]`` and ``#[receive(...)]`` macros will help you in this
 endeavour, as they will cause functions to return a ``NotPayble`` error if
 they receive a non-zero amount of CCD.
 To enable receiving CCD for a function, use the |payable|_ attribute in the
-macro, i.e.: ``#[init(..., payable)]`` and ``#[receive(..., payable)]``.
+macro, e.g.: ``#[init(..., payable)]`` and ``#[receive(..., payable)]``.
 
 .. todo::
 

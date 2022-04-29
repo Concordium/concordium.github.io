@@ -4,7 +4,7 @@
 Fallback entrypoints
 ====================
 
-This guide will show you how to use fallback entrypoints, which can be useful
+This guide explains how to use fallback entrypoints, which can be useful
 when creating a proxy for your smart contract.
 
 Preparation
@@ -12,11 +12,11 @@ Preparation
 
 Make sure to have Rust and Cargo installed and the ``wasm32-unknown-unknown``
 target, together with ``cargo-concordium`` and the Rust source code for a smart
-contract module, you wish to compile.
+contract module you wish to compile.
 
 .. seealso::
 
-   For instructions on how to install the developer tools see
+   For instructions on how to install the developer tools, see
    :ref:`setup-tools`.
 
 What are fallback entrypoints
@@ -41,7 +41,7 @@ Using fallback entrypoints
 ==========================
 
 You can create fallback entrypoints by making a new entrypoint and adding
-the ``fallback`` attribute to itÆ
+the ``fallback`` attribute to it:
 
 .. code-block:: rust
    :emphasize-lines: 1
@@ -57,13 +57,13 @@ the ``fallback`` attribute to itÆ
 .. note::
 
    For fallback entrypoints, you don't (and cannot) use the ``name`` attribute.
-   This is because a fallback entrypoints always has the empty string as its
+   This is because a fallback entrypoints always have the empty string as the
    name and that is, in fact, how the node recognizes it as a fallback entrypoint.
 
-   Also note, that there can only ever be *one* fallback entrypoint per contract.
+   Also note that there can only ever be *one* fallback entrypoint per contract.
 
 The ``named_entrypoint`` method on ``HasReceiveContext`` allows you to get the
-name of the entrypoint name used to the reach the fallback entrypoint.
+name of the entrypoint used to the reach the fallback entrypoint.
 
 .. code-block:: rust
    :emphasize-lines: 6

@@ -51,8 +51,8 @@ Running tests in Wasm
 Compiling the tests to native machine code is sufficient for most cases, but it
 is also possible to compile the tests to Wasm and run them using the exact
 interpreter that is used by the nodes.
-This makes the test environment closer to the run environment on-chain and could
-in some cases catch more bugs.
+This makes the test environment closer to the run environment on-chain and could,
+in some cases, catch more bugs.
 One notable difference between different environments is regarding the size of
 pointers, where `Wasm32` uses four bytes as opposed to eight, which is common
 for most platforms.
@@ -120,7 +120,7 @@ state, run some unit of code, and make assertions about the state and output of
 the code.
 
 If the contract functions are written using ``#[init(..)]`` or
-``#[receive(..)]``, we can test these functions directly in the unit test.
+``#[receive(..)]``, you can test these functions directly in the unit test.
 
 .. code-block:: rust
 
@@ -183,7 +183,7 @@ test stubs, including the ones shown in the example, e.g., ``TestHost`` and ``Te
 
 .. seealso::
 
-   For more information and examples see the crate documentation of
+   For more information and examples, see the crate documentation of
    |concordium_std|_.
 
 
@@ -228,7 +228,7 @@ a mock function that returns the same ``Ok(..)`` value every time:
 
 For returning the same error every time, use the ``returning_err``.
 Use this to test missing contracts or entrypoints, as invoking
-entrypoints, for which no mock has been set up, results in a runtime error:
+entrypoints for which no mock has been set up, results in a runtime error:
 
 .. code-block:: rust
    :emphasize-lines: 8
@@ -246,7 +246,7 @@ entrypoints, for which no mock has been set up, results in a runtime error:
 
 .. note::
 
-    The ``returning_err`` method is generic, because
+    The ``returning_err`` method is generic because
     ``CallContractError<ReturnValueType>`` is generic and can return a value
     with its logic error:
 
@@ -273,7 +273,7 @@ state of contract you are testing.
 The methods differ in what the closure should return.
 V0 contracts do not have a return value, whereas V1 contracts always do.
 
-Here is a example of a mocked entrypoint that only uses the parameter
+Here is an example of a mocked entrypoint that only uses the parameter
 and amount. For simplicity, it just traps if the input is not as expected:
 
 .. code-block:: rust
@@ -355,7 +355,7 @@ state and balance fields:
 Testing transfers
 =================
 
-|TestHost|_ has a three helper methods to useful when testing that the correct
+|TestHost|_ has three helper methods that are useful when testing that the correct
 ``invoke_transfer``'s has occurred.
 
 Use ``transfer_occurred`` to check for specific transfers:

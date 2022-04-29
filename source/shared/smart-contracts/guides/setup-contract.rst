@@ -56,7 +56,7 @@ The crate documentation is on docs.rs_.
 
 .. seealso::
 
-   It is possible to build smart contracts without the use for Rust's ``std``.
+   It is possible to build smart contracts without using Rust's ``std``.
    For more information, see :ref:`no-std`.
 
 .. _Rust: https://www.rust-lang.org/

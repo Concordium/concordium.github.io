@@ -4,8 +4,8 @@
 Inspect a smart contract instance
 =================================
 
-This guide will show you how to inspect a smart contract instance.
-Inspecting an instance will show you its name, owner, module reference, balance,
+This guide explains how to inspect a smart contract instance.
+Inspecting an instance shows you its name, owner, module reference, balance,
 and receive-functions:
 
 Preparation
@@ -52,7 +52,7 @@ The output should be similar to the following:
    :ref:`references-on-chain`.
 
 The parameter and return values for a method is only shown if the ``show`` command has
-access to a :ref:`contract schema <contract-schema>`, which contains that
+access to a :ref:`contract schema <contract-schema>` that contains that
 information for the method.
 If the schema is embedded, it will be used implicitly.
 Otherwise, a schema can be provided using ``--schema /path/to/schema.bin``
