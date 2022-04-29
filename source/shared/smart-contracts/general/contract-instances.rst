@@ -167,5 +167,4 @@ The possible operations that a contract can perform are:
 If an operations fails, it returns an error, which the instance can choose to
 handle, and the state and balance of the instance remain unchanged.
 The account which sent the initiating transaction pays for the execution of the
-entire receive function.
-Including the cost of failed operations.
+entire receive function, including the cost of failed operations.
