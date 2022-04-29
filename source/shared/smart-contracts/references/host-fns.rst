@@ -163,7 +163,7 @@ Smart contract instance state
    Delete the iterator, unlocking the subtree.
 
    :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
-   :return: Returns ``2^64`` if the iterator does not exist. Returns ``0`` if the
+   :return: Returns ``2^64 - 1`` if the iterator does not exist. Returns ``0`` if the
             iterator was already deleted. Returns ``1`` if the iterator was
             successfully deleted.
    :rtype: i32
@@ -173,7 +173,7 @@ Smart contract instance state
    Get the length of the key that the iterator is currently pointing at.
 
    :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
-   :return: ``2^64 - `` if the iterator does not exist. Otherwise, it returns the
+   :return: ``2^64 - 1`` if the iterator does not exist. Otherwise, it returns the
             length of the key in bytes.
    :rtype: i32
 

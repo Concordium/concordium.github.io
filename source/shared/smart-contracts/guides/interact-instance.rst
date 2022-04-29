@@ -38,12 +38,13 @@ run the following command:
 
    $concordium-client contract update 0 --entrypoint my_receive --energy 1000
 
-If successful, the output should be similar to the following.
-As you can see, the subindex defaults to ``0``:
+If successful, the output should be similar to the following:
 
 .. code-block:: console
 
    Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
+
+As you can see, the subindex defaults to ``0``.
 
 Passing parameters in JSON format
 ---------------------------------

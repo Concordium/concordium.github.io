@@ -265,11 +265,11 @@ entrypoints for which no mock has been set up, results in a runtime error:
            );
            ...
 
-For more advanced types of mocks, use ``MockFn::new_v1``, ``MockFn::new_v0``, or
+For more advanced types of mocks, use the functions ``MockFn::new_v1``, ``MockFn::new_v0``, or
 ``MockFn::new``.
-Each of the which take a closure that has access to the parameter and amount
+Each of these functions takes a closure that has access to the parameter and amount
 used in ``invoke_contract(.., parameter, .., amount)``, but also the balance and
-state of contract you are testing.
+state of the contract you are testing.
 The methods differ in what the closure should return.
 V0 contracts do not have a return value, whereas V1 contracts always do.
 

@@ -33,8 +33,7 @@ entrypoint ``my_receive``, run the following command:
 
    $concordium-client contract invoke 0 --entrypoint my_receive
 
-If successful, the output should be similar to the following.
-As you can see, the subindex defaults to ``0``:
+If successful, the output should be similar to the following:
 
 .. code-block:: console
 
@@ -43,6 +42,8 @@ As you can see, the subindex defaults to ``0``:
    - Energy used: 595 NRG
    - Return value:
        <some-return-value>
+
+As you can see, the subindex defaults to ``0``.
 
 .. note::
 
