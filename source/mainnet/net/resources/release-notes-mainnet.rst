@@ -20,7 +20,7 @@ CCDScan release 1
 
 CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
 
-CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. 
+CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
 CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
 
 CCDScan release 1 features include:
