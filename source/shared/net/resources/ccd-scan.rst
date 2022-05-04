@@ -4,7 +4,7 @@
 CCDScan
 =======
 
-CCDScan <https://ccdscan.io>_ is a Concordium blockchain explorer available to Concordium users. CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. CCDScan includes functionality to scan and gain insights into Concordium blockchain data, such as:
+`CCDScan <https://ccdscan.io>`_ is a Concordium blockchain explorer available to Concordium users. CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. CCDScan includes functionality to scan and gain insights into Concordium blockchain data, such as:
 
 - Block list view of the latest block data
 - Block details for each block

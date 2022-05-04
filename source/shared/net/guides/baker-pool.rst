@@ -22,7 +22,9 @@ If you are running a baker pool, you have a responsibility to manage your pool r
 
 To help potential delegators with their choice, it is a good idea to create a site with information and add this URL to your baker pool configuration. This information is published on :ref:`CCD Scan<ccd-scan>` so that potential delegators can read about the pool and understand your goals. Having a URL on your baker pool configuration is not required.
 
-Besides the recommendations for bakers listed above, you should regularly check to ensure that you aren't close to the leverage cap (too many delegators). If so, you can close the pool to new delegators.
+You should regularly check to ensure that you aren't close to the leverage cap (too many delegators). If so, you can close the pool to new delegators.
+
+Besides the recommendations for bakers listed above, you should subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a baker.
 
 Research a baker pool
 =====================
@@ -34,8 +36,6 @@ The first thing to check before delegating stake to a baker pool is the URL for 
 Make sure that the pool isn't close to having too many delegators or close to max capital.Another indicator of good management is reliability; check the uptime of the node.
 
 Once you have made a delegation, it is a good idea to monitor baker performance regularly and adjust if needed.
-
-.. _ccd-scan:
 
 CCD Scan
 ========
