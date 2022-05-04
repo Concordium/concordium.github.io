@@ -11,6 +11,31 @@ Release Notes
 Open Testnet v7 Update 1
 ========================
 
+May 4, 2022
+
+CCDScan release 1
+-----------------
+
+CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+
+CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. 
+CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+
+CCDScan release 1 features include:
+   - Block list view of the latest block data
+   - Block details for each block
+   - Transaction list view of the latest transaction data
+   - Transaction details for each transaction
+   - Account list view of the most recent account data
+   - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
+   - Easy search for specific details on blocks, transactions and accounts and bakers
+   - Cross-linking and drill-through between all relevant entities for easy navigation between blocks, transactions, and accounts
+   - A dashboard landing page with real-time updates from the Concordium blockchain
+   - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
+   - Ability to switch between Mainnet and Testnet data
+   - Ability to explore chain parameters and updates to these
+   - List of bakers and their stake, including the ability to drill through to the underlying account address
+
 April 21, 2022
 
 Concordium Node v3.0.2
