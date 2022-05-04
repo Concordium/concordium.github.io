@@ -31,7 +31,7 @@ CCDScan release 1 features include:
    - Account list view of the most recent account data
    - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
    - Easy search for specific details on blocks, transactions and accounts and bakers
-   - Cross-linking and drill-through between all relevant entities for easy navigation between blocks, transactions, and accounts
+   - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
    - A dashboard landing page with real-time updates from the Concordium blockchain
    - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
    - Ability to switch between Mainnet and Testnet data
