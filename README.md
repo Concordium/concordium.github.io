@@ -122,13 +122,13 @@ make lint
 **Mainnet**
 
 ```
-make.bat dev-mainnet
+./make.bat dev-mainnet
 ```
 and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 **Testnet**
 ```
-make.bat dev-testnet
+./make.bat dev-testnet
 ```
 and navigate to [localhost:8000/testnet](http://localhost:8000/net).
 
@@ -141,7 +141,7 @@ Before committing, make sure to try to build and fix any warnings that are repor
 
 
 > **Note**:
-> When working on changes to the design it can be benefitial to disable
+> When working on changes to the design it can be beneficial to disable
 > caching, as it can cause UI problems. To disable it, add the `-E` flag to the
 > `dev` command in the appropriate make file.
 
