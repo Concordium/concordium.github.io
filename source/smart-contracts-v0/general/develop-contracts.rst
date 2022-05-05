@@ -42,7 +42,7 @@ limitations we impose <wasm-limitations>`.
 A smart contract module is developed in Rust as a library crate, which is then
 compiled to Wasm.
 To obtain correct exports, the `crate-type` attribute must be set to
-``["cdylib", "rlib"]`` in the file ``Cargo.toml``:
+``["cdylib", "rlib"]`` in the ``Cargo.toml`` file:
 
 .. code-block:: text
 

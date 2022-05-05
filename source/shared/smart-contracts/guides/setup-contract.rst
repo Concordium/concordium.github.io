@@ -24,7 +24,7 @@ Your directory should now contain a ``Cargo.toml`` file and a ``src``
 directory and some hidden files.
 
 To be able to build Wasm we need to tell cargo the right ``crate-type``.
-This is done by adding the following in the file ``Cargo.toml``::
+This is done by adding the following in the ``Cargo.toml`` file ::
 
    [lib]
    crate-type = ["cdylib", "rlib"]

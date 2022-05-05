@@ -47,7 +47,9 @@ As you can see, the subindex defaults to ``0``.
 
 .. note::
 
-   By default, the invocation is sent by a fictional account with address ``00000000000000000000000000000000``.
+   By default, the invocation is sent by a fictional account with address
+   ``2wkBET2rRgE8pahuaczxKbmv7ciehqsne57F9gtzf1PVdr2VP3`` (the byte
+   representation is ``[0u8; 32]``).
    This account has unbounded funds.
    However, when specifying a custom sender account or contract, both of which must
    exist on the chain, these must have

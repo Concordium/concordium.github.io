@@ -197,7 +197,7 @@ contracts in your module.
    #[init(contract = "PiggyBank")]
 
 The init function takes a single argument, ``ctx: &impl HasInitContext``,
-which is a zero-sized struct with a number of getter functions for accessing
+which is a trait with a number of getter functions for accessing
 information about the current context, such as the account that invoked this contract, the
 supplied arguments and information about the state of the blockchain.
 

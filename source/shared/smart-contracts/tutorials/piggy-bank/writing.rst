@@ -194,7 +194,7 @@ contracts in your module.
 
 The init function takes two arguments:
 
-- ``ctx: &impl HasInitContext``, which is a zero-sized struct with a number of
+- ``ctx: &impl HasInitContext``, which is a trait with a number of
   getter functions for accessing information about the current context, such as
   the account that invoked this contract, the supplied arguments, and information about the state of the blockchain
 - ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating

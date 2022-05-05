@@ -10,9 +10,14 @@ when creating a proxy for your smart contract.
 Preparation
 ===========
 
-Make sure to have Rust and Cargo installed and the ``wasm32-unknown-unknown``
-target, together with ``cargo-concordium`` and the Rust source code for a smart
-contract module you wish to compile.
+Make sure you have the Rust source code for a smart contract module you wish to
+add a fallback entrypoint to.
+You also need to have the following installed:
+
+- Rust
+- Cargo
+- The ``wasm32-unknown-unknown`` compiling target
+- ``cargo-concordium``
 
 .. seealso::
 
