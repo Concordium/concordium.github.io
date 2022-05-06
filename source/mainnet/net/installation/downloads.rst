@@ -162,7 +162,7 @@ Cargo-concordium
 
       -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
 
-For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
+For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
 Concordium node distributions
 =============================
@@ -171,7 +171,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
 .. tabs::
 
-   .. tab:: Mainnet  v3.0.1
+   .. tab:: Mainnet  v3.0.2
    
       .. tabs::
       
@@ -179,7 +179,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
             To run a node on a server with Ubuntu, you need a Debian package.
 
-            - `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.1_amd64.deb>`_
+            - `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`_
 
                - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
                - :ref:`Verification instructions <verification-node-debian-package>`
@@ -192,29 +192,31 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
             Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-               - `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.1-0-mainnet.tar.gz>`_
+               - `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`_
 
-                  - SHA256 checksum of the download: ``9939f3f002a899645d3698488e5d99c9683a475f4d33197f8cab70a9cb39f2b3``
+                  - SHA256 checksum of the download: ``733600b800f7a184152453a5aa52f6d0d50101a698804a957eb82c47ff2396f8``
 
             To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
+
 
          .. tab:: Windows
 
             To run a node on Windows, you need a Windows Installer package.
 
-               - `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.1.msi>`_
+               - `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
 
             To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
+
 
          .. tab:: Mac
 
             To run a node on macOS, you need a macOS installer package.
 
-               - `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.1.pkg>`_
+               - `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
 
             To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
-   .. tab:: Testnet  v3.0.1
+   .. tab:: Testnet  v3.0.2
    
       .. tabs::
       
@@ -222,9 +224,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
          
             To run a node on a server with Ubuntu, you need a Debian package.
 
-               - `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.1_amd64.deb>`_
+               - `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.2_amd64.deb>`_
 
-                  - SHA256 checksum of the download: ``ad8ef5c95e35266f2e807788c599f5f163fe83cb3b4de4672cb071c279978dc3``
+                  - SHA256 checksum of the download: ``12cfdc47a5f791ccaaadf46b4493e4cb144442228915c40bc8ae7906f9cb25a9``
 
             To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -232,9 +234,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
          
             Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-               - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.1-0-testnet.tar.gz>`_
+               - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.2-0-testnet.tar.gz>`_
 
-                  - SHA256 checksum of the download: ``3c3ba7b6dabcd3431deecfc08b7455c5ee64df49ba799e87061e3a5ed48c55da``
+                  - SHA256 checksum of the download: ``05b4922b201015043d8bda7a3dce151e04897a122d77f1e03d72c2dbdbe1a29d``
 
             To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
@@ -242,7 +244,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
          
             To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-            - `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.1.msi>`_
+            - `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
 
             To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
@@ -250,7 +252,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
          
             To run a node on macOS, you need a macOS installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-            - `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.1.pkg>`_
+            - `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
 
             To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
