@@ -5,11 +5,6 @@
 Add credentials to an account
 =============================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
 Add more credentials on an account
 ==================================
 

@@ -1,3 +1,40 @@
+body{
+    font-family: Nb-akademie-std,sans-serif;
+  }
+
+h1{
+    font-family: Nb-akademie-std, sans-serif;
+}
+
+h2{
+    font-family: Nb-akademie-std, sans-serif;
+}
+
+h3{
+    font-family: Nb-akademie-std, sans-serif;
+}
+
+h4{
+    font-family: Nb-akademie-std, sans-serif;
+}
+
+h5{
+    font-family: Nb-akademie-std, sans-serif;
+}
+
+h6{
+    font-family: Nb-akademie-std, sans-serif;
+}
+
+.navbar{
+    position: fixed;
+    min-height: var(--pst-header-height);
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
 .wy-nav-content {
     max-width: 900px;
     margin: auto;
@@ -38,17 +75,31 @@
 }
 
 .sidebar-top-menu a.active {
-    background-color: #343131;
+    background-color: #EFEFEF;
+}
+
+i.fa-twitter-square:before {
+    color: #55acee;
+}
+
+.discourse {
+    background: white;
+    color: black;
+}
+  
+i.fab fa-github-square:before {
+    background: black;
+    color: white;
 }
 
 .consent {
     position: fixed;
-    left: 300px;
     right: 0;
     bottom: 0;
-    background: black;
-    color: #d9d9d9;
-    padding: 1em;
+    max-width: 530px;
+    padding: 30px 45px 25px;
+    background-color: #235c9b;
+    color: #fff;
 }
 
 @media only screen and (max-width: 768px) {

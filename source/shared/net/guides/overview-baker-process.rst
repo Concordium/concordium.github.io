@@ -4,10 +4,6 @@
 Overview of the baker process
 =============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Baking is possible with both Mobile Wallet and Desktop Wallet, however the process differs between the two. The overviews below give a brief description of the process.
 
 .. Note::
@@ -32,12 +28,12 @@ The Desktop Wallet requires that you store your keys on a Ledger Nanos S hardwar
 Step 3: Set up the Concordium Desktop Wallet
 --------------------------------------------
 
-You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker. See :ref:`Set up the Desktop Wallet<set-up-desktop>`.
+You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker. See :ref:`Set up the Desktop Wallet<overview-desktop>`.
 
 Step 4: Set up an identity and an initial account
 -------------------------------------------------
 
-Once you've installed the Desktop Wallet, you must set up an identity and an initial account. It is recommended to create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account-desktop>` and :ref:`Create an account in the Desktop Wallet<create-account-desktop>`.
+Once you've installed the Desktop Wallet, you must set up an identity and an initial account. It is recommended to create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
 
 Step 5: Add a baker in the Desktop Wallet
 -----------------------------------------
@@ -81,7 +77,7 @@ Once you've installed the Mobile Wallet, you must set up an identity and an init
 Step 4: Export the account keys
 -------------------------------
 
-You must export the account keys of the account you will use as your baker account in Mobile Wallet. For instructions, see :ref:`export-import-mw`.
+You must export the account keys of the account you will use as your baker account in Mobile Wallet. For instructions, see :ref:`export-import`.
 
 Step 4: Download and run Concordium Client
 ------------------------------------------
@@ -99,3 +95,13 @@ Step 6: Create and register baker keys
 You need to create and register baker keys for your account. See :ref:`become-a-baker` for information about the commands to do this.
 
 Once you have performed these steps, you can :ref:`manage your baker using Concordium Client<become-a-baker>`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   baker-windows
+   ../nodes/baker-macos
+   ../nodes/baker-ubuntu
+   ../nodes/baker-docker
+   become-baker

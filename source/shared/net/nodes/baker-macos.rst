@@ -7,10 +7,6 @@
 Run a baker node on macOS
 =========================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to configure and manage baking on a macOS node.
 
 Prerequisites

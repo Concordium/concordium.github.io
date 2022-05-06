@@ -1,16 +1,11 @@
 .. _transaction-log:
 
-==============================
-Apply a transaction log filter
-==============================
+================================================
+Apply a transaction log filter in Desktop Wallet
+================================================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
+You can specify which transactions to show in the transaction log.
 
-Specify which transactions to show in the transaction log
-=========================================================
 
 #. Go to **Accounts** and select the account that you want to apply the transaction log filter to.
 

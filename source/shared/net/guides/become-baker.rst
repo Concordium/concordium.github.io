@@ -7,10 +7,6 @@
 Become a baker using the Concordium Client
 ==========================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide takes you through the steps involved in upgrading your node to a baker node and managing the node using the Concordium Client.
 
 The process of becoming a baker involves the following:

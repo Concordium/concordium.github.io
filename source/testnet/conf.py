@@ -131,7 +131,7 @@ html_theme_options = {
     'display_version': True,
     'prev_next_buttons_location': None,
     # 'style_external_links': False,
-    'style_nav_header_background': '#34838C',
+    'style_nav_header_background': '#a38b72',
     # # Toc options
     # 'collapse_navigation': False,
     # 'sticky_navigation': True,

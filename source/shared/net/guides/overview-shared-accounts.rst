@@ -1,16 +1,11 @@
 
 .. _overview-shared-accounts:
 
-=====================================================
-Overview of shared accounts with multiple credentials
-=====================================================
+=======================================================================
+Shared accounts with multiple credentials in Desktop Wallet
+=======================================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
-In the Desktop Wallet, you have the option of creating shared accounts. This is useful, for example, if your organization wants to allow multiple people to manage an account, or if you’re part of a group of people who want to share an account. In these cases, more credentials must be added to an account.
+In the Desktop Wallet, you have the option of creating shared accounts, also known as multi-signature accounts. This is useful, for example, if your organization wants to allow multiple people to manage an account, or if you’re part of a group of people who want to share an account. In these cases, more credentials must be added to an account.
 
 Credentials
 ===========
@@ -47,3 +42,14 @@ Step 4
 ------
 
 The initial account owner imports the file and adds the credentials to the account. If needed, the user changes the signature threshold. See :ref:`Add credentials to an account <multi-credentials>`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   ../desktop-wallet/create-credentials-file
+   ../guides/multi-credentials
+   ../desktop-wallet/multisig-simple-transfer
+   multisig-transfer
+   ../desktop-wallet/sign-transaction
+   ../desktop-wallet/proposed-transactions

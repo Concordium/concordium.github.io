@@ -1,12 +1,8 @@
 .. _inspect-release-schedule-mw:
 
-==========================
-Inspect a release schedule
-==========================
-
-.. contents::
-   :local:
-   :backlinks: none
+===========================================
+Inspect a release schedule in Mobile Wallet
+===========================================
 
 Some transfers contain a release schedule. This means that the CCD in the transfer can be seen on the account, but they are locked
 until one or more specific points in time. While the funds are locked, they cannot be transferred, but they will be part of the total amount on the account.

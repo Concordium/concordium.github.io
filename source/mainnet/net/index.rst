@@ -5,69 +5,55 @@
 =====
 
 .. toctree::
-   :maxdepth: 1
    :caption: Installation
 
    installation/downloads
    installation/verification-instructions
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Getting Started
+   :includehidden: 
+   :caption: Learn
 
-   concepts/concepts
+   guides/learn-about-concordium
+
+.. toctree::
+   :includehidden:
+   :caption: Concordium Wallets
+
    guides/deciding-wallet
-   resources/glossary
+   mobile-wallet/setup-mobile-wallet
+   guides/overview-desktop
+   guides/create-identity
+   guides/create-account
+   mobile-wallet/share-address-mw
+   mobile-wallet/change-passcode-mw
+   desktop-wallet/accounts-desktop
+   guides/send-ccd-wallets
+   guides/shield-ccd-wallets
+   guides/shielded-transfer
+   guides/export-import
+   desktop-wallet/single-sign-schedule
+   mobile-wallet/inspect-release-schedule-mw
+   desktop-wallet/transaction-log-filter
+   desktop-wallet/update-application
+   guides/overview-shared-accounts
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Concordium Mobile Wallet
+   :includehidden:
+   :caption: Develop on Concordium
 
-   mobile-wallet/setup-maintenance-mw
-   mobile-wallet/transfers-mw
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Concordium Desktop Wallet
-
-   desktop-wallet/setup-maintenance-dw
-   desktop-wallet/transfers-dw
+   guides/developer-page
+   nodes/node-requirements
+   Smart contracts <https://developer.concordium.software/en/mainnet/smart-contracts/index.html>
+   guides/overview-baker-process
    desktop-wallet/baking-dw
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Concordium Client
-
    references/concordium-client
    references/transactions
    references/query-node
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Run a node
-
-   nodes/ubuntu
-   nodes/docker
-   nodes/windows
-   nodes/macos
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Baking
-
-   guides/overview-baker-process
-   guides/become-baker
-   guides/baker-windows
-   nodes/baker-macos
-   nodes/baker-ubuntu
-   nodes/baker-docker
-   desktop-wallet/baking-dw
-
-.. toctree::
-   :maxdepth: 1
    :caption: Resources
 
-   resources/dashboards
-   references/developer-tools
    resources/release-notes-mainnet
+   resources/release-notes
    resources/legal

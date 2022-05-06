@@ -4,10 +4,6 @@
 Troubleshoot a node running on Windows
 ======================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to troubleshoot a node running on Windows on the Concordium network.
 
 Node crash or database corruption

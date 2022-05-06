@@ -4,10 +4,6 @@
 Set up the Mobile Wallet
 ========================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 The Concordium Mobile :ref:`wallet<glossary-wallet>` is a digital wallet that enables you to create and manage your Concordium
 :ref:`identities<glossary-identity>` and :ref:`accounts<glossary-account>` and to create transactions such as sending CCD, :ref:`shielding<glossary-shielding>` and :ref:`unshielding<glossary-unshielding>` CCD,
 and sending :ref:`shielded transactions<glossary-shielded-transfer>`.

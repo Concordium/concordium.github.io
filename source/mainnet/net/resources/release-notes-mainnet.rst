@@ -1,8 +1,8 @@
 .. _mainnet-release-notes:
 
-=============
-Release notes
-=============
+=======================
+Release notes - Mainnet
+=======================
 
 .. contents::
    :local:

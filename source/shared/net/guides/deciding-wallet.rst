@@ -5,10 +5,6 @@
 Deciding between the Desktop Wallet and the Mobile Wallet
 ==========================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Why you need a wallet
 =====================
 
@@ -50,9 +46,9 @@ How to backup a wallet
 
 Concordium strongly recommends that you make a backup of your wallet regardless of which one you use. Backups are created in different ways in the two wallets.
 
-- **Backup of the Desktop Wallet**: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It's vital that you keep the recovery phrase safe. For more information, see :ref:`Make a backup of identities, accounts, and addresses<export-import-desktop>` and :ref:`Account recovery<account-recovery-desktop>`.
+- **Backup of the Desktop Wallet**: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It's vital that you keep the recovery phrase safe. For more information, see :ref:`Make a backup of identities, accounts, and addresses<export-import>` and :ref:`Account recovery<account-recovery-desktop>`.
 
-- **Backup of the Mobile Wallet**: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import-mw>`.
+- **Backup of the Mobile Wallet**: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import>`.
 
 
 .. Warning::
@@ -100,7 +96,6 @@ Next steps
 
 - If you want to use the Desktop Wallet, :ref:`download <downloads>` and install it on your computer, and then see :ref:`Overview of setting up the Desktop Wallet<overview-desktop>` for the next steps.
 
-bakcups-and-recovery
 - If you want to use the Mobile Wallet, :ref:`download <downloads>` the app on your mobile phone, and then see :ref:`Set up the Mobile Wallet<setup-mobile-wallet>` for the next steps.
 
 - If you want to learn more about the Ledger device, go to `Ledger's website <https://www.ledger.com>`_.
