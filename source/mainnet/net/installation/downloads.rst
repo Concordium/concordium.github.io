@@ -22,7 +22,7 @@ The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wal
 .. tabs::
 
    .. tab:: Mainnet
-   
+
       You can find Concordium Mobile Wallet on App Store and on Google Play.
 
       .. image:: ../images/mobile-wallet/app-store-badge.svg
@@ -39,7 +39,7 @@ The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wal
             :target: https://www.nowsecure.com/certified-apps/concordium/
 
    .. tab:: Testnet
-   
+
       **iOS**
 
       #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`_ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
@@ -80,7 +80,7 @@ Concordium Desktop Wallet
             - :ref:`Verification instructions <verification-cdw-rpm>`
 
    .. tab:: Testnet v1.3.1
-   
+
       - `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.3.1.exe>`_
 
       - `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.3.1.dmg>`_
@@ -110,12 +110,12 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
    .. tab:: Testnet - Sirius
       The firmware version 2.0.0 is no longer supported.
-      
+   
       - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
-Concordium Client 
+Concordium Client
 =================
 
 .. tabs::
@@ -131,7 +131,7 @@ Concordium Client
       -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
 
    .. tab:: Testnet v3.0.4
-   
+
       -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
 
          - SHA256 checksum of the download: ``6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8``
@@ -172,9 +172,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 .. tabs::
 
    .. tab:: Mainnet  v3.0.1
-   
+
       .. tabs::
-      
+
          .. tab:: Ubuntu
 
             To run a node on a server with Ubuntu, you need a Debian package.
@@ -187,7 +187,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
             To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
          .. tab:: Docker-Linux
-         
+
             .. _concordium-docker-package-download:
 
             Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
@@ -217,9 +217,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
    .. tab:: Testnet  v3.0.1
    
       .. tabs::
-      
+
          .. tab:: Ubuntu
-         
+
             To run a node on a server with Ubuntu, you need a Debian package.
 
                - `Download the Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.1_amd64.deb>`_

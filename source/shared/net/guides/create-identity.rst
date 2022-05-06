@@ -15,8 +15,8 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
          Before you start, you need a Ledger hardware device that's set up and ready for use.
 
-         .. warning:: 
-            You can't exchange identities and accounts between the Mobile      Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+         .. warning::
+            You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
          #. Go to **Accounts**. A message is displayed saying you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**.
 

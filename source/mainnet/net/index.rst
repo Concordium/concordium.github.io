@@ -11,7 +11,7 @@
    installation/verification-instructions
 
 .. toctree::
-   :includehidden: 
+   :includehidden:
    :caption: Learn
 
    guides/learn-about-concordium

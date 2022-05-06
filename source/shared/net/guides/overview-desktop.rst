@@ -29,7 +29,7 @@ You'll need to install and set up the Desktop Wallet to create and manage identi
 .. Note::
     Without CCD you can't submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.
 
-    You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet. 
+    You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet.
 
 To set up the Desktop Wallet:
 

@@ -143,4 +143,3 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
-   
