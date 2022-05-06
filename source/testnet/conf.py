@@ -51,7 +51,8 @@ extensions = [
     "sphinx_reredirects",
     # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
     "sphinx_copybutton",
-    'sphinx_toolbox.collapse'
+    "sphinx_toolbox.collapse",
+    "sphinx_tabs.tabs"
 ]
 
 # todo_include_todos = True
