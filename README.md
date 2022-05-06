@@ -118,6 +118,8 @@ make lint
 
 ### Windows
 
+**Note:**
+The exact command depends on which terminal type you are using. For example, in Powershell, you write .\make.bat dev-XXX where XXX is your target to build.
 
 **Mainnet**
 
@@ -141,7 +143,7 @@ Before committing, make sure to try to build and fix any warnings that are repor
 
 
 > **Note**:
-> When working on changes to the design it can be benefitial to disable
+> When working on changes to the design it can be beneficial to disable
 > caching, as it can cause UI problems. To disable it, add the `-E` flag to the
 > `dev` command in the appropriate make file.
 
