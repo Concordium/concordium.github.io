@@ -64,17 +64,17 @@ Concordium Desktop Wallet
 
       -  Download the Desktop Wallet for Linux®:
 
-         -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.AppImage>`_
+         -  `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.AppImage>`_
 
             - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
             - :ref:`Verification instructions <verification-cdw-appimage>`
 
-         -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.deb>`_
+         -  `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.deb>`_
 
             - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
             - :ref:`Verification instructions <verification-cdw-deb>`
 
-         -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.rpm>`_
+         -  `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.rpm>`_
 
             - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
             - :ref:`Verification instructions <verification-cdw-rpm>`
@@ -87,15 +87,15 @@ Concordium Desktop Wallet
 
       - Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-         - `AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.AppImage>`_
+         - `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.AppImage>`_
 
             - SHA256 checksum of the download: ``59dc17c2cf47dfff8c60c0c662b7145cd08a10fcb44d1fa367ff62afa57e35c4``
 
-         - `Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.deb>`_
+         - `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.deb>`_
 
             - SHA256 checksum of the download: ``2bcd2f29498d5de58c049525b44508b675b4ef9afebd0d01052c555e7ee09b30``
 
-         - `RPM. <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.rpm>`_
+         - `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.rpm>`_
 
             - SHA256 checksum of the download: ``152885940a03502d63e5a052805f5d1a2a3252e3df18a9f719641b8f7bc4b3ef``
 
@@ -110,7 +110,7 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
    .. tab:: Testnet - Sirius
       The firmware version 2.0.0 is no longer supported.
-   
+
       - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
 
 .. _concordium-node-and-client-download:
@@ -172,7 +172,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 .. tabs::
 
    .. tab:: Mainnet  v3.0.2
-   
+
       .. tabs::
 
          .. tab:: Ubuntu
@@ -217,7 +217,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
             To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
    .. tab:: Testnet  v3.0.2
-   
+
       .. tabs::
 
          .. tab:: Ubuntu
@@ -231,7 +231,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
             To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
          .. tab:: Linux-Docker
-         
+
             Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
                - `Download the suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.2-0-testnet.tar.gz>`_
@@ -241,7 +241,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
             To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
          .. tab:: Windows
-         
+
             To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
             - `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
@@ -249,7 +249,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
             To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
          .. tab:: Mac
-         
+
             To run a node on macOS, you need a macOS installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
             - `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
@@ -263,14 +263,14 @@ Download the block separately to inspect it or to run a node in a custom configu
 
 .. tabs::
    .. tab:: Mainnet
-   
+
       - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
          - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
          - :ref:`Verification instructions <verification-mainnet-genesis-block>`
 
    .. tab:: Testnet
-   
+
       - `Download the testnet genesis block <https://distribution.testnet.concordium.com/data/genesis.dat>`_
 
          - SHA256 checksum of the download: ``592a921e8b43185f1726037bf7e23e78a2ea22ced82179a0840d42088e28f44a``
