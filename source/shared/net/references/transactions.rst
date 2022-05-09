@@ -21,55 +21,52 @@ You can perform all types of transactions with the :ref:`concordium-client<conco
 Transaction commands
 ====================
 
-+-------------------------------+-------------------------------------+
-| Command                       | Description                         |
-+===============================+=====================================+
-| ``transaction send``          | Transfer CCD tokens                 |
-+-------------------------------+-------------------------------------+
-| ``transaction                 | Transfer CCD tokens between shielded|
-| send-shielded``               | balances                            |
-+-------------------------------+-------------------------------------+
-| ``transaction                 | Make a transfer that will be        |
-| send-scheduled``              | released gradually                  |
-+-------------------------------+-------------------------------------+
-| ``baker add``                 | Add a new baker. For more           |
-|                               | information, see                    |
-|                               | :ref:`become-a-baker`.              |
-+-------------------------------+-------------------------------------+
-| ``baker remove``              | Remove a baker. For more            |
-|                               | information, see                    |
-|                               | :ref:`become-a-baker`.              |
-+-------------------------------+-------------------------------------+
-| ``baker update-stake``        | Update the staked amount of a baker.|
-|                               | For more information, see           |
-|                               | :ref:`become-a-baker`.              |
-+-------------------------------+-------------------------------------+
-| ``baker update-restake``      | Update the restaking switch of a    |
-|                               | baker.                              |
-|                               | For more information, see           |
-|                               | :ref:`become-a-baker`.              |
-+-------------------------------+-------------------------------------+
-| ``baker set-key``             | Update the keys of a baker.         |
-|                               | For more information, see           |
-|                               | :ref:`become-a-baker`.              |
-+-------------------------------+-------------------------------------+
-| ``account update-keys``       | Update credentials keys for a       |
-|                               | specific credential                 |
-+-------------------------------+-------------------------------------+
-| ``account shield``            | Transfer part of the public balance |
-|                               | to shielded balance                 |
-+-------------------------------+-------------------------------------+
-| ``account unshield``          | Transfer part of the shielded       |
-|                               | balance to public balance           |
-+-------------------------------+-------------------------------------+
-| ``account show``              | Show account information.           |
-|                               | :ref:`See below for specific        |
-|                               | information<account-commands>`.     |
-+-------------------------------+-------------------------------------+
-| ``identity show``             | Show identity information.          |
-|                               | :ref:`See below for specific        |
-|                               | information<identity-commands>`.    |
-+-------------------------------+-------------------------------------+
++-------------------------------------+------------------------------------------------+
+| Command                             | Description                                    |
++=====================================+================================================+
+| ``transaction send``                | Transfer CCD tokens                            |
++-------------------------------------+------------------------------------------------+
+| ``transaction send-shielded``       | Transfer CCD tokens between shielded balances  |
++-------------------------------------+------------------------------------------------+
+| ``transaction send-scheduled``      | Make a transfer that will be released          |
+|                                     | gradually                                      |
++-------------------------------------+------------------------------------------------+
+| ``baker add``                       | Add a new baker. For more information, see     |
+|                                     | :ref:`become-a-baker`.                         |
++-------------------------------------+------------------------------------------------+
+| ``baker remove``                    | Remove a baker. For more information, see      |
+|                                     | :ref:`become-a-baker`.                         |
++-------------------------------------+------------------------------------------------+
+| ``baker update-stake``              | Update the staked amount of a baker. For more  |
+|                                     | information, see :ref:`become-a-baker`.        |
++-------------------------------------+------------------------------------------------+
+| ``baker update-restake``            | Update the restaking switch of a baker. For    |
+|                                     | more information, see :ref:`become-a-baker`.   |
++-------------------------------------+------------------------------------------------+
+| ``baker set-key``                   | Update the keys of a baker. For more           |
+|                                     | information, see :ref:`become-a-baker`.        |
++-------------------------------------+------------------------------------------------+
+| ``account update-keys``             | Update credentials keys for a specific         |
+|                                     | credential                                     |
++-------------------------------------+------------------------------------------------+
+| ``account shield``                  | Transfer part of the public balance to the     |
+|                                     | shielded balance                               |
++-------------------------------------+------------------------------------------------+
+| ``account unshield``                | Transfer part of the shielded balance to the   |
+|                                     | public balance                                 |
++-------------------------------------+------------------------------------------------+
+| ``account show``                    | Show account information.                      |
+|                                     | :ref:`See below for specific                   |
+|                                     | information<account-commands>`.                |
++-------------------------------------+------------------------------------------------+
+| ``identity show``                   | Show identity information.                     |
+|                                     | :ref:`See below for specific                   |
+|                                     | information<identity-commands>`.               |
++-------------------------------------+------------------------------------------------+
+| ``consensus show-chain-parameters`` | Show chain parameters.                         |
+|                                     | :ref:`See below for specific                   |
+|                                     | information<consensus show-chain-parameters>`. |
++-------------------------------------+------------------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
 
@@ -455,3 +452,156 @@ If you query the account information of the recipient account afterwards, it wil
 The amount that is not yet released is also included in the ``Balance`` field
 so in this case the account owns ``100 CCD`` that don't belong to any pending
 release schedule.
+
+Consensus commands
+==================
+
+.. _consensus show-chain-parameters:
+
+Show chain parameters
+---------------------
+
+Use the consensus command ``show-chain-parameters`` to show a number of parameters for the last known block or a specific block.
+
+.. code-block:: console
+
+   $concordium-client consensus show-chain-parameters
+   
+To see the chain parameters for a specific block use the ``--block`` flag to specify the block hash.
+
+The output is:
+
+.. code-block:: console
+
+   # Parameters related to baker pools:
+      + minimum equity capital: 100.000000 CCD
+      + maximum fraction of total stake a pool is allowed hold: 0.5
+      + maximum factor a pool may stake relative to the baker's stake: 5 % 1
+      + pool owner cooldown duration: 1h
+      + allowed range for finalization commission: [0.0, 1.0]
+      + allowed range for baking commission: [0.0, 1.0]
+      + allowed range for transaction commission: [0.0, 1.0]
+
+   # Passive delegation parameters:
+      + finalization commission: 0.0
+      + baking commission: 0.1
+      + transaction commission: 0.1
+
+   # Parameters related to delegators: 
+      + delegator cooldown duration: 30m
+
+   # Exchange rate parameters: 
+      - EUR per CCD rate (approx): 0.0100
+      - EUR per Energy rate: 1 / 1000000 (approx 1.0e-6)
+      - microCCD per EUR rate: 100000000 / 1 (approx 1.0e8)
+
+   # Parameters that affect rewards distribution:
+      + mint amount per reward period: 1e-5
+      + mint distribution:
+         * baking reward: 0.6
+         * finalization reward: 0.3
+      + transaction fee distribution:
+         * baker: 0.45
+         * GAS account: 0.45
+      + GAS rewards:
+         * baking a block: 0.25
+         * adding a finalization proof: 5.0e-3
+         * adding a credential deployment: 2.0e-2
+         * adding a chain update: 5.0e-3
+
+   # Time parameters:
+      + reward period length: 4 epochs
+
+   # Other parameters: 
+      + election difficulty: 2.5e-2
+      + foundation account index: 5
+      + maximum credential deployments per block: 10
+
+.. list-table::
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter section
+     - Parameter
+     - Description
+   * - Parameters related to baker pools
+     - Minimum equity capital
+     - The minimum amount of CCD to stake to become a baker
+   * -
+     - maximum fraction of total stake a pool is allowed hold
+     - The maximum percent of total stake a baker pool can have
+   * -
+     - maximum factor a pool may stake relative to the baker's stake
+     -
+   * -
+     - pool owner cooldown duration
+     - The number of hours for pool owner cool down period when the pool owner updates settings
+   * -
+     - allowed range for finalization commission
+     - The allowed percentage range for finalization commission for baker pools
+   * -
+     - allowed range for baking commission
+     - The allowed percentage range for baking commission for baker pools
+   * -
+     - allowed range for transaction commission
+     - The allowed percentage range for transaction commission for baker pools
+   * - Passive delegation parameters
+     - finalization commission
+     - The percentage paid for finalization commission when delegating to passive delegation
+   * -
+     - baking commission
+     - The percentage paid for baking commission when delegating to passive delegation
+   * -
+     - transaction commission
+     - The percentage paid for transaction commission when delegating to passive delegation
+   * - Parameters related to delegators
+     - delegator cooldown duration
+     - The amount of time of delegator cool down period when delegator updates settings related to delegation
+   * - Exchange rate parameters
+     - EUR per CCD rate (approx)
+     - The approximate exchange rate for number of Euros per CCD
+   * -
+     - EUR per Energy rate
+     - The Euro per energy rate
+   * -
+     - microCCD per EUR related
+     - The rate of microCCD per Euro
+   * - Parameters that affect rewards distribution
+     - mint amount per reward period
+     -
+   * -
+     - mint distribution: baking reward
+     -
+   * -
+     - mint distribution: finalization reward
+     -
+   * -
+     - transaction fee distribution: baker
+     -
+   * -
+     - transaction fee distribution: GAS account
+     -
+   * -
+     - GAS rewards: baking a block
+     -
+   * -
+     - GAS rewards: adding a finalization proof
+     -
+   * -
+     - GAS rewards: adding a credential deployment
+     -
+   * -
+     - Gas rewards: adding a chain update
+     -
+   * - Time parameters
+     - reward period length
+     - The amount of time before rewards are received
+   * - Other parameters
+     - election difficulty
+     -
+   * -
+     - foundation account index
+     -
+   * -
+     - maximum credential deployments per block
+     -
