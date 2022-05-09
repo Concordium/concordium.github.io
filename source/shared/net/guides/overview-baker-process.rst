@@ -14,6 +14,10 @@ Baking is possible with both Mobile Wallet and Desktop Wallet, however the proce
 
    If you plan to be a baker, Concordium recommends using the Desktop Wallet.
 
+.. Note::
+
+   To check the minimum amount required to become a baker, see :ref:`consensus show-chain-parameters`.
+
 Baking with Desktop Wallet
 ==========================
 
