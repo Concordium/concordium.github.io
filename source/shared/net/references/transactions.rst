@@ -466,7 +466,7 @@ Use the consensus command ``show-chain-parameters`` to show a number of paramete
 .. code-block:: console
 
    $concordium-client consensus show-chain-parameters
-   
+
 To see the chain parameters for a specific block use the ``--block`` flag to specify the block hash.
 
 The output is:
@@ -487,10 +487,10 @@ The output is:
       + baking commission: 0.1
       + transaction commission: 0.1
 
-   # Parameters related to delegators: 
+   # Parameters related to delegators:
       + delegator cooldown duration: 30m
 
-   # Exchange rate parameters: 
+   # Exchange rate parameters:
       - EUR per CCD rate (approx): 0.0100
       - EUR per Energy rate: 1 / 1000000 (approx 1.0e-6)
       - microCCD per EUR rate: 100000000 / 1 (approx 1.0e8)
@@ -512,7 +512,7 @@ The output is:
    # Time parameters:
       + reward period length: 4 epochs
 
-   # Other parameters: 
+   # Other parameters:
       + election difficulty: 2.5e-2
       + foundation account index: 5
       + maximum credential deployments per block: 10
