@@ -34,7 +34,7 @@
  -->
  <div class="row">
     <div class="column">
-        <div class="card"><a href="{{ pathto('net/guides/learn-about-concordium') }}"><span class="fas fa-info-circle fa-3x"></span><h3>Learn about Concordium</h3><p class="w3-hide-medium">Learn about the concepts of the Concordium blockchain.</p></a></div>
+        <a href="{{ pathto('net/guides/learn-about-concordium') }}"><div class="card"><span class="fas fa-info-circle fa-3x"></span><h3>Learn about Concordium</h3><p class="w3-hide-medium">Learn about the concepts of the Concordium blockchain.</p></div></a>
     </div>
     <div class="column">
         <a href="{{ pathto('net/nodes/node-requirements') }}"><div class="card"><span class="fas fa-server fa-3x"></span><h3>Run a node</h3><p class="w3-hide-medium">Run a node on the Concordium blockchain.</p></div></a>
@@ -96,6 +96,10 @@
 
         a {
             color:#235c9b;
+        }
+
+        a:visited {
+            color: #235c9b;
         }
 
         .info-container {
@@ -196,19 +200,28 @@
         }
         /* Style the counter cards */
         .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */  
-            padding: 16px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+            padding: 16px;  
             text-align: center;
             height: 200px;
             background-color: #f1f1f1;
             transition: all 0.5s ease;
             border-radius: 15px;
-            margin-bottom: 16px;
+            margin: 10px;
         }
         
         .card:hover {
             transform: translateY(12px);
+            transition-duration: 250ms;
         }
+
+        /* Large devices 1125px to 992px */
+        @media only screen and (max-width: 1125px) and (min-width: 993px) {
+            p {
+            display: none;
+            }
+        }
+
 
         /* Medium devices (landscape tablets, desktops 768px and up) */
         @media only screen and (min-width: 768px) {
@@ -244,7 +257,8 @@
                 padding: 30px 45px 25px;
                 background-color: #235c9b;
                 color: #fff;
-}
+            }
+        }
 
         /* Responsive columns - one column layout (vertical) on Extra small devices (phones, 600px and down) */
         @media screen and (max-width: 600px) {
@@ -259,7 +273,7 @@
                 justify-content: center;}
 
             .consent {
-                left: 0;
+                left: 0;}
         }
 
         /* Small devices (portrait tablets and large phones, 600px and up) */
