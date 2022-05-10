@@ -79,7 +79,7 @@ Here is an example of a smart contract that implements a counter:
    }
 
    #[receive(contract = "counter", name = "increment", mutable)]
-   fn contract_receive<A: HasStateApi>(
+   fn contract_receive<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
        host: &mut impl HasHost<State, StateApiType = S>,
    ) -> ReceiveResult<()> {
