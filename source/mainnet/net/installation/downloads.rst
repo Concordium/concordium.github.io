@@ -130,15 +130,15 @@ Concordium Client
 
       -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
 
-   .. tab:: Testnet v3.0.4
+   .. tab:: Testnet v4.0.2
 
-      -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
+      -  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.2-0>`_
 
          - SHA256 checksum of the download: ``6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8``
 
-      -  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_
+      -  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.2-0.zip>`_
 
-      -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
+      -  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.2-0.exe>`_
 
 Cargo-concordium
 ================
@@ -216,7 +216,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
             To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
-   .. tab:: Testnet  v3.0.2
+   .. tab:: Testnet  v4.0.0
 
       .. tabs::
 
@@ -250,7 +250,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
          .. tab:: Mac
 
-            To run a node on macOS, you need a macOS installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+            To run a node on macOS, you need a macOS installer package.
 
             - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
 

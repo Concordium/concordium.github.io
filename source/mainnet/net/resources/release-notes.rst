@@ -4,8 +4,74 @@
 Release Notes - Testnet
 =======================
 
+Sirius Testnet
+==============
+
+May 16, 2022
+
+Concordium Node 4.0.0
+---------------------
+
+Concordium Node 4.0.0 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
+
+V1 smart contracts includes the following key features:
+   - Unlimited contract state size
+   - Synchronous contract calls
+   - Fallback entrypoints
+   - An increased smart contract module size limit of 512kB
+   - A number of cryptographic primitives
+
+Also smart contract modules are cached on startup from the existing state to improve smart contract execution.
+
+Other improvements in this version include:
+   - The SendTransaction function exposed via the gRPC interface now provides the caller with detailed error messages.
+   - Support for wire-protocol version 0 is dropped, meaning that the node cannot connect to peers that do not support wire-protocol version 1, which is supported since version 1.1.0.
+   - The macOS installer has been improved so it no longer overwrites the service files when reinstalling.
+   - When using the Mac installer users now can leave one (but not both) of the net configurations empty when they don't want to configure a node for it. On the initial installation, leaving a net configuration empty means that the start/stop app shortcuts and the application support folder for that net won't be installed.
+   - Consensus queries have been made more robust by validating input more extensively. This affects all queries whose input was a block or transaction hash. These queries now return an InvalidArgument error.
+   - The maximum number of retries for Node Collector has been removed so it will keep querying.
+   - Nodes can now be stopped during out of band catchup by using the signals ``SIGINT`` and ``SIGTERM``.
+   - The ``GetAccountInfo`` endpoint supports querying the account via the account index.
+   - Baker pools and stake delegation are implemented for the P4 protocol version.
+   - The new gRPC endpoint ``GetBakerList`` retrieves a JSON list of the baker IDs of the bakers registered in a known block. It returns null for an unknown block.
+   - The new gRPC endpoint ``GetPoolStatus`` retrieves a status record for a baker pool, or for the set of passive delegators.
+   - The bakerStakeThreshold level-2 keys are renamed to poolParameters keys; two additional access structures are defined: cooldownParameters and timeParameters. These are described more below.
+
+The following changes have been made to the chain parameters in P4:
+
+   - The mint distribution no longer includes the mint per slot rate.
+   - Pool parameters, governed by the poolParameters keys, have been added to determine commission rates and ranges, bounds, and other factors affecting baker pools.
+   - Time parameters, governed by timeParameters, have been added to determine the duration of a payday (in epochs) and the mint rate per payday.
+   - Cooldown parameters, governed by cooldownParameters, have been added to determine the required cooldown periods when bakers and delegators reduce their stakes.
+   - ``ConfigureBaker`` and ``ConfigureDelegator`` transactions have been added (with the old baker transactions becoming obsolete in P4). These permit adding, modifying, and removing bakers and delegators from an account. Delegators can delegate to a baker, or delegate passively (effectively to all bakers).
+   - The reward mechanism is overhauled, with minting and rewarding being done once per 'payday' (a number of epochs, nominally one day). Baker rewards are shared with delegators to the baker's pool, with some commission being paid to the baker. Block rewards (i.e. transaction fee rewards), baking rewards, and finalization rewards are accumulated over the reward period and paid out at the payday.
+
+
+Concordium Client 4.0.2
+-----------------------
+
+Concordium Client 4.0.2 supports Smart Contracts v1 with the following changes. 
+
+   - A ``contract invoke`` command has been added for simulating contracts locally on the node.
+   - Module deploy now expects modules with a version prefix. This prefix is added automatically when building with cargo-concordium version >= 2. The flag ``--contract-version`` has been added to support modules without the version prefix.
+   - The ``contract update`` command now uses ``--entrypoint`` to specify the function to invoke. This is renamed from the previous ``--func``.
+   - When calling ``contract update`` or ``contract invoke`` with a non-existent entrypoint the fallback entrypoint is called if one is specified in the contract.
+
+Concordium Client 4.0.2 also supports delegation to baker pools or passive delegation, and commands have been added to open baker pools. 
+
+   - The commands ``delegator add``, ``delegator configure`` and ``delegator remove`` have been added. Commands to support the baker opening a baker pool have also been added, including ``baker configure``, ``baker update-url`` and ``baker update-delegation-status``.
+   - The existing commands ``baker add``, ``baker remove``, ``baker set-key``, ``baker update-restake`` and ``baker update-stake`` have been updated so that in Protocol version < 4, they generate the former P3 transaction, and in Protocol version 4, they generate the relevant ``configure baker`` transaction.
+   - Support has been added for the raw queries ``GetPoolStatus`` and ``GetBakerList``.
+   - The subcommand ``consensus show-chain-parameters`` has been added to show the chain parameters. This subcommand shows useful information, such as the amount needed to become a baker, bounding caps for baker pools, commission percentages for delegation, exchange rate parameters, and more. 
+
 Open Testnet v7 Update 1
 ========================
+
+April 21, 2022
+
+Concordium Node v3.0.2
+----------------------
+- Fixed a security vulnerability in the network layer that could be used to crash the node, causing a denial of service.
 
 March 22, 2022
 
