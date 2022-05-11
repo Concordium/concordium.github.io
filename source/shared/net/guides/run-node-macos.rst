@@ -7,10 +7,6 @@
 Run and manage a node on macOS
 ==============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to run and manage a node on macOS. You can also run a
 node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
 

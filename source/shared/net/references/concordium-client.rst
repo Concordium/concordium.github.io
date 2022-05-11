@@ -12,11 +12,6 @@
 Concordium Client
 =================
 
-.. contents::
-   :local:
-   :backlinks: none
-
-
 The Concordium distribution ships with a CLI tool named ``concordium-client``.
 
 By default ``concordium-client`` performs its queries and sends transactions

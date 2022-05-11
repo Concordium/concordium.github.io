@@ -6,12 +6,13 @@ Set up the Desktop Wallet
 
 The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
 
+
 The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, only the Ledger Nano S is supported.
 
 Prerequisites
 =============
 
--  Connect to a **trusted** node on the Concordium blockchain, either your own or a third-party node. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux.
+-  Connect to a **trusted** node on the Concordium blockchain, either your own or a third-party node. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
 
 -  Set up a :ref:`Ledger Nano S hardware device and install the Concordium Ledger App <install-Ledger-app>`.
 
@@ -31,7 +32,7 @@ Set up the Desktop Wallet
 
 #. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
 
-The next step is to :ref:`set up an initial account and an identity <create-initial-account-desktop>`.
+The next step is to :ref:`set up an initial account and an identity <create-initial-account>`.
 
 .. Warning::
     Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.

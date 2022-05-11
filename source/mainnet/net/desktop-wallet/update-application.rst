@@ -1,13 +1,8 @@
 .. _update-application:
 
 ===========================
-Update the desktop wallet
+Update the Desktop Wallet
 ===========================
-
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
 
 The Desktop Wallet installs updates automatically on **MacOS**, **Windows**, and **Linux** (though only for the AppImage distribution).
 

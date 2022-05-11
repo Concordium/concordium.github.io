@@ -5,11 +5,6 @@
 Create a scheduled transfer in the Desktop Wallet
 =================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
 Send CCD with a schedule
 ========================
 

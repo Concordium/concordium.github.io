@@ -4,10 +4,6 @@
 Troubleshoot a node on a server with Ubuntu
 ===========================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to troubleshoot a node on the Concordium network from a server with Ubuntu.
 
 Database invariant violation error

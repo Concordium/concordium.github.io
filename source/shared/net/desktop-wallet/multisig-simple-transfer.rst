@@ -5,14 +5,6 @@
 Create a multi-signature CCD transfer in the Desktop Wallet
 ===========================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
-Multi-signature CCD transfer
-============================
-
 A multi-signature transfer of CCD is a transaction that
 requires two or more co-signers to sign with their private keys to
 authorize the transaction.

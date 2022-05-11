@@ -6,10 +6,6 @@
 Run a node with Docker
 ======================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate

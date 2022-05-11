@@ -5,10 +5,6 @@
 Run and manage a node on Windows
 ================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`macOS <run-node-macos>`.
 
 If you want to run a baker node on Windows, see :ref:`Configure a node on Windows as baker<baker-windows>`.
