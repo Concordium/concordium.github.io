@@ -1,8 +1,8 @@
 .. _transaction-log:
 
-================================================
-Apply a transaction log filter in Desktop Wallet
-================================================
+====================================================
+Apply a transaction log filter in the Desktop Wallet
+====================================================
 
 You can specify which transactions to show in the transaction log.
 

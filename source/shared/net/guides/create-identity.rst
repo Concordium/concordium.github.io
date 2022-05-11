@@ -83,7 +83,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
       .. Warning::
             **When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
             **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
-            For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import-mw>`.
+            For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import>`.
 
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
