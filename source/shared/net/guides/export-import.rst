@@ -66,7 +66,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
                 **Incomplete backups**
 
-                If you have :ref:`imported <export-import-desktop>` accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.
+                If you have :ref:`imported <export-import>` accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.
 
                 **How to recover accounts**
 

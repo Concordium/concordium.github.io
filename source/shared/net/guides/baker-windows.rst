@@ -11,7 +11,7 @@ Prerequisites
 =============
 
 -  Run Windows 10 or later or Windows Server 2019 or later.
--  Meet the :ref:`minimum system requirements<requirements-run-node>` for running a node.
+-  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 -  :ref:`Run a node on Windows<run-node-windows>`
 
 .. _configure-baker-windows:

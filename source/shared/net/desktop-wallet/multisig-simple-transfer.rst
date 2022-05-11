@@ -12,7 +12,7 @@ authorize the transaction.
 Prerequisites
 =============
 
--  Set up an :ref:`identity and an account <create-initial-account-desktop>`.
+-  Set up an :ref:`identity and an account <create-initial-account>`.
 
 -  Set up an :ref:`account with multiple credentials <multi-credentials>`
 
