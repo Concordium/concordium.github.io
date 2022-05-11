@@ -31,7 +31,7 @@ See :ref:`Create an account in the Desktop Wallet <create-account>`.
 Step 2
 ------
 
-The account owner shares the account address with the user or users whose credentials are going to be added to the account. See :ref:`Address book overview <overview-addresses>`.
+The account owner shares the account address with the user or users whose credentials are going to be added to the account. See :ref:`Address book overview<overview-addresses>`.
 
 Step 3
 ------
