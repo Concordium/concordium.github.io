@@ -72,7 +72,7 @@ The Mobile Wallet is available for iOS and Android. For instructions about downl
 Step 3: Set up an identity and initial account
 ----------------------------------------------
 
-Once you've installed the Mobile Wallet, you must set up an identity and an initial account. It is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-identity`.
+Once you've installed the Mobile Wallet, you must set up an identity and an initial account. It is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
 Step 4: Export the account keys
 -------------------------------
