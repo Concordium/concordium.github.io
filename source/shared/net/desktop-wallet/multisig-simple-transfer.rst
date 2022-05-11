@@ -5,14 +5,6 @@
 Create a multi-signature CCD transfer in the Desktop Wallet
 ===========================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
-Multi-signature CCD transfer
-============================
-
 A multi-signature transfer of CCD is a transaction that
 requires two or more co-signers to sign with their private keys to
 authorize the transaction.
@@ -20,7 +12,7 @@ authorize the transaction.
 Prerequisites
 =============
 
--  Set up an :ref:`identity and an account <create-initial-account-desktop>`.
+-  Set up an :ref:`identity and an account <create-initial-account>`.
 
 -  Set up an :ref:`account with multiple credentials <multi-credentials>`
 

@@ -4,10 +4,6 @@
 Terms and Conditions for Concordium Desktop Wallet
 ==================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Effective from November 18, 2021
 
 Introduction

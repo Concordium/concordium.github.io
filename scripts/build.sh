@@ -6,7 +6,9 @@
 set -e # Fail script on error
 
 # Branches to include in the build, must be separated by comma and no spaces.
+
 all_versions='mainnet,smart-contracts-v0'
+
 # Languages to include in the build
 all_languages='en'
 
