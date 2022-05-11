@@ -13,7 +13,7 @@ Prequisites
 ===========
 
 -  Run Windows 10 or later or Windows Server 2019 or later.
--  Meet the :ref:`minimum system requirements<requirements-run-node>` for running a node.
+-  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 
 Install/upgrade and run a node
 ==============================
@@ -33,7 +33,7 @@ Install/upgrade and run a node
 
    - In **Install Concordium Node to**, specify where to store the executable code.
 
-   - In **Install Concordium Node configuration and data to**, specify where to store the node configuration and the blockchain databases and logs. Choose a drive that has sufficient space to accommodate the database and is sufficiently fast. For more information, see :ref:`Requirements for running a node<requirements-run-node>`.
+   - In **Install Concordium Node configuration and data to**, specify where to store the node configuration and the blockchain databases and logs. Choose a drive that has sufficient space to accommodate the database and is sufficiently fast. For more information, see :ref:`Requirements for running a node<node-requirements>`.
 
      .. image:: ../images/run-node/Node-setup-win-2.png
          :width: 60%

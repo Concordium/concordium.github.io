@@ -15,7 +15,7 @@ Prerequisites
 
 - Run macOS 10.14 or later.
 - Have the administrator password to your computer.
-- Meet the :ref:`minimum system requirements<requirements-run-node>` for running
+- Meet the :ref:`minimum system requirements<node-requirements>` for running
   a node.
 
 Install/upgrade and run a node

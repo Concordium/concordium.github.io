@@ -26,7 +26,7 @@ Step 1
 ------
 
 A user creates the account that's going to be used as a shared account.
-See :ref:`Create an account in the Desktop Wallet <create-account-desktop>`.
+See :ref:`Create an account in the Desktop Wallet <create-account>`.
 
 Step 2
 ------
