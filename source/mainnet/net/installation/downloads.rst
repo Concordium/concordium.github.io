@@ -101,17 +101,19 @@ Concordium Desktop Wallet
 
 Concordium Ledger App
 =====================
+
 The version of the Ledger App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
 
 .. tabs::
    .. tab:: Mainnet - Alpha Centauri
+
       - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
       - `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
 
-   .. tab:: Testnet - Sirius
-      The firmware version 2.0.0 is no longer supported.
+   .. tab:: Testnet - Alpha Centauri
 
       - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
+      - `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
@@ -145,6 +147,7 @@ Cargo-concordium
 
 .. tabs::
    .. tab:: Mainnet v1.0.0-2
+
       Download cargo-concordium:
 
       -  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
@@ -154,6 +157,7 @@ Cargo-concordium
       -  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
 
    .. tab:: Testnet v1.0.0-2
+
       Download cargo-concordium:
 
       -  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
@@ -258,6 +262,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
 Genesis block
 =============
+
 The genesis block is included in node distributions.
 Download the block separately to inspect it or to run a node in a custom configuration.
 

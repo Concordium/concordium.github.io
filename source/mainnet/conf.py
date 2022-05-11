@@ -188,14 +188,6 @@ current_version = os.environ['current_version'] if 'current_version' in os.envir
 versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
 languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
 
-# rst_epilog = """
-# Support & Feedback
-# ==================
-#
-# If you have questions or feedback, join us on `Discourse <https://support.concordium.software/>`_, or contact us at support@concordium.software.
-# """
-
-
 html_show_sourcelink = False
 
 html_context = {
@@ -321,7 +313,7 @@ linkcheck_request_headers = {
 }
 
 # -- InterSphinx links for linking between document versions ------------------
-intersphinx_mapping = {'testnet': ('https://developer.concordium.software/en/testnet/', None)}
+# intersphinx_mapping = {'testnet': ('https://developer.concordium.software/en/testnet/', None)}
 
 
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------

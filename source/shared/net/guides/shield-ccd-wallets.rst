@@ -83,7 +83,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
 
-                    .. image:: ../images/mobile-wallet/MW32.png
+                    .. image:: ../images/mobile-wallet/MW77.png
                         :width: 25%
 
                 #. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.

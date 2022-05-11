@@ -1,3 +1,28 @@
+:root {
+    /*****************************************************************************
+    * Font family
+    **/
+    /* These are adapted from https://systemfontstack.com/ */
+    --pst-font-family-base-system: Nb-akademie-std, sans-serif;
+    --pst-font-family-monospace-system: "SFMono-Regular", Menlo, Consolas, Monaco,
+      Liberation Mono, Lucida Console, monospace;
+  
+    --pst-font-family-base: var(--pst-font-family-base-system);
+    --pst-font-family-heading: var(--pst-font-family-base);
+    --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+  
+    /*****************************************************************************
+    * Color
+    *
+    * Colors are defined in rgb string way, "red, green, blue"
+    **/
+    --pst-color-link: 35, 92, 155;
+    --pst-color-link-hover: 35, 92, 155;
+    --pst-color-headerlink: 35, 92, 155;
+    --pst-color-headerlink-hover: 255, 255, 255;
+    --pst-color-inline-code: 178, 34, 34;
+  }
+
 body{
     font-family: Nb-akademie-std,sans-serif;
   }
@@ -24,6 +49,14 @@ h5{
 
 h6{
     font-family: Nb-akademie-std, sans-serif;
+}
+
+a.reference.external{
+    color: #235c9b
+}
+
+a.reference.internal{
+    color: #235c9b
 }
 
 .navbar{

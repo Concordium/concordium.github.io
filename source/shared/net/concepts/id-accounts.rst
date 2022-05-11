@@ -37,7 +37,7 @@ You are in control of which attributes are revealed to the public. You can choos
 Obtain an identity
 ------------------
 
-You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
+You can create identities in the :ref:`Desktop Wallet or Mobile Wallet <create-initial-account>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
