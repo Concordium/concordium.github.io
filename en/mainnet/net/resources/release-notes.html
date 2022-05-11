@@ -1,0 +1,1564 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Release Notes - Testnet &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Legal" href="legal.html" />
+    <link rel="prev" title="Release notes - Mainnet" href="release-notes-mainnet.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: black;
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 992px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="../guides/learn-about-concordium.html">Learn</a>
+  <a href="../nodes/node-requirements.html">Run a node</a>
+  <a href="../guides/deciding-wallet.html">Wallets</a>
+  <a href="../guides/overview-baker-process.html">Baking</a>
+  <a href="../guides/developer-page.html">Develop</a>
+  <a href="../../smart-contracts/index.html">Smart Contracts</a>
+</div>
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><img src="../../_static/discourse-brands.svg" class="icon-link-image" alt="Discourse"/></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="list-caption">
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Installation
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../installation/downloads.html">
+     Downloads
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../installation/verification-instructions.html">
+     Verification instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Learn
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/learn-about-concordium.html">
+     Learn about Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/id-accounts.html">
+       Identities
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/concepts-backup.html">
+       Backup
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/concepts-baker.html">
+       Bakers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/company-identities.html">
+       Company identity creation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="glossary.html">
+       Glossary of Concordium Terms
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Concordium Wallets
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/deciding-wallet.html">
+     Deciding between the Desktop Wallet and the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+     Set up the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
+       Set up the Ledger Nano S and install the Concordium Ledger App
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/create-identity.html">
+     Create an identity and an initial account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/create-account.html">
+     Create an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/share-address-mw.html">
+     Find and share your account address
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
+     Use the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/send-ccd-wallets.html">
+     Send CCD
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/shielded-transfer.html">
+     Make a shielded transfer on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/export-import.html">
+     Make a backup of identities, accounts, and addresses
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">
+     Transfer CCD with a schedule in Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">
+     Inspect a release schedule in Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../desktop-wallet/update-application.html">
+     Update the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/macos.html">
+       MacOS nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/windows.html">
+       Windows nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/docker.html">
+       Docker nodes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference external" href="https://developer.concordium.software/en/mainnet/smart-contracts/index.html">
+     Smart contracts
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/overview-baker-process.html">
+     Overview of the baker process
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/baker-windows.html">
+       Run a baker node on Windows
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/baker-macos.html">
+       Run a baker node on macOS
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/baker-ubuntu.html">
+       Run a baker node on Ubuntu
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/baker-docker.html">
+       Run a baker node on Docker
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/become-baker.html">
+       Become a baker using the Concordium Client
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../desktop-wallet/baking-dw.html">
+     Baking in the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/add-baker-desktop.html">
+       Add a baker account in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/update-baker-keys.html">
+       Update baker keys in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/remove-baker.html">
+       Remove a baker account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/change-baker-stake.html">
+       Update the staked amount
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/change-restake-settings.html">
+       Update the restake settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../references/concordium-client.html">
+     Concordium Client
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../references/transactions.html">
+     Concordium Client transactions
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../references/query-node.html">
+     Querying a node
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="release-notes-mainnet.html">
+     Release notes - Mainnet
+    </a>
+   </li>
+   <li class="toctree-l1 current active">
+    <a class="current reference internal" href="#">
+     Release Notes - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="legal.html">
+     Legal
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Mobile Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v7-update-1">
+   Open Testnet v7 Update 1
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v2-0-0-75">
+     Concordium Mobile Wallet for Android v2.0.0(75)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v2-0-0-38">
+     Concordium Mobile Wallet for iOS v2.0.0(38)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-3-34">
+     Concordium Mobile Wallet for iOS v1.3(34)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-2-33">
+     Concordium Mobile Wallet for iOS v1.2(33)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v1-2-6">
+     Concordium Mobile Wallet for Android v1.2.6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-3-1">
+     Concordium Desktop Wallet v1.3.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-node-v3-0-1">
+     Concordium Node v3.0.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-3-0">
+     Concordium Desktop Wallet v1.3.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v1-0-22">
+     Concordium Mobile Wallet for Android v1.0.22
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-ledger-app-v2-0-3">
+     Concordium Ledger App v2.0.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-1-27">
+     Concordium Mobile Wallet for iOS v1.1(27)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v7">
+   Open Testnet v7
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordrium-node-v3-0-0">
+     Concordrium Node v3.0.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-client-v3-0-4">
+     Concordium-client v3.0.4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v6-update-4">
+   Open Testnet v6 Update 4
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v-1-0-16">
+     Concordium Mobile Wallet for Android (v. 1.0.16)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">
+     The new version of Concordium Mobile Wallet for iOS is coming soon
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v6-update-3">
+   Open Testnet v6 Update 3
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-2-0">
+     Concordium Desktop Wallet v1.2.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-ledger-app-v2-0-1">
+     Concordium Ledger App v2.0.1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v6-update-2">
+   Open Testnet v6 Update 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v6-update-1">
+   Open Testnet v6 Update 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v6">
+   Open Testnet v6
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-node-v1-1-1">
+     Concordium Node v1.1.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-client-v1-1-1">
+     Concordium Client v1.1.1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v5-update-4">
+   Open Testnet v5 Update 4
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-1-6">
+     Concordium Desktop Wallet v1.1.6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v5-update-3">
+   Open Testnet v5 Update 3
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-1-5-for-testnet">
+     Concordium Desktop Wallet v1.1.5 for Testnet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v5-update-2">
+   Open Testnet v5 Update 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v5-update-1">
+   Open Testnet v5 Update 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v5">
+   Open Testnet v5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v4-update-1">
+   Open Testnet v4 Update 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v4">
+   Open Testnet v4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v3-update-2">
+   Open Testnet v3 update 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v3-update-1">
+   Open Testnet v3 update 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v3">
+   Open Testnet v3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v2-update-1">
+   Open Testnet v2 update 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v2">
+   Open Testnet v2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updates">
+   Updates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-testnet-v1">
+   Open Testnet v1
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordium-nodes">
+   Concordium Nodes
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="release-notes-testnet">
+<span id="testnet-release-notes"></span><h1>Release Notes - Testnet<a class="headerlink" href="#release-notes-testnet" title="Permalink to this headline">#</a></h1>
+<div class="section" id="open-testnet-v7-update-1">
+<h2>Open Testnet v7 Update 1<a class="headerlink" href="#open-testnet-v7-update-1" title="Permalink to this headline">#</a></h2>
+<p>March 22, 2022</p>
+<div class="section" id="concordium-mobile-wallet-for-android-v2-0-0-75">
+<h3>Concordium Mobile Wallet for Android v2.0.0(75)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v2-0-0-75" title="Permalink to this headline">#</a></h3>
+<p>Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.</p>
+<p>The simplified UI involves:</p>
+<ul>
+<li><p>Redesigned account cards with Send, Receive and More options.</p></li>
+<li><p>Updated simple and shielded transaction flows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is now possible to paste recipient addresses directly, without having to add them to the address book first.</p></li>
+<li><p>A “Send all” button has been added.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.</p></li>
+<li><p>The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.</p></li>
+</ul>
+<p>March 21, 2022</p>
+</div>
+<div class="section" id="concordium-mobile-wallet-for-ios-v2-0-0-38">
+<h3>Concordium Mobile Wallet for iOS v2.0.0(38)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v2-0-0-38" title="Permalink to this headline">#</a></h3>
+<p>Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.</p>
+<p>The simplified UI involves:</p>
+<ul>
+<li><p>Redesigned account cards with Send, Receive and More options.</p></li>
+<li><p>Updated simple and shielded transaction flows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is now possible to paste recipient addresses directly, without having to add them to the address book first.</p></li>
+<li><p>A “Send all” button has been added.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.</p></li>
+<li><p>The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.</p></li>
+</ul>
+<p>February 10, 2022</p>
+</div>
+<div class="section" id="concordium-mobile-wallet-for-ios-v1-3-34">
+<h3>Concordium Mobile Wallet for iOS v1.3(34)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-3-34" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fixed a bug related to import of backup files.</p></li>
+</ul>
+<p>February 1, 2022</p>
+</div>
+<div class="section" id="concordium-mobile-wallet-for-ios-v1-2-33">
+<h3>Concordium Mobile Wallet for iOS v1.2(33)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-2-33" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Changed name of export file to <code class="docutils literal notranslate"><span class="pre">concordium-backup.concordiumwallet</span></code>.</p></li>
+<li><p>Added prompts and dialogs to remind users to back up.</p></li>
+</ul>
+<p>January 25, 2022</p>
+</div>
+<div class="section" id="concordium-mobile-wallet-for-android-v1-2-6">
+<h3>Concordium Mobile Wallet for Android v1.2.6<a class="headerlink" href="#concordium-mobile-wallet-for-android-v1-2-6" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Changed name of export file to <code class="docutils literal notranslate"><span class="pre">concordium-backup.concordiumwallet</span></code>.</p></li>
+<li><p>Added prompts and dialogs to remind users to back up.</p></li>
+</ul>
+<p>January 10, 2022</p>
+</div>
+<div class="section" id="concordium-desktop-wallet-v1-3-1">
+<h3>Concordium Desktop Wallet v1.3.1<a class="headerlink" href="#concordium-desktop-wallet-v1-3-1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.</p></li>
+<li><p>Fixed identity issuance with DTS.</p></li>
+</ul>
+<p>January 3, 2022</p>
+</div>
+<div class="section" id="concordium-node-v3-0-1">
+<h3>Concordium Node v3.0.1<a class="headerlink" href="#concordium-node-v3-0-1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fixed a starvation bug in some cases of parallel node queries.</p></li>
+</ul>
+<p>December 17, 2021</p>
+</div>
+<div class="section" id="concordium-desktop-wallet-v1-3-0">
+<h3>Concordium Desktop Wallet v1.3.0<a class="headerlink" href="#concordium-desktop-wallet-v1-3-0" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Added a GTU drop option for testnet.</p></li>
+<li><p>In the case of a failed identity, the error details received from the identity provider are now displayed to the user.</p></li>
+<li><p>Added UI flows for baker transactions for single signer accounts.</p></li>
+<li><p>Auxiliary data in an Update Protocol transaction is now optional.</p></li>
+<li><p>Updated terms and conditions.</p></li>
+<li><p>Updated UI to reflect the rename of GTU to CCD, meaning anywhere tokens were referred to as GTU, it now says CCD. The GTU icon has also been replaced with the icon representing CCD.</p></li>
+<li><p>Datetimes are now selected with a date picker from a calendar.</p></li>
+<li><p>Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.</p></li>
+<li><p>Failed database migrations errors are now shown correctly to the user.</p></li>
+</ul>
+</div>
+<div class="section" id="concordium-mobile-wallet-for-android-v1-0-22">
+<h3>Concordium Mobile Wallet for Android v1.0.22<a class="headerlink" href="#concordium-mobile-wallet-for-android-v1-0-22" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Changed naming from GTU to CCD.</p></li>
+<li><p>Various bug fixes.</p></li>
+</ul>
+<p>December 13, 2021</p>
+</div>
+<div class="section" id="concordium-ledger-app-v2-0-3">
+<h3>Concordium Ledger App v2.0.3<a class="headerlink" href="#concordium-ledger-app-v2-0-3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Supports Ledger Nano S firmware version 2.1.0.</p></li>
+<li><p>Removed references to GTU in the UI.</p></li>
+<li><p>An acceptance step has been added to the export of private key seeds.</p></li>
+</ul>
+<p>December 7, 2021</p>
+</div>
+<div class="section" id="concordium-mobile-wallet-for-ios-v1-1-27">
+<h3>Concordium Mobile Wallet for iOS v1.1(27)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-1-27" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Changed GTU/Ǥ naming to CCD/Ͼ.</p></li>
+<li><p>Support for the new memo functionality in simple, shielded, and scheduled transfers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is now possible to add memos to simple and shielded transfers.</p></li>
+<li><p>Memos can also be displayed for transfers with a release schedule.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Various improvements of the identity issuance flow, account creation and related support options.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.</p></li>
+<li><p>Added a small dialogue to remind the user to check for a response on new identity requests.</p></li>
+<li><p>Users will now be notified on successful creation of new accounts inside the app.</p></li>
+<li><p>Various back-end improvements by the identity provider to make their service more robust.</p></li>
+<li><p>Various improvements to make the identity issuance and account creation flow more robust.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Various bug fixes.</p></li>
+<li><p>Various smaller textual updates.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="open-testnet-v7">
+<h2>Open Testnet v7<a class="headerlink" href="#open-testnet-v7" title="Permalink to this headline">#</a></h2>
+<p>November 29th 2021</p>
+<div class="section" id="concordrium-node-v3-0-0">
+<h3>Concordrium Node v3.0.0<a class="headerlink" href="#concordrium-node-v3-0-0" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Introduced support for account aliases via protocol P3. Accounts can be queried in <code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">GetAccountNonFinalizedTransactions</span></code>, <code class="docutils literal notranslate"><span class="pre">GetNextAccountNonce</span></code> by any alias.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> object now has an additional field <code class="docutils literal notranslate"><span class="pre">accountAddress</span></code> that contains the canonical address of the account.</p></li>
+<li><p>Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.</p></li>
+<li><p>Faster state queries by avoiding locking the block state file when reading.</p></li>
+<li><p>Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.</p></li>
+<li><p>The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.</p></li>
+</ul>
+</div>
+<div class="section" id="concordium-client-v3-0-4">
+<h3>Concordium-client v3.0.4<a class="headerlink" href="#concordium-client-v3-0-4" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Credentials revealing the newly introduced attribute LEI can be deployed.</p></li>
+<li><p>Renamed GTU token to CCD.</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">send-gtu</span></code>, <code class="docutils literal notranslate"><span class="pre">send-gtu-scheduled</span></code> and <code class="docutils literal notranslate"><span class="pre">send-gtu-encrypted</span></code> to <code class="docutils literal notranslate"><span class="pre">send</span></code>, <code class="docutils literal notranslate"><span class="pre">send-scheduled</span></code> and <code class="docutils literal notranslate"><span class="pre">send-shielded</span></code>.</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">encrypt</span></code>/<code class="docutils literal notranslate"><span class="pre">decrypt</span></code> to <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">shield</span></code>/<code class="docutils literal notranslate"><span class="pre">unshield</span></code>.</p></li>
+<li><p>Added command for generating aliases of an address.</p></li>
+<li><p>Now shows line breaks, tabs etc. in memo transfers (when it’s CBOR encoded string), instead of escaping them as <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\t</span></code> etc.</p></li>
+<li><p>Now displays memo as JSON in a more readable way.</p></li>
+<li><p>Added time units to slot duration and epoch duration in consensus status.</p></li>
+<li><p>Updated the <code class="docutils literal notranslate"><span class="pre">register-data</span></code> command to register data as CBOR encoded strings or JSON using the new flags <code class="docutils literal notranslate"><span class="pre">--string</span></code> and <code class="docutils literal notranslate"><span class="pre">--json</span></code>. Raw data can still be registered using the new flag <code class="docutils literal notranslate"><span class="pre">--raw</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">DisconnectPeer</span></code>, a counterpart to the existing <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">ConnectPeer</span></code>.</p></li>
+<li><p>Now warning  the user when trying to add a baker with a stake below the minimum threshold.</p></li>
+<li><p>Improved how contract schemas are shown as JSON:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Now displays complex types in arrays correctly.</p></li>
+<li><p>Use angle brackets to indicate placeholders, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;&lt;UInt16&gt;&quot;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&quot;UInt16&quot;</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Improved <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">inspect</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Now shows all contracts from a module regardless of whether a schema is included or not.</p></li>
+<li><p>Now shows the receive methods for contracts as well.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Now allows sending transactions where the sender is an account alias.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="open-testnet-v6-update-4">
+<h2>Open Testnet v6 Update 4<a class="headerlink" href="#open-testnet-v6-update-4" title="Permalink to this headline">#</a></h2>
+<p>November 16th, 2021</p>
+<div class="section" id="concordium-mobile-wallet-for-android-v-1-0-16">
+<h3>Concordium Mobile Wallet for Android (v. 1.0.16)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v-1-0-16" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Support for the new memo functionality in simple, shielded, and scheduled transfers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is now possible to add memos to simple and shielded transactions.</p></li>
+<li><p>Memos can also be displayed for transfers with release schedule.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Various improvements of the identity issuance flow, account creation and related support options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
+containing an issuance reference for better personal support as well as system information of the user for better debugging.</p></li>
+<li><p>Added a small dialogue to remind user to check for response on new identity requests.</p></li>
+<li><p>User will now be notified on successful creation of new accounts inside the app.</p></li>
+<li><p>Various back-end improvements by the identity provider to make their service more robust.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Various bug fixes.</p></li>
+<li><p>Various smaller textual updates.</p></li>
+<li><p>Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.</p></li>
+</ul>
+</div>
+<div class="section" id="the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">
+<h3>The new version of Concordium Mobile Wallet for iOS is coming soon<a class="headerlink" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" title="Permalink to this headline">#</a></h3>
+</div>
+</div>
+<div class="section" id="open-testnet-v6-update-3">
+<span id="id1"></span><h2>Open Testnet v6 Update 3<a class="headerlink" href="#open-testnet-v6-update-3" title="Permalink to this headline">#</a></h2>
+<div class="section" id="concordium-desktop-wallet-v1-2-0">
+<h3>Concordium Desktop Wallet v1.2.0<a class="headerlink" href="#concordium-desktop-wallet-v1-2-0" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium Desktop Wallet v1.2.0</span></a></p>
+<ul class="simple">
+<li><p>Added memo functionality to simple, shielded and scheduled transfers.</p></li>
+<li><p>Automatic updates now supported.</p></li>
+<li><p>Added option to recover lost accounts from Ledger devices.</p></li>
+<li><p>The desktop wallet now shows connected node status in side bar.</p></li>
+<li><p>Added an option to change between two account views.</p></li>
+<li><p>Transaction log can now handle more than 100 transactions and filter functionality has been expanded.</p></li>
+<li><p>Failed identities now show more information, including how to contact support.</p></li>
+<li><p>Apple M1 Macs are now supported through Rosetta.</p></li>
+<li><p>It is now possible to view an account address QR-code in “fullscreen” mode.</p></li>
+<li><p>It is now possible to rename accounts and identities.</p></li>
+<li><p>Added an option to add an address book entry while creating a transfer transaction.</p></li>
+<li><p>Added an introductory screen to set up a node connection for first time users.</p></li>
+<li><p>It is now possible to remove a failed identity.</p></li>
+<li><p>The accounts page has been updated to make it clearer that multi credential accounts are not able to use shielded transactions.</p></li>
+<li><p>Transactions in the ‘Transfers’ list in the account view are now grouped by dates.</p></li>
+<li><p>Various smaller UI updates.</p></li>
+<li><p>Various smaller bug fixes.</p></li>
+<li><p>The desktop wallet is now open source.</p></li>
+</ul>
+</div>
+<div class="section" id="concordium-ledger-app-v2-0-1">
+<h3>Concordium Ledger App v2.0.1<a class="headerlink" href="#concordium-ledger-app-v2-0-1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Improved state validation to deny instruction changes in multi command transactions.</p></li>
+<li><p>Support building for the Ledger Nano X.</p></li>
+<li><p>Simplified the UI by updating terminology and stopped displaying details that cannot feasibly be verified by a user.</p></li>
+<li><p>Export of private key seeds has been changed so that either the PRF key can be exported alone, or the PRF key and the IdCredSec are exported in a single command.</p></li>
+<li><p>Added support for transactions with memos.</p></li>
+<li><p>Support for the “Add identity provider” update.</p></li>
+<li><p>Support for the “Add anonymity revoker” update.</p></li>
+<li><p>Improved pagination of account addresses and hexadecimal strings, so that pages are split evenly and consistently.</p></li>
+<li><p>Fixed an issue in the add baker UI, where a response could be sent before signing or declining.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="open-testnet-v6-update-2">
+<span id="id2"></span><h2>Open Testnet v6 Update 2<a class="headerlink" href="#open-testnet-v6-update-2" title="Permalink to this headline">#</a></h2>
+<p>October 6, 2021</p>
+<p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.3</span></a> is a bugfix release.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-node/blob/1.1.3-1/CHANGELOG.md#concordium-node-113">Changelog</a></p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v6-update-1">
+<span id="id3"></span><h2>Open Testnet v6 Update 1<a class="headerlink" href="#open-testnet-v6-update-1" title="Permalink to this headline">#</a></h2>
+<p>September 17, 2021</p>
+<p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.2</span></a> is a bugfix release.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-node/blob/1.1.2/CHANGELOG.md#concordium-node-112">Changelog</a></p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v6">
+<span id="id4"></span><h2>Open Testnet v6<a class="headerlink" href="#open-testnet-v6" title="Permalink to this headline">#</a></h2>
+<p>September 15, 2021</p>
+<div class="section" id="concordium-node-v1-1-1">
+<h3>Concordium Node v1.1.1<a class="headerlink" href="#concordium-node-v1-1-1" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.1</span></a> implements a protocol update to add memo functionality for simple, shielded and scheduled transfers. This means that node runners <strong>must upgrade</strong> their nodes before the new protocol takes effect on testnet on September 22, 2021. Old nodes will stop processing new blocks at that point. See <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals">protocol updates</a> for more details.</p>
+<ul class="simple">
+<li><p>Added memo functionality for transactions to Protocol</p></li>
+<li><p>Windows support for running a node</p></li>
+<li><p>Mac support for running a node</p></li>
+<li><p>Mac ARM M1 support for running a node</p></li>
+</ul>
+</div>
+<div class="section" id="concordium-client-v1-1-1">
+<h3>Concordium Client v1.1.1<a class="headerlink" href="#concordium-client-v1-1-1" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium Client v1.1.1</span></a></p>
+<ul class="simple">
+<li><p>Added memo functionality for transactions</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="open-testnet-v5-update-4">
+<span id="id5"></span><h2>Open Testnet v5 Update 4<a class="headerlink" href="#open-testnet-v5-update-4" title="Permalink to this headline">#</a></h2>
+<p>July 28, 2021</p>
+<div class="section" id="concordium-desktop-wallet-v1-1-6">
+<h3>Concordium Desktop Wallet v1.1.6<a class="headerlink" href="#concordium-desktop-wallet-v1-1-6" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue where identity creation would fail consistently making it impossible to create new identities.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="open-testnet-v5-update-3">
+<span id="id6"></span><h2>Open Testnet v5 Update 3<a class="headerlink" href="#open-testnet-v5-update-3" title="Permalink to this headline">#</a></h2>
+<p>July 27, 2021</p>
+<div class="section" id="concordium-desktop-wallet-v1-1-5-for-testnet">
+<h3>Concordium Desktop Wallet v1.1.5 for Testnet<a class="headerlink" href="#concordium-desktop-wallet-v1-1-5-for-testnet" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>General improvements to the user interface, in particular for multi signature transaction flows.</p></li>
+<li><p>Change of wallet password now enforces the same length restriction as when initially set.</p></li>
+<li><p>Wallet exports now contain the genesis hash to prevent the import of a wallet from testnet to a mainnet wallet.</p></li>
+<li><p>Improved messages when waiting for a Ledger device to be connected.</p></li>
+<li><p>Transaction status is now included in an account report.</p></li>
+<li><p>Fixed an issue where e.g. a loss of connection could result in a failed identity when it should not.</p></li>
+<li><p>Security improvements. Node integration was available to the Electron renderer threads which is considered unsafe. This has now been disabled.</p></li>
+<li><p>Added foundation feature for importing and creating multi signature transactions in bulk.</p></li>
+<li><p>A number of bug fixes.</p></li>
+</ul>
+<p><strong>Concordium Ledger App v1.0.2</strong></p>
+<ul class="simple">
+<li><p>Scheduled transfer release times are now shown as human readable UTC date time strings.</p></li>
+<li><p>Fixed a UI bug in remove baker transaction.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="open-testnet-v5-update-2">
+<span id="id7"></span><h2>Open Testnet v5 Update 2<a class="headerlink" href="#open-testnet-v5-update-2" title="Permalink to this headline">#</a></h2>
+<p><strong>Concordium Desktop Wallet v1.1.3 for Testnet.</strong></p>
+<p>The Desktop Wallet is available on Testnet for Windows, macOS, and Linux including:</p>
+<ul class="simple">
+<li><p>All features released in v1.0.2 for Mainnet.</p></li>
+<li><p>Transaction status in account reports.</p></li>
+<li><p>Various bug fixes.</p></li>
+<li><p>Foundation feature: Added support for bulk import of proposals.</p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v5-update-1">
+<span id="id8"></span><h2>Open Testnet v5 Update 1<a class="headerlink" href="#open-testnet-v5-update-1" title="Permalink to this headline">#</a></h2>
+<p>June 24th, 2021</p>
+<p>Concordium Mobile Wallet for iOS v1.0.5</p>
+<ul class="simple">
+<li><p>Added feature enabling change of passcode and biometrics.</p></li>
+<li><p>Updates to Account page UI for easier shielding/unshielding transactions.</p></li>
+<li><p>Added option to filter rewards in transaction log.</p></li>
+<li><p>Added About page.</p></li>
+<li><p>Improved security.</p></li>
+<li><p>Various bug fixes and robustness improvements.</p></li>
+<li><p>Code is now open source.</p></li>
+</ul>
+<p>Concordium Mobile Wallet for Android v1.0.7(46)</p>
+<ul class="simple">
+<li><p>Added feature enabling change of passcode and biometrics.</p></li>
+<li><p>Updates to Account page UI for easier shielding/unshielding transactions.</p></li>
+<li><p>Added option to filter rewards in transaction log.</p></li>
+<li><p>Added About page.</p></li>
+<li><p>Improved security.</p></li>
+<li><p>Various bug fixes and robustness improvements.</p></li>
+<li><p>Code is now open source.</p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v5">
+<span id="id9"></span><h2>Open Testnet v5<a class="headerlink" href="#open-testnet-v5" title="Permalink to this headline">#</a></h2>
+<p>May 12th, 2021</p>
+<p>Updated Open Testnet to match Mainnet features including:</p>
+<p><strong>Proof of Stake</strong></p>
+<p>The Concordium Blockchain uses a proof of stake mechanism to ensure resource-efficient operation of the network.</p>
+<p><strong>Two Layer Consensus Protocol</strong></p>
+<p>Nakamoto-Style Consensus Bakers participate in a form of lottery to win the right to append blocks to the chain.</p>
+<p>Finality Layer Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byzantine agreement to identify and mark common blocks in the chains of honest users as final.</p>
+<p><strong>Built in IDLayer</strong></p>
+<p>Account creation is based on a validated identity, but at the same time it provides transactional privacy for users with a mechanism that allows accountability to local regulatory authorities.</p>
+<p>Transactional privacy is further enhanced by support for shielded transfers.</p>
+<p><strong>Smart Contracts</strong></p>
+<p>Concordium blockchain has native support for smart contracts on-chain with our core on-chain language WebAssembly (Wasm), a portable well-defined assembly-like language.</p>
+<p>Rust is the first off-chain high level smart contract language.</p>
+<p><strong>Tokenomics and On-chain Incentivization</strong></p>
+<p>The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.</p>
+<p>The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.</p>
+<p><strong>Concordium Node</strong></p>
+<p>The Concordium node software is available for Linux and available in two different packages:</p>
+<ul class="simple">
+<li><p>A distribution package, which provides wrappers for setting up the node in a Docker image.</p></li>
+<li><p>A Debian package built for Ubuntu 20.04. This package allows for greater customization of the node set up.</p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v4-update-1">
+<span id="id10"></span><h2>Open Testnet v4 Update 1<a class="headerlink" href="#open-testnet-v4-update-1" title="Permalink to this headline">#</a></h2>
+<p>January 14th, 2020</p>
+<ul class="simple">
+<li><p>Fixed an issue in the node, where a parameter update transaction could cause the node to crash on restart.</p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v4">
+<span id="id11"></span><h2>Open Testnet v4<a class="headerlink" href="#open-testnet-v4" title="Permalink to this headline">#</a></h2>
+<p>January 13th, 2020</p>
+<p>Smart contracts:</p>
+<ul class="simple">
+<li><p>Smart contracts support on chain</p></li>
+<li><p>Rust supported as off-chain Smart Contract language</p></li>
+<li><p><a class="reference external" href="https://crates.io/crates/concordium-std">Concordium-std</a> library added for developing smart contracts in Rust.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cargo-concordium</span></code> tool for building and testing smart contracts off-chain</p></li>
+<li><p>Documentation for smart contracts added to <a class="reference external" href="https://concordium.github.io/en/testnet4/smart-contracts/index.html">developer documentation</a></p></li>
+<li><p>Smart Contract transactions added to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code></p></li>
+</ul>
+<p>Tokenomics (to match tokenomics model):</p>
+<ul class="simple">
+<li><p>Rewards for baking and finalization changed</p></li>
+<li><p>Minting changed</p></li>
+<li><p>Extended the list of adjustable chain parameters</p></li>
+<li><p>Updated <a class="reference external" href="https://dashboard.testnet.concordium.com/chain">network dashboard block explorer</a> to include new info</p></li>
+<li><p>Amount lock-up transaction with schedule added</p></li>
+<li><p>Staking changed so staked amount is locked</p></li>
+<li><p>Mobile app updated to show staking and amount lockup schedules</p></li>
+<li><p>Delegation removed</p></li>
+</ul>
+<p>ID layer:</p>
+<ul class="simple">
+<li><p>Initial account creation added to ID provider process</p></li>
+<li><p>Mobile app updated to support initial account creation</p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v3-update-2">
+<h2>Open Testnet v3 update 2<a class="headerlink" href="#open-testnet-v3-update-2" title="Permalink to this headline">#</a></h2>
+<p>October 16th, 2020</p>
+<p>A new Mac version is released after fixing an issue with adding a baker on the
+dashboard. The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">downloads page</span></a> has been updated accordingly. Please download
+the latest Mac release, then stop your node, reset your data, and restart your
+node.</p>
+</div>
+<div class="section" id="open-testnet-v3-update-1">
+<h2>Open Testnet v3 update 1<a class="headerlink" href="#open-testnet-v3-update-1" title="Permalink to this headline">#</a></h2>
+<p>October 8th, 2020</p>
+<p>New mobile wallets are released after some bug fixes on both iOS and Android.
+The released versions are ConcordiumID version 0.1.52 for iOS and version 0.5.24
+for Android. The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">downloads page</span></a> has been updated accordingly. The node
+software is unaffected by this update.</p>
+</div>
+<div class="section" id="open-testnet-v3">
+<h2>Open Testnet v3<a class="headerlink" href="#open-testnet-v3" title="Permalink to this headline">#</a></h2>
+<p>October 6th, 2020.</p>
+<ul class="simple">
+<li><p>Chain visualization: The connection of blocks has been made more
+stable to ensure that it progresses smoothly.</p></li>
+<li><p>iOS Concordium ID app available.</p></li>
+<li><p>Added import to app. It is now possible to import a file that has
+previously been exported. This enables moving identities and accounts
+to other mobile devices and restoring from backup.</p></li>
+<li><p>µCCD. The smallest unit has been changed from 10-4 to 10-6.</p></li>
+<li><p>Bulletproofs. The core blockchain has been updated to support use of
+bulletproofs.</p></li>
+<li><p>Encrypted(shielded) amounts and transfers: Support for shielded
+transactions has been added to the core blockchain. Support for
+sending and receiving shielded amounts are added to the mobile apps
+and the Concordium client.</p></li>
+<li><p>Anonymity revocation tool available for anonymity revokers.</p></li>
+<li><p>Block storage improvements for storing the chain on nodes.</p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v2-update-1">
+<h2>Open Testnet v2 update 1<a class="headerlink" href="#open-testnet-v2-update-1" title="Permalink to this headline">#</a></h2>
+<p>July 2, 2020</p>
+<p>An issue was identified in the Concordium ID app for Android. When using an
+identification document with no expiry date (such as a Swiss driving license)
+the app will crash upon completion of the ID issuance process. An app update has
+been issued and is available here (No longer available - See the <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">downloads page</span></a> for the newest app). The node software is unaffected by this
+update.</p>
+</div>
+<div class="section" id="open-testnet-v2">
+<h2>Open Testnet v2<a class="headerlink" href="#open-testnet-v2" title="Permalink to this headline">#</a></h2>
+<p>June 29, 2020</p>
+<p>Follow our instructions on how to upgrade to Open Testnet v2
+from v1.</p>
+<p>The Testnet v2 is the second public release of the Concordium Blockchain. Open
+Testnet aims at demonstrating the technology behind the Concordium Blockchain.
+This version is not feature-complete compared to the expected features for the
+first Mainnet version of the Concordium Blockchain.</p>
+<p>This version of the Testnet is running Concordium Node version 0.2.13.</p>
+</div>
+<div class="section" id="updates">
+<h2>Updates<a class="headerlink" href="#updates" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Concordium ID, an Android mobile app for accessing identities and
+accounts</p></li>
+<li><p>Identity provider integration in Android mobile app</p>
+<ul>
+<li><p>Notabene developer identity issuance flow</p></li>
+<li><p>Notabene identity issuance flow</p></li>
+</ul>
+</li>
+<li><p>Catch-up time improvements</p>
+<ul>
+<li><p>The time needed for new nodes to catch-up has been significantly
+reduced</p></li>
+<li><p>Restarting nodes can now choose to start from their local database
+removing the need to do a complete catch-up.</p></li>
+</ul>
+</li>
+<li><p>Storage requirements improvements</p>
+<ul>
+<li><p>Storage of the chain on nodes has been optimized</p></li>
+</ul>
+</li>
+<li><p>Concordium Node and Client Software improvements. Extended in the
+following areas:</p>
+<ul>
+<li><p>Managing bakers</p></li>
+<li><p>Account delegation</p></li>
+<li><p>Module query</p></li>
+<li><p>Account management</p></li>
+</ul>
+</li>
+<li><p>Block explorer added to dashboard</p></li>
+<li><p>Node dashboard with support for becoming a baker</p></li>
+<li><p>Improvements to the <a class="reference external" href="https://dashboard.testnet.concordium.com">Network Dashboard</a></p></li>
+</ul>
+</div>
+<div class="section" id="open-testnet-v1">
+<h2>Open Testnet v1<a class="headerlink" href="#open-testnet-v1" title="Permalink to this headline">#</a></h2>
+<p>April 2, 2020</p>
+<p>The Testnet v1 is the first public release of the Concordium Blockchain. Open
+Testnet aims at demonstrating the technology behind the Concordium Blockchain.
+This version is not feature-complete compared to the expected features for the
+first Mainnet version of the Concordium Blockchain.</p>
+<p>This is the initial version of the Testnet. It will be running
+Concordium Node version 0.2.4.</p>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h3>
+<p>This release contains the following main features:</p>
+<ul class="simple">
+<li><p>Node software in a dockerized container featuring:</p>
+<ul>
+<li><p><em>Passive node:</em> A node that participates in the Concordium
+network. It relays messages, provides an API for submitting
+transactions and inspecting the chain, and processes blocks, but
+does not produce any blocks on its own.</p></li>
+<li><p><em>Baker node:</em> Does everything a passive node does, but in addition
+participates in consensus, producing blocks.</p></li>
+<li><p><em>Finalizer node:</em> Does everything a baker node does, but in
+addition participates in the finalization part of our consensus.</p></li>
+<li><p><em>Concordium Client:</em> A command-line interface to the Concordium
+Blockchain. Can send transactions and inspect the state of the
+node and the chain.</p></li>
+<li><p>Tools for interacting with the container</p></li>
+</ul>
+</li>
+<li><p>A demo Web wallet</p>
+<ul>
+<li><p>Creating identities</p></li>
+<li><p>Creating accounts</p></li>
+<li><p>Making transfers</p></li>
+<li><p>Depositing CCD tokens</p></li>
+<li><p>Exporting identities and accounts</p></li>
+</ul>
+</li>
+<li><p>A demo Identity service</p></li>
+<li><p>A Network <a class="reference external" href="https://dashboard.testnet.concordium.com">Dashboard</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="concordium-nodes">
+<h2>Concordium Nodes<a class="headerlink" href="#concordium-nodes" title="Permalink to this headline">#</a></h2>
+<p>Concordium will be running 19 nodes in Europe for this iteration of the Testnet
+and an additional node in Hong Kong (all running both baker and finalizer).</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2022, Concordium Software ApS
+        </a>
+    </div>
+  </body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': loadChoice() ? 'granted' : 'denied' });
+gtag('js', new Date());
+gtag('config', 'G-TE81YY48VB', {'anonymize_ip': true});
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+    document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+    if (!document.cookie.includes("cookie-consent=")) {
+        return undefined;
+    }
+    return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+    document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+    storeChoice(true)
+    gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'granted' });
+    removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+    storeChoice(false)
+    removeCookieConsentBanner()
+}
+
+
+</script>
+<div id="cookie-consent" class="consent">
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+<script>
+    const stored = loadChoice();
+    if (stored !== undefined) {
+        removeCookieConsentBanner()
+    }
+</script>
+
+  </body>
+</html>

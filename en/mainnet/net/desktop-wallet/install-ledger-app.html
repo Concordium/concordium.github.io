@@ -1,265 +1,757 @@
 
 
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Set up the Ledger Nano S and install the Concordium Ledger App &mdash; Concordium  documentation</title>
-  
 
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set up the Ledger Nano S and install the Concordium Ledger App &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Set up the Desktop Wallet" href="get-started-desktop.html" />
-    <link rel="prev" title="Overview of setting up the Desktop Wallet" href="../guides/overview-desktop.html" />
+    <link rel="next" title="Create an identity and an initial account" href="../guides/create-identity.html" />
+    <link rel="prev" title="Set up the Desktop Wallet" href="../guides/overview-desktop.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #4486AB" >
-          
+    <div class="container-fluid" id="banner"></div>
 
-
-          
-            <a href="../../index.html">
-          
-
-          
-            
-            <img src="../../_static/concordium-logo-mainnet.svg" class="logo" alt="Logo"/>
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-<nav class="sidebar-top-menu">
-    <a href="../index.html" class="active" ><i class="icon fa fa-connectdevelop"></i> Mainnet</a>
-    <a href="../../smart-contracts/index.html" class=""> <i class="icon fa fa-file-o"></i> Smart Contracts </a>
-</nav>
-
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/downloads.html">Downloads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/verification-instructions.html">Verification instructions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/concepts.html">Concordium Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the Desktop Wallet and the Mobile Wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium Terms</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Mobile Wallet</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/setup-maintenance-mw.html">Setup and Maintenance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mobile-wallet/transfers-mw.html">Transfers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Desktop Wallet</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="setup-maintenance-dw.html">Setup and Maintenance</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../guides/overview-desktop.html">Overview of setting up the Desktop Wallet</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Set up the Ledger Nano S and install the Concordium Ledger App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started-desktop.html">Set up the Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create-identity-desktop.html">Create an identity and an initial account in the Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create-account-desktop.html">Create an account in the  Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accounts-desktop.html">Overview of accounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="export-import-desktop.html">Make a backup of identities, accounts, and addresses in the Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create-credentials-file.html">Create a credentials file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/multi-credentials.html">Add credentials to an account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/overview-shared-accounts.html">Overview of shared accounts with multiple credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="settings-overview.html">Desktop Wallet settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview-addresses.html">Address book overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="update-application.html">Update the desktop wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="make-account-report.html">Make an account report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="account-recovery.html">Account recovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup-maintenance-dw.html#support-feedback">Support &amp; Feedback</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="transfers-dw.html">Transfers and Transactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="baking-dw.html">Baking in the Desktop Wallet</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Concordium Client</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Run a node</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/ubuntu.html">Ubuntu nodes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/docker.html">Docker nodes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/windows.html">Windows nodes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/macos.html">MacOS nodes</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Baking</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/overview-baker-process.html">Overview of the baker process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/become-baker.html">Become a baker using the Concordium Client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/baker-windows.html">Run a baker node on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-macos.html">Run a baker node on macOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-ubuntu.html">Run a baker node on Ubuntu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nodes/baker-docker.html">Run a baker node on Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="baking-dw.html">Baking in the Desktop Wallet</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../resources/dashboards.html">Dashboards and Status Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/developer-tools.html">Auxiliary Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/release-notes-mainnet.html">Release notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/legal.html">Legal</a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Concordium</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../index.html">Mainnet</a> &raquo;</li>
-        
-          <li><a href="setup-maintenance-dw.html">Setup and Maintenance</a> &raquo;</li>
-        
-      <li>Set up the Ledger Nano S and install the Concordium Ledger App</li>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
     
     
-      <li class="wy-breadcrumbs-aside">
-        
-          
-        
-      </li>
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
     
-  </ul>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-  <hr/>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: black;
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 992px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="../guides/learn-about-concordium.html">Learn</a>
+  <a href="../nodes/node-requirements.html">Run a node</a>
+  <a href="../guides/deciding-wallet.html">Wallets</a>
+  <a href="../guides/overview-baker-process.html">Baking</a>
+  <a href="../guides/developer-page.html">Develop</a>
+  <a href="../../smart-contracts/index.html">Smart Contracts</a>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><img src="../../_static/discourse-brands.svg" class="icon-link-image" alt="Discourse"/></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
             
-  <div class="section" id="set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app">
-<span id="install-ledger-app"></span><h1>Set up the Ledger Nano S and install the Concordium Ledger App<a class="headerlink" href="#set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app" title="Permalink to this headline">¶</a></h1>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id4">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#set-up-the-ledger-nano-s" id="id5">Set up the Ledger Nano S</a></p></li>
-<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-windows" id="id6">Install Concordium Ledger app on Windows</a></p></li>
-<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-macos" id="id7">Install Concordium Ledger app on macOS</a></p></li>
-<li><p><a class="reference internal" href="#install-concordium-ledger-app-on-ubuntu" id="id8">Install Concordium Ledger app on Ubuntu</a></p></li>
-<li><p><a class="reference internal" href="#support-feedback" id="id9">Support &amp; Feedback</a></p></li>
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="list-caption">
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Installation
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../installation/downloads.html">
+     Downloads
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../installation/verification-instructions.html">
+     Verification instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Learn
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/learn-about-concordium.html">
+     Learn about Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/id-accounts.html">
+       Identities
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/concepts-backup.html">
+       Backup
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../concepts/concepts-baker.html">
+       Bakers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/company-identities.html">
+       Company identity creation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/glossary.html">
+       Glossary of Concordium Terms
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Concordium Wallets
+   </span>
+  </p>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/deciding-wallet.html">
+     Deciding between the Desktop Wallet and the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+     Set up the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="../guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Set up the Ledger Nano S and install the Concordium Ledger App
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/create-identity.html">
+     Create an identity and an initial account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/create-account.html">
+     Create an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/share-address-mw.html">
+     Find and share your account address
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="accounts-desktop.html">
+     Use the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/send-ccd-wallets.html">
+     Send CCD
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/shielded-transfer.html">
+     Make a shielded transfer on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/export-import.html">
+     Make a backup of identities, accounts, and addresses
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="single-sign-schedule.html">
+     Transfer CCD with a schedule in Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">
+     Inspect a release schedule in Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="update-application.html">
+     Update the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/macos.html">
+       MacOS nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/windows.html">
+       Windows nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/docker.html">
+       Docker nodes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference external" href="https://developer.concordium.software/en/mainnet/smart-contracts/index.html">
+     Smart contracts
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/overview-baker-process.html">
+     Overview of the baker process
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/baker-windows.html">
+       Run a baker node on Windows
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/baker-macos.html">
+       Run a baker node on macOS
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/baker-ubuntu.html">
+       Run a baker node on Ubuntu
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../nodes/baker-docker.html">
+       Run a baker node on Docker
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/become-baker.html">
+       Become a baker using the Concordium Client
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="baking-dw.html">
+     Baking in the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/add-baker-desktop.html">
+       Add a baker account in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="update-baker-keys.html">
+       Update baker keys in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="remove-baker.html">
+       Remove a baker account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="change-baker-stake.html">
+       Update the staked amount
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="change-restake-settings.html">
+       Update the restake settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../references/concordium-client.html">
+     Concordium Client
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../references/transactions.html">
+     Concordium Client transactions
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../references/query-node.html">
+     Querying a node
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/release-notes-mainnet.html">
+     Release notes - Mainnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/release-notes.html">
+     Release Notes - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../resources/legal.html">
+     Legal
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Mobile Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
 </div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-the-ledger-nano-s">
+   Set up the Ledger Nano S
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-ledger-nano-s-firmware">
+     Update the Ledger Nano S firmware
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-ledger-app-on-windows">
+   Install Concordium Ledger app on Windows
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-python3-and-pip">
+     Install Python3 and pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-custom-certificate-on-windows">
+     Install the custom certificate on Windows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-concordium-ledger-app-on-windows">
+     Install the Concordium Ledger app on Windows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-concordium-ledger-app-on-windows">
+     Update the Concordium Ledger app on Windows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-ledger-app-on-macos">
+   Install Concordium Ledger app on macOS
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-homebrew-python3-and-pip">
+     Install Homebrew, Python3, and pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-custom-certificate-using-macos">
+     Install the custom certificate using macOS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-concordium-ledger-app-on-macos">
+     Install the Concordium Ledger app on MacOS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-reinstall-the-concordium-ledger-app-on-macos">
+     Update/reinstall the Concordium Ledger app on macOS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-ledger-app-on-ubuntu">
+   Install Concordium Ledger app on Ubuntu
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-python3-and-pip-on-ubuntu">
+     Install Python3 and pip on Ubuntu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-custom-certificate-on-ubuntu">
+     Install the custom certificate on Ubuntu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-concordium-ledger-app-on-ubuntu">
+     Install the Concordium Ledger app on Ubuntu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-concordium-ledger-app-on-ubuntu">
+     Update the Concordium Ledger app on Ubuntu
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app">
+<span id="install-ledger-app"></span><h1>Set up the Ledger Nano S and install the Concordium Ledger App<a class="headerlink" href="#set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app" title="Permalink to this headline">#</a></h1>
 <p>To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Ledger hardware wallet</p></li>
 </ul>
@@ -269,7 +761,7 @@
 </div>
 </div>
 <div class="section" id="set-up-the-ledger-nano-s">
-<h2>Set up the Ledger Nano S<a class="headerlink" href="#set-up-the-ledger-nano-s" title="Permalink to this headline">¶</a></h2>
+<h2>Set up the Ledger Nano S<a class="headerlink" href="#set-up-the-ledger-nano-s" title="Permalink to this headline">#</a></h2>
 <p>The Ledger Nano S will generate the unique 24-word recovery phrase that is used to derive your private keys.</p>
 <ol class="arabic simple">
 <li><p>Download and install <strong>Ledger Live</strong>. For information on how to do this, see <a class="reference external" href="https://www.ledger.com/ledger-live/download">Ledger’s documentation</a>. You’ll only need Ledger Live when you set up the Ledger and update the firmware.</p></li>
@@ -283,7 +775,7 @@
 </div>
 <p>Once you’ve set up the Ledger, you must check that it’s running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0.</p>
 <div class="section" id="update-the-ledger-nano-s-firmware">
-<h3>Update the Ledger Nano S firmware<a class="headerlink" href="#update-the-ledger-nano-s-firmware" title="Permalink to this headline">¶</a></h3>
+<h3>Update the Ledger Nano S firmware<a class="headerlink" href="#update-the-ledger-nano-s-firmware" title="Permalink to this headline">#</a></h3>
 <p>To find out which firmware version the Ledger is running, do the following:</p>
 <ol class="arabic simple">
 <li><p>On the Ledger navigate to <strong>Settings</strong> and press both buttons for a little while to enter the Settings menu.</p></li>
@@ -305,9 +797,9 @@
 </div>
 </div>
 <div class="section" id="install-concordium-ledger-app-on-windows">
-<h2>Install Concordium Ledger app on Windows<a class="headerlink" href="#install-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2>Install Concordium Ledger app on Windows<a class="headerlink" href="#install-concordium-ledger-app-on-windows" title="Permalink to this headline">#</a></h2>
 <div class="section" id="install-python3-and-pip">
-<span id="install-python-pip-windows"></span><h3>Install Python3 and pip<a class="headerlink" href="#install-python3-and-pip" title="Permalink to this headline">¶</a></h3>
+<span id="install-python-pip-windows"></span><h3>Install Python3 and pip<a class="headerlink" href="#install-python3-and-pip" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><p>In the <strong>Start</strong> menu, type <em>store</em> to open the Microsoft store.</p></li>
 <li><p>In <strong>Search</strong>, in the upper right corner, enter <em>python</em>.</p></li>
@@ -336,7 +828,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-custom-certificate-on-windows">
-<h3>Install the custom certificate on Windows<a class="headerlink" href="#install-the-custom-certificate-on-windows" title="Permalink to this headline">¶</a></h3>
+<h3>Install the custom certificate on Windows<a class="headerlink" href="#install-the-custom-certificate-on-windows" title="Permalink to this headline">#</a></h3>
 <p>You now have to install a custom certificate on the Ledger to ensure that it trusts applications signed by Concordium’s private key.</p>
 <ol class="arabic simple">
 <li><p>Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
@@ -352,7 +844,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-concordium-ledger-app-on-windows">
-<span id="install-ledger-app-windows"></span><h3>Install the Concordium Ledger app on Windows<a class="headerlink" href="#install-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
+<span id="install-ledger-app-windows"></span><h3>Install the Concordium Ledger app on Windows<a class="headerlink" href="#install-the-concordium-ledger-app-on-windows" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
 <li><p>The Ledger says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the Ledger says <strong>Allow unsafe manager</strong>. Press both buttons. The Ledger says <strong>Loading, please wait</strong> while it installs the app.</p></li>
@@ -360,7 +852,7 @@
 </ol>
 </div>
 <div class="section" id="update-the-concordium-ledger-app-on-windows">
-<span id="update-app-windows"></span><h3>Update the Concordium Ledger app on Windows<a class="headerlink" href="#update-the-concordium-ledger-app-on-windows" title="Permalink to this headline">¶</a></h3>
+<span id="update-app-windows"></span><h3>Update the Concordium Ledger app on Windows<a class="headerlink" href="#update-the-concordium-ledger-app-on-windows" title="Permalink to this headline">#</a></h3>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -376,9 +868,9 @@
 </div>
 </div>
 <div class="section" id="install-concordium-ledger-app-on-macos">
-<h2>Install Concordium Ledger app on macOS<a class="headerlink" href="#install-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h2>
+<h2>Install Concordium Ledger app on macOS<a class="headerlink" href="#install-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h2>
 <div class="section" id="install-homebrew-python3-and-pip">
-<span id="install-python-pip-macos"></span><h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">¶</a></h3>
+<span id="install-python-pip-macos"></span><h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
@@ -401,7 +893,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-custom-certificate-using-macos">
-<h3>Install the custom certificate using macOS<a class="headerlink" href="#install-the-custom-certificate-using-macos" title="Permalink to this headline">¶</a></h3>
+<h3>Install the custom certificate using macOS<a class="headerlink" href="#install-the-custom-certificate-using-macos" title="Permalink to this headline">#</a></h3>
 <p>You now have to install a custom certificate to ensure that the Ledger trusts applications signed by Concordium’s private key.</p>
 <ol class="arabic">
 <li><p>Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
@@ -423,7 +915,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-concordium-ledger-app-on-macos">
-<span id="install-ledger-app-macos"></span><h3>Install the Concordium Ledger app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
+<span id="install-ledger-app-macos"></span><h3>Install the Concordium Ledger app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the Ledger install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
@@ -437,7 +929,7 @@
 </ol>
 </div>
 <div class="section" id="update-reinstall-the-concordium-ledger-app-on-macos">
-<span id="update-app-macos"></span><h3>Update/reinstall the Concordium Ledger app on macOS<a class="headerlink" href="#update-reinstall-the-concordium-ledger-app-on-macos" title="Permalink to this headline">¶</a></h3>
+<span id="update-app-macos"></span><h3>Update/reinstall the Concordium Ledger app on macOS<a class="headerlink" href="#update-reinstall-the-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h3>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <p>When you update your Ledger, it should not be necessary to update the certificate.</p>
 <div class="admonition note">
@@ -460,9 +952,9 @@
 </div>
 </div>
 <div class="section" id="install-concordium-ledger-app-on-ubuntu">
-<h2>Install Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<h2>Install Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">#</a></h2>
 <div class="section" id="install-python3-and-pip-on-ubuntu">
-<h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">#</a></h3>
 <ol class="arabic" id="install-python-pip-ubuntu">
 <li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">Ledger ‘s guide Fix connection history</a>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh <span class="p">|</span> sudo bash
@@ -494,7 +986,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-custom-certificate-on-ubuntu">
-<h3>Install the custom certificate on Ubuntu<a class="headerlink" href="#install-the-custom-certificate-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<h3>Install the custom certificate on Ubuntu<a class="headerlink" href="#install-the-custom-certificate-on-ubuntu" title="Permalink to this headline">#</a></h3>
 <p>You now have to install a custom certificate to ensure that the Ledger trusts applications signed by Concordium’s private key.</p>
 <ol class="arabic">
 <li><p>Close all applications that might be connected to the Ledger such as Ledger Live and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
@@ -513,7 +1005,7 @@
 </ol>
 </div>
 <div class="section" id="install-the-concordium-ledger-app-on-ubuntu">
-<span id="install-ledger-app-ubuntu"></span><h3>Install the Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<span id="install-ledger-app-ubuntu"></span><h3>Install the Concordium Ledger app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><p>Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
@@ -527,7 +1019,7 @@
 </ol>
 </div>
 <div class="section" id="update-the-concordium-ledger-app-on-ubuntu">
-<span id="update-app-ubuntu"></span><h3>Update the Concordium Ledger app on Ubuntu<a class="headerlink" href="#update-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">¶</a></h3>
+<span id="update-app-ubuntu"></span><h3>Update the Concordium Ledger app on Ubuntu<a class="headerlink" href="#update-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">#</a></h3>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -542,71 +1034,51 @@
 </ol>
 </div>
 </div>
-<div class="section" id="support-feedback">
-<h2>Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permalink to this headline">¶</a></h2>
-<p>If you have questions or feedback, join us on <a class="reference external" href="https://support.concordium.software/">Discourse</a>, or contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
-</div>
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
+              </div>
+              
+              
+          </main>
+          
 
-  <hr/>
-
-  <div role="contentinfo">
-<a href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img style="margin-bottom: 0.5em" src="../../_static/cc-sa-by.png" />
-</a>
-
-    <p>
-        &#169; Copyright 2021 - 2022, Concordium Software ApS.
-
-    </p>
-  </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-        </div>
       </div>
-
-    </section>
-
-  </div>
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    <span class="fa fa-book"> Other Versions</span>
-    v: mainnet
-    <span class="fa fa-caret-down"></span>
-  </span>
-  <div class="rst-other-versions">
-    <dl>
-      <dt>Versions</dt>
-      <dd><a href="/en/mainnet/">mainnet</a></dd>
-      <dd><a href="/en/testnet/">testnet</a></dd>
-    </dl>
-  </div>
-</div>
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
+    </div>
   
-  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {margin:0px;}
     
-  
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2022, Concordium Software ApS
+        </a>
+    </div>
+  </body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
 <script>
@@ -653,9 +1125,9 @@ function consentDenied() {
 
 </script>
 <div id="cookie-consent" class="consent">
-    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission</p>
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission.</p>
     <button onclick="consentGranted()">Allow</button>
-    <button onclick="consentDenied()">Disallow</button>
+    <button onclick="consentDenied()">Decline</button>
     <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
 </div>
 <script>
@@ -665,6 +1137,5 @@ function consentDenied() {
     }
 </script>
 
-
-</body>
+  </body>
 </html>
