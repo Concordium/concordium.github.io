@@ -18,7 +18,7 @@ As a baker you should manage your baker node responsibily for the benefit of all
 Recommendations for baker pool owners
 -------------------------------------
 
-If you are running a baker pool, you have a responsibility to manage your pool responsibly to maximize returns, both for yourself and those who have delegated stake to your pool.
+If you are running a baker pool, you are responsible for managing your pool to maximize returns, both for yourself and those who have delegated stake to your pool.
 
 To help potential delegators with their choice, it is a good idea to create a site with information and add this URL to your baker pool configuration. This information is published on :ref:`CCD Scan<ccd-scan>` so that potential delegators can read about the pool and understand your goals. Having a URL on your baker pool configuration is not required.
 
