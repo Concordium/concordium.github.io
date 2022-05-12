@@ -11,11 +11,7 @@ Welcome to the documentation of Concordium smart contracts!
 
 There are two versions of Smart Contracts: v1 and v0. The v1 documentation is shown here. All new smart contracts should be made using V1.
 
-For the v0 documentation, use the version selector at the bottom of the sidebar to select the documentation:
-
-.. image:: ../../shared/images/version-selector.png
-  :width: 300
-  :alt: Version selector
+`Click here <https://developer.concordium.software/en/mainnet/smart-contracts-v0/index.html>`_ for the v0 documentation.
 
 The documentation is split into four categories
 

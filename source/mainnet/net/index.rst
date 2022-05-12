@@ -44,7 +44,8 @@
 
    guides/developer-page
    nodes/node-requirements
-   Smart contracts <https://developer.concordium.software/en/mainnet/smart-contracts/index.html>
+   Smart Contracts v1 - Testnet only <https://developer.concordium.software/en/mainnet/smart-contracts/index.html>
+   Smart Contracts v0 <https://developer.concordium.software/en/smart-contracts-v0/index.html>
    guides/overview-baker-process
    desktop-wallet/baking-dw
    references/concordium-client
