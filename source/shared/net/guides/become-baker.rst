@@ -36,6 +36,8 @@ For general information about baking concepts, see :ref:`baker-concept`.
 Start baking
 ============
 
+.. _import-baker-account:
+
 Import the account
 ------------------
 
@@ -43,7 +45,7 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import-mw>`.
+   You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import>`.
 
 To import an account run:
 
@@ -54,6 +56,8 @@ To import an account run:
 ``concordium-client`` asks for a password to decrypt the exported file and
 import all accounts. The same password will be used for encrypting the
 transaction signing keys and the encrypted transfers key.
+
+.. _create-register-baker-keys:
 
 Create and register baker keys
 ------------------------------
@@ -76,11 +80,21 @@ and send a ``baker add`` transaction to the network:
 where you replace
 
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``<concordium-data-dir>`` with any path of your choice. Remember to configure your node to bake using this path:
+- ``<concordium-data-dir>`` with any path of your choice.
 
-  * on Linux: See :ref:`configure Linux node<baker-node-Ubuntu>`.
-  * on MacOS: See :ref:`configure MacOS node<configure-baker-macos>`.
+   .. Note::
+
+      For a node on Docker, the ``<concordium-data-dir>`` must use the following paths:
+
+      * on Linux and MacOS: ``~/.local/share/concordium``
+      * on Windows: ``%LOCALAPPDATA%\\concordium``.
+
+  Remember to configure your node to bake using this path:
+
+  * on Linux: See :ref:`configure Linux node<baking-docker>`.
+  * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
   * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
+  * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
 
 (Keep the output file name as ``baker-credentials.json``).
 

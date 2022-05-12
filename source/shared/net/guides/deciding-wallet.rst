@@ -5,14 +5,10 @@
 Deciding between the Desktop Wallet and the Mobile Wallet
 ==========================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Why you need a wallet
 =====================
 
-You need a wallet to interact with the Concordium blockchain and to manage your CCD. Currently, there are two first party wallets available: the Concordium Desktop Wallet and the Concordium Mobile Wallet. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are two first party wallets available: the Concordium Desktop Wallet and the Concordium Mobile Wallet. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
 Both the Concordium Desktop Wallet and the Concordium Mobile Wallet are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
@@ -28,9 +24,9 @@ Which wallet is best for you?
 
 The wallets work on two different environments: the Desktop Wallet on a computer and the Mobile Wallet on a phone. The Mobile Wallet is more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.
 
-- **Desktop Wallet**: Choose this wallet if you want extra security in the form of a :ref:`Ledger<install-Ledger-app>` hardware device, want to create multi-signature transactions, and want to be able to create a baker account.
+- **Desktop Wallet**: Choose this wallet if you want extra security in the form of a :ref:`Ledger<install-Ledger-app>` hardware device, or want to create multi-signature transactions. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the Ledger hardware device.
 
-- **Mobile Wallet**: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the Mobile Wallet, you don’t have to run a node, and you don’t need a Ledger hardware device,
+- **Mobile Wallet**: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the Mobile Wallet, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device.
 
 The following provides more details on the differences between the wallets.
 
@@ -48,11 +44,11 @@ One of the main differences between the two wallets lies in how they store your 
 How to backup a wallet
 ======================
 
-We strongly recommend that you make a backup of your wallet regardless of which one you use. Backups are created in different ways in the two wallets.
+Concordium strongly recommends that you make a backup of your wallet regardless of which one you use. Backups are created in different ways in the two wallets.
 
-- **Backup of the Desktop Wallet**: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It's vital that you keep the recovery phrase safe. For more information, see :ref:`Make a backup of identities, accounts, and addresses<export-import-desktop>` and :ref:`Account recovery<account-recovery-desktop>`.
+- **Backup of the Desktop Wallet**: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the Ledger. So for a complete backup, you need both the exported file and the Ledger. If you lose the PIN code to the Ledger, you can restore the Ledger device from your recovery phrase. You can also set up a new Ledger device with the recovery phrase. It's vital that you keep the recovery phrase safe. For more information, see :ref:`Make a backup of identities, accounts, and addresses<export-import>` and `Account recovery <https://developer.concordium.software/en/mainnet/net/guides/export-import.html?highlight=account%20recovery>`_.
 
-- **Backup of the Mobile Wallet**: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import-mw>`.
+- **Backup of the Mobile Wallet**: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import>`.
 
 
 .. Warning::
@@ -93,14 +89,13 @@ The following table lists the major features of each wallet.
    *  - Creation and management of baker accounts
       - The Concordium Client must be used to manage baker accounts. Rewards are visible in the wallet.
    *  - Running a node is a requirement
-      - Running a node is not needed
+      - Running a node is not needed unless baking
 
 Next steps
 ==========
 
 - If you want to use the Desktop Wallet, :ref:`download <downloads>` and install it on your computer, and then see :ref:`Overview of setting up the Desktop Wallet<overview-desktop>` for the next steps.
 
-bakcups-and-recovery
 - If you want to use the Mobile Wallet, :ref:`download <downloads>` the app on your mobile phone, and then see :ref:`Set up the Mobile Wallet<setup-mobile-wallet>` for the next steps.
 
 - If you want to learn more about the Ledger device, go to `Ledger's website <https://www.ledger.com>`_.

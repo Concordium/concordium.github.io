@@ -5,10 +5,6 @@
 Run and manage a node on Windows
 ================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`macOS <run-node-macos>`.
 
 If you want to run a baker node on Windows, see :ref:`Configure a node on Windows as baker<baker-windows>`.
@@ -17,7 +13,7 @@ Prequisites
 ===========
 
 -  Run Windows 10 or later or Windows Server 2019 or later.
--  Meet the :ref:`minimum system requirements<requirements-run-node>` for running a node.
+-  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 
 Install/upgrade and run a node
 ==============================
@@ -37,7 +33,7 @@ Install/upgrade and run a node
 
    - In **Install Concordium Node to**, specify where to store the executable code.
 
-   - In **Install Concordium Node configuration and data to**, specify where to store the node configuration and the blockchain databases and logs. Choose a drive that has sufficient space to accommodate the database and is sufficiently fast. For more information, see :ref:`Requirements for running a node<requirements-run-node>`.
+   - In **Install Concordium Node configuration and data to**, specify where to store the node configuration and the blockchain databases and logs. Choose a drive that has sufficient space to accommodate the database and is sufficiently fast. For more information, see :ref:`Requirements for running a node<node-requirements>`.
 
      .. image:: ../images/run-node/Node-setup-win-2.png
          :width: 60%
@@ -157,7 +153,9 @@ You can change the mainnet or testnet node configuration with the Configure Conc
 
 -  Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. If you see a message saying *Do you want to allow this app to make changes to your device?*, select **Yes**. The configuration file opens in Notepad.
 
-For detailed information about all the configuration options, see :ref:`Concordium node runner service configuration <node-runner-service-configuration>`.
+.. To Do:
+
+   Add information about Concordium node runner service configuration
 
 .. _view-windows-node-log:
 
@@ -216,6 +214,12 @@ You can improve the performance by downloading the blocks before starting the no
 #. Open the configuration file again, remove the line you just added, and then save the file. This ensures that these blocks will not be processed again the next time the node is restarted.
 
 #. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. You do so by comparing the finalized length of the chain with the length of your node. If they match, your node has caught up.
+
+
+Baking on a Windows node
+========================
+
+For information about baking on a Windows node, see :ref:`baker-windows`.
 
 Uninstall a node running on Windows
 ===================================

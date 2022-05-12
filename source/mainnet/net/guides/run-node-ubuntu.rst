@@ -1,12 +1,8 @@
 .. _run-node-ubuntu:
 
-==================================
-Run a node on a server with Ubuntu
-==================================
-
-.. contents::
-   :local:
-   :backlinks: none
+=============================================
+Run a node on a server with Ubuntu on Mainnet
+=============================================
 
 This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`baker node<baker-node-Ubuntu>`.
 
@@ -24,7 +20,7 @@ Prerequisites
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See :ref:`create-baker-desktop`.
+-  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
 
 Install the Debian package and run a node
 =========================================
@@ -67,7 +63,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<baker-ubuntu>`, to bake and finalize.
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
@@ -97,66 +93,4 @@ To upgrade to a newer version of the `concordium-mainnet-node` package you need 
 Run a baker node on Ubuntu
 ==========================
 
-The following steps show you how to run a node as a :ref:`baker <baker-concept>` on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a baker node also participates in the lottery and produces its own blocks. If the stake is high enough the baker node also participates in finalization.
-
-Configure the node with baker keys
-----------------------------------
-
-#. Move the JSON file with the baker keys you generated in the :ref:`Desktop Wallet <create-baker-desktop>` to the server that's running the node.
-   Store it, for example, in ``/home/user/concordium/baker-credentials.json``.
-
-#. In the terminal, enter:
-
-   .. code-block:: console
-
-      $sudo systemctl edit concordium-mainnet-node.service
-
-#. Add the following snippet to the opened file (the file is empty the first time you open it):
-
-   .. code-block:: console
-
-      [Service]
-
-      Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
-      BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
-
-   Where you replace the path `/home/user/concordium/baker-credentials.json` with the actual location of the file.
-
-.. Note::
-   The path `%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/` is the default path to the baker's state directory, where `9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478` is the genesis hash.
-
-#. Save the edited file.
-
-#. Restart for the changes to take effect. Enter:
-
-   .. code-block:: console
-
-      $sudo systemctl restart concordium-mainnet-node.service
-
-#. To verify the node is running, enter:
-
-   .. code-block:: console
-
-      $sudo systemctl status concordium-mainnet-node.service
-
-Verify that a node is a baker node.
------------------------------------
-
-Two :ref:`epochs <glossary>` must have elapsed before you can see the baker ID of the node on the dashboard.
-
-You can use ``concordium-client`` to see the status of the node. For more information, see :ref:`Concordium Client <concordium_client>`.
-
-.. code-block:: console
-
-   $concordium-client raw GetNodeInfo
-
-   ...
-
-   Consensus type: "Active"
-
-   ...
-
-In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
-the account associated with the baker node. The bread icon appears as
-soon as the transaction has been submitted. That is, before the two
-epochs have elapsed.
+For information about how to configure a node to run as a baker, see :ref:`baker-ubuntu`.

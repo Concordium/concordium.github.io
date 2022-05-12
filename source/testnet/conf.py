@@ -50,7 +50,9 @@ extensions = [
     "multidoc",
     "sphinx_reredirects",
     # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    "sphinx_toolbox.collapse",
+    "sphinx_tabs.tabs"
 ]
 
 # todo_include_todos = True
@@ -129,7 +131,7 @@ html_theme_options = {
     'display_version': True,
     'prev_next_buttons_location': None,
     # 'style_external_links': False,
-    'style_nav_header_background': '#34838C',
+    'style_nav_header_background': '#a38b72',
     # # Toc options
     # 'collapse_navigation': False,
     # 'sticky_navigation': True,

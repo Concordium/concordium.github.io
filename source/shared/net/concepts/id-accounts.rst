@@ -4,10 +4,6 @@
 Identities
 ==========
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
 
 Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.
@@ -41,7 +37,7 @@ You are in control of which attributes are revealed to the public. You can choos
 Obtain an identity
 ------------------
 
-You can create identities in the :ref:`Desktop Wallet <create-initial-account-desktop>` or in the :ref:`Mobile Wallet <create-identity>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
+You can create identities in the :ref:`Desktop Wallet or Mobile Wallet <create-initial-account>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
