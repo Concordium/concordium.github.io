@@ -1,8 +1,30 @@
-{% extends '!footer.html' %}
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{%- block contentinfo %}
-<a href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img style="margin-bottom: 0.5em" src="{{ pathto('_static/cc-sa-by.png', True) }}" />
-</a>
-{{ super() }}
-{%- endblock %}
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="{{ pathto('_static/cc-sa-by.png', True) }}" />  Copyright 2021 - 2022, Concordium Software ApS
+        </a>
+    </div>
+  </body>

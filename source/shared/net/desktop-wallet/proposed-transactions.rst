@@ -4,11 +4,6 @@
 View transaction proposals
 ==========================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
 View a list of multi-signature proposals
 ========================================
 

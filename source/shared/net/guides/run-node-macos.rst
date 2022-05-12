@@ -7,10 +7,6 @@
 Run and manage a node on macOS
 ==============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to run and manage a node on macOS. You can also run a
 node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
 
@@ -19,7 +15,7 @@ Prerequisites
 
 - Run macOS 10.14 or later.
 - Have the administrator password to your computer.
-- Meet the :ref:`minimum system requirements<requirements-run-node>` for running
+- Meet the :ref:`minimum system requirements<node-requirements>` for running
   a node.
 
 Install/upgrade and run a node
@@ -217,61 +213,7 @@ two options.
 Configure a node as a baker
 ===========================
 
-To run a node as baker, you first have to generate baker keys in the desktop
-wallet and then register the keys on an account. For more information, see,
-:ref:`Add a baker account in the Desktop Wallet<create-baker-desktop>`.
-You then need to move the generated file to a location accessible by the node,
-and finally specify this location in the service file for the Concordium Node.
-
-.. note::
-   Baker credentials registered on mainnet will not work with a testnet node
-   and vice versa.
-
-On mainnet
-----------
-
-#. Move the ``baker-credentials.json`` file to the node's config folder:
-
-   .. code-block:: console
-
-      $sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
-
-   (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for mainnet).
-
-#. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
-   Node/LaunchDaemons/software.concordium.mainnet.node.plist``
-
-#. Underneath the ``<dict>`` tag in the *EnviromentVariables* section of the file add the following::
-
-    <!-- Path to the baker credentials file. -->
-    <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
-    <string>/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json</string>
-
-#. Restart your node by running **Concordium Node Stop Mainnet** (if running) and then
-   **Concordium Node Start Mainnnet**.
-
-On testnet
-----------
-
-#. Move the ``baker-credentials.json`` file to the node's config folder:
-
-   .. code-block:: console
-
-      $sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
-
-   (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for testnet).
-
-#. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
-   Node/LaunchDaemons/software.concordium.testnet.node.plist``
-
-#. In the *EnviromentVariables* section of the file add the following::
-
-    <!-- Path to the baker credentials file. -->
-    <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
-    <string>/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json</string>
-
-#. Restart your node by running **Concordium Node Stop Testnet** (if running) and then
-   **Concordium Node Start Testnet**.
+For information about baking on a MacOS node, see :ref:`baker-macos`.
 
 View node logs
 ==============

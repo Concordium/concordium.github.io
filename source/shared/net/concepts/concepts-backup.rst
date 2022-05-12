@@ -64,10 +64,7 @@ Concordium is continuously improving the security and reliability of its product
 Backup
 ------
 
-For instructions on how to perform the backup, select the appropriate link below.
-
-*  :ref:`Mobile wallet backup guide<export-import-mw>` including Mobile wallet backup video instructions
-*  :ref:`Desktop wallet backup guide<export-import-desktop>`
+For instructions on how to perform the backup, see :ref:`Backup and restore  guide<export-import>`.
 
 Final Notes
 ===========

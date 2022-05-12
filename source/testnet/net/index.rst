@@ -61,6 +61,9 @@
    guides/overview-baker-process
    guides/become-baker
    guides/baker-windows
+   nodes/baker-macos
+   nodes/baker-ubuntu
+   nodes/baker-docker
    desktop-wallet/baking-dw
    guides/baker-pool
 

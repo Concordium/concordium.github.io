@@ -6,10 +6,6 @@
 Run a node with Docker
 ======================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
@@ -143,6 +139,11 @@ control of your node or accounts you have saved on the node.
    ``--rpc-server-token`` flag when running a node.
    This will provide reasonable security if the token is only ever used through
    a secure channel.
+
+Run a baker node on Docker
+==========================
+
+For information about how to configure a node to run as a baker, see :ref:`baking-docker`.
 
 .. _stop-a-node:
 
