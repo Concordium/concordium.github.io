@@ -29,7 +29,7 @@ The Ledger Nano S will generate the unique 24-word recovery phrase that is used 
 
 .. Warning:: Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
-Once you've set up the Ledger, you must check that it's running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0.
+Once you've set up the Ledger, you must check that it's running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0 on **Mainnet**. The Concordium Ledger App only supports Ledger firmware version 2.1.0 on **Testnet**. 
 
 Update the Ledger Nano S firmware
 ---------------------------------
@@ -40,14 +40,17 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. Press the right button to navigate to **Firmware version**.
 
-#. Press both buttons to view the **Secure Element** version. If it says **2.0.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+#. Press both buttons to view the **Secure Element** version.
+
+   - For **Mainnet**, if it says **2.0.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+   - For **Testnet**, if it says **2.0.3**. you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
 
 For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_.
 
 Once you have updated the firmware version, you can download the version of the Ledger app that is appropriate for your firmware at :ref:`Downloads <downloads>`.
 
 .. Note::
-   There is a version of the Ledger app for devices with firmware 2.0.0 and a version for devices with firmware 2.1.0. Make sure you choose the correct app version. Follow the instructions below to update your app:
+   For **Mainnet** there is a version of the Ledger app for devices with firmware 2.0.0 and a version for devices with firmware 2.1.0. Make sure you choose the correct app version. For **Testnet**, only the Ledger app for devices with firmware 2.1.0 can be used. Follow the instructions below to update your app:
 
    * :ref:`update-app-windows`
    * :ref:`update-app-macos`
@@ -249,7 +252,7 @@ When you update your Ledger, it should not be necessary to update the certificat
 
 #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
+#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.1.0-target-2.0.3``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.1.0-target-2.0.3``.
 
 #. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
 
