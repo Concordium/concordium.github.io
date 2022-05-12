@@ -4,10 +4,6 @@
 Run a baker node on Ubuntu
 ==========================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to set up the node to run as a :ref:`baker node<baker-node-Ubuntu>`.
 
 Prerequisites

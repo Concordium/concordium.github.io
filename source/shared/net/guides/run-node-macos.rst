@@ -7,10 +7,6 @@
 Run and manage a node on macOS
 ==============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to run and manage a node on macOS. You can also run a
 node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
 
@@ -19,7 +15,7 @@ Prerequisites
 
 - Run macOS 10.14 or later.
 - Have the administrator password to your computer.
-- Meet the :ref:`minimum system requirements<requirements-run-node>` for running
+- Meet the :ref:`minimum system requirements<node-requirements>` for running
   a node.
 
 Install/upgrade and run a node

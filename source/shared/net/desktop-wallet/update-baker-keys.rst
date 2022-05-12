@@ -4,11 +4,6 @@
 Update baker keys in the Desktop Wallet
 =======================================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 2
-
 If for some reason you lose the public baker keys, Concordium recommends that you update the keys and configure the baker node with the new keys.
 
 Prerequisites

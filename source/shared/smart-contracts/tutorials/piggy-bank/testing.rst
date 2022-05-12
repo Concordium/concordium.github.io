@@ -88,7 +88,7 @@ Also, make sure to have a text editor setup to write Rust.
 Additionally, to run the tests you need to:
 
 - set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
-- :ref:`create an account for testnet<create-account-desktop>`. The account will need some CCD to run tests.
+- :ref:`create an account for testnet<create-account>`. The account will need some CCD to run tests.
 - :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
 - :ref:`deploy the smart contract to your local testnet node<deploy-module>`.
 
@@ -341,7 +341,7 @@ Lastly, you need to set the current balance of the piggy bank instance using
 
 .. code-block:: rust
 
-   let balance = Amount::from_micro_gtu(100);
+   let balance = Amount::from_micro_ccd(100);
    ctx.set_self_balance(balance);
 
 Now that you have the test context setup, call the contract function
