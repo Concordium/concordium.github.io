@@ -465,6 +465,10 @@ release schedule.
 Commands for delegation
 =======================
 
+.. Note::
+    
+    Currently delegation is only available on Testnet.
+
 Add delegation
 --------------
 

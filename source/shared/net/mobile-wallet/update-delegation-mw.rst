@@ -4,6 +4,10 @@
 Update delegation on an account in Mobile Wallet
 ================================================
 
+.. Note::
+    
+    Currently delegation is only available on Testnet.
+
 You can update individual configuration settings of your delegation or change all of them as needed. Most changes, except reducing stake, are effective from the next pay day.
 
 Before delegating stake to a baker pool, it is important to research the pool. You can only have one delegation per account. If you wish to delegate CCD to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
