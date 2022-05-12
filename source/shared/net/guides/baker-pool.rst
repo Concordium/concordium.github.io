@@ -14,6 +14,7 @@ As a baker you should manage your baker node responsibily for the benefit of all
 - Make sure your node is running 24/7/365 in a reliable place. 
 - Protect your baker keys so that they are not lost or compromised.
 - Check regularly to make sure that you are not close to the bounding cap for max capital for a baker. If you're getting close to the max capital, you can split and make another baker to divide the capital.
+- Open a baker pool. This allows others to delegate stake to you, thus increasing your effective stake and your odds of getting selected to bake a block. You also receive a commission on the delegator's rewards.
 
 Recommendations for baker pool owners
 -------------------------------------
@@ -21,8 +22,6 @@ Recommendations for baker pool owners
 If you are running a baker pool, you are responsible for managing your pool to maximize returns, both for yourself and those who have delegated stake to your pool.
 
 To help potential delegators with their choice, it is a good idea to create a site with information and add this URL to your baker pool configuration. This information is published on :ref:`CCD Scan<ccd-scan>` so that potential delegators can read about the pool and understand your goals. Having a URL on your baker pool configuration is not required.
-
-You should regularly check to ensure that you aren't close to the leverage cap (too many delegators). If so, you can close the pool to new delegators.
 
 Besides the recommendations for bakers listed above, you should subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a baker.
 

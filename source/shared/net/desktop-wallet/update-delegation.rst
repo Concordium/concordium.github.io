@@ -8,8 +8,6 @@ You can change the delegation amount and preferences on an account. You do not h
 
 If you increase the delegation, the new amount will be applied at the start of the next pay day. There is one pay day every 24 hours. However, if you decrease the delegation, there is a cool-down period before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation with is returned to your disposable balance.
 
-When you change your delegation it can influence the chances of the baker owner for your baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.
-
 .. Note::
 
    All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
@@ -32,7 +30,7 @@ Update delegation (Single-signature account)
 
 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. The Ledger device says **Something related to the delegation update** and then the amount you're going to update the stake to. Navigate to the right.
+#. On the Ledger device, a message says **Review transaction**. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.
 
 #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
@@ -76,7 +74,7 @@ Generate and sign the transaction on the Ledger
 
 #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct, and navigate to the right. The Ledger says **Update stake to** and then the amount you're going to update the stake to. Navigate to the right.
+#. On the Ledger, there's a message saying **Review transaction**. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.
 
 #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
 

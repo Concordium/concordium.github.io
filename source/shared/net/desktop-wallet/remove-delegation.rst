@@ -22,7 +22,7 @@ Remove delegation (Single-signature account)
 
 #. Go to **Accounts** and select the account on which you have delegated funds.
 
-#. Click **Change view** then select *Remove Delegation**.
+#. Click **More options** then select **Delegation** and choose **Remove Delegation**.
 
 #. Review the cool-down period. Click **Continue**.
 
@@ -30,7 +30,7 @@ Remove delegation (Single-signature account)
 
 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. The Ledger device says **Something related to stop delegation** and then the amount you're going to update the stake to. Navigate to the right.
+#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger device shows the amount to delegate as 0. Navigate to the right.
 
 #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
@@ -74,7 +74,7 @@ Generate and sign the transaction on the Ledger
 
 #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct, and navigate to the right. The Ledger says **Update stake to** and then the amount you're going to update the stake to. Navigate to the right.
+#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct, and navigate to the right. Verify that the Ledger device shows the amount to delegate as 0. Navigate to the right.
 
 #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
 
