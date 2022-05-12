@@ -7,16 +7,14 @@
 Run and manage a node on macOS
 ==============================
 
-This guide describes how to run and manage a node on macOS. You can also run a
-node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
+This guide describes how to run and manage a node on macOS. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
 
 Prerequisites
 =============
 
 - Run macOS 10.14 or later.
 - Have the administrator password to your computer.
-- Meet the :ref:`minimum system requirements<node-requirements>` for running
-  a node.
+- Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 
 Install/upgrade and run a node
 ==============================
@@ -25,147 +23,98 @@ Install/upgrade and run a node
 
     .. tab:: Mainnet
 
-      .. Note::
+      .. Note:: If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
-          If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+      #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer package (.pkg file).
 
-      #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer
-        package (.pkg file).
+      #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 
-      #. In the folder where you downloaded the .pkg file, double-click the .pkg file.
-        The **Install Concordium Node** program opens.
+      #. Click **Allow** to the message saying: *This package will run a program to determine if the software can be installed.* If you have a M1 based Mac, the installer might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
 
-      #. Click **Allow** to the message saying: *This package will run a program to
-        determine if the software can be installed.* If you have a M1 based Mac, the installer
-        might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
-
-      #. If you already have a version of the node installed, click **OK** to the
-        message saying *Previous Installation Detected*.
+      #. If you already have a version of the node installed, click **OK** to the message saying *Previous Installation Detected*.
 
       #. Click **Continue** on the *Introduction* page.
 
       #. Click **Continue** on the *License* page, and then **Agree** to accept the license agreement.
 
-      #. On the *Configuration* page you have the following options for both a
-        mainnet and testnet node.
+      #. On the *Configuration* page you have the following options.
 
           .. image:: ../../../shared/net/images/run-node/Node-setup-mac-1.png
               :width: 60%
 
-         - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs
-          when the system starts. Choose this option when you plan to use the node
-          frequently and need it to be up-to-date at short notice. If you don’t
-          select this option, you’ll have to start the node manually when required,
-          for example, when you want to use the Desktop Wallet or Concordium Client.
-          If you choose to start the node manually, it might take longer for the node
-          to get up-to-date with the blockchain depending on when the node was last
-          up-to-date.
 
-         - **Start the node after installation is complete**: The node will
-          automatically start running after the installation is complete. Do not
-          choose this option if you want to make further configuration changes before
-          starting the node.
+          - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option,   you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.
 
-         - **Report to the network dashboard**: Select this option if you want to
-          publish your node statistics to the relevant dashboard when the node is
-          running. Deselect this option if you don't want your node displayed on the dashboard.
-          If selected, you can view the statistics at the `mainnet dashboard`_ or the `testnet dashboard`_.
+          - **Start the node after installation is complete**: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.
 
-         - **Public node name**: Specify the name of your node as you want it to appear
-          on the network dashboard if the node reports to the network dashboard.
-          You must enter a name for both nodes, even if you only want to run one of them.
+          - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Deselect this option if you don't want your node displayed on the dashboard. If selected, you can view the statistics at the `mainnet dashboard`_.
+
+          - **Public node name**: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard. You must enter a name for at least one of the nodes.
 
       #. Once configured, click **Continue** to go to the **Installation Type** page.
 
-      #. Click **Install** and enter your administrator password. The installer needs
-        the password because it installs the node for all users and runs it as a
-        system service.
+      #. Click **Install** and enter your administrator password. The installer needs the password because it installs the node for all users and runs it as a system service.
 
-      #. Once installed, click **Close**. The following helper applications are now
-        available on your computer (you can view them in the LaunchPad or in the
-        */Applications/Concordium Node* folder):
+      #. Once installed, click **Close**. The following helper applications are now available on your computer (you can view them in the LaunchPad or in the */Applications/Concordium Node* folder):
 
-        - **Concordium Node Start Mainnet**
+          - **Concordium Node Start Mainnet**
 
-        - **Concordium Node Stop Mainnet**
-
-        - **Concordium Node Start Testnet**
-
-        - **Concordium Node Stop Testnet**
+          - **Concordium Node Stop Mainnet**
 
     .. tab:: Testnet
 
       .. Note::
         See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
-      #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer  package (.pkg file).
+      #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer package (.pkg file).
 
-      #. In the folder where you downloaded the .pkg file, double-click the .pkg file.  The **Install Concordium Node** program opens.
+      #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 
-      #. Click **Allow** to the message saying: *This package will run a program to    determine if the software can be installed.* If you have a M1 based Mac, the installer might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
+      #. Click **Allow** to the message saying: *This package will run a program to determine if the software can be installed.* If you have a M1 based Mac, the installer might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
 
-      #. If you already have a version of the node installed, click **OK** to the    message saying *Previous Installation Detected*.
+      #. If you already have a version of the node installed, click **OK** to the message saying *Previous Installation Detected*.
 
       #. Click **Continue** on the *Introduction* page.
 
       #. Click **Continue** on the *License* page, and then **Agree** to accept the license agreement.
 
-      #. On the *Configuration* page you have the following options for both a         mainnet and testnet node.
+      #. On the *Configuration* page you have the following options.
 
           .. image:: ../../../shared/net/images/run-node/Node-setup-mac-1.png
               :width: 60%
 
-         - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs
-          when the system starts. Choose this option when you plan to use the node
-          frequently and need it to be up-to-date at short notice. If you don’t
-          select this option, you’ll have to start the node manually when required,
-          for example, when you want to use the Desktop Wallet or Concordium Client.
-          If you choose to start the node manually, it might take longer for the node
-          to get up-to-date with the blockchain depending on when the node was last
-          up-to-date.
+         - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option, you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.
 
-         - **Start the node after installation is complete**: The node will
-          automatically start running after the installation is complete. Do not
-          choose this option if you want to make further configuration changes before
-          starting the node.
+         - **Start the node after installation is complete**: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.
 
-         - **Report to the network dashboard**: Select this option if you want to
-          publish your node statistics to the relevant dashboard when the node is
-          running. Deselect this option if you don't want your node displayed on the dashboard.
-          If selected, you can view the statistics on the `testnet dashboard`_.
+         - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Deselect this option if you don't want your node displayed on the dashboard. If selected, you can view the statistics on the `testnet dashboard`_.
 
-         - **Public node name**: Specify the name of your node as you want it to appear
-          on the network dashboard if the node reports to the network dashboard.
-          You must enter a name for both nodes, even if you only want to run one of them.
+         - **Public node name**: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard. You must enter a name for at least one of the nodes.
 
-      #. Once configured, click **Continue** to go to the **Installation Type** page.
+      8. Once configured, click **Continue** to go to the **Installation Type** page.
 
-      #. Click **Install** and enter your administrator password. The installer needs  the password because it installs the node for all users and runs it as a        system service.
+      9. Click **Install** and enter your administrator password. The installer needs the password because it installs the node for all users and runs it as a system service.
 
-      #. Once installed, click **Close**. The following helper applications are now   available on your computer (you can view them in the LaunchPad or in the */Applications/Concordium Node* folder):
+      10. Once installed, click **Close**. The following helper applications are now available on your computer (you can view them in the LaunchPad or in the */Applications/Concordium Node* folder):
 
-        - **Concordium Node Start Testnet**
+          - **Concordium Node Start Testnet**
 
-        - **Concordium Node Stop Testnet**
+          - **Concordium Node Stop Testnet**
 
 Verify that the node is running
 ===============================
 
-The node runs as a background service with no user interface. To verify that
-it's running, use the **Activity Monitor**.
+The node runs as a background service with no user interface. To verify that it's running, use the **Activity Monitor**.
 
 #. Open the **Activity Monitor** application from the LaunchPad.
 
 #. Look at the list and verify that the following is running:
 
-   - ``concordium-node`` for each node you are running. For example, if you're
-     running a node on both testnet and mainnet, you'll see two instances of
-     concordium-node.
+   - ``concordium-node`` for each node you are running. For example, if you're running a node on both testnet and mainnet, you'll see two instances of concordium-node.
 
    - ``node-collector`` for each node that reports to a network dashboard.
 
-#. If the node is running properly with reporting to the network dashboard enabled, you
-   can see the name of the node on the `mainnet dashboard`_ or the `testnet dashboard`_.
+#. If the node is running properly with reporting to the network dashboard enabled, you can see the name of the node on the `mainnet dashboard`_ or the `testnet dashboard`_.
 
 Connect a node to the Desktop Wallet
 ------------------------------------
@@ -202,13 +151,11 @@ details of how this is done will depend on your configuration.
 Change the node startup settings
 ================================
 
-If you want to change whether the node services start automatically, you have
-two options.
+If you want to change whether the node services start automatically, you have two options.
 
 - If you're not familiar with using a terminal, the easiest option is to reinstall the macOS node and configure it differently.
 
-- If you're familiar with using a terminal, the following
-  options are available:
+- If you're familiar with using a terminal, the following options are available:
 
   - Run text prefixed with a ``$`` in a terminal.
 
@@ -280,11 +227,9 @@ View node logs
 
 There are two ways to view the logs:
 
-- With the **Console.app** you can start recording logs and view them, but you can't see
-  logs from the past.
+- With the **Console.app** you can start recording logs and view them, but you can't see logs from the past.
 
-  - Open the **Console app**, click on the **Start** button to begin
-    recording logs.
+  - Open the **Console app**, click on the **Start** button to begin recording logs.
 
   - In the search bar, enter the following and press enter:
 
@@ -292,11 +237,9 @@ There are two ways to view the logs:
 
     - For testnet logs: ``software.conordium.testnet.node``
 
-  - Then click on the small **Any** button in the search bar and select
-    **Subsystem** from the list of options.
+  - Then click on the small **Any** button in the search bar and select **Subsystem** from the list of options.
 
-- With a terminal and *log show* you can view logs from the past and as they are
-  logged.
+- With a terminal and *log show* you can view logs from the past and as they are logged.
 
   - Open a terminal.
 
@@ -306,8 +249,7 @@ There are two ways to view the logs:
 
     - For testnet logs: ``log show --predicate 'subsystem == "software.concordium.testnet.node"'``
 
-  - You can filter the logs with additional parameters, such as start and end
-    date. Enter ``log show --help`` to see the parameters available.
+  - You can filter the logs with additional parameters, such as start and end date. Enter ``log show --help`` to see the parameters available.
 
 Synchronize a node with the network
 ===================================
