@@ -6,7 +6,7 @@ Delegate to a baker pool
 
 You can delegate funds from an account to a baker pool or to passive delegation.
 
-When you delegate some funds to a baker pool, it can influence the chances of the baker owner for your baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.
+When you delegate some funds to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.
 
 .. Note::
 
