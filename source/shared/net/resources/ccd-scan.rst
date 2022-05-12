@@ -20,5 +20,4 @@ CCDScan
 Delegation and baker pools
 ==========================
 
-The CCDScan tool allows bakers to view information that helps them to :ref:`manage their baker and pool responsibly<baker-pool>`. It also allows potential delegators to :ref:`research bakers and pools<baker-pool>` to find out which one is reliable and trustworthy. 
-
+The CCDScan tool allows bakers to view information that helps them to :ref:`manage their baker and pool responsibly<baker-pool>`. It also allows potential delegators to :ref:`research bakers and pools<baker-pool>` to find out which one is reliable and trustworthy.

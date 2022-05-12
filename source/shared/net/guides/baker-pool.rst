@@ -11,7 +11,7 @@ Best practices for baking
 
 As a baker you should manage your baker node responsibily for the benefit of all users of the blockchain. The recommendations for bakers are:
 
-- Make sure your node is running 24/7/365 in a reliable place. 
+- Make sure your node is running 24/7/365 in a reliable place.
 - Protect your baker keys so that they are not lost or compromised.
 - Check regularly to make sure that you are not close to the bounding cap for max capital for a baker. If you're getting close to the max capital, you can split and make another baker to divide the capital.
 - Open a baker pool. This allows others to delegate stake to you, thus increasing your effective stake and your odds of getting selected to bake a block. You also receive a commission on the delegator's rewards.
@@ -20,7 +20,7 @@ Recommendations for baker pool owners
 -------------------------------------
 
 .. Note::
-    
+
     Currently delegation and baker pools are only available on Testnet.
 
 If you are running a baker pool, you are responsible for managing your pool to maximize returns, both for yourself and those who have delegated stake to your pool.

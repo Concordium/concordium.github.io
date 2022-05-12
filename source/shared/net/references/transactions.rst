@@ -461,8 +461,8 @@ Commands for delegation
 =======================
 
 .. Note::
-    
-    Currently delegation is only available on Testnet.
+
+   Currently delegation is only available on Testnet.
 
 Add delegation
 --------------

@@ -5,7 +5,7 @@ Update delegation on an account in Mobile Wallet
 ================================================
 
 .. Note::
-    
+
     Currently delegation is only available on Testnet.
 
 You can update individual configuration settings of your delegation or change all of them as needed. Most changes, except reducing stake, are effective from the next pay day.

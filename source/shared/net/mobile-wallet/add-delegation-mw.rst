@@ -5,7 +5,7 @@ Add delegation to an account in Mobile Wallet
 =============================================
 
 .. Note::
-    
+
     Currently delegation is only available on Testnet.
 
 You can delegate some of your stake to a :ref:`baker pool<glossary-baker-pool>` or to  :ref:`passive delegation<glossary-passive-delegation>`. Before delegating stake to a baker pool, it is important to :ref:`research the pool<baker-pool>`. You can only have one delegation per account. If you wish to delegate CCD to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.

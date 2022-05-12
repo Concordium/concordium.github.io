@@ -5,8 +5,8 @@ Remove delegation to a baker pool
 =================================
 
 .. Note::
-    
-    Currently delegation is only available on Testnet.
+
+   Currently delegation is only available on Testnet.
 
 You can remove the delegation on an account to stop delegating.
 

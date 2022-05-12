@@ -5,8 +5,8 @@ Delegate to a baker pool
 ========================
 
 .. Note::
-    
-    Currently delegation is only available on Testnet.
+
+   Currently delegation is only available on Testnet.
 
 You can delegate stake from an account to a baker pool or to passive delegation.
 

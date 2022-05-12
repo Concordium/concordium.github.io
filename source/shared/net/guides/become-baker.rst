@@ -345,8 +345,8 @@ Configure a baker
 =================
 
 .. Note::
-    
-    Currently delegation is only available on Testnet.
+
+   Currently delegation is only available on Testnet.
 
 Use ``baker configure`` to configure a baker and open a baker pool. The following is an example of how ``configure baker`` might be used:
 

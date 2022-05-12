@@ -5,7 +5,7 @@ Delegation
 ==========
 
 .. Note::
-    
+
     Currently delegation is only available on Testnet.
 
 On the Concordium blockchain, bakers run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some CCD. Because Concordium runs a “proof-of-stake” protocol, each baker needs to stake an amount to bake, and the probability of being selected to create the next block is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.

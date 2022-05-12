@@ -5,7 +5,7 @@ Delegation in Mobile Wallet
 ===========================
 
 .. Note::
-    
+
     Currently delegation is only available on Testnet.
 
 Delegation allows you to earn rewards for delegating some funds without the need to run a node or become a baker. For more information about delegation, see :ref:`Delegation <delegation-concept>`.
@@ -16,9 +16,9 @@ Delegation allows you to earn rewards for delegating some funds without the need
 
 You can only have one delegation per account. If you wish to delegate CCD to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
 
-.. Note::
+.. Note:: 
 
-	An account cannot be both a baker account and have a delegation.
+   An account cannot be both a baker account and have a delegation.
 
 .. toctree::
    :hidden:

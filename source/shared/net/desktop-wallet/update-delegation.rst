@@ -5,8 +5,8 @@ Update delegation to a baker pool
 =================================
 
 .. Note::
-    
-    Currently delegation is only available on Testnet.
+
+   Currently delegation is only available on Testnet.
 
 You can change the delegation amount and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 

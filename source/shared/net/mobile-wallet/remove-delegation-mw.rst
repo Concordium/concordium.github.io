@@ -5,7 +5,7 @@ Remove delegation on an account in Mobile Wallet
 ================================================
 
 .. Note::
-    
+
     Currently delegation is only available on Testnet.
 
 .. Note::
