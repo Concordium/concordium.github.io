@@ -4,11 +4,6 @@
 Desktop Wallet settings
 =======================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
 The Desktop Wallet has a number of settings such as password and node settings that you access by going to the **Settings** page.
 
 Preferences
@@ -34,7 +29,7 @@ Change wallet password
 
 On the this page, you can update the existing password for the Desktop Wallet, providing that you remember the current password.
 
-We strongly recommend that you create a backup of your Desktop Wallet database to ensure that you can recover your accounts, identities, and addresses if, for example, you lose the password to the Desktop Wallet. For more information, see :ref:`Make a backup of identities, accounts, and addresses <export-import-desktop>`.
+Concordium strongly recommends that you create a backup of your Desktop Wallet database to ensure that you can recover your accounts, identities, and addresses if, for example, you lose the password to the Desktop Wallet. For more information, see :ref:`Make a backup of identities, accounts, and addresses <export-import>`.
 
 Recover existing accounts
 =========================

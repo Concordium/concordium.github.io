@@ -5,11 +5,6 @@
 Set up the Ledger Nano S and install the Concordium Ledger App
 ==============================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
 To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.
 
 Prerequisites

@@ -4,10 +4,6 @@
 Troubleshoot a node on a server with Docker
 ===========================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to troubleshoot a node on the Concordium network running in Docker.
 
 Database invariant violation error

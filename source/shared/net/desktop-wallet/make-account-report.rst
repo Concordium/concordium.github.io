@@ -4,11 +4,6 @@
 Make an account report
 ======================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
 When you select an account, you can see a list of all transfers in and out of the account. However, if you need a more structured view of the transfers or, for example, want to compare transfers on different accounts, you have the option of creating an account report. The report is saved as a CSV file on your computer, and the CSV format enables you to sort and organize the data in a spreadsheet.
 
 Create a report of transactions on one or more accounts

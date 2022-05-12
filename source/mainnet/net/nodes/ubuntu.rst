@@ -10,4 +10,5 @@ The following links describe running a node with Ubuntu.
    :maxdepth: 1
 
    ../guides/run-node-ubuntu
+   run-node-ubuntu
    troubleshoot-ubuntu

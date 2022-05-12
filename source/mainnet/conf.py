@@ -48,7 +48,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.extlinks",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
-    "multidoc",
+    # "multidoc",
     "sphinx_reredirects",
     # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
     "sphinx_copybutton",
@@ -118,9 +118,9 @@ highlight_language = "rust"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "pydata_sphinx_theme"
 
-html_logo = "../shared/_static/concordium-logo-mainnet.svg"
+html_logo = "../shared/_static/concordium-logo-dark.svg"
 html_favicon = "../shared/_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -132,32 +132,61 @@ html_theme_options = {
     # 'canonical_url': '',
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
     # 'analytics_anonymize_ip': False,
-    'logo_only': True,
-    'display_version': True,
-    'prev_next_buttons_location': None,
+    # 'logo_only': True,
+    # 'display_version': True,
+    # 'prev_next_buttons_location': None,
     # 'style_external_links': False,
-    'style_nav_header_background': '#4486AB',
+    # 'style_nav_header_background': '#235c9b',
     # # Toc options
-    # 'collapse_navigation': False,
+    "collapse_navigation": False,
     # 'sticky_navigation': True,
-    'navigation_depth': 2,
-    'includehidden': False,
-    # 'titles_only': False
-}
+    "navigation_depth": 2,
+    # 'includehidden': False,
+    # 'titles_only': False,
+    "show_nav_level": 0,
+    "show_toc_level": 2,
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-menu"],
+    "navbar_end": ["navbar-icon-links"],
+    "page_sidebar_items": ["page-toc"],
+    "footer_items": ["footer"],
+    "show_prev_next": False,
+    "icon_links": [
+        {
+            # Concordium GitHub
+            "name": "GitHub",
+            # URL where the link will redirect
+            "url": "https://github.com/Concordium",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fab fa-github-square",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+        },
+        {
+            # Concordium Email Support
+            "name": "Support",
+            # URL where the link will redirect
+            "url": "mailto:support@concordium.software",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fas fa-envelope",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+
+        },
+        {    
+            "name": "Discourse",
+            "url": "https://support.concordium.software/latest",
+            "icon": "_static/discourse-brands.svg",
+            "type": "local",
+        },
+    ]        
+    }
 
 
 current_language = os.environ['current_language'] if 'current_language' in os.environ else 'en'
 current_version = os.environ['current_version'] if 'current_version' in os.environ else 'local'
 versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
 languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
-
-rst_epilog = """
-Support & Feedback
-==================
-
-If you have questions or feedback, join us on `Discourse <https://support.concordium.software/>`_, or contact us at support@concordium.software.
-"""
-
 
 html_show_sourcelink = False
 
@@ -191,8 +220,10 @@ html_static_path = ["../shared/_static"]
 # defined by theme itself.  Builtin themes are using these templates by
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
-#
-# html_sidebars = {}
+html_sidebars = {
+    "**": ["search-field", "sidebar-nav-bs"]
+}
+
 # html_additional_pages = {}
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -282,7 +313,7 @@ linkcheck_request_headers = {
 }
 
 # -- InterSphinx links for linking between document versions ------------------
-intersphinx_mapping = {'testnet': ('https://developer.concordium.software/en/testnet/', None)}
+# intersphinx_mapping = {'testnet': ('https://developer.concordium.software/en/testnet/', None)}
 
 
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------
