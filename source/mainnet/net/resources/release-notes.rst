@@ -9,10 +9,10 @@ Sirius Testnet
 
 May 16, 2022
 
-Concordium Node 4.0.0
----------------------
+Concordium Node 4.0.11
+----------------------
 
-Concordium Node 4.0.0 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
+Concordium Node 4.0.11 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
 
 V1 smart contracts includes the following key features:
    - Unlimited contract state size
@@ -47,17 +47,17 @@ The following changes have been made to the chain parameters in P4:
    - The reward mechanism is overhauled, with minting and rewarding being done once per 'payday' (a number of epochs, nominally one day). Baker rewards are shared with delegators to the baker's pool, with some commission being paid to the baker. Block rewards (i.e. transaction fee rewards), baking rewards, and finalization rewards are accumulated over the reward period and paid out at the payday.
 
 
-Concordium Client 4.0.2
+Concordium Client 4.0.3
 -----------------------
 
-Concordium Client 4.0.2 supports Smart Contracts v1 with the following changes.
+Concordium Client 4.0.3 supports Smart Contracts v1 with the following changes.
 
    - A ``contract invoke`` command has been added for simulating contracts locally on the node.
    - Module deploy now expects modules with a version prefix. This prefix is added automatically when building with cargo-concordium version >= 2. The flag ``--contract-version`` has been added to support modules without the version prefix.
    - The ``contract update`` command now uses ``--entrypoint`` to specify the function to invoke. This is renamed from the previous ``--func``.
    - When calling ``contract update`` or ``contract invoke`` with a non-existent entrypoint the fallback entrypoint is called if one is specified in the contract.
 
-Concordium Client 4.0.2 also supports delegation to baker pools or passive delegation, and commands have been added to open baker pools.
+Concordium Client 4.0.3 also supports delegation to baker pools or passive delegation, and commands have been added to open baker pools.
 
    - The commands ``delegator add``, ``delegator configure`` and ``delegator remove`` have been added. Commands to support the baker opening a baker pool have also been added, including ``baker configure``, ``baker update-url`` and ``baker update-delegation-status``.
    - The existing commands ``baker add``, ``baker remove``, ``baker set-key``, ``baker update-restake`` and ``baker update-stake`` have been updated so that in Protocol version < 4, they generate the former P3 transaction, and in Protocol version 4, they generate the relevant ``configure baker`` transaction.
