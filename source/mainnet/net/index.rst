@@ -44,7 +44,6 @@
 
    guides/developer-page
    nodes/node-requirements
-   
    guides/overview-baker-process
    desktop-wallet/baking-dw
    references/concordium-client
@@ -61,7 +60,7 @@
    On-chain guides <../smart-contracts/guides/on-chain-index>
    References <../smart-contracts/references/index>
    Smart Contracts v0 <https://developer.concordium.software/en/smart-contracts-v0/index.html>
-   
+
 .. toctree::
    :caption: Resources
 
