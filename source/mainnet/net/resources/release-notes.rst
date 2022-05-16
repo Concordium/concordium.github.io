@@ -21,8 +21,6 @@ V1 smart contracts includes the following key features:
    - An increased smart contract module size limit of 512kB
    - A number of cryptographic primitives
 
-Also smart contract modules are cached on startup from the existing state to improve smart contract execution.
-
 Other improvements in this version include:
    - The SendTransaction function exposed via the gRPC interface now provides the caller with detailed error messages.
    - Support for wire-protocol version 0 is dropped, meaning that the node cannot connect to peers that do not support wire-protocol version 1, which is supported since version 1.1.0.
@@ -35,18 +33,9 @@ Other improvements in this version include:
    - Baker pools and stake delegation are implemented for the P4 protocol version.
    - The new gRPC endpoint ``GetBakerList`` retrieves a JSON list of the baker IDs of the bakers registered in a known block. It returns null for an unknown block.
    - The new gRPC endpoint ``GetPoolStatus`` retrieves a status record for a baker pool, or for the set of passive delegators.
-   - The bakerStakeThreshold level-2 keys are renamed to poolParameters keys; two additional access structures are defined: cooldownParameters and timeParameters. These are described more below.
-
-The following changes have been made to the chain parameters in P4:
-
-   - The mint distribution no longer includes the mint per slot rate.
-   - Pool parameters, governed by the poolParameters keys, have been added to determine commission rates and ranges, bounds, and other factors affecting baker pools.
-   - Time parameters, governed by timeParameters, have been added to determine the duration of a payday (in epochs) and the mint rate per payday.
-   - Cooldown parameters, governed by cooldownParameters, have been added to determine the required cooldown periods when bakers and delegators reduce their stakes.
-   - ``ConfigureBaker`` and ``ConfigureDelegator`` transactions have been added (with the old baker transactions becoming obsolete in P4). These permit adding, modifying, and removing bakers and delegators from an account. Delegators can delegate to a baker, or delegate passively (effectively to all bakers).
-   - The reward mechanism is overhauled, with minting and rewarding being done once per 'payday' (a number of epochs, nominally one day). Baker rewards are shared with delegators to the baker's pool, with some commission being paid to the baker. Block rewards (i.e. transaction fee rewards), baking rewards, and finalization rewards are accumulated over the reward period and paid out at the payday.
-
-
+   - The bakerStakeThreshold level-2 keys are renamed to poolParameters keys; two additional access structures are defined: cooldownParameters and timeParameters.
+   - Smart contract modules are cached on startup from the existing state to improve smart contract execution.
+   
 Concordium Client 4.0.3
 -----------------------
 
