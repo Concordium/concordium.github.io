@@ -146,7 +146,7 @@ html_theme_options = {
     "show_nav_level": 0,
     "show_toc_level": 2,
     "navbar_start": ["navbar-logo"],
-    "navbar_center": [""],
+    "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
     "page_sidebar_items": ["page-toc"],
     "footer_items": ["footer"],

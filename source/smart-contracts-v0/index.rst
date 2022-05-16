@@ -1,7 +1,3 @@
-.. Concordium smart contracts documentation master file, created by
-   sphinx-quickstart on Thu Oct 22 15:01:04 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 ==========================================
 Concordium Smart Contract v0 Documentation
@@ -16,10 +12,6 @@ The documentation is split into four categories
    - **Tutorials**: Step by step walk-through with details explained as needed.
    - **How-to guides**: Short guides to achieve specific goals.
    - **References**: Precise descriptions of the machinery.
-
-==================
-Smart Contracts v0
-==================
 
 .. toctree::
    :maxdepth: 1

@@ -44,8 +44,7 @@
 
    guides/developer-page
    nodes/node-requirements
-   Smart Contracts v1 - Testnet only <../smart-contracts/index>
-   Smart Contracts v0 <https://developer.concordium.software/en/smart-contracts-v0/index.html>
+   
    guides/overview-baker-process
    desktop-wallet/baking-dw
    references/concordium-client
@@ -57,8 +56,12 @@
    :caption: Smart Contracts v1 - Testnet only
 
    Introduction <../smart-contracts/general/introduction>
-   Tutorials <../smart-contracts/tutorials\piggy-bank/index>
-
+   Tutorials <../smart-contracts/tutorials/piggy-bank/index>
+   Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   On-chain guides <../smart-contracts/guides/on-chain-index>
+   References <../smart-contracts/references/index>
+   Smart Contracts v0 <https://developer.concordium.software/en/smart-contracts-v0/index.html>
+   
 .. toctree::
    :caption: Resources
 
