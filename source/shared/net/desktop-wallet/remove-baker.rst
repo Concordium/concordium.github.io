@@ -36,7 +36,7 @@ Remove a baker (Multi-signature account)
 
 #. Select the **Account** that you no longer want to be a baker account, and then select **Continue**.
 
-#. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
+#. Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
 
 Generate the transaction
 ------------------------
