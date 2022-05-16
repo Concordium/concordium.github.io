@@ -248,7 +248,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
             To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-            - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.0.11.msi>`_
+            - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.0.11-0.msi>`_
 
             To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
