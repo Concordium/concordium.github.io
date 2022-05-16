@@ -138,9 +138,9 @@ Concordium Client
 
          - SHA256 checksum of the download: ``6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8``
 
-      -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
+      -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_4.0.3-0>`_
 
-      -  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.3-0.exe>`_
+      -  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_4.0.3-0.exe>`_
 
 Cargo-concordium
 ================
