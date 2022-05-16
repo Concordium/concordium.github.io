@@ -35,7 +35,7 @@ Other improvements in this version include:
    - The new gRPC endpoint ``GetPoolStatus`` retrieves a status record for a baker pool, or for the set of passive delegators.
    - The bakerStakeThreshold level-2 keys are renamed to poolParameters keys; two additional access structures are defined: cooldownParameters and timeParameters.
    - Smart contract modules are cached on startup from the existing state to improve smart contract execution.
-   
+
 Concordium Client 4.0.3
 -----------------------
 
