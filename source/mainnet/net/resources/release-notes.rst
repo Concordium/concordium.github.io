@@ -29,7 +29,7 @@ Other improvements in this version include:
    - The macOS installer has been improved so it no longer overwrites the service files when reinstalling.
    - When using the Mac installer users now can leave one (but not both) of the net configurations empty when they don't want to configure a node for it. On the initial installation, leaving a net configuration empty means that the start/stop app shortcuts and the application support folder for that net won't be installed.
    - Consensus queries have been made more robust by validating input more extensively. This affects all queries whose input was a block or transaction hash. These queries now return an InvalidArgument error.
-   - The maximum number of retries for Node Collector has been removed so it will keep querying.
+   - The maximum number of retries for Node Collector has been removed so it will keep querying indefinitely.
    - Nodes can now be stopped during out of band catchup by using the signals ``SIGINT`` and ``SIGTERM``.
    - The ``GetAccountInfo`` endpoint supports querying the account via the account index.
    - Baker pools and stake delegation are implemented for the P4 protocol version.
