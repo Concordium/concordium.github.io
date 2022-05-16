@@ -53,6 +53,13 @@
    references/query-node
 
 .. toctree::
+   :includehidden:
+   :caption: Smart Contracts v1 - Testnet only
+
+   Introduction <../smart-contracts/general/introduction>
+   Tutorials <../smart-contracts/tutorials\piggy-bank/index>
+
+.. toctree::
    :caption: Resources
 
    resources/release-notes-mainnet

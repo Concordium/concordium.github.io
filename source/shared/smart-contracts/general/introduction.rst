@@ -87,3 +87,14 @@ A smart contract is first deployed to the chain as part of a :ref:`contract
 module <contract-module>`. After this a smart contract can be *initialized* to
 obtain a :ref:`smart contract instance <contract-instances>`. Finally a smart
 contract instance can be repeatedly updated according to its own logic.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: General
+
+   contract-module
+   contract-instances
+   contract-schema
+   resource-accounting
+   develop-contracts

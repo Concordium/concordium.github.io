@@ -1,1 +1,1 @@
-.. include:: /../shared/net/guides/deciding-wallet.rst
+# .. include:: /../shared/net/guides/deciding-wallet.rst
