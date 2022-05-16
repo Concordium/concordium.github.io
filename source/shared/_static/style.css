@@ -78,7 +78,7 @@ a.reference.internal{
     width: 100% !important;
 }
 
-.rst-content div.highlight .gp {
+.gp {
     /* Adds padding to the right of '$' in code-blocks with terminal commands. */
     padding-right: 0.5em;
 }
