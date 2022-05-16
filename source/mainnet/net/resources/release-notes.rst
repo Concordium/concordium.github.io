@@ -39,7 +39,7 @@ Other improvements in this version include:
 Concordium Client 4.0.3
 -----------------------
 
-Concordium Client 4.0.3 supports Smart Contracts v1 with the following changes.
+Concordium Client 4.0.3 supports version 1 Smart Contracts with the following changes.
 
    - A ``contract invoke`` command has been added for simulating contracts locally on the node.
    - Module deploy now expects modules with a version prefix. This prefix is added automatically when building with cargo-concordium version >= 2. The flag ``--contract-version`` has been added to support modules without the version prefix.
