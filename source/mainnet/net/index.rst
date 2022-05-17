@@ -59,7 +59,16 @@
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
    References <../smart-contracts/references/index>
-   Smart Contracts v0 <https://developer.concordium.software/en/smart-contracts-v0/index.html>
+
+.. toctree::
+   :includehidden:
+   :caption: Smart Contracts v0
+
+   Introduction <../smart-contracts-v0/general/introduction>
+   Tutorials <../smart-contracts-v0/tutorials/piggy-bank/index>
+   Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
+   On-chain guides <../smart-contracts-v0/guides/on-chain-index>
+   References <../smart-contracts-v0/references/index>
 
 .. toctree::
    :caption: Resources

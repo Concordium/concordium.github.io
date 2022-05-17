@@ -1,4 +1,4 @@
-.. _sc-references:
+.. _sc-references-v0:
 
 ==========
 References
@@ -17,4 +17,4 @@ A number of references exist to help you when creating and testing smart contrac
    references-on-chain
    local-settings
    Rust contract examples (repo) <https://github.com/Concordium/concordium-rust-smart-contracts>
-   concordium-std <https://docs.rs/concordium-std/3.0.0/concordium_std/>
+   concordium-std <https://docs.rs/concordium-std/2.0.0/concordium_std/>
