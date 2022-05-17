@@ -357,7 +357,7 @@ Use ``baker configure`` to configure a baker and open a baker pool. The followin
 Configure baker has the following optional arguments:
 
 - ``--sender`` is the name or address of the baker account.
-- ``--capital`` is an amount of CCD that is the intended equity capital of the baker
+- ``--stake`` is an amount of CCD that is the intended equity capital of the baker
 - ``--restake`` determines whether earnings are restaked or not. 0 is for ??? and 1 is for ???
 - ``--open-delegation`` sets whether the baker's pool is optn for delegators. Options are: for none, open, ???
 - ``--signatureVerifyKey`` is the public key for verifying signed blocks and finalization messages, with a proof of knowledge of the secret key
