@@ -19,11 +19,16 @@ Install/upgrade and run a node
 ==============================
 
 .. Note::
+
    If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See :ref:`verify-running-node` for details about how to do this.
 
    Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`configure-node` for information about how to change the service configuration settings.
 
-#. Go to :ref:`Downloads<downloads>`, and download the latest Windows Installer package (.msi file).
+#. Download the latest Windows Installer package (.msi file).
+
+   - For Mainnet go to :ref:`Downloads<downloads>`.
+
+   - For Testnet go to :ref:`Downloads<downloads-testnet>`.
 
 #. In the folder where you downloaded the .msi file, double-click the .msi file. The **Concordium Node Setup Wizard** opens. Select **Next**. If you see a message saying *Windows protected your PC*, select **More info**, and then select **Run anyway**.
 
