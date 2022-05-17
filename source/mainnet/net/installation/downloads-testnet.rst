@@ -51,13 +51,20 @@ Concordium Desktop Wallet v1.3.1
 
    - SHA256 checksum of the download: ``152885940a03502d63e5a052805f5d1a2a3252e3df18a9f719641b8f7bc4b3ef``
 
-Concordium Ledger App - Alpha Centauri
-======================================
+Concordium Ledger App - Sirius
+==============================
 
 The version of the Ledger App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
 
-- `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
-- `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
+.. Note::
+
+   Ledger firmware version 2.0.0 is no longer supported.
+
+.. Note::
+
+   The Ledger Nano S Plus is not supported currently.
+
+- `Download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.testnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
 .. _concordium-node-and-client-download-testnet:
 
