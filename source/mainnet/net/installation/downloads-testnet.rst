@@ -104,6 +104,8 @@ To run a node on a server with Ubuntu, you need a Debian package.
 Linux-Docker
 ------------
 
+.. _concordium-docker-package-download-testnet:
+
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
    - `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.0.11-0-testnet.tar.gz>`_
