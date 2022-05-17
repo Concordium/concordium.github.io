@@ -29,7 +29,7 @@ To run the node, you must install a Debian package.
 After installation, the ``concordium-testnet-node`` and ``concordium-testnet-node-collector`` services will be started.
 The services are also enabled to start automatically on system start.
 
-#. Download the :ref:`Debian package <downloads>`
+#. Download the :ref:`Debian package <downloads-testnet>`
 
 #. Install the package:
 
