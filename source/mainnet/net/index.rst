@@ -8,6 +8,7 @@
    :caption: Installation
 
    installation/downloads
+   installation/downloads-testnet
    installation/verification-instructions
 
 .. toctree::
