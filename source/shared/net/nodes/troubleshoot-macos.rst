@@ -4,10 +4,6 @@
 Troubleshoot a node on MacOS
 ============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to troubleshoot a node running on MacOS on the Concordium network.
 
 Node crash or database corruption

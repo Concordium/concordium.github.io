@@ -6,10 +6,6 @@
 Run a node with Docker
 ======================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
@@ -32,14 +28,14 @@ Before running a Concordium node you will need to
 
    -  On *Linux*, allow Docker to be run as a non-root user.
 
-2. Download and extract the :ref:`full suite for running a node on Linux<concordium-docker-package-download>`.
+2. Download and extract the :ref:`full suite for running a Mainnet node on Linux<concordium-docker-package-download>` or :ref:`full suite for running a Testnet node on Linux<concordium-docker-package-download-testnet>`.
 
 .. _running-a-node:
 
 Running/upgrading a node
 ========================
 
-To start running a client that will join the |Net| follow these
+To start running a client that will join Mainnet or Testnet follow these
 steps:
 
 1. Open the ``concordium-node`` executable from the unzipped archive.

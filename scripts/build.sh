@@ -6,7 +6,7 @@
 set -e # Fail script on error
 
 # Branches to include in the build, must be separated by comma and no spaces.
-all_versions='mainnet,testnet'
+all_versions='mainnet'
 # Languages to include in the build
 all_languages='en'
 

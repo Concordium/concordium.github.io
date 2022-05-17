@@ -4,10 +4,6 @@
 Dashboards and Status Pages
 ===========================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Dashboard pages
 ===============
 

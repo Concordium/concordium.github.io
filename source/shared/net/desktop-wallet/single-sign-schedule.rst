@@ -1,17 +1,9 @@
 
 .. _CCD-single-schedule-desktop:
 
-============================
-Transfer CCD with a schedule
-============================
-
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
-Send CCD with a schedule from an account
-========================================
+==============================================
+Transfer CCD with a schedule in Desktop Wallet
+==============================================
 
 This topic describes how you can send CCD from an account with only one signer with a schedule. If you want to learn about sending CCD with a schedule when more co-signers are required, see :ref:`Create a scheduled multi-signature CCD transfer in the Desktop Wallet <create-multisig-scheduled>`.
 

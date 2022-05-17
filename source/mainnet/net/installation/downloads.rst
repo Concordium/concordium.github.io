@@ -2,15 +2,11 @@
 .. include:: ../../variables.rst
 .. _downloads:
 
-=========
-Downloads
-=========
+===================
+Downloads - Mainnet
+===================
 
-.. contents::
-   :local:
-   :backlinks: none
-
-This topics contains information about where you can download the Concordium Wallets and tools for |Net|. You can also find out about the hardware requirements for running a node.
+This topic contains information about where you can download the Concordium Wallets and tools for Mainnet. You can also find out about the hardware requirements for running a node.
 
 Concordium Mobile Wallet
 ========================
@@ -23,24 +19,23 @@ The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wal
 
 You can find Concordium Mobile Wallet on App Store and on Google Play.
 
-.. image:: ../images/mobile-wallet/app-store-badge.svg
-   :width: 23%
-   :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
-.. image:: ../images/mobile-wallet/google-play-badge.png
-   :width: 29.5%
-   :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+   .. image:: ../images/mobile-wallet/app-store-badge.svg
+      :width: 23%
+      :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
+   .. image:: ../images/mobile-wallet/google-play-badge.png
+      :width: 29.5%
+      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
 
 The Concordium Mobile Wallet has been verified by NowSecure.
 
-.. image:: ../images/mobile-wallet/nowsecure_certificate.png
+   .. image:: ../images/mobile-wallet/nowsecure_certificate.png
       :width: 32%
       :target: https://www.nowsecure.com/certified-apps/concordium/
 
-
 .. _downloads-desktop-wallet:
 
-Concordium Desktop Wallet v1.3.1
-================================
+Concordium Desktop Wallet v.1.3.1
+=================================
 
 -  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.3.1.exe>`_
 
@@ -48,131 +43,115 @@ Concordium Desktop Wallet v1.3.1
 
 -  Download the Desktop Wallet for Linux®:
 
-   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.AppImage>`_
+   -  `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.AppImage>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
       - :ref:`Verification instructions <verification-cdw-appimage>`
 
-   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.deb>`_
+   -  `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.deb>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
       - :ref:`Verification instructions <verification-cdw-deb>`
 
-   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.rpm>`_
+   -  `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.3.1.rpm>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
       - :ref:`Verification instructions <verification-cdw-rpm>`
 
-Concordium Ledger App
-=====================
+Concordium Ledger App - Alpha Centauri
+======================================
 
-  - `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
-  - `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
+The version of the Ledger App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
+
+- `Download the Concordium Ledger App 2.0.3 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.3-target-2.1.0.zip>`_
+- `Download the Concordium Ledger App 2.0.1 for Ledger firmware version 2.0.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
 
 .. _concordium-node-and-client-download:
 
 Concordium Client v3.0.4
 ========================
 
-Download the Concordium Client:
-
--  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
+-  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
 
    - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
    - :ref:`Verification instructions <verification-client-linux>`
 
--  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_.
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_.
 
--  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
-
+-  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
 
 Cargo-concordium v1.0.0-2
 =========================
 
 Download cargo-concordium:
 
--  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
+   -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
 
--  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
+   -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
 
--  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
+   -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
 
-For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
-
+For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
 Concordium node distributions v3.0.2
 ====================================
 
-Node Debian package
--------------------
+For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
+
+Ubuntu
+------
+
 To run a node on a server with Ubuntu, you need a Debian package.
 
-- `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`_
+   - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`_
 
-   - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
-   - :ref:`Verification instructions <verification-node-debian-package>`
+      - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
+      - :ref:`Verification instructions <verification-node-debian-package>`
 
 To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
+Docker-Linux
+------------
+
 .. _concordium-docker-package-download:
 
-Full suite for running a node on Linux using Docker
----------------------------------------------------
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`_
+   - `Download the Mainnet suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`_
 
-   - SHA256 checksum of the download: ``733600b800f7a184152453a5aa52f6d0d50101a698804a957eb82c47ff2396f8``
+      - SHA256 checksum of the download: ``733600b800f7a184152453a5aa52f6d0d50101a698804a957eb82c47ff2396f8``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
-Native Windows node
--------------------
+Windows
+-------
 
 To run a node on Windows, you need a Windows Installer package.
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
+   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
 
-Native Mac node
----------------
+Mac
+---
 
 To run a node on macOS, you need a macOS installer package.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
+   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
-Mainnet genesis block
-=====================
+Genesis block
+=============
+
 The genesis block is included in node distributions.
 Download the block separately to inspect it or to run a node in a custom configuration.
 
 - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
-  - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
-  - :ref:`Verification instructions <verification-mainnet-genesis-block>`
+   - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
+   - :ref:`Verification instructions <verification-mainnet-genesis-block>`
 
-.. _requirements-run-node:
-
-Requirements for running a node
-===============================
-
-The following are the minimum system requirements for running a node. If your system does not meet or exceed these requirements, you might not be able to run the node properly.
-
-You need a broadband connection to run a node, and we strongly recommend that the node is running around the clock. This is especially important if you're running a baker node.
-
-If you use a laptop in combination with Docker, sleep mode can cause problems with the Docker container used to run the node.
-
-System requirements
--------------------
-
--  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen™ 5000 series or Intel® Core™ 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
-
--  Minimum 16 GB of RAM.
-
--  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
 
 Auxiliary tools
 ===============
