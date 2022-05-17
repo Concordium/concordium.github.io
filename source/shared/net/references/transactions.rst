@@ -474,22 +474,26 @@ The command is:
 
 .. code-block:: console
 
-   $concordium-client delegator add --capital 5000 --restake 0 --baker 12345
+   $concordium-client delegator add --sender EXAMPLEACCT --stake 5000 --target 12345
 
-The command has the following optional arguments:
+The command has the following required arguments:
 
-- ``--capital`` is an amount of CCD you intend to delegate
-- ``--restake`` can be set to either 0 or 1 (which is which?) to not restake earnings or restake earnings
-- ``--baker`` is the baker pool ID or L-pool if delegating to the lockup pool.
+- ``--sender`` is the account from which you want to stake.
+- ``--stake`` is an amount of CCD you intend to delegate
+- ``--target`` is either the baker pool ID or ``Passive``.
+
+The command has the following optional argument:
+
+- ``--no-restake`` can be set if you do not want to restake earnings.
 
 Configure or change delegation
 ------------------------------
 
 The command to add delegation with ``concordium-client`` is
-``delegator configure``. The command has the same arguments as ``delegator add``.
+``delegator configure``. The command has the same arguments as ``delegator add`` but the all arguments are optional for ``delegator configure``. If you do not specifiy the argument, then no change is made.
 
 Stop delegation
 ---------------
 
 The command to add delegation with ``concordium-client`` is
-``delegator remove``. The command has the same arguments as ``delegator add``?
+``delegator remove``. It is recommended to specify the ``--sender`` account for where unstaked funds should be returned.

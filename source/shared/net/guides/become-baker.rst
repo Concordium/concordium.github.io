@@ -75,7 +75,8 @@ and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for <none> --delegation-transaction-fee-commission <5.0e-2> --delegation-baking-commission <5.0e-2> --delegation-finalization-commission <1.0> --baker-url <baker-url>.json --keys-in <baker-keys-new>.json --keys-out <baker-creds-new>.json
+
 
 where you replace
 
@@ -97,6 +98,21 @@ where you replace
   * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
 
 (Keep the output file name as ``baker-credentials.json``).
+
+The following arguments are also required for the ``baker add`` transaction:
+
+- ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
+- ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
+- ``--keys-in`` specifies the name of the file containing the baker keys.
+- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
+- ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
+- ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
+- ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
+
+The following arguments are optional. If no selection is made, earnings are restaked automatically.
+
+- ``--restake`` sets that earnings are restaked.
+- ``--no-restake`` sets that earnings are not restaked.
 
 .. warning::
 
@@ -358,12 +374,15 @@ Configure baker has the following optional arguments:
 
 - ``--sender`` is the name or address of the baker account.
 - ``--stake`` is an amount of CCD that is the intended equity capital of the baker
-- ``--restake`` determines whether earnings are restaked or not. 0 is for ??? and 1 is for ???
+- ``--restake`` sets that earnings are restaked.
+- ``--no-restake`` sets that earnings are not restaked.
 - ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
-- ``--signatureVerifyKey`` is the public key for verifying signed blocks and finalization messages, with a proof of knowledge of the secret key
-- ``--electionVerifyKey`` is the public key for the baker’s verifiable random function, with a proof of knowledge of the secret key
-- ``--aggregationVerifyKey`` is the public key for verifying the baker’s signature in the aggregate signature scheme, with a proof of knowledge of the secret key
 - ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
+- ``--keys-in`` specifies the name of the file containing the baker keys.
+- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
+- ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
+- ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
+- ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
 
 Remove a baker
 ==============
