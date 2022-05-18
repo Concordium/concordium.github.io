@@ -490,7 +490,7 @@ Configure or change delegation
 ------------------------------
 
 The command to configure or change delegation on an account with ``concordium-client`` is
-``delegator configure``. The command has the same arguments as ``delegator add`` but the all arguments are optional for ``delegator configure``. You can specify ``--restake`` or ``--no-restake`` for ``delegator configure``. If it's specified, it can change whether or not earnings are restaked; if neither is specified, then it won't be changed. If an argument is not specified, then no change is made. 
+``delegator configure``. The command has the same arguments as ``delegator add`` but the all arguments are optional for ``delegator configure``. You can specify ``--restake`` or ``--no-restake`` for ``delegator configure``. If it's specified, it can change whether or not earnings are restaked; if neither is specified, then it won't be changed. If an argument is not specified, then no change is made.
 
 Stop delegation
 ---------------

@@ -33,7 +33,7 @@
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
-   desktop-wallet/delegation-desktop
+   desktop-wallet/delegation-dw
    mobile-wallet/delegation-mw
    desktop-wallet/single-sign-schedule
    mobile-wallet/inspect-release-schedule-mw
