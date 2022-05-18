@@ -8,4 +8,5 @@
    concepts-backup
    concepts-transactions
    concepts-baker
+   concepts-delegation
    ../guides/company-identities

@@ -60,7 +60,7 @@ A node that participates in the production of :ref:`blocks<glossary-block>`, ref
 Baker pool
 ==========
 
-A collection of stake by a baker and delegators who choose to stake funds for baking with that baker in order to increase probability of being selected to bake a block and thus earn rewards. The baker takes a commission on rewards paid to delegators.
+A baker and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The baker runs a baker node on behalf of the baker pool to bake (and possibly finalize) blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the baker produces a block. Each payday, the accrued rewards are distributed to the pool's participants in proportion to their relative stakes in the pool, with the baker (the pool owner) receiving an additional commission from the delegators' rewards.
 
 .. _glossary-best-block:
 
@@ -213,10 +213,12 @@ this key is only known to the account holder.
 
 .. _glossary-delegate:
 
-Delegate
-========
+Delegator
+==========
 
-The action of giving a baker the right to stake an amount of CCD from you in order to increase probability of baking a block and earning rewards. Delegators earn rewards, minus a commission to the baker, on delegated stake.
+An account that contributes stake to a baker pool, or to passive delegation.
+When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated.
+Delegators earn rewards, minus a commission to the baker, in proportion to their delegated stake.
 
 .. _glossary-encryption-key:
 
@@ -325,7 +327,7 @@ the :ref:`staked amount<glossary-staked-amount>` of that baker. The lottery powe
 last. (This delay ensures that the stake distribution is determined before the
 randomness that fixes the bakers for the epoch: otherwise, stakeholders might
 redistribute their stake to luckier bakers, which undermines the security of the
-system.)
+system.) :ref:`Delegation<glossary-delegate>` affects the lottery power of the baker by increasing their stake, thus increasing the odds of that baker being chosen to bake a block.
 
 .. _glossary-mainnet:
 
@@ -387,7 +389,7 @@ given out to, e.g., bakers.
 Passive delegation
 ==================
 
-A form of delegation where delegators can allocate stake to distribute among all pools. It is not associated with a specific baker. You earn lower rewards when delegating to to passive delegation than if you delegated to a specific baker pool. But passive delegation is not affected by poor performance of a single baker.
+A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
 
 .. _glossary-shielded-amount:
 
@@ -465,9 +467,11 @@ winner.
 Staked Amount
 =============
 
-:ref:`Bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
+:ref:`Bakers<glossary-baker>` can have part of the balance of their account staked. The amount that is
 staked remains locked while staked and cannot be transferred or moved in any
 way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
+
+:ref:`Delegators<glossary-delegate>` can delegate stake to a baker pool or passive delegation. This affects the staked amount of the baker and thus their lottery power.
 
 .. _glossary-testnet:
 

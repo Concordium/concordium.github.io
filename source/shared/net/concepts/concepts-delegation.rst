@@ -19,7 +19,7 @@ A baker opens a pool, and other CCD holders delegate some stake to this pool. Th
 
 Bounding the size of pools
 ---------------------------
-Concordium imposes two caps on the amount of stake in a single pool. The first cap bounds the size of a pool with respect to a fraction of the total staked CCDs. For example, with the capital bound cap a pool cannot have more than 5% of all the CCD. This limit ensures that the pools remain distributed and prevents the crash of one baker from affecting the whole system. A party with lots of capital can run multiple bakers to avoid this cap. This would increase decentralization.
+Concordium imposes two caps on the amount of stake in a single pool. The first cap bounds the size of a pool with respect to a fraction of the total staked CCDs. For example, with the capital bound cap a pool cannot have more than 10% of all the staked CCD. This limit ensures that the pools remain distributed and prevents the crash of one baker from affecting the whole system. A party with lots of capital can run multiple bakers to avoid this cap. This would increase decentralization.
 
 The second cap is on the amount of stake in a pool with respect to the stake of the baker. For example, the total stake of a pool can be at most 3 times the stake of the baker. This bound is for security reasons as it prevents a party with a small stake from controlling too large a part of the system. Every baker’s power is thus still proportional to their own stake, which is crucial for cryptographic security to hold.
 

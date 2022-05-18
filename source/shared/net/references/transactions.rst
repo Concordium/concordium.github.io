@@ -467,7 +467,7 @@ Commands for delegation
 Add delegation
 --------------
 
-The command to add delegation with ``concordium-client`` is
+The command to add delegation on an account with ``concordium-client`` is
 ``delegator add``. For example, an interaction to add delegation on an account looks like the following:
 
 The command is:
@@ -489,11 +489,11 @@ The command has the following optional argument:
 Configure or change delegation
 ------------------------------
 
-The command to add delegation with ``concordium-client`` is
-``delegator configure``. The command has the same arguments as ``delegator add`` but the all arguments are optional for ``delegator configure``. If you do not specifiy the argument, then no change is made.
+The command to configure or change delegation on an account with ``concordium-client`` is
+``delegator configure``. The command has the same arguments as ``delegator add`` but the all arguments are optional for ``delegator configure``. You can specify ``--restake`` or ``--no-restake`` for ``delegator configure``. If it's specified, it can change whether or not earnings are restaked; if neither is specified, then it won't be changed. If an argument is not specified, then no change is made. 
 
 Stop delegation
 ---------------
 
-The command to add delegation with ``concordium-client`` is
-``delegator remove``. It is recommended to specify the ``--sender`` account for where unstaked funds should be returned.
+The command to remove delegation on an account with ``concordium-client`` is
+``delegator remove``. It is recommended to specify the ``--sender`` account where delegation should be removed. No other arguments are available.
