@@ -5,11 +5,6 @@
 Add credentials to an account
 =============================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
 Add more credentials on an account
 ==================================
 
@@ -21,6 +16,8 @@ Prerequisites
 -  Create the account that's going to hold more credentials and share the account address with the users whose credentials, you're going to add to the account.
 
 -  Receive and save one or more files with the credentials that you want to associate with the account. For more information, see :ref:`Create a file with credentials <create-credentials-file>`.
+
+:ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
 
 Select an identity and an account
 =================================
@@ -34,7 +31,7 @@ Select an identity and an account
 
 #. Select **Add Credential to proposal**, and then select **Continue**.
 
-#. Set an **expiry date and time** for your proposal. You must submit proposals to the chain within the last 2 hours up to the expiry date. This means you must set the expiry time so that it’s possible for any co-signers to return their signatures in time.
+#. Set an **expiry date and time** for your proposal. You must set the expiry time so that it’s possible for any co-signers to return their signatures in time.
 
 .. _guide-change-signature:
 

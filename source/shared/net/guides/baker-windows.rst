@@ -5,17 +5,13 @@
 Run a baker node on Windows
 ===========================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 A baker node is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking two epochs after the transaction has been approved.
 
 Prerequisites
 =============
 
 -  Run Windows 10 or later or Windows Server 2019 or later.
--  Meet the :ref:`minimum system requirements<requirements-run-node>` for running a node.
+-  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 -  :ref:`Run a node on Windows<run-node-windows>`
 
 .. _configure-baker-windows:
@@ -27,13 +23,13 @@ Configure a baker node on Windows
 
    .. code-block:: console
 
-     concordium-client baker generate-keys <keys-file>.json
+     $concordium-client baker generate-keys <keys-file>.json
 
    and
 
    .. code-block:: console
 
-     concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+     $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
 
    In the following, the baker keys are referred to as baker-credentials.json.
 

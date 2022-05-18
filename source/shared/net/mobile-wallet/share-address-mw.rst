@@ -4,28 +4,19 @@
 Find and share your account address
 ===================================
 
-.. contents::
-   :local:
-   :backlinks: none
+If you need to share your account address with someone, you can find the address on the account page.
 
-If you need to share your account address with someone, you can find the address on the individual account page.
-
-Read the following or watch the video to learn how to share your account address.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/ldSitbxrsjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-|
+Read the following to learn how to share your account address.
 
 Share your account address
 ==========================
 
 #. Go to the **Accounts** page.
 
-#. Tap the balance of the account you want to find the address to.
+#. On the account you want to find the address to tap **RECEIVE**.
 
-#. Tap **ADDRESS**.
+   .. image:: ../images/mobile-wallet/MW13.png
+      :width: 25%
 
 #. Share your address:
 
@@ -35,13 +26,5 @@ Share your account address
 
    - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
-|
-
-.. image:: ../images/mobile-wallet/MW52.png
+   .. image:: ../images/mobile-wallet/MW54.png
       :width: 25%
-.. image:: ../images/mobile-wallet/MW53.png
-      :width: 25%
-.. image:: ../images/mobile-wallet/MW54.png
-      :width: 25%
-
-|

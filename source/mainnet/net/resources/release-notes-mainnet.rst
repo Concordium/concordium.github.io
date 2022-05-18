@@ -1,8 +1,8 @@
 .. _mainnet-release-notes:
 
-=============
-Release notes
-=============
+=======================
+Release notes - Mainnet
+=======================
 
 .. contents::
    :local:
@@ -12,6 +12,80 @@ Release notes
 
 Mainnet 3: Alpha Centauri 3.0
 ==============================
+
+May 4, 2022
+
+CCDScan release 1
+-----------------
+
+CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+
+CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
+CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+
+CCDScan release 1 features include:
+   - Block list view of the latest block data
+   - Block details for each block
+   - Transaction list view of the latest transaction data
+   - Transaction details for each transaction
+   - Account list view of the most recent account data
+   - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
+   - Easy search for specific details on blocks, transactions and accounts and bakers
+   - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
+   - A dashboard landing page with real-time updates from the Concordium blockchain
+   - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
+   - Ability to switch between Mainnet and Testnet data
+   - Ability to explore chain parameters and updates to these
+   - List of bakers and their stake, including the ability to drill through to the underlying account address
+
+April 21, 2022
+
+Concordium Node v3.0.2
+----------------------
+- Fixed a security vulnerability in the network layer that could be used to crash the node, causing a denial of service.
+
+March 22, 2022
+
+Concordium Mobile Wallet for Android v2.0.0(75)
+-----------------------------------------------
+
+Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.
+
+The simplified UI involves:
+
+- Redesigned account cards with Send, Receive and More options.
+
+- Updated simple and shielded transaction flows:
+
+   - It is now possible to paste recipient addresses directly, without having to add them to the address book first.
+
+   - A “Send all” button has been added.
+
+- The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.
+
+- The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.
+
+March 21, 2022
+
+Concordium Mobile Wallet for iOS v2.0.0(38)
+-------------------------------------------
+
+Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.
+
+The simplified UI involves:
+
+- Redesigned account cards with Send, Receive and More options.
+
+- Updated simple and shielded transaction flows:
+
+   - It is now possible to paste recipient addresses directly, without having to add them to the address book first.
+
+   - A “Send all” button has been added.
+
+- The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.
+
+- The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.
+
 
 February 10, 2022
 

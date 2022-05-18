@@ -4,10 +4,6 @@
 Terms and Conditions for Concordium Mobile Wallet
 =================================================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 Effective from November 18, 2021
 
 Introduction

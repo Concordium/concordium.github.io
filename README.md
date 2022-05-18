@@ -102,13 +102,13 @@ To watch the doc files and automate the build run:
 ```
 make dev-mainnet
 ```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 **Testnet**
 ```
 make dev-testnet
 ```
-and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
+and navigate to [localhost:8000/testnet](http://localhost:8000/net).
 
 
 Before committing, make sure to run the linter and fix all the errors reported:
@@ -118,19 +118,21 @@ make lint
 
 ### Windows
 
+**Note:**
+The exact command depends on which terminal type you are using. For example, in Powershell, you write .\make.bat dev-XXX where XXX is your target to build.
 
 **Mainnet**
 
 ```
 make.bat dev-mainnet
 ```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 **Testnet**
 ```
 make.bat dev-testnet
 ```
-and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
+and navigate to [localhost:8000/testnet](http://localhost:8000/net).
 
 
 Before committing, make sure to try to build and fix any warnings that are reported.
@@ -141,7 +143,7 @@ Before committing, make sure to try to build and fix any warnings that are repor
 
 
 > **Note**:
-> When working on changes to the design it can be benefitial to disable
+> When working on changes to the design it can be beneficial to disable
 > caching, as it can cause UI problems. To disable it, add the `-E` flag to the
 > `dev` command in the appropriate make file.
 

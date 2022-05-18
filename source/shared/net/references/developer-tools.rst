@@ -4,11 +4,6 @@
 Auxiliary Tools
 ===============
 
-.. contents::
-   :local:
-   :backlinks: none
-
-
 Decrypt encrypted output
 ========================
 

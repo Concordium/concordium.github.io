@@ -4,11 +4,6 @@
 Account recovery
 =====================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
 Recover accounts in the Desktop Wallet without a backup file
 ============================================================
 

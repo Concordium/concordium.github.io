@@ -4,12 +4,6 @@
 Remove a baker account
 ======================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 2
-
-
 If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 :ref:`epochs <glossary-epoch>`. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
 
 .. Note::
@@ -42,7 +36,7 @@ Remove a baker (Multi-signature account)
 
 #. Select the **Account** that you no longer want to be a baker account, and then select **Continue**.
 
-#. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
+#. Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
 
 Generate the transaction
 ------------------------

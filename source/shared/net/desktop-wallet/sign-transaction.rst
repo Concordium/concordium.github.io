@@ -4,11 +4,6 @@
 Sign a transaction proposal
 ===========================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
 As a co-signer on an account, you'll receive transaction proposals that you have to sign. You'll receive the proposals as files with the extension .json. Sometimes, you'll also receive a PDF file with the transaction information. You import the .json file into the Desktop Wallet and then you compare the transaction details with the contents of the PDF file. Some proposers also send a separate file with a copy of the identicon as an extra security measure.
 
 .. Note::

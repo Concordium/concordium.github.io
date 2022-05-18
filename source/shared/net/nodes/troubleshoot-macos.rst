@@ -4,10 +4,6 @@
 Troubleshoot a node on MacOS
 ============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
 This guide describes how to troubleshoot a node running on MacOS on the Concordium network.
 
 Node crash or database corruption
@@ -46,7 +42,7 @@ To see if this is your problem, try to load the service manually:
 
 .. code-block:: console
 
-   $ sudo launchctl load /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
+   $sudo launchctl load "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"
 
 If your file ownership has changed, you will see the following:
 
@@ -59,4 +55,4 @@ To resolve the issue, change the file ownership back to root.
 
 .. code-block:: console
 
-   sudo chown root /Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist
+   $sudo chown root "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"

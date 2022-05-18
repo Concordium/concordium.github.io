@@ -7,10 +7,6 @@
 Querying a node
 ===============
 
-.. contents::
-   :local:
-   :backlinks: none
-
 The :ref:`concordium-client<concordium_client>` tool supports queries of multiple kinds of state against
 a backend node:
 

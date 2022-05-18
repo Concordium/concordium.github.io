@@ -48,7 +48,11 @@ extensions = [
     "sphinx.ext.intersphinx",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
     "multidoc",
-    "sphinx_reredirects"
+    "sphinx_reredirects",
+    # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
+    "sphinx_copybutton",
+    "sphinx_toolbox.collapse",
+    "sphinx_tabs.tabs"
 ]
 
 # todo_include_todos = True
@@ -71,6 +75,9 @@ graphviz_dot_args=[
 # sphinx-prompt must be the first of these two.
 extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
+# Options for copybutton behavior
+copybutton_prompt_text = "$"
+copybutton_line_continuation_character = "\\"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../shared/_templates']
@@ -124,7 +131,7 @@ html_theme_options = {
     'display_version': True,
     'prev_next_buttons_location': None,
     # 'style_external_links': False,
-    'style_nav_header_background': '#34838C',
+    'style_nav_header_background': '#a38b72',
     # # Toc options
     # 'collapse_navigation': False,
     # 'sticky_navigation': True,

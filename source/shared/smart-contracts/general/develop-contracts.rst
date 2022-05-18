@@ -82,7 +82,7 @@ Here is an example of a smart contract that implements a counter:
        ctx: &impl HasReceiveContext,
        state: &mut State,
    ) -> ReceiveResult<A> {
-       ensure!(ctx.sender().matches_account(&ctx.owner()); // Only the owner can increment
+       ensure!(ctx.sender().matches_account(&ctx.owner())); // Only the owner can increment
        *state += 1;
        Ok(A::accept())
    }

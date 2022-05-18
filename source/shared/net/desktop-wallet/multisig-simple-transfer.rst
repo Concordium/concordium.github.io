@@ -1,18 +1,9 @@
 
-
 .. _create-multisig:
 
-=====================================================================
+===========================================================
 Create a multi-signature CCD transfer in the Desktop Wallet
-=====================================================================
-
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 1
-
-Multi-signature CCD transfer
-============================
+===========================================================
 
 A multi-signature transfer of CCD is a transaction that
 requires two or more co-signers to sign with their private keys to
@@ -21,9 +12,13 @@ authorize the transaction.
 Prerequisites
 =============
 
--  Set up an :ref:`identity and an account <create-initial-account-desktop>`.
+-  Set up an :ref:`identity and an account <create-initial-account>`.
+
+-  Set up an :ref:`account with multiple credentials <multi-credentials>`
 
 -  Set up a :ref:`Ledger Nano S hardware device identity <install-Ledger-app>`.
+
+:ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
 
 .. Note::
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
@@ -43,10 +38,7 @@ Make a transfer proposal
 
 #.  Select the relevant recipient from the list. If there are many recipients in the list, you can use search to find the right recipient. Select **Continue**.
 
-#. Set the **Transaction expiry** time and then select **Continue**.
-
-.. Note::
-   You must submit proposals to the chain within the last 2 hours up to the expiry date, so take this into consideration, when you set the expiry time. It's important that you leave enough time for the co-signers to return their signatures in time.
+#. Set the **Transaction expiry** time, leaving enough time for the co-signers to return their signatures in time, and then select **Continue**.
 
 Generate the transaction
 ========================

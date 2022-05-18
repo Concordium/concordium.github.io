@@ -12,11 +12,6 @@
 Concordium Client
 =================
 
-.. contents::
-   :local:
-   :backlinks: none
-
-
 The Concordium distribution ships with a CLI tool named ``concordium-client``.
 
 By default ``concordium-client`` performs its queries and sends transactions
@@ -320,7 +315,7 @@ Show account aliases
 
 .. code-block:: console
 
-   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
+   $concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
 
 This generates the output:
 
