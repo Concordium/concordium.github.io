@@ -36,9 +36,6 @@ Rust_ programming language using the |concordium-std| library.
    The reader is assumed to have basic knowledge of what a blockchain and smart
    contract is, and some experience with Rust_.
 
-.. contents::
-   :local:
-   :backlinks: None
 
 Preparation
 ===========

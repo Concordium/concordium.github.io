@@ -97,6 +97,10 @@ part<piggy-bank-writing-v0>`, either follow the previous part or copy the result
 
 You are now ready to write unit tests for your smart contract!
 
+.. Note::
+
+   To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
+
 Add a test module
 =================
 
