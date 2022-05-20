@@ -47,7 +47,7 @@ Delegate to a baker pool (Multi-signature account)
 
 #. Select the account on which you want to delegate funds.
 
-#. Enter the new amount that you want to stake and select **Continue**.
+#. Enter the new amount that you want to stake and select **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
 #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
