@@ -40,9 +40,9 @@ For CCD holders who do not want to regularly check the performance of their pool
 Time and cool-downs
 ===================
 
-Changes to the pools are performed every 24 hours. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all occur at the payday. At payday, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last epoch before pay day, then the change has to wait until the second pay day.
+Changes to the pools are performed every 24 hours. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all occur at the pay day. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last epoch before pay day, then the change has to wait until the second pay day.
 
-But decreasing the stake (whether for delegators or bakers) is subject to a cool down period. In other words, once the transaction has been included in a block the cool down period starts. Unstaking occurs at the payday event after the cooldown has elapsed and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
+But decreasing the stake (whether for delegators or bakers) is subject to a cool down period. In other words, once the transaction has been included in a block the cool down period starts. Unstaking occurs at the pay day event after the cooldown has elapsed and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
 
 Where delegation is available
 =============================

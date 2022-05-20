@@ -60,7 +60,7 @@ A node that participates in the production of :ref:`blocks<glossary-block>`, ref
 Baker pool
 ==========
 
-A baker and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The baker runs a baker node on behalf of the baker pool to bake (and possibly finalize) blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the baker produces a block. Each payday, the accrued rewards are distributed to the pool's participants in proportion to their relative stakes in the pool, with the baker (the pool owner) receiving an additional commission from the delegators' rewards.
+A baker and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The baker runs a baker node on behalf of the baker pool to bake (and possibly finalize) blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the baker produces a block. Each pay day, the accrued rewards are distributed to the pool's participants in proportion to their relative stakes in the pool, with the baker (the pool owner) receiving an additional commission from the delegators' rewards.
 
 .. _glossary-best-block:
 
