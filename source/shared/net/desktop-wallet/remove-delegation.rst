@@ -47,7 +47,7 @@ Remove delegation (Multi-signature account)
 
 #. Select the account whose baker stake you want to change.
 
-#. Enter the new amount that you want to stake and select **Continue**.
+#. Review the cool-down period. Click **Continue**.
 
 #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
