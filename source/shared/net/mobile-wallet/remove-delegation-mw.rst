@@ -18,7 +18,7 @@ Remove delegation on an account in Mobile Wallet
 
 #. Tap on the balance area of the account for which you want to stop delegation or tap **More** (button picture).
 
-#. In the Hamburger menu (button picture) tap **Delegation**.
+#. In the hamburger menu (button picture) tap **Delegation**.
 
 #. You see your current delegation. Tap **Stop delegation**.
 
