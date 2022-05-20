@@ -26,7 +26,7 @@ Delegate to a baker pool (Single-signature account)
 
 #. Go to **Accounts** and select the account on which you want to delegate funds.
 
-#. Click **More options** then select **Register to a delegator**.
+#. Click **More options** then select **Register as a delegator**.
 
 #. Select your target (a baker pool or passive delegation). Click **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
