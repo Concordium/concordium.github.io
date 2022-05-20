@@ -22,7 +22,7 @@ Before delegating stake to a baker pool, it is important to research the pool. Y
 
 #. Tap on the balance area of the account for which you want to update delegation or tap **More** (button picture).
 
-#. In the Hamburger menu (button picture) tap **Delegation**.
+#. In the hamburger menu (button picture) tap **Delegation**.
 
 #. You see your current delegation. Tap **Update current delegation**.
 
