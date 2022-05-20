@@ -15,7 +15,7 @@ Not everyone with CCD has the resources needed to run a baker. **Delegation** en
 Pools and Rewards
 =================
 
-A baker opens a pool, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. Rewards are distributed to everyone in the pool proportional to their stake, and a the baker takes a commission on the earnings of the delegators. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool gets 30 CCD as reward and the commission of the baker is 10%. Then a party with 1,000 CCD in the pool will receive a share of 3 CCD. If this party is a delegator, 0.3 CCD are paid as a commission to the baker and the other 2.7 CCD are kept.
+A baker opens a pool, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. Rewards are distributed to everyone in the pool proportional to their stake, and the baker takes a commission on the earnings of the delegators. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool gets 30 CCD as reward and the commission of the baker is 10%. Then a party with 1,000 CCD in the pool will receive a share of 3 CCD. If this party is a delegator, 0.3 CCD are paid as a commission to the baker and the other 2.7 CCD are kept.
 
 Bounding the size of pools
 ---------------------------
