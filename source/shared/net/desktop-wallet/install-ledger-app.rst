@@ -9,7 +9,7 @@ To be able to sign and send transactions using the Desktop Wallet, you need a Le
 
 .. Note::
 
-   The Ledger Nano S Plus is not supported currently.
+   The Ledger Nano S Plus and Ledger Nano X are not supported currently.
 
 Prerequisites
 =============
