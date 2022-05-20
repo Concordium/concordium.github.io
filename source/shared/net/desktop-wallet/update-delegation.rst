@@ -26,7 +26,7 @@ Update delegation (Single-signature account)
 
 #. Go to **Accounts** and select the account on which you want to change your delegation preferences.
 
-#. Click **Change view** then select *Update Delegation**.
+#. Click **More options** then select **Delegation** and choose **Update Delegation**.
 
 #. You can enter a new amount that you want to delegate, choose whether rewards should be redelegated or not, and enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
 
