@@ -28,7 +28,7 @@ Update delegation (Single-signature account)
 
 #. Click **More options** then select **Delegation** and choose **Update Delegation**.
 
-#. You can enter a new amount that you want to delegate, choose whether rewards should be redelegated or not, and enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
+#. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
