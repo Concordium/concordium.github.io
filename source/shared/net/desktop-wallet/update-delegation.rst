@@ -43,7 +43,7 @@ Update delegation (Single-signature account)
 Update delegation (Multi-signature account)
 ===========================================
 
-#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
+#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update Delegation**.
 
 #. Select the account on which you want to change your delegation preferences.
 
