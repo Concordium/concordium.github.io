@@ -38,4 +38,4 @@ Once the transaction is finalized, the delegation update is effective from the n
 
 .. Note::
 
-   Reducing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and no changes can be made the the amount. The reduction in stake is not effective until the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+   Reducing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
