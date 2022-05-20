@@ -43,7 +43,7 @@ Remove delegation (Single-signature account)
 Remove delegation (Multi-signature account)
 ===========================================
 
-#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
+#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Remove Delegation**.
 
 #. Select the account whose baker stake you want to change.
 
