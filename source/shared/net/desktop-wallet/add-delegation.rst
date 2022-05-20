@@ -43,7 +43,7 @@ Delegate to a baker pool (Single-signature account)
 Delegate to a baker pool (Multi-signature account)
 ==================================================
 
-#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
+#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Delegate to a pool**.
 
 #. Select the account on which you want to delegate funds.
 
