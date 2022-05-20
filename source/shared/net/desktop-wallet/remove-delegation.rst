@@ -10,7 +10,7 @@ Remove delegation to a baker pool
 
 You can remove the delegation on an account to stop delegating.
 
-If you remove the delegation, there is a cool-down period before the delegation is stopped. During this period, you continue to earn rewards; you cannot change the delegation amount, but you can change other delegation settings. After the cool-down period, the amount you had delegated is returned to your disposable balance.
+If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the delegation is stopped. During this period, you continue to earn rewards; you cannot change the delegation amount, but you can change other delegation settings. The delegation stop is not effective until the next pay day after cool-down period ends. At that time the amount you had delegated is returned to your disposable balance.
 
 .. Note::
 

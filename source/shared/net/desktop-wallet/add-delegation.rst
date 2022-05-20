@@ -26,7 +26,7 @@ Delegate to a baker pool (Single-signature account)
 
 #. Go to **Accounts** and select the account on which you want to delegate funds.
 
-#. Click **More options** then select **Register as a delegator**.
+#. Click **More options** then select **Register to a delegator**.
 
 #. Select your target (a baker pool or passive delegation). Click **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
@@ -85,7 +85,7 @@ Generate and sign the transaction on the Ledger
 .. Note::
    If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
 
-In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-stake-change>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
+In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-delegation>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
 Export proposal
 ---------------
@@ -108,6 +108,8 @@ When the co-signers have signed the transaction, they return the signed transact
 #. Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.
 
 #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
+
+.. _submit-delegation:
 
 Submit the transaction to the blockchain
 ----------------------------------------

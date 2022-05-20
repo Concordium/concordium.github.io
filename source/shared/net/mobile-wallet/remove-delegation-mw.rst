@@ -28,4 +28,4 @@ Remove delegation on an account in Mobile Wallet
 
 .. Note::
 
-   Removing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation will be locked during this period and no changes can be made. The delegation stop is not effective until the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+   Removing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and cannot be increased or decreased; you can still change targets or restaking preferences during cool-down. The delegation stop is not effective until the next pay day after cool-down period ends. During the cool-down period the staked amount continues earning rewards.

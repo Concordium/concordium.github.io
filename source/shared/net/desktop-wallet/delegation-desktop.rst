@@ -12,7 +12,7 @@ Delegation allows you to earn rewards for delegating some stake without the need
 
 .. Note::
 
-   Before delegating any of your stake to a baker or pool, use the :ref:`CCD scan tool<ccd-scan>` to research bakers and pools thoroughly.
+   Before delegating any of your stake to a baker or pool, use the :ref:`CCD scan tool<ccd-scan>` to research baker pools thoroughly.
 
 You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
 

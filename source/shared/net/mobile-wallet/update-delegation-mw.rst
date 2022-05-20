@@ -10,6 +10,10 @@ Update delegation on an account in Mobile Wallet
 
 You can update individual configuration settings of your delegation or change all of them as needed. Most changes, except reducing stake, are effective from the next pay day.
 
+.. Note::
+
+   Any changes made in the last epoch before the upcoming pay day are applied not in the upcoming pay day but the pay day after that.
+
 Before delegating stake to a baker pool, it is important to research the pool. You can only have one delegation per account. If you wish to delegate CCD to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
 
 .. Note::
