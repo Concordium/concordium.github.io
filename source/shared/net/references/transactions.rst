@@ -554,7 +554,7 @@ The output is:
      - The amount of time of delegator must wait before changes are effective when decreasing or removing stake, or changing pools.
    * - Exchange rate parameters
      - EUR per CCD rate (approx)
-     - The approximate exchange rate for the EUR to CCD exchange rate
+     - The approximate exchange rate for the EUR to CCD exchange rate.
    * -
      - EUR per Energy rate
      - The Euro per energy rate
