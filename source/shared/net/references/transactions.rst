@@ -560,7 +560,7 @@ The output is:
      - The Euro per energy exchange rate.
    * -
      - microCCD per EUR related
-     - The microCCD per Euro rate
+     - The microCCD per Euro exchange rate.
    * - Parameters that affect rewards distribution
      - mint amount per reward period
      - The percentage increase in amount of CCD per payday.
