@@ -1,1 +1,1 @@
-.. include:: /../shared/net/mobile-wallet/create-identity.rst
+# .. include:: /../shared/net/mobile-wallet/create-identity.rst

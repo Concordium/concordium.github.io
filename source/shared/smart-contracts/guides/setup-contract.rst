@@ -24,7 +24,7 @@ Your directory should now contain a ``Cargo.toml`` file and a ``src``
 directory and some hidden files.
 
 To be able to build Wasm we need to tell cargo the right ``crate-type``.
-This is done by adding the following in the file ``Cargo.toml``::
+This is done by adding the following in the ``Cargo.toml`` file ::
 
    [lib]
    crate-type = ["cdylib", "rlib"]
@@ -36,14 +36,14 @@ The next step is to add ``concordium-std`` as a dependency.
 It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.
 
-The library is added by opening ``Cargo.toml`` and adding the line
+To add the library, open ``Cargo.toml`` and add the line
 ``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
 the ``[dependencies]`` section::
 
    [dependencies]
-   concordium-std = "0.4"
+   concordium-std = "3.0"
 
-The crate documentation can be found on docs.rs_.
+The crate documentation is on docs.rs_.
 
 .. note::
 
@@ -53,6 +53,11 @@ The crate documentation can be found on docs.rs_.
 
       [dependencies]
       concordium-std = { path = "./path/to/concordium-std" }
+
+.. seealso::
+
+   It is possible to build smart contracts without using Rust's ``std``.
+   For more information, see :ref:`no-std`.
 
 .. _Rust: https://www.rust-lang.org/
 .. _Cargo: https://doc.rust-lang.org/cargo/

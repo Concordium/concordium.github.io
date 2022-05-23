@@ -24,13 +24,14 @@ Setup the contract for a schema
 In order to build a contract schema, we first have to prepare our smart
 contract for building the schema.
 
-We can choose which parts of our smart contract to included in the schema.
-The options are to include a schema for the contract state, and/or for each of
-the parameters of init and receive functions.
+You can choose which parts of the smart contract to include in the schema.
+For each init function, you can choose to include a schema for the parameter.
+And for each receive function, you can choose to include a schema for the parameter,
+the return value, or both.
 
 Every type we want to include in the schema must implement the ``SchemaType``
 trait. This is already done for all base types and some other types (see `list of types implementing the SchemaType`_).
-For most other cases, it can also be achieved automatically, using
+For most other cases, it can also be derived automatically, using
 ``#[derive(SchemaType)]``::
 
    #[derive(SchemaType)]
@@ -47,41 +48,44 @@ how this type is represented as bytes and how to represent it.
    Create an example showing how to manually implement ``SchemaType`` and link
    to it from here.
 
-Including contract state
-------------------------
+Including schemas for init
+--------------------------
 
-To generate and include the schema for the contract state, we annotate the type
-with the ``#[contract_state(contract = ...)]`` macro::
-
-   #[contract_state(contract = "my_contract")]
-   #[derive(SchemaType)]
-   struct MyState {
-       ...
-   }
-
-Or even simpler if the contract state is of a type that already implements ``SchemaType``, e.g., u32::
-
-   #[contract_state(contract = "my_contract")]
-   type State = u32;
-
-Including function parameters
------------------------------
-
-To generate and include the schema for parameters for init  and
-receive functions, we set the optional ``parameter`` attribute for the
-``#[init(..)]``- and ``#[receive(..)]``-macro::
+To generate and include the schema for parameters for init functions, set the optional ``parameter`` attribute for the
+``#[init(..)]``-macro::
 
    #[derive(SchemaType)]
    enum InitParameter { ... }
 
-   #[derive(SchemaType)]
-   enum ReceiveParameter { ... }
-
    #[init(contract = "my_contract", parameter = "InitParameter")]
    fn contract_init<...> (...){ ... }
 
-   #[receive(contract = "my_contract", name = "my_receive", parameter = "ReceiveParameter")]
-   fn contract_receive<...> (...){ ... }
+Including schemas for receive
+-----------------------------
+
+To generate and include the schema for parameters or return values for receive
+functions, set the optional ``parameter`` or ``return_value`` attribute for the
+``#[receive(..)]``-macro::
+
+   #[derive(SchemaType)]
+   enum ReceiveParameter { ... }
+
+   #[derive(SchemaType)]
+   enum ReceiveReturnValue { ... }
+
+   #[receive(contract = "my_contract", name = "just_param", parameter = "String")]
+   fn contract_receive_just_param<...> (...) -> ReceiveResult<String> { ... }
+
+   #[receive(contract = "my_contract", name = "just_return", return_value = "Vec<u64>")]
+   fn contract_receive_just_return<...> (...) -> ReceiveResult<Vec<u64>> { ... }
+
+   #[receive(
+       contract = "my_contract",
+       name = "param_and_return",
+       parameter = "ReceiveParameter",
+       return_value = "ReceiveReturnValue"
+   )]
+   fn contract_receive_param_and_return<...> (...) -> ReceiveResult<ReceiveReturnValue> { ... }
 
 Building the schema
 ===================
