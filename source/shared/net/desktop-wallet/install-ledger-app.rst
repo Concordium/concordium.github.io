@@ -256,7 +256,7 @@ When you update your Ledger, it should not be necessary to update the certificat
 
 #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.1.0-target-2.0.3``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.1.0-target-2.0.3``.
+#. Navigate to where you have downloaded the Ledger install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0``.
 
 #. Install the Concordium application on the Ledger by running the following script from the folder you extracted the files to:
 
