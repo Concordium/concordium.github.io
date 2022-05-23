@@ -100,6 +100,7 @@ Once you have performed these steps, you can :ref:`manage your baker using Conco
    :hidden:
    :maxdepth: 1
 
+   baker-pool
    baker-windows
    ../nodes/baker-macos
    ../nodes/baker-ubuntu

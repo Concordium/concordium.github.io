@@ -33,6 +33,7 @@
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
+   desktop-wallet/delegation-dw
    desktop-wallet/single-sign-schedule
    mobile-wallet/inspect-release-schedule-mw
    desktop-wallet/transaction-log-filter
@@ -74,6 +75,7 @@
 .. toctree::
    :caption: Resources
 
+   resources/ccd-scan
    resources/release-notes-mainnet
    resources/release-notes
    resources/legal
