@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/make-account-report.rst
+# .. include:: /../shared/net/desktop-wallet/make-account-report.rst

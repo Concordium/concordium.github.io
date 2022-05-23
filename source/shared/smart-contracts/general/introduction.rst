@@ -62,8 +62,8 @@ Smart contracts are a very exciting technology and people are still finding new
 ways to take advantage of them.
 However, there are some cases where smart contracts are not a good solution.
 
-One of the key advantages of smart contracts are the trust in the code
-execution, and to achieve this a large number of nodes in the blockchain network
+One of the key advantages of smart contracts is the trust in the code
+execution, and to achieve this, a large number of nodes in the blockchain network
 have to execute the same code and ensure agreement of the result.
 Naturally, this becomes expensive compared to running the same code on one node
 in some cloud service.
@@ -87,3 +87,14 @@ A smart contract is first deployed to the chain as part of a :ref:`contract
 module <contract-module>`. After this a smart contract can be *initialized* to
 obtain a :ref:`smart contract instance <contract-instances>`. Finally a smart
 contract instance can be repeatedly updated according to its own logic.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: General
+
+   contract-module
+   contract-instances
+   contract-schema
+   resource-accounting
+   develop-contracts

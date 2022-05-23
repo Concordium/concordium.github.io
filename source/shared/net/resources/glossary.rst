@@ -55,6 +55,13 @@ Baker
 A node that participates in the production of :ref:`blocks<glossary-block>`, referred to as
 *baking*.
 
+.. _glossary-baker-pool:
+
+Baker pool
+==========
+
+A baker and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The baker runs a baker node on behalf of the baker pool to bake (and possibly finalize) blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the baker produces a block. Each pay day, the accrued rewards are distributed to the pool's participants in proportion to their relative stakes in the pool, with the baker (the pool owner) receiving an additional commission from the delegators' rewards.
+
 .. _glossary-best-block:
 
 Best block
@@ -118,6 +125,13 @@ purposes:
 The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000
 µCCD. This means that CCD amounts are given with up to six decimal places of
 precision.
+
+.. _glossary-ccdscan:
+
+CCDScan
+=======
+
+CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. Often used to research bakers and pools before deciding to delegate funds to a particular pool.
 
 .. _glossary-chain:
 
@@ -196,6 +210,15 @@ Decryption key
 
 Dual to :ref:`encryption key<glossary-encryption-key>`. In contrast to the encryption key, which is public,
 this key is only known to the account holder.
+
+.. _glossary-delegate:
+
+Delegator
+==========
+
+An account that contributes stake to a baker pool, or to passive delegation.
+When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated.
+Delegators earn rewards, minus a commission to the baker, in proportion to their delegated stake.
 
 .. _glossary-encryption-key:
 
@@ -304,7 +327,7 @@ the :ref:`staked amount<glossary-staked-amount>` of that baker. The lottery powe
 last. (This delay ensures that the stake distribution is determined before the
 randomness that fixes the bakers for the epoch: otherwise, stakeholders might
 redistribute their stake to luckier bakers, which undermines the security of the
-system.)
+system.) :ref:`Delegation<glossary-delegate>` affects the lottery power of the baker by increasing their stake, thus increasing the odds of that baker being chosen to bake a block.
 
 .. _glossary-mainnet:
 
@@ -360,6 +383,13 @@ network and recorded on the Concordium blockchain. The recording can be explicit
 or implicit as part of the consensus protocol. An example of the former is a
 transaction such as a CCD transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
+
+.. _glossary-passive-delegation:
+
+Passive delegation
+==================
+
+A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
 
 .. _glossary-shielded-amount:
 
@@ -437,9 +467,11 @@ winner.
 Staked Amount
 =============
 
-:ref:`Bakers<glossary-baker>` can have part of the balance of its account staked. The amount that is
+:ref:`Bakers<glossary-baker>` can have part of the balance of their account staked. The amount that is
 staked remains locked while staked and cannot be transferred or moved in any
 way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
+
+:ref:`Delegators<glossary-delegate>` can delegate stake to a baker pool or passive delegation. This affects the staked amount of the baker and thus their lottery power.
 
 .. _glossary-testnet:
 

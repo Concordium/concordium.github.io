@@ -1,1 +1,1 @@
-.. include:: /../shared/net/resources/dw-licenses.rst
+# .. include:: /../shared/net/resources/dw-licenses.rst

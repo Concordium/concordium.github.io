@@ -46,12 +46,13 @@ Return custom errors, as you would with any other error type:
 .. code-block:: rust
 
    #[init(contract = "my_contract")]
-   fn contract_init_my(
-       _ctx: &impl HasInitContext<()>,
+   fn contract_init_my<S: HasStateApi>(
+       _ctx: &impl HasInitContext,
+       _state_builder: &mut StateBuilder<S>,
    ) -> Result<State, MyError> { Err(MyError::ErrOne) }
 
    #[receive(contract = "my_contract", name = "my_receive")]
-   fn contract_receive_my<A: HasActions>(
-       _ctx: &impl HasReceiveContext<()>,
-       _state: &mut State,
-   ) -> Result<A, MyError> { Err(MyError::ErrTwo) }
+   fn contract_receive_my<S: HasStateApi>(
+       _ctx: &impl HasReceiveContext,
+       _host: &impl HasHost<State, StateApiType = S>
+   ) -> Result<MyReturnValue, MyError> { Err(MyError::ErrTwo) }

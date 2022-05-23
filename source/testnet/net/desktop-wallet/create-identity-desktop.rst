@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/create-identity-desktop.rst
+# .. include:: /../shared/net/desktop-wallet/create-identity-desktop.rst
