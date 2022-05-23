@@ -96,5 +96,4 @@ contract instance can be repeatedly updated according to its own logic.
    contract-module
    contract-instances
    contract-schema
-   resource-accounting
    develop-contracts
