@@ -557,7 +557,7 @@ The output is:
      - The approximate exchange rate for the EUR to CCD exchange rate.
    * -
      - EUR per Energy rate
-     - The Euro per energy rate
+     - The Euro per energy exchange rate.
    * -
      - microCCD per EUR related
      - The microCCD per Euro rate
