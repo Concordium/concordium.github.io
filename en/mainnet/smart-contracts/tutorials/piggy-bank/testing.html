@@ -1338,7 +1338,7 @@ By using immutable receive functions, it is possible to rule out certain error
 cases at compile time, which means that you do not need tests for these
 scenarios.
 Along with performance, those are the two primary reasons for not making your
-receive methods <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-state"><code class="docutils literal notranslate"><span class="pre">mutable</span></code></a> unless strictly necessary.</p>
+receive methods <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-the-state"><code class="docutils literal notranslate"><span class="pre">mutable</span></code></a> unless strictly necessary.</p>
 <p>The second test becomes:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
