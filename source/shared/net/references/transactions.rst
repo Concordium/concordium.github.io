@@ -521,7 +521,7 @@ The output is:
      - Description
    * - Parameters related to baker pools
      - Minimum equity capital
-     - The minimum amount of CCD to stake to become a baker
+     - The minimum amount of CCD to stake to become a baker.
    * -
      - maximum fraction of total stake a pool is allowed hold
      - The maximum percent of total stake any single baker pool can have.
