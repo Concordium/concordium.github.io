@@ -1,1 +1,1 @@
-.. include:: /../shared/net/resources/third-party-notices.rst
+# .. include:: /../shared/net/resources/third-party-notices.rst

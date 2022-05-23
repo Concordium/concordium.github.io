@@ -1,1 +1,1 @@
-.. include:: /../shared/net/resources/dashboards.rst
+# .. include:: /../shared/net/resources/dashboards.rst

@@ -70,16 +70,19 @@ To create a fresh set of keys run:
 
    $concordium-client baker generate-keys <keys-file>.json
 
-You can choose an arbitrary name for the keys file. To register the keys in the network you need to be :ref:`running a node <running-a-node>`
+You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>`
 and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for none --delegation-transaction-fee-commission 0.05 --delegation-baking-commission 0.05 --delegation-finalization-commission 1.0 --baker-url MyBakerURL.json --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
+
 
 where you replace
 
+- ``MyBakerKeys.json`` with the name of baker keys file you generated
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
+- ``MyBakerURL`` with the information for your baker pool URL (optional)
 - ``<concordium-data-dir>`` with any path of your choice.
 
    .. Note::
@@ -89,14 +92,29 @@ where you replace
       * on Linux and MacOS: ``~/.local/share/concordium``
       * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
-  Remember to configure your node to bake using this path:
+      Remember to configure your node to bake using this path:
 
-  * on Linux: See :ref:`configure Linux node<baking-docker>`.
-  * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
-  * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
-  * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
+      * on Linux: See :ref:`configure Linux node<baking-docker>`.
+      * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
+      * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
+      * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
 
-(Keep the output file name as ``baker-credentials.json``).
+Keep the output file name as ``baker-credentials.json``.
+
+The following arguments are also required for the ``baker add`` transaction:
+
+- ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
+- ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
+- ``--keys-in`` specifies the name of the file containing the baker keys.
+- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
+- ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
+- ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
+- ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
+
+The following arguments are optional. If no selection is made, earnings are restaked automatically.
+
+- ``--restake`` sets that earnings are restaked.
+- ``--no-restake`` sets that earnings are not restaked. This flag means that rewards to the staked amount are not added on the baker automatically. Read more about this behavior in the section :ref:`Restake earnings<restake-earnings>`.
 
 .. warning::
 
@@ -106,9 +124,6 @@ where you replace
 
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
-
-Provide a ``--no-restake`` flag to avoid automatically adding the
-rewards to the staked amount on the baker. Read more about this behavior in the section :ref:`Restake earnings<restake-earnings>`.
 
 To start the node with these baker keys and bake blocks, you
 first need to shut down the current running node. To do this, either press ``Ctrl + C`` on the terminal where the node is running or use the
@@ -340,6 +355,33 @@ first need to shut down the current running node. To do this, either press ``Ctr
 ``concordium-node-stop`` executable.
 
 When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``.
+
+Configure a baker
+=================
+
+.. Note::
+
+   Currently delegation is only available on Testnet.
+
+Use ``baker configure`` to configure a baker and open a baker pool. The following is an example of how ``configure baker`` might be used:
+
+.. code-block:: console
+
+   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for none --delegation-transaction-fee-commission 5.0e-2 --delegation-baking-commission 5.0e-2 --delegation-finalization-commission 1.0 --baker-url baker-url.json --keys-in baker-keys-new.json --keys-out baker-creds-new.json
+
+Configure baker has the following optional arguments:
+
+- ``--sender`` is the name or address of the baker account.
+- ``--stake`` is an amount of CCD that is the intended equity capital of the baker
+- ``--restake`` sets that earnings are restaked.
+- ``--no-restake`` sets that earnings are not restaked.
+- ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
+- ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
+- ``--keys-in`` specifies the name of the file containing the baker keys.
+- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
+- ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
+- ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
+- ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
 
 Remove a baker
 ==============

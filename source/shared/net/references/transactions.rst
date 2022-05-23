@@ -65,6 +65,10 @@ Transaction commands
 |                               | :ref:`See below for specific        |
 |                               | information<identity-commands>`.    |
 +-------------------------------+-------------------------------------+
+| ``delegator configure``       | Add, configure, and remove          |
+|                               | delegation. :ref:`See below for     |
+|                               | information<delegation-commands>`.  |
++-------------------------------+-------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
 
@@ -450,3 +454,46 @@ If you query the account information of the recipient account afterwards, it wil
 The amount that is not yet released is also included in the ``Balance`` field
 so in this case the account owns ``100 CCD`` that don't belong to any pending
 release schedule.
+
+.. _delegation-commands:
+
+Commands for delegation
+=======================
+
+.. Note::
+
+   Currently delegation is only available on Testnet.
+
+Add delegation
+--------------
+
+The command to add delegation on an account with ``concordium-client`` is
+``delegator add``. For example, an interaction to add delegation on an account looks like the following:
+
+The command is:
+
+.. code-block:: console
+
+   $concordium-client delegator add --sender EXAMPLEACCT --stake 5000 --target 12345
+
+The command has the following required arguments:
+
+- ``--sender`` is the account from which you want to stake.
+- ``--stake`` is an amount of CCD you intend to delegate
+- ``--target`` is either the baker pool ID or ``Passive``.
+
+The command has the following optional argument:
+
+- ``--no-restake`` can be set if you do not want to restake earnings.
+
+Configure or change delegation
+------------------------------
+
+The command to configure or change delegation on an account with ``concordium-client`` is
+``delegator configure``. The command has the same arguments as ``delegator add`` but the all arguments are optional for ``delegator configure``. You can specify ``--restake`` or ``--no-restake`` for ``delegator configure``. If it's specified, it can change whether or not earnings are restaked; if neither is specified, then it won't be changed. If an argument is not specified, then no change is made.
+
+Stop delegation
+---------------
+
+The command to remove delegation on an account with ``concordium-client`` is
+``delegator remove``. It is recommended to specify the ``--sender`` account where delegation should be removed. No other arguments are available.

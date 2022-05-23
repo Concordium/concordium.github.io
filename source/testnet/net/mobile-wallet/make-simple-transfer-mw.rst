@@ -1,1 +1,1 @@
-.. include:: /../shared/net/mobile-wallet/make-simple-transfer-mw.rst
+# .. include:: /../shared/net/mobile-wallet/make-simple-transfer-mw.rst

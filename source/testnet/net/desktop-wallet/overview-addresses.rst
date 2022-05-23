@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/overview-addresses.rst
+# .. include:: /../shared/net/desktop-wallet/overview-addresses.rst

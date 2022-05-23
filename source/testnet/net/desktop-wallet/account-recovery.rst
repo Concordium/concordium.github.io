@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/account-recovery.rst
+# .. include:: /../shared/net/desktop-wallet/account-recovery.rst

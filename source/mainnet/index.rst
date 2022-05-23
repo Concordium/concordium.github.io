@@ -7,4 +7,4 @@ Mainnet
 .. toctree::
 
    net/index
-   smart-contracts/index
+   smart-contracts/general/introduction

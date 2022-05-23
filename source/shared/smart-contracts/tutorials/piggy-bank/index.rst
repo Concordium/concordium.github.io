@@ -30,3 +30,10 @@ tests.
 
    The reader is assumed to have basic knowledge of what a blockchain and smart
    contracts are, and to have some experience with Rust_.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   writing
+   testing

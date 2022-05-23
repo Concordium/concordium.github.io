@@ -36,13 +36,15 @@ run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --func my_receive --energy 1000
+   $concordium-client contract update 0 --entrypoint my_receive --energy 1000
 
 If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_receive'.
+   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
+
+As you can see, the subindex defaults to ``0``.
 
 Passing parameters in JSON format
 ---------------------------------
@@ -62,7 +64,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --func my_parameter_receive \
+   $concordium-client contract update 0 --entrypoint my_parameter_receive \
             --energy 1000 \
             --parameter-json my_parameter.json
 
@@ -70,10 +72,9 @@ If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_parameter_receive'.
+   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_parameter_receive'.
 
 Otherwise, an error describing the problem is displayed.
-Common errors are described in the next section.
 
 .. seealso::
 
@@ -117,7 +118,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --func my_parameter_receive \
+   $concordium-client contract update 0 --entrypoint my_parameter_receive \
             --energy 1000 \
             --parameter-bin my_parameter.bin
 
@@ -125,14 +126,9 @@ If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the function 'my_parameter_receive'.
+   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_parameter_receive'.
 
 .. seealso::
 
    For information on how to work with parameters in smart contracts, see
    :ref:`working-with-parameters`.
-
-.. _parameter_cursor():
-   https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html#tymethod.parameter_cursor
-.. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
-.. _read(): https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html#method.read_u8

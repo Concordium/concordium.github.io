@@ -13,26 +13,32 @@
 .. |init| replace:: ``#[init]``
 .. _receive: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html
 .. |receive| replace:: ``#[receive]``
-.. _InitContextTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.InitContextTest.html
-.. |InitContextTest| replace:: ``InitContextTest``
-.. _ReceiveContextTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html
-.. |ReceiveContextTest| replace:: ``ReceiveContextTest``
+.. _TestInitContext: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestInitContext.html
+.. |TestInitContext| replace:: ``TestInitContext``
+.. _TestReceiveContext: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html
+.. |TestReceiveContext| replace:: ``TestReceiveContext``
+.. _TestHost: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html
+.. |TestHost| replace:: ``TestHost``
+.. _TestStateBuilder: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestStateBuilder.html
+.. |TestStateBuilder| replace:: ``TestStateBuilder``
 .. _HasInitContext: https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html
 .. |HasInitContext| replace:: ``HasInitContext``
-.. _HasActions: https://docs.rs/concordium-std/latest/concordium_std/trait.HasActions.html
-.. |HasActions| replace:: ``HasActions``
-.. _ActionsTree: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/enum.ActionsTree.html
-.. |ActionsTree| replace:: ``ActionsTree``
+.. _HasStateApi: https://docs.rs/concordium-std/latest/concordium_std/trait.HasStateApi.html
+.. |HasStateApi| replace:: ``HasStateApi``
 .. _AccountAddress: https://docs.rs/concordium-std/latest/concordium_std/struct.AccountAddress.html
 .. |AccountAddress| replace:: ``AccountAddress``
-.. _set_owner: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_owner
+.. _set_owner: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html#method.set_owner
 .. |set_owner| replace:: ``set_owner``
 .. _Address: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html
 .. |Address| replace:: ``Address``
-.. _set_sender: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender
+.. _set_sender: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html#method.set_sender
 .. |set_sender| replace:: ``set_sender``
-.. _set_self_balance: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance
+.. _set_self_balance: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.set_self_balance
 .. |set_self_balance| replace:: ``set_self_balance``
+.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
+.. |invoke_transfer| replace:: ``invoke_transfer``
+.. _get_transfers: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.get_transfers
+.. |get_transfers| replace:: ``get_transfers``
 .. _concordium_cfg_test: https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_cfg_test.html
 .. |concordium_cfg_test| replace:: ``#[concordium_cfg_test]``
 .. _concordium_test: https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_test.html
@@ -49,6 +55,8 @@
 .. |claim_eq| replace:: ``claim_eq!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
+.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-state
+.. |mutable| replace:: ``mutable``
 
 .. _piggy-bank-testing:
 
@@ -69,13 +77,6 @@ contract.
    The reader is assumed to have basic knowledge of what a blockchain and smart
    contract is, and some experience with Rust_.
 
-.. contents::
-   :local:
-   :backlinks: None
-
-.. todo::
-
-   Link the repo with the final code.
 
 Preparation
 ===========
@@ -85,17 +86,16 @@ contracts.
 The guide :ref:`setup-tools` shows you how to do this.
 Also, make sure to have a text editor setup to write Rust.
 
-Additionally, to run the tests you need to:
-
-- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
-- :ref:`create an account for testnet<create-account>`. The account will need some CCD to run tests.
-- :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
-- :ref:`deploy the smart contract to your local testnet node<deploy-module>`.
-
 Since you are going to extend the smart contract code written in the :ref:`previous
-part<piggy-bank-writing>`, either follow the previous part or copy the resulting code from there.
+part<piggy-bank-writing>`, either follow the previous part or copy the complete
+example code for part 1 from `GitHub
+<https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs>`__.
 
 You are now ready to write unit tests for your smart contract!
+
+.. Note::
+
+   To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
 
 Add a test module
 =================
@@ -113,7 +113,6 @@ following starting point:
    #[cfg(test)]
    mod tests {
        use super::*;
-
    }
 
 This is your test module, which is a common pattern for writing unit tests in
@@ -133,7 +132,6 @@ stubs for this, so first bring everything from the submodule into scope.
    mod tests {
        use super::*;
        use test_infrastructure::*;
-
    }
 
 Now you can start adding tests to this module.
@@ -148,17 +146,20 @@ state.
 
    #[test]
    fn test_init() {
-      todo!("Implement")
+      todo!()
    }
 
 As mentioned above, you test the initialization by calling the function
 ``piggy_init`` directly.
-To construct its argument for, you use |InitContextTest|_ which provides a
-placeholder for the context.
+To construct its arguments, you use |TestInitContext|_, which provides a
+placeholder for the context, and |TestStateBuilder|_, which provides a
+state builder for the test state. While the contract doesn't use the state
+builder, it still needs the argument supplied.
 
 .. code-block:: rust
 
-   let ctx = InitContextTest::empty();
+   let ctx = TestInitContext::empty();
+   let mut state_builder = TestStateBuilder::new();
 
 Just as the name suggests, the test context is empty and if any of the getter
 functions are called, it will make sure to fail the test, which should be fine
@@ -166,14 +167,14 @@ for now since the piggy bank is not reading anything from the context.
 
 .. note::
 
-   As you will see later with the |ReceiveContextTest|_, these placeholders have
+   As you will see later with the |TestReceiveContext|_, these placeholders have
    setter functions, allowing us to partially specify the context.
 
 Now you can call ``piggy_init`` and get a result containing the initial state.
 
 .. code-block:: rust
 
-   let state_result = piggy_init(&ctx);
+   let state_result = piggy_init(&ctx, &mut state_builder);
 
 First, you want the test to fail if the contract did not result in an
 initial state:
@@ -182,7 +183,7 @@ initial state:
 
        let state = state_result.expect("Contract initialization results in error.");
 
-Next you assert the state is correctly set to ``Intact``:
+Next, you assert the state is correctly set to ``Intact``:
 
 .. code-block:: rust
 
@@ -206,9 +207,10 @@ piggy bank:
 
        #[test]
        fn test_init() {
-           let ctx = InitContextTest::empty();
+           let ctx = TestInitContext::empty();
+           let mut state_builder = TestStateBuilder::new();
 
-           let state_result = piggy_init(&ctx);
+           let state_result = piggy_init(&ctx, &mut state_builder);
 
            let state = state_result.expect("Contract initialization results in error.");
 
@@ -226,51 +228,55 @@ Run the test to check that it compiles and succeeds.
 
    $cargo test
 
-
-
 Test inserting CCD into a piggy bank
 ====================================
 
-Next you should test the different functions for interacting with a piggy bank.
-This is done in the same way as initializing, except you use |ReceiveContextTest|
-to construct the context.
+Next, you should test the different functions for interacting with a piggy bank.
+This works similarly to how you test init functions, in that we construct test
+versions of the arguments.
+For receive functions that means constructing |TestReceiveContext|_ and
+|TestHost|_, the latter of which expects the initial contract state.
 
-To test ``piggy_insert`` you also need some amount of CCD and the current state
-of your smart contract instance:
+To test ``piggy_insert`` you also need to provide some amount of CCD:
 
 .. code-block:: rust
 
-   let ctx = ReceiveContextTest::empty();
+   let ctx = TestReceiveContext::empty();
+   let host = TestHost::new(PiggyBankState::Intact);
    let amount = Amount::from_micro_ccd(100);
-   let mut state = PiggyBankState::Intact;
 
-When calling ``piggy_insert`` you get back a result with actions instead of an
-initial state as with ``piggy_init``. But you will need to help the compiler
-infer which type to use for the generic ``A`` implementing |HasActions|_, so
-add the result type ``ReceiveResult<ActionsTree>``:
+When calling ``piggy_insert`` you get back a result with a return value as
+opposed to the initial state that you get from ``piggy_init``:
 
 .. code-block:: rust
 
-   let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
+   let result = piggy_insert(&ctx, &host, amount);
 
-For testing you can represent the actions as a simple tree structure
-|ActionsTree|_, making it easy to inspect.
-
-.. note::
-
-   The |receive| macro uses another representation of the actions, when building
-   the smart contract module. This representation depends on functions supplied
-   by the host environment and is therefore not suitable for unit tests.
-
-Now you need to check if the function succeeded and verify the resulting state and actions.
-In this case the state should remain intact and the function produce only the action for accepting the CCD.
+The test then checks whether the result was ok:
 
 .. code-block:: rust
 
-   let actions = actions_result.expect("Inserting CCD results in error.");
+   assert!(result.is_ok(), "Inserting CCD results in error");
 
-   assert_eq!(actions, ActionsTree::accept(), "No action should be produced.");
-   assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
+One test that is tempting to add is to check that the piggy bank remains intact
+after inserting CCD into it:
+
+.. code-block:: rust
+
+   assert_eq!(
+       *host.state(),
+       PiggyBankState::Intact,
+       "Piggy bank state should still be intact."
+   );
+
+However, there is no way for the immutable receive method ``piggy_insert`` to
+mutate the state.
+Trying to do so would result in an error from the Rust compiler.
+By using immutable receive functions, it is possible to rule out certain error
+cases at compile time, which means that you do not need tests for these
+scenarios.
+Along with performance, those are the two primary reasons for not making your
+receive methods |mutable|_ unless strictly necessary.
 
 The second test becomes:
 
@@ -278,22 +284,19 @@ The second test becomes:
 
    #[test]
    fn test_insert_intact() {
-       let ctx = ReceiveContextTest::empty();
+       let ctx = TestReceiveContext::empty();
+       let host = TestHost::new(PiggyBankState::Intact);
        let amount = Amount::from_micro_ccd(100);
-       let mut state = PiggyBankState::Intact;
 
-       let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
+       let result = piggy_insert(&ctx, &host, amount);
 
-       let actions = actions_result.expect("Inserting CCD results in error.");
-
-       assert_eq!(actions, ActionsTree::accept(), "No action should be produced.");
-       assert_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
+       assert!(result.is_ok(), "Inserting CCD results in error");
    }
 
-Again you should verify everything compiles and the tests succeeds using ``cargo
+Again, you should verify everything compiles and the tests succeeds using ``cargo
 test``.
 
-Next you could add a test to check that inserting into a piggy bank with state
+Next, you could add a test to check that inserting into a piggy bank with state
 ``Smashed`` results in an error. You have been through everything needed to
 do this, and can do this exercise on your own.
 
@@ -302,18 +305,18 @@ Test smashing a piggy bank
 
 Testing ``piggy_smash`` will follow the same pattern, but this time you will need
 to populate the context since this function uses the context for getting the
-contract owner, the sender of the message triggering the function, and the
-balance of contract.
+contract owner, the sender of the message triggering the function.
+You also need to set the balance on the host.
 
 If you only supply the function with an empty context it will fail, so instead
 define the context as mutable:
 
 .. code-block:: rust
 
-   let mut ctx = ReceiveContextTest::empty();
+   let mut ctx = TestReceiveContext::empty();
 
 Create an |AccountAddress|_ to represent the owner and use the setter
-|set_owner| implemented on |ReceiveContextTest|_:
+|set_owner| implemented on |TestReceiveContext|_:
 
 .. code-block:: rust
 
@@ -322,12 +325,12 @@ Create an |AccountAddress|_ to represent the owner and use the setter
 
 .. note::
 
-   Notice you created the account address using an array of 32 bytes, which is
+   You created the account address using an array of 32 bytes, which is
    how account addresses are represented on the Concordium blockchain.
    These byte arrays can also be represented as a base58check encoding, but for
    testing it is usually more convenient to specify addresses directly in bytes.
 
-Next set the sender to be the same address as the owner using |set_sender|_.
+Next, set the sender to be the same address as the owner using |set_sender|_.
 Since the sender can be a contract instance as well, you must wrap the owner
 address in the |Address|_ type:
 
@@ -336,40 +339,73 @@ address in the |Address|_ type:
    let sender = Address::Account(owner);
    ctx.set_sender(sender);
 
-Lastly, you need to set the current balance of the piggy bank instance using
-|set_self_balance|_.
+Lastly, you need to create a |TestHost|_ with the state and set the balance of the piggy bank
+instance using |set_self_balance|_.
 
 .. code-block:: rust
 
+   let mut host = TestHost::new(PiggyBankState::Intact);
    let balance = Amount::from_micro_ccd(100);
-   ctx.set_self_balance(balance);
+   host.set_self_balance(balance);
 
 Now that you have the test context setup, call the contract function
-``piggy_smash`` and inspect the resulting action tree and state as you did
-in the previous tests:
+``piggy_smash`` and inspect the result and state as you did
+in the previous tests.
+
+.. code-block:: rust
+
+   let result = piggy_smash(&ctx, &mut host);
+
+   assert!(result.is_ok(), "Smashing intact piggy bank results in error.");
+   assert_eq!(*host.state(), PiggyBankState::Smashed, "Piggy bank should be smashed.");
+
+You should also test whether the contract transferred all of its CCD to the
+owner.
+|TestHost|_ has a number of helper functions for checking the results of
+actions it performed.
+This includes the |get_transfers|_ function, which returns a list of
+transactions in the form of ``(AccountAddress, Amount)`` pairs.
+In this case, it should be a single transaction:
+
+.. code-block:: rust
+
+    assert_eq!(
+        host.get_transfers(),
+        [(owner, balance)],
+        "Smashing did not produce the correct transfers."
+    );
+
+The complete third test thus becomes:
 
 .. code-block:: rust
 
    #[test]
    fn test_smash_intact() {
-       let mut ctx = ReceiveContextTest::empty();
+       let mut ctx = TestReceiveContext::empty();
        let owner = AccountAddress([0u8; 32]);
        ctx.set_owner(owner);
        let sender = Address::Account(owner);
        ctx.set_sender(sender);
+       let mut host = TestHost::new(PiggyBankState::Intact);
        let balance = Amount::from_micro_ccd(100);
-       ctx.set_self_balance(balance);
+       host.set_self_balance(balance);
 
-       let mut state = PiggyBankState::Intact;
+       let result = piggy_smash(&ctx, &mut host);
 
-       let actions_result: ReceiveResult<ActionsTree> = piggy_smash(&ctx, &mut state);
-
-       let actions = actions_result.expect("Inserting CCD results in error.");
-       assert_eq!(actions, ActionsTree::simple_transfer(&owner, balance));
-       assert_eq!(state, PiggyBankState::Smashed);
+       assert!(result.is_ok(), "Smashing intact piggy bank results in error.");
+       assert_eq!(*host.state(), PiggyBankState::Smashed, "Piggy bank should be smashed.");
+       assert_eq!(
+           host.get_transfers(),
+           [(owner, balance)],
+           "Smashing did not produce the correct transfers."
+       );
    }
 
 Ensure everything compiles and the test succeeds using ``cargo test``.
+
+Next, you could add a test to check that the ``piggy_view`` method returns the
+correct state and balance. Again, you have been through everything needed to do
+this, and can do this exercise on your own.
 
 Testing cause of rejection
 ==========================
@@ -390,19 +426,18 @@ The test could look like this:
 
    #[test]
    fn test_smash_intact_not_owner() {
-       let mut ctx = ReceiveContextTest::empty();
+       let mut ctx = TestReceiveContext::empty();
        let owner = AccountAddress([0u8; 32]);
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
+       let mut host = TestHost::new(PiggyBankState::Intact);
        let balance = Amount::from_micro_ccd(100);
-       ctx.set_self_balance(balance);
+       host.set_self_balance(balance);
 
-       let mut state = PiggyBankState::Intact;
+       let result = piggy_smash(&ctx, &mut host);
 
-       let actions_result: ReceiveResult<ActionsTree> = piggy_smash(&ctx, &mut state);
-
-       assert!(actions_result.is_err(), "Contract is expected to fail.")
+       assert!(result.is_err(), "Contract is expected to fail.")
    }
 
 One thing to notice is that the test is not ensuring *why* the contract
@@ -421,12 +456,12 @@ reasons for rejection:
    enum SmashError {
        NotOwner,
        AlreadySmashed,
+       TransferError, // Should never occur, see details below.
    }
 
 .. seealso::
 
    For more information about custom errors and deriving ``Reject``, see :ref:`custom-errors`.
-
 
 To use this error type, the function ``piggy_smash`` should return ``Result<A,
 SmashError>`` instead of ``ReceiveResult<A>``:
@@ -434,11 +469,11 @@ SmashError>`` instead of ``ReceiveResult<A>``:
 .. code-block:: rust
    :emphasize-lines: 5
 
-   #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<A: HasActions>(
+   #[receive(contract = "PiggyBank", name = "smash", mutable)]
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> Result<A, SmashError> {
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> Result<(), SmashError> {
       // ...
    }
 
@@ -446,82 +481,69 @@ and you also have to supply the |ensure| macros with a second argument, which is
 the error to produce:
 
 .. code-block:: rust
-   :emphasize-lines: 9, 10
+   :emphasize-lines: 9, 10, 16
 
-   #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<A: HasActions>(
+   #[receive(contract = "PiggyBank", name = "smash", mutable)]
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> Result<A, SmashError> {
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> Result<(), SmashError> {
        let owner = ctx.owner();
        let sender = ctx.sender();
 
        ensure!(sender.matches_account(&owner), SmashError::NotOwner);
-       ensure!(*state == PiggyBankState::Intact, SmashError::AlreadySmashed);
+       ensure!(*host.state() == PiggyBankState::Intact, SmashError::AlreadySmashed);
 
-       *state = PiggyBankState::Smashed;
+       *host.state_mut() = PiggyBankState::Smashed;
 
-       let balance = ctx.self_balance();
-       Ok(A::simple_transfer(&owner, balance))
+       let balance = host.self_balance();
+       let transfer_result = host.invoke_transfer(&owner, balance);
+       ensure!(transfer_result.is_ok(), SmashError::TransferError);
+       Ok(())
    }
 
-Since the return type has changed for the ``piggy_smash`` function, you have to
-change the type in the tests as well:
+The |invoke_transfer| fails if the account does not exist, or if the contract
+has insufficient funds. Neither case can occur in the contract since contracts
+always have a valid owner and the amount it sends is the ``self_balance``. But
+you should still be able to represent this error and distinguish it from the two
+other error types.
 
-.. code-block:: rust
-   :emphasize-lines: 5, 14
-
-   #[test]
-   fn test_smash_intact() {
-       // ...
-
-       let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
-
-       // ...
-   }
-
-   #[test]
-   fn test_smash_intact_not_owner() {
-       // ...
-
-       let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
-
-       // ...
-   }
 
 You can now check which error was produced in the test:
 
 .. code-block:: rust
-   :emphasize-lines: 15-16
+   :emphasize-lines: 14
 
    #[test]
    fn test_smash_intact_not_owner() {
-       let mut ctx = ReceiveContextTest::empty();
+       let mut ctx = TestReceiveContext::empty();
        let owner = AccountAddress([0u8; 32]);
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
+       let mut host = TestHost::new(PiggyBankState::Intact);
        let balance = Amount::from_micro_ccd(100);
-       ctx.set_self_balance(balance);
+       host.set_self_balance(balance);
 
-       let mut state = PiggyBankState::Intact;
+       let result = piggy_smash(&ctx, &mut host);
 
-       let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
-
-       let err = actions_result.expect_err("Contract is expected to fail.");
-       assert_eq!(err, SmashError::NotOwner, "Expected to fail with error NotOwner")
+       assert_eq!(result, Err(SmashError::NotOwner), "Expected to fail with error NotOwner.");
    }
 
 It is up to the reader to test whether smashing a piggy bank that has
 already been smashed results in the correct error.
+
+.. seealso::
+
+   For more information on unit testing, see :ref:`unit-test-contract`.
 
 Compiling and running tests in Wasm
 ===================================
 
 When running ``cargo test`` your contract module and tests are compiled targeting
 your native platform, but on the Concordium blockchain a smart contract module
-is in Wasm.
-Therefore it is preferable to compile the tests targeting Wasm and run the tests
+is in `Wasm <https://webassembly.org/>`_.
+Therefore, it is preferable to compile the tests targeting Wasm and run the tests
 using a Wasm interpreter instead.
 Luckily, the ``cargo-concordium`` tool contains such an interpreter, and
 it is the same interpreter shipped with the official nodes on the Concordium
@@ -580,7 +602,7 @@ except when you build your smart contract for testing in Wasm using
 using ``cargo test``.
 
 .. code-block:: rust
-   :emphasize-lines: 14, 16, 31, 33, 34, 51, 52, 53, 70, 71
+   :emphasize-lines: 15, 17, 32, 48, 49, 50, 70
 
    // PiggyBank contract code up here
 
@@ -591,68 +613,67 @@ using ``cargo test``.
 
       #[concordium_test]
       fn test_init() {
-          let ctx = InitContextTest::empty();
+          let ctx = TestInitContext::empty();
+          let mut state_builder = TestStateBuilder::new();
 
-          let state_result = piggy_init(&ctx);
+          let state_result = piggy_init(&ctx, &mut state_builder);
 
           let state = state_result.expect_report("Contract initialization failed.");
 
           claim_eq!(
-                state,
-                PiggyBankState::Intact,
-                "Piggy bank state should be intact after initialization."
+              state,
+              PiggyBankState::Intact,
+              "Piggy bank state should be intact after initialization."
           );
       }
 
       #[concordium_test]
       fn test_insert_intact() {
-          let ctx = ReceiveContextTest::empty();
+          let ctx = TestReceiveContext::empty();
+          let host = TestHost::new(PiggyBankState::Intact);
           let amount = Amount::from_micro_ccd(100);
-          let mut state = PiggyBankState::Intact;
 
-          let actions_result: ReceiveResult<ActionsTree> = piggy_insert(&ctx, amount, &mut state);
+          let result = piggy_insert(&ctx, &host, amount);
 
-          let actions = actions_result.expect_report("Inserting CCD results in error.");
-
-          claim_eq!(actions, ActionsTree::accept(), "No action should be produced.");
-          claim_eq!(state, PiggyBankState::Intact, "Piggy bank state should still be intact.");
+          claim!(result.is_ok(), "Inserting CCD results in error");
       }
 
       #[concordium_test]
       fn test_smash_intact() {
-          let mut ctx = ReceiveContextTest::empty();
+          let mut ctx = TestReceiveContext::empty();
           let owner = AccountAddress([0u8; 32]);
           ctx.set_owner(owner);
           let sender = Address::Account(owner);
           ctx.set_sender(sender);
+          let mut host = TestHost::new(PiggyBankState::Intact);
           let balance = Amount::from_micro_ccd(100);
-          ctx.set_self_balance(balance);
+          host.set_self_balance(balance);
 
-          let mut state = PiggyBankState::Intact;
+          let result = piggy_smash(&ctx, &mut host);
 
-          let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
-
-          let actions = actions_result.expect_report("Inserting CCD results in error.");
-          claim_eq!(actions, ActionsTree::simple_transfer(&owner, balance));
-          claim_eq!(state, PiggyBankState::Smashed);
+          claim!(result.is_ok(), "Smashing intact piggy bank results in error.");
+          claim_eq!(*host.state(), PiggyBankState::Smashed, "Piggy bank should be smashed.");
+          claim_eq!(
+              host.get_transfers(),
+              [(owner, balance)],
+              "Smashing did not produce the correct transfers."
+          );
       }
 
       #[concordium_test]
       fn test_smash_intact_not_owner() {
-          let mut ctx = ReceiveContextTest::empty();
+          let mut ctx = TestReceiveContext::empty();
           let owner = AccountAddress([0u8; 32]);
           ctx.set_owner(owner);
           let sender = Address::Account(AccountAddress([1u8; 32]));
           ctx.set_sender(sender);
+          let mut host = TestHost::new(PiggyBankState::Intact);
           let balance = Amount::from_micro_ccd(100);
-          ctx.set_self_balance(balance);
+          host.set_self_balance(balance);
 
-          let mut state = PiggyBankState::Intact;
+          let result = piggy_smash(&ctx, &mut host);
 
-          let actions_result: Result<ActionsTree, SmashError> = piggy_smash(&ctx, &mut state);
-
-          let err = actions_result.expect_err_report("Contract is expected to fail.");
-          claim_eq!(err, SmashError::NotOwner, "Expected to fail with error NotOwner")
+          claim_eq!(result, Err(SmashError::NotOwner), "Expected to fail with error NotOwner.");
       }
    }
 
@@ -665,6 +686,9 @@ Compiling and running the tests in Wasm can be done using:
 This will make a special test build of your smart contract module, exporting all
 of your tests as functions, and it will then run each of these functions catching
 the reported errors.
+This should succeed if everything is set up correctly. Otherwise, compare your
+code with the one found on `GitHub <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part2/src/lib.rs>`_.
+
 
 Simulating the piggy bank
 =========================

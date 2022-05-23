@@ -1,2 +1,2 @@
 
-.. include:: /../shared/net/concepts/concepts-transactions.rst
+# .. include:: /../shared/net/concepts/concepts-transactions.rst
