@@ -524,79 +524,79 @@ The output is:
      - The minimum amount of CCD to stake to become a baker
    * -
      - maximum fraction of total stake a pool is allowed hold
-     - The maximum percent of total stake a baker pool can have
+     - The maximum percent of total stake any single baker pool can have
    * -
      - maximum factor a pool may stake relative to the baker's stake
-     -
+     - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
-     - The number of hours for pool owner cool down period when the pool owner updates settings
+     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cooldown has expired.
    * -
      - allowed range for finalization commission
-     - The allowed percentage range for finalization commission for baker pools
+     - The allowed range of finalization commissions bakers may select when creating or updating pools.
    * -
      - allowed range for baking commission
-     - The allowed percentage range for baking commission for baker pools
+     - The allowed range of baking commissions bakers may select when creating or updating pools.
    * -
      - allowed range for transaction commission
-     - The allowed percentage range for transaction commission for baker pools
+     - The allowed range of transaction commissions bakers may select when creating or updating pools.
    * - Passive delegation parameters
      - finalization commission
-     - The percentage paid for finalization commission when delegating to passive delegation
+     - The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
      - baking commission
-     - The percentage paid for baking commission when delegating to passive delegation
+     - The percentage of baking rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
      - transaction commission
-     - The percentage paid for transaction commission when delegating to passive delegation
+     - The percentage of transaction rewards retained by the passive delegation, i.e., not given out to delegators.
    * - Parameters related to delegators
      - delegator cooldown duration
-     - The amount of time of delegator cool down period when delegator updates settings related to delegation
+     - The amount of time of delegator must wait before changes are effective when decreasing or removing stake, or changing pools.
    * - Exchange rate parameters
      - EUR per CCD rate (approx)
-     - The approximate exchange rate for number of Euros per CCD
+     - The approximate exchange rate for the EUR to CCD exchange rate
    * -
      - EUR per Energy rate
      - The Euro per energy rate
    * -
      - microCCD per EUR related
-     - The rate of microCCD per Euro
+     - The microCCD per Euro rate
    * - Parameters that affect rewards distribution
      - mint amount per reward period
-     -
+     - The percentage increase in amount of CCD per payday.
    * -
      - mint distribution: baking reward
-     -
+     - The fraction of newly minted CCD that goes towards baker rewards.
    * -
      - mint distribution: finalization reward
-     -
+     - The fraction of newly minted CCD that goes towards finalization rewards.
    * -
      - transaction fee distribution: baker
-     -
+     - The fraction of block transaction fees allocated to the baker.
    * -
      - transaction fee distribution: GAS account
-     -
+     - The fraction of block transaction fees allocated to the GAS account.
    * -
      - GAS rewards: baking a block
-     -
+     - The fraction of the GAS account that is allocated to the baker for baking a block.
    * -
      - GAS rewards: adding a finalization proof
-     -
+     - The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.
    * -
      - GAS rewards: adding a credential deployment
-     -
+     - The fraction of the GAS account that is allocated to the baker for including an account creation transaction in a block.
    * -
      - Gas rewards: adding a chain update
-     -
+     - The fraction of the GAS account that is allocated to the baker for including an update transaction in a block.
    * - Time parameters
      - reward period length
-     - The amount of time before rewards are received
+     - The length of the reward period. All rewards are handed out at the end of each reward period.
    * - Other parameters
      - election difficulty
-     -
+     - The election difficulty determines the probability that there is a block in a slot. Thus together with slot duration it determines average block time.
    * -
      - foundation account index
-     -
+     - An index of the designated foundation reward account. The foundation account receives the foundation tax.
    * -
      - maximum credential deployments per block
-     -
+     - The maximum amount of accounts that can be created in a block.
