@@ -524,7 +524,7 @@ The output is:
      - The minimum amount of CCD to stake to become a baker
    * -
      - maximum fraction of total stake a pool is allowed hold
-     - The maximum percent of total stake any single baker pool can have
+     - The maximum percent of total stake any single baker pool can have.
    * -
      - maximum factor a pool may stake relative to the baker's stake
      - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
