@@ -30,24 +30,24 @@ Android
 
 .. _downloads-desktop-wallet-testnet:
 
-Concordium Desktop Wallet v1.3.1
+Concordium Desktop Wallet v1.4.0
 ================================
 
-- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.3.1.exe>`_
+- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.4.0.exe>`_
 
-- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.3.1.dmg>`_
+- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.4.0.dmg>`_
 
 - Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-- `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.AppImage>`_
+- `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.0.AppImage>`_
 
    - SHA256 checksum of the download: ``59dc17c2cf47dfff8c60c0c662b7145cd08a10fcb44d1fa367ff62afa57e35c4``
 
-- `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.deb>`_
+- `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.0.deb>`_
 
    - SHA256 checksum of the download: ``2bcd2f29498d5de58c049525b44508b675b4ef9afebd0d01052c555e7ee09b30``
 
-- `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.3.1.rpm>`_
+- `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.0.rpm>`_
 
    - SHA256 checksum of the download: ``152885940a03502d63e5a052805f5d1a2a3252e3df18a9f719641b8f7bc4b3ef``
 
