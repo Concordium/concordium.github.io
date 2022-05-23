@@ -281,8 +281,7 @@ intersphinx_mapping = {'mainnet': ('https://developer.concordium.software/en/mai
 
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------
 redirects = {
-    "./net/desktop-wallet/send-gtu-single-desktop": "/en/testnet/net/desktop-wallet/send-ccd-single-desktop.html",
-    "./net/desktop-wallet/shield-gtu-desktop": "/en/testnet/net/desktop-wallet/shield-ccd-desktop.html",
+    "*":"https://developer.concordium.software/en/mainnet/index.html"
 }
 
 # -- Tags that enables the .. only option ----------------

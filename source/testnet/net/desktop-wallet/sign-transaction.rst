@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/sign-transaction.rst
+# .. include:: /../shared/net/desktop-wallet/sign-transaction.rst

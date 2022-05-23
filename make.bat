@@ -13,6 +13,7 @@ set BUILDDIR=build
 if "%1" == "" goto help
 if "%1" == "dev-mainnet" goto dev-mainnet
 if "%1" == "dev-testnet" goto dev-testnet
+if "%1" == "smart-contracts-v0" goto dev-smart-contracts-v0
 if "%1" == "lint" goto lint
 
 %SPHINXBUILD% >NUL 2>NUL
@@ -39,6 +40,9 @@ goto end
 sphinx-autobuild %SOURCEDIR%\testnet %BUILDDIR%\testnet
 goto end
 
+:dev-smart-contracts-v0
+sphinx-autobuild %SOURCEDIR%\smart-contracts-v0 %BUILDDIR%\smart-contracts-v0
+goto end
 
 :lint
 doc8 ./source --ignore D004 --ignore D002

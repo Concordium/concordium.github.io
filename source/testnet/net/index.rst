@@ -1,4 +1,4 @@
-.. include:: ../variables.rst
+# .. include:: ../variables.rst
 
 =====
 |Net|
@@ -25,6 +25,7 @@
 
    mobile-wallet/setup-maintenance-mw
    mobile-wallet/transfers-mw
+   mobile-wallet/delegation-mw
 
 .. toctree::
    :maxdepth: 1
@@ -33,6 +34,7 @@
    desktop-wallet/setup-maintenance-dw
    desktop-wallet/transfers-dw
    desktop-wallet/baking-dw
+   desktop-wallet/delegation-dw
 
 .. toctree::
    :maxdepth: 1
@@ -41,7 +43,6 @@
    references/concordium-client
    references/transactions
    references/query-node
-   references/node-runner-service-configuration
 
 .. toctree::
    :maxdepth: 1
@@ -63,12 +64,14 @@
    nodes/baker-ubuntu
    nodes/baker-docker
    desktop-wallet/baking-dw
+   guides/baker-pool
 
 .. toctree::
    :maxdepth: 1
    :caption: Resources
 
    resources/dashboards
+   resources/ccd-scan
    references/developer-tools
    resources/release-notes
    resources/legal

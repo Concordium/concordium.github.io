@@ -1,1 +1,1 @@
-.. include:: /../shared/net/nodes/troubleshoot-ubuntu.rst
+# .. include:: /../shared/net/nodes/troubleshoot-ubuntu.rst

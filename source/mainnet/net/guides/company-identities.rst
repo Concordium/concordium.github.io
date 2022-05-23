@@ -4,14 +4,6 @@
 Company identity creation
 ============================
 
-.. contents::
-    :local:
-    :backlinks: none
-    :depth: 1
-
-What is a company identity
-==============================
-
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
 You can't use the Desktop Wallet or the Mobile Wallet to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). The tabs below describe how you create a company identity. Note that the process differs for testnet and mainnet.
@@ -100,5 +92,9 @@ You can't use the Desktop Wallet or the Mobile Wallet to create a company identi
       #. When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named ``id-object.json``. Concordium also creates the initial account.
 
       #. To create additional accounts from the identity object returned by Concordium, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-an-identity-object>`_. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
+
+      Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:
+
+      ``curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV`` where you replace 3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV with the account address that should receive the CCDs.
 
       If you experience issues, please contact Concordium’s technical support via support@concordium.software.

@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/send-shielded-amount.rst
+# .. include:: /../shared/net/desktop-wallet/send-shielded-amount.rst

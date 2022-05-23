@@ -1,1 +1,1 @@
-.. include:: /../shared/net/desktop-wallet/create-account-desktop.rst
+# .. include:: /../shared/net/desktop-wallet/create-account-desktop.rst
