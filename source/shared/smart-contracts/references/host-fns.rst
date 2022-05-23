@@ -36,27 +36,33 @@ Logging events
 Function parameter
 ==================
 
-.. function:: get_parameter_size() -> i32
+.. function:: get_parameter_size(i) -> i32
 
-   Get the byte size of the parameter.
+   Get the byte size of the ``i``-th parameter to the call. The 0-th parameter is
+   always the original parameter that the method was invoked with. Invoking
+   other contracts with ``invoke`` adds additional parameters to the stack.
 
-   :return: Byte size of the parameter.
+   :param i32 i: Index of the parameter.
+   :return: Byte size of the ``i``-th parameter or ``-1`` if the parameter
+            doesn't exist.
    :rtype: i32
 
-.. function:: get_parameter_section(location, length, offset) -> i32
+.. function:: get_parameter_section(i, location, length, offset) -> i32
 
-   Read a section of the parameter to the given location in Wasm linear memory.
+   Read a section of the ``i``-th parameter to the given location in Wasm linear memory.
    Return the number of bytes read.
    The location is assumed to contain enough memory to write the requested
    length into. If not, the function will trap and abort execution of
    the contract.
 
+   :param i32 i: Index of the parameter.
    :param i32 location: Pointer to the write location in Wasm linear memory.
    :param i32 length: Number of bytes to read from the parameter.
    :param i32 offset: Starting offset in the parameter bytes.
    :return: The number of actual bytes read. This is always less than or equal
             to ``length``. It is less if the parameter does not have
-            enough bytes available (i.e., if ``offset + length > parameter_size``).
+            enough bytes available (i.e., if ``offset + length >
+            parameter_size``). Returns ``-1`` if the parameter does not exist.
    :rtype: i32
 
 .. _host-functions-state:
@@ -64,47 +70,174 @@ Function parameter
 Smart contract instance state
 =============================
 
-.. function:: state_size() -> i32
+.. function:: state_create_entry(key_start, key_length) -> i64
 
-   Get the byte size of the contract state.
+    Create an empty entry with the given key.
+    If an entry at that key already exists it is set to the empty entry.
 
-   :return: Byte size of the contract state.
+    :param i32 key_start: Pointer to a key, represented as a bytearray in the Wasm
+                          memory.
+    :param i32 key_length: The length of the key.
+    :return: The return value is either ``2^64 - 1`` if creating the entry failed
+             because of an iterator lock on the part of the tree, or else the
+             first bit is ``0``, and the remaining bits are an *entry
+             identifier* that maybe used in subsequent state-related calls.
+    :rtype: i64
+
+.. function:: state_lookup_entry(key_start, key_length) -> i64
+
+    Lookup an entry with the given key.
+
+    :param i32 key_start: Pointer to key, represented as a bytearray in the Wasm
+                          memory.
+    :param i32 key_length: The length of the key.
+    :return: The return value is either ``2^64 - 1`` if creating the entry failed
+             because of an iterator lock on the part of the tree, or else the
+             first bit is ``0`` and the remaining bits are an *entry
+             identifier* that maybe used in any of the entry calls.
+    :rtype: i64
+
+.. function:: state_delete_entry(key_start, key_length) -> i32
+
+    Delete the entry.
+
+    :param i32 key_start: Pointer to a key, represented as a byte array in the Wasm
+                          memory.
+    :param i32 key_length: The length of the key.
+    :return: Returns ``0`` if the part of the tree this entry was in is *locked*
+             by an iterator (see the |state_iterate_prefix|_ for details) and
+             the deletion thus failed.
+             Returns ``1`` if the entry didn't exist. Return ``2`` if the entry
+             was successfully deleted.
+    :rtype: i32
+
+.. function:: state_delete_prefix(key_start, key_length) -> i32
+
+    Delete a prefix in the tree, that is, delete all parts of the tree that have
+    the given key as a prefix.
+
+    :param i32 key_start: Pointer to a key, represented as a byte array in the Wasm
+                          memory.
+    :param i32 key_length: The length of the key.
+    :return: Returns ``0`` if the tree is *locked*
+             by an iterator (see the |state_iterate_prefix|_ for details) and
+             the deletion thus failed.
+             Returns ``1`` if the tree *was not locked*, but the key points to
+             an empty part of the tree.
+             Returns ``2`` if a part of the tree was successfully deleted.
+    :rtype: i32
+
+.. function:: state_iterate_prefix(prefix_start, prefix_length) -> i64
+
+    Construct an iterator over a part of the tree. This **locks the part of
+    the tree that has the given prefix**. Locking means that no
+    deletions or insertions of entries may occur in that subtree.
+
+    :param i32 key_start: Pointer to a prefix, represented as a byte array in the Wasm
+                          memory.
+    :param i32 key_length: The length of the prefix.
+    :return: Returns all 1 bits if too many iterators already exist with this key.
+             Returns all but second bit set to 1 if there is no value in the
+             state with given prefix.
+             Otherwise, the first bit is 0, and the remaining bits are the
+             *iterator identifier* that may be used in subsequent calls to
+             advance it, or to get its key.
+    :rtype: i64
+
+.. function:: state_iterator_next(iterator) -> i64
+
+   Return the next entry along the iterator, and advance the iterator.
+
+   :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
+   :return: Returns all 1 bits if the iterator does not exist (it was deleted,
+            or the identifier was invalid).
+            Returns all but the second bit set to 1 if no more entries are left,
+            i.e., the iterator is exhausted. All further calls will yield the
+            same value until the iterator is deleted.
+            Otherwise, the first bit is 0, and the remaining bits encode an
+            *entry identifier* that may be with any of the entry methods.
+   :rtype: i64
+
+.. function:: state_iterator_delete(iterator) -> i32
+
+   Delete the iterator, unlocking the subtree.
+
+   :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
+   :return: Returns ``2^64 - 1`` if the iterator does not exist. Returns ``0`` if the
+            iterator was already deleted. Returns ``1`` if the iterator was
+            successfully deleted.
    :rtype: i32
 
-.. function:: load_state(location, length, offset) -> i32
+.. function:: state_iterator_key_size(iterator) -> i32
 
-   Read a section of the state to the given location. Return the number of
+   Get the length of the key that the iterator is currently pointing at.
+
+   :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
+   :return: ``2^64 - 1`` if the iterator does not exist. Otherwise, it returns the
+            length of the key in bytes.
+   :rtype: i32
+
+.. function:: state_iterator_key_read(iterator, start, length, offset) -> i32
+
+   Read a section of the key the iterator is currently pointing at.
+   Before the first call to the |state_iterator_next|_ function this returns
+   (sections of) the key that was used to create the iterator. After
+   the iterator is exhausted, this method returns (sections of) the key at the
+   first node returned by the iterator.
+
+   :param i64 iterator: An iterator identifier, as returned by |state_iterate_prefix|_.
+   :param i32 start: A pointer to a location in the Wasm memory where the key
+                     section be written to.
+   :param i32 length: Number of bytes to read from the key.
+   :param i32 offset: Starting offset in the key bytes.
+   :return: ``2^64 - 1`` if the iterator does not exist. Otherwise, it returns the
+            length of the key in bytes.
+   :rtype: i32
+
+.. function:: state_entry_size(entry) -> i32
+
+   Get the byte size of the entry.
+
+   :param entry i64: Entry identifier.
+   :return: Byte size of the entry. Or ``2^32 - 1`` if the entry does not exist.
+   :rtype: i32
+
+.. function:: state_entry_read(entry, location, length, offset) -> i32
+
+   Read a section of the entry to the given location. Return the number of
    bytes written. The location is assumed to contain enough memory to write the
    requested length into. If not, the function will trap and abort execution of
    the contract.
 
+   :param i64 entry: Entry identifier.
    :param i32 location: Pointer to write location in Wasm linear memory.
    :param i32 length: Number of bytes to read.
-   :param i32 offset: Starting offset in the state bytes.
-   :return: The number of read bytes.
+   :param i32 offset: Starting offset in the entry bytes.
+   :return: The number of read bytes. Or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
-.. function:: write_state(location, length, offset) -> i32
+.. function:: state_entry_write(entry, location, length, offset) -> i32
 
-   Write a section of the memory to the state at a given offset.
+   Write a section of the memory to the entry at a given offset.
    Return the number of bytes written.
-   The offset must be less than or equal to the current state size.
-   The state is assumed to be large enough to write the requested
-   length into.
+   The offset must be less than or equal to the current entry size.
 
+   :param i64 entry: Entry identifier.
    :param i32 location: Pointer to read location in Wasm linear memory.
    :param i32 length: Number of bytes to write.
-   :param i32 offset: Starting offset in the state bytes.
-   :return: The number of written bytes.
+   :param i32 offset: Starting offset in the entry bytes.
+   :return: The number of written bytes. Or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
-.. function:: resize_state(new_size) -> i32
+.. function:: state_entry_resize(entry, new_size) -> i32
 
-   Resize state to the new value (truncate if new size is smaller).
-   The additional state is initialized to `0`.
+   Resize entry to the new value (truncate if new size is smaller).
+   If the new size is bigger, the additional state is initialized with ``0``.
 
-   :param i32 new_size: New size of contract state in bytes.
-   :return: ``0`` if this was unsuccessful (new state too big), or ``1`` if successful.
+   :param i64 entry: Entry identifier.
+   :param i32 new_size: New size of contract entry in bytes.
+   :return: ``0`` if this was unsuccessful (new entry too big), ``1`` if
+            successful, or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
 .. _host_function_chain_getters:
@@ -152,6 +285,36 @@ Only in receive function
 ========================
 Functions only accessible for smart contract receive functions.
 
+
+.. function:: invoke(tag, start, length) -> i64
+
+   Invoke a host instruction which is either a *transfer to an account* or a *call to a
+   contract*.
+
+   :param i32 tag: ``0`` for transfer to an account or ``1`` for call to a contract.
+   :param i32 start: Pointer to the start of the invoke payload.
+   :param i32 length: Length of the invoke payload.
+   :return: If the last five bytes are ``0`` then the call succeeded. In this
+            case, the first bit of the response indicates whether state (of the
+            *invoking* contract) has changed (``1``) or not (``0``) and the
+            remaining 23 bits are the index of the return value that can be used
+            in a call to |get_parameter_size|_ and |get_parameter_section|_.
+            Otherwise, the call failed and only the forth byte is set. With the value:
+
+            ``1`` if the call failed because of insufficient funds.
+
+            ``2`` if the account to transfer to did not exist.
+
+            ``3`` if the contract to call did not exist.
+
+            ``4`` if the entrypoint did not exist on contract to call.
+
+            ``5`` if it called a V0 contract that failed.
+
+            ``6`` if it called a contract that failed with a runtime error.
+
+   :rtype: i64
+
 .. function:: get_receive_invoker(start)
 
    Get the address of the account that initiated the top-level transaction
@@ -184,66 +347,30 @@ Functions only accessible for smart contract receive functions.
    :return: Current balance of the contract instance.
    :rtype: i64
 
-.. _host-functions-actions:
+.. function:: get_receive_entrypoint_size() -> i32
 
-Action description
-------------------
-The description of actions to execute on the chain, returned by smart contract
-receive function.
+   Get the size of the entrypoint that was named. See ``get_receive_entrypoint``
+   for more information on the use of this host function.
 
-.. function:: accept() -> i32
-
-   Constructs a accept action, indicating the function was successful.
-
-   :return: Identifier of the resulting action.
+   :return: The size of the entrypoint that was named.
    :rtype: i32
 
-.. function:: simple_transfer(addr_bytes, amount) -> i32
+.. function:: get_receive_entrypoint(start)
 
-   Constructs a simple transfer of CCD action.
+   Write the receive entrypoint name into the given location.
+   It is assumed that the location contains enough space to write the name.
+   For regular receive methods, the entrypoint name will always be the same as
+   the receive method's entrypoint name. But for fallback entrypoints, it might
+   differ.
 
-   :param i32 addr_bytes: Pointer to the address of the receiver.
-   :param i64 amount: The amount of CCD to send.
-   :return: Identifier of the resulting action.
-   :rtype: i32
-
-.. function:: send(addr_index, addr_subindex, receive_name, receive_name_len, amount, parameter, parameter_len) -> i32
-
-   Constructs an action for sending a message to another smart contract instance.
-
-   :param i64 addr_index: Index of the smart contract instance address to send to.
-   :param i64 addr_subindex: Subindex of the smart contract instance address to send to.
-   :param i32 receive_name: Pointer to a memory location containing the name of the receive function to invoke.
-   :param i32 receive_name_len: Length of the receive function name. Determines how much memory will be read by the host.
-   :param i64 amount: The amount of CCD to invoke the receive function with.
-   :param i32 parameter: Pointer to a memory location containing the parameters to the receive function.
-   :param i32 parameter_len: Length of the parameters.
-   :return: Identifier of the resulting action.
-   :rtype: i32
-
-.. function:: combine_and(first, second) -> i32
-
-   Combine two actions using ``and``.
-   Only run the second if the first succeeds.
-   If the given identifiers are not valid, i.e., returned by a previous call to
-   one of the ``actions`` functions, this function will abort.
-
-   :param i32 first: Identifier of the first action.
-   :param i32 second: Identifier of the second action.
-   :return: Identifier of the resulting action.
-   :rtype: i32
-
-.. function:: combine_or(first, second) -> i32
-
-   Combine two actions using ``or``.
-   Only runs the second if the first fails.
-   If the given identifiers are not valid, i.e., returned by a previous call to
-   one of the ``actions`` functions, this function will abort.
-
-   :param i32 first: Identifier of the first action.
-   :param i32 second: Identifier of the second action.
-   :return: Identifier of the resulting action.
-   :rtype: i32
-
+   :param i32 start: Pointer to the location to put th entrypoint name.
 
 .. _concordium-std: https://docs.rs/concordium-std/latest/concordium_std/
+.. _state_iterate_prefix: #concordium.state_iterate_prefix
+.. |state_iterate_prefix| replace:: ``state_iterate_prefix``
+.. _state_iterator_next: #concordium.state_iterator_next
+.. |state_iterator_next| replace:: ``state_iterator_next``
+.. _get_parameter_size: #concordium.get_parameter_size
+.. |get_parameter_size| replace:: ``get_parameter_size``
+.. _get_parameter_section: #concordium.get_parameter_section
+.. |get_parameter_section| replace:: ``get_parameter_section``

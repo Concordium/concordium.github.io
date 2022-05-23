@@ -1,4 +1,4 @@
-.. include:: ../variables.rst
+# .. include:: ../variables.rst
 
 =====
 |Net|
@@ -41,7 +41,6 @@
    references/concordium-client
    references/transactions
    references/query-node
-   references/node-runner-service-configuration
 
 .. toctree::
    :maxdepth: 1

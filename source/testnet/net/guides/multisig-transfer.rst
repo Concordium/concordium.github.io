@@ -1,1 +1,1 @@
-.. include:: /../shared/net/guides/multisig-transfer.rst
+# .. include:: /../shared/net/guides/multisig-transfer.rst

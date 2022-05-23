@@ -29,6 +29,7 @@
    guides/local-simulate
    guides/build-schema
    guides/no-std
+   guides/fallback-entrypoints
 
 .. toctree::
    :maxdepth: 1
@@ -38,6 +39,7 @@
    guides/initialize-contract
    guides/interact-instance
    guides/inspect-instance
+   guides/invoke-instance
 
 .. toctree::
    :maxdepth: 1
