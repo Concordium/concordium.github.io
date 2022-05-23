@@ -1,0 +1,1296 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build using no_std &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="On-chain guides" href="on-chain-index.html" />
+    <link rel="prev" title="Build a contract schema" href="build-schema.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: black;
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 992px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="../../net/guides/learn-about-concordium.html">Learn</a>
+  <a href="../../net/nodes/node-requirements.html">Run a node</a>
+  <a href="../../net/guides/deciding-wallet.html">Wallets</a>
+  <a href="../../net/guides/overview-baker-process.html">Baking</a>
+  <a href="../../net/guides/developer-page.html">Develop</a>
+  <a href="../../smart-contracts/general/introduction.html">Smart Contracts</a>
+</div>
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><img src="../../_static/discourse-brands.svg" class="icon-link-image" alt="Discourse"/></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="list-caption">
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Installation
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/installation/downloads.html">
+     Downloads - Mainnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/installation/downloads-testnet.html">
+     Downloads - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/installation/verification-instructions.html">
+     Verification instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Learn
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/learn-about-concordium.html">
+     Learn about Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/id-accounts.html">
+       Identities
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-backup.html">
+       Backup
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-baker.html">
+       Bakers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-delegation.html">
+       Delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/company-identities.html">
+       Company identity creation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/glossary.html">
+       Glossary of Concordium Terms
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Concordium Wallets
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/deciding-wallet.html">
+     Deciding between the Desktop Wallet and the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/mobile-wallet/setup-mobile-wallet.html">
+     Set up the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/install-ledger-app.html">
+       Set up the Ledger Nano S and install the Concordium Ledger App
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/create-identity.html">
+     Create an identity and an initial account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/create-account.html">
+     Create an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/mobile-wallet/share-address-mw.html">
+     Find and share your account address
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/accounts-desktop.html">
+     Use the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/send-ccd-wallets.html">
+     Send CCD
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/shielded-transfer.html">
+     Make a shielded transfer on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/export-import.html">
+     Make a backup of identities, accounts, and addresses
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/desktop-wallet/delegation-dw.html">
+     Delegation in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/add-delegation.html">
+       Delegate to a baker pool
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/update-delegation.html">
+       Update delegation to a baker pool
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/remove-delegation.html">
+       Remove delegation to a baker pool
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/single-sign-schedule.html">
+     Transfer CCD with a schedule in Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/mobile-wallet/inspect-release-schedule-mw.html">
+     Inspect a release schedule in Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/update-application.html">
+     Update the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/macos.html">
+       MacOS nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/windows.html">
+       Windows nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/docker.html">
+       Docker nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/node-runner-service-configuration.html">
+       Concordium Windows node runner service configuration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/overview-baker-process.html">
+     Overview of the baker process
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/baker-pool.html">
+       Baker management
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/baker-windows.html">
+       Run a baker node on Windows
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/baker-macos.html">
+       Run a baker node on macOS
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/baker-ubuntu.html">
+       Run a baker node on Ubuntu
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/baker-docker.html">
+       Run a baker node on Docker
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/become-baker.html">
+       Become a baker using the Concordium Client
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/desktop-wallet/baking-dw.html">
+     Baking in the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/add-baker-desktop.html">
+       Add a baker account in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/update-baker-keys.html">
+       Update baker keys in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/remove-baker.html">
+       Remove a baker account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/change-baker-stake.html">
+       Update the staked amount
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/change-restake-settings.html">
+       Update the restake settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/references/concordium-client.html">
+     Concordium Client
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/references/transactions.html">
+     Concordium Client transactions
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/references/query-node.html">
+     Querying a node
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v1 - Testnet only
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts/general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/general/resource-accounting.html">
+       Resource accounting
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/writing.html">
+       Writing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/testing.html">
+       Testing the piggy bank smart contract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts/guides/contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/fallback-entrypoints.html">
+       Fallback entrypoints
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts/guides/on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/invoke-instance.html">
+       Invoke a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts/references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v0
+   </span>
+  </p>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/resource-accounting.html">
+       Resource accounting
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../tutorials/piggy-bank/index.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../tutorials/piggy-bank/writing.html">
+       Writing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../tutorials/piggy-bank/testing.html">
+       Testing the piggy bank smart contract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/resources/ccd-scan.html">
+     CCDScan
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/resources/release-notes-mainnet.html">
+     Release notes - Mainnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/resources/release-notes.html">
+     Release Notes - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/resources/legal.html">
+     Legal
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Mobile Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparation">
+   Preparation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-the-module-for-no-std">
+   Setting up the module for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     no_std
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-the-module">
+   Building the module
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="build-using-no-std">
+<span id="no-std-v0"></span><h1>Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code><a class="headerlink" href="#build-using-no-std" title="Permalink to this headline">#</a></h1>
+<p>This guide shows how to enable <code class="docutils literal notranslate"><span class="pre">no_std</span></code> for your rust smart contract,
+potentially reducing the size of the resulting Wasm module by several kilobytes.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
+<p>Compiling <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> without the <code class="docutils literal notranslate"><span class="pre">std</span></code> feature requires using the rust
+nightly toolchain, which can be installed using <code class="docutils literal notranslate"><span class="pre">rustup</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup toolchain install nightly
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-the-module-for-no-std">
+<h2>Setting up the module for <code class="docutils literal notranslate"><span class="pre">no_std</span></code><a class="headerlink" href="#setting-up-the-module-for-no-std" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> library exposes a <code class="docutils literal notranslate"><span class="pre">std</span></code> feature, which enables the use
+of the rust standard library.
+This feature is enabled by default.</p>
+<p>To disable it, one must simply disable default features for the
+<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> in the dependencies of your module.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
+<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span>: <span class="s">&quot;=0.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="o">-</span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>To be able to toggle between with and without std, also add a <code class="docutils literal notranslate"><span class="pre">std</span></code> to your
+own module, which enables the <code class="docutils literal notranslate"><span class="pre">std</span></code> feature of <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">features</span><span class="p">]</span><span class="w"></span>
+<span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/std&quot;</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This is the setup of the smart contract examples, where <code class="docutils literal notranslate"><span class="pre">std</span></code> for each
+smart contract module is enabled by default.</p>
+</div>
+<div class="section" id="building-the-module">
+<h2>Building the module<a class="headerlink" href="#building-the-module" title="Permalink to this headline">#</a></h2>
+<p>In order to use the nightly toolchain, add <code class="docutils literal notranslate"><span class="pre">+nightly</span></code> right after
+<code class="docutils literal notranslate"><span class="pre">cargo</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo +nightly concordium build
+</pre></div>
+</div>
+<p>If you want to disable the default features of your own smart contract module,
+you can pass extra arguments for <code class="docutils literal notranslate"><span class="pre">cargo</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo +nightly concordium build -- --no-default-features
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2022, Concordium Software ApS
+        </a>
+    </div>
+  </body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE81YY48VB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': loadChoice() ? 'granted' : 'denied' });
+gtag('js', new Date());
+gtag('config', 'G-TE81YY48VB', {'anonymize_ip': true});
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+    document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+    if (!document.cookie.includes("cookie-consent=")) {
+        return undefined;
+    }
+    return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+    document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+    storeChoice(true)
+    gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'granted' });
+    removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+    storeChoice(false)
+    removeCookieConsentBanner()
+}
+
+
+</script>
+<div id="cookie-consent" class="consent">
+    <p>We use cookies to ensure that we give you the best experience on our website, but only if you grant us the permission.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+<script>
+    const stored = loadChoice();
+    if (stored !== undefined) {
+        removeCookieConsentBanner()
+    }
+</script>
+
+  </body>
+</html>

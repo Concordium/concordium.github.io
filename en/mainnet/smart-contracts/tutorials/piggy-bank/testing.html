@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Testing the piggy bank smart contract &#8212; Concordium  documentation</title>
+    <title>Testing the piggy bank smart contract &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Install tools for development" href="../../guides/setup-tools.html" />
-    <link rel="prev" title="1. Writing the piggy bank smart contract" href="writing.html" />
+    <link rel="next" title="Contract development guides" href="../../guides/contract-dev-guides.html" />
+    <link rel="prev" title="Writing the piggy bank smart contract" href="writing.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -105,7 +105,7 @@ body {margin:0;}
   <a href="../../../net/guides/deciding-wallet.html">Wallets</a>
   <a href="../../../net/guides/overview-baker-process.html">Baking</a>
   <a href="../../../net/guides/developer-page.html">Develop</a>
-  <a href="../../index.html">Smart Contracts</a>
+  <a href="../../general/introduction.html">Smart Contracts</a>
 </div>
 </body>
 </html>
@@ -152,7 +152,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    General
+    Installation
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -162,33 +162,18 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../../general/introduction.html">
-     Introduction to smart contracts
+    <a class="reference internal" href="../../../net/installation/downloads.html">
+     Downloads - Mainnet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../general/contract-module.html">
-     Smart contract modules
+    <a class="reference internal" href="../../../net/installation/downloads-testnet.html">
+     Downloads - Testnet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../general/contract-instances.html">
-     Smart contract instances
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../general/contract-schema.html">
-     Smart contract schemas
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../general/resource-accounting.html">
-     Resource accounting
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../general/develop-contracts.html">
-     Developing smart contracts in Rust
+    <a class="reference internal" href="../../../net/installation/verification-instructions.html">
+     Verification instructions
     </a>
    </li>
   </ul>
@@ -196,33 +181,63 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Tutorials
+    Learn
    </span>
   </p>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label class="label-parts" for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current nav bd-sidenav">
-   <li class="toctree-l1 current active has-children">
-    <a class="reference internal" href="index.html">
-     The piggy bank smart contract
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/learn-about-concordium.html">
+     Learn about Concordium
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
     <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="writing.html">
-       1. Writing the piggy bank smart contract
+      <a class="reference internal" href="../../../net/concepts/id-accounts.html">
+       Identities
       </a>
      </li>
-     <li class="toctree-l2 current active">
-      <a class="current reference internal" href="#">
-       2. Testing the piggy bank smart contract
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/concepts/concepts-backup.html">
+       Backup
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/concepts/concepts-baker.html">
+       Bakers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/concepts/concepts-delegation.html">
+       Delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/company-identities.html">
+       Company identity creation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/glossary.html">
+       Glossary of Concordium Terms
       </a>
      </li>
     </ul>
@@ -232,7 +247,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Contract development guides
+    Concordium Wallets
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -242,48 +257,336 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/setup-tools.html">
-     Install tools for development
+    <a class="reference internal" href="../../../net/guides/deciding-wallet.html">
+     Deciding between the Desktop Wallet and the Mobile Wallet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/setup-contract.html">
-     Setting up a smart contract project
+    <a class="reference internal" href="../../../net/mobile-wallet/setup-mobile-wallet.html">
+     Set up the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/install-ledger-app.html">
+       Set up the Ledger Nano S and install the Concordium Ledger App
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/create-identity.html">
+     Create an identity and an initial account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/compile-module.html">
-     Compile a Rust smart contract module
+    <a class="reference internal" href="../../../net/guides/create-account.html">
+     Create an account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/unit-test-contract.html">
-     Unit test a contract in Rust
+    <a class="reference internal" href="../../../net/mobile-wallet/share-address-mw.html">
+     Find and share your account address
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/custom-errors.html">
-     Return custom errors
+    <a class="reference internal" href="../../../net/mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/local-simulate.html">
-     Locally simulate contract functions
+    <a class="reference internal" href="../../../net/desktop-wallet/accounts-desktop.html">
+     Use the Desktop Wallet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/build-schema.html">
-     Build a contract schema
+    <a class="reference internal" href="../../../net/guides/send-ccd-wallets.html">
+     Send CCD
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/no-std.html">
-     Build using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       no_std
-      </span>
-     </code>
+    <a class="reference internal" href="../../../net/guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/shielded-transfer.html">
+     Make a shielded transfer on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/export-import.html">
+     Make a backup of identities, accounts, and addresses
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/desktop-wallet/delegation-dw.html">
+     Delegation in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/add-delegation.html">
+       Delegate to a baker pool
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/update-delegation.html">
+       Update delegation to a baker pool
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/remove-delegation.html">
+       Remove delegation to a baker pool
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/desktop-wallet/single-sign-schedule.html">
+     Transfer CCD with a schedule in Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/inspect-release-schedule-mw.html">
+     Inspect a release schedule in Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/desktop-wallet/update-application.html">
+     Update the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/macos.html">
+       MacOS nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/windows.html">
+       Windows nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/docker.html">
+       Docker nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/node-runner-service-configuration.html">
+       Concordium Windows node runner service configuration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-baker-process.html">
+     Overview of the baker process
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/baker-pool.html">
+       Baker management
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/baker-windows.html">
+       Run a baker node on Windows
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/baker-macos.html">
+       Run a baker node on macOS
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/baker-ubuntu.html">
+       Run a baker node on Ubuntu
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/nodes/baker-docker.html">
+       Run a baker node on Docker
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/become-baker.html">
+       Become a baker using the Concordium Client
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/desktop-wallet/baking-dw.html">
+     Baking in the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/add-baker-desktop.html">
+       Add a baker account in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/update-baker-keys.html">
+       Update baker keys in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/remove-baker.html">
+       Remove a baker account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/change-baker-stake.html">
+       Update the staked amount
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/change-restake-settings.html">
+       Update the restake settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/references/concordium-client.html">
+     Concordium Client
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/references/transactions.html">
+     Concordium Client transactions
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/references/query-node.html">
+     Querying a node
     </a>
    </li>
   </ul>
@@ -291,83 +594,494 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    On-chain guides
+    Smart Contracts v1 - Testnet only
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/deploy-module.html">
-     Deploy a smart contract module
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../general/introduction.html">
+     Introduction
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/resource-accounting.html">
+       Resource accounting
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/initialize-contract.html">
-     Initialize a smart contract instance
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="index.html">
+     Tutorials
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="writing.html">
+       Writing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Testing the piggy bank smart contract
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/interact-instance.html">
-     Interact with a smart contract instance
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../guides/contract-dev-guides.html">
+     Contract development guides
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/fallback-entrypoints.html">
+       Fallback entrypoints
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../guides/inspect-instance.html">
-     Inspect a smart contract instance
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../guides/on-chain-index.html">
+     On-chain guides
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/invoke-instance.html">
+       Invoke a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    References
+    Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts-v0/general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/general/resource-accounting.html">
+       Resource accounting
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts-v0/tutorials/piggy-bank/index.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/tutorials/piggy-bank/writing.html">
+       Writing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/tutorials/piggy-bank/testing.html">
+       Testing the piggy bank smart contract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts-v0/guides/contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts-v0/guides/on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts-v0/references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts-v0/references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-25">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../../references/schema-json.html">
-     Schema JSON representation
+    <a class="reference internal" href="../../../net/resources/ccd-scan.html">
+     CCDScan
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../references/simulate-context.html">
-     Simulation contexts
+    <a class="reference internal" href="../../../net/resources/release-notes-mainnet.html">
+     Release notes - Mainnet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../../references/host-fns.html">
-     Contract host functions
+    <a class="reference internal" href="../../../net/resources/release-notes.html">
+     Release Notes - Testnet
     </a>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../references/references-on-chain.html">
-     References on-chain
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/resources/legal.html">
+     Legal
     </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../references/local-settings.html">
-     Local settings
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
-     Rust contract examples (repo)
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
-     concordium-std
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Mobile Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -395,42 +1109,42 @@ body {margin:0;}
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preparation">
-   2.1. Preparation
+   Preparation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-a-test-module">
-   2.2. Add a test module
+   Add a test module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing-instantiation-of-a-piggy-bank">
-   2.3. Testing instantiation of a piggy bank
+   Testing instantiation of a piggy bank
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-inserting-ccd-into-a-piggy-bank">
-   2.4. Test inserting CCD into a piggy bank
+   Test inserting CCD into a piggy bank
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-smashing-a-piggy-bank">
-   2.5. Test smashing a piggy bank
+   Test smashing a piggy bank
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing-cause-of-rejection">
-   2.6. Testing cause of rejection
+   Testing cause of rejection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compiling-and-running-tests-in-wasm">
-   2.7. Compiling and running tests in Wasm
+   Compiling and running tests in Wasm
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simulating-the-piggy-bank">
-   2.8. Simulating the piggy bank
+   Simulating the piggy bank
   </a>
  </li>
 </ul>
@@ -451,7 +1165,7 @@ body {margin:0;}
               <div>
                 
   <div class="section" id="testing-the-piggy-bank-smart-contract">
-<span id="piggy-bank-testing"></span><h1><span class="section-number">2. </span>Testing the piggy bank smart contract<a class="headerlink" href="#testing-the-piggy-bank-smart-contract" title="Permalink to this headline">#</a></h1>
+<span id="piggy-bank-testing"></span><h1>Testing the piggy bank smart contract<a class="headerlink" href="#testing-the-piggy-bank-smart-contract" title="Permalink to this headline">#</a></h1>
 <p>This is the second <a class="reference internal" href="index.html#piggy-bank"><span class="std std-ref">part of a tutorial</span></a> on smart contract
 development.
 So far you have written a piggy bank smart contract in the <a class="reference external" href="https://www.rust-lang.org/">Rust</a> programming
@@ -464,37 +1178,23 @@ contract.</p>
 <p>The reader is assumed to have basic knowledge of what a blockchain and smart
 contract is, and some experience with <a class="reference external" href="https://www.rust-lang.org/">Rust</a>.</p>
 </div>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#preparation" id="id2">Preparation</a></p></li>
-<li><p><a class="reference internal" href="#add-a-test-module" id="id3">Add a test module</a></p></li>
-<li><p><a class="reference internal" href="#testing-instantiation-of-a-piggy-bank" id="id4">Testing instantiation of a piggy bank</a></p></li>
-<li><p><a class="reference internal" href="#test-inserting-ccd-into-a-piggy-bank" id="id5">Test inserting CCD into a piggy bank</a></p></li>
-<li><p><a class="reference internal" href="#test-smashing-a-piggy-bank" id="id6">Test smashing a piggy bank</a></p></li>
-<li><p><a class="reference internal" href="#testing-cause-of-rejection" id="id7">Testing cause of rejection</a></p></li>
-<li><p><a class="reference internal" href="#compiling-and-running-tests-in-wasm" id="id8">Compiling and running tests in Wasm</a></p></li>
-<li><p><a class="reference internal" href="#simulating-the-piggy-bank" id="id9">Simulating the piggy bank</a></p></li>
-</ul>
-</div>
 <div class="section" id="preparation">
-<h2><span class="section-number">2.1. </span>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
 <p>Before you start, make sure to have the necessary tooling to build Rust
 contracts.
 The guide <a class="reference internal" href="../../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> shows you how to do this.
 Also, make sure to have a text editor setup to write Rust.</p>
-<p>Additionally, to run the tests you need to:</p>
-<ul class="simple">
-<li><p>set up a local testnet node using your preferred platform: <a class="reference internal" href="../../../net/nodes/windows.html#windows-node"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../../../net/nodes/macos.html#macos-node"><span class="std std-ref">MacOS</span></a>, <a class="reference internal" href="../../../net/nodes/ubuntu.html#ubuntu-node"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="../../../net/nodes/docker.html#docker-node"><span class="std std-ref">Docker/Linux</span></a></p></li>
-<li><p><a class="reference internal" href="../../../net/guides/create-account.html#create-account"><span class="std std-ref">create an account for testnet</span></a>. The account will need some CCD to run tests.</p></li>
-<li><p><a class="reference internal" href="../../../net/references/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import the created account using concordium-client</span></a></p></li>
-<li><p><a class="reference internal" href="../../guides/deploy-module.html#deploy-module"><span class="std std-ref">deploy the smart contract to your local testnet node</span></a>.</p></li>
-</ul>
 <p>Since you are going to extend the smart contract code written in the <a class="reference internal" href="writing.html#piggy-bank-writing"><span class="std std-ref">previous
-part</span></a>, either follow the previous part or copy the resulting code from there.</p>
+part</span></a>, either follow the previous part or copy the complete
+example code for part 1 from <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs">GitHub</a>.</p>
 <p>You are now ready to write unit tests for your smart contract!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.</p>
+</div>
 </div>
 <div class="section" id="add-a-test-module">
-<h2><span class="section-number">2.2. </span>Add a test module<a class="headerlink" href="#add-a-test-module" title="Permalink to this headline">#</a></h2>
+<h2>Add a test module<a class="headerlink" href="#add-a-test-module" title="Permalink to this headline">#</a></h2>
 <p>Since a smart contract module is written as a Rust library, you can test it as
 one would test any library and write unit-tests as part of the Rust module.</p>
 <p>At the bottom of the <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code> file containing our code, make sure you have the
@@ -504,7 +1204,6 @@ following starting point:</p>
 <span class="cp">#[cfg(test)]</span><span class="w"></span>
 <span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
-
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -519,27 +1218,29 @@ stubs for this, so first bring everything from the submodule into scope.</p>
 <span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
-</span>
-<span class="p">}</span><span class="w"></span>
+</span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now you can start adding tests to this module.</p>
 </div>
 <div class="section" id="testing-instantiation-of-a-piggy-bank">
-<h2><span class="section-number">2.3. </span>Testing instantiation of a piggy bank<a class="headerlink" href="#testing-instantiation-of-a-piggy-bank" title="Permalink to this headline">#</a></h2>
+<h2>Testing instantiation of a piggy bank<a class="headerlink" href="#testing-instantiation-of-a-piggy-bank" title="Permalink to this headline">#</a></h2>
 <p>The first test to add is to verify a piggy bank is set up with the correct
 state.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="fm">todo!</span><span class="p">(</span><span class="s">&quot;Implement&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="fm">todo!</span><span class="p">()</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>As mentioned above, you test the initialization by calling the function
 <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code> directly.
-To construct its argument for, you use <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.InitContextTest.html"><code class="docutils literal notranslate"><span class="pre">InitContextTest</span></code></a> which provides a
-placeholder for the context.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+To construct its arguments, you use <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestInitContext.html"><code class="docutils literal notranslate"><span class="pre">TestInitContext</span></code></a>, which provides a
+placeholder for the context, and <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestStateBuilder.html"><code class="docutils literal notranslate"><span class="pre">TestStateBuilder</span></code></a>, which provides a
+state builder for the test state. While the contract doesn’t use the state
+builder, it still needs the argument supplied.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestInitContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state_builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestStateBuilder</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Just as the name suggests, the test context is empty and if any of the getter
@@ -547,11 +1248,11 @@ functions are called, it will make sure to fail the test, which should be fine
 for now since the piggy bank is not reading anything from the context.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As you will see later with the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>, these placeholders have
+<p>As you will see later with the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html"><code class="docutils literal notranslate"><span class="pre">TestReceiveContext</span></code></a>, these placeholders have
 setter functions, allowing us to partially specify the context.</p>
 </div>
 <p>Now you can call <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code> and get a result containing the initial state.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state_builder</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>First, you want the test to fail if the contract did not result in an
@@ -559,7 +1260,7 @@ initial state:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Contract initialization results in error.&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Next you assert the state is correctly set to <code class="docutils literal notranslate"><span class="pre">Intact</span></code>:</p>
+<p>Next, you assert the state is correctly set to <code class="docutils literal notranslate"><span class="pre">Intact</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
 <span class="w">   </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
 <span class="w">   </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
@@ -578,9 +1279,10 @@ piggy bank:</p>
 
 <span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
 <span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestInitContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state_builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestStateBuilder</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
 
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state_builder</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Contract initialization results in error.&quot;</span><span class="p">);</span><span class="w"></span>
 
@@ -599,126 +1301,155 @@ piggy bank:</p>
 </div>
 </div>
 <div class="section" id="test-inserting-ccd-into-a-piggy-bank">
-<h2><span class="section-number">2.4. </span>Test inserting CCD into a piggy bank<a class="headerlink" href="#test-inserting-ccd-into-a-piggy-bank" title="Permalink to this headline">#</a></h2>
-<p>Next you should test the different functions for interacting with a piggy bank.
-This is done in the same way as initializing, except you use <code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code>
-to construct the context.</p>
-<p>To test <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you also need some amount of CCD and the current state
-of your smart contract instance:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<h2>Test inserting CCD into a piggy bank<a class="headerlink" href="#test-inserting-ccd-into-a-piggy-bank" title="Permalink to this headline">#</a></h2>
+<p>Next, you should test the different functions for interacting with a piggy bank.
+This works similarly to how you test init functions, in that we construct test
+versions of the arguments.
+For receive functions that means constructing <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html"><code class="docutils literal notranslate"><span class="pre">TestReceiveContext</span></code></a> and
+<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html"><code class="docutils literal notranslate"><span class="pre">TestHost</span></code></a>, the latter of which expects the initial contract state.</p>
+<p>To test <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you also need to provide some amount of CCD:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>When calling <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you get back a result with actions instead of an
-initial state as with <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code>. But you will need to help the compiler
-infer which type to use for the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> implementing <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.HasActions.html"><code class="docutils literal notranslate"><span class="pre">HasActions</span></code></a>, so
-add the result type <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;ActionsTree&gt;</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<p>When calling <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you get back a result with a return value as
+opposed to the initial state that you get from <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>For testing you can represent the actions as a simple tree structure
-<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/enum.ActionsTree.html"><code class="docutils literal notranslate"><span class="pre">ActionsTree</span></code></a>, making it easy to inspect.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">#[receive]</span></code> macro uses another representation of the actions, when building
-the smart contract module. This representation depends on functions supplied
-by the host environment and is therefore not suitable for unit tests.</p>
-</div>
-<p>Now you need to check if the function succeeded and verify the resulting state and actions.
-In this case the state should remain intact and the function produce only the action for accepting the CCD.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span><span class="w"></span>
+<p>The test then checks whether the result was ok:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="fm">assert!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Inserting CCD results in error&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+<p>One test that is tempting to add is to check that the piggy bank remains intact
+after inserting CCD into it:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">(),</span><span class="w"></span>
+<span class="w">    </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>However, there is no way for the immutable receive method <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> to
+mutate the state.
+Trying to do so would result in an error from the Rust compiler.
+By using immutable receive functions, it is possible to rule out certain error
+cases at compile time, which means that you do not need tests for these
+scenarios.
+Along with performance, those are the two primary reasons for not making your
+receive methods <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-state"><code class="docutils literal notranslate"><span class="pre">mutable</span></code></a> unless strictly necessary.</p>
 <p>The second test becomes:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Inserting CCD results in error&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Again you should verify everything compiles and the tests succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span>
+<p>Again, you should verify everything compiles and the tests succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span>
 <span class="pre">test</span></code>.</p>
-<p>Next you could add a test to check that inserting into a piggy bank with state
+<p>Next, you could add a test to check that inserting into a piggy bank with state
 <code class="docutils literal notranslate"><span class="pre">Smashed</span></code> results in an error. You have been through everything needed to
 do this, and can do this exercise on your own.</p>
 </div>
 <div class="section" id="test-smashing-a-piggy-bank">
-<h2><span class="section-number">2.5. </span>Test smashing a piggy bank<a class="headerlink" href="#test-smashing-a-piggy-bank" title="Permalink to this headline">#</a></h2>
+<h2>Test smashing a piggy bank<a class="headerlink" href="#test-smashing-a-piggy-bank" title="Permalink to this headline">#</a></h2>
 <p>Testing <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> will follow the same pattern, but this time you will need
 to populate the context since this function uses the context for getting the
-contract owner, the sender of the message triggering the function, and the
-balance of contract.</p>
+contract owner, the sender of the message triggering the function.
+You also need to set the balance on the host.</p>
 <p>If you only supply the function with an empty context it will fail, so instead
 define the context as mutable:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Create an <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.AccountAddress.html"><code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code></a> to represent the owner and use the setter
-<code class="docutils literal notranslate"><span class="pre">set_owner</span></code> implemented on <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>:</p>
+<code class="docutils literal notranslate"><span class="pre">set_owner</span></code> implemented on <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html"><code class="docutils literal notranslate"><span class="pre">TestReceiveContext</span></code></a>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Notice you created the account address using an array of 32 bytes, which is
+<p>You created the account address using an array of 32 bytes, which is
 how account addresses are represented on the Concordium blockchain.
 These byte arrays can also be represented as a base58check encoding, but for
 testing it is usually more convenient to specify addresses directly in bytes.</p>
 </div>
-<p>Next set the sender to be the same address as the owner using <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender"><code class="docutils literal notranslate"><span class="pre">set_sender</span></code></a>.
+<p>Next, set the sender to be the same address as the owner using <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.TestReceiveContext.html#method.set_sender"><code class="docutils literal notranslate"><span class="pre">set_sender</span></code></a>.
 Since the sender can be a contract instance as well, you must wrap the owner
 address in the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a> type:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Lastly, you need to set the current balance of the piggy bank instance using
-<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance"><code class="docutils literal notranslate"><span class="pre">set_self_balance</span></code></a>.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<p>Lastly, you need to create a <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html"><code class="docutils literal notranslate"><span class="pre">TestHost</span></code></a> with the state and set the balance of the piggy bank
+instance using <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.set_self_balance"><code class="docutils literal notranslate"><span class="pre">set_self_balance</span></code></a>.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="n">host</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now that you have the test context setup, call the contract function
-<code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> and inspect the resulting action tree and state as you did
-in the previous tests:</p>
+<code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> and inspect the result and state as you did
+in the previous tests.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
+
+<span class="fm">assert!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Smashing intact piggy bank results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">(),</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank should be smashed.&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You should also test whether the contract transferred all of its CCD to the
+owner.
+<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html"><code class="docutils literal notranslate"><span class="pre">TestHost</span></code></a> has a number of helper functions for checking the results of
+actions it performed.
+This includes the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.get_transfers"><code class="docutils literal notranslate"><span class="pre">get_transfers</span></code></a> function, which returns a list of
+transactions in the form of <code class="docutils literal notranslate"><span class="pre">(AccountAddress,</span> <span class="pre">Amount)</span></code> pairs.
+In this case, it should be a single transaction:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">get_transfers</span><span class="p">(),</span><span class="w"></span>
+<span class="w">    </span><span class="p">[(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">)],</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Smashing did not produce the correct transfers.&quot;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The complete third test thus becomes:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Smashing intact piggy bank results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">(),</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank should be smashed.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">host</span><span class="p">.</span><span class="n">get_transfers</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="p">[(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">)],</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Smashing did not produce the correct transfers.&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ensure everything compiles and the test succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
+<p>Next, you could add a test to check that the <code class="docutils literal notranslate"><span class="pre">piggy_view</span></code> method returns the
+correct state and balance. Again, you have been through everything needed to do
+this, and can do this exercise on your own.</p>
 </div>
 <div class="section" id="testing-cause-of-rejection">
-<h2><span class="section-number">2.6. </span>Testing cause of rejection<a class="headerlink" href="#testing-cause-of-rejection" title="Permalink to this headline">#</a></h2>
+<h2>Testing cause of rejection<a class="headerlink" href="#testing-cause-of-rejection" title="Permalink to this headline">#</a></h2>
 <p>You want to test that the piggy bank rejects in certain contexts, for example
 when someone besides the owner of the smart contract tries to smash it.</p>
 <p>The test should:</p>
@@ -731,19 +1462,18 @@ when someone besides the owner of the smart contract tries to smash it.</p>
 <p>The test could look like this:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">actions_result</span><span class="p">.</span><span class="n">is_err</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_err</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -759,6 +1489,7 @@ reasons for rejection:</p>
 <span class="k">enum</span> <span class="nc">SmashError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">NotOwner</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">AlreadySmashed</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">TransferError</span><span class="p">,</span><span class="w"> </span><span class="c1">// Should never occur, see details below.</span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -768,85 +1499,73 @@ reasons for rejection:</p>
 </div>
 <p>To use this error type, the function <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> should return <code class="docutils literal notranslate"><span class="pre">Result&lt;A,</span>
 <span class="pre">SmashError&gt;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;A&gt;</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">, mutable)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
-<span class="hll"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 </span><span class="w">   </span><span class="c1">// ...</span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>and you also have to supply the <code class="docutils literal notranslate"><span class="pre">ensure!</span></code> macros with a second argument, which is
 the error to produce:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">, mutable)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
 
 <span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">),</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">AlreadySmashed</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">AlreadySmashed</span><span class="p">);</span><span class="w"></span>
 </span>
-<span class="w">    </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">self_balance</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">self_balance</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">transfer_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">invoke_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">transfer_result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">TransferError</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Since the return type has changed for the <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> function, you have to
-change the type in the tests as well:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// ...</span>
-
-<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-</span>
-<span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// ...</span>
-
-<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-</span>
-<span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">invoke_transfer</span></code> fails if the account does not exist, or if the contract
+has insufficient funds. Neither case can occur in the contract since contracts
+always have a valid owner and the amount it sends is the <code class="docutils literal notranslate"><span class="pre">self_balance</span></code>. But
+you should still be able to represent this error and distinguish it from the two
+other error types.</p>
 <p>You can now check which error was produced in the test:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span><span class="w"></span>
 <span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-
-<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner.&quot;</span><span class="p">);</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>It is up to the reader to test whether smashing a piggy bank that has
 already been smashed results in the correct error.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on unit testing, see <a class="reference internal" href="../../guides/unit-test-contract.html#unit-test-contract"><span class="std std-ref">Unit test a contract in Rust</span></a>.</p>
+</div>
 </div>
 <div class="section" id="compiling-and-running-tests-in-wasm">
-<h2><span class="section-number">2.7. </span>Compiling and running tests in Wasm<a class="headerlink" href="#compiling-and-running-tests-in-wasm" title="Permalink to this headline">#</a></h2>
+<h2>Compiling and running tests in Wasm<a class="headerlink" href="#compiling-and-running-tests-in-wasm" title="Permalink to this headline">#</a></h2>
 <p>When running <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code> your contract module and tests are compiled targeting
 your native platform, but on the Concordium blockchain a smart contract module
-is in Wasm.
-Therefore it is preferable to compile the tests targeting Wasm and run the tests
+is in <a class="reference external" href="https://webassembly.org/">Wasm</a>.
+Therefore, it is preferable to compile the tests targeting Wasm and run the tests
 using a Wasm interpreter instead.
 Luckily, the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> tool contains such an interpreter, and
 it is the same interpreter shipped with the official nodes on the Concordium
@@ -908,68 +1627,67 @@ using <code class="docutils literal notranslate"><span class="pre">cargo</span> 
 
 <span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
 <span class="w">   </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestInitContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state_builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestStateBuilder</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state_builder</span><span class="p">);</span><span class="w"></span>
 
 <span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Contract initialization failed.&quot;</span><span class="p">);</span><span class="w"></span>
 </span>
 <span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
-</span><span class="w">             </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span><span class="w"></span>
+</span><span class="w">           </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
+<span class="w">           </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
+<span class="w">           </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span><span class="w"></span>
 <span class="w">       </span><span class="p">);</span><span class="w"></span>
 <span class="w">   </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
 <span class="w">   </span><span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span><span class="w"></span>
 
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-</span>
-<span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="n">claim</span><span class="o">!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Inserting CCD results in error&quot;</span><span class="p">);</span><span class="w"></span>
 </span><span class="w">   </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
 <span class="w">   </span><span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="n">host</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">));</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">);</span><span class="w"></span>
-</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="n">claim</span><span class="o">!</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Smashing intact piggy bank results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">(),</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank should be smashed.&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
+</span><span class="w">           </span><span class="n">host</span><span class="p">.</span><span class="n">get_transfers</span><span class="p">(),</span><span class="w"></span>
+<span class="w">           </span><span class="p">[(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">)],</span><span class="w"></span>
+<span class="w">           </span><span class="s">&quot;Smashing did not produce the correct transfers.&quot;</span><span class="w"></span>
+<span class="w">       </span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
 <span class="w">   </span><span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span><span class="w"></span>
 <span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
 <span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="n">host</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
-
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err_report</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner.&quot;</span><span class="p">);</span><span class="w"></span>
 </span><span class="w">   </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -980,10 +1698,12 @@ using <code class="docutils literal notranslate"><span class="pre">cargo</span> 
 </div>
 <p>This will make a special test build of your smart contract module, exporting all
 of your tests as functions, and it will then run each of these functions catching
-the reported errors.</p>
+the reported errors.
+This should succeed if everything is set up correctly. Otherwise, compare your
+code with the one found on <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part2/src/lib.rs">GitHub</a>.</p>
 </div>
 <div class="section" id="simulating-the-piggy-bank">
-<h2><span class="section-number">2.8. </span>Simulating the piggy bank<a class="headerlink" href="#simulating-the-piggy-bank" title="Permalink to this headline">#</a></h2>
+<h2>Simulating the piggy bank<a class="headerlink" href="#simulating-the-piggy-bank" title="Permalink to this headline">#</a></h2>
 <p>So far the tests you have written are in <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and have to be compiled alongside
 the smart contract module in a test build. This is fine for unit testing, but
 this test build is not the actual module that you intend to deploy on the

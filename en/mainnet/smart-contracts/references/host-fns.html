@@ -105,7 +105,7 @@ body {margin:0;}
   <a href="../../net/guides/deciding-wallet.html">Wallets</a>
   <a href="../../net/guides/overview-baker-process.html">Baking</a>
   <a href="../../net/guides/developer-page.html">Develop</a>
-  <a href="../index.html">Smart Contracts</a>
+  <a href="../general/introduction.html">Smart Contracts</a>
 </div>
 </body>
 </html>
@@ -152,7 +152,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    General
+    Installation
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -162,33 +162,18 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../general/introduction.html">
-     Introduction to smart contracts
+    <a class="reference internal" href="../../net/installation/downloads.html">
+     Downloads - Mainnet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../general/contract-module.html">
-     Smart contract modules
+    <a class="reference internal" href="../../net/installation/downloads-testnet.html">
+     Downloads - Testnet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../general/contract-instances.html">
-     Smart contract instances
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../general/contract-schema.html">
-     Smart contract schemas
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../general/resource-accounting.html">
-     Resource accounting
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../general/develop-contracts.html">
-     Developing smart contracts in Rust
+    <a class="reference internal" href="../../net/installation/verification-instructions.html">
+     Verification instructions
     </a>
    </li>
   </ul>
@@ -196,7 +181,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Tutorials
+    Learn
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -206,8 +191,8 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../tutorials/piggy-bank/index.html">
-     The piggy bank smart contract
+    <a class="reference internal" href="../../net/guides/learn-about-concordium.html">
+     Learn about Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
     <label for="toctree-checkbox-3">
@@ -216,13 +201,43 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../tutorials/piggy-bank/writing.html">
-       1. Writing the piggy bank smart contract
+      <a class="reference internal" href="../../net/concepts/id-accounts.html">
+       Identities
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../tutorials/piggy-bank/testing.html">
-       2. Testing the piggy bank smart contract
+      <a class="reference internal" href="../../net/references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-backup.html">
+       Backup
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-baker.html">
+       Bakers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/concepts/concepts-delegation.html">
+       Delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/company-identities.html">
+       Company identity creation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/glossary.html">
+       Glossary of Concordium Terms
       </a>
      </li>
     </ul>
@@ -232,7 +247,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Contract development guides
+    Concordium Wallets
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -242,48 +257,336 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/setup-tools.html">
-     Install tools for development
+    <a class="reference internal" href="../../net/guides/deciding-wallet.html">
+     Deciding between the Desktop Wallet and the Mobile Wallet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/setup-contract.html">
-     Setting up a smart contract project
+    <a class="reference internal" href="../../net/mobile-wallet/setup-mobile-wallet.html">
+     Set up the Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/install-ledger-app.html">
+       Set up the Ledger Nano S and install the Concordium Ledger App
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/create-identity.html">
+     Create an identity and an initial account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/compile-module.html">
-     Compile a Rust smart contract module
+    <a class="reference internal" href="../../net/guides/create-account.html">
+     Create an account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/unit-test-contract.html">
-     Unit test a contract in Rust
+    <a class="reference internal" href="../../net/mobile-wallet/share-address-mw.html">
+     Find and share your account address
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/custom-errors.html">
-     Return custom errors
+    <a class="reference internal" href="../../net/mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/local-simulate.html">
-     Locally simulate contract functions
+    <a class="reference internal" href="../../net/desktop-wallet/accounts-desktop.html">
+     Use the Desktop Wallet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/build-schema.html">
-     Build a contract schema
+    <a class="reference internal" href="../../net/guides/send-ccd-wallets.html">
+     Send CCD
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/no-std.html">
-     Build using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       no_std
-      </span>
-     </code>
+    <a class="reference internal" href="../../net/guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/shielded-transfer.html">
+     Make a shielded transfer on an account
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/guides/export-import.html">
+     Make a backup of identities, accounts, and addresses
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/desktop-wallet/delegation-dw.html">
+     Delegation in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/add-delegation.html">
+       Delegate to a baker pool
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/update-delegation.html">
+       Update delegation to a baker pool
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/remove-delegation.html">
+       Remove delegation to a baker pool
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/single-sign-schedule.html">
+     Transfer CCD with a schedule in Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/mobile-wallet/inspect-release-schedule-mw.html">
+     Inspect a release schedule in Mobile Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/update-application.html">
+     Update the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/macos.html">
+       MacOS nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/windows.html">
+       Windows nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/docker.html">
+       Docker nodes
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/node-runner-service-configuration.html">
+       Concordium Windows node runner service configuration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/guides/overview-baker-process.html">
+     Overview of the baker process
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/baker-pool.html">
+       Baker management
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/baker-windows.html">
+       Run a baker node on Windows
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/baker-macos.html">
+       Run a baker node on macOS
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/baker-ubuntu.html">
+       Run a baker node on Ubuntu
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/nodes/baker-docker.html">
+       Run a baker node on Docker
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/become-baker.html">
+       Become a baker using the Concordium Client
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/desktop-wallet/baking-dw.html">
+     Baking in the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/guides/add-baker-desktop.html">
+       Add a baker account in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/update-baker-keys.html">
+       Update baker keys in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/remove-baker.html">
+       Remove a baker account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/change-baker-stake.html">
+       Update the staked amount
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/desktop-wallet/change-restake-settings.html">
+       Update the restake settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/references/concordium-client.html">
+     Concordium Client
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/references/transactions.html">
+     Concordium Client transactions
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/references/query-node.html">
+     Querying a node
     </a>
    </li>
   </ul>
@@ -291,83 +594,494 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    On-chain guides
+    Smart Contracts v1 - Testnet only
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/resource-accounting.html">
+       Resource accounting
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../tutorials/piggy-bank/index.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../tutorials/piggy-bank/writing.html">
+       Writing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../tutorials/piggy-bank/testing.html">
+       Testing the piggy bank smart contract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/fallback-entrypoints.html">
+       Fallback entrypoints
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/invoke-instance.html">
+       Invoke a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="index.html">
+     References
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v0
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/general/resource-accounting.html">
+       Resource accounting
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/writing.html">
+       Writing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/testing.html">
+       Testing the piggy bank smart contract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts-v0/references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-25">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/deploy-module.html">
-     Deploy a smart contract module
+    <a class="reference internal" href="../../net/resources/ccd-scan.html">
+     CCDScan
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/initialize-contract.html">
-     Initialize a smart contract instance
+    <a class="reference internal" href="../../net/resources/release-notes-mainnet.html">
+     Release notes - Mainnet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/interact-instance.html">
-     Interact with a smart contract instance
+    <a class="reference internal" href="../../net/resources/release-notes.html">
+     Release Notes - Testnet
     </a>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/inspect-instance.html">
-     Inspect a smart contract instance
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../net/resources/legal.html">
+     Legal
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    References
-   </span>
-  </p>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="schema-json.html">
-     Schema JSON representation
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="simulate-context.html">
-     Simulation contexts
-    </a>
-   </li>
-   <li class="toctree-l1 current active">
-    <a class="current reference internal" href="#">
-     Contract host functions
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="references-on-chain.html">
-     References on-chain
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="local-settings.html">
-     Local settings
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
-     Rust contract examples (repo)
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
-     concordium-std
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Mobile Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -427,13 +1141,6 @@ body {margin:0;}
   <a class="reference internal nav-link" href="#only-in-receive-function">
    Only in receive function
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#action-description">
-     Action description
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -493,22 +1200,28 @@ execution of the smart contract.</p>
 <h2>Function parameter<a class="headerlink" href="#function-parameter" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_parameter_size">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_parameter_size" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the byte size of the parameter.</p>
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_parameter_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the byte size of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th parameter to the call. The 0-th parameter is
+always the original parameter that the method was invoked with. Invoking
+other contracts with <code class="docutils literal notranslate"><span class="pre">invoke</span></code> adds additional parameters to the stack.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Byte size of the parameter.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>i32</em>) – Index of the parameter.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>i32</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Byte size of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th parameter or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the parameter
+doesn’t exist.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_parameter_section">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_parameter_section" title="Permalink to this definition">#</a></dt>
-<dd><p>Read a section of the parameter to the given location in Wasm linear memory.
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_parameter_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_parameter_section" title="Permalink to this definition">#</a></dt>
+<dd><p>Read a section of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th parameter to the given location in Wasm linear memory.
 Return the number of bytes read.
 The location is assumed to contain enough memory to write the requested
 length into. If not, the function will trap and abort execution of
@@ -516,6 +1229,7 @@ the contract.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<em>i32</em>) – Index of the parameter.</p></li>
 <li><p><strong>location</strong> (<em>i32</em>) – Pointer to the write location in Wasm linear memory.</p></li>
 <li><p><strong>length</strong> (<em>i32</em>) – Number of bytes to read from the parameter.</p></li>
 <li><p><strong>offset</strong> (<em>i32</em>) – Starting offset in the parameter bytes.</p></li>
@@ -524,7 +1238,8 @@ the contract.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The number of actual bytes read. This is always less than or equal
 to <code class="docutils literal notranslate"><span class="pre">length</span></code>. It is less if the parameter does not have
-enough bytes available (i.e., if <code class="docutils literal notranslate"><span class="pre">offset</span> <span class="pre">+</span> <span class="pre">length</span> <span class="pre">&gt;</span> <span class="pre">parameter_size</span></code>).</p>
+enough bytes available (i.e., if <code class="docutils literal notranslate"><span class="pre">offset</span> <span class="pre">+</span> <span class="pre">length</span> <span class="pre">&gt;</span>
+<span class="pre">parameter_size</span></code>). Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the parameter does not exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>i32</p>
@@ -536,36 +1251,257 @@ enough bytes available (i.e., if <code class="docutils literal notranslate"><spa
 <div class="section" id="smart-contract-instance-state">
 <span id="host-functions-state"></span><h2>Smart contract instance state<a class="headerlink" href="#smart-contract-instance-state" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="concordium.state_size">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_size" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the byte size of the contract state.</p>
+<dt class="sig sig-object py" id="concordium.state_create_entry">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_create_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.state_create_entry" title="Permalink to this definition">#</a></dt>
+<dd><p>Create an empty entry with the given key.
+If an entry at that key already exists it is set to the empty entry.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Byte size of the contract state.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_start</strong> (<em>i32</em>) – Pointer to a key, represented as a bytearray in the Wasm
+memory.</p></li>
+<li><p><strong>key_length</strong> (<em>i32</em>) – The length of the key.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>i32</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The return value is either <code class="docutils literal notranslate"><span class="pre">2^64</span> <span class="pre">-</span> <span class="pre">1</span></code> if creating the entry failed
+because of an iterator lock on the part of the tree, or else the
+first bit is <code class="docutils literal notranslate"><span class="pre">0</span></code>, and the remaining bits are an <em>entry
+identifier</em> that maybe used in subsequent state-related calls.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i64</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="concordium.load_state">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">load_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.load_state" title="Permalink to this definition">#</a></dt>
-<dd><p>Read a section of the state to the given location. Return the number of
+<dt class="sig sig-object py" id="concordium.state_lookup_entry">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_lookup_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.state_lookup_entry" title="Permalink to this definition">#</a></dt>
+<dd><p>Lookup an entry with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_start</strong> (<em>i32</em>) – Pointer to key, represented as a bytearray in the Wasm
+memory.</p></li>
+<li><p><strong>key_length</strong> (<em>i32</em>) – The length of the key.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The return value is either <code class="docutils literal notranslate"><span class="pre">2^64</span> <span class="pre">-</span> <span class="pre">1</span></code> if creating the entry failed
+because of an iterator lock on the part of the tree, or else the
+first bit is <code class="docutils literal notranslate"><span class="pre">0</span></code> and the remaining bits are an <em>entry
+identifier</em> that maybe used in any of the entry calls.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_delete_entry">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_delete_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_delete_entry" title="Permalink to this definition">#</a></dt>
+<dd><p>Delete the entry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_start</strong> (<em>i32</em>) – Pointer to a key, represented as a byte array in the Wasm
+memory.</p></li>
+<li><p><strong>key_length</strong> (<em>i32</em>) – The length of the key.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> if the part of the tree this entry was in is <em>locked</em>
+by an iterator (see the <a class="reference external" href="#concordium.state_iterate_prefix"><code class="docutils literal notranslate"><span class="pre">state_iterate_prefix</span></code></a> for details) and
+the deletion thus failed.
+Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> if the entry didn’t exist. Return <code class="docutils literal notranslate"><span class="pre">2</span></code> if the entry
+was successfully deleted.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_delete_prefix">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_delete_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_delete_prefix" title="Permalink to this definition">#</a></dt>
+<dd><p>Delete a prefix in the tree, that is, delete all parts of the tree that have
+the given key as a prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_start</strong> (<em>i32</em>) – Pointer to a key, represented as a byte array in the Wasm
+memory.</p></li>
+<li><p><strong>key_length</strong> (<em>i32</em>) – The length of the key.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> if the tree is <em>locked</em>
+by an iterator (see the <a class="reference external" href="#concordium.state_iterate_prefix"><code class="docutils literal notranslate"><span class="pre">state_iterate_prefix</span></code></a> for details) and
+the deletion thus failed.
+Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> if the tree <em>was not locked</em>, but the key points to
+an empty part of the tree.
+Returns <code class="docutils literal notranslate"><span class="pre">2</span></code> if a part of the tree was successfully deleted.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_iterate_prefix">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_iterate_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.state_iterate_prefix" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct an iterator over a part of the tree. This <strong>locks the part of
+the tree that has the given prefix</strong>. Locking means that no
+deletions or insertions of entries may occur in that subtree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_start</strong> (<em>i32</em>) – Pointer to a prefix, represented as a byte array in the Wasm
+memory.</p></li>
+<li><p><strong>key_length</strong> (<em>i32</em>) – The length of the prefix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns all 1 bits if too many iterators already exist with this key.
+Returns all but second bit set to 1 if there is no value in the
+state with given prefix.
+Otherwise, the first bit is 0, and the remaining bits are the
+<em>iterator identifier</em> that may be used in subsequent calls to
+advance it, or to get its key.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_iterator_next">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_iterator_next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterator</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.state_iterator_next" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the next entry along the iterator, and advance the iterator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>i64</em>) – An iterator identifier, as returned by <a class="reference external" href="#concordium.state_iterate_prefix"><code class="docutils literal notranslate"><span class="pre">state_iterate_prefix</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns all 1 bits if the iterator does not exist (it was deleted,
+or the identifier was invalid).
+Returns all but the second bit set to 1 if no more entries are left,
+i.e., the iterator is exhausted. All further calls will yield the
+same value until the iterator is deleted.
+Otherwise, the first bit is 0, and the remaining bits encode an
+<em>entry identifier</em> that may be with any of the entry methods.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_iterator_delete">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_iterator_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterator</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_iterator_delete" title="Permalink to this definition">#</a></dt>
+<dd><p>Delete the iterator, unlocking the subtree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>i64</em>) – An iterator identifier, as returned by <a class="reference external" href="#concordium.state_iterate_prefix"><code class="docutils literal notranslate"><span class="pre">state_iterate_prefix</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns <code class="docutils literal notranslate"><span class="pre">2^64</span> <span class="pre">-</span> <span class="pre">1</span></code> if the iterator does not exist. Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> if the
+iterator was already deleted. Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> if the iterator was
+successfully deleted.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_iterator_key_size">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_iterator_key_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterator</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_iterator_key_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the length of the key that the iterator is currently pointing at.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>i64</em>) – An iterator identifier, as returned by <a class="reference external" href="#concordium.state_iterate_prefix"><code class="docutils literal notranslate"><span class="pre">state_iterate_prefix</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">2^64</span> <span class="pre">-</span> <span class="pre">1</span></code> if the iterator does not exist. Otherwise, it returns the
+length of the key in bytes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_iterator_key_read">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_iterator_key_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_iterator_key_read" title="Permalink to this definition">#</a></dt>
+<dd><p>Read a section of the key the iterator is currently pointing at.
+Before the first call to the <a class="reference external" href="#concordium.state_iterator_next"><code class="docutils literal notranslate"><span class="pre">state_iterator_next</span></code></a> function this returns
+(sections of) the key that was used to create the iterator. After
+the iterator is exhausted, this method returns (sections of) the key at the
+first node returned by the iterator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterator</strong> (<em>i64</em>) – An iterator identifier, as returned by <a class="reference external" href="#concordium.state_iterate_prefix"><code class="docutils literal notranslate"><span class="pre">state_iterate_prefix</span></code></a>.</p></li>
+<li><p><strong>start</strong> (<em>i32</em>) – A pointer to a location in the Wasm memory where the key
+section be written to.</p></li>
+<li><p><strong>length</strong> (<em>i32</em>) – Number of bytes to read from the key.</p></li>
+<li><p><strong>offset</strong> (<em>i32</em>) – Starting offset in the key bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">2^64</span> <span class="pre">-</span> <span class="pre">1</span></code> if the iterator does not exist. Otherwise, it returns the
+length of the key in bytes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_entry_size">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_entry_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_entry_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the byte size of the entry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i64</strong> (<em>entry</em>) – Entry identifier.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Byte size of the entry. Or <code class="docutils literal notranslate"><span class="pre">2^32</span> <span class="pre">-</span> <span class="pre">1</span></code> if the entry does not exist.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.state_entry_read">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_entry_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_entry_read" title="Permalink to this definition">#</a></dt>
+<dd><p>Read a section of the entry to the given location. Return the number of
 bytes written. The location is assumed to contain enough memory to write the
 requested length into. If not, the function will trap and abort execution of
 the contract.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>entry</strong> (<em>i64</em>) – Entry identifier.</p></li>
 <li><p><strong>location</strong> (<em>i32</em>) – Pointer to write location in Wasm linear memory.</p></li>
 <li><p><strong>length</strong> (<em>i32</em>) – Number of bytes to read.</p></li>
-<li><p><strong>offset</strong> (<em>i32</em>) – Starting offset in the state bytes.</p></li>
+<li><p><strong>offset</strong> (<em>i32</em>) – Starting offset in the entry bytes.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The number of read bytes.</p>
+<dd class="field-even"><p>The number of read bytes. Or <code class="docutils literal notranslate"><span class="pre">2^32</span> <span class="pre">-</span> <span class="pre">1</span></code> if the entry does not exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>i32</p>
@@ -574,23 +1510,22 @@ the contract.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="concordium.write_state">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">write_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.write_state" title="Permalink to this definition">#</a></dt>
-<dd><p>Write a section of the memory to the state at a given offset.
+<dt class="sig sig-object py" id="concordium.state_entry_write">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_entry_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_entry_write" title="Permalink to this definition">#</a></dt>
+<dd><p>Write a section of the memory to the entry at a given offset.
 Return the number of bytes written.
-The offset must be less than or equal to the current state size.
-The state is assumed to be large enough to write the requested
-length into.</p>
+The offset must be less than or equal to the current entry size.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>entry</strong> (<em>i64</em>) – Entry identifier.</p></li>
 <li><p><strong>location</strong> (<em>i32</em>) – Pointer to read location in Wasm linear memory.</p></li>
 <li><p><strong>length</strong> (<em>i32</em>) – Number of bytes to write.</p></li>
-<li><p><strong>offset</strong> (<em>i32</em>) – Starting offset in the state bytes.</p></li>
+<li><p><strong>offset</strong> (<em>i32</em>) – Starting offset in the entry bytes.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The number of written bytes.</p>
+<dd class="field-even"><p>The number of written bytes. Or <code class="docutils literal notranslate"><span class="pre">2^32</span> <span class="pre">-</span> <span class="pre">1</span></code> if the entry does not exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>i32</p>
@@ -599,16 +1534,20 @@ length into.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="concordium.resize_state">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">resize_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_size</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.resize_state" title="Permalink to this definition">#</a></dt>
-<dd><p>Resize state to the new value (truncate if new size is smaller).
-The additional state is initialized to <cite>0</cite>.</p>
+<dt class="sig sig-object py" id="concordium.state_entry_resize">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">state_entry_resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_size</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.state_entry_resize" title="Permalink to this definition">#</a></dt>
+<dd><p>Resize entry to the new value (truncate if new size is smaller).
+If the new size is bigger, the additional state is initialized with <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>new_size</strong> (<em>i32</em>) – New size of contract state in bytes.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entry</strong> (<em>i64</em>) – Entry identifier.</p></li>
+<li><p><strong>new_size</strong> (<em>i32</em>) – New size of contract entry in bytes.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if this was unsuccessful (new state too big), or <code class="docutils literal notranslate"><span class="pre">1</span></code> if successful.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if this was unsuccessful (new entry too big), <code class="docutils literal notranslate"><span class="pre">1</span></code> if
+successful, or <code class="docutils literal notranslate"><span class="pre">2^32</span> <span class="pre">-</span> <span class="pre">1</span></code> if the entry does not exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>i32</p>
@@ -683,6 +1622,40 @@ bytes and the memory must be large enough to contain it.</p>
 <h2>Only in receive function<a class="headerlink" href="#only-in-receive-function" title="Permalink to this headline">#</a></h2>
 <p>Functions only accessible for smart contract receive functions.</p>
 <dl class="py function">
+<dt class="sig sig-object py" id="concordium.invoke">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">invoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.invoke" title="Permalink to this definition">#</a></dt>
+<dd><p>Invoke a host instruction which is either a <em>transfer to an account</em> or a <em>call to a
+contract</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>i32</em>) – <code class="docutils literal notranslate"><span class="pre">0</span></code> for transfer to an account or <code class="docutils literal notranslate"><span class="pre">1</span></code> for call to a contract.</p></li>
+<li><p><strong>start</strong> (<em>i32</em>) – Pointer to the start of the invoke payload.</p></li>
+<li><p><strong>length</strong> (<em>i32</em>) – Length of the invoke payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>If the last five bytes are <code class="docutils literal notranslate"><span class="pre">0</span></code> then the call succeeded. In this
+case, the first bit of the response indicates whether state (of the
+<em>invoking</em> contract) has changed (<code class="docutils literal notranslate"><span class="pre">1</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">0</span></code>) and the
+remaining 23 bits are the index of the return value that can be used
+in a call to <a class="reference external" href="#concordium.get_parameter_size"><code class="docutils literal notranslate"><span class="pre">get_parameter_size</span></code></a> and <a class="reference external" href="#concordium.get_parameter_section"><code class="docutils literal notranslate"><span class="pre">get_parameter_section</span></code></a>.
+Otherwise, the call failed and only the forth byte is set. With the value:</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code> if the call failed because of insufficient funds.</p>
+<p><code class="docutils literal notranslate"><span class="pre">2</span></code> if the account to transfer to did not exist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">3</span></code> if the contract to call did not exist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">4</span></code> if the entrypoint did not exist on contract to call.</p>
+<p><code class="docutils literal notranslate"><span class="pre">5</span></code> if it called a V0 contract that failed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">6</span></code> if it called a contract that failed with a runtime error.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="concordium.get_receive_invoker">
 <span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_receive_invoker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.get_receive_invoker" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the address of the account that initiated the top-level transaction
@@ -741,17 +1714,14 @@ which lead to triggering the receive function.</p>
 </dl>
 </dd></dl>
 
-<div class="section" id="action-description">
-<span id="host-functions-actions"></span><h3>Action description<a class="headerlink" href="#action-description" title="Permalink to this headline">#</a></h3>
-<p>The description of actions to execute on the chain, returned by smart contract
-receive function.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="concordium.accept">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.accept" title="Permalink to this definition">#</a></dt>
-<dd><p>Constructs a accept action, indicating the function was successful.</p>
+<dt class="sig sig-object py" id="concordium.get_receive_entrypoint_size">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_receive_entrypoint_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.get_receive_entrypoint_size" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the size of the entrypoint that was named. See <code class="docutils literal notranslate"><span class="pre">get_receive_entrypoint</span></code>
+for more information on the use of this host function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Identifier of the resulting action.</p>
+<dd class="field-odd"><p>The size of the entrypoint that was named.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>i32</p>
@@ -760,97 +1730,20 @@ receive function.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="concordium.simple_transfer">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">simple_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.simple_transfer" title="Permalink to this definition">#</a></dt>
-<dd><p>Constructs a simple transfer of CCD action.</p>
+<dt class="sig sig-object py" id="concordium.get_receive_entrypoint">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">get_receive_entrypoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.get_receive_entrypoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Write the receive entrypoint name into the given location.
+It is assumed that the location contains enough space to write the name.
+For regular receive methods, the entrypoint name will always be the same as
+the receive method’s entrypoint name. But for fallback entrypoints, it might
+differ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>addr_bytes</strong> (<em>i32</em>) – Pointer to the address of the receiver.</p></li>
-<li><p><strong>amount</strong> (<em>i64</em>) – The amount of CCD to send.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Identifier of the resulting action.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>i32</p>
+<dd class="field-odd"><p><strong>start</strong> (<em>i32</em>) – Pointer to the location to put th entrypoint name.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="concordium.send">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr_subindex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receive_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receive_name_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_len</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.send" title="Permalink to this definition">#</a></dt>
-<dd><p>Constructs an action for sending a message to another smart contract instance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>addr_index</strong> (<em>i64</em>) – Index of the smart contract instance address to send to.</p></li>
-<li><p><strong>addr_subindex</strong> (<em>i64</em>) – Subindex of the smart contract instance address to send to.</p></li>
-<li><p><strong>receive_name</strong> (<em>i32</em>) – Pointer to a memory location containing the name of the receive function to invoke.</p></li>
-<li><p><strong>receive_name_len</strong> (<em>i32</em>) – Length of the receive function name. Determines how much memory will be read by the host.</p></li>
-<li><p><strong>amount</strong> (<em>i64</em>) – The amount of CCD to invoke the receive function with.</p></li>
-<li><p><strong>parameter</strong> (<em>i32</em>) – Pointer to a memory location containing the parameters to the receive function.</p></li>
-<li><p><strong>parameter_len</strong> (<em>i32</em>) – Length of the parameters.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Identifier of the resulting action.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>i32</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="concordium.combine_and">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">combine_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.combine_and" title="Permalink to this definition">#</a></dt>
-<dd><p>Combine two actions using <code class="docutils literal notranslate"><span class="pre">and</span></code>.
-Only run the second if the first succeeds.
-If the given identifiers are not valid, i.e., returned by a previous call to
-one of the <code class="docutils literal notranslate"><span class="pre">actions</span></code> functions, this function will abort.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>first</strong> (<em>i32</em>) – Identifier of the first action.</p></li>
-<li><p><strong>second</strong> (<em>i32</em>) – Identifier of the second action.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Identifier of the resulting action.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>i32</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="concordium.combine_or">
-<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">combine_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.combine_or" title="Permalink to this definition">#</a></dt>
-<dd><p>Combine two actions using <code class="docutils literal notranslate"><span class="pre">or</span></code>.
-Only runs the second if the first fails.
-If the given identifiers are not valid, i.e., returned by a previous call to
-one of the <code class="docutils literal notranslate"><span class="pre">actions</span></code> functions, this function will abort.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>first</strong> (<em>i32</em>) – Identifier of the first action.</p></li>
-<li><p><strong>second</strong> (<em>i32</em>) – Identifier of the second action.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Identifier of the resulting action.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>i32</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
 </div>
 </div>
 

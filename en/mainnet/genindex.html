@@ -104,7 +104,7 @@ body {margin:0;}
   <a href="net/guides/deciding-wallet.html">Wallets</a>
   <a href="net/guides/overview-baker-process.html">Baking</a>
   <a href="net/guides/developer-page.html">Develop</a>
-  <a href="smart-contracts/index.html">Smart Contracts</a>
+  <a href="smart-contracts/general/introduction.html">Smart Contracts</a>
 </div>
 </body>
 </html>
@@ -175,32 +175,16 @@ body {margin:0;}
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
- | <a href="#C"><strong>C</strong></a>
+ <a href="#C"><strong>C</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
- | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
- | <a href="#W"><strong>W</strong></a>
  
 </div>
-<h2 id="A">A</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.accept">accept() (in module concordium)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.combine_and">combine_and() (in module concordium)</a>
-</li>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.combine_or">combine_or() (in module concordium)</a>
-</li>
-  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     concordium
@@ -223,10 +207,14 @@ body {margin:0;}
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.get_policy_section">get_policy_section() (in module concordium)</a>
 </li>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.get_receive_invoker">get_receive_invoker() (in module concordium)</a>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.get_receive_entrypoint">get_receive_entrypoint() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.get_receive_entrypoint_size">get_receive_entrypoint_size() (in module concordium)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.get_receive_invoker">get_receive_invoker() (in module concordium)</a>
+</li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.get_receive_owner">get_receive_owner() (in module concordium)</a>
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.get_receive_self_address">get_receive_self_address() (in module concordium)</a>
@@ -240,12 +228,16 @@ body {margin:0;}
   </ul></td>
 </tr></table>
 
-<h2 id="L">L</h2>
+<h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.load_state">load_state() (in module concordium)</a>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.invoke">invoke() (in module concordium)</a>
 </li>
   </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="smart-contracts/references/host-fns.html#concordium.log_event">log_event() (in module concordium)</a>
 </li>
@@ -265,32 +257,36 @@ body {margin:0;}
   </ul></td>
 </tr></table>
 
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.resize_state">resize_state() (in module concordium)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.send">send() (in module concordium)</a>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_create_entry">state_create_entry() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_delete_entry">state_delete_entry() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_delete_prefix">state_delete_prefix() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_read">state_entry_read() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_resize">state_entry_resize() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_size">state_entry_size() (in module concordium)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.simple_transfer">simple_transfer() (in module concordium)</a>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_write">state_entry_write() (in module concordium)</a>
 </li>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.state_size">state_size() (in module concordium)</a>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_iterate_prefix">state_iterate_prefix() (in module concordium)</a>
 </li>
-  </ul></td>
-</tr></table>
-
-<h2 id="W">W</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.write_state">write_state() (in module concordium)</a>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_iterator_delete">state_iterator_delete() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_iterator_key_read">state_iterator_key_read() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_iterator_key_size">state_iterator_key_size() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_iterator_next">state_iterator_next() (in module concordium)</a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.state_lookup_entry">state_lookup_entry() (in module concordium)</a>
 </li>
   </ul></td>
 </tr></table>
