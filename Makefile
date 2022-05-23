@@ -21,6 +21,9 @@ dev-mainnet:
 dev-testnet:
 	sphinx-autobuild "$(SOURCEDIR)/testnet" "$(BUILDDIR)/testnet" --watch "$(SOURCEDIR)/shared"
 
+dev-smart-contracts-v0:
+	sphinx-autobuild "$(SOURCEDIR)/smart-contracts-v0" "$(BUILDDIR)/smart-contracts-v0"
+
 lint:
 	doc8 "$(SOURCEDIR)"
 

@@ -33,6 +33,7 @@
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
+   desktop-wallet/delegation-dw
    desktop-wallet/single-sign-schedule
    mobile-wallet/inspect-release-schedule-mw
    desktop-wallet/transaction-log-filter
@@ -45,7 +46,6 @@
 
    guides/developer-page
    nodes/node-requirements
-   Smart contracts <https://developer.concordium.software/en/mainnet/smart-contracts/index.html>
    guides/overview-baker-process
    desktop-wallet/baking-dw
    references/concordium-client
@@ -53,8 +53,29 @@
    references/query-node
 
 .. toctree::
+   :includehidden:
+   :caption: Smart Contracts v1 - Testnet only
+
+   Introduction <../smart-contracts/general/introduction>
+   Tutorials <../smart-contracts/tutorials/piggy-bank/index>
+   Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   On-chain guides <../smart-contracts/guides/on-chain-index>
+   References <../smart-contracts/references/index>
+
+.. toctree::
+   :includehidden:
+   :caption: Smart Contracts v0
+
+   Introduction <../smart-contracts-v0/general/introduction>
+   Tutorials <../smart-contracts-v0/tutorials/piggy-bank/index>
+   Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
+   On-chain guides <../smart-contracts-v0/guides/on-chain-index>
+   References <../smart-contracts-v0/references/index>
+
+.. toctree::
    :caption: Resources
 
+   resources/ccd-scan
    resources/release-notes-mainnet
    resources/release-notes
    resources/legal
