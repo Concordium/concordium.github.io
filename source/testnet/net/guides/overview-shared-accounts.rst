@@ -1,1 +1,1 @@
-.. include:: /../shared/net/guides/overview-shared-accounts.rst
+# .. include:: /../shared/net/guides/overview-shared-accounts.rst

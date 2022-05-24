@@ -26,16 +26,26 @@ enough CCD to pay for the transaction.
 Deployment
 ==========
 
-To deploy a smart contract module ``my_module.wasm`` using the account
+To deploy a smart contract module ``my_module.wasm.v1`` using the account
 with name account-name, run the following command:
 
 .. code-block:: console
 
-   $concordium-client module deploy my_module.wasm --sender account_name
+   $concordium-client module deploy my_module.wasm.v1 --sender account_name
 
 .. note::
 
-   The --sender option can be omitted if the account "default" is to be used. For brevity, we will do so in the following.
+   The ``--sender`` option can be omitted if the account "default" is to be used. For brevity, we will do so in the following.
+
+   Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
+   the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
+   ``my_module.wasm.v1`` for V1 contracts.
+
+   When deploying a smart contract module built using ``cargo-concordium``
+   version < 2, or built directly with ``cargo``, it is necessary to
+   specify the smart contract version with the ``--contract-version [v0, v1]``
+   option. These module files will not have the version suffix, e.g.
+   ``.v0``, or ``.v1``, but just be called ``<module_name>.wasm``.
 
 If successful, the output should be similar to the following:
 
@@ -73,7 +83,7 @@ Here, we are naming the module ``my_deployed_module``:
 
 .. code-block:: console
 
-   $concordium-client module deploy my_module.wasm --name my_deployed_module
+   $concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
 
 If successful, the output should be similar to the following:
 

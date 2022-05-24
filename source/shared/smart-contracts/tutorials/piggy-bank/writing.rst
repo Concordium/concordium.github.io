@@ -8,16 +8,18 @@
 .. |init| replace:: ``#[init]``
 .. _receive: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html
 .. |receive| replace:: ``#[receive]``
-.. _HasActions: https://docs.rs/concordium-std/latest/concordium_std/trait.HasAction.html
-.. |HasActions| replace:: ``HasActions``
 .. _bail: https://docs.rs/concordium-std/latest/concordium_std/macro.bail.html
 .. |bail| replace:: ``bail!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
 .. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account
 .. |matches_account| replace:: ``matches_account``
-.. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance
+.. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
+.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
+.. |invoke_transfer| replace:: ``invoke_transfer``
+.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-the-state
+.. |mutable| replace:: ``mutable``
 
 .. _piggy-bank-writing:
 
@@ -34,13 +36,6 @@ Rust_ programming language using the |concordium-std| library.
    The reader is assumed to have basic knowledge of what a blockchain and smart
    contract is, and some experience with Rust_.
 
-.. contents::
-   :local:
-   :backlinks: None
-
-.. todo::
-
-   Link the repo with the final code.
 
 Preparation
 ===========
@@ -52,12 +47,6 @@ Also, make sure to have a text editor for writing Rust.
 
 You also need to set up a new smart contract project.
 Follow the guide :ref:`setup-contract` and return to this point afterwards.
-
-For testing, you will need the following:
-
-- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
-- :ref:`create an account for testnet<create-account>`
-- :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
 
 You are now ready to write a smart contract for the Concordium blockchain!
 
@@ -90,14 +79,11 @@ piggy bank. Everyone should be able to put money in the form of CCD into it, but
 can smash it and retrieve the CCD inside. Once the piggy bank has been
 smashed, it should not be possible to add CCD to it.
 
-.. todo::
-
-   Add image of piggy bank.
-
 The piggy-bank smart contract is going to contain a function for setting up a
 new piggy bank and two functions for updating a piggy bank; one is for everyone
 to use for inserting CCD, the other is for the owner to smash the piggy bank and
-prevent further interaction.
+prevent further interaction. It will also contain a method for everyone to view
+the current state and balance of the piggy bank.
 
 Specifying the state
 ====================
@@ -121,7 +107,7 @@ being intact and one for it being smashed:
 Since the state of your smart contract is going to be stored on the blockchain,
 you need to specify how the contract state should be serialized.
 When using the |concordium-std|_ library, this all boils down to your type
-for the contract state having to implement the |Serialize|_ trait exposed by
+for the contract state having to implement the |Serialize|_ [#s]_ trait exposed by
 |concordium-std|_.
 
 Luckily the library already contains implementations for most of the primitives
@@ -136,17 +122,21 @@ and standard types in Rust_, and a `procedural macro for deriving`_
        Smashed,
    }
 
-Later in this tutorial, you will also need to check the state for equality, so you also
-derive the trait implementation for ``PartialEq`` and ``Eq``:
+Later in this tutorial, you will also need to check the state for equality and
+return a copy of the state, so you also derive the trait implementation for
+``PartialEq``, ``Eq``, ``Clone``, and ``Copy``:
 
 .. code-block:: rust
 
-   #[derive(Serialize, PartialEq, Eq, Debug)]
+   #[derive(Serialize, PartialEq, Eq, Debug, Clone, Copy)]
    enum PiggyBankState {
        Intact,
        Smashed,
    }
 
+.. [#s] In certain cases, the ``Serial`` and ``DeserialWithState``
+        traits are needed instead of ``Serialize``. See
+        :ref:`serialize-state-and-parameters` for more information.
 
 Set up a piggy bank
 ===================
@@ -179,7 +169,10 @@ This allows you to create a new piggy bank as follows:
 .. code-block:: rust
 
    #[init(contract = "PiggyBank")]
-   fn piggy_init(_ctx: &impl HasInitContext) -> InitResult<PiggyBankState> {
+   fn piggy_init<S: HasStateApi>(
+       _ctx: &impl HasInitContext,
+       _state_builder: &mut StateBuilder<S>,
+   ) -> InitResult<PiggyBankState> {
        Ok(PiggyBankState::Intact)
    }
 
@@ -196,10 +189,15 @@ contracts in your module.
 
    #[init(contract = "PiggyBank")]
 
-The init function takes a single argument, ``ctx: &impl HasInitContext``,
-which is a zero-sized struct with a number of getter functions for accessing
-information about the current context, such as the account that invoked this contract, the
-supplied arguments and information about the state of the blockchain.
+The init function takes two arguments:
+
+- ``ctx: &impl HasInitContext``, which is a trait with a number of
+  getter functions for accessing information about the current context, such as
+  the account that invoked this contract, the supplied arguments, and information about the state of the blockchain
+- ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating
+  sets, maps, and boxes that effectively utilize the way contract state is
+  stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
+  the state, as you will see in part two of this tutorial.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
 alias for ``Result<PiggyBankState, Reject>``. The returned state is serialized
@@ -227,14 +225,18 @@ contract, specifically how to add CCD to it and how to smash a piggy bank.
 
 A smart contract can expose zero or more functions for interacting with an
 instance.
-These functions are called receive functions. They can read and
-write to the state of the instance, read the state of the blockchain and
-return a description of actions to be executed on-chain.
+These functions are called receive functions.
+They can access the state of the instance and the blockchain and perform
+actions, such as transferring CCD to an account or invoking another contract instance.
+Receive functions are immutable/readonly by default, which means that they
+cannot mutate the state.
+You will look at mutable receive methods when it's time to implement smashing the piggy bank.
 
 .. note::
 
    For a Rust_ developer, receive functions are like methods with
-   a mutable reference to `self`.
+   a reference to `self`. The reference is immutable by default, and mutable for
+   mutable receive functions.
 
    A continuation of the analogy to object-oriented programming:
    receive functions correspond to object methods.
@@ -245,17 +247,17 @@ The ``#[receive(...)]`` macro
 In Rust, receive functions can be specified using the procedural macro
 |receive|_, which, like |init|_, is used to annotate a function and sets up an
 external function and supplies you with an interface for accessing the context.
-But, unlike the |init|_ macro, the function for |receive|_ is also supplied with
-a mutable reference to the current state of the instance:
+But, unlike the |init|_ macro, the function for |receive|_ is supplied with
+a reference to the host (through which you can access the state of the instance):
 
 .. code-block:: rust
 
    #[receive(contract = "MyContract", name = "some_interaction")]
-   fn some_receive<A: HasActions>(
+   fn some_receive<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       state: &mut MyContractState,
-   ) -> ReceiveResult<A> {
-      todo!("Implement")
+       host: &impl HasHost<MyState, StateApiType = S>,
+   ) -> ReceiveResult<MyReturnValue> {
+       todo!()
    }
 
 The ``contract`` attribute supplies the name of the contract to the macro.
@@ -264,12 +266,10 @@ This name should match the name in the corresponding attribute in |init|_
 particular receive function using ``name``. The name and contract attributes
 each have to be unique within a smart contract module.
 
-The return type of the function is ``ReceiveResult<A>``, which is an alias for
-``Result<A, Reject>``.
-Here, ``A`` implements |HasActions|, which exposes functions for creating
-various :ref:`actions<action-descriptions>`.
-
-In this contract you will use the **Accept** and **Simple Transfer** actions.
+The return type of the function is ``ReceiveResult<MyReturnValue>``, which is an alias for
+``Result<MyReturnValue, Reject>``.
+You will learn more about return values when implementing a view function for
+the piggy bank.
 
 Inserting CCD
 -------------
@@ -280,11 +280,11 @@ You start by defining a receive function as:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<A: HasActions>(
+   fn piggy_insert<S: HasStateApi>(
        _ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       todo!("Implement")
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<()> {
+       todo!()
    }
 
 Make sure that the contract name matches the one you use for the |init|_ macro,
@@ -297,16 +297,16 @@ smart contract should reject any messages if the piggy bank is smashed:
 
 .. code-block:: rust
 
-   if *state == PiggyBankState::Smashed {
+   if *host.state() == PiggyBankState::Smashed {
       return Err(Reject::default());
    }
 
-Since returning early is a common pattern when writing smart contracts and in
+Since returning early is a common pattern when writing smart contracts, and in
 Rust_ in general, |concordium-std| exposes a |bail|_ macro:
 
 .. code-block:: rust
 
-   if *state == PiggyBankState::Smashed {
+   if *host.state() == PiggyBankState::Smashed {
       bail!();
    }
 
@@ -314,29 +314,28 @@ Furthermore, you can use the |ensure|_ macro for returning early depending on a 
 
 .. code-block:: rust
 
-   ensure!(*state == PiggyBankState::Intact);
+   ensure!(*host.state() == PiggyBankState::Intact);
 
 From this line, you will know that the state of the piggy bank is intact and all
 you have left to do is accept the incoming amount of CCD.
 The CCD balance is maintained by the blockchain, so there is no need for you to
-maintain this in your contract. The contract just needs to produce the **Accept** action
-using the generic ``A`` (more on that below):
+maintain this in your contract. The contract just needs to produce an empty return value:
 
 .. code-block:: rust
 
-   Ok(A::accept())
+   Ok(())
 
 So far you have the following definition of the receive function:
 
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<A: HasActions>(
+   fn piggy_insert<S: HasStateApi>(
        _ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       ensure!(*state == PiggyBankState::Intact);
-       Ok(A::accept())
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<()> {
+       ensure!(*host.state() == PiggyBankState::Intact);
+       Ok(())
    }
 
 The definition of how to add CCD to the piggy bank is almost done, but one important detail is
@@ -347,7 +346,7 @@ which, by default, prevents init and receive functions
 from accepting CCD.
 
 The reason for rejecting CCD by default is to reduce the risk of creating a smart
-contract that accepts CCD without retrieving it: any CCD passed to such a contract
+contract that accepts CCD without the ability to retrieve it again; any CCD passed to such a contract
 would be *inaccessible forever*.
 
 To be able to accept CCD, you have to add the ``payable`` attribute to the |receive| macro.
@@ -356,16 +355,16 @@ take an extra argument ``amount: Amount``, which represents the amount that is p
 function.
 
 .. code-block:: rust
-   :emphasize-lines: 1, 4
+   :emphasize-lines: 1, 5
 
    #[receive(contract = "PiggyBank", name = "insert", payable)]
-   fn piggy_insert<A: HasActions>(
+   fn piggy_insert<S: HasStateApi>(
        _ctx: &impl HasReceiveContext,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
        _amount: Amount,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       ensure!(*state == PiggyBankState::Intact);
-       Ok(A::accept())
+   ) -> ReceiveResult<()> {
+       ensure!(*host.state() == PiggyBankState::Intact);
+       Ok(())
    }
 
 As mentioned above, since the blockchain is maintaining the balance of our smart contract, you
@@ -378,11 +377,10 @@ do not have to do that yourself, and the ``amount`` is not used by your contract
 Smashing a piggy bank
 ---------------------
 
-Now that you can insert CCD into a piggy bank, you are only left to define how to
+Now that you can insert CCD into a piggy bank, you also need to define how to
 smash one.
 Remember, you only want the owner of the piggy bank (smart contract
-instance) to be able to call this and only if the piggy bank has not already
-been smashed.
+instance) to be able to smash it and only if it isn't already smashed.
 It should set its state to be smashed and transfer all of its CCD to the owner.
 
 Again you use the |receive|_ macro to define the smash function:
@@ -390,11 +388,11 @@ Again you use the |receive|_ macro to define the smash function:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<A: HasActions>(
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
-       todo!("Implement")
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<()> {
+       todo!()
    }
 
 Ensure that the contract name matches the one of your smart contract and name this function ``smash``.
@@ -429,65 +427,90 @@ an account address that is equal to the owner:
 
    ensure!(sender.matches_account(&owner));
 
-Next ensure that the state of the piggy bank is ``Intact``, just like previously:
+Next, ensure that the state of the piggy bank is ``Intact``, just like previously:
 
 .. code-block:: rust
 
-   ensure!(*state == PiggyBankState::Intact);
+   ensure!(*host.state() == PiggyBankState::Intact);
 
 At this point you know the piggy bank is still intact and the sender is the
-owner, meaning you now get to the smashing part:
+owner, meaning you now get to the smashing part.
+But there is one problem.
+The state is immutable, so you first need to make the receive function mutable by
+adding the |mutable|_ attribute to the |receive|_ macro.
+
+.. code-block:: rust
+   :emphasize-lines: 1, 4
+
+   #[receive(contract = "PiggyBank", name = "smash", mutable)]
+   fn piggy_smash<S: HasStateApi>(
+       ctx: &impl HasReceiveContext,
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<()> {
+       let owner = ctx.owner();
+       let sender = ctx.sender();
+       ensure!(sender.matches_account(&owner));
+       ensure!(*host.state() == PiggyBankState::Intact);
+
+       todo!()
+   }
+
+This gives you a mutable reference to the ``host``, through which you can access
+the mutable state with the ``state_mut`` function. You then set the state to
+``Smashed``, preventing further insertions of CCD:
 
 .. code-block:: rust
 
-   *state = PiggyBankState::Smashed
+   *host.state_mut() = PiggyBankState::Smashed;
 
-Since the state is a mutable reference, you can simply mutate it to be
-``Smashed``, preventing anyone from inserting any more CCD.
-
-Lastly you need to empty the piggy bank. To do that, transfer all the CCD
+Lastly, you need to empty the piggy bank. To do that, transfer all the CCD
 of the smart-contract instance to an account.
 
-To transfer CCD from a smart contract instance you create an
-action for a simple transfer, again using the generic ``A``.
-To construct a simple transfer you need to provide the address of the receiving
-account and the amount to be transferred.
+To transfer CCD from a smart contract instance you use the |invoke_transfer|_
+method on the ``host``. For this, you need to provide the address of the receiving
+account and the amount to transfer.
 In this case the receiver is the owner of the piggy bank and the amount is the
 entire balance of the piggy bank.
 
-The context has a getter function for reading
+The ``host`` has a getter function for reading
 the current balance of the smart contract instance, which is called
 |self_balance|_:
 
 .. code-block:: rust
 
-   let balance = ctx.self_balance();
+   let balance = host.self_balance();
 
 You already have a variable with the address of the contract owner, so you can
-construct and return the action for a simple transfer:
+use that to invoke the transfer:
 
 .. code-block:: rust
 
-   Ok(A::simple_transfer(&owner, balance))
+   Ok(host.invoke_transfer(&owner, balance)?)
+
+A transfer can fail in two ways, either your contract has insufficient funds, or
+the receiver account does not exist. Neither can occur in this contract. This is
+because it tries to transfer its own balance, and because a contract always has
+a valid owner. The code propagates the error out with the ``?``, which will
+become useful when testing the contract.
 
 The final definition of the "smash" receive function is then:
 
 .. code-block:: rust
 
-   #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<A: HasActions>(
+   #[receive(contract = "PiggyBank", name = "smash", mutable)]
+   fn piggy_smash<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
-       state: &mut PiggyBankState,
-   ) -> ReceiveResult<A> {
+       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<()> {
        let owner = ctx.owner();
        let sender = ctx.sender();
        ensure!(sender.matches_account(&owner));
-       ensure!(*state == PiggyBankState::Intact);
+       ensure!(*host.state() == PiggyBankState::Intact);
 
-       *state = PiggyBankState::Smashed;
+       *host.state_mut() = PiggyBankState::Smashed;
 
-       let balance = ctx.self_balance();
-       Ok(A::simple_transfer(&owner, balance))
+       let balance = host.self_balance();
+       Ok(host.invoke_transfer(&owner, balance)?)
    }
 
 .. .. note::
@@ -495,6 +518,38 @@ The final definition of the "smash" receive function is then:
    worry about the usual problems when dealing with mutable state. Problems
    such as race conditions, but the semantics of smart contracts require the
    execution to be atomic in order to reach consensus.
+
+Viewing the state
+-----------------
+
+Now that you can smash and insert CCD into a piggy bank, you can add a way to
+check the current state and balance of the piggy bank.
+This is what the return values of receive methods are for:
+
+.. code-block:: rust
+   :emphasize-lines: 5, 8
+
+   #[receive(contract = "PiggyBank", name = "view")]
+   fn piggy_view<S: HasStateApi>(
+       _ctx: &impl HasReceiveContext,
+       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   ) -> ReceiveResult<(PiggyBankState, Amount)> {
+       let current_state = *host.state();
+       let current_balance = host.self_balance();
+       Ok((current_state, current_balance))
+   }
+
+The ``piggy_view`` method gets a copy of the state and the balance and returns
+it as a tuple of type ``(PiggyBankState, Amount)``, which is also specified in
+the return type.
+
+A more complex smart contract might have multiple view functions that return
+different parts of the state or return a value computed from the state.
+
+.. note::
+
+   To view return values of a contract instance on the chain, see the guide :ref:`invoke-instance`.
+
 
 You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:
 
