@@ -73,7 +73,7 @@ Concordium Client v4.0.3
 
 -  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
 
-   - SHA256 checksum of the download: ``6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8``
+   - SHA256 checksum of the download: ``7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da``
 
 -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_4.0.3-0>`_
 
@@ -135,7 +135,7 @@ Mac
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
