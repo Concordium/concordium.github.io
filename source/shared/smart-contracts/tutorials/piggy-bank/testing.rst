@@ -55,7 +55,7 @@
 .. |claim_eq| replace:: ``claim_eq!``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
-.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-state
+.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-the-state
 .. |mutable| replace:: ``mutable``
 
 .. _piggy-bank-testing:

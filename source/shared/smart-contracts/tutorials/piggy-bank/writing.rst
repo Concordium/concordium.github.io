@@ -18,7 +18,7 @@
 .. |self_balance| replace:: ``self_balance``
 .. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
 .. |invoke_transfer| replace:: ``invoke_transfer``
-.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-state
+.. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-the-state
 .. |mutable| replace:: ``mutable``
 
 .. _piggy-bank-writing:
