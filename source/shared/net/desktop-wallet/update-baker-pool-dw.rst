@@ -1,10 +1,14 @@
-.. _remove-baker:
+.. _update-baker-pool-dw:
 
-======================
-Remove a baker account
-======================
+===================
+Update a baker pool
+===================
 
-If you remove a baker in the desktop wallet, the node that is configured with the baker keys will stop baking after a cool-down period. The cool-down period is 7 days, which corresponds to 168 :ref:`epochs <glossary-epoch>`. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
+.. Note::
+
+   Currently delegation is only available on Testnet.
+
+Once you have opened a baker pool, you can update it to manage your pool responsibly. You can also choose to close the pool to new delegators or close it altogether. See :ref:`Baker management<baker-pool>` for information about how to be a responsible baker.
 
 .. Note::
 
@@ -12,35 +16,58 @@ If you remove a baker in the desktop wallet, the node that is configured with th
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
    You can see the fee in the transaction log.
 
-Remove a baker (Single-signature account)
-=========================================
+.. Warning::
+   Make sure you have enough funds in your disposable balance to cover transaction fees.
 
-#. Go to **Accounts**, select the account that you no longer want to be a baker account.
+Update a baker pool (Single-signature account)
+==============================================
 
-#. Click **More options** and select **Baking**.
+#. Go to **Accounts** and select the account on which you have a baker pool that you want to update.
 
-#. Click **Stop baking**.
+#. Click **More options** then select **Baking**.
 
-#. The cool-down period is displayed. Select **Continue**.
+#. Click **Update baker pool**.
+
+#. Choose the status for your baker pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
+
+   - Open: open your baker pool to delegators.
+
+   - Closed for new: close the baker pool to new delegators. Existing delegators remain in the pool.
+
+   - Closed for all: close the pool for all delegators.
+
+#. Review the commission rates. Click **Continue**.
+
+#. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct, and navigate to the right. The Ledger device says **Remove baker from pool**. Navigate to the right.
+#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
 #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
 #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
-Remove a baker (Multi-signature account)
-========================================
+Open a baker pool (Multi-signature account)
+===========================================
 
-#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Stop baking**.
+#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker pool**.
 
-#. Select the **Account** that you no longer want to be a baker account, and then select **Continue**.
+#. Choose the status for your baker pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
 
-#. Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
+   - Open: open your baker pool to delegators.
+
+   - Closed for new: close the baker pool to new delegators. Existing delegators remain in the pool.
+
+   - Closed for all: close the pool for all delegators.
+
+#. Review the commission rates. Click **Continue**.
+
+#. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+
+#. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
 Generate the transaction
 ------------------------
@@ -69,14 +96,14 @@ Generate and sign the transaction on the Ledger
 
 #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct, and navigate to the right. The Ledger says **Remove baker from pool**. Navigate to the right.
+#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
 #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
 
 .. Note::
    If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
 
-In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-remove-baker>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
+In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-pool-update>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
 Export proposal
 ---------------
@@ -100,7 +127,7 @@ When the co-signers have signed the transaction, they return the signed transact
 
 #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
 
-.. _submit-remove-baker:
+.. _submit-pool-update:
 
 Submit the transaction to the blockchain
 ----------------------------------------
@@ -109,7 +136,7 @@ When you have received and added all the required signatures, you can submit the
 
 #. Review the transaction details carefully to ensure that all information is correct.
 
-#. Select **I understand this is the final submission, and that it cannot be reverted**.
+#. Select **I understand this is the final submission and that it cannot be reverted**.
 
    If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 

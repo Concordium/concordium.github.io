@@ -7,7 +7,13 @@ Use the Desktop Wallet
 
 This topic describes the information and the tasks that are available in the Desktop Wallet. To learn more about creating accounts, see :ref:`Create an account in the Desktop Wallet <create-account>`.
 
--  To view information about an account, go to **Accounts** and select the relevant account.
+To view information about an account, go to **Accounts** and select the relevant account. At the top of the window you see the following:
+
+-  **Wallet total** shows the total amount of CCDs in all accounts in this wallet.
+
+-  **At disposal** shows the amount of CCDs you have available for transactions in all accounts in this wallet. This includes shielded balances but not staked amounts.
+
+-  **Stake** shows the amount of CCDs staked in all accounts for this wallet.
 
 The most common tasks on an account are:
 
@@ -15,27 +21,29 @@ The most common tasks on an account are:
 
 -  **Shield**: Transfer CCD from your public balance to your shielded balance. See :ref:`Shield CCD on an account <shield-ccd-wallets>`.
 
-In addition, you can see the following information about the selected account:
+-  **Receive**: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network or let them scan the QR code.
 
--  The **Account Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or shielded CCD. It also includes CCD that is scheduled to be released to your account on a future date.
+In addition, you can see the following information about the selected account on the **Balance** tab:
 
--  The **Balance** shows the CCD that are at your disposal, the amount of CCD that you've staked, and any CCD that are locked in a release schedule. It does not include any shielded amounts.
+-  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or shielded CCD. It also includes CCD that is scheduled to be released to your account on a future date.
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
--  The **Shielded balance** shows the amount of CCD that you've shielded. The **Balance** is visible to all participants on the Concordium Blockchain, while the **Shielded balance** is visible to you only.
+-  The **Staked with...** amount shows the amount staked if baking.
+
+On the Shielded balance tab, you'll see:
+
+-  The **Shielded balance total** shows the amount of CCD that you've shielded. The **Balance total** is visible to all participants on the Concordium Blockchain, while the **Shielded balance total** is visible to you only.
 
    .. Note::
       Shielded transfers and Shielded balance is only available on accounts with a single credential. You can't make or receive shielded transfers on multi-signature accounts.
 
--  **Latest transactions**: This is a list of the 10 latest transactions on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account, they are also applied here.
+The Transactions box contains the 10 latest transactions on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account they are also applied here.
 
--  **Account address**: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network.
+More options
+============
 
-Change view
-===========
-
-When you select **Change view**, you'll see a variety of information about your account and a number of tasks you can perform:
+When you select **Account list** at the top of the window, the button name toggles to **More options**. You'll see a variety of information about your account and a number of tasks you can perform:
 
 -  **Transaction log**. View a list of transactions on the account. Use **Log filters** to specify which transaction types you want to be displayed in the **Transfers** list. See :ref:`Apply a transaction log filter <transaction-log>`.
 
@@ -49,7 +57,11 @@ When you select **Change view**, you'll see a variety of information about your 
 
 -  **Update credentials**: Add new credentials to the account. See :ref:`Add credentials to an account <multi-credentials>`.
 
--  **Add baker**: Make the account a baker account. See :ref:`See Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
+-  **Register data**:
+
+-  **Register as a baker**: Make the account a baker account. See :ref:`See Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see **Baking** which contains a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
+
+- **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation in the Desktop Wallet<delegation-dw>` and :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
 
 Edit account name
 -----------------

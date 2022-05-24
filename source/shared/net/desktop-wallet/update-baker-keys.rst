@@ -15,7 +15,11 @@ Prerequisites
 Update baker keys (Single-signature account)
 ============================================
 
-#. Go to **Accounts**, select the account whose baker keys you want to update, change the view to the detailed view, and select **Update baker keys**.
+#. Go to **Accounts**, select the account whose baker keys you want to update.
+
+#. Click **More options** and select **Baking**.
+
+#. Click **Update baker keys**.
 
 #. You have to export the baker credentials so that you can restart the node with the new baker keys. Select **Export baker credentials**. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 

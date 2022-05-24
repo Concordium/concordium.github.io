@@ -8,14 +8,16 @@ Delegation
 
     Currently delegation is only available on Testnet.
 
-On the Concordium blockchain, bakers run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some CCD. Because Concordium runs a proof-of-stake protocol, each baker needs to stake an amount to bake, and the probability of being selected to create the next block is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.
+On the Concordium blockchain, :ref:`bakers<glossary-baker>` run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some :ref:`CCD<glossary-ccd>`. Because Concordium runs a proof-of-stake protocol, each baker needs to :ref:`stake an amount to bake<glossary-staked-amount>`, and the :ref:`probability of being selected to create the next block<glossary-lottery-power>` is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.
 
-Not everyone with CCD has the resources needed to run a baker. **Delegation** enables everyone to earn interest. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party's control; they are just considered part of the baker's stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a cool-down period.
+Not everyone with CCD has the resources needed to run a baker. :ref:`Delegation<glossary-delegate>` enables everyone to earn interest. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party's control; they are just considered part of the baker's stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a :ref:`cool-down period<glossary-cool-down-period>`.
 
 Pools and Rewards
 =================
 
-A baker opens a pool, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. Rewards are distributed to everyone in the pool proportional to their stake, and the baker takes a commission on the earnings of the delegators. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool gets 30 CCD as reward and the commission of the baker is 10%. Then a party with 1,000 CCD in the pool will receive a share of 3 CCD. If this party is a delegator, 0.3 CCD are paid as a commission to the baker and the other 2.7 CCD are kept.
+A baker opens a :ref:`pool<glossary-baker-pool>`, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. Rewards are distributed to everyone in the pool proportional to their stake, and the baker takes a commission on the earnings of the delegators. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.
+
+Pool rewards are in three categories: finalization, baking and transaction fee rewards. These can have separate commission rates.
 
 Bounding the size of pools
 ---------------------------
@@ -35,12 +37,12 @@ Bakers cannot choose the commission values themselves. There is a fixed commissi
 Passive delegation
 ------------------
 
-For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, passive delegation offers a low-risk low-reward alternative. Passive delegation is not associated with a specific baker; it can be thought of as distributing its capital to each pool in proportion to the pool's stake. It is not affected by the poor performance of a single baker. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable baker.
+For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, :ref:`passive delegation<glossary-passive-delegation>` offers a low-risk low-reward alternative. Passive delegation is not associated with a specific baker; it can be thought of as distributing its capital to each pool in proportion to the pool's stake. It is not affected by the poor performance of a single baker. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable baker.
 
 Time and cool-downs
 ===================
 
-Changes to the pools are performed every 24 hours. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all occur at the pay day. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last epoch before pay day, then the change has to wait until the second pay day.
+Changes to the pools are performed every 24 hours. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all occur at the :ref:`pay day<glossary-pay-day>`. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :ref:`epoch<glossary-epoch>` before pay day, then the change has to wait until the second pay day.
 
 But decreasing the stake (whether for delegators or bakers) is subject to a cool down period. In other words, once the transaction has been included in a block the cool down period starts. Unstaking occurs at the pay day event after the cooldown has elapsed and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
 
