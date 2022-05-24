@@ -52,7 +52,7 @@ Add baker (Single-signature account)
 
 #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
 
-   - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**. 
+   - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
    - Choose Closed if you do not want to open a baker pool. Click **Continue**.
 
@@ -97,7 +97,7 @@ You need to stake an amount of CCD on the account that you want to add as baker 
 
 #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
 
-   - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**. 
+   - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**.
 
    - Choose Closed if you do not want to open a baker pool. Click **Continue**.
 
