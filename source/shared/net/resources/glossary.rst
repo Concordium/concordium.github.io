@@ -233,8 +233,7 @@ An `ElGamal`_ public key associated to an account which is used to encrypt all
 Epoch
 =====
 
-A time period consisting of multiple :ref:`slots<glossary-slot>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, we compute a
-:ref:`leadership election nonce<glossary-leader-election>` based on the block nonces of the previous epoch.
+A time period consisting of multiple :ref:`slots<glossary-slot>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
 
 .. _glossary-finalization:

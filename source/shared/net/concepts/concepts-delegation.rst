@@ -15,7 +15,7 @@ Not everyone with CCD has the resources needed to run a baker. :ref:`Delegation<
 Pools and Rewards
 =================
 
-A baker opens a :ref:`pool<glossary-baker-pool>`, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. Rewards are distributed to everyone in the pool proportional to their stake, and the baker takes a commission on the earnings of the delegators. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.
+A baker opens a :ref:`pool<glossary-baker-pool>`, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the baker takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.
 
 Pool rewards are in three categories: finalization, baking and transaction fee rewards. These can have separate commission rates.
 
@@ -42,9 +42,9 @@ For CCD holders who do not want to regularly check the performance of their pool
 Time and cool-downs
 ===================
 
-Changes to the pools are performed every 24 hours. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all occur at the :ref:`pay day<glossary-pay-day>`. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :ref:`epoch<glossary-epoch>` before pay day, then the change has to wait until the second pay day.
+Changes to the pools take effect every 24 hours. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the :ref:`pay day<glossary-pay-day>`. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :ref:`epoch<glossary-epoch>` before pay day, then the change has to wait until the second pay day.
 
-But decreasing the stake (whether for delegators or bakers) is subject to a cool down period. In other words, once the transaction has been included in a block the cool down period starts. Unstaking occurs at the pay day event after the cooldown has elapsed and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
+But decreasing the stake (whether for delegators or bakers) is subject to a cool-down period. In other words, once the transaction has been included in a block the cool-down period starts. Unstaking takes effect at the pay day event after the cool-down has elapsed, and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
 
 Where delegation is available
 =============================
