@@ -86,7 +86,7 @@ copybutton_prompt_text = "$"
 copybutton_line_continuation_character = "\\"
 
 # Disable default url prefix "/en/latest/" on every resource.
-notfound_urls_prefix = "/"
+notfound_urls_prefix = "/en/mainnet/"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../shared/_templates']
