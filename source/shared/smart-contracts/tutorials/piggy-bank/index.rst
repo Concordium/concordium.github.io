@@ -20,10 +20,10 @@ piggy bank.
 It should allow any account to insert CCD and only the owner to smash it,
 taking all of the CCD inside.
 
-In the :ref:`first part<writing>`, you will learn how to write the very basic piggy bank smart
+In the :ref:`first part<piggy-bank-writing>`, you will learn how to write the very basic piggy bank smart
 contract using the Rust_ programming language.
 
-The :ref:`second part<testing>` is about how to test your piggy bank smart contract with unit
+The :ref:`second part<piggy-bank-testing>` is about how to test your piggy bank smart contract with unit
 tests.
 
 .. warning::
@@ -31,7 +31,7 @@ tests.
    The reader is assumed to have basic knowledge of what a blockchain and smart
    contracts are, and to have some experience with Rust_.
 
-To start the tutorial click :ref:`here<writing>`.
+To start the tutorial click :ref:`here<piggy-bank-writing>`.
 
 .. toctree::
    :hidden:
