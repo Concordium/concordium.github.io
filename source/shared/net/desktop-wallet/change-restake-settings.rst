@@ -9,7 +9,7 @@ By default, your baker rewards are restaked when you create the baker account. H
 Change restake settings (Single-signature account)
 ==================================================
 
-#. Go to **Accounts** and select the account whose baker stake you want to change.
+#. Go to **Accounts** and select the account whose baker restake preferences you want to change.
 
 #. Click **More options** and select **Baking**.
 
