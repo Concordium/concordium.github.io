@@ -347,5 +347,5 @@ macro, e.g.: ``#[init(..., payable)]`` and ``#[receive(..., payable)]``.
 .. |StateMap| replace:: ``StateMap``
 .. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
 .. |StateSet| replace:: ``StateSet``
-.. _payable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.init.html#payable-make-function-accept-an-amount-of-ccd..
+.. _payable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.init.html#payable-make-function-accept-an-amount-of-ccd
 .. |payable| replace:: ``payable``
