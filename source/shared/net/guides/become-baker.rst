@@ -113,7 +113,7 @@ The following arguments are also required for the ``baker add`` transaction:
 
 .. Note::
 
-   To find the range for the commissions, see the Concordium client :ref:`Show Chain Paramters command<consensus show-chain-parameters>`.
+   To find the range for the commissions, see the Concordium client :ref:`Show Chain Parameters command<consensus show-chain-parameters>`.
 
 The following arguments are optional. If no selection is made, earnings are restaked automatically.
 
@@ -389,7 +389,7 @@ Configure baker has the following optional arguments:
 
 .. Note::
 
-   To find the range for the commissions, see the Concordium client :ref:`Show Chain Paramters command<consensus show-chain-parameters>`.
+   To find the range for the commissions, see the Concordium client :ref:`Show Chain Parameters command<consensus show-chain-parameters>`.
 
 Remove a baker
 ==============
