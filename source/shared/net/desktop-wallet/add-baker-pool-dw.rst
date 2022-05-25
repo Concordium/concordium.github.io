@@ -42,7 +42,7 @@ Open a baker pool (Single-signature account)
 
 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the pool status is correct and navigate to the right. Verify that the metadata URL is correct and navigate to the right.
 
 #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
@@ -94,7 +94,7 @@ Generate and sign the transaction on the Ledger
 
 #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+#. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the pool status is correct and navigate to the right. Verify that the metadata URL is correct and navigate to the right.
 
 #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
 
