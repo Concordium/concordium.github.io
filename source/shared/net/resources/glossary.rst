@@ -233,9 +233,7 @@ An `ElGamal`_ public key associated to an account which is used to encrypt all
 Epoch
 =====
 
-A time period consisting of multiple :ref:`slots<glossary-slot>` (on the testnet, an epoch lasts
-for approximately one hour). At the start of each epoch, we compute a
-:ref:`leadership election nonce<glossary-leader-election>` based on the block nonces of the previous epoch.
+A time period consisting of multiple :ref:`slots<glossary-slot>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
 
 .. _glossary-finalization:
@@ -383,6 +381,13 @@ network and recorded on the Concordium blockchain. The recording can be explicit
 or implicit as part of the consensus protocol. An example of the former is a
 transaction such as a CCD transfer, an example of the latter are the rewards
 given out to, e.g., bakers.
+
+.. _glossary-pay-day:
+
+Pay day
+=======
+
+A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each payday are fixed one epoch before). Pay day is also when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers.
 
 .. _glossary-passive-delegation:
 

@@ -20,9 +20,13 @@ When you change the stake it can influence your chance of being selected to bake
 Change the staked amount (Single-signature account)
 ===================================================
 
-#. Go to **Accounts**, select the account whose baker stake you want to change, change the view to the detailed view, and select **Update baker stake**.
+#. Go to **Accounts** and select the account whose baker stake you want to change.
 
-#. Enter the new amount that you want to stake and select **Continue**.
+#. Click **More options** and select **Baking**.
+
+#. Click **Update baker stake**.
+
+#. Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click **Continue**.
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
@@ -41,7 +45,7 @@ Change the staked amount (Multi-signature account)
 
 #. Select the account whose baker stake you want to change.
 
-#. Enter the new amount that you want to stake and select **Continue**.
+#. Enter the new amount that you want to stake if you want to change that. Change the restaking preference if you want to change that. Click **Continue**.
 
 #. Set an expiry date and time for your proposal. You must submit the proposals to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 

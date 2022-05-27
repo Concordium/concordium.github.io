@@ -22,7 +22,7 @@ schedule and an explicit schedule.
 
 #. Go to **Accounts** and select the relevant account.
 
-#. Select **Change view**, and then select **Send CCD with a schedule**
+#. Select **More options**, and then select **Send CCD with a schedule**
 
 #. Enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account and you’ll have to change the amount. You can see the estimated transaction fee of the transfer under **Transaction Details**.
 

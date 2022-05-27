@@ -9,30 +9,38 @@ By default, your baker rewards are restaked when you create the baker account. H
 Change restake settings (Single-signature account)
 ==================================================
 
-#. Go to **Accounts**, select the account whose baker keys you want to update, change the view to the detailed view, and select **Update baker restake earnings**.
+#. Go to **Accounts** and select the account whose baker restake preferences you want to change.
 
-#. Select whether you want to restake earnings or not, and then select **Continue**.
+#. Click **More options** and select **Baking**.
 
-#. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on Ledger device.
+#. Click **Update baker stake**.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+#. You can change the staked amount, if desired. Select whether you want to restake earnings or not, and then select **Continue**.
 
-#. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. The Ledger either says **Restake earnings Yes** or **Restake earnings No**, depending on what you've selected. Navigate to the right.
+.. Note:: If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies. See :ref:`Update baker stake<change-baker-stake>` for more information.
 
-#. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+5. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on Ledger device.
 
-#. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+
+7. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. The Ledger either says **Restake earnings Yes** or **Restake earnings No**, depending on what you've selected. Navigate to the right.
+
+8. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+
+9. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
 Change restake settings (Multi-signature account)
 =================================================
 
-#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker restake earnings**.
+#. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
 
 #. Select the **Account** whose baker keys you want to update, and then select **Continue**. Only baker accounts are listed.
 
-#. Select whether you want to restake earnings or not, and then select **Continue**.
+#. You can change the staked amount, if desired. Select whether you want to restake earnings or not, and then select **Continue**.
 
-#. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
+.. Note:: If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies. See :ref:`Update baker stake<change-baker-stake>` for more information.
+
+4. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
 
 Generate the Transaction
 ------------------------
