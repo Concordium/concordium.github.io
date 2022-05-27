@@ -14,3 +14,5 @@ The following links describe baking in the Desktop Wallet.
    remove-baker
    change-baker-stake
    change-restake-settings
+   add-baker-pool-dw
+   update-baker-pool-dw
