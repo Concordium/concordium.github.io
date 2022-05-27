@@ -572,6 +572,16 @@ body {margin:0;}
        Update the restake settings
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="add-baker-pool-dw.html">
+       Open a baker pool in Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="update-baker-pool-dw.html">
+       Update a baker pool
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1">
@@ -1098,8 +1108,8 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#change-view">
-   Change view
+  <a class="reference internal nav-link" href="#more-options">
+   More options
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1183,39 +1193,62 @@ body {margin:0;}
   <div class="section" id="use-the-desktop-wallet">
 <span id="overview-account-desktop"></span><h1>Use the Desktop Wallet<a class="headerlink" href="#use-the-desktop-wallet" title="Permalink to this headline">#</a></h1>
 <p>This topic describes the information and the tasks that are available in the Desktop Wallet. To learn more about creating accounts, see <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
+<p>To view information about an account, go to <strong>Accounts</strong> and select the relevant account. At the top of the window you see the following:</p>
+<img alt="../../_images/dw-wallet-totals.png" src="../../_images/dw-wallet-totals.png" />
 <ul class="simple">
-<li><p>To view information about an account, go to <strong>Accounts</strong> and select the relevant account.</p></li>
+<li><p><strong>Wallet total</strong> shows the total amount of CCDs in all accounts in this wallet, including shielded balances and CCDs that are scheduled to be released to your account on a future date.</p></li>
+<li><p><strong>At disposal</strong> shows the amount of CCDs you have available for transactions in all accounts in this wallet. This includes shielded balances but <em>not</em> staked amounts or CCDs that are scheduled to be released to your account on a future date.</p></li>
+<li><p><strong>Stake</strong> shows the amount of CCDs staked in all accounts for this wallet.</p></li>
 </ul>
 <p>The most common tasks on an account are:</p>
 <ul class="simple">
 <li><p><strong>Send</strong>: Send CCD to a recipient in your address book. See <a class="reference internal" href="../guides/send-ccd-wallets.html#send-ccd-wallets"><span class="std std-ref">Create CCD transfer in the Desktop Wallet</span></a>.</p></li>
 <li><p><strong>Shield</strong>: Transfer CCD from your public balance to your shielded balance. See <a class="reference internal" href="../guides/shield-ccd-wallets.html#shield-ccd-wallets"><span class="std std-ref">Shield CCD on an account</span></a>.</p></li>
+<li><p><strong>Receive</strong>: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network or let them scan the QR code.</p></li>
 </ul>
-<p>In addition, you can see the following information about the selected account:</p>
-<ul>
-<li><p>The <strong>Account Total</strong> shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or shielded CCD. It also includes CCD that is scheduled to be released to your account on a future date.</p></li>
-<li><p>The <strong>Balance</strong> shows the CCD that are at your disposal, the amount of CCD that you’ve staked, and any CCD that are locked in a release schedule. It does not include any shielded amounts.</p></li>
+<p>In the account card in the accounts list, you can see the following information:</p>
+<img alt="../../_images/dw-acct-card-in-list.png" src="../../_images/dw-acct-card-in-list.png" />
+<ul class="simple">
+<li><p>The <strong>Account Total</strong> shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs. It also includes CCDs that are scheduled to be released to your account on a future date.</p></li>
+<li><p>The <strong>Balance Total</strong> shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does <em>not</em> include shielded CCDs.</p></li>
 <li><p>The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.</p></li>
-<li><p>The <strong>Shielded balance</strong> shows the amount of CCD that you’ve shielded. The <strong>Balance</strong> is visible to all participants on the Concordium Blockchain, while the <strong>Shielded balance</strong> is visible to you only.</p>
+<li><p>The <strong>Staked</strong> amount shows the amount staked if baking.</p></li>
+<li><p><strong>Shielded balance</strong> shows any shielded amounts on the account.</p></li>
+</ul>
+<p>In addition, you can see the following information about the selected account on the <strong>Balance</strong> tab in the account details:</p>
+<img alt="../../_images/dw-balance-details.png" src="../../_images/dw-balance-details.png" />
+<ul class="simple">
+<li><p>The <strong>Balance Total</strong> shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does <em>not</em> include shielded CCDs.</p></li>
+<li><p>The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.</p></li>
+<li><p>The <strong>Staked with…</strong> amount shows the amount staked if baking.</p></li>
+</ul>
+<p>On the Shielded balance tab, you’ll see:</p>
+<ul>
+<li><p>The <strong>Shielded balance total</strong> shows the amount of CCD that you’ve shielded. The <strong>Balance total</strong> is visible to all participants on the Concordium Blockchain, while the <strong>Shielded balance total</strong> is visible to you only.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Shielded transfers and Shielded balance is only available on accounts with a single credential. You can’t make or receive shielded transfers on multi-signature accounts.</p>
 </div>
 </li>
-<li><p><strong>Latest transactions</strong>: This is a list of the 10 latest transactions on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you’ll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account, they are also applied here.</p></li>
-<li><p><strong>Account address</strong>: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network.</p></li>
 </ul>
-<div class="section" id="change-view">
-<h2>Change view<a class="headerlink" href="#change-view" title="Permalink to this headline">#</a></h2>
-<p>When you select <strong>Change view</strong>, you’ll see a variety of information about your account and a number of tasks you can perform:</p>
+<p>The Transactions box contains the 10 latest transactions on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you’ll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account they are also applied here.</p>
+<div class="section" id="more-options">
+<h2>More options<a class="headerlink" href="#more-options" title="Permalink to this headline">#</a></h2>
+<p>When you select <strong>Account list</strong> at the top of the window, the button name toggles to <strong>More options</strong>.</p>
+<img alt="../../_images/dw-screen-toggle.png" src="../../_images/dw-screen-toggle.png" />
+<p><strong>Account list</strong> toggles to <strong>More options</strong>.</p>
+<img alt="../../_images/dw-screen-toggle2.png" src="../../_images/dw-screen-toggle2.png" />
+<p>You’ll see a variety of information in <strong>More options</strong> about your account and a number of tasks you can perform:</p>
 <ul class="simple">
 <li><p><strong>Transaction log</strong>. View a list of transactions on the account. Use <strong>Log filters</strong> to specify which transaction types you want to be displayed in the <strong>Transfers</strong> list. See <a class="reference internal" href="transaction-log-filter.html#transaction-log"><span class="std std-ref">Apply a transaction log filter</span></a>.</p></li>
 <li><p><strong>Send CCD with a schedule</strong>: Send CCD according to a schedule. See <a class="reference internal" href="single-sign-schedule.html#ccd-single-schedule-desktop"><span class="std std-ref">Transfer CCD with a schedule</span></a>.</p></li>
 <li><p><strong>Inspect release schedule</strong>: Shows any future CCD releases that are scheduled to be released on your account.</p></li>
 <li><p><strong>Export account reports</strong>: Export a file with a list of all transactions on the account. Set the relevant time period and filters, and then select <strong>Make account report</strong>. Save the export as a .csv file.</p></li>
-<li><p><strong>Credentials and attribute information</strong>: Here you can see all credential ID that are associated with the account and the attributes that are revealed for each credential ID (if any). You can also see the creation dates and valid to dates of the credentials. One or more credentials can be associated with the an account.</p></li>
+<li><p><strong>Credentials and attribute information</strong>: Here you can see all credential ID that are associated with the account and the attributes that are revealed for each credential ID (if any). You can also see the creation dates and valid to dates of the credentials. One or more credentials can be associated with an account.</p></li>
 <li><p><strong>Update credentials</strong>: Add new credentials to the account. See <a class="reference internal" href="../guides/multi-credentials.html#multi-credentials"><span class="std std-ref">Add credentials to an account</span></a>.</p></li>
-<li><p><strong>Add baker</strong>: Make the account a baker account. See <a class="reference internal" href="../guides/add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">See Add a baker account in the Desktop Wallet</span></a>. If the account is already a baker account, you’ll see a list of options for managing a baker account: <a class="reference internal" href="remove-baker.html#remove-baker"><span class="std std-ref">Remove baker</span></a>, <a class="reference internal" href="update-baker-keys.html#update-baker-keys"><span class="std std-ref">Update baker keys</span></a>, <a class="reference internal" href="change-baker-stake.html#change-baker-stake"><span class="std std-ref">Update baker stake</span></a>, and <a class="reference internal" href="change-restake-settings.html#change-restake-settings"><span class="std std-ref">Update baker restake earnings</span></a>.</p></li>
+<li><p><strong>Register data</strong>: Add a small message to the chain, such as a hash. This information is visible on the chain and cannot be removed. Note that adding this message incurs a transaction fee.</p></li>
+<li><p><strong>Register as a baker</strong>: Make the account a baker account. See <a class="reference internal" href="../guides/add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>. If the account is already a baker account, you’ll see <strong>Baking</strong> which contains a list of options for managing a baker account: <a class="reference internal" href="remove-baker.html#remove-baker"><span class="std std-ref">Remove baker</span></a>, <a class="reference internal" href="update-baker-keys.html#update-baker-keys"><span class="std std-ref">Update baker keys</span></a>, <a class="reference internal" href="change-baker-stake.html#change-baker-stake"><span class="std std-ref">Update baker stake</span></a>, and <a class="reference internal" href="change-restake-settings.html#change-restake-settings"><span class="std std-ref">Update baker restake earnings</span></a>.</p></li>
+<li><p><strong>Register as a delegator</strong>: Register the account as a delegator. See <a class="reference internal" href="delegation-dw.html#delegation-dw"><span class="std std-ref">Delegation in the Desktop Wallet</span></a> and <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">Delegation</span></a> for information about delegation. If you are already delegating, you’ll see <strong>Delegation</strong> which contains a list of options for managing delegation.</p></li>
 </ul>
 <div class="section" id="edit-account-name">
 <h3>Edit account name<a class="headerlink" href="#edit-account-name" title="Permalink to this headline">#</a></h3>

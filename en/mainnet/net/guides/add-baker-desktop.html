@@ -572,6 +572,16 @@ body {margin:0;}
        Update the restake settings
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/add-baker-pool-dw.html">
+       Open a baker pool in Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../desktop-wallet/update-baker-pool-dw.html">
+       Update a baker pool
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1">
@@ -1213,12 +1223,19 @@ You can see the fee in the transaction log.</p>
 <div class="section" id="add-baker-single-signature-account">
 <h2>Add baker (Single-signature account)<a class="headerlink" href="#add-baker-single-signature-account" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><p>Go to <strong>Accounts</strong>, select the account you want to add as baker account, change the view to the detailed view, and select <strong>Add baker</strong>.</p></li>
+<li><p>Go to <strong>Accounts</strong> and select the account you want to add as baker account</p></li>
+<li><p>Click <strong>More options</strong> then select <strong>Register as a baker</strong>.</p></li>
 <li><p>Specify the amount that you want to stake where it says <strong>Amount</strong>. The more you stake, the greater the probability that your account will be chosen to bake the next block.</p>
 <p>Baker accounts receive a reward when they have baked a block, and the reward
 is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.</p>
 <ul class="simple">
 <li><p>Select <strong>No, don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p></li>
+</ul>
+</li>
+<li><p>Choose if you want to open a baker pool so delegators may delegate stake to your baker.</p>
+<ul class="simple">
+<li><p>Choose Open to open your baker pool for this baker. Click <strong>Continue</strong>. Click <strong>Continue</strong> after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. <strong>Click Continue</strong>.</p></li>
+<li><p>Choose Closed if you do not want to open a baker pool. Click <strong>Continue</strong> after reviewing the commission rates and Baker metadata URL.</p></li>
 </ul>
 </li>
 <li><p>You have to export the baker credentials so that you can start the node with the baker keys. Select <strong>Export baker credentials</strong> and navigate to the place on your computer where you want to save the file. If you’re running Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong> and navigate to the place on your computer where you want to save the file.</p></li>
@@ -1230,7 +1247,7 @@ is added to the staked amount on the account by default. However, you can change
 <ol class="arabic simple" start="4">
 <li><p>There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
 <li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
-<li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Review the <strong>Amount to stake</strong> and the <strong>Restake earnings</strong> information to verify that it matches the transaction details in the Desktop Wallet.</p></li>
+<li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Review the information to verify that it matches the transaction details in the Desktop Wallet.</p></li>
 <li><p>When the Ledger device says <strong>Sign transaction</strong>, press both buttons to confirm the transaction. The Ledger device says <strong>Concordium is ready</strong>.</p></li>
 <li><p>In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
 </ol>
@@ -1240,7 +1257,8 @@ is added to the staked amount on the account by default. However, you can change
 <div class="section" id="select-an-account-to-add-as-baker-account">
 <h3>Select an account to add as baker account<a class="headerlink" href="#select-an-account-to-add-as-baker-account" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>Go to the <strong>Multi Signature Transactions</strong> tab, and then select <strong>Add Baker</strong>.</p></li>
+<li><p>Go to the <strong>Multi Signature Transactions</strong> tab, and then select <strong>Make new proposal</strong>.</p></li>
+<li><p>Click <strong>Register as a Baker</strong>.</p></li>
 <li><p>Select the account you want to add as baker account, and then select <strong>Continue</strong>.</p></li>
 </ol>
 </div>
@@ -1253,6 +1271,12 @@ is added to the staked amount on the account by default. However, you can change
 is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.</p>
 <ul class="simple">
 <li><p>Select <strong>No, don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p></li>
+</ul>
+</li>
+<li><p>Choose if you want to open a baker pool so delegators may delegate stake to your baker.</p>
+<ul class="simple">
+<li><p>Choose Open to open your baker pool for this baker. Click <strong>Continue</strong>. Click <strong>Continue</strong> after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. <strong>Click Continue</strong>.</p></li>
+<li><p>Choose Closed if you do not want to open a baker pool. Click <strong>Continue</strong> after reviewing the commission rates and Baker metadata URL.</p></li>
 </ul>
 </li>
 <li><p>When you look at the <strong>Transaction Details</strong> in the left pane, you can see the identity of the account owner, the account where the CCD are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.</p></li>
@@ -1288,7 +1312,7 @@ is added to the staked amount on the account by default. However, you can change
 <li><p>Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong>.</p></li>
 <li><p>In the Desktop Wallet verify that all transaction details are correct and select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
 <li><p>Select <strong>Generate and sign</strong>. There’s a message saying <strong>Waiting for user to finish the process on the device</strong>.</p></li>
-<li><p>On the Ledger, there’s a message saying <strong>Review transaction</strong>. Review the <strong>Amount to stake</strong> and the <strong>Restake earnings</strong> information to verify that it matches the transaction details in the Desktop Wallet.</p></li>
+<li><p>On the Ledger, there’s a message saying <strong>Review transaction</strong>. Review the information to verify that it matches the transaction details in the Desktop Wallet.</p></li>
 <li><p>When the Ledger says <strong>Sign transaction</strong>, press both buttons to confirm the transaction. The Ledger says <strong>Concordium is ready</strong>.</p></li>
 </ol>
 <div class="admonition note">
