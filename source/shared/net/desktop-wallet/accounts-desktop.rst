@@ -9,9 +9,9 @@ This topic describes the information and the tasks that are available in the Des
 
 To view information about an account, go to **Accounts** and select the relevant account. At the top of the window you see the following:
 
--  **Wallet total** shows the total amount of CCDs in all accounts in this wallet.
+-  **Wallet total** shows the total amount of CCDs in all accounts in this wallet, including CCDs that are scheduled to be released to your account on a future date.
 
--  **At disposal** shows the amount of CCDs you have available for transactions in all accounts in this wallet. This includes shielded balances but not staked amounts.
+-  **At disposal** shows the amount of CCDs you have available for transactions in all accounts in this wallet. This includes shielded balances but *not* staked amounts or CCDs that are scheduled to be released to your account on a future date.
 
 -  **Stake** shows the amount of CCDs staked in all accounts for this wallet.
 
@@ -25,7 +25,9 @@ The most common tasks on an account are:
 
 In addition, you can see the following information about the selected account on the **Balance** tab:
 
--  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or shielded CCD. It also includes CCD that is scheduled to be released to your account on a future date.
+-  The **Account Total** shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs. It also includes CCDs that are scheduled to be released to your account on a future date.
+
+-  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does *not* include shielded CCDs.
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
@@ -57,7 +59,7 @@ When you select **Account list** at the top of the window, the button name toggl
 
 -  **Update credentials**: Add new credentials to the account. See :ref:`Add credentials to an account <multi-credentials>`.
 
--  **Register data**:
+-  **Register data**: Add a small message to the chain, such as a hash. Note that adding this message incurs a transaction fee.
 
 -  **Register as a baker**: Make the account a baker account. See :ref:`Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see **Baking** which contains a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
 
