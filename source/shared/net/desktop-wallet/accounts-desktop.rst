@@ -61,7 +61,7 @@ The Transactions box contains the 10 latest transactions on the account includin
 More options
 ============
 
-When you select **Account list** at the top of the window, the button name toggles to **More options**. 
+When you select **Account list** at the top of the window, the button name toggles to **More options**.
 
 .. image:: ../images/desktop-wallet/dw-screen-toggle.png
 
