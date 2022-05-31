@@ -75,14 +75,14 @@ and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url MyBakerURL.json --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
 
 
 where you replace
 
 - ``MyBakerKeys.json`` with the name of baker keys file you generated
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``MyBakerURL`` with the information for your baker pool URL (optional)
+- ``MyBakerURL`` with the URL to the json file containing information for your baker pool (optional)
 - ``<concordium-data-dir>`` with any path of your choice.
 
    .. Note::
@@ -371,7 +371,7 @@ Use ``baker configure`` to configure a baker and open a baker pool. The followin
 
 .. code-block:: console
 
-   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url MyBakerURL.json --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
 
 Configure baker has the following optional arguments:
 
