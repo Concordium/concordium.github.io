@@ -75,14 +75,14 @@ and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for none --delegation-transaction-fee-commission 0.05 --delegation-baking-commission 0.05 --delegation-finalization-commission 1.0 --baker-url MyBakerURL.json --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
 
 
 where you replace
 
 - ``MyBakerKeys.json`` with the name of baker keys file you generated
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``MyBakerURL`` with the information for your baker pool URL (optional)
+- ``MyBakerURL`` with the URL to the json file containing information for your baker pool (optional)
 - ``<concordium-data-dir>`` with any path of your choice.
 
    .. Note::
@@ -110,6 +110,10 @@ The following arguments are also required for the ``baker add`` transaction:
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
 - ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
 - ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
+
+.. Note::
+
+   To find the range for the commissions, see the Concordium client :ref:`Show Chain Parameters command<consensus show-chain-parameters>`.
 
 The following arguments are optional. If no selection is made, earnings are restaked automatically.
 
@@ -367,7 +371,7 @@ Use ``baker configure`` to configure a baker and open a baker pool. The followin
 
 .. code-block:: console
 
-   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for none --delegation-transaction-fee-commission 5.0e-2 --delegation-baking-commission 5.0e-2 --delegation-finalization-commission 1.0 --baker-url baker-url.json --keys-in baker-keys-new.json --keys-out baker-creds-new.json
+   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
 
 Configure baker has the following optional arguments:
 
@@ -378,10 +382,14 @@ Configure baker has the following optional arguments:
 - ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
 - ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
 - ``--keys-in`` specifies the name of the file containing the baker keys.
-- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
+- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node. Replace ``<concordium-data-dir>`` with any path of your choice.
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
 - ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
 - ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
+
+.. Note::
+
+   To find the range for the commissions, see the Concordium client :ref:`Show Chain Parameters command<consensus show-chain-parameters>`.
 
 Remove a baker
 ==============
