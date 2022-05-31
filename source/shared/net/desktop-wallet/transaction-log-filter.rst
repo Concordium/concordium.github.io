@@ -9,7 +9,7 @@ You can specify which transactions to show in the transaction log.
 
 #. Go to **Accounts** and select the account that you want to apply the transaction log filter to.
 
-#. Select **Change view**.
+#. Click **More options**.
 
 #. Select **Transaction log**.
 

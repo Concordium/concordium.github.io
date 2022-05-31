@@ -39,7 +39,9 @@ There are a couple of things you must set up in preparation before you can start
 Add baker (Single-signature account)
 ====================================
 
-#. Go to **Accounts**, select the account you want to add as baker account, change the view to the detailed view, and select **Add baker**.
+#. Go to **Accounts** and select the account you want to add as baker account
+
+#. Click **More options** then select **Register as a baker**.
 
 #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
 
@@ -47,6 +49,12 @@ Add baker (Single-signature account)
    is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
    -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+
+#. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
+
+   - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+
+   - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
 
 #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
@@ -57,7 +65,7 @@ Add baker (Single-signature account)
 
 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger device, a message says **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet.
+#. On the Ledger device, a message says **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
 
 #. When the Ledger device says **Sign transaction**, press both buttons to confirm the transaction. The Ledger device says **Concordium is ready**.
 
@@ -69,7 +77,9 @@ Add baker (Multi-signature account)
 Select an account to add as baker account
 -----------------------------------------
 
-#. Go to the **Multi Signature Transactions** tab, and then select **Add Baker**.
+#. Go to the **Multi Signature Transactions** tab, and then select **Make new proposal**.
+
+#. Click **Register as a Baker**.
 
 #. Select the account you want to add as baker account, and then select **Continue**.
 
@@ -84,6 +94,12 @@ You need to stake an amount of CCD on the account that you want to add as baker 
    is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
    -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+
+#. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
+
+   - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**.
+
+   - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
 
 #. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the CCD are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
 
@@ -128,7 +144,7 @@ Generate and sign the transaction on the Ledger
 
 #. Select **Generate and sign**. There's a message saying **Waiting for user to finish the process on the device**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Review the **Amount to stake** and the **Restake earnings** information to verify that it matches the transaction details in the Desktop Wallet.
+#. On the Ledger, there's a message saying **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
 
 #. When the Ledger says **Sign transaction**, press both buttons to confirm the transaction. The Ledger says **Concordium is ready**.
 

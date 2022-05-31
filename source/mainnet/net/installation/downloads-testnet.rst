@@ -75,7 +75,7 @@ Concordium Client v4.0.3
 
    - SHA256 checksum of the download: ``7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da``
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/concordium-client_4.0.3-0>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
 
 -  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_4.0.3-0.exe>`_
 
@@ -104,7 +104,7 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.0.11_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``12cfdc47a5f791ccaaadf46b4493e4cb144442228915c40bc8ae7906f9cb25a9``
+      - SHA256 checksum of the download: ``ad418857eb27ca17b0747198f91a1bee89728ba91d0d14965fa614af23d9d0f6``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -117,7 +117,7 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 
    - `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.0.11-0-testnet.tar.gz>`_
 
-      - SHA256 checksum of the download: ``05b4922b201015043d8bda7a3dce151e04897a122d77f1e03d72c2dbdbe1a29d``
+      - SHA256 checksum of the download: ``0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
