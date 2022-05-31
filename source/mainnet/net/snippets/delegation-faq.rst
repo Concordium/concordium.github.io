@@ -57,7 +57,7 @@ Remember that commissions are also distributed to the baker. For example, suppos
 **Why is there a cool-down when I decrease / stop my delegation?**
 
 **I didn't receive a reward at pay day. Why is that?**
-It could be because the baker to whose pool you have delegated stake was not selected to bake a block. There are several reasons this could have happened. 
+It could be because the baker to whose pool you have delegated stake was not selected to bake a block. There are several reasons this could have happened.
 
 **My account is suddenly delegating to passive delegation. Why is that?**
 It is likely because the baker pool to which you were delegating has been closed. You can continue to delegate to passive delegation or select a new baker pool for your delegation.
