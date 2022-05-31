@@ -14,7 +14,7 @@ basics](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
 
 For building the documentation we use
 [Sphinx](https://www.sphinx-doc.org/en/master/index.html) and the [theme from
-ReadTheDocs](https://sphinx-rtd-theme.readthedocs.io/en/stable/) with minor
+pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/) with minor
 design tweaks.
 
 Sphinx supplies a number of useful
@@ -32,7 +32,7 @@ directives
 ```
 
 To show TODOs as warnings when building the docs you need to uncomment the
-following line in `/source/testnet/conf.py` and/or `/source/mainnet/conf.py`:
+following line in `/source/mainnet/conf.py`:
 
 ```
 # todo_emit_warnings = True
@@ -46,9 +46,9 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Development
 
-All of the documentation lives in the `source` directory, here there are subdirectories for Mainnet and Testnet, and a subdirectory `shared` for content which can be shared between the two.
+All of the documentation lives in the `source` directory; here there are subdirectories for Mainnet and `shared` for content which can be shared between the two.
 
-The way to have shared content, is to make a file in both `mainnet` and `testnet`, which includes the shared content using the `include` directive.
+The way to have shared content is to make a file in `mainnet` which includes the shared content using the `include` directive.
 
 ```
 .. include:: /../shared/path/to/file.rst
@@ -104,13 +104,6 @@ make dev-mainnet
 ```
 and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
-**Testnet**
-```
-make dev-testnet
-```
-and navigate to [localhost:8000/testnet](http://localhost:8000/net).
-
-
 Before committing, make sure to run the linter and fix all the errors reported:
 ```
 make lint
@@ -127,13 +120,6 @@ The exact command depends on which terminal type you are using. For example, in 
 make.bat dev-mainnet
 ```
 and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
-
-**Testnet**
-```
-make.bat dev-testnet
-```
-and navigate to [localhost:8000/testnet](http://localhost:8000/net).
-
 
 Before committing, make sure to try to build and fix any warnings that are reported.
 
@@ -158,17 +144,14 @@ To check for dead links (can also be done by the CI), run:
 ```
 make linkcheck-mainnet
 ```
-or
-```
-make linkcheck-testnet
-```
-
 
 # Contributing
 
-The `source/testnet` directory is used for documentation for future releases, and documentation for new features should be done here.
-
 The `source/mainnet` directory contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
+
+With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a tab if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
+
+For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.readthedocs.io/en/latest/#basic-tabs>`_.
 
 ## Style guide
 
