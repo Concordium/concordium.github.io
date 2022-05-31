@@ -53,7 +53,8 @@ extensions = [
     # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
     "sphinx_copybutton",
     "sphinx_toolbox.collapse",
-    "sphinx_tabs.tabs"
+    "sphinx_tabs.tabs",
+    'notfound.extension'
 ]
 
 # sphinx-prompt must be the first of these two.
@@ -84,8 +85,14 @@ graphviz_dot_args=[
 copybutton_prompt_text = "$"
 copybutton_line_continuation_character = "\\"
 
+# Disable default url prefix "/en/latest/" on every resource.
+notfound_urls_prefix = "/en/mainnet/"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../shared/_templates']
+
+# 404 page template.
+notfound_template = '404.html'
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
