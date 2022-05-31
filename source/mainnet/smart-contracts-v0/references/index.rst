@@ -7,7 +7,6 @@ References
 A number of references exist to help you when creating and testing smart contracts.
 
 .. toctree::
-   :hidden:
    :maxdepth: 1
    :caption: References
 
