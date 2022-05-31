@@ -1670,48 +1670,48 @@ release schedule.</p>
 <p>To see the chain parameters for a specific block use the <code class="docutils literal notranslate"><span class="pre">--block</span></code> flag to specify the block hash.</p>
 <p>The output is:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Parameters related to baker pools:
-<span class="go">   + minimum equity capital: 100.000000 CCD</span>
-<span class="go">   + maximum fraction of total stake a pool is allowed hold: 0.5</span>
-<span class="go">   + maximum factor a pool may stake relative to the baker&#39;s stake: 5 % 1</span>
-<span class="go">   + pool owner cooldown duration: 1h</span>
-<span class="go">   + allowed range for finalization commission: [0.0, 1.0]</span>
-<span class="go">   + allowed range for baking commission: [0.0, 1.0]</span>
-<span class="go">   + allowed range for transaction commission: [0.0, 1.0]</span>
+<span class="go">  + minimum equity capital: 14000.000000 CCD</span>
+<span class="go">  + maximum fraction of total stake a pool is allowed to hold: 0.1</span>
+<span class="go">  + maximum factor a pool may stake relative to the baker&#39;s stake: 3 % 1</span>
+<span class="go">  + pool owner cooldown duration: 21d</span>
+<span class="go">  + allowed range for finalization commission: [1.0, 1.0]</span>
+<span class="go">  + allowed range for baking commission: [0.1, 0.1]</span>
+<span class="go">  + allowed range for transaction commission: [0.1, 0.1]</span>
 
 <span class="gp"># </span>Passive delegation parameters:
-<span class="go">   + finalization commission: 0.0</span>
-<span class="go">   + baking commission: 0.1</span>
-<span class="go">   + transaction commission: 0.1</span>
+<span class="go">  + finalization commission: 1.0</span>
+<span class="go">  + baking commission: 0.12</span>
+<span class="go">  + transaction commission: 0.12</span>
 
 <span class="gp"># </span>Parameters related to delegators:
-<span class="go">   + delegator cooldown duration: 30m</span>
+<span class="go">  + delegator cooldown duration: 14d</span>
 
 <span class="gp"># </span>Exchange rate parameters:
-<span class="go">   - EUR per CCD rate (approx): 0.0100</span>
-<span class="go">   - EUR per Energy rate: 1 / 1000000 (approx 1.0e-6)</span>
-<span class="go">   - microCCD per EUR rate: 100000000 / 1 (approx 1.0e8)</span>
+<span class="go">  - EUR per CCD rate (approx): 0.0200</span>
+<span class="go">  - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)</span>
+<span class="go">  - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)</span>
 
 <span class="gp"># </span>Parameters that affect rewards distribution:
-<span class="go">   + mint amount per reward period: 1e-5</span>
-<span class="go">   + mint distribution:</span>
+<span class="go">  + mint amount per reward period: 261157877e-12</span>
+<span class="go">  + mint distribution:</span>
 <span class="go">      * baking reward: 0.6</span>
 <span class="go">      * finalization reward: 0.3</span>
-<span class="go">   + transaction fee distribution:</span>
+<span class="go">  + transaction fee distribution:</span>
 <span class="go">      * baker: 0.45</span>
 <span class="go">      * GAS account: 0.45</span>
-<span class="go">   + GAS rewards:</span>
+<span class="go">  + GAS rewards:</span>
 <span class="go">      * baking a block: 0.25</span>
 <span class="go">      * adding a finalization proof: 5.0e-3</span>
 <span class="go">      * adding a credential deployment: 2.0e-2</span>
 <span class="go">      * adding a chain update: 5.0e-3</span>
 
 <span class="gp"># </span>Time parameters:
-<span class="go">   + reward period length: 4 epochs</span>
+<span class="go">  + reward period length: 24 epochs</span>
 
 <span class="gp"># </span>Other parameters:
-<span class="go">   + election difficulty: 2.5e-2</span>
-<span class="go">   + foundation account index: 5</span>
-<span class="go">   + maximum credential deployments per block: 10</span>
+<span class="go">  + election difficulty: 2.5e-2</span>
+<span class="go">  + foundation account index: 10</span>
+<span class="go">  + maximum credential deployments per block: 10</span>
 </pre></div>
 </div>
 <table class="colwidths-given table">

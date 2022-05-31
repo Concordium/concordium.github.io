@@ -1241,14 +1241,14 @@ transaction signing keys and the encrypted transfers key.</p>
 </div>
 <p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">&lt;keys</span> <span class="pre">file&gt;</span></code>. To register the keys in the network you need to be <a class="reference internal" href="run-node.html#running-a-node"><span class="std std-ref">running a node</span></a>
 and send a <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --open-delegation-for none --delegation-transaction-fee-commission <span class="m">0</span>.05 --delegation-baking-commission <span class="m">0</span>.05 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url MyBakerURL.json --keys-in MyNewBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/baker-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --open-delegation-for all --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">MyBakerKeys.json</span></code> with the name of baker keys file you generated</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerURL</span></code> with the information for your baker pool URL (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerURL</span></code> with the URL to the json file containing information for your baker pool (optional)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p>
 <blockquote>
 <div><div class="admonition note">
@@ -1280,6 +1280,10 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-baking-commission</span></code> specifies the baking commission for the baker pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-finalization-commission</span></code> specifies the finalization commission for the baker pool.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To find the range for the commissions, see the Concordium client <a class="reference internal" href="../references/transactions.html#consensus-show-chain-parameters"><span class="std std-ref">Show Chain Parameters command</span></a>.</p>
+</div>
 <p>The following arguments are optional. If no selection is made, earnings are restaked automatically.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--restake</span></code> sets that earnings are restaked.</p></li>
@@ -1562,7 +1566,7 @@ first need to shut down the current running node. To do this, either press <code
 <p>Currently delegation is only available on Testnet.</p>
 </div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">configure</span></code> to configure a baker and open a baker pool. The following is an example of how <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">baker</span></code> might be used:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker configure --sender <span class="s2">&quot;acc1&quot;</span> --stake <span class="m">14001</span> --open-delegation-for none --delegation-transaction-fee-commission <span class="m">5</span>.0e-2 --delegation-baking-commission <span class="m">5</span>.0e-2 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url baker-url.json --keys-in baker-keys-new.json --keys-out baker-creds-new.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker configure --sender <span class="s2">&quot;acc1&quot;</span> --stake <span class="m">14001</span> --open-delegation-for existing --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --keys-in MyBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
 <p>Configure baker has the following optional arguments:</p>
@@ -1574,11 +1578,15 @@ first need to shut down the current running node. To do this, either press <code
 <li><p><code class="docutils literal notranslate"><span class="pre">--open-delegation-for</span></code> sets whether the baker’s pool is open for delegators. Options are: <code class="docutils literal notranslate"><span class="pre">none</span></code> (no delegators will be allowed), <code class="docutils literal notranslate"><span class="pre">all</span></code> (any account can delegate), <code class="docutils literal notranslate"><span class="pre">existing</span></code> (only existing delegators can delegate).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--baker-url</span></code> is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--keys-in</span></code> specifies the name of the file containing the baker keys.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--keys-out</span></code> can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--keys-out</span></code> can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node. Replace <code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-transaction-fee-commission</span></code> specifies the transaction fee commission for the baker pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-baking-commission</span></code> specifies the baking commission for the baker pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-finalization-commission</span></code> specifies the finalization commission for the baker pool.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To find the range for the commissions, see the Concordium client <a class="reference internal" href="../references/transactions.html#consensus-show-chain-parameters"><span class="std std-ref">Show Chain Parameters command</span></a>.</p>
+</div>
 </div>
 <div class="section" id="remove-a-baker">
 <h2>Remove a baker<a class="headerlink" href="#remove-a-baker" title="Permalink to this headline">#</a></h2>

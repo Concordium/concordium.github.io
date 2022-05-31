@@ -7,7 +7,6 @@ On-chain guides
 There are several on-chain guides to help you with smart contract actions.
 
 .. toctree::
-   :hidden:
    :maxdepth: 1
    :caption: On-chain guides
 
