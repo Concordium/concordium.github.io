@@ -1248,7 +1248,7 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">MyBakerKeys.json</span></code> with the name of baker keys file you generated</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerURL</span></code> with the URL to the json file containing information for your baker pool (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerURL</span></code> with the URL to the json file containing information for your baker pool URL (optional)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p>
 <blockquote>
 <div><div class="admonition note">
@@ -1341,7 +1341,7 @@ first need to shut down the current running node. To do this, either press <code
 <p>To see if the node is baking, you can check various sources that
 offer different degrees of precision in the information displayed.</p>
 <ul>
-<li><p>In the <a class="reference external" href="https://dashboard.mainnet.concordium.software">network dashboard</a>, the baker ID of the node is shown in the <code class="docutils literal notranslate"><span class="pre">Baker</span></code> column.</p></li>
+<li><p>In the <a class="reference external" href="https://dashboard.mainnet.concordium.software/">network dashboard</a>, the baker ID of the node is shown in the <code class="docutils literal notranslate"><span class="pre">Baker</span></code> column.</p></li>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check the list of current bakers
 and the relative staked amount that they hold, that is, their lottery power.  The lottery power determines how likely it is that a given baker will win the lottery and bake a block.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
