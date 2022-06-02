@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: black;
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 992px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="{{ pathto('net/guides/learn-about-concordium') }}">Learn</a>
+  <a href="{{ pathto('net/nodes/node-requirements') }}">Run a node</a>
+  <a href="{{ pathto('net/guides/deciding-wallet') }}">Wallets</a>
+  <a href="{{ pathto('net/guides/overview-baker-process') }}">Baking</a>
+  <a href="{{ pathto('net/guides/developer-page') }}">Develop</a>
+  <a href="{{ pathto('smart-contracts/general/introduction') }}">Smart Contracts</a>
+</div>
+</body>
+</html>
