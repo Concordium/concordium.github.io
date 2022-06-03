@@ -38,7 +38,7 @@ Therefore, attracting delegators and managing your baker responsibly will maximi
 Yes, the cool-down period for bakers is three weeks when reducing stake or stopping baking.
 
 **Can I change my restaking preference if I am in a cool-down period?**
-Yes, you can. Note that anything that is restaked during the cool-down period will be unstaked after the stake reduction takes effect. 
+Yes, you can. Note that anything that is restaked during the cool-down period will be unstaked after the stake reduction takes effect.
 
 **How much does it cost to begin baking?**
 There is no specific fee to begin baking, however, you do need to stake a minimum of 14,000 CCD, and you need to have enough CCD left in your disposable balance to cover transaction fees to generate your baker keys (link to definition?).
@@ -59,13 +59,13 @@ There is no minimum amount required to delegate stake to a pool or enable passiv
 **How much can I expect to earn as a delegator?**
 This depends on the baker pool you select and how reliable this baker is. It also depends on how much stake the baker has. It is important to use `CCDScan <https://ccdscan.io>`_ to research bakers before delegating stake.
 
-To cover the costs of running the baker node 10% of the delegators’ share of the pool rewards are awarded to the pool owner. For example, suppose that a pool has 1,000,000 CCD staked and out of that you have delegated 10,000 CCD to the pool (1%). Suppose that in a 24 hour period this pool earns 500 CCD. Your delegation’s share of the rewards is 1% equal to 5 CCD. Of this amount 10% (0.5 CCD) is awarded to the pool owner and you receive the remaining 4.5 CCD. 
+To cover the costs of running the baker node 10% of the delegators’ share of the pool rewards are awarded to the pool owner. For example, suppose that a pool has 1,000,000 CCD staked and out of that you have delegated 10,000 CCD to the pool (1%). Suppose that in a 24 hour period this pool earns 500 CCD. Your delegation’s share of the rewards is 1% equal to 5 CCD. Of this amount 10% (0.5 CCD) is awarded to the pool owner and you receive the remaining 4.5 CCD.
 
 **If I delegate stake to a baker pool or passive delegation, can I use it for transactions?**
 No, any stake that you delegate is not part of the disposable balance; it is locked and cannot be used for transactions or to pay transaction fees.
 
 **Is there a “cool-down” period when delegating and how does it work?**
-Yes, for certain changes there is a cool-down period built into the pool system. The cool-down period is two weeks. During the cool-down it is not possible to change the delegated amount or move the delegated amount to a different baker pool. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely. 
+Yes, for certain changes there is a cool-down period built into the pool system. The cool-down period is two weeks. During the cool-down it is not possible to change the delegated amount or move the delegated amount to a different baker pool. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely.
 
 **Why is there a cool-down when I decrease / stop my delegation?**
 The cool-down period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
