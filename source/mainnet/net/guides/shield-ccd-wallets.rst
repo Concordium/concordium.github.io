@@ -41,7 +41,11 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Select **Shield**.
 
+                    .. image:: ../images/desktop-wallet/dw-shield.png
+
                 #. Enter the amount of CCD that you want to shield. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. Select **Continue**.
+
+                    .. image:: ../images/desktop-wallet/dw-shield-ccd.png
 
                 #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
 
@@ -57,7 +61,11 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Select **Shielded Balance** on the relevant account, and then select **Unshield**.
 
+                    .. image:: ../images/desktop-wallet/dw-unshield.png
+
                 #. Enter the amount of CCD that you want to unshield, and then select **Continue**.
+
+                    .. image:: ../images/desktop-wallet/dw-unshield-ccd.png
 
                 #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
 

@@ -21,7 +21,11 @@ Update baker keys (Single-signature account)
 
 #. Click **Update baker keys**.
 
+   .. image:: ../images/desktop-wallet/dw-baker-menu.png
+
 #. You have to export the baker credentials so that you can restart the node with the new baker keys. Select **Export baker credentials**. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+
+   .. image:: ../images/desktop-wallet/dw-baker-keys.png
 
 .. Warning::
    This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel.

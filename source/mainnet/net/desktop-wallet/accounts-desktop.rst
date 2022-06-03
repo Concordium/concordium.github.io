@@ -49,6 +49,8 @@ In addition, you can see the following information about the selected account on
 
 -  The **Staked with...** amount shows the amount staked if baking.
 
+-  The **Delegation to...** amount shows the amount delegated to a baker pool or passive delegation.
+
 On the Shielded balance tab, you'll see:
 
 -  The **Shielded balance total** shows the amount of CCD that you've shielded. The **Balance total** is visible to all participants on the Concordium Blockchain, while the **Shielded balance total** is visible to you only.
@@ -71,7 +73,9 @@ When you select **Account list** at the top of the window, the button name toggl
 
 You'll see a variety of information in **More options** about your account and a number of tasks you can perform:
 
--  **Transaction log**. View a list of transactions on the account. Use **Log filters** to specify which transaction types you want to be displayed in the **Transfers** list. See :ref:`Apply a transaction log filter <transaction-log>`.
+.. image:: ../images/desktop-wallet/dw-account-menu-regular.png
+
+-  **Transaction log**. View a list of transactions on the account. Use **Filters** to specify which transaction types you want to be displayed in the **Transfers** list. See :ref:`Apply a transaction log filter <transaction-log>`.
 
 -  **Send CCD with a schedule**: Send CCD according to a schedule. See :ref:`Transfer CCD with a schedule <CCD-single-schedule-desktop>`.
 
@@ -94,6 +98,8 @@ Edit account name
 
 You can edit the name of the account. Click |edit| to edit the account name. Click |save| to save the change.
 
+.. image:: ../images/desktop-wallet/dw-edit-account-name.png
+
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
                     :alt: small square with pencil
@@ -104,22 +110,26 @@ You can edit the name of the account. Click |edit| to edit the account name. Cli
 Set default account
 -------------------
 
-To make the currently selected account the default account, click the star icon in the lower right corner. Setting this means that this will be the account initially visible when opening the account page.
+To make the currently selected account the default account, click the star icon. Setting this means that this will be the account initially visible when opening the account page.
+
+.. image:: ../images/desktop-wallet/dw-favorite-account.png
 
 Address book overview
 =====================
 
-The address book is where you can see all addresses of accounts that you've created in or imported into the Desktop Wallet. In addition, you have the option of adding accounts, for example, if you want to send CCD from the desktop wallet to addresses on the mobile wallet.
+The address book is where you can see all addresses of accounts that you've created in or imported into the Desktop Wallet (1). In addition, you have the option of adding accounts (5), for example, if you want to send CCD from the desktop wallet to addresses on the mobile wallet.
 
-- When you select a recipient, the recipient's account address is displayed as well as any notes that you’ve added.
+.. image:: ../images/desktop-wallet/dw-address-book.png
 
-- To copy an address, select the **Copy** icon to the right of the address.
+- When you select a recipient, the recipient's account address is displayed as well as any notes that you’ve added (2).
 
-- To add a note, select the **Edit** icon, add your note, and then select **Save recipient**.
+- To copy an address, select the **Copy** icon to the right of the address (4).
 
-- To add an address, select the plus sign in the upper right corner. Enter the name of the recipient, paste the account address, optionally add a note, and then select **Save recipient**. The account address could, for example, be an account address that you've copied from the Mobile Wallet or that somebody sent you.
+- To add a note, select the **Edit** icon (3), add your note, and then select **Save recipient**.
 
-- To find a specific recipient among a long list of recipients, use the search function.
+- To add an address, select the plus sign in the upper right corner (5). Enter the name of the recipient, paste the account address, optionally add a note, and then select **Save recipient**. The account address could, for example, be an account address that you've copied from the Mobile Wallet or that somebody sent you.
+
+- To find a specific recipient among a long list of recipients, use the search function (6).
 
 Desktop Wallet settings
 =======================
@@ -138,9 +148,9 @@ Node settings
 
 Here you specify which node on the blockchain that you want to connect to.
 
-- If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10000``.
+- If you're running the **mainnet** version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10000``.
 
-- If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter ``127.0.0.1`` and in the **Port field** enter ``10001``.
+- If you're running the **testnet** version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter ``127.0.0.1`` and in the **Port field** enter ``10001``.
 
 - Select **Set connection**. If the connection works, there's a message saying **Successfully connected**.
 

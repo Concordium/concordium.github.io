@@ -24,11 +24,15 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 Remove delegation (Single-signature account)
 ============================================
 
-#. Go to **Accounts** and select the account on which you have delegated funds.
+#. Go to **Accounts** and select the account on which you have delegated funds and click **More options**. 
 
-#. Click **More options** then select **Delegation** and choose **Remove Delegation**.
+#. Select **Delegation** and choose **Remove Delegation**.
+
+   .. image:: ../images/desktop-wallet/dw-delegation-menu.png
 
 #. Review the cool-down period. Click **Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-remove-delegation.png
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
