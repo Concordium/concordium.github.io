@@ -7,6 +7,15 @@ Release notes - Mainnet
 Mainnet 4: Sirius
 =================
 
+June 23, 2022
+
+Concordium Desktop Wallet v1.4.0
+--------------------------------
+
+Concordium Desktop Wallet 1.4.0 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface.
+
+The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
+
 June 15, 2022
 
 Concordium Node 4.0.11

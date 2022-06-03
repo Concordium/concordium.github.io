@@ -4,10 +4,6 @@
 Delegation
 ==========
 
-.. Note::
-
-    Currently delegation is only available on Testnet.
-
 On the Concordium blockchain, :ref:`bakers<glossary-baker>` run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some :ref:`CCD<glossary-ccd>`. Because Concordium runs a proof-of-stake protocol, each baker needs to :ref:`stake an amount to bake<glossary-staked-amount>`, and the :ref:`probability of being selected to create the next block<glossary-lottery-power>` is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.
 
 Not everyone with CCD has the resources needed to run a baker. :ref:`Delegation<glossary-delegate>` enables everyone to earn interest. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party's control; they are just considered part of the baker's stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a :ref:`cool-down period<glossary-cool-down-period>`.

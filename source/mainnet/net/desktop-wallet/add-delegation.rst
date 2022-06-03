@@ -4,10 +4,6 @@
 Delegate to a baker pool
 ========================
 
-.. Note::
-
-   Currently delegation is only available on Testnet.
-
 You can delegate stake from an account to a baker pool or to passive delegation.
 
 When you delegate some stake to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.

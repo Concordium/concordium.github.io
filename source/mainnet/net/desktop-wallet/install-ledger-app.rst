@@ -46,15 +46,14 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. Press both buttons to view the **Secure Element** version.
 
-   - For **Mainnet**, if it says **2.0.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+   - For **Mainnet**, if it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
    - For **Testnet**, if it says **2.1.0**. you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
 
 For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_.
 
 Once you have updated the firmware version, you can download the version of the Ledger app that is appropriate for your firmware at :ref:`Downloads <downloads>`.
 
-.. Note::
-   For **Mainnet** there is a version of the Ledger app for devices with firmware 2.0.0 and a version for devices with firmware 2.1.0. Make sure you choose the correct app version. For **Testnet**, only the Ledger app for devices with firmware 2.1.0 can be used. Follow the instructions below to update your app:
+Follow the instructions below to update your app:
 
    * :ref:`update-app-windows`
    * :ref:`update-app-macos`
