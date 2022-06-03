@@ -15,7 +15,7 @@ If you remove a baker in the desktop wallet, the node that is configured with th
 Remove a baker (Single-signature account)
 =========================================
 
-#. Go to **Accounts**, select the account that you no longer want to be a baker account then click **More options**. 
+#. Go to **Accounts**, select the account that you no longer want to be a baker account then click **More options**.
 
 #. Select **Baking**.
 

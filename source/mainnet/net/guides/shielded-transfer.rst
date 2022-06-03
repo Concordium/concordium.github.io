@@ -49,7 +49,7 @@ Prerequisites
                 .. Warning::
 
                     Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
-    
+
                 4. Select the recipient of the CCD, and then select **Continue**.
 
                 5. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
@@ -86,7 +86,7 @@ Prerequisites
                 #. The Desktop Wallet says **Decrypt shielded balance**. Click **Decrypt**.
 
                     .. image:: ../images/desktop-wallet/dw-decrypt-shielded.png
-                
+
                 #. The Desktop Wallet says **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
                 #. On the Ledger, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S** is ready.

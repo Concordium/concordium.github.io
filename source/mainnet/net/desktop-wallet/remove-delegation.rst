@@ -24,7 +24,7 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 Remove delegation (Single-signature account)
 ============================================
 
-#. Go to **Accounts** and select the account on which you have delegated funds and click **More options**. 
+#. Go to **Accounts** and select the account on which you have delegated funds and click **More options**.
 
 #. Select **Delegation** and choose **Remove Delegation**.
 

@@ -22,7 +22,7 @@ Once you have opened a baker pool, you can update it to manage your pool respons
 Update a baker pool (Single-signature account)
 ==============================================
 
-#. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**. 
+#. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**.
 
 #. Select **Baking**.
 

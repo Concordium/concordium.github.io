@@ -29,7 +29,7 @@ Change the staked amount (Single-signature account)
    .. image:: ../images/desktop-wallet/dw-baker-menu.png
 
 #. Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click **Continue**.
-   
+
    .. image:: ../images/desktop-wallet/dw-baker-stake.png
 
 .. Note:: If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies. See :ref:`Update baker stake<change-baker-stake>` for more information.
