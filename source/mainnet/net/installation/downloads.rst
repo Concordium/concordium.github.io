@@ -68,33 +68,32 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
 .. _concordium-node-and-client-download:
 
-Concordium Client v3.0.4
+Concordium Client v4.0.3
 ========================
 
--  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
 
-   - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
-   - :ref:`Verification instructions <verification-client-linux>`
+   - SHA256 checksum of the download: ``7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da``
 
--  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_.
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
 
--  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_4.0.3-0.exe>`_
 
-Cargo-concordium v1.0.0-2
-=========================
+Cargo-concordium v2.0.1
+=======================
 
 Download cargo-concordium:
 
-   -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
+   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.0.1-0>`_
 
-   -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
+   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_2.0.1-0>`_
 
-   -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.1-0.exe>`_
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions v3.0.2
-====================================
+Concordium node distributions v4.0.11
+=====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
@@ -103,41 +102,40 @@ Ubuntu
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.0.11_amd64.deb>`_
 
-      - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
-      - :ref:`Verification instructions <verification-node-debian-package>`
+      - SHA256 checksum of the download: ``ad418857eb27ca17b0747198f91a1bee89728ba91d0d14965fa614af23d9d0f6``
 
-To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
+   To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Docker-Linux
+Linux-Docker
 ------------
 
-.. _concordium-docker-package-download:
+.. _concordium-docker-package-download-testnet:
 
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-   - `Download the Mainnet suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`_
+   - `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.0.11-0-testnet.tar.gz>`_
 
-      - SHA256 checksum of the download: ``733600b800f7a184152453a5aa52f6d0d50101a698804a957eb82c47ff2396f8``
+      - SHA256 checksum of the download: ``0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
 Windows
 -------
 
-To run a node on Windows, you need a Windows Installer package.
+To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.0.11-0.msi>`_
 
-To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
+To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
 Mac
 ---
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 

@@ -23,7 +23,8 @@ Install/upgrade and run a node
 
     .. tab:: Mainnet
 
-      .. Note:: If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+      .. Note::
+        See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
       #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer package (.pkg file).
 
