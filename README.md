@@ -46,13 +46,7 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Development
 
-All of the documentation lives in the `source` directory; here there are subdirectories for Mainnet and `shared` for content which can be shared between the two.
-
-The way to have shared content is to make a file in `mainnet` which includes the shared content using the `include` directive.
-
-```
-.. include:: /../shared/path/to/file.rst
-```
+All of the documentation lives in the `source` directory; here there is a subdirectory for Mainnet. General content such as site images, stylesheets, and other templates are in the `source` directory.
 
 ## Installation
 

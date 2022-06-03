@@ -517,48 +517,48 @@ The output is:
 .. code-block:: console
 
    # Parameters related to baker pools:
-      + minimum equity capital: 100.000000 CCD
-      + maximum fraction of total stake a pool is allowed hold: 0.5
-      + maximum factor a pool may stake relative to the baker's stake: 5 % 1
-      + pool owner cooldown duration: 1h
-      + allowed range for finalization commission: [0.0, 1.0]
-      + allowed range for baking commission: [0.0, 1.0]
-      + allowed range for transaction commission: [0.0, 1.0]
+     + minimum equity capital: 14000.000000 CCD
+     + maximum fraction of total stake a pool is allowed to hold: 0.1
+     + maximum factor a pool may stake relative to the baker's stake: 3 % 1
+     + pool owner cooldown duration: 21d
+     + allowed range for finalization commission: [1.0, 1.0]
+     + allowed range for baking commission: [0.1, 0.1]
+     + allowed range for transaction commission: [0.1, 0.1]
 
    # Passive delegation parameters:
-      + finalization commission: 0.0
-      + baking commission: 0.1
-      + transaction commission: 0.1
+     + finalization commission: 1.0
+     + baking commission: 0.12
+     + transaction commission: 0.12
 
    # Parameters related to delegators:
-      + delegator cooldown duration: 30m
+     + delegator cooldown duration: 14d
 
    # Exchange rate parameters:
-      - EUR per CCD rate (approx): 0.0100
-      - EUR per Energy rate: 1 / 1000000 (approx 1.0e-6)
-      - microCCD per EUR rate: 100000000 / 1 (approx 1.0e8)
+     - EUR per CCD rate (approx): 0.0200
+     - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)
+     - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)
 
    # Parameters that affect rewards distribution:
-      + mint amount per reward period: 1e-5
-      + mint distribution:
+     + mint amount per reward period: 261157877e-12
+     + mint distribution:
          * baking reward: 0.6
          * finalization reward: 0.3
-      + transaction fee distribution:
+     + transaction fee distribution:
          * baker: 0.45
          * GAS account: 0.45
-      + GAS rewards:
+     + GAS rewards:
          * baking a block: 0.25
          * adding a finalization proof: 5.0e-3
          * adding a credential deployment: 2.0e-2
          * adding a chain update: 5.0e-3
 
    # Time parameters:
-      + reward period length: 4 epochs
+     + reward period length: 24 epochs
 
    # Other parameters:
-      + election difficulty: 2.5e-2
-      + foundation account index: 5
-      + maximum credential deployments per block: 10
+     + election difficulty: 2.5e-2
+     + foundation account index: 10
+     + maximum credential deployments per block: 10
 
 .. list-table::
    :widths: 25 25 50
