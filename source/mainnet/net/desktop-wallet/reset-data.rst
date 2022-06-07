@@ -4,18 +4,18 @@
 Reset desktop wallet data
 ==============================
 
-All the local data of the desktop wallet is stored in a database in the applications user data folder.
+All the local data of the desktop wallet is stored in a database in the user's applications data folder.
 
-The desktop wallet does not remove your user data when it is uninstalled, to avoid users losing their data, and to simplify the update process of the application.
+The desktop wallet does not remove your user data when it is uninstalled; this avoids users losing their data, and simplifies the update process for the application.
 
-We will here describe the process of deleting this user data, because it might be necessary to do, but you should make sure that you have a :ref:`backup <export-import>` with your data, before doing so.
+Occasionally, it might be necessary to delete the user data. The following steps describe the process of deleting this user data. Make sure that you have a :ref:`backup <export-import>` with your data before starting this process.
 
 .. warning:: Deleting the user data without a :ref:`backup <export-import>` will mean you can only recover what is recoverable with :ref:`account recovery <export-import>` (under "Recover accounts without a backup file"), which does not include your identities, address book, names or notes.
 
-Deleting the user data
+Delete the user data
 =========================================================
 
-Delete the following folder, containing all the user data of the wallet:
+Delete the following folder containing all the user data of the wallet:
 
 .. tabs::
 
@@ -39,4 +39,4 @@ Delete the following folder, containing all the user data of the wallet:
 
 .. Note:: To quickly navigate to the roaming folder on Windows, enter :code:`%appdata%` in the file explorer's navigation bar.
 
-When you next open the wallet, it will behave as a fresh installation, and prompt you to accept the terms and conditions and choose a new password.
+When you open the wallet for the first time after resetting the user data, it will behave as a fresh installation, and prompt you to accept the terms and conditions and choose a new password.
