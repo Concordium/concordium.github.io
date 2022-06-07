@@ -30,4 +30,4 @@ Most affected parties
 Migration
 =========
 
-Detailed instructions for migration will be provided closer to the release of the new testnet.
+Detailed instructions for migration of nodes and wallets will be provided closer to the release of the new testnet.
