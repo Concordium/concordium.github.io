@@ -1046,6 +1046,11 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/sirius-testnet-reset.html">
+     Testnet reset
+    </a>
+   </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/legal.html">
      Legal
@@ -1182,11 +1187,21 @@ You can see the fee in the transaction log.</p>
 </div>
 <div class="section" id="change-the-staked-amount-single-signature-account">
 <h2>Change the staked amount (Single-signature account)<a class="headerlink" href="#change-the-staked-amount-single-signature-account" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Go to <strong>Accounts</strong> and select the account whose baker stake you want to change.</p></li>
 <li><p>Click <strong>More options</strong> and select <strong>Baking</strong>.</p></li>
-<li><p>Click <strong>Update baker stake</strong>.</p></li>
-<li><p>Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click <strong>Continue</strong>.</p></li>
+<li><p>Click <strong>Update baker stake</strong>.</p>
+<img alt="../../_images/dw-baker-menu.png" src="../../_images/dw-baker-menu.png" />
+</li>
+<li><p>Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click <strong>Continue</strong>.</p>
+<img alt="../../_images/dw-baker-stake.png" src="../../_images/dw-baker-stake.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you reduce the staked amount, a <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down</span></a> period applies. See <a class="reference internal" href="#change-baker-stake"><span class="std std-ref">Update baker stake</span></a> for more information.</p>
+</div>
+<ol class="arabic simple">
 <li><p>A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
 <li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
 <li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. The Ledger device says <strong>Update stake to</strong> and then the amount you’re going to update the stake to. Navigate to the right.</p></li>

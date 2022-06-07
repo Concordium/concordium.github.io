@@ -1046,6 +1046,11 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/sirius-testnet-reset.html">
+     Testnet reset
+    </a>
+   </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/legal.html">
      Legal
@@ -1173,7 +1178,7 @@ body {margin:0;}
 <p>Currently delegation is only available on Testnet.</p>
 </div>
 <p>You can change the delegation amount and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.</p>
-<p>If you increase the delegation, the new amount will be applied at the start of the next pay day. There is one pay day every 24 hours. However, if you decrease the delegation, there is a cool-down period before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance.</p>
+<p>If you increase the delegation, the new amount will be applied at the start of the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. There is one pay day every 24 hours. However, if you decrease the delegation, there is a <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a> before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any changes made in the last epoch before the upcoming pay day are applied not in the upcoming pay day but the pay day after that.</p>
@@ -1190,10 +1195,17 @@ You can see the fee in the transaction log.</p>
 </div>
 <div class="section" id="update-delegation-single-signature-account">
 <h2>Update delegation (Single-signature account)<a class="headerlink" href="#update-delegation-single-signature-account" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Go to <strong>Accounts</strong> and select the account on which you want to change your delegation preferences.</p></li>
-<li><p>Click <strong>More options</strong> then select <strong>Delegation</strong> and choose <strong>Update Delegation</strong>.</p></li>
-<li><p>You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click <strong>Continue</strong>. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p></li>
+<li><p>Click <strong>More options</strong> then select <strong>Delegation</strong> and choose <strong>Update Delegation</strong>.</p>
+<img alt="../../_images/dw-delegation-menu.png" src="../../_images/dw-delegation-menu.png" />
+</li>
+<li><p>You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click <strong>Continue</strong>.</p>
+<img alt="../../_images/dw-update-delegation-target.png" src="../../_images/dw-update-delegation-target.png" />
+</li>
+<li><p>You can enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p>
+<img alt="../../_images/dw-update-delegation-stake.png" src="../../_images/dw-update-delegation-stake.png" />
+</li>
 <li><p>A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
 <li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
 <li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.</p></li>

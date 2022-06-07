@@ -1046,6 +1046,11 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/sirius-testnet-reset.html">
+     Testnet reset
+    </a>
+   </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/legal.html">
      Legal
@@ -1200,7 +1205,7 @@ body {margin:0;}
 <p>This guide goes through all the steps involved in adding a baker in the Desktop Wallet. To start baking, you must start your node with the baker keys. You can run a baker node with keys generated in the Desktop Wallet on <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker/Linux</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
-<p>There are a couple of things you must set up in preparation before you can start baking.</p>
+<p>There are several things you must set up in preparation before you can start baking.</p>
 <ul class="simple">
 <li><p>Run a node on the Concordium blockchain. Make sure that you have a setup where the node can operate around the clock.</p></li>
 <li><p>Set up a Ledger hardware wallet for your private key.</p></li>
@@ -1223,8 +1228,10 @@ You can see the fee in the transaction log.</p>
 <div class="section" id="add-baker-single-signature-account">
 <h2>Add baker (Single-signature account)<a class="headerlink" href="#add-baker-single-signature-account" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><p>Go to <strong>Accounts</strong> and select the account you want to add as baker account</p></li>
-<li><p>Click <strong>More options</strong> then select <strong>Register as a baker</strong>.</p></li>
+<li><p>Go to <strong>Accounts</strong> and select the account you want to add as baker account and click <strong>More options</strong>.</p></li>
+<li><p>Select <strong>Register as a baker</strong>.</p>
+<img alt="../../_images/dw-account-menu-regular.png" src="../../_images/dw-account-menu-regular.png" />
+</li>
 <li><p>Specify the amount that you want to stake where it says <strong>Amount</strong>. The more you stake, the greater the probability that your account will be chosen to bake the next block.</p>
 <p>Baker accounts receive a reward when they have baked a block, and the reward
 is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.</p>

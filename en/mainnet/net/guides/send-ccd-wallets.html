@@ -1047,6 +1047,11 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/sirius-testnet-reset.html">
+     Testnet reset
+    </a>
+   </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/legal.html">
      Legal
@@ -1138,18 +1143,25 @@ You can see the fee in the transaction log.</p>
 <p>On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet or Mobile Wallet to request 2000 CCDs.</p>
 </div>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Mobile Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Mobile Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic">
 <li><p>Go to <strong>Accounts</strong> and select the relevant account.</p></li>
-<li><p>Select <strong>Send</strong>.</p></li>
-<li><p>In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough CCD in the account, and you’ll have to change the amount.</p></li>
-<li><p>Enter a <strong>Memo</strong> if you want to send a message to the recipient along with the shielded amount. Note that there’s a fee associated with sending a memo and the fee depends on the size of the memo in bytes.</p></li>
+<li><p>Select <strong>Send</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/dw-send.png" src="../../_images/dw-send.png" />
+</div></blockquote>
+</li>
+<li><p>In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough CCD in the account, and you’ll have to change the amount. Enter a <strong>Memo</strong> if you want to send a message to the recipient along with the shielded amount. Note that there’s a fee associated with sending a memo and the fee depends on the size of the memo in bytes. Click <strong>Select Recipient</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/dw-send-ccd.png" src="../../_images/dw-send-ccd.png" />
+</div></blockquote>
+</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>Select the recipient and select <strong>Continue</strong>.</p></li>
+<ol class="arabic simple" start="4">
+<li><p>Select the recipient and click <strong>Continue</strong>.</p></li>
 <li><p>There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
 <li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> and select <strong>Submit</strong>.</p></li>
 <li><p>Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.</p></li>
