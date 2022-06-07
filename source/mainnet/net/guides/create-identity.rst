@@ -18,11 +18,17 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
          .. warning::
             You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
-         #. Go to **Accounts**. A message is displayed saying you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**.
+         #. Go to **Accounts**. A message is displayed if you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**. You can also create a new identity if you already have one or more by going to **Identities** and clicking on the plus in the upper right corner of the window.
+
+            .. image:: ../images/desktop-wallet/dw-add-identity-plus.png
 
          #. Enter a name for your identity, and then enter a name for your initial account. Select **Continue**.
 
+            .. image:: ../images/desktop-wallet/dw-add-identity-name.png
+
          #. Select an identity provider.
+
+            .. image:: ../images/desktop-wallet/dw-add-identity-provider.png
 
          #. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
@@ -50,7 +56,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
          #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
 
          .. Note::
-            You can change the name of an identity after it has been created. Go to the Identities page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
+            You can change the name of an identity after it has been created. Go to the **Identities** page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
 
    .. tab:: Mobile Wallet
       You can submit requests for additional :ref:`identities<glossary-identity>` and :ref:`initial accounts<glossary-initial-account>` in the Mobile Wallet. You do this from the **Identities** page.
@@ -89,7 +95,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
 
 .. Note::
-   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, ID's and addresses. This way, you'll have a backup in case the database is damaged.
+   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, IDs and addresses. This way, you'll have a backup in case the database is damaged.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px

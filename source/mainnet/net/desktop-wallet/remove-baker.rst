@@ -15,13 +15,17 @@ If you remove a baker in the desktop wallet, the node that is configured with th
 Remove a baker (Single-signature account)
 =========================================
 
-#. Go to **Accounts**, select the account that you no longer want to be a baker account.
+#. Go to **Accounts**, select the account that you no longer want to be a baker account then click **More options**.
 
-#. Click **More options** and select **Baking**.
+#. Select **Baking**.
 
 #. Click **Stop baking**.
 
+   .. image:: ../images/desktop-wallet/dw-baker-menu.png
+
 #. The cool-down period is displayed. Select **Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-remove-baker.png
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 

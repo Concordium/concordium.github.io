@@ -17,7 +17,7 @@ This guide goes through all the steps involved in adding a baker in the Desktop 
 
 Prerequisites
 =============
-There are a couple of things you must set up in preparation before you can start baking.
+There are several things you must set up in preparation before you can start baking.
 
 - Run a node on the Concordium blockchain. Make sure that you have a setup where the node can operate around the clock.
 - Set up a Ledger hardware wallet for your private key.
@@ -39,9 +39,11 @@ There are a couple of things you must set up in preparation before you can start
 Add baker (Single-signature account)
 ====================================
 
-#. Go to **Accounts** and select the account you want to add as baker account
+#. Go to **Accounts** and select the account you want to add as baker account and click **More options**.
 
-#. Click **More options** then select **Register as a baker**.
+#. Select **Register as a baker**.
+
+   .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
 
 #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
 

@@ -20,7 +20,11 @@ Open a baker pool (Single-signature account)
 
 #. Go to **Accounts** and select the account on which you are a baker.
 
-#. Click **More options** then select **Update baker pool**.
+#. Click **More options** then select **Baking**.
+
+#. Click **Update baker pool**.
+
+   .. image:: ../images/desktop-wallet/dw-baker-menu.png
 
 #. Choose the status for your baker pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
 
@@ -30,9 +34,15 @@ Open a baker pool (Single-signature account)
 
    - Closed for all: close the pool for all delegators.
 
+   .. image:: ../images/desktop-wallet/dw-pool-status.png
+
 #. Review the commission rates. Click **Continue**.
 
+   .. image:: ../images/desktop-wallet/dw-pool-commission.png
+
 #. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-pool-url.png
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
