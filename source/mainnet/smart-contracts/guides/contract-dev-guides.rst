@@ -11,7 +11,6 @@ The contract development guides help you get started writing smart contracts. He
    To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
 
 .. toctree::
-   :hidden:
    :maxdepth: 1
    :caption: Contract development guides
 
