@@ -6,7 +6,7 @@ Update delegation to a baker pool
 
 You can change the delegation amount and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
-If you increase the delegation, the new amount will be applied at the start of the next pay day. There is one pay day every 24 hours. However, if you decrease the delegation, there is a cool-down period before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance.
+If you increase the delegation, the new amount will be applied at the start of the next :ref:`pay day<glossary-pay-day>`. There is one pay day every 24 hours. However, if you decrease the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance.
 
 .. Note::
 
@@ -28,7 +28,15 @@ Update delegation (Single-signature account)
 
 #. Click **More options** then select **Delegation** and choose **Update Delegation**.
 
-#. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+   .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+
+#. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
+
+#. You can enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-update-delegation-stake.png
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
