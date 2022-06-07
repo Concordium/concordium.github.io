@@ -4,8 +4,21 @@
 Release Notes - Testnet
 =======================
 
+Sirius Testnet reset
+====================
+
+June 13, 2022
+
+Sirius testnet has been reset on June 13, 2022. For information about the implications of this, see :ref:`Sirius Testnet reset<sirius-testnet-reset>`.
+
+Concordium Node 4.1.0
+----------------------
+
+A new version of Concordium Node has been released to fix two critical errors related to delegation.
+
 Sirius Testnet
 ==============
+
 May 23, 2022
 
 Concordium Desktop Wallet v1.4.0
