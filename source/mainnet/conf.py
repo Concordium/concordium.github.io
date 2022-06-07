@@ -53,7 +53,8 @@ extensions = [
     # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
     "sphinx_copybutton",
     "sphinx_toolbox.collapse",
-    "sphinx_tabs.tabs"
+    "sphinx_tabs.tabs",
+    'notfound.extension'
 ]
 
 # sphinx-prompt must be the first of these two.
@@ -84,8 +85,14 @@ graphviz_dot_args=[
 copybutton_prompt_text = "$"
 copybutton_line_continuation_character = "\\"
 
+# Disable default url prefix "/en/latest/" on every resource.
+notfound_urls_prefix = "/en/mainnet/"
+
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates', '../shared/_templates']
+templates_path = ['_templates', '../_templates']
+
+# 404 page template.
+notfound_template = '404.html'
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -120,8 +127,8 @@ highlight_language = "rust"
 #
 html_theme = "pydata_sphinx_theme"
 
-html_logo = "../shared/_static/concordium-logo-dark.svg"
-html_favicon = "../shared/_static/concordium-logo-no-text.svg"
+html_logo = "../_static/concordium-logo-dark.svg"
+html_favicon = "../_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -211,7 +218,7 @@ html_context = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["../shared/_static"]
+html_static_path = ["../_static"]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
