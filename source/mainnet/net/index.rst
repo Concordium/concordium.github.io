@@ -79,4 +79,5 @@
    resources/ccd-scan
    resources/release-notes-mainnet
    resources/release-notes
+   resources/sirius-testnet-reset
    resources/legal
