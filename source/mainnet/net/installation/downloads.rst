@@ -81,7 +81,7 @@ Concordium Client v4.0.3
 -  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
-      - :ref:`Verification instructions <client-linux>`
+      - :ref:`Verification instructions <verification-client-linux>`
 
 -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
 
