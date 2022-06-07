@@ -31,10 +31,14 @@ schedule and an explicit schedule.
 .. Warning::
     Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
 
-#. Select the recipient and select **Continue**.
+5. Select the recipient and select **Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-send-ccd-schedule.png
 
 Option 1: Create a regular interval schedule
 --------------------------------------------
+
+.. image:: ../images/desktop-wallet/dw-send-ccd-regular-interval.png
 
 #.  Select **Regular interval** in **Schedule type**.
 
@@ -61,6 +65,12 @@ Option 1: Create a regular interval schedule
 
 Option 2: Create an explicit schedule
 -------------------------------------
+
+.. image:: ../images/desktop-wallet/dw-send-ccd-explicit-schedule1.png
+        :width: 35%
+
+.. image:: ../images/desktop-wallet/dw-send-ccd-explicit-schedule2.png
+         :width: 35%
 
 #. Select **Explicit schedule**. For each release you want in the schedule, you have to specify the amount and the release time.
 
