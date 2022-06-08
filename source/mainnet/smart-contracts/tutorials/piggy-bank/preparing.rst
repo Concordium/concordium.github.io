@@ -62,7 +62,7 @@ This is the third :ref:`part of a tutorial<piggy-bank>` on smart contract
 development.
 So far you have written and tested a piggy bank smart contract in the Rust_ programming
 language.
-This part will focus on how you can setup your own testnet node on a server, and create a testnet account.
+This part will focus on how you can set up your own testnet node on a server, and create a testnet account.
 
 .. warning::
 
@@ -73,8 +73,7 @@ This part will focus on how you can setup your own testnet node on a server, and
 Preparation
 ===========
 
-Before you start, make sure you create an account at your favourite cloud provider. You
-will be guided through the setup based on pictures from amazon web services.
+Before you start, make sure you create an account at your favourite cloud provider to set up your instance.
 
 You are now ready to select an instance on the cloud provider that matches the following requirements to run a testnet node:
 
@@ -82,7 +81,7 @@ You are now ready to select an instance on the cloud provider that matches the f
    :widths: 25 25
    :header-rows: 1
 
-   * - Hardware
+   * - Hardware (Testnet node)
      - Recommended
    * - CPU (Core)
      - ?
@@ -92,3 +91,43 @@ You are now ready to select an instance on the cloud provider that matches the f
      - 50 GB
    * - Operating System
      - Ubuntu 20.04 x64
+
+Create an ubuntu instance on a server
+=====================================
+
+The :ref:`run a node <node-requirements>` guide will help you set up your instance correctly. It is recommended using an ubuntu instance for this tutorial.
+
+Sync a testnet node
+===================
+
+You are now ready to download the :ref:`Concordium Client<concordium-node-and-client-download-testnet>` package to your instance. This software package will allow you to run a testnet node on your server. You find important commands that Concordium Client provides :ref:`here<concordium_client>`.
+
+.. Note::
+   It is possible to download the package to your local laptop/computer and then use a file-sharing tool (such as `FileZilla`) to transfer the software package to your instance.
+
+Start the syncing process of the testnet node by following the guide for your platform :ref:`Ubuntu<ubuntu-node>`, :ref:`Docker<docker-node>`, :ref:`Windows<windows-node>`, or :ref:`MacOS<macos-node>`.
+
+.. Note::
+   It is a good practice to enable inbound connection at the port to 8889 (testnet). This is not mandatory for the node to sync but it will make your node a good network participant.
+
+Create a mobile wallet account on testnet
+=========================================
+
+You can download the mobile wallet package from the :ref:`installation page<downloads-mobile-wallet-testnet>`.
+After you followed the instruction in the mobile app you are provided with a testnet account. You don't need to provide an ID to create an account on testnet.
+
+.. Note::
+   Please remember the `name` and the `password` that you used for creating the account. These two variables are needed later when important your account keys into the testnet node.
+
+.. Note::
+   It is a good practice to back up your wallet keys.
+
+
+You also need to request some testnet CCD. The mobile app wallet has a button that prompts you to request some testnet CCD.
+
+.. Note::
+   Some CCD on your testnet account is needed later when sending transactions from your account to the testnet blockchain.
+
+
+Import your mobile wallet account key to your testnet node
+==========================================================
