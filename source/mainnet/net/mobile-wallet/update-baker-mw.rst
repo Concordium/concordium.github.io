@@ -10,15 +10,15 @@ Change baker options in Mobile Wallet
 
 #. In the Baker status screen tap **Update baker settings**. You have four options:
 
-	- Update baker stake
-	- Update pool settings
-	- Update baker keys
-	- Stop baking
+    - Update baker stake
+    - Update pool settings
+    - Update baker keys
+    - Stop baking
 
 Update baker stake
 ==================
 
-If you choose **Update baker stake** you see your balance and the current Baker stake amount. 
+If you choose **Update baker stake** you see your balance and the current Baker stake amount.
 
 Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
 
@@ -109,7 +109,7 @@ If you no longer wish to bake on this account, you can remove the baker.
 
 .. Note::
 
-    When you stop baking, there is a longer :ref:`cool-down period<glossary-cool-down-period>` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards. 
+    When you stop baking, there is a longer :ref:`cool-down period<glossary-cool-down-period>` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.
 
 .. Note::
 
