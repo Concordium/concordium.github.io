@@ -26,9 +26,16 @@ install and run the new node. These are the steps.
 MacOS
 =====
 
-To update MacOS nodes, you need to download and run the latest installer.
+To update the macOS node you need to delete the existing testnet database and
+install and run the new node. These are the steps.
 
-`Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.1.0-0.pkg>`_
+1. Stop the existing testnet node by running the **Concordium Node Stop
+   Testnet** application.
+2. Navigate to the testnet node's data directory at ``/Library/Application
+   Support/Concordium Node/Testnet/Data``
+3. Delete the directory named ``database-v4``.
+4. `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.1.0-0.pkg>`_
+5. Install the new node version and start it.
 
 Ubuntu
 ======
