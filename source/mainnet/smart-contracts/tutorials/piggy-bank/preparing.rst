@@ -63,6 +63,7 @@ development.
 So far you have written and tested a piggy bank smart contract in the Rust_ programming
 language.
 This part will focus on how you can set up your own testnet node on a server, and create a testnet account.
+In more detail, you will create an instance on a server that will host your own testnet node. Secondly, you will create your own testnet account and import the keys to your testnet node.
 
 .. warning::
 
@@ -95,7 +96,11 @@ You are now ready to select an instance on the cloud provider that matches the f
 Create an ubuntu instance on a server
 =====================================
 
-The :ref:`run a node <node-requirements>` guide will help you set up your instance correctly. It is recommended using an ubuntu instance for this tutorial.
+The :ref:`run a node <node-requirements>` guide will help you set up your instance correctly. It is recommended using an ubuntu instance on a server in the cloud for this tutorial.
+
+.. Note::
+   It is technically fine to run your testnet node locally on your machine instead of on a server in the cloud. Since blockchain nodes have to run 24/7 to be up-to-date with the blockchain, you have to run your local machine 24/7. Alternatively if you don't want to run your local machine 24/7, you can let catch up your node whenever you start your machine. Because this takes some time, this tutorial recommends a cloud provider setup for convenience.
+
 
 Sync a testnet node
 ===================
@@ -108,26 +113,67 @@ You are now ready to download the :ref:`Concordium Client<concordium-node-and-cl
 Start the syncing process of the testnet node by following the guide for your platform :ref:`Ubuntu<ubuntu-node>`, :ref:`Docker<docker-node>`, :ref:`Windows<windows-node>`, or :ref:`MacOS<macos-node>`.
 
 .. Note::
-   It is a good practice to enable inbound connection at the port to 8889 (testnet). This is not mandatory for the node to sync but it will make your node a good network participant.
+   It is a good practice to enable inbound connection at the port 8889 (testnet). This is not mandatory for the node to sync but it will make your node a good network participant.
 
 Create a mobile wallet account on testnet
 =========================================
 
+You can create an account with any of the officially provided wallets from Concordium. This tutorial focuses on the mobile wallet but feel free to explore the setup of the :ref:`desktop wallets<overview-account-desktop>` alternatively.
+
 You can download the mobile wallet package from the :ref:`installation page<downloads-mobile-wallet-testnet>`.
-After you followed the instruction in the mobile app you are provided with a testnet account. You don't need to provide an ID to create an account on testnet.
+If you follow the instruction in the mobile app you are asked to name your account and to name your initial identity card. This tutorial uses `Concordium` for the account name and `Account1` for the identity card name but feel free to chose your own naming.
+
+
+.. image:: ./images/pb_tutorial_1.png
+   :width: 20 %
+
+.. image:: ./images/pb_tutorial_2.png
+   :width: 20 %
+
+.. image:: ./images/pb_tutorial_3.png
+   :width: 20 %
+
+
+You don't have to provide an ID to create an account on testnet when selecting `Concordium testnet IP`. This allows you to insert some dummy identity data and is meant for testnet testing only.
+
+.. image:: ./images/pb_tutorial_4.png
+   :width: 20 %
 
 .. Note::
-   Please remember the `name` and the `password` that you used for creating the account. These two variables are needed later when important your account keys into the testnet node.
+   On mainnet you will have to provide your personal ID to an identity provider to get a mainnet account.
 
-.. Note::
-   It is a good practice to back up your wallet keys.
+You also have to request some testnet CCD. The mobile app wallet has a button that you can use to request 20000 testnet CCD.
 
-
-You also need to request some testnet CCD. The mobile app wallet has a button that prompts you to request some testnet CCD.
+.. image:: ./images/pb_tutorial_5.png
+   :width: 20.5 %
+.. image:: ./images/pb_tutorial_6.png
+   :width: 20 %
 
 .. Note::
    Some CCD on your testnet account is needed later when sending transactions from your account to the testnet blockchain.
 
+Create a backup of your wallet by clicking the `Backup` button in the mobile app. Safe the file for now because it will be used in the next section.
+
+.. image:: ./images/pb_tutorial_7.png
+   :width: 20 %
+
+.. Note::
+   Please remember the `identity card name` and the `export password` that you used for creating the backup file. These two variables are needed later when important your account key into the testnet node.
+
 
 Import your mobile wallet account key to your testnet node
 ==========================================================
+
+You are ready now to import your keys to your testnet node. You have to transfer your wallet backup file to the place where your testnet node is running at.
+
+
+.. Note::
+   You can use a file-sharing tool (such as `FileZilla`) to transfer your wallet backup file from e.g. your laptop or computer to your instance in the server.
+
+If you used the desktop wallet for creating your account, you can find the equivalent steps :ref:`here<export-import>` for exporting and backing up your wallet account.
+
+You are set for importing your key to your testnet node now with this command:
+
+.. code-block:: console
+
+   $concordium-client config account add-keys --account ACCOUNT --keys KEYS
