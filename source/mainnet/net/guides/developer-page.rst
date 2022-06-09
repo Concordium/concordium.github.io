@@ -18,6 +18,10 @@ Official resources
 
 - `GitHub <https://github.com/Concordium>`_
 
+- `Concordium standards and updates <https://proposals.concordium.software/>`_
+
+    - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
+
 - Block explorers
     The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 
