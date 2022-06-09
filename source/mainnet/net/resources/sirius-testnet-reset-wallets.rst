@@ -14,4 +14,4 @@ Go to :ref:`Mobile Wallet downloads<downloads-mobile-wallet-testnet>` to get the
 Desktop Wallet
 ==============
 
-To clear the data of the wallet, uninstall it and follow :ref:`the instructions for resetting the wallet's data` (Remember to remove the testnet and *not* the mainnet files). Then reinstall the correct version for your platform. Go to :ref:`Desktop Wallet downloads<downloads-desktop-wallet-testnet>` to get the file for your platform.
+To clear the data of the wallet follow :ref:`the instructions for resetting the wallet's data` (Remember to remove the testnet and *not* the mainnet files). Go to :ref:`Desktop Wallet downloads<downloads-desktop-wallet-testnet>` to get the newest version.
