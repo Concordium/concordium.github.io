@@ -14,7 +14,7 @@ All new bakers come with pool support built in. You can actively choose to disab
 If your baker is chosen to bake the next block on the blockchain you will receive rewards for this. All rewards are distributed at :ref:`pay day<glossary-pay-day>` which is once every 24 hours. If your baker is also baking CCDs delegated to it, the pool owner rewards from the delegated stake (if any) are also distributed each pay day.
 
 **What does it mean for a baker to accept delegators?**
-To open a baker pool for delegators means that users who want to earn rewards but perhaps don't want to be a baker, can delegate some of their stake to a baker pool. By doing this, they give the baker the right to bake with their stake. When they delegate their stake to the baker this increases the baker’s stake and thus the odds of being selected to bake a block. This increase in rewards is then shared with the delegator.
+To open a baker pool for delegators means that users who want to earn rewards but perhaps don't want to be a baker, can delegate some of their stake to a baker pool. By doing this, they give the baker the right to bake with their stake. When they delegate their stake to the baker this increases the baker’s stake and thus the odds of being selected to bake a block. This increase in rewards is then shared with the delegators.
 
 **Are there any limits to the size of a baker pool?**
 Concordium blockchain imposes two caps on the amount of stake in a single pool:
