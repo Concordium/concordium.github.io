@@ -20,7 +20,8 @@ install and run the new node. These are the steps.
    ``C:\ProgramData``.
 3. Delete the directory named ``database-v4``.
 4. `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.1.0-0.msi>`_
-4. Install the new node version and start it.
+5. Install the new node version and start it.
+
 
 MacOS
 =====
