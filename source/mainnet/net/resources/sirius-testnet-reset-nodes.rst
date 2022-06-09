@@ -51,6 +51,12 @@ Docker
 
 To update a Docker node, you need to download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
+To upgrade from the previous testnet you should
+
+1. Stop the existing node using ``concordium-node-stop`` tool
+2. Delete the existing database. The database is located in ``~/.local/share/concordium/database-v4``. Delete this directory.
+3. Start the new node.
+
 `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.0-0-testnet.tar.gz>`_
 
       - SHA256 checksum of the download: ``0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b``
