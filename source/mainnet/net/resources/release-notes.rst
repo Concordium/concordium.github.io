@@ -16,6 +16,12 @@ Concordium Node 4.1.0
 
 A new version of Concordium Node has been released to fix two critical errors related to delegation.
 
+Concordium Desktop Wallet v1.4.1
+--------------------------------
+- When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
+- Fixed an issue that made it impossible to create a transaction to do passive delegation.
+- Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
+
 Sirius Testnet
 ==============
 
