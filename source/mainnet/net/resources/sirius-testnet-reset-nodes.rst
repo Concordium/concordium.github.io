@@ -10,7 +10,7 @@ Windows
 =======
 
 To update the Windows node you need to delete the existing testnet database and
-install and run the new node. These are the steps.
+install and run the new node. The steps are:
 
 1. Stop the existing testnet node following :ref:`instructions
    <install-upgrade-node-windows>` on how to upgrade a node.
@@ -27,12 +27,12 @@ MacOS
 =====
 
 To update the macOS node you need to delete the existing testnet database and
-install and run the new node. These are the steps.
+install and run the new node. The steps are:
 
 1. Stop the existing testnet node by running the **Concordium Node Stop
    Testnet** application.
 2. Navigate to the testnet node's data directory at ``/Library/Application
-   Support/Concordium Node/Testnet/Data``
+   Support/Concordium Node/Testnet/Data``.
 3. Delete the directory named ``database-v4``.
 4. `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.1.0-0.pkg>`_
 5. Install the new node version and start it.
@@ -53,7 +53,7 @@ To update a Docker node, you need to download the full suite for running a node 
 
 To upgrade from the previous testnet you should
 
-1. Stop the existing node using ``concordium-node-stop`` tool
+1. Stop the existing node using the ``concordium-node-stop`` tool.
 2. Delete the existing database. The database is located in ``~/.local/share/concordium/database-v4``. Delete this directory.
 3. Start the new node.
 
