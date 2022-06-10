@@ -9,19 +9,23 @@ Mainnet 4: Sirius
 
 June 23, 2022
 
-Concordium Desktop Wallet v1.4.0
+Note that with the protocol update to protocol 4 the cool-down period for reducing baker stake or stopping baking increases from one week to two weeks.
+
+Concordium Desktop Wallet v1.4.1
 --------------------------------
 
-Concordium Desktop Wallet 1.4.0 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface.
+Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface.
 
 The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
 
 June 15, 2022
 
-Concordium Node 4.0.11
-----------------------
+Concordium Node 4.1.0
+---------------------
 
-Concordium Node 4.0.11 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
+Concordium Node 4.1.0 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
+
+Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to two weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.
 
 V1 smart contracts includes the following key features:
    - Unlimited contract state size
