@@ -11,6 +11,8 @@ For Mobile Wallet, you must uninstall the app on your phone then reinstall it.
 
 Go to :ref:`Mobile Wallet downloads<downloads-mobile-wallet-testnet>` to get the file for your platform.
 
+After reinstalling the app, you will need to create your identity and account(s) again.
+
 Desktop Wallet
 ==============
 
