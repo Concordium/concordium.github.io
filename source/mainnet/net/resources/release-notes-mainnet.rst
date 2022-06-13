@@ -16,6 +16,11 @@ Concordium Desktop Wallet v1.4.1
 
 Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface.
 
+In addition, version 1.4.1 fixes the following issues:
+- When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
+- Fixed an issue that made it impossible to create a transaction to do passive delegation.
+- Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
+
 The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
 
 June 15, 2022

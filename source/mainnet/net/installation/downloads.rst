@@ -78,25 +78,25 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 Concordium Client v4.0.3
 ========================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
+-  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_4.0.3-0.exe>`_
+-  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/concordium-client_4.0.3-0.exe>`_
 
 Cargo-concordium v2.0.1
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.0.1-0>`_
+   -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.0.1-0>`_
 
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_2.0.1-0>`_
+   -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_2.0.1-0>`_
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.1-0.exe>`_
+   -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.1-0.exe>`_
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
