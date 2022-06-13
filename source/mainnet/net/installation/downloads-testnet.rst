@@ -8,6 +8,8 @@ Downloads - Testnet
 
 This topic contains information about where you can download the Concordium Wallets and tools for Testnet. You can also find out about the hardware requirements for running a node.
 
+.. _downloads-mobile-wallet-testnet:
+
 Concordium Mobile Wallet
 ========================
 
@@ -30,26 +32,26 @@ Android
 
 .. _downloads-desktop-wallet-testnet:
 
-Concordium Desktop Wallet v1.4.0
+Concordium Desktop Wallet v1.4.1
 ================================
 
-- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.4.0.exe>`_
+- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.4.1.exe>`_
 
-- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.4.0.dmg>`_
+- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.4.1.dmg>`_
 
 - Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-- `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.0.AppImage>`_
+- `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.1.AppImage>`_
 
-   - SHA256 checksum of the download: ``c6054a1d2a507035066c5998e5b960de5d0272106909fdaea82ee3aa22436d57``
+   - SHA256 checksum of the download: ``6950dc300d7ef316674b23a2106bc21b1552cc1ebd5fed679153c85efd6b6228``
 
-- `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.0.deb>`_
+- `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.1.deb>`_
 
-   - SHA256 checksum of the download: ``8b21274a188e43b58de085490442047ece86ea2b8ed6d4b532e35a60f9440817``
+   - SHA256 checksum of the download: ``a588058305882ecd32f8099c8a1cb5e3fb87167f6fe7ffa4ec870d302f53f8cb``
 
-- `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.0.rpm>`_
+- `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.1.rpm>`_
 
-   - SHA256 checksum of the download: ``95f200a6aab4a139b05b51c3e88069a26260d37681ea9479a29b031a3dcee317``
+   - SHA256 checksum of the download: ``578ef598eee1fce5aa0d69fda2c7b7c1621c12681fa86a7d1e266ac719dc70ab``
 
 Concordium Ledger App - Sirius
 ==============================
@@ -92,8 +94,8 @@ Download cargo-concordium:
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions v4.0.11
-=====================================
+Concordium node distributions v4.1.1
+====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
@@ -102,9 +104,9 @@ Ubuntu
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.0.11_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``ad418857eb27ca17b0747198f91a1bee89728ba91d0d14965fa614af23d9d0f6``
+      - SHA256 checksum of the download: ``35c668769576e32d94f53b3c167b16ad7c74425737932f9b9f2837ea35fe3641``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -115,9 +117,9 @@ Linux-Docker
 
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-   - `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.0.11-0-testnet.tar.gz>`_
+   - `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`_
 
-      - SHA256 checksum of the download: ``0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b``
+      - SHA256 checksum of the download: ``f914336abd4143f17beacbeb8f53af775cbbbf29258f40af2ef35fbdc613b8e1``
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
@@ -126,7 +128,7 @@ Windows
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.0.11-0.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.1.1.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
@@ -135,7 +137,7 @@ Mac
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.1.1-1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
@@ -147,7 +149,7 @@ Download the block separately to inspect it or to run a node in a custom configu
 
    - `Download the testnet genesis block <https://distribution.testnet.concordium.com/data/genesis.dat>`_
 
-      - SHA256 checksum of the download: ``592a921e8b43185f1726037bf7e23e78a2ea22ced82179a0840d42088e28f44a``
+      - SHA256 checksum of the download: ``69db4360f0a16414db86a920513600cfe29241c0c713a07d8e79dad19103e91d``
 
 Auxiliary tools
 ===============
