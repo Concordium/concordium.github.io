@@ -165,7 +165,7 @@ You can see the number of blocks added, the average block time, and the average 
 
 Below the graphs, the table contains the following:
 
-- **Block hash**: the first six digits of the block hash. You can click Copy |copy| to copy the entire hash. 
+- **Block hash**: the first six digits of the block hash. You can click Copy |copy| to copy the entire hash.
 - **Status**: the block status
 - **Height**: block height
 - **Age**: block age
@@ -193,7 +193,7 @@ Below the graphs, the table contains the following:
 - **Status**: transaction status
 - **Age**: transaction age
 - **Type**: transaction type
-- **Block height**: 
+- **Block height**: the block height of the transaction.
 - **Sender**: the first six characters of the account that sent the transaction. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Cost**: the transaction fee.
 
@@ -232,15 +232,15 @@ Bakers shows information about bakers during the selected time range in the filt
 
 |
 
-On this page you see the graphs showing the amount of staked CCD, the amount of bakers, and the total of rewards. 
+On this page you see the graphs showing the amount of staked CCD, the amount of bakers, and the total of rewards.
 
 Below the graphs, the table contains the following:
 
 - **Baker ID**: ID of the baker. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
-- **Status**: the baker's pool status. 
+- **Status**: the baker's pool status.
 - **Account**: the first six characters of the acccount hash appears. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Delegators**: the number of delegators that baker has.
-- **Staked amount**: the total stake of that baker. 
+- **Staked amount**: the total stake of that baker.
 
 Remember that this information is dependent on whether you have selected Mainnet or Testnet.
 
