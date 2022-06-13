@@ -550,6 +550,7 @@ different parts of the state or return a value computed from the state.
 
    To view return values of a contract instance on the chain, see the guide :ref:`invoke-instance`.
 
+.. _cargo_concordium_build:
 
 You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:
 

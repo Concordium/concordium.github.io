@@ -11,7 +11,7 @@ development.
 So far you have written and tested a piggy bank smart contract in the Rust_ programming
 language.
 This part will focus on how you can set up your own testnet node on a server, and create a testnet account.
-In more detail, you will create an instance on a server that will host your own testnet node. Secondly, you will create your own testnet account and import the keys to your testnet node.
+In more detail, you will create an instance on a server that will host your own testnet node. Secondly, you will create your own testnet account and prepare it so you can use it in the fourth :ref:`part of this tutorial<piggy-bank-deploying>` for deploying and interacting with smart contracts.
 
 .. warning::
 
@@ -54,26 +54,28 @@ The :ref:`run a node <node-requirements>` guide will help you set up your instan
 
 Start the syncing process of the testnet node by following the guide for your platform :ref:`Ubuntu<ubuntu-node>`, :ref:`Docker<docker-node>`, :ref:`Windows<windows-node>`, or :ref:`MacOS<macos-node>`.
 
-You should find your node name on the `Concordium testnet dashboard <https://dashboard.testnet.concordium.com/>`__. It will take around 1-2 days until your testnet node is fully synced. You can observe the syncing process by watching the finalization length of your node. Wait until the `Fin Length` (finalization length) of your node is the same as the highest value used by the majority of nodes.
+You should find your node name on the `Concordium testnet dashboard <https://dashboard.testnet.concordium.com/>`__. It will take around 1-2 days until your testnet node is fully synced. You can observe the syncing process by watching the finalization length of your node. Wait until the ``Fin Length`` (finalization length) of your node is the same as the highest value used by the majority of nodes.
 
 .. image:: ./images/pb_tutorial_13.png
    :width: 100 %
 
 .. Note::
-   It is a good practice to enable inbound connection on the port 8889 (testnet) in your instance. You can allow inbound connection from any IPv4 and IPv6 address, by selecting `0.0.0.0/0` and `::/0` on the port 8889. This is not mandatory for the node to sync but it will make your node a good network participant. Feel free to skip this step if you are not feeling confident editing the inbound connection rules of your instance.
+   It is a good practice to enable inbound connection on the port 8889 (testnet) in your instance. You can allow inbound connection from any IPv4 and IPv6 address, by selecting ``0.0.0.0/0`` and ``::/0`` on the port 8889. This is not mandatory for the node to sync but it will make your node a good network participant. Feel free to skip this step if you are not feeling confident editing the inbound connection rules of your instance.
 
 .. image:: ./images/pb_tutorial_12.png
    :width: 100 %
 
+.. _interacting_with_your_testnet_node:
+
 Interacting with your testnet node
 ==================================
 
-You are now ready to download the :ref:`Concordium Client<concordium-node-and-client-download-testnet>` package. Please rename the package to just `concordium-client` in case it has some version annotation so you can follow the commands in this guide easily.
+You are now ready to download the :ref:`concordium-client<concordium-node-and-client-download-testnet>` package. Please rename the package to just ``concordium-client`` in case it has some version annotation so you can follow the commands in this guide easily.
 
 .. Note::
    If you are not using ubuntu as operation system the following screenshots look differently. Please remember to adjust the following commands based on your operation system if you are not using ubuntu.
 
-Move to the folder that you downloaded the concordium client to. You can check if you are in the correct folder when you see the output `concordium-client` from the command:
+Move to the folder that you downloaded the ``concordium-client`` to. You can check if you are in the correct folder when you see the output ``concordium-client`` from the command:
 
 .. code-block:: console
 
@@ -94,31 +96,31 @@ The package is not yet executable. You change this with the command:
 
 
 
-Let's check if you can execute the concordium client tool.
+Let's check if you can execute the ``concordium-client`` tool.
 
 
 .. code-block:: console
 
    $./concordium-client --help
 
-You should see some output that will help you in getting familiar with the concordium client tool.
+You should see some output that will help you in getting familiar with the ``concordium-client`` tool.
 
 .. image:: ./images/pb_tutorial_9.png
    :width: 100 %
 
-The concordium client tool will allow you to interact with your testnet node. You find important commands that the concordium client tool provides :ref:`here<concordium_client>`.
+The ``concordium-client`` tool will allow you to interact with your testnet node. You find important commands that the ``concordium-client`` tool provides :ref:`here<concordium_client>`.
 
-Your next task enables the concordium client tool to talk to your testnet node. There are two options to achieve this:
+Your next task enables the ``concordium-client`` tool to talk to your testnet node. There are two options to achieve this:
 
 1. Option (beginners)
 
-This option explains how to transfer the concordium client tool to your instance and execute commands from within the instance.
+This option explains how to transfer the ``concordium-client`` tool to your instance and execute commands from within the instance.
 
-**Advantage**: You don't have to adjust the inbound connection rules to your instance.
+**Advantage**: You can execute the commands within your instance.
 
-**Disadvantage**: You have to transfer files between your local machine and your instance later in the tutorial when we deploy the smart contracts.
+**Disadvantage**: You have to transfer files between your local machine and your instance later in the tutorial.
 
-Transfer the concordium client package from your machine via a file-sharing tool (such as `FileZilla`) to your instance.
+Transfer the ``concordium-client`` package from your machine via a file-sharing tool (such as ``FileZilla``) to your instance.
 
 Connect to your instance and make your package executable again as we done previously already:
 
@@ -142,23 +144,26 @@ You should see some block data output.
 
 2. Option (advanced users)
 
-This option explains how you can use the concordium client tool locally at your machine and connect remotely to your node running on the server.
+This option explains how you can use the ``concordium-client`` tool locally at your machine and connect remotely to your node running on the server.
 
-**Advantage**: You don't have to transfer files between your local machine and your instance later in the tutorial when we deploy the smart contracts.
+**Advantage**: You don't have to transfer files between your local machine and your instance later in the tutorial.
 
-**Disadvantage**: You have to adjust the inbound connection rules to your instance.
+**Disadvantage**: You have to use ssh with port forwarding every time you locally run a command.
 
-.. Note::
-   Port 10001 is open by default on your testnet node to interact with it. But you have to open port 10001 in your inbound connection rules for your instance as well. Please open the port only for your IP address. Please be aware of the security implication, it is assumed that you are the only person using that IP address. Please be aware that we recommend this option for advanced users.
-
-.. image:: ./images/pb_tutorial_14.png
-   :width: 100 %
-
-Let's check if everything is connected correctly by displaying the best/latest block.
+Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance. The port 10001 at your localhost (127.0.0.1) is forwarded to the port 10001 at your instance.
 
 .. code-block:: console
 
-   $./concordium-client block show --grpc-ip <IP Address of Your Instance> --grpc-port 10001
+   $ssh -L 127.0.0.1:10001:<IP Address of Your Instance>:10001 <username>@<host>
+
+.. Note::
+   Port 10001 is open by default on your testnet node to interact with it. Cloud providers often use ``ubuntu`` as the default <username> and the <IP Address of Your Instance> as the default <host>.
+
+Move to the folder that you downloaded the ``concordium-client`` to. Let's check if everything is connected correctly by displaying the best/latest block.
+
+.. code-block:: console
+
+   $ssh -L 127.0.0.1:10001:<IP Address of Your Instance>:10001 <username>@<host> ./concordium-client block show --grpc-ip <IP Address of Your Instance> --grpc-port 10001
 
 You should see some block data output.
 
@@ -166,13 +171,15 @@ You should see some block data output.
    :width: 100 %
 
 
-Create a mobile wallet account on testnet
-=========================================
+Creating a mobile wallet account on testnet
+===========================================
+You are ready to create a mobile wallet account now.
 
-You can create an account with any of the officially provided wallets from Concordium. This tutorial focuses on the mobile wallet.
+.. Note::
+   Only the Concordium mobile wallet currently supports exporting of keys. Please do not use the Concordium desktop wallet for this tutorial.
 
 You can download the mobile wallet package from the :ref:`installation page<downloads-mobile-wallet-testnet>`.
-If you follow the instruction in the mobile app you are asked to name your account and to name your initial identity card. This tutorial uses `Concordium` for the account name and `Account1` for the identity card name but feel free to chose your own naming.
+If you follow the instruction in the mobile app you are asked to name your account and to name your initial identity card. This tutorial uses ``Concordium`` for the account name and ``Account1`` for the identity card name but feel free to chose your own naming.
 
 
 .. image:: ./images/pb_tutorial_1.png
@@ -185,7 +192,7 @@ If you follow the instruction in the mobile app you are asked to name your accou
    :width: 20 %
 
 
-You don't have to provide an ID to create an account on testnet when selecting `Concordium testnet IP`. This gives you an example for a dummy identity that you can customise or use as it is. Dummy identities are meant for testnet testing only.
+You don't have to provide an ID to create an account on testnet when selecting ``Concordium testnet IP``. This gives you an example for a dummy identity that you can customise or use as it is. Dummy identities are meant for testnet testing only.
 
 .. image:: ./images/pb_tutorial_4.png
    :width: 20 %
@@ -203,29 +210,26 @@ You also have to request some testnet CCD. The mobile app wallet has a button th
 .. Note::
    Some CCD on your testnet account is needed later when sending transactions from your account to the testnet blockchain.
 
-Create a backup of your wallet by clicking the `Backup` button in the mobile app. Save the file `concordium-backup.concordiumwallet` for now because it will be used in the next section.
+Create a backup of your wallet by clicking the ``Backup`` button in the mobile app. Save the file ``concordium-backup.concordiumwallet`` for now because it will be used in the next section.
 
 .. image:: ./images/pb_tutorial_7.png
    :width: 20 %
 
 .. Note::
-   Please remember the `export password` that you used for creating the backup file. The password is needed later when importing your account key into the testnet node.
+   Please remember the ``export password`` that you used for creating the backup file. The password is needed later when importing your account key into the ``concordium-client`` configuration.
 
 
-Import your mobile wallet account key to your testnet node
-==========================================================
+Importing your mobile wallet account key
+========================================
 
-You are ready now to import your keys to your testnet node. Let's transfer your wallet backup file (meaning the file `concordium-backup.concordiumwallet`) to the place where you are running your concordium client tool.
+You are ready now to import your key into the ``concordium-client`` configuration. Let's transfer your wallet backup file (meaning the file ``concordium-backup.concordiumwallet``) to the place where you are running your ``concordium-client`` tool. Move to the folder as well.
 
-.. Note::
-   You can use a file-sharing tool (such as `FileZilla`) to transfer your wallet backup file from e.g. your local machine to your instance.
-
-You are set for importing your key to your testnet node now:
+You are set for importing your key into the ``concordium-client`` configuration:
 
 .. code-block:: console
 
    $./concordium-client config account import ./concordium-backup.concordiumwallet
 
 .. Note::
-   You will be asked to input a password. Use the password from the back-up operation on your mobile wallet.
+   You will be asked to input a password. Use the ``export password`` that you used for creating the backup file.
 
