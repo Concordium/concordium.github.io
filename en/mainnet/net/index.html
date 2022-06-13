@@ -417,6 +417,11 @@ body {margin:0;}
      </li>
     </ul>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="desktop-wallet/reset-data.html">
+     Reset desktop wallet data
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l0 has-children">
@@ -1046,17 +1051,39 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/sirius-testnet-reset-nodes.html">
+       Node migration after Testnet reset
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/sirius-testnet-reset-wallets.html">
+       Wallet migration after Testnet reset
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/sirius-testnet-reset-client.html">
+       Client migration after Testnet reset
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1155,11 +1182,11 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#android">Android</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-desktop-wallet-v1-4-0">Concordium Desktop Wallet v1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-desktop-wallet-v1-4-1">Concordium Desktop Wallet v1.4.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-ledger-app-sirius">Concordium Ledger App - Sirius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-client-v4-0-3">Concordium Client v4.0.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#cargo-concordium-v2-0-1">Cargo-concordium v2.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v4-0-11">Concordium node distributions v4.0.11</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v4-1-1">Concordium node distributions v4.1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#ubuntu">Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#linux-docker">Linux-Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#windows">Windows</a></li>
@@ -1590,6 +1617,10 @@ body {margin:0;}
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="desktop-wallet/reset-data.html">Reset desktop wallet data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/reset-data.html#delete-the-user-data">Delete the user data</a></li>
 </ul>
 </li>
 </ul>
@@ -2655,6 +2686,11 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes.html">Release Notes - Testnet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#sirius-testnet-reset">Sirius Testnet reset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-1-1">Concordium Node 4.1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-4-1">Concordium Desktop Wallet v1.4.1</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#sirius-testnet">Sirius Testnet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-4-0">Concordium Desktop Wallet v1.4.0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-0-11">Concordium Node 4.0.11</a></li>
@@ -2730,7 +2766,34 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset.html#most-affected-parties">Most affected parties</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resources/sirius-testnet-reset.html#migration">Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources/sirius-testnet-reset.html#migration">Migration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html">Node migration after Testnet reset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#macos">MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#docker">Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html">Wallet migration after Testnet reset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html#mobile-wallet">Mobile Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html#desktop-wallet">Desktop Wallet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-client.html">Client migration after Testnet reset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#accounts">Accounts</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#account-keys">Account keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#account-names">Account names</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#smart-contracts">Smart contracts</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#module-names">Module names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#contract-names">Contract names</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/legal.html">Legal</a><ul>

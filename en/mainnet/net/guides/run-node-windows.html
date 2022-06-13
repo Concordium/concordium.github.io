@@ -417,6 +417,11 @@ body {margin:0;}
      </li>
     </ul>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../desktop-wallet/reset-data.html">
+     Reset desktop wallet data
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l0 has-children">
@@ -1046,17 +1051,39 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/sirius-testnet-reset-nodes.html">
+       Node migration after Testnet reset
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/sirius-testnet-reset-wallets.html">
+       Wallet migration after Testnet reset
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/sirius-testnet-reset-client.html">
+       Client migration after Testnet reset
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1196,7 +1223,7 @@ body {margin:0;}
 </ul>
 </div>
 <div class="section" id="install-upgrade-and-run-a-node">
-<h2>Install/upgrade and run a node<a class="headerlink" href="#install-upgrade-and-run-a-node" title="Permalink to this headline">#</a></h2>
+<span id="install-upgrade-node-windows"></span><h2>Install/upgrade and run a node<a class="headerlink" href="#install-upgrade-and-run-a-node" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p>

@@ -417,6 +417,11 @@ body {margin:0;}
      </li>
     </ul>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../net/desktop-wallet/reset-data.html">
+     Reset desktop wallet data
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l0 has-children">
@@ -1046,17 +1051,39 @@ body {margin:0;}
      Release Notes - Testnet
     </a>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../net/resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/sirius-testnet-reset-nodes.html">
+       Node migration after Testnet reset
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/sirius-testnet-reset-wallets.html">
+       Wallet migration after Testnet reset
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/resources/sirius-testnet-reset-client.html">
+       Client migration after Testnet reset
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../net/resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1538,7 +1565,7 @@ schema and items depending on the nested type. Example of <code class="docutils 
 <p>Supplied as the fields directly, see below.</p>
 </div>
 <div class="section" id="enum">
-<h3><code class="docutils literal notranslate"><span class="pre">Enum</span></code><a class="headerlink" href="#enum" title="Permalink to this headline">#</a></h3>
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">Enum</span></code><a class="headerlink" href="#enum" title="Permalink to this headline">#</a></h3>
 <p>An enum variant is supplied as an JSON object containing a single
 property, where the name of the variant as the property and the fields as the
 value. More about the fields below.</p>
@@ -1549,8 +1576,12 @@ value. More about the fields below.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>In JSON the variant <code class="docutils literal notranslate"><span class="pre">Some(9)</span></code> is then</p>
+<p>In JSON the variant <code class="docutils literal notranslate"><span class="pre">Some(9)</span></code> is then:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;Some&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>And a <code class="docutils literal notranslate"><span class="pre">None</span></code> variant is written as:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;None&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1622,18 +1653,8 @@ the field schema.</p>
 </div>
 <div class="section" id="empty">
 <h3><code class="docutils literal notranslate"><span class="pre">Empty</span></code><a class="headerlink" href="#empty" title="Permalink to this headline">#</a></h3>
-<p>Supplied as an empty JSON array.</p>
-<p>Example of empty fields in the Rust enum <code class="docutils literal notranslate"><span class="pre">Option</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nb">Option</span> <span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nb">None</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">U32</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>In JSON a <code class="docutils literal notranslate"><span class="pre">None</span></code> variant is written as:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;None&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">Empty</span></code> is supplied as an empty JSON array.</p>
+<p>See <a class="reference internal" href="#enum"><span class="std std-ref">enum</span></a> for an example.</p>
 </div>
 </div>
 </div>
