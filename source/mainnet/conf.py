@@ -85,6 +85,9 @@ graphviz_dot_args=[
 copybutton_prompt_text = "$"
 copybutton_line_continuation_character = "\\"
 
+# Options for tabs behavior
+sphinx_tabs_disable_tab_closing = True
+
 # Disable default url prefix "/en/latest/" on every resource.
 notfound_urls_prefix = "/en/mainnet/"
 

@@ -9,56 +9,60 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
+.. warning::
+   You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+
+.. Note::
+   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, IDs and addresses. This way, you'll have a backup in case the database is damaged.
+
 .. tabs::
 
-    .. tab:: Desktop Wallet
+   .. tab:: Desktop Wallet
 
-         Before you start, you need a Ledger hardware device that's set up and ready for use.
+      Before you start, you need a Ledger hardware device that's set up and ready for use.
 
-         .. warning::
-            You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+      #. Go to **Accounts**. A message is displayed if you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**. You can also create a new identity if you already have one or more by going to **Identities** and clicking on the plus in the upper right corner of the window.
 
-         #. Go to **Accounts**. A message is displayed if you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**. You can also create a new identity if you already have one or more by going to **Identities** and clicking on the plus in the upper right corner of the window.
+         .. image:: ../images/desktop-wallet/dw-add-identity-plus.png
 
-            .. image:: ../images/desktop-wallet/dw-add-identity-plus.png
+      #. Enter a name for your identity, and then enter a name for your initial account. Select **Continue**.
 
-         #. Enter a name for your identity, and then enter a name for your initial account. Select **Continue**.
+         .. image:: ../images/desktop-wallet/dw-add-identity-name.png
 
-            .. image:: ../images/desktop-wallet/dw-add-identity-name.png
+      #. Select an identity provider.
 
-         #. Select an identity provider.
+         .. image:: ../images/desktop-wallet/dw-add-identity-provider.png
 
-            .. image:: ../images/desktop-wallet/dw-add-identity-provider.png
+      #. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-         #. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+      #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**.
 
-         #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**.
+      #. In the Desktop Wallet there's a message saying **Ledger Nano S is ready**. Select **Submit**.
 
-         #. In the Desktop Wallet there's a message saying **Ledger Nano S is ready**. Select **Submit**.
+      #. Press both buttons to confirm the following on the Ledger:
 
-         #. Press both buttons to confirm the following on the Ledger:
+         - Create credential (each credential is assigned a number): : Press the right button and then both buttons to confirm **Accept**.
+         - Public key: Press both buttons to accept.
 
-            - Create credential (each credential is assigned a number): : Press the right button and then both buttons to confirm **Accept**.
-            - Public key: Press both buttons to accept.
+      #. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
-         #. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
+      #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-         #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
+      #. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-         #. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+      #. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
 
-         #. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
+      #. Press the right button, and then press both buttons to sign the identity provider information.
 
-         #. Press the right button, and then press both buttons to sign the identity provider information.
+      #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
-         #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
+      #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
 
-         #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
-
-         .. Note::
-            You can change the name of an identity after it has been created. Go to the **Identities** page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
+      .. Note::
+           You can change the name of an identity after it has been created. Go to the **Identities** page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
 
    .. tab:: Mobile Wallet
+
       You can submit requests for additional :ref:`identities<glossary-identity>` and :ref:`initial accounts<glossary-initial-account>` in the Mobile Wallet. You do this from the **Identities** page.
 
       #. Go to the |morepage| page.
@@ -93,9 +97,6 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
-
-.. Note::
-   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, IDs and addresses. This way, you'll have a backup in case the database is damaged.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
