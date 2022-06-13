@@ -14,13 +14,12 @@ install and run the new node. The steps are:
 
 1. Stop the existing testnet node following :ref:`instructions
    <install-upgrade-node-windows>` on how to upgrade a node.
-2. Navigate to the testnet node's data directory. This was selected during node
+2. Delete the testnet node's data directory folder. This was selected during node
    installation. By default it will be ``<CommonAppDataFolder>\Concordium\Node
    Runner\testnet\data`` where ``<CommonAppDataFolder>`` is usually
    ``C:\ProgramData``.
-3. Delete the directory named ``database-v4``.
-4. `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.1.0-0.msi>`_
-5. Install the new node version and start it.
+3. `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.1.1-0.msi>`_
+4. Install the new node version and start it.
 
 
 MacOS
