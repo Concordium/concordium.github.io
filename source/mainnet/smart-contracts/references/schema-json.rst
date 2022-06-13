@@ -189,6 +189,8 @@ schema and items depending on the nested type. Example of ``Array(12, U8)``:
 
 Supplied as the fields directly, see below.
 
+.. _enum:
+
 ``Enum``
 --------
 
@@ -210,6 +212,21 @@ In JSON the variant ``Some(9)`` is then
 .. code-block:: json
 
    { "Some": [9] }
+
+``Empty`` is supplied as an empty JSON array. Example of empty fields in the Rust enum ``Option``:
+
+.. code-block:: rust
+
+   enum Option {
+       None,
+       Some(U32)
+   }
+
+In JSON a ``None`` variant is written as:
+
+.. code-block:: json
+
+   { "None": [] }
 
 ``String``
 ----------------
@@ -298,19 +315,4 @@ In JSON a ``Person`` with an id of 500 and age 35 is written as:
 ``Empty``
 ---------
 
-Supplied as an empty JSON array.
-
-Example of empty fields in the Rust enum ``Option``:
-
-.. code-block:: rust
-
-   enum Option {
-       None,
-       Some(U32)
-   }
-
-In JSON a ``None`` variant is written as:
-
-.. code-block:: json
-
-   { "None": [] }
+See :ref:`enum<enum>` for an example.
