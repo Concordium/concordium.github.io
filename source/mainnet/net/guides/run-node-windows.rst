@@ -15,6 +15,8 @@ Prequisites
 -  Run Windows 10 or later or Windows Server 2019 or later.
 -  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 
+.. _install-upgrade-node-windows:
+
 Install/upgrade and run a node
 ==============================
 
