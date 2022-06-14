@@ -36,7 +36,7 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 
 |
 
-1.  Mainnet/Testnet selector
+1.  Mainnet/Testnet selector. The information shown is dependent on whether you have selected Mainnet or Testnet.
 2.  Search field
 3.  Page selector: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
 4.  Time range filter
@@ -67,7 +67,7 @@ When you click a block hash, the following appears:
 
 |
 
-The block details shows the following information about the block. Remember that this information is dependent on whether you have selected Mainnet or Testnet.
+The block details shows the following information about the block.
 
 - **Block**: the first six characters of the block hash. You can click Copy |copy| to copy the entire hash.
 - **Finalised** or **Rejected**: status of the block.
@@ -88,10 +88,10 @@ When you click a baker ID, the following appears:
 
 |
 
-The baker details shows the following information about the baker. Remember that this information is dependent on whether you have selected Mainnet or Testnet.
+The baker details shows the following information about the baker.
 
-- **Baker**: the baker ID
-- **Open, Closed**: the baker pool status
+- **Baker**: the baker ID. This is the ID you need if you want to delegate to the baker pool in a wallet.
+- **Open, Closed**: the baker pool status.
 - **Total stake**: the baker's total stake. Below the total is the amount staked by the baker and the amount of stake that comes from delegators.
 - **Account**: the first six characters of the baker account. You can click on the characters for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire account number.
 - **Baker rank**: the baker's rank out of all bakers on Mainnet/Testnet.
@@ -107,7 +107,7 @@ The baker details shows the following information about the baker. Remember that
 Transaction hash
 ^^^^^^^^^^^^^^^^
 
-When you click a transaction hash, transaction information appears. The information is different depending upon whether the transaction was successful or rejected. Remember that this information is dependent on whether you have selected Mainnet or Testnet.
+When you click a transaction hash, transaction information appears. The information is different depending upon whether the transaction was successful or rejected.
 
 .. image:: ../images/ccd-scan/ccd-scan-home-transaction-success.png
 
@@ -136,7 +136,7 @@ The only difference between a successful and rejected transaction is that the re
 Sender
 ^^^^^^
 
-When you select a sender, the following appears. Remember that this information is dependent on whether you have selected Mainnet or Testnet.
+When you select a sender, the following appears.
 
 .. image:: ../images/ccd-scan/ccd-scan-home-sender.png
 
@@ -172,8 +172,6 @@ Below the graphs, the table contains the following:
 - **Baker**: the baker ID of the baker who baked the block
 - **Transactions**: the number of transactions in the block
 
-Remember that this information is dependent on whether you have selected Mainnet or Testnet.
-
 .. _transactions-view:
 
 Transactions
@@ -197,8 +195,6 @@ Below the graphs, the table contains the following:
 - **Sender**: the first six characters of the account that sent the transaction. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Cost**: the transaction fee.
 
-Remember that this information is dependent on whether you have selected Mainnet or Testnet.
-
 .. _accounts-view:
 
 Accounts
@@ -219,8 +215,6 @@ Below the graphs, the table contains the following:
 - **Transaction count**: number of transactions the account has conducted during the selected time range.
 - **Account age**: how long the account has existed.
 
-Remember that this information is dependent on whether you have selected Mainnet or Testnet.
-
 .. _bakers-view:
 
 Bakers
@@ -236,14 +230,11 @@ On this page you see the graphs showing the amount of staked CCD, the amount of 
 
 Below the graphs, the table contains the following:
 
-- **Baker ID**: ID of the baker. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
+- **Baker ID**: ID of the baker. This is the ID you need if you want to delegate to the baker pool in a wallet. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
 - **Status**: the baker's pool status.
 - **Account**: the first six characters of the acccount hash appears. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Delegators**: the number of delegators that baker has.
 - **Staked amount**: the total stake of that baker.
-
-Remember that this information is dependent on whether you have selected Mainnet or Testnet.
-
 
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button
