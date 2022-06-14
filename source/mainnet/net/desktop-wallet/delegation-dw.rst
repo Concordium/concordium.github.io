@@ -27,3 +27,9 @@ You can only have one delegation per account. If you wish to delegate stake to m
    add-delegation
    update-delegation
    remove-delegation
+
+.. _delegation-faq:
+
+The Delegation FAQ answers many commonly asked questions.
+
+.. include:: ../snippets/delegation-faq.rst

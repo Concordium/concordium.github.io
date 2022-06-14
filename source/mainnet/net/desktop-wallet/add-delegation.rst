@@ -8,7 +8,7 @@ Delegate to a baker pool
 
    Currently delegation is only available on Testnet.
 
-You can delegate stake from an account to a baker pool or to passive delegation.
+You can delegate stake from an account to a :ref:`baker pool<glossary-baker-pool>` or to :ref:`passive delegation<glossary-passive-delegation>`.
 
 When you delegate some stake to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.
 
@@ -28,7 +28,15 @@ Delegate to a baker pool (Single-signature account)
 
 #. Click **More options** then select **Register as a delegator**.
 
-#. Select your target (a baker pool or passive delegation). Click **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+      .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
+
+#. Select your target (a baker pool or passive delegation). Click **Continue**.
+
+      .. image:: ../images/desktop-wallet/dw-delegation-target.png
+
+#. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+
+      .. image:: ../images/desktop-wallet/dw-delegation-stake.png
 
 #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 

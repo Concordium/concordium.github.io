@@ -41,11 +41,17 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Select **Shield**.
 
+                    .. image:: ../images/desktop-wallet/dw-shield.png
+
                 #. Enter the amount of CCD that you want to shield. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. Select **Continue**.
+
+                    .. image:: ../images/desktop-wallet/dw-shield-ccd.png
 
                 #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
 
                 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+
+                #. Press both buttons on the Ledger to confirm the decryption.
 
                 #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
@@ -57,11 +63,17 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Select **Shielded Balance** on the relevant account, and then select **Unshield**.
 
+                    .. image:: ../images/desktop-wallet/dw-unshield.png
+
                 #. Enter the amount of CCD that you want to unshield, and then select **Continue**.
+
+                    .. image:: ../images/desktop-wallet/dw-unshield-ccd.png
 
                 #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
 
                 #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+
+                #. Press both buttons on the Ledger to confirm the decryption.
 
                 #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
