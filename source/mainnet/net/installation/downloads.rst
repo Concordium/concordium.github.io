@@ -97,7 +97,7 @@ Download cargo-concordium:
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions v4.1.0
+Concordium node distributions v4.1.1
 ====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
@@ -107,7 +107,7 @@ Ubuntu
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Mainnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.0_amd64.deb>`_
+   - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`_
 
       - SHA256 checksum of the download: ``ad418857eb27ca17b0747198f91a1bee89728ba91d0d14965fa614af23d9d0f6``
 
@@ -120,7 +120,7 @@ Linux-Docker
 
 Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
 
-   - `Download the Mainnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.0-0-testnet.tar.gz>`_
+   - `Download the Mainnet suite for Linux <https://distribution.mainnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`_
 
       - SHA256 checksum of the download: ``0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b``
 
@@ -131,7 +131,7 @@ Windows
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.1.0-0.msi>`_
+   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.1.1.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
@@ -140,7 +140,7 @@ Mac
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.1.0-0.pkg>`_
+   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.1.1-1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 

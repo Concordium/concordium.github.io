@@ -55,6 +55,19 @@ Concordium Client 4.0.3 also supports delegation to baker pools or passive deleg
    - Support has been added for the raw queries ``GetPoolStatus`` and ``GetBakerList``.
    - The subcommand ``consensus show-chain-parameters`` has been added to show the chain parameters. This subcommand shows useful information, such as the amount needed to become a baker, bounding caps for baker pools, commission percentages for delegation, exchange rate parameters, and more.
 
+Concordium Desktop Wallet v1.4.1
+--------------------------------
+
+Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface. Note that the delegation functionality will not work until the protocol update occurs on June 23, 2022.
+
+The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
+
+In addition, the following changes were made:
+
+- When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
+- Fixed an issue that made it impossible to create a transaction to do passive delegation.
+- Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
+
 Mainnet 3: Alpha Centauri 3.0
 ==============================
 
