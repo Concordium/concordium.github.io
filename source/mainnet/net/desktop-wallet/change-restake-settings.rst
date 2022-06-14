@@ -15,7 +15,11 @@ Change restake settings (Single-signature account)
 
 #. Click **Update baker stake**.
 
+   .. image:: ../images/desktop-wallet/dw-baker-menu.png
+
 #. You can change the staked amount, if desired. Select whether you want to restake earnings or not, and then select **Continue**.
+
+   .. image:: ../images/desktop-wallet/dw-baker-stake.png
 
 .. Note:: If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies. See :ref:`Update baker stake<change-baker-stake>` for more information.
 

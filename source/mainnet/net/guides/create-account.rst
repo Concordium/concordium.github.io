@@ -23,14 +23,22 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         #. Select the plus sign in the upper right corner to create a new account.
 
+            .. image:: ../images/desktop-wallet/dw-add-account-plus.png
+
         #. Enter a name for your new account, and then select **Continue**.
+
+            .. image:: ../images/desktop-wallet/dw-new-account-name.png
 
         #. Select the identity you want to create the new account from. All available identities are listed in the right pane.
 
+            .. image:: ../images/desktop-wallet/dw-new-account-identity.png
+
         #. Select whether you want to reveal any attributes on the account or not. The available attributes depend on the identity provider.
 
+            .. image:: ../images/desktop-wallet/dw-new-account-attributes.png
+
         .. note::
-            If you select **Choose attributes to reveal**, the selected attributes will be public on the blockchain. We recommend that you do not reveal any attributes.
+            If you select **Reveal attributes**, the selected attributes will be public on the blockchain. Concordium recommends that you do not reveal any attributes.
 
         6. Select **Submit without revealing attributes**.
 
