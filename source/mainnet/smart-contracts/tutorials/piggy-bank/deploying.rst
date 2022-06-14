@@ -9,7 +9,7 @@ Deploying the piggy bank smart contract
 This is the fourth :ref:`part of a tutorial<piggy-bank>` on smart contract
 development.
 So far you have written and tested a piggy bank smart contract in the Rust_ programming language. Furthermore, you set up your testnet node on a server, created an account that is funded with some CCD, and  imported your account key into the ``concordium-client`` configuration.
-This part will focus on how you can deploy your developed piggy bank smart contract to the testnet node and interact with it.
+This part will focus on how you can deploy your developed piggy bank smart contract to the Concordium testnet and interact with it.
 
 
 .. warning::
@@ -52,7 +52,7 @@ You are now set up to deploy the piggy bank module to the testnet chain.
 
 
 .. Note::
-   This tutorial used ``Concordium`` for the <Account name>.
+   This tutorial uses ``Concordium`` for the <Account name>.
 
 .. Note::
    You will be asked to input a password. It is the password that you use for your mobile app wallet log-in.
@@ -62,7 +62,7 @@ If everything works correctly the output has a green line with your module refer
 Initializing a module
 =====================
 
-You can initialize your smart contract now to create an smart contract instance.
+You can initialize your smart contract now to create a smart contract instance.
 
 .. code-block:: console
 
@@ -78,7 +78,7 @@ If everything works correctly the output has a green line with your smart contra
 
    Contract successfully initialized with address: {"index":<Smart contract instance index>,"subindex":0}
 
-You can find additional information about initializing a module in this :ref:`guide<initialize-contract>`.
+You can find additional information about initializing a smart contract instance in this :ref:`guide<initialize-contract>`.
 
 
 Updating the piggy bank smart contract
@@ -96,7 +96,7 @@ If everything works correctly the output has a green line as follows:
 
    Successfully updated contract instance {"index":<Smart contract instance index>,"subindex":0} using the function 'insert'.
 
-You can find additional information about updating a module in this :ref:`guide<interact-instance>`.
+You can find additional information about updating a smart contract instance in this :ref:`guide<interact-instance>`.
 
 
 Viewing the piggy bank state
