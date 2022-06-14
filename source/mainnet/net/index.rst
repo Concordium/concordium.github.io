@@ -40,6 +40,7 @@
    desktop-wallet/transaction-log-filter
    desktop-wallet/update-application
    guides/overview-shared-accounts
+   desktop-wallet/reset-data
 
 .. toctree::
    :includehidden:
