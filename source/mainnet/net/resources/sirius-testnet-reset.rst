@@ -30,4 +30,11 @@ Most affected parties
 Migration
 =========
 
-Detailed instructions for migration of nodes and wallets will be provided closer to the release of the new testnet.
+The following guides contain information to help you migrate after the Testnet reset.
+
+.. toctree::
+    :maxdepth: 1
+
+    sirius-testnet-reset-nodes
+    sirius-testnet-reset-wallets
+    sirius-testnet-reset-client
