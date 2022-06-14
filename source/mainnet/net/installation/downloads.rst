@@ -78,7 +78,8 @@ Concordium Client v4.0.3
 
 -  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
 
-   - SHA256 checksum of the download: ``7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da``
+      - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
+      - :ref:`Verification instructions <verification-client-linux>`
 
 -  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
 
@@ -109,7 +110,8 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``ad418857eb27ca17b0747198f91a1bee89728ba91d0d14965fa614af23d9d0f6``
+      - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
+      - :ref:`Verification instructions <verification-node-debian-package>`
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -122,7 +124,7 @@ Download the full suite for running a node on Linux using Docker. The suite cont
 
    - `Download the Mainnet suite for Linux <https://distribution.mainnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`_
 
-      - SHA256 checksum of the download: ``0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b``
+      - SHA256 checksum of the download: :substitution-code:`|node-docker-package-checksum|`
 
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 

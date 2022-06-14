@@ -10,11 +10,15 @@
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_4.0.3-0
-.. |client-linux-checksum| replace:: 6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8
+.. |client-linux-checksum| replace:: 7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_4.1.1_amd64.deb
 .. |node-deb-package-checksum| replace:: a6a70d06fb3b3b2a3fa0f43452fc54e4a9dc2be9855a0cde8c60dba370fea814
+
+.. Node docker package verification variables
+.. |node-docker-package| replace:: concordium-software-linux-4.1.1-1-testnet.tar.gz
+.. |node-docker-package-checksum| replace:: a6a70d06fb3b3b2a3fa0f43452fc54e4a9dc2be9855a0cde8c60dba370fea814
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
