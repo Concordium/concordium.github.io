@@ -94,7 +94,7 @@ The baker details shows the following information about the baker.
 - **Open, Closed**: the baker pool status.
 - **Total stake**: the baker's total stake. Below the total is the amount staked by the baker and the amount of stake that comes from delegators.
 - **Account**: the first six characters of the baker account. You can click on the characters for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire account number.
-- **Baker rank**: the baker's rank out of all bakers on Mainnet/Testnet.
+- **Baker rank**: the baker's rank out of all bakers on Mainnet/Testnet based on the baker's total stake.
 - **Baking commission**: the baker's baking commission percent.
 - **Finalisation commission**: the baker's finalization commission percent.
 - **Transaction commission**: the baker's transaction commission percent.
@@ -226,12 +226,12 @@ Bakers shows information about bakers during the selected time range in the filt
 
 |
 
-On this page you see the graphs showing the amount of staked CCD, the amount of bakers, and the total of rewards.
+On this page you see the graphs showing when the next payday happens, the amount of staked CCD, the number of bakers, and the total of rewards.
 
 Below the graphs, the table contains the following:
 
 - **Baker ID**: ID of the baker. This is the ID you need if you want to delegate to the baker pool in a wallet. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
-- **Status**: the baker's pool status.
+- **Delegation pool Status**: the baker's pool status.
 - **Account**: the first six characters of the acccount hash appears. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Delegators**: the number of delegators that baker has.
 - **Staked amount**: the total stake of that baker.
