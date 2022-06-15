@@ -4,10 +4,6 @@
 Delegation in Desktop Wallet
 ============================
 
-.. Note::
-
-   Currently delegation is only available on Testnet.
-
 Delegation allows you to earn rewards for delegating some stake without the need to run a node or become a baker. For more information about delegation, see :ref:`Delegation <delegation-concept>`.
 
 .. Note::
