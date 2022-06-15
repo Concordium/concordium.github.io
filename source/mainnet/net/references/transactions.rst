@@ -6,7 +6,7 @@
 Concordium Client transactions
 ==============================
 
-You can perform all types of transactions with the :ref:`concordium-client<concordium_client>`. To do so, you use specialized subcommands. For an introduction to transactions, see :ref:`Transactions overview <transactions-overview>`.
+You can perform all types of transactions with the :ref:`concordium-client<concordium-client>`. To do so, you use specialized subcommands. For an introduction to transactions, see :ref:`Transactions overview <transactions-overview>`.
 
 .. Note::
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
