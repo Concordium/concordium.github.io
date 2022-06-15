@@ -27,7 +27,7 @@ AppImage
 
 .. _verification-cdw-deb:
 
-Debain package
+Debian package
 ^^^^^^^^^^^^^^
 
 .. include:: cdw-verification-instructions/cdw-deb.rst
