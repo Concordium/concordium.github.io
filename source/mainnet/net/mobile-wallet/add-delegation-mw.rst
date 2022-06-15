@@ -20,11 +20,23 @@ You can delegate some of your stake to a :ref:`baker pool<glossary-baker-pool>` 
 
 #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
+   .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
+      :width: 25%
+
 #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
+
+   .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
+      :width: 25%
 
 #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
+   .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
+      :width: 25%
+
 #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
+   .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
+      :width: 25%
 
 Once the transaction is finalized, the delegation is effective from the next pay day.
 

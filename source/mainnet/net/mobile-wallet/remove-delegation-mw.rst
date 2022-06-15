@@ -18,9 +18,18 @@ Remove delegation on an account in Mobile Wallet
 
 #. You see your current delegation. Tap **Stop delegation**.
 
+   .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+       :width: 25%
+
 #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
+   .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+      :width: 25%
+
 #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
+   .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+      :width: 25%
 
 .. Note::
 
