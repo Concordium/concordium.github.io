@@ -14,7 +14,7 @@ Concordium Node 4.1.1
 
 Concordium Node 4.1.1 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
 
-Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to two weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.
+Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to three weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.
 
 V1 smart contracts include the following key features:
    - Unlimited contract state size
