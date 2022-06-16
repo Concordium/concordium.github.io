@@ -54,7 +54,11 @@
         <a href="{{ pathto('net/guides/overview-baker-process') }}"><div class="card"><span class="fas fa-bread-slice fa-3x"></span><h3>Become a baker</h3><p class="w3-hide-medium">Create blocks on the Concordium blockchain.</p></div></a>
     </div>  
   </div>
-
+  <div class="row-ctr">
+    <div class="column">
+        <a href="{{ pathto('net/concepts/concepts-delegation') }}"><div class="card"><span class="fas fa-money-bill fa-3x"></span><h3>Delegation</h3><p class="w3-hide-medium">Delegate stake to earn rewards.</p></div></a>
+    </div>   
+  </div>
     <div class="text-container">
         <h4>New to Concordium? Go to <a href="https://concordium.com/">Concordium.com</a> to learn more about the project.</h4>
         <ul>
@@ -196,8 +200,10 @@
 
         .list-container {
 	        height: 100px;
-	        width: 100%;
+	        width: 60%;
             margin-top: 10px;
+            margin-right: auto;
+            margin-left: auto;
             text-align:center;
             position:relative;
             font-family: Nb-akademie-std,sans-serif;
@@ -265,6 +271,17 @@
                 clear: both;
             }
             
+            .list-container {
+	        height: 100px;
+	        width: 60%;
+            margin-top: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            text-align:center;
+            position:relative;
+            font-family: Nb-akademie-std,sans-serif;
+            }
+
             .consent {
                 position: fixed;
                 right: 0;
@@ -291,6 +308,13 @@
 
             .consent {
                 left: 0;}
+            
+            .list-container {
+                margin-top: 100px;
+                text-align:center;
+                position:relative;
+                font-family: Nb-akademie-std,sans-serif;
+        }
         }
 
         /* Small devices (portrait tablets and large phones, 600px and up) */
