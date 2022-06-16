@@ -1,7 +1,7 @@
 .. _concepts-index:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    id-accounts
    ../references/manage-accounts
