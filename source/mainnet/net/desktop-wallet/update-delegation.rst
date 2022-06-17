@@ -1,8 +1,8 @@
 .. _update-delegation:
 
-=================================
-Update delegation to a baker pool
-=================================
+=======================================================
+Update delegation to a baker pool or passive delegation
+=======================================================
 
 .. Note::
 
