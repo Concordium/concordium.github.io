@@ -1,8 +1,8 @@
 .. _add-delegation:
 
-========================
-Delegate to a baker pool
-========================
+==============================================
+Delegate to a baker pool or passive delegation
+==============================================
 
 .. Note::
 
@@ -21,8 +21,8 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
-Delegate to a baker pool (Single-signature account)
-===================================================
+Delegate stake (Single-signature account)
+=========================================
 
 #. Go to **Accounts** and select the account on which you want to delegate funds.
 
@@ -48,8 +48,8 @@ Delegate to a baker pool (Single-signature account)
 
 #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
-Delegate to a baker pool (Multi-signature account)
-==================================================
+Delegate stake (Multi-signature account)
+========================================
 
 #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Delegate to a pool**.
 
