@@ -231,6 +231,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="snippets/delegation-faq.html">
+       Delegation FAQ
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="guides/company-identities.html">
        Company identity creation
       </a>
@@ -340,17 +345,22 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2">
       <a class="reference internal" href="desktop-wallet/add-delegation.html">
-       Delegate to a baker pool
+       Delegate to a baker pool or passive delegation
       </a>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="desktop-wallet/update-delegation.html">
-       Update delegation to a baker pool
+       Update delegation to a baker pool or passive delegation
       </a>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="desktop-wallet/remove-delegation.html">
-       Remove delegation to a baker pool
+       Remove delegation to a baker pool or passive delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="snippets/delegation-faq.html">
+       Delegation FAQ
       </a>
      </li>
     </ul>
@@ -1312,7 +1322,66 @@ body {margin:0;}
 </li>
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#time-and-cool-downs">Time and cool-downs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#where-delegation-is-available">Where delegation is available</a></li>
-<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#summary">Summary</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="snippets/delegation-faq.html">Delegation FAQ</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="snippets/delegation-faq.html#for-delegators">For delegators</a></li>
+<li class="toctree-l5"><a class="reference internal" href="snippets/delegation-faq.html#for-bakers">For bakers</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/delegation-dw.html">Delegation in Desktop Wallet</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/add-delegation.html">Delegate to a baker pool or passive delegation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/add-delegation.html#delegate-stake-single-signature-account">Delegate stake (Single-signature account)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/add-delegation.html#delegate-stake-multi-signature-account">Delegate stake (Multi-signature account)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/add-delegation.html#generate-the-transaction">Generate the transaction</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/add-delegation.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/add-delegation.html#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the Ledger</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/add-delegation.html#export-proposal">Export proposal</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/add-delegation.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/add-delegation.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/update-delegation.html">Update delegation to a baker pool or passive delegation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/update-delegation.html#update-delegation-single-signature-account">Update delegation (Single-signature account)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/update-delegation.html#update-delegation-multi-signature-account">Update delegation (Multi-signature account)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/update-delegation.html#generate-the-transaction">Generate the transaction</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/update-delegation.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/update-delegation.html#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the Ledger</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/update-delegation.html#export-proposal">Export proposal</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/update-delegation.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/update-delegation.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/remove-delegation.html">Remove delegation to a baker pool or passive delegation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/remove-delegation.html#remove-delegation-single-signature-account">Remove delegation (Single-signature account)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/remove-delegation.html#remove-delegation-multi-signature-account">Remove delegation (Multi-signature account)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/remove-delegation.html#generate-the-transaction">Generate the transaction</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/remove-delegation.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/remove-delegation.html#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the Ledger</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/remove-delegation.html#export-proposal">Export proposal</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/remove-delegation.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/remove-delegation.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="snippets/delegation-faq.html">Delegation FAQ</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="snippets/delegation-faq.html#for-delegators">For delegators</a></li>
+<li class="toctree-l6"><a class="reference internal" href="snippets/delegation-faq.html#for-bakers">For bakers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="snippets/delegation-faq.html">Delegation FAQ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-delegators">For delegators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-bakers">For bakers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guides/company-identities.html">Company identity creation</a></li>
@@ -1483,9 +1552,9 @@ body {margin:0;}
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="desktop-wallet/delegation-dw.html">Delegation in Desktop Wallet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/add-delegation.html">Delegate to a baker pool</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/add-delegation.html#delegate-to-a-baker-pool-single-signature-account">Delegate to a baker pool (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/add-delegation.html#delegate-to-a-baker-pool-multi-signature-account">Delegate to a baker pool (Multi-signature account)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/add-delegation.html">Delegate to a baker pool or passive delegation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/add-delegation.html#delegate-stake-single-signature-account">Delegate stake (Single-signature account)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/add-delegation.html#delegate-stake-multi-signature-account">Delegate stake (Multi-signature account)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-delegation.html#generate-the-transaction">Generate the transaction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-delegation.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-delegation.html#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the Ledger</a></li>
@@ -1496,7 +1565,7 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/update-delegation.html">Update delegation to a baker pool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/update-delegation.html">Update delegation to a baker pool or passive delegation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-delegation.html#update-delegation-single-signature-account">Update delegation (Single-signature account)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-delegation.html#update-delegation-multi-signature-account">Update delegation (Multi-signature account)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-delegation.html#generate-the-transaction">Generate the transaction</a></li>
@@ -1509,7 +1578,7 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/remove-delegation.html">Remove delegation to a baker pool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/remove-delegation.html">Remove delegation to a baker pool or passive delegation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/remove-delegation.html#remove-delegation-single-signature-account">Remove delegation (Single-signature account)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/remove-delegation.html#remove-delegation-multi-signature-account">Remove delegation (Multi-signature account)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-delegation.html#generate-the-transaction">Generate the transaction</a></li>
@@ -1522,9 +1591,9 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/delegation-dw.html#id1">Delegation FAQ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/delegation-dw.html#for-delegators">For delegators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/delegation-dw.html#for-bakers">For bakers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snippets/delegation-faq.html">Delegation FAQ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-delegators">For delegators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-bakers">For bakers</a></li>
 </ul>
 </li>
 </ul>

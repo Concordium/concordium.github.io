@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Delegate to a baker pool" href="add-delegation.html" />
-    <link rel="prev" title="Make a backup of identities, accounts, and addresses" href="../guides/export-import.html" />
+    <link rel="next" title="Delegate to a baker pool or passive delegation" href="add-delegation.html" />
+    <link rel="prev" title="Delegation FAQ" href="../snippets/delegation-faq.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -184,22 +184,22 @@ body {margin:0;}
     Learn
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label class="label-parts" for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1 has-children">
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 current active has-children">
     <a class="reference internal" href="../guides/learn-about-concordium.html">
      Learn about Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
     <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l2">
       <a class="reference internal" href="../concepts/id-accounts.html">
        Identities
@@ -225,9 +225,14 @@ body {margin:0;}
        Bakers
       </a>
      </li>
-     <li class="toctree-l2">
+     <li class="toctree-l2 current active">
       <a class="reference internal" href="../concepts/concepts-delegation.html">
        Delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../snippets/delegation-faq.html">
+       Delegation FAQ
       </a>
      </li>
      <li class="toctree-l2">
@@ -340,17 +345,22 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2">
       <a class="reference internal" href="add-delegation.html">
-       Delegate to a baker pool
+       Delegate to a baker pool or passive delegation
       </a>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="update-delegation.html">
-       Update delegation to a baker pool
+       Update delegation to a baker pool or passive delegation
       </a>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="remove-delegation.html">
-       Remove delegation to a baker pool
+       Remove delegation to a baker pool or passive delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../snippets/delegation-faq.html">
+       Delegation FAQ
       </a>
      </li>
     </ul>
@@ -1133,31 +1143,9 @@ body {margin:0;}
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Delegation FAQ
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-delegators">
-     For delegators
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-bakers">
-     For bakers
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -1191,76 +1179,7 @@ body {margin:0;}
 </div>
 <div class="toctree-wrapper compound">
 </div>
-<p id="delegation-faq">The Delegation FAQ answers many commonly asked questions.</p>
-<div class="section" id="id1">
-<h2>Delegation FAQ<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<div class="section" id="for-delegators">
-<h3>For delegators<a class="headerlink" href="#for-delegators" title="Permalink to this headline">#</a></h3>
-<p><strong>Can I delegate to more than one baker at a time?</strong>
-Yes. You can delegate to multiple bakers but an account can only have one delegation. To delegate to multiple bakers, you need multiple accounts.</p>
-<p><strong>Can I move from one baker pool to another without having to wait for the next pay day?</strong>
-Changes to the pools take effect every 24 hours. So increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>.</p>
-<p><strong>How much does it cost to begin delegating?</strong>
-There is no minimum amount required to delegate stake to a pool or enable passive delegation. You just have to have enough CCD left in your disposable balance to cover transaction fees.</p>
-<p><strong>How much can I expect to earn as a delegator?</strong>
-This depends on how much you delegate, the baker pool you select and how reliable this baker is. It also depends on how much stake the baker has. It is important to use <a class="reference external" href="https://ccdscan.io">CCDScan</a> to research bakers before delegating stake.</p>
-<p>To cover the costs of running the baker node 10% of the delegators’ share of the pool rewards are awarded to the pool owner. For example, suppose that a pool has 1,000,000 CCD staked and out of that you have delegated 10,000 CCD to the pool (1%). Suppose that in a 24 hour period this pool earns 500 CCD. Your delegation’s share of the rewards is 1% equal to 5 CCD. Of this amount 10% (0.5 CCD) is awarded to the pool owner and you receive the remaining 4.5 CCD.</p>
-<p><strong>If I delegate stake to a baker pool or passive delegation, can I use it for transactions?</strong>
-No, any stake that you delegate is not part of the disposable balance; it is locked and cannot be used for transactions or to pay transaction fees.</p>
-<p><strong>Is there a “cool-down” period when delegating and how does it work?</strong>
-Yes, for certain changes there is a cool-down period built into the pool system. The cool-down period is two weeks. During the cool-down it is not possible to change the delegated amount or move the delegated amount to a different baker pool. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely.</p>
-<p><strong>Why is there a cool-down when I decrease / stop my delegation?</strong>
-The cool-down period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.</p>
-<p><strong>Can I change my restaking preference if I am in a cool-down period?</strong>
-Yes, you can change whether you want earnings restaked or not during a cool-down period.</p>
-<p><strong>Can I change the delegated amount if I am in a cool-down period?</strong>
-No, if you are in a cool-down period, you cannot change the delegated amount until the cool-down period ends. The cool-down period is two weeks.</p>
-<p><strong>I want to update my delegation amount, but the input is locked. Why is that?</strong>
-The amount is locked because you are in a cool-down period and the delegation amount cannot be changed. The cool-down period is two weeks when decreasing your delegation amount or stopping delegation.</p>
-<p><strong>Where can I see a list of all the baker pools I can delegate to?</strong>
-You can see a list of all pools and some performance metrics on <a class="reference external" href="https://ccdscan.io">CCDScan</a>.</p>
-<p><strong>How do I know whether a baker pool is good or bad? Where can I research baker performance and reliability?</strong>
-You can research baker performance and pool reliability on <a class="reference external" href="https://ccdscan.io">CCDScan</a>. For information about how to judge baker performance and reliability, see <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">Baker management</span></a>.</p>
-<p><strong>What happens if a baker I delegate to closes the pool?</strong>
-If a baker closes their pool your delegation is moved to passive delegation.</p>
-<p><strong>I didn’t receive a reward at pay day. Why is that?</strong>
-It could be because the baker to whose pool you have delegated stake was not selected to bake a block. There are several reasons this could have happened. It might be a good idea to check the baker’s performance regularly.</p>
-<p><strong>What is “passive delegation”?</strong>
-For CCD holders who do not want to regularly check the performance of a chosen pool but just want a stable way of earning rewards, passive delegation offers a low-risk, low-reward alternative. This staking strategy is not associated with a specific baker, so there is no risk of poor baker health. The trade off when choosing passive delegation is that the rewards will be less than what you may receive when delegating to a specific baker pool.</p>
-<p><strong>My account is suddenly delegating to passive delegation. Why is that?</strong>
-It is likely because the baker pool to which you were delegating has been closed. You can continue to delegate to passive delegation or select a new baker pool for your delegation.</p>
-</div>
-<div class="section" id="for-bakers">
-<h3>For bakers<a class="headerlink" href="#for-bakers" title="Permalink to this headline">#</a></h3>
-<p><strong>Can I open a pool on my existing baker node?</strong>
-Yes. See <a class="reference internal" href="update-baker-pool-dw.html#update-baker-pool-dw"><span class="std std-ref">Update a baker pool</span></a> for instructions about how to set up a baker pool on an existing baker.</p>
-<p><strong>How do I activate a baker pool?</strong>
-All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See <a class="reference internal" href="update-baker-pool-dw.html#update-baker-pool-dw"><span class="std std-ref">Update a baker pool</span></a> for instructions about how to set up a baker pool.</p>
-<p><strong>How often are rewards distributed to bakers?</strong>
-If your baker is chosen to bake the next block on the blockchain you will receive rewards for this. All rewards are distributed at <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> which is once every 24 hours. If your baker is also baking using CCDs delegated to it, the pool owner rewards from the delegated stake (if any) are also distributed each pay day.</p>
-<p><strong>What does it mean for a baker to accept delegators?</strong>
-To open a baker pool for delegators means that users who want to earn rewards but perhaps don’t want to be a baker, can delegate some of their stake to a baker pool. By doing this, they give the baker the right to bake with their stake. When they delegate their stake to the baker this increases the baker’s stake and thus the odds of being selected to bake a block. This increase in rewards is then shared with the delegators.</p>
-<p><strong>Are there any limits to the size of a baker pool?</strong>
-Concordium blockchain imposes two caps on the amount of stake in a single pool:</p>
-<ul class="simple">
-<li><p>A pool cannot have more than 10% of all staked CCD</p></li>
-<li><p>The total stake of a pool cannot be more than 3x the size of the pool owners own stake</p></li>
-</ul>
-<p>The first limit ensures that the blockchain remains distributed and prevents the crash of one baker from affecting the whole system. A party with lots of capital is welcome to run multiple bakers to avoid this cap as in turn this would increase decentralization.</p>
-<p>The second cap is for security reasons as it prevents a party with a small stake from controlling too large a part of the system using leverage.</p>
-<p><strong>What happens when the maximum stake cap is reached for my baker?</strong>
-These two caps are soft caps in the sense that a pool can have more stake than allowed, but only the allowed amounts are taken into account in the consensus algorithm and when distributing rewards. A pool violating the amount limits will gradually receive less rewards per CCD in the pool as the size of the pool continues to increase.</p>
-<p><strong>How much less/more can I expect to earn when opening my pool to delegators?</strong>
-The amount you earn depends on how much stake your pool is baking. The more delegators, the more stake you have and the greater your chances of being selected to bake a block are. 10% of the additional rewards the delegators’ stake in your pool attracts will go to the pool owner. As you are able to have 2x your own stake delegated to your pool, you are effectively able to increase your rewards by 20% if your pool is full.</p>
-<p>Therefore, attracting delegators and managing your baker responsibly will maximize rewards for all. In <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">Baker management</span></a> you’ll find information about how to be a responsible baker.</p>
-<p><strong>Is there a cool-down period for bakers?</strong>
-Yes, the <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down</span></a> period for bakers is three weeks when reducing stake or stopping baking. The stake is locked during the cool-down period and cannot be changed. The stake continues to earn rewards until the end of the cool-down period. The cool-down period is there to provide stability to the blockchain.</p>
-<p><strong>Can I change my restaking preference if I am in a cool-down period?</strong>
-Yes, you can. Note that anything that is restaked during the cool-down period will be unstaked after the stake reduction takes effect.</p>
-<p><strong>How much does it cost to begin baking?</strong>
-There is no specific fee to begin baking, however, you do need to stake a minimum of 14,000 CCD, and you need to have enough CCD left in your disposable balance to cover transaction fees to register your baker keys on chain.</p>
-</div>
-</div>
+<p>The <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq"><span class="std std-ref">Delegation FAQ</span></a> answers many commonly asked questions.</p>
 </div>
 
 

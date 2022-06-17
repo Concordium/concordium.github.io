@@ -231,6 +231,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../snippets/delegation-faq.html">
+       Delegation FAQ
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../guides/company-identities.html">
        Company identity creation
       </a>
@@ -340,17 +345,22 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/add-delegation.html">
-       Delegate to a baker pool
+       Delegate to a baker pool or passive delegation
       </a>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/update-delegation.html">
-       Update delegation to a baker pool
+       Update delegation to a baker pool or passive delegation
       </a>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/remove-delegation.html">
-       Remove delegation to a baker pool
+       Remove delegation to a baker pool or passive delegation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../snippets/delegation-faq.html">
+       Delegation FAQ
       </a>
      </li>
     </ul>
@@ -1154,41 +1164,92 @@ body {margin:0;}
   <div class="toctree-wrapper compound" id="concepts-index">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="id-accounts.html#about-identities">About identities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id-accounts.html#about-identities">About identities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="id-accounts.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="id-accounts.html#obtain-an-identity">Obtain an identity</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="id-accounts.html#about-accounts">About accounts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="id-accounts.html#revoking-anonymity">Revoking anonymity</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../references/manage-accounts.html">Accounts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#about-accounts">About accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#about-accounts">About accounts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#initial-account">Initial account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#account-creation">Account creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#attributes">Attributes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#revoking-anonymity">Revoking anonymity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#account-concepts">Account concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#account-concepts">Account concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#account-balances">Account balances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#account-sequence-number">Account sequence number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#account-aliases">Account aliases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../references/manage-accounts.html#tools">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#the-desktop-wallet">The Desktop Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#the-mobile-wallet">The Mobile Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../references/manage-accounts.html#command-line-tool">Command-line tool</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-backup.html">Backup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concepts-backup.html#backups-for-mobile-wallet">Backups for Mobile Wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-backup.html#backups-for-mobile-wallet">Backups for Mobile Wallet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts-backup.html#how-it-works">How it works</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="concepts-backup.html#backups-for-desktop-wallet">Backups for Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-backup.html#how-to-proceed">How to proceed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-backup.html#how-to-proceed">How to proceed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts-backup.html#upgrade">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-backup.html#id2">Backup</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="concepts-backup.html#final-notes">Final Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-transactions.html">Transactions overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html#how-transactions-work">How transactions work</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html#transaction-fees">Transaction fees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html#tools">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts-transactions.html#the-desktop-wallet">The Desktop Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-transactions.html#the-mobile-wallet">The Mobile Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-transactions.html#command-line-tool">Command-line tool</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-baker.html">Bakers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html#how-baking-works">How baking works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html#finalization">Finalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html#how-baking-works">How baking works</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts-baker.html#baker-keys">Baker keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-baker.html#baker-account">Baker account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-baker.html#stake-and-lottery">Stake and lottery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-baker.html#time-concepts">Time concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html#finalization">Finalization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts-baker.html#what-is-finalization">What is finalization?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-baker.html#finalization-committee">Finalization committee</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-delegation.html">Delegation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html#pools-and-rewards">Pools and Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html#pools-and-rewards">Pools and Rewards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts-delegation.html#bounding-the-size-of-pools">Bounding the size of pools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-delegation.html#pool-reliability">Pool reliability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts-delegation.html#passive-delegation">Passive delegation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html#time-and-cool-downs">Time and cool-downs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html#where-delegation-is-available">Where delegation is available</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../snippets/delegation-faq.html">Delegation FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snippets/delegation-faq.html#for-delegators">For delegators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snippets/delegation-faq.html#for-bakers">For bakers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/company-identities.html">Company identity creation</a></li>
