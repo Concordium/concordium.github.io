@@ -9,4 +9,5 @@
    concepts-transactions
    concepts-baker
    concepts-delegation
+   ../snippets/delegation-faq
    ../guides/company-identities
