@@ -181,21 +181,24 @@ This option explains how you can use the ``concordium-client`` tool locally on y
 
 **Disadvantage**: You have to use ssh with port forwarding when you run a command locally.
 
-Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance. The port 10001 on your localhost is forwarded to the port 10001 on your instance.
+Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 10001 on your localhost is forwarded to the port 10001 on your instance.
 
 .. code-block:: console
 
-   $ssh -L localhost:10001:<IP-address-of-your-instance>:10001 <username>@<host>
+   $ssh -NL localhost:10001:<IP-address-of-your-instance>:10001 <username>@<host>
+
+.. image:: ./images/pb_tutorial_26.png
+   :width: 100 %
 
 .. note::
 
    Port 10001 is open by default on your testnet node to interact with it. Cloud providers often use ``ubuntu`` as the default <username> and the <IP-address-of-your-instance> as the default <host>.
 
-Go to the folder where you downloaded the ``concordium-client``. Check if everything is connected correctly by displaying the best/latest block.
+Go in another terminal B to the folder where you downloaded the ``concordium-client``. Check if everything is connected correctly by displaying the best/latest block.
 
 .. code-block:: console
 
-   $ssh <method-to-ssh-into-your-instance-given-by-your-cloud-provider> ./concordium-client block show --grpc-ip <IP-address-of-your-instance> --grpc-port 10001
+   $./concordium-client block show --grpc-port 10001
 
 You should see some block data output.
 
