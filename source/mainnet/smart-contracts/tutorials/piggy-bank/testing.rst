@@ -93,7 +93,7 @@ example code for part 1 from `GitHub
 
 You are now ready to write unit tests for your smart contract!
 
-.. Note::
+.. note::
 
    To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
 

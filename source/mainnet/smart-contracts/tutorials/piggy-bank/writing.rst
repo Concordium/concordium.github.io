@@ -374,6 +374,8 @@ do not have to do that yourself, and the ``amount`` is not used by your contract
 
    The ``payable`` attribute also exists for the |init| macro.
 
+.. _smashing-the-piggy-bank-writing:
+
 Smashing a piggy bank
 ---------------------
 
