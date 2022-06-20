@@ -7,6 +7,13 @@ Release notes - Mainnet
 Mainnet 4: Sirius
 =================
 
+July 4, 2022
+
+Concordium Node 4.2.1
+---------------------
+
+Node startup has been improved and memory consumption reduced.
+
 June 15, 2022
 
 Concordium Node 4.1.1
