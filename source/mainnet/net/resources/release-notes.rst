@@ -4,6 +4,16 @@
 Release Notes - Testnet
 =======================
 
+Sirius Testnet
+==============
+
+June 27, 2022
+
+Concordium Node 4.2.1
+---------------------
+
+The node startup has been improved and memory consumption reduced.
+
 Sirius Testnet reset
 ====================
 
