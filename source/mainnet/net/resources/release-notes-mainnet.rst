@@ -4,11 +4,69 @@
 Release notes - Mainnet
 =======================
 
-.. contents::
-   :local:
-   :backlinks: none
+Mainnet 4: Sirius
+=================
 
+June 15, 2022
 
+Concordium Node 4.1.1
+---------------------
+
+Concordium Node 4.1.1 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
+
+Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to three weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.
+
+V1 smart contracts include the following key features:
+   - Unlimited contract state size
+   - Synchronous contract calls
+   - Fallback entrypoints
+   - An increased smart contract module size limit of 512kB
+   - A number of cryptographic primitives
+
+Other improvements in this version include:
+   - The SendTransaction function exposed via the gRPC interface now provides the caller with detailed error messages.
+   - Support for wire-protocol version 0 is dropped, meaning that the node cannot connect to peers that do not support wire-protocol version 1, which is supported since version 1.1.0.
+   - The macOS installer has been improved so it no longer overwrites the service files when reinstalling.
+   - When using the Mac installer users now can leave one (but not both) of the net configurations empty when they don't want to configure a node for it. On the initial installation, leaving a net configuration empty means that the start/stop app shortcuts and the application support folder for that net won't be installed.
+   - Consensus queries have been made more robust by validating input more extensively. This affects all queries whose input was a block or transaction hash. These queries now return an InvalidArgument error.
+   - The maximum number of retries for Node Collector has been removed so it will keep querying indefinitely.
+   - Nodes can now be stopped during out of band catchup by using the signals ``SIGINT`` and ``SIGTERM``.
+   - The ``GetAccountInfo`` endpoint supports querying the account via the account index.
+   - Baker pools and stake delegation are implemented for the P4 protocol version.
+   - The new gRPC endpoint ``GetBakerList`` retrieves a JSON list of the baker IDs of the bakers registered in a known block. It returns null for an unknown block.
+   - The new gRPC endpoint ``GetPoolStatus`` retrieves a status record for a baker pool, or for the set of passive delegators.
+   - The bakerStakeThreshold level-2 keys are renamed to poolParameters keys; two additional access structures are defined: cooldownParameters and timeParameters.
+   - Smart contract modules are cached on startup from the existing state to improve smart contract execution.
+
+Concordium Client 4.0.3
+-----------------------
+
+Concordium Client 4.0.3 supports version 1 Smart Contracts with the following changes.
+
+   - A ``contract invoke`` command has been added for simulating contracts locally on the node.
+   - Module deploy now expects modules with a version prefix. This prefix is added automatically when building with cargo-concordium version >= 2. The flag ``--contract-version`` has been added to support modules without the version prefix.
+   - The ``contract update`` command now uses ``--entrypoint`` to specify the function to invoke. This is renamed from the previous ``--func``.
+   - When calling ``contract update`` or ``contract invoke`` with a non-existent entrypoint the fallback entrypoint is called if one is specified in the contract.
+
+Concordium Client 4.0.3 also supports delegation to baker pools or passive delegation, and commands have been added to open baker pools.
+
+   - The commands ``delegator add``, ``delegator configure`` and ``delegator remove`` have been added. Commands to support the baker opening a baker pool have also been added, including ``baker configure``, ``baker update-url`` and ``baker update-delegation-status``.
+   - The existing commands ``baker add``, ``baker remove``, ``baker set-key``, ``baker update-restake`` and ``baker update-stake`` have been updated so that in Protocol version < 4, they generate the former P3 transaction, and in Protocol version 4, they generate the relevant ``configure baker`` transaction.
+   - Support has been added for the raw queries ``GetPoolStatus`` and ``GetBakerList``.
+   - The subcommand ``consensus show-chain-parameters`` has been added to show the chain parameters. This subcommand shows useful information, such as the amount needed to become a baker, bounding caps for baker pools, commission percentages for delegation, exchange rate parameters, and more.
+
+Concordium Desktop Wallet v1.4.1
+--------------------------------
+
+Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface. Note that the delegation functionality will not work until the protocol update occurs on June 23, 2022.
+
+The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
+
+In addition, the following changes were made:
+
+- When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
+- Fixed an issue that made it impossible to create a transaction to do passive delegation.
+- Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
 
 Mainnet 3: Alpha Centauri 3.0
 ==============================

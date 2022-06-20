@@ -1,3 +1,5 @@
+.. _delegation-faq:
+
 Delegation FAQ
 ==============
 

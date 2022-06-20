@@ -1,7 +1,7 @@
 .. _concepts-index:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    id-accounts
    ../references/manage-accounts
@@ -9,4 +9,5 @@
    concepts-transactions
    concepts-baker
    concepts-delegation
+   ../snippets/delegation-faq
    ../guides/company-identities
