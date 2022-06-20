@@ -11,7 +11,6 @@ The following topics are specific to Desktop Wallet.
 
     ../guides/overview-desktop
     accounts-desktop
-    delegation-dw
     single-sign-schedule
     transaction-log-filter
     update-application
