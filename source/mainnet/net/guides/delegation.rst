@@ -1,12 +1,8 @@
-.. _delegation-dw:
+.. _delegation:
 
-============================
-Delegation in Desktop Wallet
-============================
-
-.. Note::
-
-   Currently delegation is only available on Testnet.
+==========
+Delegation
+==========
 
 Delegation allows you to earn rewards for delegating some stake without the need to run a node or become a baker. For more information about delegation, see :ref:`Delegation <delegation-concept>`.
 
@@ -27,6 +23,5 @@ You can only have one delegation per account. If you wish to delegate stake to m
    add-delegation
    update-delegation
    remove-delegation
-   ../snippets/delegation-faq
 
-The :ref:`Delegation FAQ<delegation-faq>` answers many commonly asked questions.
+The Delegation FAQ answers many commonly asked questions.

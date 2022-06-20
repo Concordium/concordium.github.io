@@ -91,7 +91,7 @@ You'll see a variety of information in **More options** about your account and a
 
 -  **Register as a baker**: Make the account a baker account. See :ref:`Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see **Baking** which contains a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
 
-- **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation in the Desktop Wallet<delegation-dw>` and :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
+- **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation in the Desktop Wallet<delegation>` and :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
 
 Edit account name
 -----------------

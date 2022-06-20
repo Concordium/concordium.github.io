@@ -31,10 +31,9 @@
    desktop-wallet/accounts-desktop
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
+   guides/delegation
    guides/shielded-transfer
    guides/export-import
-   desktop-wallet/delegation-dw
-   mobile-wallet/delegation-mw
    desktop-wallet/single-sign-schedule
    mobile-wallet/inspect-release-schedule-mw
    desktop-wallet/transaction-log-filter

@@ -48,7 +48,7 @@ But decreasing the stake (whether for delegators or bakers) is subject to a cool
 
 Where delegation is available
 =============================
-You can delegate CCDs in :ref:`Desktop Wallet<delegation-dw>`, :ref:`Mobile Wallet<delegation-mw>`, and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
+You can delegate CCDs in :ref:`Desktop Wallet<delegation>`, :ref:`Mobile Wallet<delegation>`, and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======
@@ -62,4 +62,4 @@ See the :ref:`Delegation FAQ<delegation-faq>` for answers to the most frequently
    :maxdepth: 2
 
    ../snippets/delegation-faq
-   ../desktop-wallet/delegation-dw
+   ../guides/delegation
