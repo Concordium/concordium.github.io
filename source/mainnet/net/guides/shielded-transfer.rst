@@ -12,6 +12,10 @@ Prerequisites
 
 -  You must have a shielded amount of CCD on the account you want to make the shielded transfer from. See :ref:`Shield CCD on an account <shield-CCD-wallets>`.
 
+.. Warning::
+
+    Exchanges do not support shielded transfers. Attempting to do a shielded transfer to an exchange may cause missing or inaccessible funds on the exchange wallet.
+
 .. Note::
    You can't make shielded transfers on multi-signature accounts in the Desktop Wallet.
 
