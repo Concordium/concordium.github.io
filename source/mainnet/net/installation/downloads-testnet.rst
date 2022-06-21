@@ -47,7 +47,7 @@ MacOS v1.4.2
 
 
 Linux® v1.4.1
-------
+-------------
 -  Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
    -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.4.1.AppImage>`_
