@@ -1,8 +1,8 @@
 .. _update-delegation:
 
-=================================
-Update delegation to a baker pool
-=================================
+=======================================================
+Update delegation to a baker pool or passive delegation
+=======================================================
 
 You can change the delegation amount and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 

@@ -6,6 +6,14 @@ Release notes - Mainnet
 
 Mainnet 4: Sirius
 =================
+June 21, 2022
+
+Concordium Desktop Wallet v1.4.2
+--------------------------------
+Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS containing the following fixes:
+
+-   Fixed an issue on macOS where an error popup would show after closing the main application window and opening it again.
+-   Fixed an issue on macOS where identity creation was not possible after closing the main application window and opening it again.
 
 June 15, 2022
 

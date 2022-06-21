@@ -1,8 +1,8 @@
 .. _remove-delegation:
 
-=================================
-Remove delegation to a baker pool
-=================================
+=======================================================
+Remove delegation to a baker pool or passive delegation
+=======================================================
 
 You can remove the delegation on an account to stop delegating.
 
