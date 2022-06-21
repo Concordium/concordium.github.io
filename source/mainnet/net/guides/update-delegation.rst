@@ -142,6 +142,8 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
         #. In the hamburger menu |hamburger| tap **Delegation**.
 
+            .. image:: ../images/mobile-wallet/account-hamburger-menu.png
+
         #. You see your current delegation. Tap **Update current delegation**.
 
             .. image:: ../images/mobile-wallet/delegation-status-mw.jpg

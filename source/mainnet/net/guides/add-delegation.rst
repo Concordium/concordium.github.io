@@ -134,7 +134,11 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. Tap on the balance area of the account you want to delegate from or tap **More** |moredetails|.
 
-        #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation. Tap **Register delegation**.
+        #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation.
+
+            .. image:: ../images/mobile-wallet/account-hamburger-menu.png
+
+        #. Tap **Register delegation**.
 
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
@@ -152,7 +156,13 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
             .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
 
-        Once the transaction is finalized, the delegation is effective from the next pay day.
+        Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
+
+        .. image:: ../images/mobile-wallet/account-delegating.png
+            :width: 40%
+
+        .. image:: ../images/mobile-wallet/account-details-delegating.png
+            :width: 40%
 
         .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
