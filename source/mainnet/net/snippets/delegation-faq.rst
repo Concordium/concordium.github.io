@@ -56,6 +56,7 @@ For CCD holders who do not want to regularly check the performance of a chosen p
 **My account is suddenly delegating to passive delegation. Why is that?**
 It is likely because the baker pool to which you were delegating has been closed. You can continue to delegate to passive delegation or select a new baker pool for your delegation.
 
+
 For bakers
 ----------
 
@@ -97,3 +98,4 @@ Yes, you can. Note that anything that is restaked during the cool-down period wi
 
 **How much does it cost to begin baking?**
 There is no specific fee to begin baking, however, you do need to stake a minimum of 14,000 CCD, and you need to have enough CCD left in your disposable balance to cover transaction fees to register your baker keys on chain.
+
