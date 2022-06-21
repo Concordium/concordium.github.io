@@ -26,12 +26,12 @@ Preparation
 
 Before you start, make sure you completed the previous parts of the tutorial and have a running testnet node that has caught up to the head of the blockchain and an account with some CCD setup.
 
-Building a wasm module
+Building a Wasm module
 ======================
 
-You have already built a wasm module from your piggy bank smart contract in a :ref:`previous part<cargo-concordium-build>` of this tutorial.
+You have already built a Wasm module from your piggy bank smart contract in a :ref:`previous part<cargo-concordium-build>` of this tutorial.
 
-Repeat this step since you might have done some changes to the smart contract code in :ref:`part 2<piggy-bank-testing>` of this tutorial. Go to the folder where you saved your piggy bank smart contract and use ``cargo concordium build`` to create a wasm module.
+Repeat this step since you might have done some changes to the smart contract code in :ref:`part 2<piggy-bank-testing>` of this tutorial. Go to the folder where you saved your piggy bank smart contract and use ``cargo concordium build`` to create a Wasm module.
 
 .. code-block:: console
 
@@ -43,8 +43,8 @@ Repeat this step since you might have done some changes to the smart contract co
 
 .. note::
 
-   Alternatively, you can find the module in the folder ``./target/concordium/wasm32-unknown-unknown/release/``.
-   Use the wasm module file suffixed with ``v1`` when deploying to the chain. The ``piggy_bank_part2.wasm`` file (without the ``v1`` suffix) is not the ``v0`` module, but rather the raw wasm module produced by cargo.
+   When you use the above command without the ``--out`` flag, you can find the module in the folder ``./target/concordium/wasm32-unknown-unknown/release/``.
+   Use the Wasm module file suffixed with ``v1`` when deploying to the chain. The ``piggy_bank_part2.wasm`` file (without the ``v1`` suffix) is not the ``v0`` module, but rather the raw Wasm module produced by cargo.
    The ``v1`` suffixed module has been stripped for debugging information, which makes it significantly smaller.
 
 
