@@ -22,24 +22,15 @@
    :caption: Concordium Wallets
 
    guides/deciding-wallet
-   mobile-wallet/setup-mobile-wallet
-   guides/overview-desktop
    guides/create-identity
    guides/create-account
-   mobile-wallet/share-address-mw
-   mobile-wallet/change-passcode-mw
-   desktop-wallet/accounts-desktop
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
+   desktop-wallet/delegation-dw
    guides/shielded-transfer
    guides/export-import
-   desktop-wallet/delegation-dw
-   desktop-wallet/single-sign-schedule
-   mobile-wallet/inspect-release-schedule-mw
-   desktop-wallet/transaction-log-filter
-   desktop-wallet/update-application
-   guides/overview-shared-accounts
-   desktop-wallet/reset-data
+   mobile-wallet/index
+   desktop-wallet/index
 
 .. toctree::
    :includehidden:
