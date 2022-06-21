@@ -8,25 +8,33 @@ Change baker options in Mobile Wallet
 
 #. In the hamburger menu |hamburger| tap **Baking**.
 
-#. In the Baker status screen tap **Update baker settings**. You have four options:
+#. In the Baker status screen tap **Update baker settings**. 
+
+    .. image:: ../images/mobile-wallet/baker-status-mw.png
+
+You have four options:
 
     - Update baker stake
     - Update pool settings
     - Update baker keys
     - Stop baking
 
+.. image:: ../images/mobile-wallet/baker-hamburger-menu.png
+
 Update baker stake
 ==================
 
-If you choose **Update baker stake** you see your balance and the current Baker stake amount.
+If you choose **Update baker stake** you see your balance and the current Baker stake amount. Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
 
-Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
+.. image:: ../images/mobile-wallet/update-baker-stake-amt-mw.png
 
 On the overview screen, check the information. Once you are satisfied, tap **Submit baker transaction**.
 
+.. image:: ../images/mobile-wallet/update-baker-stake-amt-submit.png
+
 Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
-Once the transaction is approved, you see the active baker screen where you have the possibility to update baker settings.
+.. image:: ../images/mobile-wallet/update-baker-stake-amt-finish.png
 
 .. Note::
 
@@ -36,6 +44,8 @@ Update pool settings
 ====================
 
 If you choose **Update pool settings**, you have three options:
+
+.. image:: ../images/mobile-wallet/update-baker-pool-mw.png
 
 - Open pool: open a pool for a previously closed baker
 - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake using** `CCDScan <https://ccdscan.io>`_ **to make pool management decisions.**
@@ -78,6 +88,8 @@ Update baker keys
 If you believe your baker keys have been compromised or lost, you can generate new baker keys. It is important to remember to update your baker keys on your node once you have exported them.
 
 #. If you choose **Update baker keys**, after the screens explaining reasons for updating baker keys, you see the new baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file.
+
+.. image:: ../images/mobile-wallet/update-baker-keys.png
 
 .. Warning::
 
