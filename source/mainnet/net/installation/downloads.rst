@@ -34,13 +34,20 @@ The Concordium Mobile Wallet has been verified by NowSecure.
 
 .. _downloads-desktop-wallet:
 
-Concordium Desktop Wallet v.1.4.1
+Concordium Desktop Wallet
 =================================
+
+Windows v1.4.1
+--------------
 
 -  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.4.1.exe>`_
 
--  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.4.1.dmg>`_
+MacOS v1.4.2
+------------
+-  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.4.2.dmg>`_
 
+Linux® v1.4.1
+-------------
 -  Download the Desktop Wallet for Linux®:
 
    -  `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.4.1.AppImage>`_

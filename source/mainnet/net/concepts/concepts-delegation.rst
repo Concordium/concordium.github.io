@@ -56,10 +56,3 @@ Summary
 To earn rewards, a CCD holder can either delegate to passive delegation, to a baking pool, or start their own baker. Baking oneself is the most challenging, as it requires resources to take part in the protocol, but it also provides the most rewards. Delegating to passive delegation provides the least rewards and requires the least actions from the investor. Delegating to a baking pool is somewhere between the two, both in terms of rewards and work, as it is recommended for a delegator to regularly check the performance of their pool’s baker, and change pool if it underperforms.
 
 See the :ref:`Delegation FAQ<delegation-faq>` for answers to the most frequently asked questions.
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   ../snippets/delegation-faq
-   ../desktop-wallet/delegation-dw
