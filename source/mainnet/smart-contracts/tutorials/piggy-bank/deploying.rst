@@ -43,7 +43,7 @@ Repeat this step since you might have done some changes to the smart contract co
 
 .. note::
 
-   When you use the above command without the ``--out`` flag, you can find the module in the folder ``./target/concordium/wasm32-unknown-unknown/release/``.
+   When you use the above command *without* the ``--out`` flag, you can find the module in the folder ``./target/concordium/wasm32-unknown-unknown/release/``.
    Use the Wasm module file suffixed with ``v1`` when deploying to the chain. The ``piggy_bank_part2.wasm`` file (without the ``v1`` suffix) is not the ``v0`` module, but rather the raw Wasm module produced by cargo.
    The ``v1`` suffixed module has been stripped for debugging information, which makes it significantly smaller.
 
@@ -73,7 +73,7 @@ You are now set up to deploy the piggy bank module to the testnet chain. Give th
 
 .. note::
 
-   You will be asked to input a password. Use the ``export password`` that you used to create the key backup file.
+   You will be asked to input a password. Use the ``export password`` that you used to create the key backup file in :ref:`part 3<mobile-wallet-account>` of the piggy bank tutorial.
 
 If everything works correctly the output has a green line with your module reference.
 
@@ -192,10 +192,12 @@ If everything works correctly the output has a green line as follows:
 
 You can find additional information about updating a smart contract instance in this :ref:`guide<interact-instance>`.
 
+``Concordium-std`` crate errors
+-------------------------------
+
 .. note::
 
-   Ensure that you don't send any CCD to the smart contract instance and that the ``--sender`` flag uses the <account-name>
-   that initialized the piggy bank smart contract instance (the owner of this smart contract instance).
+   Ensure that you don't send any CCD to the smart contract instance.
    You can find explanations about the behavior of the ``Smash`` entry point in this :ref:`guide<smashing-the-piggy-bank-writing>`.
    The ``Smash`` entry point is ``non-payable`` and will print the below error message if you send CCD with the ``--amount`` flag.
    The opposite is not true and you can omit the ``--amount`` flag when interacting
@@ -208,5 +210,33 @@ You can find additional information about updating a smart contract instance in 
 
 .. image:: ./images/pb_tutorial_21.png
    :width: 100 %
+
+.. note::
+   You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/3.0.0/concordium_std/#signalling-errors>`_.
+   This error was thrown by the ``concordium-std`` crate. The error codes start from ``i32::MIN`` and go upwards.
+   ``-2147483636`` corresponds to ``NotPayableError``. In contrast, error types of the smart contract start from ``-1`` and go downwards.
+
+Smart contract errors
+---------------------
+
+.. note::
+
+   Ensure that the ``--sender`` flag uses the <account-name>
+   that initialized the piggy bank smart contract instance (the owner of this smart contract instance).
+   You can find explanations about the behavior of the ``Smash`` entry point in this :ref:`guide<smashing-the-piggy-bank-writing>`.
+
+.. code-block:: console
+
+   Error: Updating contract instance failed:
+   'smash' in 'PiggyBank' at {"index":<smart-contract-instance-index>,"subindex":0} failed with code -1.
+
+.. image:: ./images/pb_tutorial_27.png
+   :width: 100 %
+
+.. note::
+   You can find the meaning of the piggy bank error codes in this :ref:`section<piggy-bank-smash-error>`.
+   This error was thrown by the smart contract. The error codes start from ``-1`` and go downwards.
+   ``-1`` is the first error code and corresponds to ``NotOwner``.
+   In contrast, errors from the ``concordium-std`` crate start from ``i32::MIN`` and go upwards.
 
 Congratulations. You have completed the whole piggy bank tutorial.

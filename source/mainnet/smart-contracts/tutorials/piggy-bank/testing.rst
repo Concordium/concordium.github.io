@@ -447,6 +447,8 @@ This is probably fine for a simple smart contract like your piggy bank, but for 
 smart contract with more complex logic and many reasons for rejecting, it would
 be better if you tested this as well.
 
+.. _piggy-bank-smash-error:
+
 To solve this, introduce a ``SmashError`` enum  to represent the different
 reasons for rejection:
 

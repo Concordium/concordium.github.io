@@ -205,6 +205,7 @@ You should see some block data output.
 .. image:: ./images/pb_tutorial_17.png
    :width: 100 %
 
+.. _mobile-wallet-account:
 
 Creating a mobile wallet account on testnet
 ===========================================
@@ -215,7 +216,7 @@ You are ready to create a mobile wallet account now.
    Only the Concordium mobile wallet currently supports exporting of keys. Do not use the Concordium desktop wallet for this tutorial.
 
 You can download the mobile wallet package from the :ref:`downloads page<downloads-mobile-wallet-testnet>`.
-If you follow the instruction in the mobile app you are asked to name your account and to name your initial identity card. This tutorial uses ``Concordium`` for the account name and ``Account1`` for the identity card name but feel free to choose your own naming.
+If you follow the instruction in the mobile app you are asked to name your account and to name your initial identity card. This tutorial uses ``Concordium`` for the account name and ``Identity1`` for the identity card name but feel free to choose your own naming.
 
 
 .. image:: ./images/pb_tutorial_1.png
@@ -229,14 +230,14 @@ If you follow the instruction in the mobile app you are asked to name your accou
 
 
 
-You don't have to provide an ID to create an account on testnet when selecting ``Concordium testnet IP``. This gives you an example of a test identity that you can customize or use as it is. Test identities are meant for testnet/stagenet testing only.
+You don't have to provide an ID to create an identity on testnet when selecting ``Concordium testnet IP``. This gives you an example of a test identity that you can customize or use as it is. Test identities are meant for testnet/stagenet testing only.
 
 .. image:: ./images/pb_tutorial_4.png
    :width: 20 %
 
 .. note::
 
-   On mainnet you will have to provide your personal ID to an identity provider to get a mainnet account.
+   On mainnet you will have to provide your personal ID to an identity provider to get a mainnet identity.
 
 You also have to request some testnet CCD. The mobile app wallet has a button that you can use to request 2000 testnet CCD.
 
@@ -273,4 +274,3 @@ Import your key into the ``concordium-client`` configuration:
 .. note::
 
    You will be asked to input a password. Use the ``export password`` that you used to create the key backup file.
-
