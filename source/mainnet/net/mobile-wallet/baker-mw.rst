@@ -4,7 +4,7 @@
 Baking in Mobile Wallet
 =======================
 
-A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Mobile Wallet when you add a baker account. The baker node will start baking two :ref:`epochs <glossary-epoch>` after the transaction has been approved.
+A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the Mobile Wallet when you add a baker account. The baker node will start baking after the next :ref:`pay day<glossary-pay-day>` once the transaction has been approved.
 
 You have the option when adding a baker to open a :ref:`baker pool<glossary-baker-pool>`. A baker pool allows others who want to earn rewards to do so without the need to run a node or become a baker themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your baker pool which then increases your stake and your chances of winning the lottery to bake a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
 
