@@ -53,7 +53,7 @@ If you choose **Open pool**:
 
 #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-#. In the Mobile Wallet, you can see that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, you see the active baker screen where you have the possibility to update baker settings.
+#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 If you choose **Closed for new**:
 
@@ -63,7 +63,7 @@ Existing delegators remain in the pool. You have the option to adjust commission
 
 #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-#. In the Mobile Wallet, you can see that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, you see the active baker screen where you have the possibility to update baker settings.
+#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 If you choose **Close pool**:
 
@@ -71,7 +71,7 @@ This closes the pool completely for both existing delegators and new delegators.
 
 #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-#. In the Mobile Wallet, you can see that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, you see the active baker screen where you have the possibility to update baker settings.
+#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 .. Note::
 
@@ -85,15 +85,15 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
 #. If you choose **Update baker keys**, after the screens explaining reasons for updating baker keys, you see the new baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file.
 
-.. image:: ../images/mobile-wallet/update-baker-keys.png
+    .. image:: ../images/mobile-wallet/update-baker-keys.png
 
 .. Warning::
 
     This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-2. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap **Submit baker transaction**.
+2. Once you have saved the keys, review the information on the overview screen of the add baker transaction then tap **Submit baker transaction**.
 
-3. In the Mobile Wallet, you can see that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, you see the active baker screen where you have the possibility to update baker settings.
+3. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 4. You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
 
@@ -115,7 +115,7 @@ If you no longer wish to bake on this account, you can stop baking.
 
 #. After the screens explaining baker removal, review the information on the overview screen. When you are satisfied, tap **Submit baker transaction**.
 
-#. In the Mobile Wallet, you can see that the transaction has been submitted to the chain. Tap **Finish**.
+#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
 
 .. Note::
 

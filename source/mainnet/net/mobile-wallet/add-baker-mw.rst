@@ -28,7 +28,7 @@ Add baker in Mobile Wallet
 
     .. image:: ../images/mobile-wallet/add-baker-pool-url-mw.png
 
-6. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+6. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
 
     .. image:: ../images/mobile-wallet/add-baker-export-keys-mw.png
 
@@ -40,7 +40,7 @@ Add baker in Mobile Wallet
 
     .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
 
-8. In the Mobile Wallet, you can see that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, you see the active baker screen where you have the possibility to update baker settings.
+8. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
     .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
 

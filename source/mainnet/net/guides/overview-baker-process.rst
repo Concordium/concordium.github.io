@@ -58,6 +58,8 @@ can start baking.
 
 - :ref:`On Docker/Linux<baking-docker>`.
 
+For information about how to update your baker or stop baking, see :ref:`Baking in Desktop Wallet<baking-dw>`.
+
 Baking with Mobile Wallet
 =========================
 
@@ -78,27 +80,26 @@ Step 3: Set up an identity and initial account
 
 Once you've installed the Mobile Wallet, you must set up an identity and an initial account. It is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
-Step 4: Export the account keys
--------------------------------
+Step 4: Add baking to an account
+--------------------------------
 
-You must export the account keys of the account you will use as your baker account in Mobile Wallet. For instructions, see :ref:`export-import`.
+Configure baking for an account. For instructions, see :ref:`add-baker-mw`.
 
-Step 4: Download and run Concordium Client
-------------------------------------------
-
-Go to :ref:`downloads` to download the latest version of Concordium Client for your operating system. Once you have downloaded it, you need to run it.
-
-Step 5: Import Mobile Wallet account using Concordium Client
-------------------------------------------------------------
-
-You must import the account you exported keys for into Concoridum Client. For instructions, see :ref:`become-a-baker`.
-
-Step 6: Create and register baker keys
+Step 5: Create and register baker keys
 --------------------------------------
 
-You need to create and register baker keys for your account. See :ref:`become-a-baker` for information about the commands to do this.
+The last step is to configure the running node with the baker keys so the node
+can start baking.
 
-Once you have performed these steps, you can :ref:`manage your baker using Concordium Client<become-a-baker>`.
+- :ref:`On Windows<baker-windows>`
+
+- :ref:`On macOS<baker-macos>`
+
+- :ref:`On Ubuntu<baker-Ubuntu>`
+
+- :ref:`On Docker/Linux<baking-docker>`.
+
+For information about how to update your baker or stop baking, see :ref:`Change baker options in Mobile Wallet<update-baker-mw>`.
 
 .. toctree::
    :hidden:
