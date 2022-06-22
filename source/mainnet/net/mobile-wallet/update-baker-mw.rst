@@ -8,7 +8,7 @@ Change baker options in Mobile Wallet
 
 #. In the hamburger menu |hamburger| tap **Baking**.
 
-#. In the Baker status screen tap **Update baker settings**. 
+#. In the Baker status screen tap **Update baker settings**.
 
     .. image:: ../images/mobile-wallet/baker-status-mw.png
 
@@ -30,11 +30,7 @@ If you choose **Update baker stake** you see your balance and the current Baker 
 
 On the overview screen, check the information. Once you are satisfied, tap **Submit baker transaction**.
 
-.. image:: ../images/mobile-wallet/update-baker-stake-amt-submit.png
-
 Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-.. image:: ../images/mobile-wallet/update-baker-stake-amt-finish.png
 
 .. Note::
 
@@ -48,7 +44,7 @@ If you choose **Update pool settings**, you have three options:
 .. image:: ../images/mobile-wallet/update-baker-pool-mw.png
 
 - Open pool: open a pool for a previously closed baker
-- Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake using** `CCDScan <https://ccdscan.io>`_ **to make pool management decisions.**
+- Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
 - Close pool: close a pool permanently.
 
 If you choose **Open pool**:
@@ -79,7 +75,7 @@ This closes the pool completely for both existing delegators and new delegators.
 
 .. Note::
 
-   Closing a pool does not mean that baking stops. You continue baking but only using your own stake. If you wish to stop baking, you must :ref:`remove the baker<remove-baker-mw>`.
+   Closing a pool does not mean that baking stops. You continue baking but only using your own stake. If you wish to stop baking, you must :ref:`stop baking<remove-baker-mw>`.
 
 
 Update baker keys
@@ -108,12 +104,14 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
 .. _remove-baker-mw:
 
-Remove baker
-============
+Stop baking
+===========
 
-If you no longer wish to bake on this account, you can remove the baker.
+If you no longer wish to bake on this account, you can stop baking.
 
 #. Tap **Stop baking**.
+
+    .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
 
 #. After the screens explaining baker removal, review the information on the overview screen. When you are satisfied, tap **Submit baker transaction**.
 
