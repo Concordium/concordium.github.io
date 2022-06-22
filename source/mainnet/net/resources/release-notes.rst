@@ -4,6 +4,22 @@
 Release Notes - Testnet
 =======================
 
+????????????????????
+====================
+June 27, 2022
+
+Concordium Node 4.2.1
+---------------------
+
+Concordium Node 4.2.1 is a maintenance release bringing performance improvements and bugfixes. The highlights are
+
+- Significant decrease in node startup time. The exact improvements are platform
+  dependent, but startup should be at least 6 times faster on mainnet.
+- Significant decrease in node memory use. On mainnet 4.2.1 node should use less
+  than 50% compared of memory compared to 4.1.1.
+- Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
+
+
 Sirius Testnet reset
 ====================
 June 21, 2022
