@@ -44,7 +44,7 @@ Add baker in Mobile Wallet
 
     .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
 
-9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
 
     - :ref:`Windows<baker-windows>`
     - :ref:`macOS<baker-macos>`
