@@ -195,13 +195,11 @@ You can find additional information about updating a smart contract instance in 
 ``Concordium-std`` crate errors
 -------------------------------
 
-.. note::
-
-   Ensure that you don't send any CCD to the smart contract instance.
-   You can find explanations about the behavior of the ``Smash`` entry point in this :ref:`guide<smashing-the-piggy-bank-writing>`.
-   The ``Smash`` entry point is ``non-payable`` and will print the below error message if you send CCD with the ``--amount`` flag.
-   The opposite is not true and you can omit the ``--amount`` flag when interacting
-   with a ``payable`` function without raising an error because in that case 0 CCD is sent to the ``payable`` entry point.
+Ensure that you don't send any CCD to the smart contract instance.
+You can find explanations about the behavior of the ``Smash`` entry point in this :ref:`guide<smashing-the-piggy-bank-writing>`.
+The ``Smash`` entry point is ``non-payable`` and will print the below error message if you send CCD with the ``--amount`` flag.
+The opposite is not true and you can omit the ``--amount`` flag when interacting
+with a ``payable`` function without raising an error because in that case 0 CCD is sent to the ``payable`` entry point.
 
 .. code-block:: console
 
@@ -219,11 +217,10 @@ You can find additional information about updating a smart contract instance in 
 Smart contract errors
 ---------------------
 
-.. note::
-
-   Ensure that the ``--sender`` flag uses the <account-name>
-   that initialized the piggy bank smart contract instance (the owner of this smart contract instance).
-   You can find explanations about the behavior of the ``Smash`` entry point in this :ref:`guide<smashing-the-piggy-bank-writing>`.
+Ensure that the ``--sender`` flag uses the <account-name>
+that initialized the piggy bank smart contract instance (the owner of this smart contract instance).
+You can find explanations about the behavior of the ``Smash`` entry point in this :ref:`guide<smashing-the-piggy-bank-writing>`.
+If you invoke the ``Smash`` entry point with a different account than the owner, it will print the below error message.
 
 .. code-block:: console
 
