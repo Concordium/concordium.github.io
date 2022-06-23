@@ -4,10 +4,6 @@
 Update delegation to a baker pool or passive delegation
 =======================================================
 
-.. Note::
-
-   Currently delegation is only available on Testnet.
-
 You can change the delegation amount and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
 If you increase the delegation, the new amount will be applied at the start of the next :ref:`pay day<glossary-pay-day>`. There is one pay day every 24 hours. However, if you decrease the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance.

@@ -4,10 +4,6 @@
 Open a baker pool in Desktop Wallet
 ===================================
 
-.. Note::
-
-   Currently delegation is only available on Testnet.
-
 You can open a baker pool so that others can delegate stake from an account to your baker pool. When others delegate some stake to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards. See :ref:`Baker management<baker-pool>` for information about how to be a responsible baker.
 
 .. Note::
