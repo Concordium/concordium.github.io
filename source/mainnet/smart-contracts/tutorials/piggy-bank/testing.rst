@@ -93,7 +93,7 @@ example code for part 1 from `GitHub
 
 You are now ready to write unit tests for your smart contract!
 
-.. Note::
+.. note::
 
    To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
 
@@ -446,6 +446,8 @@ bug.
 This is probably fine for a simple smart contract like your piggy bank, but for a
 smart contract with more complex logic and many reasons for rejecting, it would
 be better if you tested this as well.
+
+.. _piggy-bank-smash-error:
 
 To solve this, introduce a ``SmashError`` enum  to represent the different
 reasons for rejection:

@@ -374,6 +374,8 @@ do not have to do that yourself, and the ``amount`` is not used by your contract
 
    The ``payable`` attribute also exists for the |init| macro.
 
+.. _smashing-the-piggy-bank-writing:
+
 Smashing a piggy bank
 ---------------------
 
@@ -550,6 +552,7 @@ different parts of the state or return a value computed from the state.
 
    To view return values of a contract instance on the chain, see the guide :ref:`invoke-instance`.
 
+.. _cargo-concordium-build:
 
 You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:
 
