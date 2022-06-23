@@ -100,7 +100,11 @@ The baker details shows the following information about the baker.
 - **Baking commission**: the baker's baking commission percent.
 - **Finalisation commission**: the baker's finalization commission percent.
 - **Transaction commission**: the baker's transaction commission percent.
-- **Payday rewards**: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter. Shows the date/time the reward was earned, the transaction type, reference shows the first six characters of the transaction hash, and amount shows the amount of the reward. You can click on the first six characters of a number in Reference to see :ref:`information about the transaction<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
+- **Payday rewards**: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter. 
+    - **Time**: shows the date/time the reward was distributed.
+    - the transaction type
+    - **Reference**: shows the first six characters of the transaction hash. Click on the first six characters of a hash in Reference to see :ref:`information about the transaction<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
+    - **Amount**: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by Baking rewards, Finalisation rewards, and Transaction fees.
 - **Related transactions**: shows other transactions related to this baker ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more :ref:`information about the transacation<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
 - **Delegators**: shows the first six characters of the account delegating to the baker, that account's delegated stake, and whether earnings are restaked. You can click on the characters of the account for more :ref:`information about the delegator<home-screen-sender>`. Click Copy |copy| to copy the entire account number.
 - **Metadata**: contains the URL that the baker can optionally provide with information about the baker pool.
