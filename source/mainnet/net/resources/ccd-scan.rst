@@ -45,7 +45,7 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 7.  Block Time
 8.  Transactions
 9.  Accounts created
-10. Latest blocks: continuously updated list of the latest 10 blocks baked on the blockchain, including links to details for the individual blocks and bakers. 
+10. Latest blocks: continuously updated list of the latest 10 blocks baked on the blockchain, including links to details for the individual blocks and bakers.
 11. Latest transactions: continuously updated list of the latest 10 transactions on the blockchain, including links to details for the individual transactions and senders (where available).
 
 In Latest blocks and Latest transactions click on information in the highlighted columns for details about the :ref:`block<home-screen-block>`, :ref:`baker<home-screen-baker>`, :ref:`transaction<home-screen-transaction>`, or :ref:`sender<home-screen-sender>`.
@@ -123,8 +123,7 @@ The transaction details shows the following.
 - **Age**: the transaction age with date/time stamp.
 - **Transaction type/cost**: the transaction type and the transaction fee.
 - **Sender**: the first six characters of the account that sent the transaction if available for that transaction. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
-- **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions. If you see the transaction type **Update micro CCD per Euro**, it is 
-possible to see the new rate and the effective timestamp.
+- **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions. If you see the transaction type **Update micro CCD per Euro**, it is possible to see the new rate and the effective timestamp.
 
 A successful transaction shows the **Events** that were included in the transaction.
 
@@ -261,7 +260,7 @@ If you select **Passive delegation** the following appears:
 - **APY (30 days)**: the annual percentage yield of passive delegation based on past 30 days.
 - **Baking commission**: percent of rewards paid as commission to baker.
 - **Finalisation commission**: percent of finalization commission.
-- **Transaction commission**: 
+- **Transaction commission**:
 - **Rewards**: list of rewards paid out during the selected time range. **Time** shows the date/time the reward was paid; **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. If you click on the hash, the :ref:`block details<home-screen-block>` appear.
 - **Delegators**: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a **Hash** to see :ref:`account details<accounts-view>`. You can click Copy |copy| to copy the entire hash.
 
