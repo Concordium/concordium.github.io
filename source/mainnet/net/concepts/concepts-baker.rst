@@ -20,7 +20,7 @@ A node uses a set of cryptographic keys called baker keys to sign the blocks tha
 Baker account
 -------------
 
-Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker's account after some time. The baker account also receives an award after each :ref:`epoch <glossary-epoch>`. The reward per block is determined by the contents of the block, and is usually lower than the reward that is paid after.
+Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker's account (and the baker pool delegators if they have a pool) at :ref:`pay day<glossary-pay-day>`.
 
 The account can be viewed either in the Desktop Wallet or the Mobile Wallet, depending on where the account was created.
 
@@ -53,6 +53,8 @@ The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :
 When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
 
 Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>`, each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
+
+A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is also when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers.:ref:`Pay day<glossary-pay-day>` is every 24 hours at 08:00 UTC on Mainnet. 
 
 A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased after a cool-down period. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down.)
 
