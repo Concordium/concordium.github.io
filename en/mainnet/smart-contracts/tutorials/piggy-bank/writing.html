@@ -650,6 +650,16 @@ body {margin:0;}
        Testing the piggy bank smart contract
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="preparing.html">
+       Preparing a testnet node on a server
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="deploying.html">
+       Deploying the piggy bank smart contract
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1504,7 +1514,7 @@ do not have to do that yourself, and the <code class="docutils literal notransla
 </div>
 </div>
 <div class="section" id="smashing-a-piggy-bank">
-<h3>Smashing a piggy bank<a class="headerlink" href="#smashing-a-piggy-bank" title="Permalink to this headline">#</a></h3>
+<span id="smashing-the-piggy-bank-writing"></span><h3>Smashing a piggy bank<a class="headerlink" href="#smashing-a-piggy-bank" title="Permalink to this headline">#</a></h3>
 <p>Now that you can insert CCD into a piggy bank, you also need to define how to
 smash one.
 Remember, you only want the owner of the piggy bank (smart contract
@@ -1639,7 +1649,7 @@ different parts of the state or return a value computed from the state.</p>
 <p class="admonition-title">Note</p>
 <p>To view return values of a contract instance on the chain, see the guide <a class="reference internal" href="../../guides/invoke-instance.html#invoke-instance"><span class="std std-ref">Invoke a smart contract instance</span></a>.</p>
 </div>
-<p>You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:</p>
+<p id="cargo-concordium-build">You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
 </pre></div>
 </div>

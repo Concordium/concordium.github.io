@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Contract development guides" href="../../guides/contract-dev-guides.html" />
+    <link rel="next" title="Preparing a testnet node on a server" href="preparing.html" />
     <link rel="prev" title="Writing the piggy bank smart contract" href="writing.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -648,6 +648,16 @@ body {margin:0;}
      <li class="toctree-l2 current active">
       <a class="current reference internal" href="#">
        Testing the piggy bank smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="preparing.html">
+       Preparing a testnet node on a server
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="deploying.html">
+       Deploying the piggy bank smart contract
       </a>
      </li>
     </ul>
@@ -1495,7 +1505,7 @@ bug.
 This is probably fine for a simple smart contract like your piggy bank, but for a
 smart contract with more complex logic and many reasons for rejecting, it would
 be better if you tested this as well.</p>
-<p>To solve this, introduce a <code class="docutils literal notranslate"><span class="pre">SmashError</span></code> enum  to represent the different
+<p id="piggy-bank-smash-error">To solve this, introduce a <code class="docutils literal notranslate"><span class="pre">SmashError</span></code> enum  to represent the different
 reasons for rejection:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Debug, PartialEq, Eq, Reject)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">SmashError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>

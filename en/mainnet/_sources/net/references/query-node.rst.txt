@@ -7,7 +7,7 @@
 Querying a node
 ===============
 
-The :ref:`concordium-client<concordium_client>` tool supports queries of multiple kinds of state against
+The :ref:`concordium-client<concordium-client>` tool supports queries of multiple kinds of state against
 a backend node:
 
 -  Account state: List all accounts and display all publicly available
