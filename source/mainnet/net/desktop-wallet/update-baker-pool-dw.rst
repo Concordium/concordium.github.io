@@ -4,10 +4,6 @@
 Update a baker pool
 ===================
 
-.. Note::
-
-   Currently delegation is only available on Testnet.
-
 Once you have opened a baker pool, you can update it to manage your pool responsibly. You can also choose to close the pool to new delegators or close it altogether. See :ref:`Baker management<baker-pool>` for information about how to be a responsible baker.
 
 .. Note::
