@@ -18,6 +18,8 @@ You need a broadband connection to run a node, and Concordium strongly recommend
 
 If you use a laptop in combination with Docker, sleep mode can cause problems with the Docker container used to run the node.
 
+.. _system-requirements-node-mainnet:
+
 System requirements
 -------------------
 
