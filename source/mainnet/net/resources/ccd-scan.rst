@@ -264,7 +264,7 @@ If you select **Passive delegation** the following appears:
 - **Baking commission**: percent of rewards paid as commission to baker.
 - **Finalisation commission**: percent of finalization commission.
 - **Transaction commission**: the transaction commission percent.
-- **Rewards**: list of rewards paid out during the selected time range. 
+- **Rewards**: list of rewards paid out during the selected time range.
     - **Time** shows the date/time the reward was paid
     - **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. If you click on the hash, the :ref:`block details<home-screen-block>` appear.
     - **Rewards** shows the amount of reward distributed.
