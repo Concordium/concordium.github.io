@@ -15,6 +15,8 @@ A baker opens a :ref:`pool<glossary-baker-pool>`, and other CCD holders delegate
 
 Pool rewards are in three categories: finalization, baking and transaction fee rewards. These can have separate commission rates.
 
+.. _delegation-caps:
+
 Bounding the size of pools
 ---------------------------
 Concordium imposes two caps on the amount of stake in a single pool. The first cap bounds the size of a pool with respect to a fraction of the total staked CCDs. For example, with the capital bound cap a pool cannot have more than 10% of all the staked CCD. This limit ensures that the pools remain distributed and prevents the crash of one baker from affecting the whole system. A party with lots of capital can run multiple bakers to avoid this cap. This would increase decentralization.
@@ -44,7 +46,7 @@ But decreasing the stake (whether for delegators or bakers) is subject to a cool
 
 Where delegation is available
 =============================
-You can delegate CCDs in :ref:`Desktop Wallet<delegation-dw>` and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
+You can delegate CCDs in :ref:`Desktop Wallet<delegation-dw>` and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<bakers-view>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======

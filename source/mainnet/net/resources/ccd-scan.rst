@@ -244,7 +244,7 @@ If you select **Baker pools** the table contains the following:
 - **APY (7 days)**: the annual percentage yield of the baker for the past 7 days.
 - **Delegation pool Status**: the baker's pool status.
 - **Delegators**: the number of delegators that baker has.
-- **Available for delegation**:
+- **Available for delegation**: the amount available to delegate based on the :ref:`cap<delegation-caps>` imposed.
 - **Total stake**: the total stake of that baker.
 
 If you select **Top delegaators** the table contains the following:
@@ -263,9 +263,14 @@ If you select **Passive delegation** the following appears:
 - **APY (30 days)**: the annual percentage yield of passive delegation based on past 30 days.
 - **Baking commission**: percent of rewards paid as commission to baker.
 - **Finalisation commission**: percent of finalization commission.
-- **Transaction commission**:
-- **Rewards**: list of rewards paid out during the selected time range. **Time** shows the date/time the reward was paid; **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. If you click on the hash, the :ref:`block details<home-screen-block>` appear.
+- **Transaction commission**: the transaction commission percent.
+- **Rewards**: list of rewards paid out during the selected time range. 
+    - **Time** shows the date/time the reward was paid
+    - **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. If you click on the hash, the :ref:`block details<home-screen-block>` appear.
+    - **Rewards** shows the amount of reward distributed.
 - **Delegators**: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a **Hash** to see :ref:`account details<accounts-view>`. You can click Copy |copy| to copy the entire hash.
+
+.. _ccdscan-nodes:
 
 Nodes
 -----
