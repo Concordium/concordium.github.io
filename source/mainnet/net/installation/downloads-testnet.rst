@@ -70,7 +70,7 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
 .. Note::
 
-   The Ledger Nano S Plus and Ledger Nano X are not supported currently.
+   The Ledger Nano X is not supported currently.
 
 - `Download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
