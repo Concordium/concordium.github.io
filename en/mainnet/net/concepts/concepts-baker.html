@@ -772,13 +772,8 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/references/schema-json.html">
-       Schema JSON representation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/references/simulate-context.html">
-       Simulation contexts
+      <a class="reference internal" href="../../smart-contracts/references/crypto-primitives.html">
+       Cryptographic primitives
       </a>
      </li>
      <li class="toctree-l2">
@@ -787,13 +782,23 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../../smart-contracts/references/references-on-chain.html">
        References on-chain
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/references/local-settings.html">
-       Local settings
+      <a class="reference internal" href="../../smart-contracts/references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/references/simulate-context.html">
+       Simulation contexts
       </a>
      </li>
      <li class="toctree-l2">
@@ -1225,7 +1230,7 @@ the amount can be staked even if it hasn’t been released yet.</p>
 <img alt="timeline showing how 14400 slots make up one epoch" src="../../_images/epochs-slots.png" />
 <p>When considering the rewards and other baking-related concepts, the concept of an <em>epoch</em> is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#glossary-genesis-block"><span class="std std-ref">Genesis block</span></a>.</p>
 <p>Epochs are subdivided into slots. On any given <a class="reference internal" href="../resources/glossary.html#glossary-branch"><span class="std std-ref">branch</span></a>, each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#glossary-genesis-block"><span class="std std-ref">Genesis block</span></a>.</p>
-<p>A <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 2 weeks for delegators and 3 weeks for bakers.:ref:<cite>Pay day&lt;glossary-pay-day&gt;</cite> is every 24 hours at 08:00 UTC on Mainnet.</p>
+<p>A <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:00 UTC on Mainnet.</p>
 <p>A <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a> describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased after a cool-down period. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down.)</p>
 </div>
 </div>

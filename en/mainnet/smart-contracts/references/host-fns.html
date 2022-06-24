@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="References on-chain" href="references-on-chain.html" />
-    <link rel="prev" title="Simulation contexts" href="simulate-context.html" />
+    <link rel="next" title="Local settings" href="local-settings.html" />
+    <link rel="prev" title="Cryptographic primitives" href="crypto-primitives.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -772,13 +772,8 @@ body {margin:0;}
     </label>
     <ul class="current">
      <li class="toctree-l2">
-      <a class="reference internal" href="schema-json.html">
-       Schema JSON representation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="simulate-context.html">
-       Simulation contexts
+      <a class="reference internal" href="crypto-primitives.html">
+       Cryptographic primitives
       </a>
      </li>
      <li class="toctree-l2 current active">
@@ -787,13 +782,23 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="references-on-chain.html">
        References on-chain
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="local-settings.html">
-       Local settings
+      <a class="reference internal" href="schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="simulate-context.html">
+       Simulation contexts
       </a>
      </li>
      <li class="toctree-l2">
@@ -1142,6 +1147,11 @@ body {margin:0;}
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#smart-contract-instance-state">
    Smart contract instance state
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cryptographic-primitives">
+   Cryptographic primitives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1573,6 +1583,97 @@ successful, or <code class="docutils literal notranslate"><span class="pre">2^32
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="cryptographic-primitives">
+<span id="host-function-crypto-primitives"></span><h2>Cryptographic primitives<a class="headerlink" href="#cryptographic-primitives" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.verify_ed25519_signature">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">verify_ed25519_signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_len</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.verify_ed25519_signature" title="Permalink to this definition">#</a></dt>
+<dd><p>Verify an ed25519 signature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public_key</strong> (<em>i32</em>) – Pointer to a public key in linear memory. The <code class="docutils literal notranslate"><span class="pre">public_key</span></code> must point to a 32-byte array.</p></li>
+<li><p><strong>signature</strong> (<em>i32</em>) – Pointer to the claimed signature. The <code class="docutils literal notranslate"><span class="pre">signature</span></code> must point to a 64-byte array.</p></li>
+<li><p><strong>message</strong> (<em>i32</em>) – Pointer to the beginning of the message.</p></li>
+<li><p><strong>message_len</strong> (<em>i32</em>) – Length of the message in bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if the signature check is successful, <code class="docutils literal notranslate"><span class="pre">0</span></code> if not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.verify_ecdsa_secp256k1_signature">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">verify_ecdsa_secp256k1_signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i32</span></span></span><a class="headerlink" href="#concordium.verify_ecdsa_secp256k1_signature" title="Permalink to this definition">#</a></dt>
+<dd><p>Verify an ecdsa over secp256k1 signature with the bitcoin-core implementation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public_key</strong> (<em>i32</em>) – Pointer to a public key in linear memory. The <code class="docutils literal notranslate"><span class="pre">public_key</span></code> must point to a 33-byte array.</p></li>
+<li><p><strong>signature</strong> (<em>i32</em>) – Pointer to the claimed signature. The <code class="docutils literal notranslate"><span class="pre">signature</span></code> must point to a 64-byte array, serialized in compressed format.</p></li>
+<li><p><strong>message</strong> (<em>i32</em>) – Pointer to the beginning of the message. The message must be exactly 32-bytes long.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if the signature check is successful, <code class="docutils literal notranslate"><span class="pre">0</span></code> if not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.hash_sha2_256">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">hash_sha2_256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.hash_sha2_256" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the SHA2-256 digest of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>i32</em>) – Pointer to the beginning of the data.</p></li>
+<li><p><strong>data_len</strong> (<em>i32</em>) – Length of the data in bytes.</p></li>
+<li><p><strong>output</strong> (<em>i32</em>) – Pointer to a memory location where the digest will be written.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.hash_sha3_256">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">hash_sha3_256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.hash_sha3_256" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the SHA3-256 digest of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>i32</em>) – Pointer to the beginning of the data.</p></li>
+<li><p><strong>data_len</strong> (<em>i32</em>) – Length of the data in bytes.</p></li>
+<li><p><strong>output</strong> (<em>i32</em>) – Pointer to a memory location where the digest will be written.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.hash_keccak_256">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">hash_keccak_256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#concordium.hash_keccak_256" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the Keccak-256 digest of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>i32</em>) – Pointer to the beginning of the data.</p></li>
+<li><p><strong>data_len</strong> (<em>i32</em>) – Length of the data in bytes.</p></li>
+<li><p><strong>output</strong> (<em>i32</em>) – Pointer to a memory location where the digest will be written.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
