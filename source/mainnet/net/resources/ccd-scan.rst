@@ -100,9 +100,8 @@ The baker details shows the following information about the baker.
 - **Baking commission**: the baker's baking commission percent.
 - **Finalisation commission**: the baker's finalization commission percent.
 - **Transaction commission**: the baker's transaction commission percent.
-- **Payday rewards**: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter. 
+- **Payday rewards**: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter.
     - **Time**: shows the date/time the reward was distributed.
-    - the transaction type
     - **Reference**: shows the first six characters of the transaction hash. Click on the first six characters of a hash in Reference to see :ref:`information about the transaction<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
     - **Amount**: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by Baking rewards, Finalisation rewards, and Transaction fees.
 - **Related transactions**: shows other transactions related to this baker ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more :ref:`information about the transacation<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
@@ -257,7 +256,7 @@ If you select **Top delegaators** the table contains the following:
 
 If you select **Passive delegation** the following appears:
 
-.. image:: ..images/ccd-scan/ccd-scan-passive-delegation.png
+.. image:: ../images/ccd-scan/ccd-scan-passive-delegation.png
 
 - **Delegated stake**: amount of CCD delegated to passive delegation.
 - **APY (7 days)**: the annual percentage yield of passive delegation based on past 7 days.
