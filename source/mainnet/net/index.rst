@@ -40,6 +40,7 @@
    nodes/node-requirements
    guides/overview-baker-process
    desktop-wallet/baking-dw
+   mobile-wallet/baker-mw
    references/concordium-client
    references/transactions
    references/query-node
