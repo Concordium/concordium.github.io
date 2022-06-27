@@ -218,9 +218,14 @@ The graphs show the Cumulative accounts created since inception and the Accounts
 Below the graphs, the table contains the following:
 
 - **Address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
-- **Amount**: The publicly visible balance of the account. Does not include shielded amounts.
-- **Transaction count**: number of transactions the account has conducted during the selected time range.
 - **Account age**: how long the account has existed.
+- **Transactions**: number of transactions the account has conducted during the selected time range.
+- **Delegated stake**: 
+- **Balance**: The publicly visible balance of the account. Does not include shielded amounts.
+
+You can sort the information in the table using the following sort options:
+
+.. image:: ../images/ccd-scan/ccd-scan-account-sort.png
 
 .. _bakers-view:
 
@@ -240,8 +245,8 @@ Below the graphs, you can switch between **Baker pools** and **Top delegators**.
 If you select **Baker pools** the table contains the following:
 
 - **Baker ID**: ID of the baker. This is the ID you need if you want to delegate to the baker pool in a wallet. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears. If the Baker has been removed (i.e. the baker is no longer active), **Removed** appears next to the ID.
-- **Account**: the first six characters of the acccount hash appears. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
-- **APY (7 days)**: the annual percentage yield of the baker for the past 7 days.
+- **Baker APY (30 days)**: the annual percentage yield of the baker for the past 30 days.
+- **Delegators APY (30 days)**: the annual percentage yield of the delegators for the past 30 days.
 - **Delegation pool Status**: the baker's pool status.
 - **Delegators**: the number of delegators that baker has.
 - **Available for delegation**: the amount available to delegate based on the :ref:`cap<delegation-caps>` imposed.
