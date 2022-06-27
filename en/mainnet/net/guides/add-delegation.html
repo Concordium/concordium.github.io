@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delegation in Desktop Wallet &#8212; Concordium  documentation</title>
+    <title>Delegate to a baker pool or passive delegation &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -35,11 +35,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Delegate to a baker pool or passive delegation" href="add-delegation.html" />
-    <link rel="prev" title="Shield and unshield CCD on an account" href="../guides/shield-ccd-wallets.html" />
+    <link rel="next" title="Update delegation to a baker pool or passive delegation" href="update-delegation.html" />
+    <link rel="prev" title="Delegation" href="delegation.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -100,11 +101,11 @@ body {margin:0;}
 <body>
 
 <div class="navbar-menu w3-hide-medium w3-hide-small">
-  <a href="../guides/learn-about-concordium.html">Learn</a>
+  <a href="learn-about-concordium.html">Learn</a>
   <a href="../nodes/node-requirements.html">Run a node</a>
-  <a href="../guides/deciding-wallet.html">Wallets</a>
-  <a href="../guides/overview-baker-process.html">Baking</a>
-  <a href="../guides/developer-page.html">Develop</a>
+  <a href="deciding-wallet.html">Wallets</a>
+  <a href="overview-baker-process.html">Baking</a>
+  <a href="developer-page.html">Develop</a>
   <a href="../../smart-contracts/general/introduction.html">Smart Contracts</a>
 </div>
 </body>
@@ -191,7 +192,7 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../guides/learn-about-concordium.html">
+    <a class="reference internal" href="learn-about-concordium.html">
      Learn about Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -236,7 +237,7 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/company-identities.html">
+      <a class="reference internal" href="company-identities.html">
        Company identity creation
       </a>
      </li>
@@ -262,42 +263,42 @@ body {margin:0;}
   </label>
   <ul class="current nav bd-sidenav">
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/deciding-wallet.html">
+    <a class="reference internal" href="deciding-wallet.html">
      Deciding between the Desktop Wallet and the Mobile Wallet
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-identity.html">
+    <a class="reference internal" href="create-identity.html">
      Create an identity and an initial account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-account.html">
+    <a class="reference internal" href="create-account.html">
      Create an account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/send-ccd-wallets.html">
+    <a class="reference internal" href="send-ccd-wallets.html">
      Send CCD
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/shield-ccd-wallets.html">
+    <a class="reference internal" href="shield-ccd-wallets.html">
      Shield and unshield CCD on an account
     </a>
    </li>
    <li class="toctree-l1 current active has-children">
-    <a class="current reference internal" href="#">
-     Delegation in Desktop Wallet
+    <a class="reference internal" href="delegation.html">
+     Delegation
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="add-delegation.html">
+    <ul class="current">
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
        Delegate to a baker pool or passive delegation
       </a>
      </li>
@@ -314,12 +315,12 @@ body {margin:0;}
     </ul>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/shielded-transfer.html">
+    <a class="reference internal" href="shielded-transfer.html">
      Make a shielded transfer on an account
     </a>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="../guides/export-import.html">
+    <a class="reference internal" href="export-import.html">
      Make a backup of identities, accounts, and addresses
     </a>
    </li>
@@ -356,7 +357,7 @@ body {margin:0;}
     </ul>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="index.html">
+    <a class="reference internal" href="../desktop-wallet/index.html">
      Desktop Wallet
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -366,37 +367,37 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/overview-desktop.html">
+      <a class="reference internal" href="overview-desktop.html">
        Set up the Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="accounts-desktop.html">
+      <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Use the Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="single-sign-schedule.html">
+      <a class="reference internal" href="../desktop-wallet/single-sign-schedule.html">
        Transfer CCD with a schedule in Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="transaction-log-filter.html">
+      <a class="reference internal" href="../desktop-wallet/transaction-log-filter.html">
        Apply a transaction log filter in the Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="update-application.html">
+      <a class="reference internal" href="../desktop-wallet/update-application.html">
        Update the Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="reset-data.html">
+      <a class="reference internal" href="../desktop-wallet/reset-data.html">
        Reset desktop wallet data
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/overview-shared-accounts.html">
+      <a class="reference internal" href="overview-shared-accounts.html">
        Shared accounts with multiple credentials in Desktop Wallet
       </a>
      </li>
@@ -417,7 +418,7 @@ body {margin:0;}
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../guides/developer-page.html">
+    <a class="reference internal" href="developer-page.html">
      Developer resources
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -427,7 +428,7 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/sdks-apis.html">
+      <a class="reference internal" href="sdks-apis.html">
        SDKs and APIs
       </a>
      </li>
@@ -481,7 +482,7 @@ body {margin:0;}
     </ul>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../guides/overview-baker-process.html">
+    <a class="reference internal" href="overview-baker-process.html">
      Overview of the baker process
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -491,12 +492,12 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/baker-pool.html">
+      <a class="reference internal" href="baker-pool.html">
        Baker management
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/baker-windows.html">
+      <a class="reference internal" href="baker-windows.html">
        Run a baker node on Windows
       </a>
      </li>
@@ -516,14 +517,14 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/become-baker.html">
+      <a class="reference internal" href="become-baker.html">
        Become a baker using the Concordium Client
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="baking-dw.html">
+    <a class="reference internal" href="../desktop-wallet/baking-dw.html">
      Baking in the Desktop Wallet
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -533,38 +534,60 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../guides/add-baker-desktop.html">
+      <a class="reference internal" href="add-baker-desktop.html">
        Add a baker account in the Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="update-baker-keys.html">
+      <a class="reference internal" href="../desktop-wallet/update-baker-keys.html">
        Update baker keys in the Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="remove-baker.html">
+      <a class="reference internal" href="../desktop-wallet/remove-baker.html">
        Remove a baker account
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="change-baker-stake.html">
+      <a class="reference internal" href="../desktop-wallet/change-baker-stake.html">
        Update the staked amount
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="change-restake-settings.html">
+      <a class="reference internal" href="../desktop-wallet/change-restake-settings.html">
        Update the restake settings
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="add-baker-pool-dw.html">
+      <a class="reference internal" href="../desktop-wallet/add-baker-pool-dw.html">
        Open a baker pool in Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="update-baker-pool-dw.html">
+      <a class="reference internal" href="../desktop-wallet/update-baker-pool-dw.html">
        Update a baker pool
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../mobile-wallet/baker-mw.html">
+     Baking in Mobile Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
+       Add baker in Mobile Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
+       Change baker options in Mobile Wallet
       </a>
      </li>
     </ul>
@@ -592,8 +615,8 @@ body {margin:0;}
     Smart Contracts v1
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -602,8 +625,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-    <label for="toctree-checkbox-14">
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -634,8 +657,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -666,8 +689,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -728,8 +751,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-    <label for="toctree-checkbox-17">
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -765,8 +788,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-    <label for="toctree-checkbox-18">
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -821,8 +844,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-19">
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-20">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -831,8 +854,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-    <label for="toctree-checkbox-20">
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -863,8 +886,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-    <label for="toctree-checkbox-21">
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -885,8 +908,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -942,8 +965,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-    <label for="toctree-checkbox-23">
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -974,8 +997,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-    <label for="toctree-checkbox-24">
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1025,8 +1048,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-25">
+  <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-26">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1050,8 +1073,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1077,8 +1100,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-    <label for="toctree-checkbox-27">
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1146,26 +1169,137 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="delegation-in-desktop-wallet">
-<span id="delegation-dw"></span><h1>Delegation in Desktop Wallet<a class="headerlink" href="#delegation-in-desktop-wallet" title="Permalink to this headline">#</a></h1>
-<p>Delegation allows you to earn rewards for delegating some stake without the need to run a node or become a baker. For more information about delegation, see <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">Delegation</span></a>.</p>
+  <div class="section" id="delegate-to-a-baker-pool-or-passive-delegation">
+<span id="add-delegation"></span><h1>Delegate to a baker pool or passive delegation<a class="headerlink" href="#delegate-to-a-baker-pool-or-passive-delegation" title="Permalink to this headline">#</a></h1>
+<p>You can delegate stake from an account to a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or to <a class="reference internal" href="../resources/glossary.html#glossary-passive-delegation"><span class="std std-ref">passive delegation</span></a>.</p>
+<p>When you delegate some stake to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Before delegating any of your stake to a baker or pool, use the <a class="reference internal" href="../resources/ccd-scan.html#ccd-scan"><span class="std std-ref">CCD scan tool</span></a> to research baker pools thoroughly.</p>
+<p>All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
+The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the <strong>Balance</strong> of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
+You can see the fee in the transaction log.</p>
 </div>
-<p>You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>An account cannot be both a baker account and have a delegation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure you have enough funds in your disposable balance to cover transaction fees.</p>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="add-delegation.html">Delegate to a baker pool or passive delegation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update-delegation.html">Update delegation to a baker pool or passive delegation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remove-delegation.html">Remove delegation to a baker pool or passive delegation</a></li>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Mobile Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Single signature account</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Multi signature account</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><ol class="arabic">
+<li><p>Go to <strong>Accounts</strong> and select the account on which you want to delegate funds.</p></li>
+<li><p>Click <strong>More options</strong> then select <strong>Register as a delegator</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/dw-account-menu-regular.png" src="../../_images/dw-account-menu-regular.png" />
+</div></blockquote>
+</li>
+<li><p>Select your target (a baker pool or passive delegation). Click <strong>Continue</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/dw-delegation-target.png" src="../../_images/dw-delegation-target.png" />
+</div></blockquote>
+</li>
+<li><p>Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/dw-delegation-stake.png" src="../../_images/dw-delegation-stake.png" />
+</div></blockquote>
+</li>
+<li><p>A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
+<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
+<li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.</p></li>
+<li><p>The Ledger device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger device says <strong>Concordium is ready</strong>.</p></li>
+<li><p>In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+</ol>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Delegate to a pool</strong>.</p></li>
+<li><p>Select the account on which you want to delegate funds.</p></li>
+<li><p>Enter the new amount that you want to stake and select <strong>Continue</strong>. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p></li>
+<li><p>Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.</p></li>
+</ol>
+<p><strong>Generate the transaction</strong></p>
+<p>There are two ways that you can generate the transaction:</p>
+<ul class="simple">
+<li><p>Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
+<li><p>Generate and sign the transaction This option requires a Ledger and an internet connection.</p></li>
 </ul>
+<p>In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
+<p><strong>Generate the transaction without signing</strong></p>
+<ol class="arabic simple">
+<li><p>Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
+<li><p>Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
+</ol>
+<p><strong>Generate and sign the transaction on the Ledger</strong></p>
+<ol class="arabic simple">
+<li><p>If you haven’t connected the Ledger, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
+<li><p>Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong>. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying Ledger Nano S is ready.</p></li>
+<li><p>In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
+<li><p>On the Ledger, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.</p></li>
+<li><p>The Ledger says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger says <strong>Concordium is ready</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet, there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
 </div>
-<p>The <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq"><span class="std std-ref">Delegation FAQ</span></a> answers many commonly asked questions.</p>
+<p>In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can <a class="reference internal" href="#submit-delegation"><span class="std std-ref">submit the transaction to the chain</span></a>, otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
+<p><strong>Export proposal</strong></p>
+<p>If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
+<ol class="arabic simple">
+<li><p>In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
+<li><p>Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
+<li><p>You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.</p></li>
+</ol>
+<p><strong>Receive signatures from co-signers</strong></p>
+<p>When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
+<ol class="arabic simple">
+<li><p>If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
+<li><p>Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
+<li><p>Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
+</ol>
+<p id="submit-delegation"><strong>Submit the transaction to the blockchain</strong></p>
+<p>When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
+<ol class="arabic">
+<li><p>Review the transaction details carefully to ensure that all information is correct.</p></li>
+<li><p>Select <strong>I understand this is the final submission and that it cannot be reverted</strong>.</p>
+<blockquote>
+<div><p>If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
+</div></blockquote>
+</li>
+<li><p>Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the Ledger.</p></li>
+<li><p>Select <strong>Finish</strong> to leave the page.</p></li>
+</ol>
+</div></div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
+<li><p>Go to the <strong>Accounts</strong> screen.</p></li>
+<li><p>Tap on the balance area of the account you want to delegate from or tap <strong>More</strong> <img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" />.</p></li>
+<li><p>Tap the hamburger menu <img alt="Three horizontal lines" src="../../_images/hamburger.png" /> and tap <strong>Delegation</strong>. If you are delegating for the first time, you see some information about delegation.</p>
+<blockquote>
+<div><img alt="../../_images/account-hamburger-menu.png" src="../../_images/account-hamburger-menu.png" />
+</div></blockquote>
+</li>
+<li><p>Tap <strong>Register delegation</strong>.</p></li>
+<li><p>If you want to delegate to a specific pool tap <strong>Baker pool</strong> and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap <strong>Passive delegation</strong>. Tap <strong>Continue</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/add-delegation-mw.jpg" src="../../_images/add-delegation-mw.jpg" />
+</div></blockquote>
+</li>
+<li><p>You can see your balance available to delegate. <strong>Enter the Amount you want to delegate</strong> in the field. And tap <strong>Yes, restake</strong> to restake any rewards or tap <strong>No, don’t restake</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap <strong>Continue</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/add-delegation-amt-mw.jpg" src="../../_images/add-delegation-amt-mw.jpg" />
+</div></blockquote>
+</li>
+<li><p>Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/add-delegation-conf-mw.jpg" src="../../_images/add-delegation-conf-mw.jpg" />
+</div></blockquote>
+</li>
+<li><p>Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p>
+<blockquote>
+<div><img alt="../../_images/add-delegation-submit-mw.jpg" src="../../_images/add-delegation-submit-mw.jpg" />
+</div></blockquote>
+</li>
+</ol>
+<p>Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.</p>
+<a class="reference internal image-reference" href="../../_images/account-delegating.png"><img alt="../../_images/account-delegating.png" src="../../_images/account-delegating.png" style="width: 40%;" /></a>
+<a class="reference internal image-reference" href="../../_images/account-details-delegating.png"><img alt="../../_images/account-details-delegating.png" src="../../_images/account-details-delegating.png" style="width: 40%;" /></a>
+</div></div>
 </div>
 
 
