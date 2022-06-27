@@ -220,7 +220,7 @@ Below the graphs, the table contains the following:
 - **Address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Account age**: how long the account has existed.
 - **Transactions**: number of transactions the account has conducted during the selected time range.
-- **Delegated stake**: 
+- **Delegated stake**:
 - **Balance**: The publicly visible balance of the account. Does not include shielded amounts.
 
 You can sort the information in the table using the following sort options:
