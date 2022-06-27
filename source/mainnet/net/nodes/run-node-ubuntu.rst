@@ -49,7 +49,7 @@ The services are also enabled to start automatically on system start.
    If the node is well behind the head of the chain, you can speed up initial catchup by downloading a batch of blocks and using out of band catchup.
 
    1. Download testnet blocks from `catchup.testnet.concordium.com <https://catchup.testnet.concordium.com/blocks_to_import.mdb>`__.
-     The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+      The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
 
    2. Stop the node if it is running
 
@@ -75,7 +75,7 @@ The services are also enabled to start automatically on system start.
      .. code-block::
 
        $sudo systemctl start concordium-testnet-node.service
-  
+
 
   After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
