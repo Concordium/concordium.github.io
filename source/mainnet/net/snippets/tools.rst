@@ -20,7 +20,7 @@ Command-line tool
 -----------------
 
 The Concordium distribution ships with a command-line tool named
-:ref:`concordium-client<concordium_client>`. It is designed as a low-level interface to the
+:ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
 :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as

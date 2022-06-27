@@ -52,7 +52,7 @@ Concordium software
 ===================
 
 The tool to deploy and interact with smart contracts is
-:ref:`concordium-client<concordium_client>`. It is distributed as part of the
+:ref:`concordium-client<concordium-client>`. It is distributed as part of the
 :ref:`Concordium software<downloads>` package.
 
 .. note::
