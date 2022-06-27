@@ -85,7 +85,7 @@ Step 4: Add baking to an account
 
 Configure baking for an account. For instructions, see :ref:`add-baker-mw`.
 
-Step 5: Create and register baker keys
+Step 5: Register baker keys
 --------------------------------------
 
 The last step is to configure the running node with the baker keys so the node
