@@ -6,7 +6,7 @@
 .. _port number: https://en.wikipedia.org/wiki/Port_(computer_networking)
 
 
-.. _concordium_client:
+.. _concordium-client:
 
 =================
 Concordium Client

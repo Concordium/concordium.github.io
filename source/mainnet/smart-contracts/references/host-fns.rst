@@ -240,6 +240,58 @@ Smart contract instance state
             successful, or ``2^32 - 1`` if the entry does not exist.
    :rtype: i32
 
+.. _host_function_crypto_primitives:
+
+Cryptographic primitives
+========================
+
+.. function:: verify_ed25519_signature(public_key, signature, message, message_len) -> i32
+
+   Verify an ed25519 signature.
+
+   :param i32 public_key: Pointer to a public key in linear memory. The ``public_key`` must point to a 32-byte array.
+   :param i32 signature: Pointer to the claimed signature. The ``signature`` must point to a 64-byte array.
+   :param i32 message: Pointer to the beginning of the message.
+   :param i32 message_len: Length of the message in bytes.
+
+   :return: ``1`` if the signature check is successful, ``0`` if not.
+   :rtype: i32
+
+.. function:: verify_ecdsa_secp256k1_signature(public_key, signature, message) -> i32
+
+   Verify an ecdsa over secp256k1 signature with the bitcoin-core implementation.
+
+   :param i32 public_key: Pointer to a public key in linear memory. The ``public_key`` must point to a 33-byte array.
+   :param i32 signature: Pointer to the claimed signature. The ``signature`` must point to a 64-byte array, serialized in compressed format.
+   :param i32 message: Pointer to the beginning of the message. The message must be exactly 32-bytes long.
+
+   :return: ``1`` if the signature check is successful, ``0`` if not.
+   :rtype: i32
+
+.. function:: hash_sha2_256(data, data_len, output)
+
+   Compute the SHA2-256 digest of the data.
+
+   :param i32 data: Pointer to the beginning of the data.
+   :param i32 data_len: Length of the data in bytes.
+   :param i32 output: Pointer to a memory location where the digest will be written.
+
+.. function:: hash_sha3_256(data, data_len, output)
+
+   Compute the SHA3-256 digest of the data.
+
+   :param i32 data: Pointer to the beginning of the data.
+   :param i32 data_len: Length of the data in bytes.
+   :param i32 output: Pointer to a memory location where the digest will be written.
+
+.. function:: hash_keccak_256(data, data_len, output)
+
+   Compute the Keccak-256 digest of the data.
+
+   :param i32 data: Pointer to the beginning of the data.
+   :param i32 data_len: Length of the data in bytes.
+   :param i32 output: Pointer to a memory location where the digest will be written.
+
 .. _host_function_chain_getters:
 
 Chain data
