@@ -14,7 +14,7 @@
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_4.2.1_amd64.deb
-.. |node-deb-package-checksum| replace:: b1f4c582a44761363bed5f25bb857cfe541cae4becf9f14c0062b67c4caabfd3
+.. |node-deb-package-checksum| replace:: 0ecefbdaa7a00d90d8e8099c6d25558f3d8f9d23164726550b1d62cfde5821b5
 
 .. Node docker package verification variables
 .. |node-docker-package| replace:: concordium-software-linux-4.2.1-0-mainnet.tar.gz
