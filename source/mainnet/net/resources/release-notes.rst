@@ -20,6 +20,17 @@ If you have enough stake to become a baker, you can also do that from Mobile Wal
 
 This functionality will be available for iOS shortly.
 
+Concordium Node 4.2.1
+----------------------
+
+Concordium Node 4.2.1 is a maintenance release, bringing performance improvements and bugfixes. The highlights are:
+
+- A significant decrease in node startup time. The exact improvements are platform
+  dependent, but startup should be at least 6 times faster on mainnet.
+- A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less
+  than 50% of memory compared to 4.1.1.
+- Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
+
 Sirius Testnet reset
 ====================
 
