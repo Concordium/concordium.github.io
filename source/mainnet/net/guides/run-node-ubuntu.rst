@@ -33,13 +33,13 @@ The services are also enabled to start automatically on system start.
 
 #. Install the package:
 
-   .. code-block:: console
+    .. code-block:: console
 
-    $sudo apt install /path-to-downloaded-package
+      $sudo apt install /path-to-downloaded-package
 
-  Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
+    Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
 
-  The path should be absolute, e.g., ``./concordium-mainnet-node.deb``, otherwise ``apt`` will assume that you want to install a package from the registry.
+    The path should be absolute, e.g., ``./concordium-mainnet-node.deb``, otherwise ``apt`` will assume that you want to install a package from the registry.
 
 3. Enter a ``node name`` when prompted. The node name is visible on the network dashboard. When you have installed the services, the ``concordium-mainnet-node`` will be running automatically.
 
@@ -48,27 +48,37 @@ The services are also enabled to start automatically on system start.
 .. Note::
    If the node is well behind the head of the chain, you can speed up initial catchup by downloading a batch of blocks and using out of band catchup.
 
-   - Download mainnet blocks from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__.
-     The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``
-   - Stop the node if it is running
+   1. Download mainnet blocks from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__.
+     The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+
+   2. Stop the node if it is running
 
      .. code-block:: console
 
        $sudo systemctl stop concordium-mainnet-node.service
 
 
-   - Edit the node service configuration file
+   3. Edit the node service configuration file
 
      .. code-block:: console
 
        $sudo systemctl edit concordium-mainnet-node.service
 
-   - Add the following under the ``[Service]`` section (create the section if it does not exist)
+   4. Add the following under the ``[Service]`` section (create the section if it does not exist)
 
      .. code-block::
 
        Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
        BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
+
+   5. Start the service again
+
+     .. code-block::
+
+       $sudo systemctl start concordium-mainnet-node.service
+  
+
+  After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
 The ``concordium-mainnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
 
