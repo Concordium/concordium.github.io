@@ -33,21 +33,52 @@ The services are also enabled to start automatically on system start.
 
 #. Install the package:
 
-   .. code-block:: console
+    .. code-block:: console
 
-    $sudo apt install /path-to-downloaded-package
+      $sudo apt install /path-to-downloaded-package
 
-  Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
+    Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
 
-  The path should be absolute, e.g., ``./concordium-testnet-node.deb``, otherwise ``apt`` will assume that you want to install a package from the registry.
+    The path should be absolute, e.g., ``./concordium-testnet-node.deb``, otherwise ``apt`` will assume that you want to install a package from the registry.
 
 3. Enter a ``node name`` when prompted. The node name is visible on the network dashboard. When you have installed the services, the ``concordium-testnet-node`` will be running automatically.
 
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.testnet.concordium.com/>`__ and look for a node with the name you provided.
 
 .. Note::
-   If the node is installed fresh, you can speed up initial catchup by downloading a batch of blocks and using `Out of band catchup <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md#out-of-band-catchup>`__.
-   Testnet blocks can be downloaded from `catchup.testnet.concordium.com <https://catchup.testnet.concordium.com/blocks_to_import.mdb>`__.
+   If the node is well behind the head of the chain, you can speed up initial catchup by downloading a batch of blocks and using out of band catchup.
+
+   1. Download testnet blocks from `catchup.testnet.concordium.com <https://catchup.testnet.concordium.com/blocks_to_import.mdb>`__.
+      The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+
+   2. Stop the node if it is running
+
+     .. code-block:: console
+
+       $sudo systemctl stop concordium-testnet-node.service
+
+   3. Edit the node service configuration file
+
+     .. code-block:: console
+
+       $sudo systemctl edit concordium-testnet-node.service
+
+   4. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+     .. code-block::
+
+       Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796/blocks_to_import.mdb
+       BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796/blocks_to_import.mdb
+
+   5. Start the service again
+
+     .. code-block::
+
+       $sudo systemctl start concordium-testnet-node.service
+
+
+  After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
 
 The ``concordium-testnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
 
