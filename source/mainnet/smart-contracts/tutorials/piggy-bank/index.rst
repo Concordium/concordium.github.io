@@ -26,6 +26,10 @@ contract using the Rust_ programming language.
 The :ref:`second part<piggy-bank-testing>` is about how to test your piggy bank smart contract with unit
 tests.
 
+The :ref:`third part<piggy-bank-preparing>` is about how to setup your testnet node on a server.
+
+The :ref:`fourth part<piggy-bank-deploying>` is about how to deploy your piggy bank smart contract to the Concordium testnet and interact with it.
+
 .. warning::
 
    The reader is assumed to have basic knowledge of what a blockchain and smart
@@ -39,3 +43,5 @@ To start the tutorial click :ref:`here<piggy-bank-writing>`.
 
    writing
    testing
+   preparing
+   deploying

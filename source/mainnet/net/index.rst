@@ -46,7 +46,7 @@
 
 .. toctree::
    :includehidden:
-   :caption: Smart Contracts v1 - Testnet only
+   :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
    Tutorials <../smart-contracts/tutorials/piggy-bank/index>

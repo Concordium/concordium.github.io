@@ -10,10 +10,11 @@ A number of references exist to help you when creating and testing smart contrac
    :maxdepth: 1
    :caption: References
 
+   crypto-primitives
+   host-fns
+   local-settings
+   references-on-chain
    schema-json
    simulate-context
-   host-fns
-   references-on-chain
-   local-settings
    Rust contract examples (repo) <https://github.com/Concordium/concordium-rust-smart-contracts>
    concordium-std <https://docs.rs/concordium-std/3.0.0/concordium_std/>
