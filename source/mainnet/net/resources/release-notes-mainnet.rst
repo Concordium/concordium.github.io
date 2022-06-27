@@ -27,13 +27,6 @@ Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS conta
 -   Fixed an issue on macOS where an error popup would show after closing the main application window and opening it again.
 -   Fixed an issue on macOS where identity creation was not possible after closing the main application window and opening it again.
 
-July 4, 2022
-
-Concordium Node 4.2.1
----------------------
-
-Node startup has been improved and memory consumption reduced.
-
 June 15, 2022
 
 Concordium Node 4.1.1
