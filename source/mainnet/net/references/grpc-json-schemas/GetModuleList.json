@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Array_of_SHA256Hash",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/SHA256Hash"
+  },
+  "definitions": {
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    }
+  }
+}

@@ -1,63 +1,108 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "TransactionStatus",
-  "description": "Status of a transaction known to the node.",
-  "oneOf": [
+  "title": "BlockSummary",
+  "description": "Summary of transactions, protocol generated transfers, and chain parameters in a given block.",
+  "anyOf": [
     {
-      "description": "Transaction is received, but not yet in any blocks.",
       "type": "object",
       "required": [
-        "status"
+        "protocolVersion",
+        "specialEvents",
+        "transactionSummaries",
+        "updates"
       ],
       "properties": {
-        "status": {
-          "type": "string",
-          "enum": [
-            "received"
+        "finalizationData": {
+          "description": "If the block contains a finalization record this contains its summary. Otherwise [None].",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FinalizationSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "protocolVersion": {
+          "description": "Protocol version at which this block was baked. This is no more than [ProtocolVersion::P3]",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProtocolVersion"
+            }
+          ]
+        },
+        "specialEvents": {
+          "description": "Any special events generated as part of this block. Special events are protocol defined transfers, e.g., rewards, minting.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpecialTransactionOutcome"
+          }
+        },
+        "transactionSummaries": {
+          "description": "Outcomes of transactions in this block, ordered as in the block.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BlockItemSummary"
+          }
+        },
+        "updates": {
+          "description": "Chain parameters, and any scheduled updates to chain parameters or the protocol.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV0_and_ChainParametersV0_and_PendingUpdatesV0"
+            }
           ]
         }
       }
     },
     {
-      "description": "Transaction is finalized in the given block, with the given summary. If the finalization committee is not corrupt then this will always be a singleton map.",
       "type": "object",
       "required": [
-        "outcomes",
-        "status"
+        "protocolVersion",
+        "specialEvents",
+        "transactionSummaries",
+        "updates"
       ],
       "properties": {
-        "outcomes": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/BlockItemSummary"
-          }
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "finalized"
+        "finalizationData": {
+          "description": "If the block contains a finalization record this contains its summary. Otherwise [None].",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FinalizationSummary"
+            },
+            {
+              "type": "null"
+            }
           ]
-        }
-      }
-    },
-    {
-      "description": "Transaction is committed to one or more blocks. The outcomes are listed for each block. Note that in the vast majority of cases the outcome of a transaction should not be dependent on the block it is in, but this can in principle happen.",
-      "type": "object",
-      "required": [
-        "outcomes",
-        "status"
-      ],
-      "properties": {
-        "outcomes": {
-          "type": "object",
-          "additionalProperties": {
+        },
+        "protocolVersion": {
+          "description": "Protocol version at which this block was baked. This is at least [ProtocolVersion::P4]",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProtocolVersion"
+            }
+          ]
+        },
+        "specialEvents": {
+          "description": "Any special events generated as part of this block. Special events are protocol defined transfers, e.g., rewards, minting.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpecialTransactionOutcome"
+          }
+        },
+        "transactionSummaries": {
+          "description": "Outcomes of transactions in this block, ordered as in the block.",
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/BlockItemSummary"
           }
         },
-        "status": {
-          "type": "string",
-          "enum": [
-            "committed"
+        "updates": {
+          "description": "Chain parameters, and any scheduled updates to chain parameters or the protocol.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV1_and_ChainParametersV1_and_PendingUpdatesV1"
+            }
           ]
         }
       }
@@ -93,6 +138,21 @@
       "maxLength": 50,
       "minLength": 50,
       "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "AccountAmount": {
+      "type": "object",
+      "required": [
+        "address",
+        "amount"
+      ],
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/AccountAddress"
+        },
+        "amount": {
+          "$ref": "#/definitions/CCDAmount"
+        }
+      }
     },
     "Address": {
       "description": "Either an account or contract address. Some operations are allowed on both types of items, hence the need for this type.",
@@ -653,6 +713,219 @@
       "maxLength": 20,
       "minLength": 1,
       "pattern": "^([0-9])*"
+    },
+    "ChainParametersV0": {
+      "description": "Values of chain parameters that can be updated via chain updates.",
+      "type": "object",
+      "required": [
+        "accountCreationLimit",
+        "bakerCooldownEpochs",
+        "electionDifficulty",
+        "euroPerEnergy",
+        "foundationAccountIndex",
+        "microGTUPerEuro",
+        "minimumThresholdForBaking",
+        "rewardParameters"
+      ],
+      "properties": {
+        "accountCreationLimit": {
+          "description": "The limit for the number of account creations in a block.",
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "bakerCooldownEpochs": {
+          "description": "Extra number of epochs before reduction in stake, or baker deregistration is completed.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "electionDifficulty": {
+          "description": "Election difficulty for consensus lottery.",
+          "type": "number"
+        },
+        "euroPerEnergy": {
+          "description": "Euro per energy exchange rate.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ExchangeRate"
+            }
+          ]
+        },
+        "foundationAccountIndex": {
+          "description": "Index of the foundation account.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "microGTUPerEuro": {
+          "description": "Micro ccd per euro exchange rate.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ExchangeRate"
+            }
+          ]
+        },
+        "minimumThresholdForBaking": {
+          "description": "Minimum threshold for becoming a baker.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "rewardParameters": {
+          "description": "Current reward parameters.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RewardParametersSkeleton_for_MintDistributionV0"
+            }
+          ]
+        }
+      }
+    },
+    "ChainParametersV1": {
+      "description": "Values of chain parameters that can be updated via chain updates.",
+      "type": "object",
+      "required": [
+        "accountCreationLimit",
+        "bakingCommissionRange",
+        "capitalBound",
+        "delegatorCooldown",
+        "electionDifficulty",
+        "euroPerEnergy",
+        "finalizationCommissionRange",
+        "foundationAccountIndex",
+        "leverageBound",
+        "microGTUPerEuro",
+        "minimumEquityCapital",
+        "mintPerPayday",
+        "passiveBakingCommission",
+        "passiveFinalizationCommission",
+        "passiveTransactionCommission",
+        "poolOwnerCooldown",
+        "rewardParameters",
+        "rewardPeriodLength",
+        "transactionCommissionRange"
+      ],
+      "properties": {
+        "accountCreationLimit": {
+          "description": "The limit for the number of account creations in a block.",
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "bakingCommissionRange": {
+          "description": "The range of allowed baker commissions.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/InclusiveRange_for_Number"
+            }
+          ]
+        },
+        "capitalBound": {
+          "description": "Maximum fraction of the total staked capital of that a new baker can have.",
+          "type": "number"
+        },
+        "delegatorCooldown": {
+          "description": "Number of seconds that a delegator must cooldown when reducing their delegated stake.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "electionDifficulty": {
+          "description": "Election difficulty for consensus lottery.",
+          "type": "number"
+        },
+        "euroPerEnergy": {
+          "description": "Euro per energy exchange rate.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ExchangeRate"
+            }
+          ]
+        },
+        "finalizationCommissionRange": {
+          "description": "The range of allowed finalization commissions.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/InclusiveRange_for_Number"
+            }
+          ]
+        },
+        "foundationAccountIndex": {
+          "description": "Index of the foundation account.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "leverageBound": {
+          "description": "The maximum leverage that a baker can have as a ratio of total stake to equity capital.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/LeverageFactor"
+            }
+          ]
+        },
+        "microGTUPerEuro": {
+          "description": "Micro ccd per euro exchange rate.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ExchangeRate"
+            }
+          ]
+        },
+        "minimumEquityCapital": {
+          "description": "Minimum equity capital required for a new baker.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "mintPerPayday": {
+          "$ref": "#/definitions/MintRate"
+        },
+        "passiveBakingCommission": {
+          "description": "Fraction of baking rewards charged by the passive delegation.",
+          "type": "number"
+        },
+        "passiveFinalizationCommission": {
+          "description": "Fraction of finalization rewards charged by the passive delegation.",
+          "type": "number"
+        },
+        "passiveTransactionCommission": {
+          "description": "Fraction of transaction rewards charged by the L-pool.",
+          "type": "number"
+        },
+        "poolOwnerCooldown": {
+          "description": "Number of seconds that pool owners must cooldown when reducing their equity capital or closing the pool.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "rewardParameters": {
+          "description": "Current reward parameters.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RewardParametersSkeleton_for_MintDistributionV1"
+            }
+          ]
+        },
+        "rewardPeriodLength": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "transactionCommissionRange": {
+          "description": "The range of allowed transaction commissions.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/InclusiveRange_for_Number"
+            }
+          ]
+        }
+      }
     },
     "ContractAddress": {
       "type": "object",
@@ -2077,6 +2350,64 @@
         }
       }
     },
+    "FinalizationSummary": {
+      "description": "Summary of the finalization record in a block, if any.",
+      "type": "object",
+      "required": [
+        "finalizationBlockPointer",
+        "finalizationDelay",
+        "finalizationIndex",
+        "finalizers"
+      ],
+      "properties": {
+        "finalizationBlockPointer": {
+          "$ref": "#/definitions/SHA256Hash"
+        },
+        "finalizationDelay": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "finalizationIndex": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "finalizers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FinalizationSummaryParty"
+          }
+        }
+      }
+    },
+    "FinalizationSummaryParty": {
+      "description": "Details of a party in a finalization.",
+      "type": "object",
+      "required": [
+        "bakerId",
+        "signed",
+        "weight"
+      ],
+      "properties": {
+        "bakerId": {
+          "description": "The identity of the baker.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "signed": {
+          "description": "Whether the party's signature is present",
+          "type": "boolean"
+        },
+        "weight": {
+          "description": "The party's relative weight in the committee",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
     "GASRewards": {
       "description": "The reward fractions related to the gas account and inclusion of special transactions.",
       "type": "object",
@@ -2345,6 +2676,140 @@
       "minLength": 0,
       "pattern": "^(([0-9]?[a-f]?){2})*$"
     },
+    "PendingUpdatesV0": {
+      "type": "object",
+      "required": [
+        "addAnonymityRevoker",
+        "addIdentityProvider",
+        "bakerStakeThreshold",
+        "electionDifficulty",
+        "euroPerEnergy",
+        "foundationAccount",
+        "gasRewards",
+        "level1Keys",
+        "level2Keys",
+        "microGTUPerEuro",
+        "mintDistribution",
+        "protocol",
+        "rootKeys",
+        "transactionFeeDistribution"
+      ],
+      "properties": {
+        "addAnonymityRevoker": {
+          "$ref": "#/definitions/UpdateQueue_for_ArInfo_for_HexString"
+        },
+        "addIdentityProvider": {
+          "$ref": "#/definitions/UpdateQueue_for_IpInfo_for_HexString"
+        },
+        "bakerStakeThreshold": {
+          "$ref": "#/definitions/UpdateQueue_for_BakerParameters"
+        },
+        "electionDifficulty": {
+          "$ref": "#/definitions/UpdateQueue_for_Number"
+        },
+        "euroPerEnergy": {
+          "$ref": "#/definitions/UpdateQueue_for_ExchangeRate"
+        },
+        "foundationAccount": {
+          "$ref": "#/definitions/UpdateQueue_for_uint64"
+        },
+        "gasRewards": {
+          "$ref": "#/definitions/UpdateQueue_for_GASRewards"
+        },
+        "level1Keys": {
+          "$ref": "#/definitions/UpdateQueue_for_HigherLevelAccessStructure_for_Level1KeysKind"
+        },
+        "level2Keys": {
+          "$ref": "#/definitions/UpdateQueue_for_AuthorizationsV0"
+        },
+        "microGTUPerEuro": {
+          "$ref": "#/definitions/UpdateQueue_for_ExchangeRate"
+        },
+        "mintDistribution": {
+          "$ref": "#/definitions/UpdateQueue_for_MintDistributionV0"
+        },
+        "protocol": {
+          "$ref": "#/definitions/UpdateQueue_for_ProtocolUpdate"
+        },
+        "rootKeys": {
+          "$ref": "#/definitions/UpdateQueue_for_HigherLevelAccessStructure_for_RootKeysKind"
+        },
+        "transactionFeeDistribution": {
+          "$ref": "#/definitions/UpdateQueue_for_TransactionFeeDistribution"
+        }
+      }
+    },
+    "PendingUpdatesV1": {
+      "type": "object",
+      "required": [
+        "addAnonymityRevoker",
+        "addIdentityProvider",
+        "cooldownParameters",
+        "electionDifficulty",
+        "euroPerEnergy",
+        "foundationAccount",
+        "gasRewards",
+        "level1Keys",
+        "level2Keys",
+        "microGTUPerEuro",
+        "mintDistribution",
+        "poolParameters",
+        "protocol",
+        "rootKeys",
+        "timeParameters",
+        "transactionFeeDistribution"
+      ],
+      "properties": {
+        "addAnonymityRevoker": {
+          "$ref": "#/definitions/UpdateQueue_for_ArInfo_for_HexString"
+        },
+        "addIdentityProvider": {
+          "$ref": "#/definitions/UpdateQueue_for_IpInfo_for_HexString"
+        },
+        "cooldownParameters": {
+          "$ref": "#/definitions/UpdateQueue_for_CooldownParameters"
+        },
+        "electionDifficulty": {
+          "$ref": "#/definitions/UpdateQueue_for_Number"
+        },
+        "euroPerEnergy": {
+          "$ref": "#/definitions/UpdateQueue_for_ExchangeRate"
+        },
+        "foundationAccount": {
+          "$ref": "#/definitions/UpdateQueue_for_uint64"
+        },
+        "gasRewards": {
+          "$ref": "#/definitions/UpdateQueue_for_GASRewards"
+        },
+        "level1Keys": {
+          "$ref": "#/definitions/UpdateQueue_for_HigherLevelAccessStructure_for_Level1KeysKind"
+        },
+        "level2Keys": {
+          "$ref": "#/definitions/UpdateQueue_for_AuthorizationsV1"
+        },
+        "microGTUPerEuro": {
+          "$ref": "#/definitions/UpdateQueue_for_ExchangeRate"
+        },
+        "mintDistribution": {
+          "$ref": "#/definitions/UpdateQueue_for_MintDistributionV1"
+        },
+        "poolParameters": {
+          "$ref": "#/definitions/UpdateQueue_for_PoolParameters"
+        },
+        "protocol": {
+          "$ref": "#/definitions/UpdateQueue_for_ProtocolUpdate"
+        },
+        "rootKeys": {
+          "$ref": "#/definitions/UpdateQueue_for_HigherLevelAccessStructure_for_RootKeysKind"
+        },
+        "timeParameters": {
+          "$ref": "#/definitions/UpdateQueue_for_TimeParameters"
+        },
+        "transactionFeeDistribution": {
+          "$ref": "#/definitions/UpdateQueue_for_TransactionFeeDistribution"
+        }
+      }
+    },
     "PoolParameters": {
       "description": "Parameters related to staking pools.",
       "type": "object",
@@ -2441,6 +2906,11 @@
           "type": "string"
         }
       }
+    },
+    "ProtocolVersion": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
     },
     "PublicKey": {
       "type": "string",
@@ -3412,6 +3882,46 @@
         }
       ]
     },
+    "RewardParametersSkeleton_for_MintDistributionV0": {
+      "description": "Values of reward parameters.",
+      "type": "object",
+      "required": [
+        "gASRewards",
+        "mintDistribution",
+        "transactionFeeDistribution"
+      ],
+      "properties": {
+        "gASRewards": {
+          "$ref": "#/definitions/GASRewards"
+        },
+        "mintDistribution": {
+          "$ref": "#/definitions/MintDistributionV0"
+        },
+        "transactionFeeDistribution": {
+          "$ref": "#/definitions/TransactionFeeDistribution"
+        }
+      }
+    },
+    "RewardParametersSkeleton_for_MintDistributionV1": {
+      "description": "Values of reward parameters.",
+      "type": "object",
+      "required": [
+        "gASRewards",
+        "mintDistribution",
+        "transactionFeeDistribution"
+      ],
+      "properties": {
+        "gASRewards": {
+          "$ref": "#/definitions/GASRewards"
+        },
+        "mintDistribution": {
+          "$ref": "#/definitions/MintDistributionV1"
+        },
+        "transactionFeeDistribution": {
+          "$ref": "#/definitions/TransactionFeeDistribution"
+        }
+      }
+    },
     "RootUpdate": {
       "description": "An update with root keys of some other set of governance keys, or the root keys themselves. Each update is a separate transaction.",
       "oneOf": [
@@ -3495,6 +4005,739 @@
       "minLength": 64,
       "pattern": "^(([0-9]?[a-f]?){2})*$"
     },
+    "ScheduledUpdate_for_ArInfo_for_HexString": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/ArInfo_for_HexString"
+        }
+      }
+    },
+    "ScheduledUpdate_for_AuthorizationsV0": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/AuthorizationsV0"
+        }
+      }
+    },
+    "ScheduledUpdate_for_AuthorizationsV1": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/AuthorizationsV1"
+        }
+      }
+    },
+    "ScheduledUpdate_for_BakerParameters": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/BakerParameters"
+        }
+      }
+    },
+    "ScheduledUpdate_for_CooldownParameters": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/CooldownParameters"
+        }
+      }
+    },
+    "ScheduledUpdate_for_ExchangeRate": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/ExchangeRate"
+        }
+      }
+    },
+    "ScheduledUpdate_for_GASRewards": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/GASRewards"
+        }
+      }
+    },
+    "ScheduledUpdate_for_HigherLevelAccessStructure_for_Level1KeysKind": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/HigherLevelAccessStructure_for_Level1KeysKind"
+        }
+      }
+    },
+    "ScheduledUpdate_for_HigherLevelAccessStructure_for_RootKeysKind": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/HigherLevelAccessStructure_for_RootKeysKind"
+        }
+      }
+    },
+    "ScheduledUpdate_for_IpInfo_for_HexString": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/IpInfo_for_HexString"
+        }
+      }
+    },
+    "ScheduledUpdate_for_MintDistributionV0": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/MintDistributionV0"
+        }
+      }
+    },
+    "ScheduledUpdate_for_MintDistributionV1": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/MintDistributionV1"
+        }
+      }
+    },
+    "ScheduledUpdate_for_Number": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "type": "number"
+        }
+      }
+    },
+    "ScheduledUpdate_for_PoolParameters": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/PoolParameters"
+        }
+      }
+    },
+    "ScheduledUpdate_for_ProtocolUpdate": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/ProtocolUpdate"
+        }
+      }
+    },
+    "ScheduledUpdate_for_TimeParameters": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/TimeParameters"
+        }
+      }
+    },
+    "ScheduledUpdate_for_TransactionFeeDistribution": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "$ref": "#/definitions/TransactionFeeDistribution"
+        }
+      }
+    },
+    "ScheduledUpdate_for_uint64": {
+      "description": "A scheduled update of a given type.",
+      "type": "object",
+      "required": [
+        "effectiveTime",
+        "update"
+      ],
+      "properties": {
+        "effectiveTime": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "update": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "SpecialTransactionOutcome": {
+      "description": "In addition to the user initiated transactions the protocol generates some events which are deemed \"Special outcomes\". These are rewards for running the consensus and finalization protocols.",
+      "oneOf": [
+        {
+          "description": "Reward issued to all the bakers at the end of an epoch for baking blocks in the epoch.",
+          "type": "object",
+          "required": [
+            "bakerRewards",
+            "remainder",
+            "tag"
+          ],
+          "properties": {
+            "bakerRewards": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AccountAmount"
+              }
+            },
+            "remainder": {
+              "description": "Remaining balance of the baking account. This will be transfered to the next epoch's reward account. It exists since it is not possible to perfectly distribute the accumulated rewards. The reason this is not possible is that amounts are integers.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "BakingRewards"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Distribution of newly minted CCD.",
+          "type": "object",
+          "required": [
+            "foundationAccount",
+            "mintBakingReward",
+            "mintFinalizationReward",
+            "mintPlatformDevelopmentCharge",
+            "tag"
+          ],
+          "properties": {
+            "foundationAccount": {
+              "description": "The address of the foundation account that the newly minted CCD goes to.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/AccountAddress"
+                }
+              ]
+            },
+            "mintBakingReward": {
+              "description": "The portion of the newly minted CCD that goes to the baking reward account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "mintFinalizationReward": {
+              "description": "The portion that goes to the finalization reward account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "mintPlatformDevelopmentCharge": {
+              "description": "The portion that goes to the foundation, as foundation tax.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "Mint"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Distribution of finalization rewards.",
+          "type": "object",
+          "required": [
+            "finalizationRewards",
+            "remainder",
+            "tag"
+          ],
+          "properties": {
+            "finalizationRewards": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AccountAmount"
+              }
+            },
+            "remainder": {
+              "description": "Remaining balance of the finalization reward account. It exists since it is not possible to perfectly distribute the accumulated rewards. The reason this is not possible is that amounts are integers.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "FinalizationRewards"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Reward for including transactions in a block.",
+          "type": "object",
+          "required": [
+            "baker",
+            "bakerReward",
+            "foundationAccount",
+            "foundationCharge",
+            "newGASAccount",
+            "oldGASAccount",
+            "tag",
+            "transactionFees"
+          ],
+          "properties": {
+            "baker": {
+              "description": "The account address where the baker receives the reward.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/AccountAddress"
+                }
+              ]
+            },
+            "bakerReward": {
+              "description": "The amount of CCD that goes to the baker.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "foundationAccount": {
+              "description": "The account address where the foundation receives the tax.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/AccountAddress"
+                }
+              ]
+            },
+            "foundationCharge": {
+              "description": "The amount of CCD that goes to the foundation.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "newGASAccount": {
+              "description": "New balance of the GAS account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "oldGASAccount": {
+              "description": "Previous balance of the GAS account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "BlockReward"
+              ]
+            },
+            "transactionFees": {
+              "description": "Total amount of transaction fees in the block.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "description": "Payment for the foundation.",
+          "type": "object",
+          "required": [
+            "developmentCharge",
+            "foundationAccount",
+            "tag"
+          ],
+          "properties": {
+            "developmentCharge": {
+              "description": "Amount rewarded.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "foundationAccount": {
+              "description": "Address of the foundation account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/AccountAddress"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "PaydayFoundationReward"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Payment for a particular account. When listed in a block summary, the delegated pool of the account is given by the last PaydayPoolReward outcome included before this outcome.",
+          "type": "object",
+          "required": [
+            "account",
+            "bakerReward",
+            "finalizationReward",
+            "tag",
+            "transactionFees"
+          ],
+          "properties": {
+            "account": {
+              "description": "The account that got rewarded.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/AccountAddress"
+                }
+              ]
+            },
+            "bakerReward": {
+              "description": "The baking reward at payday to the account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "finalizationReward": {
+              "description": "The finalization reward at payday to the account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "PaydayAccountReward"
+              ]
+            },
+            "transactionFees": {
+              "description": "The transaction fee reward at payday to the account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "description": "Amounts accrued to accounts for each baked block.",
+          "type": "object",
+          "required": [
+            "bakerId",
+            "bakerReward",
+            "foundationCharge",
+            "newGASAccount",
+            "oldGASAccount",
+            "passiveReward",
+            "tag",
+            "transactionFees"
+          ],
+          "properties": {
+            "bakerId": {
+              "description": "The baker of the block, who will receive the award.",
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "bakerReward": {
+              "description": "The amount awarded to the baker.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "foundationCharge": {
+              "description": "The amount awarded to the foundation.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "newGASAccount": {
+              "description": "The new balance of the GAS account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "oldGASAccount": {
+              "description": "The old balance of the GAS account.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "passiveReward": {
+              "description": "The amount awarded to the passive delegators.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "BlockAccrueReward"
+              ]
+            },
+            "transactionFees": {
+              "description": "The total fees paid for transactions in the block.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "description": "Payment distributed to a pool or passive delegators.",
+          "type": "object",
+          "required": [
+            "bakerReward",
+            "finalizationReward",
+            "tag",
+            "transactionFees"
+          ],
+          "properties": {
+            "bakerReward": {
+              "description": "Accrued baking rewards for pool.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "finalizationReward": {
+              "description": "Accrued finalization rewards for pool.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "poolOwner": {
+              "description": "The pool owner (passive delegators when 'None').",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "PaydayPoolReward"
+              ]
+            },
+            "transactionFees": {
+              "description": "Accrued transaction fees for pool.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "TimeParameters": {
       "description": "The time parameters are introduced as of protocol version 4, and consist of the reward period length and the mint rate per payday. These are coupled as a change to either affects the overall rate of minting.",
       "type": "object",
@@ -3557,6 +4800,46 @@
         "configureBaker",
         "configureDelegation"
       ]
+    },
+    "UpdateKeysCollectionSkeleton_for_AuthorizationsV0": {
+      "description": "The current collection of keys allowed to do updates. Parametrized by the chain parameter version.",
+      "type": "object",
+      "required": [
+        "level1Keys",
+        "level2Keys",
+        "rootKeys"
+      ],
+      "properties": {
+        "level1Keys": {
+          "$ref": "#/definitions/HigherLevelAccessStructure_for_Level1KeysKind"
+        },
+        "level2Keys": {
+          "$ref": "#/definitions/AuthorizationsV0"
+        },
+        "rootKeys": {
+          "$ref": "#/definitions/HigherLevelAccessStructure_for_RootKeysKind"
+        }
+      }
+    },
+    "UpdateKeysCollectionSkeleton_for_AuthorizationsV1": {
+      "description": "The current collection of keys allowed to do updates. Parametrized by the chain parameter version.",
+      "type": "object",
+      "required": [
+        "level1Keys",
+        "level2Keys",
+        "rootKeys"
+      ],
+      "properties": {
+        "level1Keys": {
+          "$ref": "#/definitions/HigherLevelAccessStructure_for_Level1KeysKind"
+        },
+        "level2Keys": {
+          "$ref": "#/definitions/AuthorizationsV1"
+        },
+        "rootKeys": {
+          "$ref": "#/definitions/HigherLevelAccessStructure_for_RootKeysKind"
+        }
+      }
     },
     "UpdatePayload": {
       "description": "The type of an update payload.",
@@ -3869,6 +5152,420 @@
         }
       ]
     },
+    "UpdateQueue_for_ArInfo_for_HexString": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_ArInfo_for_HexString"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_AuthorizationsV0": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_AuthorizationsV0"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_AuthorizationsV1": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_AuthorizationsV1"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_BakerParameters": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_BakerParameters"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_CooldownParameters": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_CooldownParameters"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_ExchangeRate": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_ExchangeRate"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_GASRewards": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_GASRewards"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_HigherLevelAccessStructure_for_Level1KeysKind": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_HigherLevelAccessStructure_for_Level1KeysKind"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_HigherLevelAccessStructure_for_RootKeysKind": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_HigherLevelAccessStructure_for_RootKeysKind"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_IpInfo_for_HexString": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_IpInfo_for_HexString"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_MintDistributionV0": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_MintDistributionV0"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_MintDistributionV1": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_MintDistributionV1"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_Number": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_Number"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_PoolParameters": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_PoolParameters"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_ProtocolUpdate": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_ProtocolUpdate"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_TimeParameters": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_TimeParameters"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_TransactionFeeDistribution": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_TransactionFeeDistribution"
+          }
+        }
+      }
+    },
+    "UpdateQueue_for_uint64": {
+      "description": "A queue of updates of a given type.",
+      "type": "object",
+      "required": [
+        "nextSequenceNumber",
+        "queue"
+      ],
+      "properties": {
+        "nextSequenceNumber": {
+          "description": "Next available sequence number for the update type.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "queue": {
+          "description": "Queue of updates, ordered by effective time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledUpdate_for_uint64"
+          }
+        }
+      }
+    },
     "UpdateType": {
       "description": "Enumeration of the types of updates that are possible.",
       "type": "string",
@@ -3890,6 +5587,100 @@
         "updateCooldownParameters",
         "updateTimeParameters"
       ]
+    },
+    "UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV0_and_ChainParametersV0_and_PendingUpdatesV0": {
+      "description": "State of updates. This includes current values of parameters as well as any scheduled updates.",
+      "type": "object",
+      "required": [
+        "chainParameters",
+        "keys",
+        "updateQueues"
+      ],
+      "properties": {
+        "chainParameters": {
+          "description": "Values of chain parameters.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ChainParametersV0"
+            }
+          ]
+        },
+        "keys": {
+          "description": "Keys allowed to perform updates.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/UpdateKeysCollectionSkeleton_for_AuthorizationsV0"
+            }
+          ]
+        },
+        "protocolUpdate": {
+          "description": "Possibly pending protocol update.",
+          "default": null,
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ProtocolUpdate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "updateQueues": {
+          "description": "Any scheduled updates.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PendingUpdatesV0"
+            }
+          ]
+        }
+      }
+    },
+    "UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV1_and_ChainParametersV1_and_PendingUpdatesV1": {
+      "description": "State of updates. This includes current values of parameters as well as any scheduled updates.",
+      "type": "object",
+      "required": [
+        "chainParameters",
+        "keys",
+        "updateQueues"
+      ],
+      "properties": {
+        "chainParameters": {
+          "description": "Values of chain parameters.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ChainParametersV1"
+            }
+          ]
+        },
+        "keys": {
+          "description": "Keys allowed to perform updates.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/UpdateKeysCollectionSkeleton_for_AuthorizationsV1"
+            }
+          ]
+        },
+        "protocolUpdate": {
+          "description": "Possibly pending protocol update.",
+          "default": null,
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ProtocolUpdate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "updateQueues": {
+          "description": "Any scheduled updates.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PendingUpdatesV1"
+            }
+          ]
+        }
+      }
     },
     "VerifyKey": {
       "type": "object",

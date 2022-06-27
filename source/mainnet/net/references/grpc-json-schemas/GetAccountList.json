@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Array_of_AccountAddress",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/AccountAddress"
+  },
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    }
+  }
+}

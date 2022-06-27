@@ -1,0 +1,364 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PoolStatus",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "allPoolTotalCapital",
+        "bakerAddress",
+        "bakerEquityCapital",
+        "bakerId",
+        "bakerStakePendingChange",
+        "delegatedCapital",
+        "delegatedCapitalCap",
+        "poolInfo",
+        "poolType"
+      ],
+      "properties": {
+        "allPoolTotalCapital": {
+          "description": "Total capital staked across all pools.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "bakerAddress": {
+          "description": "The account address of the pool owner.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountAddress"
+            }
+          ]
+        },
+        "bakerEquityCapital": {
+          "description": "The equity capital provided by the pool owner.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "bakerId": {
+          "description": "The 'BakerId' of the pool owner.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "bakerStakePendingChange": {
+          "description": "Any pending change to the baker's stake.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PoolPendingChange"
+            }
+          ]
+        },
+        "currentPaydayStatus": {
+          "description": "Status of the pool in the current reward period. This will be [None] if the pool is not a",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/CurrentPaydayBakerPoolStatus"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "delegatedCapital": {
+          "description": "The capital delegated to the pool by other accounts.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "delegatedCapitalCap": {
+          "description": "The maximum amount that may be delegated to the pool, accounting for leverage and stake limits.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "poolInfo": {
+          "description": "The pool info associated with the pool: open status, metadata URL and commission rates.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/BakerPoolInfo"
+            }
+          ]
+        },
+        "poolType": {
+          "type": "string",
+          "enum": [
+            "BakerPool"
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "allPoolTotalCapital",
+        "commissionRates",
+        "currentPaydayDelegatedCapital",
+        "currentPaydayTransactionFeesEarned",
+        "delegatedCapital",
+        "poolType"
+      ],
+      "properties": {
+        "allPoolTotalCapital": {
+          "description": "Total capital staked across all pools, including passive delegation.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "commissionRates": {
+          "description": "The passive delegation commission rates.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CommissionRates"
+            }
+          ]
+        },
+        "currentPaydayDelegatedCapital": {
+          "description": "The effective delegated capital to the passive delegators for the current reward period.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "currentPaydayTransactionFeesEarned": {
+          "description": "The transaction fees accruing to the passive delegators in the current reward period.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "delegatedCapital": {
+          "description": "The total capital delegated passively.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "poolType": {
+          "type": "string",
+          "enum": [
+            "PassiveDelegation"
+          ]
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "BakerPoolInfo": {
+      "description": "Additional information about a baking pool. This information is added with the introduction of delegation.",
+      "type": "object",
+      "required": [
+        "commissionRates",
+        "metadataUrl",
+        "openStatus"
+      ],
+      "properties": {
+        "commissionRates": {
+          "description": "The commission rates charged by the pool owner.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CommissionRates"
+            }
+          ]
+        },
+        "metadataUrl": {
+          "description": "The URL that links to the metadata about the pool.",
+          "type": "string"
+        },
+        "openStatus": {
+          "description": "Whether the pool allows delegators.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/OpenStatus"
+            }
+          ]
+        }
+      }
+    },
+    "CCDAmount": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "pattern": "^([0-9])*"
+    },
+    "CommissionRates": {
+      "type": "object",
+      "required": [
+        "bakingCommission",
+        "finalizationCommission",
+        "transactionCommission"
+      ],
+      "properties": {
+        "bakingCommission": {
+          "description": "Fraction of baking rewards charged by the pool owner.",
+          "type": "number"
+        },
+        "finalizationCommission": {
+          "description": "Fraction of finalization rewards charged by the pool owner.",
+          "type": "number"
+        },
+        "transactionCommission": {
+          "description": "Fraction of transaction rewards charged by the pool owner.",
+          "type": "number"
+        }
+      }
+    },
+    "CurrentPaydayBakerPoolStatus": {
+      "type": "object",
+      "required": [
+        "bakerEquityCapital",
+        "blocksBaked",
+        "delegatedCapital",
+        "effectiveStake",
+        "finalizationLive",
+        "lotteryPower",
+        "transactionFeesEarned"
+      ],
+      "properties": {
+        "bakerEquityCapital": {
+          "description": "The effective equity capital of the baker for the current reward period.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "blocksBaked": {
+          "description": "The number of blocks baked in the current reward period.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "delegatedCapital": {
+          "description": "The effective delegated capital to the pool for the current reward period.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "effectiveStake": {
+          "description": "The effective stake of the baker in the current reward period.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "finalizationLive": {
+          "description": "Whether the baker has contributed a finalization proof in the current reward period.",
+          "type": "boolean"
+        },
+        "lotteryPower": {
+          "description": "The lottery power of the baker in the current reward period.",
+          "type": "number",
+          "format": "double"
+        },
+        "transactionFeesEarned": {
+          "description": "The transaction fees accruing to the pool in the current reward period.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        }
+      }
+    },
+    "OpenStatus": {
+      "description": "The status of whether a baking pool allows delegators to join.",
+      "type": "string",
+      "enum": [
+        "openForAll",
+        "closedForNew",
+        "closedForAll"
+      ]
+    },
+    "PoolPendingChange": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "pendingChangeType"
+          ],
+          "properties": {
+            "pendingChangeType": {
+              "type": "string",
+              "enum": [
+                "NoChange"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "bakerEquityCapital",
+            "effectiveTime",
+            "pendingChangeType"
+          ],
+          "properties": {
+            "bakerEquityCapital": {
+              "description": "New baker equity capital.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "effectiveTime": {
+              "description": "Effective time of the change.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "pendingChangeType": {
+              "type": "string",
+              "enum": [
+                "ReduceBakerCapital"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "effectiveTime",
+            "pendingChangeType"
+          ],
+          "properties": {
+            "effectiveTime": {
+              "description": "Effective time of the change.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "pendingChangeType": {
+              "type": "string",
+              "enum": [
+                "RemovePool"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

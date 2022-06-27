@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Versioned_for_GlobalContext_for_HexString",
+  "description": "Versioned<T> represents T as a versioned data-structure. The version is a integer number up to the implementation, which is serialized using variable integer encoding. The caller is responsible for ensuring the data structure `T` is compatible with the version number.",
+  "type": "object",
+  "required": [
+    "v",
+    "value"
+  ],
+  "properties": {
+    "v": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "value": {
+      "$ref": "#/definitions/GlobalContext_for_HexString"
+    }
+  },
+  "definitions": {
+    "GlobalContext_for_HexString": {
+      "description": "A set of cryptographic parameters that are particular to the chain and shared by everybody that interacts with the chain.",
+      "type": "object",
+      "required": [
+        "bulletproofGenerators",
+        "genesisString",
+        "onChainCommitmentKey"
+      ],
+      "properties": {
+        "bulletproofGenerators": {
+          "description": "Generators for the bulletproofs. It is unclear what length we will require here, or whether we'll allow dynamic generation.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        },
+        "genesisString": {
+          "description": "A free-form string used to distinguish between different chains even if they share other parameters.",
+          "type": "string"
+        },
+        "onChainCommitmentKey": {
+          "description": "A shared commitment key known to the chain and the account holder (and therefore it is public). The account holder uses this commitment key to generate commitments to values in the attribute list.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        }
+      }
+    },
+    "PublicKey": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^([0-9]?[a-f]?)*$"
+    }
+  }
+}

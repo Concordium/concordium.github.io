@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Branch",
+  "description": "Branches of the tree. This is the part of the tree above the last finalized block.",
+  "type": "object",
+  "required": [
+    "blockHash",
+    "children"
+  ],
+  "properties": {
+    "blockHash": {
+      "description": "Root of the tree.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "children": {
+      "description": "And children.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Branch"
+      }
+    }
+  },
+  "definitions": {
+    "Branch": {
+      "description": "Branches of the tree. This is the part of the tree above the last finalized block.",
+      "type": "object",
+      "required": [
+        "blockHash",
+        "children"
+      ],
+      "properties": {
+        "blockHash": {
+          "description": "Root of the tree.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/SHA256Hash"
+            }
+          ]
+        },
+        "children": {
+          "description": "And children.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Branch"
+          }
+        }
+      }
+    },
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    }
+  }
+}

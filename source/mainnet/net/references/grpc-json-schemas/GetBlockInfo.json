@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BlockInfo",
+  "description": "Metadata about a given block.",
+  "type": "object",
+  "required": [
+    "blockArriveTime",
+    "blockHash",
+    "blockHeight",
+    "blockLastFinalized",
+    "blockParent",
+    "blockReceiveTime",
+    "blockSlot",
+    "blockSlotTime",
+    "blockStateHash",
+    "eraBlockHeight",
+    "finalized",
+    "genesisIndex",
+    "transactionCount",
+    "transactionEnergyCost",
+    "transactionsSize"
+  ],
+  "properties": {
+    "blockArriveTime": {
+      "description": "Time when the block was added to the node's tree. This is a subjective (i.e., node specific) value.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "blockBaker": {
+      "description": "Identity of the baker of the block. For non-genesis blocks the value is going to always be `Some`.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "blockHash": {
+      "description": "Hash of the block.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "blockHeight": {
+      "description": "Height of the block from genesis.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "blockLastFinalized": {
+      "description": "Pointer to the last finalized block. Each block has a pointer to a specific finalized block that existed at the time the block was produced.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "blockParent": {
+      "description": "Parent block pointer.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "blockReceiveTime": {
+      "description": "Time when the block was first received by the node. This can be in principle quite different from the arrive time if, e.g., block execution takes a long time, or the block must wait for the arrival of its parent.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "blockSlot": {
+      "description": "Slot number of the slot the block is in.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "blockSlotTime": {
+      "description": "Slot time of the slot the block is in. In contrast to [BlockInfo::block_arrive_time] this is an objective value, all nodes agree on it.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "blockStateHash": {
+      "description": "Hash of the block state at the end of the given block.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "eraBlockHeight": {
+      "description": "The height of this block relative to the (re)genesis block of its era.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "finalized": {
+      "description": "Whether the block is finalized or not.",
+      "type": "boolean"
+    },
+    "genesisIndex": {
+      "description": "The genesis index for this block. This counts the number of protocol updates that have preceded this block, and defines the era of the block.",
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "transactionCount": {
+      "description": "The number of transactions in the block.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "transactionEnergyCost": {
+      "description": "The total energy consumption of transactions in the block.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "transactionsSize": {
+      "description": "Size of all the transactions in the block in bytes.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    }
+  },
+  "definitions": {
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    }
+  }
+}
