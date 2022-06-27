@@ -9,8 +9,8 @@ Sirius Testnet
 
 June 27, 2022
 
-Concordium Mobile Wallet for Android v3.0.0
--------------------------------------------
+Concordium Mobile Wallet for Android v3.0.0(100)
+------------------------------------------------
 
 Concordium Mobile Wallet for Androind 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
 
