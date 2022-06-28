@@ -9,6 +9,17 @@ Sirius Testnet
 
 June 27, 2022
 
+Concordium Mobile Wallet for Android v3.0.0(100)
+------------------------------------------------
+
+Concordium Mobile Wallet for Androind 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+
+You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
+
+If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
+
+This functionality will be available for iOS shortly.
+
 Concordium Node 4.2.1
 ----------------------
 

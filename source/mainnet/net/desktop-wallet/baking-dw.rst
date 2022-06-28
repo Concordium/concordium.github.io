@@ -1,4 +1,4 @@
-.. baking-dw:
+.. _baking-dw:
 
 ============================
 Baking in the Desktop Wallet
