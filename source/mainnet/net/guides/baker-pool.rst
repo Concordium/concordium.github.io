@@ -32,7 +32,7 @@ Before delegating stake to a baker pool, it is important to research the pool an
 
 The first thing to check before delegating stake to a baker pool is the URL for the baker pool. This is information that the baker can provide about the pool. It is not required that the baker provide this, but recommended. You can find the URLs on :ref:`CCD Scan<bakers-view>`.
 
-Make sure that the pool isn't close to having too many delegators or close to max capital. Another indicator of good management is reliability; check the :ref:`uptime of the node<ccdscan-nodes>`.
+Make sure that the pool isn't close to having too many delegators or close to max capital. Another indicator of good management is reliability, such as uptime (i.e., has it been running a long time), and if the node is upgraded to the latest version.
 
 Once you have made a delegation, it is a good idea to monitor baker performance regularly and adjust if needed.
 
