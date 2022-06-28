@@ -14,7 +14,7 @@ Add baker in Mobile Wallet
 
 .. Note::
 
-    There is a minimum amount to stake to become a baker. To find out what the minimum stake is, you can run the :ref:`consensus show-chain-parameters transaction in concordium-client<consensus show-chain-parameters>`.
+    There is a minimum amount to stake (14000 CCD) to become a baker.
 
 .. Warning::
 
