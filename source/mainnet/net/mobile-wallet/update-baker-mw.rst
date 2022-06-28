@@ -36,6 +36,8 @@ Once the transaction is submitted you see a confirmation screen. Tap **Finish** 
 
    Reducing your stake results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
+.. _update-pool-settings:
+
 Update pool settings
 ====================
 
