@@ -53,6 +53,12 @@ It could be because the baker to whose pool you have delegated stake was not sel
 **What is “passive delegation”?**
 For CCD holders who do not want to regularly check the performance of a chosen pool but just want a stable way of earning rewards, passive delegation offers a low-risk, low-reward alternative. This staking strategy is not associated with a specific baker, so there is no risk of poor baker health. The trade off when choosing passive delegation is that the rewards will be less than what you may receive when delegating to a specific baker pool.
 
+The commission rates for passive delegation are:
+
+- Baking commission: 12.00%
+- Finalization commission: 100.00%
+- Transaction commission: 12.00%
+
 **My account is suddenly delegating to passive delegation. Why is that?**
 It is likely because the baker pool to which you were delegating has been closed. You can continue to delegate to passive delegation or select a new baker pool for your delegation.
 
