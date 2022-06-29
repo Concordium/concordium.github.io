@@ -28,7 +28,7 @@ There are several things you must set up in preparation before you can start bak
 - Download and install the Mobile Wallet.
 - Set up an initial account and an identity.
 - Set up a new account that you'll be using as the baker account.
-- Verify that the account balance has the required amount of CCD to become a baker.
+- Verify that the account balance has the required amount of CCD (minimum 14000) to become a baker.
 
 .. Note::
 
@@ -44,7 +44,7 @@ Next steps
 ==========
 
 - Read the information about :ref:`baker management<baker-pool>`.
-- If you are interested in a baker pool, read the Delegation FAQ (link).
+- If you are interested in a baker pool, read the :ref:`Delegation FAQ<delegation-faq>`.
 - You need to :ref:`add a baker <add-baker-mw>` to the account you created.
 - You can then :ref:`update baker settings <update-baker-mw>` as needed to manage your baker.
 
