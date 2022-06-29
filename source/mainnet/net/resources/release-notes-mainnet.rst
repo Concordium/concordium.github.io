@@ -9,7 +9,7 @@ Mainnet 4: Sirius
 
 June XX, 2022
 
-Concordium Mobile Wallet for iOS v3.0.0(XX)
+Concordium Mobile Wallet for iOS v3.0.0(53)
 ------------------------------------------------
 
 Concordium Mobile Wallet for iOS 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
