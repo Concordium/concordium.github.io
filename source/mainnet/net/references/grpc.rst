@@ -2,9 +2,6 @@
  gRPC Documentation
 ====================
 
-.. contents:: Table of contents
-   :local:
-
 Notation
 ========
 
@@ -320,7 +317,7 @@ The Node
    Get information about the running node.
 
    :returns: Information about the running node
-   :rtype: ``NodeInfoResponse`` (see the `protobuf definition <https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L67>`_)
+   :rtype: |NodeInfoResponse|_
 
 TODO: Add comments to protobuf file.
 
@@ -357,7 +354,7 @@ Networks and peers
    :param bool IncludeBootstrappers: Whether to include the bootstrapper nodes
                                      in the response.
    :returns: Information about the peers.
-   :rtype: ``PeerStatsResponse`` (see the `protobuf definition <https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L51>`_)
+   :rtype: |PeerStatsResponse|_
 
 
 .. function:: PeerUptime() -> uint64
@@ -399,7 +396,8 @@ Networks and peers
 
    Unban a previously banned node.
 
-   :param PeerElement: The peer to unban (see the `protobuf definition <https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L34>`_)
+   :param PeerElement: The peer to unban.
+   :type PeerElement: |PeerElement|_
    :returns: Whether the unbanning succeeded.
    :rtype: bool
 
@@ -408,7 +406,8 @@ Networks and peers
 
    Get a list of banned peers.
 
-   :returns: A list of banned peers (see the `protobuf definition <https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L46>`_)
+   :returns: A list of banned peers.
+   :rtype: |PeerListResponse|_
 
 .. function:: JoinNetwork(NetworkId) -> bool
 
@@ -477,68 +476,56 @@ Types
 .. _grpc-transaction-hash:
 
 ``TransactionHash``
--------------------
-Base-16 encoded hash of a transaction (64 characters). Example:
+   Base-16 encoded hash of a transaction (64 characters). Example:
 
-.. code-block:: json
+   .. code-block:: json
 
-   "2e71affba96da648ca628eccda190c3f2c3868d16a99619337dd50725582c2d1"
+      "2e71affba96da648ca628eccda190c3f2c3868d16a99619337dd50725582c2d1"
 
 .. _grpc-block-hash:
 
 ``BlockHash``
--------------
+   Base-16 encoded hash of a block (64 characters). Example:
 
-Base-16 encoded hash of a block (64 characters). Example:
+   .. code-block:: json
 
-.. code-block:: json
-
-   "987d6c06256fbf874d6ba14f19baee4390a31c6ee58edd9cc4efef62e89d22d7"
+      "987d6c06256fbf874d6ba14f19baee4390a31c6ee58edd9cc4efef62e89d22d7"
 
 .. _grpc-block-height:
 
 ``BlockHeight``
----------------
-
-The block height.
-See more details in the `protobuf file <https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L146>`_.
+   The block height.
+   See more details in the |BlockHeight|_
 
 .. _grpc-account-address:
 
 ``AccountAddress``
-------------------
-A base-58 check with version byte 1 encoded address (with Bitcoin mapping
-table). Example:
+   A base-58 check with version byte 1 encoded address (with Bitcoin mapping
+   table). Example:
 
-.. code-block:: json
+   .. code-block:: json
 
-   "3DJoe7aUwMwVmdFdRU2QsnJfsBbCmQu1QHvEg7YtWFZWmsoBXe"
+      "3DJoe7aUwMwVmdFdRU2QsnJfsBbCmQu1QHvEg7YtWFZWmsoBXe"
 
 .. _grpc-contract-address:
 
 ``ContractAddress``
--------------------
+   A JSON object with two fields: index and subindex. Example:
 
-A JSON object with two fields: index and subindex. Example:
+   .. code-block:: json
 
-.. code-block:: json
-
-   { "index": 42, "subindex": 0 }
+      { "index": 42, "subindex": 0 }
 
 .. _grpc-contract-context:
 
 ``ContractContext``
--------------------
+   The context in which a contract instance is invoked. Represented as a JSON
+   object.
 
-The context in which a contract instance is invoked. Represented as a JSON
-object.
+   .. collapse:: View JSON schema
 
-.. collapse:: View JSON schema
-
-   .. literalinclude:: grpc-json-schemas/ContractContext.json
-      :language: json
-
-
+      .. literalinclude:: grpc-json-schemas/ContractContext.json
+         :language: json
 
 .. |grpc-block-hash| replace:: ``BlockHash``
 .. |grpc-block-height| replace:: ``BlockHeight``
@@ -546,3 +533,13 @@ object.
 .. |grpc-account-address| replace:: ``AccountAddress``
 .. |grpc-contract-address| replace:: ``ContractAddress``
 .. |grpc-contract-context| replace:: ``ContractContext``
+.. _NodeInfoResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L67
+.. |NodeInfoResponse| replace:: ``NodeInfoResponse``
+.. _BlockHeight: _https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L146
+.. |BlockHeight| replace:: ``BlockHeight``
+.. _PeerElement: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L34
+.. |PeerElement| replace:: ``PeerElement``
+.. _PeerStatsResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L51
+.. |PeerStatsResponse| replace:: ``PeerStatResponse``
+.. _PeerListResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L46
+.. |PeerListResponse| replace:: ``PeerListResponse``
