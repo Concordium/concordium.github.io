@@ -2,7 +2,30 @@
  gRPC Documentation
 ====================
 
-TODO: Intro
+The Concordium node has a `gRPC <https://grpc.io/>`_ interface that enables
+queries, sending of transactions, and more.
+While the gRPC interface is powerful, it is not the most convenient tool.
+We provide a number of SDKs that build on top of the gRPC interface, which are
+much more ergonomic to use.
+
+These are the SDKs we currently provide:
+
+- `Concordium Rust SDK <https://github.com/Concordium/concordium-rust-sdk>`_
+- `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
+- `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
+- `Concordium .NET (C#) SDK <https://github.com/Concordium/concordium-net-sdk>`_
+- `Concordium Go SDK <https://github.com/Concordium/concordium-go-sdk>`_
+
+The gRPC interface uses a mixture of protobuf defined types and JSON. For the
+JSON types, a `JSON Schema <https://json-schema.org/>`_ is provided.
+
+For the JSON schemas, you may find these two tools useful:
+
+- `JSON Schema Faker <https://json-schema-faker.js.org/>`_: Generates fake data
+  that conforms to the provided schema.
+- `JSON Schema Validator <https://www.jsonschemavalidator.net/>`_: Validates
+  whether the JSON input follows the provided schema.
+
 
 Notation
 ========
@@ -103,11 +126,28 @@ Blocks and Consensus
    :param BlockHeight: A block height
    :type BlockHeight: |grpc-block-height|_
    :returns: A list of block hashes
-   :rtype: [:ref:`BlockHash <grpc-block-hash>`]
+   :rtype: ``[BlockHash]`` (see JSON schema below)
 
-.. function:: GetAncestors(BlockHashAndAmount) -> ?[BlockHash]
+   .. collapse:: View JSON schema
 
-   TODO: Generate schema
+      .. literalinclude:: grpc-json-schemas/GetBlocksAtHeight.json
+         :language: json
+
+.. function:: GetAncestors(BlockHash, Amount) -> ?[BlockHash]
+
+   Get a list of the blocks preceding the given block. The list will contain at
+   most ``Amount`` blocks.
+
+   :param BlockHash: The block to get ancestors of.
+   :type BlockHash: |grpc-block-hash|_
+   :param UInt64 Amount: The request number of ancestors.
+   :returns: A list of block hashes.
+   :rtype: ``[BlockHash]`` (see JSON schema below)
+
+   .. collapse:: View JSON schema
+
+      .. literalinclude:: grpc-json-schemas/GetAncestors.json
+         :language: json
 
 .. function:: GetBranches() -> Branch
 
@@ -248,7 +288,8 @@ Smart contracts
 
    .. collapse:: View JSON schema
 
-      TODO: Generate invoke contract JSON schema and add it here
+      .. literalinclude:: grpc-json-schemas/InvokeContract.json
+         :language: json
 
 Baking
 ======
@@ -354,7 +395,7 @@ TODO: Add comments to protobuf file.
    Start dumping packages into the specified file.
 
    :param FilePath File: The file to dump packages into.
-   :param bool Raw: Whether it should dump the raw packages. TODO: Is this correct?
+   :param bool Raw: Whether it should dump the raw packages.
    :returns: Whether it started dumping correctly
    :rtype: bool
 
@@ -563,7 +604,7 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 
 .. note::
 
-   All numbers in this section use **big-endian encoding**.
+   All numbers in this section use `big-endian encoding <https://www.freecodecamp.org/news/what-is-endianness-big-endian-vs-little-endian/>`_.
 
 
 .. _grpc-block-item:
