@@ -1,5 +1,7 @@
+.. _grpc-documentation:
+
 ====================
- gRPC Documentation
+ gRPC documentation
 ====================
 
 The Concordium node has a `gRPC <https://grpc.io/>`_ interface that enables
@@ -34,8 +36,8 @@ This page uses the following notation:
 
 - ``?a`` means ``a`` OR ``null``.
 
-  - JSON schemas for ``?a``-types, will only specify the ``a``. So handle
-    ``null`` separately.
+  - JSON schemas for ``?a``-types, will only specify the ``a``. But the node may
+    also return ``null``.
 
 - ``[a]`` means a list of type ``a``.
 - JSON Schemas follow the `JSON Schema (Draft 7) <https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01>`_.
@@ -49,24 +51,24 @@ This page uses the following notation:
 Transactions
 ============
 
-.. function:: SendTransaction(NetworkId, Payload) -> bool
+.. function:: SendTransaction(networkId, payload) -> bool
 
    Send a transaction to the given network. See more information about the
-   payload in |grpc-transaction-encoding|_.
+   payload in the :ref:`grpc-transaction-encoding` section.
 
-   :param int32 NetworkId: The network that the transaction should be sent to (default is 100).
-   :param Payload: Binary encoding of the transaction payload.
-   :type Payload: |grpc-block-item|_
+   :param Int32 networkId: The network that the transaction should be sent to (default is 100).
+   :param payload: Binary encoding of the transaction payload.
+   :type payload: |grpc-block-item|_
    :returns: Whether the transaction succeeded.
    :rtype: bool
 
-.. function:: GetTransactionStatus(TransactionHash) -> ?TransactionStatus
+.. function:: GetTransactionStatus(transactionHash) -> ?TransactionStatus
 
    Get the status of a given transaction.
 
-   :param TransactionHash: The transaction to query
-   :type TransactionHash: |grpc-transaction-hash|_
-   :returns: The status of the transaction
+   :param transactionHash: The transaction to query.
+   :type transactionHash: |grpc-transaction-hash|_
+   :returns: The status of the transaction.
    :rtype: ``?TransactionStatus`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -74,15 +76,15 @@ Transactions
       .. literalinclude:: grpc-json-schemas/GetTransactionStatus.json
          :language: json
 
-.. function:: GetTransactionStatusInBlock(TransactionHash, BlockHash) -> ?TransactionStatus
+.. function:: GetTransactionStatusInBlock(transactionHash, blockHash) -> ?TransactionStatusInBlock
 
    Get the status of a given transaction in a given block.
 
-   :param TransactionHash: The transaction to query
-   :param BlockHash: The block to query in
-   :type TransactionHash: |grpc-transaction-hash|_
-   :type BlockHash: |grpc-block-hash|_
-   :returns: The status of the transaction
+   :param transactionHash: The transaction to query.
+   :param blockHash: The given block.
+   :type transactionHash: |grpc-transaction-hash|_
+   :type blockHash: |grpc-block-hash|_
+   :returns: The status of the transaction.
    :rtype: ``TransactionStatusInBlock`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -90,7 +92,7 @@ Transactions
       .. literalinclude:: grpc-json-schemas/GetTransactionStatusInBlock.json
          :language: json
 
-Blocks and Consensus
+Blocks and consensus
 ====================
 
 .. function:: GetConsensusInfo() -> ConsensusInfo
@@ -105,12 +107,12 @@ Blocks and Consensus
       .. literalinclude:: grpc-json-schemas/GetConsensusInfo.json
          :language: json
 
-.. function:: GetBlockSummary(BlockHash) -> ?BlockSummary
+.. function:: GetBlockSummary(blockHash) -> ?BlockSummary
 
-   Get a summary of the transactions and data for a given block.
+   Get a summary of the transactions and data in a given block.
 
-   :param BlockHash: The block to query.
-   :type BlockHash: |grpc-block-hash|_
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
    :returns: A summary of the transactions and data in the block.
    :rtype: ``?BlockSummary`` (see JSON schema below)
 
@@ -119,13 +121,13 @@ Blocks and Consensus
       .. literalinclude:: grpc-json-schemas/GetBlockSummary.json
          :language: json
 
-.. function:: GetBlocksAtHeight(BlockHeight) -> [BlockHash]
+.. function:: GetBlocksAtHeight(blockHeight) -> [BlockHash]
 
    Get a list of the blocks at the given height.
 
-   :param BlockHeight: A block height
-   :type BlockHeight: |grpc-block-height|_
-   :returns: A list of block hashes
+   :param blockHeight: A block height.
+   :type blockHeight: |grpc-block-height|_
+   :returns: A list of block hashes.
    :rtype: ``[BlockHash]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -133,14 +135,14 @@ Blocks and Consensus
       .. literalinclude:: grpc-json-schemas/GetBlocksAtHeight.json
          :language: json
 
-.. function:: GetAncestors(BlockHash, Amount) -> ?[BlockHash]
+.. function:: GetAncestors(blockHash, amount) -> ?[BlockHash]
 
    Get a list of the blocks preceding the given block. The list will contain at
-   most ``Amount`` blocks.
+   most ``amount`` blocks.
 
-   :param BlockHash: The block to get ancestors of.
-   :type BlockHash: |grpc-block-hash|_
-   :param UInt64 Amount: The request number of ancestors.
+   :param blockHash: The block to get ancestors of.
+   :type blockHash: |grpc-block-hash|_
+   :param UInt64 amount: The requested number of ancestors.
    :returns: A list of block hashes.
    :rtype: ``[BlockHash]`` (see JSON schema below)
 
@@ -165,13 +167,13 @@ Blocks and Consensus
 Accounts
 ========
 
-.. function:: GetAccountList(BlockHash) -> ?[AccountAddress]
+.. function:: GetAccountList(blockHash) -> ?[AccountAddress]
 
-   Get a list of all accounts that exist when the given block was created.
+   Get a list of all accounts that existed when the given block was created.
 
-   :param BlockHash: The block to query.
-   :type BlockHash: |grpc-block-hash|_
-   :returns: A list of accounts
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :returns: A list of accounts.
    :rtype: ``AccountList`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -180,14 +182,14 @@ Accounts
          :language: json
 
 
-.. function:: GetAccountInfo(BlockHash, AccountAddress) -> ?AccountInfo
+.. function:: GetAccountInfo(blockHash, accountAddress) -> ?AccountInfo
 
    Get the state of an account in the given block.
 
-   :param BlockHash: The block
-   :param AccountAddress: The account to query
-   :type BlockHash: |grpc-block-hash|_
-   :type AccountAddress: |grpc-account-address|_
+   :param blockHash: The given block.
+   :param accountAddress: The account to query.
+   :type blockHash: |grpc-block-hash|_
+   :type accountAddress: |grpc-account-address|_
    :returns: The state of the account.
    :rtype: ``?AccountInfo`` (see JSON schema below)
 
@@ -197,13 +199,13 @@ Accounts
          :language: json
 
 
-.. function:: GetAccountNonFinalizedTransactions(AccountAddress) -> ?[TransactionHash]
+.. function:: GetAccountNonFinalizedTransactions(accountAddress) -> ?[TransactionHash]
 
    Get a list of non-finalized transactions present on an account.
 
-   :param AccountAddress: The account to query
-   :type AccountAddress: |grpc-account-address|_
-   :returns: A list of hashes of non-finalized transactions
+   :param accountAddress: The account to query.
+   :type accountAddress: |grpc-account-address|_
+   :returns: A list of hashes of non-finalized transactions.
    :rtype: ``[TransactionHash]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -211,14 +213,14 @@ Accounts
       .. literalinclude:: grpc-json-schemas/GetAccountNonFinalized.json
          :language: json
 
-.. function:: GetNextAccountNonce(AccountAddress) -> ?AccountNonceResponse
+.. function:: GetNextAccountNonce(accountAddress) -> ?AccountNonceResponse
 
    Returns the next available nonce for this account.
 
-   :param AccountAddress: The account to query
-   :type AccountAddress: |grpc-account-address|_
+   :param accountAddress: The account to query.
+   :type accountAddress: |grpc-account-address|_
    :returns: An account nonce and whether there are any non-finalized
-             transactions for the account
+             transactions for the account.
    :rtype: ``?AccountNonceResponse`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -229,13 +231,13 @@ Accounts
 Smart contracts
 ===============
 
-.. function:: GetModuleList(BlockHash) -> ?[ModuleHash]
+.. function:: GetModuleList(blockHash) -> ?[ModuleHash]
 
    Get a list of all smart contract modules that existed when the given block was created.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
-   :returns: A list of hashes of smart contract modules
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :returns: A list of hashes of smart contract modules.
    :rtype: ``[ModuleHash]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -243,14 +245,14 @@ Smart contracts
       .. literalinclude:: grpc-json-schemas/GetModuleList.json
          :language: json
 
-.. function:: GetInstances(BlockHash) -> ?[ContractAddress]
+.. function:: GetInstances(blockHash) -> ?[ContractAddress]
 
    Get a list of all smart contract instances that existed when the given block
    was created.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
-   :returns: A list of smart contract addresses
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :returns: A list of smart contract addresses.
    :rtype: ``[ContractAddress]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -258,15 +260,15 @@ Smart contracts
       .. literalinclude:: grpc-json-schemas/GetInstances.json
          :language: json
 
-.. function:: GetInstanceInfo(BlockHash, ContractAddress) -> ?InstanceInfo
+.. function:: GetInstanceInfo(blockHash, contractAddress) -> ?InstanceInfo
 
    Get information about the given smart contract instance in the given block.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
-   :param ContractAddress: The smart contract instance
-   :type ContractAddress: |grpc-contract-address|_
-   :returns: Information about the smart contract instance
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :param contractAddress: The smart contract instance.
+   :type contractAddress: |grpc-contract-address|_
+   :returns: Information about the smart contract instance.
    :rtype: ``?InstanceInfo`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -274,16 +276,16 @@ Smart contracts
       .. literalinclude:: grpc-json-schemas/GetInstanceInfo.json
          :language: json
 
-.. function:: InvokeContract(BlockHash, ContractContext) -> ?InvokeContractResult
+.. function:: InvokeContract(blockHash, contractContext) -> ?InvokeContractResult
 
    Invoke a smart contract instance and view its results as if it had been
-   updated at the end of the given block.
+   updated at the end of the given block. *This is not a transaction*.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
-   :param ContractContext: The context in which to invoke the contract
-   :type ContractContext: |grpc-contract-context|_
-   :returns: An invocation result
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :param contractContext: The context in which to invoke the contract.
+   :type contractContext: |grpc-contract-context|_
+   :returns: An invocation result.
    :rtype: ``?InvokeContractResult`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -294,17 +296,17 @@ Smart contracts
 Baking
 ======
 
-.. function:: GetPoolStatus(BlockHash, PassiveDelegation, BakerId) -> ?PoolStatus
+.. function:: GetPoolStatus(blockHash, passiveDelegation, bakerId) -> ?PoolStatus
 
    Get the status of a pool.
-   If the boolean argument is ``true``, this returns the status for the passive delegators.
+   If ``passiveDelegation == true``, this returns the status for the passive delegators.
    Otherwise, it returns the status for the baker with the specified ID (if it exists).
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
-   :param bool PassiveDelegation: Whether the request is for passive delegation or a
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :param bool passiveDelegation: Whether the request is for passive delegation or a
                              specific baker.
-   :param integer BakerId: The baker id to get the status of.
+   :param integer bakerId: The baker id to get the status of.
    :returns: The status of the pool.
    :rtype: ``?PoolStatus`` (see JSON schema below)
 
@@ -314,12 +316,12 @@ Baking
          :language: json
 
 
-.. function:: GetRewardStatus(BlockHash) -> ?RewardStatus
+.. function:: GetRewardStatus(blockHash) -> ?RewardStatus
 
-   Get an overview of the current balance of special accounts.
+   Get an overview of the balance of special accounts in the given block.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
    :returns: The reward status in the given block.
    :rtype: ``RewardStatus`` (see JSON schema below)
 
@@ -328,12 +330,12 @@ Baking
       .. literalinclude:: grpc-json-schemas/GetRewardStatus.json
          :language: json
 
-.. function:: GetBirkParameters(BlockHash) -> ?BirkParameters
+.. function:: GetBirkParameters(blockHash) -> ?BirkParameters
 
    Get an overview of the parameters used for baking.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
    :returns: The parameters used for baking in the given block.
    :rtype: ``?BirkParameters`` (see JSON schema below)
 
@@ -342,14 +344,14 @@ Baking
       .. literalinclude:: grpc-json-schemas/GetBirkParameters.json
          :language: json
 
-.. function:: GetBakerList(BlockHash) -> ?[BakerId]
+.. function:: GetBakerList(blockHash) -> ?[BakerId]
 
    Get a list of all baker IDs registered at that block in ascending order. Or
    ``null``, if the block is invalid.
 
-   :param BlockHash: The block
-   :type BlockHash: |grpc-block-hash|_
-   :returns: A list of baker IDs
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :returns: A list of baker IDs.
    :rtype: ``?[BakerId]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -371,17 +373,15 @@ Baking
    :returns: Whether stopping the baker succeeded.
    :rtype: bool
 
-The Node
+The node
 ========
 
 .. function:: NodeInfo() -> NodeInfoResponse
 
    Get information about the running node.
 
-   :returns: Information about the running node
+   :returns: Information about the running node.
    :rtype: |NodeInfoResponse|_
-
-TODO: Add comments to protobuf file.
 
 .. function:: Shutdown() -> bool
 
@@ -390,77 +390,77 @@ TODO: Add comments to protobuf file.
    :returns: Whether shutting down succeeded.
    :rtype: bool
 
-.. function:: DumpStart(File, Raw) -> bool
+.. function:: DumpStart(file, raw) -> bool
 
    Start dumping packages into the specified file.
 
-   :param FilePath File: The file to dump packages into.
-   :param bool Raw: Whether it should dump the raw packages.
-   :returns: Whether it started dumping correctly
+   :param FilePath file: The file to dump packages into.
+   :param bool raw: Whether it should dump the raw packages.
+   :returns: Whether it started dumping correctly.
    :rtype: bool
 
 .. function:: DumpStop() -> bool
 
    Stop dumping packages.
 
-   :returns: Whether it stopped dumping correctly
+   :returns: Whether it stopped dumping correctly.
    :rtype: bool
 
 Networks and peers
 ==================
 
-.. function:: PeerStats(IncludeBootstrappers) -> PeerStatsResponse
+.. function:: PeerStats(includeBootstrappers) -> PeerStatsResponse
 
    Get information on the peers that the node is connected to.
 
-   :param bool IncludeBootstrappers: Whether to include the bootstrapper nodes
+   :param bool includeBootstrappers: Whether to include the bootstrapper nodes
                                      in the response.
    :returns: Information about the peers.
    :rtype: |PeerStatsResponse|_
 
 
-.. function:: PeerUptime() -> uint64
+.. function:: PeerUptime() -> UInt64
 
    Get the uptime of the *node* in milliseconds.
 
    :returns: The uptime of the queried node in milliseconds.
-   :rtype: uint64
+   :rtype: UInt64
 
-.. function:: PeerConnect(IP, Port) -> bool
+.. function:: PeerConnect(ip, port) -> bool
 
    Suggest the node to connect to the submitted peer. If successful, this adds
    the peer to the list of peers.
 
-   :param String IP: IP of the peer
-   :param int32 Port: Port of the peer
+   :param String ip: IP of the peer.
+   :param Int32 port: Port of the peer.
    :returns: Whether the request was processed successfully.
    :rtype: bool
 
-.. function:: PeerDisconnect(IP, Port) -> bool
+.. function:: PeerDisconnect(ip, port) -> bool
 
    Disconnect from the peer and remove them from the given addresses list if
    they are on it.
 
-   :param String IP: IP of the peer
-   :param int32 Port: Port of the peer
+   :param String ip: IP of the peer.
+   :param Int32 port: Port of the peer.
    :returns: Whether the request was processed successfully.
    :rtype: bool
 
-.. function:: BanNode(PeerElement) -> bool
+.. function:: BanNode(peerElement) -> bool
 
    Ban a node from being a peer.
 
-   :param PeerElement: The peer to ban.
-   :type PeerElement: |PeerElement|_
+   :param peerElement: The peer to ban.
+   :type peerElement: |PeerElement|_
    :returns: Whether the banning succeeded.
    :rtype: bool
 
-.. function:: UnbanNode(PeerElement) -> bool
+.. function:: UnbanNode(peerElement) -> bool
 
    Unban a previously banned node.
 
-   :param PeerElement: The peer to unban.
-   :type PeerElement: |PeerElement|_
+   :param peerElement: The peer to unban.
+   :type peerElement: |PeerElement|_
    :returns: Whether the unbanning succeeded.
    :rtype: bool
 
@@ -472,31 +472,31 @@ Networks and peers
    :returns: A list of banned peers.
    :rtype: |PeerListResponse|_
 
-.. function:: JoinNetwork(NetworkId) -> bool
+.. function:: JoinNetwork(networkId) -> bool
 
    Attempt to join the specified network.
 
-   :param int32 NetworkId: The network to join.
+   :param Int32 networkId: The network to join.
    :returns: Whether joining succeeded.
    :rtype: bool
 
-.. function:: LeaveNetwork(NetworkId) -> bool
+.. function:: LeaveNetwork(networkId) -> bool
 
    Attempt to leave the specified network.
 
-   :param int32 NetworkId: The network to leave.
+   :param Int32 networkId: The network to leave.
    :returns: Whether leaving succeeded.
    :rtype: bool
 
-Chain Data
+Chain data
 ==========
 
-.. function:: GetIdentityProviders(BlockHash) -> ?[IdentityProvider]
+.. function:: GetIdentityProviders(blockHash) -> ?[IdentityProvider]
 
    Get a list of all identity providers that existed when the given block was created.
 
-   :param BlockHash: The block to query.
-   :type BlockHash: |grpc-block-hash|_
+   :param blockHash: The block to query.
+   :type blockHash: |grpc-block-hash|_
    :returns: A list of identity providers.
    :rtype: ``?[IdentityProvider]`` (see JSON schema below)
 
@@ -505,12 +505,12 @@ Chain Data
       .. literalinclude:: grpc-json-schemas/GetIdentityProviders.json
          :language: json
 
-.. function:: GetAnonymityRevokers(BlockHash) -> ?[AnonymityRevoker]
+.. function:: GetAnonymityRevokers(blockHash) -> ?[AnonymityRevoker]
 
    Get a list of all anonymity revokers that existed when the given block was created.
 
-   :param BlockHash: The block to query.
-   :type BlockHash: |grpc-block-hash|_
+   :param blockHash: The block to query.
+   :type blockHash: |grpc-block-hash|_
    :returns: A list of anonymity revokers.
    :rtype: ``?[AnonymityRevoker]`` (see JSON schema below)
 
@@ -519,12 +519,12 @@ Chain Data
       .. literalinclude:: grpc-json-schemas/GetAnonymityRevokers.json
          :language: json
 
-.. function:: GetCryptographicParameters(BlockHash) -> ?CryptographicParameters
+.. function:: GetCryptographicParameters(blockHash) -> ?CryptographicParameters
 
    Get the cryptographic parameters used in the given block.
 
-   :param BlockHash: The block to query.
-   :type BlockHash: |grpc-block-hash|_
+   :param blockHash: The block to query.
+   :type blockHash: |grpc-block-hash|_
    :returns: The cryptographic parameters.
    :rtype: ``?CryptographicParameters`` (see JSON schema below)
 
@@ -558,7 +558,7 @@ Types
 
 ``BlockHeight``
    The block height.
-   See more details in the |BlockHeight|_
+   See more details in the protobuf file here: |BlockHeight|_.
 
 .. _grpc-account-address:
 
@@ -577,7 +577,7 @@ Types
 
    .. code-block:: json
 
-      { "index": 42, "subindex": 0 }
+      { "index": 11235, "subindex": 0 }
 
 .. _grpc-contract-context:
 
@@ -599,7 +599,7 @@ This section describes the ``BlockItem`` used in the `SendTransaction
 <#SendTransaction>`_ .
 It also covers the binary serialization of an ``BlockItem`` as that is the
 expected format.
-All possible transactions are not covered on this page.
+All possible transactions are *not* covered on this page.
 Instead, it will **focus on transfers and the smart contract-related transactions**.
 
 .. note::
@@ -619,13 +619,11 @@ Instead, it will **focus on transfers and the smart contract-related transaction
    .. code-block::
 
       BiVersion ::= (x: Byte)                   =>  x                     if x < 2^7
-                  | (x: Byte) (m: BiVersion)    =>  (x - 2^7) + 2^7 * m   if x >= 2^7
+                  | (m: BiVersion) (x: Byte)    =>  (x - 2^7) + 2^7 * m   if x >= 2^7
 
       BiTag ::= (n: UInt8)
 
       BlockItem ::= (version: BiVersion) (tag: BiTag) (transaction: TransactionType)
-
-   TODO: Make BiVersion correct for big endian.
 
 .. _grpc-account-transaction:
 
@@ -646,13 +644,12 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 .. _grpc-transaction-signature:
 
 ``TransactionSignature``
-   A transaction signature is map from the index of the credential to another
+   A transaction signature is a map from the index of the credential to another
    map from the key index to the actual signature.
    The credential index is relative to the account address, and the indices
    should be distinct.
    The key index is relative to the credential.
    The maximum length of the list is 255, and the minimum length is 1.
-
 
    .. code-block::
 
@@ -714,7 +711,7 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 
    ``InitContract``
       Initialize a smart contract using a deployed smart contract module. If
-      successful, it creates a smart contract *instance* with a unique ``ContractAddress``.
+      successful, it creates a smart contract *instance* with a unique |grpc-contract-address|_.
 
       ``amount``: Amount in microCCD (``10^-6 CCD``).
 
@@ -788,7 +785,6 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 .. |grpc-account-address| replace:: ``AccountAddress``
 .. |grpc-contract-address| replace:: ``ContractAddress``
 .. |grpc-contract-context| replace:: ``ContractContext``
-.. |grpc-transaction-encoding| replace:: ``Payload``
 .. |grpc-block-item| replace:: ``BlockItem``
 .. |grpc-account-transaction| replace:: ``AccountTransaction``
 .. |grpc-transaction-signature| replace:: ``TransactionSignature``
