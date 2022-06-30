@@ -245,6 +245,8 @@ Smart contracts
       .. literalinclude:: grpc-json-schemas/GetModuleList.json
          :language: json
 
+.. _grpc-get-instances:
+
 .. function:: GetInstances(blockHash) -> ?[ContractAddress]
 
    Get a list of all smart contract instances that existed when the given block
@@ -259,6 +261,8 @@ Smart contracts
 
       .. literalinclude:: grpc-json-schemas/GetInstances.json
          :language: json
+
+.. _grpc-get-instance-info:
 
 .. function:: GetInstanceInfo(blockHash, contractAddress) -> ?InstanceInfo
 
@@ -706,6 +710,14 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 
          DeployModule ::= (version: UInt32) (n: UInt32) (module: Byteⁿ)
 
+      .. note::
+
+         When working with smart contracts, a typical workflow is:
+
+         - Deploy a smart contract module by sending a |grpc-module-deploy|_ transaction.
+         - Create a contract instance from the module by sending an |grpc-init-contract|_ transaction.
+         - Find the address of the contract instance via |grpc-get-instances|_ and |grpc-get-instance-info|_.
+         - Update the contract by sending a |grpc-update|_ transaction.
 
    .. _grpc-init-contract:
 
@@ -790,6 +802,11 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 .. |grpc-transaction-signature| replace:: ``TransactionSignature``
 .. |grpc-transaction-header| replace:: ``TransactionHeader``
 .. |grpc-transaction-payload| replace:: ``TransactionPayload``
+.. |grpc-module-deploy| replace:: ``ModuleDeploy``
+.. |grpc-init-contract| replace:: ``InitContract``
+.. |grpc-update| replace:: ``Update``
+.. |grpc-get-instances| replace:: ``GetInstances``
+.. |grpc-get-instance-info| replace:: ``GetInstanceInfo``
 .. _NodeInfoResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L67
 .. |NodeInfoResponse| replace:: ``NodeInfoResponse``
 .. _BlockHeight: _https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L146
