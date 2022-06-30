@@ -428,7 +428,7 @@ Networks and peers
 
 .. function:: PeerConnect(IP, Port) -> bool
 
-   Suggest the node to connect to the submitted peer. This, if successful, adds
+   Suggest the node to connect to the submitted peer. If successful, this adds
    the peer to the list of peers.
 
    :param String IP: IP of the peer
