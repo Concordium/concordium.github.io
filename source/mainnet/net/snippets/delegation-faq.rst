@@ -53,17 +53,24 @@ It could be because the baker to whose pool you have delegated stake was not sel
 **What is “passive delegation”?**
 For CCD holders who do not want to regularly check the performance of a chosen pool but just want a stable way of earning rewards, passive delegation offers a low-risk, low-reward alternative. This staking strategy is not associated with a specific baker, so there is no risk of poor baker health. The trade off when choosing passive delegation is that the rewards will be less than what you may receive when delegating to a specific baker pool.
 
+The commission rates for passive delegation are:
+
+- Baking commission: 12.00%
+- Finalization commission: 100.00%
+- Transaction commission: 12.00%
+
 **My account is suddenly delegating to passive delegation. Why is that?**
 It is likely because the baker pool to which you were delegating has been closed. You can continue to delegate to passive delegation or select a new baker pool for your delegation.
+
 
 For bakers
 ----------
 
 **Can I open a pool on my existing baker node?**
-Yes. See :ref:`Update a baker pool<update-baker-pool-dw>` for instructions about how to set up a baker pool on an existing baker.
+Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for Mobile Wallet<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
 
 **How do I activate a baker pool?**
-All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool<update-baker-pool-dw>` for instructions about how to set up a baker pool.
+All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for Mobile Wallet<update-pool-settings>` for instructions about how to set up a baker pool.
 
 **How often are rewards distributed to bakers?**
 If your baker is chosen to bake the next block on the blockchain you will receive rewards for this. All rewards are distributed at :ref:`pay day<glossary-pay-day>` which is once every 24 hours. If your baker is also baking using CCDs delegated to it, the pool owner rewards from the delegated stake (if any) are also distributed each pay day.
@@ -97,3 +104,4 @@ Yes, you can. Note that anything that is restaked during the cool-down period wi
 
 **How much does it cost to begin baking?**
 There is no specific fee to begin baking, however, you do need to stake a minimum of 14,000 CCD, and you need to have enough CCD left in your disposable balance to cover transaction fees to register your baker keys on chain.
+

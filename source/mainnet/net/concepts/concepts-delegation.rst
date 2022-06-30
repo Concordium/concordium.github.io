@@ -35,6 +35,12 @@ Passive delegation
 
 For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, :ref:`passive delegation<glossary-passive-delegation>` offers a low-risk low-reward alternative. Passive delegation is not associated with a specific baker; it can be thought of as distributing its capital to each pool in proportion to the pool's stake. It is not affected by the poor performance of a single baker. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable baker.
 
+The commission rates for passive delegation are:
+
+- Baking commission: 12.00%
+- Finalization commission: 100.00%
+- Transaction commission: 12.00%
+
 Time and cool-downs
 ===================
 
@@ -44,7 +50,8 @@ But decreasing the stake (whether for delegators or bakers) is subject to a cool
 
 Where delegation is available
 =============================
-You can delegate CCDs in :ref:`Desktop Wallet<delegation-dw>` and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
+
+You can delegate CCDs in :ref:`the Desktop Wallet, Mobile Wallet<delegation>` and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======
