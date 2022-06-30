@@ -7,7 +7,7 @@ Release notes - Mainnet
 Mainnet 4: Sirius
 =================
 
-June XX, 2022
+June 30, 2022
 
 Concordium Mobile Wallet for iOS v3.0.0(53)
 ------------------------------------------------
