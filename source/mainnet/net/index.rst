@@ -44,7 +44,6 @@
    references/concordium-client
    references/transactions
    references/query-node
-   references/grpc
 
 .. toctree::
    :includehidden:
