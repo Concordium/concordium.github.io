@@ -95,9 +95,9 @@ Transactions
 Blocks and consensus
 ====================
 
-.. function:: GetConsensusInfo() -> ConsensusInfo
+.. function:: GetConsensusStatus() -> ConsensusInfo
 
-   Get the consensus information.
+   Get the information about the consensus.
 
    :returns: Information about the consensus.
    :rtype: ``ConsensusInfo`` (see JSON schema below)
@@ -105,6 +105,21 @@ Blocks and consensus
    .. collapse:: View JSON schema
 
       .. literalinclude:: grpc-json-schemas/GetConsensusInfo.json
+         :language: json
+
+.. function:: GetBlockInfo(blockHash) -> ?BlockInfo
+
+   Get information, such as height, timings, and transaction counts for the
+   given block.
+
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :returns: Information about the block.
+   :rtype: ``?BlockInfo`` (see JSON schema below)
+
+   .. collapse:: View JSON schema
+
+      .. literalinclude:: grpc-json-schemas/GetBlockInfo.json
          :language: json
 
 .. function:: GetBlockSummary(blockHash) -> ?BlockSummary
@@ -244,6 +259,17 @@ Smart contracts
 
       .. literalinclude:: grpc-json-schemas/GetModuleList.json
          :language: json
+
+.. function:: GetModuleSource(blockHash, moduleReference) -> ?[Byte]
+
+   Get the binary source of a smart contract module.
+
+   :param blockHash: The given block.
+   :type blockHash: |grpc-block-hash|_
+   :param moduleReference: The reference (hash) of the smart contract module.
+   :type blockHash: |grpc-module-reference|_
+   :returns: The binary source of the module.
+   :rtype: ``[Byte]``
 
 .. _grpc-get-instances:
 
@@ -387,6 +413,34 @@ The node
    :returns: Information about the running node.
    :rtype: |NodeInfoResponse|_
 
+.. function:: PeerVersion() -> String
+
+   Get the version of the node software.
+
+   :returns: The version of the node software.
+   :rtype: String
+
+.. function:: PeerUptime() -> UInt64
+
+   Get the uptime of the *node* in milliseconds.
+
+   :returns: The uptime of the queried node in milliseconds.
+   :rtype: UInt64
+
+.. function:: PeerTotalSent() -> UInt64
+
+   Get the total number of packets sent by the *node*.
+
+   :returns: The total number of packets sent by the node.
+   :rtype: UInt64
+
+.. function:: PeerTotalReceive() -> UInt64
+
+   Get the total number of packets received by the *node*.
+
+   :returns: The total number of packets received.
+   :rtype: UInt64
+
 .. function:: Shutdown() -> bool
 
    Shut down the node.
@@ -413,6 +467,15 @@ The node
 Networks and peers
 ==================
 
+.. function:: PeerList(includeBootstrappers) -> PeerListResponse
+
+   Get a list of the peers that the node is connected to.
+
+   :param bool includeBootstrappers: Whether to include the bootstrapper nodes
+                                     in the response.
+   :returns: A list of peers.
+   :rtype: |PeerListResponse|_
+
 .. function:: PeerStats(includeBootstrappers) -> PeerStatsResponse
 
    Get information on the peers that the node is connected to.
@@ -421,14 +484,6 @@ Networks and peers
                                      in the response.
    :returns: Information about the peers.
    :rtype: |PeerStatsResponse|_
-
-
-.. function:: PeerUptime() -> UInt64
-
-   Get the uptime of the *node* in milliseconds.
-
-   :returns: The uptime of the queried node in milliseconds.
-   :rtype: UInt64
 
 .. function:: PeerConnect(ip, port) -> bool
 
@@ -567,12 +622,23 @@ Types
 .. _grpc-account-address:
 
 ``AccountAddress``
+   A string with the account address.
    A base-58 check with version byte 1 encoded address (with Bitcoin mapping
    table). Example:
 
    .. code-block:: json
 
       "3DJoe7aUwMwVmdFdRU2QsnJfsBbCmQu1QHvEg7YtWFZWmsoBXe"
+
+.. _grpc-module-reference:
+
+``ModuleReference``
+   A string with module reference, which is the hash of the module.
+   Example:
+
+   .. code-block:: json
+
+      "eecfe4ceda7432e2727d8137b9c23c4c343634e41657b72313fb061e249aaa97"
 
 .. _grpc-contract-address:
 
@@ -807,6 +873,7 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 .. |grpc-update| replace:: ``Update``
 .. |grpc-get-instances| replace:: ``GetInstances``
 .. |grpc-get-instance-info| replace:: ``GetInstanceInfo``
+.. |grpc-module-reference| replace:: ``ModuleReference``
 .. _NodeInfoResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L67
 .. |NodeInfoResponse| replace:: ``NodeInfoResponse``
 .. _BlockHeight: _https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L146
@@ -814,6 +881,6 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 .. _PeerElement: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L34
 .. |PeerElement| replace:: ``PeerElement``
 .. _PeerStatsResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L51
-.. |PeerStatsResponse| replace:: ``PeerStatResponse``
+.. |PeerStatsResponse| replace:: ``PeerStatsResponse``
 .. _PeerListResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L46
 .. |PeerListResponse| replace:: ``PeerListResponse``
