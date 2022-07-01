@@ -45,13 +45,13 @@ This page uses the following notation:
 - ``Foo ::= (n: UInt16) (bars: Byteⁿ)``
 
   - Denotes the serialization of the type ``Foo``, which starts with an unsigned
-    16-bit integer, ``n``, which describes the number of bytes used to represent
+    16-bit Integer, ``n``, which describes the number of bytes used to represent
     ``bars``. So if ``n == 100``, then ``bars`` is represented with ``100`` bytes.
 
 Transactions
 ============
 
-.. function:: SendTransaction(networkId, payload) -> bool
+.. function:: SendTransaction(networkId, payload) -> Bool
 
    Send a transaction to the given network. See more information about the
    payload in the :ref:`grpc-transaction-encoding` section.
@@ -60,7 +60,7 @@ Transactions
    :param payload: Binary encoding of the transaction payload.
    :type payload: |grpc-block-item|_
    :returns: Whether the transaction succeeded.
-   :rtype: bool
+   :rtype: Bool
 
 .. function:: GetTransactionStatus(transactionHash) -> ?TransactionStatus
 
@@ -334,9 +334,9 @@ Baking
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :param bool passiveDelegation: Whether the request is for passive delegation or a
+   :param Bool passiveDelegation: Whether the request is for passive delegation or a
                              specific baker.
-   :param integer bakerId: The baker id to get the status of.
+   :param Integer bakerId: The baker id to get the status of.
    :returns: The status of the pool.
    :rtype: ``?PoolStatus`` (see JSON schema below)
 
@@ -389,19 +389,19 @@ Baking
       .. literalinclude:: grpc-json-schemas/GetBakerList.json
          :language: json
 
-.. function:: StartBaker() -> bool
+.. function:: StartBaker() -> Bool
 
    Start the baker.
 
    :returns: Whether starting the baker succeeded.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: StopBaker() -> bool
+.. function:: StopBaker() -> Bool
 
    Stop the baker.
 
    :returns: Whether stopping the baker succeeded.
-   :rtype: bool
+   :rtype: Bool
 
 The node
 ========
@@ -441,28 +441,28 @@ The node
    :returns: The total number of packets received.
    :rtype: UInt64
 
-.. function:: Shutdown() -> bool
+.. function:: Shutdown() -> Bool
 
    Shut down the node.
 
    :returns: Whether shutting down succeeded.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: DumpStart(file, raw) -> bool
+.. function:: DumpStart(file, raw) -> Bool
 
    Start dumping packages into the specified file.
 
    :param FilePath file: The file to dump packages into.
-   :param bool raw: Whether it should dump the raw packages.
+   :param Bool raw: Whether it should dump the raw packages.
    :returns: Whether it started dumping correctly.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: DumpStop() -> bool
+.. function:: DumpStop() -> Bool
 
    Stop dumping packages.
 
    :returns: Whether it stopped dumping correctly.
-   :rtype: bool
+   :rtype: Bool
 
 Networks and peers
 ==================
@@ -471,7 +471,7 @@ Networks and peers
 
    Get a list of the peers that the node is connected to.
 
-   :param bool includeBootstrappers: Whether to include the bootstrapper nodes
+   :param Bool includeBootstrappers: Whether to include the bootstrapper nodes
                                      in the response.
    :returns: A list of peers.
    :rtype: |PeerListResponse|_
@@ -480,12 +480,12 @@ Networks and peers
 
    Get information on the peers that the node is connected to.
 
-   :param bool includeBootstrappers: Whether to include the bootstrapper nodes
+   :param Bool includeBootstrappers: Whether to include the bootstrapper nodes
                                      in the response.
    :returns: Information about the peers.
    :rtype: |PeerStatsResponse|_
 
-.. function:: PeerConnect(ip, port) -> bool
+.. function:: PeerConnect(ip, port) -> Bool
 
    Suggest the node to connect to the submitted peer. If successful, this adds
    the peer to the list of peers.
@@ -493,9 +493,9 @@ Networks and peers
    :param String ip: IP of the peer.
    :param Int32 port: Port of the peer.
    :returns: Whether the request was processed successfully.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: PeerDisconnect(ip, port) -> bool
+.. function:: PeerDisconnect(ip, port) -> Bool
 
    Disconnect from the peer and remove them from the given addresses list if
    they are on it.
@@ -503,25 +503,25 @@ Networks and peers
    :param String ip: IP of the peer.
    :param Int32 port: Port of the peer.
    :returns: Whether the request was processed successfully.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: BanNode(peerElement) -> bool
+.. function:: BanNode(peerElement) -> Bool
 
    Ban a node from being a peer.
 
    :param peerElement: The peer to ban.
    :type peerElement: |PeerElement|_
    :returns: Whether the banning succeeded.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: UnbanNode(peerElement) -> bool
+.. function:: UnbanNode(peerElement) -> Bool
 
    Unban a previously banned node.
 
    :param peerElement: The peer to unban.
    :type peerElement: |PeerElement|_
    :returns: Whether the unbanning succeeded.
-   :rtype: bool
+   :rtype: Bool
 
 
 .. function:: GetBannedPeers() -> PeerListResponse
@@ -531,21 +531,21 @@ Networks and peers
    :returns: A list of banned peers.
    :rtype: |PeerListResponse|_
 
-.. function:: JoinNetwork(networkId) -> bool
+.. function:: JoinNetwork(networkId) -> Bool
 
    Attempt to join the specified network.
 
    :param Int32 networkId: The network to join.
    :returns: Whether joining succeeded.
-   :rtype: bool
+   :rtype: Bool
 
-.. function:: LeaveNetwork(networkId) -> bool
+.. function:: LeaveNetwork(networkId) -> Bool
 
    Attempt to leave the specified network.
 
    :param Int32 networkId: The network to leave.
    :returns: Whether leaving succeeded.
-   :rtype: bool
+   :rtype: Bool
 
 Chain data
 ==========
