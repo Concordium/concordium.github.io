@@ -7,6 +7,7 @@ Release notes - Mainnet
 Mainnet 4: Sirius
 =================
 
+
 July 4, 2022
 
 Concordium Node 4.2.1
@@ -17,6 +18,17 @@ Concordium Node 4.2.1 is a maintenance release, bringing performance improvement
 - A significant decrease in node startup time. The exact improvements are platform dependent, but startup should be at least 6 times faster on mainnet.
 - A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less than 50% of memory compared to 4.1.1.
 - Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
+
+June 30, 2022
+
+Concordium Mobile Wallet for iOS v3.0.0(53)
+------------------------------------------------
+
+Concordium Mobile Wallet for iOS 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+
+You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
+
+If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
 
 June 27, 2022
 
