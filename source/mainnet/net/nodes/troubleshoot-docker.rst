@@ -36,7 +36,7 @@ To fix this, do the following:
 
 #. Stop any memory heavy applications that are running.
 #. Stop the node.
-#. Locate the state directory for your mainnet node (the root of the database directory is usually ~/.local/share/concordium unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the treestate-... and blockstate-...dat directories and files are.
+#. Locate the state directory for your mainnet node (the root of the database directory is usually ``~/.local/share/concordium`` unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the ``treestate-...`` and ``blockstate-...dat`` directories and files are.
 #. Delete the offending file. In the example above, you delete the blockstate2.dat file since it has no matching treestate file.
 #. Restart the node.
 
