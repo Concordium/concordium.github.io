@@ -45,6 +45,10 @@ JSON for schema type
        String(SizeLength),
        ContractName(SizeLength),
        ReceiveName(SizeLength),
+       ULeb128(u32),
+       ILeb128(u32),
+       ByteList(SizeLength),
+       ByteArray(u32)
    }
 
 ``Unit``
@@ -244,6 +248,50 @@ type JSON string. Example:
 .. code-block:: json
 
    { "contract": "my_contract", "func": "my_receive" }
+
+``ULeb128``
+-----------
+
+Supplied as a JSON string containing an unsigned integer. Example:
+
+.. code-block:: json
+
+   "1234567890"
+
+``ILeb128``
+-----------
+
+Supplied as a JSON string containing a signed integer. Example:
+
+.. code-block:: json
+
+   "1234567890"
+
+or
+
+.. code-block:: json
+
+   "-1234567890"
+
+``ByteList``
+------------
+
+Supplied as a JSON string containing a variable sized list of bytes encoded in lowercase hex. Example:
+
+.. code-block:: json
+
+   "1234567890abcdef"
+
+
+``ByteArray``
+-------------
+
+Supplied as a JSON string containing a fixed sized list of bytes encoded in lowercase hex. Example of ``ByteArray(8)``:
+
+.. code-block:: json
+
+   "1234567890abcdef"
+
 
 JSON for schema type fields
 ===========================
