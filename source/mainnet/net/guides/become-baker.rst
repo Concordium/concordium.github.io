@@ -87,14 +87,9 @@ where you replace
 
    .. Note::
 
-      For a node on Docker, the ``<concordium-data-dir>`` must use the following paths:
-
-      * on Linux and MacOS: ``~/.local/share/concordium``
-      * on Windows: ``%LOCALAPPDATA%\\concordium``.
-
       Remember to configure your node to bake using this path:
 
-      * on Linux: See :ref:`configure Linux node<baking-docker>`.
+      * using Docker: See :ref:`configure Linux node<baking-docker>`.
       * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
       * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
       * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
@@ -129,11 +124,10 @@ The following arguments are optional. If no selection is made, earnings are rest
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
 
-To start the node with these baker keys and bake blocks, you
-first need to shut down the current running node. To do this, either press ``Ctrl + C`` on the terminal where the node is running or use the
-``concordium-node-stop`` executable.
-
-When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``. The node will automatically start baking when the baker is included in the bakers for the current epoch.
+To start the node with these baker keys and bake blocks configure the node to
+use the baker keys, and restart it., you first need to shut down the current
+running node. The node will automatically start baking when the baker is
+included in the bakers for the current epoch.
 
 This change is executed immediately, and it will take effect when finishing the epoch after the one in which the transaction for adding the baker was included in a block.
 
@@ -354,11 +348,7 @@ was done). It defaults to the account name "default".
 
 If you want to keep the ``baker-credentials.json`` output file in the same location as your other Concordium files, you can omit ``<concordium-data-dir>/``.
 
-To start the node with these baker keys and bake blocks, you
-first need to shut down the current running node. To do this, either press ``Ctrl + C`` on the terminal where the node is running or use the
-``concordium-node-stop`` executable.
-
-When you've placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using ``concordium-node``.
+To start the node with these baker keys and bake blocks you need to restart the node.
 
 Configure a baker
 =================

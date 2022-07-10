@@ -67,10 +67,10 @@ To start the node with these baker keys and bake blocks do the following.
 
    into the ``environment`` section of the ``node`` service section of the file.
 
-When you've placed the file in the appropriate directory, which is what you did
-in the previous command when you specified the output file, start the node again
-using ``concordium-node``. The node will automatically start baking when the
-baker is included in the bakers for the current epoch.
+When you've placed the file in the appropriate directory start the node again in
+the same way as the first time, e.g., ``docker-compose -f testnet-node.yaml
+up``. The node will automatically start baking when the baker is included in the
+bakers for the current epoch.
 
 In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
 the account associated with the baker node. The bread icon appears as

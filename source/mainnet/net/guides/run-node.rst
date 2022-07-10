@@ -28,7 +28,7 @@ Before running a Concordium node you will need to
 
    -  On *Linux*, allow Docker to be run as a non-root user.
 
-2. `Install the compose plugin<https://docs.docker.com/compose/install/>`
+2. `Install the compose plugin. <https://docs.docker.com/compose/install/>`_
 
 .. _running-a-node:
 
@@ -37,7 +37,7 @@ Running/upgrading a node
 
 Concordium provides two docker images, a
 `mainnet <https://hub.docker.com/r/concordium/mainnet-node>`_ one and a
-`testnet <https://hub.docker.com/r/concordium/testnet-node>`_ one
+`testnet <https://hub.docker.com/r/concordium/testnet-node>`_ one.
 These images are designed to be used together with docker-compose, or a similar
 driver. This guide provides a sample configuration using ``docker-compose``.
 
@@ -125,7 +125,7 @@ running the node collector that reports the node state to the network dashboard.
          - CONCORDIUM_NODE_DATA_DIR=/mnt/data
          - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
 
-         # port on which the node will listen for incoming connections. This is a
+         # The port on which the node will listen for incoming connections. This is a
          # port inside the container. It is mapped to an external port by the port
          # mapping in the `ports` section below. If the internal and external ports
          # are going to be different then you should also set
@@ -139,7 +139,7 @@ running the node collector that reports the node state to the network dashboard.
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
-         # maximum number of __connections__ the node can have. This can temporarily be more than
+         # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
          - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
@@ -152,7 +152,7 @@ running the node collector that reports the node state to the network dashboard.
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for passive nodes.
+         # which reduces CPU load for non-baking nodes.
          - CONCORDIUM_NODE_BAKER_HASKELL_RTS_FLAGS=-N2,-I0
 
        entrypoint: ["/concordium-node"]
@@ -238,6 +238,7 @@ The main differences from the testnet configuration are
   <https://hub.docker.com/r/concordium/mainnet-node>`_
   for a list of currently available versions.
 - the node listens on port 8888 instead of 8889 by default
+- the node's GRPC interface is exposed on port 10000 instead of 10001
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
 
@@ -270,7 +271,7 @@ Logs of the mainnet node can be retrieved by running
          - CONCORDIUM_NODE_DATA_DIR=/mnt/data
          - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
 
-         # port on which the node will listen for incoming connections. This is a
+         # The port on which the node will listen for incoming connections. This is a
          # port inside the container. It is mapped to an external port by the port
          # mapping in the `ports` section below. If the internal and external ports
          # are going to be different then you should also set
@@ -284,7 +285,7 @@ Logs of the mainnet node can be retrieved by running
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
-         # maximum number of __connections__ the node can have. This can temporarily be more than
+         # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
          - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
@@ -297,7 +298,7 @@ Logs of the mainnet node can be retrieved by running
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for passive nodes.
+         # which reduces CPU load for non-baking nodes.
          - CONCORDIUM_NODE_BAKER_HASKELL_RTS_FLAGS=-N2,-I0
 
        entrypoint: ["/concordium-node"]
@@ -365,3 +366,34 @@ image and running the node. To migrate from that setup
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
 3. start the new node.
+
+Troubleshooting
+===============
+
+The above configuration describes a basic configuration and has been tested on
+Ubuntu 20.04. Other linux distributions might require some modifications. Below
+are some common issues.
+
+Mounting host directories under SELinux
+---------------------------------------
+
+When mounting host directories on distributions running `SELinux <https://en.wikipedia.org/wiki/Security-Enhanced_Linux>`_ special considerations apply.
+This in particular includes Fedora and its derivatives. See `the Docker documentation <https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label>`_ for details on how to proceed.
+
+Letting the node container access the internet
+----------------------------------------------
+
+Some linux distributions whose firewall is not based on iptables, Fedora and
+CentOS among them, require additional steps to allow docker containers to access
+external networks, e.g., the internet.
+
+On Fedora the following command should be run
+
+.. code-block:: console
+
+   $sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+
+to allow docker containers to access external networks.
+
+Please note that this will allow any docker container access to the internet,
+not just the concordium node.
