@@ -45,18 +45,24 @@ This page uses the following notation:
 - ``Foo ::= (n: UInt16) (bars: Byteⁿ)``
 
   - Denotes the serialization of the type ``Foo``, which starts with an unsigned
-    16-bit Integer, ``n``, which describes the number of bytes used to represent
+    16-bit big-endian integer, ``n``, which describes the number of bytes used to represent
     ``bars``. So if ``n == 100``, then ``bars`` is represented with ``100`` bytes.
 
 Transactions
 ============
 
+.. _grpc-send-transaction:
+
 .. function:: SendTransaction(networkId, payload) -> Bool
 
-   Send a transaction to the given network. See more information about the
-   payload in the :ref:`grpc-transaction-encoding` section.
+   Send a transaction to the given network.
+   The node will do basic transaction validation, such as signature checks and
+   account nonce checks, and if these fail, the call will return a gRPC error.
+   The payload is in binary encoding, read more in the
+   :ref:`grpc-transaction-encoding` section.
 
-   :param Int32 networkId: The network that the transaction should be sent to (default is 100).
+   :param Int32 networkId: The network that the transaction should be sent to
+                           (only ``100`` is currently supported).
    :param payload: Binary encoding of the transaction payload.
    :type payload: |grpc-block-item|_
    :returns: Whether the transaction succeeded.
@@ -184,7 +190,7 @@ Accounts
 
 .. function:: GetAccountList(blockHash) -> ?[AccountAddress]
 
-   Get a list of all accounts that existed when the given block was created.
+   Get a list of all accounts that exist in the state at the end of the given block.
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
@@ -196,6 +202,7 @@ Accounts
       .. literalinclude:: grpc-json-schemas/GetAccountList.json
          :language: json
 
+.. _grpc-get-account-info:
 
 .. function:: GetAccountInfo(blockHash, accountAddress) -> ?AccountInfo
 
@@ -248,7 +255,7 @@ Smart contracts
 
 .. function:: GetModuleList(blockHash) -> ?[ModuleHash]
 
-   Get a list of all smart contract modules that existed when the given block was created.
+   Get a list of all smart contract modules that exist in the state at the end of the given block.
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
@@ -275,8 +282,8 @@ Smart contracts
 
 .. function:: GetInstances(blockHash) -> ?[ContractAddress]
 
-   Get a list of all smart contract instances that existed when the given block
-   was created.
+   Get a list of all smart contract instances that exist in the state at the end
+   of the given block.
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
@@ -309,7 +316,8 @@ Smart contracts
 .. function:: InvokeContract(blockHash, contractContext) -> ?InvokeContractResult
 
    Invoke a smart contract instance and view its results as if it had been
-   updated at the end of the given block. *This is not a transaction*.
+   updated at the end of the given block. Please note that *this is not a
+   transaction*, so it won't affect the contract on chain. It only simulates the invocation.
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
@@ -422,21 +430,21 @@ The node
 
 .. function:: PeerUptime() -> UInt64
 
-   Get the uptime of the *node* in milliseconds.
+   Get the uptime of the node in milliseconds.
 
    :returns: The uptime of the queried node in milliseconds.
    :rtype: UInt64
 
 .. function:: PeerTotalSent() -> UInt64
 
-   Get the total number of packets sent by the *node*.
+   Get the total number of packets sent by the node.
 
    :returns: The total number of packets sent by the node.
    :rtype: UInt64
 
 .. function:: PeerTotalReceive() -> UInt64
 
-   Get the total number of packets received by the *node*.
+   Get the total number of packets received by the node.
 
    :returns: The total number of packets received.
    :rtype: UInt64
@@ -552,7 +560,7 @@ Chain data
 
 .. function:: GetIdentityProviders(blockHash) -> ?[IdentityProvider]
 
-   Get a list of all identity providers that existed when the given block was created.
+   Get a list of all identity providers that exist in the state at the end of the given block.
 
    :param blockHash: The block to query.
    :type blockHash: |grpc-block-hash|_
@@ -566,7 +574,7 @@ Chain data
 
 .. function:: GetAnonymityRevokers(blockHash) -> ?[AnonymityRevoker]
 
-   Get a list of all anonymity revokers that existed when the given block was created.
+   Get a list of all anonymity revokers that exist in the state at the end of the given block.
 
    :param blockHash: The block to query.
    :type blockHash: |grpc-block-hash|_
@@ -665,12 +673,11 @@ Types
 Transaction encoding
 --------------------
 
-This section describes the ``BlockItem`` used in the `SendTransaction
-<#SendTransaction>`_ .
-It also covers the binary serialization of an ``BlockItem`` as that is the
-expected format.
+This section describes the ``BlockItem`` used in the |grpc-send-transaction|_.
+The binary serialization of an ``BlockItem`` is also covered, as that is the
+expected format when sending transactions.
 All possible transactions are *not* covered on this page.
-Instead, it will **focus on transfers and the smart contract-related transactions**.
+Instead, there is a **focus on transfers and the smart contract-related transactions**.
 
 .. note::
 
@@ -738,7 +745,7 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 
    ``Nonce``: Account nonce. Initial nonce is ``1``. Is incremented by 1 with
    every transaction originating from an account. Find the current nonce with
-   `GetAccountInfo <#GetAccountInfo>`_.
+   |grpc-get-account-info|_.
 
    ``Energy``: The amount of energy allocated for the execution of this transaction.
 
@@ -874,6 +881,8 @@ Instead, it will **focus on transfers and the smart contract-related transaction
 .. |grpc-get-instances| replace:: ``GetInstances``
 .. |grpc-get-instance-info| replace:: ``GetInstanceInfo``
 .. |grpc-module-reference| replace:: ``ModuleReference``
+.. |grpc-send-transaction| replace:: ``SendTransaction``
+.. |grpc-get-account-info| replace:: ``GetAccountInfo``
 .. _NodeInfoResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L67
 .. |NodeInfoResponse| replace:: ``NodeInfoResponse``
 .. _BlockHeight: _https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L146
