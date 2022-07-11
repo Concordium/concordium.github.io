@@ -139,6 +139,18 @@ To check for dead links (can also be done by the CI), run:
 make linkcheck-mainnet
 ```
 
+### Building the gRPC JSON schemas
+
+The folder `./source/mainnet/net/references/grpc-json-schemas/` contains the JSON
+schemas used in the gRPC documentation.
+
+To generate the schemas:
+
+1. Check out the [`derive-schema`
+branch of Concordium Rust
+SDK](https://github.com/Concordium/concordium-rust-sdk/tree/derive-schema).
+2. Run `cargo run generate --output_folder <path-to-grpc-json-schema-folder>`.
+
 # Contributing
 
 The `source/mainnet` directory contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
