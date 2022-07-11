@@ -36,8 +36,9 @@ This page uses the following notation:
 
 - ``?a`` means ``a`` OR ``null``.
 
-  - JSON schemas for ``?a``-types, will only specify the ``a``. But the node may
-    also return ``null``.
+  - Queries that return ``?a`` will only do so if the input is malformed or
+    refers to non-existent data, for example a ``blockHash`` for a block that
+    doesn't exist on the chain.
 
 - ``[a]`` means a list of type ``a``.
 - JSON Schemas follow the `JSON Schema (Draft 7) <https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01>`_.

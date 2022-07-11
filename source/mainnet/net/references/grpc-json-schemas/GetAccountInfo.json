@@ -1,98 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "AccountInfo",
-  "description": "Account information exposed via the node's API. This is always the state of an account in a specific block.",
-  "type": "object",
-  "required": [
-    "accountAddress",
-    "accountAmount",
-    "accountCredentials",
-    "accountEncryptedAmount",
-    "accountEncryptionKey",
-    "accountIndex",
-    "accountNonce",
-    "accountReleaseSchedule",
-    "accountThreshold"
-  ],
-  "properties": {
-    "accountAddress": {
-      "description": "Canonical address of the account.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/AccountAddress"
-        }
-      ]
+  "title": "Nullable_AccountInfo",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/AccountInfo"
     },
-    "accountAmount": {
-      "description": "Current (unencrypted) balance of the account.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/CCDAmount"
-        }
-      ]
-    },
-    "accountBaker": {
-      "description": "`Some` if and only if the account is a baker or delegator. In that case it is the information about the baker or delegator.",
-      "default": null,
-      "anyOf": [
-        {
-          "$ref": "#/definitions/AccountStakingInfo"
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "accountCredentials": {
-      "description": "Map of all currently active credentials on the account. This includes public keys that can sign for the given credentials, as well as any revealed attributes. This map always contains a credential with index 0.",
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "#/definitions/Versioned_for_AccountCredentialWithoutProofs_for_HexString_and_AttributeKind"
-      }
-    },
-    "accountEncryptedAmount": {
-      "description": "The encrypted balance of the account.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/AccountEncryptedAmount"
-        }
-      ]
-    },
-    "accountEncryptionKey": {
-      "description": "The public key for sending encrypted balances to the account.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/PublicKey"
-        }
-      ]
-    },
-    "accountIndex": {
-      "description": "Internal index of the account. Accounts on the chain get sequential indices. These should generally not be used outside of the chain, the account address is meant to be used to refer to accounts, however the account index serves the role of the baker id, if the account is a baker. Hence it is exposed here as well.",
-      "type": "integer",
-      "format": "uint64",
-      "minimum": 0.0
-    },
-    "accountNonce": {
-      "description": "Next nonce to be used for transactions signed from this account.",
-      "type": "integer",
-      "format": "uint64",
-      "minimum": 0.0
-    },
-    "accountReleaseSchedule": {
-      "description": "Release schedule for any locked up amount. This could be an empty release schedule.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/AccountReleaseSchedule"
-        }
-      ]
-    },
-    "accountThreshold": {
-      "description": "Lower bound on how many credentials must sign any given transaction from this account.",
-      "type": "integer",
-      "format": "uint8",
-      "minimum": 1.0
+    {
+      "type": "null"
     }
-  },
+  ],
   "definitions": {
     "AccountAddress": {
       "type": "string",
@@ -287,6 +203,100 @@
           "type": "integer",
           "format": "uint64",
           "minimum": 0.0
+        }
+      }
+    },
+    "AccountInfo": {
+      "description": "Account information exposed via the node's API. This is always the state of an account in a specific block.",
+      "type": "object",
+      "required": [
+        "accountAddress",
+        "accountAmount",
+        "accountCredentials",
+        "accountEncryptedAmount",
+        "accountEncryptionKey",
+        "accountIndex",
+        "accountNonce",
+        "accountReleaseSchedule",
+        "accountThreshold"
+      ],
+      "properties": {
+        "accountAddress": {
+          "description": "Canonical address of the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountAddress"
+            }
+          ]
+        },
+        "accountAmount": {
+          "description": "Current (unencrypted) balance of the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "accountBaker": {
+          "description": "`Some` if and only if the account is a baker or delegator. In that case it is the information about the baker or delegator.",
+          "default": null,
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AccountStakingInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accountCredentials": {
+          "description": "Map of all currently active credentials on the account. This includes public keys that can sign for the given credentials, as well as any revealed attributes. This map always contains a credential with index 0.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Versioned_for_AccountCredentialWithoutProofs_for_HexString_and_AttributeKind"
+          }
+        },
+        "accountEncryptedAmount": {
+          "description": "The encrypted balance of the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountEncryptedAmount"
+            }
+          ]
+        },
+        "accountEncryptionKey": {
+          "description": "The public key for sending encrypted balances to the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        },
+        "accountIndex": {
+          "description": "Internal index of the account. Accounts on the chain get sequential indices. These should generally not be used outside of the chain, the account address is meant to be used to refer to accounts, however the account index serves the role of the baker id, if the account is a baker. Hence it is exposed here as well.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "accountNonce": {
+          "description": "Next nonce to be used for transactions signed from this account.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "accountReleaseSchedule": {
+          "description": "Release schedule for any locked up amount. This could be an empty release schedule.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountReleaseSchedule"
+            }
+          ]
+        },
+        "accountThreshold": {
+          "description": "Lower bound on how many credentials must sign any given transaction from this account.",
+          "type": "integer",
+          "format": "uint8",
+          "minimum": 1.0
         }
       }
     },

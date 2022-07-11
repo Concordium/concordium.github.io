@@ -1,160 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "PoolStatus",
-  "oneOf": [
+  "title": "Nullable_PoolStatus",
+  "anyOf": [
     {
-      "type": "object",
-      "required": [
-        "allPoolTotalCapital",
-        "bakerAddress",
-        "bakerEquityCapital",
-        "bakerId",
-        "bakerStakePendingChange",
-        "delegatedCapital",
-        "delegatedCapitalCap",
-        "poolInfo",
-        "poolType"
-      ],
-      "properties": {
-        "allPoolTotalCapital": {
-          "description": "Total capital staked across all pools.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "bakerAddress": {
-          "description": "The account address of the pool owner.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/AccountAddress"
-            }
-          ]
-        },
-        "bakerEquityCapital": {
-          "description": "The equity capital provided by the pool owner.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "bakerId": {
-          "description": "The 'BakerId' of the pool owner.",
-          "type": "integer",
-          "format": "uint64",
-          "minimum": 0.0
-        },
-        "bakerStakePendingChange": {
-          "description": "Any pending change to the baker's stake.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PoolPendingChange"
-            }
-          ]
-        },
-        "currentPaydayStatus": {
-          "description": "Status of the pool in the current reward period. This will be [None] if the pool is not a",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/CurrentPaydayBakerPoolStatus"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "delegatedCapital": {
-          "description": "The capital delegated to the pool by other accounts.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "delegatedCapitalCap": {
-          "description": "The maximum amount that may be delegated to the pool, accounting for leverage and stake limits.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "poolInfo": {
-          "description": "The pool info associated with the pool: open status, metadata URL and commission rates.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/BakerPoolInfo"
-            }
-          ]
-        },
-        "poolType": {
-          "type": "string",
-          "enum": [
-            "BakerPool"
-          ]
-        }
-      }
+      "$ref": "#/definitions/PoolStatus"
     },
     {
-      "type": "object",
-      "required": [
-        "allPoolTotalCapital",
-        "commissionRates",
-        "currentPaydayDelegatedCapital",
-        "currentPaydayTransactionFeesEarned",
-        "delegatedCapital",
-        "poolType"
-      ],
-      "properties": {
-        "allPoolTotalCapital": {
-          "description": "Total capital staked across all pools, including passive delegation.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "commissionRates": {
-          "description": "The passive delegation commission rates.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CommissionRates"
-            }
-          ]
-        },
-        "currentPaydayDelegatedCapital": {
-          "description": "The effective delegated capital to the passive delegators for the current reward period.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "currentPaydayTransactionFeesEarned": {
-          "description": "The transaction fees accruing to the passive delegators in the current reward period.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "delegatedCapital": {
-          "description": "The total capital delegated passively.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/CCDAmount"
-            }
-          ]
-        },
-        "poolType": {
-          "type": "string",
-          "enum": [
-            "PassiveDelegation"
-          ]
-        }
-      }
+      "type": "null"
     }
   ],
   "definitions": {
@@ -354,6 +206,164 @@
               "type": "string",
               "enum": [
                 "RemovePool"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "PoolStatus": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "allPoolTotalCapital",
+            "bakerAddress",
+            "bakerEquityCapital",
+            "bakerId",
+            "bakerStakePendingChange",
+            "delegatedCapital",
+            "delegatedCapitalCap",
+            "poolInfo",
+            "poolType"
+          ],
+          "properties": {
+            "allPoolTotalCapital": {
+              "description": "Total capital staked across all pools.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "bakerAddress": {
+              "description": "The account address of the pool owner.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/AccountAddress"
+                }
+              ]
+            },
+            "bakerEquityCapital": {
+              "description": "The equity capital provided by the pool owner.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "bakerId": {
+              "description": "The 'BakerId' of the pool owner.",
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "bakerStakePendingChange": {
+              "description": "Any pending change to the baker's stake.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PoolPendingChange"
+                }
+              ]
+            },
+            "currentPaydayStatus": {
+              "description": "Status of the pool in the current reward period. This will be [None] if the pool is not a",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/CurrentPaydayBakerPoolStatus"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "delegatedCapital": {
+              "description": "The capital delegated to the pool by other accounts.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "delegatedCapitalCap": {
+              "description": "The maximum amount that may be delegated to the pool, accounting for leverage and stake limits.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "poolInfo": {
+              "description": "The pool info associated with the pool: open status, metadata URL and commission rates.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/BakerPoolInfo"
+                }
+              ]
+            },
+            "poolType": {
+              "type": "string",
+              "enum": [
+                "BakerPool"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "allPoolTotalCapital",
+            "commissionRates",
+            "currentPaydayDelegatedCapital",
+            "currentPaydayTransactionFeesEarned",
+            "delegatedCapital",
+            "poolType"
+          ],
+          "properties": {
+            "allPoolTotalCapital": {
+              "description": "Total capital staked across all pools, including passive delegation.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "commissionRates": {
+              "description": "The passive delegation commission rates.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CommissionRates"
+                }
+              ]
+            },
+            "currentPaydayDelegatedCapital": {
+              "description": "The effective delegated capital to the passive delegators for the current reward period.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "currentPaydayTransactionFeesEarned": {
+              "description": "The transaction fees accruing to the passive delegators in the current reward period.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "delegatedCapital": {
+              "description": "The total capital delegated passively.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ]
+            },
+            "poolType": {
+              "type": "string",
+              "enum": [
+                "PassiveDelegation"
               ]
             }
           }

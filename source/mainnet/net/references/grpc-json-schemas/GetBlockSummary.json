@@ -1,111 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "BlockSummary",
-  "description": "Summary of transactions, protocol generated transfers, and chain parameters in a given block.",
+  "title": "Nullable_BlockSummary",
   "anyOf": [
     {
-      "type": "object",
-      "required": [
-        "protocolVersion",
-        "specialEvents",
-        "transactionSummaries",
-        "updates"
-      ],
-      "properties": {
-        "finalizationData": {
-          "description": "If the block contains a finalization record this contains its summary. Otherwise [None].",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/FinalizationSummary"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "protocolVersion": {
-          "description": "Protocol version at which this block was baked. This is no more than [ProtocolVersion::P3]",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ProtocolVersion"
-            }
-          ]
-        },
-        "specialEvents": {
-          "description": "Any special events generated as part of this block. Special events are protocol defined transfers, e.g., rewards, minting.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SpecialTransactionOutcome"
-          }
-        },
-        "transactionSummaries": {
-          "description": "Outcomes of transactions in this block, ordered as in the block.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/BlockItemSummary"
-          }
-        },
-        "updates": {
-          "description": "Chain parameters, and any scheduled updates to chain parameters or the protocol.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV0_and_ChainParametersV0_and_PendingUpdatesV0"
-            }
-          ]
-        }
-      }
+      "$ref": "#/definitions/BlockSummary"
     },
     {
-      "type": "object",
-      "required": [
-        "protocolVersion",
-        "specialEvents",
-        "transactionSummaries",
-        "updates"
-      ],
-      "properties": {
-        "finalizationData": {
-          "description": "If the block contains a finalization record this contains its summary. Otherwise [None].",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/FinalizationSummary"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "protocolVersion": {
-          "description": "Protocol version at which this block was baked. This is at least [ProtocolVersion::P4]",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ProtocolVersion"
-            }
-          ]
-        },
-        "specialEvents": {
-          "description": "Any special events generated as part of this block. Special events are protocol defined transfers, e.g., rewards, minting.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SpecialTransactionOutcome"
-          }
-        },
-        "transactionSummaries": {
-          "description": "Outcomes of transactions in this block, ordered as in the block.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/BlockItemSummary"
-          }
-        },
-        "updates": {
-          "description": "Chain parameters, and any scheduled updates to chain parameters or the protocol.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV1_and_ChainParametersV1_and_PendingUpdatesV1"
-            }
-          ]
-        }
-      }
+      "type": "null"
     }
   ],
   "definitions": {
@@ -708,6 +609,115 @@
         }
       ]
     },
+    "BlockSummary": {
+      "description": "Summary of transactions, protocol generated transfers, and chain parameters in a given block.",
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "protocolVersion",
+            "specialEvents",
+            "transactionSummaries",
+            "updates"
+          ],
+          "properties": {
+            "finalizationData": {
+              "description": "If the block contains a finalization record this contains its summary. Otherwise [None].",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FinalizationSummary"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "protocolVersion": {
+              "description": "Protocol version at which this block was baked. This is no more than [ProtocolVersion::P3]",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/ProtocolVersion"
+                }
+              ]
+            },
+            "specialEvents": {
+              "description": "Any special events generated as part of this block. Special events are protocol defined transfers, e.g., rewards, minting.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SpecialTransactionOutcome"
+              }
+            },
+            "transactionSummaries": {
+              "description": "Outcomes of transactions in this block, ordered as in the block.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BlockItemSummary"
+              }
+            },
+            "updates": {
+              "description": "Chain parameters, and any scheduled updates to chain parameters or the protocol.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV0_and_ChainParametersV0_and_PendingUpdatesV0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "protocolVersion",
+            "specialEvents",
+            "transactionSummaries",
+            "updates"
+          ],
+          "properties": {
+            "finalizationData": {
+              "description": "If the block contains a finalization record this contains its summary. Otherwise [None].",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FinalizationSummary"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "protocolVersion": {
+              "description": "Protocol version at which this block was baked. This is at least [ProtocolVersion::P4]",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/ProtocolVersion"
+                }
+              ]
+            },
+            "specialEvents": {
+              "description": "Any special events generated as part of this block. Special events are protocol defined transfers, e.g., rewards, minting.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SpecialTransactionOutcome"
+              }
+            },
+            "transactionSummaries": {
+              "description": "Outcomes of transactions in this block, ordered as in the block.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BlockItemSummary"
+              }
+            },
+            "updates": {
+              "description": "Chain parameters, and any scheduled updates to chain parameters or the protocol.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/UpdatesSkeleton_for_UpdateKeysCollectionSkeleton_for_AuthorizationsV1_and_ChainParametersV1_and_PendingUpdatesV1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "CCDAmount": {
       "type": "string",
       "maxLength": 20,
@@ -948,8 +958,8 @@
     },
     "ContractEvent": {
       "type": "string",
-      "minLength": 0,
-      "pattern": "^([0-9]?[a-f]?)*$"
+      "maxLength": 1024,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
     },
     "CooldownParameters": {
       "type": "object",

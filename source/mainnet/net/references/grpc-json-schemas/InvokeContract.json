@@ -1,77 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "InvokeContractResult",
-  "oneOf": [
+  "title": "Nullable_InvokeContractResult",
+  "anyOf": [
     {
-      "type": "object",
-      "required": [
-        "events",
-        "tag",
-        "usedEnergy"
-      ],
-      "properties": {
-        "events": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ContractTraceElement"
-          }
-        },
-        "returnValue": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/HexString"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "tag": {
-          "type": "string",
-          "enum": [
-            "success"
-          ]
-        },
-        "usedEnergy": {
-          "type": "integer",
-          "format": "uint64",
-          "minimum": 0.0
-        }
-      }
+      "$ref": "#/definitions/InvokeContractResult"
     },
     {
-      "type": "object",
-      "required": [
-        "reason",
-        "tag",
-        "usedEnergy"
-      ],
-      "properties": {
-        "reason": {
-          "$ref": "#/definitions/RejectReason"
-        },
-        "returnValue": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/HexString"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "tag": {
-          "type": "string",
-          "enum": [
-            "failure"
-          ]
-        },
-        "usedEnergy": {
-          "type": "integer",
-          "format": "uint64",
-          "minimum": 0.0
-        }
-      }
+      "type": "null"
     }
   ],
   "definitions": {
@@ -155,8 +90,8 @@
     },
     "ContractEvent": {
       "type": "string",
-      "minLength": 0,
-      "pattern": "^([0-9]?[a-f]?)*$"
+      "maxLength": 1024,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
     },
     "ContractTraceElement": {
       "description": "A successful contract invocation produces a sequence of effects on smart contracts and possibly accounts (if any contract transfers CCD to an account).",
@@ -354,6 +289,81 @@
           "type": "string"
         }
       }
+    },
+    "InvokeContractResult": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "events",
+            "tag",
+            "usedEnergy"
+          ],
+          "properties": {
+            "events": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ContractTraceElement"
+              }
+            },
+            "returnValue": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/HexString"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "success"
+              ]
+            },
+            "usedEnergy": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "reason",
+            "tag",
+            "usedEnergy"
+          ],
+          "properties": {
+            "reason": {
+              "$ref": "#/definitions/RejectReason"
+            },
+            "returnValue": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/HexString"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "failure"
+              ]
+            },
+            "usedEnergy": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      ]
     },
     "Parameter": {
       "type": "string",

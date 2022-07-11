@@ -1,60 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "TransactionStatusInBlock",
-  "description": "Status of a transaction in a given block. NB: If the transaction is committed or finalized, but not in the given block, then the API response will be `QueryError::NotFound`, hence those cases are not covered by this type.",
-  "oneOf": [
+  "title": "Nullable_TransactionStatusInBlock",
+  "anyOf": [
     {
-      "description": "Transaction is received, but is not in any blocks.",
-      "type": "object",
-      "required": [
-        "status"
-      ],
-      "properties": {
-        "status": {
-          "type": "string",
-          "enum": [
-            "received"
-          ]
-        }
-      }
+      "$ref": "#/definitions/TransactionStatusInBlock"
     },
     {
-      "description": "Transaction is finalized in a block, with the given outcome.",
-      "type": "object",
-      "required": [
-        "result",
-        "status"
-      ],
-      "properties": {
-        "result": {
-          "$ref": "#/definitions/BlockItemSummary"
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "finalized"
-          ]
-        }
-      }
-    },
-    {
-      "description": "Transaction is committed, but not yet finalized in a block, with the given outcome.",
-      "type": "object",
-      "required": [
-        "result",
-        "status"
-      ],
-      "properties": {
-        "result": {
-          "$ref": "#/definitions/BlockItemSummary"
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "committed"
-          ]
-        }
-      }
+      "type": "null"
     }
   ],
   "definitions": {
@@ -669,8 +621,8 @@
     },
     "ContractEvent": {
       "type": "string",
-      "minLength": 0,
-      "pattern": "^([0-9]?[a-f]?)*$"
+      "maxLength": 1024,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
     },
     "CooldownParameters": {
       "type": "object",
@@ -3524,6 +3476,64 @@
           "type": "number"
         }
       }
+    },
+    "TransactionStatusInBlock": {
+      "description": "Status of a transaction in a given block. NB: If the transaction is committed or finalized, but not in the given block, then the API response will be `QueryError::NotFound`, hence those cases are not covered by this type.",
+      "oneOf": [
+        {
+          "description": "Transaction is received, but is not in any blocks.",
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "received"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Transaction is finalized in a block, with the given outcome.",
+          "type": "object",
+          "required": [
+            "result",
+            "status"
+          ],
+          "properties": {
+            "result": {
+              "$ref": "#/definitions/BlockItemSummary"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "finalized"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Transaction is committed, but not yet finalized in a block, with the given outcome.",
+          "type": "object",
+          "required": [
+            "result",
+            "status"
+          ],
+          "properties": {
+            "result": {
+              "$ref": "#/definitions/BlockItemSummary"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "committed"
+              ]
+            }
+          }
+        }
+      ]
     },
     "TransactionType": {
       "description": "Types of account transactions.",

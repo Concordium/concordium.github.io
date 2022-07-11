@@ -1,66 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "TransactionStatus",
-  "description": "Status of a transaction known to the node.",
-  "oneOf": [
+  "title": "Nullable_TransactionStatus",
+  "anyOf": [
     {
-      "description": "Transaction is received, but not yet in any blocks.",
-      "type": "object",
-      "required": [
-        "status"
-      ],
-      "properties": {
-        "status": {
-          "type": "string",
-          "enum": [
-            "received"
-          ]
-        }
-      }
+      "$ref": "#/definitions/TransactionStatus"
     },
     {
-      "description": "Transaction is finalized in the given block, with the given summary. If the finalization committee is not corrupt then this will always be a singleton map.",
-      "type": "object",
-      "required": [
-        "outcomes",
-        "status"
-      ],
-      "properties": {
-        "outcomes": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/BlockItemSummary"
-          }
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "finalized"
-          ]
-        }
-      }
-    },
-    {
-      "description": "Transaction is committed to one or more blocks. The outcomes are listed for each block. Note that in the vast majority of cases the outcome of a transaction should not be dependent on the block it is in, but this can in principle happen.",
-      "type": "object",
-      "required": [
-        "outcomes",
-        "status"
-      ],
-      "properties": {
-        "outcomes": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/BlockItemSummary"
-          }
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "committed"
-          ]
-        }
-      }
+      "type": "null"
     }
   ],
   "definitions": {
@@ -675,8 +621,8 @@
     },
     "ContractEvent": {
       "type": "string",
-      "minLength": 0,
-      "pattern": "^([0-9]?[a-f]?)*$"
+      "maxLength": 1024,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
     },
     "CooldownParameters": {
       "type": "object",
@@ -3530,6 +3476,70 @@
           "type": "number"
         }
       }
+    },
+    "TransactionStatus": {
+      "description": "Status of a transaction known to the node.",
+      "oneOf": [
+        {
+          "description": "Transaction is received, but not yet in any blocks.",
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "received"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Transaction is finalized in the given block, with the given summary. If the finalization committee is not corrupt then this will always be a singleton map.",
+          "type": "object",
+          "required": [
+            "outcomes",
+            "status"
+          ],
+          "properties": {
+            "outcomes": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/BlockItemSummary"
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "finalized"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Transaction is committed to one or more blocks. The outcomes are listed for each block. Note that in the vast majority of cases the outcome of a transaction should not be dependent on the block it is in, but this can in principle happen.",
+          "type": "object",
+          "required": [
+            "outcomes",
+            "status"
+          ],
+          "properties": {
+            "outcomes": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/BlockItemSummary"
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "committed"
+              ]
+            }
+          }
+        }
+      ]
     },
     "TransactionType": {
       "description": "Types of account transactions.",

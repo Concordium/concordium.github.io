@@ -1,34 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "BirkParameters",
-  "description": "The state of consensus parameters, and allowed participants (i.e., bakers).",
-  "type": "object",
-  "required": [
-    "bakers",
-    "electionDifficulty",
-    "electionNonce"
-  ],
-  "properties": {
-    "bakers": {
-      "description": "The list of active bakers.",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/BirkBaker"
-      }
+  "title": "Nullable_BirkParameters",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/BirkParameters"
     },
-    "electionDifficulty": {
-      "description": "Current election difficulty.",
-      "type": "number"
-    },
-    "electionNonce": {
-      "description": "Leadership election nonce for the current epoch.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SHA256Hash"
-        }
-      ]
+    {
+      "type": "null"
     }
-  },
+  ],
   "definitions": {
     "AccountAddress": {
       "type": "string",
@@ -63,6 +43,36 @@
           "description": "The lottery power of the baker. This is the baker's stake relative to the total staked amount.",
           "type": "number",
           "format": "double"
+        }
+      }
+    },
+    "BirkParameters": {
+      "description": "The state of consensus parameters, and allowed participants (i.e., bakers).",
+      "type": "object",
+      "required": [
+        "bakers",
+        "electionDifficulty",
+        "electionNonce"
+      ],
+      "properties": {
+        "bakers": {
+          "description": "The list of active bakers.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BirkBaker"
+          }
+        },
+        "electionDifficulty": {
+          "description": "Current election difficulty.",
+          "type": "number"
+        },
+        "electionNonce": {
+          "description": "Leadership election nonce for the current epoch.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/SHA256Hash"
+            }
+          ]
         }
       }
     },

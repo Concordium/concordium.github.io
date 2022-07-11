@@ -1,22 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Versioned_for_GlobalContext_for_HexString",
-  "description": "Versioned<T> represents T as a versioned data-structure. The version is a integer number up to the implementation, which is serialized using variable integer encoding. The caller is responsible for ensuring the data structure `T` is compatible with the version number.",
-  "type": "object",
-  "required": [
-    "v",
-    "value"
-  ],
-  "properties": {
-    "v": {
-      "type": "integer",
-      "format": "uint32",
-      "minimum": 0.0
+  "title": "Nullable_Versioned_for_GlobalContext_for_HexString",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/Versioned_for_GlobalContext_for_HexString"
     },
-    "value": {
-      "$ref": "#/definitions/GlobalContext_for_HexString"
+    {
+      "type": "null"
     }
-  },
+  ],
   "definitions": {
     "GlobalContext_for_HexString": {
       "description": "A set of cryptographic parameters that are particular to the chain and shared by everybody that interacts with the chain.",
@@ -53,6 +45,24 @@
       "type": "string",
       "minLength": 64,
       "pattern": "^([0-9]?[a-f]?)*$"
+    },
+    "Versioned_for_GlobalContext_for_HexString": {
+      "description": "Versioned<T> represents T as a versioned data-structure. The version is a integer number up to the implementation, which is serialized using variable integer encoding. The caller is responsible for ensuring the data structure `T` is compatible with the version number.",
+      "type": "object",
+      "required": [
+        "v",
+        "value"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "value": {
+          "$ref": "#/definitions/GlobalContext_for_HexString"
+        }
+      }
     }
   }
 }

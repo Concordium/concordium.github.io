@@ -1,50 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "InstanceInfo",
-  "description": "Helper struct to derive JSON instances for super::InstanceInfo.",
-  "type": "object",
-  "required": [
-    "amount",
-    "methods",
-    "name",
-    "owner",
-    "sourceModule"
-  ],
-  "properties": {
-    "amount": {
-      "$ref": "#/definitions/CCDAmount"
+  "title": "Nullable_InstanceInfo",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/InstanceInfo"
     },
-    "methods": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "uniqueItems": true
-    },
-    "model": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "name": {
-      "type": "string"
-    },
-    "owner": {
-      "$ref": "#/definitions/AccountAddress"
-    },
-    "sourceModule": {
-      "$ref": "#/definitions/SHA256Hash"
-    },
-    "version": {
-      "default": 0,
-      "allOf": [
-        {
-          "$ref": "#/definitions/WasmVersion"
-        }
-      ]
+    {
+      "type": "null"
     }
-  },
+  ],
   "definitions": {
     "AccountAddress": {
       "type": "string",
@@ -57,6 +21,52 @@
       "maxLength": 20,
       "minLength": 1,
       "pattern": "^([0-9])*"
+    },
+    "InstanceInfo": {
+      "description": "Helper struct to derive JSON instances for super::InstanceInfo.",
+      "type": "object",
+      "required": [
+        "amount",
+        "methods",
+        "name",
+        "owner",
+        "sourceModule"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/CCDAmount"
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/definitions/AccountAddress"
+        },
+        "sourceModule": {
+          "$ref": "#/definitions/SHA256Hash"
+        },
+        "version": {
+          "default": 0,
+          "allOf": [
+            {
+              "$ref": "#/definitions/WasmVersion"
+            }
+          ]
+        }
+      }
     },
     "SHA256Hash": {
       "type": "string",
