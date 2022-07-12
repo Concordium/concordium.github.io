@@ -255,6 +255,7 @@ type JSON string. Example:
 Supplied as a JSON string containing an unsigned integer.
 The number of bytes for the encoding of the integer is bound to a constraint (``u32``) in the schema.
 As each byte of the encoding contains 7 bits of information, a constraint of ``n`` puts an upper bound of ``2^(n * 7) - 1`` for the unsigned integer.
+
 Example of ``ILeb128(4)``:
 
 .. code-block:: json
@@ -267,6 +268,7 @@ Example of ``ILeb128(4)``:
 Supplied as a JSON string containing a signed integer.
 The number of bytes for the encoding of the integer is bound to a constraint (``u32``) in the schema.
 As each byte of the encoding contains 7 bits of information, a constraint of ``n`` puts an upper bound of ``2^(n * 7 - 1) - 1`` and a lower bound of ``-2^(n * 7 - 1)`` for the signed integer.
+
 Example of ``ILeb128(5)``:
 
 .. code-block:: json
@@ -282,8 +284,10 @@ or
 ``ByteList``
 ------------
 
-Supplied as a JSON string containing a variable-sized list of bytes encoded in lowercase hex. Example:
+Supplied as a JSON string containing a variable-sized list of bytes encoded in lowercase hex.
+Notice each byte is encoded using two charactors in hex.
 
+Example:
 
 .. code-block:: json
 
@@ -295,6 +299,7 @@ Supplied as a JSON string containing a variable-sized list of bytes encoded in l
 
 Supplied as a JSON string containing a fixed-sized list of bytes encoded in lowercase hex.
 Notice the length of the list is specified as the number of bytes, and each byte is encoded using two charactors in hex.
+
 Example of a fixed list of 8 bytes (``ByteArray(8)``):
 
 .. code-block:: json
