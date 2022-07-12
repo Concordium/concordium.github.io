@@ -884,13 +884,13 @@ Instead, there is a **focus on transfers and the smart contract-related transact
 .. |grpc-module-reference| replace:: ``ModuleReference``
 .. |grpc-send-transaction| replace:: ``SendTransaction``
 .. |grpc-get-account-info| replace:: ``GetAccountInfo``
-.. _NodeInfoResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L67
+.. _NodeInfoResponse: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L121
 .. |NodeInfoResponse| replace:: ``NodeInfoResponse``
-.. _BlockHeight: _https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L146
+.. _BlockHeight: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L271
 .. |BlockHeight| replace:: ``BlockHeight``
-.. _PeerElement: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L34
+.. _PeerElement: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L47
 .. |PeerElement| replace:: ``PeerElement``
-.. _PeerStatsResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L51
+.. _PeerStatsResponse: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L89
 .. |PeerStatsResponse| replace:: ``PeerStatsResponse``
-.. _PeerListResponse: https://github.com/Concordium/concordium-grpc-api/blob/44e9c5825b1b18d9e81d15db30546316aa5906ec/concordium_p2p_rpc.proto#L46
+.. _PeerListResponse: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L79
 .. |PeerListResponse| replace:: ``PeerListResponse``
