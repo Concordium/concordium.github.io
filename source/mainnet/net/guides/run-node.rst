@@ -50,57 +50,7 @@ any location to which the user that runs the docker command has access to will d
 Run a testnet node
 ==================
 
-To run a node on testnet use the following configuration file.
-
-1. Save the contents as ``testnet-node.yaml``.
-2. Possibly modify the **volume mount** to map the database directory to a
-   different location on the host system. The volume mount is the following section.
-
-   .. code-block:: yaml
-
-      volumes:
-         # The node's database should be stored in a persistent volume so that it
-         # survives container restart. In this case we map the **host** directory
-         # /var/lib/concordium-testnet to be used as the node's database directory.
-         - /var/lib/concordium-testnet:/mnt/data
-
-3. Modify the node name that will appear on the network dashboard. This is set by
-   the environment variable
-
-   .. code-block:: yaml
-
-      - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
-
-   This name can be set to any non-empty string. If the name has spaces it should
-   be quoted.
-
-4. Start the node and the collector
-
-   .. code-block:: console
-
-      $docker-compose up -f testnet-node.yaml
-
-The configuration will start two containers, one running the node, and another
-running the node collector that reports the node state to the network dashboard.
-
-.. Note::
-
-   The sample configuration will always download the latest node image. It is
-   good practice to deliberately choose the version. To choose a specific
-   version find the correct version in
-   `hub.docker.com/concordium/testnet-node <https://hub.docker.com/r/concordium/testnet-node>`_ and change the
-   ``image`` value from
-
-   .. code-block:: yaml
-
-       image: concordium/testnet-node:latest
-
-   to, e.g.,
-
-   .. code-block:: yaml
-
-       image: concordium/testnet-node:4.2.2-0
-
+To run a node on testnet use the following configuration file and follow the steps below.
 
 .. code-block:: yaml
 
@@ -195,6 +145,58 @@ running the node collector that reports the node state to the network dashboard.
 
        entrypoint: ["/node-collector"]
 
+1. Save the contents as ``testnet-node.yaml``.
+2. Possibly modify the **volume mount** to map the database directory to a
+   different location on the host system. The volume mount is the following section.
+
+   .. code-block:: yaml
+
+      volumes:
+         # The node's database should be stored in a persistent volume so that it
+         # survives container restart. In this case we map the **host** directory
+         # /var/lib/concordium-testnet to be used as the node's database directory.
+         - /var/lib/concordium-testnet:/mnt/data
+
+3. Modify the node name that will appear on the network dashboard. This is set by
+   the environment variable
+
+   .. code-block:: yaml
+
+      - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
+
+   This name can be set to any non-empty string. If the name has spaces it should
+   be quoted.
+
+4. Start the node and the collector
+
+   .. code-block:: console
+
+      $docker-compose up -f testnet-node.yaml
+
+The configuration will start two containers, one running the node, and another
+running the node collector that reports the node state to the network dashboard.
+
+If you wish to have the node running in the background then add a ``-d`` option to the above command.
+
+
+.. Note::
+
+   The sample configuration will always download the latest node image. It is
+   good practice to deliberately choose the version. To choose a specific
+   version find the correct version in
+   `hub.docker.com/concordium/testnet-node <https://hub.docker.com/r/concordium/testnet-node>`_ and change the
+   ``image`` value from
+
+   .. code-block:: yaml
+
+       image: concordium/testnet-node:latest
+
+   to, e.g.,
+
+   .. code-block:: yaml
+
+       image: concordium/testnet-node:4.2.1-2
+
 Enable inbound connections
 --------------------------
 
@@ -260,7 +262,7 @@ Logs of the mainnet node can be retrieved by running
        environment:
          # Environment specific configuration
          # The url where IPs of the bootstrap nodes can be found.
-         - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.com:8888
+         - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888
          # Where the genesis is located
          - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat
 
@@ -328,7 +330,7 @@ Logs of the mainnet node can be retrieved by running
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet
 
          # Environment specific settings.
-         - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.com/nodes/post
+         - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.software/nodes/post
 
          # Collection settings.
          # How often to collect the statistics from the node.

@@ -125,9 +125,8 @@ The following arguments are optional. If no selection is made, earnings are rest
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
 
 To start the node with these baker keys and bake blocks configure the node to
-use the baker keys, and restart it., you first need to shut down the current
-running node. The node will automatically start baking when the baker is
-included in the bakers for the current epoch.
+use the baker keys, and **restart** it. The node will automatically start baking
+when the baker is included in the bakers for the current epoch.
 
 This change is executed immediately, and it will take effect when finishing the epoch after the one in which the transaction for adding the baker was included in a block.
 
