@@ -238,7 +238,7 @@
           ]
         },
         "accountBaker": {
-          "description": "`Some` if and only if the account is a baker or delegator. In that case it is the information about the baker or delegator.",
+          "description": "`Some` (non-null) if and only if the account is a baker or delegator. In that case it is the information about the baker or delegator.",
           "default": null,
           "anyOf": [
             {
