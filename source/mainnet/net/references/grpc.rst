@@ -75,7 +75,8 @@ Transactions
 
    :param transactionHash: The transaction to query.
    :type transactionHash: |grpc-transaction-hash|_
-   :returns: The status of the transaction.
+   :returns: The status of the transaction, or ``null`` if either the transaction
+             or block hash is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?TransactionStatus`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -91,7 +92,8 @@ Transactions
    :param blockHash: The given block.
    :type transactionHash: |grpc-transaction-hash|_
    :type blockHash: |grpc-block-hash|_
-   :returns: The status of the transaction.
+   :returns: The status of the transaction, or ``null`` if either the transaction
+             or block hash is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?TransactionStatusInBlock`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -121,7 +123,8 @@ Blocks and consensus
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: Information about the block.
+   :returns: Information about the block, or ``null`` if the block hash is
+             malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?BlockInfo`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -135,7 +138,8 @@ Blocks and consensus
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: A summary of the transactions and data in the block.
+   :returns: A summary of the transactions and data in the block, or ``null`` if
+             the block hash is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?BlockSummary`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -165,7 +169,8 @@ Blocks and consensus
    :param blockHash: The block to get ancestors of.
    :type blockHash: |grpc-block-hash|_
    :param UInt64 amount: The requested number of ancestors.
-   :returns: A list of block hashes.
+   :returns: A list of block hashes, or ``null`` if the block hash is malformed
+             or doesn't exist.
    :rtype: ``JsonResponse`` with ``?[BlockHash]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -195,7 +200,8 @@ Accounts
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: A list of accounts.
+   :returns: A list of accounts, or ``null`` if the block hash is malformed or
+             doesn't exist.
    :rtype: ``JsonResponse`` with ``?[AccountAddress]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -213,7 +219,8 @@ Accounts
    :param accountAddress: The account to query.
    :type blockHash: |grpc-block-hash|_
    :type accountAddress: |grpc-account-address|_
-   :returns: The state of the account.
+   :returns: The state of the account, or ``null`` if either the block hash or account
+             address is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?AccountInfo`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -227,7 +234,8 @@ Accounts
 
    :param accountAddress: The account to query.
    :type accountAddress: |grpc-account-address|_
-   :returns: A list of hashes of non-finalized transactions.
+   :returns: A list of hashes of non-finalized transactions, or null if the
+             account address is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?[TransactionHash]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -242,7 +250,8 @@ Accounts
    :param accountAddress: The account to query.
    :type accountAddress: |grpc-account-address|_
    :returns: An account nonce and whether there are any non-finalized
-             transactions for the account.
+             transactions for the account. Or ``null`` if the account address is
+             malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?AccountNonceResponse`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -259,7 +268,8 @@ Smart contracts
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: A list of hashes of smart contract modules.
+   :returns: A list of hashes of smart contract modules, or ``null`` if the
+             block hash is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?[ModuleHash]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -275,7 +285,8 @@ Smart contracts
    :type blockHash: |grpc-block-hash|_
    :param moduleReference: The reference (hash) of the smart contract module.
    :type blockHash: |grpc-module-reference|_
-   :returns: The binary source of the module.
+   :returns: The binary source of the module, or ``null`` if either the block hash or
+             module reference is malformed or doesn't exist.
    :rtype: ``?[Byte]``
 
 .. _grpc-get-instances:
@@ -287,7 +298,8 @@ Smart contracts
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: A list of smart contract addresses.
+   :returns: A list of smart contract addresses, or ``null`` if the block hash
+             is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?[ContractAddress]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -305,7 +317,8 @@ Smart contracts
    :type blockHash: |grpc-block-hash|_
    :param contractAddress: The smart contract instance.
    :type contractAddress: |grpc-contract-address|_
-   :returns: Information about the smart contract instance.
+   :returns: Information about the smart contract instance, or ``null`` if
+             either the block hash or contract address is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?InstanceInfo`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -323,7 +336,8 @@ Smart contracts
    :type blockHash: |grpc-block-hash|_
    :param contractContext: The context in which to invoke the contract.
    :type contractContext: |grpc-contract-context|_
-   :returns: An invocation result.
+   :returns: An invocation result, or ``null`` if the block hash is malformed or
+             doesn't exist, or if the contract context is malformed or invalid.
    :rtype: ``JsonResponse`` with ``?InvokeContractResult`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -345,7 +359,8 @@ Baking
    :param Bool passiveDelegation: Whether the request is for passive delegation or a
                              specific baker.
    :param UInt64 bakerId: The baker id to get the status of.
-   :returns: The status of the pool.
+   :returns: The status of the pool, or ``null`` if the block hash is malformed,
+             or if either the block hash or baker id doesn't exist.
    :rtype: ``JsonResponse`` with ``?PoolStatus`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -360,7 +375,8 @@ Baking
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: The reward status in the given block.
+   :returns: The reward status in the given block, or ``null`` if the block hash
+             is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?RewardStatus`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -374,7 +390,8 @@ Baking
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: The parameters used for baking in the given block.
+   :returns: The parameters used for baking in the given block, or ``null`` if
+             the block hash is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?BirkParameters`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -389,7 +406,8 @@ Baking
 
    :param blockHash: The given block.
    :type blockHash: |grpc-block-hash|_
-   :returns: A list of baker IDs.
+   :returns: A list of baker IDs, or ``null`` if the block hash is malformed or
+             doesn't exist.
    :rtype: ``JsonResponse`` with ``?[BakerId]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -566,7 +584,8 @@ Chain data
 
    :param blockHash: The block to query.
    :type blockHash: |grpc-block-hash|_
-   :returns: A list of identity providers.
+   :returns: A list of identity providers, or ``null`` if the block hash is
+             malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?[IdentityProvider]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -580,7 +599,8 @@ Chain data
 
    :param blockHash: The block to query.
    :type blockHash: |grpc-block-hash|_
-   :returns: A list of anonymity revokers.
+   :returns: A list of anonymity revokers, or ``null`` if the block hash is
+             malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?[AnonymityRevoker]`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -594,7 +614,8 @@ Chain data
 
    :param blockHash: The block to query.
    :type blockHash: |grpc-block-hash|_
-   :returns: The cryptographic parameters.
+   :returns: The cryptographic parameters, or ``null`` if the block hash is
+             malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?CryptographicParameters`` (see JSON schema below)
 
    .. collapse:: View JSON schema
