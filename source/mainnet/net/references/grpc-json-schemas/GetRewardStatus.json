@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_RewardsOverview",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/RewardsOverview"
+    },
+    {
+      "type": "null"
+    }
+  ],
+  "definitions": {
+    "CCDAmount": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "pattern": "^([0-9])*"
+    },
+    "MintRate": {
+      "type": "number"
+    },
+    "ProtocolVersion": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "RewardsOverview": {
+      "description": "Reward data common to both V0 and V1 rewards.",
+      "type": "object",
+      "required": [
+        "bakingRewardAccount",
+        "finalizationRewardAccount",
+        "gasAccount",
+        "protocolVersion",
+        "totalAmount",
+        "totalEncryptedAmount"
+      ],
+      "properties": {
+        "bakingRewardAccount": {
+          "description": "The amount in the baking reward account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "finalizationRewardAccount": {
+          "description": "The amount in the finalization reward account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "foundationTransactionRewards": {
+          "description": "The transaction reward fraction accruing to the foundation (to be paid at next payday).",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gasAccount": {
+          "description": "The amount in the GAS account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "nextPaydayMintRate": {
+          "description": "The rate at which CCD will be minted (as a proportion of the total supply) at the next payday",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MintRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nextPaydayTime": {
+          "description": "The time of the next payday.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "protocolVersion": {
+          "description": "Protocol version that applies to these rewards. V0 variant only exists for protocol versions 1, 2, and 3.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProtocolVersion"
+            }
+          ]
+        },
+        "totalAmount": {
+          "description": "The total CCD in existence.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "totalEncryptedAmount": {
+          "description": "The total CCD in encrypted balances.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "totalStakedCapital": {
+          "description": "The total capital put up as stake by bakers and delegators",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

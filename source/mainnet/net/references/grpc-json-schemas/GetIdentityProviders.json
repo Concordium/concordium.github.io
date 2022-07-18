@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_Array_of_IpInfo_for_HexString",
+  "type": [
+    "array",
+    "null"
+  ],
+  "items": {
+    "$ref": "#/definitions/IpInfo_for_HexString"
+  },
+  "definitions": {
+    "Description": {
+      "description": "Description either of an anonymity revoker or identity provider. Metadata that should be visible on the chain.",
+      "type": "object",
+      "required": [
+        "description",
+        "name",
+        "url"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "IpInfo_for_HexString": {
+      "description": "Public information about an identity provider.",
+      "type": "object",
+      "required": [
+        "ipCdiVerifyKey",
+        "ipDescription",
+        "ipIdentity",
+        "ipVerifyKey"
+      ],
+      "properties": {
+        "ipCdiVerifyKey": {
+          "description": "Ed public key of the IP",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        },
+        "ipDescription": {
+          "description": "Free form description, e.g., how to contact them off-chain",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Description"
+            }
+          ]
+        },
+        "ipIdentity": {
+          "description": "Unique identifier of the identity provider.",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "ipVerifyKey": {
+          "description": "PS public key of the IP",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        }
+      }
+    },
+    "PublicKey": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^([0-9]?[a-f]?)*$"
+    }
+  }
+}
