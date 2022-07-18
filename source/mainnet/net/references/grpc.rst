@@ -76,7 +76,7 @@ Transactions
                  unrecognized protocol update.
                - ``DUPLICATE_ENTRY``: The transaction was a duplicate.
                - ``INTERNAL``: An internal error happened and as such the
-                 transaction could not be processed. The node will retrun a gRPC
+                 transaction could not be processed. The node will return a gRPC
                  status if the transaction was deemed invalid.
    :rtype: Bool
 
