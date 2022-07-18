@@ -68,7 +68,16 @@ Transactions
                            (only ``100`` is currently supported).
    :param payload: Binary encoding of the transaction payload.
    :type payload: ``[Byte]`` of |grpc-block-item|_
-   :returns: Whether the transaction succeeded.
+   :returns: Either ``True`` or one of the following gRPC errors:
+
+               - ``INVALID_ARGUMENT``: The transaction was deemed invalid or
+                 exceeds the maximum size allowed (the raw size of the transaction).
+               - ``FAILED_PRECONDITION``: The network was stopped due to an
+                 unrecognized protocol update.
+               - ``DUPLICATE_ENTRY``: The transaction was a duplicate.
+               - ``INTERNAL``: An internal error happened and as such the
+                 transaction could not be processed. The node will retrun a gRPC
+                 status if the transaction was deemed invalid.
    :rtype: Bool
 
 .. function:: GetTransactionStatus(transaction_hash: TransactionHash, block_hash: BlockHash) -> JsonResponse
@@ -535,24 +544,29 @@ Networks and peers
    :returns: Whether the request was processed successfully.
    :rtype: Bool
 
-.. function:: BanNode(peer_element: PeerElement) -> Bool
+.. function:: BanNode(node_id: String, port: UInt32, ip: String, catchup_status: CatchupStatus) -> Bool
 
-   Ban a node from being a peer.
+   Ban a node from being a peer. Note that you should provide a ``node_id`` OR
+   an ``ip``, but not both. Use ``null`` for the option not chosen.
 
-   :param peer_element: The peer to ban.
-   :type peer_element: |PeerElement|_
+   :param String node_id: The id of the node to ban.
+   :param UInt32 port: *Deprecated*: No longer used. Pass in ``null``.
+   :param String ip: The ip of the node.
+   :param CatchupStatus catchup_status: *Deprecated*: No longer used. Pass in ``null``.
    :returns: Whether the banning succeeded.
    :rtype: Bool
 
-.. function:: UnbanNode(peer_element: PeerElement) -> Bool
+.. function:: UnbanNode(node_id: String, port: UInt32, ip: String, catchup_status: CatchupStatus) -> Bool
 
-   Unban a previously banned node.
+   Unban a previously banned node. Note that you should provide a ``node_id`` OR
+   an ``ip``, but not both. Use ``null`` for the option not chosen.
 
-   :param peer_element: The peer to unban.
-   :type peer_element: |PeerElement|_
+   :param String node_id: The id of the node to ban.
+   :param UInt32 port: *Deprecated*: No longer used. Pass in ``null``.
+   :param String ip: The ip of the node.
+   :param CatchupStatus catchup_status: *Deprecated*: No longer used. Pass in ``null``.
    :returns: Whether the unbanning succeeded.
    :rtype: Bool
-
 
 .. function:: GetBannedPeers() -> PeerListResponse
 
@@ -912,8 +926,6 @@ Instead, there is a **focus on transfers and the smart contract-related transact
 .. |NodeInfoResponse| replace:: ``NodeInfoResponse``
 .. _BlockHeight: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L271
 .. |BlockHeight| replace:: ``BlockHeight``
-.. _PeerElement: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L47
-.. |PeerElement| replace:: ``PeerElement``
 .. _PeerStatsResponse: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L89
 .. |PeerStatsResponse| replace:: ``PeerStatsResponse``
 .. _PeerListResponse: https://github.com/Concordium/concordium-grpc-api/blob/232e34fbe163f3f537277d406f058774a8d3a432/concordium_p2p_rpc.proto#L79
