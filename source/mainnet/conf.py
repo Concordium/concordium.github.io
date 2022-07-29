@@ -54,6 +54,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_toolbox.collapse",
     "sphinx_tabs.tabs",
+    "sphinx_design",
     'notfound.extension'
 ]
 

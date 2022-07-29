@@ -13,7 +13,7 @@ linkcheck-mainnet:
 	@$(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet"
 
 dev-mainnet:
-	sphinx-autobuild "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet"
+	sphinx-autobuild "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet" -E
 
 lint:
 	doc8 "$(SOURCEDIR)"
