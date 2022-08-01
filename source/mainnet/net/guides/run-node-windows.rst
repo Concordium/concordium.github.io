@@ -26,6 +26,10 @@ Install/upgrade and run a node
 
    Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`configure-node` for information about how to change the service configuration settings.
 
+.. Note::
+
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
+
 #. Download the latest Windows Installer package (.msi file).
 
    - For Mainnet go to :ref:`Downloads<downloads>`.

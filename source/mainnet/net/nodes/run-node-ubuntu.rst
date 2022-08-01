@@ -107,6 +107,10 @@ details of how this is done will depend on your configuration.
 Upgrade version
 ===============
 
+.. Note::
+
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
+
 To upgrade to a newer version of the `concordium-testnet-node` package you need to:
 
 - Install the new package

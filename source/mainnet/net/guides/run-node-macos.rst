@@ -19,6 +19,10 @@ Prerequisites
 Install/upgrade and run a node
 ==============================
 
+.. Note::
+
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
+
 .. tabs::
 
     .. tab:: Mainnet

@@ -13,7 +13,7 @@ information about blocks and transactions to the nodes in the Concordium
 network. After following this guide, you will be able to
 
 -  run a Concordium node
--  observe it on the network dashboard and
+-  observe it on the network dashboard
 -  query the state of the Concordium blockchain directly from your
    machine.
 
@@ -46,6 +46,10 @@ persists when the docker container is stopped. It is up to the user to select
 the location of the database on their host system. In the guide the location
 used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but
 any location to which the user that runs the docker command has access to will do.
+
+.. Note::
+
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
 
 Run a testnet node
 ==================
@@ -157,7 +161,7 @@ To run a node on testnet use the following configuration file and follow the ste
          # /var/lib/concordium-testnet to be used as the node's database directory.
          - /var/lib/concordium-testnet:/mnt/data
 
-3. Modify the node name that will appear on the network dashboard. This is set by
+3. Modify the node name that appears on the network dashboard. This is set by
    the environment variable
 
    .. code-block:: yaml
@@ -173,7 +177,7 @@ To run a node on testnet use the following configuration file and follow the ste
 
       $docker-compose up -f testnet-node.yaml
 
-The configuration will start two containers, one running the node, and another
+The configuration starts two containers, one running the node, and another
 running the node collector that reports the node state to the network dashboard.
 
 If you wish to have the node running in the background then add a ``-d`` option to the above command.
@@ -181,9 +185,9 @@ If you wish to have the node running in the background then add a ``-d`` option 
 
 .. Note::
 
-   The sample configuration will always download the latest node image. It is
-   good practice to deliberately choose the version. To choose a specific
-   version find the correct version in
+   The sample configuration always downloads the latest node image. It is
+   good practice to choose the version deliberately. To choose a specific
+   version, find the correct version in
    `hub.docker.com/concordium/testnet-node <https://hub.docker.com/r/concordium/testnet-node>`_ and change the
    ``image`` value from
 
@@ -218,14 +222,14 @@ this is done will depend on your configuration.
 Retrieve node logs
 ------------------
 
-The sample configuration presented above will log data using docker's default
-logging infrastructure. The logs for the node can be retrieved by running
+The sample configuration presented above logs data using Docker's default
+logging infrastructure. To retrieve the logs for the node run:
 
 .. code-block:: console
 
    $docker logs testnet-node
 
-This will output the logs to ``stdout``.
+This outputs the logs to ``stdout``.
 
 
 Run a mainnet node
@@ -234,7 +238,7 @@ Run a mainnet node
 The same steps apply as for the testnet node, except the following sample
 configuration file should be used.
 
-The main differences from the testnet configuration are
+The main differences from the testnet configuration are:
 
 - the image used is the mainnet image. See `hub.docker.com/concordium/mainnet-node
   <https://hub.docker.com/r/concordium/mainnet-node>`_
@@ -244,7 +248,7 @@ The main differences from the testnet configuration are
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
 
-Logs of the mainnet node can be retrieved by running
+To retrieve mainnet node logs run:
 
 .. code-block:: console
 
@@ -346,12 +350,12 @@ Logs of the mainnet node can be retrieved by running
 Migration from the previous docker distribution
 ===============================================
 
-In the past concordium provided a ``concordium-software`` package which
-contained a ``concordium-node`` binary which orchestrated downloading a docker
-image and running the node. To migrate from that setup
+In the past Concordium provided a ``concordium-software`` package which
+contained a ``concordium-node`` binary which orchestrated downloading a Docker
+image and running the node. To migrate from that setup:
 
-1. stop the running node (e.g., using ``concordium-node-stop``)
-2. either modify the relevant example configuration file above by mapping the
+1. Stop the running node (e.g., using ``concordium-node-stop``)
+2. Either modify the relevant example configuration file above by mapping the
    existing node database directory for use by the new container, i.e., replacing
 
    .. code-block:: yaml
@@ -367,7 +371,7 @@ image and running the node. To migrate from that setup
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. start the new node.
+3. Start the new node.
 
 Troubleshooting
 ===============
@@ -380,22 +384,20 @@ Mounting host directories under SELinux
 ---------------------------------------
 
 When mounting host directories on distributions running `SELinux <https://en.wikipedia.org/wiki/Security-Enhanced_Linux>`_ special considerations apply.
-This in particular includes Fedora and its derivatives. See `the Docker documentation <https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label>`_ for details on how to proceed.
+In particular, this includes Fedora and its derivatives. See `the Docker documentation <https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label>`_ for details on how to proceed.
 
 Letting the node container access the internet
 ----------------------------------------------
 
-Some linux distributions whose firewall is not based on iptables, Fedora and
+Some Linux distributions whose firewall is not based on iptables, Fedora and
 CentOS among them, require additional steps to allow docker containers to access
 external networks, e.g., the internet.
 
-On Fedora the following command should be run
+On Fedora run the following command to allow docker containers to access external networks.
 
 .. code-block:: console
 
    $sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
 
-to allow docker containers to access external networks.
-
-Please note that this will allow any docker container access to the internet,
-not just the concordium node.
+Note that this will allow any Docker container access to the internet,
+not just the Concordium node.
