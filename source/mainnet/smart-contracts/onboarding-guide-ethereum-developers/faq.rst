@@ -31,6 +31,11 @@ Feel free to suggest additional FAQs here<TODO: add an official email address>.
 
         abcdefgh
 
+.. dropdown::  Where can I find example smart contracts?
+
+    You can find example smart contracts in the
+    `Concordium rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
+
 .. dropdown::  Where can I find a logged event on testnet/mainnet?
 
     You can look up a tx hash on the `dashboard <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_.
@@ -72,3 +77,68 @@ Feel free to suggest additional FAQs here<TODO: add an official email address>.
 
     CCDScan currently does not support compiling, hosting, or verifying your smart contract code.
     You are welcome to publish your smart contract code in public source code management tools such as `GitHub <https://github.com/>`_.
+
+.. dropdown::  What does `invoke` mean?
+
+    `Invoke` may refer to:
+        - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
+
+        - In the context of the `concordium-client` tool, it means to simulate a tx locally on your node via the `invoke` command of the `concordium-client` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain.
+
+.. dropdown::  Is there something similar to the ERC20 standard?
+
+    Yes, please read the `CIS-2 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_.
+    The `CIS-2` standard can represent fungible and non-fungible tokens.
+    It combines the Ethereum ERC20 and ERC721 standards with some modifications.
+    Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
+    The `CIS-2` library is meant to be imported by `CIS-2` tokens.
+    Please explore our four `CIS-2` token standard implementations that import the `CIS-2` library:
+
+    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
+    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+
+.. dropdown::  Is there something similar to the ERC721 standard?
+
+    Yes, please read the `CIS-2 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_.
+    The `CIS-2` standard can represent fungible and non-fungible tokens.
+    It combines the Ethereum ERC721 and ERC20 standards with some modifications.
+    Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
+    The `CIS-2` library is meant to be imported by `CIS-2` tokens.
+    Please explore our four `CIS-2` token standard implementations that import the `CIS-2` library:
+
+    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
+    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+
+.. dropdown::  Is there something similar to the ERC165 standard?
+
+    Yes, please read the `CIS-0 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-0.rst>`_.
+    Please explore the `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
+    that provides the basic `CIS-0` primitives.
+    The `CIS-2` library is meant to be imported by `CIS-2` tokens so they can implement the `CIS-0` standard easily.
+    Please explore our four token examples that have the `CIS-0` standard implemented:
+
+    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
+    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+
+.. dropdown::  Is there something similar to a wrapped token contract?
+
+    Yes, please explore our two wCCD examples:
+
+    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+
+    Concordium will provide and maintain the canonical wCCD implementation on testnet and mainnet soon.
+    Developers are encouraged to use the following addresses for their dApps.
+
+    - Testnet canonical wCCD address: coming soon
+    - Mainnet canonical wCCD address: coming soon
+
+.. dropdown:: Does Concordium have a smart contract upgrade pattern?
+
+    Yes, please explore our `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
