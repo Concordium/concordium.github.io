@@ -7,7 +7,7 @@ Release Notes - Testnet
 Sirius Testnet
 ==============
 
-August 1, 2022
+August 2, 2022
 
 Concordium Node 4.2.3
 ---------------------
