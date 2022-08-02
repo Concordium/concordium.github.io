@@ -7,6 +7,19 @@ Release Notes - Testnet
 Sirius Testnet
 ==============
 
+August 4, 2022
+
+Concordium Client 4.0.4
+-----------------------
+
+The Concordium Client has been updated to better support the new smart contract v1 schema.
+
+Cargo concordium 2.0.3
+----------------------
+
+Cargo concordium has also been updated to better support the new smart contract v1 schema.
+
+
 August 2, 2022
 
 Concordium Node 4.2.3

@@ -76,27 +76,27 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
 .. _concordium-node-and-client-download-testnet:
 
-Concordium Client v4.0.3
+Concordium Client v4.0.4
 ========================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.3-0>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_4.0.4-0>`_
 
    - SHA256 checksum of the download: ``7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da``
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.4-0.zip>`_
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.3-0.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.4-0.exe>`_
 
-Cargo-concordium v2.0.1
+Cargo-concordium v2.0.3
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.0.1-0>`_
+   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.0.3-0>`_
 
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_2.0.1-0>`_
+   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_2.0.3-0>`_
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.1-0.exe>`_
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.3-0.exe>`_
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
