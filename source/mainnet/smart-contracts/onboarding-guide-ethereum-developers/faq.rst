@@ -8,7 +8,7 @@ This is a list of Frequently Asked Questions about Concordium. It is focused on
 helping developers with an Ethereum/solidity background to understand
 the Concordium blockchain and its smart contract ecosystem.
 
-Feel free to suggest additional FAQs here<TODO: add an official email address>.
+Feel free to suggest additional FAQs by contacting `support@concordium.software`.
 
 .. dropdown::  Example question?
 
@@ -34,10 +34,28 @@ Feel free to suggest additional FAQs here<TODO: add an official email address>.
 Concordium smart contracts:
 ===========================
 
+.. dropdown::  What smart contract language is used on Concordium?
+
+    Concordium uses Rust as smart contract language.
+
+.. dropdown::  How can I start with the Rust smart contract language?
+
+    Rust is a fast and memory-efficient
+    language that is a popular smart contract language among different blockchain projects.
+    There is plenty of literature to get started with Rust such as the
+    `Rust language book <https://doc.rust-lang.org/book/>`_.
+    You can find examples of smart contracts in the
+    `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
+
 .. dropdown::  Where can I find example smart contracts?
 
     You can find examples of smart contracts in the
-    `Concordium rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
+    `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
+
+.. dropdown::  Do you have a smart contract reference library similar to the GitHub repo from `OpenZeppelin`?
+
+    You can find examples and standard implementations in the
+    `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
 
 .. dropdown::  How are `smart contract addresses` represented on Concordium?
 
@@ -73,19 +91,51 @@ Concordium smart contracts:
     You cannot send CCD to an account address (or a smart contract address) before they have been deployed/initialized on the Concordium chain.
     When a smart contract tries to interact with an address that has not been deployed/initialized yet, the smart contract will revert on the Concordium chain.
 
-.. dropdown::  Can I distinguish between contract and account addresses in smart contracts on the Concordium chain?
+.. dropdown::  Can I distinguish between contract and account addresses?
 
     Yes. You can distinguish between the different types of addresses
-    in smart contracts on the Concordium chain while this is impossible to do on the Ethereum chain.
+    in smart contracts on the Concordium chain.
+    `Addresses <https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html>`_
+    are represented as an enum with two variants.
 
-    The below code behaves differently depending on if the `sender` that invoked this smart contract function is a contract or an account.
+    .. code-block:: console
+
+        pub enum Address {
+            Account(AccountAddress),
+            Contract(ContractAddress),
+        }
+
+    Rust has a matching pattern that determines at runtime which
+    variant of the enum Address is applicable, and then the appropriate code
+    is executed. You can read more about `pattern matching  <https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html>`_ in the
+    Rust language book.
+
+    For example, the below code prints out if the `sender`
+    that invoked this smart contract function is a contract or an account.
 
     .. code-block:: console
 
         match ctx.sender() {
-            Address::Contract(contract_address) => { println!("This smart contract invoked the function {:?}", contract_address) },
-            Address::Account(account_address) => { println!("This account invoked the function {:?}", account_address) },
+            Address::Contract(contract_address) => { println!("This contract invoked the function: {:?}", contract_address) },
+            Address::Account(account_address) => { println!("This account invoked the function: {:?}", account_address) },
         };
+
+    Add the above matching pattern snippet to one of your Rust smart contract functions and write
+    a test case that invokes that function. You can see the printout of the snippet
+    by running the tests with the below command.
+
+    .. code-block:: console
+
+        $cargo test -- --nocapture
+
+.. dropdown::  What is the equivalent to `msg.sender` and `tx.origin` on Concordium?
+
+    `ctx.sender()`, and `ctx.invoker()` are the equivalent variables to `msg.sender`, and `tx.origin` on the Concordium chain, respectively.
+    The `ctx.invoker()` variable refers to the original account address (no contract address)
+    that started the transaction while `ctx.sender()`
+    refers to the immediate account (it could be an account
+    or another contract address) that invokes the function entry point.
+    A contract cannot start a tx and that is why `ctx.invoker()` never returns a contract address.
 
 .. dropdown::  Can you force CCD to a smart contract even if it has no payable function?
 
@@ -100,6 +150,10 @@ Concordium smart contracts:
     - no self-destruct host function.
     - a smart contract cannot be a baker(miner) of a minted block.
     - CCD cannot be transferred to a smart contract address before a smart contract is initialized at that index.
+
+.. dropdown:: Is there a smart contract code linter?
+
+    Yes. You can use the `fmt` and `cargo clippy` linter tools as described in the `README <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
 
 Events:
 =======
@@ -188,6 +242,11 @@ Standards:
 
     Yes, please explore the `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
+.. dropdown:: Does Concordium have something similar to `delegateCall`?
+
+    No. A contract on Concordium can only change its own state. If you are looking for an upgradable pattern, please explore
+    the  `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+
 Deploying and Initializing of smart contracts:
 ==============================================
 
@@ -234,12 +293,79 @@ Concordium tools:
     CCDScan currently does not support compiling, hosting, or verifying your smart contract code.
     You are welcome to publish your smart contract code in public source code management tools such as `GitHub <https://github.com/>`_.
 
+Miscellaneous:
+==============
+
+.. dropdown:: What is the native currency on Concordium?
+
+    The native currency of the Concordium chain is CCD.
+
+.. dropdown:: Where do I get some test CCD? Is there a testnet faucet?
+
+    There are several options to request test CCD:
+
+    **Option 1:**
+    If you just created your account in the mobile app wallet then you
+    find a button to request 2000 testnet CCD to get started with your new account.
+
+    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_5.png
+        :width: 20 %
+    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_6.png
+        :width: 20 %
+
+    **Option 2:** If you have the curl package installed on your Unix-like operating systems,
+    you can request CCD in the terminal directly from the wallet proxy via the below command.
+
+    .. code-block:: console
+
+        $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/<YourAccountAddress>
+
+    If you insert your account address correctly, the command should look similar to the below line.
+
+    .. code-block:: console
+
+        $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDAz9WdEy
+
+    **Option 3:**
+    If you have the curl package and the `concordium-client` tool installed on your Unix-like operating systems, you can request CCD to any of your alias account addresses.
+    If you already sent a previous request to the wallet proxy, you can not request any more CCD to the same account address.
+    Look up one of your alias account addresses instead and use it for your request.
+    The CCD will be credited to your canonical account address.
+
+    .. code-block:: console
+
+        $concordium-client account show-alias <YourAccountAddress> --alias <number>
+
+    If you insert your account address and a number correctly, the command should look similar to the below line.
+
+    .. code-block:: console
+
+        $concordium-client account show-alias 4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j --alias 17
+
+    This generates the output:
+
+    .. code-block:: console
+
+        The requested alias for address 4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j is 4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDCpCaUT6
+
+    Copy your alias address to the below command.
+
+    .. code-block:: console
+
+        $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/<YourAliasAccountAddress>
+
+    If you insert your alias account address correctly, the command should look similar to the below line.
+
+    .. code-block:: console
+
+        $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDCpCaUT6
+
+    **Option 4:** If you need plenty of CCD for large-scale testing.
+    Please contact Concordium’s technical support via support@concordium.software.
+
 .. dropdown::  What does `invoke` mean?
 
     `Invoke` may refer to:
         - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
 
         - In the context of the `concordium-client` tool, it means to simulate a tx locally on your node via the `invoke` command of the `concordium-client` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain.
-
-Miscellaneous:
-==============
