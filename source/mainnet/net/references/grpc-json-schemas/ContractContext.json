@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ContractContext",
+  "description": "Data needed to invoke the contract.",
+  "type": "object",
+  "required": [
+    "contract",
+    "method"
+  ],
+  "properties": {
+    "amount": {
+      "description": "Amount to invoke the contract with.",
+      "default": "0",
+      "allOf": [
+        {
+          "$ref": "#/definitions/CCDAmount"
+        }
+      ]
+    },
+    "contract": {
+      "description": "Contract to invoke.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ContractAddress"
+        }
+      ]
+    },
+    "energy": {
+      "description": "The amount of energy to allow for execution. This should be small enough so that it can be converted to interpreter energy.",
+      "default": 10000000,
+      "type": "integer",
+      "format": "uint64",
+      "maximum": 100000000000.0,
+      "minimum": 0.0
+    },
+    "invoker": {
+      "description": "Invoker of the contract. If this is not supplied then the contract will be invoked by an account with address 0, no credentials and sufficient amount of CCD to cover the transfer amount. If given, the relevant address must exist in the blockstate.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Address"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "method": {
+      "description": "Which entrypoint to invoke.",
+      "type": "string"
+    },
+    "parameter": {
+      "description": "Parameter to invoke with.",
+      "default": "",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Parameter"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "Address": {
+      "description": "Either an account or contract address. Some operations are allowed on both types of items, hence the need for this type.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "address",
+            "type"
+          ],
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "AddressAccount"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "address",
+            "type"
+          ],
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/ContractAddress"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "AddressContract"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "CCDAmount": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "pattern": "^([0-9])*"
+    },
+    "ContractAddress": {
+      "type": "object",
+      "required": [
+        "index",
+        "subindex"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "subindex": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "Parameter": {
+      "type": "string",
+      "maxLength": 2048,
+      "minLength": 0,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    }
+  }
+}

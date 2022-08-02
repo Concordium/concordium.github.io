@@ -1,0 +1,826 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_AccountInfo",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/AccountInfo"
+    },
+    {
+      "type": "null"
+    }
+  ],
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "AccountCredentialWithoutProofs_for_HexString_and_AttributeKind": {
+      "description": "Account credential with values and commitments, but without proofs. Serialization must match the serializaiton of `AccountCredential` in Haskell.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "contents",
+            "type"
+          ],
+          "properties": {
+            "contents": {
+              "description": "Values in initial credential deployment.",
+              "type": "object",
+              "required": [
+                "credentialPublicKeys",
+                "ipIdentity",
+                "policy",
+                "regId"
+              ],
+              "properties": {
+                "credentialPublicKeys": {
+                  "description": "Account this credential belongs to.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/CredentialPublicKeys"
+                    }
+                  ]
+                },
+                "ipIdentity": {
+                  "description": "Identity of the identity provider who signed the identity object from which this credential is derived.",
+                  "type": "integer",
+                  "format": "uint32",
+                  "minimum": 0.0
+                },
+                "policy": {
+                  "description": "Policy of this credential object.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Policy_for_HexString_and_AttributeKind"
+                    }
+                  ]
+                },
+                "regId": {
+                  "description": "Credential registration id of the credential.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/HexString"
+                    }
+                  ]
+                }
+              }
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "initial"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "contents",
+            "type"
+          ],
+          "properties": {
+            "contents": {
+              "description": "Values (as opposed to proofs) in credential deployment.",
+              "type": "object",
+              "required": [
+                "arData",
+                "commitments",
+                "credId",
+                "credentialPublicKeys",
+                "ipIdentity",
+                "policy",
+                "revocationThreshold"
+              ],
+              "properties": {
+                "arData": {
+                  "description": "Anonymity revocation data. List of anonymity revokers which can revoke identity. NB: The order is important since it is the same order as that signed by the identity provider, and permuting the list will invalidate the signature from the identity provider.",
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/definitions/ChainArData_for_HexString"
+                  }
+                },
+                "commitments": {
+                  "$ref": "#/definitions/CredentialDeploymentCommitments_for_HexString"
+                },
+                "credId": {
+                  "description": "Credential registration id of the credential.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/HexString"
+                    }
+                  ]
+                },
+                "credentialPublicKeys": {
+                  "description": "Credential keys (i.e. account holder keys).",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/CredentialPublicKeys"
+                    }
+                  ]
+                },
+                "ipIdentity": {
+                  "description": "Identity of the identity provider who signed the identity object from which this credential is derived.",
+                  "type": "integer",
+                  "format": "uint32",
+                  "minimum": 0.0
+                },
+                "policy": {
+                  "description": "Policy of this credential object.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Policy_for_HexString_and_AttributeKind"
+                    }
+                  ]
+                },
+                "revocationThreshold": {
+                  "description": "Anonymity revocation threshold. Must be <= length of ar_data.",
+                  "type": "integer",
+                  "format": "uint8",
+                  "minimum": 0.0
+                }
+              }
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "normal"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "AccountEncryptedAmount": {
+      "description": "The state of the encrypted balance of an account.",
+      "type": "object",
+      "required": [
+        "incomingAmounts",
+        "selfAmount",
+        "startIndex"
+      ],
+      "properties": {
+        "aggregatedAmount": {
+          "description": "If ['Some'], the amount that has resulted from aggregating other amounts and the number of aggregated amounts (must be at least 2 if present).",
+          "default": null,
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": [
+            {
+              "$ref": "#/definitions/EncryptedAmount"
+            },
+            {
+              "type": "integer",
+              "format": "uint32",
+              "minimum": 0.0
+            }
+          ],
+          "maxItems": 2,
+          "minItems": 2
+        },
+        "incomingAmounts": {
+          "description": "Amounts starting at `start_index` (or at `start_index + 1` if there is an aggregated amount present). They are assumed to be numbered sequentially. The length of this list is bounded by the maximum number of incoming amounts on the accounts, which is currently 32. After that aggregation kicks in.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EncryptedAmount"
+          }
+        },
+        "selfAmount": {
+          "description": "Encrypted amount that is a result of this accounts' actions. In particular this list includes the aggregate of\n\n- remaining amounts that result when transfering to public balance - remaining amounts when transfering to another account - encrypted amounts that are transferred from public balance\n\nWhen a transfer is made all of these must always be used.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/EncryptedAmount"
+            }
+          ]
+        },
+        "startIndex": {
+          "description": "Starting index for incoming encrypted amounts. If an aggregated amount is present then this index is associated with such an amount and the list of incoming encrypted amounts starts at the index `start_index + 1`.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "AccountInfo": {
+      "description": "Account information exposed via the node's API. This is always the state of an account in a specific block.",
+      "type": "object",
+      "required": [
+        "accountAddress",
+        "accountAmount",
+        "accountCredentials",
+        "accountEncryptedAmount",
+        "accountEncryptionKey",
+        "accountIndex",
+        "accountNonce",
+        "accountReleaseSchedule",
+        "accountThreshold"
+      ],
+      "properties": {
+        "accountAddress": {
+          "description": "Canonical address of the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountAddress"
+            }
+          ]
+        },
+        "accountAmount": {
+          "description": "Current (unencrypted) balance of the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "accountBaker": {
+          "description": "`Some` (non-null) if and only if the account is a baker or delegator. In that case it is the information about the baker or delegator.",
+          "default": null,
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AccountStakingInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accountCredentials": {
+          "description": "Map of all currently active credentials on the account. This includes public keys that can sign for the given credentials, as well as any revealed attributes. This map always contains a credential with index 0.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Versioned_for_AccountCredentialWithoutProofs_for_HexString_and_AttributeKind"
+          }
+        },
+        "accountEncryptedAmount": {
+          "description": "The encrypted balance of the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountEncryptedAmount"
+            }
+          ]
+        },
+        "accountEncryptionKey": {
+          "description": "The public key for sending encrypted balances to the account.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        },
+        "accountIndex": {
+          "description": "Internal index of the account. Accounts on the chain get sequential indices. These should generally not be used outside of the chain, the account address is meant to be used to refer to accounts, however the account index serves the role of the baker id, if the account is a baker. Hence it is exposed here as well.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "accountNonce": {
+          "description": "Next nonce to be used for transactions signed from this account.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "accountReleaseSchedule": {
+          "description": "Release schedule for any locked up amount. This could be an empty release schedule.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountReleaseSchedule"
+            }
+          ]
+        },
+        "accountThreshold": {
+          "description": "Lower bound on how many credentials must sign any given transaction from this account.",
+          "type": "integer",
+          "format": "uint8",
+          "minimum": 1.0
+        }
+      }
+    },
+    "AccountReleaseSchedule": {
+      "description": "State of the account's release schedule. This is the balance of the account that is owned by the account, but cannot be used until the release point.",
+      "type": "object",
+      "required": [
+        "schedule",
+        "total"
+      ],
+      "properties": {
+        "schedule": {
+          "description": "List of timestamped releases. In increasing order of timestamps.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Release"
+          }
+        },
+        "total": {
+          "description": "Total amount that is locked up in releases.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        }
+      }
+    },
+    "AccountStakingInfo": {
+      "anyOf": [
+        {
+          "description": "The account is a baker.",
+          "type": "object",
+          "required": [
+            "bakerAggregationVerifyKey",
+            "bakerElectionVerifyKey",
+            "bakerId",
+            "bakerSignatureVerifyKey",
+            "restakeEarnings",
+            "stakedAmount"
+          ],
+          "properties": {
+            "bakerAggregationVerifyKey": {
+              "description": "Baker's public key used to check signatures on finalization records. This is only used if the baker has sufficient stake to participate in finalization.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/BakerAggregationVerifyKey"
+                }
+              ]
+            },
+            "bakerElectionVerifyKey": {
+              "description": "Baker's public key used to check whether they won the lottery or not.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/BakerElectionVerifyKey"
+                }
+              ]
+            },
+            "bakerId": {
+              "description": "Identity of the baker. This is actually the account index of the account controlling the baker.",
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "bakerSignatureVerifyKey": {
+              "description": "Baker's public key used to check that they are indeed the ones who produced the block.",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/BakerSignatureVerifyKey"
+                }
+              ]
+            },
+            "pendingChange": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/StakePendingChange"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "poolInfo": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/BakerPoolInfo"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "restakeEarnings": {
+              "type": "boolean"
+            },
+            "stakedAmount": {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          }
+        },
+        {
+          "description": "The account is delegating stake to a baker.",
+          "type": "object",
+          "required": [
+            "delegationTarget",
+            "restakeEarnings",
+            "stakedAmount"
+          ],
+          "properties": {
+            "delegationTarget": {
+              "$ref": "#/definitions/DelegationTarget"
+            },
+            "pendingChange": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/StakePendingChange"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "restakeEarnings": {
+              "type": "boolean"
+            },
+            "stakedAmount": {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          }
+        }
+      ]
+    },
+    "AttributeKind": {
+      "description": "Concrete attribute values. All currently supported attributes are string values.",
+      "type": "string"
+    },
+    "BakerAggregationVerifyKey": {
+      "type": "string",
+      "maxLength": 192,
+      "minLength": 192,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "BakerElectionVerifyKey": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "BakerPoolInfo": {
+      "description": "Additional information about a baking pool. This information is added with the introduction of delegation.",
+      "type": "object",
+      "required": [
+        "commissionRates",
+        "metadataUrl",
+        "openStatus"
+      ],
+      "properties": {
+        "commissionRates": {
+          "description": "The commission rates charged by the pool owner.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CommissionRates"
+            }
+          ]
+        },
+        "metadataUrl": {
+          "description": "The URL that links to the metadata about the pool.",
+          "type": "string"
+        },
+        "openStatus": {
+          "description": "Whether the pool allows delegators.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/OpenStatus"
+            }
+          ]
+        }
+      }
+    },
+    "BakerSignatureVerifyKey": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "CCDAmount": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "pattern": "^([0-9])*"
+    },
+    "ChainArData_for_HexString": {
+      "description": "Data relating to a single anonymity revoker sent by the account holder to the chain. Typically a vector of these will be sent to the chain.",
+      "type": "object",
+      "required": [
+        "encIdCredPubShare"
+      ],
+      "properties": {
+        "encIdCredPubShare": {
+          "description": "encrypted share of id cred pub",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Cipher"
+            }
+          ]
+        }
+      }
+    },
+    "Cipher": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "CommissionRates": {
+      "type": "object",
+      "required": [
+        "bakingCommission",
+        "finalizationCommission",
+        "transactionCommission"
+      ],
+      "properties": {
+        "bakingCommission": {
+          "description": "Fraction of baking rewards charged by the pool owner.",
+          "type": "number"
+        },
+        "finalizationCommission": {
+          "description": "Fraction of finalization rewards charged by the pool owner.",
+          "type": "number"
+        },
+        "transactionCommission": {
+          "description": "Fraction of transaction rewards charged by the pool owner.",
+          "type": "number"
+        }
+      }
+    },
+    "Commitment_for_HexString": {
+      "description": "A Commitment is a group element.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/HexString"
+        }
+      ]
+    },
+    "CredentialDeploymentCommitments_for_HexString": {
+      "description": "The commitments sent by the account holder to the chain in order to deploy credentials",
+      "type": "object",
+      "required": [
+        "cmmAttributes",
+        "cmmCredCounter",
+        "cmmIdCredSecSharingCoeff",
+        "cmmMaxAccounts",
+        "cmmPrf"
+      ],
+      "properties": {
+        "cmmAttributes": {
+          "description": "List of commitments to the attributes that are not revealed. For the purposes of checking signatures, the commitments to those that are revealed as part of the policy are going to be computed by the verifier.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Commitment_for_HexString"
+          }
+        },
+        "cmmCredCounter": {
+          "description": "commitment to credential counter",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Commitment_for_HexString"
+            }
+          ]
+        },
+        "cmmIdCredSecSharingCoeff": {
+          "description": "commitments to the coefficients of the polynomial used to share id_cred_sec S + b1 X + b2 X^2... where S is id_cred_sec",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Commitment_for_HexString"
+          }
+        },
+        "cmmMaxAccounts": {
+          "description": "commitment to the max account number.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Commitment_for_HexString"
+            }
+          ]
+        },
+        "cmmPrf": {
+          "description": "commitment to the prf key",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Commitment_for_HexString"
+            }
+          ]
+        }
+      }
+    },
+    "CredentialPublicKeys": {
+      "description": "Public credential keys currently on the account, together with the threshold needed for a valid signature on a transaction.",
+      "type": "object",
+      "required": [
+        "keys",
+        "threshold"
+      ],
+      "properties": {
+        "keys": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/VerifyKey"
+          }
+        },
+        "threshold": {
+          "type": "integer",
+          "format": "uint8",
+          "minimum": 0.0
+        }
+      }
+    },
+    "DelegationTarget": {
+      "oneOf": [
+        {
+          "description": "Delegate passively, i.e., to no specific baker.",
+          "type": "object",
+          "required": [
+            "delegateType"
+          ],
+          "properties": {
+            "delegateType": {
+              "type": "string",
+              "enum": [
+                "Passive"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Delegate to a specific baker.",
+          "type": "object",
+          "required": [
+            "bakerId",
+            "delegateType"
+          ],
+          "properties": {
+            "bakerId": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "delegateType": {
+              "type": "string",
+              "enum": [
+                "Baker"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "EncryptedAmount": {
+      "type": "string",
+      "maxLength": 384,
+      "minLength": 384,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "HexString": {
+      "type": "string",
+      "minLength": 0,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "OpenStatus": {
+      "description": "The status of whether a baking pool allows delegators to join.",
+      "type": "string",
+      "enum": [
+        "openForAll",
+        "closedForNew",
+        "closedForAll"
+      ]
+    },
+    "Policy_for_HexString_and_AttributeKind": {
+      "description": "A policy is (currently) revealed values of attributes that are part of the identity object. Policies are part of credentials.",
+      "type": "object",
+      "required": [
+        "createdAt",
+        "revealedAttributes",
+        "validTo"
+      ],
+      "properties": {
+        "createdAt": {
+          "$ref": "#/definitions/YearMonth"
+        },
+        "revealedAttributes": {
+          "description": "Revealed attributes for now. In the future we might have additional items with (Tag, Property, Proof).",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/AttributeKind"
+          }
+        },
+        "validTo": {
+          "$ref": "#/definitions/YearMonth"
+        }
+      }
+    },
+    "PublicKey": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^([0-9]?[a-f]?)*$"
+    },
+    "Release": {
+      "description": "An individual release of a locked balance.",
+      "type": "object",
+      "required": [
+        "amount",
+        "timestamp",
+        "transactions"
+      ],
+      "properties": {
+        "amount": {
+          "description": "Amount to be released.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "timestamp": {
+          "description": "Effective time of release.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "transactions": {
+          "description": "List of transaction hashes that contribute a balance to this release.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SHA256Hash"
+          }
+        }
+      }
+    },
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "StakePendingChange": {
+      "description": "Pending change in the baker's stake.",
+      "oneOf": [
+        {
+          "description": "The stake is being reduced. The new stake will take affect in the given epoch.",
+          "type": "object",
+          "required": [
+            "change",
+            "effectiveTime",
+            "newStake"
+          ],
+          "properties": {
+            "change": {
+              "type": "string",
+              "enum": [
+                "ReduceStake"
+              ]
+            },
+            "effectiveTime": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "newStake": {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          }
+        },
+        {
+          "description": "The baker will be removed at the end of the given epoch.",
+          "type": "object",
+          "required": [
+            "change",
+            "effectiveTime"
+          ],
+          "properties": {
+            "change": {
+              "type": "string",
+              "enum": [
+                "RemoveStake"
+              ]
+            },
+            "effectiveTime": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      ]
+    },
+    "VerifyKey": {
+      "type": "object",
+      "properties": {
+        "schemeId": {
+          "type": "string"
+        },
+        "verifyKey": {
+          "type": "string",
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^(([0-9]?[a-f]?){2})*$"
+        }
+      }
+    },
+    "Versioned_for_AccountCredentialWithoutProofs_for_HexString_and_AttributeKind": {
+      "description": "Versioned<T> represents T as a versioned data-structure. The version is a integer number up to the implementation, which is serialized using variable integer encoding. The caller is responsible for ensuring the data structure `T` is compatible with the version number.",
+      "type": "object",
+      "required": [
+        "v",
+        "value"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "value": {
+          "$ref": "#/definitions/AccountCredentialWithoutProofs_for_HexString_and_AttributeKind"
+        }
+      }
+    },
+    "YearMonth": {
+      "type": "string"
+    }
+  }
+}

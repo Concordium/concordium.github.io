@@ -1,8 +1,8 @@
-.. _delegation-dw:
+.. _delegation:
 
-============================
-Delegation in Desktop Wallet
-============================
+==========
+Delegation
+==========
 
 Delegation allows you to earn rewards for delegating some stake without the need to run a node or become a baker. For more information about delegation, see :ref:`Delegation <delegation-concept>`.
 
@@ -17,6 +17,7 @@ You can only have one delegation per account. If you wish to delegate stake to m
    An account cannot be both a baker account and have a delegation.
 
 .. toctree::
+   :hidden:
    :maxdepth: 1
 
    add-delegation

@@ -13,12 +13,12 @@
 .. |client-linux-checksum| replace:: 7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da
 
 .. Node debian package verification variables
-.. |node-deb-package| replace:: concordium-mainnet-node_4.1.1_amd64.deb
-.. |node-deb-package-checksum| replace:: b1f4c582a44761363bed5f25bb857cfe541cae4becf9f14c0062b67c4caabfd3
+.. |node-deb-package| replace:: concordium-mainnet-node_4.2.1_amd64.deb
+.. |node-deb-package-checksum| replace:: 0ecefbdaa7a00d90d8e8099c6d25558f3d8f9d23164726550b1d62cfde5821b5
 
 .. Node docker package verification variables
-.. |node-docker-package| replace:: concordium-software-linux-4.1.1-1-mainnet.tar.gz
-.. |node-docker-package-checksum| replace:: eb5c7e0573b0778589ae035373a253330e367ad281916739ed9f5104fd08c22b
+.. |node-docker-package| replace:: concordium-software-linux-4.2.1-0-mainnet.tar.gz
+.. |node-docker-package-checksum| replace:: 8bf746a5efbdc160a562c7c03d9fb7b2f1ab431877aad066187d4bd8354294e5
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat

@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_InstanceInfo",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/InstanceInfo"
+    },
+    {
+      "type": "null"
+    }
+  ],
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "CCDAmount": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "pattern": "^([0-9])*"
+    },
+    "InstanceInfo": {
+      "description": "Helper struct to derive JSON instances for super::InstanceInfo.",
+      "type": "object",
+      "required": [
+        "amount",
+        "methods",
+        "name",
+        "owner",
+        "sourceModule"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/CCDAmount"
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/definitions/AccountAddress"
+        },
+        "sourceModule": {
+          "$ref": "#/definitions/SHA256Hash"
+        },
+        "version": {
+          "default": 0,
+          "allOf": [
+            {
+              "$ref": "#/definitions/WasmVersion"
+            }
+          ]
+        }
+      }
+    },
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "WasmVersion": {
+      "type": "integer",
+      "format": "uint8",
+      "minimum": 0.0
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_BirkParameters",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/BirkParameters"
+    },
+    {
+      "type": "null"
+    }
+  ],
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "BirkBaker": {
+      "description": "State of an individual baker.",
+      "type": "object",
+      "required": [
+        "bakerAccount",
+        "bakerId",
+        "bakerLotteryPower"
+      ],
+      "properties": {
+        "bakerAccount": {
+          "description": "Address of the account this baker is associated with.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccountAddress"
+            }
+          ]
+        },
+        "bakerId": {
+          "description": "ID of the baker. Matches their account index.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "bakerLotteryPower": {
+          "description": "The lottery power of the baker. This is the baker's stake relative to the total staked amount.",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "BirkParameters": {
+      "description": "The state of consensus parameters, and allowed participants (i.e., bakers).",
+      "type": "object",
+      "required": [
+        "bakers",
+        "electionDifficulty",
+        "electionNonce"
+      ],
+      "properties": {
+        "bakers": {
+          "description": "The list of active bakers.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BirkBaker"
+          }
+        },
+        "electionDifficulty": {
+          "description": "Current election difficulty.",
+          "type": "number"
+        },
+        "electionNonce": {
+          "description": "Leadership election nonce for the current epoch.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/SHA256Hash"
+            }
+          ]
+        }
+      }
+    },
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    }
+  }
+}
