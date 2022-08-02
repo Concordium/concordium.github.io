@@ -14,6 +14,18 @@ Concordium Desktop Wallet 1.4.3
 
 The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet. 
 
+August 2, 2022
+
+Concordium Node 4.2.3
+---------------------
+
+Concordium Node 4.2.3 fixes a critical security vulnerability present in all
+previous 4.* node versions. All node runners **must** upgrade as soon as
+possible.
+
+The security advisory detailing the issue and the patch will be released on
+August 15th.
+
 June 30, 2022
 
 Concordium Mobile Wallet for iOS v3.0.0(53)

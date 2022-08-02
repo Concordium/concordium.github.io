@@ -39,7 +39,7 @@ To set up the Desktop Wallet:
 
 #. In the Desktop Wallet go to **Settings** and then select **Node settings**.
 
-#. The Virtual Hive node is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
+#. The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
 
 #. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
 
