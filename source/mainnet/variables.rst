@@ -18,7 +18,7 @@
 
 .. Node docker package verification variables
 .. |node-docker-package| replace:: concordium-software-linux-4.2.3-0-mainnet.tar.gz
-.. |node-docker-package-checksum| replace:: 8bf746a5efbdc160a562c7c03d9fb7b2f1ab431877aad066187d4bd8354294e5
+.. |node-docker-package-checksum| replace:: e09e853147a5393b7206c64da3261f11191a9339669d67180b7137b8ed2ec47f
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
