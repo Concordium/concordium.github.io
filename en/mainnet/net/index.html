@@ -441,6 +441,11 @@ body {margin:0;}
        Auxiliary Tools
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="references/grpc.html">
+       gRPC documentation
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1184,7 +1189,7 @@ body {margin:0;}
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-ledger-app">Concordium Ledger App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-client-v4-0-3">Concordium Client v4.0.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#cargo-concordium-v2-0-1">Cargo-concordium v2.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-node-distributions-v4-2-1">Concordium node distributions v4.2.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-node-distributions-v4-2-3">Concordium node distributions v4.2.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#ubuntu">Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#linux-docker">Linux-Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#windows">Windows</a></li>
@@ -1213,7 +1218,7 @@ body {margin:0;}
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-ledger-app-sirius">Concordium Ledger App - Sirius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-client-v4-0-3">Concordium Client v4.0.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#cargo-concordium-v2-0-1">Cargo-concordium v2.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v4-2-1">Concordium node distributions v4.2.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v4-2-3">Concordium node distributions v4.2.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#ubuntu">Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#linux-docker">Linux-Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#windows">Windows</a></li>
@@ -1641,6 +1646,22 @@ body {margin:0;}
 </li>
 <li class="toctree-l3"><a class="reference internal" href="references/developer-tools.html">Auxiliary Tools</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="references/developer-tools.html#decrypt-encrypted-output">Decrypt encrypted output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="references/grpc.html">gRPC documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#notation">Notation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#transactions">Transactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#blocks-and-consensus">Blocks and consensus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#accounts">Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#smart-contracts">Smart contracts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#baking">Baking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#the-node">The node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#networks-and-peers">Networks and peers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#chain-data">Chain data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/grpc.html#types">Types</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/grpc.html#transaction-encoding">Transaction encoding</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2340,6 +2361,10 @@ body {margin:0;}
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#string"><code class="docutils literal notranslate"><span class="pre">String</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#contractname"><code class="docutils literal notranslate"><span class="pre">ContractName</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#receivename"><code class="docutils literal notranslate"><span class="pre">ReceiveName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#uleb128"><code class="docutils literal notranslate"><span class="pre">ULeb128</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#ileb128"><code class="docutils literal notranslate"><span class="pre">ILeb128</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#bytelist"><code class="docutils literal notranslate"><span class="pre">ByteList</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/references/schema-json.html#bytearray"><code class="docutils literal notranslate"><span class="pre">ByteArray</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/references/schema-json.html#json-for-schema-type-fields">JSON for schema type fields</a><ul>
@@ -2668,6 +2693,7 @@ body {margin:0;}
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes-mainnet.html">Release notes - Mainnet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-4-sirius">Mainnet 4: Sirius</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-1">Concordium Node 4.2.1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-ios-v3-0-0-53">Concordium Mobile Wallet for iOS v3.0.0(53)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-android-v3-0-0-100">Concordium Mobile Wallet for Android v3.0.0(100)</a></li>
@@ -2734,6 +2760,7 @@ body {margin:0;}
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes.html">Release Notes - Testnet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#sirius-testnet">Sirius Testnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v3-0-0-53">Concordium Mobile Wallet for iOS v3.0.0(53)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-android-v3-0-0-100">Concordium Mobile Wallet for Android v3.0.0(100)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-1">Concordium Node 4.2.1</a></li>

@@ -7,6 +7,17 @@ Release notes - Mainnet
 Mainnet 4: Sirius
 =================
 
+August 1, 2022
+
+Concordium Node 4.2.3
+---------------------
+
+Concordium Node 4.2.3 fixes a critical security vulnerability present in all
+previous 4.* node versions. All node runners **must** upgrade as soon as
+possible.
+
+The security advisory detailing the issue and the patch will be released on
+August 15th.
 
 July 4, 2022
 

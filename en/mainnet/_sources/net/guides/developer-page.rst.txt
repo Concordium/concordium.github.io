@@ -14,7 +14,7 @@ Official resources
 
 - See :ref:`SDKs and APIs<sdks-apis>` for links to SDKs and APIs for development
 
-- `Smart contracts <https://developer.concordium.software/en/mainnet/smart-contracts/index.html>`_
+- :ref:`Smart contracts <introduction>`
 
 - `GitHub <https://github.com/Concordium>`_
 
@@ -53,3 +53,4 @@ Community resources
     sdks-apis
     ../resources/dashboards
     ../references/developer-tools
+    ../references/grpc

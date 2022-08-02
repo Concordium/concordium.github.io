@@ -441,6 +441,11 @@ body {margin:0;}
        Auxiliary Tools
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../net/references/grpc.html">
+       gRPC documentation
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1371,6 +1376,42 @@ body {margin:0;}
      </code>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uleb128">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ULeb128
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ileb128">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ILeb128
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bytelist">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ByteList
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bytearray">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ByteArray
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1462,6 +1503,10 @@ be represented as JSON together with a <code class="docutils literal notranslate
 <span class="w">    </span><span class="nb">String</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">ContractName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">ReceiveName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">ULeb128</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">ILeb128</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">ByteList</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">ByteArray</span><span class="p">(</span><span class="kt">u32</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1619,6 +1664,48 @@ Example:</p>
 <p>Supplied as a JSON object with the fields <code class="docutils literal notranslate"><span class="pre">contract</span></code> and <code class="docutils literal notranslate"><span class="pre">func</span></code>, both of
 type JSON string. Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;contract&quot;</span><span class="p">:</span> <span class="s2">&quot;my_contract&quot;</span><span class="p">,</span> <span class="nt">&quot;func&quot;</span><span class="p">:</span> <span class="s2">&quot;my_receive&quot;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uleb128">
+<h3><code class="docutils literal notranslate"><span class="pre">ULeb128</span></code><a class="headerlink" href="#uleb128" title="Permalink to this headline">#</a></h3>
+<p>Supplied as a JSON string containing an unsigned integer.
+The number of bytes for the encoding of the integer is bound to a constraint (<code class="docutils literal notranslate"><span class="pre">u32</span></code>) in the schema.
+As each byte of the encoding contains 7 bits of information, a constraint of <code class="docutils literal notranslate"><span class="pre">n</span></code> puts an upper bound of <code class="docutils literal notranslate"><span class="pre">2^(n</span> <span class="pre">*</span> <span class="pre">7)</span> <span class="pre">-</span> <span class="pre">1</span></code> for the unsigned integer.</p>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">ILeb128(4)</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;1234567890&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ileb128">
+<h3><code class="docutils literal notranslate"><span class="pre">ILeb128</span></code><a class="headerlink" href="#ileb128" title="Permalink to this headline">#</a></h3>
+<p>Supplied as a JSON string containing a signed integer.
+The number of bytes for the encoding of the integer is bound to a constraint (<code class="docutils literal notranslate"><span class="pre">u32</span></code>) in the schema.
+As each byte of the encoding contains 7 bits of information, a constraint of <code class="docutils literal notranslate"><span class="pre">n</span></code> puts an upper bound of <code class="docutils literal notranslate"><span class="pre">2^(n</span> <span class="pre">*</span> <span class="pre">7</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">-</span> <span class="pre">1</span></code> and a lower bound of <code class="docutils literal notranslate"><span class="pre">-2^(n</span> <span class="pre">*</span> <span class="pre">7</span> <span class="pre">-</span> <span class="pre">1)</span></code> for the signed integer.</p>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">ILeb128(5)</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;1234567890&quot;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;-1234567890&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bytelist">
+<h3><code class="docutils literal notranslate"><span class="pre">ByteList</span></code><a class="headerlink" href="#bytelist" title="Permalink to this headline">#</a></h3>
+<p>Supplied as a JSON string containing a variable-sized list of bytes encoded in lowercase hex.
+Notice each byte is encoded using two charactors in hex.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;1234567890abcdef&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bytearray">
+<h3><code class="docutils literal notranslate"><span class="pre">ByteArray</span></code><a class="headerlink" href="#bytearray" title="Permalink to this headline">#</a></h3>
+<p>Supplied as a JSON string containing a fixed-sized list of bytes encoded in lowercase hex.
+Notice the length of the list is specified as the number of bytes, and each byte is encoded using two charactors in hex.</p>
+<p>Example of a fixed list of 8 bytes (<code class="docutils literal notranslate"><span class="pre">ByteArray(8)</span></code>):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;1234567890abcdef&quot;</span>
 </pre></div>
 </div>
 </div>
