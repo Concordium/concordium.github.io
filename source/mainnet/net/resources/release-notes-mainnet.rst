@@ -9,7 +9,7 @@ Mainnet 4: Sirius
 
 August XX, 2022
 
-Concordium Desktop Wallet 1.4.3
+Concordium Desktop Wallet 1.5.0
 -------------------------------
 
 The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.

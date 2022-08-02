@@ -28,7 +28,7 @@ When you register with Concordium Desktop Wallet, you enter into an agreement wi
 Concordium Software ApS, Østergade 13, 2., 1100 København K, Denmark. CVR no.: 42334758. Our email address is contact@concordium.software.
 
 What you need in order to register with Concordium Desktop Wallet
-================================================================
+=================================================================
 
 The following is required to register with Concordium Desktop Wallet:
 

@@ -9,10 +9,10 @@ Sirius Testnet
 
 August XX, 2022
 
-Concordium Desktop Wallet 1.4.3
+Concordium Desktop Wallet 1.5.0
 -------------------------------
 
-The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet. 
+The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
 
 August 2, 2022
 
