@@ -30,7 +30,7 @@ Configure a baker node on Windows
    .. code-block:: console
 
      $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
-   
+
    where you replace
 
    - ``MyBakerKeys.json`` with the name of baker keys file you generated
