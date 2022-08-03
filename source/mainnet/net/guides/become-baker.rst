@@ -234,7 +234,7 @@ When a baker **decreases the staked amount**, the change requires a 21 day cool-
 .. table:: Timeline: decreasing the stake
 
    +----------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                        | When transaction is included in a block | After cool-down |
+   |                                        | When transaction is included in a block | After cool-down                                |
    +========================================+=========================================+========================================+
    | Change is visible by querying the node | ✓                                       |                                        |
    +----------------------------------------+-----------------------------------------+----------------------------------------+
@@ -414,7 +414,7 @@ the staked amount. The change requires a 21 day cool-down to take effect. The ch
 .. table:: Timeline: removing a baker
 
    +--------------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                            | When transaction is included in a block | After cool-down |
+   |                                            | When transaction is included in a block | After cool-down                               |
    +============================================+=========================================+========================================+
    | Change is visible by querying the node     | ✓                                       |                                        |
    +--------------------------------------------+-----------------------------------------+----------------------------------------+
