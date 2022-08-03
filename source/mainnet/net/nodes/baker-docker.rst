@@ -61,7 +61,7 @@ To start the node with these baker keys and bake blocks do the following.
    .. code-block:: yaml
 
       - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
-   
+
    into the ``environment`` section of the ``node`` service section of the file.
 
 When you've placed the file in the appropriate directory, start the node again in

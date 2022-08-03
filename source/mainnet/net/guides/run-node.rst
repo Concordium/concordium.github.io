@@ -144,7 +144,7 @@ To run a node on testnet use the following configuration file and follow the ste
    .. code-block:: yaml
 
       - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
-   
+
    This name can be set to any non-empty string. If the name has spaces it should be quoted.
 
 4. Start the node and the collector.
@@ -326,7 +326,7 @@ image and running the node. To migrate from that setup:
    .. code-block:: yaml
 
           - /var/lib/concordium-mainnet:/mnt/data
-   
+
    with
 
    .. code-block:: yaml
