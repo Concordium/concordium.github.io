@@ -10,27 +10,6 @@ the Concordium blockchain and its smart contract ecosystem.
 
 Feel free to suggest additional FAQs by contacting `support@concordium.software`.
 
-.. dropdown::  Example question?
-
-    Example text
-
-    Example picture
-
-    .. image:: ./images/onboarding_ethereum_developers_1.png
-      :width: 100 %
-
-    Example code
-
-    .. code-block:: console
-
-        $./concordium-client contract init piggy_bank_part2_module --sender <account-name> --contract PiggyBank --name piggy_bank_part2_instance --energy 1000 --grpc-port 10001
-
-    Example note
-
-    .. note::
-
-        abcdefgh
-
 Concordium smart contracts:
 ===========================
 
@@ -56,6 +35,12 @@ Concordium smart contracts:
 
     You can find examples and standard implementations in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
+
+.. dropdown::  Should I use V0 or V1 smart contracts?
+
+    Version 1 smart contracts have many improvements and features added compared to Version 0 smart contracts.
+    Hence, V1 smart contracts are recommended over V0 smart contracts if you start a new project.
+    Mainnet continues supporting V0 smart contracts due to backward compatibility.
 
 .. dropdown::  How are `smart contract addresses` represented on Concordium?
 
@@ -137,6 +122,34 @@ Concordium smart contracts:
     or another contract address) that invokes the function entry point.
     A contract cannot start a tx and that is why `ctx.invoker()` never returns a contract address.
 
+.. dropdown::  How do I get the balance of the smart contract within the Rust code?
+
+    `host.self_balance()` returns the current balance of the smart contract.
+    Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance>`_ of the concordium standard crate.
+
+    In contrast to Ethereum and in contrast to the documentation in the crate (TODO: can we update the comment in the crate?),
+    the current balance of the smart contract is the sum of the `host.self_balance() + amount`.
+
+    .. code-block:: console
+
+        #[receive(contract = "exampleFunction", name = "example", payable, mutable)]
+        fn example_function<S: HasStateApi>(
+            ctx: &impl HasReceiveContext,
+            host: &mut impl HasHost<State, StateApiType = S>,
+            amount: Amount,
+        ) -> Result<(), Error> {
+
+            let current_balance_of_smart_contract = host.self_balance() + amount;
+
+            ...
+
+        }
+
+.. dropdown::  How do I get the address of the smart contract within the Rust code?
+
+    `ctx.self_address()` returns the address of the smart contract.
+    Additional documentation can be found in the `self_address description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_address>`_ of the concordium standard crate.
+
 .. dropdown::  Can you force CCD to a smart contract even if it has no payable function?
 
     There are three edge cases on the Ethereum chain that forces ETHER to a contract address even though there is no payable function on it.
@@ -151,9 +164,101 @@ Concordium smart contracts:
     - a smart contract cannot be a baker(miner) of a minted block.
     - CCD cannot be transferred to a smart contract address before a smart contract is initialized at that index.
 
+.. dropdown::  Can I print values from the smart contract code or test cases?
+
+    Yes. You can use
+
+    .. code-block:: console
+
+        $println!("Printing output of f: {}, and g: {}", f(1,2,3), g("hi"));
+
+    or
+
+    .. code-block:: console
+
+        $println!("Printing debug value: {:?}", 12345);
+
+    for printing to stdout and
+
+    .. code-block:: console
+
+        $eprintln!("Printing output of f: {}, and g: {}", f(1,2,3), g("hi"));
+
+    or
+
+    .. code-block:: console
+
+        $eprintln!("Printing debug value: {:?}", 12345);
+
+    for printing to stderr.
+
+    Add one of the above lines of code to a Rust smart contract function or one of your test cases (Write
+    a test case that invokes your Rust smart contract function if the printing statement is in the smart contract code).
+    You can see the printout by running the tests with the below command.
+
+    .. code-block:: console
+
+        $cargo test -- --nocapture
+
+
+.. dropdown::  My tx is rejected and I get an error code number. How can I interpret smart contract errors?
+
+    Error codes come from the ``Concordium-std`` crate or are thrown by the smart contract itself.
+
+    **Concordium-std crate errors**
+
+    An example of a ``concordium-std`` crate error is shown below:
+
+    .. code-block:: console
+
+        Error: Updating contract instance failed:
+        'smash' in 'PiggyBank' at {"index":12345,"subindex":0} failed with code -2147483636.
+
+    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_21.png
+            :width: 100 %
+
+    You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/3.0.0/concordium_std/#signalling-errors>`_.
+    This error was thrown by the ``concordium-std`` crate. The error codes start from ``i32::MIN`` and go upwards.
+    ``-2147483636`` corresponds to ``NotPayableError``. In contrast, error types of smart contracts start from ``-1`` and go downwards.
+
+    **Smart contract errors**
+
+    An example of a smart contract error is shown below:
+
+    .. code-block:: console
+
+        Error: Updating contract instance failed:
+        'smash' in 'PiggyBank' at {"index":12345,"subindex":0} failed with code -1.
+
+    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_27.png
+        :width: 100 %
+
+    You can find the meaning of the piggy bank error codes in this :ref:`section<piggy-bank-smash-error>`.
+    This error was thrown by the smart contract. The error codes start from ``-1`` and go downwards.
+    ``-1`` is the first error code and corresponds to ``NotOwner``.
+    In contrast, errors from the ``concordium-std`` crate start from ``i32::MIN`` and go upwards.
+
 .. dropdown:: Is there a smart contract code linter?
 
     Yes. You can use the `fmt` and `cargo clippy` linter tools as described in the `README <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
+
+.. dropdown:: Are tests executed in parallel or sequentially?
+
+    Tests run in parallel by default by the following two commands
+
+    .. code-block:: console
+
+        $cargo concordium test
+
+    .. code-block:: console
+
+        $cargo test
+
+    You can use the below command for consecutive execution of the tests.
+
+    .. code-block:: console
+
+        $cargo test -- --test-threads=1
 
 Events:
 =======
@@ -250,6 +355,13 @@ Standards:
 Deploying and Initializing of smart contracts:
 ==============================================
 
+.. dropdown::  Is there a max smart contract size limit when deploying a contract on-chain?
+
+    Yes. The max smart contract size limit is xyz KB (TODO: ask what is the current limit) on Concordium.
+    Concordium choose a much higher limit compared to the Ethereum chain.
+    This enables smart contract developers to develop smart contracts
+    without splitting them into many smaller pieces which is a common annoyance when developing on Ethereum.
+
 .. dropdown::  What is the `owner` of a smart contract instance on Concordium?
 
     You can access the account that created a smart contract instance with the variable `ctx.owner()`.
@@ -281,12 +393,26 @@ Deploying and Initializing of smart contracts:
             subindex: 0,
         };
 
+.. dropdown::  Can you invoke another smart contract from within the `init` function?
+
+    No. The `init` function is similar to a `constructor` function. Its purpose
+    is to deploy a new smart contract instance from a module and set the state of the current smart contract.
+    You have to use a regular `receive` function when you want to invoke another smart contract.
+
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 
     You can follow the chapter :ref:`deploying a smart contract<piggy-bank-deploying>` in the piggy bank tutorial.
 
 Concordium tools:
 =================
+
+.. dropdown::  Do you have a block explorer?
+
+    Yes. The official block explorer is `CCDScan <https://testnet.ccdscan.io/>`_.
+    In addition, you can use the dashboard
+    to `lock up txs <https://dashboard.testnet.concordium.com/lookup>`_,
+    `explore the network <https://dashboard.testnet.concordium.com>`_,
+    and observe the `block-producing process <https://dashboard.testnet.concordium.com/chain>`_.
 
 .. dropdown::  Can I upload and verify my smart contract code on the block explorer (CCDScan)?
 
@@ -362,6 +488,33 @@ Miscellaneous:
 
     **Option 4:** If you need plenty of CCD for large-scale testing.
     Please contact Concordium’s technical support via support@concordium.software.
+
+
+.. dropdown:: How can I create the parameter data if I want to use binary input instead of a JSON + schema input?
+
+    Input parameters can be either in a JSON format (with a schema) or binary format.
+    If you want to use the binary format then the below command shows that a `myParameterBinary.bin` file is required.
+
+    .. code-block:: console
+
+        $concordium-client contract update <ContractIndex> --entrypoint <ContractEntryPoint> --parameter-binary myParameterBinary.bin --sender <Account> --energy 12345678
+
+    You can create such a `myParameterBinary.bin` file by adding the below lines to your test cases replacing the `ExampleParams` struct with your input parameter struct for that function.
+
+    .. code-block:: console
+
+        let parameter = ExampleParams {
+            example_key1: value1,
+            example_key1: value2,
+        }
+        let parameter_bytes = to_bytes(&parameter);
+        std::fs::write("myParameterBinary.bin", &parameter_bytes).expect("Failed to write parameter file");
+
+    When running the tests with the below command the `myParameterBinary.bin` file is created in the current folder.
+
+    .. code-block:: console
+
+        $ cargo test
 
 .. dropdown::  What does `invoke` mean?
 
