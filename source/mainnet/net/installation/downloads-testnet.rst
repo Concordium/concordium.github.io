@@ -121,12 +121,6 @@ Linux-Docker
 
 .. _concordium-docker-package-download-testnet:
 
-Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
-
-   - `Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.2.3-0-testnet.tar.gz>`_
-
-      - SHA256 checksum of the download: ``f783a82f0d201c8d7b361f0b7f460459bafa79fdc0037d9b40b3eebdf18be6a9``
-
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
 Windows

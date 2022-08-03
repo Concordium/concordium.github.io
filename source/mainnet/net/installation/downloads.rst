@@ -127,12 +127,6 @@ Linux-Docker
 
 .. _concordium-docker-package-download:
 
-Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
-
-   - `Download the Mainnet suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.2.3-0-mainnet.tar.gz>`_
-
-      - SHA256 checksum of the download: :substitution-code:`|node-docker-package-checksum|`
-
 To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
 Windows
