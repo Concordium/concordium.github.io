@@ -70,13 +70,15 @@ Concordium Ledger App
 
 .. Note::
 
-   Ledger firmware version 2.0.0 is no longer supported.
+   Ledger firmware version 2.0.0 is no longer supported for the Ledger Nano S.
 
 .. Note::
 
    The Ledger Nano X is not supported currently.
 
-- `Download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+- For Ledger Nano S, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+
+- For Ledger Nano S Plus `download the Concordium Ledger App X.X.X for Ledger firmware version 1.0.3 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
 .. _concordium-node-and-client-download:
 

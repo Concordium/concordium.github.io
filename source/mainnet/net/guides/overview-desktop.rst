@@ -19,7 +19,7 @@ The Desktop Wallet must be connected to a running **trusted** node on the Concor
 Step 2: Set up the Ledger device
 ================================
 
-The Desktop Wallet requires that you store your keys on a Ledger device. This is to ensure that your private account keys are kept secure. To be able to use the Ledger Nano S with the Desktop Wallet, you must install the Concordium Ledger App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`.
+The Desktop Wallet requires that you store your keys on a Ledger device. This is to ensure that your private account keys are kept secure. To be able to use the Ledger device with the Desktop Wallet, you must install the Concordium Ledger App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`.
 
 Step 3: Set up the Concordium Desktop Wallet
 ============================================

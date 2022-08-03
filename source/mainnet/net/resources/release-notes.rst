@@ -7,7 +7,7 @@ Release Notes - Testnet
 Sirius Testnet
 ==============
 
-August 3, 2022
+August 4, 2022
 
 Concordium Desktop Wallet 1.5.0
 -------------------------------

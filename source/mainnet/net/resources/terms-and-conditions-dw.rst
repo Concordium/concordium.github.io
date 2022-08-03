@@ -4,7 +4,7 @@
 Terms and Conditions for Concordium Desktop Wallet
 ==================================================
 
-Effective from August XX, 2022
+Effective from August 4, 2022
 
 Introduction
 ============
