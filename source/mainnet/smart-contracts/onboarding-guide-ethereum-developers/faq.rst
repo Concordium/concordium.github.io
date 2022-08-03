@@ -8,14 +8,15 @@ This is a list of Frequently Asked Questions about Concordium. It is focused on
 helping developers with an Ethereum/solidity background to understand
 the Concordium blockchain and its smart contract ecosystem.
 
-Feel free to suggest additional FAQs by contacting `support@concordium.software`.
+Feel free to participate and add your questions to the `concordium software support channels <https://support.concordium.software/>`_.
 
 Concordium smart contracts:
 ===========================
 
 .. dropdown::  What smart contract language is used on Concordium?
 
-    Concordium uses Rust as smart contract language.
+    Smart contracts are deployed as wasm modules on the Concordium chain.
+    Rust has currently the best support to write and compile your smart contract into a wasm module that then can be deployed to the Concordium chain.
 
 .. dropdown::  How can I start with the Rust smart contract language?
 
@@ -35,6 +36,12 @@ Concordium smart contracts:
 
     You can find examples and standard implementations in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
+
+    .. note::
+
+        These contracts are not meant for production,
+        they are used to illustrate how to use the standard library and the tooling Concordium provides.
+        There is no claim that the logic of the contract is reasonable, or safe.
 
 .. dropdown::  Should I use V0 or V1 smart contracts?
 
@@ -90,7 +97,7 @@ Concordium smart contracts:
             Contract(ContractAddress),
         }
 
-    Rust has a matching pattern that determines at runtime which
+    Rust has a pattern matching that determines at runtime which
     variant of the enum Address is applicable, and then the appropriate code
     is executed. You can read more about `pattern matching  <https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html>`_ in the
     Rust language book.
@@ -105,7 +112,7 @@ Concordium smart contracts:
             Address::Account(account_address) => { println!("This account invoked the function: {:?}", account_address) },
         };
 
-    Add the above matching pattern snippet to one of your Rust smart contract functions and write
+    Add the above pattern matching snippet to one of your Rust smart contract functions and write
     a test case that invokes that function. You can see the printout of the snippet
     by running the tests with the below command.
 
@@ -452,7 +459,20 @@ Miscellaneous:
 
         $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDAz9WdEy
 
+    The above request will return a tx hash which you can lock up on the block explorer.
+    You can only request CCD a single time for each account address via this API endpoint.
+    If you already submitted a request before it will be an old tx hash that is returned.
+
+    .. image:: ./images/onboarding_ethereum_developers_3.png
+        :width: 100 %
+
     **Option 3:**
+    Alternative, you can use `Postman <https://www.postman.com/>`_ and insert the following data before clicking the `Send` button.
+
+    .. image:: ./images/onboarding_ethereum_developers_4.png
+        :width: 100 %
+
+    **Option 4:**
     If you have the curl package and the `concordium-client` tool installed on your Unix-like operating systems, you can request CCD to any of your alias account addresses.
     If you already sent a previous request to the wallet proxy, you can not request any more CCD to the same account address.
     Look up one of your alias account addresses instead and use it for your request.
@@ -486,9 +506,8 @@ Miscellaneous:
 
         $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDCpCaUT6
 
-    **Option 4:** If you need plenty of CCD for large-scale testing.
+    **Option 5:** If you need plenty of CCD for large-scale testing.
     Please contact Concordium’s technical support via support@concordium.software.
-
 
 .. dropdown:: How can I create the parameter data if I want to use binary input instead of a JSON + schema input?
 
@@ -521,4 +540,4 @@ Miscellaneous:
     `Invoke` may refer to:
         - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
 
-        - In the context of the `concordium-client` tool, it means to simulate a tx locally on your node via the `invoke` command of the `concordium-client` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain.
+        - In the context of the `concordium-client` tool, it means to simulate a tx locally on your node via the `invoke` command of the `concordium-client` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
