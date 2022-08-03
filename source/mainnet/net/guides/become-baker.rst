@@ -218,10 +218,7 @@ bakerAccount``) and takes effect 2 epochs after that.
    | Baker uses the new stake               |                                         | ✓              |
    +----------------------------------------+-----------------------------------------+----------------+
 
-When a baker **decreases the staked amount**, the change will need *2 +
-bakerCooldownEpochs* epochs to take effect. The change becomes visible on the
-chain as soon as the transaction is included in a block, it can be consulted through
-``concordium-client account show bakerAccount``:
+When a baker **decreases the staked amount**, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends when the transaction is included in a block. it can be consulted through ``concordium-client account show bakerAccount``:
 
 .. code-block:: console
 
@@ -237,7 +234,7 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 .. table:: Timeline: decreasing the stake
 
    +----------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                        | When transaction is included in a block | After *2 + bakerCooldownEpochs* epochs |
+   |                                        | When transaction is included in a block | After cool-down |
    +========================================+=========================================+========================================+
    | Change is visible by querying the node | ✓                                       |                                        |
    +----------------------------------------+-----------------------------------------+----------------------------------------+
@@ -249,14 +246,14 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 
 .. note::
 
-   In the Mainnet, ``bakerCooldownEpochs`` is set initially to 168 epochs. This
+   In the Mainnet, the cool-down duration for reducing baker stake is set to 21 days. This
    value can be checked as follows:
 
    .. code-block:: console
 
-      $concordium-client raw GetBlockSummary
+      $concordium-client consensus show-chain-parameters
       ...
-              "bakerCooldownEpochs": 168
+            + pool owner cooldown duration: 21d
       ...
 
 .. warning::
@@ -363,10 +360,6 @@ When you've placed the file in the appropriate directory, which is what you did 
 Configure a baker
 =================
 
-.. Note::
-
-   Currently delegation is only available on Testnet.
-
 Use ``baker configure`` to configure a baker and open a baker pool. The following is an example of how ``configure baker`` might be used:
 
 .. code-block:: console
@@ -405,7 +398,7 @@ This removes the baker from the baker list and unlocks the staked amount on
 the baker so that it can be transferred or moved freely.
 
 When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take effect. The change becomes visible on the chain as soon as the transaction is included in a block and you can check when the change will be take effect by querying the account information with ``concordium-client``:
+the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends when the transaction is included in a block. You can check when the change will be take effect by querying the account information with ``concordium-client``:
 
 .. code-block:: console
 
@@ -421,7 +414,7 @@ the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take
 .. table:: Timeline: removing a baker
 
    +--------------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                            | When transaction is included in a block | After *2 + bakerCooldownEpochs* epochs |
+   |                                            | When transaction is included in a block | After cool-down |
    +============================================+=========================================+========================================+
    | Change is visible by querying the node     | ✓                                       |                                        |
    +--------------------------------------------+-----------------------------------------+----------------------------------------+
@@ -431,5 +424,5 @@ the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take
 .. warning::
 
    Decreasing the staked amount and removing the baker can't be done
-   simultaneously. During the cooldown period produced by decreasing the staked
+   simultaneously. During the cool-down period produced by decreasing the staked
    amount, the baker can't be removed and vice versa.
