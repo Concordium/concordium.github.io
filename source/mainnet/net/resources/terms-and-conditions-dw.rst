@@ -70,7 +70,7 @@ store in a safe place. This is the only backup of your private keys.
 Other obligations etc.
 ======================
 
-You have a duty to ensure that the details you provide are correct and updated at any given time. Your Concordium Desktop Wallet and Ledger Nano S are
+You have a duty to ensure that the details you provide are correct and updated at any given time. Your Concordium Desktop Wallet and Ledger device are
 personal and may be used only by you. You must not disclose your passwords and PIN codes to others, and you must not write them down, or save them on your
 computer or mobile device. You must not disclose your Ledger device 24-word recovery phrase or PIN code to others or store them digitally on your computer or mobile device.
 
