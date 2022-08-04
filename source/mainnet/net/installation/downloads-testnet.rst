@@ -96,7 +96,7 @@ Download cargo-concordium:
 
    -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_2.0.2-0>`_
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.3-0.exe>`_
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.0.2-0.exe>`_
 
 For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
 
