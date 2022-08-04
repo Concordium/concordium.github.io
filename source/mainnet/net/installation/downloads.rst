@@ -92,6 +92,10 @@ Concordium Client v4.0.4
 
 -  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.0.4-0.pkg>`_
 
+   - The macOS distribution is an installer that places an alias to the binary
+     into the folder ``/usr/local/bin``. So after installing, you should have
+     ``concordium-client`` on your path.
+
 -  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.4-0.exe>`_
 
 Cargo-concordium v2.0.2
