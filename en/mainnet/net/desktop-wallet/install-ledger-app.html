@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Set up the Ledger Nano S and install the Concordium Ledger App &#8212; Concordium  documentation</title>
+    <title>Set up the Ledger device and install the Concordium Ledger App &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1167,13 +1167,13 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-the-ledger-nano-s">
-   Set up the Ledger Nano S
+  <a class="reference internal nav-link" href="#set-up-the-ledger-device">
+   Set up the Ledger device
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-the-ledger-nano-s-firmware">
-     Update the Ledger Nano S firmware
+    <a class="reference internal nav-link" href="#update-the-ledger-device-firmware">
+     Update the Ledger device firmware
     </a>
    </li>
   </ul>
@@ -1276,12 +1276,12 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app">
-<span id="install-ledger-app"></span><h1>Set up the Ledger Nano S and install the Concordium Ledger App<a class="headerlink" href="#set-up-the-ledger-nano-s-and-install-the-concordium-ledger-app" title="Permalink to this headline">#</a></h1>
-<p>To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.</p>
+  <div class="section" id="set-up-the-ledger-device-and-install-the-concordium-ledger-app">
+<span id="install-ledger-app"></span><h1>Set up the Ledger device and install the Concordium Ledger App<a class="headerlink" href="#set-up-the-ledger-device-and-install-the-concordium-ledger-app" title="Permalink to this headline">#</a></h1>
+<p>To be able to sign and send transactions using the Desktop Wallet, you need a Ledger hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Ledger Nano S Plus and Ledger Nano X are not supported currently.</p>
+<p>The Ledger Nano X is not supported currently.</p>
 </div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
@@ -1290,15 +1290,15 @@ body {margin:0;}
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>During the process described in this guide, you’ll generate private keys on the Ledger Nano S hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.</p>
+<p>During the process described in this guide, you’ll generate private keys on the Ledger hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.</p>
 </div>
 </div>
-<div class="section" id="set-up-the-ledger-nano-s">
-<h2>Set up the Ledger Nano S<a class="headerlink" href="#set-up-the-ledger-nano-s" title="Permalink to this headline">#</a></h2>
-<p>The Ledger Nano S will generate the unique 24-word recovery phrase that is used to derive your private keys.</p>
+<div class="section" id="set-up-the-ledger-device">
+<h2>Set up the Ledger device<a class="headerlink" href="#set-up-the-ledger-device" title="Permalink to this headline">#</a></h2>
+<p>The Ledger device will generate the unique 24-word recovery phrase that is used to derive your private keys.</p>
 <ol class="arabic simple">
 <li><p>Download and install <strong>Ledger Live</strong>. For information on how to do this, see <a class="reference external" href="https://www.ledger.com/ledger-live/download">Ledger’s documentation</a>. You’ll only need Ledger Live when you set up the Ledger and update the firmware.</p></li>
-<li><p>Open <strong>Ledger Live</strong>, select <strong>Get started</strong>, and then select <strong>Nano S</strong>.</p></li>
+<li><p>Open <strong>Ledger Live</strong>, select <strong>Get started</strong>, and then select <strong>Nano S</strong> or <strong>Nano S Plus</strong>.</p></li>
 <li><p>Follow the on-screen setup instructions to set up your PIN code on the Ledger.</p></li>
 <li><p>Follow the on-screen instructions to get your 24-word recovery phrase.</p></li>
 </ol>
@@ -1306,17 +1306,17 @@ body {margin:0;}
 <p class="admonition-title">Warning</p>
 <p>Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.</p>
 </div>
-<p>Once you’ve set up the Ledger, you must check that it’s running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0 on <strong>Mainnet</strong>. The Concordium Ledger App only supports Ledger firmware version 2.1.0 on <strong>Testnet</strong>.</p>
-<div class="section" id="update-the-ledger-nano-s-firmware">
-<h3>Update the Ledger Nano S firmware<a class="headerlink" href="#update-the-ledger-nano-s-firmware" title="Permalink to this headline">#</a></h3>
+<p>Once you’ve set up the Ledger, you must check that it’s running the proper firmware version for your device. The Concordium Ledger App currently supports Ledger firmware version 2.1.0 for the Ledger Nano S and 1.0.3 for Ledger Nano S Plus.</p>
+<div class="section" id="update-the-ledger-device-firmware">
+<h3>Update the Ledger device firmware<a class="headerlink" href="#update-the-ledger-device-firmware" title="Permalink to this headline">#</a></h3>
 <p>To find out which firmware version the Ledger is running, do the following:</p>
 <ol class="arabic simple">
 <li><p>On the Ledger navigate to <strong>Settings</strong> and press both buttons for a little while to enter the Settings menu.</p></li>
 <li><p>Press the right button to navigate to <strong>Firmware version</strong>.</p></li>
 <li><p>Press both buttons to view the <strong>Secure Element</strong> version. If it says <strong>2.1.0</strong>, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.</p></li>
 </ol>
-<p>For details on how to update the Ledger firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">Ledger‘s guide</a>.</p>
-<p>Once you have updated the firmware version, you can download the version of the Ledger app that is appropriate for your firmware at <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>.</p>
+<p>For details on how to update the Ledger firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">Ledger Nano S guide</a> or <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true">Ledger Nano S Plus guide</a>.</p>
+<p>Once you have updated the firmware version, you can download the Ledger app at <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a>.</p>
 <p>Follow the instructions below to update your app:</p>
 <blockquote>
 <div><ul class="simple">
