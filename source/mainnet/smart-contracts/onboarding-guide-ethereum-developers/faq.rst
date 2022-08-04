@@ -32,7 +32,7 @@ Concordium smart contracts:
     You can find examples of smart contracts in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
 
-.. dropdown::  Do you have a smart contract reference library similar to the GitHub repo from `OpenZeppelin`?
+.. dropdown::  Where can I find a smart contract reference library similar to the GitHub repo from `OpenZeppelin`?
 
     You can find examples and standard implementations in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
@@ -48,6 +48,38 @@ Concordium smart contracts:
     Version 1 smart contracts have many improvements and features added compared to Version 0 smart contracts.
     Hence, V1 smart contracts are recommended over V0 smart contracts if you start a new project.
     Mainnet continues supporting V0 smart contracts due to backward compatibility.
+
+.. dropdown::  How can I write a smart contract?
+
+    You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial.
+
+.. dropdown::  How can I test a smart contract?
+
+    You can follow the chapter :ref:`testing a smart contract<piggy-bank-testing>` in the piggy bank tutorial.
+
+.. dropdown:: Can I build tests that print a table of content structure (a layered output similar to mocha and chai tests)?
+
+    Yes. You can use a similar pattern as shown below:
+
+    .. code-block:: console
+
+        #[cfg(test)]
+        mod tests {
+            mod func_a {
+                #[test]
+                fn correct_params_correct_result(){...}
+                #[test]
+                fn invalid_params_invalid_result(){...}
+            }
+        }
+
+    The test cases are printed as follows:
+
+    .. code-block:: console
+
+        running 2 tests
+        test tests::func_a::correct_params_correct_result ... ok
+        test tests::func_a::invalid_params_invalid_result ... ok
 
 .. dropdown::  How are `smart contract addresses` represented on Concordium?
 
@@ -102,7 +134,7 @@ Concordium smart contracts:
     is executed. You can read more about `pattern matching  <https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html>`_ in the
     Rust language book.
 
-    For example, the below code prints out if the `sender`
+    For example, the below code prints out a different message depending on if the `sender`
     that invoked this smart contract function is a contract or an account.
 
     .. code-block:: console
@@ -138,6 +170,7 @@ Concordium smart contracts:
     the current balance of the smart contract is the sum of the `host.self_balance() + amount`.
 
     .. code-block:: console
+        :emphasize-lines: 8
 
         #[receive(contract = "exampleFunction", name = "example", payable, mutable)]
         fn example_function<S: HasStateApi>(
@@ -157,7 +190,7 @@ Concordium smart contracts:
     `ctx.self_address()` returns the address of the smart contract.
     Additional documentation can be found in the `self_address description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_address>`_ of the concordium standard crate.
 
-.. dropdown::  Can you force CCD to a smart contract even if it has no payable function?
+.. dropdown::  Can I force CCD to a smart contract even if it has no payable function?
 
     There are three edge cases on the Ethereum chain that forces ETHER to a contract address even though there is no payable function on it.
 
@@ -267,6 +300,117 @@ Concordium smart contracts:
 
         $cargo test -- --test-threads=1
 
+.. dropdown:: How do I embed a schema into a smart contract? Why do I need a schema? How can I provide the input parameters as a JSON object and get the output parameters in a human-readable format when using the `concordium-client`?
+
+    A :ref:`smart contract schema<contract-schema>` is a description of how to represent
+    bytes in a more structured representation. It is used by
+    external tools (such as the ``concordium-client``) when displaying the return value of a receive
+    function and for specifying the input parameters to a receive
+    function using a structured representation, such as JSON.
+
+    That the input parameters, and output parameters of a function are included into a schema
+    a `parameter`, and a `return_value` needs to be defined, respectively.
+
+    .. code-block:: console
+        :emphasize-lines: 4, 5
+
+        #[receive(
+            contract = "CIS2-wCCD",
+            name = "balanceOf",
+            parameter = "ContractBalanceOfQueryParams",
+            return_value = "ContractBalanceOfQueryResponse"
+        )]
+        fn contract_balance_of<S: HasStateApi>(
+            ctx: &impl HasReceiveContext,
+            host: &impl HasHost<StateImplementation, StateApiType = S>,
+        ) -> ContractResult<ContractBalanceOfQueryResponse> { ... }
+
+
+    The schema can either be embedded into the smart contract or generated
+    as a separate file.
+
+    **Option 1 (Schema embedded into a smart contract)**
+
+    .. code-block:: console
+
+        cargo concordium build -e
+
+    .. image:: ./images/onboarding_ethereum_developers_5.png
+        :width: 100 %
+
+    **Option 2 (Schema as a separate file)**
+
+    .. code-block:: console
+
+        $ cargo concordium build --schema-out ./schema.bin
+
+    .. image:: ./images/onboarding_ethereum_developers_6.png
+        :width: 100 %
+
+    If the schema is a separate file, it needs to be provided with the ``--schema`` flag to the ``concordium-client``.
+
+    When using the ``concordium-client`` to interact with smart contracts the input and output parameters
+    can be either in human-readable format (with a schema) or in raw bytes (binary format).
+
+    **Example 1 (Schema is provided as a separate file but the provided
+    file with the flag `parameter-json` has a wrong JSON object)**
+
+    If your JSON object that was provided with the ``--parameter-json`` flag is in the wrong format, you
+    get an error message with additional information on what JSON object format is expected.
+    This information can help you to create the correct JSON object.
+
+    .. image:: ./images/onboarding_ethereum_developers_7.png
+        :width: 100 %
+
+    **Example 2 (Schema is embedded into the smart contract and the `parameter-json`
+    flag provides the input parameters as a JSON object; the return value is displayed
+    in a human-readable format due to the provided additional information in the schema)**
+
+    .. image:: ./images/onboarding_ethereum_developers_8.png
+        :width: 100 %
+
+    **Example 3 (Schema is provided as a separate file and the `parameter-json` flag
+    provides the input parameters as a JSON object; the return value is displayed in a
+    human-readable format due to the provided additional information in the schema)**
+
+    .. image:: ./images/onboarding_ethereum_developers_9.png
+        :width: 100 %
+
+    **Example 4 (No schema is provided and the `parameter-binary` flag provides the input
+    parameters as a raw bytes string; the return value is displayed in raw bytes because no additional
+    information is available on how to represent the bytes in a human-readable format)**
+
+    .. image:: ./images/onboarding_ethereum_developers_10.png
+        :width: 100 %
+
+.. dropdown:: How can I create the parameter data if I want to use binary input instead of a JSON input?
+
+    When using the ``concordium-client`` to interact with smart contracts the input and output parameters
+    can be either in human-readable format (with a schema) or in raw bytes (binary format).
+    If you want to use the binary format, the below command shows that a `myParameterBinary.bin` file is required.
+
+    .. code-block:: console
+
+        $concordium-client contract update <ContractIndex> --entrypoint <ContractEntryPoint> --parameter-binary myParameterBinary.bin --sender <Account> --energy 12345678
+
+    You can create such a `myParameterBinary.bin` file by adding the below lines to your test cases replacing the `ExampleParams` struct with your input parameter struct for that function.
+
+    .. code-block:: console
+        :emphasize-lines: 6
+
+        let parameter = ExampleParams {
+            example_key1: value1,
+            example_key1: value2,
+        }
+        let parameter_bytes = to_bytes(&parameter);
+        std::fs::write("myParameterBinary.bin", &parameter_bytes).expect("Failed to write parameter file");
+
+    When running the tests with the below command the `myParameterBinary.bin` file is created in the current folder.
+
+    .. code-block:: console
+
+        $ cargo test
+
 Events:
 =======
 
@@ -292,6 +436,82 @@ Events:
 
     .. image:: ./images/onboarding_ethereum_developers_2.png
         :width: 100 %
+
+.. dropdown::  How can I compare/decode the event data that I see on the dashboard?
+
+    A smart contract developer is free to use their own way of encoding and
+    interpreting event log data when writing their own smart contracts.
+
+    The official Concordium smart contracts use the following standard:
+    Each event has a number tag then two 0s and the rest of the event data.
+
+    .. image:: ./images/onboarding_ethereum_developers_11.png
+        :width: 100 %
+
+    For example, the above image has an event number tag of `fd` (hex encoding) which is `15*16+13 = 253` in decimal.
+    This number tag corresponds to a `burn event <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs#L53>`_
+    of a `Cis2` token.
+    `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value as in the image above).
+
+    .. code-block:: console
+
+        pub const BURN_EVENT_TAG: u8 = u8::MAX - 2;
+
+    This number tag is used to distinguish between the different types of events.
+
+    In contrast, Ethereum uses a 32-byte long hash as an event tag which is called the event signature.
+
+    .. code-block:: console
+
+        eventTag (Ethereum) = hash(Transfer(address, address, uint)).
+
+    A downside of using a hash is that you have to use more than one byte for the tag
+    to avoid getting collisions. Concordium can efficiently store the event tag in
+    1 byte compared to the 32 bytes used by Ethereum.
+
+    You can compare the rest of the event data by adding the below lines of code to your test cases
+    and adjusting the `MyEventParams` to the event object that you are using.
+
+    .. code-block:: console
+
+        let parameter = MyEventParams {
+            example_key1: value1,
+            example_key1: value2,
+        }
+        let parameter_bytes = to_bytes(&parameter);
+        println!("(:x?)",parameter_bytes);
+
+    When running the test cases with the below command, the event data is printed as bytes to your standard output.
+
+    .. code-block:: console
+
+        $ cargo test -- --nocapture
+
+    For example, the following output would be shown on
+    `the dashboard <https://dashboard.testnet.concordium.com>`_ as  0: fe0003532a04.
+
+    .. code-block:: console
+
+        [fe, 0, 3, 53, 2a, 4]
+
+.. dropdown::  How does the TestHost record CCD transfer events in the test cases?
+
+    Every time when a transfer occurs by the below code, the TestHost records the `address` and the `amount`.
+
+    .. code-block:: console
+
+        host.invoke_transfer(address, amount);
+
+    The recorded event data can be used in the test cases to confirm that the CCD was
+    transferred as shown in the below `example code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/recorder/src/lib.rs#L128>`_.
+
+    .. code-block:: console
+
+        let transfers_occurred = host.get_transfers();
+        claim_eq!(
+            &transfers_occurred[..],
+            &[(addr0, Amount::from_micro_ccd(0)), (addr1, Amount::from_micro_ccd(0))][..]
+        );
 
 Standards:
 ==========
@@ -362,6 +582,10 @@ Standards:
 Deploying and Initializing of smart contracts:
 ==============================================
 
+.. dropdown::  How can I deploy a smart contract to the Concordium chain?
+
+    You can follow the chapter :ref:`deploying a smart contract<piggy-bank-deploying>` in the piggy bank tutorial.
+
 .. dropdown::  Is there a max smart contract size limit when deploying a contract on-chain?
 
     Yes. The max smart contract size limit is xyz KB (TODO: ask what is the current limit) on Concordium.
@@ -400,20 +624,16 @@ Deploying and Initializing of smart contracts:
             subindex: 0,
         };
 
-.. dropdown::  Can you invoke another smart contract from within the `init` function?
+.. dropdown::  Can I invoke another smart contract from within the `init` function?
 
     No. The `init` function is similar to a `constructor` function. Its purpose
     is to deploy a new smart contract instance from a module and set the state of the current smart contract.
     You have to use a regular `receive` function when you want to invoke another smart contract.
 
-.. dropdown::  How can I deploy a smart contract to the Concordium chain?
-
-    You can follow the chapter :ref:`deploying a smart contract<piggy-bank-deploying>` in the piggy bank tutorial.
-
 Concordium tools:
 =================
 
-.. dropdown::  Do you have a block explorer?
+.. dropdown::  Does Concordium have a block explorer?
 
     Yes. The official block explorer is `CCDScan <https://testnet.ccdscan.io/>`_.
     In addition, you can use the dashboard
@@ -438,7 +658,7 @@ Miscellaneous:
     There are several options to request test CCD:
 
     **Option 1:**
-    If you just created your account in the mobile app wallet then you
+    If you just created your account in the mobile app wallet, you
     find a button to request 2000 testnet CCD to get started with your new account.
 
     .. image:: ../tutorials/piggy-bank/images/pb_tutorial_5.png
@@ -461,7 +681,7 @@ Miscellaneous:
 
     The above request will return a tx hash which you can lock up on the block explorer.
     You can only request CCD a single time for each account address via this API endpoint.
-    If you already submitted a request before it will be an old tx hash that is returned.
+    If you already submitted a request before, it will be an old tx hash that is returned.
 
     .. image:: ./images/onboarding_ethereum_developers_3.png
         :width: 100 %
@@ -473,7 +693,7 @@ Miscellaneous:
         :width: 100 %
 
     **Option 4:**
-    If you have the curl package and the `concordium-client` tool installed on your Unix-like operating systems, you can request CCD to any of your alias account addresses.
+    If you have the curl package and the ``concordium-client`` tool installed on your Unix-like operating systems, you can request CCD to any of your alias account addresses.
     If you already sent a previous request to the wallet proxy, you can not request any more CCD to the same account address.
     Look up one of your alias account addresses instead and use it for your request.
     The CCD will be credited to your canonical account address.
@@ -506,38 +726,44 @@ Miscellaneous:
 
         $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDCpCaUT6
 
-    **Option 5:** If you need plenty of CCD for large-scale testing.
-    Please contact Concordium’s technical support via support@concordium.software.
+    **Option 5:** If you need plenty of CCD for large-scale testing,
+    please contact Concordium’s technical support via support@concordium.software.
 
-.. dropdown:: How can I create the parameter data if I want to use binary input instead of a JSON + schema input?
+.. dropdown::  Is there something similiar to gas and tx fees?
 
-    Input parameters can be either in a JSON format (with a schema) or binary format.
-    If you want to use the binary format then the below command shows that a `myParameterBinary.bin` file is required.
+    Yes, gas is called NRG (pronounced energy) on the Concordium chain.
+    The block limit is 3 million NRG. Tx fees are fixed in Euro and are much
+    cheaper than on Ethereum.
 
-    .. code-block:: console
+.. dropdown::  What networks can be used for testing?
 
-        $concordium-client contract update <ContractIndex> --entrypoint <ContractEntryPoint> --parameter-binary myParameterBinary.bin --sender <Account> --energy 12345678
+    Concordium has a testnet and stagenet for testing.
 
-    You can create such a `myParameterBinary.bin` file by adding the below lines to your test cases replacing the `ExampleParams` struct with your input parameter struct for that function.
+.. dropdown:: Does Concordium have multiSig wallets?
 
-    .. code-block:: console
+    Yes. You can create a `multiSig wallet <https://developer.concordium.software/en/mainnet/net/guides/overview-shared-accounts.html>`_ with the desktop wallet.
+    Each account has 1+ credentials, and each credential has 1+ keys.
+    You can set a threshold for the number of signers needed on an account (for example 2/3 signers).
 
-        let parameter = ExampleParams {
-            example_key1: value1,
-            example_key1: value2,
-        }
-        let parameter_bytes = to_bytes(&parameter);
-        std::fs::write("myParameterBinary.bin", &parameter_bytes).expect("Failed to write parameter file");
+    .. note::
 
-    When running the tests with the below command the `myParameterBinary.bin` file is created in the current folder.
+        The desktop wallet supports all transaction types (:ref:`except smart contract transactions<transactions-overview>`).
 
-    .. code-block:: console
+    In contrast, on Ethereum, an externally owned account cannot hold more than one key, and no externally
+    owned account multiSig wallets exist.
+    All multiSig wallets on Ethereum are smart contracts.
 
-        $ cargo test
+    .. note::
+
+        You cannot import the keys from the desktop wallet to the ``concordium-client``.
+        Hence, the desktop wallet does not support smart contract transactions.
+        If you need the multiSig wallet to manage a smart contract.
+        You need to deploy a smart contract multiSig wallet
+        (similar to how Ethereum uses multiSig wallets at work).
 
 .. dropdown::  What does `invoke` mean?
 
     `Invoke` may refer to:
         - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
 
-        - In the context of the `concordium-client` tool, it means to simulate a tx locally on your node via the `invoke` command of the `concordium-client` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
+        - In the context of the ``concordium-client`` tool, it means to simulate a tx locally on your node via the `invoke` command of the ``concordium-client`` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
