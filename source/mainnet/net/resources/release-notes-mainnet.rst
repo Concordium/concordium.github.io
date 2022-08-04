@@ -26,6 +26,13 @@ Some improvements have been made to the Docker node version. The new Docker imag
 
 It is not mandatory but **strongly recommended** for Linux node runners to migrate to the new Docker distribution. The old Docker images will be deprecated and future node versions from 4.3 and upwards will only be provided in the new distribution.
 
+Concordium Desktop Wallet 1.5.0
+-------------------------------
+
+The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+
 August 2, 2022
 
 Concordium Node 4.2.3
