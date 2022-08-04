@@ -9,6 +9,23 @@ Sirius Testnet
 
 August 4, 2022
 
+Concordium Client 4.0.4
+-----------------------
+
+The Concordium Client has been updated to better support the new smart contract v1 schema.
+
+Cargo concordium 2.0.3
+----------------------
+
+Cargo concordium has also been updated to better support the new smart contract v1 schema.
+
+Concordium Node 4.2.3 for Docker
+--------------------------------
+
+Some improvements have been made to the Docker node version. The new Docker images (one for Mainnet and one for Testnet) are designed for use with docker-compose or a similar driver. The node also requires a database which must be stored on the host system so that it persists when the Docker container is stopped.
+
+It is not mandatory but **strongly recommended** for Linux node runners to migrate to the new Docker distribution. The old Docker images will be deprecated and future node versions from 4.3 and upwards will only be provided in the new distribution.
+
 Concordium Desktop Wallet 1.5.0
 -------------------------------
 
