@@ -39,7 +39,7 @@ This topic describes how you can send CCD from an account when only one particip
 
         5. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
 
-        6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+        6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
         7. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.
 

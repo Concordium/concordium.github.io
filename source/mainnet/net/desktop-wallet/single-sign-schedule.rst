@@ -52,7 +52,7 @@ Option 1: Create a regular interval schedule
 
 #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer, and enter your PIN on Ledger.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
 #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct. When you see **Continue with transaction** press both buttons.
 

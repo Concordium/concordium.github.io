@@ -7,6 +7,26 @@ Release notes - Mainnet
 Mainnet 4: Sirius
 =================
 
+August 4, 2022
+
+Concordium Desktop Wallet 1.5.0
+-------------------------------
+
+The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+
+August 2, 2022
+
+Concordium Node 4.2.3
+---------------------
+
+Concordium Node 4.2.3 fixes a critical security vulnerability present in all
+previous 4.* node versions. All node runners **must** upgrade as soon as
+possible.
+
+The security advisory detailing the issue and the patch will be released on
+August 15th.
 
 July 4, 2022
 

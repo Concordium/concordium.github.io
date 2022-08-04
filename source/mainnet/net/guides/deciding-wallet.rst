@@ -59,7 +59,7 @@ What are the requirements for each wallet?
 
 - **Mobile Wallet**: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- **Desktop Wallet**: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
+- **Desktop Wallet**: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
 
 Comparison
 ==========
