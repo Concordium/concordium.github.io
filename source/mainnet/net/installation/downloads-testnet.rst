@@ -51,13 +51,13 @@ Linux® v1.5.0
 -  Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
    -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.AppImage>`_
-      -  SHA256 checksum of the download: ``6950dc300d7ef316674b23a2106bc21b1552cc1ebd5fed679153c85efd6b6228``
+      -  SHA256 checksum of the download: ``044d8b2aa039428b7e6626d3af1dade21e52bee04dbcfc9f78d303bd0f1c855e``
 
    -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.deb>`_
-      -  SHA256 checksum of the download: ``a588058305882ecd32f8099c8a1cb5e3fb87167f6fe7ffa4ec870d302f53f8cb``
+      -  SHA256 checksum of the download: ``f15d996f9e73118cf12820265af6303a9d6359b30c1e3c401bd0f292e977ceb2``
 
    -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.rpm>`_
-      -  SHA256 checksum of the download: ``578ef598eee1fce5aa0d69fda2c7b7c1621c12681fa86a7d1e266ac719dc70ab``
+      -  SHA256 checksum of the download: ``66d2a9ce4809a6e84a84accdb0768d6c1c6a7dcb046b751667a80d75a8a66464``
 
 Concordium Ledger App - Sirius
 ==============================
@@ -72,8 +72,9 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
    The Ledger Nano X is not supported currently.
 
-- `Download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+- For Ledger Nano S, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
+- For Ledger Nano S Plus, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 1.0.3 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.3.zip>`_
 .. _concordium-node-and-client-download-testnet:
 
 Concordium Client v4.0.3
