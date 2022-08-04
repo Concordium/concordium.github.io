@@ -18,7 +18,7 @@ Import and sign a proposal
 
    The proposal is displayed, and you can see the security details, which include the identicon and the digest to sign, the transaction details, and the status of the Ledger. The transaction details will vary depending on the type of transaction.
 
-#. If you haven't connected the Ledger yet, there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter the PIN code on the Ledger. The Desktop Wallet says **Ledger Nano S is ready**.
+#. If you haven't connected the Ledger yet, there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter the PIN code on the Ledger. The Desktop Wallet says **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
 #. Verify that the transaction details are correct and match the information in the PDF you received. Once you're certain the information is correct, select the following in the: **The transaction details are correct**, **The identicon matches the one received exactly**, and **The hash matches the one received exactly**.
 

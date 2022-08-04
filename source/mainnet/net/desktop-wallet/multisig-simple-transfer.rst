@@ -16,7 +16,7 @@ Prerequisites
 
 -  Set up an :ref:`account with multiple credentials <multi-credentials>`
 
--  Set up a :ref:`Ledger Nano S hardware device identity <install-Ledger-app>`.
+-  Set up a :ref:`Ledger Nano hardware device identity <install-Ledger-app>`.
 
 :ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
 
@@ -67,7 +67,7 @@ Generate and sign the transaction proposal on the Ledger
 
 #. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
+#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
 #. In the Desktop Wallet, verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**. (If you're not on the proposal page, go to **Multi Signature Transactions** -> **Your proposed transactions**, and then select the proposal you want to sign.)
 

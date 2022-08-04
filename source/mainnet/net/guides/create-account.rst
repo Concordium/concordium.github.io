@@ -17,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
             .. note::
                 You can't import accounts that were created on the Mobile Wallet.
 
-        Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger Nano S and install the Concordium Ledger App<install-ledger-app>`.
+        Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger device and install the Concordium Ledger App<install-ledger-app>`.
 
         #. Go to **Accounts**. You can now see all the accounts that you're the custodian of.
 
@@ -44,7 +44,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         7. Connect your Ledger hardware wallet if you haven't done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The Ledger says **Concordium is ready**.
 
-        8. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** and select **Submit**.
+        8. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
         9. You now have to confirm the following on the Ledger:
 

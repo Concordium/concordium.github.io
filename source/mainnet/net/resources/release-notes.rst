@@ -7,6 +7,15 @@ Release Notes - Testnet
 Sirius Testnet
 ==============
 
+August 4, 2022
+
+Concordium Desktop Wallet 1.5.0
+-------------------------------
+
+The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+
 August 2, 2022
 
 Concordium Node 4.2.3
