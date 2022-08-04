@@ -88,7 +88,7 @@ Concordium Client v4.0.4
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
 
--  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.4-0.zip>`_
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.0.4-0.pkg>`_
 
 -  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.4-0.exe>`_
 
