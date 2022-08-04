@@ -9,8 +9,8 @@
 .. |cdw-rpm-checksum| replace:: 734956de6e7071a25479f9cffdcc2080a00e198897acda7b46d596ba848b6dad
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_4.0.3-0
-.. |client-linux-checksum| replace:: 7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da
+.. |client-linux| replace:: concordium-client_4.0.4-0
+.. |client-linux-checksum| replace:: 8d4bc3e630c958d0443fa5cdbff2bcfba3bca30424346fd8ad6f5415aa52ab95
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_4.2.3_amd64.deb
