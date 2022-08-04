@@ -87,7 +87,7 @@ Concordium Client v4.0.3
 
 -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.pkg>`_
 
-   - The macOS distribution is an installer, which places an alias to the binary
+   - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
