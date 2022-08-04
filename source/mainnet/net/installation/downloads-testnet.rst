@@ -33,7 +33,7 @@ Android
 .. _downloads-desktop-wallet-testnet:
 
 Concordium Desktop Wallet
-================================
+=========================
 
 Windows v1.5.0
 --------------
@@ -85,7 +85,11 @@ Concordium Client v4.0.3
 
    - SHA256 checksum of the download: ``7d082dfc8dad0d5b9099a62e80728c0527fa5453fa686a7b24bc1b7b7527e1da``
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.zip>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_4.0.3-0.pkg>`_
+
+   - The macOS distribution is an installer that places an alias to the binary
+     into the folder ``/usr/local/bin``. So after installing, you should have
+     ``concordium-client`` on your path.
 
 -  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.0.3-0.exe>`_
 
