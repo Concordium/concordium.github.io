@@ -167,7 +167,7 @@ Concordium smart contracts:
     Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance>`_ of the concordium standard crate.
 
     In contrast to Ethereum and in contrast to the documentation in the crate (TODO: can we update the comment in the crate?),
-    the current balance of the smart contract is the sum of the `host.self_balance() + amount`.
+    the current balance of the smart contract is the sum of the `host.self_balance()` and the `amount`.
 
     .. code-block:: console
         :emphasize-lines: 8
@@ -243,7 +243,7 @@ Concordium smart contracts:
 
 .. dropdown::  My tx is rejected and I get an error code number. How can I interpret smart contract errors?
 
-    Error codes come from the ``Concordium-std`` crate or are thrown by the smart contract itself.
+    Error codes come from the ``concordium-std`` crate or are thrown by the smart contract itself.
 
     **Concordium-std crate errors**
 
@@ -280,7 +280,7 @@ Concordium smart contracts:
 
 .. dropdown:: Is there a smart contract code linter?
 
-    Yes. You can use the `fmt` and `cargo clippy` linter tools as described in the `README <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
+    Yes. You can use the `fmt` and the `cargo clippy` linter tools as described in the `README <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
 
 .. dropdown:: Are tests executed in parallel or sequentially?
 
@@ -387,25 +387,24 @@ Concordium smart contracts:
 
     When using the ``concordium-client`` to interact with smart contracts the input and output parameters
     can be either in human-readable format (with a schema) or in raw bytes (binary format).
-    If you want to use the binary format, the below command shows that a `myParameterBinary.bin` file is required.
+    If you want to use the binary format, the below command shows that a `myInputParameters.bin` file is required.
 
     .. code-block:: console
 
-        $concordium-client contract update <ContractIndex> --entrypoint <ContractEntryPoint> --parameter-binary myParameterBinary.bin --sender <Account> --energy 12345678
+        $concordium-client contract update <ContractIndex> --entrypoint <ContractEntryPoint> --parameter-binary myInputParameters.bin --sender <Account> --energy 12345678
 
-    You can create such a `myParameterBinary.bin` file by adding the below lines to your test cases replacing the `ExampleParams` struct with your input parameter struct for that function.
+    You can create such a `myInputParameters.bin` file by adding the below lines to your test cases replacing the `ExampleParams` struct with your input parameter struct for that function.
 
     .. code-block:: console
-        :emphasize-lines: 6
 
         let parameter = ExampleParams {
             example_key1: value1,
             example_key1: value2,
         }
         let parameter_bytes = to_bytes(&parameter);
-        std::fs::write("myParameterBinary.bin", &parameter_bytes).expect("Failed to write parameter file");
+        std::fs::write("myInputParameters.bin", &parameter_bytes).expect("Failed to write parameter file");
 
-    When running the tests with the below command the `myParameterBinary.bin` file is created in the current folder.
+    When running the tests with the below command the `myInputParameters.bin` file is created in the current folder.
 
     .. code-block:: console
 
@@ -451,7 +450,7 @@ Events:
     For example, the above image has an event number tag of `fd` (hex encoding) which is `15*16+13 = 253` in decimal.
     This number tag corresponds to a `burn event <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs#L53>`_
     of a `Cis2` token.
-    `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value as in the image above).
+    `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value than in the image above).
 
     .. code-block:: console
 
@@ -589,7 +588,7 @@ Deploying and Initializing of smart contracts:
 .. dropdown::  Is there a max smart contract size limit when deploying a contract on-chain?
 
     Yes. The max smart contract size limit is xyz KB (TODO: ask what is the current limit) on Concordium.
-    Concordium choose a much higher limit compared to the Ethereum chain.
+    Concordium chose a much higher limit compared to the Ethereum chain.
     This enables smart contract developers to develop smart contracts
     without splitting them into many smaller pieces which is a common annoyance when developing on Ethereum.
 
@@ -750,15 +749,15 @@ Miscellaneous:
         The desktop wallet supports all transaction types (:ref:`except smart contract transactions<transactions-overview>`).
 
     In contrast, on Ethereum, an externally owned account cannot hold more than one key, and no externally
-    owned account multiSig wallets exist.
+    owned account multiSig wallet exist.
     All multiSig wallets on Ethereum are smart contracts.
 
     .. note::
 
         You cannot import the keys from the desktop wallet to the ``concordium-client``.
         Hence, the desktop wallet does not support smart contract transactions.
-        If you need the multiSig wallet to manage a smart contract.
-        You need to deploy a smart contract multiSig wallet
+        If you need the multiSig wallet to manage a smart contract,
+        you need to deploy a smart contract multiSig wallet
         (similar to how Ethereum uses multiSig wallets at work).
 
 .. dropdown::  What does `invoke` mean?
