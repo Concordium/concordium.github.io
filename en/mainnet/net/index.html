@@ -1187,8 +1187,8 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-ledger-app">Concordium Ledger App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-client-v4-0-3">Concordium Client v4.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#cargo-concordium-v2-0-1">Cargo-concordium v2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-client-v4-0-4">Concordium Client v4.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#cargo-concordium-v2-0-2">Cargo-concordium v2.0.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-node-distributions-v4-2-3">Concordium node distributions v4.2.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#ubuntu">Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#linux-docker">Linux-Docker</a></li>
@@ -1216,8 +1216,8 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-ledger-app-sirius">Concordium Ledger App - Sirius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-client-v4-0-3">Concordium Client v4.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#cargo-concordium-v2-0-1">Cargo-concordium v2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-client-v4-0-4">Concordium Client v4.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#cargo-concordium-v2-0-2">Cargo-concordium v2.0.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v4-2-3">Concordium node distributions v4.2.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#ubuntu">Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#linux-docker">Linux-Docker</a></li>
@@ -1744,17 +1744,18 @@ body {margin:0;}
 <li class="toctree-l5"><a class="reference internal" href="guides/run-node.html">Run a node with Docker</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#before-you-begin">Before you begin</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#running-upgrading-a-node">Running/upgrading a node</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#seeing-your-node-on-the-dashboard">Seeing your node on the dashboard</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#network-dashboard">Network dashboard</a></li>
-</ul>
-</li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-testnet-node">Run a testnet node</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#enable-inbound-connections">Enable inbound connections</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#configuring-ports-and-tokens">Configuring ports and tokens</a></li>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#retrieve-node-logs">Retrieve node logs</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-baker-node-on-docker">Run a baker node on Docker</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#stop-the-node">Stop the node</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#retrieve-node-logs">Retrieve node logs</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-mainnet-node">Run a mainnet node</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#migration-from-the-previous-docker-distribution">Migration from the previous Docker distribution</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#mounting-host-directories-under-selinux">Mounting host directories under SELinux</a></li>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#letting-the-node-container-access-the-internet">Letting the node container access the internet</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l5"><a class="reference internal" href="nodes/troubleshoot-docker.html">Troubleshoot a node on a server with Docker</a><ul>
@@ -2693,6 +2694,9 @@ body {margin:0;}
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes-mainnet.html">Release notes - Mainnet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-4-sirius">Mainnet 4: Sirius</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-4-0-4">Concordium Client 4.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-0-3">Cargo concordium 2.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-3-for-docker">Concordium Node 4.2.3 for Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-1-5-0">Concordium Desktop Wallet 1.5.0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-1">Concordium Node 4.2.1</a></li>
@@ -2761,6 +2765,9 @@ body {margin:0;}
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes.html">Release Notes - Testnet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#sirius-testnet">Sirius Testnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-client-4-0-4">Concordium Client 4.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-0-3">Cargo concordium 2.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-3-for-docker">Concordium Node 4.2.3 for Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-1-5-0">Concordium Desktop Wallet 1.5.0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v3-0-0-53">Concordium Mobile Wallet for iOS v3.0.0(53)</a></li>
@@ -2854,7 +2861,6 @@ body {margin:0;}
 <li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#windows">Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#macos">MacOS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#ubuntu">Ubuntu</a></li>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#docker">Docker</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html">Wallet migration after Testnet reset</a><ul>

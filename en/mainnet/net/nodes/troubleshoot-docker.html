@@ -1215,7 +1215,7 @@ body {margin:0;}
 <ol class="arabic simple">
 <li><p>Stop any memory heavy applications that are running.</p></li>
 <li><p>Stop the node.</p></li>
-<li><p>Locate the state directory for your mainnet node (the root of the database directory is usually ~/.local/share/concordium unless you have changed the defaults). Inside that there should be a directory database-v4 and inside there is where the treestate-… and blockstate-…dat directories and files are.</p></li>
+<li><p>Locate the state directory for your mainnet node (the example docker-compose configuration places this at <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> or    <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code>, respectively). Inside that there should be a   directory database-v4 and inside there is where the <code class="docutils literal notranslate"><span class="pre">treestate-...</span></code> and <code class="docutils literal notranslate"><span class="pre">blockstate-...dat</span></code> directories and files are.</p></li>
 <li><p>Delete the offending file. In the example above, you delete the blockstate2.dat file since it has no matching treestate file.</p></li>
 <li><p>Restart the node.</p></li>
 </ol>

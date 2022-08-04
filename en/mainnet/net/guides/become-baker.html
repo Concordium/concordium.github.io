@@ -1314,7 +1314,7 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 </ul>
 <p>Remember to configure your node to bake using this path:</p>
 <ul class="simple">
-<li><p>on Linux: See <a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">configure Linux node</span></a>.</p></li>
+<li><p>using Docker: See <a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">configure Linux node</span></a>.</p></li>
 <li><p>on MacOS: See <a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">configure MacOS node</span></a>.</p></li>
 <li><p>on Windows: See <a class="reference internal" href="baker-windows.html#configure-baker-windows"><span class="std std-ref">configure Windows node</span></a>.</p></li>
 <li><p>on Ubuntu: See <a class="reference internal" href="../nodes/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">configure Ubuntu node</span></a>.</p></li>
@@ -1353,10 +1353,9 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <p class="admonition-title">Warning</p>
 <p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
 </div>
-<p>To start the node with these baker keys and bake blocks, you
-first need to shut down the current running node. To do this, either press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or use the
-<code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable.</p>
-<p>When you’ve placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>. The node will automatically start baking when the baker is included in the bakers for the current epoch.</p>
+<p>To start the node with these baker keys and bake blocks, configure the node to
+use the baker keys, and <strong>restart</strong> it. The node will automatically start baking
+when the baker is included in the bakers for the current epoch.</p>
 <p>This change is executed immediately, and it will take effect when finishing the epoch after the one in which the transaction for adding the baker was included in a block.</p>
 <table class="table" id="id1">
 <caption><span class="caption-text">Timeline: adding a baker</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
@@ -1607,18 +1606,11 @@ block is finalized.</p>
 <p><code class="docutils literal notranslate"><span class="pre">--sender</span></code> is the name or address of the transaction’s sender account. The name is the one that’s used when you <a class="reference internal" href="../references/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import the account</span></a> (assuming that this
 was done). It defaults to the account name “default”.</p>
 <p>If you want to keep the <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code> output file in the same location as your other Concordium files, you can omit <code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;/</span></code>.</p>
-<p>To start the node with these baker keys and bake blocks, you
-first need to shut down the current running node. To do this, either press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or use the
-<code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable.</p>
-<p>When you’ve placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>.</p>
+<p>To start the node with these baker keys and bake blocks you need to restart the node.</p>
 </div>
 </div>
 <div class="section" id="configure-a-baker">
 <h2>Configure a baker<a class="headerlink" href="#configure-a-baker" title="Permalink to this headline">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Currently delegation is only available on Testnet.</p>
-</div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">configure</span></code> to configure a baker and open a baker pool. The following is an example of how <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">baker</span></code> might be used:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker configure --sender <span class="s2">&quot;acc1&quot;</span> --stake <span class="m">14001</span> --open-delegation-for existing --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --keys-in MyBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>

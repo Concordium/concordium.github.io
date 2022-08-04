@@ -1204,25 +1204,15 @@ body {margin:0;}
 For information about the process for each type of wallet, see <a class="reference internal" href="../guides/overview-baker-process.html#overview-baker"><span class="std std-ref">Overview of the baker process</span></a>.
 You then need to move the generated baker keys file to a location accessible by the node,
 and finally specify this location in the service file for the Concordium Node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The baker keys output file name must be <code class="docutils literal notranslate"><span class="pre">baker-credentials.json</span></code>.</p>
-</div>
 <p>To register the keys in the network you need to be <a class="reference internal" href="../guides/run-node.html#running-a-node"><span class="std std-ref">running a node</span></a>
 and send a <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> transaction to the network:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with:</p>
 <ul class="simple">
-<li><p>on Linux and MacOS: <code class="docutils literal notranslate"><span class="pre">~/.local/share/concordium</span></code></p></li>
-<li><p>on Windows: <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%\\concordium</span></code>.</p></li>
-</ul>
-<p>Remember to configure your node to bake using this path.</p>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with the directory specified as the volume mount for the node database. In the <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">sample configuration file</span></a> this is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code> for the testnet node, and <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> for the mainnet node.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1230,10 +1220,29 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 </div>
 <p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the
 rewards to the staked amount on the baker. Read more about this behavior in the section <a class="reference internal" href="../guides/become-baker.html#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
-<p>To start the node with these baker keys and bake blocks, you
-first need to shut down the current running node. To do this, either press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or use the
-<code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code> executable.</p>
-<p>When you’ve placed the file in the appropriate directory, which is what you did you did in the previous command when you specified the output file, start the node again using <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code>. The node will automatically start baking when the baker is included in the bakers for the current epoch.</p>
+<p>To start the node with these baker keys and bake blocks do the following.</p>
+<ol class="arabic">
+<li><p>Stop the currently running node. To do this, press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker stop testnet-node
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker stop mainnet-node
+</pre></div>
+</div>
+<p>depending on the environment.</p>
+</li>
+<li><p>Update the configuration file for the node by adding</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+</pre></div>
+</div>
+<p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
+</li>
+</ol>
+<p>When you’ve placed the file in the appropriate directory, start the node again in
+the same way as the first time, e.g., <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">testnet-node.yaml</span>
+<span class="pre">up</span></code>. The node will automatically start baking when the baker is included in the
+bakers for the current epoch.</p>
 <p>In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
 the account associated with the baker node. The bread icon appears as
 soon as the transaction has been submitted. That is, before the two
