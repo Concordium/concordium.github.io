@@ -368,7 +368,7 @@ to allow Docker containers to access external networks.
 
 Note that this will allow any Docker container access to the internet, not just the Concordium node.
 
-Some users on Ubuntu have reported the node does not have internet access. In this case, adding `network_mode: bridge` to each service, might solve this problem:
+Some users on Ubuntu have reported the node does not have internet access. In this case, adding `network_mode: bridge` to each service might solve this problem:
 
 .. code-block:: yaml
    :emphasize-lines: 4, 8
