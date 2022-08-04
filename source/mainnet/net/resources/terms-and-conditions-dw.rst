@@ -14,7 +14,7 @@ At `developer.concordium.software <https://developer.concordium.software>`_, you
 Software may continually change and/or adjust the functions of Concordium Desktop Wallet. Concordium Software’s terms and conditions apply
 to Concordium Desktop Wallet users worldwide.
 
-The wallet will register and use data about you. Concordium Software will not register or use data about you
+The wallet will register and use data about you. Concordium Software will not register or use data about you.
 
 
 Terms and conditions for all services and functions
@@ -34,7 +34,7 @@ The following is required to register with Concordium Desktop Wallet:
 
 -  A computer with a newer version of Windows 10, macOS, or a Linux distribution like Ubuntu or Debian.
 
--  An identity that is verified with an identity provider and an initial account created on your behalf be the identity provider.
+-  An identity that is verified with an identity provider and an initial account created on your behalf by the identity provider.
    The identity provider will know your identity and your ownership of an initial account.
 
 -  A Ledger Nano S or Ledger Nano S Plus.
@@ -171,7 +171,7 @@ Data retention and deletion
 
 Concordium as a company does not retain or delete any user identifiable information. However, to get an account you must obtain an identity object issued by an identity provider.
 The identity object contains some user identifiable information, such as your name. By default the identity object is only stored in the wallet and is not visible on the chain.
-Some data derived from the identity object is send to the chain, however by default it is not possible to obtain user identifiable information from the information stored in the
+Some data derived from the identity object is sent to the chain, however by default it is not possible to obtain user identifiable information from the information stored in the
 account on the chain.  However, if you choose to reveal any attributes associated with your account, these attributes will be visible on-chain, and can never be deleted.
 
 Governing law and venue
