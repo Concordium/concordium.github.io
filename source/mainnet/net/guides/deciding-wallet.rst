@@ -87,7 +87,7 @@ The following table lists the major features of each wallet.
    *  - Creation of identities
       - Creation of identities
    *  - Creation and management of baker accounts
-      - The Concordium Client must be used to manage baker accounts. Rewards are visible in the wallet.
+      - Creation and management of baker accounts
    *  - Running a node is a requirement
       - Running a node is not needed unless baking
 
