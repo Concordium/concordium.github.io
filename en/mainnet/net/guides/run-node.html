@@ -1319,6 +1319,12 @@ These images are designed to be used together with docker-compose, or a similar 
     <span class="c1"># by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)</span>
     <span class="c1"># should match what is defined here. When running multiple nodes the</span>
     <span class="c1"># external ports should be changed so as not to conflict.</span>
+    <span class="c1"># In the mapping below, the first port is the `host` port, and the second</span>
+    <span class="c1"># port is the `container` port. When the `container` port is changed the</span>
+    <span class="c1"># relevant environment variable listed above must be changed as well. For</span>
+    <span class="c1"># example, changing `10001:10001` to `10001:13000` would mean that</span>
+    <span class="c1"># `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise</span>
+    <span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
     <span class="nt">ports</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;8889:8889&quot;</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;10001:10001&quot;</span>
@@ -1488,6 +1494,12 @@ for a list of currently available versions.</p></li>
     <span class="c1"># by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)</span>
     <span class="c1"># should match what is defined here. When running multiple nodes the</span>
     <span class="c1"># external ports should be changed so as not to conflict.</span>
+    <span class="c1"># In the mapping below, the first port is the `host` port, and the second</span>
+    <span class="c1"># port is the `container` port. When the `container` port is changed the</span>
+    <span class="c1"># relevant environment variable listed above must be changed as well. For</span>
+    <span class="c1"># example, changing `10000:10000` to `10000:13000` would mean that</span>
+    <span class="c1"># `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise</span>
+    <span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
     <span class="nt">ports</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;8888:8888&quot;</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;10000:10000&quot;</span>
@@ -1563,6 +1575,18 @@ external networks, e.g., the internet.</p>
 </div>
 <p>to allow Docker containers to access external networks.</p>
 <p>Note that this will allow any Docker container access to the internet, not just the Concordium node.</p>
+<p>Some users on Ubuntu have reported the node does not have internet access. In this case, adding <cite>network_mode: bridge</cite> to each service might solve this problem:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+  <span class="nt">mainnet-node</span><span class="p">:</span>
+    <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="hll">    <span class="nt">network_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bridge</span>
+</span>    <span class="l l-Scalar l-Scalar-Plain">...</span>
+  <span class="nt">mainnet-node-collector</span><span class="p">:</span>
+    <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mainnet-node-collector</span>
+<span class="hll">    <span class="nt">network_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bridge</span>
+</span>    <span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

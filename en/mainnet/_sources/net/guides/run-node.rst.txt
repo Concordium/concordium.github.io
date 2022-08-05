@@ -99,6 +99,12 @@ To run a node on testnet use the following configuration file and follow the ste
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
        # should match what is defined here. When running multiple nodes the
        # external ports should be changed so as not to conflict.
+       # In the mapping below, the first port is the `host` port, and the second
+       # port is the `container` port. When the `container` port is changed the
+       # relevant environment variable listed above must be changed as well. For
+       # example, changing `10001:10001` to `10001:13000` would mean that
+       # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
+       # the node's gRPC interface will not be available from the host.
        ports:
        - "8889:8889"
        - "10001:10001"
@@ -281,6 +287,12 @@ Logs of the mainnet node can be retrieved by running:
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
        # should match what is defined here. When running multiple nodes the
        # external ports should be changed so as not to conflict.
+       # In the mapping below, the first port is the `host` port, and the second
+       # port is the `container` port. When the `container` port is changed the
+       # relevant environment variable listed above must be changed as well. For
+       # example, changing `10000:10000` to `10000:13000` would mean that
+       # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
+       # the node's gRPC interface will not be available from the host.
        ports:
        - "8888:8888"
        - "10000:10000"
@@ -367,3 +379,18 @@ On Fedora run the following command:
 to allow Docker containers to access external networks.
 
 Note that this will allow any Docker container access to the internet, not just the Concordium node.
+
+Some users on Ubuntu have reported the node does not have internet access. In this case, adding `network_mode: bridge` to each service might solve this problem:
+
+.. code-block:: yaml
+   :emphasize-lines: 4, 8
+
+   services:
+     mainnet-node:
+       container_name: mainnet-node
+       network_mode: bridge
+       ...
+     mainnet-node-collector:
+       container_name: mainnet-node-collector
+       network_mode: bridge
+       ...
