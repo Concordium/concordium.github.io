@@ -164,26 +164,18 @@ Concordium smart contracts:
 .. dropdown::  How do I get the balance of the smart contract within the Rust code?
 
     `host.self_balance()` returns the current balance of the smart contract.
-    Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance>`_ of the concordium standard crate.
+    Upon entry to a smart contract function, the balance that is returned is the sum of the
+    balance of the contract at the time of the invocation and the amount that is being transferred to the contract.
+    Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance>`_
+    of the ``concordium-std`` crate.
 
-    In contrast to Ethereum and in contrast to the documentation in the crate (TODO: can we update the comment in the crate?),
-    the current balance of the smart contract is the sum of the `host.self_balance()` and the `amount`.
+    .. note::
 
-    .. code-block:: console
-        :emphasize-lines: 8
-
-        #[receive(contract = "exampleFunction", name = "example", payable, mutable)]
-        fn example_function<S: HasStateApi>(
-            ctx: &impl HasReceiveContext,
-            host: &mut impl HasHost<State, StateApiType = S>,
-            amount: Amount,
-        ) -> Result<(), Error> {
-
-            let current_balance_of_smart_contract = host.self_balance() + amount;
-
-            ...
-
-        }
+        When writing smart contract test cases, the ``set_self_balance`` function of the ``TestHost`` needs
+        to account for it and you should set it to the sum of the contract’s initial balance
+        and the amount you wish to invoke it with. Additional documentation can be
+        found in the `set_self_balance description <https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.set_self_balance>`_
+        of the TestHost or in the `auction example <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/auction/src/lib.rs>`_.
 
 .. dropdown::  How do I get the address of the smart contract within the Rust code?
 
@@ -585,12 +577,12 @@ Deploying and Initializing of smart contracts:
 
     You can follow the chapter :ref:`deploying a smart contract<piggy-bank-deploying>` in the piggy bank tutorial.
 
-.. dropdown::  Is there a max smart contract size limit when deploying a contract on-chain?
+.. dropdown::  Is there a smart contract size limit when deploying a contract on-chain?
 
-    Yes. The max smart contract size limit is xyz KB (TODO: ask what is the current limit) on Concordium.
+    Yes. The module (`.wasm` file) size limit is 64kB for V0 contracts and 512kB for V1 contracts.
     Concordium chose a much higher limit compared to the Ethereum chain.
-    This enables smart contract developers to develop smart contracts
-    without splitting them into many smaller pieces which is a common annoyance when developing on Ethereum.
+    Smart contract developers can deploy large-scale protocols on Concordium without splitting
+    them into small smart contract pieces which is a common annoyance encountered on Ethereum.
 
 .. dropdown::  What is the `owner` of a smart contract instance on Concordium?
 
