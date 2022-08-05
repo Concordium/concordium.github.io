@@ -1,4 +1,4 @@
-.. _whitepaper: https://concordium.com/wp-content/uploads/2021/02/Concordium-White-Paper-v1.3.pdf
+.. _whitepaper: https://assets-global.website-files.com/6172c154c6a83e2a4713d1af/61cc25e0b3273f28f6a75dba_Concordium-White-Paper-June2021.pdf
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
 

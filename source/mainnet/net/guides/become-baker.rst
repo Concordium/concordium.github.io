@@ -87,6 +87,11 @@ where you replace
 
    .. Note::
 
+      For a node on Docker, the ``<concordium-data-dir>`` must use the following paths:
+
+      * on Linux and MacOS: ``~/.local/share/concordium``
+      * on Windows: ``%LOCALAPPDATA%\\concordium``.
+
       Remember to configure your node to bake using this path:
 
       * using Docker: See :ref:`configure Linux node<baking-docker>`.
@@ -124,7 +129,7 @@ The following arguments are optional. If no selection is made, earnings are rest
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
 
-To start the node with these baker keys and bake blocks configure the node to
+To start the node with these baker keys and bake blocks, configure the node to
 use the baker keys, and **restart** it. The node will automatically start baking
 when the baker is included in the bakers for the current epoch.
 
@@ -351,10 +356,6 @@ To start the node with these baker keys and bake blocks you need to restart the 
 
 Configure a baker
 =================
-
-.. Note::
-
-   Currently delegation is only available on Testnet.
 
 Use ``baker configure`` to configure a baker and open a baker pool. The following is an example of how ``configure baker`` might be used:
 
