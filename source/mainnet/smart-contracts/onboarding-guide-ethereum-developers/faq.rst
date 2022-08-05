@@ -4,11 +4,11 @@
 FAQs
 ====
 
-This is a list of Frequently Asked Questions about Concordium. It is focused on
-helping developers with an Ethereum/solidity background to understand
-the Concordium blockchain and its smart contract ecosystem.
+The following Frequently Asked Questions about Concordium
+focuses on helping developers with an Ethereum/solidity
+background to understand the Concordium blockchain and its smart contract ecosystem.
 
-Feel free to participate and add your questions to the `concordium software support channels <https://support.concordium.software/>`_.
+Feel free to participate and add your questions to the `Concordium software support channels <https://support.concordium.software/>`_.
 
 Concordium smart contracts:
 ===========================
@@ -16,7 +16,7 @@ Concordium smart contracts:
 .. dropdown::  What smart contract language is used on Concordium?
 
     Smart contracts are deployed as wasm modules on the Concordium chain.
-    Rust has currently the best support to write and compile your smart contract into a wasm module that then can be deployed to the Concordium chain.
+    Rust currently has the best support to write and compile your smart contract into a wasm module that then can be deployed to the Concordium chain.
 
 .. dropdown::  How can I start with the Rust smart contract language?
 
@@ -39,9 +39,9 @@ Concordium smart contracts:
 
     .. note::
 
-        These contracts are not meant for production,
-        they are used to illustrate how to use the standard library and the tooling Concordium provides.
-        There is no claim that the logic of the contract is reasonable, or safe.
+        These contracts are not meant for production.
+        They are used to illustrate how to use the standard library and the tooling Concordium provides.
+        There is no claim that the logic of the contract is reasonable or safe.
 
 .. dropdown::  Should I use V0 or V1 smart contracts?
 
@@ -61,7 +61,7 @@ Concordium smart contracts:
 
     Yes. You can use a similar pattern as shown below:
 
-    .. code-block:: console
+    .. code-block:: rust
 
         #[cfg(test)]
         mod tests {
@@ -75,7 +75,7 @@ Concordium smart contracts:
 
     The test cases are printed as follows:
 
-    .. code-block:: console
+    .. code-block:: rust
 
         running 2 tests
         test tests::func_a::correct_params_correct_result ... ok
@@ -83,8 +83,8 @@ Concordium smart contracts:
 
 .. dropdown::  How are `smart contract addresses` represented on Concordium?
 
-    In terms of naming, Concordium uses `contract`, and `account` to refer
-    to the Ethereum equivalent of a `smart contract`, and an `externally owned address`, respectively.
+    In terms of naming, Concordium uses `contract` and `account` to refer
+    to the Ethereum equivalent of a `smart contract` and an `externally owned address`, respectively.
     The word `address` refers to either an `account` address or a `contract` address on Concordium.
 
     Contract addresses on Concordium are represented by an index and a subindex as seen below.
@@ -94,7 +94,7 @@ Concordium smart contracts:
 
     In contrast to Ethereum, you cannot send CCD to a contract address (or account address) before they have been deployed/initialized on the Concordium chain.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         ContractAddress {
             index:    1234,
@@ -103,8 +103,8 @@ Concordium smart contracts:
 
 .. dropdown::  How are `externally owned addresses` represented on Concordium?
 
-    In terms of naming, Concordium uses `contract`, and `account` to refer
-    to the Ethereum equivalent of a `smart contract`, and an `externally owned address`, respectively.
+    In terms of naming, Concordium uses `contract` and `account` to refer
+    to the Ethereum equivalent of a `smart contract` and an `externally owned address`, respectively.
     The word `address` refers to either an `account` address or a `contract` address on Concordium.
 
     Accounts on the chain are identified via an account address, which is a 32-byte sequence.
@@ -122,7 +122,7 @@ Concordium smart contracts:
     `Addresses <https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html>`_
     are represented as an enum with two variants.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         pub enum Address {
             Account(AccountAddress),
@@ -137,7 +137,7 @@ Concordium smart contracts:
     For example, the below code prints out a different message depending on if the `sender`
     that invoked this smart contract function is a contract or an account.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         match ctx.sender() {
             Address::Contract(contract_address) => { println!("This contract invoked the function: {:?}", contract_address) },
@@ -154,16 +154,16 @@ Concordium smart contracts:
 
 .. dropdown::  What is the equivalent to `msg.sender` and `tx.origin` on Concordium?
 
-    `ctx.sender()`, and `ctx.invoker()` are the equivalent variables to `msg.sender`, and `tx.origin` on the Concordium chain, respectively.
-    The `ctx.invoker()` variable refers to the original account address (no contract address)
-    that started the transaction while `ctx.sender()`
-    refers to the immediate account (it could be an account
+    ``ctx.sender()``, and ``ctx.invoker()`` are the equivalent variables to ``msg.sender``, and ``tx.origin`` on the Concordium chain, respectively.
+    The ``ctx.invoker()`` variable refers to the original account address (no contract address)
+    that started the transaction while ``ctx.sender()``
+    refers to the immediate address (it could be an account
     or another contract address) that invokes the function entry point.
-    A contract cannot start a tx and that is why `ctx.invoker()` never returns a contract address.
+    A contract cannot start a transaction and that is why ``ctx.invoker()`` never returns a contract address.
 
 .. dropdown::  How do I get the balance of the smart contract within the Rust code?
 
-    `host.self_balance()` returns the current balance of the smart contract.
+    ``host.self_balance()`` returns the current balance of the smart contract.
     Upon entry to a smart contract function, the balance that is returned is the sum of the
     balance of the contract at the time of the invocation and the amount that is being transferred to the contract.
     Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance>`_
@@ -179,7 +179,7 @@ Concordium smart contracts:
 
 .. dropdown::  How do I get the address of the smart contract within the Rust code?
 
-    `ctx.self_address()` returns the address of the smart contract.
+    ``ctx.self_address()`` returns the address of the smart contract.
     Additional documentation can be found in the `self_address description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_address>`_ of the concordium standard crate.
 
 .. dropdown::  Can I force CCD to a smart contract even if it has no payable function?
@@ -200,27 +200,27 @@ Concordium smart contracts:
 
     Yes. You can use
 
-    .. code-block:: console
+    .. code-block:: rust
 
-        $println!("Printing output of f: {}, and g: {}", f(1,2,3), g("hi"));
+        println!("Printing output of f: {}, and g: {}", f(1,2,3), g("hi"));
 
     or
 
-    .. code-block:: console
+    .. code-block:: rust
 
-        $println!("Printing debug value: {:?}", 12345);
+        println!("Printing debug value: {:?}", 12345);
 
     for printing to stdout and
 
-    .. code-block:: console
+    .. code-block:: rust
 
-        $eprintln!("Printing output of f: {}, and g: {}", f(1,2,3), g("hi"));
+        eprintln!("Printing output of f: {}, and g: {}", f(1,2,3), g("hi"));
 
     or
 
-    .. code-block:: console
+    .. code-block:: rust
 
-        $eprintln!("Printing debug value: {:?}", 12345);
+        eprintln!("Printing debug value: {:?}", 12345);
 
     for printing to stderr.
 
@@ -233,7 +233,7 @@ Concordium smart contracts:
         $cargo test -- --nocapture
 
 
-.. dropdown::  My tx is rejected and I get an error code number. How can I interpret smart contract errors?
+.. dropdown::  My transaction is rejected and I get an error code number. How can I interpret smart contract errors?
 
     Error codes come from the ``concordium-std`` crate or are thrown by the smart contract itself.
 
@@ -272,11 +272,11 @@ Concordium smart contracts:
 
 .. dropdown:: Is there a smart contract code linter?
 
-    Yes. You can use the `fmt` and the `cargo clippy` linter tools as described in the `README <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
+    Yes. You can use the ``fmt`` and the ``cargo clippy`` linter tools as described in the `README <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
 
 .. dropdown:: Are tests executed in parallel or sequentially?
 
-    Tests run in parallel by default by the following two commands
+    Tests run in parallel by default with the following two commands
 
     .. code-block:: console
 
@@ -300,10 +300,10 @@ Concordium smart contracts:
     function and for specifying the input parameters to a receive
     function using a structured representation, such as JSON.
 
-    That the input parameters, and output parameters of a function are included into a schema
-    a `parameter`, and a `return_value` needs to be defined, respectively.
+    The smart contract function needs to define a ``parameter`` and a `return_value``
+    so that a schema can be generated for the input parameters and the output parameters, respectively.
 
-    .. code-block:: console
+    .. code-block:: rust
         :emphasize-lines: 4, 5
 
         #[receive(
@@ -325,7 +325,7 @@ Concordium smart contracts:
 
     .. code-block:: console
 
-        cargo concordium build -e
+        $cargo concordium build -e
 
     .. image:: ./images/onboarding_ethereum_developers_5.png
         :width: 100 %
@@ -334,7 +334,7 @@ Concordium smart contracts:
 
     .. code-block:: console
 
-        $ cargo concordium build --schema-out ./schema.bin
+        $cargo concordium build --schema-out ./schema.bin
 
     .. image:: ./images/onboarding_ethereum_developers_6.png
         :width: 100 %
@@ -387,7 +387,7 @@ Concordium smart contracts:
 
     You can create such a `myInputParameters.bin` file by adding the below lines to your test cases replacing the `ExampleParams` struct with your input parameter struct for that function.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         let parameter = ExampleParams {
             example_key1: value1,
@@ -400,18 +400,18 @@ Concordium smart contracts:
 
     .. code-block:: console
 
-        $ cargo test
+        $cargo test
 
 Events:
 =======
 
 .. dropdown::  Where can I find a logged event on testnet/mainnet?
 
-    You can look up a tx hash on the `dashboard <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_.
+    You can look up a transaction hash on the `dashboard <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_.
     It will provide you with the full execution chain of the smart contracts that
     were invoked and updated during this tx.
     You can click on an updated contract instance row to see additional information.
-    For example, navigate to the last page (third page) of the displayed execution chain of `this tx <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_
+    For example, navigate to the last page (third page) of the displayed execution chain of `this transaction <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_
     and click on the top row `Updated contract instance at address: <783,0>`. You will see additional information
     about the smart contract address, name, the function entry point that was invoked,
     the CCD amount that was sent to the function, and events that were logged by this smart contract function.
@@ -434,7 +434,7 @@ Events:
     interpreting event log data when writing their own smart contracts.
 
     The official Concordium smart contracts use the following standard:
-    Each event has a number tag then two 0s and the rest of the event data.
+    Each event has a number tag and then the rest of the event data.
 
     .. image:: ./images/onboarding_ethereum_developers_11.png
         :width: 100 %
@@ -444,7 +444,7 @@ Events:
     of a `Cis2` token.
     `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value than in the image above).
 
-    .. code-block:: console
+    .. code-block:: rust
 
         pub const BURN_EVENT_TAG: u8 = u8::MAX - 2;
 
@@ -463,20 +463,20 @@ Events:
     You can compare the rest of the event data by adding the below lines of code to your test cases
     and adjusting the `MyEventParams` to the event object that you are using.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         let parameter = MyEventParams {
             example_key1: value1,
             example_key1: value2,
         }
         let parameter_bytes = to_bytes(&parameter);
-        println!("(:x?)",parameter_bytes);
+        println!("{:x?}",parameter_bytes);
 
     When running the test cases with the below command, the event data is printed as bytes to your standard output.
 
     .. code-block:: console
 
-        $ cargo test -- --nocapture
+        $cargo test -- --nocapture
 
     For example, the following output would be shown on
     `the dashboard <https://dashboard.testnet.concordium.com>`_ as  0: fe0003532a04.
@@ -489,14 +489,14 @@ Events:
 
     Every time when a transfer occurs by the below code, the TestHost records the `address` and the `amount`.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         host.invoke_transfer(address, amount);
 
     The recorded event data can be used in the test cases to confirm that the CCD was
     transferred as shown in the below `example code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/recorder/src/lib.rs#L128>`_.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         let transfers_occurred = host.get_transfers();
         claim_eq!(
@@ -586,29 +586,29 @@ Deploying and Initializing of smart contracts:
 
 .. dropdown::  What is the `owner` of a smart contract instance on Concordium?
 
-    You can access the account that created a smart contract instance with the variable `ctx.owner()`.
+    You can access the account that created a smart contract instance with the variable ``ctx.owner()``.
     It is always an account because smart contracts cannot initialize another smart contract on Concordium.
-    `ctx.owner()` is the account that invoked the `init` function to create a smart contract instance.
+    ``ctx.owner()`` is the account that invoked the ``init`` function to create a smart contract instance.
 
 .. dropdown::  Can a smart contract deploy/initialize another smart contract on Concordium?
 
-    No. The `init` function has to be called by an account (not a smart contract) on the Concordium chain.
+    No. The ``init`` function has to be called by an account (not a smart contract) on the Concordium chain.
 
 .. dropdown::  Can I create a factory smart contract on Concordium?
 
     No. A factory smart contract on the Ethereum chain deploys other smart contracts. In contrast,
-    the `init` function has to be called by an account (not a smart contract) on the Concordium chain.
+    the ``init`` function has to be called by an account (not a smart contract) on the Concordium chain.
 
 .. dropdown::  Can I predict/calculate the address of the smart contract before deploying it? Is there something similar to the Ethereum CREATE2?
 
-    Contract addresses on Concordium are represented by an index and a subindex as seen below.
-    When invoking the `init` function, a new smart contract instance is
+    No. Contract addresses on Concordium are represented by an index and a subindex as seen below.
+    When invoking the ``init`` function, a new smart contract instance is
     deployed and assigned the next index number in sequential order.
     The subindex is currently not in use and is always 0. There are plans to give the subindex meaning in the future.
 
     In contrast to Ethereum, you cannot send CCD to a contract address (or account address) before they have been deployed/initialized.
 
-    .. code-block:: console
+    .. code-block:: rust
 
         ContractAddress {
             index:    1234,
@@ -617,9 +617,9 @@ Deploying and Initializing of smart contracts:
 
 .. dropdown::  Can I invoke another smart contract from within the `init` function?
 
-    No. The `init` function is similar to a `constructor` function. Its purpose
+    No. The ``init`` function is similar to a `constructor` function. Its purpose
     is to deploy a new smart contract instance from a module and set the state of the current smart contract.
-    You have to use a regular `receive` function when you want to invoke another smart contract.
+    You have to use a regular ``receive`` function when you want to invoke another smart contract.
 
 Concordium tools:
 =================
@@ -628,7 +628,7 @@ Concordium tools:
 
     Yes. The official block explorer is `CCDScan <https://testnet.ccdscan.io/>`_.
     In addition, you can use the dashboard
-    to `lock up txs <https://dashboard.testnet.concordium.com/lookup>`_,
+    to `look up txs <https://dashboard.testnet.concordium.com/lookup>`_,
     `explore the network <https://dashboard.testnet.concordium.com>`_,
     and observe the `block-producing process <https://dashboard.testnet.concordium.com/chain>`_.
 
@@ -670,15 +670,15 @@ Miscellaneous:
 
         $curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JXBDAz9WdEy
 
-    The above request will return a tx hash which you can lock up on the block explorer.
+    The above request will return a transaction hash which you can look up on the block explorer.
     You can only request CCD a single time for each account address via this API endpoint.
-    If you already submitted a request before, it will be an old tx hash that is returned.
+    If you already submitted a request before, it will be an old transaction hash that is returned.
 
     .. image:: ./images/onboarding_ethereum_developers_3.png
         :width: 100 %
 
     **Option 3:**
-    Alternative, you can use `Postman <https://www.postman.com/>`_ and insert the following data before clicking the `Send` button.
+    Alternatively, you can use `Postman <https://www.postman.com/>`_ and insert the following data before clicking the `Send` button.
 
     .. image:: ./images/onboarding_ethereum_developers_4.png
         :width: 100 %
@@ -720,10 +720,10 @@ Miscellaneous:
     **Option 5:** If you need plenty of CCD for large-scale testing,
     please contact Concordium’s technical support via support@concordium.software.
 
-.. dropdown::  Is there something similiar to gas and tx fees?
+.. dropdown::  Is there something similiar to gas and transaction fees?
 
     Yes, gas is called NRG (pronounced energy) on the Concordium chain.
-    The block limit is 3 million NRG. Tx fees are fixed in Euro and are much
+    The block limit is 3 million NRG. Transaction fees are fixed in Euro and are much
     cheaper than on Ethereum.
 
 .. dropdown::  What networks can be used for testing?
@@ -741,7 +741,7 @@ Miscellaneous:
         The desktop wallet supports all transaction types (:ref:`except smart contract transactions<transactions-overview>`).
 
     In contrast, on Ethereum, an externally owned account cannot hold more than one key, and no externally
-    owned account multiSig wallet exist.
+    owned account multiSig wallet exists.
     All multiSig wallets on Ethereum are smart contracts.
 
     .. note::
@@ -754,7 +754,6 @@ Miscellaneous:
 
 .. dropdown::  What does `invoke` mean?
 
-    `Invoke` may refer to:
-        - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
+    - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
 
-        - In the context of the ``concordium-client`` tool, it means to simulate a tx locally on your node via the `invoke` command of the ``concordium-client`` tool instead of sending the tx to the blockchain network and executing it on-chain. Since the tx was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
+    - In the context of the ``concordium-client`` tool, it means to simulate a transaction locally on your node via the `invoke` command of the ``concordium-client`` tool instead of sending the transaction to the blockchain network and executing it on-chain. Since the transaction was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
