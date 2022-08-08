@@ -109,7 +109,11 @@ You now have to install a custom certificate on the Ledger to ensure that it tru
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Press the right button while you reconnect the Ledger to the computer, and hold it down until the Ledger says **recovery**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer until the Ledger says **recovery**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Press both buttons to select **recovery**.
 
 #. Enter your PIN code.
 
@@ -197,7 +201,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Press both buttons to select **recovery mode**.
 
 #. Enter your PIN code.
 
@@ -319,7 +327,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Press both buttons to select **recovery mode**.
 
 #. Enter your PIN code.
 
