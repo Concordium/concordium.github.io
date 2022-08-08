@@ -342,6 +342,12 @@ Concordium smart contracts:
 
         $cargo concordium build --schema-out ./schema.bin
 
+    The shorter version of the above command is as follows:
+
+    .. code-block:: console
+
+        $cargo concordium build -s ./schema.bin
+
     .. image:: ./images/onboarding_ethereum_developers_6.png
         :width: 100 %
 
