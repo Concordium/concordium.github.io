@@ -46,7 +46,7 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. Press the right button to navigate to **Firmware version**.
 
-#. Press both buttons to view the **Secure Element** version. 
+#. Press both buttons to view the **Secure Element** version.
 
    - For **Nano S**, if it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
