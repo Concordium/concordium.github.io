@@ -14,6 +14,6 @@ Required notices for open source or other separately licensed software and hardw
 * Microsoft and Windows are trademarks of the Microsoft group of companies.
 * AMD Ryzen™ is a trademark of AMD.
 * Intel®, the Intel® logo, and Intel® Core™ are trademarks of Intel Corporation or its subsidiaries.
-* Ledger, Ledger Nano S, Ledger Vault, Bolos are registered trademarks of Ledger SAS.
+* Ledger, Ledger Nano S, Ledger Nano S Plus, Ledger Vault, Bolos are registered trademarks of Ledger SAS.
 * "Python" is a registered trademark of the Python Software Foundation.
 * JSON is copyright (c) 2002 JSON.org.

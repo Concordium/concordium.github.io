@@ -58,7 +58,7 @@ Prerequisites
 
                 5. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
-                6. On the Ledger, there's a message saying Concordium. Press both buttons. The Ledger says **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S** is ready.
+                6. On the Ledger, there's a message saying Concordium. Press both buttons. The Ledger says **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
                 7. In the Desktop Wallet, select **Submit**. There’s a message saying **Waiting for the user to finish the process on the device**.
 
@@ -93,7 +93,7 @@ Prerequisites
 
                 #. The Desktop Wallet says **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
-                #. On the Ledger, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S** is ready.
+                #. On the Ledger, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
                 #. In the Desktop Wallet, select **Decrypt**.
 

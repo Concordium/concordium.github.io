@@ -4,7 +4,7 @@
 Terms and Conditions for Concordium Desktop Wallet
 ==================================================
 
-Effective from November 18, 2021
+Effective from August 4, 2022
 
 Introduction
 ============
@@ -14,7 +14,7 @@ At `developer.concordium.software <https://developer.concordium.software>`_, you
 Software may continually change and/or adjust the functions of Concordium Desktop Wallet. Concordium Software’s terms and conditions apply
 to Concordium Desktop Wallet users worldwide.
 
-The wallet will register and use data about you. Concordium Software will not register or use data about you
+The wallet will register and use data about you. Concordium Software will not register or use data about you.
 
 
 Terms and conditions for all services and functions
@@ -27,17 +27,17 @@ When you register with Concordium Desktop Wallet, you enter into an agreement wi
 
 Concordium Software ApS, Østergade 13, 2., 1100 København K, Denmark. CVR no.: 42334758. Our email address is contact@concordium.software.
 
-What you need in order to register with Concordium Mobile Wallet
-================================================================
+What you need in order to register with Concordium Desktop Wallet
+=================================================================
 
 The following is required to register with Concordium Desktop Wallet:
 
 -  A computer with a newer version of Windows 10, macOS, or a Linux distribution like Ubuntu or Debian.
 
--  An identity that is verified with an identity provider and an initial account created on your behalf be the identity provider.
+-  An identity that is verified with an identity provider and an initial account created on your behalf by the identity provider.
    The identity provider will know your identity and your ownership of an initial account.
 
--  A Ledger Nano S.
+-  A Ledger Nano S or Ledger Nano S Plus.
 
 -  Concordium Ledger App.
 
@@ -47,7 +47,7 @@ You must be at least 18 years old to register.
 Registering as a Concordium Desktop Wallet user
 ===============================================
 
-To be able to use the Concordium Desktop Wallet, you need a Ledger Nano S hardware device with the Concordium Ledger Application installed.
+To be able to use the Concordium Desktop Wallet, you need a Ledger Nano S or Nano S Plus hardware device with the Concordium Ledger Application installed.
 
 Before you can use Concordium Desktop Wallet, you will need to create an initial account and register with an identity provider by following the
 instructions in the app. An identity provider is a third-party supplier and independent of Concordium Software. The Concordium Desktop Wallet stores
@@ -64,15 +64,15 @@ Activation code and personal password
 When you register in Concordium Desktop Wallet, you will need to create a personal password. You should be aware that the password can be used to
 log on to Concordium Desktop Wallet and use some of the functions. All transactions require you to use the Ledger device with the Desktop Wallet to sign the transaction.
 
-When you set up the Ledger Nano S you’ll generate private keys on the Ledger Nano S, and you’ll receive a 24-word recovery phrase that you must
+When you set up the Ledger device you’ll generate private keys on the Ledger device, and you’ll receive a 24-word recovery phrase that you must
 store in a safe place. This is the only backup of your private keys.
 
 Other obligations etc.
 ======================
 
-You have a duty to ensure that the details you provide are correct and updated at any given time. Your Concordium Desktop Wallet and Ledger Nano S are
+You have a duty to ensure that the details you provide are correct and updated at any given time. Your Concordium Desktop Wallet and Ledger device are
 personal and may be used only by you. You must not disclose your passwords and PIN codes to others, and you must not write them down, or save them on your
-computer or mobile device. You must not disclose your Ledger Nano S 24-word recovery phrase or PIN code to others or store them digitally on your computer or mobile device.
+computer or mobile device. You must not disclose your Ledger device 24-word recovery phrase or PIN code to others or store them digitally on your computer or mobile device.
 
 Concordium Desktop Wallet must not be used for illegal activities or purposes.
 
@@ -81,7 +81,7 @@ You must not use Concordium Desktop Wallet in a way that harasses other Concordi
 All transaction requests are irreversible. You are yourself responsible for ensuring that the recipient of a transaction via Concordium Desktop Wallet is the
 intended recipient, and you must verify that the transaction amount is correct. You are responsible for providing the correct account to persons and users who want to transfer funds to you.
 
-To prevent unauthorized use of Concordium Desktop Wallet, you must store your computer and the Ledger Nano S so that others cannot gain unauthorized access
+To prevent unauthorized use of Concordium Desktop Wallet, you must store your computer and the Ledger device so that others cannot gain unauthorized access
 to them. Do not disclose the password or PIN code to third parties.
 
 You are obliged to verify your identity with an identity provider. The identity provider will know the identity of the initial account creator. Your identity
@@ -171,7 +171,7 @@ Data retention and deletion
 
 Concordium as a company does not retain or delete any user identifiable information. However, to get an account you must obtain an identity object issued by an identity provider.
 The identity object contains some user identifiable information, such as your name. By default the identity object is only stored in the wallet and is not visible on the chain.
-Some data derived from the identity object is send to the chain, however by default it is not possible to obtain user identifiable information from the information stored in the
+Some data derived from the identity object is sent to the chain, however by default it is not possible to obtain user identifiable information from the information stored in the
 account on the chain.  However, if you choose to reveal any attributes associated with your account, these attributes will be visible on-chain, and can never be deleted.
 
 Governing law and venue
