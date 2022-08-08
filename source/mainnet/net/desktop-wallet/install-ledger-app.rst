@@ -42,6 +42,8 @@ To find out which firmware version the Ledger is running, do the following:
 
 #. On the Ledger press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
 
+#. On the **Nano S Plus** press both buttons on the **General** menu item.
+
 #. Press the right button to navigate to **Firmware version**.
 
 #. Press both buttons to view the **Secure Element** version. 
