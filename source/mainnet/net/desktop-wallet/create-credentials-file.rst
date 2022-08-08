@@ -20,7 +20,7 @@ Create and export a file with credentials
 
 #. Paste the address of the account that you want to add credentials to, and then give the account a name. This is the name that will be shown in your list of accounts.
 
-#. Select **Reveal attributes** if you want any attributes to be public on the blockchain. We recommend that you don't reveal any attributes.
+#. Select **Reveal attributes** if you want any attributes to be public on the blockchain. Concordium recommends that you don't reveal any attributes.
 
 #.  Select **Continue**.
 
@@ -28,7 +28,7 @@ Create and export a file with credentials
 
 #. On the Ledger press both buttons to open the Concordium application. There's a message saying **Concordium is ready**.
 
-#. In the Desktop Wallet, there's a message saying **Ledger Nano S is ready**. Select **Submit**.
+#. In the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**. Select **Submit**.
 
 #. Press both buttons to confirm the following on the Ledger:
 

@@ -44,18 +44,3 @@ To update Ubuntu, you need to download and intall the new version.
 `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`_
 
       - SHA256 checksum of the download: ``35c668769576e32d94f53b3c167b16ad7c74425737932f9b9f2837ea35fe3641``
-
-Docker
-======
-
-To update a Docker node, you need to download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
-
-To upgrade from the previous testnet you should
-
-1. Stop the existing node using the ``concordium-node-stop`` tool.
-2. Delete the existing database. The database is located in ``~/.local/share/concordium/database-v4``. Delete this directory.
-3. Start the new node.
-
-`Download the Testnet suite for Linux <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`_
-
-      - SHA256 checksum of the download: ``f914336abd4143f17beacbeb8f53af775cbbbf29258f40af2ef35fbdc613b8e1``
