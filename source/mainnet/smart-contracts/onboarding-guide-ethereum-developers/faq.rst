@@ -300,7 +300,7 @@ Concordium smart contracts:
     function and for specifying the input parameters to a receive
     function using a structured representation, such as JSON.
 
-    The smart contract function needs to define a ``parameter`` and a `return_value``
+    The smart contract function needs to define a ``parameter`` and a ``return_value``
     so that a schema can be generated for the input parameters and the output parameters, respectively.
 
     .. code-block:: rust
@@ -322,6 +322,12 @@ Concordium smart contracts:
     as a separate file.
 
     **Option 1 (Schema embedded into a smart contract)**
+
+    .. code-block:: console
+
+        $cargo concordium build --schema-embed
+
+    The shorter version of the above command is as follows:
 
     .. code-block:: console
 
@@ -407,7 +413,7 @@ Events:
 
 .. dropdown::  Where can I find a logged event on testnet/mainnet?
 
-    You can look up a transaction hash on the `dashboard <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_.
+    You can look up a transaction hash on the dashboard such as `this example <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_.
     It will provide you with the full execution chain of the smart contracts that
     were invoked and updated during this tx.
     You can click on an updated contract instance row to see additional information.
@@ -439,10 +445,10 @@ Events:
     .. image:: ./images/onboarding_ethereum_developers_11.png
         :width: 100 %
 
-    For example, the above image has an event number tag of `fd` (hex encoding) which is `15*16+13 = 253` in decimal.
+    For example, the above image has an event number tag of ``fd`` (hex encoding) which is ``15*16+13 = 253`` in decimal.
     This number tag corresponds to a `burn event <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs#L53>`_
     of a `Cis2` token.
-    `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value as in the image above).
+    ``u8::MAX`` is ``255`` in decimal and ``u8::MAX-2`` is ``253`` in decimal (the same value as in the image above).
 
     .. code-block:: rust
 
@@ -761,7 +767,10 @@ Miscellaneous:
 
 .. dropdown::  What networks can be used for testing?
 
-    Concordium has a testnet and stagenet for testing.
+    Concordium has a testnet, a stagenet, and a protonet for testing.
+    The testnet is available publicly. Please contact us via Concordium’s technical support
+    support@concordium.software if you have a special
+    request for accessing other networks.
 
 .. dropdown:: Does Concordium have multiSig wallets?
 
