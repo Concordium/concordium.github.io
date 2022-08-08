@@ -113,7 +113,7 @@ Concordium smart contracts:
 
     In contrast to Ethereum, `accounts` are also deployed on-chain and their corresponding `account` address only exists from that point on.
     You cannot send CCD to an account address (or a smart contract address) before they have been deployed/initialized on the Concordium chain.
-    When a smart contract tries to interact with an address that has not been deployed/initialized yet, the smart contract will revert on the Concordium chain.
+    When a smart contract tries to interact with an address that has not been deployed/initialized yet, the interaction fails.
 
 .. dropdown::  Can I distinguish between contract and account addresses?
 
@@ -442,7 +442,7 @@ Events:
     For example, the above image has an event number tag of `fd` (hex encoding) which is `15*16+13 = 253` in decimal.
     This number tag corresponds to a `burn event <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs#L53>`_
     of a `Cis2` token.
-    `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value than in the image above).
+    `u8::MAX` is 255 in decimal and `u8::MAX-2` is 253 in decimal (the same value as in the image above).
 
     .. code-block:: rust
 
@@ -460,6 +460,7 @@ Events:
     to avoid getting collisions. Concordium can efficiently store the event tag in
     1 byte compared to the 32 bytes used by Ethereum.
 
+    **Option 1:**
     You can compare the rest of the event data by adding the below lines of code to your test cases
     and adjusting the `MyEventParams` to the event object that you are using.
 
@@ -470,20 +471,52 @@ Events:
             example_key1: value2,
         }
         let parameter_bytes = to_bytes(&parameter);
-        println!("{:x?}",parameter_bytes);
+        println!("{:02x?}", parameter_bytes);
 
-    When running the test cases with the below command, the event data is printed as bytes to your standard output.
+    When running the test cases with the below command, the event data is printed to your standard output.
 
     .. code-block:: console
 
         $cargo test -- --nocapture
 
     For example, the following output would be shown on
-    `the dashboard <https://dashboard.testnet.concordium.com>`_ as  0: fe0003532a04.
+    `the dashboard <https://dashboard.testnet.concordium.com/lookup>`_ as  0: fe0003532a04.
 
     .. code-block:: console
 
-        [fe, 0, 3, 53, 2a, 4]
+        [fe, 00, 03, 53, 2a, 04]
+
+    **Option 2:**
+    You can compare the rest of the event data by adding the below line to your ``Cargo.toml`` file
+
+    .. code-block:: rust
+
+        [dependencies]
+        hex = "0.4"
+
+    as well as adding the below lines of code to your test cases
+    and adjusting the `MyEventParams` to the event object that you are using.
+
+    .. code-block:: rust
+
+        let parameter = MyEventParams {
+            example_key1: value1,
+            example_key1: value2,
+        }
+        let parameter_bytes = to_bytes(&parameter);
+        println!("{}", hex::encode(&parameter_bytes));
+
+    When running the test cases with the below command, the event data is printed to your standard output.
+
+    .. code-block:: console
+
+        $cargo test -- --nocapture
+
+    For example, the following output would be shown:
+
+    .. code-block:: console
+
+        fe0003532a04
 
 .. dropdown::  How does the TestHost record CCD transfer events in the test cases?
 
