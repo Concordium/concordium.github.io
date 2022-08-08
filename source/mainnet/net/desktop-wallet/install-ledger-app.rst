@@ -40,11 +40,17 @@ Update the Ledger device firmware
 
 To find out which firmware version the Ledger is running, do the following:
 
-#. On the Ledger navigate to **Settings** and press both buttons for a little while to enter the Settings menu.
+#. On the Ledger press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
+
+#. On the **Nano S Plus** press both buttons on the **General** menu item.
 
 #. Press the right button to navigate to **Firmware version**.
 
-#. Press both buttons to view the **Secure Element** version. If it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+#. Press both buttons to view the **Secure Element** version.
+
+   - For **Nano S**, if it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+
+   - For **Nano S Plus**, if it says **1.0.3**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
 For details on how to update the Ledger firmware, see `Ledger Nano S guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_ or `Ledger Nano S Plus guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
@@ -109,7 +115,11 @@ You now have to install a custom certificate on the Ledger to ensure that it tru
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Press the right button while you reconnect the Ledger to the computer, and hold it down until the Ledger says **recovery**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer until the Ledger says **recovery**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
 #. Enter your PIN code.
 
@@ -197,7 +207,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
 #. Enter your PIN code.
 
@@ -319,7 +333,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
 #. Enter your PIN code.
 
