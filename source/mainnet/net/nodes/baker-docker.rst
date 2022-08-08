@@ -32,10 +32,7 @@ and send a ``baker add`` transaction to the network:
 where you replace
 
 - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``<concordium-data-dir>`` with the directory specified as the volume mount for
-  the node database. In the :ref:`sample configuration file<run-a-node>` this is
-  ``/var/lib/concordium-testnet`` for the testnet node, and
-  ``/var/lib/concordium-mainnet`` for the mainnet node.
+- ``<concordium-data-dir>`` with the directory specified as the volume mount for the node database. In the :ref:`sample configuration file<run-a-node>` this is ``/var/lib/concordium-testnet`` for the testnet node, and ``/var/lib/concordium-mainnet`` for the mainnet node.
 
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
@@ -67,7 +64,7 @@ To start the node with these baker keys and bake blocks do the following.
 
    into the ``environment`` section of the ``node`` service section of the file.
 
-When you've placed the file in the appropriate directory start the node again in
+When you've placed the file in the appropriate directory, start the node again in
 the same way as the first time, e.g., ``docker-compose -f testnet-node.yaml
 up``. The node will automatically start baking when the baker is included in the
 bakers for the current epoch.

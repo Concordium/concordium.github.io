@@ -2,30 +2,30 @@
 .. _install-Ledger-app:
 
 ==============================================================
-Set up the Ledger Nano S and install the Concordium Ledger App
+Set up the Ledger device and install the Concordium Ledger App
 ==============================================================
 
-To be able to sign and send transactions using the Desktop Wallet, you need a Ledger Nano S hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.
+To be able to sign and send transactions using the Desktop Wallet, you need a Ledger hardware wallet, and you need to install the Concordium Ledger Application on the Ledger. You can use Windows, macOS or Ubuntu to install the app.
 
 .. Note::
 
-   The Ledger Nano S Plus and Ledger Nano X are not supported currently.
+   The Ledger Nano X is not supported currently.
 
 Prerequisites
 =============
 
 -  Ledger hardware wallet
 
-.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger Nano S hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
+.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
-Set up the Ledger Nano S
+Set up the Ledger device
 ========================
 
-The Ledger Nano S will generate the unique 24-word recovery phrase that is used to derive your private keys.
+The Ledger device will generate the unique 24-word recovery phrase that is used to derive your private keys.
 
 #. Download and install **Ledger Live**. For information on how to do this, see `Ledger's documentation <https://www.ledger.com/ledger-live/download>`_. You’ll only need Ledger Live when you set up the Ledger and update the firmware.
 
-#. Open **Ledger Live**, select **Get started**, and then select **Nano S**.
+#. Open **Ledger Live**, select **Get started**, and then select **Nano S** or **Nano S Plus**.
 
 #. Follow the on-screen setup instructions to set up your PIN code on the Ledger.
 
@@ -33,22 +33,28 @@ The Ledger Nano S will generate the unique 24-word recovery phrase that is used 
 
 .. Warning:: Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
-Once you've set up the Ledger, you must check that it's running the proper firmware version. The Concordium Ledger App currently supports Ledger firmware version 2.0.0 and 2.1.0 on **Mainnet**. The Concordium Ledger App only supports Ledger firmware version 2.1.0 on **Testnet**.
+Once you've set up the Ledger, you must check that it's running the proper firmware version for your device. The Concordium Ledger App currently supports Ledger firmware version 2.1.0 for the Ledger Nano S and 1.0.3 for Ledger Nano S Plus.
 
-Update the Ledger Nano S firmware
+Update the Ledger device firmware
 ---------------------------------
 
 To find out which firmware version the Ledger is running, do the following:
 
-#. On the Ledger navigate to **Settings** and press both buttons for a little while to enter the Settings menu.
+#. On the Ledger press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
+
+#. On the **Nano S Plus** press both buttons on the **General** menu item.
 
 #. Press the right button to navigate to **Firmware version**.
 
-#. Press both buttons to view the **Secure Element** version. If it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+#. Press both buttons to view the **Secure Element** version.
 
-For details on how to update the Ledger firmware, see `Ledger‘s guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_.
+   - For **Nano S**, if it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
-Once you have updated the firmware version, you can download the version of the Ledger app that is appropriate for your firmware at :ref:`Downloads <downloads>`.
+   - For **Nano S Plus**, if it says **1.0.3**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+
+For details on how to update the Ledger firmware, see `Ledger Nano S guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_ or `Ledger Nano S Plus guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
+
+Once you have updated the firmware version, you can download the Ledger app at :ref:`Downloads <downloads>`.
 
 Follow the instructions below to update your app:
 
@@ -109,7 +115,11 @@ You now have to install a custom certificate on the Ledger to ensure that it tru
 
 #. Extract the files from the ZIP folder to a folder on your computer.
 
-#. Press the right button while you reconnect the Ledger to the computer, and hold it down until the Ledger says **recovery**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer until the Ledger says **recovery**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
 #. Enter your PIN code.
 
@@ -197,7 +207,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
 #. Enter your PIN code.
 
@@ -319,7 +333,11 @@ You now have to install a custom certificate to ensure that the Ledger trusts ap
 
 #. Disconnect the Ledger from your computer.
 
-#. Press the right button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+#. Now you need to start recovery mode on the Ledger device.
+
+   - On the **Nano S**, press the *right* button and hold it down while you reconnect the Ledger to the computer. The Ledger says **recovery mode**.
+
+   - On the **Nano S Plus**, press the *left* button and hold it down while you reconnect the Ledger to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
 #. Enter your PIN code.
 
