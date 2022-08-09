@@ -15,7 +15,7 @@ front-end should invoke the functions.
 .. warning::
 
    The reader is assumed to have basic knowledge of what a blockchain and smart
-   contracts are, and front-end development.
+   contracts are, and some experience with front-end development.
 
 To start the tutorial click :ref:`here<wCCD-logic>`.
 
@@ -23,4 +23,4 @@ To start the tutorial click :ref:`here<wCCD-logic>`.
    :hidden:
    :maxdepth: 1
 
-   wCCD-logic
+   wCCD-logic <./wCCD-logic>

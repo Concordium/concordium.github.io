@@ -10,5 +10,5 @@ A number of tutorials.
    :maxdepth: 1
    :caption: Tutorials
 
-   ./piggy-bank/index
-   ./wCCD/index
+   PiggyBank <./piggy-bank/index>
+   wCCD <./wCCD/index>
