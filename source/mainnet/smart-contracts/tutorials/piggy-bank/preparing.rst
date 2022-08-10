@@ -274,3 +274,5 @@ Import your key into the ``concordium-client`` configuration:
 .. note::
 
    You will be asked to input a password. Use the ``export password`` that you used to create the key backup file.
+
+   To continue with the tutorial click :ref:`here<piggy-bank-deploying>`.

@@ -8,23 +8,39 @@ Introduction
 ------------
 
 The native currency on the Concordium blockchain is CCD. When other tokens are
-built on the Concordium blockchain, they often apply the recommended CIS-2
+built on the Concordium blockchain, they often apply the recommended ``CIS-2``
 token standard. This has the advantage that other dApps (decentralized apps)
-can rely on some basic rules on how to correctly interact with the CIS-2
-tokens and on some basic rules on what events and data the apps can be retrieved from the CIS-2 tokens.
+can rely on some basic rules on how to correctly interact with the ``CIS-2``
+tokens and on some basic rules on what events and data the apps can retrieve from the ``CIS-2`` tokens.
 Unfortunately, the native currency CCD has a special intention in the Concordium
-blockchain network and does not comply with the CIS-2 token standard.
+blockchain network and does not comply with the ``CIS-2`` token standard.
 
-Implementing two interfaces (one for CCD and another for CIS-2 tokens)
+.. note::
+
+    The `CIS-2 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_
+    can represent fungible and non-fungible tokens.
+    It combines the Ethereum ``ERC20`` and ``ERC721`` standards with some modifications.
+    The `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
+    is meant to be imported by ``CIS-2`` tokens.
+    Please explore the four ``CIS-2`` token standard implementation examples in the Concordium
+    smart contract repo:
+
+    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
+    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+
+
+Implementing two interfaces (one for CCD and another for ``CIS-2`` tokens)
 within the same smart contract can be cumbersome for developers and adds
-complexity. We need a process that converts CCD into a token that is CIS-2
+complexity. We need a process that converts CCD into a token (named wCCD) that is ``CIS-2``
 compliant so dApps can interact with it easily. For example, decentralized
 exchanges depend on the wCCD token because the wCCD token allows you to trade
-your CCD for other CIS-2 tokens seamlessly.
+your CCD for other ``CIS-2`` tokens seamlessly.
 
 Wrapping CCD refers to the process of converting the native currency CCD into
-a CIS-2 compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD smart
-contract and getting wCCD in return. Unwrapping CCD refers to the opposite process of converting the CIS-2
+a ``CIS-2`` compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD smart
+contract and getting wCCD in return. Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
 compliant wCCD token at a 1:1 ratio back to the native currency CCD by sending
 wCCD to the wCCD smart contract and getting CCD in return.
 
@@ -40,7 +56,7 @@ Protocol contract addresses
 The Concordium foundation maintains the canonical wCCD smart contract protocol and promotes its
 usage to create a coherent overall smart contract ecosystem on the Concordium blockchain.
 
-The canonical wCCD smart contract protocol following the CIS-2 standard is deployed on ``testnet`` at the following addresses:
+The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``testnet`` at the following addresses:
 
 ``ProxyAddress (Testnet)`` = ContractAddress { index: 652, subindex: 0 }
 
@@ -49,7 +65,7 @@ The canonical wCCD smart contract protocol following the CIS-2 standard is deplo
 ``StateAddress (Testnet)`` = ContractAddress { index: 650, subindex: 0 }
 
 
-The canonical wCCD smart contract protocol following the CIS-2 standard is deployed on ``mainnet`` at the following addresses:
+The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``mainnet`` at the following addresses:
 
 ``ProxyAddress (Mainnet)`` = coming soon
 
