@@ -53,6 +53,7 @@
    Tutorials <../smart-contracts/tutorials/piggy-bank/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
    References <../smart-contracts/references/index>
 
 .. toctree::
