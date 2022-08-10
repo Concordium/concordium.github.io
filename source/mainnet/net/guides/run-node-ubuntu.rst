@@ -109,7 +109,7 @@ Upgrade version
 
 .. Note::
 
-   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 To upgrade to a newer version of the `concordium-mainnet-node` package you need to:
 

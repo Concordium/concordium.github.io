@@ -42,7 +42,7 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
-   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 Run a testnet node
 ==================

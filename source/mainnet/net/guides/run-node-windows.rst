@@ -28,7 +28,7 @@ Install/upgrade and run a node
 
 .. Note::
 
-   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions.
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 #. Download the latest Windows Installer package (.msi file).
 
