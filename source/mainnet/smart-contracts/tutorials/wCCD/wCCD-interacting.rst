@@ -23,7 +23,7 @@ You can specify with the ``--amount`` flag how much CCD you want to wrap.
 
 You can download the schema `wrap_fallback_schema.bin <https://distribution.testnet.concordium/tutorials/wCCD/wrap_fallback_schema.bin>`_
 for interacting with the ``wrap`` function
-or created it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
 (TODO: ask if I can upload the schemas at some places and get a link)
 
@@ -38,7 +38,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
         {
             "data": "",
-            "to":  {
+            "to": {
                 "Account": [
                     ACCOUNT_ADDRESS
                 ]
@@ -53,7 +53,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
         {
             "data": "",
-            "to":  {
+            "to": {
                 "Account": [
                     "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
                 ]
@@ -66,7 +66,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
         {
             "data": "",
-            "to":  {
+            "to": {
                 "Contract": [
                     {
                         "index": INDEX,
@@ -91,7 +91,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
         {
             "data": "",
-            "to":  {
+            "to": {
                 "Contract": [
                     {
                         "index": 844,
@@ -142,7 +142,7 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
         [
             {
                 "address": {
-                    "Account":[
+                    "Account": [
                         ACCOUNT
                     ]
                 },
@@ -157,7 +157,7 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
         [
             {
                 "address": {
-                    "Account":[
+                    "Account": [
                         "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
                     ]
                 },
@@ -182,8 +182,7 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
 
         [
             {
-                "address":
-                    {
+                "address": {
                     "Contract": [
                         {
                             "index": INDEX,
@@ -201,8 +200,7 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
 
         [
             {
-                "address":
-                    {
+                "address": {
                     "Contract": [
                         {
                             "index": 844,
@@ -239,7 +237,7 @@ You are ready now to wrap your CCD into wCCD with the following command.
 
     $./concordium-client contract update WCCD_PROXY --entrypoint wrap --schema wrap_fallback_schema.bin --parameter-json wrap.json --amount AMOUNT --sender ACCOUNT --energy 25000 --grpc-port 10001
 
-The below screenshot wraps 1 CCD (1000000 micro CCD) into 1000000 wCCD.
+The below screenshot wraps 1 CCD (1000000 micro CCDs) into 1000000 wCCD.
 
 .. image:: ./images/wCCD_tutorial_2.png
         :width: 100 %
@@ -260,6 +258,98 @@ The ``unWrap`` function
 Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
 compliant wCCD token at a 1:1 ratio back to the native currency CCD by sending
 wCCD to the wCCD smart contract and getting CCD in return.
+
+You can download the schema `unwrap_fallback_schema.bin <https://distribution.testnet.concordium/tutorials/wCCD/unwrap_fallback_schema.bin>`_
+for interacting with the ``unwrap`` function
+or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+
+The ``unwrap`` function requires some input parameters. Because you will use a ``schema``,
+the input parameters can be provided with the ``--parameter-json`` flag.
+Create a ``unwrap.json`` file and insert the below JSON object.
+
+.. dropdown:: Input parameters for the ``unwrap`` function
+
+    .. code-block::
+
+        {
+            "amount": AMOUNT,
+            "data": "",
+                "owner": {
+                    "Enum": [
+                        {
+                            "Account": [
+                                ACCOUNT_ADDRESS
+                            ]
+                        },
+                        {
+                            "Contract": [
+                                {
+                                    "index": INDEX,
+                                    "subindex": SUBINDEX
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "receiver": {
+                    "Enum": [
+                        {
+                            "Account": [
+                                ACCOUNT_ADDRESS
+                            ]
+                        },
+                        {
+                            "Contract": [
+                                {
+                                    "index": INDEX,
+                                    "subindex": SUBINDEX
+                                },
+                                ENTRYPOINT_NAME
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+
+    If you insert everything correctly, the JSON object should look similar to
+    the below JSON object that will unwrap 1000000 wCDD from an account
+    and send the received CCDs back to the same account.
+
+    .. code-block:: json
+
+        {
+            "amount": "1000000",
+            "data": "",
+            "owner": {
+                "Account": [
+                    "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
+                ]
+            },
+            "receiver": {
+                "Account": [
+                    "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
+                ]
+            }
+        }
+
+The ``owner`` has to have at least a balance of AMOUNT in wCCD tokens
+and the ``sender`` account has to be the ``owner`` address or be an ``operator`` of the ``owner`` address.
+You are ready now to unwrap your wCCD into CCD with the following command.
+
+.. code-block:: console
+
+    $./concordium-client contract update WCCD_PROXY --entrypoint unwrap --schema unwrap_fallback_schema.bin --parameter-json unwrap.json --sender ACCOUNT --energy 25000 --grpc-port 10001
+
+The below screenshot executes the ``unwrap`` function.
+
+**TODO: add screenshot once a new protocol is deployed**
+
+Confirm that the CCD balance of the ``receiver`` was increased
+by ``AMOUNT`` (specified in the ``unwrap.json`` file) and that the CCD
+balance of the ``proxy`` contract was decreased by ``AMOUNT``.
+
+Confirm that the wCCD balance of the ``owner`` address decreased by ``AMOUNT`` specified in the ``unwrap.json`` file.
 
 The ``transfer`` function
 =========================
