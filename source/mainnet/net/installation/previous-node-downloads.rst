@@ -56,7 +56,9 @@ macOS - Mainnet and Testnet
 Linux-Docker - Mainnet
 ======================
 
-`4.2.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.2.1-0-mainnet.tar.gz>`_
+For information about how to run the previous versions of Docker nodes prior to 4.2.3, see :ref:`Run a node with previous Docker node versions<run-previous-docker-version>`.
+
+`4.2.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.2.1-0-mainnet.tar.gz>`__
    - Verification instructions:
       In a terminal:
 
@@ -64,7 +66,7 @@ Linux-Docker - Mainnet
       #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.2.1-0-mainnet.tar.gz
       #. Verify that the output matches the SHA256 checksum 8bf746a5efbdc160a562c7c03d9fb7b2f1ab431877aad066187d4bd8354294e5.
 
-`4.1.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.1.1-1-mainnet.tar.gz>`_
+`4.1.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.1.1-1-mainnet.tar.gz>`__
    - Verification instructions:
       In a terminal:
 
@@ -72,7 +74,7 @@ Linux-Docker - Mainnet
       #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.1.1-1-mainnet.tar.gz
       #. Verify that the output matches the SHA256 checksum eb5c7e0573b0778589ae035373a253330e367ad281916739ed9f5104fd08c22b.
 
-`3.0.2 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`_
+`3.0.2 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`__
    - Verification instructions:
       In a terminal:
 
@@ -80,7 +82,7 @@ Linux-Docker - Mainnet
       #. Then paste the following into the terminal: $sha526sum concordium-software-linux-3.0.2-0-mainnet.tar.gz
       #. Verify that the output matches the SHA256 checksum 733600b800f7a184152453a5aa52f6d0d50101a698804a957eb82c47ff2396f8.
 
-`3.0.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.1-0-mainnet.tar.gz>`_
+`3.0.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.1-0-mainnet.tar.gz>`__
    - Verification instructions:
       In a terminal:
 
@@ -102,7 +104,7 @@ Ubuntu - Mainnet
 Default GRPC port is set to 10000
 Default listen port is set to 8888
 
-`4.2.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.1_amd64.deb>`_
+`4.2.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.1_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
@@ -112,7 +114,7 @@ Default listen port is set to 8888
       #. Verify that the output matches the SHA256 checksum 0ecefbdaa7a00d90d8e8099c6d25558f3d8f9d23164726550b1d62cfde5821b5.
 
 
-`4.1.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.1.1_amd64.deb>`_
+`4.1.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.1.1_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
@@ -122,7 +124,7 @@ Default listen port is set to 8888
       #. Verify that the output matches the SHA256 checksum b1f4c582a44761363bed5f25bb857cfe541cae4becf9f14c0062b67c4caabfd3.
 
 
-`3.0.2 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`_
+`3.0.2 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
@@ -135,7 +137,9 @@ Default listen port is set to 8888
 Linux-Docker - Testnet
 ======================
 
-`4.1.1 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`_
+For information about how to run the previous versions of Docker nodes prior to 4.2.3, see :ref:`Run a node with previous Docker node versions<run-previous-docker-version>`.
+
+`4.1.1 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`__
    - Verification instructions:
       In a terminal:
 
@@ -152,7 +156,7 @@ Linux-Docker - Testnet
       #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.0.11-0-testnet.tar.gz
       #. Verify that the output matches the SHA256 checksum 0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b.
 
-`3.0.1 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.1-0-testnet.tar.gz>`_
+`3.0.1 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.1-0-testnet.tar.gz>`__
    - Verification instructions:
       In a terminal:
 
@@ -166,7 +170,7 @@ Ubuntu - Testnet
 Default GRPC port is set to 10001
 Default listen port is set to 8889
 
-`4.2.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.1_amd64.deb>`_
+`4.2.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.1_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
@@ -175,7 +179,7 @@ Default listen port is set to 8889
       #. Paste the following into the terminal: $sha256sum concordium-testnet-node_4.2.1_amd64.deb
       #. Verify that the output matches the SHA256 checksum ea17f5e192e77a1469ab9c4486892f1a6f63894de6ab54a86ea7b80cdecbbf17.
 
-`4.1.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`_
+`4.1.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
@@ -184,7 +188,7 @@ Default listen port is set to 8889
       #. Paste the following into the terminal: $sha256sum concordium-testnet-node_4.1.1_amd64.deb
       #. Verify that the output matches the SHA256 checksum 35c668769576e32d94f53b3c167b16ad7c74425737932f9b9f2837ea35fe3641.
 
-`3.0.2 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.2_amd64.deb>`_
+`3.0.2 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.2_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
