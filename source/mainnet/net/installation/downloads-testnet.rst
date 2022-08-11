@@ -111,6 +111,10 @@ Concordium node distributions v4.2.3
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
+.. Note::
+
+   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
 Ubuntu
 ------
 
