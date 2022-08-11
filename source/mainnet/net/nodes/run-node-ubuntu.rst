@@ -109,7 +109,7 @@ Upgrade version
 
 .. Note::
 
-   When upgrading, you can only upgrade one version higher (V+1) than your current version. You cannot skip versions. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+  When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 To upgrade to a newer version of the `concordium-testnet-node` package you need to:
 

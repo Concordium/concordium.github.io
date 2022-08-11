@@ -14,8 +14,6 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-`Windows 4.2.1 <https://distribution.concordium.software/windows/Signed/Node-4.2.1-0.msi>`_
-
 `Windows 4.1.1 <https://distribution.concordium.software/windows/Signed/Node-4.1.1.msi>`_ (Note: new genesis)
 
 `Windows 4.1.0 <https://distribution.concordium.software/windows/Signed/Node-4.1.0-0.msi>`_
@@ -30,8 +28,6 @@ Windows - Mainnet and Testnet
 
 macOS - Mainnet and Testnet
 ===========================
-
-`macOS 4.2.1 <https://distribution.concordium.software/macos/signed/concordium-node-4.2.1.pkg>`_
 
 `macOS 4.1.1 <https://distribution.concordium.software/macos/signed/concordium-node-4.1.1-1.pkg>`_ (Note: new genesis)
 
@@ -94,16 +90,6 @@ Ubuntu - Mainnet
 Default GRPC port is set to 10000
 Default listen port is set to 8888
 
-`4.2.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.1_amd64.deb>`__
-   - Verification instructions
-
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_4.2.1_amd64.deb
-      #. Verify that the output matches the SHA256 checksum 0ecefbdaa7a00d90d8e8099c6d25558f3d8f9d23164726550b1d62cfde5821b5.
-
-
 `4.1.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.1.1_amd64.deb>`__
    - Verification instructions
 
@@ -159,15 +145,6 @@ Ubuntu - Testnet
 
 Default GRPC port is set to 10001
 Default listen port is set to 8889
-
-`4.2.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.1_amd64.deb>`__
-   - Verification instructions
-
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_4.2.1_amd64.deb
-      #. Verify that the output matches the SHA256 checksum ea17f5e192e77a1469ab9c4486892f1a6f63894de6ab54a86ea7b80cdecbbf17.
 
 `4.1.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`__
    - Verification instructions
