@@ -460,6 +460,96 @@ balance of the ``from`` address was decreased by ``AMOUNT``.
 The ``updateOperator`` function
 ===============================
 
+You can add one or more operator addresses to an address that you control.
+
+These operators have access to your wCCD tokens
+at that address and can transfer or unwrap them on your behalf.
+You should only add operator addresses that you trust. The ``updateOperator`` function allows you
+to add and remove operators.
+
+For example, a smart contract address is often added as an operator so it can
+access your tokens to perform some smart contract operations
+without you having to interact with the smart contract again.
+
+Download the schema `updateOperator_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
+for interacting with the ``updateOperator`` function
+or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+
+The ``updateOperator`` function requires some input parameters. Because you will use a ``schema``,
+the input parameters can be provided with the ``--parameter-json`` flag.
+Create an ``updateOperator.json`` file and insert the below JSON object.
+
+.. dropdown:: Input parameters for the ``updateOperator`` function
+
+    .. code-block::
+
+        [
+            {
+                "operator": {
+                    "Enum": [
+                        {
+                            "Account": [
+                                ACCOUNT_ADDRESS
+                            ]
+                        },
+                        {
+                            "Contract": [
+                                {
+                                    "index": INDEX,
+                                    "subindex": SUBINDEX
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "update": {
+                    "Enum": [
+                        {
+                            "Remove": []
+                        },
+                        {
+                            "Add": []
+                        }
+                    ]
+                }
+            }
+        ]
+
+    .. note::
+
+        You can add/remove several operator addresses in the above array simultaneously.
+
+    If you insert everything correctly, the JSON object should look similar to
+    the below JSON object that will add the account address "4DH219B..." as
+    an operator to the ``sender`` account.
+
+    .. code-block:: json
+
+        [
+            {
+                "operator": {
+                    "Account": [
+                        "4DH219BXocxeVByKpZAGKNAJx7s2w1HFpwaNu1Ljd1mXFXig22"
+                    ]
+                },
+                "update":
+                {
+                    "Add": []
+                }
+            }
+        ]
+
+You are ready now to update the operator on your account address with the following command.
+
+.. code-block:: console
+
+    $./concordium-client contract update WCCD_PROXY --entrypoint updateOperator --schema updateOperator_fallback_schema.bin --parameter-json updateOperator.json --sender ACCOUNT --energy 25000 --grpc-port 10001
+
+The below screenshot shows the execution of the ``updateOperator`` function.
+
+.. image:: ./images/wCCD_tutorial_6.png
+        :width: 100 %
+
 Non-state-mutative functions
 ----------------------------
 
