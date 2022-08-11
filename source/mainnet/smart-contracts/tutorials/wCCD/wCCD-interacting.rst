@@ -21,11 +21,9 @@ a ``CIS-2`` compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD sma
 contract and getting wCCD in return.
 You can specify with the ``--amount`` flag how much CCD you want to wrap.
 
-You can download the schema `wrap_fallback_schema.bin <https://distribution.testnet.concordium/tutorials/wCCD/wrap_fallback_schema.bin>`_
+Download the schema `wrap_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 for interacting with the ``wrap`` function
 or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
-
-(TODO: ask if I can upload the schemas at some places and get a link)
 
 The ``wrap`` function requires some input parameters. Because you will use a ``schema``,
 the input parameters can be provided with the ``--parameter-json`` flag.
@@ -150,6 +148,10 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
             }
         ]
 
+    .. note::
+
+        You can query the balance of several addresses in the above array.
+
     If you insert the account address correctly, the JSON object should look similar to the below JSON object.
 
     .. code-block:: json
@@ -194,6 +196,10 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
             }
         ]
 
+    .. note::
+
+        You can query the balance of several addresses in the above array.
+
     If you insert the smart contract address correctly, the JSON object should look similar to the below JSON object.
 
     .. code-block:: json
@@ -222,8 +228,10 @@ because the ``wrap`` function will credit some wCCD to the ``to`` address.
         :width: 100 %
 
 **TODO: deploy the wCCD on testnet with the balanceOf_fallback_schema embedded into the smart contract
-because I think this is the most common invoke executed (advantage: users don't  have to provide an extra schema with
-a flag when querying the wCCD balance)**
+because I think this is the most common invoke executed throuh the fallback function (advantage: users don't  have to provide an extra schema with
+a flag when querying the wCCD balance through the fallback function)**
+
+**TODO: create all schemas again from the final version of the smart contracts deployed on testnet so minor changes are included**
 
 .. note::
 
@@ -237,7 +245,7 @@ You are ready now to wrap your CCD into wCCD with the following command.
 
     $./concordium-client contract update WCCD_PROXY --entrypoint wrap --schema wrap_fallback_schema.bin --parameter-json wrap.json --amount AMOUNT --sender ACCOUNT --energy 25000 --grpc-port 10001
 
-The below screenshot wraps 1 CCD (1000000 micro CCDs) into 1000000 wCCD.
+The below screenshot shows the wrapping of 1 CCD (1000000 micro CCDs) into 1000000 wCCD.
 
 .. image:: ./images/wCCD_tutorial_2.png
         :width: 100 %
@@ -259,7 +267,7 @@ Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
 compliant wCCD token at a 1:1 ratio back to the native currency CCD by sending
 wCCD to the wCCD smart contract and getting CCD in return.
 
-You can download the schema `unwrap_fallback_schema.bin <https://distribution.testnet.concordium/tutorials/wCCD/unwrap_fallback_schema.bin>`_
+Download the schema `unwrap_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 for interacting with the ``unwrap`` function
 or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
@@ -341,7 +349,7 @@ You are ready now to unwrap your wCCD into CCD with the following command.
 
     $./concordium-client contract update WCCD_PROXY --entrypoint unwrap --schema unwrap_fallback_schema.bin --parameter-json unwrap.json --sender ACCOUNT --energy 25000 --grpc-port 10001
 
-The below screenshot executes the ``unwrap`` function.
+The below screenshot shows the execution of the ``unwrap`` function.
 
 **TODO: add screenshot once a new protocol is deployed**
 
@@ -353,6 +361,101 @@ Confirm that the wCCD balance of the ``owner`` address decreased by ``AMOUNT`` s
 
 The ``transfer`` function
 =========================
+
+You can transfer the wCCD tokens from one address to another address.
+
+Download the schema `transfer_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
+for interacting with the ``transfer`` function
+or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+
+The ``transfer`` function requires some input parameters. Because you will use a ``schema``,
+the input parameters can be provided with the ``--parameter-json`` flag.
+Create a ``transfer.json`` file and insert the below JSON object.
+
+.. dropdown:: Input parameters for the ``transfer`` function
+
+    .. code-block::
+
+        {
+            "amount": AMOUNT,
+            "data": "",
+            "from": {
+                "Enum": [
+                    {
+                        "Account": [
+                            ACCOUNT_ADDRESS
+                        ]
+                    },
+                    {
+                        "Contract": [
+                            {
+                                "index": INDEX,
+                                "subindex": SUBINDEX
+                            }
+                        ]
+                    }
+                ]
+            },
+            "to": {
+                "Enum": [
+                    {
+                        "Account": [
+                            ACCOUNT_ADDRESS
+                        ]
+                    },
+                    {
+                        "Contract": [
+                            {
+                                "index": INDEX,
+                                "subindex": SUBINDEX
+                            },
+                            ENTRYPOINT_NAME
+                        ]
+                    }
+                ]
+            },
+            "token_id": ""
+        }
+
+    If you insert everything correctly, the JSON object should look similar to
+    the below JSON object that will transfer 1 wCCD from an account address to another account address.
+
+    .. code-block:: json
+
+        [
+            {
+                "amount": "1",
+                "data": "",
+                "from": {
+                    "Account": [
+                        "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
+                    ]
+                },
+                "to": {
+                    "Account": [
+                        "4DH219BXocxeVByKpZAGKNAJx7s2w1HFpwaNu1Ljd1mXFXig22"
+                    ]
+                },
+                "token_id": ""
+            }
+        ]
+
+The ``from`` address has to have at least a balance of AMOUNT in wCCD tokens
+and the ``sender`` account has to be the ``from`` address or be an ``operator`` of the ``from`` address.
+You are ready now to transfer your wCCD to another address with the following command.
+
+.. code-block:: console
+
+    $./concordium-client contract update WCCD_PROXY --entrypoint transfer --schema transfer_fallback_schema.bin --parameter-json transfer.json --sender ACCOUNT --energy 25000 --grpc-port 10001
+
+The below screenshot shows the execution of the ``transfer`` function.
+
+.. image:: ./images/wCCD_tutorial_5.png
+        :width: 100 %
+
+Confirm that the wCCD balance of the ``to`` address was increased
+by ``AMOUNT`` (specified in the ``transfer.json`` file) and that the wCCD
+balance of the ``from`` address was decreased by ``AMOUNT``.
 
 The ``updateOperator`` function
 ===============================
