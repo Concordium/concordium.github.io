@@ -14,17 +14,13 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-`Windows 4.2.2 <https://distribution.concordium.software/windows/Signed/Node-4.2.2-0.msi>`_
-
 `Windows 4.2.1 <https://distribution.concordium.software/windows/Signed/Node-4.2.1-0.msi>`_
 
 `Windows 4.1.1 <https://distribution.concordium.software/windows/Signed/Node-4.1.1.msi>`_ (Note: new genesis)
 
 `Windows 4.1.0 <https://distribution.concordium.software/windows/Signed/Node-4.1.0-0.msi>`_
 
-`Windows 4.0.11 <https://distribution.concordium.software/windows/Signed/Node-4.0.11-0.msi>`_
-
-`Windows 4.0.7 <https://distribution.concordium.software/windows/Signed/Node-4.0.7.msi>`_
+`Windows 4.0.11 <https://distribution.concordium.software/windows/Signed/Node-4.0.11-0.msi>`_ (Testnet only)
 
 `Windows 3.0.2 <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
 
@@ -37,15 +33,9 @@ macOS - Mainnet and Testnet
 
 `macOS 4.2.1 <https://distribution.concordium.software/macos/signed/concordium-node-4.2.1.pkg>`_
 
-`macOS 4.2.0 <https://distribution.concordium.software/macos/signed/concordium-node-4.2.0-0.pkg>`_
-
 `macOS 4.1.1 <https://distribution.concordium.software/macos/signed/concordium-node-4.1.1-1.pkg>`_ (Note: new genesis)
 
-`macOS 4.1.0 <https://distribution.concordium.software/macos/signed/concordium-node-4.1.0.pkg>`_
-
-`macOS 4.0.11-1 <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg>`_
-
-`macOS 4.0.11 <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11.pkg>`_
+`macOS 4.0.11-1 <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg>`_ (Testnet only)
 
 `macOS 3.0.2 <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
 
