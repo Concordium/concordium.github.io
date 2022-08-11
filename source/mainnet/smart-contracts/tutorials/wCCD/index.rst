@@ -1,11 +1,10 @@
 .. _wCCD:
 
-.. image:: piggy-bank.svg
-   :width: 33%
+.. image:: wCCD.svg
+   :width: 40%
    :align: center
    :alt: The wCCD smart contract protocol
 
-<TODO: create or ask if design can create a picture for this tutorial>
 
 =======================
 The wCCD smart contract
