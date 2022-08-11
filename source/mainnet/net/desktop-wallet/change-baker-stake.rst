@@ -53,7 +53,7 @@ Change the staked amount (Multi-signature account)
 
 #. Enter the new amount that you want to stake if you want to change that. Change the restaking preference if you want to change that. Click **Continue**.
 
-#. Set an expiry date and time for your proposal. You must submit the proposals to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
+#. Set an expiry date and time for your proposal. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
 Generate the transaction
 ------------------------

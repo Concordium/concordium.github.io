@@ -26,12 +26,6 @@ You can find Concordium Mobile Wallet on App Store and on Google Play.
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
 
-The Concordium Mobile Wallet has been verified by NowSecure.
-
-   .. image:: ../images/mobile-wallet/nowsecure_certificate.png
-      :width: 32%
-      :target: https://www.nowsecure.com/certified-apps/concordium/
-
 .. _downloads-desktop-wallet:
 
 Concordium Desktop Wallet
