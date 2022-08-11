@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_Array_of_ContractAddress",
+  "type": [
+    "array",
+    "null"
+  ],
+  "items": {
+    "$ref": "#/definitions/ContractAddress"
+  },
+  "definitions": {
+    "ContractAddress": {
+      "type": "object",
+      "required": [
+        "index",
+        "subindex"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "subindex": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    }
+  }
+}

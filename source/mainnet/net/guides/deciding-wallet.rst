@@ -59,7 +59,7 @@ What are the requirements for each wallet?
 
 - **Mobile Wallet**: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- **Desktop Wallet**: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
+- **Desktop Wallet**: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
 
 Comparison
 ==========
@@ -87,7 +87,7 @@ The following table lists the major features of each wallet.
    *  - Creation of identities
       - Creation of identities
    *  - Creation and management of baker accounts
-      - The Concordium Client must be used to manage baker accounts. Rewards are visible in the wallet.
+      - Creation and management of baker accounts
    *  - Running a node is a requirement
       - Running a node is not needed unless baking
 

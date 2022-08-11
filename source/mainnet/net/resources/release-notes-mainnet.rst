@@ -6,6 +6,84 @@ Release notes - Mainnet
 
 Mainnet 4: Sirius
 =================
+
+.. Note::
+
+   Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+August 4, 2022
+
+Concordium Client 4.0.4
+-----------------------
+
+The Concordium Client has been updated to better support the new smart contract v1 schema.
+
+Cargo concordium 2.0.2
+----------------------
+
+Cargo concordium has also been updated to better support the new smart contract v1 schema.
+
+Concordium Node 4.2.3 for Docker
+--------------------------------
+
+Some improvements have been made to the Docker node version. The new Docker images (one for Mainnet and one for Testnet) are designed for use with docker-compose or a similar driver. The node also requires a database which must be stored on the host system so that it persists when the Docker container is stopped.
+
+It is not mandatory but **strongly recommended** for Linux node runners to migrate to the new Docker distribution. The old Docker images will be deprecated and future node versions from 4.3 and upwards will only be provided in the new distribution.
+
+Concordium Desktop Wallet 1.5.0
+-------------------------------
+
+The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+
+August 2, 2022
+
+Concordium Node 4.2.3
+---------------------
+
+Concordium Node 4.2.3 fixes a critical security vulnerability present in all
+previous 4.* node versions. All node runners **must** upgrade as soon as
+possible.
+
+The security advisory detailing the issue and the patch will be released on
+August 15th.
+
+July 4, 2022
+
+Concordium Node 4.2.1
+----------------------
+
+Concordium Node 4.2.1 is a maintenance release, bringing performance improvements and bugfixes. The highlights are:
+
+- A significant decrease in node startup time. The exact improvements are platform dependent, but startup should be at least 6 times faster on mainnet.
+- A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less than 50% of memory compared to 4.1.1.
+- Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
+
+June 30, 2022
+
+Concordium Mobile Wallet for iOS v3.0.0(53)
+------------------------------------------------
+
+Concordium Mobile Wallet for iOS 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+
+You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
+
+If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
+
+June 27, 2022
+
+Concordium Mobile Wallet for Android v3.0.0(100)
+------------------------------------------------
+
+Concordium Mobile Wallet 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+
+You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
+
+If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
+
+This functionality will be available for iOS shortly.
+
 June 21, 2022
 
 Concordium Desktop Wallet v1.4.2

@@ -1,0 +1,1345 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_InvokeContractResult",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/InvokeContractResult"
+    },
+    {
+      "type": "null"
+    }
+  ],
+  "definitions": {
+    "AccountAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50,
+      "pattern": "^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*"
+    },
+    "Address": {
+      "description": "Either an account or contract address. Some operations are allowed on both types of items, hence the need for this type.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "address",
+            "type"
+          ],
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "AddressAccount"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "address",
+            "type"
+          ],
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/ContractAddress"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "AddressContract"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "BakerAggregationVerifyKey": {
+      "type": "string",
+      "maxLength": 192,
+      "minLength": 192,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "CCDAmount": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "pattern": "^([0-9])*"
+    },
+    "ContractAddress": {
+      "type": "object",
+      "required": [
+        "index",
+        "subindex"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "subindex": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "ContractEvent": {
+      "type": "string",
+      "maxLength": 1024,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "ContractTraceElement": {
+      "description": "A successful contract invocation produces a sequence of effects on smart contracts and possibly accounts (if any contract transfers CCD to an account).",
+      "oneOf": [
+        {
+          "description": "A contract instance was updated.",
+          "type": "object",
+          "required": [
+            "Updated"
+          ],
+          "properties": {
+            "Updated": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/InstanceUpdatedEvent"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "A contract transferred am amount to the account,",
+          "type": "object",
+          "required": [
+            "Transferred"
+          ],
+          "properties": {
+            "Transferred": {
+              "type": "object",
+              "required": [
+                "amount",
+                "from",
+                "to"
+              ],
+              "properties": {
+                "amount": {
+                  "description": "Amount transferred.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/CCDAmount"
+                    }
+                  ]
+                },
+                "from": {
+                  "description": "Sender contract.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/ContractAddress"
+                    }
+                  ]
+                },
+                "to": {
+                  "description": "Receiver account.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/AccountAddress"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Interrupted"
+          ],
+          "properties": {
+            "Interrupted": {
+              "type": "object",
+              "required": [
+                "address",
+                "events"
+              ],
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/ContractAddress"
+                },
+                "events": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/ContractEvent"
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Resumed"
+          ],
+          "properties": {
+            "Resumed": {
+              "type": "object",
+              "required": [
+                "address",
+                "success"
+              ],
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/ContractAddress"
+                },
+                "success": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CredentialRegistrationID": {
+      "type": "string",
+      "maxLength": 96,
+      "minLength": 96,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "HexString": {
+      "type": "string",
+      "minLength": 0,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "InstanceUpdatedEvent": {
+      "description": "Data generated as part of updating a single contract instance. In general a single [Update](transactions::Payload::Update) transaction will generate one or more of these events, together with possibly some transfers.",
+      "type": "object",
+      "required": [
+        "address",
+        "amount",
+        "events",
+        "instigator",
+        "message",
+        "receiveName"
+      ],
+      "properties": {
+        "address": {
+          "description": "Address of the affected instance.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ContractAddress"
+            }
+          ]
+        },
+        "amount": {
+          "description": "The amount the method was invoked with.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CCDAmount"
+            }
+          ]
+        },
+        "contractVersion": {
+          "default": 0,
+          "allOf": [
+            {
+              "$ref": "#/definitions/WasmVersion"
+            }
+          ]
+        },
+        "events": {
+          "description": "Any contract events that might have been generated by the contract execution.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContractEvent"
+          }
+        },
+        "instigator": {
+          "description": "The origin of the message to the smart contract. This can be either an account or a smart contract.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Address"
+            }
+          ]
+        },
+        "message": {
+          "description": "The message passed to method.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Parameter"
+            }
+          ]
+        },
+        "receiveName": {
+          "description": "The name of the method that was executed.",
+          "type": "string"
+        }
+      }
+    },
+    "InvokeContractResult": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "events",
+            "tag",
+            "usedEnergy"
+          ],
+          "properties": {
+            "events": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ContractTraceElement"
+              }
+            },
+            "returnValue": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/HexString"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "success"
+              ]
+            },
+            "usedEnergy": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "reason",
+            "tag",
+            "usedEnergy"
+          ],
+          "properties": {
+            "reason": {
+              "$ref": "#/definitions/RejectReason"
+            },
+            "returnValue": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/HexString"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "failure"
+              ]
+            },
+            "usedEnergy": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      ]
+    },
+    "Parameter": {
+      "type": "string",
+      "maxLength": 2048,
+      "minLength": 0,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "RejectReason": {
+      "description": "A reason for why a transaction was rejected. Rejected means included in a block, but the desired action was not achieved. The only effect of a rejected transaction is payment.\n\nNOTE: Some of the variant definitions can look peculiar, but they are made to be compatible with the serialization of the Haskell datatype.",
+      "oneOf": [
+        {
+          "description": "Error raised when validating the Wasm module.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "ModuleNotWF"
+              ]
+            }
+          }
+        },
+        {
+          "description": "As the name says.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/SHA256Hash"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "ModuleHashAlreadyExists"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Account does not exist.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidAccountReference"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Reference to a non-existing contract init method.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/SHA256Hash"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidInitMethod"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Reference to a non-existing contract receive method.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/SHA256Hash"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidReceiveMethod"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Reference to a non-existing module.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/SHA256Hash"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidModuleReference"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Contract instance does not exist.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/ContractAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidContractAddress"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Runtime exception occurred when running either the init or receive method.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "RuntimeFailure"
+              ]
+            }
+          }
+        },
+        {
+          "description": "When one wishes to transfer an amount from A to B but there are not enough funds on account/contract A to make this possible. The data are the from address and the amount to transfer.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/Address"
+                },
+                {
+                  "$ref": "#/definitions/CCDAmount"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "AmountTooLarge"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Serialization of the body failed.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "SerializationFailure"
+              ]
+            }
+          }
+        },
+        {
+          "description": "We ran of out energy to process this transaction.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "OutOfEnergy"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Rejected due to contract logic in init function of a contract.",
+          "type": "object",
+          "required": [
+            "rejectReason",
+            "tag"
+          ],
+          "properties": {
+            "rejectReason": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "RejectedInit"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "contractAddress",
+            "parameter",
+            "receiveName",
+            "rejectReason",
+            "tag"
+          ],
+          "properties": {
+            "contractAddress": {
+              "$ref": "#/definitions/ContractAddress"
+            },
+            "parameter": {
+              "$ref": "#/definitions/Parameter"
+            },
+            "receiveName": {
+              "type": "string"
+            },
+            "rejectReason": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "RejectedReceive"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Reward account desired by the baker does not exist.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NonExistentRewardAccount"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Proof that the baker owns relevant private keys is not valid.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidProof"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Tried to add baker for an account that already has a baker",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "AlreadyABaker"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Tried to remove a baker for an account that has no baker",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NotABaker"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The amount on the account was insufficient to cover the proposed stake",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InsufficientBalanceForBakerStake"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The amount provided is under the threshold required for becoming a baker",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "StakeUnderMinimumThresholdForBaking"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The change could not be made because the baker is in cooldown for another change",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "BakerInCooldown"
+              ]
+            }
+          }
+        },
+        {
+          "description": "A baker with the given aggregation key already exists",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/BakerAggregationVerifyKey"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "DuplicateAggregationKey"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Encountered credential ID that does not exist",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NonExistentCredentialID"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Attempted to add an account key to a key index already in use",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "KeyIndexAlreadyInUse"
+              ]
+            }
+          }
+        },
+        {
+          "description": "When the account threshold is updated, it must not exceed the amount of existing keys",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidAccountThreshold"
+              ]
+            }
+          }
+        },
+        {
+          "description": "When the credential key threshold is updated, it must not exceed the amount of existing keys",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidCredentialKeySignThreshold"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Proof for an encrypted amount transfer did not validate.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidEncryptedAmountTransferProof"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Proof for a secret to public transfer did not validate.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidTransferToPublicProof"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Account tried to transfer an encrypted amount to itself, that's not allowed.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "EncryptedAmountSelfTransfer"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The provided index is below the start index or above `startIndex + length incomingAmounts`",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidIndexOnEncryptedTransfer"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The transfer with schedule is going to send 0 tokens",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "ZeroScheduledAmount"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The transfer with schedule has a non strictly increasing schedule",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NonIncreasingSchedule"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The first scheduled release in a transfer with schedule has already expired",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "FirstScheduledReleaseExpired"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Account tried to transfer with schedule to itself, that's not allowed.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "ScheduledSelfTransfer"
+              ]
+            }
+          }
+        },
+        {
+          "description": "At least one of the credentials was either malformed or its proof was incorrect.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InvalidCredentials"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Some of the credential IDs already exist or are duplicated in the transaction.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CredentialRegistrationID"
+              }
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "DuplicateCredIDs"
+              ]
+            }
+          }
+        },
+        {
+          "description": "A credential id that was to be removed is not part of the account.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CredentialRegistrationID"
+              }
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NonExistentCredIDs"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Attemp to remove the first credential",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "RemoveFirstCredential"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The credential holder of the keys to be updated did not sign the transaction",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "CredentialHolderDidNotSign"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Account is not allowed to have multiple credentials because it contains a non-zero encrypted transfer.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NotAllowedMultipleCredentials"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The account is not allowed to receive encrypted transfers because it has multiple credentials.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NotAllowedToReceiveEncrypted"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The account is not allowed to send encrypted transfers (or transfer from/to public to/from encrypted)",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NotAllowedToHandleEncrypted"
+              ]
+            }
+          }
+        },
+        {
+          "description": "A configure baker transaction is missing one or more arguments in order to add a baker.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "MissingBakerAddParameters"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Finalization reward commission is not in the valid range for a baker",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "FinalizationRewardCommissionNotInRange"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Baking reward commission is not in the valid range for a baker",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "BakingRewardCommissionNotInRange"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Transaction fee commission is not in the valid range for a baker",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "TransactionFeeCommissionNotInRange"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Tried to add baker for an account that already has a delegator.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "AlreadyADelegator"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The amount on the account was insufficient to cover the proposed stake.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InsufficientBalanceForDelegationStake"
+              ]
+            }
+          }
+        },
+        {
+          "description": "A configure delegation transaction is missing one or more arguments in order to add a delegator.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "MissingDelegationAddParameters"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Delegation stake when adding a delegator was 0.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "InsufficientDelegationStake"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Account is not a delegation account.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "DelegatorInCooldown"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Account is not a delegation account.",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "$ref": "#/definitions/AccountAddress"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "NotADelegator"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Delegation target is not a baker",
+          "type": "object",
+          "required": [
+            "contents",
+            "tag"
+          ],
+          "properties": {
+            "contents": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "DelegationTargetNotABaker"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The amount would result in pool capital higher than the maximum threshold.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "StakeOverMaximumThresholdForPool"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The amount would result in pool with a too high fraction of delegated capital.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "PoolWouldBecomeOverDelegated"
+              ]
+            }
+          }
+        },
+        {
+          "description": "The pool is not open to delegators.",
+          "type": "object",
+          "required": [
+            "tag"
+          ],
+          "properties": {
+            "tag": {
+              "type": "string",
+              "enum": [
+                "PoolClosed"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    },
+    "WasmVersion": {
+      "type": "integer",
+      "format": "uint8",
+      "minimum": 0.0
+    }
+  }
+}

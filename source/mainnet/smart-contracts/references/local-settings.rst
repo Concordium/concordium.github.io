@@ -8,7 +8,7 @@ Local settings for ``concordium-client`` are stored in a single folder, the
 location of which depends on the specific operating system used:
 
 * Linux/MacOS: ``$HOME/.config/concordium``
-* Windows: ``C:\Users\%USERNAME%\Documents\concordium-software``
+* Windows: ``C:\Users\%USERNAME%\AppData\Roaming\concordium``
 
 The general structure of the folder is similar to the following:
 

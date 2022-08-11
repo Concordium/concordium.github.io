@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nullable_Array_of_ArInfo_for_HexString",
+  "type": [
+    "array",
+    "null"
+  ],
+  "items": {
+    "$ref": "#/definitions/ArInfo_for_HexString"
+  },
+  "definitions": {
+    "ArInfo_for_HexString": {
+      "description": "Information on a single anonymity revoker held by the IP. Typically an IP will hold a more than one.",
+      "type": "object",
+      "required": [
+        "arDescription",
+        "arIdentity",
+        "arPublicKey"
+      ],
+      "properties": {
+        "arDescription": {
+          "description": "description of the anonymity revoker (e.g. name, contact number)",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Description"
+            }
+          ]
+        },
+        "arIdentity": {
+          "description": "unique identifier of the anonymity revoker",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "arPublicKey": {
+          "description": "elgamal encryption key of the anonymity revoker",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PublicKey"
+            }
+          ]
+        }
+      }
+    },
+    "Description": {
+      "description": "Description either of an anonymity revoker or identity provider. Metadata that should be visible on the chain.",
+      "type": "object",
+      "required": [
+        "description",
+        "name",
+        "url"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "PublicKey": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^([0-9]?[a-f]?)*$"
+    }
+  }
+}

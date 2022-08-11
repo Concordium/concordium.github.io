@@ -24,7 +24,7 @@ There are several things you must set up in preparation before you can start bak
 - Download and install the Desktop Wallet.
 - Set up an initial account and an identity.
 - Set up a new account that you'll be using as baker account.
-- Verify that the account balance has the required amount of CCD.
+- Verify that the account balance has the required amount of CCD (minimum 14000) to become a baker.
 
 .. Note::
 
@@ -65,7 +65,7 @@ Add baker (Single-signature account)
 
 4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** in the Desktop Wallet and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
 #. On the Ledger device, a message says **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
 

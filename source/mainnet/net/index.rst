@@ -26,7 +26,7 @@
    guides/create-account
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
-   desktop-wallet/delegation-dw
+   guides/delegation
    guides/shielded-transfer
    guides/export-import
    mobile-wallet/index
@@ -40,6 +40,7 @@
    nodes/node-requirements
    guides/overview-baker-process
    desktop-wallet/baking-dw
+   mobile-wallet/baker-mw
    references/concordium-client
    references/transactions
    references/query-node
@@ -52,6 +53,7 @@
    Tutorials <../smart-contracts/tutorials/piggy-bank/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
    References <../smart-contracts/references/index>
 
 .. toctree::
