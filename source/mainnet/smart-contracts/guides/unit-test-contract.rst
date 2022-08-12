@@ -359,7 +359,7 @@ Invocations of smart contracts on the chain are transactional. This means that
 if a contract changes its state and then fails, the state is rolled back to how
 it was before the invocation.
 
-If we want the same behavior when testing, it is necessary to use a helper
+If you want the same behavior when testing, it is necessary to use a helper
 method on the |TestHost|_, namely |with_rollback|_.
 To illustrate, here is an example in which the receive function increments the
 state and then immediately fails:
@@ -411,8 +411,16 @@ state and then immediately fails:
 receive function and, if it failed, rolling back the state.
 This means that ``State`` must implement the trait |StateClone|_, which
 fortunately is implemented for all |Clone|_ types.
-If your ``State`` has one or more fields comprised of |StateBox|_, |StateSet|_, or |StateMap|_, it is
-necessary to derive |StateClone|_ directly. For example:
+However, it is not possible to implement |Clone|_ correctly for your state if it
+includes one of the special state types.
+
+This is how to handle the two scenarios:
+
+- Derive |StateClone|_ for your state (see example below) if it has one or more fields comprised
+  of |StateBox|_, |StateSet|_, or |StateMap|_.
+- Otherwise, derive |Clone|_ for your ``State``.
+
+Here is an example of how to derive |StateClone|_:
 
 .. code-block:: rust
 
@@ -426,9 +434,10 @@ You can read more about deriving |StateClone|_ on `docs.rs <https://docs.rs/conc
 
 .. note::
 
-   The state also needs to be rolled back on errors occuring in mock entrypoints, described in
+   The state also needs to be rolled back on errors occuring in mock
+   entrypoints, as described in
    :ref:`testing_contract_invocations`, but that is handled by the test
-   framework itself. Which means that mock entrypoints are handled
+   framework itself. This means that mock entrypoints are handled
    transactionally, even without the use of |with_rollback|_.
 
 Testing transfers
