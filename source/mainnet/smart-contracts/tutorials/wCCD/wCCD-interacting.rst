@@ -9,8 +9,10 @@ Non-state-mutative functions
 
 The protocol has four non-state-mutative functions (``balanceOf``, ``operatorOf``, ``tokenMetadata``, and ``supports``)
 that you can invoke on the ``proxy`` contract or the ``implementation`` contract.
-The schema is embedded on the ``implementation`` contract while you will need to provide a `schema file <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-when invoking the functions on the ``proxy`` contract.
+The schema is embedded into the ``implementation`` contract while you will need to provide a schema file
+when invoking the non-state-mutative functions on the ``proxy`` contract. All used schema files in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
+or you can create them as described in the
+comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
 **TODO: create all the schemas for the state-mutative/non-state-muatative functions from the last version of the protocol that will be deployed so minor changes are included. Currently, only the state-mutative schemas are added to this PR.**
 
@@ -313,7 +315,9 @@ The protocol has four state-mutative functions (``wrap``, ``unwrap``,
 ``transfer``, and ``updateOperator``) that you can invoke on the ``proxy`` contract.
 These invokes will be passed through the fallback function on the ``proxy`` to the ``implementation`` contract.
 You require a different schema and JSON file with your input parameters for every invoke.
-These files are provided for download in each section.
+All used schema files in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
+or you can create them as described in the
+comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
 The ``wrap`` function
 =====================
@@ -322,10 +326,6 @@ Wrapping CCD refers to the process of converting the native currency CCD into
 a ``CIS-2`` compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD smart
 contract and getting wCCD in return.
 You can specify with the ``--amount`` flag how much CCD you want to wrap.
-
-Download the schema `wrap_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-for interacting with the ``wrap`` function
-or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
 The ``wrap`` function requires some input parameters. Because you will use a ``schema``,
 the input parameters can be provided with the ``--parameter-json`` flag.
@@ -443,10 +443,6 @@ Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
 compliant wCCD token at a 1:1 ratio back to the native currency CCD by sending
 wCCD to the wCCD smart contract and getting CCD in return.
 
-Download the schema `unwrap_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-for interacting with the ``unwrap`` function
-or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
-
 The ``unwrap`` function requires some input parameters. Because you will use a ``schema``,
 the input parameters can be provided with the ``--parameter-json`` flag.
 Create a ``unwrap.json`` file and insert the below JSON object.
@@ -547,10 +543,6 @@ The ``transfer`` function
 =========================
 
 You can transfer the wCCD tokens from one address to another address.
-
-Download the schema `transfer_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-for interacting with the ``transfer`` function
-or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
 The ``transfer`` function requires some input parameters. Because you will use a ``schema``,
 the input parameters can be provided with the ``--parameter-json`` flag.
@@ -656,10 +648,6 @@ to add and remove operators.
 For example, a smart contract address is often added as an operator so it can
 access your tokens to perform some smart contract operations
 without you having to interact with the smart contract again.
-
-Download the schema `updateOperator_fallback_schema.bin <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-for interacting with the ``updateOperator`` function
-or create it yourself as described in the comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
 The ``updateOperator`` function requires some input parameters. Because you will use a ``schema``,
 the input parameters can be provided with the ``--parameter-json`` flag.
