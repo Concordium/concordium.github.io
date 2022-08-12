@@ -39,51 +39,6 @@ macOS - Mainnet and Testnet
 
 `macOS 3.0.0 <https://distribution.concordium.software/macos/signed/concordium-node-3.0.0.pkg>`_
 
-Linux-Docker - Mainnet
-======================
-
-For information about how to run the previous versions of Docker nodes prior to 4.2.3, see :ref:`Run a node with previous Docker node versions<run-previous-docker-version>`.
-
-`4.2.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.2.1-0-mainnet.tar.gz>`__
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.2.1-0-mainnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum 8bf746a5efbdc160a562c7c03d9fb7b2f1ab431877aad066187d4bd8354294e5.
-
-`4.1.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-4.1.1-1-mainnet.tar.gz>`__
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.1.1-1-mainnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum eb5c7e0573b0778589ae035373a253330e367ad281916739ed9f5104fd08c22b.
-
-`3.0.2 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.2-0-mainnet.tar.gz>`__
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-3.0.2-0-mainnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum 733600b800f7a184152453a5aa52f6d0d50101a698804a957eb82c47ff2396f8.
-
-`3.0.1 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.1-0-mainnet.tar.gz>`__
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-3.0.1-0-mainnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum 9939f3f002a899645d3698488e5d99c9683a475f4d33197f8cab70a9cb39f2b3.
-
-`3.0.0 <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-3.0.0-0-mainnet.tar.gz>`_
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-3.0.0-0-mainnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum 897ef39807eb449945b0498def00ca14d2762be8f9d206a62f1d9cd97f2beec0.
-
 Ubuntu - Mainnet
 ================
 
@@ -108,37 +63,6 @@ Default listen port is set to 8888
       #. Navigate to the download.
       #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_3.0.2_amd64.deb
       #. Verify that the output matches the SHA256 checksum a6a70d06fb3b3b2a3fa0f43452fc54e4a9dc2be9855a0cde8c60dba370fea814.
-
-
-Linux-Docker - Testnet
-======================
-
-For information about how to run the previous versions of Docker nodes prior to 4.2.3, see :ref:`Run a node with previous Docker node versions<run-previous-docker-version>`.
-
-`4.1.1 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.1.1-1-testnet.tar.gz>`__
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.1.1-1-testnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum f914336abd4143f17beacbeb8f53af775cbbbf29258f40af2ef35fbdc613b8e1.
-
-`4.0.11 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-4.0.11-0-testnet.tar.gz>`_
-   - Verification instructions:
-
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-4.0.11-0-testnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum 0978b1fdbb201dd99b7b8c2ee99f66d616a93ee22a2ef3e384e86dadd0a7051b.
-
-`3.0.1 <https://distribution.testnet.concordium.com/tools/linux/concordium-software-linux-3.0.1-0-testnet.tar.gz>`__
-   - Verification instructions:
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Then paste the following into the terminal: $sha526sum concordium-software-linux-3.0.1-0-testnet.tar.gz
-      #. Verify that the output matches the SHA256 checksum 3c3ba7b6dabcd3431deecfc08b7455c5ee64df49ba799e87061e3a5ed48c55da.
 
 Ubuntu - Testnet
 ================
