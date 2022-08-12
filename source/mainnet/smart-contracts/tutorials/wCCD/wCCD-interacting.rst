@@ -4,6 +4,17 @@
 Interacting with the wCCD token protocol
 ========================================
 
+.. note::
+
+    Before you start with part 2 of this tutorial, make sure you have access to a testnet node,
+    installed the ``concordium-client``, created an account in the mobile wallet app
+    that is funded with some CCD, and imported the keys
+    into the ``concordium-client`` configuration. If you haven't completed any of the above steps,
+    the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
+    will guide you through these setup steps.
+    If you haven't completed any of the above steps, you can continue
+    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial also we recommend completing every part of this tutorial.
+
 Non-state-mutative functions
 ----------------------------
 
@@ -13,6 +24,8 @@ The schema is embedded into the ``implementation`` contract while you will need 
 when invoking the non-state-mutative functions on the ``proxy`` contract. All used schema files in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 or you can create them as described in the
 comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+Because you will use a ``schema`` (embedded or provided with an extra flag),
+the input parameters can be provided with the ``--parameter-json`` flag.
 
 **TODO: create all the schemas for the state-mutative/non-state-muatative functions from the last version of the protocol that will be deployed so minor changes are included. Currently, only the state-mutative schemas are added to this PR.**
 
@@ -28,7 +41,7 @@ Getting the CCD balance of an address
 
 .. dropdown:: Checking the CCD balance of a smart contract (click here)
 
-    You can check the CCD balance of a smart contract with this command.
+    You can check the CCD balance of a smart contract with this command:
 
     .. code-block:: console
 
@@ -254,7 +267,8 @@ The ``tokenMetadata`` function
 
     .. note::
 
-        This empty input array is required because of the CIS-2 token standard.
+        This empty string is required because of the CIS-2 token standard.
+        The `tokenId` of the wCCD token is the smallest unit possible (an empty string).
 
 You are ready now to invoke the ``tokenMetadata`` function with one of the following commands.
 
@@ -305,7 +319,7 @@ token contract supports the following standards
 ``["12345","CIS-0","CIS-2"]``. Its response is that it does
 not support the standard ``12345`` but it supports the ``CIS-0`` and the ``CIS-1`` standards.
 
-.. image:: ./images/wCCD_tutorial_8.png
+.. image:: ./images/wCCD_tutorial_9.png
     :width: 100 %
 
 State-mutative functions
@@ -318,6 +332,8 @@ You require a different schema and JSON file with your input parameters for ever
 All used schema files in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 or you can create them as described in the
 comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+Because you will use a ``schema``,
+the input parameters can be provided with the ``--parameter-json`` flag.
 
 The ``wrap`` function
 =====================
@@ -327,8 +343,6 @@ a ``CIS-2`` compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD sma
 contract and getting wCCD in return.
 You can specify with the ``--amount`` flag how much CCD you want to wrap.
 
-The ``wrap`` function requires some input parameters. Because you will use a ``schema``,
-the input parameters can be provided with the ``--parameter-json`` flag.
 Create a ``wrap.json`` file and insert the JSON object
 from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract).
 
@@ -443,11 +457,9 @@ Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
 compliant wCCD token at a 1:1 ratio back to the native currency CCD by sending
 wCCD to the wCCD smart contract and getting CCD in return.
 
-The ``unwrap`` function requires some input parameters. Because you will use a ``schema``,
-the input parameters can be provided with the ``--parameter-json`` flag.
-Create a ``unwrap.json`` file and insert the below JSON object.
-
 .. dropdown:: Input parameters for the ``unwrap`` function (click here)
+
+    Create a ``unwrap.json`` file and insert the below JSON object.
 
     .. code-block::
 
@@ -544,11 +556,9 @@ The ``transfer`` function
 
 You can transfer the wCCD tokens from one address to another address.
 
-The ``transfer`` function requires some input parameters. Because you will use a ``schema``,
-the input parameters can be provided with the ``--parameter-json`` flag.
-Create a ``transfer.json`` file and insert the below JSON object.
-
 .. dropdown:: Input parameters for the ``transfer`` function (click here)
+
+    Create a ``transfer.json`` file and insert the below JSON object.
 
     .. code-block::
 
@@ -649,11 +659,9 @@ For example, a smart contract address is often added as an operator so it can
 access your tokens to perform some smart contract operations
 without you having to interact with the smart contract again.
 
-The ``updateOperator`` function requires some input parameters. Because you will use a ``schema``,
-the input parameters can be provided with the ``--parameter-json`` flag.
-Create an ``updateOperator.json`` file and insert the below JSON object.
-
 .. dropdown:: Input parameters for the ``updateOperator`` function (click here)
+
+    Create an ``updateOperator.json`` file and insert the below JSON object.
 
     .. code-block::
 

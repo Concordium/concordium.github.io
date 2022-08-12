@@ -11,7 +11,7 @@ The wCCD smart contract
 =======================
 
 In this tutorial, you are going to get familiar with the deployed wCCD token on testnet.
-You will write a basic front-end example that can read and write to the deployed wCCD smart contract on testnet.
+You are going to write a basic front-end example that can read and write to the deployed wCCD smart contract on testnet.
 
 In the :ref:`first part<wCCD-introduction>`, you will learn more about the wCCD token protocol.
 
