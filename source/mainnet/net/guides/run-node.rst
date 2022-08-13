@@ -348,7 +348,14 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. Start the new node.
+3. If your node is a existing baker node, update the configuration file above to include
+
+   .. code-block:: yaml
+
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+
+   into the ``environment`` section of the ``node`` service section of the file.
+4. Start the new node.
 
 Troubleshooting
 ===============
