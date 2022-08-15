@@ -13,7 +13,7 @@ Interacting with the wCCD token protocol
     the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
     will guide you through these setup steps.
     If you haven't completed any of the above steps, you can continue
-    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial also we recommend completing every part of this tutorial.
+    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, we recommend completing every part of this tutorial.
 
 Non-state-mutative functions
 ----------------------------
@@ -27,7 +27,12 @@ comments of the `upgradable wCCD smart contract <https://github.com/Concordium/c
 Because you will use a ``schema`` (embedded or provided with an extra flag),
 the input parameters can be provided with the ``--parameter-json`` flag.
 
-**TODO: create all the schemas for the state-mutative/non-state-muatative functions from the last version of the protocol that will be deployed so minor changes are included. Currently, only the state-mutative schemas are added to this PR.**
+.. note::
+
+    It is recommended to invoke the non-state-mutative functions
+    on the ``proxy`` and not on the ``implementation`` in production.
+    When the protocol is upgraded, the ``implementation`` address becomes invalid,
+    you would need to update your production product to the new ``implementation`` address.
 
 .. _balanceCCD:
 
@@ -39,6 +44,15 @@ Getting the CCD balance of an address
     You can check the CCD balance of an account on `CCDScan <https://testnet.ccdscan.io/>`_.
 
     .. image:: ./images/wCCD_tutorial_1.png
+        :width: 100 %
+
+    You can check the CCD balance of an account with this command:
+
+    .. code-block:: console
+
+        $./concordium-client account show ACCOUNT --grpc-port 10001
+
+    .. image:: ./images/wCCD_tutorial_10.png
         :width: 100 %
 
 .. dropdown:: Checking the CCD balance of a smart contract (click here)
@@ -54,9 +68,9 @@ Getting the CCD balance of an address
 
 .. note::
 
-    The smallest unit of CCD is 1 micro CCD and equals the 10^{−6} (one millionth) of a CCD.
+    The smallest unit of CCD is 1 micro CCD and equals the 10\ :sup:`−6` (one millionth) of a CCD.
     CCD has 6 decimal places. 1 CCD is represented by the balance
-    value of 1000000 on the blockchain and is worth the equivalent of a balance value of 1000000 wCCD.
+    value of 1,000,000 on the blockchain and is worth the equivalent of a balance value of 1,000,000 wCCD.
 
 .. _balanceOf:
 
@@ -76,7 +90,7 @@ The ``balanceOf`` function
                         ACCOUNT
                     ]
                 },
-                "token_id":""
+                "token_id": TOKEN_ID
             }
         ]
 
@@ -95,7 +109,7 @@ The ``balanceOf`` function
                         "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
                     ]
                 },
-                "token_id":""
+                "token_id": ""
             }
         ]
 
@@ -124,7 +138,7 @@ The ``balanceOf`` function
                         }
                     ]
                 },
-                "token_id":""
+                "token_id": TOKEN_ID
             }
         ]
 
@@ -146,7 +160,7 @@ The ``balanceOf`` function
                         }
                     ]
                 },
-                "token_id":""
+                "token_id": ""
             }
         ]
 
@@ -165,9 +179,9 @@ a flag when querying the wCCD balance through the fallback function)**
 
 .. note::
 
-    The smallest unit of CCD is 1 micro CCD and equals the 10^{−6} (one millionth) of a CCD.
+    The smallest unit of CCD is 1 micro CCD and equals the 10\ :sup:`−6` (one millionth) of a CCD.
     CCD has 6 decimal places. 1 CCD is represented by the balance
-    value of 1000000 on the blockchain and is worth the equivalent of a balance value of 1000000 wCCD.
+    value of 1,000,000 on the blockchain and is worth the equivalent of a balance value of 1,000,000 wCCD.
 
 .. _operatorOf:
 
@@ -303,8 +317,8 @@ The ``supports`` function
 
     .. note::
 
-        You can find more information about the `CIS-0 standard here <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-0.rst>`_.
-        You can find more information about the `CIS-2 standard here <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_.
+        You can find more information about the `CIS-0 standard <https://proposals.concordium.software/CIS/cis-0.html>`_
+        and the `CIS-2 standard <https://proposals.concordium.software/CIS/cis-2.html>`_.
 
 You are ready now to invoke the ``supports`` function with one of the following commands.
 
@@ -355,7 +369,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
     .. code-block::
 
         {
-            "data": "",
+            "data": DATA_STRING,
             "to": {
                 "Account": [
                     ACCOUNT_ADDRESS
@@ -363,7 +377,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
             }
         }
 
-    The ``data`` field is only relevant if wCCD is sent to a smart contract as described in option 2.
+    The ``DATA_STRING`` is only relevant if wCCD is sent to a smart contract as described in option 2.
     You can use your account address if you want to credit the wCCD to your own account.
     If you insert your account address correctly, the JSON object should look similar to the below JSON object.
 
@@ -383,7 +397,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
     .. code-block::
 
         {
-            "data": "",
+            "data": DATA_STRING,
             "to": {
                 "Contract": [
                     {
@@ -395,10 +409,10 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
             }
         }
 
-    The ``data`` field is relevant because wCCD is sent to a smart contract.
+    The ``DATA_STRING`` is relevant because wCCD is sent to a smart contract and it is a string of bytes (string with lowercase hex).
     The ``OnReceivingCis2`` hook is executed in that case. This hook invokes the ``ENTRYPOINT_NAME``
     on the smart contract ``INDEX`` with the ``OnReceivingCis2Params`` parameters
-    which include the above ``data`` field. This action allows the receiving smart contract to
+    which include the above ``DATA_STRING``. This action allows the receiving smart contract to
     react to the credited wCCD amount. You can keep the data field empty
     if you don't want to send any additional data to the receiving smart contract.
 
@@ -440,7 +454,7 @@ You are ready now to wrap your CCD into wCCD with the following command.
 
     $./concordium-client contract update WCCD_PROXY --entrypoint wrap --schema wrap_fallback_schema.bin --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
 
-The below screenshot shows the wrapping of 1 CCD (1000000 micro CCDs) into 1000000 wCCD.
+The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 wCCD.
 
 .. image:: ./images/wCCD_tutorial_2.png
     :width: 100 %
@@ -455,7 +469,7 @@ by ``AMOUNT`` and that the CCD balance of the ``proxy`` contract was increased b
 
 Confirm that the wCCD balance of the ``to`` address increased by ``AMOUNT``.
 
-The ``unWrap`` function
+The ``unwrap`` function
 =======================
 
 Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
@@ -470,7 +484,7 @@ wCCD token in the wCCD smart contract and getting CCD in return.
 
         {
             "amount": AMOUNT,
-            "data": "",
+            "data": DATA_STRING,
             "owner": {
                 "Enum": [
                     {
@@ -509,13 +523,13 @@ wCCD token in the wCCD smart contract and getting CCD in return.
         }
 
     If you insert everything correctly, the JSON object should look similar to
-    the below JSON object that will unwrap 1000000 wCDD from an account
+    the below JSON object that will unwrap 1,000,000 wCDD from an account
     and send the received CCDs back to the same account.
 
     .. code-block:: json
 
         {
-            "amount": "1000000",
+            "amount": "1,000,000",
             "data": "",
             "owner": {
                 "Account": [
@@ -570,7 +584,7 @@ You can transfer the wCCD tokens from one address to another address.
         [
             {
                 "amount": AMOUNT,
-                "data": "",
+                "data": DATA_STRING,
                 "from": {
                     "Enum": [
                         {
@@ -606,7 +620,7 @@ You can transfer the wCCD tokens from one address to another address.
                         }
                     ]
                 },
-                "token_id": ""
+                "token_id": TOKEN_ID
             }
         ]
 

@@ -5,16 +5,16 @@ Understanding the wCCD token protocol
 =====================================
 
 The native currency on the Concordium blockchain is CCD. When other tokens are
-built on the Concordium blockchain, they often apply the recommended ``CIS-2``
+built on the Concordium blockchain, they often use the recommended ``CIS-2``
 token standard. This has the advantage that other dApps (decentralized apps)
 can rely on some basic rules on how to interact with the ``CIS-2``
 tokens and on some basic rules on how the apps can retrieve events and data from the ``CIS-2`` tokens.
-Unfortunately, the native currency CCD has a special intention in the Concordium
+The native currency CCD has a special intention in the Concordium
 blockchain network and does not comply with the ``CIS-2`` token standard.
 
 .. note::
 
-    The `CIS-2 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_
+    The `CIS-2 standard <https://proposals.concordium.software/CIS/cis-2.html>`_
     can represent fungible and non-fungible tokens.
     It combines the Ethereum ``ERC20`` and ``ERC721`` standards with some modifications.
     The `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
@@ -37,15 +37,20 @@ your CCD for other ``CIS-2`` tokens seamlessly.
 
 Wrapping CCD refers to the process of converting the native currency CCD into
 a ``CIS-2`` compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD smart
-contract and getting wCCD in return. Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
-compliant wCCD token at a 1:1 ratio back to the native currency CCD by buring the
-wCCD token in the wCCD smart contract and getting CCD in return.
+contract and getting wCCD in return.
+You send some CCD to the ``wrap`` function in the wCCD smart contract and it mints the same amount of
+wCCD tokens to your specified receiver address.
+wCCD is a token minted(created) by the wCCD smart contract when you invoke the ``wrap`` function.
 
-wCCD is a token minted(created) by the wCCD smart contract when you call the ``wrap`` function.
-wCCD is burned(destroyed) by the wCCD smart contract when you call the ``unwrap`` function.
+Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
+compliant wCCD token at a 1:1 ratio back to the native currency CCD by burning the
+wCCD token in the wCCD smart contract and getting CCD in return.
+You invoke the ``unwrap`` function in the wCCD smart contract with the amount of wCCD that you want to burn
+and the wCCD smart contract sends the same amount in CCD back to your specified address while burning your wCCD tokens.
+wCCD is burned(destroyed) by the wCCD smart contract when you invoke the ``unwrap`` function.
+
 The circulating supply of the wCCD token is backed 1:1
 by the CCD balance on the wCCD smart contract.
-
 
 Protocol contract addresses
 ---------------------------
@@ -53,8 +58,10 @@ Protocol contract addresses
 The Concordium foundation maintains the canonical wCCD smart contract protocol and promotes its
 usage to create a coherent overall smart contract ecosystem on the Concordium blockchain.
 
-**TODO: Is it Concordium foundation will run the wCCD protocol or someone else?**
-**TODO: Update the below addresses once the final version is deployed.**
+.. note::
+
+    The below testnet addresses are an early version of the wCCD contract protocol.
+    They will be updated when the protocol is finalized and some minor changes can be expected.
 
 The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``testnet`` at the following addresses:
 
@@ -66,6 +73,10 @@ The canonical wCCD smart contract protocol following the ``CIS-2`` standard is d
 
 
 The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``mainnet`` at the following addresses:
+
+.. note::
+
+    Deployment on mainnet will follow once a partner has been chosen to manage the deployment.
 
 ``ProxyAddress (Mainnet)`` = coming soon
 
