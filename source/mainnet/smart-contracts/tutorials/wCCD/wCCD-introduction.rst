@@ -53,7 +53,7 @@ Protocol contract addresses
 The Concordium foundation maintains the canonical wCCD smart contract protocol and promotes its
 usage to create a coherent overall smart contract ecosystem on the Concordium blockchain.
 
-**TODO: Ask is it Concordium foundation will run the wCCD protocol or someone else?**
+**TODO: Is it Concordium foundation will run the wCCD protocol or someone else?**
 **TODO: Update the below addresses once the final version is deployed.**
 
 The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``testnet`` at the following addresses:
