@@ -348,7 +348,7 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. If your node is a existing baker node, update the configuration file above to include
+3. If your node is an existing baker node, update the configuration file above to include
 
    .. code-block:: yaml
 
