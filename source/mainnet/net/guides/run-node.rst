@@ -157,7 +157,7 @@ To run a node on testnet use the following configuration file and follow the ste
 
    .. code-block:: console
 
-      $docker-compose up -f testnet-node.yaml
+      $docker-compose -f testnet-node.yaml up
 
 The configuration will start two containers, one running the node, and another
 running the node collector that reports the node state to the network dashboard.
