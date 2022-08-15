@@ -35,7 +35,7 @@ Configure a baker node on Windows
 
    - ``MyBakerKeys.json`` with the name of baker keys file you generated
    - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-   - ``MyBakerURL`` with the URL to the json file containing information for your baker pool URL (optional)
+   - ``MyBakerURL`` with the URL containing information for your baker pool; can be left as an empty string if you do not want to provide a URL.
    - ``<concordium-data-dir>`` with any path of your choice.
 
    In the following, the baker keys are referred to as baker-credentials.json.
