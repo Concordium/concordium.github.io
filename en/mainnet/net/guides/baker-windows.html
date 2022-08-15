@@ -1243,9 +1243,16 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --open-delegation-for all --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
+<p>where you replace</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerKeys.json</span></code> with the name of baker keys file you generated</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerURL</span></code> with the URL containing information for your baker pool; can be left as an empty string if you do not want to provide a URL.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p></li>
+</ul>
 <p>In the following, the baker keys are referred to as baker-credentials.json.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1269,9 +1276,9 @@ body {margin:0;}
 </div>
 <div class="section" id="view-the-node-log">
 <h2>View the node log<a class="headerlink" href="#view-the-node-log" title="Permalink to this headline">#</a></h2>
+<p>You can find the node logs here:</p>
 <blockquote>
-<div><p>You can find the node logs here:</p>
-<ul class="simple">
+<div><ul class="simple">
 <li><p>Mainnet: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\mainnet\logs</span></code></p></li>
 <li><p>Testnet: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\testnet\logs</span></code></p></li>
 </ul>

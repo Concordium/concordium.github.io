@@ -1392,7 +1392,7 @@ These images are designed to be used together with docker-compose, or a similar 
 <p>This name can be set to any non-empty string. If the name has spaces it should be quoted.</p>
 </li>
 <li><p>Start the node and the collector.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker-compose up -f testnet-node.yaml
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker-compose -f testnet-node.yaml up
 </pre></div>
 </div>
 </li>
@@ -1569,6 +1569,12 @@ existing node database directory for use by the new container, i.e., replacing</
 <p>Or, alternatively, moving the contents of <code class="docutils literal notranslate"><span class="pre">~/.local/share/concordium</span></code> to,
 e.g., <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> and keeping the configuration files as
 they are.</p>
+</li>
+<li><p>If your node is an existing baker node, update the configuration file above to include</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+</pre></div>
+</div>
+<p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
 </li>
 <li><p>Start the new node.</p></li>
 </ol>
