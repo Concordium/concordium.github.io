@@ -42,7 +42,9 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
-   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3.
+
+   If you are running version 4.2.3 you can :ref:`migrate to the latest version<migration-docker-distribution>`. If you are running any version older than 4.2.3 you will have to delete your database and start over using the instructions on this page.
 
 Run a testnet node
 ==================

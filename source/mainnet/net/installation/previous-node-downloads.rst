@@ -22,10 +22,6 @@ Windows - Mainnet and Testnet
 
 `Windows 3.0.2 <https://distribution.concordium.software/windows/Signed/Node-3.0.2.msi>`_
 
-`Windows 3.0.1 <https://distribution.concordium.software/windows/Signed/Node-3.0.1.msi>`_
-
-`Windows 3.0.0 <https://distribution.concordium.software/windows/Signed/Node-3.0.0.msi>`_
-
 macOS - Mainnet and Testnet
 ===========================
 
@@ -34,10 +30,6 @@ macOS - Mainnet and Testnet
 `macOS 4.0.11-1 <https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg>`_ (Testnet only)
 
 `macOS 3.0.2 <https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg>`_
-
-`macOS 3.0.1 <https://distribution.concordium.software/macos/signed/concordium-node-3.0.1.pkg>`_
-
-`macOS 3.0.0 <https://distribution.concordium.software/macos/signed/concordium-node-3.0.0.pkg>`_
 
 Ubuntu - Mainnet
 ================
