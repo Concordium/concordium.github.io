@@ -29,7 +29,14 @@ Configure a baker node on Windows
 
    .. code-block:: console
 
-     $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+     $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --out <concordium-data-dir>/baker-credentials.json
+
+   where you replace
+
+   - ``MyBakerKeys.json`` with the name of baker keys file you generated
+   - ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
+   - ``MyBakerURL`` with the URL containing information for your baker pool; can be left as an empty string if you do not want to provide a URL.
+   - ``<concordium-data-dir>`` with any path of your choice.
 
    In the following, the baker keys are referred to as baker-credentials.json.
 
@@ -57,7 +64,8 @@ Configure a baker node on Windows
 
 View the node log
 =================
-   You can find the node logs here:
+
+You can find the node logs here:
 
    - Mainnet: ``C:\ProgramData\Concordium\Node Runner\mainnet\logs``
    - Testnet: ``C:\ProgramData\Concordium\Node Runner\testnet\logs``
