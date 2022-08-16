@@ -7,14 +7,19 @@ The Desktop Wallet
 
 The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
 
-The Mobile Wallet
+The |mw-gen1|
 -----------------
 
-The Mobile Wallet is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
 
-To learn more about the differences between the two wallets, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet<choosing-wallet>`.
+The |mw-gen2|
+------------------
 
-.. warning:: You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities.
+
+To learn more about the differences between the wallets, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet<choosing-wallet>`.
+
+.. warning:: You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
 Command-line tool
 -----------------

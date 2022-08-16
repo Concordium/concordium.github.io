@@ -4,7 +4,7 @@
 Identities
 ==========
 
-Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen1|, |mw-gen2|, Desktop Wallet, or Concordium Client for your transactions.
 
 Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.
 
@@ -37,10 +37,10 @@ You are in control of which attributes are revealed to the public. You can choos
 Obtain an identity
 ------------------
 
-You can create identities in the :ref:`Desktop Wallet or Mobile Wallet <create-initial-account>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
+You can create identities in the :ref:`Desktop Wallet, |mw-gen1|, or |mw-gen2| <create-initial-account>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
-   Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
+   Currently, it is not possible to exchange identities and accounts between the |mw-gen1|, |mw-gen2|, and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| or |mw-gen2| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1| or |mw-gen2|.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
@@ -54,7 +54,7 @@ About accounts
 
 For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
-Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 .. _revoke-anomity:
 

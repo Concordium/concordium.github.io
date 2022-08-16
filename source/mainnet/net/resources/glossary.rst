@@ -300,6 +300,8 @@ who submitted it to the chain. In contrast, the real-life identity of the
 owner of a regular account can only be ascertained by anonymity revokers working
 in concert with the identity provider.
 
+Initial accounts are only relevant for Desktop Wallet and |mw-gen2|.
+
 .. _glossary-leader-election:
 
 Leader Election

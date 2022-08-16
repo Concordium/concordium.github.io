@@ -8,6 +8,10 @@
 .. |cdw-rpm| replace:: concordium-desktop-wallet-1.5.0.rpm
 .. |cdw-rpm-checksum| replace:: 845f375c728b14ce13400869001b58c894510454dd7af8fa95d9538b5d8ef2d4
 
+.. Mobile Wallet product names
+.. |mw-gen1| replace:: Mobile Wallet
+.. |mw-gen2| replace:: Concordium Pax Mobile Wallet
+    
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_4.0.4-0
 .. |client-linux-checksum| replace:: 8d4bc3e630c958d0443fa5cdbff2bcfba3bca30424346fd8ad6f5415aa52ab95

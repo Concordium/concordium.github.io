@@ -8,10 +8,14 @@ Making a backup is an essential action every time you create accounts whether it
 
 A backup is only necessary when creating new accounts, not every time a transaction is executed. Think of your account like a safe: it contains assets. If you lose the key, you cannot get into the safe unless you have a copy of the key. Your backup is your copy of the safe key.
 
-You can make a backup from Mobile Wallet or from Desktop Wallet but there are differences between them.
+You can make a backup from |mw-gen1| or from Desktop Wallet but there are differences between them.
 
-Backups for Mobile Wallet
-=========================
+.. Note::
+
+   This information is not relevant for |mw-gen2| which uses a secret passphrase to recover a wallet.
+
+Backups for |mw-gen1|
+=====================
 
 Because the Concordium Mobile Wallet does not use a seed phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.
 
@@ -64,7 +68,7 @@ Concordium is continuously improving the security and reliability of its product
 Backup
 ------
 
-For instructions on how to perform the backup, see :ref:`Backup and restore  guide<export-import>`.
+For instructions on how to perform the backup, see :ref:`Backup and restore guide<export-import>`.
 
 Final Notes
 ===========

@@ -124,7 +124,8 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
                 #. Select **Finish** to leave the page.
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen1| and |mw-gen2|
+
         #. Go to the **Accounts** screen.
 
         #. Tap on the balance area of the account for which you want to stop delegation or tap **More** |moredetails|.

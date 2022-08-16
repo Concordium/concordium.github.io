@@ -1,7 +1,7 @@
 .. _setup-mobile-wallet:
 
 ========================
-Set up the Mobile Wallet
+Set up the |mw-gen1|
 ========================
 
 The Concordium Mobile :ref:`wallet<glossary-wallet>` is a digital wallet that enables you to create and manage your Concordium
@@ -44,7 +44,7 @@ and an initial account. You do this immediately after setting up the passcode an
 
 #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
 
-#. Enter a name for your identity.  Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
+#. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
 
    .. image:: ../images/mobile-wallet/MW10.png
       :width: 25%

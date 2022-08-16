@@ -60,10 +60,10 @@ can start baking.
 
 For information about how to update your baker or stop baking, see :ref:`Baking in Desktop Wallet<baking-dw>`.
 
-Baking with Mobile Wallet
-=========================
+Baking with |mw-gen1| and |mw-gen2|
+===================================
 
-This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using Mobile Wallet and running a node. Baking when using Mobile Wallet requires you to use Concordium Client to configure and manage the baker.
+This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using |mw-gen1| or |mw-gen2| and running a node.
 
 Step 1: Set up the node
 -----------------------
@@ -78,7 +78,7 @@ The Mobile Wallet is available for iOS and Android. For instructions about downl
 Step 3: Set up an identity and initial account
 ----------------------------------------------
 
-Once you've installed the Mobile Wallet, you must set up an identity and an initial account. It is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
+Once you've installed the Mobile Wallet, you must set up an identity and an account. It is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
 Step 4: Add baking to an account
 --------------------------------

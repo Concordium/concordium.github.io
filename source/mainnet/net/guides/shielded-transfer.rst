@@ -102,7 +102,52 @@ Prerequisites
             .. |shielded-xfer| image:: ../images/desktop-wallet/dw-shielded-xfer-received.png
                             :alt: Balance with a shield that has a lock on it
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen2|
+
+        .. tabs::
+
+            .. tab:: Send a shielded amount of CCD
+
+                #. Go to the Accounts page.
+
+                #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
+
+                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for _your account name_**.
+
+                #. Tap the **Shielded balance** tab of the totals area.
+
+                #. Tap **SEND**.
+
+                #. Enter the amount you want to transfer.
+
+                #. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
+
+                    - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
+
+                #. Tap **Send Amount**.
+
+                    .. image:: ../images/mobile-wallet/MW42.png
+                        :width: 25%
+
+                #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
+
+                #. Finally, tap **Send shielded amount**.
+
+                    .. image:: ../images/mobile-wallet/MW43.png
+                        :width: 25%
+
+                #. The transaction is subbmitted; tap **Ok, thanks**.
+
+                    .. image:: ../images/mobile-wallet/MW44.png
+                        :width: 25%
+
+            .. |hamburger| image:: ../images/hamburger.png
+                         :alt: Three horizontal lines
+
+            .. |moredetails| image:: ../images/more-arrow.png
+                         :alt: Button with More and double-headed arrow
+
+    .. tab:: |mw-gen1|
 
         .. tabs::
 

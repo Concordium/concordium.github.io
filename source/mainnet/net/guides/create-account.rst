@@ -5,8 +5,9 @@
 Create an account
 =================
 
-When you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
-to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+When you created your :ref:`identity<glossary-identity>` for Desktop Wallet and |mw-gen1|, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+
+If you are using |mw-gen2|, you created your :ref:`identity<glossary-identity>` during setup. Once you have an identity, you can create :ref:`accounts<glossary-account>` with that identity.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
