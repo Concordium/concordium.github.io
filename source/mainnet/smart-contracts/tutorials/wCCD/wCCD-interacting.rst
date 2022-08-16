@@ -562,7 +562,8 @@ You are ready now to unwrap your wCCD into CCD with the following command.
 
 The below screenshot shows the execution of the ``unwrap`` function.
 
-**TODO: add screenshot once a new protocol is deployed**
+.. image:: ./images/wCCD_tutorial_11.png
+    :width: 100 %
 
 Confirm that the CCD balance of the ``receiver`` was increased
 by ``AMOUNT`` (specified in the ``unwrap.json`` file) and that the CCD
