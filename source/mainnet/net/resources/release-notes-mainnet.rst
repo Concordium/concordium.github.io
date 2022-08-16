@@ -11,6 +11,17 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+August 22, 20222
+
+Concordium Client 4.0.5
+-----------------------
+
+Cargo concordium 2.0.3
+----------------------
+
+concordium-std
+--------------
+
 August 4, 2022
 
 Concordium Client 4.0.4
