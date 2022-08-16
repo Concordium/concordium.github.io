@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _send-CCD-wallets:
 
 ========

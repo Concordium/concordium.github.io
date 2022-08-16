@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _export-import:
 
 ====================================================
@@ -88,7 +88,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
                 #. To view placeholders for identities, go to **Identities**. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can't use the placeholders to create new accounts.
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen1|
 
         .. Warning::
             **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
@@ -145,9 +145,9 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
                         #. Review your import and tap **Ok, thanks**.
 
-    .. tab:: Mobile Wallet Gen2
+    .. tab:: |mw-gen2|
 
-        Backup is not available in Mobile Wallet Gen2. MW Gen2 uses a secret passphrase to recover your accounts, identities, and private keys. For information about recovering your MW Gen2 wallet, see :ref:`Recover your wallet<recover-wallet>`.
+        Backup is not available in |mw-gen2|. It uses a secret passphrase to recover your accounts, identities, and private keys. For information about recovering your |mw-gen1| wallet, see :ref:`Recover your wallet<recover-wallet>`.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _recover-wallet:
 
 ===================
@@ -8,7 +9,7 @@ In case you get a new device or need to restore your existing device, you can re
 
 .. tabs::
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen2|
 
         #. After reinstalling the Concordium Mobile Wallet app, open the app.
 

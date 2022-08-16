@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _mw-gen2-faq:
 
 ======================

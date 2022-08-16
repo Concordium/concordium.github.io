@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _setup-g2-mobile-wallet:
 
 ========================

@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _shield-CCD-wallets:
 
 =====================================
@@ -159,12 +159,6 @@ If you have an account with CCD in the shielded balance, you can't add new crede
                 .. Note::
 
                     You can hide the shielded balance when finished to prevent accidental shielding. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
-
-            .. |hamburger| image:: ../images/hamburger.png
-                         :alt: Three horizontal lines
-
-            .. |moredetails| image:: ../images/more-arrow.png
-                         :alt: Button with More and double-headed arrow
 
     .. tab:: |mw-gen1|
 

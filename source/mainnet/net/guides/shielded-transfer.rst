@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _shielded-transfer:
 
 ======================================
@@ -140,12 +140,6 @@ Prerequisites
 
                     .. image:: ../images/mobile-wallet/MW44.png
                         :width: 25%
-
-            .. |hamburger| image:: ../images/hamburger.png
-                         :alt: Three horizontal lines
-
-            .. |moredetails| image:: ../images/more-arrow.png
-                         :alt: Button with More and double-headed arrow
 
     .. tab:: |mw-gen1|
 

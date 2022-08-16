@@ -1,4 +1,5 @@
-
+.. include:: ../../variables.rst
+    
 Tools
 =====
 
