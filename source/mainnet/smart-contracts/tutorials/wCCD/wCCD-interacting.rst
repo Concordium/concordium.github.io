@@ -77,7 +77,7 @@ Getting the CCD balance of an address
 The ``balanceOf`` function
 ==========================
 
-.. dropdown:: Checking the wCCD balance of an account (click here)
+.. dropdown:: Input parameters for the ``balanceOf`` function (click here)
 
     Create a ``balanceOf.json`` file and insert the following JSON object.
 
@@ -86,8 +86,20 @@ The ``balanceOf`` function
         [
             {
                 "address": {
-                    "Account": [
-                        ACCOUNT
+                    "Enum": [
+                        {
+                            "Account": [
+                                ACCOUNT_ADDRESS
+                            ]
+                        },
+                        {
+                            "Contract": [
+                                {
+                                    "index": INDEX,
+                                    "subindex": SUBINDEX
+                                }
+                            ]
+                        }
                     ]
                 },
                 "token_id": TOKEN_ID
@@ -98,7 +110,7 @@ The ``balanceOf`` function
 
         You can query the balance of several addresses in the above array.
 
-    If you insert the account address correctly, the JSON object should look similar to the below JSON object.
+    If you insert an account address correctly, the JSON object should look similar to the below JSON object.
 
     .. code-block:: json
 
@@ -113,40 +125,7 @@ The ``balanceOf`` function
             }
         ]
 
-    Execute the following command to get the wCCD balance as a return value.
-
-    .. code-block:: console
-
-        $./concordium-client contract invoke PROXY --entrypoint balanceOf --parameter-json balanceOf.json --energy 25000 --grpc-port 10001
-
-    .. image:: ./images/wCCD_tutorial_4.png
-        :width: 100 %
-
-.. dropdown:: Checking the wCCD balance of a smart contract (click here)
-
-    Create a ``balanceOf.json`` file and insert the following JSON object.
-
-    .. code-block::
-
-        [
-            {
-                "address": {
-                    "Contract": [
-                        {
-                            "index": INDEX,
-                            "subindex": SUBINDEX
-                        }
-                    ]
-                },
-                "token_id": TOKEN_ID
-            }
-        ]
-
-    .. note::
-
-        You can query the balance of several addresses in the above array.
-
-    If you insert the smart contract address correctly, the JSON object should look similar to the below JSON object.
+    If you insert a smart contract address correctly, the JSON object should look similar to the below JSON object.
 
     .. code-block:: json
 
@@ -164,18 +143,20 @@ The ``balanceOf`` function
             }
         ]
 
-    Execute the following command to get the wCCD balance as a return value.
+You are ready now to invoke the ``balanceOf`` function with one of the following commands.
 
-    .. code-block:: console
+.. code-block:: console
 
-        $./concordium-client contract invoke PROXY --entrypoint balanceOf --parameter-json balanceOf.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke PROXY --entrypoint balanceOf --schema balanceOf_fallback_schema.bin --parameter-json balanceOf.json --energy 25000 --grpc-port 10001
 
-    .. image:: ./images/wCCD_tutorial_4.png
-        :width: 100 %
+or
 
-**TODO: deploy the wCCD on testnet with the balanceOf_fallback_schema embedded into the smart contract proxy
-because I think this is the most common invoke executed throuh the fallback function (advantage: users don't  have to provide an extra schema with
-a flag when querying the wCCD balance through the fallback function)**
+.. code-block:: console
+
+    $./concordium-client contract invoke IMPLEMENTATION --entrypoint balanceOf --parameter-json balanceOf.json --energy 25000 --grpc-port 10001
+
+.. image:: ./images/wCCD_tutorial_4.png
+    :width: 100 %
 
 .. note::
 
