@@ -29,10 +29,10 @@ the input parameters can be provided with the ``--parameter-json`` flag.
 
 .. note::
 
-    It is recommended to invoke the non-state-mutative functions
-    on the ``proxy`` and not on the ``implementation`` in production.
-    When the protocol is upgraded, the ``implementation`` address becomes invalid,
-    you would need to update your production product to the new ``implementation`` address.
+    While for testings it can be convenient to invoke these functions on the ``implementation`` contract,
+    you should always invoke them on the ``proxy`` contract in production.
+    When the protocol is upgraded, the ``implementation`` address becomes
+    invalid, you would need to update your production product to the new ``implementation`` address.
 
 .. _balanceCCD:
 
