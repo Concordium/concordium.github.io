@@ -160,9 +160,7 @@ You can change the mainnet or testnet node configuration with the Configure Conc
 
 -  Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. If you see a message saying *Do you want to allow this app to make changes to your device?*, select **Yes**. The configuration file opens in Notepad.
 
-.. To Do:
-
-   Add information about Concordium node runner service configuration
+For more information, see :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>`.
 
 .. _view-windows-node-log:
 
