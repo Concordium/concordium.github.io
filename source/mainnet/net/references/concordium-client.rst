@@ -22,7 +22,7 @@ flags are supported by all ``concordium-client`` commands.
 
 .. note::
 
-   This page will describe the commands that are related with configuration of
+   This page describes the commands that are related with configuration of
    the client, but the rest of available commands will be discussed on the pages
    where the features that use them are documented. Some commands will perform
    :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions>`.
@@ -31,6 +31,30 @@ flags are supported by all ``concordium-client`` commands.
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
+
+.. Note::
+   It is presumed that the reader has some basic knowledge about executing commands from a command line using Terminal, Power Shell, or similar tools.
+
+Run Concordium Client
+=====================
+
+Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the concordium client will exit immediately without doing anything useful.
+
+To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can  type concordium-client from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the ``concordium-client_4.0.4-0.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_4.0.4-0.exe``. So you enter the full path at the prompt in the terminal.
+
+When running commands for the Concordium Client in the terminal, replace concordium-client with ``C:\Users\User\Downloads\concordium-client_<version>.exe`` as in the following example:
+
+.. code-block:: console
+
+   C:\Users\User\Downloads\concordium-client_4.0.4-0.exe config account import concordium-backup.concordiumwallet --name AccountA
+
+.. Note::
+
+   To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.concordiuwallet is saved. If not, you have to specify the full path to the file, for example:
+
+   .. code-block:: console
+
+      C:\Users\User\Downloads\concordium-client_3.0.4-0.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name AccountA
 
 Commands and help
 =================
