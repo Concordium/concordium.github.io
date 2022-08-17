@@ -17,7 +17,7 @@ In case you get a new device or need to restore your existing device, you can re
 
         #. After the screens explaining recovery tap **Continue**.
 
-        #. Enter each word of your recovery phrase in the correct order. Once the words are correct, tap **Continue** to submit the recovery request to the identity provider(s).
+        #. Enter each word of your recovery phrase in the correct order. When you start typing, possible words appear for you to select. Once the words are correct, tap **Continue** to submit the recovery request to the identity provider(s).
 
         #. When recovery is successful, the screen below appears.
 
@@ -25,9 +25,24 @@ In case you get a new device or need to restore your existing device, you can re
 
             Sometimes recovery can take longer. Here are some scenarios that you might encounter.
 
-            (table with screenshot and explanations)
+            +------------------------+---------------------------------------------------------------------------------------------+
+            | Image                  | Description                                                                                 |
+            +========================+=============================================================================================+
+            |                        | Pending                                                                                     |
+            |                        | The wallet recovery is still pending.                                                       |
+            +------------------------+---------------------------------------------------------------------------------------------+
+            |                        | Identity provider unresponsive                                                              |
+            |                        | One of the identity providers is unresponsive. You can try again now or wait until later    |
+            |                        | to try to recover. If you wait until later you can continue to the wallet. Accounts with    |            
+            |                        | an unrecovered identity are shown like this (screenshot).                                   |
+            |                        | To continue recovery, go to the ...More page and tap **Recovery** to continue.              |              
+            +------------------------+---------------------------------------------------------------------------------------------+
+            |                        | Partially recovered                                                                         |
+            |                        | The accounts and identities have been partially recovered. You can continue to the wallet.  |
+            |                        | Accounts with an unrecovered identity are shown like this (screenshot).                     |
+            |                        | To continue recovery, go to the ...More page and tap **Recovery** to continue.              |
+            +------------------------+---------------------------------------------------------------------------------------------+
+            |                        | Nothing to recover                                                                          |
+            |                        | The seed phrase entered does not have any keys, accounts, or identities associated with it. |
+            +------------------------+---------------------------------------------------------------------------------------------+
 
-            Pending / The wallet recovery is still pending.
-            Identity provider unresponsive / One of the identity providers is unresponsive. You can try again now or wait until later to try to recover. If you wait until later you can continue to the wallet. Accounts with an unrecovered identity are shown like this (screenshot). To continue recovery, go to the ...More page and tap **Recovery** to continue.
-            Partially recovered / The accounts and identities have been partially recovered. You can continue to the wallet. Accounts with an unrecovered identity are shown like this (screenshot). To continue recovery, go to the ...More page and tap **Recovery** to continue.
-            Nothing to recover / The seed phrase entered does not have any keys, accounts, or identities associated with it.

@@ -55,7 +55,7 @@ Request identity
 
 #. Read the next page in the app, shortly explaining the Concordium concepts of initial account and identity. Tap **Continue**.
 
-#. Select a third party identity provider from the list. An external web page opens within the app.
+#. Select a third party identity provider from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
 
    .. image:: ../images/mobile-wallet/MW11.png
       :width: 25%
@@ -77,7 +77,7 @@ Request account
 
 Once the identity provider has verified your identity you can submit an account. You can see when your identity has been verified by the green check next to the identity name.
 
-#. Tap **Submit account**.
+#. Tap **Submit account**. Enter your wallet passcode when prompted.
 
 .. Note::
    To access the **Balance** of the new account, tap the Balance area on the account card or tap |morepage|.
