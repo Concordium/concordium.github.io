@@ -1270,6 +1270,10 @@ body {margin:0;}
 <p>If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p>
 <p>Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See <a class="reference internal" href="#configure-node"><span class="std std-ref">Configure the Concordium Node Service</span></a> for information about how to change the service configuration settings.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
+</div>
 <ol class="arabic">
 <li><p>Download the latest Windows Installer package (.msi file).</p>
 <ul class="simple">

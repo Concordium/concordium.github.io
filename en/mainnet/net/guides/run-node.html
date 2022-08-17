@@ -1260,7 +1260,7 @@ information about blocks and transactions to the nodes in the Concordium
 network. After following this guide, you will be able to</p>
 <ul class="simple">
 <li><p>run a Concordium node</p></li>
-<li><p>observe it on the network dashboard and</p></li>
+<li><p>observe it on the network dashboard</p></li>
 <li><p>query the state of the Concordium blockchain directly from your
 machine.</p></li>
 </ul>
@@ -1282,6 +1282,11 @@ machine.</p></li>
 <p>Concordium provides two Docker images, a <a class="reference external" href="https://hub.docker.com/r/concordium/mainnet-node">mainnet</a> one and a <a class="reference external" href="https://hub.docker.com/r/concordium/testnet-node">testnet</a> one.
 These images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code>.</p>
 <p>The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> or <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testent</span></code> but any location to which the user that runs the Docker command has access to will do.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>.</p>
+<p>If you are running version 4.2.3 you can <a class="reference internal" href="#migration-docker-distribution"><span class="std std-ref">migrate to the latest version</span></a>. If you are running any version older than 4.2.3 you will have to delete your database and start over using the instructions on this page.</p>
+</div>
 </div>
 <div class="section" id="run-a-testnet-node">
 <h2>Run a testnet node<a class="headerlink" href="#run-a-testnet-node" title="Permalink to this headline">#</a></h2>
@@ -1385,7 +1390,8 @@ These images are designed to be used together with docker-compose, or a similar 
 </pre></div>
 </div>
 </li>
-<li><p>Modify the node name that will appear on the network dashboard. This is set by the environment variable</p>
+<li><p>Modify the node name that appears on the network dashboard. This is set by
+the environment variable</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test</span>
 </pre></div>
 </div>
@@ -1397,12 +1403,12 @@ These images are designed to be used together with docker-compose, or a similar 
 </div>
 </li>
 </ol>
-<p>The configuration will start two containers, one running the node, and another
+<p>The configuration starts two containers, one running the node, and another
 running the node collector that reports the node state to the network dashboard.</p>
 <p>If you wish to have the node running in the background, then add a <code class="docutils literal notranslate"><span class="pre">-d</span></code> option to the above command.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The sample configuration will always download the latest node image. It is
+<p>The sample configuration always downloads the latest node image. It is
 good practice to choose the version deliberately. To choose a specific
 version, find the correct version in
 <a class="reference external" href="https://hub.docker.com/r/concordium/testnet-node">hub.docker.com/concordium/testnet-node</a> and change the
@@ -1436,8 +1442,8 @@ platform configuration you will either need to forward an external port to
 this is done will depend on your configuration.</p>
 <div class="section" id="retrieve-node-logs">
 <h3>Retrieve node logs<a class="headerlink" href="#retrieve-node-logs" title="Permalink to this headline">#</a></h3>
-<p>The sample configuration presented above will log data using docker’s default
-logging infrastructure. The logs for the node can be retrieved by running</p>
+<p>The sample configuration presented above logs data using Docker’s default
+logging infrastructure. To retrieve the logs for the node run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker logs testnet-node
 </pre></div>
 </div>
@@ -1457,7 +1463,7 @@ for a list of currently available versions.</p></li>
 <li><p>the database directory is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code></p></li>
 </ul>
-<p>Logs of the mainnet node can be retrieved by running:</p>
+<p>To retrieve mainnet node logs run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker logs mainnet-node
 </pre></div>
 </div>
@@ -1587,19 +1593,19 @@ are some common issues.</p>
 <div class="section" id="mounting-host-directories-under-selinux">
 <h3>Mounting host directories under SELinux<a class="headerlink" href="#mounting-host-directories-under-selinux" title="Permalink to this headline">#</a></h3>
 <p>When mounting host directories on distributions running <a class="reference external" href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a> special considerations apply.
-This in particular includes Fedora and its derivatives. See <a class="reference external" href="https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label">the Docker documentation</a> for details on how to proceed.</p>
+In particular, this includes Fedora and its derivatives. See <a class="reference external" href="https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label">the Docker documentation</a> for details on how to proceed.</p>
 </div>
 <div class="section" id="letting-the-node-container-access-the-internet">
 <h3>Letting the node container access the internet<a class="headerlink" href="#letting-the-node-container-access-the-internet" title="Permalink to this headline">#</a></h3>
 <p>Some Linux distributions whose firewall is not based on iptables, Fedora and
-CentOS among them, require additional steps to allow Docker containers to access
+CentOS among them, require additional steps to allow docker containers to access
 external networks, e.g., the internet.</p>
-<p>On Fedora run the following command:</p>
+<p>On Fedora run the following command to allow docker containers to access external networks.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo firewall-cmd --permanent --zone<span class="o">=</span>trusted --add-interface<span class="o">=</span>docker0
 </pre></div>
 </div>
-<p>to allow Docker containers to access external networks.</p>
-<p>Note that this will allow any Docker container access to the internet, not just the Concordium node.</p>
+<p>Note that this will allow any Docker container access to the internet,
+not just the Concordium node.</p>
 <p>Some users on Ubuntu have reported the node does not have internet access. In this case, adding <cite>network_mode: bridge</cite> to each service might solve this problem:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
   <span class="nt">mainnet-node</span><span class="p">:</span>

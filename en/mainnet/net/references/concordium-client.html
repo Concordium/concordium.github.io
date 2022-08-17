@@ -1181,6 +1181,11 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-concordium-client">
+   Run Concordium Client
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#commands-and-help">
    Commands and help
   </a>
@@ -1283,7 +1288,7 @@ to set the <a class="reference external" href="https://en.wikipedia.org/wiki/IP_
 flags are supported by all <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> commands.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page will describe the commands that are related with configuration of
+<p>This page describes the commands that are related with configuration of
 the client, but the rest of available commands will be discussed on the pages
 where the features that use them are documented. Some commands will perform
 <a class="reference internal" href="query-node.html#testnet-query-node"><span class="std std-ref">queries</span></a> and others send <a class="reference internal" href="transactions.html#transactions"><span class="std std-ref">transactions</span></a>.</p>
@@ -1293,6 +1298,26 @@ where the features that use them are documented. Some commands will perform
 <p>All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
 The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the <strong>Balance</strong> of the account, so it is important to have some available CCDs to cover fees.
 You can see the fee in the transaction log.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is presumed that the reader has some basic knowledge about executing commands from a command line using Terminal, Power Shell, or similar tools.</p>
+</div>
+<div class="section" id="run-concordium-client">
+<h2>Run Concordium Client<a class="headerlink" href="#run-concordium-client" title="Permalink to this headline">#</a></h2>
+<p>Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the concordium client will exit immediately without doing anything useful.</p>
+<p>To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can  type concordium-client from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the <code class="docutils literal notranslate"><span class="pre">concordium-client_4.0.4-0.exe</span></code> in the Downloads folder of a user called User, then the full path is probably <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_4.0.4-0.exe</span></code>. So you enter the full path at the prompt in the terminal.</p>
+<p>When running commands for the Concordium Client in the terminal, replace concordium-client with <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_&lt;version&gt;.exe</span></code> as in the following example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_4.0.4-0.exe config account import concordium-backup.concordiumwallet --name AccountA</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.concordiuwallet is saved. If not, you have to specify the full path to the file, for example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_3.0.4-0.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name AccountA</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="commands-and-help">
 <h2>Commands and help<a class="headerlink" href="#commands-and-help" title="Permalink to this headline">#</a></h2>
