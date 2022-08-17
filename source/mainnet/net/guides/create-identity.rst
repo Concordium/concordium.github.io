@@ -8,10 +8,7 @@ Create an identity
 Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider. To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
-   You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
-
-.. Note::
-   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, IDs and addresses. This way, you'll have a backup in case the database is damaged.
+   You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
 .. tabs::
 
@@ -59,9 +56,38 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
       .. Note::
            You can change the name of an identity after it has been created. Go to the **Identities** page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
 
-   .. tab:: Mobile Wallet and Mobile Wallet Gen2
+   .. tab:: |mw-gen2|
 
-      You can submit requests for additional :ref:`identities<glossary-identity>` in the Mobile Wallet. You do this from the **Identities** page.
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
+
+      #. Go to the |morepage| page.
+
+      #. Tap **Your identity cards** page.
+
+      #. Tap the **+** in the upper right corner.
+
+      #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
+
+      #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
+
+         .. image:: ../images/mobile-wallet/MW10.png
+            :width: 25%
+
+      #. Select a third-party identity provider from the list. An external web page opens within the app.
+
+         .. image:: ../images/mobile-wallet/MW11.png
+            :width: 25%
+
+      #. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+
+      #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
+
+         .. image:: ../images/mobile-wallet/MW12.png
+            :width: 25%
+
+   .. tab:: |mw-gen1|
+
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
 
       #. Go to the |morepage| page.
 

@@ -72,7 +72,7 @@ Comparison
 The following table lists the major features of each wallet.
 
 .. list-table::
-   :widths: 20 20
+   :widths: 10 10 10
    :header-rows: 1
 
    *  - **Desktop Wallet**

@@ -26,9 +26,11 @@
    guides/create-account
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
+   guides/recover-wallet
    guides/delegation
    guides/shielded-transfer
    guides/export-import
+   mobile-wallet-gen2/index
    mobile-wallet/index
    desktop-wallet/index
 
