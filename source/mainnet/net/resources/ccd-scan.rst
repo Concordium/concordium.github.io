@@ -38,13 +38,13 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 
 1.  Mainnet/Testnet selector. The information shown is dependent on whether you have selected Mainnet or Testnet.
 2.  Search field: search across all relevant blockchain data for specific information, such as a particular account, transaction, block, or baker and see all relevant details associated with that entity.
-3.  Page naviation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
+3.  Site naviation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
 4.  Time range filter: controls the time range of the data shown.
-5.  Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown
-6.  Blocks added
-7.  Block Time
-8.  Transactions
-9.  Accounts created
+5.  Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown.
+6.  Blocks added: sum of blocks added in the selected time range.
+7.  Block Time: average time since last block created in the selected time range. 
+8.  Transactions: sum of transactions in the selected time range.
+9.  Accounts created: sum of accounts created in the selected time range.
 10. Latest blocks: continuously updated list of the latest 10 blocks baked on the blockchain, including links to details for the individual blocks and bakers.
 11. Latest transactions: continuously updated list of the latest 10 transactions on the blockchain, including links to details for the individual transactions and senders (where available).
 
@@ -58,8 +58,8 @@ You can click Copy |copy| to copy the entire hash or account number.
 
 .. _home-screen-block:
 
-Block hash
-^^^^^^^^^^
+Block details
+^^^^^^^^^^^^^
 
 When you click a block hash, the following appears:
 
@@ -79,8 +79,8 @@ The block details shows the following information about the block.
 
 .. _home-screen-baker:
 
-Baker
-^^^^^
+Baker details
+^^^^^^^^^^^^^
 
 When you click a baker ID, the following appears:
 
@@ -110,8 +110,8 @@ The baker details shows the following information about the baker.
 
 .. _home-screen-transaction:
 
-Transaction hash
-^^^^^^^^^^^^^^^^
+Transaction details
+^^^^^^^^^^^^^^^^^^^
 
 When you click a transaction hash, transaction information appears. The information is different depending upon whether the transaction was successful or rejected.
 
@@ -121,11 +121,11 @@ When you click a transaction hash, transaction information appears. The informat
 
 The transaction details shows the following.
 
-- **Transaction**: the first six characters of the transaction hash. You can click Copy |copy| to copy the entire transaction hash. It also shows the transaction state.
-- **Block height/block hash**: the block height and the first six characters of the block hash. You can click Copy |copy| to copy the entire block hash. If you click on an block hash, the :ref:`account details<blocks-view>` appears.
+- **Transaction**: the first six characters of the transaction hash. Click Copy |copy| to copy the entire transaction hash. It also shows the transaction state.
+- **Block height/block hash**: the block height and the first six characters of the block hash. Click Copy |copy| to copy the entire block hash. Click the block hash to see the :ref:`account details<blocks-view>`.
 - **Age**: the transaction age with date/time stamp.
 - **Transaction type/cost**: the transaction type and the transaction fee.
-- **Sender**: the first six characters of the account that sent the transaction if available for that transaction. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
+- **Sender**: the first six characters of the account that sent the transaction if available for that transaction. Click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
 - **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions. If you see the transaction type **Update micro CCD per Euro**, it is possible to see the new rate and the effective timestamp.
 
 A successful transaction shows the **Events** that were included in the transaction.
@@ -140,8 +140,8 @@ The only difference between a successful and rejected transaction is that the re
 
 .. _home-screen-sender:
 
-Sender/Account
-^^^^^^^^^^^^^^
+Sender/Account details
+^^^^^^^^^^^^^^^^^^^^^^
 
 When you select a sender or account, the following appears.
 
@@ -151,16 +151,22 @@ When you select a sender or account, the following appears.
 
 The following information is shown in the account details:
 
-- **Account**: the first six characters of the account number are shown. You can click Copy |copy| to copy the entire account number.
-- **Balance**: the account balance is shown.
+- **Account**: the first six characters of the account number are shown. Click Copy |copy| to copy the entire account number. If the account is participating in baking or delegation, the staked amount is displayed. Additional information is available on the account: a baker section for bakers, a delegation section for
+delegators, and a rewards section for both bakers and delegators.
+- **Balance**: the current account balance is shown. If the account has a release schedule, the remaining locked amount is displayed here. The same applies if the account is participating in baking or delegation then the amount staked is displayed under the account balance.
 - **Age**: the age of the account including the exact timestamp for all individual accounts.
 - **Transactions**: a list of all related transactions associated with the account. Use the navigation buttons at the bottom to navigate through transactions.
+- **Release schedule**: shown only for accounts that have transfers with a release schedule to show the remainder of the schedule (non-released assets). The list of release dates and amounts is available, including a drill-through link to the :ref:`underlying transaction(s)<home-screen-transaction>`.
 - **Account statement**: shows how the account balance has changed over time, including the types of changes that have impacted the balance of the account. Use the navigation buttons at the bottom to navigate through account statements.
+- **Baker**: if an account is also a baker, the baker ID and the staked amount is shown here. Click the baker ID to see :ref:`baker details<home-screen-baker>`.
+- **Delegation**: shown for accounts that are delegating to a baker pool or passive delegation. Information includes the delegator ID of the account, the staked amount, if the earnings are restaked or not, and the delegation target (a baker or passive delegation) including drill-though to the :ref:`baker<home-screen-baker>` or passive delegation information.
+- **Rewards**: includes an overview graph that shows the aggregated rewards for an account based on the applied time range filter. The table shows reward details broken down by type. Click the block hash to see :ref:`block details<home-screen-block>` for the corresponding block where the reward payout occurred. Use the navigation buttons at the bottom to navigate through reward payouts.
+
 
 .. _blocks-view:
 
-Blocks
-------
+Blocks overview
+---------------
 
 Blocks shows information about the blocks created during the selected time range in the filter.
 
@@ -172,17 +178,17 @@ The graphs show the number of blocks added, the average block time, and the aver
 
 Below the graphs, the table contains the latest blocks added to the blockchain with the following information:
 
-- **Block hash**: the first six digits of the block hash. You can click Copy |copy| to copy the entire hash.
+- **Block hash**: the first six digits of the block hash. Click Copy |copy| to copy the entire hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Status**: the block status
 - **Height**: block height
 - **Age**: block age
-- **Baker**: the baker ID of the baker who baked the block
+- **Baker**: the baker ID of the baker who baked the block. Click the baker ID to see :ref:`baker details<home-screen-baker>`.
 - **Transactions**: the number of transactions in the block
 
 .. _transactions-view:
 
-Transactions
-------------
+Transactions overview
+---------------------
 
 Transactions shows information about the transactions during the selected time range in the filter.
 
@@ -190,22 +196,22 @@ Transactions shows information about the transactions during the selected time r
 
 |
 
-The graphs show the cumulative number of transactions since inception and the number of transactions in a range as determined by the time selected in the filter.
+The graphs show the number of **cumulative transactions** since inception and the number of **Transactions** in a range as determined by the time selected in the filter.
 
 Below the graphs, the table contains the following:
 
-- **Transaction hash**: the first six digits of the transaction hash. You can click Copy |copy| to copy the entire hash. If you click on a transaction hash, the :ref:`transaction details<home-screen-transaction>` appears.
+- **Transaction hash**: the first six digits of the transaction hash. You can click Copy |copy| to copy the entire hash. Click the transaction hash to see the :ref:`transaction details<home-screen-transaction>`.
 - **Status**: transaction status
 - **Age**: transaction age
 - **Type**: transaction type
 - **Block height**: the block height of the transaction.
-- **Sender**: the first six characters of the account that sent the transaction. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
+- **Sender**: the first six characters of the account that sent the transaction. You can click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
 - **Cost**: the transaction fee.
 
 .. _accounts-view:
 
-Accounts
---------
+Accounts overview
+-----------------
 
 Accounts shows information about accounts during the selected time range in the filter.
 
@@ -213,14 +219,14 @@ Accounts shows information about accounts during the selected time range in the 
 
 |
 
-The graphs show the Cumulative accounts created since inception and the Accounts created during the selected time range in the filter.
+The graphs show the **Cumulative accounts created** since inception and the **Accounts created** during the selected time range in the filter.
 
 Below the graphs, the table contains the following:
 
-- **Address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
+- **Address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
 - **Account age**: how long the account has existed.
-- **Transactions**: number of transactions the account has conducted during the selected time range.
-- **Delegated stake**:
+- **Transactions**: number of transactions the account has conducted.
+- **Delegated stake**: total amount of CCD the account has delegated.
 - **Balance**: The publicly visible balance of the account. Does not include shielded amounts.
 
 You can sort the information in the table using the following sort options:
@@ -229,8 +235,8 @@ You can sort the information in the table using the following sort options:
 
 .. _bakers-view:
 
-Staking
--------
+Staking overview
+----------------
 
 Staking shows information about bakers during the selected time range in the filter:
 
@@ -277,13 +283,13 @@ If you select **Passive delegation** the following appears:
 
 .. _ccdscan-nodes:
 
-Nodes
------
+Nodes overview
+--------------
 
-Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order by node name. The list contains the following information:
+Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order. The list contains the following information:
 
-- **Node name**: node name as given by the node runner.
-- **Baker ID**: if the node is a baker, the baker ID appears. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
+- **Node name**: node name as given by the node runner. Click the node name to see the :ref:`node details<node-details>`.
+- **Baker ID**: if the node is a baker, the baker ID appears. Click the baker ID to see the :ref:`baker details<home-screen-baker>`.
 - **Uptime**: amount of time the node has been running.
 - **Node version**: version of Concordium node software that the node is running.
 - **Avg. ping**: average ping time between the peers of the participant.
@@ -293,6 +299,28 @@ Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order
 .. image:: ../images/ccd-scan/ccd-scan-nodes.png
 
 |
+
+.. _node-details:
+
+Node details
+^^^^^^^^^^^^
+
+When you click a node name on the Nodes page, the following appears:
+
+
+The following information is shown in the node details:
+
+- **Node**: shows the name of the node
+- **Baker**: baker ID of the node if it is a baker. Click the baker ID to see the :ref:`baker details<home-screen-baker>`.
+- **Uptime**: amount of time the node has been running.
+- **Client version**: version of concordium node software the node is running.
+- **Average ping**: average ping time between the peers of the participant.
+- **Packets sent**:
+- **Packets received**:
+- **Baking committee**: Active member or Not a member
+- **Best block statistics**:
+- **Last finalized block statistics**:
+- **Peers**: Shows the current list of peers of the node with the ability to drill-through and inspect peer node information.
 
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button
