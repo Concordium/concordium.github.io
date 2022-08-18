@@ -412,7 +412,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
         that allows a programmer to insert customized programming code to either
         provide a different behavior or to react when something happens.
         The ``OnReceivingCis2`` hook allows a smart contract developer to code a
-        smart contract A that tabs into the ``transfer`` or ``wrap`` functions of the wCCD smart
+        smart contract A that taps into the ``transfer`` or ``wrap`` functions of the wCCD smart
         contract. Smart contract A can insert some custom logic/behavior if the ``transfer`` or ``wrap`` functions
         are invoked and would result in the smart contract A getting credited some wCCD.
 

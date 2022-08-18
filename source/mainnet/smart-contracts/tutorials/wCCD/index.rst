@@ -1,6 +1,6 @@
 .. _wCCD:
 
-.. image:: wCCD.png
+.. image:: wCCD.svg
    :width: 40%
    :align: center
    :alt: The wCCD smart contract protocol
