@@ -11,7 +11,7 @@ In the ``piggy bank`` tutorial, you are going to build a simple smart contract m
 It should allow any account to insert CCD and only the owner to smash it, taking all of the CCD inside.
 
 In the ``wCCD`` tutorial, you are going to get familiar with the deployed wCCD token on testnet.
-You are going to write a basic front-end example that can read and write to the deployed wCCD smart contract on testnet.
+You are going to write a basic web front-end example that can read from and write to the deployed wCCD smart contract on testnet.
 
 .. toctree::
    :maxdepth: 1

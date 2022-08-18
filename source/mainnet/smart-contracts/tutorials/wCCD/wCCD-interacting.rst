@@ -13,26 +13,33 @@ Interacting with the wCCD token protocol
     the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
     will guide you through these setup steps.
     If you haven't completed any of the above steps, you can continue
-    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, we recommend completing every part of this tutorial.
+    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, we recommend
+    completing every part of this tutorial in the given order.
 
-Non-state-mutative functions
-----------------------------
+Query (non-state-mutative) functions
+------------------------------------
 
-The protocol has four non-state-mutative functions (``balanceOf``, ``operatorOf``, ``tokenMetadata``, and ``supports``)
+The protocol has four query functions (``balanceOf``, ``operatorOf``, ``tokenMetadata``, and ``supports``)
 that you can invoke on the ``proxy`` contract or the ``implementation`` contract.
+
+.. note::
+
+    While testing, it can be convenient to invoke these functions on the ``implementation`` contract,
+    but you should always invoke them on the ``proxy`` contract in production.
+    When the protocol is upgraded, the ``implementation`` address becomes
+    invalid, you would need to update your production product to the new ``implementation`` address.
+
+.. note::
+
+    We recommend reading the :ref:`schema <contract-schema>` section to have a basic
+    understanding of its usage before reading the next paragraph.
+
 The schema is embedded into the ``implementation`` contract while you will need to provide a schema file
-when invoking the non-state-mutative functions on the ``proxy`` contract. All used schema files in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
+when invoking the query functions on the ``proxy`` contract. All schema files used in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 or you can create them as described in the
 comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 Because you will use a ``schema`` (embedded or provided with an extra flag),
 the input parameters can be provided with the ``--parameter-json`` flag.
-
-.. note::
-
-    While for testings it can be convenient to invoke these functions on the ``implementation`` contract,
-    you should always invoke them on the ``proxy`` contract in production.
-    When the protocol is upgraded, the ``implementation`` address becomes
-    invalid, you would need to update your production product to the new ``implementation`` address.
 
 .. _balanceCCD:
 
@@ -68,9 +75,9 @@ Getting the CCD balance of an address
 
 .. note::
 
-    The smallest unit of CCD is 1 micro CCD and equals the 10\ :sup:`−6` (one millionth) of a CCD.
+    The smallest unit of CCD is 1 micro CCD and equals 10\ :sup:`−6` (one millionth) of a CCD.
     CCD has 6 decimal places. 1 CCD is represented by the balance
-    value of 1,000,000 on the blockchain and is worth the equivalent of a balance value of 1,000,000 wCCD.
+    value of 1,000,000 micro CCD on the blockchain and is worth the equivalent of a balance value of 1,000,000 micro wCCD.
 
 .. _balanceOf:
 
@@ -79,9 +86,9 @@ The ``balanceOf`` function
 
 .. dropdown:: Input parameters for the ``balanceOf`` function (click here)
 
-    Create a ``balanceOf.json`` file and insert the following JSON object.
+    Create a ``balanceOf.json`` file and insert the following JSON array.
 
-    .. code-block::
+    .. code-block:: toml
 
         [
             {
@@ -110,7 +117,7 @@ The ``balanceOf`` function
 
         You can query the balance of several addresses in the above array.
 
-    If you insert an account address correctly, the JSON object should look similar to the below JSON object.
+    If you insert an account address correctly, the JSON array should look similar to the below JSON array.
 
     .. code-block:: json
 
@@ -125,7 +132,7 @@ The ``balanceOf`` function
             }
         ]
 
-    If you insert a smart contract address correctly, the JSON object should look similar to the below JSON object.
+    If you insert a smart contract address correctly, the JSON array should look similar to the below JSON array.
 
     .. code-block:: json
 
@@ -147,22 +154,22 @@ You are ready now to invoke the ``balanceOf`` function with one of the following
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint balanceOf --schema balanceOf_fallback_schema.bin --parameter-json balanceOf.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke PROXY --entrypoint balanceOf --schema balanceOf_fallback_schema.bin --parameter-json balanceOf.json --grpc-port 10001
 
 or
 
 .. code-block:: console
 
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint balanceOf --parameter-json balanceOf.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke IMPLEMENTATION --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port 10001
 
 .. image:: ./images/wCCD_tutorial_4.png
     :width: 100 %
 
 .. note::
 
-    The smallest unit of CCD is 1 micro CCD and equals the 10\ :sup:`−6` (one millionth) of a CCD.
+    The smallest unit of CCD is 1 micro CCD and equals 10\ :sup:`−6` (one millionth) of a CCD.
     CCD has 6 decimal places. 1 CCD is represented by the balance
-    value of 1,000,000 on the blockchain and is worth the equivalent of a balance value of 1,000,000 wCCD.
+    value of 1,000,000 micro CCD on the blockchain and is worth the equivalent of a balance value of 1,000,000 micro wCCD.
 
 .. _operatorOf:
 
@@ -171,9 +178,9 @@ The ``operatorOf`` function
 
 .. dropdown:: Input parameters for the ``operatorOf`` function (click here)
 
-    Create an ``operatorOf.json`` file and insert the following JSON object.
+    Create an ``operatorOf.json`` file and insert the following JSON array.
 
-    .. code-block::
+    .. code-block:: toml
 
         [
             {
@@ -218,8 +225,8 @@ The ``operatorOf`` function
 
         You can query several sets of addresses in the above array.
 
-    If you insert everything correctly, the JSON object should look similar to
-    the below JSON object.
+    If you insert everything correctly, the JSON array should look similar to
+    the below JSON array.
 
     .. code-block:: json
 
@@ -242,13 +249,13 @@ You are ready now to invoke the ``operatorOf`` function with one of the followin
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint operatorOf --schema operatorOf_fallback_schema.bin --parameter-json operatorOf.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke PROXY --entrypoint operatorOf --schema operatorOf_fallback_schema.bin --parameter-json operatorOf.json --grpc-port 10001
 
 or
 
 .. code-block:: console
 
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint operatorOf --parameter-json operatorOf.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke IMPLEMENTATION --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port 10001
 
 .. image:: ./images/wCCD_tutorial_7.png
     :width: 100 %
@@ -258,7 +265,7 @@ The ``tokenMetadata`` function
 
 .. dropdown:: Input parameters for the ``tokenMetadata`` function (click here)
 
-    Create a ``tokenMetadata.json`` file and insert the following JSON object.
+    Create a ``tokenMetadata.json`` file and insert the following JSON array.
 
     .. code-block:: json
 
@@ -273,13 +280,13 @@ You are ready now to invoke the ``tokenMetadata`` function with one of the follo
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint tokenMetadata --schema tokenMetadata_fallback_schema.bin --parameter-json tokenMetadata.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke PROXY --entrypoint tokenMetadata --schema tokenMetadata_fallback_schema.bin --parameter-json tokenMetadata.json --grpc-port 10001
 
 or
 
 .. code-block:: console
 
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint tokenMetadata --parameter-json tokenMetadata.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke IMPLEMENTATION --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port 10001
 
 .. image:: ./images/wCCD_tutorial_8.png
     :width: 100 %
@@ -289,7 +296,7 @@ The ``supports`` function
 
 .. dropdown:: Input parameters for the ``supports`` function (click here)
 
-    Create a ``supports.json`` file and insert the following example JSON object. It will query if
+    Create a ``supports.json`` file and insert the following example JSON array. It will query if
     the two token standards (``CIS-0`` and ``CIS-2``) are supported by the wCCD token.
 
     .. code-block:: json
@@ -305,13 +312,13 @@ You are ready now to invoke the ``supports`` function with one of the following 
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint supports --schema supports_fallback_schema.bin --parameter-json supports.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke PROXY --entrypoint supports --schema supports_fallback_schema.bin --parameter-json supports.json --grpc-port 10001
 
 or
 
 .. code-block:: console
 
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint supports --parameter-json supports.json --energy 25000 --grpc-port 10001
+    $./concordium-client contract invoke IMPLEMENTATION --entrypoint supports --parameter-json supports.json --grpc-port 10001
 
 The below screenshot shows the response of querying if the wCCD
 token contract supports the following standards
@@ -327,8 +334,8 @@ State-mutative functions
 The protocol has four state-mutative functions (``wrap``, ``unwrap``,
 ``transfer``, and ``updateOperator``) that you can invoke on the ``proxy`` contract.
 These invokes will be passed through the fallback function on the ``proxy`` to the ``implementation`` contract.
-You require a different schema and JSON file with your input parameters for every invoke.
-All used schema files in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
+They require a different schema and JSON file with your input parameters for every invoke.
+All schema files used in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 or you can create them as described in the
 comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 Because you will use a ``schema``,
@@ -347,7 +354,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
 .. dropdown:: Option 1 (Receiver is an account) (click here)
 
-    .. code-block::
+    .. code-block:: toml
 
         {
             "data": DATA_STRING,
@@ -375,7 +382,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
 .. dropdown::  Option 2 (Receiver is a smart contract) (click here)
 
-    .. code-block::
+    .. code-block:: toml
 
         {
             "data": DATA_STRING,
@@ -390,12 +397,32 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
             }
         }
 
-    The ``DATA_STRING`` is relevant because wCCD is sent to a smart contract and it is a string of bytes (string with lowercase hex).
-    The ``OnReceivingCis2`` hook is executed in that case. This hook invokes the ``ENTRYPOINT_NAME``
-    on the smart contract ``INDEX`` with the ``OnReceivingCis2Params`` parameters
-    which include the above ``DATA_STRING``. This action allows the receiving smart contract to
+    Some additional bytes (encoded as a lowercase hex string called ``DATA_STRING``)
+    are used in the ``OnReceivingCis2`` hook. This hook is executed only if the ``to`` address is a
+    contract and the ``to`` address is not the invoker of the ``wrap`` function.
+    The ``OnReceivingCis2`` hook invokes the ``ENTRYPOINT_NAME`` on the smart contract ``INDEX`` with
+    the ``OnReceivingCis2Params`` parameters which include the above ``DATA_STRING``.
+    This action allows the receiving smart contract to
     react to the credited wCCD amount. You can keep the data field empty
     if you don't want to send any additional data to the receiving smart contract.
+
+    .. note::
+
+        In programming, a ``hook`` is an interface provided in packaged code
+        that allows a programmer to insert customized programming code to either
+        provide a different behavior or to react when something happens.
+        The ``OnReceivingCis2`` hook allows a smart contract developer to code a
+        smart contract A that tabs into the ``transfer`` or ``wrap`` functions of the wCCD smart
+        contract. Smart contract A can insert some custom logic/behavior if the ``transfer`` or ``wrap`` functions
+        are invoked and would result in the smart contract A getting credited some wCCD.
+
+        The ``ENTRYPOINT_NAME`` is an attribute that is added above each function
+        in the smart contract code as shown below using the example entrypoint name ``receiveToken``.
+
+        .. code-block:: rust
+
+            #[receive(contract = "contractName", name = "receiveToken")]
+            fn contract_receive_Token<S: HasStateApi>( ... ) ... { ... }
 
     You can use the smart contract deployed at index 844 on testnet and
     its function entry point name ``receiveToken`` for testing.
@@ -430,12 +457,15 @@ The ``to`` address will receive some wCCD
 because the ``wrap`` function will credit some wCCD to the ``to`` address.
 
 You are ready now to wrap your CCD into wCCD with the following command.
+The ``--energy`` flag specifies the maximum amount of NRG to be spent on the transaction
+and can be used to set an upper limit of the transaction fee that you are
+willing to spend when interacting with the blockchain.
 
 .. code-block:: console
 
     $./concordium-client contract update WCCD_PROXY --entrypoint wrap --schema wrap_fallback_schema.bin --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
 
-The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 wCCD.
+The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 micro wCCD.
 
 .. image:: ./images/wCCD_tutorial_2.png
     :width: 100 %
@@ -454,14 +484,14 @@ The ``unwrap`` function
 =======================
 
 Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
-compliant wCCD token at a 1:1 ratio back to the native currency CCD by buring the
+compliant wCCD token at a 1:1 ratio back to the native currency CCD by burning the
 wCCD token in the wCCD smart contract and getting CCD in return.
 
 .. dropdown:: Input parameters for the ``unwrap`` function (click here)
 
     Create an ``unwrap.json`` file and insert the below JSON object.
 
-    .. code-block::
+    .. code-block:: toml
 
         {
             "amount": AMOUNT,
@@ -504,13 +534,13 @@ wCCD token in the wCCD smart contract and getting CCD in return.
         }
 
     If you insert everything correctly, the JSON object should look similar to
-    the below JSON object that will unwrap 1,000,000 wCDD from an account
+    the below JSON object that will unwrap 1,000,000 micro wCDD from an account
     and send the received CCDs back to the same account.
 
     .. code-block:: json
 
         {
-            "amount": "1,000,000",
+            "amount": "1000000",
             "data": "",
             "owner": {
                 "Account": [
@@ -559,9 +589,9 @@ You can transfer the wCCD tokens from one address to another address.
 
 .. dropdown:: Input parameters for the ``transfer`` function (click here)
 
-    Create a ``transfer.json`` file and insert the below JSON object.
+    Create a ``transfer.json`` file and insert the below JSON array.
 
-    .. code-block::
+    .. code-block:: toml
 
         [
             {
@@ -610,8 +640,8 @@ You can transfer the wCCD tokens from one address to another address.
 
         You can execute several transfers in the above array.
 
-    If you insert everything correctly, the JSON object should look similar to
-    the below JSON object that will transfer 1 wCCD from an account address to another account address.
+    If you insert everything correctly, the JSON array should look similar to
+    the below JSON array that will transfer 1 micro wCCD from an account address to another account address.
 
     .. code-block:: json
 
@@ -668,9 +698,9 @@ without you having to interact with the smart contract again.
 
 .. dropdown:: Input parameters for the ``updateOperator`` function (click here)
 
-    Create an ``updateOperator.json`` file and insert the below JSON object.
+    Create an ``updateOperator.json`` file and insert the below JSON array.
 
-    .. code-block::
+    .. code-block:: toml
 
         [
             {
@@ -708,8 +738,8 @@ without you having to interact with the smart contract again.
 
         You can add/remove several operator addresses in the above array.
 
-    If you insert everything correctly, the JSON object should look similar to
-    the below JSON object that will add the account address 4DH219B... as
+    If you insert everything correctly, the JSON array should look similar to
+    the below JSON array that will add the account address 4DH219B... as
     an operator to the ``SENDER_ACCOUNT``.
 
     .. code-block:: json

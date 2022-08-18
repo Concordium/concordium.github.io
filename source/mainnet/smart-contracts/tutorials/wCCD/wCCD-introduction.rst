@@ -9,7 +9,7 @@ built on the Concordium blockchain, they often use the recommended ``CIS-2``
 token standard. This has the advantage that other dApps (decentralized apps)
 can rely on some basic rules on how to interact with the ``CIS-2``
 tokens and on some basic rules on how the apps can retrieve events and data from the ``CIS-2`` tokens.
-The native currency CCD has a special intention in the Concordium
+The native currency CCD has a special purpose in the Concordium
 blockchain network and does not comply with the ``CIS-2`` token standard.
 
 .. note::
@@ -32,22 +32,19 @@ Implementing two interfaces (one for CCD and another for ``CIS-2`` tokens)
 within the same smart contract can be cumbersome for developers and adds
 complexity. We need a process that converts CCD into a token (named wCCD) that is ``CIS-2``
 compliant so dApps can interact with it easily. For example, decentralized
-exchanges depend on the wCCD token because the wCCD token allows you to trade
-your CCD for other ``CIS-2`` tokens seamlessly.
+exchanges depend on the wCCD token because the wCCD token can be traded with other ``CIS-2`` tokens.
 
 Wrapping CCD refers to the process of converting the native currency CCD into
 a ``CIS-2`` compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD smart
-contract and getting wCCD in return.
-You send some CCD to the ``wrap`` function in the wCCD smart contract and it mints the same amount of
-wCCD tokens to your specified receiver address.
-wCCD is a token minted(created) by the wCCD smart contract when you invoke the ``wrap`` function.
+contract and getting wCCD in return. The ``wrap`` function accepts an amount of CCD and mints(creates)
+the same amount of wCCD tokens. It takes a receiving address as the parameter and transfers
+the minted amount of wCCD tokens to this receiver.
 
 Unwrapping CCD refers to the opposite process of converting the ``CIS-2``
-compliant wCCD token at a 1:1 ratio back to the native currency CCD by burning the
+compliant wCCD token at a 1:1 ratio back to the native currency CCD by burning(destroying) the
 wCCD token in the wCCD smart contract and getting CCD in return.
-You invoke the ``unwrap`` function in the wCCD smart contract with the amount of wCCD that you want to burn
-and the wCCD smart contract sends the same amount in CCD back to your specified address while burning your wCCD tokens.
-wCCD is burned(destroyed) by the wCCD smart contract when you invoke the ``unwrap`` function.
+The ``unwrap`` function takes the amount of tokens to unwrap and burns(destroys) them
+before transferring the same amount of CCD to the receiver.
 
 The circulating supply of the wCCD token is backed 1:1
 by the CCD balance on the wCCD smart contract.
@@ -63,29 +60,38 @@ usage to create a coherent overall smart contract ecosystem on the Concordium bl
     The below testnet addresses are an early version of the wCCD contract protocol.
     They will be updated when the protocol is finalized and some minor changes can be expected.
 
-The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``testnet`` at the following addresses:
+The canonical wCCD smart contract protocol following the ``CIS-2`` standard
+is deployed on ``testnet`` at the following addresses:
 
-``ProxyAddress (Testnet)`` = ContractAddress { index: 652, subindex: 0 }
++-----------------------------------------------------+-------------------------------------------------+
+| ``ProxyContractAddress (Testnet):``                 |  { index: 652, subindex: 0 }                    |
++-----------------------------------------------------+-------------------------------------------------+
+| ``ImplementationContractAddress (Testnet):``        |  { index: 651, subindex: 0 }                    |
++-----------------------------------------------------+-------------------------------------------------+
+| ``StateContractAddress (Testnet):``                 |  { index: 650, subindex: 0 }                    |
++-----------------------------------------------------+-------------------------------------------------+
+|                                                     |                                                 |
++-----------------------------------------------------+-------------------------------------------------+
 
-``ImplementationAddress (Testnet)`` = ContractAddress { index: 651, subindex: 0 }
-
-``StateAddress (Testnet)`` = ContractAddress { index: 650, subindex: 0 }
-
-
-The canonical wCCD smart contract protocol following the ``CIS-2`` standard is deployed on ``mainnet`` at the following addresses:
+The canonical wCCD smart contract protocol following the ``CIS-2`` standard is
+deployed on ``mainnet`` at the following addresses:
 
 .. note::
 
     Deployment on mainnet will follow once a partner has been chosen to manage the deployment.
 
-``ProxyAddress (Mainnet)`` = coming soon
-
-``ImplementationAddress (Mainnet)`` = coming soon
-
-``StateAddress (Mainnet)`` = coming soon
++----------------------------------------------------------+-------------------------------------------------+
+| ``ProxyContractAddress (Mainnet):``                      |        coming soon                              |
++----------------------------------------------------------+-------------------------------------------------+
+| ``ImplementationContractAddress (Mainnet):``             |        coming soon                              |
++----------------------------------------------------------+-------------------------------------------------+
+| ``StateContractAddress (Mainnet):``                      |        coming soon                              |
++----------------------------------------------------------+-------------------------------------------------+
+|                                                          |                                                 |
++----------------------------------------------------------+-------------------------------------------------+
 
 The ``proxy`` smart contract is the entry point for all your interactions with the protocol.
 It holds the CCD funds and logs events.
 
-You have read all information to begin interacting with the protocol on testnet now.
+You have now read all information necessary to begin interacting with the protocol on testnet.
 To continue with the tutorial click :ref:`here<wCCD-interacting>`.
