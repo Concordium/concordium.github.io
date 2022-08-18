@@ -290,7 +290,7 @@ If you select **Passive delegation**  it is possible to see the size of the pass
 - **Baking commission**: percent of rewards paid as commission to baker.
 - **Finalisation commission**: percent of finalization commission.
 - **Transaction commission**: the transaction commission percent.
-- **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table. 
+- **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.
     - **Time** shows the date/time the reward was paid
     - **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. Click the hash to see the :ref:`block details<home-screen-block>` for the block where the award payout occurred.
     - **Rewards** shows the amount of reward distributed.
