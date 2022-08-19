@@ -72,6 +72,36 @@ If you select **Passive delegation**  it is possible to see the size of the pass
     - **Rewards** shows the amount of reward distributed.
 - **Delegators**: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a **Hash** to see :ref:`account details<accounts-view>`. You can click Copy |copy| to copy the entire hash.
 
+.. _home-screen-baker:
+
+Baker details
+=============
+
+When you click a baker ID, the following appears:
+
+.. image:: ../images/ccd-scan/ccd-scan-baker-details.png
+
+|
+
+The baker details shows the following information about the baker.
+
+- **Baker**: the baker ID. This is the ID you need if you want to delegate to the baker pool in a wallet. If the Baker has been removed (i.e. the baker is no longer active), **Removed** appears next to the ID and a timestamp shows when the baker stopped.
+- If there are any pending changes, they are shown here. Events such as stake increase, stake reduction, or baker stop are displayed.
+- **Total stake**: the baker's total stake. Below the total is the amount staked by the baker and the amount of stake that comes from delegators.
+- **Open, Closed**: the baker pool status.
+- **Account**: the first six characters of the baker account. You can click on the characters for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire account number.
+- **APY Period**: choose between 7 days or 30 days. This seletion affects the **Total APY**, **Baker APY**, and **Delegators APY**.
+- **Baker rank**: the baker's rank out of all bakers on Mainnet/Testnet based on the baker's total stake.
+- **Baking commission**: the baker's baking commission percent.
+- **Finalisation commission**: the baker's finalization commission percent.
+- **Transaction commission**: the baker's transaction commission percent.
+- **Payday rewards**: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter.
+    - **Time**: shows the date/time the reward was distributed.
+    - **Reference**: shows the first six characters of the transaction hash. Click on the first six characters of a hash in Reference to see :ref:`information about the transaction<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
+    - **Amount**: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by Baking rewards, Finalisation rewards, and Transaction fees.
+- **Related transactions**: shows other transactions related to this baker ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more :ref:`information about the transacation<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
+- **Delegators**: shows the first six characters of the account delegating to the baker, that account's delegated stake, and whether earnings are restaked. You can click on the characters of the account for more :ref:`information about the delegator<home-screen-sender>`. Click Copy |copy| to copy the entire account number.
+- **Metadata**: contains the URL that the baker can optionally provide with information about the baker pool.
 
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button

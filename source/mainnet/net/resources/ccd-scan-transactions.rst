@@ -22,6 +22,36 @@ Below the graphs, the table contains the following:
 - **Sender**: the first six characters of the account that sent the transaction. You can click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
 - **Cost**: the transaction fee.
 
+.. _home-screen-transaction:
+
+Transaction details
+===================
+
+When you click a transaction hash, transaction information appears. The information is different depending upon whether the transaction was successful or rejected.
+
+.. image:: ../images/ccd-scan/ccd-scan-home-transaction-success.png
+
+|
+
+The transaction details shows the following.
+
+- **Transaction**: the first six characters of the transaction hash. Click Copy |copy| to copy the entire transaction hash. It also shows the transaction state.
+- **Block height/block hash**: the block height and the first six characters of the block hash. Click Copy |copy| to copy the entire block hash. Click the block hash to see the :ref:`account details<blocks-view>`.
+- **Age**: the transaction age with date/time stamp.
+- **Transaction type/cost**: the transaction type and the transaction fee.
+- **Sender**: the first six characters of the account that sent the transaction if available for that transaction. Click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
+- **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions. If you see the transaction type **Update micro CCD per Euro**, it is possible to see the new rate and the effective timestamp.
+
+A successful transaction shows the **Events** that were included in the transaction.
+
+If the transaction was rejected, you see something similar to the following:
+
+.. image:: ../images/ccd-scan/ccd-scan-home-transaction-reject.png
+
+|
+
+The only difference between a successful and rejected transaction is that the rejected transaction shows the **Reject reason** instead of the events.
+
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button
              :alt: Green document on top of another green document
