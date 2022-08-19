@@ -6,10 +6,17 @@ Interacting with the wCCD token protocol
 
 .. note::
 
-    Before you start with part 2 of this tutorial, make sure you have access to a testnet node,
-    installed the ``concordium-client``, created an account in the mobile wallet app
-    that is funded with some CCD, and imported the keys
-    into the ``concordium-client`` configuration. If you haven't completed any of the above steps,
+    Before you start with part 2 of this tutorial, make sure you have:
+
+    - access to a testnet node
+
+    - the ``concordium-client`` installed
+
+    - an account created in the mobile wallet app that is funded with some CCD
+
+    - the keys from the Mobile Wallet imported into the ``concordium-client`` configuration
+
+    If you haven't completed any of the above steps,
     the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
     will guide you through these setup steps.
     If you haven't completed any of the above steps, you can continue
@@ -27,7 +34,7 @@ that you can invoke on the ``proxy`` contract or the ``implementation`` contract
     While testing, it can be convenient to invoke these functions on the ``implementation`` contract,
     but you should always invoke them on the ``proxy`` contract in production.
     When the protocol is upgraded, the ``implementation`` address becomes
-    invalid, you would need to update your production product to the new ``implementation`` address.
+    invalid. You would need to update your production product to the new ``implementation`` address in that case.
 
 .. note::
 
@@ -442,16 +449,16 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
             }
         }
 
-Before you execute the ``wrap`` function, let us check
+Before you execute the ``wrap`` function, check
 the CCD balance of your ``SENDER_ACCOUNT`` (the account that initiates the transaction) and the ``proxy`` contract as described :ref:`here <balanceCCD>`.
 The ``wrap`` function will send some CCD from your ``SENDER_ACCOUNT`` account to the ``proxy`` contract.
 
 .. note::
 
-    This tutorial is read by other people too and they might at the same
+    This tutorial is also used by other people and they might at the same
     time interact with the smart contracts and change their CCD or wCCD balances.
 
-Before you execute the ``wrap`` function, let us check
+Before you execute the ``wrap`` function, check
 the wCCD balance of the ``to`` address with the :ref:`balanceOf <balanceOf>` function.
 The ``to`` address will receive some wCCD
 because the ``wrap`` function will credit some wCCD to the ``to`` address.
@@ -554,11 +561,11 @@ wCCD token in the wCCD smart contract and getting CCD in return.
             }
         }
 
-Before you execute the ``unwrap`` function, let us check
+Before you execute the ``unwrap`` function, check
 the CCD balance of the ``receiver`` address and the ``proxy`` contract as described :ref:`here <balanceCCD>`.
 The ``unwrap`` function will send some CCD from the ``proxy`` contract to the ``receiver`` address.
 
-Before you execute the ``unwrap`` function, let us check
+Before you execute the ``unwrap`` function, check
 the wCCD balance of the ``owner`` address with the :ref:`balanceOf <balanceOf>` function.
 The ``owner`` address will get its wCCD balance reduced
 because the ``unwrap`` function will burn some wCCD from the ``owner`` address.
@@ -663,7 +670,7 @@ You can transfer the wCCD tokens from one address to another address.
             }
         ]
 
-Before you execute the ``transfer`` function, let us check
+Before you execute the ``transfer`` function, check
 the wCCD balance of the ``from`` address and the ``to`` address with the :ref:`balanceOf <balanceOf>` function.
 The ``transfer`` function will send some wCCD from the ``from`` address to the ``to`` address.
 
@@ -758,7 +765,7 @@ without you having to interact with the smart contract again.
             }
         ]
 
-Before you execute the ``updateOperator`` function, let us check
+Before you execute the ``updateOperator`` function, check
 the state of the smart contract with the :ref:`operatorOf <operatorOf>` function.
 
 You are ready now to update the operator on your ``SENDER_ACCOUNT`` address with the following command.

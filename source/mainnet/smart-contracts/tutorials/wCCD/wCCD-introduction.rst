@@ -7,8 +7,8 @@ Understanding the wCCD token protocol
 The native currency on the Concordium blockchain is CCD. When other tokens are
 built on the Concordium blockchain, they often use the recommended ``CIS-2``
 token standard. This has the advantage that other dApps (decentralized apps)
-can rely on some basic rules on how to interact with the ``CIS-2``
-tokens and on some basic rules on how the apps can retrieve events and data from the ``CIS-2`` tokens.
+can rely on some basic rules for how to interact with the ``CIS-2``
+tokens and on some basic rules for how the apps can retrieve events and data from the ``CIS-2`` tokens.
 The native currency CCD has a special purpose in the Concordium
 blockchain network and does not comply with the ``CIS-2`` token standard.
 
@@ -30,7 +30,7 @@ blockchain network and does not comply with the ``CIS-2`` token standard.
 
 Implementing two interfaces (one for CCD and another for ``CIS-2`` tokens)
 within the same smart contract can be cumbersome for developers and adds
-complexity. We need a process that converts CCD into a token (named wCCD) that is ``CIS-2``
+complexity. You need a process that converts CCD into a token (named wCCD) that is ``CIS-2``
 compliant so dApps can interact with it easily. For example, decentralized
 exchanges depend on the wCCD token because the wCCD token can be traded with other ``CIS-2`` tokens.
 
@@ -66,7 +66,7 @@ newest science and research done at Concordium.
 
 .. note::
 
-    The below testnet addresses are an early version of the wCCD contract protocol.
+    The testnet addresses below are an early version of the wCCD contract protocol.
     They will be updated when the protocol is finalized and some minor changes can be expected.
 
 The canonical wCCD smart contract protocol following the ``CIS-2`` standard
