@@ -706,3 +706,5 @@ wasm module and uses the Wasm interpreter to run a smart contract function in a
 given context. For a reference of the context, see :ref:`simulate-context`.
 
 For more on how to run simulations, see :ref:`local-simulate`.
+
+To continue with the tutorial click :ref:`here<piggy-bank-preparing>`.
