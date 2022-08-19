@@ -53,6 +53,7 @@ If you select **Top delegaators** you see a list of all delegators (sorted by th
 .. image:: ../images/ccd-scan/ccd-scan-staking-delegators.png
 
 |
+
 - **Account address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Delegation target**: the baker whose pool the account has staked. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
 - **Restake earnings**: shows the delegator's restaking preference.
