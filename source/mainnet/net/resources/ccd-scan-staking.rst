@@ -12,7 +12,9 @@ The Staking overview shows information about bakers during the selected time ran
 
 The graphs show when the next payday happens, the amount of staked CCD, the number of bakers, and the total of rewards during the selected time range in the filter. The **Previous payday block** contains information about all rewards paid out for a payday period. If you click **Previous payday block**, a special block details screen for the previous pay day block appears.
 
-(Screenshot of pay day block details)
+.. image:: ../images/ccd-scan/ccd-scan-staking-payday-block-details.png
+
+|
 
 The Pay Day block details contains the following:
 
@@ -48,6 +50,9 @@ Top delegators view
 
 If you select **Top delegaators** you see a list of all delegators (sorted by their staked amount. With the ability to see account details plus inspect details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:
 
+.. image:: ../images/ccd-scan/ccd-scan-staking-delegators.png
+
+|
 - **Account address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
 - **Delegation target**: the baker whose pool the account has staked. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
 - **Restake earnings**: shows the delegator's restaking preference.
@@ -66,7 +71,7 @@ If you select **Passive delegation**  it is possible to see the size of the pass
 - **Baking commission**: percent of rewards paid as commission to baker.
 - **Finalisation commission**: percent of finalization commission.
 - **Transaction commission**: the transaction commission percent.
-- **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table. 
+- **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.
     - **Time** shows the date/time the reward was paid
     - **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. Click the hash to see the :ref:`block details<home-screen-block>` for the block where the award payout occurred.
     - **Rewards** shows the amount of reward distributed.

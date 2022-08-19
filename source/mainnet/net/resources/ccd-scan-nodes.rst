@@ -27,6 +27,10 @@ When you click a node name on the Nodes page, the following appears:
 
 The following information is shown in the node details:
 
+.. image:: ../images/ccd-scan/ccd-scan-node-details.png
+
+|
+
 - **Node**: shows the name of the node
 - **Baker**: baker ID of the node if it is a baker. Click the baker ID to see the :ref:`baker details<home-screen-baker>`.
 - **Uptime**: amount of time the node has been running.
