@@ -201,7 +201,44 @@ Synchronize a node with the network
 
 When you start a node for the first time, it can take a while to synchronize the node with the rest of the network, since it has to get all blocks from its peers.
 
-You can improve the performance by downloading the blocks before starting the node. While it will still take time to process the blocks, it will typically be faster than requesting them from peers.
+You can improve the performance by downloading the blocks from an out-of-band catchup service before starting the node. While it will still take time to process the blocks, it will typically be faster than requesting them from peers.
+
+#. Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. The configuration file opens in **Notepad**.
+
+#. Specify the URL to the block file index in the configuration file:
+
+   - For mainnet, add the following line to the ``[node.mainnet]`` section:
+
+   .. code-block:: TOML
+
+      node.args = ['--download-blocks-from', 'https://catchup.mainnet.concordium.software/blocks.idx']
+
+   - For testnet, add the following line to the ``[node.testnet]`` section:
+
+   .. code-block:: TOML
+
+      node.args = ['--download-blocks-from', 'https://catchup.test.concordium.com/blocks.idx']
+
+   Save the configuration file.
+
+#. In the **Search** bar, search for and select **Stop Concordium Service Node** to stop the node, and then search for and select **Start Concordium Service Node** to restart the node.
+
+#. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. You do so by comparing the finalized length of the chain with the length of your node. If they match, your node has caught up.
+
+.. note::
+
+   It is recommended to keep the `--download-blocks-from` parameter set in the node configuration, unlike `--import-blocks-from`.
+   The former permits incremental out-of-band catchup starting from the best block already present in the node database.
+   The latter does not and slows down the node startup significantly.
+
+
+For node versions 4.3.0 or earlier
+----------------------------------
+
+.. note::
+
+   A block file for mainnet does not work with a testnet node and vice versa.
+   Make sure to download the appropriate file for your node.
 
 #. Download the file with the blocks from the following addresses:
 
