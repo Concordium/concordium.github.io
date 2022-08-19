@@ -333,7 +333,7 @@ State-mutative functions
 
 The protocol has four state-mutative functions (``wrap``, ``unwrap``,
 ``transfer``, and ``updateOperator``) that you can invoke on the ``proxy`` contract.
-These invokes will be passed through the fallback function on the ``proxy`` to the ``implementation`` contract.
+These invokes will be passed through the ``proxy`` to the ``implementation`` contract (via the `fallback entrypoint <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/proxy/src/lib.rs#L48>`_).
 They require a different schema and JSON file with your input parameters for every invoke.
 All schema files used in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
 or you can create them as described in the

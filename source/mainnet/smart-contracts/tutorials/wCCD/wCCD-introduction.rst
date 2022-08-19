@@ -55,6 +55,15 @@ Protocol contract addresses
 The Concordium foundation maintains the canonical wCCD smart contract protocol and promotes its
 usage to create a coherent overall smart contract ecosystem on the Concordium blockchain.
 
+The protocol consists of three smart contracts (``proxy``, ``implementation``, and ``state``).
+The ``proxy`` contract is the entrypoint for all your interactions with the protocol.
+It holds the CCD funds and logs events. The ``proxy`` contract uses the fallback mechanism
+to forward any CCD and parameters to the invoked entrypoint on the ``implementation`` contract.
+If the ``implementation`` contract returns a value, this will also be returned by the ``proxy``.
+This architecture is used to enable upgrades to the logic of the wCCD contract.
+It can be used to add additional features and to improve the protocol based on the
+newest science and research done at Concordium.
+
 .. note::
 
     The below testnet addresses are an early version of the wCCD contract protocol.
@@ -89,9 +98,6 @@ deployed on ``mainnet`` at the following addresses:
 +----------------------------------------------------------+-------------------------------------------------+
 |                                                          |                                                 |
 +----------------------------------------------------------+-------------------------------------------------+
-
-The ``proxy`` smart contract is the entry point for all your interactions with the protocol.
-It holds the CCD funds and logs events.
 
 You have now read all information necessary to begin interacting with the protocol on testnet.
 To continue with the tutorial click :ref:`here<wCCD-interacting>`.
