@@ -367,10 +367,22 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="guides/overview-desktop.html">
        Set up the Desktop Wallet
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="desktop-wallet/install-ledger-app.html">
+         Set up the Ledger device and install the Concordium Ledger App
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="desktop-wallet/accounts-desktop.html">
@@ -397,10 +409,47 @@ body {margin:0;}
        Reset desktop wallet data
       </a>
      </li>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="guides/overview-shared-accounts.html">
        Shared accounts with multiple credentials in Desktop Wallet
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="desktop-wallet/create-credentials-file.html">
+         Create a credentials file
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/multi-credentials.html">
+         Add credentials to an account
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html">
+         Create a multi-signature CCD transfer in the Desktop Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/multisig-transfer.html">
+         Create a scheduled transfer in the Desktop Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="desktop-wallet/sign-transaction.html">
+         Sign a transaction proposal
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="desktop-wallet/proposed-transactions.html">
+         View transaction proposals
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -412,8 +461,8 @@ body {margin:0;}
     Develop on Concordium
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -422,8 +471,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/developer-page.html">
      Developer resources
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -454,31 +503,104 @@ body {margin:0;}
     <a class="reference internal" href="nodes/node-requirements.html">
      Run a node on Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="nodes/ubuntu.html">
        Ubuntu nodes
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/run-node-ubuntu.html">
+         Run a node on a server with Ubuntu on Mainnet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/run-node-ubuntu.html">
+         Run a node on a server with Ubuntu on Testnet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/troubleshoot-ubuntu.html">
+         Troubleshoot a node on a server with Ubuntu
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="nodes/macos.html">
        MacOS nodes
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/run-node-macos.html">
+         Run and manage a node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/troubleshoot-macos.html">
+         Troubleshoot a node on MacOS
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="nodes/windows.html">
        Windows nodes
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/run-node-windows.html">
+         Run and manage a node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/troubleshoot-windows.html">
+         Troubleshoot a node running on Windows
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="nodes/docker.html">
        Docker nodes
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/run-node.html">
+         Run a node with Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/troubleshoot-docker.html">
+         Troubleshoot a node on a server with Docker
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="nodes/node-runner-service-configuration.html">
@@ -491,8 +613,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/overview-baker-process.html">
      Overview of the baker process
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -533,8 +655,8 @@ body {margin:0;}
     <a class="reference internal" href="desktop-wallet/baking-dw.html">
      Baking in the Desktop Wallet
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-    <label for="toctree-checkbox-12">
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -580,8 +702,8 @@ body {margin:0;}
     <a class="reference internal" href="mobile-wallet/baker-mw.html">
      Baking in Mobile Wallet
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-    <label for="toctree-checkbox-13">
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -621,8 +743,8 @@ body {margin:0;}
     Smart Contracts v1
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-20">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -631,8 +753,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -660,34 +782,78 @@ body {margin:0;}
     </ul>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/index.html">
+    <a class="reference internal" href="../smart-contracts/tutorials/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html">
-       Writing the piggy bank smart contract
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/index.html">
+       PiggyBank
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html">
+         Writing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html">
+         Testing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html">
+         Preparing a testnet node on a server
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html">
+         Deploying the piggy bank smart contract
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html">
-       Testing the piggy bank smart contract
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts/tutorials/wCCD/index.html">
+       wCCD
       </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html">
-       Preparing a testnet node on a server
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html">
-       Deploying the piggy bank smart contract
-      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-introduction.html">
+         Understanding the wCCD token protocol
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html">
+         Interacting with the wCCD token protocol
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html">
+         Setting up the front-end
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-full-dApp.html">
+         Running your first full dApp
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -695,8 +861,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-    <label for="toctree-checkbox-17">
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -757,8 +923,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-    <label for="toctree-checkbox-18">
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -794,8 +960,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/onboarding-guide-ethereum-developers/index.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-    <label for="toctree-checkbox-19">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -811,8 +977,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-    <label for="toctree-checkbox-20">
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -867,8 +1033,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-21">
+  <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-29">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -877,8 +1043,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts-v0/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -909,8 +1075,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-    <label for="toctree-checkbox-23">
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -931,8 +1097,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts-v0/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-    <label for="toctree-checkbox-24">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -988,8 +1154,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts-v0/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-    <label for="toctree-checkbox-25">
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1020,8 +1186,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts-v0/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1071,8 +1237,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-27">
+  <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-35">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1096,8 +1262,8 @@ body {margin:0;}
     <a class="reference internal" href="resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-    <label for="toctree-checkbox-28">
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1123,8 +1289,8 @@ body {margin:0;}
     <a class="reference internal" href="resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-    <label for="toctree-checkbox-29">
+    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+    <label for="toctree-checkbox-37">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2174,56 +2340,86 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/index.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html">Writing the piggy bank smart contract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#bring-in-the-standard-library">Bring in the standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#piggy-bank-contract">Piggy bank contract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#specifying-the-state">Specifying the state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#set-up-a-piggy-bank">Set up a piggy bank</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#the-init-macro">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/index.html">PiggyBank</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html">Writing the piggy bank smart contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#bring-in-the-standard-library">Bring in the standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#piggy-bank-contract">Piggy bank contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#specifying-the-state">Specifying the state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#set-up-a-piggy-bank">Set up a piggy bank</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#the-init-macro">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#define-interaction-with-piggy-banks">Define interaction with piggy banks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#the-receive-macro">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#inserting-ccd">Inserting CCD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#smashing-a-piggy-bank">Smashing a piggy bank</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#viewing-the-state">Viewing the state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#define-interaction-with-piggy-banks">Define interaction with piggy banks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#the-receive-macro">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#inserting-ccd">Inserting CCD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#smashing-a-piggy-bank">Smashing a piggy bank</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/writing.html#viewing-the-state">Viewing the state</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html">Testing the piggy bank smart contract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#add-a-test-module">Add a test module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#testing-instantiation-of-a-piggy-bank">Testing instantiation of a piggy bank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#test-inserting-ccd-into-a-piggy-bank">Test inserting CCD into a piggy bank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#test-smashing-a-piggy-bank">Test smashing a piggy bank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#testing-cause-of-rejection">Testing cause of rejection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#compiling-and-running-tests-in-wasm">Compiling and running tests in Wasm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#simulating-the-piggy-bank">Simulating the piggy bank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html">Testing the piggy bank smart contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#add-a-test-module">Add a test module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#testing-instantiation-of-a-piggy-bank">Testing instantiation of a piggy bank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#test-inserting-ccd-into-a-piggy-bank">Test inserting CCD into a piggy bank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#test-smashing-a-piggy-bank">Test smashing a piggy bank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#testing-cause-of-rejection">Testing cause of rejection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#compiling-and-running-tests-in-wasm">Compiling and running tests in Wasm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/testing.html#simulating-the-piggy-bank">Simulating the piggy bank</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html">Preparing a testnet node on a server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#syncing-a-testnet-node">Syncing a testnet node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#interacting-with-your-testnet-node">Interacting with your testnet node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#creating-a-mobile-wallet-account-on-testnet">Creating a mobile wallet account on testnet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#importing-your-mobile-wallet-account-key">Importing your mobile wallet account key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html">Preparing a testnet node on a server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#syncing-a-testnet-node">Syncing a testnet node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#interacting-with-your-testnet-node">Interacting with your testnet node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#creating-a-mobile-wallet-account-on-testnet">Creating a mobile wallet account on testnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/preparing.html#importing-your-mobile-wallet-account-key">Importing your mobile wallet account key</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html">Deploying the piggy bank smart contract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#building-a-wasm-module">Building a Wasm module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#deploying-a-module">Deploying a module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#initializing-a-module">Initializing a module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#updating-the-piggy-bank-smart-contract">Updating the piggy bank smart contract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#viewing-the-piggy-bank-state">Viewing the piggy bank state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#smashing-the-piggy-bank-smart-contract">Smashing the piggy bank smart contract</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#concordium-std-crate-errors"><code class="docutils literal notranslate"><span class="pre">Concordium-std</span></code> crate errors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#smart-contract-errors">Smart contract errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html">Deploying the piggy bank smart contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#building-a-wasm-module">Building a Wasm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#deploying-a-module">Deploying a module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#initializing-a-module">Initializing a module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#updating-the-piggy-bank-smart-contract">Updating the piggy bank smart contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#viewing-the-piggy-bank-state">Viewing the piggy bank state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#smashing-the-piggy-bank-smart-contract">Smashing the piggy bank smart contract</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#concordium-std-crate-errors"><code class="docutils literal notranslate"><span class="pre">Concordium-std</span></code> crate errors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/deploying.html#smart-contract-errors">Smart contract errors</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/index.html">wCCD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-introduction.html#protocol-contract-addresses">Protocol contract addresses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#query-non-state-mutative-functions">Query (non-state-mutative) functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#getting-the-ccd-balance-of-an-address">Getting the CCD balance of an address</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-balanceof-function">The <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-operatorof-function">The <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-tokenmetadata-function">The <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-supports-function">The <code class="docutils literal notranslate"><span class="pre">supports</span></code> function</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#state-mutative-functions">State-mutative functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-wrap-function">The <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-unwrap-function">The <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-transfer-function">The <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-interacting.html#the-updateoperator-function">The <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html">Setting up the front-end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-full-dApp.html">Running your first full dApp</a></li>
 </ul>
 </li>
 </ul>
