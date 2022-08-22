@@ -82,20 +82,14 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
             .. image:: ../images/mobile-wallet/MW16.png
                 :width: 25%
 
-        #. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, it is recommended not to reveal any attributes.
-
-            - If you want to reveal some attributes, tap **Reveal account attributes**, select the attributes you want to reveal, and then tap **Submit account**.
-            - If you don’t want to reveal any attributes, tap **Submit account**.
-
-            .. image:: ../images/mobile-wallet/MW17.png
-                :width: 25%
-
         #. Finally, tap **Ok, thanks**.
 
             .. image:: ../images/mobile-wallet/MW19.png
                 :width: 25%
 
         Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+
+         You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 
     .. tab:: |mw-gen1|
 
@@ -130,6 +124,8 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
                 :width: 25%
 
         Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 
         .. Warning::
             **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**

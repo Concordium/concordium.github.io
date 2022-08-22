@@ -137,11 +137,7 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
     .. tab:: |mw-gen2|
 
-        #. Go to the **Accounts** screen.
-
-        #. Tap on the balance area of the account for which you want to update delegation or tap **More** |moredetails|.
-
-        #. In the hamburger menu |hamburger| tap **Delegation**.
+        #. Tap Earn on the account with a delegation in the **Accounts** page, or tap on an account card and tap Earn on the account details screen.
 
         #. You see your current delegation. Tap **Update current delegation**.
 

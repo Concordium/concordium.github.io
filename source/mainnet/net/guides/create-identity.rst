@@ -58,7 +58,7 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
 
    .. tab:: |mw-gen2|
 
-      You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen2|. You do this from the **Identities** page.
 
       #. Go to the |morepage| page.
 
@@ -78,12 +78,14 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
          .. image:: ../images/mobile-wallet/MW11.png
             :width: 25%
 
-      #. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+      #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
       #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
 
          .. image:: ../images/mobile-wallet/MW12.png
             :width: 25%
+
+      You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
 
    .. tab:: |mw-gen1|
 
@@ -121,6 +123,8 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
 
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
+
+      You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
