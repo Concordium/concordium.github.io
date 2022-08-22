@@ -13,13 +13,17 @@ Defining and deriving
 Custom error codes help communicate why a contract rejects and can be returned
 both during initialization and during updates.
 
-On-chain, smart contracts return a numeric error code when rejecting. This is
-also the case when using a custom error type. Therefore, a mapping from the
-custom error type to ``Reject``, in the form of an implementation of
-``From<MyError> for Reject``, is needed. We can also derive it
-automatically using ``#[derive(Reject)]``::
+On-chain, smart contracts return a numeric error code and an optional serialized
+return value when rejecting. This is also the case when using a custom error type.
+Therefore, a mapping from the custom error type to ``Reject``, in the
+form of an implementation of ``From<MyError> for Reject``, is needed.
+You can derive the implementation automatically with ``#[derive(Reject)]``, if
+the type also implements ``Serial`` (also derivable). The ``Serial`` instance is
+needed, because the whole data type is serialized and included as the optional
+return value.
+Here is a typical example::
 
-   #[derive(Reject)]
+   #[derive(Serial, Reject)]
    enum MyError {
        ErrOne,
        ErrTwo,
@@ -34,9 +38,7 @@ automatically using ``#[derive(Reject)]``::
 
 .. warning::
 
-   Deriving ``Reject`` is only possible for fieldless enums, i.e., enums where
-   the variants do not have associated data. Additionally, derivation for enums
-   with `custom discriminant values`_ is not supported either.
+   Deriving ``Reject`` for enums with `custom discriminant values`_ is not supported.
 
 Using custom errors
 ===================
@@ -56,3 +58,8 @@ Return custom errors, as you would with any other error type:
        _ctx: &impl HasReceiveContext,
        _host: &impl HasHost<State, StateApiType = S>
    ) -> Result<MyReturnValue, MyError> { Err(MyError::ErrTwo) }
+
+.. note::
+
+   Adding  :ref:`schemas<build-schema>` to your errors makes them more useful in
+   ``concordium-client`` and ``cargo-concordium``.
