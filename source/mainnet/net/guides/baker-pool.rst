@@ -21,7 +21,7 @@ Recommendations for baker pool owners
 
 If you are running a baker pool, you are responsible for managing your pool to maximize returns, both for yourself and those who have delegated stake to your pool.
 
-To help potential delegators with their choice, it is a good idea to create a site with information and add this URL to your baker pool configuration. This information is published on :ref:`CCD Scan<bakers-view>` so that potential delegators can read about the pool and understand your goals. Having a URL on your baker pool configuration is not required.
+To help potential delegators with their choice, it is a good idea to create a site with information and add this URL to your baker pool configuration. This information is published on :ref:`CCD Scan<home-screen-baker>` so that potential delegators can read about the pool and understand your goals. Having a URL on your baker pool configuration is not required.
 
 Besides the recommendations for bakers listed above, you should subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a baker.
 
@@ -30,9 +30,11 @@ Research a baker pool
 
 Before delegating stake to a baker pool, it is important to research the pool and get an idea of performance and how it is managed.
 
-The first thing to check before delegating stake to a baker pool is the URL for the baker pool. This is information that the baker can provide about the pool. It is not required that the baker provide this, but recommended. You can find the URLs on :ref:`CCD Scan<bakers-view>`.
+The first thing to check before delegating stake to a baker pool is the URL for the baker pool. This is information that the baker can provide about the pool. It is not required that the baker provide this, but recommended. You can find the URLs on :ref:`CCD Scan<home-screen-baker>`.
 
-Make sure that the pool isn't close to having too many delegators or close to max capital. Another indicator of good management is reliability, such as uptime (i.e., has it been running a long time), and if the node is upgraded to the latest version.
+.. image:: ../images/ccd-scan/ccd-scan-pool-metadata.png
+
+Make sure that the pool isn't close to having too many delegators or close to max capital. Another indicator of good management is reliability, such as whether the node is upgraded to the latest version.
 
 Once you have made a delegation, it is a good idea to monitor baker performance regularly and adjust if needed.
 

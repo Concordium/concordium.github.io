@@ -41,7 +41,7 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 3.  Site naviation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
 4.  Time range filter: controls the time range of the data shown.
 5.  Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown.
-6.  Blocks added: sum of blocks added in the selected time range.
+6.  Blocks added: number of blocks added in the selected time range.
 7.  Block Time: average time since last block created in the selected time range.
 8.  Transactions: sum of transactions in the selected time range.
 9.  Accounts created: sum of accounts created in the selected time range.

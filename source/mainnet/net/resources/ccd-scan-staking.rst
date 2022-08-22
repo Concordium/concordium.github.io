@@ -18,7 +18,7 @@ The graphs show when the next payday happens, the amount of staked CCD, the numb
 
 The Pay Day block details contains the following:
 
-- **Block**: the first six digits of the block hash. Click Copy |copy| to copy the entire hash. The block status is also shown.
+- **Block**: the first six characters of the block hash. Click Copy |copy| to copy the entire hash. The block status is also shown.
 - **Age**: the age of the block and date/time stamp when it was created.
 - **Baker id**: ID of the baker who baked the block. Click the baker IDto see the :ref:`baker details<home-screen-baker>`.
 - **Tokenomics**: contains the following details about the block:
@@ -40,7 +40,7 @@ If you select **Baker pools** the table contains a list of all bakers/pools (inc
 - **Baker ID**: ID of the baker. This is the ID you need if you want to delegate to the baker pool in a wallet. Click the baker IDto see the :ref:`baker details<home-screen-baker>`. If the Baker has been removed (i.e. the baker is no longer active), **Removed** appears next to the ID.
 - **Baker APY (30 days)**: the calculated yield of the baker for the past 30 days.
 - **Delegators APY (30 days)**: the calculated yield of the delegators for the past 30 days.
-- **Delegation pool Status**: the baker's pool status.
+- **Delegation pool Status**: the baker's pool status. Can be **Open for all**, **Closed for all**, or **Closed for new**.
 - **Delegators**: the number of delegators that baker has if the baker has an open pool
 - **Available for delegation**: shows the maximum number of remaining CCDs available for delegation based on the capital bound and the leverage factor between a baker and associated delegators. Based on the :ref:`cap<delegation-caps>` imposed.
 - **Total stake**:  shows the combined stake of the baker and delegators (if any) and the percentage breakdown of the split between the two.
@@ -48,13 +48,13 @@ If you select **Baker pools** the table contains a list of all bakers/pools (inc
 Top delegators view
 ===================
 
-If you select **Top delegaators** you see a list of all delegators (sorted by their staked amount. With the ability to see account details plus inspect details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:
+If you select **Top delegaators** you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:
 
 .. image:: ../images/ccd-scan/ccd-scan-staking-delegators.png
 
 |
 
-- **Account address**: the first six characters of the account hash. You can click Copy |copy| to copy the entire hash. If you click on an account hash, the :ref:`account details<accounts-view>` appears.
+- **Account address**: the first six characters of the account address. You can click Copy |copy| to copy the entire address. If you click on an account address, the :ref:`account details<accounts-view>` appears.
 - **Delegation target**: the baker whose pool the account has staked. If you click on a baker ID, the :ref:`baker details<home-screen-baker>` appears.
 - **Restake earnings**: shows the delegator's restaking preference.
 - **Staked amount**: amount of CCD the delegator has staked.
@@ -70,13 +70,13 @@ If you select **Passive delegation**  it is possible to see the size of the pass
 - **APY (7 days)**: the calculated yield of passive delegation based on past 7 days.
 - **APY (30 days)**: the calculated yield of passive delegation based on past 30 days.
 - **Baking commission**: percent of rewards paid as commission to baker.
-- **Finalisation commission**: percent of finalization commission.
-- **Transaction commission**: the transaction commission percent.
+- **Finalisation commission**: percentage of finalization rewards that are paid as commission to the baker.
+- **Transaction commission**: percentage of transaction rewards that are paid as commission to the baker.
 - **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.
     - **Time** shows the date/time the reward was paid
     - **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. Click the hash to see the :ref:`block details<home-screen-block>` for the block where the award payout occurred.
     - **Rewards** shows the amount of reward distributed.
-- **Delegators**: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a **Hash** to see :ref:`account details<accounts-view>`. You can click Copy |copy| to copy the entire hash.
+- **Delegators**: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a **Hash** to see :ref:`account details<accounts-view>`. You can click Copy |copy| to copy the entire account address.
 
 .. _home-screen-baker:
 
@@ -94,13 +94,13 @@ The baker details shows the following information about the baker.
 - **Baker**: the baker ID. This is the ID you need if you want to delegate to the baker pool in a wallet. If the Baker has been removed (i.e. the baker is no longer active), **Removed** appears next to the ID and a timestamp shows when the baker stopped.
 - If there are any pending changes, they are shown here. Events such as stake increase, stake reduction, or baker stop are displayed.
 - **Total stake**: the baker's total stake. Below the total is the amount staked by the baker and the amount of stake that comes from delegators.
-- **Open, Closed**: the baker pool status.
 - **Account**: the first six characters of the baker account. You can click on the characters for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire account number.
+- **Delegation pool status**: the baker pool status. **Open for all** means that the baker pool is open for delegation. **Closed for all** means that you cannot delegate to that baker pool. **Closed for new** means that new delegators cannot delegate to that pool but existing delegators remain in the pool.
 - **APY Period**: choose between 7 days or 30 days. This seletion affects the **Total APY**, **Baker APY**, and **Delegators APY**.
 - **Baker rank**: the baker's rank out of all bakers on Mainnet/Testnet based on the baker's total stake.
 - **Baking commission**: the baker's baking commission percent.
-- **Finalisation commission**: the baker's finalization commission percent.
-- **Transaction commission**: the baker's transaction commission percent.
+- **Finalisation commission**: percentage of finalization rewards that are paid as commission to the baker.
+- **Transaction commission**: percentage of transaction rewards that are paid as commission to the baker.
 - **Payday rewards**: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter.
     - **Time**: shows the date/time the reward was distributed.
     - **Reference**: shows the first six characters of the transaction hash. Click on the first six characters of a hash in Reference to see :ref:`information about the transaction<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.

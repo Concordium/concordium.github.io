@@ -8,11 +8,11 @@ Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order
 
 - **Node name**: node name as given by the node runner. Click the node name to see the :ref:`node details<node-details>`.
 - **Baker ID**: if the node is a baker, the baker ID appears. Click the baker ID to see the :ref:`baker details<home-screen-baker>`.
-- **Uptime**: amount of time the node has been running.
+- **Uptime**: amount of time the node has been running since last restart.
 - **Node version**: version of Concordium node software that the node is running.
-- **Avg. ping**: average ping time between the peers of the participant.
+- **Avg. ping**: average network delay between the node and its peers.
 - **Peers**: number of peers connected to the participant.
-- **Fin. length**: length of participant’s chain up to last finalized block.
+- **Fin. length**: height of the node's most recent finalized block.
 
 .. image:: ../images/ccd-scan/ccd-scan-nodes.png
 
@@ -35,10 +35,10 @@ The following information is shown in the node details:
 - **Baker**: baker ID of the node if it is a baker. Click the baker ID to see the :ref:`baker details<home-screen-baker>`.
 - **Uptime**: amount of time the node has been running.
 - **Client version**: version of concordium node software the node is running.
-- **Average ping**: average ping time between the peers of the participant.
-- **Packets sent**: number of packets sent by the participant during uptime.
-- **Packets received**: number of packets received by the participant during uptime.
-- **Baking committee**: Active member or Not a member
+- **Average ping**: average network delay between the node and its peers.
+- **Packets sent**: number of packets sent by the participant during uptime. Packets are transactions, blocks, finalization messages.
+- **Packets received**: number of packets received by the participant during uptime. Packets are transactions, blocks, finalization messages.
+- **Baking committee**: Whether the node is currently running as a baker. Will be either **Active member** or **Not a member**.
 - **Best block statistics**: shows statistics about the best block.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Last finalized block statistics**: shows statistics about the last finalized block in participant’s chain.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Peers**: Shows the current list of peers of the node with the ability to drill-through and inspect peer node information.

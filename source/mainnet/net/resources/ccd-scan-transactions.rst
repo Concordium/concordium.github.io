@@ -10,11 +10,11 @@ The Transactions overview shows information about the transactions during the se
 
 |
 
-The graphs show the number of **cumulative transactions** since inception and the number of **Transactions** in a range as determined by the time selected in the filter.
+The graphs show the number of **cumulative transactions** since genesis and the number of **Transactions** in a range as determined by the time selected in the filter.
 
 Below the graphs, the table contains the following:
 
-- **Transaction hash**: the first six digits of the transaction hash. You can click Copy |copy| to copy the entire hash. Click the transaction hash to see the :ref:`transaction details<home-screen-transaction>`.
+- **Transaction hash**: the first six characters of the transaction hash. You can click Copy |copy| to copy the entire hash. Click the transaction hash to see the :ref:`transaction details<home-screen-transaction>`.
 - **Status**: transaction status
 - **Age**: transaction age
 - **Type**: transaction type
@@ -40,7 +40,7 @@ The transaction details shows the following.
 - **Age**: the transaction age with date/time stamp.
 - **Transaction type/cost**: the transaction type and the transaction fee.
 - **Sender**: the first six characters of the account that sent the transaction if available for that transaction. Click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
-- **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions. If you see the transaction type **Update micro CCD per Euro**, it is possible to see the new rate and the effective timestamp.
+- **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions.
 
 A successful transaction shows the **Events** that were included in the transaction.
 
