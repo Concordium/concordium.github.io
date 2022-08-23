@@ -15,7 +15,7 @@ The graphs show the number of blocks added, the average block time, and the aver
 Below the graphs, the table contains the latest blocks added to the blockchain with the following information:
 
 - **Block hash**: the first six characters of the block hash. Click Copy |copy| to copy the entire hash. Click the block hash to see :ref:`block details<home-screen-block>`.
-- **Status**: the block status (Finalized or Rejected)
+- **Status**: the block status. Only Finalized blocks are shown.
 - **Height**: block height
 - **Age**: block age
 - **Baker**: the baker ID of the baker who baked the block. Click the baker ID to see :ref:`baker details<home-screen-baker>`.
@@ -35,7 +35,7 @@ When you click a block hash, the following appears:
 The block details shows the following information about the block.
 
 - **Block**: the first six characters of the block hash. You can click Copy |copy| to copy the entire hash.
-- **Finalised** or **Rejected**: state of the block.
+- **Finalised**: state of the block. Only Finalized blocks are shown.
 - **Age**: age of the block with date/time stamp.
 - **Baker id**: baker ID of the baker who baked the block. Click on the baker ID for details about the :ref:`baker<home-screen-baker>`.
 - **Tokenomics**: shows the tokenomics of the accrued block rewards.
