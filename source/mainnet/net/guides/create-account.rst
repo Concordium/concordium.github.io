@@ -5,8 +5,10 @@
 Create an account
 =================
 
-When you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
+If you are using Mobile Wallet or Desktop Wallet, when you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
 to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+
+If you are using Browser Wallet, no initial account was created when you created your :ref:`identity<glossary-identity>`. You create all :ref:`accounts<glossary-account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -106,6 +108,14 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap |moredetails|.
+
+    .. tab:: Browser Wallet
+
+        #. To switch to the accounts page, click on the Concordium logo (screenshot) and select Accounts.
+
+        #. Click the Accounts drop-down. Then click Add new.
+
+        #. Enter a private key and account address. Click Add account.
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow

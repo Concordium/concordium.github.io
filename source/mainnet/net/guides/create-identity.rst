@@ -1,19 +1,16 @@
 
 .. _create-initial-account:
 
-=========================================
-Create an identity and an initial account
-=========================================
+==================
+Create an identity
+==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an initial account and an identity issued by an identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of Mobile Wallet and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For Browser Wallet, an initial account is not submitted by the identity provider.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
-   You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
-
-.. Note::
-   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, IDs and addresses. This way, you'll have a backup in case the database is damaged.
+   You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet, the Mobile Wallet and Browser Wallet, or the Desktop Wallet and Browser Wallet. You can, however, send CCD from one wallet to another.
 
 .. tabs::
 
@@ -97,6 +94,22 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
+
+   .. tab:: Browser Wallet
+
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the Browser Wallet. You do this from the **ID cards** page.
+
+      #. If you are not in the ID cards page, click the Concordium logo and select ID Cards.
+
+      #. Click the ID cards drop-down.
+
+      #. Click Request new.
+
+      #. Select a third-party identity provider from the list. An external web page opens within the app.
+
+      #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+
+      #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
