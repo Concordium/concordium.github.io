@@ -11,5 +11,6 @@ The following topics are specific to Browser Wallet.
 
     browser-wallet-faq
     setup-browser-wallet
+    use-browser-wallet
     share-address-bw
     change-passcode-bw
