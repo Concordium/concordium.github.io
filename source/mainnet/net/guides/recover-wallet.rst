@@ -46,3 +46,6 @@ In case you get a new device or need to restore your existing device, you can re
             |                        | The seed phrase entered does not have any keys, accounts, or identities associated with it. |
             +------------------------+---------------------------------------------------------------------------------------------+
 
+.. Note::
+
+    When you recover your wallet, any account names that you might have edited will be reset to the account number. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
