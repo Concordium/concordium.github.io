@@ -17,9 +17,9 @@ On-chain, smart contracts return a numeric error code and an optional serialized
 return value when rejecting. This is also the case when using a custom error type.
 Therefore, a mapping from the custom error type to ``Reject``, in the
 form of an implementation of ``From<MyError> for Reject``, is needed.
-You can derive the implementation automatically with ``#[derive(Reject)]``, if
+You can derive the implementation automatically with ``#[derive(Reject)]`` if
 the type also implements ``Serial`` (also derivable). The ``Serial`` instance is
-needed, because the whole data type is serialized and included as the optional
+needed because the whole data type is serialized and included as the optional
 return value.
 Here is a typical example::
 
