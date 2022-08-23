@@ -564,3 +564,5 @@ This should succeed if everything is set up correctly. Otherwise, compare your
 code with the one found here_.
 
 .. _here: https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs
+
+To continue with the tutorial click :ref:`here<piggy-bank-testing>`.
