@@ -17,7 +17,7 @@ Concordium Client 4.1.0
 -----------------------
 
 - Fix bug in contract schema parsing caused by endiannes confusion.
-- Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables concordium-client to interact with contracts built using concordium-std version 4.
+- Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables `concordium-client` to interact with contracts built using `concordium-std` version 4.
 
 Cargo concordium 2.1.0
 ----------------------
@@ -29,7 +29,7 @@ August 4, 2022
 Concordium Client 4.0.4
 -----------------------
 
-The Concordium Client has been updated to better support the new smart contract v1 schema.
+The `concordium-client` has been updated to better support the new smart contract v1 schema.
 
 Cargo concordium 2.0.2
 ----------------------

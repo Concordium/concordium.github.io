@@ -103,7 +103,7 @@ Download cargo-concordium:
 
    -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_2.1.0.exe>`_
 
-For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`.
+For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
 Concordium node distributions v4.2.3
 ====================================
