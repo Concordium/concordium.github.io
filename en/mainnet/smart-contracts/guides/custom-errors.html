@@ -1019,7 +1019,7 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
        concordium-std
       </a>
      </li>
@@ -1380,12 +1380,16 @@ body {margin:0;}
 <h2>Defining and deriving<a class="headerlink" href="#defining-and-deriving" title="Permalink to this headline">#</a></h2>
 <p>Custom error codes help communicate why a contract rejects and can be returned
 both during initialization and during updates.</p>
-<p>On-chain, smart contracts return a numeric error code when rejecting. This is
-also the case when using a custom error type. Therefore, a mapping from the
-custom error type to <code class="docutils literal notranslate"><span class="pre">Reject</span></code>, in the form of an implementation of
-<code class="docutils literal notranslate"><span class="pre">From&lt;MyError&gt;</span> <span class="pre">for</span> <span class="pre">Reject</span></code>, is needed. We can also derive it
-automatically using <code class="docutils literal notranslate"><span class="pre">#[derive(Reject)]</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Reject)]</span><span class="w"></span>
+<p>On-chain, smart contracts return a numeric error code and an optional serialized
+return value when rejecting. This is also the case when using a custom error type.
+Therefore, a mapping from the custom error type to <code class="docutils literal notranslate"><span class="pre">Reject</span></code>, in the
+form of an implementation of <code class="docutils literal notranslate"><span class="pre">From&lt;MyError&gt;</span> <span class="pre">for</span> <span class="pre">Reject</span></code>, is needed.
+You can derive the implementation automatically with <code class="docutils literal notranslate"><span class="pre">#[derive(Reject)]</span></code> if
+the type also implements <code class="docutils literal notranslate"><span class="pre">Serial</span></code> (also derivable). The <code class="docutils literal notranslate"><span class="pre">Serial</span></code> instance is
+needed because the whole data type is serialized and included as the optional
+return value.
+Here is a typical example:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serial, Reject)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">MyError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">ErrOne</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">ErrTwo</span><span class="p">,</span><span class="w"></span>
@@ -1401,9 +1405,7 @@ ordering. First variant (<code class="docutils literal notranslate"><span class=
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Deriving <code class="docutils literal notranslate"><span class="pre">Reject</span></code> is only possible for fieldless enums, i.e., enums where
-the variants do not have associated data. Additionally, derivation for enums
-with <a class="reference external" href="https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations">custom discriminant values</a> is not supported either.</p>
+<p>Deriving <code class="docutils literal notranslate"><span class="pre">Reject</span></code> for enums with <a class="reference external" href="https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations">custom discriminant values</a> is not supported.</p>
 </div>
 </div>
 <div class="section" id="using-custom-errors">
@@ -1421,6 +1423,11 @@ with <a class="reference external" href="https://doc.rust-lang.org/reference/ite
 <span class="w">    </span><span class="n">_host</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrTwo</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding  <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">schemas</span></a> to your errors makes them more useful in
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>.</p>
 </div>
 </div>
 </div>

@@ -1019,7 +1019,7 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
        concordium-std
       </a>
      </li>
@@ -1362,6 +1362,11 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-with-state-rollbacks">
+   Testing with state rollbacks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing-transfers">
    Testing transfers
   </a>
@@ -1390,7 +1395,8 @@ body {margin:0;}
 <li><p><a class="reference internal" href="#running-tests-in-wasm" id="id1">Running tests in Wasm</a></p></li>
 <li><p><a class="reference internal" href="#writing-unit-tests" id="id2">Writing unit tests</a></p></li>
 <li><p><a class="reference internal" href="#testing-contract-invocations-with-mocks" id="id3">Testing contract invocations with mocks</a></p></li>
-<li><p><a class="reference internal" href="#testing-transfers" id="id4">Testing transfers</a></p></li>
+<li><p><a class="reference internal" href="#testing-with-state-rollbacks" id="id4">Testing with state rollbacks</a></p></li>
+<li><p><a class="reference internal" href="#testing-transfers" id="id5">Testing transfers</a></p></li>
 </ul>
 </div>
 <p>This guide will show you how to write unit tests for a smart contract written in
@@ -1615,7 +1621,7 @@ with its logic error:</p>
 <p>For more advanced types of mocks, use the functions <code class="docutils literal notranslate"><span class="pre">MockFn::new_v1</span></code>, <code class="docutils literal notranslate"><span class="pre">MockFn::new_v0</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">MockFn::new</span></code>.
 Each of these functions takes a closure that has access to the parameter and amount
-used in <code class="docutils literal notranslate"><span class="pre">invoke_contract(..,</span> <span class="pre">parameter,</span> <span class="pre">..,</span> <span class="pre">amount)</span></code>, but also the balance and
+used in <code class="docutils literal notranslate"><span class="pre">invoke_contract(parameter,</span> <span class="pre">amount,</span> <span class="pre">..)</span></code>, but also the balance and
 state of the contract you are testing.
 The methods differ in what the closure should return.
 V0 contracts do not have a return value, whereas V1 contracts always do.</p>
@@ -1690,6 +1696,86 @@ state and balance fields:</p>
 <span class="n">do_something_with</span><span class="p">(</span><span class="n">state_copy</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="testing-with-state-rollbacks">
+<h2>Testing with state rollbacks<a class="headerlink" href="#testing-with-state-rollbacks" title="Permalink to this headline">#</a></h2>
+<p>Invocations of smart contracts on the chain are transactional. This means that
+if a contract changes its state and then fails, the state is rolled back to how
+it was before the invocation.</p>
+<p>If you want the same behavior when testing, it is necessary to use a helper
+method on the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html"><code class="docutils literal notranslate"><span class="pre">TestHost</span></code></a>, namely <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.with_rollback"><code class="docutils literal notranslate"><span class="pre">with_rollback</span></code></a>.
+To illustrate, here is an example in which the receive function increments the
+state and then immediately fails:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="nc">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u8</span><span class="p">;</span><span class="w"></span>
+
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;increment&quot;</span><span class="cp">, mutable)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">receive</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">()</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Mutate state.</span>
+<span class="w">    </span><span class="nb">Err</span><span class="p">(</span><span class="n">Reject</span>::<span class="n">default</span><span class="p">())</span><span class="w">  </span><span class="c1">// Then fail.</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[concordium_cfg_test]</span><span class="w"></span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_without_rollback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">StateBuilder</span>::<span class="n">new</span><span class="p">());</span><span class="w"></span>
+
+<span class="hll"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">receive</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="p">);</span><span class="w"></span>
+</span>
+<span class="hll"><span class="w">        </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// FAILS! State wasn&#39;t rolled back.</span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_with_rollback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestReceiveContext</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHost</span>::<span class="n">new</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">StateBuilder</span>::<span class="n">new</span><span class="p">());</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Use the `with_rollback` method.</span>
+<span class="hll"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">with_rollback</span><span class="p">(</span><span class="o">|</span><span class="n">host</span><span class="o">|</span><span class="w"> </span><span class="n">receive</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">host</span><span class="p">));</span><span class="w"></span>
+</span>
+<span class="hll"><span class="w">        </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Success!</span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.with_rollback"><code class="docutils literal notranslate"><span class="pre">with_rollback</span></code></a> works by creating a clone of the <code class="docutils literal notranslate"><span class="pre">State</span></code>, invoking the
+receive function and, if it failed, rolling back the state.
+This means that <code class="docutils literal notranslate"><span class="pre">State</span></code> must implement the trait <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.StateClone.html"><code class="docutils literal notranslate"><span class="pre">StateClone</span></code></a>, which
+fortunately is implemented for all <a class="reference external" href="https://doc.rust-lang.org/std/clone/trait.Clone.html"><code class="docutils literal notranslate"><span class="pre">Clone</span></code></a> types.
+However, it is not possible to implement <a class="reference external" href="https://doc.rust-lang.org/std/clone/trait.Clone.html"><code class="docutils literal notranslate"><span class="pre">Clone</span></code></a> correctly for your state if it
+includes one of the special state types.</p>
+<p>This is how to handle the two scenarios:</p>
+<ul class="simple">
+<li><p>Derive <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.StateClone.html"><code class="docutils literal notranslate"><span class="pre">StateClone</span></code></a> for your state (see example below) if it has one or more fields comprised
+of <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.StateBox.html"><code class="docutils literal notranslate"><span class="pre">StateBox</span></code></a>, <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html"><code class="docutils literal notranslate"><span class="pre">StateSet</span></code></a>, or <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.StateMap.html"><code class="docutils literal notranslate"><span class="pre">StateMap</span></code></a>.</p></li>
+<li><p>Otherwise, derive <a class="reference external" href="https://doc.rust-lang.org/std/clone/trait.Clone.html"><code class="docutils literal notranslate"><span class="pre">Clone</span></code></a> for your <code class="docutils literal notranslate"><span class="pre">State</span></code>.</p></li>
+</ul>
+<p>Here is an example of how to derive <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.StateClone.html"><code class="docutils literal notranslate"><span class="pre">StateClone</span></code></a>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(StateClone)]</span><span class="w"></span>
+<span class="cp">#[concordium(state_parameter = </span><span class="s">&quot;S&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">State</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">my_state_map</span>: <span class="nc">StateMap</span><span class="o">&lt;</span><span class="n">SomeType</span><span class="p">,</span><span class="w"> </span><span class="n">SomeOtherType</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can read more about deriving <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.StateClone.html"><code class="docutils literal notranslate"><span class="pre">StateClone</span></code></a> on <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_std_derive/derive.StateClone.html">docs.rs</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The state also needs to be rolled back on errors occuring in mock
+entrypoints, as described in
+<a class="reference internal" href="#testing-contract-invocations"><span class="std std-ref">Testing contract invocations with mocks</span></a>, but that is handled by the test
+framework itself. This means that mock entrypoints are handled
+transactionally, even without the use of <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.with_rollback"><code class="docutils literal notranslate"><span class="pre">with_rollback</span></code></a>.</p>
 </div>
 </div>
 <div class="section" id="testing-transfers">

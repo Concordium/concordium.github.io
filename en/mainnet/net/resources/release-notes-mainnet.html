@@ -1019,7 +1019,7 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
        concordium-std
       </a>
      </li>
@@ -1352,6 +1352,16 @@ body {margin:0;}
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-client-4-1-0">
+     Concordium Client 4.1.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cargo-concordium-2-1-0">
+     Cargo concordium 2.1.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concordium-client-4-0-4">
      Concordium Client 4.0.4
     </a>
@@ -1647,10 +1657,22 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
+<p>August 24, 20222</p>
+<div class="section" id="concordium-client-4-1-0">
+<h3>Concordium Client 4.1.0<a class="headerlink" href="#concordium-client-4-1-0" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fix bug in contract schema parsing caused by endiannes confusion.</p></li>
+<li><p>Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables <cite>concordium-client</cite> to interact with contracts built using <cite>concordium-std</cite> version 4.</p></li>
+</ul>
+</div>
+<div class="section" id="cargo-concordium-2-1-0">
+<h3>Cargo concordium 2.1.0<a class="headerlink" href="#cargo-concordium-2-1-0" title="Permalink to this headline">#</a></h3>
+<p>Use schemas for error values when simulating contracts. In particular support building and testing contracts with <cite>concordium-std</cite> version 4.</p>
 <p>August 4, 2022</p>
+</div>
 <div class="section" id="concordium-client-4-0-4">
 <h3>Concordium Client 4.0.4<a class="headerlink" href="#concordium-client-4-0-4" title="Permalink to this headline">#</a></h3>
-<p>The Concordium Client has been updated to better support the new smart contract v1 schema.</p>
+<p>The <cite>concordium-client</cite> has been updated to better support the new smart contract v1 schema.</p>
 </div>
 <div class="section" id="cargo-concordium-2-0-2">
 <h3>Cargo concordium 2.0.2<a class="headerlink" href="#cargo-concordium-2-0-2" title="Permalink to this headline">#</a></h3>

@@ -1019,7 +1019,7 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
        concordium-std
       </a>
      </li>
@@ -1437,20 +1437,24 @@ function, which is a getter for a <code class="docutils literal notranslate"><sp
 how this type is represented as bytes and how to represent it.</p>
 <div class="section" id="including-schemas-for-init">
 <h3>Including schemas for init<a class="headerlink" href="#including-schemas-for-init" title="Permalink to this headline">#</a></h3>
-<p>To generate and include the schema for parameters for init functions, set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> attribute for the
+<p>To generate and include the schema for parameters or errors for init functions, set the
+optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code> attributes for the
 <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code>-macro:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
-<span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_init</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[derive(Serial, Reject, SchemaType)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">InitError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">, error = </span><span class="s">&quot;InitError&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_init</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="o">&lt;..</span><span class="p">.,</span><span class="w"> </span><span class="n">InitError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="including-schemas-for-receive">
 <h3>Including schemas for receive<a class="headerlink" href="#including-schemas-for-receive" title="Permalink to this headline">#</a></h3>
-<p>To generate and include the schema for parameters or return values for receive
-functions, set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> or <code class="docutils literal notranslate"><span class="pre">return_value</span></code> attribute for the
+<p>To generate and include the schema for parameters, return values, or errors for receive
+functions, set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code>, <code class="docutils literal notranslate"><span class="pre">return_value</span></code>, or <code class="docutils literal notranslate"><span class="pre">error</span></code> attributes for the
 <code class="docutils literal notranslate"><span class="pre">#[receive(..)]</span></code>-macro:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">ReceiveParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
@@ -1458,19 +1462,26 @@ functions, set the optional <code class="docutils literal notranslate"><span cla
 <span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">ReceiveReturnValue</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
+<span class="cp">#[derive(Serial, Reject, SchemaType)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">ReceiveError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
 <span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_param&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;String&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">contract_receive_just_param</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 <span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_return&quot;</span><span class="cp">, return_value = </span><span class="s">&quot;Vec&lt;u64&gt;&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">contract_receive_just_return</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_return&quot;</span><span class="cp">, error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_erro</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
 <span class="cp">#[receive(</span>
 <span class="cp">    contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">,</span>
 <span class="cp">    name = </span><span class="s">&quot;param_and_return&quot;</span><span class="cp">,</span>
 <span class="cp">    parameter = </span><span class="s">&quot;ReceiveParameter&quot;</span><span class="cp">,</span>
-<span class="cp">    return_value = </span><span class="s">&quot;ReceiveReturnValue&quot;</span><span class="cp"></span>
+<span class="cp">    return_value = </span><span class="s">&quot;ReceiveReturnValue&quot;</span><span class="cp">,</span>
+<span class="cp">    error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp"></span>
 <span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_param_and_return</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ReceiveReturnValue</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ReceiveReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

@@ -1019,7 +1019,7 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference external" href="https://docs.rs/concordium-std/3.0.0/concordium_std/">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
        concordium-std
       </a>
      </li>
@@ -1724,7 +1724,7 @@ smart contract with more complex logic and many reasons for rejecting, it would
 be better if you tested this as well.</p>
 <p id="piggy-bank-smash-error">To solve this, introduce a <code class="docutils literal notranslate"><span class="pre">SmashError</span></code> enum  to represent the different
 reasons for rejection:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Debug, PartialEq, Eq, Reject)]</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Debug, PartialEq, Eq, Serial, Reject)]</span><span class="w"></span>
 <span class="k">enum</span> <span class="nc">SmashError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">NotOwner</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">AlreadySmashed</span><span class="p">,</span><span class="w"></span>
