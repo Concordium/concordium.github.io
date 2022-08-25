@@ -17,7 +17,7 @@ The process of becoming a baker involves the following:
 #. Start the node with the baker keys.
 
 After completing these steps, the baker node will bake blocks. If a baked block
-is added to the chain, the baker of the node will receive a reward.
+is added to the chain, the baker receives a reward.
 
 .. note::
 
@@ -133,21 +133,17 @@ To start the node with these baker keys and bake blocks, configure the node to
 use the baker keys, and **restart** it. The node will automatically start baking
 when the baker is included in the bakers for the current epoch.
 
-This change is executed immediately, and it will take effect when finishing the epoch after the one in which the transaction for adding the baker was included in a block.
+This change is executed immediately, and it will take effect at the next :ref:`pay day<glossary-pay-day>` after the one in which the transaction for adding the baker was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 
-.. table:: Timeline: adding a baker
 
-   +-------------------------------------------+-----------------------------------------+-----------------+
-   |                                           | When transaction is included in a block | After 2 epochs  |
-   +===========================================+=========================================+=================+
-   | Change is visible by querying the node    |  ✓                                      |                 |
-   +-------------------------------------------+-----------------------------------------+-----------------+
-   | Baker is included in the baking committee |                                         | ✓               |
-   +-------------------------------------------+-----------------------------------------+-----------------+
++-------------------------------------------+-----------------------------------------+-----------------+
+|                                           | When transaction is included in a block | At next pay day |
++===========================================+=========================================+=================+
+| Change is visible by querying the node    |  ✓                                      |                 |
++-------------------------------------------+-----------------------------------------+-----------------+
+| Baker is included in the baking committee |                                         | ✓               |
++-------------------------------------------+-----------------------------------------+-----------------+
 
-.. note::
-
-   If the transaction for adding the baker was included in a block during epoch `E`, the baker will be considered as part of the baking committee when epoch `E+2` starts.
 
 Manage the baker
 ==================
@@ -201,22 +197,20 @@ To update the baker stake run
 When the staked amount is modified, the probability that a baker gets elected
 to bake blocks is also modified.
 
-When a baker adds a stake for the first time or increase the stake, that
+When a baker adds a stake for the first time or increases the stake, that
 change is executed on the chain and becomes visible as soon as the transaction
 is included in a block (can be seen through ``concordium-client account show
-bakerAccount``) and takes effect 2 epochs after that.
+bakerAccount``) and takes effect at the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 
-.. table:: Timeline: increasing the stake
++----------------------------------------+-----------------------------------------+-----------------+
+|                                        | When transaction is included in a block | At next pay day |
++========================================+=========================================+=================+
+| Change is visible by querying the node | ✓                                       |                 |
++----------------------------------------+-----------------------------------------+-----------------+
+| Baker uses the new stake               |                                         | ✓               |
++----------------------------------------+-----------------------------------------+-----------------+
 
-   +----------------------------------------+-----------------------------------------+----------------+
-   |                                        | When transaction is included in a block | After 2 epochs |
-   +========================================+=========================================+================+
-   | Change is visible by querying the node | ✓                                       |                |
-   +----------------------------------------+-----------------------------------------+----------------+
-   | Baker uses the new stake               |                                         | ✓              |
-   +----------------------------------------+-----------------------------------------+----------------+
-
-When a baker **decreases the staked amount**, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends when the transaction is included in a block. it can be consulted through ``concordium-client account show bakerAccount``:
+When a baker **decreases the staked amount**, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends. It can be consulted through ``concordium-client account show bakerAccount``:
 
 .. code-block:: console
 
@@ -229,18 +223,16 @@ When a baker **decreases the staked amount**, the change requires a 21 day cool-
 
    ...
 
-.. table:: Timeline: decreasing the stake
-
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                        | When transaction is included in a block | After cool-down                                |
-   +========================================+=========================================+========================================+
-   | Change is visible by querying the node | ✓                                       |                                        |
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
-   | Baker uses the new stake               |                                         | ✓                                      |
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
-   | Stake can be decreased again or        | ✗                                       | ✓                                      |
-   | baker can be removed                   |                                         |                                        |
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
++------------------------------------------+-----------------------------------------+-------------------------------+
+|                                          | When transaction is included in a block | First pay day after cool-down |
++==========================================+=========================================+===============================+
+| Change is visible by querying the node   | ✓                                       |                               |
++------------------------------------------+-----------------------------------------+-------------------------------+
+| Baker uses the new stake                 |                                         | ✓                             |
++------------------------------------------+-----------------------------------------+-------------------------------+
+| Stake can be decreased again or baker    | ✗                                       |                               |
+| can be removed                           |                                         |                               |
++------------------------------------------+-----------------------------------------+-------------------------------+
 
 .. note::
 
@@ -258,7 +250,7 @@ When a baker **decreases the staked amount**, the change requires a 21 day cool-
 
    The staked amount is *locked*. That is, you can't transfer it or use it for payment. You should take this into account and consider staking an amount that will not be needed in the short term. In particular, to deregister a baker or to modify the staked amount you need to own some non-staked CCD to cover the transaction costs.
 
-   .. _restake-earnings:
+.. _restake-earnings:
 
 Restake the earnings
 ----------------------
@@ -276,7 +268,7 @@ the account balance without staking them automatically. You can change this swit
    $concordium-client baker update-restake True --sender bakerAccount
 
 Changes to the restake flag will take effect immediately; however, the changes
-start affecting baking and finalizing power in the epoch after next. The current value of the switch can be seen in the account information which you can query using ``concordium-client``:
+start affecting baking and finalizing power in the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using ``concordium-client``:
 
 .. code-block:: console
 
@@ -289,18 +281,17 @@ start affecting baking and finalizing power in the epoch after next. The current
 
    ...
 
-.. table:: Timeline: updating restake
 
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
-   |                                               | When transaction is included in a block | 2 epochs after being rewarded |
-   +===============================================+=========================================+===============================+
-   | Change is visible by querying the node        | ✓                                       |                               |
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
-   | Earnings will [not] be restaked automatically | ✓                                       |                               |
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
-   | If restaking automatically, the gained        |                                         | ✓                             |
-   | stake affects the lottery power               |                                         |                               |
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
++-----------------------------------------------+-----------------------------------------+------------+
+|                                               | When transaction is included in a block | At pay day |
++===============================================+=========================================+============+
+| Change is visible by querying the node        | ✓                                       |            |
++-----------------------------------------------+-----------------------------------------+------------+
+| Earnings will [not] be restaked automatically | ✓                                       |            |
++-----------------------------------------------+-----------------------------------------+------------+
+| If restaking automatically, the gained        |                                         | ✓          |
+| stake affects the lottery power               |                                         |            |
++-----------------------------------------------+-----------------------------------------+------------+
 
 When the baker is registered, it will automatically restake the earnings, but you can change this by providing the ``--no-restake`` flag to
 the ``baker add`` command as shown in the following:
@@ -382,7 +373,7 @@ Remove a baker
 ==============
 
 The controlling account can choose to de-register its baker on the chain. To do
-so you have to execute the ``concordium-client``:
+so you have to execute:
 
 .. code-block:: console
 
@@ -392,7 +383,7 @@ This removes the baker from the baker list and unlocks the staked amount on
 the baker so that it can be transferred or moved freely.
 
 When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends when the transaction is included in a block. You can check when the change will be take effect by querying the account information with ``concordium-client``:
+the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends . You can check when the change will take effect by querying the account information:
 
 .. code-block:: console
 
@@ -404,16 +395,6 @@ the staked amount. The change requires a 21 day cool-down to take effect. The ch
     - Restake earnings: yes
 
    ...
-
-.. table:: Timeline: removing a baker
-
-   +--------------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                            | When transaction is included in a block | After cool-down                               |
-   +============================================+=========================================+========================================+
-   | Change is visible by querying the node     | ✓                                       |                                        |
-   +--------------------------------------------+-----------------------------------------+----------------------------------------+
-   | Baker is removed from the baking committee |                                         | ✓                                      |
-   +--------------------------------------------+-----------------------------------------+----------------------------------------+
 
 .. warning::
 
