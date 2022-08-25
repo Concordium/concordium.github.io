@@ -74,3 +74,4 @@
    resources/release-notes
    resources/sirius-testnet-reset
    resources/legal
+   resources/ar-idp-contact
