@@ -10,7 +10,6 @@ Identity Providers
 **Notabene**
 
 Website: https://notabene.id/
-Support chat: https://idiss.notabene.id/support
 
 **Digital Trust Solutions (DTS)**
 
