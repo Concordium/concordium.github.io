@@ -383,7 +383,7 @@ This removes the baker from the baker list and unlocks the staked amount on
 the baker so that it can be transferred or moved freely.
 
 When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends . You can check when the change will take effect by querying the account information:
+the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends. You can check when the change will take effect by querying the account information:
 
 .. code-block:: console
 
