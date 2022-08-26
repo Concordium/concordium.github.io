@@ -210,7 +210,7 @@ with a ``payable`` function without raising an error because in that case 0 CCD 
    :width: 100 %
 
 .. note::
-   You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/3.0.0/concordium_std/#signalling-errors>`_.
+   You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/latest/concordium_std/#signalling-errors>`_.
    This error was thrown by the ``concordium-std`` crate. The error codes start from ``i32::MIN`` and go upwards.
    ``-2147483636`` corresponds to ``NotPayableError``. In contrast, error types of the smart contract start from ``-1`` and go downwards.
 
