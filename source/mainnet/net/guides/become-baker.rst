@@ -230,8 +230,8 @@ When a baker **decreases the staked amount**, the change requires a 21 day cool-
 +------------------------------------------+-----------------------------------------+-------------------------------+
 | Baker uses the new stake                 |                                         | ✓                             |
 +------------------------------------------+-----------------------------------------+-------------------------------+
-| Stake can be decreased again or baker    | ✗                                       |                               |
-| can be removed                           |                                         |                               |
+| Stake can be increased, decreased again  |                                         | ✓                            |
+| or baker can be removed                  |                                         |                               |
 +------------------------------------------+-----------------------------------------+-------------------------------+
 
 .. note::
