@@ -8,7 +8,13 @@ Setting up the front-end
 
     Before you start with part 3 of this tutorial, make sure you have:
 
-    - access to a web browser on your laptop or computer
+    - access to the `Chrome <https://www.google.com/chrome/>`_ web browser on your laptop or computer
+
+    - ``node.js`` and ``yarn`` installed
+
+``Node.js`` is a JavaScript runtime environment and ``yarn`` is a common package manager
+used in combination with ``node.js``. You can find additional information on their official website as well as download
+`Node.js <https://nodejs.org/en/download/>`_  and `yarn <https://yarnpkg.com/getting-started/install>`_.
 
 Non-tech users might find it inconvenient to interact via the Concordium node with smart contracts
 and we cannot expect everyone is going to host their own Concordium node in the future.
@@ -18,7 +24,7 @@ to your potential customers. Web front-ends are a familiar side nowadays but kee
 that downloading a crypto wallet as a browser extension and its behavior or safe usage might be new
 for people using your front-end. Providing comprehensive explanations and step-by-step guides at your front-end on topics
 related to the browser wallet is important for a good user experience. The browser wallet
-connects via ``HTTPS`` to a server that runs a Concordium node. This setup alleviates the
+connects via ``HTTPS`` to a server that is connected to a Concordium node. This setup alleviates the
 need for the user to host their own Concordium node.
 
 Concordium browser wallet
@@ -26,11 +32,11 @@ Concordium browser wallet
 
 A browser wallet is a piece of code that can be added as an extension to supported browsers such as ``Chrome``.
 The browser wallet hosts the private keys corresponding to the accounts of the user and a link that points
-to a ``JSON-RPC server``.
+to a `JSON-RPC server  <https://github.com/Concordium/concordium-json-rpc>`_.
 
-Your front-end code that is run in the browser constructs the transaction object
+Your front-end code, that is run in the browser, constructs the transaction object
 and sends it the the browser wallet. The transaction object is signed by the private key hosted in the browser wallet
-and transmitted to the `JSON-RPC server <https://github.com/Concordium/concordium-json-rpc>`_ via ``HTTPS``. This server has access to a Concordium node and masks
+and transmitted to the ``JSON-RPC server`` via ``HTTPS``. This server has access to a Concordium node and masks
 the request (including the signed transaction object) that comes via ``HTTPS`` from the browser wallet
 to a ``JSON-RPC`` request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
@@ -43,10 +49,10 @@ part of the Concordium blockchain.
     Expect some breaking changes until the MVP version is released in the next quarter. It is not recommended to
     use any pre-MVP product on mainnet.
 
-We provide two different workflows that will guide you through the setup steps. Workflow 1 is for
+You can choose from two different workflows that will guide you through the setup steps. Workflow 1 is for
 advanced readers that want to build all the components from the source code and connect the browser wallet
 to their own hosted Concordium node. Workflow 2 is easier by downloading the browser wallet and
-connecting it to a ``JSON-RPC server proxy`` hosted by Concordium which will take care of the
+connecting it to the ``JSON-RPC wallet proxy`` hosted by Concordium which will take care of the
 Concordium node on behalf of you.
 
 .. dropdown:: Workflow 1 (click here)
@@ -55,7 +61,7 @@ Concordium node on behalf of you.
 
     - a running Concordium testnet node
 
-    - have port forwarding enabled with the command (only needed when running the node on a remote server instead of locally):
+    - have port forwarding enabled with the command (this step is only required when you run your node on a remote server instead of locally):
 
     .. code-block:: console
 
@@ -72,8 +78,8 @@ Concordium node on behalf of you.
 
         $git clone git@github.com:Concordium/concordium-json-rpc.git
 
-    You can build and run the server as described in the
-    `README file of the json-rpc repo <https://github.com/Concordium/concordium-json-rpc>`_.
+    Build and run the server as described in the README file of the
+    `JSON-RPC repo <https://github.com/Concordium/concordium-json-rpc>`_.
 
     The final command that you execute to start the ``JSON-RPC server`` is as follows:
 
@@ -81,6 +87,7 @@ Concordium node on behalf of you.
 
         $yarn start --port 9095 --nodeAddress 127.0.0.1 --nodePort 10001 --nodeTimeout 5000
 
+    Your ``JSON-RPC server`` is running on port `9095` and connects to your local node on port `10001`.
     You are ready now to build the pre-MVP browser wallet from the source code.
     Clone the repository with the command:
 
@@ -91,16 +98,19 @@ Concordium node on behalf of you.
     You can build the browser wallet extension and load it
     (``dist`` folder from the path `root/packages/browser-wallet`) into the
     `Chrome browser <https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked>`_ as
-    described in the
-    `README file of the browser wallet repo <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
+    described in the README file of the
+    `browser wallet repo <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
 
     You are ready now to start the browser wallet by clicking on the Concordium icon at the top right of the
     ``Chrome`` browser.
 
     .. note::
 
-        You can pin the Concordium browser wallet icon at the top right of your ``Chrome`` browser
-        by clicking on the puzzle icon that allows you to manage your browser extensions.
+        The puzzle icon at the top right of the ``Chrome`` browser allows you to manage your browser extensions.
+        You can enable pinning by clicking on the Concordium browser wallet.
+
+        .. image:: ./images/wCCD_tutorial_13.png
+            :width: 30 %
 
     .. image:: ./images/wCCD_tutorial_12.png
         :width: 100 %
@@ -110,8 +120,73 @@ Concordium node on behalf of you.
         Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
         screenshots and setup steps might differ. The browser wallet hosts the private keys corresponding
         to the accounts of the user and a link that points to a ``JSON-RPC server``.
-        Depending on the pre-MVP browser wallet version, you either need to create a new account
-        (a new private key) or import an existing private key (as it can be seen in the above screenshot).
+        Depending on the pre-MVP browser wallet version, you either have to create a new account
+        (a new private key) with builds after 22.8.2022 or import
+        an existing private key (as seen in the above screenshot) with builds before 22.8.2022.
+
+    .. dropdown:: Getting your private key from the mobile wallet backup file
+
+        Coming soon.
+
+    .. dropdown:: Getting your private key from an account already imported to the `concordium-client`
+
+        Display your keys with the following :ref:`command <concordium-client-display>`
+
+        .. code-block:: console
+
+            $./concordium-client config show
+
+        Save the ``encryptedSignKey`` blob to a file named ``output.json``. The content of that file
+        should look similar to the below content.
+
+        .. code-block:: json
+
+            {
+                "cipherText": "K1ylur5Qy+UUYlwyShu1W6rRgRhcN12e91SEGZ9UBboEzTVVQ80cDpsJNBQmU+sBlo1FKrGxKFzPjxhKxxohmZ99yDXgyo9bMDxuTosqcfY=",
+                "metadata": {
+                    "encryptionMethod": "AES-256",
+                    "initializationVector": "oJhcClLqUEotJxh4nmuCgA==",
+                    "iterations": 100000,
+                    "keyDerivationMethod": "PBKDF2WithHmacSHA256",
+                    "salt": "0XSYLtrsLN+XXwYqxD+gDw=="
+                }
+            }
+
+        Download the :ref:`utils tool <downloads-testnet-auxiliary-tools>` under the auxiliary tools section.
+        This tool is able to decode your encrypted key.
+
+        You can find additional information on the `utils` tool :ref:`here <developer-tools>`.
+
+        Decode your private key by running the decrypt command on the ``output.json`` file.
+        You will need to enter your password from the backup file when it was exported from the mobile wallet.
+
+        .. code-block:: console
+
+            $./utils decrypt --in output.json --out decrypted.example
+
+        Your private key will be saved to the ``decrypted.example`` file.
+
+    Enter the below ``JSON-RPC`` endpoint into the browser wallet to connect to
+    your local ``JSON-RPC server`` on port 9095.
+
+    .. code-block:: console
+
+        http://127.0.0.1:9095
+
+    In case you run an older pre-MVP wallet, you have to enter the private key and
+    the associated account into the browser wallet. In case you run a newer pre-MVP wallet, you can create a
+    new account with the associated private key in the browser wallet.
+
+    .. code-block:: toml
+
+        74ff83a13ca066298583dcb9151822359fd2e4c9b69c9ca427455da565f6129b,3oLNhuxM7yrf3LrJa3hH5NfocTViGS8Aj2t6YScWNvUq4o2nC
+
+    You completed the browser wallet setup. Check that your account balance is displayed.
+    You are connected to a website with your browser wallet when you see the green ``Connected`` button.
+    You can toggle on/off the connection by clicking on the button.
+
+    .. image:: ./images/wCCD_tutorial_14.png
+        :width: 40 %
 
 .. dropdown:: Workflow 2 (click here)
 
