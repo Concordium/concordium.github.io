@@ -10,6 +10,7 @@ Identity Providers
 **Notabene**
 
 Website: https://notabene.id/
+Support e-mail: support@notabene.id
 
 **Digital Trust Solutions (DTS)**
 
