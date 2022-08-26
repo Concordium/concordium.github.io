@@ -174,16 +174,19 @@ Concordium node on behalf of you.
         http://127.0.0.1:9095
 
     In case you run an older pre-MVP wallet, you have to enter the private key and
-    the associated account into the browser wallet. In case you run a newer pre-MVP wallet, you can create a
-    new account with the associated private key in the browser wallet.
+    the associated account into the browser wallet similar to the below string. In case you run a newer pre-MVP wallet,
+    you can create a new account with the associated private key in the browser wallet.
 
     .. code-block:: toml
 
         74ff83a13ca066298583dcb9151822359fd2e4c9b69c9ca427455da565f6129b,3oLNhuxM7yrf3LrJa3hH5NfocTViGS8Aj2t6YScWNvUq4o2nC
 
-    You completed the browser wallet setup. Check that your account balance is displayed.
-    You are connected to a website with your browser wallet when you see the green ``Connected`` button.
-    You can toggle on/off the connection by clicking on the button.
+    You completed the browser wallet setup. Check that your account balance is displayed and you have enough
+    CCD to be able to execute transactions.
+
+    .. note::
+        You are connected to a website with your browser wallet when you see the green ``Connected`` button.
+        You can toggle on/off the connection by clicking on the button.
 
     .. image:: ./images/wCCD_tutorial_14.png
         :width: 40 %
@@ -208,5 +211,73 @@ Concordium node on behalf of you.
 
 Running the web front-end
 -------------------------
+
+You have successfully added the Concordium browser wallet as an extension in the previous section.
+In the next step of the tutorial, you are going to clone a wCCD demo front-end written with the React library
+and run it locally. The demo front-end has the required packages installed to connect to the Concordium browser wallet
+and implements common flows to deal with the different states that the browser wallet could be in. For example,
+the front-end will show a red text and a ``connect`` button when the side is loaded. It has flows
+to react to the events when the user switches the network or account in the browser wallet or
+connects/disconnects the browser wallet to update the front-end state accordingly.
+
+.. note::
+
+    React is a popular open-source front-end JavaScript library.
+
+Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>`_ and checkout the
+`wccd front-end example branch <https://github.com/Concordium/concordium-browser-wallet/pull/62>`_.
+
+Build and run the front-end as described in the README file of the
+`wCCD front-end demo <https://github.com/Concordium/concordium-browser-wallet/tree/131-wccd-front-end/examples/wCCD>`_.
+
+The steps in the README file are as follows:
+
+- Run yarn in the root folder to install all dependencies.
+
+.. code-block:: console
+
+    $yarn
+
+- Navigate into the ``browser-wallet-api-helpers`` folder.
+
+.. code-block:: console
+
+    $cd ./packages/browser-wallet-api-helpers
+
+- Run ``yarn build`` in the ``browser-wallet-api-helpers`` package folder to build the package.
+
+.. code-block:: console
+
+    $yarn build
+
+- Remove the old browser-wallet-api-helpers link and copy the ``browser-wallet-api-helpers`` package into the node-module folder in the root folder.
+
+.. code-block:: console
+
+    $rm -r ../../node_modules/@concordium/browser-wallet-api-helpers
+    $cp -r ../browser-wallet-api-helpers ../../node_modules/@concordium
+
+- Navigate into the wCCD example folder.
+
+.. code-block:: console
+
+    $cd ../../examples/wCCD/
+
+- Run ``yarn watch`` to enable reload of the web front-end whenever you do any changes to the code.
+
+.. code-block:: console
+
+    $yarn watch
+
+- Run ``yarn start`` in another terminal to start the web front-end.
+
+.. code-block:: console
+
+    $yarn start
+
+This command logs an URL in the console (typically http://127.0.0.1:8080). Open this URL in the ``Chrome`` browser.
+Click the connect button on the front-end.
+
+You completed the local front-end setup. Check that balances are displayed at the front-end.
 
 To continue with the tutorial click :ref:`here<wCCD-full-dApp>`.
