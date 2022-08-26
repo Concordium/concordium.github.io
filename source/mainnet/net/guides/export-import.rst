@@ -9,7 +9,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
 .. Note::
 
-    Backup and import cannot be used for Mobile Wallet Gen2 because it uses a secret passphrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
+    Backup and import cannot be used for |mw-gen2| because it uses a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
 
 .. Warning::
     You can't import a file created in the Mobile Wallet into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the old Mobile Wallet to the new Mobile Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet. For more information, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet <choosing-wallet>`.
@@ -147,7 +147,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
     .. tab:: |mw-gen2|
 
-        Backup is not available in |mw-gen2|. It uses a secret passphrase to recover your accounts, identities, and private keys. For information about recovering your |mw-gen1| wallet, see :ref:`Recover your wallet<recover-wallet>`.
+        Backup is not available in |mw-gen2|. It uses a secret recovery phrase to recover your accounts, identities, and private keys. For information about recovering your |mw-gen1| wallet, see :ref:`Recover your wallet<recover-wallet>`.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

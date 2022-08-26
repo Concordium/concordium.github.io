@@ -13,12 +13,12 @@ You can make a backup from |mw-gen1| or from Desktop Wallet but there are differ
 
 .. Note::
 
-   This information is not relevant for |mw-gen2| which uses a secret passphrase to recover a wallet.
+   This information is not relevant for |mw-gen2| which uses a secret recovery phrase to recover a wallet.
 
 Backups for |mw-gen1|
 =====================
 
-Because the Concordium Mobile Wallet does not use a seed phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.
+Because the |mw-gen1| does not use a secret recovery phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.
 
 If you set up a new phone and transfer the wallet, you will lose the private keys; they can only be recovered from the pre-exported backup file.
 
@@ -29,7 +29,7 @@ A new backup file should be exported EVERY time a new account is made, otherwise
 How it works
 ------------
 
-The Concordium Mobile Wallet provides built-in functionality to export wallet backups, encrypted under a passcode you choose. The wallet backup contains the keys for all wallet accounts. Each account has its own keys. Every time you make a new account in your wallet, you have to make a wallet backup to include the newly created account keys.
+The |mw-gen1| provides built-in functionality to export wallet backups, encrypted under a passcode you choose. The wallet backup contains the keys for all wallet accounts. Each account has its own keys. Every time you make a new account in your wallet, you have to make a wallet backup to include the newly created account keys.
 
 .. Warning:
    Concordium strongly urges you to backup your account keys using the export function in the wallet whenever a new account has been created. The wallet backup as well as the export password must be stored securely. You cannot recover your accounts without a wallet backup and its passcode.

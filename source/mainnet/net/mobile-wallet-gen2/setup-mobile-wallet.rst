@@ -31,14 +31,14 @@ Get started
       :width: 25%
 
 
-Recovery passphrase
-===================
+Secret recovery phrase
+======================
 
-Now you must write down and confirm your secret recovery passphrase. It is important to keep this passphrase in a safe location in case you need to recover your wallet on a new device.
+Now you must write down and confirm your secret recovery phrase. It is important to keep this recovery phrase in a safe location in case you need to recover your wallet on a new device.
 
 #. Tap **Set up a fresh wallet**.
 
-#. Tap on the screen to view your secret passphrase. Write down all 24 words in the exact order in which they are shown.
+#. Tap on the screen to view your secret recovery phrase. Write down all 24 words in the exact order in which they are shown.
 
 #. Place a check in the box **I confirm I have written down my 24 word secret recovery phrase**.
 
@@ -47,8 +47,7 @@ Now you must write down and confirm your secret recovery passphrase. It is impor
 Request your identity and account
 =================================
 
-Having set up your passcode, possibly biometrics, and your secret passphrase, you must then submit a request for an identity
-and an account. You do this immediately after setting up the passcode and biometrics.
+Having set up your passcode, possibly biometrics, and your secret recovery phrase, you must then submit a request for an identity and an account.
 
 Request identity
 ----------------

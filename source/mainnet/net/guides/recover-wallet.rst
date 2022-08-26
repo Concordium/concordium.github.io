@@ -5,13 +5,13 @@
 Recover your Wallet
 ===================
 
-In case you get a new device or need to restore your existing device, you can recover your identities, accounts, and keys with the secret passphrase you wrote down during wallet setup.
+In case you get a new device or need to restore your existing device, you can recover your identities, accounts, and keys with the secret recovery phrase you wrote down during wallet setup.
 
 .. tabs::
 
     .. tab:: |mw-gen2|
 
-        #. After reinstalling the Concordium Mobile Wallet app, open the app.
+        #. After reinstalling the |mw-gen2| app, open the app.
 
         #. On the Getting Started screen, tap **Recover wallet**.
 

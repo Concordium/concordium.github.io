@@ -19,6 +19,15 @@ Before you decide which wallet to use, it's important to know that you can’t i
 
 .. warning:: You can't exchange identities and accounts between |mw-gen1| and |mw-gen2|, or |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
+Recovery of identities and accounts between |mw-gen2| and Browser Extension Wallet
+==================================================================================
+
+It is possible to recover accounts, identities, and private keys between the |mw-gen2| and Browser Extension Wallet. Use the secret recovery phrase to recover the wallet on either a mobile device or in a supported browser.
+
+.. note::
+
+   Any account or identity names that you may have edited in either |mw-gen2| or Browser Extension Wallet are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can :ref:`edit the account name<change-mw-acct-name>` and :ref:`edit the identity name<change-mw-id-name>`, if desired.
+
 Which wallet is best for you?
 =============================
 
@@ -28,7 +37,7 @@ The wallets work on two different environments: the Desktop Wallet on a computer
 
 - **|mw-gen1|**: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the |mw-gen1|, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device. Requires you to make backups regularly.
 
-- **|mw-gen2|**: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the |mw-gen2|, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device. Uses a secret passphrase for wallet recovery.
+- **|mw-gen2|**: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the |mw-gen2|, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device. Uses a secret recovery phrase for wallet recovery.
 
 The following provides more details on the differences between the wallets.
 
@@ -43,7 +52,7 @@ One of the main differences between the wallets lies in how they store your priv
 
 - The |mw-gen1| creates and stores your private keys on the phone. This means it's easier to use because you don't need a Ledger device to make transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet. You must back up the private keys on your phone.
 
-- The |mw-gen2| uses a secret passphrase that is created during setup to protect your private keys. You don't need a Ledger device for transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet.
+- The |mw-gen2| uses a secret recovery phrase that is created during setup to protect your private keys. You don't need a Ledger device for transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet.
 
 How to backup a wallet
 ======================
@@ -54,7 +63,7 @@ Concordium strongly recommends that you make a backup of your wallet. Backups ar
 
 - **Backup of the |mw-gen1|**: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import>`.
 
-Backups are not necessary for the |mw-gen2| because the secret passphrase created during setup protects your private keys.
+Backups are not necessary for the |mw-gen2| because the secret recovery phrase created during setup protects your private keys.
 
 .. Warning::
    You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.
@@ -89,7 +98,7 @@ The following table lists the major features of each wallet.
       - Backup is not necessary
    *  - Private keys are stored on the Ledger that is secured by a PIN code and backed up by recovery phrase.
       - Private keys are stored in the wallet.
-      - Private keys are stored in the wallet and protected by a secret passphrase for recovery.
+      - Private keys are stored in the wallet and protected by a secret recovery phrase for recovery.
    *  - Creation and management of single signature accounts
       - Creation and management of single signature accounts
       - Creation and management of single signature accounts
