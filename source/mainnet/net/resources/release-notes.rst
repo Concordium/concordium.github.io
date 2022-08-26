@@ -13,18 +13,31 @@ Sirius Testnet
 
 August 29, 2022
 
-Concordium Node 4.3.0
+Concordium Node 4.3.1
 ---------------------
 
-Concordium Node 4.3.0 introduces a number of performance improvements. 
+Concordium Node 4.3.1 introduces a number of performance improvements. 
 
-Account records are no longer constantly retained in memory. Instead a limited number are retained in a cache. The number of cached accounts defaults to 10000 and can be configured by the ``--accounts-cache-size`` command line argument or the ``CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE`` environment variable.
-Reduce startup time and memory use further by reducing the amount of block data retained in memory. In particular finalized blocks are no longer stored in memory.
-Optimize node data structures related to accounts. This reduces node memory use and improves performance.
-Added the ability to download the catch-up file using the ``--download-blocks-from`` option (or ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable).
-The gRPC API now reports correctly when the sender of a transaction did not have enough funds to cover the transaction costs.
-Remove obsolete and unused option ``--max-expiry-duration``.
-Remove transaction logging functionality from the node. It is replaced by an external service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
+- Account records are no longer constantly retained in memory. Instead, a limited number are retained in a cache. The number of cached accounts defaults to 10000 and can be configured by the ``--accounts-cache-size`` command line argument or the ``CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE`` environment variable.
+- Reduce startup time and memory use further by reducing the amount of block data retained in memory. In particular finalized blocks are no longer stored in memory.
+- Optimize node data structures related to accounts. This reduces node memory use and improves performance.
+- The gRPC API now reports correctly when the sender of a transaction did not have enough funds to cover the transaction costs.
+- Remove obsolete and unused option ``--max-expiry-duration``.
+- Remove transaction logging functionality from the node. It is replaced by an external service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
+
+August 24, 20222
+
+Concordium Client 4.1.0
+-----------------------
+
+Fix bug in contract schema parsing caused by endiannes confusion.
+
+Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables concordium-client to interact with contracts built using concordium-std version 4.
+
+Cargo concordium 2.1.0
+----------------------
+
+Use schemas for error values when simulating contracts. In particular support building and testing contracts with concordium-std version 4.
 
 August 4, 2022
 
