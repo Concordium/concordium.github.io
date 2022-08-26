@@ -45,7 +45,8 @@ Configure a baker node on Windows
 
 View the node log
 =================
-   You can find the node logs here:
+
+You can find the node logs here:
 
    - Mainnet: ``C:\ProgramData\Concordium\Node Runner\mainnet\logs``
    - Testnet: ``C:\ProgramData\Concordium\Node Runner\testnet\logs``
