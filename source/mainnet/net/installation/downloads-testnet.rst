@@ -122,7 +122,7 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.3.1_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``66a54d77a8d6810a9d87b828ed3881105858609b9b921a700064b2719c861691``
+      - SHA256 checksum of the download: ``1f8650a01746617c10d9e8aeee01b1adbf1e8a005e5a246b6920437344c7f518``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -147,7 +147,7 @@ Mac
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.3.1.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.3.1-0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
