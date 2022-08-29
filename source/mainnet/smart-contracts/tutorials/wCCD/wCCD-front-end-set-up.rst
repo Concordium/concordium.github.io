@@ -61,13 +61,13 @@ Concordium node on behalf of you.
 
     - a running Concordium testnet node
 
-    - have port forwarding enabled with the command (this step is only required when you run your node on a remote server instead of locally):
+    - have port forwarding enabled with the following command (this step is only required when you run your node on a remote server instead of locally):
 
     .. code-block:: console
 
         $ssh -NL localhost:10001:<IP-address-of-your-instance>:10001 <username>@<host>
 
-    If you don't have a running testnet node, the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
+    If you don't have a running testnet node or port forwarding enabled, the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
     will guide you through these setup steps.
 
     These prerequisites ensure that you have a testnet node reachable locally on port 10001. The browser wallet requires a
@@ -101,8 +101,20 @@ Concordium node on behalf of you.
     described in the README file of the
     `browser wallet repo <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
 
+    .. note::
+
+        Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
+        screenshots and setup steps might differ. The browser wallet hosts the private keys corresponding
+        to the accounts of the user and a link that points to a ``JSON-RPC server``.
+        Depending on the pre-MVP browser wallet version, you either have to create a new account
+        (a new private key) with builds after 22.8.2022 or import
+        an existing private key (as seen in the below screenshot) with builds before 22.8.2022.
+
     You are ready now to start the browser wallet by clicking on the Concordium icon at the top right of the
     ``Chrome`` browser.
+
+    .. image:: ./images/wCCD_tutorial_12.png
+        :width: 100 %
 
     .. note::
 
@@ -111,18 +123,6 @@ Concordium node on behalf of you.
 
         .. image:: ./images/wCCD_tutorial_13.png
             :width: 30 %
-
-    .. image:: ./images/wCCD_tutorial_12.png
-        :width: 100 %
-
-    .. note::
-
-        Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
-        screenshots and setup steps might differ. The browser wallet hosts the private keys corresponding
-        to the accounts of the user and a link that points to a ``JSON-RPC server``.
-        Depending on the pre-MVP browser wallet version, you either have to create a new account
-        (a new private key) with builds after 22.8.2022 or import
-        an existing private key (as seen in the above screenshot) with builds before 22.8.2022.
 
     .. dropdown:: Getting your private key from the mobile wallet backup file
 
@@ -216,7 +216,8 @@ You have successfully added the Concordium browser wallet as an extension in the
 In the next step of the tutorial, you are going to clone a wCCD demo front-end written with the React library
 and run it locally. The demo front-end has the required packages installed to connect to the Concordium browser wallet
 and implements common flows to deal with the different states that the browser wallet could be in. For example,
-the front-end will show a red text and a ``connect`` button when the side is loaded. It has flows
+the front-end will prompt (displaying a ``connect`` button and a red explanatory text) the user to connect
+to the browser wallet when loading the website. Furthermore, the front-end has flows
 to react to the events when the user switches the network or account in the browser wallet or
 connects/disconnects the browser wallet to update the front-end state accordingly.
 
@@ -226,6 +227,14 @@ connects/disconnects the browser wallet to update the front-end state accordingl
 
 Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>`_ and checkout the
 `wccd front-end example branch <https://github.com/Concordium/concordium-browser-wallet/pull/62>`_.
+
+.. code-block:: console
+
+    $git clone git@github.com:Concordium/concordium-browser-wallet.git
+
+.. code-block:: console
+
+    $git checkout 131-wccd-front-end
 
 Build and run the front-end as described in the README file of the
 `wCCD front-end demo <https://github.com/Concordium/concordium-browser-wallet/tree/131-wccd-front-end/examples/wCCD>`_.
