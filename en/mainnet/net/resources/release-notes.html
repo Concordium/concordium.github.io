@@ -1352,12 +1352,27 @@ body {margin:0;}
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-node-4-3-1">
+     Concordium Node 4.3.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concordium-client-4-1-0">
      Concordium Client 4.1.0
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cargo-concordium-2-1-0">
+     Cargo concordium 2.1.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Concordium Client 4.1.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
      Cargo concordium 2.1.0
     </a>
    </li>
@@ -1426,7 +1441,7 @@ body {margin:0;}
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#id3">
    Sirius Testnet
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -1713,16 +1728,39 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
+<p>August 29, 2022</p>
+<div class="section" id="concordium-node-4-3-1">
+<h3>Concordium Node 4.3.1<a class="headerlink" href="#concordium-node-4-3-1" title="Permalink to this headline">#</a></h3>
+<p>Concordium Node 4.3.1 introduces a number of performance improvements. The effects of these are that the node on mainnet at the current load will use around 1/4 the memory of the <cite>4.2.3</cite> node. Startup can be up to 50% faster, although exact improvements will be platform dependent.</p>
+<ul class="simple">
+<li><p>Account records are no longer constantly retained in memory. Instead, a limited number are retained in a cache. The number of cached accounts defaults to 10000 and can be configured by the <code class="docutils literal notranslate"><span class="pre">--accounts-cache-size</span></code> command line argument or the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE</span></code> environment variable.</p></li>
+<li><p>Reduce startup time and memory use further by reducing the amount of block data retained in memory. In particular finalized blocks are no longer stored in memory.</p></li>
+<li><p>Optimize node data structures related to accounts. This reduces node memory use and improves performance.</p></li>
+<li><p>The gRPC API now reports correctly when the sender of a transaction did not have enough funds to cover the transaction costs.</p></li>
+<li><p>Remove obsolete and unused option <code class="docutils literal notranslate"><span class="pre">--max-expiry-duration</span></code>.</p></li>
+<li><p>Remove transaction logging functionality from the node. It is replaced by an external <a class="reference external" href="https://github.com/Concordium/concordium-transaction-logger">transaction logger</a> service. As a consequence the <code class="docutils literal notranslate"><span class="pre">transaction-outcome-logging</span></code> family of command line options are removed from the node.</p></li>
+</ul>
 <p>August 24, 20222</p>
+</div>
 <div class="section" id="concordium-client-4-1-0">
 <h3>Concordium Client 4.1.0<a class="headerlink" href="#concordium-client-4-1-0" title="Permalink to this headline">#</a></h3>
+<p>Fix bug in contract schema parsing caused by endiannes confusion.</p>
+<p>Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables concordium-client to interact with contracts built using concordium-std version 4.</p>
+</div>
+<div class="section" id="cargo-concordium-2-1-0">
+<h3>Cargo concordium 2.1.0<a class="headerlink" href="#cargo-concordium-2-1-0" title="Permalink to this headline">#</a></h3>
+<p>Use schemas for error values when simulating contracts. In particular support building and testing contracts with concordium-std version 4.</p>
+<p>August 24, 20222</p>
+</div>
+<div class="section" id="id1">
+<h3>Concordium Client 4.1.0<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Fix bug in contract schema parsing caused by endiannes confusion.</p></li>
 <li><p>Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables <cite>concordium-client</cite> to interact with contracts built using <cite>concordium-std</cite> version 4.</p></li>
 </ul>
 </div>
-<div class="section" id="cargo-concordium-2-1-0">
-<h3>Cargo concordium 2.1.0<a class="headerlink" href="#cargo-concordium-2-1-0" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id2">
+<h3>Cargo concordium 2.1.0<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Use schemas for error values when simulating contracts. In particular support building and testing contracts with <cite>concordium-std</cite> version 4.</p>
 <p>August 4, 2022</p>
 </div>
@@ -1806,8 +1844,8 @@ than 50% of memory compared to 4.1.1.</p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Sirius Testnet<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id3">
+<h2>Sirius Testnet<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>May 23, 2022</p>
 <div class="section" id="concordium-desktop-wallet-v1-4-0">
 <h3>Concordium Desktop Wallet v1.4.0<a class="headerlink" href="#concordium-desktop-wallet-v1-4-0" title="Permalink to this headline">#</a></h3>
@@ -2095,7 +2133,7 @@ containing an issuance reference for better personal support as well as system i
 </div>
 </div>
 <div class="section" id="open-testnet-v6-update-3">
-<span id="id2"></span><h2>Open Testnet v6 Update 3<a class="headerlink" href="#open-testnet-v6-update-3" title="Permalink to this headline">#</a></h2>
+<span id="id4"></span><h2>Open Testnet v6 Update 3<a class="headerlink" href="#open-testnet-v6-update-3" title="Permalink to this headline">#</a></h2>
 <div class="section" id="concordium-desktop-wallet-v1-2-0">
 <h3>Concordium Desktop Wallet v1.2.0<a class="headerlink" href="#concordium-desktop-wallet-v1-2-0" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium Desktop Wallet v1.2.0</span></a></p>
@@ -2136,7 +2174,7 @@ containing an issuance reference for better personal support as well as system i
 </div>
 </div>
 <div class="section" id="open-testnet-v6-update-2">
-<span id="id3"></span><h2>Open Testnet v6 Update 2<a class="headerlink" href="#open-testnet-v6-update-2" title="Permalink to this headline">#</a></h2>
+<span id="id5"></span><h2>Open Testnet v6 Update 2<a class="headerlink" href="#open-testnet-v6-update-2" title="Permalink to this headline">#</a></h2>
 <p>October 6, 2021</p>
 <p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.3</span></a> is a bugfix release.</p>
 <ul class="simple">
@@ -2144,7 +2182,7 @@ containing an issuance reference for better personal support as well as system i
 </ul>
 </div>
 <div class="section" id="open-testnet-v6-update-1">
-<span id="id4"></span><h2>Open Testnet v6 Update 1<a class="headerlink" href="#open-testnet-v6-update-1" title="Permalink to this headline">#</a></h2>
+<span id="id6"></span><h2>Open Testnet v6 Update 1<a class="headerlink" href="#open-testnet-v6-update-1" title="Permalink to this headline">#</a></h2>
 <p>September 17, 2021</p>
 <p>The <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium node release v1.1.2</span></a> is a bugfix release.</p>
 <ul class="simple">
@@ -2152,7 +2190,7 @@ containing an issuance reference for better personal support as well as system i
 </ul>
 </div>
 <div class="section" id="open-testnet-v6">
-<span id="id5"></span><h2>Open Testnet v6<a class="headerlink" href="#open-testnet-v6" title="Permalink to this headline">#</a></h2>
+<span id="id7"></span><h2>Open Testnet v6<a class="headerlink" href="#open-testnet-v6" title="Permalink to this headline">#</a></h2>
 <p>September 15, 2021</p>
 <div class="section" id="concordium-node-v1-1-1">
 <h3>Concordium Node v1.1.1<a class="headerlink" href="#concordium-node-v1-1-1" title="Permalink to this headline">#</a></h3>
@@ -2173,7 +2211,7 @@ containing an issuance reference for better personal support as well as system i
 </div>
 </div>
 <div class="section" id="open-testnet-v5-update-4">
-<span id="id6"></span><h2>Open Testnet v5 Update 4<a class="headerlink" href="#open-testnet-v5-update-4" title="Permalink to this headline">#</a></h2>
+<span id="id8"></span><h2>Open Testnet v5 Update 4<a class="headerlink" href="#open-testnet-v5-update-4" title="Permalink to this headline">#</a></h2>
 <p>July 28, 2021</p>
 <div class="section" id="concordium-desktop-wallet-v1-1-6">
 <h3>Concordium Desktop Wallet v1.1.6<a class="headerlink" href="#concordium-desktop-wallet-v1-1-6" title="Permalink to this headline">#</a></h3>
@@ -2183,7 +2221,7 @@ containing an issuance reference for better personal support as well as system i
 </div>
 </div>
 <div class="section" id="open-testnet-v5-update-3">
-<span id="id7"></span><h2>Open Testnet v5 Update 3<a class="headerlink" href="#open-testnet-v5-update-3" title="Permalink to this headline">#</a></h2>
+<span id="id9"></span><h2>Open Testnet v5 Update 3<a class="headerlink" href="#open-testnet-v5-update-3" title="Permalink to this headline">#</a></h2>
 <p>July 27, 2021</p>
 <div class="section" id="concordium-desktop-wallet-v1-1-5-for-testnet">
 <h3>Concordium Desktop Wallet v1.1.5 for Testnet<a class="headerlink" href="#concordium-desktop-wallet-v1-1-5-for-testnet" title="Permalink to this headline">#</a></h3>
@@ -2206,7 +2244,7 @@ containing an issuance reference for better personal support as well as system i
 </div>
 </div>
 <div class="section" id="open-testnet-v5-update-2">
-<span id="id8"></span><h2>Open Testnet v5 Update 2<a class="headerlink" href="#open-testnet-v5-update-2" title="Permalink to this headline">#</a></h2>
+<span id="id10"></span><h2>Open Testnet v5 Update 2<a class="headerlink" href="#open-testnet-v5-update-2" title="Permalink to this headline">#</a></h2>
 <p><strong>Concordium Desktop Wallet v1.1.3 for Testnet.</strong></p>
 <p>The Desktop Wallet is available on Testnet for Windows, macOS, and Linux including:</p>
 <ul class="simple">
@@ -2217,7 +2255,7 @@ containing an issuance reference for better personal support as well as system i
 </ul>
 </div>
 <div class="section" id="open-testnet-v5-update-1">
-<span id="id9"></span><h2>Open Testnet v5 Update 1<a class="headerlink" href="#open-testnet-v5-update-1" title="Permalink to this headline">#</a></h2>
+<span id="id11"></span><h2>Open Testnet v5 Update 1<a class="headerlink" href="#open-testnet-v5-update-1" title="Permalink to this headline">#</a></h2>
 <p>June 24th, 2021</p>
 <p>Concordium Mobile Wallet for iOS v1.0.5</p>
 <ul class="simple">
@@ -2241,7 +2279,7 @@ containing an issuance reference for better personal support as well as system i
 </ul>
 </div>
 <div class="section" id="open-testnet-v5">
-<span id="id10"></span><h2>Open Testnet v5<a class="headerlink" href="#open-testnet-v5" title="Permalink to this headline">#</a></h2>
+<span id="id12"></span><h2>Open Testnet v5<a class="headerlink" href="#open-testnet-v5" title="Permalink to this headline">#</a></h2>
 <p>May 12th, 2021</p>
 <p>Updated Open Testnet to match Mainnet features including:</p>
 <p><strong>Proof of Stake</strong></p>
@@ -2266,14 +2304,14 @@ containing an issuance reference for better personal support as well as system i
 </ul>
 </div>
 <div class="section" id="open-testnet-v4-update-1">
-<span id="id11"></span><h2>Open Testnet v4 Update 1<a class="headerlink" href="#open-testnet-v4-update-1" title="Permalink to this headline">#</a></h2>
+<span id="id13"></span><h2>Open Testnet v4 Update 1<a class="headerlink" href="#open-testnet-v4-update-1" title="Permalink to this headline">#</a></h2>
 <p>January 14th, 2020</p>
 <ul class="simple">
 <li><p>Fixed an issue in the node, where a parameter update transaction could cause the node to crash on restart.</p></li>
 </ul>
 </div>
 <div class="section" id="open-testnet-v4">
-<span id="id12"></span><h2>Open Testnet v4<a class="headerlink" href="#open-testnet-v4" title="Permalink to this headline">#</a></h2>
+<span id="id14"></span><h2>Open Testnet v4<a class="headerlink" href="#open-testnet-v4" title="Permalink to this headline">#</a></h2>
 <p>January 13th, 2020</p>
 <p>Smart contracts:</p>
 <ul class="simple">

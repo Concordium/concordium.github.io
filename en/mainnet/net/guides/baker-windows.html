@@ -1404,22 +1404,7 @@ body {margin:0;}
 <div class="section" id="configure-a-baker-node-on-windows">
 <span id="configure-baker-windows"></span><h2>Configure a baker node on Windows<a class="headerlink" href="#configure-a-baker-node-on-windows" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><p>Create baker keys and associate them with an account either on mainnet or testnet. Doing this with the <a class="reference internal" href="add-baker-desktop.html#create-baker-desktop"><span class="std std-ref">Desktop Wallet</span></a> is recommended. However, if you want use an account from the mobile wallet as a baker account, you have to use the <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">Concordium Client</span></a>, in partiuclar the commands:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker generate-keys &lt;keys-file&gt;.json
-</pre></div>
-</div>
-<p>and</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --open-delegation-for all --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --out &lt;concordium-data-dir&gt;/baker-credentials.json
-</pre></div>
-</div>
-<p>where you replace</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerKeys.json</span></code> with the name of baker keys file you generated</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MyBakerURL</span></code> with the URL containing information for your baker pool; can be left as an empty string if you do not want to provide a URL.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p></li>
-</ul>
-<p>In the following, the baker keys are referred to as baker-credentials.json.</p>
+<li><p>Create baker keys in Mobile Wallet, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The baker credentials file must be accessible by the SYSTEM user and can’t be encrypted.</p>

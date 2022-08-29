@@ -1438,7 +1438,7 @@ body {margin:0;}
 <li><p>Start the node with the baker keys.</p></li>
 </ol>
 <p>After completing these steps, the baker node will bake blocks. If a baked block
-is added to the chain, the baker of the node will receive a reward.</p>
+is added to the chain, the baker receives a reward.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In this section the name <code class="docutils literal notranslate"><span class="pre">bakerAccount</span></code> indicates the name of the
@@ -1541,9 +1541,8 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <p>To start the node with these baker keys and bake blocks, configure the node to
 use the baker keys, and <strong>restart</strong> it. The node will automatically start baking
 when the baker is included in the bakers for the current epoch.</p>
-<p>This change is executed immediately, and it will take effect when finishing the epoch after the one in which the transaction for adding the baker was included in a block.</p>
-<table class="table" id="id1">
-<caption><span class="caption-text">Timeline: adding a baker</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after the one in which the transaction for adding the baker was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
+<table class="table">
 <colgroup>
 <col style="width: 43%" />
 <col style="width: 41%" />
@@ -1552,7 +1551,7 @@ when the baker is included in the bakers for the current epoch.</p>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>When transaction is included in a block</p></th>
-<th class="head"><p>After 2 epochs</p></th>
+<th class="head"><p>At next pay day</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1566,10 +1565,6 @@ when the baker is included in the bakers for the current epoch.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If the transaction for adding the baker was included in a block during epoch <cite>E</cite>, the baker will be considered as part of the baking committee when epoch <cite>E+2</cite> starts.</p>
-</div>
 </div>
 </div>
 <div class="section" id="manage-the-baker">
@@ -1617,21 +1612,20 @@ registered a baker and the current amount that is staked by that baker.</p>
 </div>
 <p>When the staked amount is modified, the probability that a baker gets elected
 to bake blocks is also modified.</p>
-<p>When a baker adds a stake for the first time or increase the stake, that
+<p>When a baker adds a stake for the first time or increases the stake, that
 change is executed on the chain and becomes visible as soon as the transaction
 is included in a block (can be seen through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span>
-<span class="pre">bakerAccount</span></code>) and takes effect 2 epochs after that.</p>
-<table class="table" id="id2">
-<caption><span class="caption-text">Timeline: increasing the stake</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<span class="pre">bakerAccount</span></code>) and takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
+<table class="table">
 <colgroup>
 <col style="width: 41%" />
 <col style="width: 42%" />
-<col style="width: 16%" />
+<col style="width: 17%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>When transaction is included in a block</p></th>
-<th class="head"><p>After 2 epochs</p></th>
+<th class="head"><p>At next pay day</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1645,10 +1639,7 @@ is included in a block (can be seen through <code class="docutils literal notran
 </tr>
 </tbody>
 </table>
-<p>When a baker <strong>decreases the staked amount</strong>, the change will need <em>2 +
-bakerCooldownEpochs</em> epochs to take effect. The change becomes visible on the
-chain as soon as the transaction is included in a block, it can be consulted through
-<code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>:</p>
+<p>When a baker <strong>decreases the staked amount</strong>, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after the cool-down ends. It can be consulted through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
@@ -1659,17 +1650,16 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 <span class="go">...</span>
 </pre></div>
 </div>
-<table class="table" id="id3">
-<caption><span class="caption-text">Timeline: decreasing the stake</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<table class="table">
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 34%" />
-<col style="width: 33%" />
+<col style="width: 37%" />
+<col style="width: 36%" />
+<col style="width: 27%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>When transaction is included in a block</p></th>
-<th class="head"><p>After <em>2 + bakerCooldownEpochs</em> epochs</p></th>
+<th class="head"><p>First pay day after cool-down</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1681,20 +1671,20 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 <td></td>
 <td><p>✓</p></td>
 </tr>
-<tr class="row-even"><td><p>Stake can be decreased again or
-baker can be removed</p></td>
-<td><p>✗</p></td>
+<tr class="row-even"><td><p>Stake can be increased, decreased again
+or baker can be removed</p></td>
+<td></td>
 <td><p>✓</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the Mainnet, <code class="docutils literal notranslate"><span class="pre">bakerCooldownEpochs</span></code> is set initially to 168 epochs. This
+<p>In the Mainnet, the cool-down duration for reducing baker stake is set to 21 days. This
 value can be checked as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockSummary
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-chain-parameters
 <span class="go">...</span>
-<span class="go">        &quot;bakerCooldownEpochs&quot;: 168</span>
+<span class="go">      + pool owner cooldown duration: 21d</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -1716,7 +1706,7 @@ the account balance without staking them automatically. You can change this swit
 </pre></div>
 </div>
 <p>Changes to the restake flag will take effect immediately; however, the changes
-start affecting baking and finalizing power in the epoch after next. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+start affecting baking and finalizing power in the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
@@ -1727,17 +1717,16 @@ start affecting baking and finalizing power in the epoch after next. The current
 <span class="go">...</span>
 </pre></div>
 </div>
-<table class="table" id="id4">
-<caption><span class="caption-text">Timeline: updating restake</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
+<table class="table">
 <colgroup>
-<col style="width: 39%" />
-<col style="width: 34%" />
-<col style="width: 26%" />
+<col style="width: 47%" />
+<col style="width: 41%" />
+<col style="width: 12%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>When transaction is included in a block</p></th>
-<th class="head"><p>2 epochs after being rewarded</p></th>
+<th class="head"><p>At pay day</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1822,14 +1811,14 @@ was done). It defaults to the account name “default”.</p>
 <div class="section" id="remove-a-baker">
 <h2>Remove a baker<a class="headerlink" href="#remove-a-baker" title="Permalink to this headline">#</a></h2>
 <p>The controlling account can choose to de-register its baker on the chain. To do
-so you have to execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+so you have to execute:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker remove --sender bakerAccount
 </pre></div>
 </div>
 <p>This removes the baker from the baker list and unlocks the staked amount on
 the baker so that it can be transferred or moved freely.</p>
 <p>When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change will need <em>2 + bakerCooldownEpochs</em> epochs to take effect. The change becomes visible on the chain as soon as the transaction is included in a block and you can check when the change will be take effect by querying the account information with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after the cool-down ends. You can check when the change will take effect by querying the account information:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
@@ -1840,34 +1829,10 @@ the staked amount. The change will need <em>2 + bakerCooldownEpochs</em> epochs 
 <span class="go">...</span>
 </pre></div>
 </div>
-<table class="table" id="id5">
-<caption><span class="caption-text">Timeline: removing a baker</span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 33%" />
-<col style="width: 32%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"></th>
-<th class="head"><p>When transaction is included in a block</p></th>
-<th class="head"><p>After <em>2 + bakerCooldownEpochs</em> epochs</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Change is visible by querying the node</p></td>
-<td><p>✓</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Baker is removed from the baking committee</p></td>
-<td></td>
-<td><p>✓</p></td>
-</tr>
-</tbody>
-</table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Decreasing the staked amount and removing the baker can’t be done
-simultaneously. During the cooldown period produced by decreasing the staked
+simultaneously. During the cool-down period produced by decreasing the staked
 amount, the baker can’t be removed and vice versa.</p>
 </div>
 </div>
