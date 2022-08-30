@@ -17,7 +17,7 @@ Below the graphs, the table contains the latest blocks added to the blockchain w
 - **Block hash**: the first six characters of the block hash. Click Copy |copy| to copy the entire hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Status**: the block status. Only Finalized blocks are shown.
 - **Height**: block height
-- **Age**: block age. Time since block was finalized and added to chain.
+- **Age**: block age
 - **Baker**: the baker ID of the baker who baked the block. Click the baker ID to see :ref:`baker details<home-screen-baker>`.
 - **Transactions**: the number of transactions in the block
 
@@ -36,7 +36,7 @@ The block details shows the following information about the block.
 
 - **Block**: the first six characters of the block hash. You can click Copy |copy| to copy the entire hash.
 - **Finalised**: state of the block. Only Finalized blocks are shown.
-- **Age**: age of the block with date/time stamp. Includes time since block was added to chain.
+- **Age**: age of the block with date/time stamp.
 - **Baker id**: baker ID of the baker who baked the block. Click on the baker ID for details about the :ref:`baker<home-screen-baker>`.
 - **Tokenomics**: shows the tokenomics of the accrued block rewards.
 - **Transactions**: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click **Hash** for more :ref:`information about the transacation<home-screen-transaction>`, or click **Sender** for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire hash or account number.
