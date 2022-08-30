@@ -38,7 +38,7 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 
 1.  Mainnet/Testnet selector. The information shown is dependent on whether you have selected Mainnet or Testnet.
 2.  Search field: search across all relevant blockchain data for specific information, such as a particular account, transaction, block, or baker and see all relevant details associated with that entity.
-3.  Site naviation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
+3.  Site navigation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
 4.  Time range filter: controls the time range of the data shown.
 5.  Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown.
 6.  Blocks added: number of blocks added in the selected time range.
