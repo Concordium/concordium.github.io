@@ -574,7 +574,7 @@ The output is:
      - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
-     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cooldown has expired.
+     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cool-down has expired.
    * -
      - allowed range for finalization commission
      - The allowed range of finalization commissions bakers may select when creating or updating pools.

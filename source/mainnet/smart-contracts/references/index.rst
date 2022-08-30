@@ -17,4 +17,4 @@ A number of references exist to help you when creating and testing smart contrac
    schema-json
    simulate-context
    Rust contract examples (repo) <https://github.com/Concordium/concordium-rust-smart-contracts>
-   concordium-std <https://docs.rs/concordium-std/3.0.0/concordium_std/>
+   concordium-std <https://docs.rs/concordium-std/latest/concordium_std/>

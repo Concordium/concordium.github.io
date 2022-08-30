@@ -4,7 +4,7 @@
 Update the restake settings
 ===========================
 
-By default, your baker rewards are restaked when you create the baker account. However, you can also choose to have the rewards transferred to the disposable amount of your account. If you change the restake settings, the change will take effect after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. This topic describes how you change the setting.
+By default, your baker rewards are restaked when you create the baker account. However, you can also choose to have the rewards transferred to the disposable amount of your account. If you change the restake settings, the change will take effect at the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. This topic describes how you change the setting.
 
 Change restake settings (Single-signature account)
 ==================================================
