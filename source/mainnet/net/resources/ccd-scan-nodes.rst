@@ -38,10 +38,10 @@ The following information is shown in the node details:
 - **Average ping**: average network delay between the node and its peers.
 - **Packets sent**: number of packets sent by the participant during uptime. Packets are transactions, blocks, finalization messages.
 - **Packets received**: number of packets received by the participant during uptime. Packets are transactions, blocks, finalization messages.
-- **Baking committee**: Whether the node is currently running as a baker. Will be either **Active member** or **Not a member**.
+- **Baking committee**: whether the node is currently running as a baker. Will be either **Active member** or **Not a member**.
 - **Best block statistics**: shows statistics about the best block.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Last finalized block statistics**: shows statistics about the last finalized block in participant’s chain.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
-- **Peers**: Shows the current list of peers of the node with the ability to drill-through and inspect peer node information.
+- **Peers**: shows the current list of peers of the node with the ability to drill-through and inspect peer node information.
 
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button

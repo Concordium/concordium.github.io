@@ -50,7 +50,7 @@ If the transaction was rejected, you see something similar to the following:
 
 |
 
-The only difference between a successful and rejected transaction is that the rejected transaction shows the **Reject reason** instead of the events.
+The only effect of a rejected transaction is the payment for execution cost. In contrast, a successful transaction affects the state of the chain. The effects are described by the generated events.
 
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button

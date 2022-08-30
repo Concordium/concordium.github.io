@@ -43,8 +43,8 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 5.  Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown.
 6.  Blocks added: number of blocks added in the selected time range.
 7.  Block Time: average time since last block created in the selected time range.
-8.  Transactions: sum of transactions in the selected time range.
-9.  Accounts created: sum of accounts created in the selected time range.
+8.  Transactions: total number of transactions in the selected time range.
+9.  Accounts created: total number of accounts created in the selected time range.
 10. Latest blocks: continuously updated list of the latest 10 blocks baked on the blockchain, including links to details for the individual blocks and bakers.
 11. Latest transactions: continuously updated list of the latest 10 transactions on the blockchain, including links to details for the individual transactions and senders (where available).
 
