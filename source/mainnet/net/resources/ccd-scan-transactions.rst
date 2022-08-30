@@ -42,7 +42,7 @@ The transaction details shows the following.
 - **Sender**: the first six characters of the account that sent the transaction if available for that transaction. Click Copy |copy| to copy the entire hash. Click the account hash to see the :ref:`account details<accounts-view>`.
 - **Events/Reject reason**:  list of events included in the transaction. It contains more details about the transaction, including drill-through links and copy options where available. There are many different transaction types and descriptions.
 
-A successful transaction shows the **Events** that were included in the transaction.
+A successful transaction shows the **Events** that were the result of the transaction.
 
 If the transaction was rejected, you see something similar to the following:
 
