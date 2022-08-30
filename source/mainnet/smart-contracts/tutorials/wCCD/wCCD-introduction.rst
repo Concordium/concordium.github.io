@@ -73,11 +73,11 @@ The canonical wCCD smart contract protocol following the ``CIS-2`` standard
 is deployed on ``testnet`` at the following addresses:
 
 +-----------------------------------------------------+-------------------------------------------------+
-| ``ProxyContractAddress (Testnet):``                 |  { index: 864, subindex: 0 }                    |
+| ``ProxyContractAddress (Testnet):``                 |  { index: 866, subindex: 0 }                    |
 +-----------------------------------------------------+-------------------------------------------------+
 | ``ImplementationContractAddress (Testnet):``        |  { index: 865, subindex: 0 }                    |
 +-----------------------------------------------------+-------------------------------------------------+
-| ``StateContractAddress (Testnet):``                 |  { index: 866, subindex: 0 }                    |
+| ``StateContractAddress (Testnet):``                 |  { index: 864, subindex: 0 }                    |
 +-----------------------------------------------------+-------------------------------------------------+
 |                                                     |                                                 |
 +-----------------------------------------------------+-------------------------------------------------+
