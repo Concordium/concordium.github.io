@@ -1243,10 +1243,42 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/ccd-scan.html">
      CCDScan
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/ccd-scan-blocks.html">
+       CCDScan Blocks overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/ccd-scan-transactions.html">
+       CCDScan Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/ccd-scan-accounts.html">
+       CCDScan Accounts overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/ccd-scan-staking.html">
+       CCDScan Staking overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../resources/ccd-scan-nodes.html">
+       CCDScan Nodes overview
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="../resources/release-notes-mainnet.html">
@@ -1262,8 +1294,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-    <label for="toctree-checkbox-36">
+    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+    <label for="toctree-checkbox-37">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1289,8 +1321,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-    <label for="toctree-checkbox-37">
+    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+    <label for="toctree-checkbox-38">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1409,7 +1441,7 @@ body {margin:0;}
 <p>A baker opens a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">pool</span></a>, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the baker takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.</p>
 <p>Pool rewards are in three categories: finalization, baking and transaction fee rewards. These can have separate commission rates.</p>
 <div class="section" id="bounding-the-size-of-pools">
-<h3>Bounding the size of pools<a class="headerlink" href="#bounding-the-size-of-pools" title="Permalink to this headline">#</a></h3>
+<span id="delegation-caps"></span><h3>Bounding the size of pools<a class="headerlink" href="#bounding-the-size-of-pools" title="Permalink to this headline">#</a></h3>
 <p>Concordium imposes two caps on the amount of stake in a single pool. The first cap bounds the size of a pool with respect to a fraction of the total staked CCDs. For example, with the capital bound cap a pool cannot have more than 10% of all the staked CCD. This limit ensures that the pools remain distributed and prevents the crash of one baker from affecting the whole system. A party with lots of capital can run multiple bakers to avoid this cap. This would increase decentralization.</p>
 <p>The second cap is on the amount of stake in a pool with respect to the stake of the baker. For example, the total stake of a pool can be at most 3 times the stake of the baker. This bound is for security reasons as it prevents a party with a small stake from controlling too large a part of the system. Every baker’s power is thus still proportional to their own stake, which is crucial for cryptographic security to hold.</p>
 <p>These two caps are soft caps in the sense that a pool can have more stake than allowed, but then at most the cap value will be taken into account in the consensus algorithm and when distributing rewards. This means that a pool violating this bound will gradually receive less rewards per CCD in the pool as the size of the pool continues to increase.</p>
