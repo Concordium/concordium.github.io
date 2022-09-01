@@ -12,4 +12,3 @@ The following SDKs and APIs exist for developing on the Concordium network.
 - `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
 - `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
 - `Concordium .NET (C#) SDK <https://github.com/Concordium/concordium-net-sdk>`_
-- `Concordium Go SDK <https://github.com/Concordium/concordium-go-sdk>`_
