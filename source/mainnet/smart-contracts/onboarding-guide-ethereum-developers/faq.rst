@@ -249,7 +249,7 @@ Concordium smart contracts:
     .. image:: ../tutorials/piggy-bank/images/pb_tutorial_21.png
             :width: 100 %
 
-    You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/3.0.0/concordium_std/#signalling-errors>`_.
+    You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/latest/concordium_std/#signalling-errors>`_.
     This error was thrown by the ``concordium-std`` crate. The error codes start from ``i32::MIN`` and go upwards.
     ``-2147483636`` corresponds to ``NotPayableError``. In contrast, error types of smart contracts start from ``-1`` and go downwards.
 
@@ -554,7 +554,7 @@ Standards:
 
 .. dropdown::  Is there something similar to the ERC20 standard?
 
-    Yes, please read the `CIS-2 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_.
+    Yes, please read the `CIS-2 standard <https://proposals.concordium.software/CIS/cis-2.html>`_.
     The `CIS-2` standard can represent fungible and non-fungible tokens.
     It combines the Ethereum ERC20 and ERC721 standards with some modifications.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
@@ -568,7 +568,7 @@ Standards:
 
 .. dropdown::  Is there something similar to the ERC721 standard?
 
-    Yes, please read the `CIS-2 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-2.rst>`_.
+    Yes, please read the `CIS-2 standard <https://proposals.concordium.software/CIS/cis-2.html>`_.
     The `CIS-2` standard can represent fungible and non-fungible tokens.
     It combines the Ethereum ERC721 and ERC20 standards with some modifications.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
@@ -582,7 +582,7 @@ Standards:
 
 .. dropdown::  Is there something similar to the ERC165 standard?
 
-    Yes, please read the `CIS-0 standard <https://github.com/Concordium/concordium-update-proposals/blob/main/source/CIS/cis-0.rst>`_.
+    Yes, please read the `CIS-0 standard <https://proposals.concordium.software/CIS/cis-0.html>`_.
     Please explore the `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
     that provides the basic `CIS-0` primitives.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens so they can implement the `CIS-0` standard easily.

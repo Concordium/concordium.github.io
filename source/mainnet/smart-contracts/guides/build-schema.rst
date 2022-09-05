@@ -51,20 +51,24 @@ how this type is represented as bytes and how to represent it.
 Including schemas for init
 --------------------------
 
-To generate and include the schema for parameters for init functions, set the optional ``parameter`` attribute for the
+To generate and include the schema for parameters or errors for init functions, set the
+optional ``parameter`` and ``error`` attributes for the
 ``#[init(..)]``-macro::
 
    #[derive(SchemaType)]
    enum InitParameter { ... }
 
-   #[init(contract = "my_contract", parameter = "InitParameter")]
-   fn contract_init<...> (...){ ... }
+   #[derive(Serial, Reject, SchemaType)]
+   enum InitError { ... }
+
+   #[init(contract = "my_contract", parameter = "InitParameter", error = "InitError")]
+   fn contract_init<...>(...) -> <..., InitError> { ... }
 
 Including schemas for receive
 -----------------------------
 
-To generate and include the schema for parameters or return values for receive
-functions, set the optional ``parameter`` or ``return_value`` attribute for the
+To generate and include the schema for parameters, return values, or errors for receive
+functions, set the optional ``parameter``, ``return_value``, or ``error`` attributes for the
 ``#[receive(..)]``-macro::
 
    #[derive(SchemaType)]
@@ -73,19 +77,26 @@ functions, set the optional ``parameter`` or ``return_value`` attribute for the
    #[derive(SchemaType)]
    enum ReceiveReturnValue { ... }
 
+   #[derive(Serial, Reject, SchemaType)]
+   enum ReceiveError { ... }
+
    #[receive(contract = "my_contract", name = "just_param", parameter = "String")]
    fn contract_receive_just_param<...> (...) -> ReceiveResult<String> { ... }
 
    #[receive(contract = "my_contract", name = "just_return", return_value = "Vec<u64>")]
    fn contract_receive_just_return<...> (...) -> ReceiveResult<Vec<u64>> { ... }
 
+   #[receive(contract = "my_contract", name = "just_return", error = "ReceiveError")]
+   fn contract_receive_just_erro<...> (...) -> Result<Vec<u64>, ReceiveError> { ... }
+
    #[receive(
        contract = "my_contract",
        name = "param_and_return",
        parameter = "ReceiveParameter",
-       return_value = "ReceiveReturnValue"
+       return_value = "ReceiveReturnValue",
+       error = "ReceiveError"
    )]
-   fn contract_receive_param_and_return<...> (...) -> ReceiveResult<ReceiveReturnValue> { ... }
+   fn contract_receive<...> (...) -> Result<ReceiveReturnValue, ReceiveError> { ... }
 
 Building the schema
 ===================

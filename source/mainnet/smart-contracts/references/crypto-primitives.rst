@@ -18,5 +18,5 @@ References
 ==========
 
 - `An example contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/signature-verifier/src/lib.rs>`_
-- `concordium-std documentation <https://docs.rs/concordium-std/3.0.0/concordium_std/trait.HasCryptoPrimitives.html>`_
+- `concordium-std documentation <https://docs.rs/concordium-std/latest/concordium_std/trait.HasCryptoPrimitives.html>`_
 - :ref:`Host function reference <host_function_crypto_primitives>`
