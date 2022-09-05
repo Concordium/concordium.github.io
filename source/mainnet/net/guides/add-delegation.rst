@@ -132,7 +132,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
     .. tab:: |mw-gen2|
 
         #. You can either: tap Earn on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap Earn on the account details screen.
-        
+
         #. Tap **Continue to delegation setup**. If you are delegating for the first time, you see some information about delegation.
 
         #. Tap **Register delegation**.

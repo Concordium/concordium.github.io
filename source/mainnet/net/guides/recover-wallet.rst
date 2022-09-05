@@ -33,9 +33,9 @@ In case you get a new device or need to restore your existing device, you can re
             +------------------------+---------------------------------------------------------------------------------------------+
             |                        | Identity provider unresponsive                                                              |
             |                        | One of the identity providers is unresponsive. You can try again now or wait until later    |
-            |                        | to try to recover. If you wait until later you can continue to the wallet. Accounts with    |            
+            |                        | to try to recover. If you wait until later you can continue to the wallet. Accounts with    |
             |                        | an unrecovered identity are shown like this (screenshot).                                   |
-            |                        | To continue recovery, go to the ...More page and tap **Recovery** to continue.              |              
+            |                        | To continue recovery, go to the ...More page and tap **Recovery** to continue.              |
             +------------------------+---------------------------------------------------------------------------------------------+
             |                        | Partially recovered                                                                         |
             |                        | The accounts and identities have been partially recovered. You can continue to the wallet.  |
