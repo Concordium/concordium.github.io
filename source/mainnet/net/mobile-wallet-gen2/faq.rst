@@ -31,7 +31,7 @@
 
     If you accidentally throw away the paper your secret recovery phrase is written on, forget where you hid it, or die without passing it on to an heir, you lose access to your CCDs. If someone steals your secret reovery phrase, your CCDs remain safely stored on the blockchain, but you (or your heirs) won’t have any way to access it. **If you lose your secret recovery phrase you lose access to your CCDs.**
 
-    As long as you have your secret recovery phrase, you have your CCDs. If you break a phone containing your wallet, you haven’t lost your CCDs. You can simply enter your secret recovery phrase into a newly downloaded |mw-gen2||.
+    As long as you have your secret recovery phrase, you have your CCDs. If you break a phone containing your wallet, you haven’t lost your CCDs. You can simply enter your secret recovery phrase into a newly downloaded |mw-gen2|.
 
 .. dropdown:: How can I keep my secret recovery phrase secure?
 
