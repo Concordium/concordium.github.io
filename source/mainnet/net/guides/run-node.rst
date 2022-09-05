@@ -59,6 +59,7 @@ To run a node on testnet use the following configuration file and follow the ste
      testnet-node:
        container_name: testnet-node
        image: concordium/testnet-node:latest
+       pull_policy: always
        environment:
          # Environment specific configuration
          # The url where IPs of the bootstrap nodes can be found.
@@ -125,6 +126,7 @@ To run a node on testnet use the following configuration file and follow the ste
      testnet-node-collector:
        container_name: testnet-node-collector
        image: concordium/testnet-node:latest
+       pull_policy: always
        environment:
          # Settings that should be customized by the user.
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
@@ -248,6 +250,7 @@ To retrieve mainnet node logs run:
      mainnet-node:
        container_name: mainnet-node
        image: concordium/mainnet-node:latest
+       pull_policy: always
        environment:
          # Environment specific configuration
          # The url where IPs of the bootstrap nodes can be found.
@@ -314,6 +317,7 @@ To retrieve mainnet node logs run:
      mainnet-node-collector:
        container_name: mainnet-node-collector
        image: concordium/mainnet-node:latest
+       pull_policy: always
        environment:
          # Settings that should be customized by the user.
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet
