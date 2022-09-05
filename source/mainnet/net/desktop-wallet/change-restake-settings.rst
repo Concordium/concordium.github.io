@@ -4,7 +4,7 @@
 Update the restake settings
 ===========================
 
-By default, your baker rewards are restaked when you create the baker account. However, you can also choose to have the rewards transferred to the disposable amount of your account. If you change the restake settings, the change will take effect after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. This topic describes how you change the setting.
+By default, your baker rewards are restaked when you create the baker account. However, you can also choose to have the rewards transferred to the disposable amount of your account. If you change the restake settings, the change will take effect at the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. This topic describes how you change the setting.
 
 Change restake settings (Single-signature account)
 ==================================================
@@ -44,7 +44,7 @@ Change restake settings (Multi-signature account)
 
 .. Note:: If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies. See :ref:`Update baker stake<change-baker-stake>` for more information.
 
-4. Set an expiry date and time for your proposal. You must submit the proposal to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
+4. Set an expiry date and time for your proposal. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
 
 Generate the Transaction
 ------------------------

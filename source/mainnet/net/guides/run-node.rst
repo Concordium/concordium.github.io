@@ -13,7 +13,7 @@ information about blocks and transactions to the nodes in the Concordium
 network. After following this guide, you will be able to
 
 -  run a Concordium node
--  observe it on the network dashboard and
+-  observe it on the network dashboard
 -  query the state of the Concordium blockchain directly from your
    machine.
 
@@ -39,6 +39,12 @@ Concordium provides two Docker images, a `mainnet <https://hub.docker.com/r/conc
 These images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using ``docker-compose``.
 
 The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but any location to which the user that runs the Docker command has access to will do.
+
+.. Note::
+
+   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`.
+
+   If you are running version 4.2.3 you can :ref:`migrate to the latest version<migration-docker-distribution>`. If you are running any version older than 4.2.3 you will have to delete your database and start over using the instructions on this page.
 
 Run a testnet node
 ==================
@@ -99,6 +105,12 @@ To run a node on testnet use the following configuration file and follow the ste
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
        # should match what is defined here. When running multiple nodes the
        # external ports should be changed so as not to conflict.
+       # In the mapping below, the first port is the `host` port, and the second
+       # port is the `container` port. When the `container` port is changed the
+       # relevant environment variable listed above must be changed as well. For
+       # example, changing `10001:10001` to `10001:13000` would mean that
+       # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
+       # the node's gRPC interface will not be available from the host.
        ports:
        - "8889:8889"
        - "10001:10001"
@@ -139,7 +151,8 @@ To run a node on testnet use the following configuration file and follow the ste
          # /var/lib/concordium-testnet to be used as the node's database directory.
          - /var/lib/concordium-testnet:/mnt/data
 
-3. Modify the node name that will appear on the network dashboard. This is set by the environment variable
+3. Modify the node name that appears on the network dashboard. This is set by
+   the environment variable
 
    .. code-block:: yaml
 
@@ -151,16 +164,16 @@ To run a node on testnet use the following configuration file and follow the ste
 
    .. code-block:: console
 
-      $docker-compose up -f testnet-node.yaml
+      $docker-compose -f testnet-node.yaml up
 
-The configuration will start two containers, one running the node, and another
+The configuration starts two containers, one running the node, and another
 running the node collector that reports the node state to the network dashboard.
 
 If you wish to have the node running in the background, then add a ``-d`` option to the above command.
 
 .. Note::
 
-   The sample configuration will always download the latest node image. It is
+   The sample configuration always downloads the latest node image. It is
    good practice to choose the version deliberately. To choose a specific
    version, find the correct version in
    `hub.docker.com/concordium/testnet-node <https://hub.docker.com/r/concordium/testnet-node>`_ and change the
@@ -196,8 +209,8 @@ this is done will depend on your configuration.
 Retrieve node logs
 ------------------
 
-The sample configuration presented above will log data using docker's default
-logging infrastructure. The logs for the node can be retrieved by running
+The sample configuration presented above logs data using Docker's default
+logging infrastructure. To retrieve the logs for the node run:
 
 .. code-block:: console
 
@@ -221,7 +234,7 @@ The main differences from the testnet configuration are:
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
 
-Logs of the mainnet node can be retrieved by running:
+To retrieve mainnet node logs run:
 
 .. code-block:: console
 
@@ -281,6 +294,12 @@ Logs of the mainnet node can be retrieved by running:
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
        # should match what is defined here. When running multiple nodes the
        # external ports should be changed so as not to conflict.
+       # In the mapping below, the first port is the `host` port, and the second
+       # port is the `container` port. When the `container` port is changed the
+       # relevant environment variable listed above must be changed as well. For
+       # example, changing `10000:10000` to `10000:13000` would mean that
+       # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
+       # the node's gRPC interface will not be available from the host.
        ports:
        - "8888:8888"
        - "10000:10000"
@@ -336,7 +355,14 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. Start the new node.
+3. If your node is an existing baker node, update the configuration file above to include
+
+   .. code-block:: yaml
+
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+
+   into the ``environment`` section of the ``node`` service section of the file.
+4. Start the new node.
 
 Troubleshooting
 ===============
@@ -349,21 +375,36 @@ Mounting host directories under SELinux
 ---------------------------------------
 
 When mounting host directories on distributions running `SELinux <https://en.wikipedia.org/wiki/Security-Enhanced_Linux>`_ special considerations apply.
-This in particular includes Fedora and its derivatives. See `the Docker documentation <https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label>`_ for details on how to proceed.
+In particular, this includes Fedora and its derivatives. See `the Docker documentation <https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label>`_ for details on how to proceed.
 
 Letting the node container access the internet
 ----------------------------------------------
 
 Some Linux distributions whose firewall is not based on iptables, Fedora and
-CentOS among them, require additional steps to allow Docker containers to access
+CentOS among them, require additional steps to allow docker containers to access
 external networks, e.g., the internet.
 
-On Fedora run the following command:
+On Fedora run the following command to allow docker containers to access external networks.
 
 .. code-block:: console
 
    $sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
 
-to allow Docker containers to access external networks.
+Note that this will allow any Docker container access to the internet,
+not just the Concordium node.
 
-Note that this will allow any Docker container access to the internet, not just the Concordium node.
+Some users on Ubuntu have reported the node does not have internet access. In this case, adding `network_mode: bridge` to each service might solve this problem:
+
+.. code-block:: yaml
+   :emphasize-lines: 4, 8
+
+   services:
+     mainnet-node:
+       container_name: mainnet-node
+       network_mode: bridge
+       ...
+     mainnet-node-collector:
+       container_name: mainnet-node-collector
+       network_mode: bridge
+       ...
+

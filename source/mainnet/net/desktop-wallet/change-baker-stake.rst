@@ -4,7 +4,7 @@
 Update the staked amount
 ========================
 
-You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account except during a cool-down period. If you increase the stake, the new stake will be applied after two :ref:`epochs <glossary-epoch>`, which corresponds to two hours. However, if you decrease the stake, there is a cool-down period before the new stake is applied. The cool-down period is 7 days, which corresponds to 168 epochs. During this period, you'll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance.
+You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account except during a cool-down period. If you increase the stake, the new stake takes effect at the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
 
 When you change the stake it can influence your chance of being selected to bake a block and receive baker rewards and of being included in the :ref:`finalization <glossary-finalization>` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a blocks and of being included in the finalization committee.
 
@@ -53,7 +53,7 @@ Change the staked amount (Multi-signature account)
 
 #. Enter the new amount that you want to stake if you want to change that. Change the restaking preference if you want to change that. Click **Continue**.
 
-#. Set an expiry date and time for your proposal. You must submit the proposals to the chain within the last 2 hours up to the expiry date. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
+#. Set an expiry date and time for your proposal. Consider this when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
 Generate the transaction
 ------------------------
