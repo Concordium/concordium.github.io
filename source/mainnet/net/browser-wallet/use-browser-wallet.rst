@@ -1,10 +1,10 @@
 .. _use-browser-wallet:
 
 =============================
-How to use the Browser Wallet
+How to use the |bw|
 =============================
 
-This guide covers navigation and basic usage of the Concordium Browser Wallet.
+This guide covers navigation and basic usage of the |bw|.
 
 Basic navigation
 ================

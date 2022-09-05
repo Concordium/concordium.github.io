@@ -1,11 +1,11 @@
 .. _setup-browser-wallet:
 
 =========================
-Set up the Browser Wallet
+Set up the |bw|
 =========================
 
-The Concordium Browser :ref:`wallet<glossary-wallet>` is a digital wallet that enables you to create and manage your Concordium
-:ref:`identities<glossary-identity>` and :ref:`accounts<glossary-account>` and to create transactions such as sending CCD.
+The |bw| is a digital wallet that enables you to create and manage your Concordium
+:ref:`identities<glossary-identity>` and :ref:`accounts<glossary-account>` and to create transactions, such as sending CCD.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
@@ -14,9 +14,9 @@ Read the following guide to learn how to set up the wallet.
 Get started
 ===========
 
-#. Download the Browser Wallet extension. See :ref:`Downloads <downloads>`.
+#. Download the |bw| extension. See :ref:`Downloads <downloads>`.
 
-#. Open a Google Chrome browser. Click Extensions. Select Manage Extensions.
+#. Open a Google Chrome browser. Click **Extensions**. Select **Manage Extensions**.
 
 #. Turn on Developer mode. Click Load unpacked.
 
@@ -44,7 +44,7 @@ Having set up your passcode, you must then submit a request for an identity.
 
 #. If you don’t have any identities, click the ID cards drop-down.
 
-#. Click Request new.
+#. Click **Request new**.
 
 #. Select a third-party identity provider from the list. An external web page opens within the app.
 
@@ -55,14 +55,11 @@ Having set up your passcode, you must then submit a request for an identity.
    The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve
    the result. The result can be retrieved for up to seven days.
 
-.. Note::
-   To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
-
 Create an account
 =================
 
-#. To switch to the accounts page, click on the Concordium logo (screenshot) and select Accounts.
+#. To switch to the accounts page, click the Concordium logo (screenshot) and select **Accounts**.
 
-#. Click the Accounts drop-down. Then click Add new.
+#. Click the Accounts drop-down. Then click **Add new**.
 
-#. Enter a private key and account address. Click Add account.
+#. Enter a private key and account address. Click **Add account**.

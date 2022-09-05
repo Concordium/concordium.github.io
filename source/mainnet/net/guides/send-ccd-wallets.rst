@@ -84,8 +84,13 @@ This topic describes how you can send CCD from an account when only one particip
             .. image:: ../images/mobile-wallet/MW28.png
                 :width: 25%
 
-    .. tab:: Browser Wallet
+    .. tab:: |bw|
 
-        #. Go to...
+        #. Go to Accounts.
+    
+        #. Click |send|.
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
+
+.. |send| image:: ../images/send-ccd.png
+             :alt: paper airplane
