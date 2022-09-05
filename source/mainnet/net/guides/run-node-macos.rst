@@ -19,6 +19,10 @@ Prerequisites
 Install/upgrade and run a node
 ==============================
 
+.. Note::
+
+  When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
 .. tabs::
 
     .. tab:: Mainnet

@@ -242,7 +242,7 @@ To test ``piggy_insert`` you also need to provide some amount of CCD:
 .. code-block:: rust
 
    let ctx = TestReceiveContext::empty();
-   let host = TestHost::new(PiggyBankState::Intact);
+   let host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
    let amount = Amount::from_micro_ccd(100);
 
 When calling ``piggy_insert`` you get back a result with a return value as
@@ -285,7 +285,7 @@ The second test becomes:
    #[test]
    fn test_insert_intact() {
        let ctx = TestReceiveContext::empty();
-       let host = TestHost::new(PiggyBankState::Intact);
+       let host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
        let amount = Amount::from_micro_ccd(100);
 
        let result = piggy_insert(&ctx, &host, amount);
@@ -344,7 +344,7 @@ instance using |set_self_balance|_.
 
 .. code-block:: rust
 
-   let mut host = TestHost::new(PiggyBankState::Intact);
+   let mut host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
    let balance = Amount::from_micro_ccd(100);
    host.set_self_balance(balance);
 
@@ -386,7 +386,7 @@ The complete third test thus becomes:
        ctx.set_owner(owner);
        let sender = Address::Account(owner);
        ctx.set_sender(sender);
-       let mut host = TestHost::new(PiggyBankState::Intact);
+       let mut host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
        let balance = Amount::from_micro_ccd(100);
        host.set_self_balance(balance);
 
@@ -431,7 +431,7 @@ The test could look like this:
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
-       let mut host = TestHost::new(PiggyBankState::Intact);
+       let mut host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
        let balance = Amount::from_micro_ccd(100);
        host.set_self_balance(balance);
 
@@ -454,7 +454,7 @@ reasons for rejection:
 
 .. code-block:: rust
 
-   #[derive(Debug, PartialEq, Eq, Reject)]
+   #[derive(Debug, PartialEq, Eq, Serial, Reject)]
    enum SmashError {
        NotOwner,
        AlreadySmashed,
@@ -523,7 +523,7 @@ You can now check which error was produced in the test:
        ctx.set_owner(owner);
        let sender = Address::Account(AccountAddress([1u8; 32]));
        ctx.set_sender(sender);
-       let mut host = TestHost::new(PiggyBankState::Intact);
+       let mut host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
        let balance = Amount::from_micro_ccd(100);
        host.set_self_balance(balance);
 
@@ -632,7 +632,7 @@ using ``cargo test``.
       #[concordium_test]
       fn test_insert_intact() {
           let ctx = TestReceiveContext::empty();
-          let host = TestHost::new(PiggyBankState::Intact);
+          let host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
           let amount = Amount::from_micro_ccd(100);
 
           let result = piggy_insert(&ctx, &host, amount);
@@ -647,7 +647,7 @@ using ``cargo test``.
           ctx.set_owner(owner);
           let sender = Address::Account(owner);
           ctx.set_sender(sender);
-          let mut host = TestHost::new(PiggyBankState::Intact);
+          let mut host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
           let balance = Amount::from_micro_ccd(100);
           host.set_self_balance(balance);
 
@@ -669,7 +669,7 @@ using ``cargo test``.
           ctx.set_owner(owner);
           let sender = Address::Account(AccountAddress([1u8; 32]));
           ctx.set_sender(sender);
-          let mut host = TestHost::new(PiggyBankState::Intact);
+          let mut host = TestHost::new(PiggyBankState::Intact, TestStateBuilder::new());
           let balance = Amount::from_micro_ccd(100);
           host.set_self_balance(balance);
 
@@ -706,3 +706,5 @@ wasm module and uses the Wasm interpreter to run a smart contract function in a
 given context. For a reference of the context, see :ref:`simulate-context`.
 
 For more on how to run simulations, see :ref:`local-simulate`.
+
+To continue with the tutorial click :ref:`here<piggy-bank-preparing>`.
