@@ -1495,6 +1495,7 @@ These images are designed to be used together with docker-compose, or a similar 
   <span class="nt">testnet-node</span><span class="p">:</span>
     <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+    <span class="nt">pull_policy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">environment</span><span class="p">:</span>
       <span class="c1"># Environment specific configuration</span>
       <span class="c1"># The url where IPs of the bootstrap nodes can be found.</span>
@@ -1561,6 +1562,7 @@ These images are designed to be used together with docker-compose, or a similar 
   <span class="nt">testnet-node-collector</span><span class="p">:</span>
     <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">testnet-node-collector</span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+    <span class="nt">pull_policy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">environment</span><span class="p">:</span>
       <span class="c1"># Settings that should be customized by the user.</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test</span>
@@ -1671,6 +1673,7 @@ for a list of currently available versions.</p></li>
   <span class="nt">mainnet-node</span><span class="p">:</span>
     <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+    <span class="nt">pull_policy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">environment</span><span class="p">:</span>
       <span class="c1"># Environment specific configuration</span>
       <span class="c1"># The url where IPs of the bootstrap nodes can be found.</span>
@@ -1737,6 +1740,7 @@ for a list of currently available versions.</p></li>
   <span class="nt">mainnet-node-collector</span><span class="p">:</span>
     <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mainnet-node-collector</span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+    <span class="nt">pull_policy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">environment</span><span class="p">:</span>
       <span class="c1"># Settings that should be customized by the user.</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet</span>
