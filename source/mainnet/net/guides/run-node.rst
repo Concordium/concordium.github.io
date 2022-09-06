@@ -393,7 +393,7 @@ If you wish to have the node running in the background, then add a ``-d`` option
 
       .. code-block:: yaml
 
-       image: concordium/mainnet-node:4.2.3-0
+       image: concordium/mainnet-node:4.3.1-0
 
 
 Troubleshooting
