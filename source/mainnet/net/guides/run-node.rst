@@ -366,7 +366,35 @@ image and running the node. To migrate from that setup:
       - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
-4. Start the new node.
+4. Start the node and the collector.
+
+   .. code-block:: console
+
+      $docker-compose -f mainnet-node.yaml up
+
+The configuration starts two containers, one running the node, and another
+running the node collector that reports the node state to the network dashboard.
+
+If you wish to have the node running in the background, then add a ``-d`` option to the above command.
+
+.. Note::
+
+   The sample configuration always downloads the latest node image. It is
+   good practice to choose the version deliberately. To choose a specific
+   version, find the correct version in
+   `hub.docker.com/concordium/mainnet-node <https://hub.docker.com/r/concordium/mainnet-node>`_ and change the
+   ``image`` value from
+
+      .. code-block:: yaml
+
+       image: concordium/mainnet-node:latest
+
+   to, e.g.,
+
+      .. code-block:: yaml
+
+       image: concordium/mainnet-node:4.2.3-0
+
 
 Troubleshooting
 ===============
