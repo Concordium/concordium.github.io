@@ -470,7 +470,7 @@ October 6, 2021
 
 The :ref:`Concordium node release v1.1.3 <downloads>` is a bugfix release.
 
-- `Changelog <https://github.com/Concordium/concordium-node/blob/1.1.3-1/CHANGELOG.md#concordium-node-113>`__
+- `Changelog <https://github.com/Concordium/concordium-node/blob/main/CHANGELOG.md#concordium-node-113>`__
 
 .. _open-testnet-v6-update-1:
 
@@ -481,7 +481,7 @@ September 17, 2021
 
 The :ref:`Concordium node release v1.1.2 <downloads>` is a bugfix release.
 
-- `Changelog <https://github.com/Concordium/concordium-node/blob/1.1.2/CHANGELOG.md#concordium-node-112>`__
+- `Changelog <https://github.com/Concordium/concordium-node/blob/main/CHANGELOG.md#concordium-node-112>`__
 
 
 .. _open-testnet-v6:
@@ -665,7 +665,7 @@ Smart contracts:
 * Rust supported as off-chain Smart Contract language
 * `Concordium-std <https://crates.io/crates/concordium-std>`_ library added for developing smart contracts in Rust.
 * ``Cargo-concordium`` tool for building and testing smart contracts off-chain
-* Documentation for smart contracts added to `developer documentation <https://concordium.github.io/en/testnet4/smart-contracts/index.html>`_
+* Documentation for smart contracts added to developer documentation
 * Smart Contract transactions added to ``concordium-client``
 
 
