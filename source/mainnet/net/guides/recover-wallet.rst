@@ -7,6 +7,10 @@ Recover your Wallet
 
 In case you get a new device or need to restore your existing device, you can recover your identities, accounts, and keys with the secret recovery phrase you wrote down during wallet setup.
 
+.. Note::
+
+    You cannot recover testnet wallets on mainnet, or vice versa.
+
 .. tabs::
 
     .. tab:: |mw-gen2|
@@ -14,6 +18,9 @@ In case you get a new device or need to restore your existing device, you can re
         #. After reinstalling the |mw-gen2| app, open the app.
 
         #. On the Getting Started screen, tap **Recover wallet**.
+    
+       .. image:: ../images/mobile-wallet-gen2/choice-wallet.png
+            :width: 25%
 
         #. After the screens explaining recovery tap **Continue**.
 
