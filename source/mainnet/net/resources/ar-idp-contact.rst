@@ -19,4 +19,18 @@ Website: https://www.digitaltrustsolutions.nl/
 Anonymity Revokers
 ==================
 
-Who to contact and what do they need to have when contacting? Court order?
+To begin the process of anonymity revocation, you must contact an anonymity revoker with appropriate documentation. To learn about this process, see :ref:`anonymity revocation<revoke-anomity>`.
+
+memo.law AG
+St. Andreas 7
+CH-6330 Cham
+Switzerland
+www.memo.law
+
+
+MLL Meyerlustenberger Lachenal Froriep Ltd
+Schiffbaustrasse 2
+8031 Zurich
+Switzerland
+`www.mll-legal.com <https://mll-legal.com/?lang=en>`_
+
