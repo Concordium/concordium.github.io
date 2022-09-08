@@ -1354,6 +1354,11 @@ body {margin:0;}
      </li>
     </ul>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/resources/ar-idp-contact.html">
+     Contact Anonymity Revokers and Identity Providers
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1526,7 +1531,7 @@ state.</p>
 </div>
 <p>As mentioned above, you test the initialization by calling the function
 <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code> directly.
-To construct its argument for, you use <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.InitContextTest.html"><code class="docutils literal notranslate"><span class="pre">InitContextTest</span></code></a> which provides a
+To construct its argument for, you use <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.InitContextTest.html"><code class="docutils literal notranslate"><span class="pre">InitContextTest</span></code></a> which provides a
 placeholder for the context.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
 </pre></div>
@@ -1536,7 +1541,7 @@ functions are called, it will make sure to fail the test, which should be fine
 for now since the piggy bank is not reading anything from the context.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As you will see later with the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>, these placeholders have
+<p>As you will see later with the <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>, these placeholders have
 setter functions, allowing us to partially specify the context.</p>
 </div>
 <p>Now you can call <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code> and get a result containing the initial state.</p>
@@ -1601,13 +1606,13 @@ of your smart contract instance:</p>
 </div>
 <p>When calling <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you get back a result with actions instead of an
 initial state as with <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code>. But you will need to help the compiler
-infer which type to use for the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> implementing <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.HasActions.html"><code class="docutils literal notranslate"><span class="pre">HasActions</span></code></a>, so
+infer which type to use for the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> implementing <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasActions.html"><code class="docutils literal notranslate"><span class="pre">HasActions</span></code></a>, so
 add the result type <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;ActionsTree&gt;</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>For testing you can represent the actions as a simple tree structure
-<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/enum.ActionsTree.html"><code class="docutils literal notranslate"><span class="pre">ActionsTree</span></code></a>, making it easy to inspect.</p>
+<a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/enum.ActionsTree.html"><code class="docutils literal notranslate"><span class="pre">ActionsTree</span></code></a>, making it easy to inspect.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">#[receive]</span></code> macro uses another representation of the actions, when building
@@ -1656,7 +1661,7 @@ define the context as mutable:</p>
 </pre></div>
 </div>
 <p>Create an <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.AccountAddress.html"><code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code></a> to represent the owner and use the setter
-<code class="docutils literal notranslate"><span class="pre">set_owner</span></code> implemented on <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>:</p>
+<code class="docutils literal notranslate"><span class="pre">set_owner</span></code> implemented on <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
 <span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -1668,7 +1673,7 @@ how account addresses are represented on the Concordium blockchain.
 These byte arrays can also be represented as a base58check encoding, but for
 testing it is usually more convenient to specify addresses directly in bytes.</p>
 </div>
-<p>Next set the sender to be the same address as the owner using <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender"><code class="docutils literal notranslate"><span class="pre">set_sender</span></code></a>.
+<p>Next set the sender to be the same address as the owner using <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender"><code class="docutils literal notranslate"><span class="pre">set_sender</span></code></a>.
 Since the sender can be a contract instance as well, you must wrap the owner
 address in the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a> type:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
@@ -1676,7 +1681,7 @@ address in the <a class="reference external" href="https://docs.rs/concordium-st
 </pre></div>
 </div>
 <p>Lastly, you need to set the current balance of the piggy bank instance using
-<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance"><code class="docutils literal notranslate"><span class="pre">set_self_balance</span></code></a>.</p>
+<a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance"><code class="docutils literal notranslate"><span class="pre">set_self_balance</span></code></a>.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
 <span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
 </pre></div>

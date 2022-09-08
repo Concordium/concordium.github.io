@@ -1355,6 +1355,11 @@ body {margin:0;}
      </li>
     </ul>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../resources/ar-idp-contact.html">
+     Contact Anonymity Revokers and Identity Providers
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1455,9 +1460,9 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-request-for-the-identity-objectinstructions">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>. Store the auxiliary output securely.</p></li>
+<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-0-request-for-the-version-0-identity-object">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>. Store the auxiliary output securely.</p></li>
 <li><p>To verify your identity towards Notabene, follow the <a class="reference external" href="https://notaben.notion.site/Entity-verification-2e5cc78149af4677bfe2c27ca5625731">entity verification instructions</a>. When the identity has been verified successfully, Notabene will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>.</p></li>
-<li><p>To create additional accounts from the identity object returned by Notabene, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-an-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
+<li><p>To create additional accounts from the identity object returned by Notabene, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-0-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
 </ol>
 <p>If you experience issues with steps 1, 2, 3, 4, or 6, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>. If you experience issues with step 5, identity verification, please contact Notabene via <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>.</p>
 </div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic simple">
@@ -1519,9 +1524,9 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-request-for-the-identity-objectinstructions">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Test company identity”. Store the auxiliary output securely.</p></li>
+<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-0-request-for-the-version-0-identity-object">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Test company identity”. Store the auxiliary output securely.</p></li>
 <li><p>When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>. Concordium also creates the initial account.</p></li>
-<li><p>To create additional accounts from the identity object returned by Concordium, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-an-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
+<li><p>To create additional accounts from the identity object returned by Concordium, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-0-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
 </ol>
 <p>Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">PUT</span> <span class="pre">https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV</span></code> where you replace 3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV with the account address that should receive the CCDs.</p>
