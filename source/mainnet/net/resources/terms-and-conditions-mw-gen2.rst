@@ -76,7 +76,7 @@ When activating, managing, and terminating baking and delegation blockchain tran
 
 When activating baking and delegation from the Concordium Mobile Wallet you acknowledge and understand how these features work and that historic performance is not a guarantee for future performance.
 
-Concordium Software does not assume any responsibility for the amount of rewards generated from baking and delegation.   
+Concordium Software does not assume any responsibility for the amount of rewards generated from baking and delegation.
 
 Term
 ====
