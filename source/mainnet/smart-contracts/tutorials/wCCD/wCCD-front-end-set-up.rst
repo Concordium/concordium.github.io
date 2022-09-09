@@ -10,11 +10,11 @@ Setting up the front-end
 
     - access to the `Chrome <https://www.google.com/chrome/>`_ web browser on your laptop or computer
 
-    - ``node.js`` and ``yarn`` installed
+    - `node.js <https://nodejs.org/en/download/>`_ and `yarn <https://yarnpkg.com/getting-started/install>`_ installed
 
-``Node.js`` is a JavaScript runtime environment and ``yarn`` is a common package manager
-used in combination with ``node.js``. You can find additional information on their official website as well as download
-`Node.js <https://nodejs.org/en/download/>`_  and `yarn <https://yarnpkg.com/getting-started/install>`_.
+``Node.js`` is a JavaScript runtime environment and ``yarn`` is a package manager
+used in combination with ``node.js``. You can download `node.js <https://nodejs.org/en/download/>`_  and
+`yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
 
 Non-tech users might find it inconvenient to interact via the Concordium node with smart contracts
 and we cannot expect everyone is going to host their own Concordium node in the future.
@@ -106,9 +106,12 @@ Concordium node on behalf of you.
         Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
         screenshots and setup steps might differ. The browser wallet hosts the private keys corresponding
         to the accounts of the user and a link that points to a ``JSON-RPC server``.
-        Depending on the pre-MVP browser wallet version, you either have to create a new account
-        (a new private key) with builds after 22.8.2022 or import
-        an existing private key (as seen in the below screenshot) with builds before 22.8.2022.
+
+    The next steps are based on the pre-MVP browser wallet from a git commit before around 22.8.2022.
+    These earlier versions of the pre-MVP browser wallet have an input field for the private key
+    to import an already existing account and an input field for the link to the ``JSON-RPC server``.
+    Alternatively, you can follow workflow 2 to use the most recent pre-MVP browser wallet
+    without hosting your own node and ``JSON-RPC server``.
 
     You are ready now to start the browser wallet by clicking on the Concordium icon at the top right of the
     ``Chrome`` browser.
@@ -119,14 +122,10 @@ Concordium node on behalf of you.
     .. note::
 
         The puzzle icon at the top right of the ``Chrome`` browser allows you to manage your browser extensions.
-        You can enable pinning by clicking on the Concordium browser wallet.
+        You can enable pinning of the Concordium browser wallet.
 
         .. image:: ./images/wCCD_tutorial_13.png
             :width: 30 %
-
-    .. dropdown:: Getting your private key from the mobile wallet backup file
-
-        Coming soon.
 
     .. dropdown:: Getting your private key from an account already imported to the `concordium-client`
 
@@ -193,86 +192,141 @@ Concordium node on behalf of you.
 
 .. dropdown:: Workflow 2 (click here)
 
-    .. note::
+    You are ready now to build the pre-MVP browser wallet from the source code.
 
-        Coming soon after browser wallet MVP is released.
+    Clone the repository with the command:
 
-    Overview of steps (coming soon):
+    .. code-block:: console
 
-    - Download the Concordium browser wallet MVP from this link.
-
-    - Input the following JSON-RPC server wallet proxy link.
-
-    - Create a new account by clicking this button.
+        $git clone git@github.com:Concordium/concordium-browser-wallet.git
 
     .. note::
 
-        The browser wallet hosts the private keys corresponding to the accounts of the user and a link that points to a ``JSON-RPC server``.
+        Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
+        screenshots might differ. The browser wallet hosts the private keys corresponding
+        to the accounts of the user and a link that points to a ``JSON-RPC server``.
+
+    The next steps are based on the pre-MVP browser wallet from a git commit after 22.8.2022.
+    These newer versions of the pre-MVP browser wallet connect to the ``JSON-RPC wallet proxy``
+    hosted by Concordium which will take care of the Concordium node on behalf of you.
+
+    You can build the browser wallet extension and load it
+    (``dist`` folder from the path `root/packages/browser-wallet`) into the
+    `Chrome browser <https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked>`_ as
+    described in the README file of the
+    `browser wallet repo <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
+
+    You are ready now to start the browser wallet by clicking on the Concordium icon at the top right of the
+    ``Chrome`` browser.
+
+    .. image:: ./images/wCCD_tutorial_18.png
+        :width: 100 %
+
+    .. note::
+
+        The puzzle icon at the top right of the ``Chrome`` browser allows you to manage your browser extensions.
+        You can enable pinning of the Concordium browser wallet.
+
+        .. image:: ./images/wCCD_tutorial_13.png
+            :width: 30 %
+
+    Create a new account on testnet by going through the setup steps of the browser wallet.
+    You have to choose a password for securing your browser wallet.
+    This password is needed to log in to your browser wallet.
+
+    .. image:: ./images/wCCD_tutorial_15.png
+        :width: 30 %
+
+    The browser wallet creates a unique seed phrase. Write down the seed phrase
+    and keep it in a safe place to be able to recover your accounts in case
+    you lose access to your device.
+
+    You have completed the browser setup. Check that your browser wallet is connected to the testnet.
+
+    .. image:: ./images/wCCD_tutorial_16.png
+        :width: 30 %
+
+    .. image:: ./images/wCCD_tutorial_17.png
+        :width: 30 %
+
+    Before you can create a new account. You need to create an identity card.
+
+    .. image:: ./images/wCCD_tutorial_19.png
+        :width: 30 %
+
+    .. image:: ./images/wCCD_tutorial_20.png
+        :width: 30 %
+
+    .. image:: ./images/wCCD_tutorial_21.png
+        :width: 30 %
+
+    .. image:: ./images/wCCD_tutorial_22.png
+        :width: 30 %
+
+    You are ready now to create a new account on testnet.
+
+    .. image:: ./images/wCCD_tutorial_19.png
+        :width: 30 %
+
+    .. image:: ./images/wCCD_tutorial_20.png
+        :width: 30 %
+
+    You completed the browser wallet setup. Send some CCD to your new account.
+    Check that your account balance is displayed and you have enough
+    CCD to be able to execute transactions.
+
+    .. note::
+        You are connected to a website with your browser wallet when you see the green ``Connected`` button.
+        You can toggle on/off the connection by clicking on the button.
+
+    .. image:: ./images/wCCD_tutorial_14.png
+        :width: 40 %
 
 Running the web front-end
 -------------------------
 
-You have successfully added the Concordium browser wallet as an extension in the previous section.
+You have successfully added the Concordium browser wallet extension to your browser in the previous section.
 In the next step of the tutorial, you are going to clone a wCCD demo front-end written with the React library
 and run it locally. The demo front-end has the required packages installed to connect to the Concordium browser wallet
 and implements common flows to deal with the different states that the browser wallet could be in. For example,
-the front-end will prompt (displaying a ``connect`` button and a red explanatory text) the user to connect
-to the browser wallet when loading the website. Furthermore, the front-end has flows
-to react to the events when the user switches the network or account in the browser wallet or
-connects/disconnects the browser wallet to update the front-end state accordingly.
+the front-end will display a ``connect wallet`` button when loading the website. Furthermore, the front-end has flows
+to react to the events when the user switches the account in the browser wallet or
+connects/disconnects an account in the browser wallet to update the front-end state accordingly.
 
 .. note::
 
     React is a popular open-source front-end JavaScript library.
 
-Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>`_ and checkout the
-`wccd front-end example branch <https://github.com/Concordium/concordium-browser-wallet/pull/62>`_.
+Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>`_.
 
 .. code-block:: console
 
     $git clone git@github.com:Concordium/concordium-browser-wallet.git
 
-.. code-block:: console
-
-    $git checkout 131-wccd-front-end
-
 Build and run the front-end as described in the README file of the
-`wCCD front-end demo <https://github.com/Concordium/concordium-browser-wallet/tree/131-wccd-front-end/examples/wCCD>`_.
+`wCCD front-end demo <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/wCCD>`_.
 
 The steps in the README file are as follows:
 
-- Run yarn in the root folder to install all dependencies.
+- Run ``yarn`` in the root folder to install all dependencies.
 
 .. code-block:: console
 
     $yarn
 
-- Navigate into the ``browser-wallet-api-helpers`` folder.
+- Run ``yarn build:all`` to build the concordium-helpers package.
 
 .. code-block:: console
 
-    $cd ./packages/browser-wallet-api-helpers
-
-- Run ``yarn build`` in the ``browser-wallet-api-helpers`` package folder to build the package.
-
-.. code-block:: console
-
-    $yarn build
-
-- Remove the old browser-wallet-api-helpers link and copy the ``browser-wallet-api-helpers`` package into the node-module folder in the root folder.
-
-.. code-block:: console
-
-    $rm -r ../../node_modules/@concordium/browser-wallet-api-helpers
-    $cp -r ../browser-wallet-api-helpers ../../node_modules/@concordium
+    $yarn build:all
 
 - Navigate into the wCCD example folder.
 
 .. code-block:: console
 
-    $cd ../../examples/wCCD/
+    $cd ./examples/wCCD/
 
-- Run ``yarn watch`` to enable reload of the web front-end whenever you do any changes to the code.
+- Run ``yarn watch`` to enable hot-reload (useful for development) of the web front-end whenever you do any changes to the code.
 
 .. code-block:: console
 
@@ -285,8 +339,11 @@ The steps in the README file are as follows:
     $yarn start
 
 This command logs an URL in the console (typically http://127.0.0.1:8080). Open this URL in the ``Chrome`` browser.
-Click the connect button on the front-end.
 
-You completed the local front-end setup. Check that balances are displayed at the front-end.
+.. note::
+
+    Check that your browser wallet is connected to the testnet and not to mainnet or stagenet.
+
+You completed the local front-end setup.
 
 To continue with the tutorial click :ref:`here<wCCD-full-dApp>`.
