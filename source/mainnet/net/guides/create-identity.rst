@@ -66,16 +66,9 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
 
       #. Tap the **+** in the upper right corner.
 
-      #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
-
-      #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
-
-         .. image:: ../images/mobile-wallet/MW10.png
-            :width: 25%
-
       #. Select a third-party identity provider from the list. An external web page opens within the app.
 
-         .. image:: ../images/mobile-wallet/MW11.png
+         .. image:: ../images/mobile-wallet-gen2/choose-idp.png
             :width: 25%
 
       #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.

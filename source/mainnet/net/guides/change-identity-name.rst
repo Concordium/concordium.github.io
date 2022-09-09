@@ -9,7 +9,7 @@ Change identity name
 
 #. Go to the |morepage| page.
 
-#. Tap **Your identity cards** page.
+#. Tap **Your identity cards** page. Tap the identity you want to edit.
 
 #. On the identity card tap |edit| next to the identity name.
 

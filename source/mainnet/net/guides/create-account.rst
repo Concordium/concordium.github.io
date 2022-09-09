@@ -72,24 +72,19 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         #. Tap the **+** in the upper right corner.
 
-        #. Enter a name for your new account. Tap **Next**.
-
-            .. image:: ../images/mobile-wallet/MW15.png
-                :width: 25%
-
         #. Tap the identity you want to use to create the account.
 
-            .. image:: ../images/mobile-wallet/MW16.png
+            .. image:: ../images/mobile-wallet-gen2/create-acct-select-id.png
                 :width: 25%
 
-        #. Finally, tap **Ok, thanks**.
+        #. Finally, tap **Submit account**.
 
-            .. image:: ../images/mobile-wallet/MW19.png
+            .. image:: ../images/mobile-wallet-gen2/create-acct-submit.png
                 :width: 25%
 
         Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
 
-         You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 
     .. tab:: |mw-gen1|
 

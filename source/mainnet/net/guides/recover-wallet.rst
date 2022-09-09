@@ -19,8 +19,8 @@ In case you get a new device or need to restore your existing device, you can re
 
         #. On the Getting Started screen, tap **Recover wallet**.
 
-       .. image:: ../images/mobile-wallet-gen2/choice-wallet.png
-            :width: 25%
+            .. image:: ../images/mobile-wallet-gen2/choice-wallet.png
+                :width: 25%
 
         #. After the screens explaining recovery tap **Continue**.
 
@@ -30,11 +30,11 @@ In case you get a new device or need to restore your existing device, you can re
 
         Sometimes recovery can take longer. Here are some scenarios that you might encounter.
 
-        **Pending**                  
+        **Pending**
         The wallet recovery is still pending.
 
         **Identity provider unresponsive**
-        One of the identity providers is unresponsive. You can try again now or wait until later 
+        One of the identity providers is unresponsive. You can try again now or wait until later
         to try to recover. If you wait until later you can continue to the wallet. Accounts with
         an unrecovered identity are shown like this (screenshot).
         To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
@@ -46,7 +46,7 @@ In case you get a new device or need to restore your existing device, you can re
             :width: 25%
 
         To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
-        
+
         **Nothing to recover**
         The recovery phrase entered does not have any keys, accounts, or identities associated with it.
 
