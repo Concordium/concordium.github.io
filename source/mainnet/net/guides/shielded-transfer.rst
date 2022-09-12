@@ -110,7 +110,7 @@ Prerequisites
 
                 #. Go to the Accounts page.
 
-                #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
+                #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
 
                     - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for _your account name_**.
 
@@ -140,6 +140,9 @@ Prerequisites
 
                     .. image:: ../images/mobile-wallet/MW44.png
                         :width: 25%
+
+                .. |more-acct| image:: ../images/more-acct.png
+                                :alt: Button with double-headed arrow
 
     .. tab:: |mw-gen1|
 

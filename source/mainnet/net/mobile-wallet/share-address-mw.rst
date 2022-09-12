@@ -13,7 +13,7 @@ If you need to share your account address with someone, you can find the address
 
       #. Go to the **Accounts** page.
 
-      #. On the account you want to find the address to tap **RECEIVE**.
+      #. On the account you want to find the address to, tap |receive|.
 
       #. Share your address:
 
@@ -26,12 +26,13 @@ If you need to share your account address with someone, you can find the address
 
          - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
+      If you are viewing an account, tap |receive-text| to see the account address.
 
    .. tab:: |mw-gen1|
 
       #. Go to the **Accounts** page.
 
-      #. On the account you want to find the address to tap **RECEIVE**.
+      #. On the account you want to find the address to, tap **RECEIVE**.
 
          .. image:: ../images/mobile-wallet/MW13.png
             :width: 25%
@@ -46,3 +47,9 @@ If you need to share your account address with someone, you can find the address
          - You can tap **SHARE** and then share the address using one of the share options.
 
          - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+
+.. |receive| image:: ../images/receive.png
+             :alt: QR code
+
+.. |receive-text| image:: ../images/receive-w-text.png
+             :alt: QR code with text receive

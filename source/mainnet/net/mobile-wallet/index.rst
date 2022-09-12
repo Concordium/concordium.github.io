@@ -1,8 +1,8 @@
 .. _mw-index:
 
-=============
-Mobile Wallet
-=============
+===================================
+Legacy Concordium Wallet for Mobile
+===================================
 
 The following topics are specific to Mobile Wallet.
 

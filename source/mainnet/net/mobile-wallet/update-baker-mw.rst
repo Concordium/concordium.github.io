@@ -11,9 +11,15 @@ The following tabs describe how to access baker settings.
 
     .. tab:: |mw-gen2|
 
-        #. In the Accounts page, tap Earn (screenshot) for the account you want to be a baker or tap on an account card and tap Earn.
+        #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
 
         #. In the Baker status screen tap **Update baker settings**.
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+
+        .. |earn-w-text| image:: ../images/earn-w-text.png
+             :alt: Hand receiving money with text earn
 
     .. tab:: |mw-gen1|
 

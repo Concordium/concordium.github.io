@@ -127,7 +127,7 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
    .. tab:: |mw-gen2|
 
-      #. Tap Earn on the account with a delegation in the **Accounts** page, or tap on an account card and tap Earn on the account details screen.
+      #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
 
       #. You see your current delegation. Tap **Stop delegation**.
 
@@ -140,6 +140,12 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
       #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
          .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+
+        .. |earn-w-text| image:: ../images/earn-w-text.png
+             :alt: Hand receiving money with text earn
 
    .. tab:: |mw-gen1|
 

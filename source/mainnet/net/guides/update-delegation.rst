@@ -137,7 +137,7 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
     .. tab:: |mw-gen2|
 
-        #. Tap Earn on the account with a delegation in the **Accounts** page, or tap on an account card and tap Earn on the account details screen.
+        #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
 
         #. You see your current delegation. Tap **Update current delegation**.
 
@@ -156,6 +156,12 @@ Before delegating stake to a baker pool, it is important to research the pool us
             .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+
+        .. |earn-w-text| image:: ../images/earn-w-text.png
+             :alt: Hand receiving money with text earn
 
     .. tab:: |mw-gen1|
 

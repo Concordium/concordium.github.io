@@ -19,7 +19,7 @@ In case you get a new device or need to restore your existing device, you can re
 
         #. On the Getting Started screen, tap **Recover wallet**.
 
-            .. image:: ../images/mobile-wallet-gen2/choice-wallet.png
+            .. image:: ../images/mobile-wallet-gen2/choice-start.png
                 :width: 25%
 
         #. After the screens explaining recovery tap **Continue**.

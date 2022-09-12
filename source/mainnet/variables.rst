@@ -9,8 +9,8 @@
 .. |cdw-rpm-checksum| replace:: 845f375c728b14ce13400869001b58c894510454dd7af8fa95d9538b5d8ef2d4
 
 .. Mobile Wallet product names
-.. |mw-gen1| replace:: Concordium Legacy Wallet
-.. |mw-gen2| replace:: Concordium Wallet
+.. |mw-gen1| replace:: Legacy Concordium Wallet
+.. |mw-gen2| replace:: Concordium Wallet for Mobile
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_4.1.0

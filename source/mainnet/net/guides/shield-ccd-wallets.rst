@@ -89,7 +89,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Go to the **Accounts** page.
 
-                #. Tap the **Balance** area of the account you want to transfer CCD from or tap |moredetails|.
+                #. Tap the **Balance** area of the account you want to transfer CCD from or tap |more-acct|.
 
                     - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
@@ -117,17 +117,17 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 .. Note::
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
             .. tab:: Unshield CCD
 
                 #. Go to the **Accounts** page.
 
-                #. Tap the account you want to unshield CCD on or tap |moredetails| on the account card.
+                #. Tap the account you want to unshield CCD on or tap |more-acct| on the account card.
 
-                #. If the Shielded balance is already shown, press the Shielded balance tab.
+                #. If the Shielded balance is already shown, tap the Shielded balance tab.
 
-                    - If the **Shield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+                    - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
                 #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
@@ -158,8 +158,10 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 .. Note::
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
+            .. |more-acct| image:: ../images/more-acct.png
+                             :alt: Button with double-headed arrow
     .. tab:: |mw-gen1|
 
         .. tabs::
@@ -168,7 +170,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Go to the **Accounts** page.
 
-                #. Tap the **Balance** area of the account you want to transfer CCD from or tap |moredetails|.
+                #. Tap the **Balance** area of the account you want to shield CCD from or tap |moredetails|.
 
                     - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
@@ -199,7 +201,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 .. Note::
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
             .. tab:: Unshield CCD
 
@@ -207,9 +209,9 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 #. Tap the account you want to unshield CCD on or tap |moredetails| on the account card.
 
-                #. If the Shielded balance is already shown, press the Shielded balance tab.
+                #. If the Shielded balance is already shown, tap the Shielded balance tab.
 
-                    - If the **Shield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+                    - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
                 #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
@@ -243,7 +245,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
                 .. Note::
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account page tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
             .. |hamburger| image:: ../images/hamburger.png
                          :alt: Three horizontal lines

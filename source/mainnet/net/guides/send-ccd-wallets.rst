@@ -47,7 +47,7 @@ This topic describes how you can send CCD from an account when only one particip
 
     .. tab:: |mw-gen2|
 
-        #. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap **SEND**.
+        #. Go to the Accounts page and tap |send| on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap |send-w-text|.
 
         #. Enter the amount you want to transfer.
 
@@ -77,6 +77,12 @@ This topic describes how you can send CCD from an account when only one particip
 
             .. image:: ../images/mobile-wallet/MW28.png
                 :width: 25%
+
+        .. |send| image:: ../images/send.png
+             :alt: Paper airplane
+
+        .. |send-w-text| image:: ../images/send-w-text.png
+             :alt: Paper airplane with text send
 
     .. tab:: |mw-gen1|
 

@@ -32,7 +32,7 @@ Now you must write down and confirm your secret recovery phrase. It is important
 
 #. Tap **Set up a fresh wallet**.
 
-   .. image:: ../images/mobile-wallet-gen2/choice-wallet.png
+   .. image:: ../images/mobile-wallet-gen2/choice-start.png
       :width: 25%
 
 #. Tap on the screen to view your secret recovery phrase. Write down all 24 words in the exact order in which they are shown.
