@@ -42,7 +42,7 @@ In case you get a new device or need to restore your existing device, you can re
         **Partially recovered**
         The accounts and identities have been partially recovered. You can continue to the wallet. Accounts with an unrecovered identity are shown as below.
 
-       .. image:: ../images/mobile-wallet-gen2/partial-recovery.png
+        .. image:: ../images/mobile-wallet-gen2/partial-recovery.png
             :width: 25%
 
         To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.

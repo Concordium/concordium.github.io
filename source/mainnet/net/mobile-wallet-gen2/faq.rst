@@ -17,7 +17,7 @@
 
 .. dropdown:: What is a secret recovery phrase?
 
-    A secret recovery phrase is a “master key” that unlocks all of your Concordium accounts. These words, when entered into |mw-gen2| in the correct order will recover all of the private keys you were storing on your original wallet and give access to all CCDs in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets.
+    A secret recovery phrase is a “master key” that unlocks all of your Concordium accounts. These words, when entered into |mw-gen2| in the correct order will recover all of the private keys you were storing on your original wallet and give access to all CCDs in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds and backup phrases.
 
 .. dropdown:: How is a secret recovery phrase different from private keys?
 
