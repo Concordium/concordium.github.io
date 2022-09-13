@@ -161,7 +161,7 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links"],
     "page_sidebar_items": ["page-toc"],
     "footer_items": ["footer"],
-    "show_prev_next": False,
+    "show_prev_next": True,
     "icon_links": [
         {
             # Concordium GitHub
@@ -208,6 +208,7 @@ html_context = {
     "github_version": current_version,
     "display_github": False,
     "conf_py_path": "/source/",
+    "default_mode": "dark",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
     "current_version": current_version,
