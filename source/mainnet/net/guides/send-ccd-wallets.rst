@@ -87,7 +87,7 @@ This topic describes how you can send CCD from an account when only one particip
     .. tab:: |bw|
 
         #. Go to Accounts.
-    
+
         #. Click |send|.
 
         #. Enter the amount of CCD to transfer. Or click **Max** to transfer all of your CCD minus the transaction fee.

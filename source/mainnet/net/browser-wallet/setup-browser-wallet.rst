@@ -21,7 +21,7 @@ Get started
 
 #. Turn on Developer mode. Click Load unpacked.
 
-#. Add the extension from the folder to which it was downloaded (and maybe unzipped, only at the dist file folder). You can click Extensions and "pin" an icon to the toolbar for the browser wallet if you want, or set up a keyboard shortcut for it. Otherwise, click Extensions whenever you want to start the browser wallet. 
+#. Add the extension from the folder to which it was downloaded (and maybe unzipped, only at the dist file folder). You can click Extensions and "pin" an icon to the toolbar for the browser wallet if you want, or set up a keyboard shortcut for it. Otherwise, click Extensions whenever you want to start the browser wallet.
 
 #. Create a six-digit passcode or use a full password.
 
