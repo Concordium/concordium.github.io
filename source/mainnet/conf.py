@@ -208,7 +208,6 @@ html_context = {
     "github_version": current_version,
     "display_github": False,
     "conf_py_path": "/source/",
-    "default_mode": "dark",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
     "current_version": current_version,
