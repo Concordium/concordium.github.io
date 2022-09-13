@@ -31,6 +31,7 @@
    guides/export-import
    mobile-wallet/index
    desktop-wallet/index
+   browser-wallet/index
 
 .. toctree::
    :includehidden:

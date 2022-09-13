@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _browser-wallet-faq:
 
 ==================
@@ -6,7 +7,7 @@
 
 .. dropdown:: Why was the |bw| made?
 
-    created to simplify the interface for users and to reduce problems with wallet recovery should it be necessary to recover your wallet.
+    The |bw| was created as a tool for developers to connect dApps to the Concordium blockchain and interact with it. It also provides a simplified interface for users and uses a secret recovery phrase to reduce problems with wallet recovery should it be necessary to recover your wallet.
 
 .. dropdown:: What are the features and benefits of the |bw|?
 
@@ -28,9 +29,9 @@
 
 .. dropdown:: What happens if I lose my secret recovery phrase?
 
-    If you accidentally throw away the paper your secret recovery phrase is written on, forget where you hid it, or die without passing it on to an heir, you lose access to your CCDs. If someone steals your secret passphrase, your CCDs remain safely stored on the blockchain, but you (or your heirs) won’t have any way to access it. **If you lose your secret passphrase you lose access to your CCDs.**
+    If you accidentally throw away the paper your secret recovery phrase is written on, forget where you hid it, or die without passing it on to an heir, you lose access to your CCDs. If someone steals your secret passphrase, your CCDs can be stolen. **If you lose your secret recovery phrase you lose access to your CCDs.**
 
-    As long as you have your secret passphrase, you have your CCDs. If you break a device containing your wallet, you haven’t lost your CCDs. You can simply enter your secret recovery phrase into a newly downloaded wallet.
+    As long as you have your secret recovery phrase, you have your CCDs. If you break a device containing your wallet, you haven’t lost your CCDs. You can simply enter your secret recovery phrase into a newly downloaded wallet.
 
 .. dropdown:: How can I keep my secret recovery phrase secure?
 

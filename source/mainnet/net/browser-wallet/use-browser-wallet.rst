@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _use-browser-wallet:
 
 =============================
@@ -11,31 +12,47 @@ Basic navigation
 
 Click on the Concordium logo to change between pages.
 
+.. image:: ../images/browser-wallet/concordium-logo.png
+                :width: 25%
+
+.. image:: ../images/browser-wallet/page-menu.png
+                :width: 25%
+
 Click X to cancel out of an action or close a page.
 
-Change passcode
-===============
+Change your passcode
+====================
 
 Click on the Concordium logo and select Wallet Settings.
 
 Click Change passcode.
 
-Network Settings
-================
+Change network
+==============
 
 Click on the Concordium logo and select Wallet Settings.
 
 Click Network settings.
 
-Enter the JSON-RPC endpoint you want to use.
+Select the Network you want to connect to: Mainnet, Testnet, or Stagenet.
 
-Click Save.
+Export your private key
+=======================
 
-Light or dark mode
-==================
+Go to Accounts.
 
-Click on the Concordium logo and select Wallet Settings.
+Click |gear|.
 
-Click Visual settings.
+Click **Export private key**.
 
-In the theme drop-down, select the mode you want to use.
+Enter your passcode.
+
+Click **Show private key**.
+
+When your private key is shown, copy it with the |copy| button.
+
+.. |gear| image:: ../images/browser-wallet/account-settings.png
+             :alt: gear wheel
+
+.. |copy| image:: ../images/copy.png
+             :alt: two documents

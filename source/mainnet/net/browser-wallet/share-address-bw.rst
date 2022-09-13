@@ -21,5 +21,5 @@ Share your account address
 
    - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
-.. |receive| image:: ../images/receive-ccd.png
+.. |receive| image:: ../images/browser-wallet/receive-ccd.png
              :alt: button with qr code

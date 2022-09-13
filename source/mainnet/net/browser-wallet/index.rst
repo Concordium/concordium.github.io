@@ -1,10 +1,11 @@
+.. include:: ../../variables.rst
 .. _bw-index:
 
 ==============
-Browser Wallet
+|bw|
 ==============
 
-The following topics are specific to Browser Wallet.
+The following topics are specific to |bw|.
 
 .. toctree::
     :maxdepth: 2
@@ -12,5 +13,4 @@ The following topics are specific to Browser Wallet.
     browser-wallet-faq
     setup-browser-wallet
     use-browser-wallet
-    share-address-bw
-    change-passcode-bw
+    connect-app
