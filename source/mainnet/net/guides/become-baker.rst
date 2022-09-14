@@ -75,7 +75,7 @@ and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --out <concordium-data-dir>/baker-credentials.json
 
 
 where you replace
@@ -105,8 +105,6 @@ The following arguments are also required for the ``baker add`` transaction:
 
 - ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
 - ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
-- ``--keys-in`` specifies the name of the file containing the baker keys.
-- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
 - ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
 - ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
