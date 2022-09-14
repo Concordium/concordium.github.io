@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _share-address-mw:
 
 ===================================
@@ -6,25 +7,39 @@ Find and share your account address
 
 If you need to share your account address with someone, you can find the address on the account page.
 
-Read the following to learn how to share your account address.
+.. tabs::
 
-Share your account address
-==========================
+   .. tab:: |bw|
 
-#. Go to the **Accounts** page.
+      #. Go to the **Accounts** page.
 
-#. On the account you want to find the address to tap **RECEIVE**.
+      #. On the account you want to find the address to tap |receive|.
 
-   .. image:: ../images/mobile-wallet/MW13.png
-      :width: 25%
+      #. Share your address:
 
-#. Share your address:
+         - You can let someone scan your QR code if they have the |mw-gen1| or |mw-gen2| installed.
 
-   - You can let someone scan your QR code if they have the Concordium Mobile Wallet installed.
+         - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
-   - You can tap **SHARE** and then share the address using one of the share options.
+   .. tab:: |mw-gen1|
 
-   - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+      #. Go to the **Accounts** page.
 
-   .. image:: ../images/mobile-wallet/MW54.png
-      :width: 25%
+      #. On the account you want to find the address to, tap **RECEIVE**.
+
+         .. image:: ../images/mobile-wallet/MW13.png
+            :width: 25%
+
+      #. Share your address:
+
+         .. image:: ../images/mobile-wallet/MW54.png
+            :width: 25%
+
+         - You can let someone scan your QR code if they have the Concordium Mobile Wallet installed.
+
+         - You can tap **SHARE** and then share the address using one of the share options.
+
+         - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+
+.. |receive| image:: ../images/browser-wallet/receive-ccd.png
+             :alt: button with qr code
