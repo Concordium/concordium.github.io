@@ -5,15 +5,15 @@
 Backup
 ======
 
+.. Note::
+
+   This information is not relevant for |mw-gen2| which uses a secret recovery phrase to recover a wallet.
+
 Making a backup is an essential action every time you create accounts whether it is an initial account or a regular account.
 
 A backup is only necessary when creating new accounts, not every time a transaction is executed. Think of your account like a safe: it contains assets. If you lose the key, you cannot get into the safe unless you have a copy of the key. Your backup is your copy of the safe key.
 
 You can make a backup from |mw-gen1| or from Desktop Wallet but there are differences between them.
-
-.. Note::
-
-   This information is not relevant for |mw-gen2| which uses a secret recovery phrase to recover a wallet.
 
 Backups for |mw-gen1|
 =====================

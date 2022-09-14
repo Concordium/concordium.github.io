@@ -11,6 +11,7 @@
 .. Mobile Wallet product names
 .. |mw-gen1| replace:: Legacy Concordium Wallet
 .. |mw-gen2| replace:: Concordium Wallet for Mobile
+.. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_4.1.0

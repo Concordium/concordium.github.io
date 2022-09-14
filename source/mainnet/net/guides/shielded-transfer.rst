@@ -112,7 +112,7 @@ Prerequisites
 
                 #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
 
-                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for _your account name_**.
+                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
 
                 #. Tap the **Shielded balance** tab of the totals area.
 
@@ -154,7 +154,7 @@ Prerequisites
 
                 #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
 
-                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for _your account name_**.
+                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
 
                 #. Tap the **Shielded balance** tab of the totals area.
 

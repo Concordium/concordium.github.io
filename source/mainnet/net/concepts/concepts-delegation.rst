@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _delegation-concept:
 
 ==========
@@ -53,7 +54,7 @@ But decreasing the stake (whether for delegators or bakers) is subject to a cool
 Where delegation is available
 =============================
 
-You can delegate CCDs in :ref:`the Desktop Wallet, |mw-gen1|, |mw-gen2|<delegation>` and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
+You can :ref:`delegate CCDs<delegation>` in the Desktop Wallet, |mw-gen1|, and |mw-gen2|. You can also delegate from :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======

@@ -12,7 +12,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
     Backup and import cannot be used for |mw-gen2| because it uses a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
 
 .. Warning::
-    You can't import a file created in the Mobile Wallet into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the old Mobile Wallet to the new Mobile Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet. For more information, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet <choosing-wallet>`.
+    You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
 
 .. Warning::
    You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.

@@ -1,10 +1,11 @@
+.. include:: ../../variables.rst
 .. _mw-index:
 
 ===================================
-Legacy Concordium Wallet for Mobile
+|mw-gen1|
 ===================================
 
-The following topics are specific to Mobile Wallet.
+The following topics are specific to |mw-gen1|.
 
 .. toctree::
     :maxdepth: 2
