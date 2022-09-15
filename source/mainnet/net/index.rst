@@ -26,7 +26,6 @@
    guides/create-account
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
-   guides/recover-wallet
    guides/shielded-transfer
    guides/export-import
    mobile-wallet-gen2/index

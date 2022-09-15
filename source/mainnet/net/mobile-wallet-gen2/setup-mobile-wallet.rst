@@ -84,6 +84,9 @@ Once the identity provider has verified your identity you can submit an account.
 
 #. Tap **Submit account**. Enter your wallet passcode when prompted.
 
+   .. image:: ../images/mobile-wallet-gen2/submit-acct.png
+      :width: 25%
+
 .. Note::
    To access the **Balance** of the new account, tap the Balance area on the account card or tap |morepage|.
 

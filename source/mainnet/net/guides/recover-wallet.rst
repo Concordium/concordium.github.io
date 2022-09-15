@@ -28,27 +28,15 @@ In case you get a new device or need to restore your existing device, you can re
 
         #. When recovery is successful, the screen below appears.
 
-        Sometimes recovery can take longer. Here are some scenarios that you might encounter.
-
-        **Pending**
-        The wallet recovery is still pending.
-
-        **Identity provider unresponsive**
-        One of the identity providers is unresponsive. You can try again now or wait until later
-        to try to recover. If you wait until later you can continue to the wallet. Accounts with
-        an unrecovered identity are shown like this (screenshot).
-        To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
-
-        **Partially recovered**
-        The accounts and identities have been partially recovered. You can continue to the wallet. Accounts with an unrecovered identity are shown as below.
+        Sometimes recovery can take longer. You might encounter a partial recovery.
 
         .. image:: ../images/mobile-wallet-gen2/partial-recovery.png
             :width: 25%
 
-        To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
+        This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. You can try again now or wait until later to try to recover. If you wait until later you can continue to the wallet. Accounts with an unrecovered identity are shown as below.
 
-        **Nothing to recover**
-        The recovery phrase entered does not have any keys, accounts, or identities associated with it.
+
+        To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
 
 .. Note::
 

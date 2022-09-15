@@ -41,7 +41,10 @@ Obtain an identity
 You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, |mw-gen1|, or |mw-gen2|. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
-   Currently, it is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet, |mw-gen2| and |mw-gen1|, or |mw-gen2| and Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| or |mw-gen2| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1| or |mw-gen2|.
+   It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
+
+.. Warning::
+   Because of the difference in the way private keys are handled between |mw-gen2| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 

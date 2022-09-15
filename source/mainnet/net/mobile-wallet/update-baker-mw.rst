@@ -17,9 +17,11 @@ The following tabs describe how to access baker settings.
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
+             :width: 25%
 
         .. |earn-w-text| image:: ../images/earn-w-text.png
              :alt: Hand receiving money with text earn
+             :width: 25%
 
     .. tab:: |mw-gen1|
 
@@ -30,6 +32,7 @@ The following tabs describe how to access baker settings.
         #. In the Baker status screen tap **Update baker settings**.
 
             .. image:: ../images/mobile-wallet/baker-status-mw.png
+                :width: 25%
 
 Once you have access baker settings for your wallet, you have four options:
 
@@ -39,6 +42,7 @@ Once you have access baker settings for your wallet, you have four options:
     - Stop baking
 
 .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
+    :width: 25%
 
 Update baker stake
 ==================
@@ -46,6 +50,7 @@ Update baker stake
 If you choose **Update baker stake** you see your balance and the current Baker stake amount. Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
 
 .. image:: ../images/mobile-wallet/update-baker-stake-amt-mw.png
+    :width: 25%
 
 On the overview screen, check the information. Once you are satisfied, tap **Submit baker transaction**.
 
@@ -63,6 +68,7 @@ Update pool settings
 If you choose **Update pool settings**, you have three options:
 
 .. image:: ../images/mobile-wallet/update-baker-pool-mw.png
+    :width: 25%
 
 - Open pool: open a pool for a previously closed baker
 - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
@@ -107,6 +113,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
 #. If you choose **Update baker keys**, after the screens explaining reasons for updating baker keys, you see the new baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file.
 
     .. image:: ../images/mobile-wallet/update-baker-keys.png
+        :width: 25%
 
 .. Warning::
 
@@ -133,6 +140,7 @@ If you no longer wish to bake on this account, you can stop baking.
 #. Tap **Stop baking**.
 
     .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
+        :width: 25%
 
 #. After the screens explaining baker removal, review the information on the overview screen. When you are satisfied, tap **Submit baker transaction**.
 
@@ -148,6 +156,8 @@ If you no longer wish to bake on this account, you can stop baking.
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 10%
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 10%
