@@ -68,7 +68,8 @@ What are the requirements for each wallet?
 
 - |mw-gen1| or |mw-gen2|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- Desktop Wallet: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
+- Desktop Wallet: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to connect to a node. You can use the default Virtual Hive node (concordiumwalletnode.com), get a third-party to run a node for you, or run a node yourself. If you run a node yourself, your computer must meet the hardware requirements for this.
+
 
 Comparison
 ==========
@@ -106,9 +107,9 @@ The following table lists the major features of each wallet.
    *  - Creation and management of baker accounts
       - Creation and management of baker accounts
       - Creation and management of baker accounts
-   *  - Running a node is a requirement
-      - Running a node is not needed unless baking
-      - Running a node is not needed unless baking
+   *  - A node is required
+      - A node is not needed unless baking
+      - A node is not needed unless baking
 
 Next steps
 ==========

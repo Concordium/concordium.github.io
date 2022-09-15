@@ -27,7 +27,6 @@
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
    guides/recover-wallet
-   guides/delegation
    guides/shielded-transfer
    guides/export-import
    mobile-wallet-gen2/index
@@ -36,13 +35,20 @@
 
 .. toctree::
    :includehidden:
+   :caption: Earn with Concordium
+
+   guides/how-to-earn
+   guides/overview-baker-process
+   desktop-wallet/baking-dw
+   mobile-wallet/baker-mw
+   guides/delegation
+
+.. toctree::
+   :includehidden:
    :caption: Develop on Concordium
 
    guides/developer-page
    nodes/node-requirements
-   guides/overview-baker-process
-   desktop-wallet/baking-dw
-   mobile-wallet/baker-mw
    references/concordium-client
    references/transactions
    references/query-node
