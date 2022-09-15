@@ -23,36 +23,40 @@ Click X to cancel out of an action or close a page.
 Change your passcode
 ====================
 
-Click on the Concordium logo and select Wallet Settings.
+#. Click on the Concordium logo and select **Wallet Settings**.
 
-Click Change passcode.
+#. Click **Change passcode**.
+
+#. Enter and confirm your new passcode.
 
 Change network
 ==============
 
-Click on the Concordium logo and select Wallet Settings.
+#. Click on the Concordium logo and select **Wallet Settings**.
 
-Click Network settings.
+#. Click **Network settings**.
 
-Select the Network you want to connect to: Mainnet, Testnet, or Stagenet.
+#. Select the Network you want to connect to: Mainnet, Testnet, or Stagenet.
 
 Export your private key
 =======================
 
-Go to Accounts.
+#. Go to Accounts.
 
-Click |gear|.
+#. Click |gear|.
 
-Click **Export private key**.
+#. Click **Export private key**.
 
-Enter your passcode.
+#. Enter your passcode.
 
-Click **Show private key**.
+#. Click **Show private key**.
 
-When your private key is shown, copy it with the |copy| button.
+#. When your private key is shown, copy it with the |copy| button.
 
 .. |gear| image:: ../images/browser-wallet/account-settings.png
              :alt: gear wheel
+             :width: 50px
 
 .. |copy| image:: ../images/copy.png
              :alt: two documents
+             :width: 40px

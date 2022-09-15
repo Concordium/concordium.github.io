@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _add-delegation:
 
 ==============================================
@@ -137,24 +138,29 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation.
 
             .. image:: ../images/mobile-wallet/account-hamburger-menu.png
+                    :width: 25%
 
         #. Tap **Register delegation**.
 
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
+                    :width: 25%
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
+                    :width: 25%
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
+                    :width: 25%
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
             .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
+                    :width: 25%
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
@@ -170,6 +176,8 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
 .. |hamburger| image:: ../images/hamburger.png
                  :alt: Three horizontal lines
+                 :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
                   :alt: Button with More and double-headed arrow
+                  :width: 50px

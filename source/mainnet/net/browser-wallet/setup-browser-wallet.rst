@@ -28,6 +28,7 @@ Get started
 #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recovery-wallet>`.
 
    .. image:: ../images/browser-wallet/wallet-choice.png
+            :width: 25%
 
 Recovery phrase setup
 =====================
@@ -37,6 +38,7 @@ If you are creating a new wallet, you must set up a recovery phrase. This is a 2
 #. Once you click on **Create** you are shown the 24 word secret recovery phrase. Write it down and click **Continue**.
 
    .. image:: ../images/browser-wallet/recovery-phrase.png
+            :width: 25%
 
 #. Enter all 24 words of your secret recovery phrase to confirm it. Click **Continue**.
 
@@ -52,6 +54,7 @@ Having set up your passcode, you must then submit a request for an identity.
 #. Click **Request new**.
 
    .. image:: ../images/browser-wallet/id-cards-new.png
+            :width: 25%
 
 #. Select a third-party identity provider from the list. An external web page opens within the app.
 

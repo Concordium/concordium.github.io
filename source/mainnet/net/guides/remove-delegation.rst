@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _remove-delegation:
 
 =======================================================
@@ -134,10 +135,12 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
         #. You see your current delegation. Tap **Stop delegation**.
 
             .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+                     :width: 25%
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+                     :width: 25%
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
@@ -153,6 +156,8 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px
