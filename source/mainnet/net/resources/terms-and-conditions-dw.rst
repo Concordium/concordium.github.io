@@ -44,7 +44,7 @@ To be able to use the Concordium Desktop Wallet, you need a Ledger Nano S or Nan
 
 Before you can use Concordium Desktop Wallet, you will need to create a digital identity certificate with an identity provider and create your initial account by following the instructions in the app. An identity provider is a third-party supplier and independent of Concordium Software. The identity provider will know your identity. The Concordium Desktop Wallet stores data from the identity provider in encrypted form, which Concordium Software does not have access to.
 
-After you have created your digital identity certificate and your initial account, you can create additional accounts. Concordium Software may impose a limit to how many accounts you can create in a single Concordium Desktop Wallet. 
+After you have created your digital identity certificate and your initial account, you can create additional accounts. Concordium Software may impose a limit to how many accounts you can create in a single Concordium Desktop Wallet.
 
 Please note that you can only register one account as the initial account.
 
@@ -83,7 +83,7 @@ When activating, managing and terminating baking and delegation blockchain trans
 
 When activating baking and delegation from the Concordium Desktop Wallet you acknowledge and understand how these features work and that historic performance is not a guarantee for future performance.
 
-Concordium Software does not assume any responsibility for the amount of rewards generated from baking and delegation. 
+Concordium Software does not assume any responsibility for the amount of rewards generated from baking and delegation.
 
 Term
 ====
