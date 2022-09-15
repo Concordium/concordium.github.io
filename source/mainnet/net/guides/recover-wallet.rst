@@ -26,15 +26,17 @@ In case you get a new device or need to restore your existing device, you can re
 
         #. Enter each word of your recovery phrase in the correct order. When you start typing, possible words appear for you to select. Once the words are correct, tap **Continue** to submit the recovery request to the identity provider(s).
 
+            .. image:: ../images/mobile-wallet-gen2/recovery-enter-phrase.png
+                :width: 25%
+
         #. When recovery is successful, the screen below appears.
+
+            .. image:: ../images/mobile-wallet-gen2/recovery-success.png
+                :width: 25%
 
         Sometimes recovery can take longer. You might encounter a partial recovery.
 
-        .. image:: ../images/mobile-wallet-gen2/partial-recovery.png
-            :width: 25%
-
-        This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. You can try again now or wait until later to try to recover. If you wait until later you can continue to the wallet. Accounts with an unrecovered identity are shown as below.
-
+        This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. Tap **Try again** to attempt recovery again now or tap **Continue** to wait until later to try to recover. If you wait until later you can continue to the wallet.
 
         To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
 
@@ -44,3 +46,4 @@ In case you get a new device or need to restore your existing device, you can re
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
+             :width: 40px

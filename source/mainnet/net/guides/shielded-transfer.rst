@@ -143,6 +143,7 @@ Prerequisites
 
                 .. |more-acct| image:: ../images/more-acct.png
                                 :alt: Button with double-headed arrow
+                                :width: 50px
 
     .. tab:: |mw-gen1|
 
@@ -188,8 +189,10 @@ Prerequisites
 
             .. |hamburger| image:: ../images/hamburger.png
                          :alt: Three horizontal lines
+                         :width: 20px
 
             .. |moredetails| image:: ../images/more-arrow.png
                          :alt: Button with More and double-headed arrow
+                         :width: 50px
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.

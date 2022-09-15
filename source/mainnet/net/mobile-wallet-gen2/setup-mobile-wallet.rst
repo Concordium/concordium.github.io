@@ -92,3 +92,4 @@ Once the identity provider has verified your identity you can submit an account.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
+             :width: 40px

@@ -22,4 +22,5 @@ Change identity name
                     :width: 20px
                     :alt: check mark
 .. |morepage| image:: ../images/more-ellipsis.png
-             :alt: Three dots button
+                    :alt: Three dots button
+                    :width: 40px

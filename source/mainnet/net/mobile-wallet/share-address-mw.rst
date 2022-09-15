@@ -50,6 +50,8 @@ If you need to share your account address with someone, you can find the address
 
 .. |receive| image:: ../images/receive.png
              :alt: QR code
+             :width: 50px
 
 .. |receive-text| image:: ../images/receive-w-text.png
              :alt: QR code with text receive
+             :width: 50px

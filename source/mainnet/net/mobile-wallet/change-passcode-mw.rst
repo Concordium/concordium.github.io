@@ -48,3 +48,4 @@ If you want to change your passcode or enable/disable your biometrics, you can d
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
+             :width: 40px

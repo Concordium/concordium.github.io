@@ -80,9 +80,11 @@ This topic describes how you can send CCD from an account when only one particip
 
         .. |send| image:: ../images/send.png
              :alt: Paper airplane
+             :width: 50px
 
         .. |send-w-text| image:: ../images/send-w-text.png
              :alt: Paper airplane with text send
+             :width: 50px
 
     .. tab:: |mw-gen1|
 

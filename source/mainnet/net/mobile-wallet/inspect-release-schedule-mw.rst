@@ -51,9 +51,12 @@ By inspecting the release schedule, you can see when the releases are unlocked.
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px
 
 .. |more-acct| image:: ../images/more-acct.png
              :alt: Button with double-headed arrow
+             :width: 50px

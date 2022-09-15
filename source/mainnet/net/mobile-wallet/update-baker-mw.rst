@@ -17,11 +17,11 @@ The following tabs describe how to access baker settings.
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
-             :width: 25%
+             :width: 50px
 
         .. |earn-w-text| image:: ../images/earn-w-text.png
              :alt: Hand receiving money with text earn
-             :width: 25%
+             :width: 50px
 
     .. tab:: |mw-gen1|
 
@@ -156,8 +156,8 @@ If you no longer wish to bake on this account, you can stop baking.
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
-             :width: 10%
+             :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
-             :width: 10%
+             :width: 20px

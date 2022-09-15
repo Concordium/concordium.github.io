@@ -143,9 +143,11 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
+             :width: 50px
 
         .. |earn-w-text| image:: ../images/earn-w-text.png
              :alt: Hand receiving money with text earn
+             :width: 50px
 
    .. tab:: |mw-gen1|
 
@@ -173,6 +175,8 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px

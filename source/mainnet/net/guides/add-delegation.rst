@@ -163,9 +163,11 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
+             :width: 50px
 
         .. |earn-w-text| image:: ../images/earn-w-text.png
              :alt: Hand receiving money with text earn
+             :width: 50px
 
     .. tab:: |mw-gen1|
 
@@ -205,6 +207,8 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
 
         .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px

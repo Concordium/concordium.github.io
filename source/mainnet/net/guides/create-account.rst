@@ -132,3 +132,4 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px

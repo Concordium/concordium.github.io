@@ -17,6 +17,8 @@ Change account name
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
+
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
                     :alt: small square with pencil
@@ -24,4 +26,5 @@ Change account name
                     :width: 20px
                     :alt: check mark
 .. |morepage| image:: ../images/more-ellipsis.png
-             :alt: Three dots button
+                    :alt: Three dots button
+                    :width: 40px

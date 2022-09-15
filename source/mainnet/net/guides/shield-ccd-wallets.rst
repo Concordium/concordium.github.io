@@ -162,6 +162,8 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             .. |more-acct| image:: ../images/more-acct.png
                              :alt: Button with double-headed arrow
+                             :width: 50px
+
     .. tab:: |mw-gen1|
 
         .. tabs::
@@ -249,6 +251,8 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             .. |hamburger| image:: ../images/hamburger.png
                          :alt: Three horizontal lines
+                         :width: 20px
 
             .. |moredetails| image:: ../images/more-arrow.png
                          :alt: Button with More and double-headed arrow
+                         :width: 50px
