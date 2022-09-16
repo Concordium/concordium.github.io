@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _create-account:
 
 =================
@@ -109,7 +109,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
         .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap |moredetails|.
 
-    .. tab:: Browser Wallet
+    .. tab:: |bw|
 
         #. To switch to the accounts page, click on the Concordium logo (screenshot) and select Accounts.
 

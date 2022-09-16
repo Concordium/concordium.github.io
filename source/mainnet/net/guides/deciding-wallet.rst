@@ -8,9 +8,9 @@ Deciding between the Desktop Wallet, Mobile Wallet, and |bw|
 Why you need a wallet
 =====================
 
-You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are three first party wallets available: the Concordium Desktop Wallet, the Concordium Mobile Wallet, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are three first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
-The Concordium Desktop Wallet, the Concordium Mobile Wallet, and the Concordium Browser Wallet are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
+The wallets are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts from one wallet to another
 ===============================================================
@@ -24,11 +24,11 @@ Which wallet is best for you?
 
 The wallets work on different environments: the Desktop Wallet on a computer, the Mobile Wallet on a phone, and the Browser Wallet from any device with an internet browser. The Mobile Wallet is more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.
 
-- **Desktop Wallet**: Choose this wallet if you want extra security in the form of a :ref:`Ledger<install-Ledger-app>` hardware device, or want to create multi-signature transactions. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the Ledger hardware device.
+- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`Ledger<install-Ledger-app>` hardware device, or want to create multi-signature transactions. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the Ledger hardware device.
 
-- **Mobile Wallet**: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the Mobile Wallet, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device.
+- Mobile Wallet: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the Mobile Wallet, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device.
 
-- **|bw|**: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain.
+- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain.
 
 The following provides more details on the differences between the wallets.
 
@@ -54,7 +54,7 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 
 - **Backup of the Mobile Wallet**: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. We strongly recommend that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import>`.
 
-Backups are not necessary for the |bw| because the secret recovery phrase created during setup protects your private keys.
+Backups are not necessary for the |bw| because the secret recovery phrase created during setup can be used to recover your private keys.
 
 .. Warning::
    You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.
@@ -62,11 +62,11 @@ Backups are not necessary for the |bw| because the secret recovery phrase create
 What are the requirements for each wallet?
 ==========================================
 
-- **Mobile Wallet**: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+- Mobile Wallet: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- **Desktop Wallet**: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
+- Desktop Wallet: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to run a node, and your computer must meet the hardware requirements for this.
 
-- **|bw|**: you'll need a device running a Google Chrome internet browser with the Concordium Browser Wallet extension installed.
+- |bw|: you'll need a device running a Google Chrome internet browser with the Concordium Browser Wallet extension installed.
 
 Comparison
 ==========
@@ -77,9 +77,9 @@ The following table lists the major features of each wallet.
    :widths: 20 20 20
    :header-rows: 1
 
-   *  - **Desktop Wallet**
-      - **Mobile Wallet**
-      - **|bw|**
+   *  - Desktop Wallet
+      - Mobile Wallet
+      - |bw|
    *  - Secured by password
       - Secured by password and biometrics
       - Secured by password and secret recovery phrase
@@ -91,7 +91,7 @@ The following table lists the major features of each wallet.
       - Backup is not necessary.
    *  - Private keys are stored on the Ledger that is secured by a PIN code and backed up by recovery phrase.
       - Private keys are stored in the wallet.
-      - Private keys are stored in the wallet and protected by a secret recovery phrase for recovery.
+      - Private keys are stored in the wallet and backed up by a secret recovery phrase.
    *  - Creation and management of single signature accounts
       - Creation and management of single signature accounts
       - Creation and management of single signature accounts
@@ -104,9 +104,9 @@ The following table lists the major features of each wallet.
    *  - Creation and management of baker accounts
       - Creation and management of baker accounts. Rewards are visible in the wallet.
       - No creation and management of baker accounts.
-   *  - Running a node is a requirement
-      - Running a node is not needed unless baking
-      - Running a node is not needed
+   *  - A node is required
+      - A node is not needed unless baking
+      - A node is not needed
 
 Next steps
 ==========

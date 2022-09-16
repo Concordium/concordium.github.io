@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _create-initial-account:
 
 ==================
@@ -95,7 +95,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
 
-   .. tab:: Browser Wallet
+   .. tab:: |bw|
 
       You can submit requests for additional :ref:`identities<glossary-identity>` in the Browser Wallet. You do this from the **ID cards** page.
 

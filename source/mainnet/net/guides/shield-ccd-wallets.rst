@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _shield-CCD-wallets:
 
 =====================================
@@ -171,3 +171,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             .. |moredetails| image:: ../images/more-arrow.png
                          :alt: Button with More and double-headed arrow
+
+    .. tab:: |bw|
+
+        Shielding is not available from the |bw|.
