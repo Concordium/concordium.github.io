@@ -13,5 +13,12 @@ Before you start using the Concordium blockchain, it's a good idea to understand
    :hidden:
    :maxdepth: 1
 
-   ../concepts/index
+   ../concepts/id-accounts
+   ../references/manage-accounts
+   ../concepts/concepts-backup
+   ../concepts/concepts-transactions
+   ../concepts/concepts-baker
+   ../concepts/concepts-delegation
+   ../snippets/delegation-faq
+   ../guides/company-identities
    ../resources/glossary
