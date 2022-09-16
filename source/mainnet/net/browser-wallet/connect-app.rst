@@ -5,7 +5,7 @@
 Connect dApps to the |bw|
 ===================================
 
-You can connect the |bw| to a dApp that has a front-end interface. 
+You can connect the |bw| to a dApp that has a front-end interface.
 
 #. In the browser navigate to your dApp's front end interface.
 
