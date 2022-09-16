@@ -17,12 +17,12 @@ used in combination with ``node.js``. You can download `node.js <https://nodejs.
 `yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
 
 Non-tech users might find it inconvenient to interact via the Concordium node with smart contracts
-and we cannot expect everyone is going to host their own Concordium node in the future.
+and some users may choose not to host their own Concordium node in the future.
 
 You can lower the bar for entry by coding an appealing front-end that provides additional information
-to your potential customers. Web front-ends are a familiar side nowadays but keep in mind
+to your potential customers. Web front-ends are a familiar sight nowadays, but keep in mind
 that downloading a crypto wallet as a browser extension and its behavior or safe usage might be new
-for people using your front-end. Providing comprehensive explanations and step-by-step guides at your front-end on topics
+for people using your front-end. Providing comprehensive explanations and step-by-step guides on your website on topics
 related to the browser wallet is important for a good user experience. The browser wallet
 connects via ``HTTPS`` to a server that is connected to a Concordium node. This setup alleviates the
 need for the user to host their own Concordium node.
@@ -34,7 +34,7 @@ A browser wallet is a piece of code that can be added as an extension to support
 The browser wallet hosts the private keys corresponding to the accounts of the user and a link that points
 to a `JSON-RPC server  <https://github.com/Concordium/concordium-json-rpc>`_.
 
-Your front-end code, that is run in the browser, constructs the transaction object
+Your front-end code that is run in the browser constructs the transaction object
 and sends it the the browser wallet. The transaction object is signed by the private key hosted in the browser wallet
 and transmitted to the ``JSON-RPC server`` via ``HTTPS``. This server has access to a Concordium node and masks
 the request (including the signed transaction object) that comes via ``HTTPS`` from the browser wallet
@@ -45,15 +45,15 @@ part of the Concordium blockchain.
 .. note ::
 
     The Concordium browser wallet is in active development. A pre-MVP
-    (minimum viable product) version is currently available that can be built from the source code.
+    (minimum viable product) version is currently available to be built from the source code.
     Expect some breaking changes until the MVP version is released in the next quarter. It is not recommended to
     use any pre-MVP product on mainnet.
 
 You can choose from two different workflows that will guide you through the setup steps. Workflow 1 is for
 advanced readers that want to build all the components from the source code and connect the browser wallet
-to their own hosted Concordium node. Workflow 2 is easier by downloading the browser wallet and
-connecting it to the ``JSON-RPC wallet proxy`` hosted by Concordium which will take care of the
-Concordium node on behalf of you.
+to their own hosted Concordium node. Workflow 2 is easier.
+The ``JSON-RPC wallet proxy`` is hosted by Concordium in workflow 2 which will take care of the
+Concordium node on your behalf.
 
 .. dropdown:: Workflow 1 (click here)
 
@@ -271,7 +271,7 @@ Concordium node on behalf of you.
     .. image:: ./images/wCCD_tutorial_20.png
         :width: 30 %
 
-    You completed the browser wallet setup. Send some CCD to your new account.
+    You completed the browser wallet setup. Send some CCD to your new account or request some CCD from testnet faucet button within the browser wallet.
     Check that your account balance is displayed and you have enough
     CCD to be able to execute transactions.
 
@@ -320,7 +320,7 @@ The steps in the README file are as follows:
 
     $yarn build:all
 
-- Navigate into the wCCD example folder.
+- Navigate to the wCCD example folder.
 
 .. code-block:: console
 
@@ -338,7 +338,7 @@ The steps in the README file are as follows:
 
     $yarn start
 
-This command logs an URL in the console (typically http://127.0.0.1:8080). Open this URL in the ``Chrome`` browser.
+This command logs a URL in the console (typically http://127.0.0.1:8080). Open this URL in the ``Chrome`` browser.
 
 .. note::
 
