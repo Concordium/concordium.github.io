@@ -30,6 +30,15 @@ Android
 
 - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.0.0(100).apk>`_
 
+.. _downloads-browser-wallet:
+
+|bw|
+=================================
+
+The |bw| is available to download as an extension for the Chrome web browser.
+
+(link)
+
 .. _downloads-desktop-wallet-testnet:
 
 Concordium Desktop Wallet
