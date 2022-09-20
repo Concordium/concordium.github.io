@@ -7,7 +7,7 @@
 
 .. dropdown:: Why was the |mw-gen2| made?
 
-    The |mw-gen2| includes the introduction of a backup phrase, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the soon to be released |bw||.
+    The |mw-gen2| includes the introduction of a backup phrase, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the soon to be released |bw|.
 
 .. dropdown:: What are the features and benefits of the |mw-gen2|?
 
