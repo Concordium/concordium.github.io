@@ -77,7 +77,7 @@ Create an account
 Remove the |bw|
 ===============
 
-Removing your wallet does not remove your data on the Concordium blockchain. 
+Removing your wallet does not remove your data on the Concordium blockchain.
 
 .. Warning::
 
