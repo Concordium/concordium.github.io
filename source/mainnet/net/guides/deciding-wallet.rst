@@ -28,7 +28,7 @@ The wallets work on different environments: the Desktop Wallet on a computer, th
 
 - Mobile Wallet: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Also, if you use the Mobile Wallet, you don’t have to run a node (unless you are a baker), and you don’t need a Ledger hardware device.
 
-- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain.
+- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
 
 The following provides more details on the differences between the wallets.
 

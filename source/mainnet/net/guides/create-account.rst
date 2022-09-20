@@ -111,11 +111,14 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     .. tab:: |bw|
 
-        #. To switch to the accounts page, click on the Concordium logo (screenshot) and select Accounts.
+        #. To switch to the accounts page, click |hamburger-bw| and select Accounts.
 
-        #. Click the Accounts drop-down. Then click Add new.
+        #. Click the Accounts drop-down. Then click **Add new**.
 
-        #. Enter a private key and account address. Click Add account.
+        #. Select the identity to use to create the account. Click **Create new account**.
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines

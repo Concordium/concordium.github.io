@@ -5,12 +5,12 @@
 Create an identity
 ==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of Mobile Wallet and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For Browser Wallet, an initial account is not submitted by the identity provider.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw|, an initial account is not submitted by the identity provider.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
-   You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet, the Mobile Wallet and Browser Wallet, or the Desktop Wallet and Browser Wallet. You can, however, send CCD from one wallet to another.
+   You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
 
 .. tabs::
 
@@ -97,13 +97,14 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    .. tab:: |bw|
 
-      You can submit requests for additional :ref:`identities<glossary-identity>` in the Browser Wallet. You do this from the **ID cards** page.
-
-      #. If you are not in the ID cards page, click the Concordium logo and select ID Cards.
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the Browser Wallet. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it.
 
       #. Click the ID cards drop-down.
 
-      #. Click Request new.
+      #. Click **Request new**.
+
+         .. image:: ../images/browser-wallet/id-cards-new.png
+                  :width: 25%
 
       #. Select a third-party identity provider from the list. An external web page opens within the app.
 
@@ -119,3 +120,6 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
                     :alt: check mark
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines

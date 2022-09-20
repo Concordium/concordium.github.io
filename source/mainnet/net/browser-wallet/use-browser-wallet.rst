@@ -10,29 +10,39 @@ This guide covers navigation and basic usage of the |bw|.
 Basic navigation
 ================
 
-Click on the Concordium logo to change between pages.
-
-.. image:: ../images/browser-wallet/concordium-logo.png
-                :width: 25%
+Click |hamburger-bw| to change between pages.
 
 .. image:: ../images/browser-wallet/page-menu.png
                 :width: 25%
-
-Click X to cancel out of an action or close a page.
 
 Transactions overview
 =====================
 
 In the Accounts page, click |log| to see an overview of the transactions. If you want to see details for the transaction, click on the transaction.
 
+Find and share your account address
+===================================
+
+#. Go to the **Accounts** page.
+
+#. On the account you want to find the address to tap |receive|.
+
+#. Share your address:
+
+    - You can let someone scan your QR code if they have the |mw-gen1| or |mw-gen2| installed.
+
+    - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+
 Change your passcode
 ====================
 
-#. Click on the Concordium logo and select **Wallet Settings**.
+#. Click |hamburger-bw| and select **Wallet Settings**.
 
 #. Click **Change passcode**.
 
 #. Enter and confirm your new passcode.
+
+.. _switch-network:
 
 Change network
 ==============
@@ -64,7 +74,7 @@ You may need to export your private key to import it to a site you are developin
 
 #. Click **Show private key**.
 
-#. When your private key is shown, copy it with the |copy| button.
+#. When your private key is shown, copy it with the |copy| button to get the key's value, or click the Export button to get a file compatible with other tools like Concordium Client.
 
 Light/dark mode toggle
 ======================
@@ -82,3 +92,10 @@ At the bottom of the Wallet settings page you can toggle between light and dark 
 .. |copy| image:: ../images/copy.png
              :alt: two documents
              :width: 40px
+
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines
+.. |receive| image:: ../images/browser-wallet/receive-ccd.png
+             :alt: button with qr code
+             :width: 50px

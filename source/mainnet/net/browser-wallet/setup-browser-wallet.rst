@@ -12,23 +12,33 @@ To learn more about identities and accounts, see :ref:`identities<reference-id-a
 
 Read the following guide to learn how to set up the wallet.
 
+.. _setup-bw:
+
 Get started
 ===========
 
 #. Download the |bw| extension. See :ref:`Downloads <downloads>`.
 
-#. Open a Google Chrome browser. Click **Extensions**. Select **Manage Extensions**.
+.. tabs::
 
-#. Turn on Developer mode. Click Load unpacked.
+   .. tab:: Chrome
 
-#. Add the extension from the folder to which it was downloaded (and maybe unzipped, only at the dist file folder). You can click Extensions and "pin" an icon to the toolbar for the browser wallet if you want, or set up a keyboard shortcut for it. Otherwise, click Extensions whenever you want to start the browser wallet.
+      #. Click **Add to Chrome** from the Chrome Web Store.
 
-#. Create a six-digit passcode or use a full password.
+      #. If prompted, click **Add extension**.
 
-#. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recovery-wallet>`.
+      #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
 
-   .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+      #. Create a six-digit passcode or use a full password.
+
+      #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+
+         .. image:: ../images/browser-wallet/wallet-choice.png
+                  :width: 25%
+
+   .. tab:: Safari
+
+      |bw| is not available yet for Safari.
 
 Recovery phrase setup
 =====================
@@ -49,13 +59,6 @@ Request your identity
 
 Having set up your passcode, you must then submit a request for an identity.
 
-#. If you don’t have any identities, click the ID cards drop-down.
-
-#. Click **Request new**.
-
-   .. image:: ../images/browser-wallet/id-cards-new.png
-            :width: 25%
-
 #. Select a third-party identity provider from the list. An external web page opens within the app.
 
 #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
@@ -65,8 +68,41 @@ Having set up your passcode, you must then submit a request for an identity.
 Create an account
 =================
 
-#. To switch to the accounts page, click the Concordium logo (screenshot) and select **Accounts**.
+#. To switch to the accounts page, click |hamburger-bw| and select **Accounts**.
 
 #. Click the Accounts drop-down. Then click **Add new**.
 
 #. Select the Identity to use for the account. Click **Add account**.
+
+Remove the |bw|
+===============
+
+Removing your wallet does not remove your data on the Concordium blockchain. 
+
+.. Warning::
+
+   Before proceeding, if you wish to continue to access your wallet and accounts, make sure you have your secret recovery phrase.
+
+.. tabs::
+
+   .. tab:: Chrome
+
+      #. Click |chrome-ext|. Click |chrome-options| to the right of **Concordium Wallet**.
+
+      #. Click **Remove from Chrome**.
+
+   .. tab:: Safari
+
+      |bw| is not available yet for Safari.
+
+.. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
+                    :width: 20px
+                    :alt: puzzle piece
+
+.. |chrome-options| image:: ../images/browser-wallet/chrome-options-icon.png
+                    :width: 20px
+                    :alt: three vertical dots
+
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines
