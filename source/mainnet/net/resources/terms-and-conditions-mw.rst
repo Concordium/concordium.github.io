@@ -1,8 +1,9 @@
+.. include:: ../../variables.rst
 .. _terms-and-conditions-mw:
 
-==========================================================
-Terms and Conditions for Concordium Mobile Wallet (Legacy)
-==========================================================
+=======================================================================================
+Terms and Conditions for |mw-gen1| (previously Concordium Mobile Wallet)
+=======================================================================================
 
 Effective from September XX, 2022
 

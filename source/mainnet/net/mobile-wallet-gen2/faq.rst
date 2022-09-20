@@ -7,11 +7,11 @@
 
 .. dropdown:: Why was the |mw-gen2| made?
 
-    The |mw-gen2| includes the introduction of a backup phrase, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the soon to be released |bw||.
+    The |mw-gen2| includes the introduction of a backup phrase, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the soon to be released |bw|.
 
 .. dropdown:: What are the features and benefits of the |mw-gen2|?
 
-    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, bake, delegate, and so on. But the |mw-gen2| uses a secret recovery phrase that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the soon to be released |bw||.
+    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, bake, delegate, and so on. But the |mw-gen2| uses a secret recovery phrase that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the soon to be released |bw|.
 
     In |mw-gen2| initial accounts are no longer created by the Identity Verification company when your identity is verified, ensuring complete privacy of all your accounts. Going forward you create all accounts yourself in your Concordium Wallet.
 
