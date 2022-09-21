@@ -5,7 +5,7 @@
 Terms and Conditions for |mw-gen2|
 =================================================
 
-Effective from September XX, 2022
+Effective from September 1, 2022
 
 Introduction
 ============

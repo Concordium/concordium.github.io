@@ -1,14 +1,15 @@
 .. include:: ../../variables.rst
 .. _terms-and-conditions-mw:
 
-=======================================================================================
+========================================================================
 Terms and Conditions for |mw-gen1| (previously Concordium Mobile Wallet)
-=======================================================================================
+========================================================================
 
-Effective from September XX, 2022
+Effective from September 2, 2022
 
 Introduction
 ============
+
 |mw-gen1| is a digital wallet that is offered by Concordium Software ApS (‘Concordium Software’). At `developer.concordium.software <https://developer.concordium.software>`_, you can read about how the app works. Concordium Software may continually change and/or adjust the functions of |mw-gen1|. Concordium Software’s terms and conditions apply to |mw-gen1| users.
 
 The wallet itself will register and use data about you. Concordium Software will not register or use data about you.
@@ -40,7 +41,6 @@ Registering as a |mw-gen1| user
 Before you can use |mw-gen1|, you will need to create a digital identity certificate and create an initial account with an identity provider by following the instructions in the app. An identity provider is a third-party supplier and independent of Concordium Software. The |mw-gen1| stores data in encrypted form from the identity provider, which Concordium Software does not have access to.
 
 After you have created your digital identity certificate and your initial account, you can create additional accounts (‘regular accounts’) with which you will be able to carry out transactions. Concordium Software may impose a limit to how many accounts you can create in a single |mw-gen1|.
-
 Please note that you can only register one account as the initial account.
 
 Activation code and personal password
@@ -111,7 +111,7 @@ Concordium Software retains all right, title, and interest in and to all of Conc
 Our notification of unauthorized use and security threats
 ---------------------------------------------------------
 
-We may issue information about general security threats through `concordium.software <https://developer.concordium.software>`_ and social media.
+We may issue information about general security threats through `developer.concordium.software <https://developer.concordium.software>`_ and social media.
 
 Concordium Software’s liability for damages
 ===========================================
