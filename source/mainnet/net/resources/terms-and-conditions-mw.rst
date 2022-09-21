@@ -5,7 +5,7 @@
 Terms and Conditions for |mw-gen1| (previously Concordium Mobile Wallet)
 ========================================================================
 
-Effective from September 21, 2022
+Effective from September 2, 2022
 
 Introduction
 ============
