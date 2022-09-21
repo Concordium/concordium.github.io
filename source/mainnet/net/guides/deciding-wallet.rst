@@ -17,12 +17,12 @@ No import of identities and accounts from one wallet to another
 
 Before you decide which wallet to use, it's important to know that you can’t import identities and accounts between the Mobile Wallet, the |bw|, and the Desktop Wallet. This is because they handle private keys in different ways as :ref:`described later<store-private-keys>` in this topic. It’s therefore essential that you choose between the wallets before you start creating identities and accounts.
 
-.. warning:: You can't exchange identities and accounts between the Mobile Wallet, the |bw|, and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+.. warning:: You can't exchange identities and accounts between the |mw-gen1|, the |bw|, and the Desktop Wallet. You can, however, send CCD from one wallet to another. You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
 
 Which wallet is best for you?
 =============================
 
-The wallets work on different environments: the Desktop Wallet on a computer, the Mobile Wallet on a phone, and the Browser Wallet from any device with an internet browser. The Mobile Wallet is more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.
+The wallets work on different environments: the Desktop Wallet on a computer, the Mobile Wallet on a phone, and the |bw| from any device with an internet browser. The Mobile Wallet is more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.
 
 - Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`Ledger<install-Ledger-app>` hardware device, or want to create multi-signature transactions. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the Ledger hardware device.
 
@@ -64,7 +64,7 @@ What are the requirements for each wallet?
 
 - Mobile Wallet: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- |bw|: you'll need a device running a Google Chrome internet browser with the Concordium Browser Wallet extension installed.
+- |bw|: you'll need a device running a Google Chrome internet browser with the |bw| extension installed.
 
 - Desktop Wallet: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to connect to a node. You can use the default Virtual Hive node (concordiumwalletnode.com), get a third-party to run a node for you, or run a node yourself. If you run a node yourself, your computer must meet the hardware requirements for this.
 
@@ -118,4 +118,4 @@ Next steps
 
 - If you want to learn more about the Ledger device, go to `Ledger's website <https://www.ledger.com>`_.
 
-- If you want to use the |bw|, :ref:`download <downloads>` the Google Chrome extension, and then see :ref:`Set up the Browser Wallet<setup-browser-wallet>` for the next steps.
+- If you want to use the |bw|, :ref:`download <downloads>` the Google Chrome extension, and then see :ref:`Set up the Concordium Wallet for Chrome<setup-browser-wallet>` for the next steps.

@@ -97,7 +97,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    .. tab:: |bw|
 
-      You can submit requests for additional :ref:`identities<glossary-identity>` in the Browser Wallet. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it.
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
+
+      .. image:: ../images/browser-wallet/id-page-no-id.png
+         :width: 25%
 
       #. Click the ID cards drop-down.
 
@@ -106,7 +109,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
          .. image:: ../images/browser-wallet/id-cards-new.png
                   :width: 25%
 
-      #. Select a third-party identity provider from the list. An external web page opens within the app.
+      #. Select a third-party identity provider from the list. An external web page opens in your default web browser.
 
       #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 

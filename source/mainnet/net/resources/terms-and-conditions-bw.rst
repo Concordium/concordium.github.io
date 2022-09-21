@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _terms-and-conditions-bw:
 
 ==================================================
