@@ -20,7 +20,7 @@ If you need to share your account address with someone, you can find the address
          .. image:: ../images/mobile-wallet/MW54.png
             :width: 25%
 
-         - You can let someone scan your QR code if they have the Concordium Mobile Wallet installed.
+         - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
 
          - You can tap **SHARE** and then share the address using one of the share options.
 
@@ -42,7 +42,7 @@ If you need to share your account address with someone, you can find the address
          .. image:: ../images/mobile-wallet/MW54.png
             :width: 25%
 
-         - You can let someone scan your QR code if they have the Concordium Mobile Wallet installed.
+         - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
 
          - You can tap **SHARE** and then share the address using one of the share options.
 

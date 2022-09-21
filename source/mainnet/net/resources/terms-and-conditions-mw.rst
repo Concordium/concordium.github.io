@@ -9,7 +9,7 @@ Effective from September XX, 2022
 
 Introduction
 ============
-Concordium Mobile Wallet is a digital wallet that is offered by Concordium Software ApS (‘Concordium Software’). At `developer.concordium.software <https://developer.concordium.software>`_, you can read about how the app works. Concordium Software may continually change and/or adjust the functions of Concordium Mobile Wallet. Concordium Software’s terms and conditions apply to Concordium Mobile Wallet users.
+|mw-gen1| is a digital wallet that is offered by Concordium Software ApS (‘Concordium Software’). At `developer.concordium.software <https://developer.concordium.software>`_, you can read about how the app works. Concordium Software may continually change and/or adjust the functions of |mw-gen1|. Concordium Software’s terms and conditions apply to |mw-gen1| users.
 
 The wallet itself will register and use data about you. Concordium Software will not register or use data about you.
 
@@ -19,14 +19,14 @@ Terms and conditions for all services and functions
 Parties to the agreement
 ------------------------
 
-When you register with Concordium Mobile Wallet, you enter into an agreement with:
+When you register with |mw-gen1|, you enter into an agreement with:
 
 Concordium Software ApS, Amaliegade 4, 1256 København K, Denmark. CVR no.: 42334758. Our email address is contact@concordium.software.
 
-What you need in order to register with Concordium Mobile Wallet
+What you need in order to register with |mw-gen1|
 ================================================================
 
-The following is required to register with Concordium Mobile Wallet:
+The following is required to register with |mw-gen1|:
 
 - Have a mobile device (e.g., smartphone or tablet). You can see which operating systems can be used at `developer.concordium.software <https://developer.concordium.software>`_.
 
@@ -34,79 +34,79 @@ The following is required to register with Concordium Mobile Wallet:
 
 You must be at least 18 years old to register.
 
-Registering as a Concordium Mobile Wallet user
+Registering as a |mw-gen1| user
 ==============================================
 
-Before you can use Concordium Mobile Wallet, you will need to create a digital identity certificate and create an initial account with an identity provider by following the instructions in the app. An identity provider is a third-party supplier and independent of Concordium Software. The Concordium Mobile Wallet stores data in encrypted form from the identity provider, which Concordium Software does not have access to.
+Before you can use |mw-gen1|, you will need to create a digital identity certificate and create an initial account with an identity provider by following the instructions in the app. An identity provider is a third-party supplier and independent of Concordium Software. The |mw-gen1| stores data in encrypted form from the identity provider, which Concordium Software does not have access to.
 
-After you have created your digital identity certificate and your initial account, you can create additional accounts (‘regular accounts’) with which you will be able to carry out transactions. Concordium Software may impose a limit to how many accounts you can create in a single Concordium Mobile Wallet.
+After you have created your digital identity certificate and your initial account, you can create additional accounts (‘regular accounts’) with which you will be able to carry out transactions. Concordium Software may impose a limit to how many accounts you can create in a single |mw-gen1|.
 
 Please note that you can only register one account as the initial account.
 
 Activation code and personal password
 =====================================
 
-When you register in Concordium Mobile Wallet, you will need to create a personal passcode. If your mobile device supports it, you can subsequently activate your fingerprint or use facial recognition instead of the 6-digit password. You should be aware that all fingerprints/facial recognitions linked to your mobile device can be used to log on to Concordium Mobile Wallet and use the functions. You are therefore obliged to ensure that you have only activated your own fingerprints and your own facial recognition if you want to use them instead of the 6-digit password for access to Concordium Mobile Wallet. Concordium Mobile Wallet does not store your fingerprints or facial recognition.
+When you register in |mw-gen1|, you will need to create a personal passcode. If your mobile device supports it, you can subsequently activate your fingerprint or use facial recognition instead of the 6-digit password. You should be aware that all fingerprints/facial recognitions linked to your mobile device can be used to log on to |mw-gen1| and use the functions. You are therefore obliged to ensure that you have only activated your own fingerprints and your own facial recognition if you want to use them instead of the 6-digit password for access to |mw-gen1|. |mw-gen1| does not store your fingerprints or facial recognition.
 
 Other obligations etc.
 ======================
 
-You have a duty to ensure that the details you provide are correct and updated at any given time. Your Concordium Mobile Wallet is personal and may be used only by you. You must not disclose your passwords to others, write them down, or save them on your mobile device.
+You have a duty to ensure that the details you provide are correct and updated at any given time. Your |mw-gen1| is personal and may be used only by you. You must not disclose your passwords to others, write them down, or save them on your mobile device.
 
-Concordium Mobile Wallet must not be used for illegal activities or purposes.
+|mw-gen1| must not be used for illegal activities or purposes.
 
-You must not use Concordium Mobile Wallet in a way that harasses other Concordium blockchain users.
+You must not use |mw-gen1| in a way that harasses other Concordium blockchain users.
 
-All transaction requests are irreversible. You are yourself responsible for ensuring that the recipient of a transaction via Concordium Mobile Wallet is the intended recipient, and you must verify that the transaction amount is correct. You are responsible for providing the correct account to persons and users who want to transfer funds to you.
+All transaction requests are irreversible. You are yourself responsible for ensuring that the recipient of a transaction via |mw-gen1| is the intended recipient, and you must verify that the transaction amount is correct. You are responsible for providing the correct account to persons and users who want to transfer funds to you.
 
-To prevent unauthorized use of Concordium Mobile Wallet, you must store your mobile device so that others cannot gain unauthorized access to it. If possible, you should lock your device with a password or keypad lock. Do not disclose the password to third parties.
+To prevent unauthorized use of |mw-gen1|, you must store your mobile device so that others cannot gain unauthorized access to it. If possible, you should lock your device with a password or keypad lock. Do not disclose the password to third parties.
 
 You are obliged to verify your identity with an identity provider. The identity provider will know the identity of the initial account creator. Your identity can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order.
 
-You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, and any other codes you use to access the Concordium Mobile Wallet or any information, CCD, or voucher. If you lose access to the Concordium Mobile Wallet, private keys, or identity, and you have not separately stored a backup of your accounts and the corresponding password(s), you acknowledge and agree that any tokens you have associated with that account will become inaccessible.
+You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, and any other codes you use to access the |mw-gen1| or any information, CCD, or voucher. If you lose access to the |mw-gen1|, private keys, or identity, and you have not separately stored a backup of your accounts and the corresponding password(s), you acknowledge and agree that any tokens you have associated with that account will become inaccessible.
 
-Please note: If you have chosen to use assistants based on speech recognition (e.g., Siri) or patterns of use, this means that information about your use of Concordium Mobile Wallet, including recipients, amounts, and messages, is sent to the provider of the assistant. Your own use of any assistant determines what information is sent. Concordium Mobile Wallet does not send any information.
+Please note: If you have chosen to use assistants based on speech recognition (e.g., Siri) or patterns of use, this means that information about your use of |mw-gen1|, including recipients, amounts, and messages, is sent to the provider of the assistant. Your own use of any assistant determines what information is sent. |mw-gen1| does not send any information.
 
 Baking and Delegation
 =====================
 
-Node runners are awarded CCD for running nodes on the Concordium blockchain through a process called baking. Other CCD holders can be rewarded for supporting this process through delegation. The Concordium Mobile Wallet supports management of baking and delegation. Each account can only have one baking or delegation process active at any given time.
+Node runners are awarded CCD for running nodes on the Concordium blockchain through a process called baking. Other CCD holders can be rewarded for supporting this process through delegation. The |mw-gen1| supports management of baking and delegation. Each account can only have one baking or delegation process active at any given time.
 
-While engaged in baking or delegation, the allocated CCD will remain in the account in a locked form. Termination of baking and delegation activates a cool-down period, where baking and delegation is still active, however, the CCDs will not be available in the wallet until the cool-down period is over. Read more about baking and delegation on developer.concordium.software.
+While engaged in baking or delegation, the allocated CCD will remain in the account in a locked form. Termination of baking and delegation activates a cool-down period, where baking and delegation is still active, however, the CCDs will not be available in the wallet until the cool-down period is over. Read more about baking and delegation on `developer.concordium.software <https://developer.concordium.software>`_.
 
 When activating, managing and terminating baking and delegation blockchain transaction fees apply. You should always ensure you have sufficient CCD in your available balance to cover these fees.
 
-When activating baking and delegation from the Concordium Mobile Wallet you acknowledge and understand how these features work and that historic performance is not a guarantee for future performance.
+When activating baking and delegation from the |mw-gen1| you acknowledge and understand how these features work and that historic performance is not a guarantee for future performance.
 
 Concordium Software does not assume any responsibility for the amount of rewards generated from baking and delegation.
 
 Term
 ====
 
-This agreement will apply between you and Concordium Software from your download of the Concordium Mobile Wallet, and until you have completely removed the Concordium Mobile Wallet in its entirety from your device.
+This agreement will apply between you and Concordium Software from your download of the |mw-gen1|, and until you have completely removed the |mw-gen1| in its entirety from your device.
 
 The section *Concordium Software’s liability for damages* shall apply indefinitely.
 
 Fees and charges
 ================
 
-Concordium Software currently does not charge any fee for registration with Concordium Mobile Wallet. Concordium Mobile Wallet does not charge a transaction fee; however, you have to pay a transaction fee for transactions on the blockchain.
+Concordium Software currently does not charge any fee for registration with |mw-gen1|. |mw-gen1| does not charge a transaction fee; however, you have to pay a transaction fee for transactions on the blockchain.
 
-Any other costs and charges related to your use of the Concordium Mobile Wallet shall be paid by you, including but not limited to costs to the identity provider, if any.
+Any other costs and charges related to your use of the |mw-gen1| shall be paid by you, including but not limited to costs to the identity provider, if any.
 
 If we introduce new functions, features, products, or services, these may be subject to fees from the start without you receiving any notice of changed terms and conditions. You will always be informed about the fee before you register for the function, feature, product, or service.
 
 Changes
 =======
 
-You will be notified on concordium.software if we change the terms and conditions. We may change the terms and conditions without notice. You can read the terms and conditions at `developer.concordium.software <https://developer.concordium.software>`_, from which you can also print, download, or email them.
+You will be notified on `developer.concordium.software <https://developer.concordium.software>`_ if we change the terms and conditions. We may change the terms and conditions without notice. You can read the terms and conditions at `developer.concordium.software <https://developer.concordium.software>`_, from which you can also print, download, or email them.
 
-If you do not wish to be covered by the new terms and conditions, you must notify us before the new terms and conditions enter into force. If you notify us that you do not wish to be covered by the new terms and conditions, we will consider the Concordium Mobile Wallet agreement to be terminated from the date on which the new terms and conditions enter into force. If we do not hear from you, we will regard it as your acceptance of the changes.
+If you do not wish to be covered by the new terms and conditions, you must notify us before the new terms and conditions enter into force. If you notify us that you do not wish to be covered by the new terms and conditions, we will consider the |mw-gen1| agreement to be terminated from the date on which the new terms and conditions enter into force. If we do not hear from you, we will regard it as your acceptance of the changes.
 
 Intellectual property rights and license
 ========================================
 
-Concordium Software retains all right, title, and interest in and to all of Concordium Software’s brands, logos, and trademarks, including, but not limited to, Concordium Mobile Wallet, Concordium Desktop Wallet, Concordium Browser Wallet, Concordium Client, and variations of the wording of the said brands, logos, and trademarks.
+Concordium Software retains all right, title, and interest in and to all of Concordium Software’s brands, logos, and trademarks, including, but not limited to, Concordium Mobile Wallet, |mw-gen1|, |mw-gen2|, Concordium Desktop Wallet, |bw|, Concordium Client, and variations of the wording of the said brands, logos, and trademarks.
 
 Our notification of unauthorized use and security threats
 ---------------------------------------------------------
@@ -116,7 +116,7 @@ We may issue information about general security threats through `concordium.soft
 Concordium Software’s liability for damages
 ===========================================
 
-Concordium Software is not liable for damages for late or defective performance of the Concordium Mobile Wallet and/or our contractual obligations resulting from error or negligence.
+Concordium Software is not liable for damages for late or defective performance of the |mw-gen1| and/or our contractual obligations resulting from error or negligence.
 
 Even in areas in which stricter liability applies, Concordium Software is not liable for losses arising from
 
@@ -130,14 +130,14 @@ Even in areas in which stricter liability applies, Concordium Software is not li
 
 -  Other circumstances beyond or within the control of Concordium Software.
 
-Please be advised that Concordium Software is not liable for any defects or deficiencies in the goods or services for which you pay using Concordium Mobile Wallet, Concordium Software accepts no liability for the fundraising campaigns to which you make contributions using Concordium Mobile Wallet. If you have any complaints regarding the delivered goods, services, or fundraising campaigns, you must contact the seller and/or the fundraiser.
+Please be advised that Concordium Software is not liable for any defects or deficiencies in the goods or services for which you pay using |mw-gen1|, Concordium Software accepts no liability for the fundraising campaigns to which you make contributions using |mw-gen1|. If you have any complaints regarding the delivered goods, services, or fundraising campaigns, you must contact the seller and/or the fundraiser.
 
 Concordium Software does not undertake any liability for the conduct of the seller/fundraiser in general.
 
 Privacy
 =======
 
-Concordium Software respects your privacy to the effect that Concordium Software will not monitor, edit, or disclose any personal information about you or your account, including its contents or your use of the Concordium Mobile Wallet, without your prior consent unless Concordium Software in good faith beliefs that such action is necessary to: (i) comply with legal process or other legal requirements of any governmental authority; (ii) protect and defend the rights or property of Concordium Software; (iii) enforce this Agreement; (iv) protect the interests of users of the Concordium Mobile Wallet other than you or any other person; (v) operate or conduct maintenance and repair of Concordium’s services or equipment, including the Concordium Mobile Wallet as authorized by law; or (vi) if your identity is revoked in accordance with the identity revocation process as required to comply with (i). You are assumed to have no expectation of privacy with respect to the Internet generally. Your IP address is transmitted and recorded with each message or other information you send from the Concordium Mobile Wallet. When you create an identity with a third party supplier, you have entered an agreement directly with such a third party supplier and such a third party supplier will store data about you and in this case, the third party supplier’s privacy policy and terms and conditions apply.
+Concordium Software respects your privacy to the effect that Concordium Software will not monitor, edit, or disclose any personal information about you or your account, including its contents or your use of the |mw-gen1|, without your prior consent unless Concordium Software in good faith beliefs that such action is necessary to: (i) comply with legal process or other legal requirements of any governmental authority; (ii) protect and defend the rights or property of Concordium Software; (iii) enforce this Agreement; (iv) protect the interests of users of the |mw-gen1| other than you or any other person; (v) operate or conduct maintenance and repair of Concordium’s services or equipment, including the |mw-gen1| as authorized by law; or (vi) if your identity is revoked in accordance with the identity revocation process as required to comply with (i). You are assumed to have no expectation of privacy with respect to the Internet generally. Your IP address is transmitted and recorded with each message or other information you send from the |mw-gen1|. When you create an identity with a third party supplier, you have entered an agreement directly with such a third party supplier and such a third party supplier will store data about you and in this case, the third party supplier’s privacy policy and terms and conditions apply.
 
 Data retention and deletion
 ===========================
@@ -159,9 +159,9 @@ New copy of these terms and conditions
 
 You can always find the latest version on `developer.concordium.software <https://developer.concordium.software>`_.
 
-You can contact Concordium Mobile Wallet support via support@concordium.software.
+You can contact |mw-gen1| support via support@concordium.software.
 
 Acceptance
 ==========
 
-The first time you open the Concordium Mobile Wallet, you’ll be asked to click "Yes, I Accept" to confirm that you agree to these terms and conditions.
+The first time you open the |mw-gen1|, you’ll be asked to click "Yes, I Accept" to confirm that you agree to these terms and conditions.

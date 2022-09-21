@@ -64,7 +64,7 @@ Upgrade
 Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the appropriate release notes:
 
 - :ref:`Mainnet release notes<mainnet-release-notes>`
-- `Testnet release notes <testnet-release-notes>`
+- :ref:`Testnet release notes <testnet-release-notes>`
 
 Backup
 ------

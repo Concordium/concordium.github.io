@@ -45,6 +45,8 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
             .. tab:: Recover accounts without a backup file
 
+                .. _account-recovery:
+
                 If, for some reason, you've lost one or more of your accounts in the Desktop Wallet, and you've also lost the backup file, you can use the Ledger device to recover those accounts.
 
                 You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.

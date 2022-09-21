@@ -2,7 +2,7 @@
 .. _terms-and-conditions-mw-gen2:
 
 =================================================
-Terms and Conditions for |mw-gen2||
+Terms and Conditions for |mw-gen2|
 =================================================
 
 Effective from September XX, 2022
@@ -45,7 +45,7 @@ After you have created your digital identity certificate and your first account,
 Activation code and personal password
 =====================================
 
-When you register in |mw-gen2|, you will need to create a personal passcode. If your mobile device supports it, you can subsequently activate your fingerprint or use facial recognition instead of the 6-digit password. You should be aware that all fingerprints/facial recognitions linked to your mobile device can be used to log on to |mw-gen2| and use the functions. You are therefore obliged to ensure that you have only activated your own fingerprints and your own facial recognition if you want to use them instead of the 6-digit password for access to Concordium Mobile Wallet. |mw-gen2| does not store your fingerprints or facial recognition.
+When you register in |mw-gen2|, you will need to create a personal passcode. If your mobile device supports it, you can subsequently activate your fingerprint or use facial recognition instead of the 6-digit password. You should be aware that all fingerprints/facial recognitions linked to your mobile device can be used to log on to |mw-gen2| and use the functions. You are therefore obliged to ensure that you have only activated your own fingerprints and your own facial recognition if you want to use them instead of the 6-digit password for access to |mw-gen2|. |mw-gen2| does not store your fingerprints or facial recognition.
 
 Other obligations etc.
 ======================
@@ -56,13 +56,13 @@ You have a duty to ensure that the details you provide are correct and updated a
 
 You must not use |mw-gen2| in a way that harasses other Concordium blockchain users.
 
-All transaction requests are irreversible. You are yourself responsible for ensuring that the recipient of a transaction via Concordium Mobile Wallet is the intended recipient, and you must verify that the transaction amount is correct. You are responsible for providing the correct account to persons and users who want to transfer funds to you.
+All transaction requests are irreversible. You are yourself responsible for ensuring that the recipient of a transaction via |mw-gen2| is the intended recipient, and you must verify that the transaction amount is correct. You are responsible for providing the correct account to persons and users who want to transfer funds to you.
 
 To prevent unauthorized use of |mw-gen2|, you must store your mobile device so that others cannot gain unauthorized access to it. If possible, you should lock your device with a password or keypad lock. Do not disclose the password to third parties.
 
 You are obliged to verify your identity with an identity provider. Your identity can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order.
 
-You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, and any other codes you use to access the |mw-gen2| or any information, CCD, or voucher. If you lose access to the Concordium Mobile Wallet, private keys, or identity, and you have not separately stored a backup of your accounts and the corresponding password(s), or your personal recovery phrase, you acknowledge and agree that any coins or tokens you have associated with that account will become inaccessible.
+You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, and any other codes you use to access the |mw-gen2| or any information, CCD, or voucher. If you lose access to the |mw-gen2|, private keys, or identity, and you have not separately stored a backup of your accounts and the corresponding password(s), or your personal recovery phrase, you acknowledge and agree that any coins or tokens you have associated with that account will become inaccessible.
 
 Please note: If you have chosen to use assistants based on speech recognition (e.g., Siri) or patterns of use, this means that information about your use of |mw-gen2|, including recipients, amounts, and messages, is sent to the provider of the assistant. Your own use of any assistant determines what information is sent. |mw-gen2| does not send any information.
 
@@ -100,12 +100,12 @@ Changes
 
 You will be notified on `developer.concordium.software <https://developer.concordium.software>`_ if we change the terms and conditions. We may change the terms and conditions without notice. You can read the terms and conditions at `developer.concordium.software <https://developer.concordium.software>`_, from which you can also print, download, or email them.
 
-If you do not wish to be covered by the new terms and conditions, you must notify us before the new terms and conditions enter into force. If you notify us that you do not wish to be covered by the new terms and conditions, we will consider the Concordium Mobile Wallet agreement to be terminated from the date on which the new terms and conditions enter into force. If we do not hear from you, we will regard it as your acceptance of the changes.
+If you do not wish to be covered by the new terms and conditions, you must notify us before the new terms and conditions enter into force. If you notify us that you do not wish to be covered by the new terms and conditions, we will consider the |mw-gen2| agreement to be terminated from the date on which the new terms and conditions enter into force. If we do not hear from you, we will regard it as your acceptance of the changes.
 
 Intellectual property rights and license
 ========================================
 
-Concordium Software retains all right, title, and interest in and to all of Concordium Software’s brands, logos, and trademarks, including, but not limited to, Concordium Mobile Wallet, Concordium Desktop Wallet, Concordium Browser Wallet, Concordium Client, and variations of the wording of the said brands, logos, and trademarks.
+Concordium Software retains all right, title, and interest in and to all of Concordium Software’s brands, logos, and trademarks, including, but not limited to, Concordium Mobile Wallet, |mw-gen1|, |mw-gen2|, Concordium Desktop Wallet, |bw|, Concordium Client, and variations of the wording of the said brands, logos, and trademarks.
 
 Our notification of unauthorized use and security threats
 ---------------------------------------------------------
@@ -132,7 +132,7 @@ Concordium Software does not undertake any liability for the conduct of the sell
 Privacy
 =======
 
-Concordium Software respects your privacy to the effect that Concordium Software will not monitor, edit, or disclose any personal information about you or your account, including its contents or your use of the Concordium Mobile Wallet, without your prior consent unless Concordium Software in good faith beliefs that such action is necessary to: (i) comply with legal process or other legal requirements of any governmental authority; (ii) protect and defend the rights or property of Concordium Software; (iii) enforce this Agreement; (iv) protect the interests of users of the Concordium Mobile Wallet other than you or any other person; (v) operate or conduct maintenance and repair of Concordium’s services or equipment, including the Concordium Mobile Wallet as authorized by law; or (vi) if your identity is revoked in accordance with the identity revocation process as required to comply with (i). You are assumed to have no expectation of privacy with respect to the Internet generally. Your IP address is transmitted and recorded with each message or other information you send from the Concordium Mobile Wallet. When you create an identity with a third party supplier, you have entered an agreement directly with such a third party supplier and such a third party supplier will store data about you and in this case, the third party supplier’s privacy policy and terms and conditions apply.
+Concordium Software respects your privacy to the effect that Concordium Software will not monitor, edit, or disclose any personal information about you or your account, including its contents or your use of the |mw-gen2|, without your prior consent unless Concordium Software in good faith beliefs that such action is necessary to: (i) comply with legal process or other legal requirements of any governmental authority; (ii) protect and defend the rights or property of Concordium Software; (iii) enforce this Agreement; (iv) protect the interests of users of the |mw-gen2| other than you or any other person; (v) operate or conduct maintenance and repair of Concordium’s services or equipment, including the |mw-gen2| as authorized by law; or (vi) if your identity is revoked in accordance with the identity revocation process as required to comply with (i). You are assumed to have no expectation of privacy with respect to the Internet generally. Your IP address is transmitted and recorded with each message or other information you send from the |mw-gen2|. When you create an identity with a third party supplier, you have entered an agreement directly with such a third party supplier and such a third party supplier will store data about you and in this case, the third party supplier’s privacy policy and terms and conditions apply.
 
 Data retention and deletion
 ===========================
@@ -154,7 +154,7 @@ New copy of these terms and conditions
 
 You can always find the latest version on `developer.concordium.software <https://developer.concordium.software>`_.
 
-You can contact Concordium Mobile Wallet support via support@concordium.software.
+You can contact |mw-gen2| support via support@concordium.software.
 
 Acceptance
 ==========

@@ -18,7 +18,7 @@ If you want to change your passcode or enable/disable your biometrics, you can d
 
       #. Select **Update Passcode & Biometrics**.
 
-         .. image:: ../images/mobile-wallet/MW58.png
+         .. image:: ../images/mobile-wallet-gen2/more-options.jpg
             :width: 25%
 
       #. Tap **Continue**.

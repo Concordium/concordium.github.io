@@ -38,7 +38,7 @@ You are in control of which attributes are revealed to the public. You can choos
 Obtain an identity
 ------------------
 
-You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, |mw-gen1|, or |mw-gen2|. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
+You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, |mw-gen1|, or |mw-gen2|. Identity creation is an :ref:`off chain<glossary-off-chain>` action. If you are creating your first identity on a mobile device, Concordium strongly recommends using |mw-gen2|.
 
 .. Warning::
    It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.

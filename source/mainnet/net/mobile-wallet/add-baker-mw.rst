@@ -66,11 +66,11 @@ Add baker in Mobile Wallet
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
-             :width: 20px
+             :width: 50px
 
         .. |earn-w-text| image:: ../images/earn-w-text.png
              :alt: Hand receiving money with text earn
-             :width: 20px
+             :width: 50px
 
     .. tab:: |mw-gen1|
 
