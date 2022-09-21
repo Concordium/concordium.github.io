@@ -5,7 +5,7 @@
 Terms and Conditions for Concordium Wallet for Mobile
 =====================================================
 
-Effective from September 2, 2022
+Effective from September 1, 2022
 
 Introduction
 ============
