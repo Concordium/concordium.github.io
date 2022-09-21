@@ -30,7 +30,7 @@ In case you get a new device or need to restore your existing device, you can re
 
 .. Note::
 
-    When you recover your wallet, any account names that you might have edited will be reset to the account number. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
+    When you recover your wallet, any account names that you might have edited will be reset to the account number. You can edit the account name, if desired.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
