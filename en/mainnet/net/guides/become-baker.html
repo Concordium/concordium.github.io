@@ -1352,8 +1352,13 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-mw-gen2.html">
+       Terms and Conditions for Concordium Wallet for Android
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../resources/terms-and-conditions-mw.html">
-       Terms and Conditions for Concordium Mobile Wallet
+       Terms and Conditions for Concordium Legacy Wallet (previously Concordium Mobile Wallet)
       </a>
      </li>
      <li class="toctree-l2">
@@ -1536,7 +1541,7 @@ transaction signing keys and the encrypted transfers key.</p>
 </div>
 <p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">&lt;keys</span> <span class="pre">file&gt;</span></code>. To register the keys in the network you need to be <a class="reference internal" href="run-node.html#running-a-node"><span class="std std-ref">running a node</span></a>
 and send a <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --open-delegation-for all --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/baker-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --open-delegation-for all --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --baker-url https://example.com/baker --out &lt;concordium-data-dir&gt;/baker-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
@@ -1569,8 +1574,7 @@ and send a <code class="docutils literal notranslate"><span class="pre">baker</s
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--open-delegation-for</span></code> sets whether the baker’s pool is open for delegators. Options are: <code class="docutils literal notranslate"><span class="pre">none</span></code> (no delegators will be allowed), <code class="docutils literal notranslate"><span class="pre">all</span></code> (any account can delegate), <code class="docutils literal notranslate"><span class="pre">existing</span></code> (only existing delegators can delegate).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--baker-url</span></code> is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--keys-in</span></code> specifies the name of the file containing the baker keys.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--keys-out</span></code> can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--out</span></code> can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-transaction-fee-commission</span></code> specifies the transaction fee commission for the baker pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-baking-commission</span></code> specifies the baking commission for the baker pool.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-finalization-commission</span></code> specifies the finalization commission for the baker pool.</p></li>
