@@ -5,7 +5,7 @@
 Terms and Conditions for Concordium Wallet for Mobile
 =====================================================
 
-Effective from September 2, 2022
+Effective from September 1, 2022
 
 Introduction
 ============
@@ -24,7 +24,7 @@ When you register with Concordium Wallet for Mobile, you enter into an agreement
 Concordium Software ApS, Amaliegade 4, 1256 København K, Denmark. CVR no.: 42334758. Our email address is contact@concordium.software.
 
 What you need in order to register with Concordium Wallet for Mobile
-================================================================
+====================================================================
 
 The following is required to register with Concordium Wallet for Mobile:
 
@@ -34,7 +34,7 @@ The following is required to register with Concordium Wallet for Mobile:
 You must be at least 18 years old to register.
 
 Registering as a Concordium Wallet for Mobile user
-==============================================
+==================================================
 
 When you register in Concordium Wallet for Mobile, you will generate private keys and you will receive a unique 24-word recovery phrase that must be stored in a safe place. The recovery phrase is the “master key” for all of your accounts – it is your private keys in mnemonic form. These words, when entered into another Concordium Wallet (not including the Cordordium Desktop Wallet) in the correct order, will recover all of the private keys of accounts in your original wallet. The recovery phrase is used as your personal backup of your private keys. If you lose the private keys and the recovery phrase, you will lose access to any funds in the account(s) permanently.
 
