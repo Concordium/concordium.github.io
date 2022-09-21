@@ -4,18 +4,6 @@
 Setting up the front-end
 ========================
 
-.. note::
-
-    Before you start with part 3 of this tutorial, make sure you have:
-
-    - access to the `Chrome <https://www.google.com/chrome/>`_ web browser on your laptop or computer
-
-    - `node.js <https://nodejs.org/en/download/>`_ and `yarn <https://yarnpkg.com/getting-started/install>`_ installed
-
-``Node.js`` is a JavaScript runtime environment and ``yarn`` is a package manager
-used in combination with ``node.js``. You can download `node.js <https://nodejs.org/en/download/>`_  and
-`yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
-
 Non-tech users might find it inconvenient to interact via the Concordium node with smart contracts
 and some users may choose not to host their own Concordium node in the future.
 
@@ -26,6 +14,20 @@ for people using your front-end. Providing comprehensive explanations and step-b
 related to the browser wallet is important for a good user experience. The browser wallet
 connects via ``HTTPS`` to a server that is connected to a Concordium node. This setup alleviates the
 need for the user to host their own Concordium node.
+
+.. note::
+
+    Before you start with part 3 of this tutorial, make sure you have:
+
+    - access to the `Chrome <https://www.google.com/chrome/>`_ web browser on your laptop or computer
+
+    - `git <https://git-scm.com/>`_ installed to be able to clone a repository from `GitHub <https://github.com/>`_
+
+    - `node.js <https://nodejs.org/en/download/>`_ and `yarn <https://yarnpkg.com/getting-started/install>`_ installed
+
+    ``Node.js`` is a JavaScript runtime environment and ``yarn`` is a package manager
+    used in combination with ``node.js``. You can download `node.js <https://nodejs.org/en/download/>`_  and
+    `yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
 
 Concordium browser wallet
 -------------------------
@@ -42,7 +44,7 @@ to a ``JSON-RPC`` request that the Concordium node can execute. The signed trans
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
-.. note ::
+.. warning ::
 
     The Concordium browser wallet is in active development. A pre-MVP
     (minimum viable product) version is currently available to be built from the source code.
@@ -55,13 +57,19 @@ to their own hosted Concordium node. Workflow 2 is easier.
 The ``JSON-RPC wallet proxy`` is hosted by Concordium in workflow 2 which will take care of the
 Concordium node on your behalf.
 
-.. dropdown:: Workflow 1 (click here)
+.. dropdown:: Workflow 1 - Setup browser wallet connected to local node (click here)
 
     Before you start this workflow, make sure you have:
 
     - a running Concordium testnet node
 
     - have port forwarding enabled with the following command (this step is only required when you run your node on a remote server instead of locally):
+
+    .. note::
+
+        When your node is running on a remote server your cloud provider usually gives you an option to ssh into it.
+        Add the following port forwarding rule to your method to ssh into your instance by running the command in another terminal.
+        The port 10001 on your localhost is forwarded to the port 10001 on your instance.
 
     .. code-block:: console
 
@@ -76,7 +84,7 @@ Concordium node on your behalf.
 
     .. code-block:: console
 
-        $git clone git@github.com:Concordium/concordium-json-rpc.git
+        $git clone https://github.com/Concordium/concordium-json-rpc.git
 
     Build and run the server as described in the README file of the
     `JSON-RPC repo <https://github.com/Concordium/concordium-json-rpc>`_.
@@ -93,7 +101,7 @@ Concordium node on your behalf.
 
     .. code-block:: console
 
-        $git clone git@github.com:Concordium/concordium-browser-wallet.git
+        $git clone https://github.com/Concordium/concordium-browser-wallet.git
 
     You can build the browser wallet extension and load it
     (``dist`` folder from the path `root/packages/browser-wallet`) into the
@@ -190,7 +198,7 @@ Concordium node on your behalf.
     .. image:: ./images/wCCD_tutorial_14.png
         :width: 40 %
 
-.. dropdown:: Workflow 2 (click here)
+.. dropdown:: Workflow 2 - Setup browser wallet connected to hosted node (click here)
 
     You are ready now to build the pre-MVP browser wallet from the source code.
 
@@ -198,7 +206,7 @@ Concordium node on your behalf.
 
     .. code-block:: console
 
-        $git clone git@github.com:Concordium/concordium-browser-wallet.git
+        $git clone https://github.com/Concordium/concordium-browser-wallet.git
 
     .. note::
 
@@ -301,7 +309,7 @@ Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>
 
 .. code-block:: console
 
-    $git clone git@github.com:Concordium/concordium-browser-wallet.git
+    $git clone https://github.com/Concordium/concordium-browser-wallet.git
 
 Build and run the front-end as described in the README file of the
 `wCCD front-end demo <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/wCCD>`_.
