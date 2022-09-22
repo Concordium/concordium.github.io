@@ -8,7 +8,7 @@ For delegators
 
 .. dropdown:: Do I risk losing my CCDs when delegating?
 
-    When you delegate, the CCDs do not leave your wallet. They are locked there, so you can not spend them, and their value is added to the value of the baker pool or to passive delegation. But the CCDs never leave your wallet, so they can never be lost. There is no more risk delegating than not delegating. The worst thing that can happen is that the baker pool stops baking but stays open, and then you will not get any rewards. If the pool closes, your stake will be transferred to passive delegation automatically. It is important to use `CCDScan <https://ccdscan.io>`_ to monitor baker and pool performance.
+    When you delegate, the CCDs do not leave your wallet. They are locked there, so you can not spend them, and their value is added to the value of the baker pool or to passive delegation. But the CCDs never leave your wallet, so they can never be lost. There is no more risk delegating than not delegating. The worst thing that can happen is that the baker pool stops baking but stays open, and then you will not get any rewards. If the pool closes, your stake will be transferred to passive delegation automatically. It is important to use `CCDScan`_ to monitor baker and pool performance.
 
 .. dropdown:: Can I delegate to more than one baker at a time?
 
@@ -24,7 +24,7 @@ For delegators
 
 .. dropdown:: How much can I expect to earn as a delegator?
 
-    This depends on how much you delegate, the baker pool you select and how reliable this baker is. It also depends on how much stake the baker has. It is important to use `CCDScan <https://ccdscan.io>`_ to research bakers before delegating stake.
+    This depends on how much you delegate, the baker pool you select and how reliable this baker is. It also depends on how much stake the baker has. It is important to use `CCDScan`_ to research bakers before delegating stake.
 
     To cover the costs of running the baker node 10% of the delegators’ share of the pool rewards are awarded to the pool owner. For example, suppose that a pool has 1,000,000 CCD staked and out of that you have delegated 10,000 CCD to the pool (1%). Suppose that in a 24 hour period this pool earns 500 CCD. Your delegation’s share of the rewards is 1% equal to 5 CCD. Of this amount 10% (0.5 CCD) is awarded to the pool owner and you receive the remaining 4.5 CCD.
 
@@ -54,11 +54,11 @@ For delegators
 
 .. dropdown:: Where can I see a list of all the baker pools I can delegate to?
 
-    You can see a list of all pools and some performance metrics on `CCDScan <https://ccdscan.io>`_.
+    You can see a list of all pools and some performance metrics on `CCDScan`_.
 
 .. dropdown:: How do I know whether a baker pool is good or bad? Where can I research baker performance and reliability?
 
-    You can research baker performance and pool reliability on `CCDScan <https://ccdscan.io>`_. For information about how to judge baker performance and reliability, see :ref:`Baker management<baker-pool>`.
+    You can research baker performance and pool reliability on `CCDScan`_. For information about how to judge baker performance and reliability, see :ref:`Baker management<baker-pool>`.
 
 .. dropdown:: What happens if a baker I delegate to closes the pool?
 
@@ -84,7 +84,7 @@ For delegators
 
 .. dropdown:: If the baker pool I delegate to wins the lottery, what is the estimated amount of rewards I would receive in CCDs?
 
-    The best tool to estimate rewards is `CCDScan <https://ccdscan.io/>`_. Look at the average past rewards for the baker pool or passive delegation. It is important to remember that small pools earn rewards less often, but more at a time. So the percentage for the (annual) interest given on CCDScan is less reliable for small pools as there is more variance. Passive delegation earns rewards daily because there is no variation.
+    The best tool to estimate rewards is `CCDScan`_. Look at the average past rewards for the baker pool or passive delegation. It is important to remember that small pools earn rewards less often, but more at a time. So the percentage for the (annual) interest given on CCDScan is less reliable for small pools as there is more variance. Passive delegation earns rewards daily because there is no variation.
 
 For bakers
 ----------
@@ -146,7 +146,9 @@ For bakers, delegators and passive delegators
 ---------------------------------------------
 
 .. dropdown:: What is better and where can I earn more rewards: by becoming a baker, delegating to a baker pool, or delegating to passive delegation? What is the difference in rewards comparing a baker and a delegator, based on X amount of CCDs?
-    
+
     A lottery takes place to decide which baker wins the right to bake the next block. The probability of winning the lottery is proportional to the stake. On *expectation*, the fraction of times a baker wins the lottery (compared to all blocks baked) is equal to the fraction of their stake (compared to all stake). But here the word *expectation* is important. Because it is a lottery, a baker might be super unlucky and never win (even though they have a lot of stake), and another baker with very little stake might win a lot. Though over time with high probability, the fraction of times you win will be proportional to your fraction of stake.
 
     The tokenomics are set so that on *expectation* a passive delegator gets less rewards than a delegator to a baker pool, and a delegator to a baker pool gets less rewards than a baker. The size of the baker pool has no impact on your expected rewards. The baker pool might win more. But what you get is proportional to your stake, so the expected rewards depend only on your stake. For example, if a pool has 1’000’000 CCD and you own 500’000 of those, you will get half the rewards (minus the fee for the pool owner). If a pool has 2’000’000 CCD, it is expected to bake twice more blocks than the 1’000’000 CCD pool, but if you still only have 500’000 CCD, then you will get 1/4 of the rewards (minus the fee for the pool owner). So it is the same thing. However, big pools have less *variance* than small pools. The variance is a measure of the probability that the rewards you get are much more or much less than the expected rewards. Passive delegation has zero variance. You always get the rewards which correspond exactly to your stake. Big pools will have some variance, but with high probability your rewards will be close to the expected value. Small pools have very large variance. So if you do not feel lucky, delegate to a big pool. If you feel very lucky, delegate to a small pool. But over time you will get roughly the same rewards, no matter what you do. Very small pools, i.e., a pool with the absolute minimum of 14000 CCD to bake, can easily go a whole year without ever winning the lottery. It takes a lot of time for their rewards to get close to the expected rewards.
+
+.. _CCDScan: https://ccdscan.io/
