@@ -21,6 +21,11 @@ Concordium introduces a new wallet for Android mobile devices: the |mw-gen2|. Th
 
 In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
 
+|mw-gen1| (previously Concordium Mobile Wallet) for Android
+-----------------------------------------------------------
+
+The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
+
 August 29, 2022
 
 Concordium Node 4.3.1
