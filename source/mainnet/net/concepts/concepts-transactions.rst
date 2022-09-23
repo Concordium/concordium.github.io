@@ -40,6 +40,7 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Delegation                 | |check|       | |check|        |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
+
 - |bw|: supports send CCD, receive CCD, connect to dApps.
 - |mw-gen1| and |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, baker management, delegation.
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
