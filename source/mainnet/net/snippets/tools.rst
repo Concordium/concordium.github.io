@@ -7,15 +7,24 @@ The Desktop Wallet
 
 The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
 
-The |mw-gen1| or |mw-gen2|
---------------------------
+The |mw-gen1|
+-----------------
 
-The |mw-gen2| and |mw-gen1| are digital smartphone wallets that enable you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake, and delegate. In |mw-gen1| you can export and import your accounts and identities.
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
 
-To learn more about the differences between the wallets, see :ref:`Deciding between the Wallets<choosing-wallet>`.
+The |mw-gen2|
+------------------
 
-.. warning:: 
-    You can't exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. You also can't exchange accounts and identities between |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+
+The |bw|
+------------------
+
+The |bw| is a web browser wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+
+To learn more about the differences between the wallets, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet<choosing-wallet>`.
+
+.. warning:: You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
     You can exchange idenitites and accounts between |mw-gen2| and |bw|.
 
