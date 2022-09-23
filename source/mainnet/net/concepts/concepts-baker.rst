@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _baker-concept:
 
 ======
@@ -22,7 +23,7 @@ Baker account
 
 Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker's account (and the baker pool delegators if they have a pool) at :ref:`pay day<glossary-pay-day>`. The reward is derived from transaction fees paid for transactions included in the block and its predecessors, as well as from newly-minted CCDs.
 
-The account can be viewed either in the Desktop Wallet or the Mobile Wallet, depending on where the account was created.
+The account can be viewed either in the Desktop Wallet, |mw-gen2|, or |mw-gen1|, depending on where the account was created.
 
 Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.
 

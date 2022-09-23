@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _reference-id-accounts:
 
 ==========
@@ -13,7 +14,7 @@ About identities
 
 Identities are issued by an identity provider. There is a :ref:`registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain<identity-commands>`. Concordium Foundation will maintain the list in the beginning.
 
-.. only:: mainnet
+.. Note::
 
    It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
    Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.
@@ -40,7 +41,9 @@ Obtain an identity
 You can create identities in the :ref:`Desktop Wallet or Mobile Wallet <create-initial-account>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
 
 .. Warning::
-   Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
+   It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. It is also not possible to exchange identities and accounts between the |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
+
+   It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 

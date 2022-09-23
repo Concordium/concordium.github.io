@@ -1,5 +1,5 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
-
+.. include:: ../../variables.rst
 .. _managing_accounts:
 
 ========
@@ -46,6 +46,10 @@ The name is resolved to an address before interactions with the node.
 
 Initial account
 ---------------
+
+.. Note::
+
+   Initial accounts are not created by the identity provider when using |mw-gen2| or |bw|. You create all accounts yourself.
 
 The user gets an :ref:`glossary-initial-account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
