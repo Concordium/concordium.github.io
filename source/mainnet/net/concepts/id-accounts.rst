@@ -14,7 +14,7 @@ About identities
 
 Identities are issued by an identity provider. There is a :ref:`registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain<identity-commands>`. Concordium Foundation will maintain the list in the beginning.
 
-.. only:: mainnet
+.. Note::
 
    It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
    Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.

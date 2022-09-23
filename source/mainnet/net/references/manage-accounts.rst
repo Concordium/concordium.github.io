@@ -6,7 +6,7 @@
 Accounts
 ========
 
-Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
 
 You must have a verified identity and a user identity certificate issued by an authorized identity provider to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
@@ -47,6 +47,10 @@ The name is resolved to an address before interactions with the node.
 Initial account
 ---------------
 
+.. Note::
+
+   Initial accounts are not created by the identity provider when using |mw-gen2| or |bw|. You create all accounts yourself.
+
 The user gets an :ref:`glossary-initial-account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
 The user additionally :ref:`creates account keys<backup>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
@@ -77,7 +81,7 @@ all other activities completely anonymous.
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 Attributes
 ----------
@@ -129,7 +133,7 @@ At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
 
 - the account has :ref:`staked<glossary-staked-amount>` some of the public
-  balance in order to become a baker
+  balance in order to become a baker or to delegate
 - some of the public balance is locked up because it was received via a
   :ref:`transfer with schedule<glossary-transfer-with-schedule>`
 
@@ -161,7 +165,7 @@ validate transactions.
 
 You can :ref:`look up the sequence number<account-seqno>` from an up to date node using Concordium Client.
 
-The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+The |mw-gen2| and |mw-gen1| keeps track of the sequence number and assigns the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually.
 

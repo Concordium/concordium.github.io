@@ -61,7 +61,7 @@ How to proceed
 Upgrade
 -------
 
-Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your Mobile Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the appropriate release notes:
+Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your |mw-gen1| or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the appropriate release notes:
 
 - :ref:`Mainnet release notes<mainnet-release-notes>`
 - :ref:`Testnet release notes <testnet-release-notes>`
@@ -74,7 +74,7 @@ For instructions on how to perform the backup, see :ref:`Backup and restore guid
 Final Notes
 ===========
 
-If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall the Concordium wallet. You can then import your wallet backup into the new wallet.
+If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall the |mw-gen1| or Desktop Wallet. You can then import your wallet backup into the new wallet.
 
 If the wallet does not have the keys from some accounts and you do not have a backup of the keys on an exported file, these accounts cannot be used. Therefore, you should ensure that you never ask anyone to transfer CCD to such accounts. Instead, go through a new identification process and generate new accounts that can be used in the future. And remember to export a new backup of the account keys each time you have generated a new account in the app.
 
