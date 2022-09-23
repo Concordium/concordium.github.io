@@ -268,7 +268,7 @@ entrypoints for which no mock has been set up, results in a runtime error:
 For more advanced types of mocks, use the functions ``MockFn::new_v1``, ``MockFn::new_v0``, or
 ``MockFn::new``.
 Each of these functions takes a closure that has access to the parameter and amount
-used in ``invoke_contract(.., parameter, .., amount)``, but also the balance and
+used in ``invoke_contract(parameter, amount, ..)``, but also the balance and
 state of the contract you are testing.
 The methods differ in what the closure should return.
 V0 contracts do not have a return value, whereas V1 contracts always do.
@@ -352,6 +352,94 @@ state and balance fields:
       // *host.state() and state_copy might not be equal any more due to reentrancy.
       do_something_with(state_copy);
 
+Testing with state rollbacks
+============================
+
+Invocations of smart contracts on the chain are transactional. This means that
+if a contract changes its state and then fails, the state is rolled back to how
+it was before the invocation.
+
+If you want the same behavior when testing, it is necessary to use a helper
+method on the |TestHost|_, namely |with_rollback|_.
+To illustrate, here is an example in which the receive function increments the
+state and then immediately fails:
+
+.. code-block:: rust
+   :emphasize-lines: 23, 25, 35, 37
+
+   type State = u8;
+
+   #[receive(contract = "my_contract", name = "increment", mutable)]
+   fn receive<S: HasStateApi>(
+       _ctx: &impl HasReceiveContext,
+       host: &mut impl HasHost<State, StateApiType = S>,
+   ) -> ReceiveResult<()> {
+       *host.state_mut() += 1; // Mutate state.
+       Err(Reject::default())  // Then fail.
+   }
+
+   #[concordium_cfg_test]
+   mod tests {
+       use super::*;
+       use concordium_std::test_infrastructure::*;
+
+       #[test]
+       fn test_without_rollback() {
+           let state = 0;
+           let ctx = TestReceiveContext::empty();
+           let mut host = TestHost::new(state, StateBuilder::new());
+
+           let _ = receive(&ctx, &mut host);
+
+           claim_eq!(*host.state(), 0); // FAILS! State wasn't rolled back.
+       }
+
+       #[test]
+       fn test_with_rollback() {
+           let state = 0;
+           let ctx = TestReceiveContext::empty();
+           let mut host = TestHost::new(state, StateBuilder::new());
+
+           // Use the `with_rollback` method.
+           let _ = host.with_rollback(|host| receive(&ctx, host));
+
+           claim_eq!(*host.state(), 0); // Success!
+       }
+   }
+
+|with_rollback|_ works by creating a clone of the ``State``, invoking the
+receive function and, if it failed, rolling back the state.
+This means that ``State`` must implement the trait |StateClone|_, which
+fortunately is implemented for all |Clone|_ types.
+However, it is not possible to implement |Clone|_ correctly for your state if it
+includes one of the special state types.
+
+This is how to handle the two scenarios:
+
+- Derive |StateClone|_ for your state (see example below) if it has one or more fields comprised
+  of |StateBox|_, |StateSet|_, or |StateMap|_.
+- Otherwise, derive |Clone|_ for your ``State``.
+
+Here is an example of how to derive |StateClone|_:
+
+.. code-block:: rust
+
+   #[derive(StateClone)]
+   #[concordium(state_parameter = "S")]
+   struct State<S> {
+     my_state_map: StateMap<SomeType, SomeOtherType, S>,
+   }
+
+You can read more about deriving |StateClone|_ on `docs.rs <https://docs.rs/concordium-std-derive/latest/concordium_std_derive/derive.StateClone.html>`_.
+
+.. note::
+
+   The state also needs to be rolled back on errors occuring in mock
+   entrypoints, as described in
+   :ref:`testing_contract_invocations`, but that is handled by the test
+   framework itself. This means that mock entrypoints are handled
+   transactionally, even without the use of |with_rollback|_.
+
 Testing transfers
 =================
 
@@ -403,3 +491,15 @@ account:
 .. |TestHost| replace:: ``TestHost``
 .. _setup_mock_entrypoint: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.setup_mock_entrypoint
 .. |setup_mock_entrypoint| replace:: ``setup_mock_entrypoint``
+.. _with_rollback: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.with_rollback
+.. |with_rollback| replace:: ``with_rollback``
+.. _Clone: https://doc.rust-lang.org/std/clone/trait.Clone.html
+.. |Clone| replace:: ``Clone``
+.. _StateClone: https://docs.rs/concordium-std/latest/concordium_std/trait.StateClone.html
+.. |StateClone| replace:: ``StateClone``
+.. _StateBox: https://docs.rs/concordium-std/latest/concordium_std/struct.StateBox.html
+.. |StateBox| replace:: ``StateBox``
+.. _StateMap: https://docs.rs/concordium-std/latest/concordium_std/struct.StateMap.html
+.. |StateMap| replace:: ``StateMap``
+.. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
+.. |StateSet| replace:: ``StateSet``

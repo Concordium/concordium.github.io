@@ -26,7 +26,6 @@
    guides/create-account
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
-   guides/delegation
    guides/shielded-transfer
    guides/export-import
    mobile-wallet/index
@@ -34,13 +33,20 @@
 
 .. toctree::
    :includehidden:
+   :caption: Earn with Concordium
+
+   guides/how-to-earn
+   guides/overview-baker-process
+   desktop-wallet/baking-dw
+   mobile-wallet/baker-mw
+   guides/delegation
+
+.. toctree::
+   :includehidden:
    :caption: Develop on Concordium
 
    guides/developer-page
    nodes/node-requirements
-   guides/overview-baker-process
-   desktop-wallet/baking-dw
-   mobile-wallet/baker-mw
    references/concordium-client
    references/transactions
    references/query-node
@@ -50,7 +56,7 @@
    :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
-   Tutorials <../smart-contracts/tutorials/piggy-bank/index>
+   Tutorials <../smart-contracts/tutorials/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
@@ -74,3 +80,4 @@
    resources/release-notes
    resources/sirius-testnet-reset
    resources/legal
+   resources/ar-idp-contact

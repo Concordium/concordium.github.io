@@ -1,4 +1,4 @@
-.. fallback-entrypoints:
+.. _fallback-entrypoints:
 
 ====================
 Fallback entrypoints
