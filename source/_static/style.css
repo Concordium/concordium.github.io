@@ -27,6 +27,10 @@ body{
     font-family: Nb-akademie-std,sans-serif;
   }
 
+p{
+    line-height: 30px;
+}
+
 h1{
     font-family: Nb-akademie-std, sans-serif;
 }
@@ -123,6 +127,14 @@ i.fa-twitter-square:before {
 i.fab fa-github-square:before {
     background: black;
     color: white;
+}
+
+.admonition.warning{
+    background: #FEF9E8;
+}
+
+.admonition.note{
+    background: #ebf2ff;
 }
 
 .consent {
