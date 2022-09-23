@@ -86,7 +86,7 @@ Concordium Client v4.1.0
    - SHA256 checksum of the download: |client-linux-checksum|
 
    |
-   
+
    When you run Concordium Client on Linux, run the following command to make the file you download executable:
 
       .. code-block:: console
