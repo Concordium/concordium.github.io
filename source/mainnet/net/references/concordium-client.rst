@@ -128,7 +128,7 @@ Read more about accounts :ref:`here<managing_accounts>`.
 Location
 --------
 
-On the |Net|, the configuration directory is mapped by Docker into a
+The configuration directory is mapped by Docker into a
 system-dependent directory:
 
 -  Linux/macOS: ``$HOME/.config/concordium``

@@ -1,8 +1,5 @@
 .. include:: ../variables.rst
 
-=====
-|Net|
-=====
 
 .. toctree::
    :caption: Installation
