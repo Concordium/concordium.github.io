@@ -173,6 +173,8 @@ Download the block separately to inspect it or to run a node in a custom configu
 
       - SHA256 checksum of the download: ``69db4360f0a16414db86a920513600cfe29241c0c713a07d8e79dad19103e91d``
 
+.. _downloads-testnet-auxiliary-tools:
+
 Auxiliary tools
 ===============
 
