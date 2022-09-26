@@ -85,6 +85,16 @@ Concordium Client v4.1.0
 
    - SHA256 checksum of the download: |client-linux-checksum|
 
+   |
+
+   Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
+
+      .. code-block:: console
+
+         chmod +x concordium-client_*
+
+   where you replace `*` with |client-version|.
+
 -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.1.0.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary

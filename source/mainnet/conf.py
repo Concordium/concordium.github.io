@@ -161,7 +161,7 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links"],
     "page_sidebar_items": ["page-toc"],
     "footer_items": ["footer"],
-    "show_prev_next": False,
+    "show_prev_next": True,
     "icon_links": [
         {
             # Concordium GitHub
