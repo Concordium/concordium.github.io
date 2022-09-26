@@ -20,7 +20,7 @@ The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or l
 Android
 -------
 
-- `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-wallet-for-mobile_1.0.0(15).apk>`_
+- `Download the Android version of Concordium Wallet for Mobile for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-wallet-for-mobile_1.0.0(15).apk>`_
 
 
 .. _downloads-mobile-wallet-testnet:

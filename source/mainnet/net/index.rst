@@ -1,5 +1,6 @@
-.. include:: ../variables.rst
-
+=====
+index
+=====
 
 .. toctree::
    :caption: Installation
