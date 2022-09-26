@@ -64,6 +64,7 @@ In case you get a new device or need to restore your existing device, you can re
              :width: 40px
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
                     :width: 20px
                     :alt: three horizontal lines

@@ -8,21 +8,23 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are three first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
 The wallets are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts from one wallet to another
 ===============================================================
 
-.. warning:: You can't exchange identities and accounts between the |mw-gen1|, the |bw|, and the Desktop Wallet. You can, however, send CCD from one wallet to another. You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
-
 Before you decide which wallet to use, it's important to know that you can’t import identities and accounts from the |mw-gen1|, |mw-gen2|, or |bw| into the Desktop Wallet. Conversely, you can’t import identities and accounts from the Desktop Wallet into |mw-gen1|, |mw-gen2|, or |bw|. You also can't import identities and accounts between |mw-gen1| and |mw-gen2|. This is because they handle private keys in different ways as :ref:`described later<store-private-keys>` in this topic. It’s therefore essential that you choose between the wallets before you start creating identities and accounts.
+
+You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
+
+You can always send CCD from one wallet to another.
 
 Which wallet is best for you?
 =============================
 
-The wallets work on two different environments: the Desktop Wallet on a computer, and |mw-gen1| and |mw-gen2| on a phone. The |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.
+The wallets work on two different environments: the Desktop Wallet on a computer, the |bw| on any device with a web browser, and |mw-gen1| and |mw-gen2| on a phone. The |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a Ledger device.
 
 - Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`Ledger<install-Ledger-app>` hardware device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the Ledger hardware device.
 
@@ -64,7 +66,7 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 
 - |bw|: Backups are not necessary for the |bw| because the secret recovery phrase created during setup can be used to recover your private keys.
 
-- |mw-gen2|: Backups are not necessary for the |mw-gen2| because the secret recovery phrase created during setup protects your private keys.
+- |mw-gen2|: Backups are not necessary for the |mw-gen2| because the secret recovery phrase created during setup can be used to recover your private keys.
 
 .. Warning::
    You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.
@@ -84,7 +86,7 @@ Comparison
 The following table lists the major features of each wallet.
 
 .. list-table::
-   :widths: 10 10 10
+   :widths: 10 10 10 10
    :header-rows: 1
 
    *  - Desktop Wallet

@@ -1,5 +1,4 @@
 .. include:: ../../variables.rst
-.. include:: ../../variables.rst
 .. _reference-id-accounts:
 
 ==========
@@ -45,7 +44,7 @@ You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, 
    It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
 
 .. Warning::
-   Because of the difference in the way private keys are handled between |mw-gen2| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
+   Because of the difference in the way private keys are handled between |mw-gen2| / |bw| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
 
    It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.
 

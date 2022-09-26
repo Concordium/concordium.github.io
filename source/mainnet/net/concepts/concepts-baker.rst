@@ -61,6 +61,7 @@ A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time
 
 Finalization
 ============
+
 Finalization ensures that baked blocks become finalized as quickly as possible and with 100% certainty.
 
 What is finalization?
