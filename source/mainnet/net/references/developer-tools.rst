@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _developer-tools:
 
 ===============
@@ -7,7 +8,7 @@ Auxiliary Tools
 Decrypt encrypted output
 ========================
 
-Some Concordium tools, such as the Mobile Wallet, sometimes produce encrypted output. These files can be decrypted and inspected using the **utils** tool. You can download the tool from :ref:`Installation downloads <downloads>`.
+Some Concordium tools, such as the |mw-gen1|, sometimes produce encrypted output. These files can be decrypted and inspected using the **utils** tool . You can download the tool from :ref:`Installation downloads <downloads>`.
 
 To encrypt, enter:
 

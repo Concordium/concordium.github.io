@@ -128,7 +128,7 @@ Read more about accounts :ref:`here<managing_accounts>`.
 Location
 --------
 
-On the |Net|, the configuration directory is mapped by Docker into a
+The configuration directory is mapped by Docker into a
 system-dependent directory:
 
 -  Linux/macOS: ``$HOME/.config/concordium``
@@ -306,7 +306,7 @@ Import accounts and keys from the Wallet apps
    $concordium-client config account import FILE [--name NAME]
 
 Import the keys of one or more accounts from a JSON file exported from the
-Mobile Wallet.
+|mw-gen1|.
 
 The ``--name`` option selects which account to import and imports it with this
 name. If it's omitted, all accounts in the file are imported under their

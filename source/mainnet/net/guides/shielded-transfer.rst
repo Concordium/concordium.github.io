@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _shielded-transfer:
 
 ======================================
@@ -30,7 +30,7 @@ Prerequisites
    Do not shield or transfer all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
 
 .. Note::
-    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet or Mobile Wallet to request 2000 CCDs.
+    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
 .. tabs::
 
@@ -102,7 +102,50 @@ Prerequisites
             .. |shielded-xfer| image:: ../images/desktop-wallet/dw-shielded-xfer-received.png
                             :alt: Balance with a shield that has a lock on it
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen2|
+
+        .. tabs::
+
+            .. tab:: Send a shielded amount of CCD
+
+                #. Go to the Accounts page.
+
+                #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
+
+                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
+
+                #. Tap the **Shielded balance** tab of the totals area.
+
+                #. Tap **SEND**.
+
+                #. Enter the amount you want to transfer.
+
+                #. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
+
+                    - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
+
+                #. Tap **Send Amount**.
+
+                    .. image:: ../images/mobile-wallet/MW42.png
+                        :width: 25%
+
+                #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
+
+                #. Finally, tap **Send shielded amount**.
+
+                    .. image:: ../images/mobile-wallet/MW43.png
+                        :width: 25%
+
+                #. The transaction is subbmitted; tap **Ok, thanks**.
+
+                    .. image:: ../images/mobile-wallet/MW44.png
+                        :width: 25%
+
+                .. |more-acct| image:: ../images/more-acct.png
+                                :alt: Button with double-headed arrow
+                                :width: 50px
+
+    .. tab:: |mw-gen1|
 
         .. tabs::
 
@@ -112,7 +155,7 @@ Prerequisites
 
                 #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
 
-                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for _your account name_**.
+                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
 
                 #. Tap the **Shielded balance** tab of the totals area.
 
@@ -146,8 +189,10 @@ Prerequisites
 
             .. |hamburger| image:: ../images/hamburger.png
                          :alt: Three horizontal lines
+                         :width: 20px
 
             .. |moredetails| image:: ../images/more-arrow.png
                          :alt: Button with More and double-headed arrow
+                         :width: 50px
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.

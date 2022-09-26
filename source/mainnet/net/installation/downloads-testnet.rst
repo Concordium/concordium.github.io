@@ -8,16 +8,31 @@ Downloads - Testnet
 
 This topic contains information about where you can download the Concordium Wallets and tools for Testnet. You can also find out about the hardware requirements for running a node.
 
-.. _downloads-mobile-wallet-testnet:
-
-Concordium Mobile Wallet
+|mw-gen2|
 ========================
 
-The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
+The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or later.
 
 .. Note::
 
-   The Concordium Mobile Wallet is not supported on tablet devices.
+   The |mw-gen2| is not supported on tablet devices.
+
+Android
+-------
+
+- `Download the Android version of Concordium Wallet for Mobile for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-wallet-for-mobile_1.0.0(15).apk>`_
+
+
+.. _downloads-mobile-wallet-testnet:
+
+|mw-gen1|
+========================
+
+The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
+
+.. Note::
+
+   The |mw-gen1| is not supported on tablet devices.
 
 iOS
 ---
@@ -28,7 +43,7 @@ iOS
 Android
 -------
 
-- `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.0.0(100).apk>`_
+- `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.0.1(104).apk>`_
 
 .. _downloads-desktop-wallet-testnet:
 

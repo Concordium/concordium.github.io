@@ -1,10 +1,11 @@
+.. include:: ../../variables.rst
 .. _reference-id-accounts:
 
 ==========
 Identities
 ==========
 
-Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen1|, |mw-gen2|, Desktop Wallet, or Concordium Client for your transactions.
 
 Before you can use the Concordium Platform, an identity provider must verify and record your real-world identity. This identification is performed when you create your first account, the initial account.
 
@@ -13,7 +14,7 @@ About identities
 
 Identities are issued by an identity provider. There is a :ref:`registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain<identity-commands>`. Concordium Foundation will maintain the list in the beginning.
 
-.. only:: mainnet
+.. Note::
 
    It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
    Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.
@@ -37,10 +38,13 @@ You are in control of which attributes are revealed to the public. You can choos
 Obtain an identity
 ------------------
 
-You can create identities in the :ref:`Desktop Wallet or Mobile Wallet <create-initial-account>`. Identity creation is an :ref:`off chain<glossary-off-chain>` action.
+You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, |mw-gen1|, or |mw-gen2|. Identity creation is an :ref:`off chain<glossary-off-chain>` action. If you are creating your first identity on a mobile device, Concordium strongly recommends using |mw-gen2|.
 
 .. Warning::
-   Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
+   It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
+
+.. Warning::
+   Because of the difference in the way private keys are handled between |mw-gen2| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
@@ -54,7 +58,7 @@ About accounts
 
 For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
-Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 .. _revoke-anomity:
 

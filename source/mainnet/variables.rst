@@ -1,5 +1,3 @@
-.. |Net| replace:: Mainnet
-
 .. Desktop wallet verification variables
 .. |cdw-appimage| replace:: concordium-desktop-wallet-1.5.0.AppImage
 .. |cdw-appimage-checksum| replace:: a04dcab599799533d8e35765a656a0ad938074d5f267f1829c5aa8258376b4e8
