@@ -298,13 +298,6 @@ faster than requesting them from peers.
    peers on the blockchain. You do so by comparing the finalized length of the
    chain with the length of your node. If they match, your node has caught up.
 
-.. note::
-
-   It is recommended to keep the `CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM` variable set in the node configuration, unlike `CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM`.
-   The former permits incremental out-of-band catchup starting from the best block already present in the node database.
-   The latter does not and slows down the node startup significantly.
-
-
 For node versions 4.3.0 or earlier
 ----------------------------------
 

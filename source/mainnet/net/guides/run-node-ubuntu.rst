@@ -72,10 +72,6 @@ The services are also enabled to start automatically on system start.
 
        $sudo systemctl start concordium-mainnet-node.service
 
-   It is recommended to keep the `CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM` variable set in the node configuration, unlike `CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM`.
-   The former permits incremental out-of-band catchup starting from the best block already present in the node database.
-   The latter does not and slows down the node startup significantly.
-
 .. Note::
    If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
 
