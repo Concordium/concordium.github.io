@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _company-identities:
 
 ============================
