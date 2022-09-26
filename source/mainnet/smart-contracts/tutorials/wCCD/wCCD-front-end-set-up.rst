@@ -11,9 +11,10 @@ and some users may choose not to host their own Concordium node locally. This tu
 a setup that alleviates the need for the user to host their own Concordium node.
 
 You can lower the bar for entry by coding an appealing front-end that provides additional information
-to your potential customers. Web front-ends are a familiar sight nowadays, but keep in mind
-that downloading a browser wallet as a browser extension and its behavior or safe usage might be new
-for people using your front-end. Providing comprehensive explanations and step-by-step guides on your website on topics
+to your potential customers. Web front-ends are a familiar sight nowadays, but to use
+the front-end, users will also need to download a browser wallet as a browser extension.
+The installation and safe usage of the browser wallet might be new for people using your front-end.
+Providing comprehensive explanations and step-by-step guides on your website on topics
 related to the browser wallet is important for a good user experience. The browser wallet
 connects via `HTTPS <https://en.wikipedia.org/wiki/HTTPS>`_ to a server that is connected to a Concordium node. This setup alleviates the
 need for the user to host their own Concordium node.
@@ -36,14 +37,16 @@ Concordium browser wallet
 -------------------------
 
 A browser wallet is a piece of code that can be added as an extension to supported browsers such as ``Chrome``.
+The browser wallet allows you to interact with the chain and make transactions.
+Currently, the browser wallet does this by connecting to a (JSON-RPC) server that communicates with a node.
 The browser wallet hosts the private keys corresponding to the accounts of the user and a link that points
-to a `JSON-RPC server  <https://github.com/Concordium/concordium-json-rpc>`_.
+to a `server  <https://github.com/Concordium/concordium-json-rpc>`_.
 
 Your front-end code that is run in the browser constructs the transaction object
 and sends it to the browser wallet. The transaction object is signed by the private key hosted in the browser wallet
-and transmitted to the ``JSON-RPC server`` via ``HTTPS``. This server has access to a Concordium node and converts
+and transmitted to the server via ``HTTPS``. This server has access to a Concordium node and converts
 the request (including the signed transaction object) that comes via ``HTTPS`` from the browser wallet
-to a ``JSON-RPC`` request that the Concordium node can execute. The signed transaction is
+to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
@@ -55,7 +58,7 @@ part of the Concordium blockchain.
     use any pre-MVP product on mainnet.
 
 You can choose from two different workflows that will guide you through the setup steps. Workflow 1 is easier.
-The ``JSON-RPC wallet proxy`` is hosted by Concordium in workflow 1 which will take care of the
+The server that the browser wallet connects to is hosted by Concordium in workflow 1. This setup will take care of the
 Concordium node on your behalf. Workflow 2 is for
 advanced readers that want to build all the components from the source code and connect the browser wallet
 to their own hosted Concordium node.
@@ -73,14 +76,13 @@ to their own hosted Concordium node.
     .. note::
 
         Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
-        screenshots might differ. The browser wallet hosts the private keys corresponding
-        to the accounts of the user and a link that points to a ``JSON-RPC server``.
+        screenshots might differ.
 
     The newer versions of the pre-MVP browser wallet connect to a server
     hosted by Concordium which will take care of the Concordium node on your behalf.
 
-    You can build the browser wallet extension and load it
-    (``dist`` folder from the path `root/packages/browser-wallet`) into the
+    You can build the browser wallet extension and load the ``dist`` folder
+    (located at ``root/packages/browser-wallet/dist``) into the
     `Chrome browser <https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked>`_ as
     described in the README file of the
     `browser wallet repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
@@ -197,8 +199,8 @@ to their own hosted Concordium node.
 
         $git clone https://github.com/Concordium/concordium-browser-wallet.git
 
-    You can build the browser wallet extension and load it
-    (``dist`` folder from the path `root/packages/browser-wallet`) into the
+    You can build the browser wallet extension and load the ``dist`` folder
+    (located at ``root/packages/browser-wallet/dist``) into the
     `Chrome browser <https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked>`_ as
     described in the README file of the
     `browser wallet repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
@@ -206,8 +208,7 @@ to their own hosted Concordium node.
     .. note::
 
         Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
-        screenshots and setup steps might differ. The browser wallet holds the private keys corresponding
-        to the accounts of the user and a link that points to a ``JSON-RPC server``.
+        screenshots and setup steps might differ.
 
     The next steps are based on the pre-MVP browser wallet from a git commit before 22.8.2022.
     These early versions of the pre-MVP browser wallet have an input field for the private key

@@ -29,9 +29,9 @@ To decrypt, enter:
 
 .. code-block:: console
 
-    $utils decrypt --in output.json --out decrypted.example
+    $utils decrypt --in output.json --out decrypted-keys
 
-Enter password to decrypt with, writing output to **decrypted.example**.
+Enter password to decrypt with, writing output to **decrypted-keys**.
 
 where ``--in ...`` is the encrypted file, and ``--out`` is the decryption.
 
@@ -65,6 +65,6 @@ You will need to enter your password from the backup file when it was exported f
 
 .. code-block:: console
 
-    $utils decrypt --in output.json --out decrypted.example
+    $utils decrypt --in output.json --out decrypted-keys
 
-Your private key will be saved to the ``decrypted.example`` file.
+Your private key will be saved to the ``decrypted-keys`` file.
