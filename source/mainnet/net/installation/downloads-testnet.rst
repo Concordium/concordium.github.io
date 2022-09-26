@@ -91,7 +91,9 @@ Concordium Client v4.1.0
 
       .. code-block:: console
 
-         chmod +x concordium-client
+         chmod +x concordium-client_*
+
+   where you replace `*` with |client-version|.
 
 -  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.1.0.pkg>`_
 
