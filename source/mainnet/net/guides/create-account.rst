@@ -67,7 +67,27 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen2|
+
+        #. Go to the **Accounts** page.
+
+        #. Tap the **+** in the upper right corner.
+
+        #. Tap the identity you want to use to create the account.
+
+            .. image:: ../images/mobile-wallet-gen2/create-acct-select-id.png
+                :width: 25%
+
+        #. Finally, tap **Submit account**.
+
+            .. image:: ../images/mobile-wallet-gen2/create-acct-submit.png
+                :width: 25%
+
+        Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+
+    .. tab:: |mw-gen1|
 
         #. Go to the **Accounts** page.
 
@@ -100,6 +120,8 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
                 :width: 25%
 
         Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 
         .. Warning::
             **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**

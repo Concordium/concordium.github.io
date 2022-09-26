@@ -8,16 +8,31 @@ Downloads - Mainnet
 
 This topic contains information about where you can download the Concordium Wallets and tools for Mainnet. You can also find out about the hardware requirements for running a node.
 
-Concordium Mobile Wallet
+|mw-gen2|
 ========================
 
-The Concordium Mobile Wallet is available for iOS and Android™. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
+The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or later.
 
 .. Note::
 
-   The Concordium Mobile Wallet is not supported on tablet devices.
+   The |mw-gen2| is not supported on tablet devices.
 
-You can find Concordium Mobile Wallet on App Store and on Google Play.
+You can find |mw-gen2| on Google Play.
+
+   .. image:: ../images/mobile-wallet/google-play-badge.png
+      :width: 29.5%
+      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet
+
+|mw-gen1|
+========================
+
+The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
+
+.. Note::
+
+   The |mw-gen1| is not supported on tablet devices.
+
+You can find |mw-gen1| on App Store and on Google Play.
 
    .. image:: ../images/mobile-wallet/app-store-badge.svg
       :width: 23%
@@ -92,6 +107,14 @@ Concordium Client v4.1.0
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
+
+   Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
+
+      .. code-block:: console
+
+         chmod +x concordium-client_*
+
+   where you replace `*` with |client-version|.
 
 -  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.1.0.pkg>`_
 
