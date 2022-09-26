@@ -1,10 +1,11 @@
+.. include:: ../../variables.rst
 .. _mw-index:
 
-=============
-Mobile Wallet
-=============
+===================================
+|mw-gen1|
+===================================
 
-The following topics are specific to Mobile Wallet.
+The following topics are specific to |mw-gen1|.
 
 .. toctree::
     :maxdepth: 2

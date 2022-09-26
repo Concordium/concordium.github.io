@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _transactions-overview:
 
 =====================
@@ -8,35 +9,39 @@ A transaction on the Concordium blockchain is an operation which applies some ch
 
 The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
-You can make transactions using either the Desktop Wallet, the Mobile Wallet, or the Concordium Client. Note that the Mobile Wallet doesn’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
+You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-gen1|, or the Concordium Client. Note that the |mw-gen1|, and |mw-gen2| don’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
 
-+----------------------------+---------------+----------------+-------------------+
-|                            | Mobile Wallet | Desktop Wallet | Concordium Client |
-+============================+===============+================+===================+
-| Send CCD                   | |check|       | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Send CCD with a schedule   |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Shield CCD                 | |check|       | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Unshield CCD               | |check|       | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Make shielded transfer     | |check|       | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Add baker                  |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Remove baker               |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Update baker stake         |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Update restake earnings    |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Update baker keys          |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
-| Update account credentials |               | |check|        | |check|           |
-+----------------------------+---------------+----------------+-------------------+
++----------------------------+---------------+----------------+---------------+-------------------+
+|                            | |mw-gen1|     | |mw-gen2|      |Desktop Wallet | Concordium Client |
++============================+===============+================+===============+===================+
+| Send CCD                   | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Send CCD with a schedule   |               |                | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Shield CCD                 | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Unshield CCD               | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Make shielded transfer     | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Add baker                  | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Remove baker               | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Update baker stake         | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Update restake earnings    | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Update baker keys          | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Update account credentials |               | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Connect to dApps           |               |                |               |                   |
++----------------------------+---------------+----------------+---------------+-------------------+
+| Delegation                 | |check|       | |check|        | |check|       | |check|           |
++----------------------------+---------------+----------------+---------------+-------------------+
 
-- Mobile Wallet: supports send CCD, shield CCD, and unshield CCD.
+- |mw-gen1| and |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, baker management, delegation.
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
 - Concordium Client: supports all transaction types.
 
@@ -58,6 +63,36 @@ The fee will always be deducted from the **Balance** of the account, so it is im
 
 You can see the fee in the transaction log.
 
-.. include:: ../snippets/tools.rst
+Tools
+=====
+
+The Desktop Wallet
+------------------
+
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+
+The |mw-gen1|
+-----------------
+
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+
+The |mw-gen2|
+------------------
+
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+
+To learn more about the differences between the wallets, see :ref:`Deciding between the wallets<choosing-wallet>`.
+
+.. warning:: You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+
+Command-line tool
+-----------------
+
+The Concordium distribution ships with a command-line tool named
+:ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
+Concordium blockchain. It cannot be used to create identities, but it can
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
+imported, the tool can be used to do CCD transfers from the account, as well as
+send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
 .. |check|  unicode:: U+2713 .. CHECKMARK

@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _node-dashboard: http://localhost:8099
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
@@ -11,7 +12,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the Mobile Wallet and acquire CCD.
+#. Create an account in the |mw-gen1| and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -45,7 +46,7 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import>`.
+   You can only import accounts created in the |mw-gen2| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
 
 To import an account run:
 

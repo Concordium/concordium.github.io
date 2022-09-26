@@ -1,19 +1,14 @@
-
+.. include:: ../../variables.rst
 .. _create-initial-account:
 
-=========================================
-Create an identity and an initial account
-=========================================
+==================
+Create an identity
+==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an initial account and an identity issued by an identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create.
-
-To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider. To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
-   You can't exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. You can, however, send CCD from one wallet to another.
-
-.. Note::
-   When you've created your identity and account, Concordium strongly recommends that you make an export of all accounts, IDs and addresses. This way, you'll have a backup in case the database is damaged.
+   You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 
 .. tabs::
 
@@ -61,9 +56,33 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
       .. Note::
            You can change the name of an identity after it has been created. Go to the **Identities** page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
 
-   .. tab:: Mobile Wallet
+   .. tab:: |mw-gen2|
 
-      You can submit requests for additional :ref:`identities<glossary-identity>` and :ref:`initial accounts<glossary-initial-account>` in the Mobile Wallet. You do this from the **Identities** page.
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen2|. You do this from the **Identities** page.
+
+      #. Go to the |morepage| page.
+
+      #. Tap **Your identity cards** page.
+
+      #. Tap the **+** in the upper right corner.
+
+      #. Select a third-party identity provider from the list. An external web page opens within the app.
+
+         .. image:: ../images/mobile-wallet-gen2/choose-idp.png
+            :width: 25%
+
+      #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+
+      #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
+
+         .. image:: ../images/mobile-wallet/MW12.png
+            :width: 25%
+
+      You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
+
+   .. tab:: |mw-gen1|
+
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
 
       #. Go to the |morepage| page.
 
@@ -85,7 +104,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
       #. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
-      #. When you have submitted the information to the identity provider, you will have a pending initial account and identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
+      #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
 
          .. image:: ../images/mobile-wallet/MW12.png
             :width: 25%
@@ -98,6 +117,8 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
 
+      You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
+
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
                     :alt: small square with pencil
@@ -105,4 +126,5 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
                     :width: 20px
                     :alt: check mark
 .. |morepage| image:: ../images/more-ellipsis.png
-             :alt: Three dots button
+                  :alt: Three dots button
+                  :width: 40px
