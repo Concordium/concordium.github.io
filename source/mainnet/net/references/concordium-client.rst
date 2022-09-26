@@ -145,6 +145,8 @@ structure. The distribution does this automatically, so it should not be
 necessary to use this command. If the configuration structure becomes corrupt
 for some reason, it may also be able to repair it.
 
+.. _concordium-client-display:
+
 Display contents
 ----------------
 
