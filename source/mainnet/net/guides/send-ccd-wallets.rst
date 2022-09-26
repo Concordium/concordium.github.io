@@ -129,7 +129,7 @@ This topic describes how you can send CCD from an account when only one particip
 
         #. Go to Accounts.
 
-        #. Click |send|.
+        #. Click |send-bw|.
 
         #. Enter the amount of CCD to transfer. Or click **Max** to transfer all of your CCD minus the transaction fee.
 
@@ -147,5 +147,5 @@ This topic describes how you can send CCD from an account when only one particip
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
 
-.. |send| image:: ../images/browser-wallet/send-ccd.png
+.. |send-bw| image:: ../images/browser-wallet/send-ccd.png
              :alt: paper airplane
