@@ -125,6 +125,11 @@ For bakers
     The amount you earn depends on how much stake your pool is baking. The more delegators, the more stake you have and the greater your chances of being selected to bake a block are. 10% of the additional rewards the delegators’ stake in your pool attracts will go to the pool owner. As you are able to have 2x your own stake delegated to your pool, you are effectively able to increase your rewards by 20% if your pool is full.
 
     Therefore, attracting delegators and managing your baker responsibly will maximize rewards for all. In :ref:`Baker management<baker-pool>` you'll find information about how to be a responsible baker.
+**Can I open a pool on my existing baker node?**
+Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
+
+**How do I activate a baker pool?**
+All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
 
 .. dropdown:: Is there a cool-down period for bakers?
 
