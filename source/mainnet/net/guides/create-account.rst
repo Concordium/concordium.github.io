@@ -16,7 +16,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. tab:: Desktop Wallet
 
             .. note::
-                You can't import accounts that were created on the Mobile Wallet.
+                You can't import accounts that were created on |mw-gen2| or |mw-gen1|.
 
         Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger device and install the Concordium Ledger App<install-ledger-app>`.
 

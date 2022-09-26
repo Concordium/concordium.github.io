@@ -5,7 +5,7 @@
 Overview of the baker process
 =============================
 
-Baking is possible with both Mobile Wallet and Desktop Wallet, however the process differs between the two. The overviews below give a brief description of the process.
+Baking is possible with |mw-gen2|, |mw-gen1|, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.
 
 .. Note::
 
@@ -69,17 +69,17 @@ This overview describes the recommended scenario for running a node and becoming
 Step 1: Set up the node
 -----------------------
 
-For baking you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`.
+For baking you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
 
-Step 2: Set up the Concordium Mobile Wallet
--------------------------------------------
+Step 2: Set up the Wallet
+-------------------------
 
-The Mobile Wallet is available for iOS and Android. For instructions about download and setup, see :ref:`setup-mobile-wallet`.
+The |mw-gen1| is available for iOS and Android. |mw-gen2| is available for Android. For instructions about download and setup, see :ref:`setup-mobile-wallet`.
 
 Step 3: Set up an identity and initial account
 ----------------------------------------------
 
-Once you've installed the Mobile Wallet, you must set up an identity and an account. It is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
+Once you've installed the Wallet, you must set up an identity and an account. If using |mw-gen1| it is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
 Step 4: Add baking to an account
 --------------------------------
@@ -100,7 +100,7 @@ can start baking.
 
 - :ref:`On Docker/Linux<baking-docker>`.
 
-For information about how to update your baker or stop baking, see :ref:`Change baker options in Mobile Wallet<update-baker-mw>`.
+For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
 
 .. toctree::
    :hidden:

@@ -27,7 +27,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
    You can see the fee in the transaction log.
 
 .. Note::
-    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet or Mobile Wallet to request 2000 CCDs.
+    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
 .. tabs::
 

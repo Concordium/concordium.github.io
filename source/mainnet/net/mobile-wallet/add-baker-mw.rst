@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _add-baker-mw:
 
-==========================
-Add baker in Mobile Wallet
-==========================
+====================================
+Add baker in |mw-gen2| and |mw-gen1|
+====================================
 
 .. tabs::
 
@@ -45,7 +45,7 @@ Add baker in Mobile Wallet
 
             .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
 
-        8. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+        8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
             .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
 
@@ -110,7 +110,7 @@ Add baker in Mobile Wallet
 
             .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
 
-        8. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+        8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
             .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
 

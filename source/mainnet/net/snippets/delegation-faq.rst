@@ -67,10 +67,10 @@ For bakers
 ----------
 
 **Can I open a pool on my existing baker node?**
-Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for Mobile Wallet<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
+Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
 
 **How do I activate a baker pool?**
-All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for Mobile Wallet<update-pool-settings>` for instructions about how to set up a baker pool.
+All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
 
 **How often are rewards distributed to bakers?**
 If your baker is chosen to bake the next block on the blockchain you will receive rewards for this. All rewards are distributed at :ref:`pay day<glossary-pay-day>` which is once every 24 hours. If your baker is also baking using CCDs delegated to it, the pool owner rewards from the delegated stake (if any) are also distributed each pay day.

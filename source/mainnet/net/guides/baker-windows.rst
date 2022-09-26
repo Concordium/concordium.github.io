@@ -19,7 +19,7 @@ Prerequisites
 Configure a baker node on Windows
 =================================
 
-#. Create baker keys in Mobile Wallet, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet.
+#. Create baker keys in |mw-gen2|, |mw-gen1|, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet.
 
    .. Note::
 

@@ -1,5 +1,5 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
-
+.. include:: ../../variables.rst
 .. _managing_accounts:
 
 ========
@@ -32,8 +32,7 @@ The off-chain part of the account contains:
 -  decryption keys used for :ref:`shielded transfers<glossary-shielded-transfer>`.
 
 Concordium provides several ways of interacting with the on-chain account.
-Off-chain parts of accounts can be transferred between different devices but not between Mobile Wallet and Desktop Wallet, and
-the same account can be used from multiple devices at the same time.
+Off-chain parts of accounts can be transferred between different devices but not between |mw-gen1| and Desktop Wallet, or |mw-gen2| and Desktop Wallet. The same account can be used from multiple devices at the same time.
 
 Accounts on the chain are identified via an account address, which is a 32-byte
 sequence. The address is usually displayed in Base58Check encoding with version
@@ -68,7 +67,7 @@ Account creation
 Once you have an identity and a user identity certificate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an :ref:`app or wallet<tools>` that guides users through the account creation process. The creation of an account is an :ref:`glossary-on-chain` action that requires sending a transaction to a node that participates in the Concordium network.
 
 .. Note::
-   Mobile Wallet does not submit the transaction directly to a node, but via a proxy. Mobile Wallet does not need to be connected to a node.
+   |mw-gen2| and |mw-gen1| do not submit the transaction directly to a node, but via a proxy. |mw-gen2| and |mw-gen1| do not need to be connected to a node.
 
 The input to the transaction is a *credential*, which contains a number of :ref:`cryptographic proofs<glossary-cryptographic-proof>`, as well as a selection of attributes the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
 

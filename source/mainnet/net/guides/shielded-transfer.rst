@@ -30,7 +30,7 @@ Prerequisites
    Do not shield or transfer all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
 
 .. Note::
-    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet or Mobile Wallet to request 2000 CCDs.
+    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
 .. tabs::
 

@@ -18,7 +18,7 @@ The |mw-gen2|
 
 The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
 
-To learn more about the differences between the wallets, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet<choosing-wallet>`.
+To learn more about the differences between the wallets, see :ref:`Deciding between the wallets<choosing-wallet>`.
 
 .. warning:: You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
 

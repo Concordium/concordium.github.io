@@ -8,9 +8,7 @@ A transaction on the Concordium blockchain is an operation which applies some ch
 
 The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
-You can make transactions using either the Desktop Wallet, the Mobile Wallet, or the Concordium Client. Note that the Mobile Wallet doesn’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
-
-You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-gen1|, |bw|, or the Concordium Client. Note that the |mw-gen1|, |mw-gen2|, and |bw| don’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
+You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-gen1|, or the Concordium Client. Note that the |mw-gen1|, and |mw-gen2| don’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
 
 +----------------------------+---------------+----------------+---------------+-------------------+
 |                            | |mw-gen1|     | |mw-gen2|      |Desktop Wallet | Concordium Client |
@@ -41,7 +39,7 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+---------------+-------------------+
 | Delegation                 | |check|       | |check|        | |check|       | |check|           |
 +----------------------------+---------------+----------------+---------------+-------------------+
-- |bw|: supports send CCD, receive CCD, connect to dApps.
+
 - |mw-gen1| and |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, baker management, delegation.
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
 - Concordium Client: supports all transaction types.

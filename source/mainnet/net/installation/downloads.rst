@@ -21,7 +21,7 @@ You can find |mw-gen2| on Google Play.
 
    .. image:: ../images/mobile-wallet/google-play-badge.png
       :width: 29.5%
-      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet
 
 |mw-gen1|
 ========================
