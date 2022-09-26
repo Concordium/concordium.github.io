@@ -87,7 +87,7 @@ Concordium Client v4.1.0
 
    |
 
-   When you run Concordium Client on Linux, run the following command to make the file you download executable:
+   Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
       .. code-block:: console
 
