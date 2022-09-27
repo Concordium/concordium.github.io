@@ -1,5 +1,5 @@
 .. _Discord: https://discord.gg/xWmQ5tp
-
+.. include:: ../../variables.rst
 .. _baking-docker:
 
 ==========================
@@ -17,7 +17,7 @@ Prerequisites
 Configure a node as a baker
 ===========================
 
-To run a node as baker, you first have to generate baker keys and then register the keys on an account. Depending on whether you are using Desktop Wallet or Mobile Wallet, the process to generate baker keys differs.
+To run a node as baker, you first have to generate baker keys and then register the keys on an account. Depending on whether you are using Desktop Wallet or |mw-gen2| / |mw-gen1|, the process to generate baker keys differs.
 For information about the process for each type of wallet, see :ref:`overview-baker`.
 You then need to move the generated baker keys file to a location accessible by the node,
 and finally specify this location in the service file for the Concordium Node.
@@ -69,7 +69,7 @@ the same way as the first time, e.g., ``docker-compose -f testnet-node.yaml
 up``. The node will automatically start baking when the baker is included in the
 bakers for the current epoch.
 
-In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
+In the Desktop Wallet, |mw-gen2|, and |mw-gen1|, a bread icon is added to
 the account associated with the baker node. The bread icon appears as
 soon as the transaction has been submitted. That is, before the two
 epochs have elapsed.

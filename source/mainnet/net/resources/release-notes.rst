@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _testnet-release-notes:
 
 =======================
@@ -10,6 +11,20 @@ Sirius Testnet
 .. Note::
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+September 26, 2022
+
+|mw-gen2|
+---------
+
+Concordium introduces a new wallet for Android mobile devices: the |mw-gen2|. The |mw-gen2| offers all of the same functionality you know from |mw-gen1|, such as sending and receiving CCDs, delegation, baking, and so on. But the |mw-gen2| uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released |bw|. You can read about |mw-gen2| and the differences between it and |mw-gen1| in the :ref:`FAQ<mw-gen2-faq>`.
+
+In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
+
+|mw-gen1| (previously Concordium Mobile Wallet) for Android
+-----------------------------------------------------------
+
+The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
 
 August 29, 2022
 

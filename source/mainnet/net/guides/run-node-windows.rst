@@ -9,8 +9,8 @@ This guide describes how organizations can run and manage a node on the Concordi
 
 If you want to run a baker node on Windows, see :ref:`Configure a node on Windows as baker<baker-windows>`.
 
-Prequisites
-===========
+Prerequisites
+=============
 
 -  Run Windows 10 or later or Windows Server 2019 or later.
 -  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
