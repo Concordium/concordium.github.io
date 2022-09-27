@@ -15,3 +15,4 @@ The following topics are specific to |bw|.
     use-browser-wallet
     connect-app
     ../guides/recover-wallet
+    piggy-bank-example
