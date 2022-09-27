@@ -10,6 +10,7 @@ The following topics relate to terms and conditions of use as well as notices an
    :maxdepth: 1
 
    terms-and-conditions-dw
+   terms-and-conditions-mw-gen2
    terms-and-conditions-mw
    third-party-licenses
    third-party-notices

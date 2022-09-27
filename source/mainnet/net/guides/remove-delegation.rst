@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _remove-delegation:
 
 =======================================================
@@ -124,7 +125,32 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
                 #. Select **Finish** to leave the page.
 
-    .. tab:: Mobile Wallet
+   .. tab:: |mw-gen2|
+
+      #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
+
+      #. You see your current delegation. Tap **Stop delegation**.
+
+         .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+
+      #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+
+         .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+
+      #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
+         .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
+
+        .. |earn-w-text| image:: ../images/earn-w-text.png
+             :alt: Hand receiving money with text earn
+             :width: 50px
+
+   .. tab:: |mw-gen1|
+
         #. Go to the **Accounts** screen.
 
         #. Tap on the balance area of the account for which you want to stop delegation or tap **More** |moredetails|.
@@ -149,6 +175,8 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px

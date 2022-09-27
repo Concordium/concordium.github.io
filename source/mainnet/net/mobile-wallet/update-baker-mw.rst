@@ -1,18 +1,40 @@
+.. include:: ../../variables.rst
 .. _update-baker-mw:
 
-=====================================
-Change baker options in Mobile Wallet
-=====================================
+====================
+Change baker options
+====================
 
-#. Go to **Accounts**. Tap on the balance area of the baker account you want update or tap **More** |moredetails|.
+The following tabs describe how to access baker settings.
 
-#. In the hamburger menu |hamburger| tap **Baking**.
+.. tabs::
 
-#. In the Baker status screen tap **Update baker settings**.
+    .. tab:: |mw-gen2|
 
-    .. image:: ../images/mobile-wallet/baker-status-mw.png
+        #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
 
-You have four options:
+        #. In the Baker status screen tap **Update baker settings**.
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
+
+        .. |earn-w-text| image:: ../images/earn-w-text.png
+             :alt: Hand receiving money with text earn
+             :width: 50px
+
+    .. tab:: |mw-gen1|
+
+        #. Go to **Accounts**. Tap on the balance area of the baker account you want update or tap **More** |moredetails|.
+
+        #. In the hamburger menu |hamburger| tap **Baking**.
+
+        #. In the Baker status screen tap **Update baker settings**.
+
+            .. image:: ../images/mobile-wallet/baker-status-mw.png
+                :width: 25%
+
+Once you have access baker settings for your wallet, you have four options:
 
     - Update baker stake
     - Update pool settings
@@ -20,6 +42,7 @@ You have four options:
     - Stop baking
 
 .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
+    :width: 25%
 
 Update baker stake
 ==================
@@ -27,6 +50,7 @@ Update baker stake
 If you choose **Update baker stake** you see your balance and the current Baker stake amount. Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
 
 .. image:: ../images/mobile-wallet/update-baker-stake-amt-mw.png
+    :width: 25%
 
 On the overview screen, check the information. Once you are satisfied, tap **Submit baker transaction**.
 
@@ -44,6 +68,7 @@ Update pool settings
 If you choose **Update pool settings**, you have three options:
 
 .. image:: ../images/mobile-wallet/update-baker-pool-mw.png
+    :width: 25%
 
 - Open pool: open a pool for a previously closed baker
 - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
@@ -55,7 +80,7 @@ If you choose **Open pool**:
 
 #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+#. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 If you choose **Closed for new**:
 
@@ -65,7 +90,7 @@ Existing delegators remain in the pool. You have the option to adjust commission
 
 #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+#. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 If you choose **Close pool**:
 
@@ -73,7 +98,7 @@ This closes the pool completely for both existing delegators and new delegators.
 
 #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+#. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 .. Note::
 
@@ -88,6 +113,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
 #. If you choose **Update baker keys**, after the screens explaining reasons for updating baker keys, you see the new baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file.
 
     .. image:: ../images/mobile-wallet/update-baker-keys.png
+        :width: 25%
 
 .. Warning::
 
@@ -95,7 +121,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
 2. Once you have saved the keys, review the information on the overview screen of the add baker transaction then tap **Submit baker transaction**.
 
-3. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+3. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
 4. You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
 
@@ -114,10 +140,11 @@ If you no longer wish to bake on this account, you can stop baking.
 #. Tap **Stop baking**.
 
     .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
+        :width: 25%
 
 #. After the screens explaining baker removal, review the information on the overview screen. When you are satisfied, tap **Submit baker transaction**.
 
-#. The Mobile Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
+#. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**.
 
 .. Note::
 
@@ -129,6 +156,8 @@ If you no longer wish to bake on this account, you can stop baking.
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
+             :width: 20px
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 20px
