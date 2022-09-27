@@ -14,7 +14,7 @@ Sirius Testnet
 
 October 5, 2022
 
-Concordium Client 4.1.X
+Concordium Client 4.2.0
 -----------------------
 
 - Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
