@@ -18,13 +18,34 @@ Concordium Node 4.4.X
 
 Concordium Node 4.4.X contains performance improvements and bug fixes.
 
-- Fix a bug in Ctrl-C signal handling where a node would fail to stop if interrupted early on in the startup if out-of-band catchup was enabled.
-- database-exporter now produces a collection of export files, instead of a single file. The new --chunksize option specifies the size of export files in blocks.
-- The --download-blocks-from option now takes the URL to the catchup index file, permitting to only download and import catchup files containing blocks not already present in the database.
-- Smart contract state is no longer cached on startup and is not cached after finalization.
-- Verify pending blocks earlier when possible and do not relay pending blocks.
-- Speed up and reduce memory overhead during protocol updates.
-- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed during contract execution. Metadata is cached for a limited number of smart contract modules. By default, the cache will retain metadata for at most 100 smart contract modules, and this is configurable via the --modules-cache-size command line argument or by using the CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE environment variable.
+## 4.4.3
+
+- Smart contract state is no longer cached on startup and is not cached after
+  finalization. This reduces node's memory use and startup time.
+
+- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+  during contract execution. Metadata is cached for a limited number of smart contract modules.
+  By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+  configurable via the `--modules-cache-size` command line argument or by using the 
+  `CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE` environment variable.
+
+- Speed up and reduce memory overhead during protocol updates. Overhead in
+  memory use during protocol updates should now be less than 20%, and time to
+  process a protocol update should be around 1/3 of the previous release.
+
+- The node now validates blocks more eagerly and does not relay blocks it cannot
+  fit into the tree, i.e., pending blocks.
+
+- The `--download-blocks-from` option now takes the URL to the catchup _index file_, permitting to
+  only download and import catchup files containing blocks not already present in the database.
+
+- Partial node database recovery. The node is now able to recover from the most
+  common causes of its database corruption.
+
+- Fix typo in environment variable `CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS` (remove trailing `S`).
+
+- Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+  interrupted early on in the startup if out-of-band catchup was enabled.
 
 August 29, 2022
 
