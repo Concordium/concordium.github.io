@@ -200,7 +200,7 @@ If you want to change whether the node services start automatically, you have tw
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.mainnet.node.plist"
 
-    - For mainnet:
+    - For testnet:
 
       .. code-block:: console
 
@@ -214,7 +214,7 @@ If you want to change whether the node services start automatically, you have tw
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.mainnet.node-collector.plist"
 
-    - For mainnet:
+    - For testnet:
 
       .. code-block:: console
 

@@ -221,7 +221,7 @@ You can improve the performance by downloading the blocks from an out-of-band ca
 
 #. In the **Search** bar, search for and select **Stop Concordium Service Node** to stop the node, and then search for and select **Start Concordium Service Node** to restart the node.
 
-#. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. You do so by comparing the finalized length of the chain with the length of your node. If they match, your node has caught up.
+#. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. To see this, compare the finalized length of the chain with the length of your node. If they match, your node has caught up.
 
 For node versions 4.3.0 or earlier
 ----------------------------------
