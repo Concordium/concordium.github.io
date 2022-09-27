@@ -29,6 +29,27 @@ This is done by adding the following in the ``Cargo.toml`` file ::
    [lib]
    crate-type = ["cdylib", "rlib"]
 
+
+Starting a smart contract project from a template
+=================================================
+
+Concordium maintains several smart contract templates (currently a ``default`` template and a ``cis2-nft`` template).
+To start a new Concordium smart contract project from a template, run the command:
+
+.. code-block:: console
+
+   $cargo concordium init
+
+This command generates a new project from the templates in the
+`template folder <https://github.com/Concordium/concordium-rust-smart-contracts>`_.
+The path where the project should be created can be provided with the ``--path`` option.
+The ``cargo-generate`` crate is required for running the above command. ``cargo-generate`` can
+be installed by running the following command:
+
+.. code-block:: console
+
+   $cargo install --locked cargo-generate
+
 Adding the smart contract standard library
 ==========================================
 
