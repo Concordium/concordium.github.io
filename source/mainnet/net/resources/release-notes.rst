@@ -13,22 +13,20 @@ Sirius Testnet
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
 
-September 28, 2022
+September 29, 2022
 
-Concordium Node 4.4.X
+Concordium Node 4.4.3
 ---------------------
 
-Concordium Node 4.4.X contains performance improvements and bug fixes.
-
-## 4.4.3
+Concordium Node 4.4.3 contains performance improvements and bug fixes.
 
 - Smart contract state is no longer cached on startup and is not cached after
-  finalization. This reduces node's memory use and startup time.
+  finalization. This reduces the node's memory use and startup time.
 
 - Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
   during contract execution. Metadata is cached for a limited number of smart contract modules.
   By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
-  configurable via the `--modules-cache-size` command line argument or by using the 
+  configurable via the `--modules-cache-size` command line argument or by using the
   `CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE` environment variable.
 
 - Speed up and reduce memory overhead during protocol updates. Overhead in
