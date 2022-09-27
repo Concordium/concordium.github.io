@@ -12,9 +12,9 @@
 .. |bw| replace:: Concordium Wallet for Chrome
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_4.1.0
-.. |client-version| replace:: 4.1.0
-.. |client-linux-checksum| replace:: 3f5e32835ec029e0eb6298aee7eca1b2b13e457575f756568a4d2f06788840b9
+.. |client-linux| replace:: concordium-client_4.2.0
+.. |client-version| replace:: 4.2.0
+.. |client-linux-checksum| replace:: 805bb509b1b76bd6750e744398146b064876e2251ed724bbcf26b229d6ede627
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_4.3.1_amd64.deb
