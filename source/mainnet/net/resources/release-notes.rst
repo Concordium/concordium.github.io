@@ -26,8 +26,8 @@ Concordium Node 4.4.3 contains performance improvements and bug fixes.
 - Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
   during contract execution. Metadata is cached for a limited number of smart contract modules.
   By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
-  configurable via the `--modules-cache-size` command line argument or by using the
-  `CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE` environment variable.
+  configurable via the ``--modules-cache-size`` command line argument or by using the
+  ``CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE`` environment variable.
 
 - Speed up and reduce memory overhead during protocol updates. Overhead in
   memory use during protocol updates should now be less than 20%, and time to
@@ -36,13 +36,13 @@ Concordium Node 4.4.3 contains performance improvements and bug fixes.
 - The node now validates blocks more eagerly and does not relay blocks it cannot
   fit into the tree, i.e., pending blocks.
 
-- The `--download-blocks-from` option now takes the URL to the catchup _index file_, permitting to
+- The ``--download-blocks-from`` option now takes the URL to the catchup ``_index file_``, permitting to
   only download and import catchup files containing blocks not already present in the database.
 
 - Partial node database recovery. The node is now able to recover from the most
   common causes of its database corruption.
 
-- Fix typo in environment variable `CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS` (remove trailing `S`).
+- Fix typo in environment variable ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS`` (remove trailing `S`).
 
 - Fix a bug in Ctrl-C signal handling where a node would fail to stop if
   interrupted early on in the startup if out-of-band catchup was enabled.
