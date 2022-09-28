@@ -15,10 +15,10 @@ Sirius Testnet
 
 September 29, 2022
 
-Concordium Node 4.4.3
+Concordium Node 4.4.4
 ---------------------
 
-Concordium Node 4.4.3 contains performance improvements and bug fixes.
+Concordium Node 4.4.4 contains performance improvements and bug fixes.
 
 - Smart contract state is no longer cached on startup and is not cached after
   finalization. This reduces the node's memory use and startup time.

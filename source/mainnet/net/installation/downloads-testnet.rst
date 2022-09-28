@@ -131,7 +131,7 @@ Download cargo-concordium:
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions v4.4.3
+Concordium node distributions v4.4.4
 ====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
@@ -145,7 +145,7 @@ Ubuntu
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.4.3_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.4.4_amd64.deb>`_
 
       - SHA256 checksum of the download: ``1f8650a01746617c10d9e8aeee01b1adbf1e8a005e5a246b6920437344c7f518``
 
@@ -165,7 +165,7 @@ Windows
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.4.3-0.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.4.4-1.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
@@ -174,7 +174,7 @@ Mac
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.4.3-0.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.4.4-1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
