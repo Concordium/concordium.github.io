@@ -110,7 +110,7 @@ Concordium Client v4.2.0
 
    where you replace `*` with |client-version|.
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.2.0.pkg>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-4.2.0-0.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
