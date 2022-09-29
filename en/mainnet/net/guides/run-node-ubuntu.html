@@ -1526,8 +1526,44 @@ The services are also enabled to start automatically on system start.</p>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.</p>
+<ol class="arabic simple">
+<li><p>Stop the node if it is running</p></li>
+</ol>
 <blockquote>
-<div><p>If the node is well behind the head of the chain, you can speed up initial catchup by downloading a batch of blocks and using out of band catchup.</p>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl stop concordium-mainnet-node.service
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Edit the node service configuration file</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl edit concordium-mainnet-node.service
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Add the following under the <code class="docutils literal notranslate"><span class="pre">[Service]</span></code> section (create the section if it does not exist)</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">Environment</span><span class="o">=</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="o">=</span><span class="n">https</span>:<span class="c1">//catchup.mainnet.concordium.software/blocks.idx</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Start the service again</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">$sudo</span><span class="w"> </span><span class="n">systemctl</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">concordium</span><span class="o">-</span><span class="n">mainnet</span><span class="o">-</span><span class="n">node</span><span class="p">.</span><span class="n">service</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.</p>
 <ol class="arabic simple">
 <li><p>Download mainnet blocks from <a class="reference external" href="https://catchup.mainnet.concordium.software/blocks_to_import.mdb">catchup.mainnet.concordium.software</a>.
 The remaining steps assume that the file is stored in <code class="docutils literal notranslate"><span class="pre">~/Downloads/blocks_to_import.mdb</span></code>.</p></li>

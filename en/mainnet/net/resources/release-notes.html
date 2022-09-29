@@ -1455,6 +1455,11 @@ body {margin:0;}
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-node-4-4-4">
+     Concordium Node 4.4.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mw-gen2">
      Concordium Wallet for Android
     </a>
@@ -1841,7 +1846,33 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
+<p>September 29, 2022</p>
+<div class="section" id="concordium-node-4-4-4">
+<h3>Concordium Node 4.4.4<a class="headerlink" href="#concordium-node-4-4-4" title="Permalink to this headline">#</a></h3>
+<p>Concordium Node 4.4.4 contains performance improvements and bug fixes.</p>
+<ul class="simple">
+<li><p>Smart contract state is no longer cached on startup and is not cached after
+finalization. This reduces the node’s memory use and startup time.</p></li>
+<li><p>Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+during contract execution. Metadata is cached for a limited number of smart contract modules.
+By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+configurable via the <code class="docutils literal notranslate"><span class="pre">--modules-cache-size</span></code> command line argument or by using the
+<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE</span></code> environment variable.</p></li>
+<li><p>Speed up and reduce memory overhead during protocol updates. Overhead in
+memory use during protocol updates should now be less than 20%, and time to
+process a protocol update should be around 1/3 of the previous release.</p></li>
+<li><p>The node now validates blocks more eagerly and does not relay blocks it cannot
+fit into the tree, i.e., pending blocks.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">--download-blocks-from</span></code> option now takes the URL to the catchup <code class="docutils literal notranslate"><span class="pre">_index</span> <span class="pre">file_</span></code>, permitting to
+only download and import catchup files containing blocks not already present in the database.</p></li>
+<li><p>Partial node database recovery. The node is now able to recover from the most
+common causes of its database corruption.</p></li>
+<li><p>Fix typo in environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS</span></code> (remove trailing <cite>S</cite>).</p></li>
+<li><p>Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+interrupted early on in the startup if out-of-band catchup was enabled.</p></li>
+</ul>
 <p>September 26, 2022</p>
+</div>
 <div class="section" id="mw-gen2">
 <h3>Concordium Wallet for Android<a class="headerlink" href="#mw-gen2" title="Permalink to this headline">#</a></h3>
 <p>Concordium introduces a new wallet for Android mobile devices: the Concordium Wallet for Android. The Concordium Wallet for Android offers all of the same functionality you know from Concordium Legacy Wallet, such as sending and receiving CCDs, delegation, baking, and so on. But the Concordium Wallet for Android uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released Concordium Wallet for Chrome. You can read about Concordium Wallet for Android and the differences between it and Concordium Legacy Wallet in the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#mw-gen2-faq"><span class="std std-ref">FAQ</span></a>.</p>

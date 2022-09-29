@@ -1496,6 +1496,13 @@ body {margin:0;}
   <a class="reference internal nav-link" href="#synchronize-a-node-with-the-network">
    Synchronize a node with the network
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-node-versions-4-3-0-or-earlier">
+     For node versions 4.3.0 or earlier
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uninstall-a-macos-node">
@@ -1690,7 +1697,7 @@ details of how this is done will depend on your configuration.</p>
 </pre></div>
 </div>
 </li>
-<li><p>For mainnet:</p>
+<li><p>For testnet:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span>
 </pre></div>
 </div>
@@ -1704,7 +1711,7 @@ details of how this is done will depend on your configuration.</p>
 </pre></div>
 </div>
 </li>
-<li><p>For mainnet:</p>
+<li><p>For testnet:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span>
 </pre></div>
 </div>
@@ -1754,9 +1761,49 @@ details of how this is done will depend on your configuration.</p>
 <p>When you start a node for the first time, it can take a while to synchronize the
 node with the rest of the network, since it has to get all blocks from its
 peers.</p>
-<p>You can improve the performance by downloading the blocks before starting the
-node. While it will still take time to process the blocks, it will typically be
+<p>You can improve the startup time by downloading the blocks from an out-of-band catchup service
+before starting the node. While it will still take time to process the blocks, it will typically be
 faster than requesting them from peers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Catchup data for mainnet does not work with a testnet node and vice versa.  Make sure to use the
+correct URL to the block file index for your node.</p>
+</div>
+<ol class="arabic">
+<li><p>Specify the URL to the block file index in the service file:</p>
+<ul>
+<li><p>For mainnet:</p>
+<ul>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.mainnet.node.plist</span></code> as an
+administrator and add the following in the <em>EnviromentVariables</em> section:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">https</span>:<span class="c1">//catchup.mainnet.concordium.software/blocks.idx&lt;/string&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>For testnet:</p>
+<ul>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.testnet.node.plist</span></code> as an
+administrator and add the following in the <em>EnviromentVariables</em> section:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">https</span>:<span class="c1">//catchup.testnet.concordium.com/blocks.idx&lt;/string&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Restart the appropriate node by running the application <strong>Concordium Node Stop [Mainnet/Testnet]</strong> (if running) and then
+<strong>Concordium Node Start [Mainnet/Testnet]</strong>.</p></li>
+<li><p>Go to the mainnet or testnet dashboard to monitor when the node has caught up with its
+peers on the blockchain. You do so by comparing the finalized length of the
+chain with the length of your node. If they match, your node has caught up.</p></li>
+</ol>
+<div class="section" id="for-node-versions-4-3-0-or-earlier">
+<h3>For node versions 4.3.0 or earlier<a class="headerlink" href="#for-node-versions-4-3-0-or-earlier" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A block file for mainnet does not work with a testnet node and vice versa.
@@ -1820,6 +1867,7 @@ time the node is restarted.</p></li>
 peers on the blockchain. You do so by comparing the finalized length of the
 chain with the length of your node. If they match, your node has caught up.</p></li>
 </ol>
+</div>
 </div>
 <div class="section" id="uninstall-a-macos-node">
 <h2>Uninstall a macOS node<a class="headerlink" href="#uninstall-a-macos-node" title="Permalink to this headline">#</a></h2>
