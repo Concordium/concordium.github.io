@@ -209,13 +209,13 @@ You can improve the performance by downloading the blocks from an out-of-band ca
 
    .. code-block:: TOML
 
-      node.args = ['--download-blocks-from', 'https://catchup.mainnet.concordium.software/blocks.idx']
+      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
 
    - For testnet, add the following line to the ``[node.testnet]`` section:
 
    .. code-block:: TOML
 
-      node.args = ['--download-blocks-from', 'https://catchup.test.concordium.com/blocks.idx']
+      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
 
    Save the configuration file.
 
