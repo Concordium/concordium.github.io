@@ -46,7 +46,34 @@ The services are also enabled to start automatically on system start.
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.testnet.concordium.com/>`__ and look for a node with the name you provided.
 
 .. Note::
-   If the node is well behind the head of the chain, you can speed up initial catchup by downloading a batch of blocks and using out of band catchup.
+   If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
+
+   1. Stop the node if it is running
+
+     .. code-block:: console
+
+       $sudo systemctl stop concordium-testnet-node.service
+
+   2. Edit the node service configuration file
+
+     .. code-block:: console
+
+       $sudo systemctl edit concordium-testnet-node.service
+
+   3. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+     .. code-block::
+
+       Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
+
+   4. Start the service again
+
+     .. code-block::
+
+       $sudo systemctl start concordium-testnet-node.service
+
+.. Note::
+   If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
 
    1. Download testnet blocks from `catchup.testnet.concordium.com <https://catchup.testnet.concordium.com/blocks_to_import.mdb>`__.
       The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
