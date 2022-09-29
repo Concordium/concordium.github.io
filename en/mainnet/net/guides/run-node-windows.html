@@ -1701,13 +1701,13 @@ details of how this is done will depend on your configuration.</p>
 <ul class="simple">
 <li><p>For mainnet, add the following line to the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> section:</p></li>
 </ul>
-<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">args</span> <span class="o">=</span> <span class="k">[&#39;--download-blocks-from&#39;, &#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;]</span>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>For testnet, add the following line to the <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section:</p></li>
 </ul>
-<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">args</span> <span class="o">=</span> <span class="k">[&#39;--download-blocks-from&#39;, &#39;https://catchup.test.concordium.com/blocks.idx&#39;]</span>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.testnet.concordium.com/blocks.idx&#39;</span>
 </pre></div>
 </div>
 <p>Save the configuration file.</p>
