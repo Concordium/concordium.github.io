@@ -17,6 +17,7 @@
 .. |client-linux-checksum| replace:: 3f5e32835ec029e0eb6298aee7eca1b2b13e457575f756568a4d2f06788840b9
 
 .. Node debian package verification variables
+
 .. |node-deb-package| replace:: concordium-mainnet-node_4.4.4-1_amd64.deb
 .. |node-deb-package-checksum| replace:: ed1c346de5d20089e4590c67e8cb757783f3938b17b36ba44756bbf0d013f21e
 
