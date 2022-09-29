@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _overview-desktop:
 
 =========================
@@ -44,7 +44,7 @@ To set up the Desktop Wallet:
 #. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
 
 .. Warning::
-    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
+    Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
 
 Step 4: Set up an identity and an initial account
 ==================================================
