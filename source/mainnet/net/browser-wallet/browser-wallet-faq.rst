@@ -54,7 +54,7 @@
 
 .. dropdown:: Can I access my wallet on multiple devices with the secret recovery phrase?
 
-    Yes, you can access your wallet using |mw-gen2| and |bw|. You can recover your wallet in a device that uses either of these. Be aware that any names you have given to identities and accounts are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can edit the account name and edit the identity name, if desired. Also, only addresses for your own account are added to the address book. Other addresses cannot be recovered. So you must add those manually.
+    Yes, you can access your wallet using |mw-gen2| and |bw|. You can recover your wallet in a device that uses either of these. Be aware that any names you have given to identities and accounts are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can edit the account name and edit the identity name, if desired.
 
     It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<recover-wallet>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
 
