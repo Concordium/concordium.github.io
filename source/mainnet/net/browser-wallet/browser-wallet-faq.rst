@@ -11,7 +11,7 @@
 
 .. dropdown:: What are the features and benefits of the |bw|?
 
-    Some of the functionality is the same as other Concordium wallets in that you can still send and receive funds. But the |bw| uses a secret recovery phrase that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, |mw-gen2|.
+    Some of the functionality is the same as other Concordium wallets in that you can still send and receive funds. But the |bw| uses a secret recovery phrase that allows you to recover your wallet should you need to replace your device. That same secret recovery phrase will also allow you to recover the wallet on, for example, |mw-gen2|.
 
     In |bw| initial accounts are no longer created by the Identity Verification company when your identity is verified, ensuring complete privacy of all your accounts. Going forward you create all accounts yourself in your Concordium Wallet.
 
