@@ -196,6 +196,10 @@ The |mw-gen1|
 
 The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
 
+.. Note::
+
+   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+
 The |mw-gen2|
 ------------------
 

@@ -88,6 +88,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     .. tab:: |mw-gen1|
 
+        .. Note::
+
+            It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+
         #. Go to the **Accounts** page.
 
         #. Tap the **+** in the upper right corner.

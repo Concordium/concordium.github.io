@@ -82,6 +82,10 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
 
    .. tab:: |mw-gen1|
 
+        .. Note::
+
+            It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
+
       You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
 
       #. Go to the |morepage| page.
