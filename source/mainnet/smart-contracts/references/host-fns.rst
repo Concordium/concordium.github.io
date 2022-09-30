@@ -351,7 +351,7 @@ Functions only accessible for smart contract receive functions.
             *invoking* contract) has changed (``1``) or not (``0``) and the
             remaining 23 bits are the index of the return value that can be used
             in a call to |get_parameter_size|_ and |get_parameter_section|_.
-            If the fourth byte is 0 the call failed because of a logic error and
+            If the bits 25..32 are all zero the call failed because of a logic error and
             there is a return value. Bits 1..24 of the response are the index of
             the return value. Bits 32..64 are to be interpreted in two's
             complement and will be a negative number indicating the error code.
