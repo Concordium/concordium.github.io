@@ -27,6 +27,7 @@ In case you get a new device or need to restore your existing device, you can re
         .. Note::
 
             You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can :ref:`switch between mainnet and testnet<switch-network>`.
+            If you use both networks, you can recover on the other net after setup, through the settings page.
 
     .. tab:: |mw-gen2|
 
