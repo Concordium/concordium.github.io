@@ -26,6 +26,7 @@ index
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
+   guides/recover-wallet
    mobile-wallet-gen2/index
    mobile-wallet/index
    desktop-wallet/index
