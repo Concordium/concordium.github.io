@@ -2078,13 +2078,18 @@ case, the first bit of the response indicates whether state (of the
 <em>invoking</em> contract) has changed (<code class="docutils literal notranslate"><span class="pre">1</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">0</span></code>) and the
 remaining 23 bits are the index of the return value that can be used
 in a call to <a class="reference external" href="#concordium.get_parameter_size"><code class="docutils literal notranslate"><span class="pre">get_parameter_size</span></code></a> and <a class="reference external" href="#concordium.get_parameter_section"><code class="docutils literal notranslate"><span class="pre">get_parameter_section</span></code></a>.
-Otherwise, the call failed and only the forth byte is set. With the value:</p>
+If the bits 25..32 are all zero the call failed because of a logic error and
+there is a return value. Bits 1..24 of the response are the index of
+the return value. Bits 32..64 are to be interpreted in two’s
+complement and will be a negative number indicating the error code.
+Otherwise, the call failed and only the fourth byte is set. Possible values are:</p>
 <p><code class="docutils literal notranslate"><span class="pre">1</span></code> if the call failed because of insufficient funds.</p>
 <p><code class="docutils literal notranslate"><span class="pre">2</span></code> if the account to transfer to did not exist.</p>
 <p><code class="docutils literal notranslate"><span class="pre">3</span></code> if the contract to call did not exist.</p>
 <p><code class="docutils literal notranslate"><span class="pre">4</span></code> if the entrypoint did not exist on contract to call.</p>
 <p><code class="docutils literal notranslate"><span class="pre">5</span></code> if it called a V0 contract that failed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">6</span></code> if it called a contract that failed with a runtime error.</p>
+<p>No other values are possible.</p>
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
