@@ -12,6 +12,14 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+October 5, 2022
+
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
 
 September 29, 2022
 
@@ -46,6 +54,7 @@ Concordium Node 4.4.4 contains performance improvements and bug fixes.
 
 - Fix a bug in Ctrl-C signal handling where a node would fail to stop if
   interrupted early on in the startup if out-of-band catchup was enabled.
+
 
 September 26, 2022
 
