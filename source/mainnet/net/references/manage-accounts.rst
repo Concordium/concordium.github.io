@@ -198,7 +198,7 @@ The |mw-gen1| is a digital smartphone wallet that enables you to create and mana
 
 .. Note::
 
-   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+   It is no longer possible for users of |mw-gen1| to create new accounts.
 
 The |mw-gen2|
 ------------------
