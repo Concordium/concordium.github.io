@@ -12,6 +12,13 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+October 13, 2022
+
+|mw-gen1|
+----------------
+
+Identity and account creation has been locked in |mw-gen1|. This means that you cannot create new identities or accounts in |mw-gen1|. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.
+
 September 26, 2022
 
 |mw-gen2|
