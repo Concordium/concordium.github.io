@@ -19,6 +19,47 @@ Cargo concordium 2.2.0
 
 Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
 
+October 5, 2022
+
+Concordium Node 4.4.4
+---------------------
+
+Concordium Node 4.4.4 contains performance improvements and bug fixes.
+
+- Smart contract state is no longer cached on startup and is not cached after
+  finalization. This reduces the node's memory use and startup time.
+
+- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+  during contract execution. Metadata is cached for a limited number of smart contract modules.
+  By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+  configurable via the ``--modules-cache-size`` command line argument or by using the
+  ``CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE`` environment variable.
+
+- Speed up and reduce memory overhead during protocol updates. Overhead in
+  memory use during protocol updates should now be less than 20%, and time to
+  process a protocol update should be around 1/3 of the previous release.
+
+- The node now validates blocks more eagerly and does not relay blocks it cannot
+  fit into the tree, i.e., pending blocks.
+
+- The ``--download-blocks-from`` option now takes the URL to the catchup ``_index file_``, permitting to
+  only download and import catchup files containing blocks not already present in the database.
+
+- Partial node database recovery. The node is now able to recover from the most
+  common causes of its database corruption.
+
+- Fix typo in environment variable ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS`` (remove trailing `S`).
+
+- Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+  interrupted early on in the startup if out-of-band catchup was enabled.
+
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
+
 September 26, 2022
 
 |mw-gen2|
