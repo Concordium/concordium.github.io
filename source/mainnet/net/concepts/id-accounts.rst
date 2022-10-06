@@ -66,7 +66,7 @@ Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<b
 
 .. Note::
 
-   It is no longer possible for users of |mw-gen1| to create new accounts.
+   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
 
 .. _revoke-anomity:
 

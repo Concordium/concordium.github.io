@@ -90,7 +90,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         .. Note::
 
-            It is no longer possible for users of |mw-gen1| to create new accounts.
+            It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
 
         #. Go to the **Accounts** page.
 
