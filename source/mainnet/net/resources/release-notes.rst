@@ -12,6 +12,17 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+October 17, 2022
+
+Concordium Node 4.5.x
+---------------------
+
+Concordium Node 4.5.x contains the updated gRPC API which is easier to use than the previous version. It also contains bug fixes and performance improvements.
+
+- Node gRPC API v2 is released.
+- The node is now able to recover after crashes which leave only treestate or only blockstate usable.
+- Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
+
 October 5, 2022
 
 Concordium Client 4.2.0
