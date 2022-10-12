@@ -12,7 +12,8 @@ smart contract templates. Choose the template that best fits your project scope.
 The *from scratch* option guides you through the process when you want to start a new project without any boilerplate code.
 
 .. note::
-   We recommend that newcomers choose the *from a template* option.
+
+   Concordium recommends that newcomers choose the *from a template* option.
 
 From a template
 ===============
@@ -23,11 +24,15 @@ For generating the smart contracts from the above templates, the ``cargo-generat
 ``cargo-generate`` can be installed by running the following command:
 
 .. code-block:: console
+
    $cargo install --locked cargo-generate
+
 To start a new Concordium smart contract project from a template, run the command:
 
 .. code-block:: console
+
    $cargo concordium init
+
 The path where the project should be created can be provided with the ``--path`` option.
 
 From scratch
