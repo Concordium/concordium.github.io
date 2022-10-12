@@ -1450,6 +1450,16 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-a-template">
+   From a template
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-scratch">
+   From scratch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-the-smart-contract-standard-library">
    Adding the smart contract standard library
   </a>
@@ -1473,6 +1483,31 @@ body {margin:0;}
                 
   <div class="section" id="setting-up-a-smart-contract-project">
 <span id="setup-contract"></span><h1>Setting up a smart contract project<a class="headerlink" href="#setting-up-a-smart-contract-project" title="Permalink to this headline">#</a></h1>
+<p>This guide documents two different options (<em>from a template</em> or <em>from scratch</em>) to create a new Concordium smart contract project.
+The <em>from a template</em> option is available for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> version 2.2.0 or greater. It provides you with some
+smart contract templates. Choose the template that best fits your project scope.
+The <em>from scratch</em> option guides you through the process when you want to start a new project without any boilerplate code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Concordium recommends that newcomers choose the <em>from a template</em> option.</p>
+</div>
+<div class="section" id="from-a-template">
+<h2>From a template<a class="headerlink" href="#from-a-template" title="Permalink to this headline">#</a></h2>
+<p>Concordium maintains several smart contract
+<a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">templates</a> (currently a <code class="docutils literal notranslate"><span class="pre">default</span></code> template and a <code class="docutils literal notranslate"><span class="pre">cis2-nft</span></code> template).
+For generating the smart contracts from the above templates, the <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> crate is required.
+<code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> can be installed by running the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install --locked cargo-generate
+</pre></div>
+</div>
+<p>To start a new Concordium smart contract project from a template, run the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium init
+</pre></div>
+</div>
+<p>The path where the project should be created can be provided with the <code class="docutils literal notranslate"><span class="pre">--path</span></code> option.</p>
+</div>
+<div class="section" id="from-scratch">
+<h2>From scratch<a class="headerlink" href="#from-scratch" title="Permalink to this headline">#</a></h2>
 <p>A smart contract in Rust is written as an ordinary Rust library crate.
 The library is then compiled to Wasm using the Rust target
 <code class="docutils literal notranslate"><span class="pre">wasm32-unknown-unknown</span></code> and, since it is just a Rust library, we can use
@@ -1491,6 +1526,7 @@ This is done by adding the following in the <code class="docutils literal notran
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[lib]</span>
 <span class="n">crate-type</span> <span class="o">=</span> <span class="k">[&quot;cdylib&quot;, &quot;rlib&quot;]</span>
 </pre></div>
+</div>
 </div>
 <div class="section" id="adding-the-smart-contract-standard-library">
 <h2>Adding the smart contract standard library<a class="headerlink" href="#adding-the-smart-contract-standard-library" title="Permalink to this headline">#</a></h2>
