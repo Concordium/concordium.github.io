@@ -14,10 +14,10 @@ Sirius Testnet
 
 October 13, 2022
 
-|mw-gen1|
-----------------
+|mw-gen1| for Android
+---------------------
 
-Identity and account creation has been locked in |mw-gen1|. This means that you cannot create new identities or accounts in |mw-gen1|. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.
+Identity and account creation has been locked in |mw-gen1| for Android. This means that you cannot create new identities or accounts in |mw-gen1| on an Android device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.
 
 October 12, 2022
 
