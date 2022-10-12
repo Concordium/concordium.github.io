@@ -12,7 +12,8 @@ smart contract templates. Choose the template that best fits your project scope.
 The *from scratch* option guides you through the process when you want to start a new project without any boilerplate code.
 
 .. note::
-   We recommend that newcomers choose the *from a template* option.
+
+   Concordium recommends that newcomers choose the *from a template* option.
 
 From a template
 ===============
@@ -60,7 +61,8 @@ This is done by adding the following in the ``Cargo.toml`` file ::
    [lib]
    crate-type = ["cdylib", "rlib"]
 
-**Adding the smart contract standard library**
+Adding the smart contract standard library
+==========================================
 
 The next step is to add ``concordium-std`` as a dependency.
 It is a library for Rust containing procedural macros and functions for
