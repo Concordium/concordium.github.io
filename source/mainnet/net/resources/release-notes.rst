@@ -12,6 +12,13 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+October 10, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
+
 October 5, 2022
 
 Concordium Client 4.2.0
