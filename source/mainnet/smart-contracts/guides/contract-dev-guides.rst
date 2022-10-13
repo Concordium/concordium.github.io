@@ -23,3 +23,4 @@ The contract development guides help you get started writing smart contracts. He
    build-schema
    no-std
    fallback-entrypoints
+   upgradeable-contract
