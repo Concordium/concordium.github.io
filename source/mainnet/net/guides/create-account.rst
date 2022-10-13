@@ -132,7 +132,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
             For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import>`.
 
         .. Note::
- 
+
             To access the **Balance** of the new account, tap the Balance area on the account card or tap |moredetails|.
 
 .. |moredetails| image:: ../images/more-arrow.png
