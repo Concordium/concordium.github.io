@@ -174,18 +174,55 @@ entire receive function, including the cost of failed operations.
 Upgradeability
 ==============
 
-Smart contract instances have the option to upgrade its module to a new smart contract
+Smart contract instances can choose to upgrade its module to a new smart contract
 module using the **upgrade** host function.
-This can only be called from a receive function.
-Upgrading takes a reference to the new module to use for the upgraded instance,
-and any new invocations of the upgraded instance uses the smart contract code in the new module.
+The host function takes a reference to a deployed smart contract module to use for
+the upgraded instance and can only be called from a receive function.
 The function returns back whether the upgrade is successful or failed, allowing the instance
-to decide the next step.
+to decide the next step. If the upgrade is succeful any new invocations of the
+upgraded instance uses the smart contract code in the new module.
+
+.. graphviz::
+   :align: center
+   :caption: Example of a smart contract instance 'Car' upgrading to a new module.
+
+   digraph G {
+       rankdir="BT"
+
+       subgraph cluster_0 {
+           label = "My module v1";
+           labelloc=b;
+           node [fillcolor=white, shape=note]
+           escrow;
+       }
+
+       subgraph cluster_2 {
+           label = "My module v2";
+           labelloc=b;
+           node [fillcolor=white, shape=note]
+           escrow2;
+       }
+
+       subgraph cluster_1 {
+           label = "Instances";
+           style=dotted;
+           node [shape=box, style=rounded]
+           House;
+           Car;
+       }
+
+       escrow[label="Escrow"]
+       escrow2[label="Escrow"]
+
+       House:n -> escrow;
+       Car:n -> escrow [style=dashed];
+       Car:n -> escrow2;
+   }
 
 Failing to upgrade
 ------------------
 
-A smart contract instance can fail for one of the following reasons:
+A smart contract instance can fail to upgrade for one of the following reasons:
 
 - The new module does not exist.
 - The new module does not contain a smart contract with a name matching the instance being upgraded.
@@ -199,7 +236,7 @@ invocation, meaning the execution will continue after the point of calling upgra
 Since any new invocation of this instance uses the new smart contract module, the instance
 can invoke itself and run code of the new module in the same transaction containing the upgrade.
 This is useful for triggering a migration function in the new smart contract module and reject the
-upgrade if the migration rejects.
+upgrade if the migration fails.
 
 .. seealso::
 
