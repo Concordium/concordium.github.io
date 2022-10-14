@@ -13,25 +13,25 @@
 .. |init| replace:: ``#[init]``
 .. _receive: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html
 .. |receive| replace:: ``#[receive]``
-.. _InitContextTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.InitContextTest.html
+.. _InitContextTest: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.InitContextTest.html
 .. |InitContextTest| replace:: ``InitContextTest``
-.. _ReceiveContextTest: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html
+.. _ReceiveContextTest: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html
 .. |ReceiveContextTest| replace:: ``ReceiveContextTest``
 .. _HasInitContext: https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html
 .. |HasInitContext| replace:: ``HasInitContext``
-.. _HasActions: https://docs.rs/concordium-std/latest/concordium_std/trait.HasActions.html
+.. _HasActions: https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasActions.html
 .. |HasActions| replace:: ``HasActions``
-.. _ActionsTree: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/enum.ActionsTree.html
+.. _ActionsTree: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/enum.ActionsTree.html
 .. |ActionsTree| replace:: ``ActionsTree``
 .. _AccountAddress: https://docs.rs/concordium-std/latest/concordium_std/struct.AccountAddress.html
 .. |AccountAddress| replace:: ``AccountAddress``
-.. _set_owner: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_owner
+.. _set_owner: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_owner
 .. |set_owner| replace:: ``set_owner``
 .. _Address: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html
 .. |Address| replace:: ``Address``
-.. _set_sender: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender
+.. _set_sender: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender
 .. |set_sender| replace:: ``set_sender``
-.. _set_self_balance: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance
+.. _set_self_balance: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance
 .. |set_self_balance| replace:: ``set_self_balance``
 .. _concordium_cfg_test: https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_cfg_test.html
 .. |concordium_cfg_test| replace:: ``#[concordium_cfg_test]``

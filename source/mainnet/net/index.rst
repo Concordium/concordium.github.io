@@ -1,7 +1,5 @@
-.. include:: ../variables.rst
-
 =====
-|Net|
+index
 =====
 
 .. toctree::
@@ -26,11 +24,21 @@
    guides/create-account
    guides/send-ccd-wallets
    guides/shield-ccd-wallets
-   guides/delegation
    guides/shielded-transfer
    guides/export-import
+   mobile-wallet-gen2/index
    mobile-wallet/index
    desktop-wallet/index
+
+.. toctree::
+   :includehidden:
+   :caption: Earn with Concordium
+
+   guides/how-to-earn
+   guides/overview-baker-process
+   desktop-wallet/baking-dw
+   mobile-wallet/baker-mw
+   guides/delegation
 
 .. toctree::
    :includehidden:
@@ -38,9 +46,6 @@
 
    guides/developer-page
    nodes/node-requirements
-   guides/overview-baker-process
-   desktop-wallet/baking-dw
-   mobile-wallet/baker-mw
    references/concordium-client
    references/transactions
    references/query-node
@@ -74,3 +79,4 @@
    resources/release-notes
    resources/sirius-testnet-reset
    resources/legal
+   resources/ar-idp-contact

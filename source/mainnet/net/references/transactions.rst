@@ -1,5 +1,5 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
-
+.. include:: ../../variables.rst
 .. _transactions:
 
 ==============================
@@ -133,7 +133,7 @@ account or the name of an account chosen when importing the account. If no
 address is provided, ``concordium-client`` will use the account name
 ``default``.
 
-The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+The |mw-gen2| and |mw-gen1| keep track of the sequence number and assign the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually via the option ``--nonce``.
 
@@ -574,7 +574,7 @@ The output is:
      - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
-     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cooldown has expired.
+     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cool-down has expired.
    * -
      - allowed range for finalization commission
      - The allowed range of finalization commissions bakers may select when creating or updating pools.

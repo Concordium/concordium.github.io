@@ -249,7 +249,7 @@ Concordium smart contracts:
     .. image:: ../tutorials/piggy-bank/images/pb_tutorial_21.png
             :width: 100 %
 
-    You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/3.0.0/concordium_std/#signalling-errors>`_.
+    You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/latest/concordium_std/#signalling-errors>`_.
     This error was thrown by the ``concordium-std`` crate. The error codes start from ``i32::MIN`` and go upwards.
     ``-2147483636`` corresponds to ``NotPayableError``. In contrast, error types of smart contracts start from ``-1`` and go downwards.
 

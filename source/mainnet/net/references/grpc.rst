@@ -16,7 +16,7 @@ These are the SDKs we currently provide:
 - `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
 - `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
 - `Concordium .NET (C#) SDK <https://github.com/Concordium/concordium-net-sdk>`_
-- `Concordium Go SDK <https://github.com/Concordium/concordium-go-sdk>`_
+- `Concordium Rosetta SDK <https://github.com/Concordium/concordium-rosetta>`_
 
 The gRPC interface uses a mixture of protobuf-defined types and JSON. For the
 JSON types, a `JSON Schema <https://json-schema.org/>`_ is provided.

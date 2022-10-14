@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _mainnet-release-notes:
 
 =======================
@@ -11,12 +12,101 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+October 12, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
+
+October 5, 2022
+
+Concordium Node 4.4.4
+---------------------
+
+Concordium Node 4.4.4 contains performance improvements and bug fixes.
+
+- Smart contract state is no longer cached on startup and is not cached after
+  finalization. This reduces the node's memory use and startup time.
+
+- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+  during contract execution. Metadata is cached for a limited number of smart contract modules.
+  By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+  configurable via the ``--modules-cache-size`` command line argument or by using the
+  ``CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE`` environment variable.
+
+- Speed up and reduce memory overhead during protocol updates. Overhead in
+  memory use during protocol updates should now be less than 20%, and time to
+  process a protocol update should be around 1/3 of the previous release.
+
+- The node now validates blocks more eagerly and does not relay blocks it cannot
+  fit into the tree, i.e., pending blocks.
+
+- The ``--download-blocks-from`` option now takes the URL to the catchup ``_index file_``, permitting to
+  only download and import catchup files containing blocks not already present in the database.
+
+- Partial node database recovery. The node is now able to recover from the most
+  common causes of its database corruption.
+
+- Fix typo in environment variable ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS`` (remove trailing `S`).
+
+- Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+  interrupted early on in the startup if out-of-band catchup was enabled.
+
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
+
+September 26, 2022
+
+|mw-gen2|
+---------
+
+Concordium introduces a new wallet for Android mobile devices: the |mw-gen2|. The |mw-gen2| offers all of the same functionality you know from |mw-gen1|, such as sending and receiving CCDs, delegation, baking, and so on. But the |mw-gen2| uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released |bw|. You can read about |mw-gen2| and the differences between it and |mw-gen1| in the :ref:`FAQ<mw-gen2-faq>`.
+
+In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
+
+|mw-gen1| (previously Concordium Mobile Wallet) for Android
+-----------------------------------------------------------
+
+The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
+
+September 5, 2022
+
+Concordium Node 4.3.1
+---------------------
+
+Concordium Node 4.3.1 introduces a number of performance improvements. The effects of these are that the node on mainnet at the current load will use around 1/4 the memory of the `4.2.3` node. Startup can be up to 50% faster, although exact improvements will be platform dependent.
+
+- Account records are no longer constantly retained in memory. Instead, a limited number are retained in a cache. The number of cached accounts defaults to 10000 and can be configured by the ``--accounts-cache-size`` command line argument or the ``CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE`` environment variable.
+- Reduce startup time and memory use further by reducing the amount of block data retained in memory. In particular finalized blocks are no longer stored in memory.
+- Optimize node data structures related to accounts. This reduces node memory use and improves performance.
+- The gRPC API now reports correctly when the sender of a transaction did not have enough funds to cover the transaction costs.
+- Remove obsolete and unused option ``--max-expiry-duration``.
+- Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
+
+August 24, 20222
+
+Concordium Client 4.1.0
+-----------------------
+
+- Fix bug in contract schema parsing caused by endiannes confusion.
+- Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables `concordium-client` to interact with contracts built using `concordium-std` version 4.
+
+Cargo concordium 2.1.0
+----------------------
+
+Use schemas for error values when simulating contracts. In particular support building and testing contracts with `concordium-std` version 4.
+
 August 4, 2022
 
 Concordium Client 4.0.4
 -----------------------
 
-The Concordium Client has been updated to better support the new smart contract v1 schema.
+The `concordium-client` has been updated to better support the new smart contract v1 schema.
 
 Cargo concordium 2.0.2
 ----------------------

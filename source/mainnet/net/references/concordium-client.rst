@@ -38,9 +38,9 @@ flags are supported by all ``concordium-client`` commands.
 Run Concordium Client
 =====================
 
-Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the concordium client will exit immediately without doing anything useful.
+Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
-To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can  type concordium-client from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the ``concordium-client_4.0.4-0.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_4.0.4-0.exe``. So you enter the full path at the prompt in the terminal.
+To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can type ``concordium-client`` from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the ``concordium-client_4.0.4-0.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_4.0.4-0.exe``. So you enter the full path at the prompt in the terminal.
 
 When running commands for the Concordium Client in the terminal, replace concordium-client with ``C:\Users\User\Downloads\concordium-client_<version>.exe`` as in the following example:
 
@@ -128,7 +128,7 @@ Read more about accounts :ref:`here<managing_accounts>`.
 Location
 --------
 
-On the |Net|, the configuration directory is mapped by Docker into a
+The configuration directory is mapped by Docker into a
 system-dependent directory:
 
 -  Linux/macOS: ``$HOME/.config/concordium``
@@ -144,6 +144,8 @@ The command ``concordium-client config init`` initializes the configuration
 structure. The distribution does this automatically, so it should not be
 necessary to use this command. If the configuration structure becomes corrupt
 for some reason, it may also be able to repair it.
+
+.. _concordium-client-display:
 
 Display contents
 ----------------
@@ -304,11 +306,15 @@ Import accounts and keys from the Wallet apps
    $concordium-client config account import FILE [--name NAME]
 
 Import the keys of one or more accounts from a JSON file exported from the
-Mobile Wallet.
+|mw-gen1|.
 
 The ``--name`` option selects which account to import and imports it with this
 name. If it's omitted, all accounts in the file are imported under their
 existing names.
+
+.. Note::
+
+   When importing keys that have been exported from |bw|, the ``--name`` option must be provided to name the account.
 
 Show account aliases
 ~~~~~~~~~~~~~~~~~~~~~~~~

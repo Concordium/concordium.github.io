@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _overview-desktop:
 
 =========================
@@ -14,7 +14,7 @@ This topic contains an overview of each task you need to complete to set up and 
 Step 1: Set up the node
 =======================
 
-The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain, so you'll have to run a node. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
+The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
 
 Step 2: Set up the Ledger device
 ================================
@@ -44,7 +44,7 @@ To set up the Desktop Wallet:
 #. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
 
 .. Warning::
-    Currently, it is not possible to exchange identities and accounts between the Mobile Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet.
+    Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
 
 Step 4: Set up an identity and an initial account
 ==================================================

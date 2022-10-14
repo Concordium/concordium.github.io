@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _delegation-concept:
 
 ==========
@@ -14,6 +15,8 @@ Pools and Rewards
 A baker opens a :ref:`pool<glossary-baker-pool>`, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the baker takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.
 
 Pool rewards are in three categories: finalization, baking and transaction fee rewards. These can have separate commission rates.
+
+.. _delegation-caps:
 
 Bounding the size of pools
 ---------------------------
@@ -51,7 +54,7 @@ But decreasing the stake (whether for delegators or bakers) is subject to a cool
 Where delegation is available
 =============================
 
-You can delegate CCDs in :ref:`the Desktop Wallet, Mobile Wallet<delegation>` and :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
+You can :ref:`delegate CCDs<delegation>` in the Desktop Wallet, |mw-gen1|, and |mw-gen2|. You can also delegate from :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======
