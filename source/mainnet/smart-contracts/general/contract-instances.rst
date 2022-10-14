@@ -182,6 +182,11 @@ The function returns back whether the upgrade is successful or failed, allowing 
 to decide the next step. If the upgrade is succeful any new invocations of the
 upgraded instance uses the smart contract code in the new module.
 
+.. warning::
+
+   Make sure to proper authorized any endpoint triggering a smart contract upgrade as
+   it allows for changing the behavior of the smart contract.
+
 .. graphviz::
    :align: center
    :caption: Example of a smart contract instance 'Car' upgrading to a new module.
@@ -227,6 +232,12 @@ A smart contract instance can fail to upgrade for one of the following reasons:
 - The new module does not exist.
 - The new module does not contain a smart contract with a name matching the instance being upgraded.
 - The new module is a smart contract module version 0.
+
+Immutability
+------------
+
+It is still possible to implement an immutable smart contract, by simply `not` implementing any logic
+triggering the *upgrade* host function.
 
 Migration
 ---------
