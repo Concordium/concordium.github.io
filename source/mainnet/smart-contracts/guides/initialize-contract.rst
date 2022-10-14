@@ -10,7 +10,7 @@ Additionally, it will show how to name an instance.
 
 .. Note::
 
-   Passing parameters to a method can only be done using a file. You cannot pass parameters directly using ``concordium-cllient``.
+   Parameters that are passed to the smart contract must be stored in a file. You cannot pass parameters directly on the command-line using ``concordium-client``.
 
 Preparation
 ===========
