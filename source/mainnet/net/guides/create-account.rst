@@ -1,12 +1,13 @@
-
+.. include:: ../../variables.rst
 .. _create-account:
 
 =================
 Create an account
 =================
 
-When you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
-to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+If you created your :ref:`identity<glossary-identity>` for Desktop Wallet and |mw-gen1|, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+
+If you are using |mw-gen2|, you created your :ref:`identity<glossary-identity>` during setup. Once you have an identity, you can create :ref:`accounts<glossary-account>` with that identity.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -15,7 +16,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. tab:: Desktop Wallet
 
             .. note::
-                You can't import accounts that were created on the Mobile Wallet.
+                You can't import accounts that were created on |mw-gen2| or |mw-gen1|.
 
         Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger device and install the Concordium Ledger App<install-ledger-app>`.
 
@@ -65,7 +66,27 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen2|
+
+        #. Go to the **Accounts** page.
+
+        #. Tap the **+** in the upper right corner.
+
+        #. Tap the identity you want to use to create the account.
+
+            .. image:: ../images/mobile-wallet-gen2/create-acct-select-id.png
+                :width: 25%
+
+        #. Finally, tap **Submit account**.
+
+            .. image:: ../images/mobile-wallet-gen2/create-acct-submit.png
+                :width: 25%
+
+        Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+
+    .. tab:: |mw-gen1|
 
         #. Go to the **Accounts** page.
 
@@ -99,6 +120,8 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
 
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+
         .. Warning::
             **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
             **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
@@ -109,3 +132,4 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+             :width: 50px

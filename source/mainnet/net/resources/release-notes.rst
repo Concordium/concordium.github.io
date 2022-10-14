@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _testnet-release-notes:
 
 =======================
@@ -10,6 +11,71 @@ Sirius Testnet
 .. Note::
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+October 12, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
+
+October 5, 2022
+
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
+
+September 29, 2022
+
+Concordium Node 4.4.4
+---------------------
+
+Concordium Node 4.4.4 contains performance improvements and bug fixes.
+
+- Smart contract state is no longer cached on startup and is not cached after
+  finalization. This reduces the node's memory use and startup time.
+
+- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+  during contract execution. Metadata is cached for a limited number of smart contract modules.
+  By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+  configurable via the ``--modules-cache-size`` command line argument or by using the
+  ``CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE`` environment variable.
+
+- Speed up and reduce memory overhead during protocol updates. Overhead in
+  memory use during protocol updates should now be less than 20%, and time to
+  process a protocol update should be around 1/3 of the previous release.
+
+- The node now validates blocks more eagerly and does not relay blocks it cannot
+  fit into the tree, i.e., pending blocks.
+
+- The ``--download-blocks-from`` option now takes the URL to the catchup ``_index file_``, permitting to
+  only download and import catchup files containing blocks not already present in the database.
+
+- Partial node database recovery. The node is now able to recover from the most
+  common causes of its database corruption.
+
+- Fix typo in environment variable ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS`` (remove trailing `S`).
+
+- Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+  interrupted early on in the startup if out-of-band catchup was enabled.
+
+
+September 26, 2022
+
+|mw-gen2|
+---------
+
+Concordium introduces a new wallet for Android mobile devices: the |mw-gen2|. The |mw-gen2| offers all of the same functionality you know from |mw-gen1|, such as sending and receiving CCDs, delegation, baking, and so on. But the |mw-gen2| uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released |bw|. You can read about |mw-gen2| and the differences between it and |mw-gen1| in the :ref:`FAQ<mw-gen2-faq>`.
+
+In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
+
+|mw-gen1| (previously Concordium Mobile Wallet) for Android
+-----------------------------------------------------------
+
+The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
 
 August 29, 2022
 
@@ -470,7 +536,7 @@ October 6, 2021
 
 The :ref:`Concordium node release v1.1.3 <downloads>` is a bugfix release.
 
-- `Changelog <https://github.com/Concordium/concordium-node/blob/1.1.3-1/CHANGELOG.md#concordium-node-113>`__
+- `Changelog <https://github.com/Concordium/concordium-node/blob/main/CHANGELOG.md#concordium-node-113>`__
 
 .. _open-testnet-v6-update-1:
 
@@ -481,7 +547,7 @@ September 17, 2021
 
 The :ref:`Concordium node release v1.1.2 <downloads>` is a bugfix release.
 
-- `Changelog <https://github.com/Concordium/concordium-node/blob/1.1.2/CHANGELOG.md#concordium-node-112>`__
+- `Changelog <https://github.com/Concordium/concordium-node/blob/main/CHANGELOG.md#concordium-node-112>`__
 
 
 .. _open-testnet-v6:
@@ -665,7 +731,7 @@ Smart contracts:
 * Rust supported as off-chain Smart Contract language
 * `Concordium-std <https://crates.io/crates/concordium-std>`_ library added for developing smart contracts in Rust.
 * ``Cargo-concordium`` tool for building and testing smart contracts off-chain
-* Documentation for smart contracts added to `developer documentation <https://concordium.github.io/en/testnet4/smart-contracts/index.html>`_
+* Documentation for smart contracts added to developer documentation
 * Smart Contract transactions added to ``concordium-client``
 
 

@@ -1,5 +1,5 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
-
+.. include:: ../../variables.rst
 .. _transactions:
 
 ==============================
@@ -133,7 +133,7 @@ account or the name of an account chosen when importing the account. If no
 address is provided, ``concordium-client`` will use the account name
 ``default``.
 
-The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+The |mw-gen2| and |mw-gen1| keep track of the sequence number and assign the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually via the option ``--nonce``.
 

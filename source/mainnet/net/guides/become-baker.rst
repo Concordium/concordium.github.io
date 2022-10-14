@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _node-dashboard: http://localhost:8099
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
@@ -11,7 +12,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the Mobile Wallet and acquire CCD.
+#. Create an account in the |mw-gen1| and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -45,7 +46,7 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the Mobile Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the Mobile Wallet. For more information, see :ref:`Make a backup of identities and accounts in the Mobile Wallet <export-import>`.
+   You can only import accounts created in the |mw-gen2| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a Ledger device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
 
 To import an account run:
 
@@ -75,7 +76,7 @@ and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --keys-in MyNewBakerKeys.json --keys-out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add MyBakerKeys.json --sender bakerAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/baker --out <concordium-data-dir>/baker-credentials.json
 
 
 where you replace
@@ -105,8 +106,7 @@ The following arguments are also required for the ``baker add`` transaction:
 
 - ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
 - ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
-- ``--keys-in`` specifies the name of the file containing the baker keys.
-- ``--keys-out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
+- ``--out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
 - ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
 - ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.

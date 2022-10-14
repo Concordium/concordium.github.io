@@ -59,6 +59,7 @@ To run a node on testnet use the following configuration file and follow the ste
      testnet-node:
        container_name: testnet-node
        image: concordium/testnet-node:latest
+       pull_policy: always
        environment:
          # Environment specific configuration
          # The url where IPs of the bootstrap nodes can be found.
@@ -125,6 +126,7 @@ To run a node on testnet use the following configuration file and follow the ste
      testnet-node-collector:
        container_name: testnet-node-collector
        image: concordium/testnet-node:latest
+       pull_policy: always
        environment:
          # Settings that should be customized by the user.
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
@@ -248,6 +250,7 @@ To retrieve mainnet node logs run:
      mainnet-node:
        container_name: mainnet-node
        image: concordium/mainnet-node:latest
+       pull_policy: always
        environment:
          # Environment specific configuration
          # The url where IPs of the bootstrap nodes can be found.
@@ -314,6 +317,7 @@ To retrieve mainnet node logs run:
      mainnet-node-collector:
        container_name: mainnet-node-collector
        image: concordium/mainnet-node:latest
+       pull_policy: always
        environment:
          # Settings that should be customized by the user.
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet
@@ -362,7 +366,35 @@ image and running the node. To migrate from that setup:
       - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
-4. Start the new node.
+4. Start the node and the collector.
+
+   .. code-block:: console
+
+      $docker-compose -f mainnet-node.yaml up
+
+The configuration starts two containers, one running the node, and another
+running the node collector that reports the node state to the network dashboard.
+
+If you wish to have the node running in the background, then add a ``-d`` option to the above command.
+
+.. Note::
+
+   The sample configuration always downloads the latest node image. It is
+   good practice to choose the version deliberately. To choose a specific
+   version, find the correct version in
+   `hub.docker.com/concordium/mainnet-node <https://hub.docker.com/r/concordium/mainnet-node>`_ and change the
+   ``image`` value from
+
+      .. code-block:: yaml
+
+       image: concordium/mainnet-node:latest
+
+   to, e.g.,
+
+      .. code-block:: yaml
+
+       image: concordium/mainnet-node:4.3.1-0
+
 
 Troubleshooting
 ===============
