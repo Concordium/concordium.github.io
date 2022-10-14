@@ -36,7 +36,7 @@ run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --entrypoint my_receive --energy 1000
+   $concordium-client contract update 0 --entrypoint my_receive --energy 1000 --sender MyAccount
 
 If successful, the output should be similar to the following:
 
@@ -64,7 +64,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --entrypoint my_parameter_receive \
+   $concordium-client contract update 0 --sender MyAccount --entrypoint my_parameter_receive \
             --energy 1000 \
             --parameter-json my_parameter.json
 
@@ -118,9 +118,9 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --entrypoint my_parameter_receive \
+   $concordium-client contract update 0 --sender MyAccount --entrypoint my_parameter_receive \
             --energy 1000 \
-            --parameter-bin my_parameter.bin
+            --parameter-binary my_parameter.bin
 
 If successful, the output should be similar to the following:
 
