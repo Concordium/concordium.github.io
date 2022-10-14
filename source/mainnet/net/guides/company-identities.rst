@@ -6,7 +6,9 @@ Company identity creation
 
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
-You can't use the Desktop Wallet or the Mobile Wallet to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). The tabs below describe how you create a company identity. Note that the process differs for testnet and mainnet.
+You can't use the Desktop Wallet or the Mobile Wallet to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
+
+The tabs below describe how to create a company identity. Note that the process differs for testnet and mainnet.
 
 .. tabs::
 
