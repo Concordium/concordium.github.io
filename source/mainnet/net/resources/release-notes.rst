@@ -12,7 +12,7 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
-October 13, 2022
+October 14, 2022
 
 |mw-gen1| for Android
 ---------------------
