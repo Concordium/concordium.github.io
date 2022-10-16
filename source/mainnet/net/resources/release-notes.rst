@@ -14,14 +14,23 @@ Sirius Testnet
 
 October 17, 2022
 
-Concordium Node 4.5.x
+Concordium Node 4.5.0
 ---------------------
 
-Concordium Node 4.5.x contains the updated gRPC API which is easier to use than the previous version. It also contains bug fixes and performance improvements.
+Concordium Node 4.5.0 contains the updated gRPC API which is easier to use than
+the previous version. It also contains bug fixes and performance and robustness
+improvements.
 
-- Node gRPC API v2 is released.
+- Node gRPC API v2 is released and enabled in all distributions.
 - The node is now able to recover after crashes which leave only treestate or only blockstate usable.
 - Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
+
+October 12, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
 
 October 5, 2022
 
