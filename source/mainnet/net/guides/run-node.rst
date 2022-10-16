@@ -42,6 +42,14 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
+   Node version 4.5.0 introduced the GRPC V2 interface which is enabled by the
+   sample configurations listed below. If you have done special configuration of
+   your node and want to re-use the configuration file and have the new API
+   enabled, make sure to edit your configuration, adding ``CONCORDIUM_NODE_GRPC2_LISTEN_PORT``
+   and ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` as in the sample configurations.
+
+.. Note::
+
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`.
 
    If you are running version 4.2.3 you can :ref:`migrate to the latest version<migration-docker-distribution>`. If you are running any version older than 4.2.3 you will have to delete your database and start over using the instructions on this page.
@@ -86,6 +94,10 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
+         # Address of the V2 GRPC server
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=0.0.0.0
+         # And its port
+         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=20001
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -115,6 +127,7 @@ To run a node on testnet use the following configuration file and follow the ste
        ports:
        - "8889:8889"
        - "10001:10001"
+       - "20001:20001"
        volumes:
        # The node's database should be stored in a persistent volume so that it
        # survives container restart. In this case we map the **host** directory
@@ -277,6 +290,10 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
+         # Address of the V2 GRPC server
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=0.0.0.0
+         # And its port
+         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=20000
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -306,6 +323,7 @@ To retrieve mainnet node logs run:
        ports:
        - "8888:8888"
        - "10000:10000"
+       - "20000:20000"
        volumes:
        # The node's database should be stored in a persistent volume so that it
        # survives container restart. In this case we map the **host** directory

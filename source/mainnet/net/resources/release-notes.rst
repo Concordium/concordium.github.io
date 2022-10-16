@@ -17,9 +17,9 @@ October 17, 2022
 Concordium Node 4.5.0
 ---------------------
 
-Concordium Node 4.5.0 contains the updated gRPC API which is easier to use than
-the previous version. It also contains bug fixes and performance and robustness
-improvements.
+Concordium Node 4.5.0 contains the :ref:`updated gRPC API <grpc2-documentation>`
+which is easier to use than the previous version. It also contains bug fixes and
+performance and robustness improvements.
 
 - Node gRPC API v2 is released and enabled in all distributions.
 - The node is now able to recover after crashes which leave only treestate or only blockstate usable.
