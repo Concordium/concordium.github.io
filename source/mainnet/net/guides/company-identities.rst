@@ -23,7 +23,7 @@ The tabs below describe how to create a company identity. Note that the process 
          - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip>`__
             - SHA256 checksum of the download: ``4a13eec29b6c7fc8214555c6b13e431c20df449bfd11e1a2f26b6a6e91a03957``
 
-         - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities.zip>`__
+         - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
             - SHA256 checksum of the download: ``242a0ff19f84c91ec0c1a3c7696718eee61f144a73a3700d8969f3531384ad6e``
 
       #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
