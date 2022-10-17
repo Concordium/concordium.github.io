@@ -24,7 +24,7 @@ The tabs below describe how to create a company identity. Note that the process 
             - SHA256 checksum of the download: ``4a13eec29b6c7fc8214555c6b13e431c20df449bfd11e1a2f26b6a6e91a03957``
 
          - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
-            - SHA256 checksum of the download: ``242a0ff19f84c91ec0c1a3c7696718eee61f144a73a3700d8969f3531384ad6e``
+            - SHA256 checksum of the download: ``1bb44659a66dcd8b60fed5f43d53d9575e8e35710ac785a87a9c161c51b1acc7``
 
       #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
