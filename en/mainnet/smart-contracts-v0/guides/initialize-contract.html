@@ -1508,6 +1508,10 @@ body {margin:0;}
 <p>This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Passing parameters to a method can only be done using a file. You cannot pass parameters directly using <code class="docutils literal notranslate"><span class="pre">concordium-cllient</span></code>.</p>
+</div>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
 <p>Make sure that you are <a class="reference internal" href="../../net/guides/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../net/installation/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a smart
@@ -1526,13 +1530,13 @@ the init function and the complexity of the function itself.</p>
 <p>To initialize an instance of the parameterless smart contract <code class="docutils literal notranslate"><span class="pre">my_contract</span></code>
 from a deployed module with reference
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> while
-allowing up to 1000 NRG to be used, run the
+allowing up to 10000 NRG to be used, run the
 following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init <span class="se">\</span>
 <span class="go">         9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \</span>
 <span class="go">         --sender my_account \</span>
 <span class="go">         --contract my_contract \</span>
-<span class="go">         --energy 1000</span>
+<span class="go">         --energy 10000</span>
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -1566,7 +1570,7 @@ parameter file <code class="docutils literal notranslate"><span class="pre">my_p
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init <span class="se">\</span>
 <span class="go">         9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \</span>
 <span class="go">         --contract my_parameter_contract \</span>
-<span class="go">         --energy 1000 \</span>
+<span class="go">         --energy 10000 \</span>
 <span class="go">         --parameter-json my_parameter.json</span>
 </pre></div>
 </div>
@@ -1613,7 +1617,7 @@ parameter file <code class="docutils literal notranslate"><span class="pre">my_p
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init <span class="se">\</span>
 <span class="go">         9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \</span>
 <span class="go">         --contract my_parameter_contract \</span>
-<span class="go">         --energy 1000 \</span>
+<span class="go">         --energy 10000 \</span>
 <span class="go">         --parameter-bin my_parameter.bin</span>
 </pre></div>
 </div>
@@ -1646,7 +1650,7 @@ it <code class="docutils literal notranslate"><span class="pre">my_named_contrac
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init <span class="se">\</span>
 <span class="go">         9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \</span>
 <span class="go">         --contract my_contract \</span>
-<span class="go">         --energy 1000 \</span>
+<span class="go">         --energy 10000 \</span>
 <span class="go">         --name my_named_contract</span>
 </pre></div>
 </div>
