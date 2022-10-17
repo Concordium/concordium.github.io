@@ -246,6 +246,7 @@ The main differences from the testnet configuration are:
   for a list of currently available versions.
 - the node listens on port 8888 instead of 8889 by default
 - the node's GRPC interface is exposed on port 10000 instead of 10001
+- the node’s GRPC V2 listens on port 20000 instead of 20001
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
 

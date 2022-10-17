@@ -30,6 +30,18 @@ Install/upgrade and run a node
    ports set on a fresh install for mainnet and testnet are ``20000`` and
    ``20001``, respectively.
 
+   **Example for Mainnet**
+
+   .. code-block:: console
+
+    <!-- Address of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
+    <string>0.0.0.0</string>
+
+    <!-- Port of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_PORT</key>
+    <string>20000</string>
+
    **Example for Testnet**
 
    .. code-block:: console
