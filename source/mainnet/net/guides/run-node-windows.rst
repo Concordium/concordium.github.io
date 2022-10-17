@@ -28,6 +28,20 @@ Install/upgrade and run a node
    your configuration and add ``grpc2.port`` and ``grpc2.address`` settings. See
    :ref:`configure-node` for more information.
 
+   **Example for Mainnet:**
+
+   .. code-block:: console
+
+      grpc2.port = 20000
+      grpc2.ip = "127.0.0.1"
+
+   **Example for Testnet:**
+
+   .. code-block:: console
+
+      grpc2.port = 20001
+      grpc2.ip = "127.0.0.1"
+
 .. Note::
 
    If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See :ref:`verify-running-node` for details about how to do this.

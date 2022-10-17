@@ -25,10 +25,22 @@ Install/upgrade and run a node
    default on new installations. However on upgrading an existing node the
    configuration is not updated. To enable the new API environment variables
    ``CONCORDIUM_NODE_GRPC2_LISTEN_PORT``
-   ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` must be set in the ``plist``
-   settings files for the relevant network as documented below.. The default
+   ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` must be set in the ``node-plist``
+   settings files for the relevant network as documented below. The default
    ports set on a fresh install for mainnet and testnet are ``20000`` and
    ``20001``, respectively.
+
+   **Example:**
+
+   .. code-block:: console
+
+    <!-- Address of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
+    <string>0.0.0.0</string>``
+
+    <!-- Port of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_PORT</key>
+    <string>20001</string>``
 
 .. Note::
 
