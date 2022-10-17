@@ -40,7 +40,7 @@ Install/upgrade and run a node
 
     <!-- Port of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_PORT</key>
-    <string>20001</string>``
+    <string>20001</string>
 
 .. Note::
 
