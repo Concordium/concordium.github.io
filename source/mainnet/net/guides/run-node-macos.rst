@@ -30,7 +30,7 @@ Install/upgrade and run a node
    ports set on a fresh install for mainnet and testnet are ``20000`` and
    ``20001``, respectively.
 
-   **Example:**
+   **Example for Testnet**
 
    .. code-block:: console
 
