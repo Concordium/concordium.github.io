@@ -36,7 +36,7 @@ Install/upgrade and run a node
 
     <!-- Address of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
-    <string>0.0.0.0</string>``
+    <string>0.0.0.0</string>
 
     <!-- Port of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_PORT</key>
