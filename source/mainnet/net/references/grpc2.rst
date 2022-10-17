@@ -4,17 +4,17 @@
  gRPC V2 documentation
 ======================
 
-Since version 4.5.0 the concordium node, in addition to the legacy :ref:`gRPC
+Since version 4.5.0 the Concordium node, in addition to the legacy :ref:`gRPC
 API<grpc-documentation>`, supports a new API that has a much more detailed
 schema definition, and does not rely on JSON responses. It also supports
 streaming responses in cases where there is a lot of data, and supports
 subscribing to new blocks and finalizations.
 
-The new V2 interface enables access to all the data that the original, V1, interface,
+The new V2 interface enables access to the same data as the original V1 interface,
 but in addition supports new endpoints, such as the ability to retrieve the
 entire smart contract state.
 
-The original gRPC interface is going to enter maintenance mode and is going to
+The original gRPC interface is going into maintenance mode and will
 be deprecated in the future.
 
 The `in-depth documentation
@@ -27,5 +27,5 @@ an SDK since there is a canonical schema of responses.
 
 At present the `Concordium Rust SDK
 <https://github.com/Concordium/concordium-rust-sdk>`_ has support for the new
-interface. Other SDKs will be migrated in the future, and before the V1
+interface. Other SDKs will be migrated in the future, before the V1
 interface is deprecated.
