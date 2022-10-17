@@ -62,7 +62,7 @@ The tabs below describe how to create a company identity. Note that the process 
          - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz>`__
             - SHA256 checksum of the download: ``fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2``
 
-         - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities.zip>`__
+         - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip>`__
             - SHA256 checksum of the download: ``38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096``
 
          - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
