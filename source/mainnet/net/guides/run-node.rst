@@ -95,9 +95,9 @@ To run a node on testnet use the following configuration file and follow the ste
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
          # Address of the V2 GRPC server
-         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=0.0.0.0
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
          # And its port
-         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=20001
+         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -291,9 +291,9 @@ To retrieve mainnet node logs run:
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
          # Address of the V2 GRPC server
-         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=0.0.0.0
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
          # And its port
-         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=20000
+         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
