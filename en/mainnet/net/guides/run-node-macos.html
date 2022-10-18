@@ -666,6 +666,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../references/grpc2.html">
+       gRPC V2 documentation
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc.html">
        gRPC documentation
       </a>
@@ -1549,6 +1554,37 @@ body {margin:0;}
 </div>
 <div class="section" id="install-upgrade-and-run-a-node">
 <h2>Install/upgrade and run a node<a class="headerlink" href="#install-upgrade-and-run-a-node" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
+default on new installations. However on upgrading an existing node the
+configuration is not updated. To enable the new API environment variables
+<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_LISTEN_PORT</span></code>
+<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</span></code> must be set in the <code class="docutils literal notranslate"><span class="pre">node.plist</span></code>
+settings files for the relevant network as documented below. The default
+ports set on a fresh install for mainnet and testnet are <code class="docutils literal notranslate"><span class="pre">20000</span></code> and
+<code class="docutils literal notranslate"><span class="pre">20001</span></code>, respectively.</p>
+<p><strong>Example for Mainnet</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;!-- Address of the GRPC V2 server. --&gt;</span>
+<span class="go">&lt;key&gt;CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS&lt;/key&gt;</span>
+<span class="go">&lt;string&gt;0.0.0.0&lt;/string&gt;</span>
+
+<span class="go">&lt;!-- Port of the GRPC V2 server. --&gt;</span>
+<span class="go">&lt;key&gt;CONCORDIUM_NODE_GRPC2_LISTEN_PORT&lt;/key&gt;</span>
+<span class="go">&lt;string&gt;20000&lt;/string&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example for Testnet</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;!-- Address of the GRPC V2 server. --&gt;</span>
+<span class="go">&lt;key&gt;CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS&lt;/key&gt;</span>
+<span class="go">&lt;string&gt;0.0.0.0&lt;/string&gt;</span>
+
+<span class="go">&lt;!-- Port of the GRPC V2 server. --&gt;</span>
+<span class="go">&lt;key&gt;CONCORDIUM_NODE_GRPC2_LISTEN_PORT&lt;/key&gt;</span>
+<span class="go">&lt;string&gt;20001&lt;/string&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>

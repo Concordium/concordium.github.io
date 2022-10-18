@@ -665,6 +665,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../references/grpc2.html">
+       gRPC V2 documentation
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc.html">
        gRPC documentation
       </a>
@@ -1551,6 +1556,24 @@ body {margin:0;}
 </div>
 <div class="section" id="install-upgrade-and-run-a-node">
 <span id="install-upgrade-node-windows"></span><h2>Install/upgrade and run a node<a class="headerlink" href="#install-upgrade-and-run-a-node" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
+default. If you have done special configuration of your node and want to
+re-use the configuration file and have the new API enabled, make sure to edit
+your configuration and add <code class="docutils literal notranslate"><span class="pre">grpc2.port</span></code> and <code class="docutils literal notranslate"><span class="pre">grpc2.address</span></code> settings. See
+<a class="reference internal" href="#configure-node"><span class="std std-ref">Configure the Concordium Node Service</span></a> for more information.</p>
+<p><strong>Example for Mainnet:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">grpc2.port = 20000</span>
+<span class="go">grpc2.ip = &quot;127.0.0.1&quot;</span>
+</pre></div>
+</div>
+<p><strong>Example for Testnet:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">grpc2.port = 20001</span>
+<span class="go">grpc2.ip = &quot;127.0.0.1&quot;</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p>

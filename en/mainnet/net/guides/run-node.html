@@ -665,6 +665,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../references/grpc2.html">
+       gRPC V2 documentation
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc.html">
        gRPC documentation
       </a>
@@ -1563,6 +1568,14 @@ These images are designed to be used together with docker-compose, or a similar 
 <p>The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> or <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testent</span></code> but any location to which the user that runs the Docker command has access to will do.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>Node version 4.5.0 introduced the GRPC V2 interface which is enabled by the
+sample configurations listed below. If you have done special configuration of
+your node and want to re-use the configuration file and have the new API
+enabled, make sure to edit your configuration, adding <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_LISTEN_PORT</span></code>
+and <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</span></code> as in the sample configurations.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>.</p>
 <p>If you are running version 4.2.3 you can <a class="reference internal" href="#migration-docker-distribution"><span class="std std-ref">migrate to the latest version</span></a>. If you are running any version older than 4.2.3 you will have to delete your database and start over using the instructions on this page.</p>
 </div>
@@ -1603,6 +1616,10 @@ These images are designed to be used together with docker-compose, or a similar 
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0</span>
       <span class="c1"># And its port</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_PORT=10001</span>
+      <span class="c1"># Address of the V2 GRPC server</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001</span>
+      <span class="c1"># And its port</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
       <span class="c1"># Maximum number of __connections__ the node can have. This can temporarily be more than</span>
       <span class="c1"># the number of peers when incoming connections are processed. This limit</span>
       <span class="c1"># ensures that there cannot be too many of those.</span>
@@ -1632,6 +1649,7 @@ These images are designed to be used together with docker-compose, or a similar 
     <span class="nt">ports</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;8889:8889&quot;</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;10001:10001&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;20001:20001&quot;</span>
     <span class="nt">volumes</span><span class="p">:</span>
     <span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
     <span class="c1"># survives container restart. In this case we map the **host** directory</span>
@@ -1741,6 +1759,7 @@ configuration file should be used.</p>
 for a list of currently available versions.</p></li>
 <li><p>the node listens on port 8888 instead of 8889 by default</p></li>
 <li><p>the node’s GRPC interface is exposed on port 10000 instead of 10001</p></li>
+<li><p>the node’s GRPC V2 listens on port 20000 instead of 20001</p></li>
 <li><p>the database directory is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code></p></li>
 </ul>
@@ -1781,6 +1800,10 @@ for a list of currently available versions.</p></li>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0</span>
       <span class="c1"># And its port</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_PORT=10000</span>
+      <span class="c1"># Address of the V2 GRPC server</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000</span>
+      <span class="c1"># And its port</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
       <span class="c1"># Maximum number of __connections__ the node can have. This can temporarily be more than</span>
       <span class="c1"># the number of peers when incoming connections are processed. This limit</span>
       <span class="c1"># ensures that there cannot be too many of those.</span>
@@ -1810,6 +1833,7 @@ for a list of currently available versions.</p></li>
     <span class="nt">ports</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;8888:8888&quot;</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;10000:10000&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;20000:20000&quot;</span>
     <span class="nt">volumes</span><span class="p">:</span>
     <span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
     <span class="c1"># survives container restart. In this case we map the **host** directory</span>

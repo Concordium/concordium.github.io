@@ -665,6 +665,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../references/grpc2.html">
+       gRPC V2 documentation
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc.html">
        gRPC documentation
       </a>
@@ -1524,6 +1529,16 @@ body {margin:0;}
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grpc2-port">
+     grpc2.port
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grpc2-address">
+     grpc2.address
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rpc-token">
      rpc.token
     </a>
@@ -1722,6 +1737,31 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>The IP address of the network interface on which to accept incoming GRPC requests. This can be either an IPV4 address or and IPV6 address. If not specified, this uses the default determined by <code class="docutils literal notranslate"><span class="pre">concordium-node.exe</span></code> (which is “<strong>127.0.0.1</strong>”). Typically, “127.0.0.1” is a good choice as it will only accept connections from the local machine. It is not recommended to accept connections on a public address, since this can be used to control the node.</p>
+</div>
+<div class="section" id="grpc2-port">
+<h3>grpc2.port<a class="headerlink" href="#grpc2-port" title="Permalink to this headline">#</a></h3>
+<p>(integer; optional)</p>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">grpc2</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">20000</span>
+</pre></div>
+</div>
+<p>The port on which the node accepts incoming GRPC requests on the V2 interface.
+If not specified the GRPC V2 interface is not enabled.
+Note that multiple nodes cannot listen on the same port, and a node will fail to
+start if the port is already in use.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">grpc2.port</span></code> is set then <code class="docutils literal notranslate"><span class="pre">grpc2.address</span></code> must also be set.</p>
+</div>
+<div class="section" id="grpc2-address">
+<h3>grpc2.address<a class="headerlink" href="#grpc2-address" title="Permalink to this headline">#</a></h3>
+<p>(string; optional)</p>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">rpc</span><span class="p">.</span><span class="n">address</span> <span class="o">=</span> <span class="mf">127.0.0.1</span>
+</pre></div>
+</div>
+<p>The IP address of the network interface on which to accept incoming GRPC V2
+requests. This can be either an IPV4 address or and IPV6 address. It is not
+recommended to accept connections on a public address without additional
+<a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md">endpoint configuration</a>, since
+some GRPC V2 endpoints can be used to control the node.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">grpc2.address</span></code> is set then <code class="docutils literal notranslate"><span class="pre">grpc2.port</span></code> must also be set.</p>
 </div>
 <div class="section" id="rpc-token">
 <h3>rpc.token<a class="headerlink" href="#rpc-token" title="Permalink to this headline">#</a></h3>
