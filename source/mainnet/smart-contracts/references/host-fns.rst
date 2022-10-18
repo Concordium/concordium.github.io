@@ -381,11 +381,11 @@ Functions only accessible for smart contract receive functions.
    :param i32 module: Pointer to 32 bytes for a module reference.
    :return: ``0`` if successful
 
-            ``1`` if failed because of module did not exist.
+            ``0x07_0000_0000`` if failed because of module did not exist.
 
-            ``2`` if failed because of module did not contain a smart contract with a name matching to one of this instance.
+            ``0x08_0000_0000`` if failed because of module did not contain a smart contract with a name matching to one of this instance.
 
-            ``3`` if failed because of module being an unsupported smart contract version.
+            ``0x09_0000_0000`` if failed because of module being an unsupported smart contract version.
 
             No other values are possible.
 
