@@ -23,7 +23,7 @@ While during Wasm installation in your system you should see something similar t
 
 Now you need to install the Concordium software package. Navigate to cargo-concordium and download the correct version for your operating system. You need to install the tools both for testnet and mainnet.
 
-First, we need to rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the cargo-concordium executable to the cargo folder. All steps below are configured for MacOS, if you are using another operating system I suggest you follow this link. (Note : In this tutorial, we are not going to use concordium-client for our operations so you don’t have to install it.)
+First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the cargo-concordium executable to the cargo folder. All steps below are configured for MacOS, if you are using another operating system I suggest you follow this link. (Note : In this tutorial, we are not going to use concordium-client for our operations so you don’t have to install it.)
 
 .. code-block:: console
     
@@ -53,15 +53,13 @@ Run the following command on your terminal to clone this repository. It will clo
     git clone --recurse-submodules
     https://github.com/chainorders/concordium-nft-tutorials.git
 
-Setup a |mw-gen2|
-=================
+Setup a wallet
+==============
 
-Now you need a Concordium wallet, please use the link to install a Concordium testnet wallet to your mobile. Follow the instructions described on this link to install and run the software. First, if you are using an IOS device you are going to need the TestFlight application and then Concordium Testnet Wallet.
+Now you need a Concordium wallet. Use the link to install a |bw| in a Chrome web browser and configure it to run on testnet. Follow the instructions described on this link to install and run the extension.
 
-When you have the Concordium Testnet Mobile Wallet on your phone installed, you need to create an account. If you follow this link, you can create your account and claim your 2000 CCD faucet from the app.
+When you have the Concordium Testnet Wallet installed, you need to create an account. If you follow this link, you can create your account and claim your 2000 CCD faucet from the app.
 
-After that step, you need to transfer your account’s backup file to your local computer from your phone. You can do it in a couple of steps from your mobile with your password. And also check the steps from this link. When your export process is done, send it to your local machine. You can set an email address while exporting, it should send the backup file via e-mail. Or you can transfer it manually.
-
-Once you receive the wallet backup file make sure that it’s copied to the same folder as the rest of the repository.
+After that step, you need to export the keys for your wallet. Save the file on your local machine in the same folder as the rest of the repository.
 
 Continue to the :ref:`next part<upload-nft>` of the tutorial to upload your NFT and assign metadata to it.
