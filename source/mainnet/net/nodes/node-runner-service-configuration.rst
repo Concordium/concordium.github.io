@@ -137,6 +137,40 @@ rpc.address
 
 The IP address of the network interface on which to accept incoming GRPC requests. This can be either an IPV4 address or and IPV6 address. If not specified, this uses the default determined by ``concordium-node.exe`` (which is "**127.0.0.1**"). Typically, "127.0.0.1" is a good choice as it will only accept connections from the local machine. It is not recommended to accept connections on a public address, since this can be used to control the node.
 
+grpc2.port
+----------
+
+(integer; optional)
+
+.. code-block:: TOML
+
+   grpc2.port = 20000
+
+The port on which the node accepts incoming GRPC requests on the V2 interface.
+If not specified the GRPC V2 interface is not enabled.
+Note that multiple nodes cannot listen on the same port, and a node will fail to
+start if the port is already in use.
+
+If ``grpc2.port`` is set then ``grpc2.address`` must also be set.
+
+grpc2.address
+-------------
+
+(string; optional)
+
+.. code-block:: TOML
+
+   rpc.address = 127.0.0.1
+
+The IP address of the network interface on which to accept incoming GRPC V2
+requests. This can be either an IPV4 address or and IPV6 address. It is not
+recommended to accept connections on a public address without additional
+`endpoint configuration
+<https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md>`_, since
+some GRPC V2 endpoints can be used to control the node.
+
+If ``grpc2.address`` is set then ``grpc2.port`` must also be set.
+
 rpc.token
 ---------
 

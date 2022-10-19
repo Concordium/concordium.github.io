@@ -8,6 +8,10 @@ This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.
 
+.. Note::
+
+   Parameters that are passed to the smart contract must be stored in a file. You cannot pass parameters directly on the command-line using ``concordium-client``.
+
 Preparation
 ===========
 
@@ -29,7 +33,7 @@ Initialization
 To initialize an instance of the parameterless smart contract ``my_contract``
 from a deployed module with reference
 ``9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2`` while
-allowing up to 1000 NRG to be used, run the
+allowing up to 10000 NRG to be used, run the
 following command:
 
 .. code-block:: console
@@ -38,7 +42,7 @@ following command:
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --sender my_account \
             --contract my_contract \
-            --energy 1000
+            --energy 10000
 
 If successful, the output should be similar to the following:
 
@@ -85,7 +89,7 @@ parameter file ``my_parameter.json`` in JSON format, run the following command:
    $concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --contract my_parameter_contract \
-            --energy 1000 \
+            --energy 10000 \
             --parameter-json my_parameter.json
 
 If successful, the output should be similar to the following:
@@ -140,7 +144,7 @@ parameter file ``my_parameter.bin`` in binary format, run the following command:
    $concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --contract my_parameter_contract \
-            --energy 1000 \
+            --energy 10000 \
             --parameter-bin my_parameter.bin
 
 
@@ -181,7 +185,7 @@ it ``my_named_contract``:
    $concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --contract my_contract \
-            --energy 1000 \
+            --energy 10000 \
             --name my_named_contract
 
 
