@@ -24,7 +24,7 @@ The tabs below describe how to create a company identity. Note that the process 
             - SHA256 checksum of the download: ``38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096``
 
          - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
-            - SHA256 checksum of the download: ``1bb44659a66dcd8b60fed5f43d53d9575e8e35710ac785a87a9c161c51b1acc7``
+            - SHA256 checksum of the download: ``6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca``
 
       #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
@@ -60,7 +60,7 @@ The tabs below describe how to create a company identity. Note that the process 
             - SHA256 checksum of the download: ``38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096``
 
          - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
-            - SHA256 checksum of the download: ``1bb44659a66dcd8b60fed5f43d53d9575e8e35710ac785a87a9c161c51b1acc7``
+            - SHA256 checksum of the download: ``6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca``
 
       #. Download the testnet-specific `configuration files <https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip>`__.
 
