@@ -7,7 +7,7 @@ Backup
 
 .. Note::
 
-   This information is not relevant for |mw-gen2| which uses a secret recovery phrase to recover a wallet.
+   This information is not relevant for |mw-gen2| or |bw| which uses a secret recovery phrase to recover a wallet.
 
 Making a backup is an essential action every time you create accounts whether it is an initial account or a regular account.
 
