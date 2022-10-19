@@ -5,7 +5,7 @@
 Terms and Conditions for |bw|
 ==================================================
 
-Effective from October XX, 2022
+Effective from October 12, 2022
 
 Introduction
 ============
