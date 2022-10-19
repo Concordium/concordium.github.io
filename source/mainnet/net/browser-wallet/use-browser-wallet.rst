@@ -59,6 +59,8 @@ You can use the wallet on both Mainnet and Testnet without the need for a separa
 
 #. Select the Network you want to connect to: Mainnet or Testnet. Note that the color of the user interface items in Mainnet is blue and the color of the user interface items in Testnet is green.
 
+.. _export-bw-keys:
+
 Export your private key
 =======================
 
