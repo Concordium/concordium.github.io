@@ -18,7 +18,7 @@ Now, in order to deploy your contract you need to change directory (with “cd�
 
     cargo concordium build --out ../dist/smart-contract/module.wasm --schema-out ../dist/smart-contract/schema.bin
 
-After these steps, you should be able to see something like the below. 
+After these steps, you should be able to see something like the below.
 
 .. image:: .images/prep-to-build-sc.png
     :width: 100%
@@ -26,11 +26,63 @@ After these steps, you should be able to see something like the below.
 Run a node
 ==========
 
-You are almost ready to mint your first NFT on Concordium. To do that you need to run a local node, which in this tutorial using a Mac is a Docker image in the repository. To start it run the command below. Docker file configurations can be found in the docker-compose.yml file as described below. Don't forget the set a name for your node with the parameter CONCORDIUM_COLLECTOR_NODE_NAME. The docker-compose configuration is inspired by the Docker docs from the Concordium website.
+You are almost ready to mint your first NFT on Concordium. To do that you need to run a local node, which in this tutorial (using a Mac) is a Docker image in the repository. To start it run the command below. Docker file configurations can be found in the docker-compose.yml file as described below. Don't forget the set a name for your node with the parameter ``CONCORDIUM_COLLECTOR_NODE_NAME``. The docker-compose configuration below is inspired by the Docker docs from the Concordium website.
 
-This runs a Docker image of a node. This step takes some time potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. In the near future, hopefully, there will be a tool that will eliminate this step and allows you to connect via a URL to a node. Like the Infura. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`_ you can continue with the development.
+.. code-block:: console
+
+    version: '3'
+    services:
+        node:
+            # platform: linux/x86_64
+            # platform: linux/amd64
+        container_name: testnet-node
+        image: concordium/testnet-node:latest
+        pull_policy: always
+        ports:
+            - ${CONCORDIUM_NODE_PORT}:${CONCORDIUM_NODE_PORT}
+        working_dir: /
+        environment:
+            ## Refer https://github.com/Concordium/concordium-node/blob/main/VARIABLES.md#grpc
+            CONCORDIUM_NODE_RPC_SERVER_ADDR: 0.0.0.0
+            CONCORDIUM_NODE_RPC_SERVER_PORT: ${CONCORDIUM_NODE_PORT}
+            CONCORDIUM_NODE_LISTEN_ADDRESS: 0.0.0.0
+            CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /testnet-genesis.dat
+            CONCORDIUM_NODE_CONFIG_DIR: "/node/concordium-node-data"
+            CONCORDIUM_NODE_DATA_DIR: "/node/concordium-node-config"
+            CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.testnet.concordium.com:8888
+            CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT: 20
+            CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE: 2
+            CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL: 1800
+        volumes:
+            - ./dist/node/data:/node/concordium-node-data
+            - ./dist/node/config:/node/concordium-node-config
+        entrypoint:
+            - ./concordium-node
+    testnet-node-collector:
+        container_name: testnet-node-collector
+        image: concordium/testnet-node:latest
+        pull_policy: always
+        environment:
+            # Settings that should be customized by the user.
+            CONCORDIUM_NODE_COLLECTOR_NODE_NAME: <YOUR NODE NAME>
+            # Environment specific settings.
+            CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
+            # Collection settings.
+            # How often to collect the statistics from the node.
+            CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL: 5000
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `testnet-node` to the internal IP of
+            # the `testnet-node`. If the name of the node service is changed from
+            # `testnet-node` then the name here must also be changed.
+            CONCORDIUM_NODE_COLLECTOR_GRPC_HOST: http://node:10001
+        entrypoint: [ "/node-collector" ]
+
+This runs a Docker image of a node. This step takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. Using the node synchronization for your node platform can speed up the catch up. In the near future, there will be a tool that will eliminate this step and allows you to connect via a URL to a node. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`__ you can continue with the development.
 
 Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node that is specified in the docker-compose.yml file in the network section of the dashboard.
+
+.. image:: .images/node-collector.png
+    :width: 100%
 
 Install required packages
 =========================
@@ -63,7 +115,7 @@ Navigate to the cli.ts file in the **node-cli** folder and add the following lin
         .then((res) => console.log("cli exited"));
     cli.showHelpAfterError().showSuggestionAfterError().allowUnknownOption(false);
 
-Now, you need to decrypt your wallet backup file in order to make some function calls. To do that use the following command. 
+Now, you need to decrypt your wallet backup file in order to make some function calls. To do that use the following command. (This needs to be adjusted to use browser wallet key export!!!!)
 
 .. code-block:: console
 
@@ -117,7 +169,7 @@ Run the command below on your terminal. Paste the signKey value and the address 
     --sender <ACCOUNT-ADDRESS> \
     --sign-key <SIGN-KEY>
 
-If you have the output below, you’ve successfully deployed your first smart contract on Concordium! You can also verify it either by looking at `CCDScan <https://ccdscan.io/>`_ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/`_.
+If you have the output below, you’ve successfully deployed your first smart contract on Concordium! You can also verify it either by looking at `CCDScan <https://ccdscan.io/>`__ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/`__.
 
 .. image:: .images/deployed-sc.png
     :width: 100%
@@ -128,7 +180,7 @@ You can check the remaining balance in your Concordium wallet too.
 .. image:: .images/deployed-sc-ccdscan.png
     :width: 100%
 
-Now you need go to the `dashboard <https://dashboard.testnet.concordium.com/`_ and get the hash value from there, using the URL in the terminal. Click **Deployed module with reference** and copy the hash value. You will need it to initialize the contract in the next section.
+Now you need go to the `dashboard <https://dashboard.testnet.concordium.com/`__ and get the hash value from there, using the URL in the terminal. Click **Deployed module with reference** and copy the hash value. You will need it to initialize the contract in the next section.
 
 Initializing the smart contract
 ===============================
