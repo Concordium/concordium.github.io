@@ -14,4 +14,3 @@ The following topics are specific to |bw|.
     setup-browser-wallet
     use-browser-wallet
     connect-app
-    piggy-bank-example
