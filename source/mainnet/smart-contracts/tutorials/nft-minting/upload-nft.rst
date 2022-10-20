@@ -9,7 +9,7 @@ Now you need to upload your asset and give it metadata. For this tutorial you wi
 Using InterPlanetary File System (IPFS)
 =======================================
 
-There are multiple ways of storing data in IPFS. You can do it from a user interface by running a node or you can use a pinning service. For this tutorial, you will download and run the IPFS and store the both NFT metadata and image itself. You can download and install IPFS from `this link <https://docs.ipfs.tech/install/>`_.
+There are multiple ways of storing data in IPFS. You can do it from a user interface by running a node or you can use a pinning service. For this tutorial, you will download and run the IPFS and store the both NFT metadata and image itself. `Click here to download and install IPFS <https://docs.ipfs.tech/install/>`__.
 
 .. image:: images/ipfs.png
     :width: 100%
@@ -19,7 +19,7 @@ After that, you need to import your NFT. Using the IPFS app click **Import** and
 .. image:: images/ipfs-upload.png
     :width: 100%
 
-Now you should be able to see its CID or URL from the user interface. This is the important part because when you buy an NFT, it will be a hyperlink that refers to the exact location of your digital asset. So you basically are buying a link that points to a location, and you want to make sure that no one can change it. The Content Identifier (CID) value guarantees that by creating unique hash values. When you import something to IPFS it generates a Content Identifier (CID) hash value to represent the asset with strings. A hash value is an output of a one-way cryptic function that takes literally anything as an input like a word, text, image, movie, book, etc. but produces only a string of fixed size to refer to that asset. You can read more about hash from `this link <https://en.wikipedia.org/wiki/InterPlanetary_File_System>`_.
+Now you should be able to see its CID or URL from the user interface. This is the important part because when you buy an NFT, it will be a hyperlink that refers to the exact location of your digital asset. So you basically are buying a link that points to a location, and you want to make sure that no one can change it. The Content Identifier (CID) value guarantees that by creating unique hash values. When you import something to IPFS it generates a Content Identifier (CID) hash value to represent the asset with strings. A hash value is an output of a one-way cryptic function that takes literally anything as an input like a word, text, image, movie, book, etc. but produces only a string of fixed size to refer to that asset. You can read more about hash from `this link <https://en.wikipedia.org/wiki/InterPlanetary_File_System>`__.
 
 Assign NFT Metadata
 ===================
