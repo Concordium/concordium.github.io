@@ -146,10 +146,6 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 
       #. Click **Remove from Chrome**.
 
-   .. tab:: Safari
-
-      |bw| is not available yet for Safari.
-
 .. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
                     :width: 20px
                     :alt: puzzle piece
