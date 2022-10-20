@@ -26,7 +26,7 @@ After these steps, you should be able to see something like the below.
 Run a node
 ==========
 
-You are almost ready to mint your first NFT on Concordium. To do that you need to run a local node, which in this tutorial (using a Mac) is a Docker image in the repository. To start it run the command below. Docker file configurations can be found in the docker-compose.yml file as described below. Don't forget the set a name for your node with the parameter ``CONCORDIUM_COLLECTOR_NODE_NAME``. The docker-compose configuration below is inspired by the Docker docs from the Concordium website.
+You are almost ready to mint your first NFT on Concordium. To do that you need to run a local node, which in this tutorial is a Docker image in the repository. To start it run the command below. Docker file configurations can be found in the docker-compose.yml file as described below. Don't forget the set a name for your node with the parameter ``CONCORDIUM_COLLECTOR_NODE_NAME``. The docker-compose configuration below is inspired by the Docker docs from the Concordium website.
 
 .. code-block:: console
 
@@ -115,6 +115,67 @@ Navigate to the cli.ts file in the **node-cli** folder and add the following lin
         .then((res) => console.log("cli exited"));
     cli.showHelpAfterError().showSuggestionAfterError().allowUnknownOption(false);
 
+The contract looks like this:
+
+.. code-block:: console
+
+    function setupCliUpdateContract(cli: commander.Command, updateContractAction: string) {
+        return (
+        cli
+        .command(updateContractAction)
+        .description(`${updateContractAction} an NFT`)
+        .requiredOption("--params <params>", "params file path", (f) => fs.realpathSync(f))
+        .requiredOption(
+            "--schema <schema>",
+            "Contract schema file path",
+            (f) => fs.realpathSync(f),
+            "../dist/smart-contract/schema.bin",
+        )
+        .requiredOption("--energy <energy>", "Maximum Contract Execution Energy", (v) => BigInt(v), 6000n)
+        .requiredOption("--contract <contract>", "Contract name", "CIS2-NFT")
+        .requiredOption("--function <function>", "Contract function name to call", updateContractAction)
+        .requiredOption("--index <index>", "Contract Address Index", (v) => BigInt(v))
+        .requiredOption("--sub-index <subIndex>", "Contract Address Sub Index", (v) => BigInt(v), 0n)
+        // Sender Account Args
+        .requiredOption("--sender <sender>", "Sender Account Address. This should be the owner of the Contract")
+        .requiredOption("--sign-key <signKey>", "Account Signing Key")
+        // Node Client args
+        .requiredOption("--auth-token <authToken>", "Concordium Node Auth Token", "rpcadmin")
+        .requiredOption("--ip <ip>", "Concordium Node IP", "127.0.0.1")
+        .requiredOption("--port <port>", "Concordum Node Port", (v) => parseInt(v), 10001)
+        .requiredOption("--timeout <timeout>", "Concordium Node request timeout", (v) => parseInt(v), 15000)
+        .action(
+            async (args: UpdateContractArgs) =>
+            await sendAccountTransaction(
+                args,
+                args.sender,
+                args.signKey,
+                // Payload
+                {
+                parameter: serializeUpdateContractParameters(
+                    args.contract,
+                    args.function,
+                    JSON.parse(readFileSync(args.params).toString()),
+                    Buffer.from(readFileSync(args.schema)),
+                    SchemaVersion.V2,
+                ),
+                amount: new GtuAmount(0n),
+                contractAddress: {
+                    index: BigInt(args.index),
+                    subindex: BigInt(args.subIndex),
+                },
+                receiveName: `${args.contract}.${args.function}`,
+                maxContractExecutionEnergy: BigInt(args.energy),
+                } as UpdateContractPayload,
+                // Transaction Type
+                AccountTransactionType.UpdateSmartContractInstance,
+            ),
+        )
+    );
+    }
+    // Mint
+    setupCliUpdateContract(cli, "mint");
+
 Now, you need to decrypt your wallet backup file in order to make some function calls. To do that use the following command. (This needs to be adjusted to use browser wallet key export!!!!)
 
 .. code-block:: console
@@ -126,7 +187,7 @@ It should create a concordium-backup.concordiumwallet.json file. Open that file 
 Deploy your smart contract
 ==========================
 
-In order to deploy the contract add the following lines to your cli.ts file to specify the compiled module file and the other arguments will be passed from the terminal.
+In order to deploy the contract add the following lines to your cli.ts file to specify the compiled module file and the other arguments that will be passed from the terminal.
 
 .. code-block:: console
 
@@ -185,7 +246,7 @@ Now you need go to the `dashboard <https://dashboard.testnet.concordium.com/`__ 
 Initializing the smart contract
 ===============================
 
-After deploying a contract you have to initialize it. It’s like object-oriented programming: you create a class which is a module, and then you initialize it to create an object. It is the same here. An object of a class is a way to store both states of the class and its functionality. This time you are going to use the hash value you got in the previous step. First, make sure initialize function is implemented in your cli.ts file.
+After deploying a contract you have to initialize it. It’s like object-oriented programming: you create a class which is a module, and then you initialize it to create an object. It is the same here. An object of a class is a way to store both states of the class and its functionality. This time you are going to use the hash value you got in the previous step. First, make sure the ``initialize`` function is implemented in your cli.ts file.
 
 .. code-block:: console
 
