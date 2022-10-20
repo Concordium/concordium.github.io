@@ -20,7 +20,7 @@ Now, in order to deploy your contract you need to change directory (with “cd�
 
 After these steps, you should be able to see something like the below.
 
-.. image:: .images/prep-to-build-sc.png
+.. image:: images/prep-to-build-sc.png
     :width: 100%
 
 Run a node
@@ -81,7 +81,7 @@ This runs a Docker image of a node. This step takes some time, potentially hours
 
 Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node that is specified in the docker-compose.yml file in the network section of the dashboard.
 
-.. image:: .images/node-collector.png
+.. image:: images/node-collector.png
     :width: 100%
 
 Install required packages
@@ -230,18 +230,18 @@ Run the command below on your terminal. Paste the signKey value and the address 
     --sender <ACCOUNT-ADDRESS> \
     --sign-key <SIGN-KEY>
 
-If you have the output below, you’ve successfully deployed your first smart contract on Concordium! You can also verify it either by looking at `CCDScan <https://ccdscan.io/>`__ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/`__.
+If you have the output below, you’ve successfully deployed your first smart contract on Concordium! You can also verify it either by looking at `CCDScan <https://ccdscan.io/>`__ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/>`__.
 
-.. image:: .images/deployed-sc.png
+.. image:: images/deployed-sc.png
     :width: 100%
 
 As you can see below the NFT minting contract is deployed and it allows you to verify the time, sender account and the block itself. It costs ~148 CCD which is less than 1.9 euros currently which is not bad for a 39.8 KB contract.
 You can check the remaining balance in your Concordium wallet too.
 
-.. image:: .images/deployed-sc-ccdscan.png
+.. image:: images/deployed-sc-ccdscan.png
     :width: 100%
 
-Now you need go to the `dashboard <https://dashboard.testnet.concordium.com/`__ and get the hash value from there, using the URL in the terminal. Click **Deployed module with reference** and copy the hash value. You will need it to initialize the contract in the next section.
+Now you need go to the `dashboard <https://dashboard.testnet.concordium.com/>`__ and get the hash value from there, using the URL in the terminal. Click **Deployed module with reference** and copy the hash value. You will need it to initialize the contract in the next section.
 
 Initializing the smart contract
 ===============================
@@ -296,12 +296,12 @@ Run the code below. Use the hash value in the <Module Hash> part, signKey from y
 
 If you have the output shown below that means you have successfully initialized your contract.
 
-.. image:: .images/initialized-sc.png
+.. image:: images/initialized-sc.png
     :width: 100%
 
 Go to the URL to get your contract's index value. From the dashboard you can easily see the index, account address as sender, event details and transaction hash.
 
-.. image:: .images/dashboard-success-init.png
+.. image:: images/dashboard-success-init.png
     :width: 100%
 
 Continue to the :ref:`final part<mint-transfer>` of the tutorial to mint and transfer your NFT.

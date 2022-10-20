@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _setup-dev-env:
 
 =================================
@@ -12,12 +13,12 @@ First, you need to install “rustup” which installs Rust and Cargo to your co
 
 Select **1** to continue the installation.
 
-.. image:: ./images/mint-install-rustup.png
+.. image:: images/mint-install-rustup.png
     :width: 100%
 
 Finally, when Rust and Cargo are successfully installed in your system, you should see something similar to below.
 
-.. image:: ./images/mint-rust-install-done.png
+.. image:: images/mint-rust-install-done.png
     :width: 100%
 
 Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.
@@ -29,10 +30,10 @@ Copy and paste the commands in a terminal to install Wasm which will be used for
 
 During Wasm installation in your system you should see something similar to below.
 
-.. image:: .images/mint-wasm-install.png
+.. image:: images/mint-wasm-install.png
     :width: 100%
 
-Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-tesnet>` and download the correct version of cargo-concordium for your operating system. The tool is the same for both testnet and mainnet.
+Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the correct version of cargo-concordium for your operating system. The tool is the same for both testnet and mainnet.
 
 First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the cargo-concordium executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly. The step below is specifically for MacOS. (Note : In this tutorial, we are not going to use concordium-client for our operations so you don’t have to install it.)
 
@@ -46,14 +47,14 @@ First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. T
 
 If everything is correct, when you enter the command ``cargo concordium --help`` it should print something similar below.
 
-.. image:: .images/cargo-help.png
+.. image:: images/cargo-help.png
     :width: 100%
 
 .. Note::
 
     If you have a warning on a Mac device that says “cargo-condordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
 
-    .. image:: .images/mac-warning.png
+    .. image:: images/mac-warning.png
         :width: 100%
 
 Clone the repository
