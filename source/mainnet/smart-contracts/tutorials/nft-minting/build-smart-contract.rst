@@ -101,8 +101,8 @@ You are going to invoke some functions from your deployed contract using ts-clie
 
     yarn add -g ts-node
 
-Wallet decryption
-=================
+Wallet decryption (this heading no longer makes sense now...what should it be?)
+===============================================================================
 
 Navigate to the cli.ts file in the **node-cli** folder and add the following lines to it. **NOTE: Remember, the cloned repository already has it. If you have it already you should not add it again.**
 
@@ -176,14 +176,6 @@ The contract looks like this:
     // Mint
     setupCliUpdateContract(cli, "mint");
 
-Now, you need to decrypt your wallet backup file in order to make some function calls. To do that use the following command. (This needs to be adjusted to use browser wallet key export!!!!)
-
-.. code-block:: console
-
-    ts-node ./src/cli.ts decrypt --wallet ../concordium-backup.concordiumwallet --password YOUR_PASSWORD --out ../concordium-backup.concordiumwallet.json
-
-It should create a concordium-backup.concordiumwallet.json file. Open that file and navigate to the signKey and address. You need them while making function calls.
-
 Deploy your smart contract
 ==========================
 
@@ -221,7 +213,7 @@ In order to deploy the contract add the following lines to your cli.ts file to s
     }
     setupCliDeployModule(cli);
 
-Run the command below on your terminal. Paste the signKey value and the address from the decrypted concordium-backup.concordiumwallet.json file.
+Run the command below on your terminal. Paste the signKey value and the address from the `your wallet export file<signkey>`.
 
 .. code-block:: console
 
@@ -288,7 +280,7 @@ After deploying a contract you have to initialize it. It’s like object-oriente
     }
     setupCliInitContract(cli);
 
-Run the code below. Use the hash value in the <Module Hash> part, signKey from your decrypted wallet file and the address of your account. That will create another transaction on chain.
+Run the code below. Use the hash value in the <Module Hash> part, and the signKey and address of your account from `your wallet export file<signkey>`. That will create another transaction on chain.
 
 .. code-block:: console
 

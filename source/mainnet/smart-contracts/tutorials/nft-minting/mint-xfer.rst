@@ -70,7 +70,7 @@ You need to set the mint parameters in mint-params.json file as described below.
 .. image:: images/mint-parameters.png
    :width: 100 %
 
-Run the command below with the index value you got previously, your account address and the signKey from your decrypted wallet.json file.
+Run the command below with the index value you got previously, your account address and the signKey from `your wallet export file<signkey>`.
 
 .. code-block:: console
 
@@ -109,7 +109,7 @@ If you are implementing a project it is a good idea to run your own IPFS node an
 Transfer function
 =================
 
-Before you transfer the NFT, you should change the sender account and receiver account in the  ``../nft-artifacts/transfer-params.json`` file. You don't have to do it like this, I just decided to read all these values from a JSON file because it’s easier to understand and follow otherwise it can get quickly messy. So make sure you made the adjustments of addresses accordingly like the one I shared below. I created another account on my mobile wallet (and this time I made some changes to my data like revealing my nationality and country of residence. Which is one of the strongest parts of Concordium, explore it!) and will transfer this token to that.
+Before you transfer the NFT, you should change the sender account and receiver account in the  ``../nft-artifacts/transfer-params.json`` file. You don't have to do it like this. In this case you read all these values from a JSON file because it’s easier to understand and follow; otherwise it can get quickly messy. So make sure you made the adjustments of addresses accordingly as shown below. You can create another account on your wallet to transfer this token to that.
 
 .. image:: images/transfer-values.png
     :width: 100%
@@ -139,7 +139,7 @@ As you can see the second account is now the owner of the asset and you can see 
 .. image:: images/transfer-view.png
     :width: 100%
 
-As a final step,  try to transfer it with your first account again. This should not be possible! The transaction is shown below.
+As a final step, try to transfer it with your first account again. This should not be possible! The transaction is shown below.
 
 .. image:: images/retransfer.png
     :width: 100%

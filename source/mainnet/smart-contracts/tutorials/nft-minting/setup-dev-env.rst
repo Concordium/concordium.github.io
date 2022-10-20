@@ -73,11 +73,13 @@ Run the following command on your terminal to clone `this repository <https://gi
     git clone --recurse-submodules
     https://github.com/chainorders/concordium-nft-tutorials.git
 
+.. _signkey:
+
 Setup a wallet
 ==============
 
 Now you need a Concordium wallet. Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a Chrome web browser and configure it to run on testnet. Follow :ref:`these instructions<setup-bw>` to install the extension for testnet and set it up with an identity and account. Use the Testnet faucet to claim 2000 CCDs for testing purposes.
 
-After that step, you need to :ref:`export the keys<export-bw-keys>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository.
+After that step, you need to :ref:`export the keys<export-bw-keys>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
 
 Continue to the :ref:`next part<upload-nft>` of the tutorial to upload your NFT and assign metadata to it.
