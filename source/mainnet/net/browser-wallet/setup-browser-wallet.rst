@@ -94,7 +94,7 @@ Get started
 
          .. image:: ../images/browser-wallet/wallet-choice.png
                   :width: 25%
-                  
+
 Recovery phrase setup
 =====================
 
