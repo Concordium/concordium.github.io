@@ -50,9 +50,7 @@ Android
 |bw|
 =================================
 
-The |bw| is available to download as an extension for the Chrome web browser.
-
-(link)
+The |bw| is available to download as an extension for the `Chrome web browser <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
 
 .. _downloads-desktop-wallet-testnet:
 
