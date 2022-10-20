@@ -36,9 +36,6 @@ Get started
          .. image:: ../images/browser-wallet/wallet-choice.png
                   :width: 25%
 
-   .. tab:: Safari
-
-      |bw| is not available yet for Safari.
 
 Recovery phrase setup
 =====================
@@ -90,10 +87,6 @@ Removing your wallet does not remove your data on the Concordium blockchain.
       #. Click |chrome-ext|. Click |chrome-options| to the right of **Concordium Wallet**.
 
       #. Click **Remove from Chrome**.
-
-   .. tab:: Safari
-
-      |bw| is not available yet for Safari.
 
 .. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
                     :width: 20px
