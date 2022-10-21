@@ -75,7 +75,7 @@ To run a node on testnet use the following configuration file and follow the ste
          # Where the genesis is located
          - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat
          # The url of the catchup file. This speeds up the catchup process.
-         - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.software/blocks.idx
+         - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
          # General node configuration Data and config directories (it's OK if they
          # are the same). This should match the volume mount below. If the location
          # of the mount inside the container is changed, then these should be
