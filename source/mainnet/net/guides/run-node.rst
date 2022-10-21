@@ -293,7 +293,7 @@ If you wish to have the node running in the background, then add a ``-d`` option
 
       .. code-block:: yaml
 
-       image: concordium/testnet-node:4.3.1-0
+       image: concordium/testnet-node:4.5.0-0
 
 Run a mainnet node
 ==================
