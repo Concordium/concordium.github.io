@@ -64,7 +64,7 @@ to their own hosted Concordium node.
 .. dropdown:: Workflow 1 - Setup wallet connected to hosted node (click here)
 
     You are ready now to install the |bw|. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
-    
+
     The |bw| connects to a server hosted by Concordium which will take care of the Concordium node on your behalf.
 
     You are ready now to start the |bw| by clicking on the Concordium icon at the top right of the
