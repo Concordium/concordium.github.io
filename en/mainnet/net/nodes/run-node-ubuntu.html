@@ -1512,6 +1512,18 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronize-a-node-with-the-network">
+   Synchronize a node with the network
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-node-versions-4-3-0-or-earlier">
+     For node versions 4.3.0 or earlier
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#upgrade-version">
    Upgrade version
   </a>
@@ -1571,10 +1583,32 @@ The services are also enabled to start automatically on system start.</p>
 <li><p>Enter a <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">name</span></code> when prompted. The node name is visible on the network dashboard. When you have installed the services, the <code class="docutils literal notranslate"><span class="pre">concordium-testnet-node</span></code> will be running automatically.</p></li>
 <li><p>To verify that the node is running, go to the <a class="reference external" href="https://dashboard.testnet.concordium.com/">Concordium dashboard</a> and look for a node with the name you provided.</p></li>
 </ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-testnet-node</span></code> service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>If you want more detailed information about building and maintaining a node, or if your node is not running, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md">Building .deb packages for ubuntu distributions README from Concordium</a></p>
+</div>
+</div>
+<div class="section" id="enable-inbound-connections">
+<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">#</a></h2>
+<p>If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+<a class="reference internal" href="baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>However you can also make your node an even better network participant
+by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
+on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and
+platform configuration you will need to forward an external port
+to <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
+details of how this is done will depend on your configuration.</p>
+</div>
+<div class="section" id="synchronize-a-node-with-the-network">
+<h2>Synchronize a node with the network<a class="headerlink" href="#synchronize-a-node-with-the-network" title="Permalink to this headline">#</a></h2>
 <p>If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.</p>
-<ol class="arabic simple">
+<blockquote>
+<div><ol class="arabic simple">
 <li><p>Stop the node if it is running</p></li>
 </ol>
 <blockquote>
@@ -1606,14 +1640,14 @@ The services are also enabled to start automatically on system start.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+</div></blockquote>
+<p>After the node is caught up remove the out of band catchup configuration to speed up further node restarts.</p>
+<div class="section" id="for-node-versions-4-3-0-or-earlier">
+<h3>For node versions 4.3.0 or earlier<a class="headerlink" href="#for-node-versions-4-3-0-or-earlier" title="Permalink to this headline">#</a></h3>
+<p>If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.</p>
 <blockquote>
-<div><p>If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.</p>
-<ol class="arabic simple">
-<li><p>Download testnet blocks from <a class="reference external" href="https://catchup.testnet.concordium.com/blocks_to_import.mdb">catchup.testnet.concordium.com</a>.
-The remaining steps assume that the file is stored in <code class="docutils literal notranslate"><span class="pre">~/Downloads/blocks_to_import.mdb</span></code>.</p></li>
+<div><ol class="arabic simple">
+<li><p>Download testnet blocks from <a class="reference external" href="https://catchup.testnet.concordium.com/blocks_to_import.mdb">catchup.testnet.concordium.com</a>. The remaining steps assume that the file is stored in <code class="docutils literal notranslate"><span class="pre">~/Downloads/blocks_to_import.mdb</span></code>.</p></li>
 <li><p>Stop the node if it is running</p></li>
 </ol>
 <blockquote>
@@ -1649,26 +1683,6 @@ The remaining steps assume that the file is stored in <code class="docutils lite
 </div></blockquote>
 <p>After the node is caught up remove the out of band catchup configuration to speed up further node restarts.</p>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">concordium-testnet-node</span></code> service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you want more detailed information about building and maintaining a node, or if your node is not running, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md">Building .deb packages for ubuntu distributions README from Concordium</a></p>
-</div>
-</div>
-<div class="section" id="enable-inbound-connections">
-<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">#</a></h2>
-<p>If you are running your node behind a firewall, or behind your home
-router, then you will probably only be able to connect to other nodes,
-but other nodes will not be able to initiate connections to your node.
-This is perfectly fine, and your node will fully participate in the
-Concordium network. It will be able to send transactions and,
-<a class="reference internal" href="baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
-<p>However you can also make your node an even better network participant
-by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
-on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and
-platform configuration you will need to forward an external port
-to <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
-details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="upgrade-version">
 <span id="upgrade-node-ubuntu-testnet"></span><h2>Upgrade version<a class="headerlink" href="#upgrade-version" title="Permalink to this headline">#</a></h2>

@@ -1510,15 +1510,22 @@ body {margin:0;}
   <a class="reference internal nav-link" href="#run-a-testnet-node">
    Run a testnet node
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#enable-inbound-connections">
-   Enable inbound connections
-  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#retrieve-node-logs">
-     Retrieve node logs
+    <a class="reference internal nav-link" href="#enable-inbound-connections">
+     Enable inbound connections
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#retrieve-node-logs">
+       Retrieve node logs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#migration-from-the-previous-docker-distribution">
+     Migration from the previous Docker distribution
     </a>
    </li>
   </ul>
@@ -1527,11 +1534,25 @@ body {margin:0;}
   <a class="reference internal nav-link" href="#run-a-mainnet-node">
    Run a mainnet node
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#migration-from-the-previous-docker-distribution">
-   Migration from the previous Docker distribution
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Enable inbound connections
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Retrieve node logs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#migration-docker-distribution">
+     Migration from the previous Docker distribution
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#troubleshooting">
@@ -1628,6 +1649,8 @@ and <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888</span>
       <span class="c1"># Where the genesis is located</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat</span>
+      <span class="c1"># The url of the catchup file. This speeds up the catchup process.</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx</span>
       <span class="c1"># General node configuration Data and config directories (it&#39;s OK if they</span>
       <span class="c1"># are the same). This should match the volume mount below. If the location</span>
       <span class="c1"># of the mount inside the container is changed, then these should be</span>
@@ -1756,9 +1779,8 @@ version, find the correct version in
 </div>
 </div></blockquote>
 </div>
-</div>
 <div class="section" id="enable-inbound-connections">
-<h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">#</a></h2>
+<h3>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">#</a></h3>
 <p>If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
@@ -1772,13 +1794,69 @@ platform configuration you will either need to forward an external port to
 <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The details of how
 this is done will depend on your configuration.</p>
 <div class="section" id="retrieve-node-logs">
-<h3>Retrieve node logs<a class="headerlink" href="#retrieve-node-logs" title="Permalink to this headline">#</a></h3>
+<h4>Retrieve node logs<a class="headerlink" href="#retrieve-node-logs" title="Permalink to this headline">#</a></h4>
 <p>The sample configuration presented above logs data using Docker’s default
 logging infrastructure. To retrieve the logs for the node run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker logs testnet-node
 </pre></div>
 </div>
 <p>This outputs the logs to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.</p>
+</div>
+</div>
+<div class="section" id="migration-from-the-previous-docker-distribution">
+<h3>Migration from the previous Docker distribution<a class="headerlink" href="#migration-from-the-previous-docker-distribution" title="Permalink to this headline">#</a></h3>
+<p>In the past Concordium provided a <code class="docutils literal notranslate"><span class="pre">concordium-software</span></code> package which
+contained a <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> binary which orchestrated downloading a Docker
+image and running the node. To migrate from that setup:</p>
+<ol class="arabic">
+<li><p>Stop the running node (e.g., using <code class="docutils literal notranslate"><span class="pre">concordium-node-stop</span></code>)</p></li>
+<li><p>Either modify the relevant example configuration file above by mapping the
+existing node database directory for use by the new container, i.e., replacing</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/var/lib/concordium-testnet:/mnt/data</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">~/.local/share/concordium:/mnt/data</span>
+</pre></div>
+</div>
+<p>Or, alternatively, moving the contents of <code class="docutils literal notranslate"><span class="pre">~/.local/share/concordium</span></code> to,
+e.g., <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code> and keeping the configuration files as
+they are.</p>
+</li>
+<li><p>If your node is an existing baker node, update the configuration file above to include</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+</pre></div>
+</div>
+<p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
+</li>
+<li><p>Start the node and the collector.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker-compose -f testnet-node.yaml up
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The configuration starts two containers, one running the node, and another
+running the node collector that reports the node state to the network dashboard.</p>
+<p>If you wish to have the node running in the background, then add a <code class="docutils literal notranslate"><span class="pre">-d</span></code> option to the above command.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sample configuration always downloads the latest node image. It is
+good practice to choose the version deliberately. To choose a specific
+version, find the correct version in
+<a class="reference external" href="https://hub.docker.com/r/concordium/testnet-node">hub.docker.com/concordium/testnet-node</a> and change the
+<code class="docutils literal notranslate"><span class="pre">image</span></code> value from</p>
+<blockquote>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>to, e.g.,</p>
+<blockquote>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:4.5.0-0</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 <div class="section" id="run-a-mainnet-node">
@@ -1812,6 +1890,8 @@ for a list of currently available versions.</p></li>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888</span>
       <span class="c1"># Where the genesis is located</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat</span>
+      <span class="c1"># The url of the catchup file. This speeds up the catchup process.</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx</span>
       <span class="c1"># General node configuration Data and config directories (it&#39;s OK if they</span>
       <span class="c1"># are the same). This should match the volume mount below. If the location</span>
       <span class="c1"># of the mount inside the container is changed, then these should be</span>
@@ -1894,9 +1974,32 @@ for a list of currently available versions.</p></li>
     <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/node-collector&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
+<div class="section" id="id2">
+<h3>Enable inbound connections<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>However you can also make your node an even better network participant by
+enabling inbound connections. The sample configuration above makes the node
+listen on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections. Depending on your network and
+platform configuration you will either need to forward an external port to
+<code class="docutils literal notranslate"><span class="pre">8888</span></code> on your router, open it in your firewall, or both. The details of how
+this is done will depend on your configuration.</p>
+<div class="section" id="id3">
+<h4>Retrieve node logs<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<p>The sample configuration presented above logs data using Docker’s default
+logging infrastructure. To retrieve the logs for the node run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker logs mainnet-node
+</pre></div>
 </div>
-<div class="section" id="migration-from-the-previous-docker-distribution">
-<span id="migration-docker-distribution"></span><h2>Migration from the previous Docker distribution<a class="headerlink" href="#migration-from-the-previous-docker-distribution" title="Permalink to this headline">#</a></h2>
+<p>This outputs the logs to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.</p>
+</div>
+</div>
+<div class="section" id="migration-docker-distribution">
+<span id="id4"></span><h3>Migration from the previous Docker distribution<a class="headerlink" href="#migration-docker-distribution" title="Permalink to this headline">#</a></h3>
 <p>In the past Concordium provided a <code class="docutils literal notranslate"><span class="pre">concordium-software</span></code> package which
 contained a <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> binary which orchestrated downloading a Docker
 image and running the node. To migrate from that setup:</p>
@@ -1948,6 +2051,7 @@ version, find the correct version in
 </pre></div>
 </div>
 </div></blockquote>
+</div>
 </div>
 </div>
 <div class="section" id="troubleshooting">

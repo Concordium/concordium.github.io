@@ -2266,6 +2266,10 @@ body {margin:0;}
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#install-the-debian-package-and-run-a-node">Install the Debian package and run a node</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#enable-inbound-connections">Enable inbound connections</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node-ubuntu.html#for-node-versions-4-3-0-or-earlier">For node versions 4.3.0 or earlier</a></li>
+</ul>
+</li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#upgrade-version">Upgrade version</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 </ul>
@@ -2274,6 +2278,10 @@ body {margin:0;}
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#install-the-debian-package-and-run-a-node">Install the Debian package and run a node</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#enable-inbound-connections">Enable inbound connections</a></li>
+<li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="nodes/run-node-ubuntu.html#for-node-versions-4-3-0-or-earlier">For node versions 4.3.0 or earlier</a></li>
+</ul>
+</li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#upgrade-version">Upgrade version</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 </ul>
@@ -2339,13 +2347,22 @@ body {margin:0;}
 <li class="toctree-l5"><a class="reference internal" href="guides/run-node.html">Run a node with Docker</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#before-you-begin">Before you begin</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#running-upgrading-a-node">Running/upgrading a node</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-testnet-node">Run a testnet node</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#enable-inbound-connections">Enable inbound connections</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#retrieve-node-logs">Retrieve node logs</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-testnet-node">Run a testnet node</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#enable-inbound-connections">Enable inbound connections</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="guides/run-node.html#retrieve-node-logs">Retrieve node logs</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-mainnet-node">Run a mainnet node</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#migration-from-the-previous-docker-distribution">Migration from the previous Docker distribution</a></li>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#migration-from-the-previous-docker-distribution">Migration from the previous Docker distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#run-a-mainnet-node">Run a mainnet node</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#id2">Enable inbound connections</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="guides/run-node.html#id3">Retrieve node logs</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#migration-docker-distribution">Migration from the previous Docker distribution</a></li>
+</ul>
+</li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node.html#troubleshooting">Troubleshooting</a><ul>
 <li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#mounting-host-directories-under-selinux">Mounting host directories under SELinux</a></li>
 <li class="toctree-l7"><a class="reference internal" href="guides/run-node.html#letting-the-node-container-access-the-internet">Letting the node container access the internet</a></li>
@@ -2631,7 +2648,7 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html">Setting up the front-end</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html#concordium-browser-wallet">Concordium browser wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html#bw">Concordium Wallet for Web</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html#running-the-web-front-end">Running the web front-end</a></li>
 </ul>
 </li>
