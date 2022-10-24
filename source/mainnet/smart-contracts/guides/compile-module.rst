@@ -53,3 +53,19 @@ This uses Cargo_ for building, but runs further optimizations on the result.
 
    Note that even with ``--release`` set, the produced Wasm module includes
    debug information.
+
+Running the ``cargo concordium build`` command will produce a smart contract module which can be found
+relative to your project root folder in ``./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1``.
+Alternatively, you can run the following command to output your smart contract module into the root folder of your project:
+
+.. code-block:: console
+
+   $cargo concordium build --out ./my_module.wasm.v1
+
+.. note::
+
+   ``cargo-concordium`` produces several smart contract modules with different suffixes. The suffix corresponds
+   to the smart contract version, i.e. ``my_module.wasm/my_module.wasm.v0`` for V0 contracts and ``my_module.wasm.v1``
+   for V1 contracts. We recommend using the wasm module with the ``.v1`` extension
+   (the most-up-to date smart contract version).
+   The file ``my_module.wasm.v1`` will be used when :ref:`deploying <deploy-module>` a smart contract on-chain.
