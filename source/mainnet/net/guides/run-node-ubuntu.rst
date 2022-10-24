@@ -45,68 +45,6 @@ The services are also enabled to start automatically on system start.
 
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.mainnet.concordium.software/>`__ and look for a node with the name you provided.
 
-.. Note::
-   If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
-
-   1. Stop the node if it is running
-
-     .. code-block:: console
-
-       $sudo systemctl stop concordium-mainnet-node.service
-
-   2. Edit the node service configuration file
-
-     .. code-block:: console
-
-       $sudo systemctl edit concordium-mainnet-node.service
-
-   3. Add the following under the ``[Service]`` section (create the section if it does not exist)
-
-     .. code-block::
-
-       Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
-
-   4. Start the service again
-
-     .. code-block::
-
-       $sudo systemctl start concordium-mainnet-node.service
-
-.. Note::
-   If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
-
-   1. Download mainnet blocks from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__.
-      The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
-
-   2. Stop the node if it is running
-
-     .. code-block:: console
-
-       $sudo systemctl stop concordium-mainnet-node.service
-
-
-   3. Edit the node service configuration file
-
-     .. code-block:: console
-
-       $sudo systemctl edit concordium-mainnet-node.service
-
-   4. Add the following under the ``[Service]`` section (create the section if it does not exist)
-
-     .. code-block::
-
-       Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
-       BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
-
-   5. Start the service again
-
-     .. code-block::
-
-       $sudo systemctl start concordium-mainnet-node.service
-
-
-  After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
-
 The ``concordium-mainnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
 
 .. Note::
@@ -128,6 +66,72 @@ on port ``8888`` for inbound connections on **Mainnet**. Depending on your netwo
 platform configuration you will need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
+
+Synchronize a node with the network
+===================================
+
+If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
+
+  1. Stop the node if it is running
+
+    .. code-block:: console
+
+      $sudo systemctl stop concordium-mainnet-node.service
+
+  2. Edit the node service configuration file
+
+    .. code-block:: console
+
+      $sudo systemctl edit concordium-mainnet-node.service
+
+  3. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+    .. code-block::
+
+      Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
+
+  4. Start the service again
+
+    .. code-block::
+
+      $sudo systemctl start concordium-mainnet-node.service
+
+After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
+For node versions 4.3.0 or earlier
+----------------------------------
+
+If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
+
+  1. Download mainnet blocks from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__. The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+
+  2. Stop the node if it is running
+
+    .. code-block:: console
+
+      $sudo systemctl stop concordium-mainnet-node.service
+
+
+  3. Edit the node service configuration file
+
+    .. code-block:: console
+
+      $sudo systemctl edit concordium-mainnet-node.service
+
+  4. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+    .. code-block::
+
+      Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
+      BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
+
+  5. Start the service again
+
+    .. code-block::
+
+      $sudo systemctl start concordium-mainnet-node.service
+
+After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
 .. _upgrade-node-Ubuntu:
 
