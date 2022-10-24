@@ -174,18 +174,19 @@ entire receive function, including the cost of failed operations.
 Upgradeability
 ==============
 
-Smart contract instances can choose to upgrade its module to a new smart contract
+A V1 smart contract instance can choose to upgrade its module to a new V1 smart contract
 module using the **upgrade** host function.
 The host function takes a reference to a deployed smart contract module to use for
 the upgraded instance and can only be called from a receive function.
-The function returns back whether the upgrade is successful or failed, allowing the instance
-to decide the next step. If the upgrade is succeful any new invocations of the
+The host function returns whether the upgrade succeeded, allowing the instance
+to decide the next step. If the upgrade is successful any new invocations of the
 upgraded instance uses the smart contract code in the new module.
 
 .. warning::
 
-   Make sure to proper authorized any endpoint triggering a smart contract upgrade as
-   it allows for changing the behavior of the smart contract.
+   Upgrading a smart contract can be used to change the behavior completely,
+   therefore it is important to carefully restrict access to any endpoint
+   triggering a smart contract upgrade.
 
 .. graphviz::
    :align: center
@@ -220,8 +221,8 @@ upgraded instance uses the smart contract code in the new module.
        escrow2[label="Escrow"]
 
        House:n -> escrow;
-       Car:n -> escrow [style=dashed];
-       Car:n -> escrow2;
+       Car:n -> escrow [style=dashed, arrowhead=onormal];
+       Car:n -> escrow2 [style=bold];
    }
 
 Failing to upgrade
@@ -236,8 +237,8 @@ A smart contract instance can fail to upgrade for one of the following reasons:
 Immutability
 ------------
 
-It is still possible to implement an immutable smart contract, by simply `not` implementing any logic
-triggering the *upgrade* host function.
+Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
+are immutable, when it does not contain any code for triggering an upgrade.
 
 Migration
 ---------
