@@ -12,6 +12,15 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+November XX, 2022
+
+Concordium Node 5.0.0
+---------------------
+
+Concordium Node 5.0.0 contains support for smart contract upgradability.
+
+It also contains an account structure update, provides the ability to query changes from a smart contract, and smart contract resource restrictions have been relaxed.
+
 October 19, 2022
 
 |bw|
