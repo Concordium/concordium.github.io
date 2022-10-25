@@ -78,8 +78,32 @@ Run the following command on your terminal to clone `this repository <https://gi
 Setup a wallet
 ==============
 
-Now you need a Concordium wallet. Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a Chrome web browser and configure it to run on testnet. Follow :ref:`these instructions<setup-bw>` to install the extension for testnet and set it up with an identity and account. Use the Testnet faucet to claim 2000 CCDs for testing purposes.
+Now you need a Concordium wallet. This tutorial uses the |bw|. The |bw| uses a 24 word secret recovery phrase to secure your wallet. Make sure that it’s protected. Save them in a secure place. Anyone who knows the secret recovery phrase can access your wallet.
+
+Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a chromium web browser. Follow :ref:`these instructions<setup-bw>` to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity.
+
+.. image:: images/bw-idp-selection.png
+    :width: 100%
+
+Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.
+
+To read more about using the |bw| see :ref:`Use the Concordium Wallet for Web<use-browser-wallet>`. One thing to note is that if you click |send|, you enter transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.
+
+.. image:: images/tx-fee-in-bw.png
+    :width: 100%
 
 After that step, you need to :ref:`export the keys<export-bw-keys>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
 
+.. image:: images/bw-export-key.png
+    :width: 100%
+
+When you export the key it creates a file named ``<YOUR PUBLIC ADDRESS>.export``. Open it with a text editor and find your ``signKey``, ``verifyKey`` in there. Copy the ``signKey`` and your address. You will use it while deploying and interacting with your contract.
+
+.. image:: images/bw-exported-key.png
+    :width: 100%
+
 Continue to the :ref:`next part<upload-nft>` of the tutorial to upload your NFT and assign metadata to it.
+
+.. |send| image:: ../images/browser-wallet/send-ccd.png
+             :alt: button with paper airplane
+             :width: 50px
