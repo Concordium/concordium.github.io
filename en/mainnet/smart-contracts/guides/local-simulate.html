@@ -1546,7 +1546,7 @@ specific scenarios.</p>
 You will also need a smart contract module in Wasm to simulate.</p>
 </div>
 <div class="section" id="simulating-instantiation">
-<h2>Simulating instantiation<a class="headerlink" href="#simulating-instantiation" title="Permalink to this headline">#</a></h2>
+<span id="id2"></span><h2>Simulating instantiation<a class="headerlink" href="#simulating-instantiation" title="Permalink to this headline">#</a></h2>
 <p>To simulate the instantiation of a smart contract instance using
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium run init --module contract.wasm.v1 <span class="se">\</span>
@@ -1590,7 +1590,7 @@ An example of a fully specified init context could be:</p>
 </div>
 <div class="section" id="simulating-updates">
 <h2>Simulating updates<a class="headerlink" href="#simulating-updates" title="Permalink to this headline">#</a></h2>
-<p>To simulate an update to a contract smart contract instance using
+<p>To simulate an update to a smart contract instance using
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium run update --module contract.wasm.v1 <span class="se">\</span>
 <span class="go">                              --contract &quot;my_contract&quot; \</span>
@@ -1606,6 +1606,12 @@ An example of a fully specified init context could be:</p>
 <p class="admonition-title">Note</p>
 <p>If using <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">contract schemas</span></a>, it is possible to pass
 the parameter as JSON instead of binary by using the <code class="docutils literal notranslate"><span class="pre">--parameter-json</span></code> flag.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The simulation of the <code class="docutils literal notranslate"><span class="pre">init</span></code> function in the <a class="reference internal" href="#simulating-instantiation"><span class="std std-ref">previous
+paragraph</span></a> produced an output <code class="docutils literal notranslate"><span class="pre">state.bin</span></code> file.
+This <code class="docutils literal notranslate"><span class="pre">state.bin</span></code> file can be used as the input <code class="docutils literal notranslate"><span class="pre">state-in.bin</span></code> file in this paragraph.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">receive-context.json</span></code> (used with the <code class="docutils literal notranslate"><span class="pre">--context</span></code> parameter) is a file that
 contains context information such as the current state of the chain, the

@@ -1562,6 +1562,22 @@ preparation is required</span></a>.</p>
 <p>Note that even with <code class="docutils literal notranslate"><span class="pre">--release</span></code> set, the produced Wasm module includes
 debug information.</p>
 </div>
+<p>Running the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> command will produce a smart contract module which can be found
+relative to your project root folder in <code class="docutils literal notranslate"><span class="pre">./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1</span></code>.
+Alternatively, you can supply the location where to store the smart contract module using
+the <code class="docutils literal notranslate"><span class="pre">--out</span></code> option. For example running the following command will output your smart contract module
+into the root folder of your project in a file name <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --out ./my_module.wasm.v1
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> produces several smart contract modules with different suffixes. The suffix corresponds
+to the smart contract version, i.e. <code class="docutils literal notranslate"><span class="pre">my_module.wasm/my_module.wasm.v0</span></code> for V0 contracts and <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>
+for V1 contracts. We recommend using the wasm module with the <code class="docutils literal notranslate"><span class="pre">.v1</span></code> extension
+(the most-up-to date smart contract version).
+The file <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code> will be used when <a class="reference internal" href="deploy-module.html#deploy-module"><span class="std std-ref">deploying</span></a> a smart contract on-chain.</p>
+</div>
 </div>
 </div>
 
