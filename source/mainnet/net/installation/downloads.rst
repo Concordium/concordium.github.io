@@ -8,6 +8,8 @@ Downloads - Mainnet
 
 This topic contains information about where you can download the Concordium Wallets and tools for Mainnet. You can also find out about the hardware requirements for running a node.
 
+.. _downloads-mwgen2:
+
 |mw-gen2|
 ========================
 
@@ -40,6 +42,13 @@ You can find |mw-gen1| on App Store and on Google Play.
    .. image:: ../images/mobile-wallet/google-play-badge.png
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+
+.. _downloads-browser-wallet:
+
+|bw|
+=================================
+
+The |bw| is available to download as an extension for the `Chrome web browser <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
 
 .. _downloads-desktop-wallet:
 

@@ -21,6 +21,41 @@ Install/upgrade and run a node
 
 .. Note::
 
+   Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
+   default on new installations. However on upgrading an existing node the
+   configuration is not updated. To enable the new API environment variables
+   ``CONCORDIUM_NODE_GRPC2_LISTEN_PORT``
+   ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` must be set in the ``node.plist``
+   settings files for the relevant network as documented below. The default
+   ports set on a fresh install for mainnet and testnet are ``20000`` and
+   ``20001``, respectively.
+
+   **Example for Mainnet**
+
+   .. code-block:: console
+
+    <!-- Address of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
+    <string>0.0.0.0</string>
+
+    <!-- Port of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_PORT</key>
+    <string>20000</string>
+
+   **Example for Testnet**
+
+   .. code-block:: console
+
+    <!-- Address of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
+    <string>0.0.0.0</string>
+
+    <!-- Port of the GRPC V2 server. -->
+    <key>CONCORDIUM_NODE_GRPC2_LISTEN_PORT</key>
+    <string>20001</string>
+
+.. Note::
+
   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 .. tabs::
