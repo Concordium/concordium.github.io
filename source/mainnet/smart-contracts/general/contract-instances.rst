@@ -240,6 +240,12 @@ Immutability
 Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
 are immutable, when they do not contain any code for triggering an upgrade.
 
+.. warning::
+
+   It is important to understand that immutable means the code of the smart contract cannot change.
+   It does not mean that the behavior of a smart contract cannot change, as the smart contract code
+   can include a switch in behavior or even invoke other mutable smart contracts.
+
 Migration
 ---------
 
