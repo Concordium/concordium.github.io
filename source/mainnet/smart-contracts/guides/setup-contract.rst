@@ -35,6 +35,9 @@ To start a new Concordium smart contract project from a template, run the comman
 
 The path where the project should be created can be provided with the ``--path`` option.
 
+You can find additional information on the available templates in the
+`README file <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates/README.md>`_.
+
 From scratch
 ============
 
