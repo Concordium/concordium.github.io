@@ -4,15 +4,15 @@
 Make a contract upgradeable
 ===========================
 
-This guide will show how to make a Rust smart contract upgradeable.
+This guide shows how to make a Rust smart contract upgradeable.
 
 Immutable smart contracts come with the drawback that bugs cannot be fixed, new features and cost optimizations cannot be implemented.
 For some decentralized applications this is a problem and these need some way to upgrade the smart contract code.
 
 .. note::
-   A common way to workaround immutability, seen on other blockchains, is to have an additinal smart contract acting as a proxy, forwarding calls to the actual smart contract.
+   A common way to workaround immutability that is seen on other blockchains is to have an additional smart contract acting as a proxy, forwarding calls to the actual smart contract.
    Upgrading is then updating the proxy to forward the calls to another smart contract.
-   Unfortunately, this will introduce an extra cost on every contract call and add an additional layer of complexity to the contract code, which usually are making authorization and testing harder.
+   Unfortunately, this will introduce an extra cost on every contract call and add an additional layer of complexity to the contract code, which usually makes authorization and testing harder.
 
 Concordium smart contract instances have the option to upgrade their smart contract module by calling the ``upgrade`` function with a reference to a new smart contract module to use.
 If successful, new invocations to the upgraded smart contract instance will use the new smart contract module.

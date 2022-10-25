@@ -238,7 +238,7 @@ Immutability
 ------------
 
 Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
-are immutable, when they do not contain any code for triggering an upgrade.
+are immutable when they do not contain any code for triggering an upgrade.
 
 .. warning::
 
@@ -258,5 +258,5 @@ upgrade if the migration fails.
 
 .. seealso::
 
-   See :ref:`guide-upgradable-contract` for a guide of how to make a Rust smart contract
+   See :ref:`guide-upgradable-contract` for a guide about how to make a Rust smart contract
    upgradeable.
