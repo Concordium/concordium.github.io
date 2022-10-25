@@ -238,7 +238,7 @@ Immutability
 ------------
 
 Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
-are immutable, when it does not contain any code for triggering an upgrade.
+are immutable, when they do not contain any code for triggering an upgrade.
 
 Migration
 ---------

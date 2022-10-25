@@ -6,7 +6,7 @@ Make a contract upgradeable
 
 This guide will show how to make a Rust smart contract upgradeable.
 
-Immutable smart contracts comes with the drawback that bugs cannot be fixed, new features and cost optimizations cannot be implemented.
+Immutable smart contracts come with the drawback that bugs cannot be fixed, new features and cost optimizations cannot be implemented.
 For some decentralized applications this is a problem and these need some way to upgrade the smart contract code.
 
 .. note::
