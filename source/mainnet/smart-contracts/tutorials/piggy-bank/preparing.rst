@@ -41,7 +41,7 @@ You are now ready to select an instance on the cloud provider that matches the f
    * - Storage
      - 25 GB
    * - Operating system
-     - Ubuntu 20.04 x64
+     - Ubuntu 20.04 or 22.04 x64
 
 .. note::
 

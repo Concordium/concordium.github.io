@@ -16,7 +16,7 @@ You can also watch the video to learn how to run a node with Ubuntu.
 Prerequisites
 =============
 
--  Ubuntu 20.04 must be installed on the server that is running the node.
+-  Ubuntu 20.04 or 22.04 must be installed on the server that is running the node.
 
 -  The server must be running around the clock.
 
