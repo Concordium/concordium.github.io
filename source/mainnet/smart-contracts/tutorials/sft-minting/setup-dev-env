@@ -1,0 +1,10 @@
+.. include:: ../../../variables.rst
+.. _setup-dev-env:
+
+=================================
+Setup the development environment
+=================================
+
+If you have done the NFT minting tutorial, you will already have most of the necessary setup. Otherwise, see :ref:`Mint an NFT<nft-index>`.
+
+You can start by cloning `this repository <https://github.com/chainorders/concordium-nft-tutorials>`_ which includes some essential binaries, docker files, and configurations that are provided by Concordium. You will use `this smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`_ that is provided by Concordium team.
