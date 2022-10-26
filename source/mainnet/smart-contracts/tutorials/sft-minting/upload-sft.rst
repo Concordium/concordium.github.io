@@ -37,7 +37,7 @@ If it’s successful you will have something similar to the below. Pay attention
 Metadata
 --------
 
-For your semi-fungible token, you will create metadata that holds the IPFS link inside of it, a description, a name, and the attributes based on the CIS-2 standard. For more details, you can check the :ref:`previous tutorial’s metadata section<nft-metadata>` or `CIS-2 <https://proposals.concordium.software/CIS/cis-2.html#example-token-metadata-non-fungible`_.
+For your semi-fungible token, you will create metadata that holds the IPFS link inside of it, a description, a name, and the attributes based on the CIS-2 standard. For more details, you can check the :ref:`previous tutorial’s metadata section<nft-metadata>` or `CIS-2 <https://proposals.concordium.software/CIS/cis-2.html#example-token-metadata-non-fungible>`_.
 
 Here is an example of metadata.
 

@@ -1,5 +1,5 @@
 .. include:: ../../../variables.rst
-.. _setup-dev-env:
+.. _setup-nft-env:
 
 =================================
 Setup the development environment

@@ -109,7 +109,7 @@ Now you can get the metadata on-chain and see what you have in there. In order t
 
 You can expect the IPFS URL pinned by Pinata that you added in the metadata.json file and a hash value you added in the mint function. In order to get the details on-chain run the following command. If you are using cargo-concordium 2.1.0 you don't need to specify the schema but for newer versions add <YOUR SCHEMA NAME>. You can check the version of your ``cargo-concordium`` with the commands ``cargo-concordium —help`` or ``cargo-concordium —version``.
 
-.. code-blcok:: console
+.. code-block:: console
 
     ts-node ./src/cli.ts view --sender $ACCOUNT --contract CIS2-Multi --schema ../dist/smart-contract-multi/schema.bin --index <CONTRACT_INDEX>
 
