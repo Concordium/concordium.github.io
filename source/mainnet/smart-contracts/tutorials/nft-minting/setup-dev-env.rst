@@ -104,6 +104,6 @@ When you export the key it creates a file named ``<YOUR PUBLIC ADDRESS>.export``
 
 Continue to the :ref:`next part<upload-nft>` of the tutorial to upload your NFT and assign metadata to it.
 
-.. |send| image:: ../images/browser-wallet/send-ccd.png
+.. |send| image:: images/send-ccd.png
              :alt: button with paper airplane
              :width: 50px
