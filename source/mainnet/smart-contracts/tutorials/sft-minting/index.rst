@@ -1,4 +1,4 @@
-.. _nft-index:
+.. _sft-index:
 
 ==========================
 Mint a semi-fungible token
@@ -21,7 +21,7 @@ One of the best use cases of semi-fungible tokens is in gaming and the metaverse
 
 .. toctree::
    :maxdepth: 1
-   :caption: NFT Minting
+   :caption: Semi-fungible token minting
 
    setup
    upload-sft
