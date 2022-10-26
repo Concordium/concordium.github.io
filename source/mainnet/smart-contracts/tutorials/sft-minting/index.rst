@@ -23,7 +23,7 @@ One of the best use cases of semi-fungible tokens is in gaming and the metaverse
    :maxdepth: 1
    :caption: NFT Minting
 
-   setup-dev-env
+   setup
    upload-sft
    build-smart-contract
    mint-xfer
