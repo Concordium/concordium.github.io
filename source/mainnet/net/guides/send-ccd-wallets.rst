@@ -125,4 +125,27 @@ This topic describes how you can send CCD from an account when only one particip
             .. image:: ../images/mobile-wallet/MW28.png
                 :width: 25%
 
+    .. tab:: |bw|
+
+        #. Go to Accounts.
+
+        #. Click |send-bw|.
+
+        #. Enter the amount of CCD to transfer. Or click **Max** to transfer all of your CCD minus the transaction fee.
+
+            .. image:: ../images/browser-wallet/send-dialog.png
+
+        #. Enter the recipient address. Click **Continue**.
+
+        #. On the confirmation screen, click **Send** to submit the transaction to the blockchain. Click **Back** if you need to correct the transfer.
+
+            .. image:: ../images/browser-wallet/send-confirm.png
+
+        #. Once you click Send, review the transaction and click **Finish**.
+
+            .. image:: ../images/browser-wallet/send-finish.png
+
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
+
+.. |send-bw| image:: ../images/browser-wallet/send-ccd.png
+             :alt: paper airplane

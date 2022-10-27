@@ -9,7 +9,7 @@
 .. Mobile Wallet product names
 .. |mw-gen1| replace:: Concordium Legacy Wallet
 .. |mw-gen2| replace:: Concordium Wallet for Android
-.. |bw| replace:: Concordium Wallet for Chrome
+.. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_4.2.0-0
@@ -18,8 +18,8 @@
 
 .. Node debian package verification variables
 
-.. |node-deb-package| replace:: concordium-mainnet-node_4.4.4-1_amd64.deb
-.. |node-deb-package-checksum| replace:: ed1c346de5d20089e4590c67e8cb757783f3938b17b36ba44756bbf0d013f21e
+.. |node-deb-package| replace:: concordium-mainnet-node_4.5.0-0_amd64.deb
+.. |node-deb-package-checksum| replace:: 9ceb5755062e9f519bde15d988e69ad88f6127b2cd15438ac0ea51de62a981ef
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat

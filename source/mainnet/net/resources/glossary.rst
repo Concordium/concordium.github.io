@@ -560,7 +560,7 @@ The user identity certificate includes attributes such as name, age, and nationa
 Wallet
 ======
 
-A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has two wallet types.
+A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has four wallet types.
 
 The Desktop Wallet
 ^^^^^^^^^^^^^^^^^^
@@ -570,7 +570,12 @@ The Desktop Wallet is a digital wallet that enables you to create and manage you
 The Mobile Wallet
 ^^^^^^^^^^^^^^^^^
 
-The Mobile Wallet is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
+The Mobile Wallet is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
+
+The |bw|
+^^^^^^^^
+
+The |bw| is a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
 
 .. _glossary-winning-probability:
 
