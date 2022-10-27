@@ -34,7 +34,7 @@ Concordium smart contracts:
     You can find examples of smart contracts in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
 
-.. dropdown::  Where can I find a smart contract reference library similar to the GitHub repo from `OpenZeppelin`?
+.. dropdown::  Where can I find a smart contract reference library similar to the GitHub repo from `Solana Program`?
 
     You can find examples and standard implementations in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
@@ -752,9 +752,9 @@ Miscellaneous:
     **Option 5:** If you need plenty of CCD for large-scale testing,
     please contact Concordium’s technical support via support@concordium.software.
 
-.. dropdown::  Is there something similiar to gas and transaction fees?
+.. dropdown::  Is there something similiar to transaction fees?
 
-    Yes, gas or transaction fees are called NRG (pronounced energy) on the Concordium chain.
+    Yes, transaction fees are called NRG (pronounced energy) on the Concordium chain.
     The block limit is 3 million NRG. Transaction fees are fixed in Euro and are much
     cheaper than on Solana.
 
@@ -780,8 +780,7 @@ Miscellaneous:
         You cannot import the keys from the desktop wallet to the ``concordium-client``.
         Hence, the desktop wallet does not support smart contract transactions.
         If you need the multiSig wallet to manage a smart contract,
-        you need to deploy a smart contract multiSig wallet
-        (similar to how Ethereum uses multiSig wallets at work).
+        you need to deploy a smart contract multiSig wallet.
 
 .. dropdown::  What does `invoke` mean?
 
