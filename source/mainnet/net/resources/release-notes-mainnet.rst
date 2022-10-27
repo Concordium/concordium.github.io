@@ -19,6 +19,13 @@ October 13, 2022
 
 Identity and account creation has been locked in |mw-gen1|. This means that you cannot create new identities or accounts in |mw-gen1|. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.
 
+October 12, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
+
 October 5, 2022
 
 Concordium Node 4.4.4

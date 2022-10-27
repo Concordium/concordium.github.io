@@ -6,6 +6,38 @@
 Setting up a smart contract project
 ===================================
 
+This guide documents two different options (*from a template* or *from scratch*) to create a new Concordium smart contract project.
+The *from a template* option is available for ``cargo-concordium`` version 2.2.0 or greater. It provides you with some
+smart contract templates. Choose the template that best fits your project scope.
+The *from scratch* option guides you through the process when you want to start a new project without any boilerplate code.
+
+.. note::
+
+   Concordium recommends that newcomers choose the *from a template* option.
+
+From a template
+===============
+
+Concordium maintains several smart contract
+`templates <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ (currently a ``default`` template and a ``cis2-nft`` template).
+For generating the smart contracts from the above templates, the ``cargo-generate`` crate is required.
+``cargo-generate`` can be installed by running the following command:
+
+.. code-block:: console
+
+   $cargo install --locked cargo-generate
+
+To start a new Concordium smart contract project from a template, run the command:
+
+.. code-block:: console
+
+   $cargo concordium init
+
+The path where the project should be created can be provided with the ``--path`` option.
+
+From scratch
+============
+
 A smart contract in Rust is written as an ordinary Rust library crate.
 The library is then compiled to Wasm using the Rust target
 ``wasm32-unknown-unknown`` and, since it is just a Rust library, we can use
