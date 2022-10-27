@@ -1,4 +1,4 @@
-.. _faq:
+.. _solana-faq:
 
 ====
 FAQs
