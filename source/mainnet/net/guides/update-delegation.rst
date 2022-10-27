@@ -174,24 +174,33 @@ Before delegating stake to a baker pool, it is important to research the pool us
         #. In the hamburger menu |hamburger| tap **Delegation**.
 
             .. image:: ../images/mobile-wallet/account-hamburger-menu.png
+                    :width: 25%
 
         #. You see your current delegation. Tap **Update current delegation**.
 
             .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+                    :width: 25%
 
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
+                    :width: 25%
 
         #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
+                    :width: 25%
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
+                    :width: 25%
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
+    .. tab:: |bw|
+
+        At the moment, delegation is not available in the |bw|.
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 

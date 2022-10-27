@@ -7,7 +7,9 @@ Company identity creation
 
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
-You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). The tabs below describe how you create a company identity. Note that the process differs for testnet and mainnet.
+You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
+
+The tabs below describe how to create a company identity. Note that the process differs for testnet and mainnet.
 
 .. tabs::
 
@@ -15,14 +17,14 @@ You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company id
 
       #. Download the tools for your platform.
 
-         - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities.tar.gz>`_
-            - SHA256 checksum of the download: ``b9981c542f46e92dd05e8b3e9bf46684e9de364bd331cd6fa8db98ed99b4df84``
+         - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz>`__
+            - SHA256 checksum of the download: ``fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2``
 
-         - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities.zip>`_
-            - SHA256 checksum of the download: ``4a13eec29b6c7fc8214555c6b13e431c20df449bfd11e1a2f26b6a6e91a03957``
+         - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip>`__
+            - SHA256 checksum of the download: ``38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096``
 
-         - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities.zip>`_
-            - SHA256 checksum of the download: ``242a0ff19f84c91ec0c1a3c7696718eee61f144a73a3700d8969f3531384ad6e``
+         - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
+            - SHA256 checksum of the download: ``6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca``
 
       #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
@@ -34,40 +36,33 @@ You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company id
 
          - ``ip-info.json`` (public keys of the identity provider Notabene)
 
-      #. Download ``concordium-client`` for your platform.
+      #. Download ``concordium-client`` for your platform.  See :ref:`Downloads<concordium-node-and-client-download>` to get the file and checksum.
 
-         - `Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
-            - SHA256 checksum of the download: ``6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8``
+      #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object>`__. Email the ``request.json`` output file to ania@notabene.id. Store the auxiliary output securely.
 
-         - `Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
-            - SHA256 checksum of the download: ``f6cafdd472b02ead818cc0f463a4cf40053dda33a824a2dfed816744a48a579c``
+      #. To verify your identity towards Notabene, follow the `entity verification instructions <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_. When the identity has been verified successfully, Notabene will notify you by email, and they will send you an identity object file named ``id-object.json``.
 
-         - `MacOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_
-            - SHA256 checksum of the download: ``3173cbe28373d9a787978b236aefdaa20d129496b61e545ed7369d8922e10d05``
+      #. To create additional accounts from the identity object returned by Notabene, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-1-identity-object>`__. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
 
-      #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-0-request-for-the-version-0-identity-object>`_. Email the ``request.json`` output file to ania@notabene.id. Store the auxiliary output securely.
+      #. To recover your identity object (e.g. if you lost it), follow the `recovery of identity instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#recovery-of-identity>`__. Email the ``recovery-request.json`` output file to ania@notabene.id. When the recovery request has been validated successfully, Notabene will notify you by email, and they will return the identity object named ``id-object.json`` that you lost. With the recovered identity object, you can then recreate your account keys, if needed.
 
-      #. To verify your identity towards Notabene, follow the `entity verification instructions <https://notaben.notion.site/Entity-verification-2e5cc78149af4677bfe2c27ca5625731>`_. When the identity has been verified successfully, Notabene will notify you by email, and they will send you an identity object file named ``id-object.json``.
-
-      #. To create additional accounts from the identity object returned by Notabene, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-0-identity-object>`_. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
-
-      If you experience issues with steps 1, 2, 3, 4, or 6, please contact Concordium’s technical support via support@concordium.software. If you experience issues with step 5, identity verification, please contact Notabene via ania@notabene.id.
+      If you experience issues with steps 1, 2, 3, 4, 6 or 7, please contact Concordium’s technical support via support@concordium.software. If you experience issues with step 5, identity verification, please contact Notabene via ania@notabene.id.
 
 
    .. tab:: Testnet
 
       #. Download the tools for your platform.
 
-         - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities.tar.gz>`_
-            - SHA256 checksum of the download: ``b9981c542f46e92dd05e8b3e9bf46684e9de364bd331cd6fa8db98ed99b4df84``
+         - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz>`__
+            - SHA256 checksum of the download: ``fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2``
 
-         - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities.zip>`_
-            - SHA256 checksum of the download: ``4a13eec29b6c7fc8214555c6b13e431c20df449bfd11e1a2f26b6a6e91a03957``
+         - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip>`__
+            - SHA256 checksum of the download: ``38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096``
 
-         - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities.zip>`_
-            - SHA256 checksum of the download: ``242a0ff19f84c91ec0c1a3c7696718eee61f144a73a3700d8969f3531384ad6e``
+         - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
+            - SHA256 checksum of the download: ``6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca``
 
-      #. Download the testnet-specific `configuration files <https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip>`_.
+      #. Download the testnet-specific `configuration files <https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip>`__.
 
       #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
@@ -77,22 +72,17 @@ You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company id
 
          - ``ip-info-testnet.json`` (public keys of the identity provider)
 
-      #. Download ``concordium-client`` for your platform.
+      #. Download ``concordium-client`` for your platform. See :ref:`Downloads<concordium-node-and-client-download-testnet>` to get the file and checksum.
 
-         - `Linux <https://distribution.concordium.software/tools/linux/concordium-client_3.0.4-0>`_
-            - SHA256 checksum of the download: ``6ea2674ebae5dafd9de3c730db536fc0675627b6b867f05a944a1a60dd5ceca8``
+      #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object>`__. Email the ``request.json`` output file to support@concordium.software with the subject line "Test company identity". Store the auxiliary output securely.
 
-         - `Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_3.0.4-0.exe>`_
-            - SHA256 checksum of the download: ``f6cafdd472b02ead818cc0f463a4cf40053dda33a824a2dfed816744a48a579c``
+      #. When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named ``id-object.json``.
 
-         - `MacOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_3.0.4-0.zip>`_
-            - SHA256 checksum of the download: ``3173cbe28373d9a787978b236aefdaa20d129496b61e545ed7369d8922e10d05``
+      #. To create accounts from the identity object returned by Concordium, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-1-identity-object>`__. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
 
-      #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-0-request-for-the-version-0-identity-object>`_. Email the ``request.json`` output file to support@concordium.software with the subject line "Test company identity". Store the auxiliary output securely.
+      #. To recover your identity object (e.g. if you lost it), follow the `recovery of identity instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#recovery-of-identity>`__. Email the ``recovery-request.json`` output file to support@concordium.software with the subject line "Recover company identity".
 
-      #. When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named ``id-object.json``. Concordium also creates the initial account.
-
-      #. To create additional accounts from the identity object returned by Concordium, follow the `create accounts instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-0-identity-object>`_. You must deploy the credential.json output file to the chain exactly as described. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
+      #. When the recovery request has been validated successfully, Concordium will notify you by email, and they will return the identity object named ``id-object.json`` that you lost. With the recovered identity object, you can then recreate your account keys, if needed.
 
       Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:
 

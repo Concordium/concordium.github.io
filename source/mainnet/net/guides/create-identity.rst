@@ -5,10 +5,12 @@
 Create an identity
 ==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider. To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw|, an initial account is not submitted by the identity provider.
+
+To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
-   You can't exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. You can, however, send CCD from one wallet to another.
+   You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
 
 .. tabs::
 
@@ -121,7 +123,25 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
       .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
 
-      You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
+   .. tab:: |bw|
+
+      You can submit requests for additional :ref:`identities<glossary-identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
+
+      .. image:: ../images/browser-wallet/id-page-no-id.png
+         :width: 25%
+
+      #. Click the ID cards drop-down.
+
+      #. Click **Request new**.
+
+         .. image:: ../images/browser-wallet/id-cards-new.png
+                  :width: 25%
+
+      #. Select a third-party identity provider from the list. An external web page opens in your default web browser.
+
+      #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+
+      #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
@@ -130,5 +150,7 @@ Before you can start using a Wallet and submit transactions to the blockchain, y
                     :width: 20px
                     :alt: check mark
 .. |morepage| image:: ../images/more-ellipsis.png
-                  :alt: Three dots button
-                  :width: 40px
+             :alt: Three dots button
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines

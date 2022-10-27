@@ -12,12 +12,25 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
-October 13, 2022
+October 19, 2022
 
-|mw-gen1|
-----------------
+|bw|
+---------------------
 
-Identity and account creation has been locked in |mw-gen1|. This means that you cannot create new identities or accounts in |mw-gen1|. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.
+The |bw| extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.
+
+October 18, 2022
+
+Concordium Node 4.5.0
+---------------------
+
+Concordium Node 4.5.0 contains the :ref:`updated gRPC API <grpc2-documentation>`
+which is easier to use than the previous version. It also contains bug fixes and
+performance and robustness improvements.
+
+- Node gRPC API v2 is released and enabled in all distributions.
+- The node is now able to recover after crashes which leave only treestate or only blockstate usable.
+- Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
 
 October 12, 2022
 
