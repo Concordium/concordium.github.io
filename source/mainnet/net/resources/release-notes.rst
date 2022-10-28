@@ -17,9 +17,13 @@ November XX, 2022
 Concordium Node 5.0.0
 ---------------------
 
-Concordium Node 5.0.0 contains support for smart contract upgradability.
+Concordium Node 5.0.0 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November XX, 2022. This adds the following features:
 
-It also contains an account structure update, provides the ability to query changes from a smart contract, and smart contract resource restrictions have been relaxed.
+- Support for smart contract upgradability
+- The possibility to query smart contracts
+- Relaxation of some restrictions that existed in smart contracts
+- A new representation of accounts that is better optimised for common operations
+- Fixed an issue where the catch-up downloader would fail at a protocol update.support for smart contract upgradability.
 
 October 19, 2022
 
