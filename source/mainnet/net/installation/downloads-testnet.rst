@@ -125,6 +125,8 @@ Concordium Client v4.2.0
 
 -  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_4.2.0-0.exe>`_
 
+.. _cargo-concordium-testnet:
+
 Cargo-concordium v2.2.0
 =======================
 
