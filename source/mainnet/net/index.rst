@@ -57,6 +57,7 @@ index
    :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
+   Quick start guide <../smart-contracts/guides/quick-start>
    Tutorials <../smart-contracts/tutorials/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>

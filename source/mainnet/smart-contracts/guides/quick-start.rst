@@ -48,6 +48,14 @@ This guide is intended to be used by experienced developers who want to get up a
 
     For information about building contracts from scratch, see :ref:`Setting up a smart contract project<setup-contract>`.
 
+    If you're using the concordium-std library bring everything from the `concordium-std`_ library into scope by adding the line:
+
+    .. code-block:: rust
+
+        use concordium_std::*;
+
+    For information about developing your smart contracts, see :ref:`Developing smart contracts<writing-smart-contracts>`.
+
 .. dropdown:: Step 3 - Set up a Concordium Wallet
 
     You need to set up a Concordium wallet and export the keys to import them to `concordium client`. You can only import keys from |bw|, |mw-gen2|, or |mw-gen1| into `concordium-client`, so you must choose one of those wallets to set up.
@@ -57,18 +65,101 @@ This guide is intended to be used by experienced developers who want to get up a
     - :ref:`|mw-gen2| setup<setup-g2-mobile-wallet>`
         - Key export
     - :ref:`|mw-gen1| setup<setup-mobile-wallet>`
-        - :ref:`Key export<export-import>
+        - :ref:`Key export<export-import>`
     - :ref:`Import keys to concordium-client<concordium-client-import-accounts-keys>`
 
     Use the testnet faucet in your wallet to get some CCDs for testing. The testnet faucet is available once you create an account.
 
 .. dropdown:: Step 4 - Build your smart contract
 
+    In order to build a smart contract, run:
 
+    .. code-block:: console
+
+        $cargo concordium build
+
+    This uses Cargo_ for building, but runs further optimizations on the result. Running the ``cargo concordium build`` command will produce a smart contract module which can be found relative to your project root folder in ``./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1``. Alternatively, you can supply the location where to store the smart contract module using the ``--out`` option. For example running the following command will output your smart contract module into the root folder of your project in a file name ``my_module.wasm.v1``.
+
+    .. code-block:: console
+
+        $cargo concordium build --out ./my_module.wasm.v1
+
+    .. Note::
+
+        For building the schema for a smart contract module, some :ref:`further preparation is required <build-schema>`.
+
+   It is also possible to compile using Cargo_ directly by running:
+
+   .. code-block:: console
+
+      $cargo build --target=wasm32-unknown-unknown [--release]
+
+   Note that even with ``--release`` set, the produced Wasm module includes
+   debug information.
 
 .. dropdown:: Step 5 - Deploy your smart contract
 
+    To deploy a smart contract module ``my_module.wasm.v1`` using the account with name account-name, run the following command:
+
+    .. code-block:: console
+
+       $concordium-client module deploy my_module.wasm.v1 --sender account_name
+
+   The ``--sender`` option can be omitted if the account "default" is to be used.
+
+   Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
+   the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
+   ``my_module.wasm.v1`` for V1 contracts.
+
+   When deploying a smart contract module built using ``cargo-concordium``
+   version < 2, or built directly with ``cargo``, it is necessary to
+   specify the smart contract version with the ``--contract-version [v0, v1]``
+   option. These module files will not have the version suffix, e.g.
+   ``.v0``, or ``.v1``, but just be called ``<module_name>.wasm``.
+
+    If successful, the output should be similar to the following:
+
+    .. code-block:: console
+
+       Module successfully deployed with reference: 'd121f262f3d34b9737faa5ded2135cf0b994c9c32fe90d7f11fae7cd31441e86'.
+
+    Make note of the module reference as it is used when creating smart contract instances.
+
+    A module can be given a local alias, or *name*, which makes referencing it easier. The name is only stored locally by ``concordium-client``, and is not visible on-chain. To add a name during deployment, the ``--name`` parameter is used.
+
+    .. code-block:: console
+
+       $concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
+
+    If successful, the output should be similar to the following:
+
+    .. code-block:: console
+
+       Module successfully deployed with reference: '9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2' (my_deployed_module).
+
+    For more detailed information about how to deploy a smart contract module, see :ref:`deploy-module`, and for information about how to create an instance, see :ref:`initialize-contract`.
+
 .. dropdown:: Step 6 - Interact with your smart contract
+
+    Since interactions with a smart contract are transactions, make sure to have ``concordium-client`` set up with an account with enough CCD to pay for the transactions. The cost of the transaction depends on the size of the parameters sent to the receive function and the complexity of the function itself.
+
+    As an example, to update an instance with address index ``0`` using the parameterless receive function ``my_receive`` while allowing up to 10000 energy to be used, run the following command:
+
+    .. code-block:: console
+
+       $concordium-client contract update 0 --entrypoint my_receive --energy 10000 --sender MyAccount
+
+    If successful, the output should be similar to the following:
+
+    .. code-block:: console
+
+       Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
+
+    As you can see, the subindex defaults to ``0``.
+
+    You can also pass parameters, either in JSON or binary format. For more information, see :ref:`Interact with a smart contract instance<interact-instance>`.
+
+    For information on how to work with parameters in smart contracts, see :ref:`working-with-parameters`.
 
 .. _Rust: https://www.rust-lang.org/
 .. _Cargo: https://doc.rust-lang.org/cargo/
