@@ -32,167 +32,159 @@ Prerequisites
 .. Note::
     On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
-.. tabs::
+.. dropdown:: Desktop Wallet
 
-    .. tab:: Desktop Wallet
+    **Send a shielded amount of CCD**
 
-        .. tabs::
+    #. Go to **Accounts** and select the account you want to make the transfer from.
 
-            .. tab:: Send a shielded amount of CCD
+    #. Select **Shielded balance** on the account and select **Send**.
 
-                #. Go to **Accounts** and select the account you want to make the transfer from.
+        .. image:: ../images/desktop-wallet/dw-shielded-xfer.png
 
-                #. Select **Shielded balance** on the account and select **Send**.
+    #. In **Send shielded funds**, enter the amount of CCD that you want to send. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
 
-                    .. image:: ../images/desktop-wallet/dw-shielded-xfer.png
+        .. image:: ../images/desktop-wallet/dw-send-shielded.png
 
-                #. In **Send shielded funds**, enter the amount of CCD that you want to send. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes.
+        .. Warning::
 
-                    .. image:: ../images/desktop-wallet/dw-send-shielded.png
+           Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
 
-                .. Warning::
+    4. Select the recipient of the CCD, and then select **Continue**.
 
-                    Transaction memos are public and visible on the blockchain, and they are permanent and can't be deleted. Therefore, carefully review all information before you submit the memo to the blockchain.
+    5. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
-                4. Select the recipient of the CCD, and then select **Continue**.
+    6. On the Ledger, there's a message saying Concordium. Press both buttons. The Ledger says **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
-                5. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
+    7. In the Desktop Wallet, select **Submit**. There’s a message saying **Waiting for the user to finish the process on the device**.
 
-                6. On the Ledger, there's a message saying Concordium. Press both buttons. The Ledger says **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+    8. Press both buttons on the Ledger to confirm the decryption.
 
-                7. In the Desktop Wallet, select **Submit**. There’s a message saying **Waiting for the user to finish the process on the device**.
+    9. On the Ledger there's a message saying **Concordium is ready**, and then it says **Review transaction**. Using the right button, you now have to navigate through the following information to verify that it's correct and matches the transaction details in the Desktop Wallet:
 
-                8. Press both buttons on the Ledger to confirm the decryption.
+        -  **Shielded transfer**: this is the type of transaction. Because the amount is encrypted, the Ledger can't display the actual amount that's going to be transferred.
 
-                9. On the Ledger there's a message saying **Concordium is ready**, and then it says **Review transaction**. Using the right button, you now have to navigate through the following information to verify that it's correct and matches the transaction details in the Desktop Wallet:
+        -  **Sender**: this is the sender account.
 
-                    -  **Shielded transfer**: this is the type of transaction. Because the amount is encrypted, the Ledger can't display the actual amount that's going to be transferred.
+        -  **Recipient**: this is the recipient account.
 
-                    -  **Sender**: this is the sender account.
+        -  **Memo**: the memo message, if applicable.
 
-                    -  **Recipient**: this is the recipient account.
+    10. On the Ledger there's a message saying **Sign transaction**. Press both buttons to sign the transaction.
 
-                    -  **Memo**: the memo message, if applicable.
+    11. In the Desktop Wallet there’s a message saying **Shielded transfer submitted**, which means that the transfer has been submitted to the chain. Click **Finish**. The transfer is listed in the **Transfers** list.
 
-                10. On the Ledger there's a message saying **Sign transaction**. Press both buttons to sign the transaction.
 
-                11. In the Desktop Wallet there’s a message saying **Shielded transfer submitted**, which means that the transfer has been submitted to the chain. Click **Finish**. The transfer is listed in the **Transfers** list.
+    **Decrypt a shielded amount of CCD**
 
+    If you have received a shielded transfer, a shield icon is displayed next to the shielded balance |shielded-xfer|. Before you can see the amount that you've received, you have to decrypt the shielded transaction.
 
-            .. tab:: Decrypt a shielded amount of CCD
+    Any shielded transfers that you've already decrypted are visible in the shielded balance.
 
-                If you have received a shielded transfer, a shield icon is displayed next to the shielded balance |shielded-xfer|. Before you can see the amount that you've received, you have to decrypt the shielded transaction.
+    #. Select the relevant account, and then select **Shielded balance**.
 
-                Any shielded transfers that you've already decrypted are visible in the shielded balance.
+    #. The Desktop Wallet says **Decrypt shielded balance**. Click **Decrypt**.
 
-                #. Select the relevant account, and then select **Shielded balance**.
+        .. image:: ../images/desktop-wallet/dw-decrypt-shielded.png
 
-                #. The Desktop Wallet says **Decrypt shielded balance**. Click **Decrypt**.
+    #. The Desktop Wallet says **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
 
-                    .. image:: ../images/desktop-wallet/dw-decrypt-shielded.png
+    #. On the Ledger, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
-                #. The Desktop Wallet says **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
+    #. In the Desktop Wallet, select **Decrypt**.
 
-                #. On the Ledger, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+    #. On the Ledger, press both buttons to decrypt the amount. In the Desktop Wallet you can now see the amount that you decrypted.
 
-                #. In the Desktop Wallet, select **Decrypt**.
+    .. |shielded-xfer| image:: ../images/desktop-wallet/dw-shielded-xfer-received.png
+        :alt: Balance with a shield that has a lock on it
 
-                #. On the Ledger, press both buttons to decrypt the amount. In the Desktop Wallet you can now see the amount that you decrypted.
+.. dropdown:: |mw-gen2|
 
-            .. |shielded-xfer| image:: ../images/desktop-wallet/dw-shielded-xfer-received.png
-                            :alt: Balance with a shield that has a lock on it
+    **Send a shielded amount of CCD**
 
-    .. tab:: |mw-gen2|
+    #. Go to the Accounts page.
 
-        .. tabs::
+    #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
 
-            .. tab:: Send a shielded amount of CCD
+        - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
 
-                #. Go to the Accounts page.
+    #. Tap the **Shielded balance** tab of the totals area.
 
-                #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
+    #. Tap **SEND**.
 
-                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
+    #. Enter the amount you want to transfer.
 
-                #. Tap the **Shielded balance** tab of the totals area.
+    #. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
 
-                #. Tap **SEND**.
+        - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
 
-                #. Enter the amount you want to transfer.
+    #. Tap **Send Amount**.
 
-                #. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
+        .. image:: ../images/mobile-wallet/MW42.png
+            :width: 25%
 
-                    - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
+    #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
 
-                #. Tap **Send Amount**.
+    #. Finally, tap **Send shielded amount**.
 
-                    .. image:: ../images/mobile-wallet/MW42.png
-                        :width: 25%
+        .. image:: ../images/mobile-wallet/MW43.png
+            :width: 25%
 
-                #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
+    #. The transaction is subbmitted; tap **Ok, thanks**.
 
-                #. Finally, tap **Send shielded amount**.
+        .. image:: ../images/mobile-wallet/MW44.png
+            :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW43.png
-                        :width: 25%
+    .. |more-acct| image:: ../images/more-acct.png
+        :alt: Button with double-headed arrow
+        :width: 50px
 
-                #. The transaction is subbmitted; tap **Ok, thanks**.
+.. dropdown:: |mw-gen1|
 
-                    .. image:: ../images/mobile-wallet/MW44.png
-                        :width: 25%
+    **Send a shielded amount of CCD**
 
-                .. |more-acct| image:: ../images/more-acct.png
-                                :alt: Button with double-headed arrow
-                                :width: 50px
+    #. Go to the Accounts page.
 
-    .. tab:: |mw-gen1|
+    #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
 
-        .. tabs::
+        - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
 
-            .. tab:: Send a shielded amount of CCD
+    #. Tap the **Shielded balance** tab of the totals area.
 
-                #. Go to the Accounts page.
+    #. Tap **SEND**.
 
-                #. Tap the Account you want to transfer CCD from or tap |moredetails| for the account.
+        .. image:: ../images/mobile-wallet/MW37.png
+           :width: 25%
 
-                    - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
+    #. Enter the amount you want to transfer.
 
-                #. Tap the **Shielded balance** tab of the totals area.
+    #. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
 
-                #. Tap **SEND**.
+        - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
 
-                   .. image:: ../images/mobile-wallet/MW37.png
-                      :width: 25%
+    #. Tap **Send Amount**.
 
-                #. Enter the amount you want to transfer.
+        .. image:: ../images/mobile-wallet/MW42.png
+            :width: 25%
 
-                #. In **Paste recipient address**, enter the recipient address for the recipient of the transfer.
+    #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
 
-                    - You can also choose a recipient that already exists in your **Address Book**, or add a new one by tapping  **Scan QR**.
+    #. Finally, tap **Send shielded amount**.
 
-                #. Tap **Send Amount**.
+        .. image:: ../images/mobile-wallet/MW43.png
+            :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW42.png
-                        :width: 25%
+    #. The transaction is subbmitted; tap **Ok, thanks**.
 
-                #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also add to the fee of the transaction.
+        .. image:: ../images/mobile-wallet/MW44.png
+            :width: 25%
 
-                #. Finally, tap **Send shielded amount**.
+    .. |hamburger| image:: ../images/hamburger.png
+           :alt: Three horizontal lines
+           :width: 20px
 
-                    .. image:: ../images/mobile-wallet/MW43.png
-                        :width: 25%
-
-                #. The transaction is subbmitted; tap **Ok, thanks**.
-
-                    .. image:: ../images/mobile-wallet/MW44.png
-                        :width: 25%
-
-            .. |hamburger| image:: ../images/hamburger.png
-                         :alt: Three horizontal lines
-                         :width: 20px
-
-            .. |moredetails| image:: ../images/more-arrow.png
-                         :alt: Button with More and double-headed arrow
-                         :width: 50px
+    .. |moredetails| image:: ../images/more-arrow.png
+            :alt: Button with More and double-headed arrow
+            :width: 50px
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.

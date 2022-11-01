@@ -18,47 +18,43 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
-.. tabs::
+.. dropdown:: Desktop Wallet
 
-    .. tab:: Desktop Wallet
+    **Single signature account**
 
-        .. tabs::
+    #. Go to **Accounts** and select the account on which you want to delegate funds.
 
-            .. tab:: Single signature account
+    #. Click **More options** then select **Register as a delegator**.
 
-                #. Go to **Accounts** and select the account on which you want to delegate funds.
+       .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
 
-                #. Click **More options** then select **Register as a delegator**.
+    #. Select your target (a baker pool or passive delegation). Click **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
+       .. image:: ../images/desktop-wallet/dw-delegation-target.png
 
-                #. Select your target (a baker pool or passive delegation). Click **Continue**.
+    #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-delegation-target.png
+        .. image:: ../images/desktop-wallet/dw-delegation-stake.png
 
-                #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+    #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
-                    .. image:: ../images/desktop-wallet/dw-delegation-stake.png
+    #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
-                #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+    #. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
-                #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+    #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
-                #. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+    #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
-                #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+    **Multi signature account**
 
-                #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+    #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Delegate to a pool**.
 
-            .. tab:: Multi signature account
+    #. Select the account on which you want to delegate funds.
 
-                #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Delegate to a pool**.
+    #. Enter the new amount that you want to stake and select **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                #. Select the account on which you want to delegate funds.
-
-                #. Enter the new amount that you want to stake and select **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
-
-                #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
+    #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
                 **Generate the transaction**
 
@@ -129,7 +125,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
                 #. Select **Finish** to leave the page.
 
-    .. tab:: |mw-gen2|
+.. dropdown:: |mw-gen2|
 
         #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
 
@@ -169,7 +165,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
              :alt: Hand receiving money with text earn
              :width: 50px
 
-    .. tab:: |mw-gen1|
+.. dropdown:: |mw-gen1|
 
         #. Go to the **Accounts** screen.
 
