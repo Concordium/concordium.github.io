@@ -19,10 +19,18 @@ Concordium Node 5.0.0
 
 Concordium Node 5.0.0 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November XX, 2022. This adds the following features:
 
-- Support for smart contract upgradability
-- The possibility to query smart contracts
-- Relaxation of some restrictions that existed in smart contracts
-- A new representation of accounts that is better optimised for common operations
+   - Support for smart contract upgradability
+   - Query the current exchange rates, account balances, and contract balances from a smart contract.
+   - Relax restrictions on smart contracts, including:
+      - Parameter size limit: 1kiB -> 65kiB
+      - Return value size limit: 16kiB -> no limit (apart from energy)
+      - Number of logs per invocation: 64 -> no limit (apart from energy)
+   - A new representation of accounts that is better optimised for common operations.
+   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Further the transaction outcomes are being stored in a merkle tree for P5 resulting in some queries being faster.
+
+Additionally, the node update contains:
+
+- More efficient indexing of accounts with scheduled releases.
 - Fixed an issue where the catch-up downloader would fail at a protocol update.support for smart contract upgradability.
 
 October 19, 2022
