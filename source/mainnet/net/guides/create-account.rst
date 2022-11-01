@@ -1,12 +1,14 @@
-
+.. include:: ../../variables.rst
 .. _create-account:
 
 =================
 Create an account
 =================
 
-When you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
+If you are using |mw-gen1| or Desktop Wallet, when you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
 to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+
+If you are using |bw| or |mw-gen2|, no initial account was created when you created your :ref:`identity<glossary-identity>`. You create all :ref:`accounts<glossary-account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -15,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. tab:: Desktop Wallet
 
             .. note::
-                You can't import accounts that were created on the Mobile Wallet.
+                You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
 
         Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger device and install the Concordium Ledger App<install-ledger-app>`.
 
@@ -65,7 +67,27 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen2|
+
+        #. Go to the **Accounts** page.
+
+        #. Tap the **+** in the upper right corner.
+
+        #. Tap the identity you want to use to create the account.
+
+            .. image:: ../images/mobile-wallet-gen2/create-acct-select-id.png
+                :width: 25%
+
+        #. Finally, tap **Submit account**.
+
+            .. image:: ../images/mobile-wallet-gen2/create-acct-submit.png
+                :width: 25%
+
+        Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+
+    .. tab:: |mw-gen1|
 
         #. Go to the **Accounts** page.
 
@@ -99,6 +121,8 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
         Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
 
+        You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+
         .. Warning::
             **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
             **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
@@ -107,5 +131,22 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
         .. Note::
             To access the **Balance** of the new account, tap the Balance area on the account card or tap |moredetails|.
 
+    .. tab:: |bw|
+
+        #. To switch to the accounts page, click |hamburger-bw| and select Accounts. If you do not have any accounts, you can click **Create account** and skip to step 3. If you do not have any identity to create an account, you can click **Create new identity**. For information about the identity creation process, see :ref:`Create an identity<create-initial-account>`.
+
+            .. image:: ../images/browser-wallet/acct-page-no-acct.png
+                :width: 25%
+
+            .. image:: ../images/browser-wallet/acct-page-no-id.png
+                :width: 25%
+
+        #. Click the Accounts drop-down. Then click **Add new**.
+
+        #. Select the identity to use to create the account. Click **Create new account**.
+
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines

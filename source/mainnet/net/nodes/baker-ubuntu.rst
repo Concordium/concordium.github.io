@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _baker-ubuntu:
 
 ==========================
@@ -11,7 +12,7 @@ Prerequisites
 
 -  The node is installed and running.
 
--  If you want to run the node as a baker, you must have generated baker keys. How you generate baker keys depends on whether you are using Desktop Wallet or Mobile Wallet. For an overview of the process for both wallets, see :ref:`overview-baker`.
+-  If you want to run the node as a baker, you must have generated baker keys. How you generate baker keys depends on whether you are using Desktop Wallet or |mw-gen2| / |mw-gen1|. For an overview of the process for both wallets, see :ref:`overview-baker`.
 
 Run a baker node on Ubuntu
 ==========================
@@ -115,7 +116,7 @@ You can use ``concordium-client`` to see the status of the node. For more inform
 
    ...
 
-In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
+In the Desktop Wallet, |mw-gen2|, and |mw-gen1|, a bread icon is added to
 the account associated with the baker node. The bread icon appears as
 soon as the transaction has been submitted. That is, before the two
 epochs have elapsed.

@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _mainnet-release-notes:
 
 =======================
@@ -10,6 +11,88 @@ Mainnet 4: Sirius
 .. Note::
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+October 25, 2022
+
+Concordium Node 4.5.0
+---------------------
+
+Concordium Node 4.5.0 contains the :ref:`updated gRPC API <grpc2-documentation>`
+which is easier to use than the previous version. It also contains bug fixes and
+performance and robustness improvements.
+
+- Node gRPC API v2 is released and enabled in all distributions.
+- The node is now able to recover after crashes which leave only treestate or only blockstate usable.
+- Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
+
+October 19, 2022
+
+|bw|
+---------------------
+
+The |bw| extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.
+
+October 12, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
+
+October 5, 2022
+
+Concordium Node 4.4.4
+---------------------
+
+Concordium Node 4.4.4 contains performance improvements and bug fixes.
+
+- Smart contract state is no longer cached on startup and is not cached after
+  finalization. This reduces the node's memory use and startup time.
+
+- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+  during contract execution. Metadata is cached for a limited number of smart contract modules.
+  By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+  configurable via the ``--modules-cache-size`` command line argument or by using the
+  ``CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE`` environment variable.
+
+- Speed up and reduce memory overhead during protocol updates. Overhead in
+  memory use during protocol updates should now be less than 20%, and time to
+  process a protocol update should be around 1/3 of the previous release.
+
+- The node now validates blocks more eagerly and does not relay blocks it cannot
+  fit into the tree, i.e., pending blocks.
+
+- The ``--download-blocks-from`` option now takes the URL to the catchup ``_index file_``, permitting to
+  only download and import catchup files containing blocks not already present in the database.
+
+- Partial node database recovery. The node is now able to recover from the most
+  common causes of its database corruption.
+
+- Fix typo in environment variable ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS`` (remove trailing `S`).
+
+- Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+  interrupted early on in the startup if out-of-band catchup was enabled.
+
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
+
+September 26, 2022
+
+|mw-gen2|
+---------
+
+Concordium introduces a new wallet for Android mobile devices: the |mw-gen2|. The |mw-gen2| offers all of the same functionality you know from |mw-gen1|, such as sending and receiving CCDs, delegation, baking, and so on. But the |mw-gen2| uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released |bw|. You can read about |mw-gen2| and the differences between it and |mw-gen1| in the :ref:`FAQ<mw-gen2-faq>`.
+
+In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
+
+|mw-gen1| (previously Concordium Mobile Wallet) for Android
+-----------------------------------------------------------
+
+The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
 
 September 5, 2022
 

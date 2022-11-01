@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _export-import:
 
 ====================================================
@@ -7,8 +7,12 @@ Make a backup of identities, accounts, and addresses
 
 To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can't access the Wallet.
 
+.. Note::
+
+    Backup and import cannot be used for |mw-gen2| because it uses a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
+
 .. Warning::
-    You can't import a file created in the Mobile Wallet into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. If you try to import a file that has been exported from the Mobile Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Mobile Wallet. For more information, see :ref:`Deciding between the Desktop Wallet and the Mobile Wallet <choosing-wallet>`.
+    You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
 
 .. Warning::
    You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.
@@ -40,6 +44,8 @@ To make sure that you have a backup of your accounts, identities, and addresses,
                 #. Enter the password of the import. If the import is successful, you can see all the imported identities, accounts, and addresses in the right pane.
 
             .. tab:: Recover accounts without a backup file
+
+                .. _account-recovery:
 
                 If, for some reason, you've lost one or more of your accounts in the Desktop Wallet, and you've also lost the backup file, you can use the Ledger device to recover those accounts.
 
@@ -84,7 +90,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
                 #. To view placeholders for identities, go to **Identities**. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can't use the placeholders to create new accounts.
 
-    .. tab:: Mobile Wallet
+    .. tab:: |mw-gen1|
 
         .. Warning::
             **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
@@ -140,6 +146,10 @@ To make sure that you have a backup of your accounts, identities, and addresses,
                         #. Enter your biometrics or app passcode.
 
                         #. Review your import and tap **Ok, thanks**.
+
+    .. tab:: |mw-gen2|
+
+        Backup is not available in |mw-gen2|. It uses a secret recovery phrase to recover your accounts, identities, and private keys. For information about recovering your |mw-gen1| wallet, see :ref:`Recover your wallet<recover-wallet>`.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
