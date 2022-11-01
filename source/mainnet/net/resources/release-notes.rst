@@ -26,7 +26,7 @@ Concordium Node 5.0.0 contains support for `protocol version 5 <https://github.c
       - Return value size limit: 16kiB -> no limit (apart from energy)
       - Number of logs per invocation: 64 -> no limit (apart from energy)
    - A new representation of accounts that is better optimised for common operations.
-   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Further the transaction outcomes are being stored in a merkle tree for P5 resulting in some queries being faster.
+   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
 
 Additionally, the node update contains:
 
