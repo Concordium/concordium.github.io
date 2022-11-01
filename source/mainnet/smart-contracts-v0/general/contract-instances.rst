@@ -171,6 +171,8 @@ Logging an event has an associated cost, similar to the cost of writing to the
 contract's state. In most cases it would only make sense to log a few bytes to
 reduce cost.
 
+There is no limit to the number of logs per invocation (apart from energy).
+
 .. _action-descriptions-v0:
 
 Action descriptions

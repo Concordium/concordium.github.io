@@ -283,6 +283,35 @@ Notice that the ``value`` is only deserialized if ``should_add`` is
 While the gain in efficiency is minimal in this example, it could have an
 substantial impact for more complex examples.
 
+Parameters have a size limit of 65kiB. There is no return value size limit (apart from energy).
+
+Working with queries
+--------------------
+
+Queries can be called from smart contracts to query an account balance, contract balance, or the current exchange rates.
+
+To query account balances, the following are available:
+
+.. code-block:: rust
+
+    let account_balance = host.account_balance(address)?;
+    let available_balance = account_balance.available(); // The amount which can be transferred.
+    let staked_balance = account_balance.staked(); // The staked amount.
+    let locked_balance = account_balance.locked(); // The amount locked in scheduled transfers.
+
+To query contract balance, the following is available:
+
+.. code-block:: rust
+
+    let contract_balance = host.contract_balance(address)?;
+
+And to query exchange rates, the following are available:
+
+.. code-block:: rust
+
+    let exchange_rates = host.exchange_rates();
+    let amount_per_euro = exchange_rates.amount_per_euro();
+    let euro_per_energy = exchange_rates.euro_per_energy();
 
 Building a smart contract module with ``cargo-concordium``
 ==========================================================

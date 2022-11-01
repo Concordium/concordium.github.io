@@ -238,6 +238,7 @@ Notice that the ``value`` is only deserialized if ``should_add`` is
 While the gain in efficiency is minimal in this example, it could have an
 substantial impact for more complex examples.
 
+Parameters have a size limit of 65kiB. There is no return value size limit (apart from energy).
 
 Building a smart contract module with ``cargo-concordium``
 ==========================================================
