@@ -29,6 +29,19 @@ Concordium Client 5.0.0
 Concordium Client 5.0.0 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release December 1, 2022.
 It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
 
+October 25, 2022
+
+Concordium Node 4.5.0
+---------------------
+
+Concordium Node 4.5.0 contains the :ref:`updated gRPC API <grpc2-documentation>`
+which is easier to use than the previous version. It also contains bug fixes and
+performance and robustness improvements.
+
+- Node gRPC API v2 is released and enabled in all distributions.
+- The node is now able to recover after crashes which leave only treestate or only blockstate usable.
+- Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
+
 October 19, 2022
 
 |bw|
