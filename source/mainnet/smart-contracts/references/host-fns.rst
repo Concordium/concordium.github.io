@@ -343,7 +343,17 @@ Functions only accessible for smart contract receive functions.
    Invoke a host instruction which is either a *transfer to an account* or a *call to a
    contract*.
 
-   :param i32 tag: ``0`` for transfer to an account or ``1`` for call to a contract.
+   :param i32 tag: Tag for the instruction to invoke.
+
+      ``0`` for transfer to an account
+
+      ``1`` for call to a contract.
+
+      ``2`` for query an account balance.
+
+      ``3`` for query a contract balance.
+
+      ``4`` for query the exchange rates.
    :param i32 start: Pointer to the start of the invoke payload.
    :param i32 length: Length of the invoke payload.
    :return: If the last five bytes are ``0`` then the call succeeded. In this
