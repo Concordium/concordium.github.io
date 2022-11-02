@@ -12,6 +12,23 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+November 10, 2022
+
+Cargo concordium 2.3.0
+----------------------
+
+Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release December 1, 2022. This includes the following new features:
+
+- Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
+- Support for relaxed smart contract resource restrictions in cargo concordium run.
+- cargo concordium build now checks contracts with respect to protocol version 5 semantics.
+
+Concordium Client 5.0.0
+-----------------------
+
+Concordium Client 5.0.0 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release December 1, 2022.
+It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
+
 October 19, 2022
 
 |bw|

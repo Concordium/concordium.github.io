@@ -33,6 +33,21 @@ Additionally, the node update contains:
 - More efficient indexing of accounts with scheduled releases.
 - Fixed an issue where the catch-up downloader would fail at a protocol update.support for smart contract upgradability.
 
+Cargo concordium 2.3.0
+----------------------
+
+Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release November 17, 2022. This includes the following new features:
+
+- Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
+- Support for relaxed smart contract resource restrictions in cargo concordium run.
+- cargo concordium build now checks contracts with respect to protocol version 5 semantics.
+
+Concordium Client 5.0.0
+-----------------------
+
+Concordium Client 5.0.0 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release November 17, 2022.
+It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
+
 October 19, 2022
 
 |bw|
