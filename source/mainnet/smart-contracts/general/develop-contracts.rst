@@ -319,8 +319,8 @@ which can then be accessed as:
 
    When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
    CCD equivalent to the max energy cost is then deposited during execution of the contract.
-   Because of this, querying the balance of the invoker will result in the current account balance subtracted
-   with the amount of CCD needed to cover the max energy cost.
+   Because of this, querying the balance of the invoker will result in the current account balance minus the
+   amount of CCD needed to cover the max energy cost.
 
 Query a contract balance
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -331,9 +331,9 @@ To query the current balance of a contract, the following is available:
 
     let contract_balance = host.contract_balance(address)?;
 
-Assuming the contract exists, this will return the current amount hold by the contract.
-Any amount transferred or received during the same transaction uptil the point of querying
-are be reflected in the balance.
+Assuming the contract exists, this returns the current amount held by the contract.
+Any amount transferred or received during the same transaction until the point of querying
+is reflected in the balance.
 
 .. note::
 
