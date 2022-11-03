@@ -5,7 +5,7 @@
 Change baker options
 ====================
 
-The following tabs describe how to access baker settings.
+The following information describes how to access baker settings.
 
 .. dropdown:: |mw-gen2|
 

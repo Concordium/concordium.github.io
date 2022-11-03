@@ -9,7 +9,7 @@ A company identity is for companies that need an identity and accounts on the Co
 
 You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
 
-The tabs below describe how to create a company identity. Note that the process differs for testnet and mainnet.
+The information below describes how to create a company identity. Note that the process differs for testnet and mainnet.
 
 .. dropdown:: Mainnet
 

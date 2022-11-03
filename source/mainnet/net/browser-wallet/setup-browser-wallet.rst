@@ -19,81 +19,79 @@ Get started
 
 #. Download the |bw| extension. See :ref:`Downloads<downloads-browser-wallet>`.
 
-.. tabs::
+.. dropdown:: Chrome
 
-   .. tab:: Chrome
+   #. Go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__ and search for Concordium Wallet.
 
-      #. Go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__ and search for Concordium Wallet.
+   #. Click **Add to Chrome** from the Chrome Web Store.
 
-      #. Click **Add to Chrome** from the Chrome Web Store.
+   #. If prompted, click **Add extension**.
 
-      #. If prompted, click **Add extension**.
+   #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
 
-      #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
+   #. Create a six-digit passcode or use a full password.
 
-      #. Create a six-digit passcode or use a full password.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+      .. image:: ../images/browser-wallet/wallet-choice.png
+            :width: 25%
 
-         .. image:: ../images/browser-wallet/wallet-choice.png
-                  :width: 25%
+.. dropdown:: Edge
 
-   .. tab:: Edge
+   Extensions designed for Google Chrome can also be used in Microsoft Edge. To add an extension to Microsoft Edge from the Chrome Web Store:
 
-      Extensions designed for Google Chrome can also be used in Microsoft Edge. To add an extension to Microsoft Edge from the Chrome Web Store:
+   #. In Microsoft Edge, go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__.
 
-      #. In Microsoft Edge, go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__.
+   #. Select **Allow extensions from other stores** in the banner at the top of the page, then click **Allow** to confirm.
 
-      #. Select **Allow extensions from other stores** in the banner at the top of the page, then click **Allow** to confirm.
+   #. Search for Concordium Wallet and select **Add to Chrome**.
 
-      #. Search for Concordium Wallet and select **Add to Chrome**.
+   #. At the prompt showing permissions required by the extension carefully review the permissions, and then click **Add extension** if you wish to proceed. You'll see a final prompt confirming the extension has been added.
 
-      #. At the prompt showing permissions required by the extension carefully review the permissions, and then click **Add extension** if you wish to proceed. You'll see a final prompt confirming the extension has been added.
+   #. Click on the Concordium icon to start the extension.
 
-      #. Click on the Concordium icon to start the extension.
+   #. Create a six-digit passcode or use a full password.
 
-      #. Create a six-digit passcode or use a full password.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+      .. image:: ../images/browser-wallet/wallet-choice.png
+            :width: 25%
 
-         .. image:: ../images/browser-wallet/wallet-choice.png
-                  :width: 25%
+   For more information, see the `Microsoft support site <https://support.microsoft.com/en-us/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=1%20Open%20Microsoft%20Edge%20and%20go%20to%20the,confirming%20the%20extension%20has%20been%20added.%20See%20More>`_.
 
-      For more information, see the `Microsoft support site <https://support.microsoft.com/en-us/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=1%20Open%20Microsoft%20Edge%20and%20go%20to%20the,confirming%20the%20extension%20has%20been%20added.%20See%20More>`_.
+.. dropdown:: Opera
 
-   .. tab:: Opera
+   #. In Opera, go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__ and search for Concordium Wallet.
 
-      #. In Opera, go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__ and search for Concordium Wallet.
+   #. Click **Add to Opera**.
 
-      #. Click **Add to Opera**.
+   #. At the prompt showing permissions required by the extension carefully review the permissions, and then click **Add extension** if you wish to proceed. You'll see a final prompt confirming the extension has been added.
 
-      #. At the prompt showing permissions required by the extension carefully review the permissions, and then click **Add extension** if you wish to proceed. You'll see a final prompt confirming the extension has been added.
+   #. Click on the cube icon in your Opera toolbar. Click **Concordium Wallet** to start the extension.
 
-      #. Click on the cube icon in your Opera toolbar. Click **Concordium Wallet** to start the extension.
+   #. Create a six-digit passcode or use a full password.
 
-      #. Create a six-digit passcode or use a full password.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+      .. image:: ../images/browser-wallet/wallet-choice.png
+            :width: 25%
 
-         .. image:: ../images/browser-wallet/wallet-choice.png
-                  :width: 25%
+.. dropdown:: Brave
 
-   .. tab:: Brave
+   #. Go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__ and search for Concordium Wallet.
 
-      #. Go to the `Chrome Web Store <https://chrome.google.com/webstore/category/extensions>`__ and search for Concordium Wallet.
+   #. Click **Add to Chrome** from the Chrome Web Store.
 
-      #. Click **Add to Chrome** from the Chrome Web Store.
+   #. If prompted, click **Add extension**.
 
-      #. If prompted, click **Add extension**.
+   #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
 
-      #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
+   #. Create a six-digit passcode or use a full password.
 
-      #. Create a six-digit passcode or use a full password.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
-
-         .. image:: ../images/browser-wallet/wallet-choice.png
-                  :width: 25%
+      .. image:: ../images/browser-wallet/wallet-choice.png
+            :width: 25%
 
 Recovery phrase setup
 =====================
@@ -138,13 +136,35 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 
    Before proceeding, if you wish to continue to access your wallet and accounts, make sure you have your secret recovery phrase.
 
-.. tabs::
+.. dropdown:: Chrome
 
-   .. tab:: Chrome
+   #. Click |chrome-ext|. Click |chrome-options| to the right of **Concordium Wallet**.
 
-      #. Click |chrome-ext|. Click |chrome-options| to the right of **Concordium Wallet**.
+   #. Click **Remove from Chrome**.
 
-      #. Click **Remove from Chrome**.
+.. dropdown:: Edge
+
+   #. Click |edge-exts|. Click |edge-options| to the right of **Concordium Wallet**.
+
+   #. Click **Remove from Microsoft Edge**.
+
+   #. Click **Remove** to confirm removal.
+
+.. dropdown:: Opera
+
+   #. Click |opera-exts|. Click |opera-options| to the right of **Concordium Wallet**.
+
+   #. Click **Remove extension**.
+
+   #. Click **Remove** to confirm removal.
+
+.. dropdown:: Brave
+
+   #. Click |brave-exts|. Click |brave-options| to the right of **Concordium Wallet**.
+
+   #. Click **Remove from Brave**.
+
+   #. Click **Remove** to confirm removal.
 
 .. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
                     :width: 20px
@@ -153,6 +173,14 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 .. |chrome-options| image:: ../images/browser-wallet/chrome-options-icon.png
                     :width: 20px
                     :alt: three vertical dots
+
+.. |opera-exts| image:: ../images/browser-wallet/opera-exts.png
+                  :width: 20px
+                  :alt: 3d cube
+
+.. |opera-actions| image:: ../images/browser-wallet/opera-actions.png
+                     :width: 20px
+                     :alt: three vertical dots
 
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
                     :width: 20px
