@@ -353,7 +353,7 @@ These are the micro CCD per Euro rate and the Euro per NRG rate.
 
 .. code-block:: rust
 
-    let amount_per_euro = exchange_rates.amount_per_euro();
+    let micro_ccd_per_euro = exchange_rates.micro_ccd_per_euro();
     let euro_per_energy = exchange_rates.euro_per_energy();
 
 Each rate is a ratio, with a numerator and a denominator.
