@@ -35,7 +35,7 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
    /// The parameter type for the contract function `upgrade`.
    /// Takes the new module and optionally a migration function to call in the new
    /// module after the upgrade.
-   #[derive(Debug, Serialize)]
+   #[derive(Debug, Serialize, SchemaType)]
    struct UpgradeParams {
        /// The new module reference.
        module:  ModuleReference,
@@ -43,7 +43,7 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
        migrate: Option<(OwnedEntrypointName, OwnedParameter)>,
    }
 
-   #[receive(contract = "my_contract", name = "upgrade", mutable)]
+   #[receive(contract = "my_contract", name = "upgrade", mutable, parameter = "UpgradeParams")]
    fn contract_upgrade<S: HasStateApi>(
        ctx: &impl HasReceiveContext,
        host: &mut impl HasHost<State<S>, StateApiType = S>,
@@ -65,3 +65,20 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
        }
        Ok(())
    }
+
+.. note::
+
+   The code snippet above is using Rust and ``concordium-std`` version 5 or newer.
+
+The JSON parameter for triggering an upgrade is of the form:
+
+.. code-block:: json
+
+   {
+       "module": "<Lowercase hex encoding of module ref>",
+       "migrate": { "Some": [["<Migration entrypoint name>", "<Parameter for the migration entrypoint>"]] }
+   }
+
+.. seealso::
+
+   For a guide how to send interact with a smart contract using JSON see :ref:`interact-instance-json-parameters`.
