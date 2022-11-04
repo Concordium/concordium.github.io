@@ -301,8 +301,19 @@ To query account balances, the following are available:
    // Query the balance of an account.
    let account_balance = host.account_balance(account_address)?;
 
-Assuming the account exists, this will return all of the public balances of an account,
-which can then be accessed as:
+Assuming the account exists, this returns the public/unshielded balance of an account.
+Any amount received during the transaction until the point of querying is reflected in the balance.
+
+.. note::
+
+   When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
+   CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
+   Because of this, querying the balance of the invoker will result in the current account balance minus the
+   amount of CCD reserved to cover the max energy cost as well as the amount included in the transaction.
+
+Some part of the balance might be used for staking or/and is locked in releases by scheduled transfers.
+Which makes the amount unavailable for transferring.
+All of this information can be accessed as:
 
 .. code-block:: rust
 
@@ -314,13 +325,6 @@ which can then be accessed as:
    let locked_balance = account_balance.locked();
    // The total public balance, i.e. including staked and locked_balance.
    let total_balance = account_balance.total();
-
-.. note::
-
-   When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
-   CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
-   Because of this, querying the balance of the invoker will result in the current account balance minus the
-   amount of CCD reserved to cover the max energy cost.
 
 Query a contract balance
 ~~~~~~~~~~~~~~~~~~~~~~~~
