@@ -174,6 +174,22 @@ Removing your wallet does not remove your data on the Concordium blockchain.
                     :width: 20px
                     :alt: three vertical dots
 
+.. |edge-exts|    image:: ../images/browser-wallet/edge-exts.png
+                    :width: 20px
+                    :alt: puzzle piece
+
+.. |edge-options| image:: ../images/browser-wallet/edge-options.png
+                    :width: 20px
+                    :alt: three horizontal dots
+
+.. |brave-exts|    image:: ../images/browser-wallet/brave-exts.png
+                    :width: 20px
+                    :alt: puzzle piece
+
+.. |brave-options| image:: ../images/browser-wallet/brave-options.png
+                    :width: 20px
+                    :alt: three horizontal lines
+   
 .. |opera-exts| image:: ../images/browser-wallet/opera-exts.png
                   :width: 20px
                   :alt: 3d cube
