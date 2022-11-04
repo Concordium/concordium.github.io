@@ -10,20 +10,20 @@ You can add, inspect, and send tokens in the |bw|.
 .. dropdown:: |bw|
 
     To access tokens and token transactions, click Tokens |token-bw|. Tabs appear for tokens.
-        
-    **Add a token**
 
-        Click **Manage**. (screenshot)
+    .. dropdown:: Add tokens
 
-        Enter a smart contract address on which to look for tokens. Click **Choose contract**. If you get an error that says **Invalid contract address** this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
+        #. Click **Manage**. (screenshot)
 
-        .. image:: ../images/browser-wallet/add-token-contract.png
-            :width: 100%
+        #. Enter a smart contract address on which to look for tokens. Click **Choose contract**. If you get an error that says **Invalid contract address** this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
-        Select the token(s) you want to add. You can click on a token to see more information about it and then click **Back to list** to return to the list to select tokens. Click **Update tokens** once you have made your selection(s).
+            .. image:: ../images/browser-wallet/add-token-contract.png
+                :width: 50%
 
-        .. image:: ../images/browser-wallet/select-tokens.png
-            :width: 100%
+        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **Back to list** to return to the list to select tokens. Click **Update tokens** once you have made your selection(s).
+
+            .. image:: ../images/browser-wallet/select-tokens.png
+                :width: 50%
 
         .. Note::
 
@@ -31,30 +31,36 @@ You can add, inspect, and send tokens in the |bw|.
 
         Once the tokens are added you can see them on the relevant tab.
 
-    **Inspect a token**
+    .. dropdown:: Inspect tokens
 
         Click the tab for the token you want to inspect. Then click on the token to see details for that token.
 
         You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Don't show token in wallet** if you don't want the token to appear in your wallet.
 
-    **Send a token**
+    .. dropdown:: Send tokens
 
-        Tap Send |send-bw| in the Tokens overview.
+        #. Click Send |send-bw| in the Accounts overview.
 
-        In the Search field tap to search for the token you want to send. (screenshot)
+        #. Click the field for what to send.
 
-        In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token.
+            .. image:: ../images/browser-wallet/send-tokens-select.png
+                :width: 25%
 
-        Add the receiver address. Paste the address, use the address book, or scan a QR code to add the address.
+            .. image:: ../images/browser-wallet/send-tokens-select2.png
+                :width: 25%
 
-        .. note::
-            If the token is a CCD token, you have the option to add a memo to the transaction. Remember that memos increase the transaction fee.
+        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token.
 
-        Tap **Send funds**.
+        #. Add the receiver address. Paste the address, use the address book, or scan a QR code to add the address.
 
-        Review the transaction. When satisfied, tap **Send funds**.
+            .. note::
+                If the token is a CCD token, you have the option to add a memo to the transaction. Remember that memos increase the transaction fee.
 
-        Tap **Finish**.
+        #. CLick **Continue**.
+
+        #. Review the transaction. When satisfied, click **Send**.
+
+        #. Click **Finish**.
 
 .. |send-bw| image:: ../images/browser-wallet/send-ccd.png
              :alt: paper airplane
