@@ -22,6 +22,28 @@ Install/upgrade and run a node
 
 .. Note::
 
+   Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
+   default. If you have done special configuration of your node and want to
+   re-use the configuration file and have the new API enabled, make sure to edit
+   your configuration and add ``grpc2.port`` and ``grpc2.address`` settings. See
+   :ref:`configure-node` for more information.
+
+   **Example for Mainnet:**
+
+   .. code-block:: console
+
+      grpc2.port = 20000
+      grpc2.ip = "127.0.0.1"
+
+   **Example for Testnet:**
+
+   .. code-block:: console
+
+      grpc2.port = 20001
+      grpc2.ip = "127.0.0.1"
+
+.. Note::
+
    If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See :ref:`verify-running-node` for details about how to do this.
 
    Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`configure-node` for information about how to change the service configuration settings.
@@ -209,13 +231,13 @@ You can improve the performance by downloading the blocks from an out-of-band ca
 
    .. code-block:: TOML
 
-      node.args = ['--download-blocks-from', 'https://catchup.mainnet.concordium.software/blocks.idx']
+      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
 
    - For testnet, add the following line to the ``[node.testnet]`` section:
 
    .. code-block:: TOML
 
-      node.args = ['--download-blocks-from', 'https://catchup.test.concordium.com/blocks.idx']
+      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
 
    Save the configuration file.
 

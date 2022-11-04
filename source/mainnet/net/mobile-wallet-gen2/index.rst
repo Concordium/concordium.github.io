@@ -16,4 +16,3 @@ The following topics are specific to |mw-gen2|.
     ../mobile-wallet/change-passcode-mw
     connect-dapp
     ../mobile-wallet/inspect-release-schedule-mw
-    ../guides/recover-wallet
