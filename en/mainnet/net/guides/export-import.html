@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1524,86 +1524,156 @@ body {margin:0;}
 <p class="admonition-title">Warning</p>
 <p>You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.</p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Legacy Wallet</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Concordium Wallet for Android</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>To actually access the recovered accounts, you still need the Ledger that was used to set up the accounts, or a new Ledger that’s been restored from the same recovery phrase.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Export</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Import</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Recover accounts without a backup file</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Go to <strong>Export/Import</strong>.</p></li>
-<li><p>Select <strong>Export</strong>.</p></li>
-<li><p>Create a password that contains at least 6 characters. You’ll need the password to import the file into the Desktop Wallet so keep it safe.</p></li>
-<li><p>Navigate to the location on your computer where you want to save the file. If you’re on Windows, make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>. Once the export is complete, we recommend that you store the file in a safe location that is different from where you store the Desktop Wallet database.</p></li>
-</ol>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Go to <strong>Export/Import</strong>.</p></li>
-<li><p>Select <strong>Import</strong> and navigate to the location on your computer where you saved the file, and then select <strong>Open</strong>.</p></li>
-<li><p>Enter the password of the import. If the import is successful, you can see all the imported identities, accounts, and addresses in the right pane.</p></li>
-</ol>
-</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><p id="account-recovery">If, for some reason, you’ve lost one or more of your accounts in the Desktop Wallet, and you’ve also lost the backup file, you can use the Ledger device to recover those accounts.</p>
-<p>You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.</p>
-<p>If you’ve lost your Ledger device or the device has stopped working, you can restore the keys in another Ledger device by by restoring it from the recovery phrase used for the original device. To learn more about the recovery phrase of a Ledger device, see Ledger’s documentation: <a class="reference external" href="https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase/">What is a recovery phrase</a> .</p>
-<p><strong>How the recovery process works</strong></p>
-<p>When you create a new identity in the Desktop Wallet, a number on the Ledger is associated with the identity. This is called the identity index and there can be more identity indices on a Ledger. These indices are used sequentially, so the first identity created from a Ledger uses index <em>0</em>, the next uses index <em>1</em>, and so on.</p>
-<p>The Ledger stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities and accounts</span></a>.</p>
-<p>Lost identities can’t be recovered because the identity object is not stored on the Ledger. However, you can go through each index on the Ledger where the data to create credentials are stored and use this information to regain access to the accounts related to a given identity.</p>
-<p>For each identity index, the recovery process uses the Ledger device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the blockchain whether the credentials have been deployed, and which account each credential is attached to. These accounts are then added to the Desktop Wallet along with the deployed credentials.</p>
-<p>If all your identity issuances were successful, you can stop the recovery when you encounter an unused index. However, if one of your identity issuance processes failed, this might have caused an index to be skipped. Therefore, you must determine yourself when the recovery is completed.</p>
-<p>The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can’t be recovered because it doesn’t exist on the blockchain. That’s why you can’t create new accounts using these placeholders. Instead, you can request a new identity from an identity provider.</p>
-<p>The names of the accounts and the notes on the credentials are also not recoverable because they are only saved locally.</p>
-<p><strong>Incomplete backups</strong></p>
-<p>If you have <a class="reference internal" href="#export-import"><span class="std std-ref">imported</span></a> accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.</p>
-<p><strong>How to recover accounts</strong></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To actually access the recovered accounts, you still need the Ledger that was used to set up the accounts, or a new Ledger that’s been restored from the same recovery phrase.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Export<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic simple">
-<li><p>In the <strong>Desktop Wallet</strong>, go to <strong>Settings</strong>, and then select <strong>Recover existing accounts</strong>.</p></li>
-<li><p>Familiarize yourself with the recovery information, and then select <strong>Continue</strong>.</p></li>
-<li><p>Connect the Ledger to the computer if you haven’t done so already, and then select <strong>Submit</strong>.</p></li>
-<li><p>In the Desktop Wallet, there’s a message saying <em>Please allow recovering credentials</em>. The Ledger says <em>Recover credentials</em>. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.</p></li>
-<li><p>When you consider the recovery complete, select <strong>Stop recovery, I found all my accounts</strong>. You then see an overview of all the recovered accounts. If you don’t think the recovery is complete, you can go back and continue the recovery process.</p></li>
-<li><p>To view the recovered accounts, go to <strong>Accounts</strong>. A recovered account doesn’t have the name you originally gave it. Instead the name consists of the first eight digits of the account address. Furthermore, because the identities are not recovered, the accounts show the index number that’s associated with the identity and not the identity itself.</p></li>
-<li><p>To view placeholders for identities, go to <strong>Identities</strong>. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can’t use the placeholders to create new accounts.</p></li>
+<li><p class="sd-card-text">Go to <strong>Export/Import</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Export</strong>.</p></li>
+<li><p class="sd-card-text">Create a password that contains at least 6 characters. You’ll need the password to import the file into the Desktop Wallet so keep it safe.</p></li>
+<li><p class="sd-card-text">Navigate to the location on your computer where you want to save the file. If you’re on Windows, make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>. Once the export is complete, we recommend that you store the file in a safe location that is different from where you store the Desktop Wallet database.</p></li>
 </ol>
-</div></div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="admonition warning">
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Import<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to <strong>Export/Import</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Import</strong> and navigate to the location on your computer where you saved the file, and then select <strong>Open</strong>.</p></li>
+<li><p class="sd-card-text">Enter the password of the import. If the import is successful, you can see all the imported identities, accounts, and addresses in the right pane.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Recover accounts without a backup file<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text" id="account-recovery">If, for some reason, you’ve lost one or more of your accounts in the Desktop Wallet, and you’ve also lost the backup file, you can use the Ledger device to recover those accounts.</p>
+<p class="sd-card-text">You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.</p>
+<p class="sd-card-text">If you’ve lost your Ledger device or the device has stopped working, you can restore the keys in another Ledger device by by restoring it from the recovery phrase used for the original device. To learn more about the recovery phrase of a Ledger device, see Ledger’s documentation: <a class="reference external" href="https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase/">What is a recovery phrase</a> .</p>
+<p class="sd-card-text"><strong>How the recovery process works</strong></p>
+<p class="sd-card-text">When you create a new identity in the Desktop Wallet, a number on the Ledger is associated with the identity. This is called the identity index and there can be more identity indices on a Ledger. These indices are used sequentially, so the first identity created from a Ledger uses index <em>0</em>, the next uses index <em>1</em>, and so on.</p>
+<p class="sd-card-text">The Ledger stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities and accounts</span></a>.</p>
+<p class="sd-card-text">Lost identities can’t be recovered because the identity object is not stored on the Ledger. However, you can go through each index on the Ledger where the data to create credentials are stored and use this information to regain access to the accounts related to a given identity.</p>
+<p class="sd-card-text">For each identity index, the recovery process uses the Ledger device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the blockchain whether the credentials have been deployed, and which account each credential is attached to. These accounts are then added to the Desktop Wallet along with the deployed credentials.</p>
+<p class="sd-card-text">If all your identity issuances were successful, you can stop the recovery when you encounter an unused index. However, if one of your identity issuance processes failed, this might have caused an index to be skipped. Therefore, you must determine yourself when the recovery is completed.</p>
+<p class="sd-card-text">The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can’t be recovered because it doesn’t exist on the blockchain. That’s why you can’t create new accounts using these placeholders. Instead, you can request a new identity from an identity provider.</p>
+<p class="sd-card-text">The names of the accounts and the notes on the credentials are also not recoverable because they are only saved locally.</p>
+<p class="sd-card-text"><strong>Incomplete backups</strong></p>
+<p class="sd-card-text">If you have <a class="reference internal" href="#export-import"><span class="std std-ref">imported</span></a> accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.</p>
+<p class="sd-card-text"><strong>How to recover accounts</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">In the <strong>Desktop Wallet</strong>, go to <strong>Settings</strong>, and then select <strong>Recover existing accounts</strong>.</p></li>
+<li><p class="sd-card-text">Familiarize yourself with the recovery information, and then select <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Connect the Ledger to the computer if you haven’t done so already, and then select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, there’s a message saying <em>Please allow recovering credentials</em>. The Ledger says <em>Recover credentials</em>. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.</p></li>
+<li><p class="sd-card-text">When you consider the recovery complete, select <strong>Stop recovery, I found all my accounts</strong>. You then see an overview of all the recovered accounts. If you don’t think the recovery is complete, you can go back and continue the recovery process.</p></li>
+<li><p class="sd-card-text">To view the recovered accounts, go to <strong>Accounts</strong>. A recovered account doesn’t have the name you originally gave it. Instead the name consists of the first eight digits of the account address. Furthermore, because the identities are not recovered, the accounts show the index number that’s associated with the identity and not the identity itself.</p></li>
+<li><p class="sd-card-text">To view placeholders for identities, go to <strong>Identities</strong>. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can’t use the placeholders to create new accounts.</p></li>
+</ol>
+</div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don’t have a backup from the Mobile Wallet, you can’t access your wallet and your CCDs are permanently inaccessible.</strong>
+<p class="sd-card-text"><strong>Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don’t have a backup from the Mobile Wallet, you can’t access your wallet and your CCDs are permanently inaccessible.</strong>
 <strong>Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.</strong></p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Export</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Import</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><blockquote>
-<div><div class="admonition warning">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Export<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will <strong>NOT</strong> include your account keys and may result in you losing access to your accounts.</p>
+<p class="sd-card-text">The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will <strong>NOT</strong> include your account keys and may result in you losing access to your accounts.</p>
 </div>
 <ol class="arabic simple">
-<li><p>Tap <strong>Backup</strong> in the lower left corner.</p></li>
-<li><p>Enter your biometrics or app passcode.</p></li>
-<li><p>Read the information about the export and tap <strong>Continue</strong>.</p></li>
-<li><p>Choose a password with a minimum of 6 characters to encrypt your export. Make sure to choose a secure password and keep it safe. Anyone with the password will be able to unlock the export and make transfers from your account. Tap <strong>Continue</strong>.</p></li>
-<li><p>Choose an option for sending or saving the export file, such as Mail.</p></li>
+<li><p class="sd-card-text">Tap <strong>Backup</strong> in the lower left corner.</p></li>
+<li><p class="sd-card-text">Enter your biometrics or app passcode.</p></li>
+<li><p class="sd-card-text">Read the information about the export and tap <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Choose a password with a minimum of 6 characters to encrypt your export. Make sure to choose a secure password and keep it safe. Anyone with the password will be able to unlock the export and make transfers from your account. Tap <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Choose an option for sending or saving the export file, such as Mail.</p></li>
 </ol>
-</div></blockquote>
-<p>Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It’s also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. Concordium is not able to recover backup passwords.</p>
-</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><p>Depending on whether you are using an Android phone or an iPhone, the import process differs slightly.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Android</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">iOS</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Go to the <img alt="Three dots button" src="../../_images/more-ellipsis.png" /> page.</p></li>
-<li><p>Tap <strong>Restore Backup</strong>.</p></li>
-<li><p>Use the Android system prompt to browse to your export and select the file.</p></li>
-<li><p>Enter the password you chose upon making the export.</p></li>
-<li><p>Enter your biometrics or app passcode.</p></li>
-<li><p>Review your import and tap <strong>Ok, thanks</strong>.</p></li>
-</ol>
-</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Find the file you want to import on your iPhone.</p></li>
-<li><p>Choose the iOS “Share” option. Choose Concordium Mobile Wallet as the app to open the file.</p></li>
-<li><p>Enter the password you chose upon making the export.</p></li>
-<li><p>Enter your biometrics or app passcode.</p></li>
-<li><p>Review your import and tap <strong>Ok, thanks</strong>.</p></li>
-</ol>
-</div></div>
-</div></div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>Backup is not available in Concordium Wallet for Android. It uses a secret recovery phrase to recover your accounts, identities, and private keys. For information about recovering your Concordium Legacy Wallet wallet, see <a class="reference internal" href="recover-wallet.html#recover-wallet"><span class="std std-ref">Recover your wallet</span></a>.</p>
-</div></div>
+<p class="sd-card-text">Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It’s also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. Concordium is not able to recover backup passwords.</p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Import<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Depending on whether you are using an Android phone or an iPhone, the import process differs slightly.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to the <img alt="Three dots button" src="../../_images/more-ellipsis.png" /> page.</p></li>
+<li><p class="sd-card-text">Tap <strong>Restore Backup</strong>.</p></li>
+<li><p class="sd-card-text">Use the Android system prompt to browse to your export and select the file.</p></li>
+<li><p class="sd-card-text">Enter the password you chose upon making the export.</p></li>
+<li><p class="sd-card-text">Enter your biometrics or app passcode.</p></li>
+<li><p class="sd-card-text">Review your import and tap <strong>Ok, thanks</strong>.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+iOS<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Find the file you want to import on your iPhone.</p></li>
+<li><p class="sd-card-text">Choose the iOS “Share” option. Choose Concordium Mobile Wallet as the app to open the file.</p></li>
+<li><p class="sd-card-text">Enter the password you chose upon making the export.</p></li>
+<li><p class="sd-card-text">Enter your biometrics or app passcode.</p></li>
+<li><p class="sd-card-text">Review your import and tap <strong>Ok, thanks</strong>.</p></li>
+</ol>
+</div>
+</details></div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Backup is not available in Concordium Wallet for Android. It uses a secret recovery phrase to recover your accounts, identities, and private keys. For information about recovering your Concordium Legacy Wallet wallet, see <a class="reference internal" href="recover-wallet.html#recover-wallet"><span class="std std-ref">Recover your wallet</span></a>.</p>
+</div>
+</details></div>
 
 
               </div>

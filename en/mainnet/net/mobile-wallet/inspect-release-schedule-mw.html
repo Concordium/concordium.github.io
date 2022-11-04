@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1514,34 +1514,45 @@ body {margin:0;}
 <p>Some transfers contain a release schedule. This means that the CCD in the transfer can be seen on the account, but they are locked
 until one or more specific points in time. While the funds are locked, they cannot be transferred, but they will be part of the total amount on the account.
 By inspecting the release schedule, you can see when the releases are unlocked.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Concordium Wallet for Android</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Legacy Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the balance area of the account that received the transaction with a release schedule or tap <a class="reference internal" href="../../_images/more-acct.png"><img alt="Button with double-headed arrow" src="../../_images/more-acct.png" style="width: 50px;" /></a>.</p></li>
-<li><p>Tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner.</p></li>
-<li><p>Tap <strong>Release Schedule</strong>.</p></li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the balance area of the account that received the transaction with a release schedule or tap <a class="reference internal" href="../../_images/more-acct.png"><img alt="Button with double-headed arrow" src="../../_images/more-acct.png" style="width: 50px;" /></a>.</p></li>
+<li><p class="sd-card-text">Tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner.</p></li>
+<li><p class="sd-card-text">Tap <strong>Release Schedule</strong>.</p></li>
 </ol>
-<p>You can now see the coming releases on the account.</p>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the balance area of the account that received the transaction with a release schedule or tap <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p>
+<p class="sd-card-text">You can now see the coming releases on the account.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the balance area of the account that received the transaction with a release schedule or tap <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p>
 <a class="reference internal image-reference" href="../../_images/MW32.png"><img alt="../../_images/MW32.png" src="../../_images/MW32.png" style="width: 25%;" /></a>
 </li>
-<li><p>Tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner.</p></li>
-<li><p>Tap <strong>Release Schedule</strong>.</p>
+<li><p class="sd-card-text">Tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner.</p></li>
+<li><p class="sd-card-text">Tap <strong>Release Schedule</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/MW56.png"><img alt="../../_images/MW56.png" src="../../_images/MW56.png" style="width: 25%;" /></a>
 </li>
 </ol>
-<p>You can now see the coming releases on the account.</p>
+<p class="sd-card-text">You can now see the coming releases on the account.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/MW57.png"><img alt="../../_images/MW57.png" src="../../_images/MW57.png" style="width: 25%;" /></a>
-<div class="line-block">
-<div class="line"><br /></div>
 </div>
-</div></div>
-</div>
+</details></div>
 
 
               </div>

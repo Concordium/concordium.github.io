@@ -24,183 +24,179 @@ Before delegating stake to a baker pool, it is important to research the pool us
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
-.. tabs::
+.. dropdown:: Desktop Wallet
 
-    .. tab:: Desktop Wallet
+    .. dropdown:: Single signature account
 
-        .. tabs::
+        #. Go to **Accounts** and select the account on which you want to change your delegation preferences.
 
-            .. tab:: Single signature account
+        #. Click **More options** then select **Delegation** and choose **Update Delegation**.
 
-                #. Go to **Accounts** and select the account on which you want to change your delegation preferences.
+            .. image:: ../images/desktop-wallet/dw-delegation-menu.png
 
-                #. Click **More options** then select **Delegation** and choose **Update Delegation**.
+        #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+            .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
 
-                #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
+        #. You can enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                   .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
+            .. image:: ../images/desktop-wallet/dw-update-delegation-stake.png
 
-                #. You can enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+        #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
-                   .. image:: ../images/desktop-wallet/dw-update-delegation-stake.png
+        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
-                #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+        #. On the Ledger device, a message says **Review transaction**. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.
 
-                #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+        #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
-                #. On the Ledger device, a message says **Review transaction**. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.
+        #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
-                #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+    .. dropdown:: Multi signature account
 
-                #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update Delegation**.
 
-            .. tab:: Multi signature account
+        #. Select the account on which you want to change your delegation preferences.
 
-                #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update Delegation**.
+        #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                #. Select the account on which you want to change your delegation preferences.
+        #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
-                #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+        **Generate the transaction**
 
-                #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
+        There are two ways that you can generate the transaction:
 
-                **Generate the transaction**
+            -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.
 
-                There are two ways that you can generate the transaction:
+            -  Generate and sign the transaction This option requires a Ledger and an internet connection.
 
-                -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.
+        In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
 
-                -  Generate and sign the transaction This option requires a Ledger and an internet connection.
+        **Generate the transaction without signing**
 
-                In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
+        #. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-                **Generate the transaction without signing**
+        #. Select **Generate without signing**. You can now export the proposal.
 
-                #. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
+        **Generate and sign the transaction on the Ledger**
 
-                #. Select **Generate without signing**. You can now export the proposal.
+        #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-                **Generate and sign the transaction on the Ledger**
+        #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying Ledger is ready.
 
-                #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+        #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-                #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying Ledger is ready.
+        #. On the Ledger, there's a message saying **Review transaction**. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.
 
-                #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
+        #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
 
-                #. On the Ledger, there's a message saying **Review transaction**. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.
+        .. Note::
+            If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
 
-                #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
+        In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-update>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
-                .. Note::
-                   If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
+        **Export proposal**
 
-                In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-update>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
+        If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
 
-                **Export proposal**
+        #. In the Desktop Wallet, select **Export transaction proposal**.
 
-                If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
+        #. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**.
 
-                #. In the Desktop Wallet, select **Export transaction proposal**.
+        #. You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.
 
-                #. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**.
+        **Receive signatures from co-signers**
 
-                #. You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.
+        When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
 
-                **Receive signatures from co-signers**
+        #. If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to **Multi-signature Transactions**, and then select Your proposed transactions.
 
-                When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
+        #. Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.
 
-                #. If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to **Multi-signature Transactions**, and then select Your proposed transactions.
+        #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
 
-                #. Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.
+        .. _submit-update:
 
-                #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
+        **Submit the transaction to the blockchain**
 
-                .. _submit-update:
+        When you have received and added all the required signatures, you can submit the transaction to the blockchain.
 
-                **Submit the transaction to the blockchain**
+        #. Review the transaction details carefully to ensure that all information is correct.
 
-                When you have received and added all the required signatures, you can submit the transaction to the blockchain.
+        #. Select **I understand this is the final submission and that it cannot be reverted**.
 
-                #. Review the transaction details carefully to ensure that all information is correct.
+            If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-                #. Select **I understand this is the final submission and that it cannot be reverted**.
+        #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
 
-                   If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
+        #. Select **Finish** to leave the page.
 
-                #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
+.. dropdown:: |mw-gen2|
 
-                #. Select **Finish** to leave the page.
+    #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
 
-    .. tab:: |mw-gen2|
+    #. You see your current delegation. Tap **Update current delegation**.
 
-        #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
+        .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
 
-        #. You see your current delegation. Tap **Update current delegation**.
+    #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
-            .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+        .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
 
-        #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
+    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
-            .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
+        .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
 
-        #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
+    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
-            .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
+        .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
 
-        #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
-            .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
+    .. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
 
-        #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+    .. |earn-w-text| image:: ../images/earn-w-text.png
+         :alt: Hand receiving money with text earn
+         :width: 50px
 
-        .. |earn| image:: ../images/earn.png
-             :alt: Hand receiving money
-             :width: 50px
+.. dropdown:: |mw-gen1|
 
-        .. |earn-w-text| image:: ../images/earn-w-text.png
-             :alt: Hand receiving money with text earn
-             :width: 50px
+    #. Go to the **Accounts** screen.
 
-    .. tab:: |mw-gen1|
+    #. Tap on the balance area of the account for which you want to update delegation or tap **More** |moredetails|.
 
-        #. Go to the **Accounts** screen.
+    #. In the hamburger menu |hamburger| tap **Delegation**.
 
-        #. Tap on the balance area of the account for which you want to update delegation or tap **More** |moredetails|.
+        .. image:: ../images/mobile-wallet/account-hamburger-menu.png
+            :width: 25%
 
-        #. In the hamburger menu |hamburger| tap **Delegation**.
+    #. You see your current delegation. Tap **Update current delegation**.
 
-            .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-                    :width: 25%
+        .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+            :width: 25%
 
-        #. You see your current delegation. Tap **Update current delegation**.
+    #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
-            .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-                    :width: 25%
+        .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
+            :width: 25%
 
-        #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
+    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
-            .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
-                    :width: 25%
+        .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
+            :width: 25%
 
-        #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
+    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
-            .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
-                    :width: 25%
+        .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
+            :width: 25%
 
-        #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
-            .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
-                    :width: 25%
+.. dropdown:: |bw|
 
-        #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-    .. tab:: |bw|
-
-        At the moment, delegation is not available in the |bw|.
+    At the moment, delegation is not available in the |bw|.
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 

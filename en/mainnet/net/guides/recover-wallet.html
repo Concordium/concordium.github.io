@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1516,50 +1516,63 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>You cannot recover testnet wallets on mainnet, or vice versa.</p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Concordium Wallet for Web</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Wallet for Android</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>After <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-bw"><span class="std std-ref">reinstalling</span></a> the Concordium Wallet for Web, open the extension, create a passcode, and when prompted, choose <strong>Restore</strong>.</p></li>
-</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">After <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-bw"><span class="std std-ref">reinstalling</span></a> the Concordium Wallet for Web, open the extension, create a passcode, and when prompted, choose <strong>Restore</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/wallet-choice.png"><img alt="../../_images/wallet-choice.png" src="../../_images/wallet-choice.png" style="width: 25%;" /></a>
 </div></blockquote>
-<ol class="arabic simple">
-<li><p>Enter your 24 word secret recovery phrase. Click <strong>Continue</strong>.</p></li>
-<li><p>Select whether to recover your wallet in Mainnet or Testnet.</p></li>
+</li>
+<li><p class="sd-card-text">Enter your 24 word secret recovery phrase. Click <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Select whether to recover your wallet in Mainnet or Testnet.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can <a class="reference internal" href="../browser-wallet/use-browser-wallet.html#switch-network"><span class="std std-ref">switch between mainnet and testnet</span></a>.
+<p class="sd-card-text">You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can <a class="reference internal" href="../browser-wallet/use-browser-wallet.html#switch-network"><span class="std std-ref">switch between mainnet and testnet</span></a>.
 If you use both networks, you can recover on the other net after setup, through the settings page.</p>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>After reinstalling the Concordium Wallet for Android app, open the app.</p></li>
-<li><p>On the Getting Started screen, tap <strong>Recover wallet</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">After reinstalling the Concordium Wallet for Android app, open the app.</p></li>
+<li><p class="sd-card-text">On the Getting Started screen, tap <strong>Recover wallet</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/choice-start.png"><img alt="../../_images/choice-start.png" src="../../_images/choice-start.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>After the screens explaining recovery tap <strong>Continue</strong>.</p></li>
-<li><p>Enter each word of your recovery phrase in the correct order. When you start typing, possible words appear for you to select. Once the words are correct, tap <strong>Continue</strong> to submit the recovery request to the identity provider(s).</p>
+<li><p class="sd-card-text">After the screens explaining recovery tap <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Enter each word of your recovery phrase in the correct order. When you start typing, possible words appear for you to select. Once the words are correct, tap <strong>Continue</strong> to submit the recovery request to the identity provider(s).</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/recovery-enter-phrase.png"><img alt="../../_images/recovery-enter-phrase.png" src="../../_images/recovery-enter-phrase.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>When recovery is successful, the screen below appears.</p>
+<li><p class="sd-card-text">When recovery is successful, the screen below appears.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/recovery-success.png"><img alt="../../_images/recovery-success.png" src="../../_images/recovery-success.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>Sometimes recovery can take longer. You might encounter a partial recovery.</p>
-<p>This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. Tap <strong>Try again</strong> to attempt recovery again now or tap <strong>Continue</strong> to wait until later to try to recover. If you wait until later you can continue to the wallet.</p>
-<p>To continue recovery, go to the More page <a class="reference internal" href="../../_images/more-ellipsis.png"><img alt="Three dots button" src="../../_images/more-ellipsis.png" style="width: 40px;" /></a> and tap <strong>Recovery</strong> to continue.</p>
+<p class="sd-card-text">Sometimes recovery can take longer. You might encounter a partial recovery.</p>
+<p class="sd-card-text">This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. Tap <strong>Try again</strong> to attempt recovery again now or tap <strong>Continue</strong> to wait until later to try to recover. If you wait until later you can continue to the wallet.</p>
+<p class="sd-card-text">To continue recovery, go to the More page <a class="reference internal" href="../../_images/more-ellipsis.png"><img alt="Three dots button" src="../../_images/more-ellipsis.png" style="width: 40px;" /></a> and tap <strong>Recovery</strong> to continue.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you recover your wallet, any account names that you might have edited will be reset to the account number. You can <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">edit the account name</span></a>, if desired.</p>
+<p class="sd-card-text">When you recover your wallet, any account names that you might have edited will be reset to the account number. You can <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">edit the account name</span></a>, if desired.</p>
 </div>
-</div></div>
 </div>
+</details></div>
 
 
               </div>

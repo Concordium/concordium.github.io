@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1516,29 +1516,45 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>You can’t change your passcode, password, or biometrics if you have pending identities or accounts in your wallet.</p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Concordium Wallet for Android</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Legacy Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <a class="reference internal" href="../../_images/more-ellipsis.png"><img alt="Three dots button" src="../../_images/more-ellipsis.png" style="width: 40px;" /></a> page.</p></li>
-<li><p>Select <strong>Update Passcode &amp; Biometrics</strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><ol class="arabic">
+<li><p class="sd-card-text">Go to the <a class="reference internal" href="../../_images/more-ellipsis.png"><img alt="Three dots button" src="../../_images/more-ellipsis.png" style="width: 40px;" /></a> page.</p></li>
+<li><p class="sd-card-text">Select <strong>Update Passcode &amp; Biometrics</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/more-options.jpg"><img alt="../../_images/more-options.jpg" src="../../_images/more-options.jpg" style="width: 25%;" /></a>
 </li>
-<li><p>Tap <strong>Continue</strong>.</p></li>
-<li><p>Enter your old passcode or biometrics.</p></li>
-<li><p>Enter a new six-digit passcode, or choose <strong>Use full password instead</strong> if you’d rather use a full password.</p></li>
-<li><p>Choose whether or not to enable biometrics.</p></li>
+<li><p class="sd-card-text">Tap <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Enter your old passcode or biometrics.</p></li>
+<li><p class="sd-card-text">Enter a new six-digit passcode, or choose <strong>Use full password instead</strong> if you’d rather use a full password.</p></li>
+<li><p class="sd-card-text">Choose whether or not to enable biometrics.</p></li>
 </ol>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <a class="reference internal" href="../../_images/more-ellipsis.png"><img alt="Three dots button" src="../../_images/more-ellipsis.png" style="width: 40px;" /></a> page.</p></li>
-<li><p>Select <strong>Update Passcode &amp; Biometrics</strong>.</p>
+</div></blockquote>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <a class="reference internal" href="../../_images/more-ellipsis.png"><img alt="Three dots button" src="../../_images/more-ellipsis.png" style="width: 40px;" /></a> page.</p></li>
+<li><p class="sd-card-text">Select <strong>Update Passcode &amp; Biometrics</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/MW58.png"><img alt="../../_images/MW58.png" src="../../_images/MW58.png" style="width: 25%;" /></a>
 </li>
-<li><p>Tap <strong>Continue</strong>.</p></li>
-<li><p>Enter your old passcode or biometrics.</p></li>
-<li><p>Enter a new six-digit passcode, or choose <strong>Use full password instead</strong> if you’d rather use a full password.</p></li>
-<li><p>Choose whether or not to enable biometrics.</p></li>
+<li><p class="sd-card-text">Tap <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Enter your old passcode or biometrics.</p></li>
+<li><p class="sd-card-text">Enter a new six-digit passcode, or choose <strong>Use full password instead</strong> if you’d rather use a full password.</p></li>
+<li><p class="sd-card-text">Choose whether or not to enable biometrics.</p></li>
 </ol>
-</div></div>
 </div>
+</details></div>
+</details></div>
 
 
               </div>

@@ -81,13 +81,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -213,6 +214,10 @@ body {margin:0;}
 <div class="section" id="windows-mainnet-and-testnet">
 <h2>Windows - Mainnet and Testnet<a class="headerlink" href="#windows-mainnet-and-testnet" title="Permalink to this headline">#</a></h2>
 <p><strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
+<p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.4.4-1.msi">Windows 4.4.4</a></p>
+<p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.3.1-0.msi">Windows 4.3.1</a></p>
+<p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.2.3-0.msi">Windows 4.2.3</a></p>
+<p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.2.1-0.msi">Windows 4.2.1</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.1.1.msi">Windows 4.1.1</a> (Note: new genesis)</p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.1.0-0.msi">Windows 4.1.0</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-4.0.11-0.msi">Windows 4.0.11</a> (Testnet only)</p>
@@ -220,6 +225,10 @@ body {margin:0;}
 </div>
 <div class="section" id="macos-mainnet-and-testnet">
 <h2>macOS - Mainnet and Testnet<a class="headerlink" href="#macos-mainnet-and-testnet" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-4.4.4-1.pkg">macOS 4.4.4</a></p>
+<p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-4.3.1-0.pkg">macOS 4.3.1</a></p>
+<p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-4.2.3.pkg">macOS 4.2.3</a></p>
+<p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-4.2.1.pkg">macOS 4.2.1</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-4.1.1-1.pkg">macOS 4.1.1</a> (Note: new genesis)</p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-4.0.11-1.pkg">macOS 4.0.11-1</a> (Testnet only)</p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-3.0.2.pkg">macOS 3.0.2</a></p>
@@ -229,6 +238,58 @@ body {margin:0;}
 <p>Default GRPC port is set to 10000
 Default listen port is set to 8888</p>
 <dl>
+<dt><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.4.4-1_amd64.deb">4.4.4</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_4.4.4-1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum ed1c346de5d20089e4590c67e8cb757783f3938b17b36ba44756bbf0d013f21e.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.3.1_amd64.deb">4.3.1</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_4.3.1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum 9cd09fff386f17562902adea699f975acaf4d4b6e3dceaf2fb7e45030a309b65.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.3_amd64.deb">4.2.3</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_4.2.3_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum 6bf3f194b4692e0e6b9548edb72a870b4504a44087b6f23e86055cc301d4e0a4.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.1_amd64.deb">4.2.1</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_4.2.1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum 0ecefbdaa7a00d90d8e8099c6d25558f3d8f9d23164726550b1d62cfde5821b5.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
 <dt><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.1.1_amd64.deb">4.1.1</a></dt><dd><ul>
 <li><p>Verification instructions</p>
 <blockquote>
@@ -262,6 +323,58 @@ Default listen port is set to 8888</p>
 <p>Default GRPC port is set to 10001
 Default listen port is set to 8889</p>
 <dl>
+<dt><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.4.4-1_amd64.deb">4.4.4</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_4.1.1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum 2569e43d8f8e93e594882e5f8b934a1a20ca7674bebf349f85c07cb09e41da4a.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.3.1_amd64.deb">4.3.1</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_4.1.1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum 1f8650a01746617c10d9e8aeee01b1adbf1e8a005e5a246b6920437344c7f518.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.3_amd64.deb">4.2.3</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_4.1.1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum 66a54d77a8d6810a9d87b828ed3881105858609b9b921a700064b2719c861691.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.1_amd64.deb">4.2.1</a></dt><dd><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_4.1.1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum ea17f5e192e77a1469ab9c4486892f1a6f63894de6ab54a86ea7b80cdecbbf17.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
 <dt><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb">4.1.1</a></dt><dd><ul>
 <li><p>Verification instructions</p>
 <blockquote>

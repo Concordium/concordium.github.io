@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1526,15 +1526,21 @@ You can see the fee in the transaction log.</p>
 <p class="admonition-title">Note</p>
 <p>On Testnet you can request CCDs for testing purposes. Use the Request button in an account to request 2000 CCDs.</p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Wallet for Android</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Concordium Legacy Wallet</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">Concordium Wallet for Web</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to <strong>Accounts</strong> and select the relevant account.</p></li>
-<li><p>Select <strong>Send</strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong> and select the relevant account.</p></li>
+<li><p class="sd-card-text">Select <strong>Send</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-send.png" src="../../_images/dw-send.png" />
 </div></blockquote>
 </li>
-<li><p>In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough CCD in the account, and you’ll have to change the amount. Enter a <strong>Memo</strong> if you want to send a message to the recipient along with the shielded amount. Note that there’s a fee associated with sending a memo and the fee depends on the size of the memo in bytes. Click <strong>Select Recipient</strong>.</p>
+<li><p class="sd-card-text">In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough CCD in the account, and you’ll have to change the amount. Enter a <strong>Memo</strong> if you want to send a message to the recipient along with the shielded amount. Note that there’s a fee associated with sending a memo and the fee depends on the size of the memo in bytes. Click <strong>Select Recipient</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-send-ccd.png" src="../../_images/dw-send-ccd.png" />
 </div></blockquote>
@@ -1542,116 +1548,140 @@ You can see the fee in the transaction log.</p>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
+<p class="sd-card-text">Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Select the recipient and click <strong>Continue</strong>.</p></li>
-<li><p>There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
-<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
-<li><p>Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.</p></li>
-<li><p>Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+<li><p class="sd-card-text">Select the recipient and click <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.</p></li>
+<li><p class="sd-card-text">Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
 </ol>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the Accounts page and tap <a class="reference internal" href="../../_images/send.png"><img alt="Paper airplane" src="../../_images/send.png" style="width: 50px;" /></a> on the account from which you want to send CCD. Or with an individual account’s transaction overview displayed, tap <a class="reference internal" href="../../_images/send-w-text.png"><img alt="Paper airplane with text send" src="../../_images/send-w-text.png" style="width: 50px;" /></a>.</p></li>
-<li><p>Enter the amount you want to transfer.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the Accounts page and tap <a class="reference internal" href="../../_images/send.png"><img alt="Paper airplane" src="../../_images/send.png" style="width: 50px;" /></a> on the account from which you want to send CCD. Or with an individual account’s transaction overview displayed, tap <a class="reference internal" href="../../_images/send-w-text.png"><img alt="Paper airplane with text send" src="../../_images/send-w-text.png" style="width: 50px;" /></a>.</p></li>
+<li><p class="sd-card-text">Enter the amount you want to transfer.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW23.png"><img alt="../../_images/MW23.png" src="../../_images/MW23.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>In <strong>Paste recipient address</strong> you can paste the recipient address.</p>
+<li><p class="sd-card-text">In <strong>Paste recipient address</strong> you can paste the recipient address.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>You can also choose a recipient that already exists in your <strong>Address Book</strong>, or tap <strong>Scan QR</strong> to add a new one.</p></li>
+<li><p class="sd-card-text">You can also choose a recipient that already exists in your <strong>Address Book</strong>, or tap <strong>Scan QR</strong> to add a new one.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p><em>Optional</em>: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.</p></li>
+<li><p class="sd-card-text"><em>Optional</em>: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
+<p class="sd-card-text">Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
 </div>
 <ol class="arabic" start="5">
-<li><p>Tap <strong>Send amount</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Send amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW26.png"><img alt="../../_images/MW26.png" src="../../_images/MW26.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Confirm your choices, and tap <strong>Send funds</strong>.</p>
+<li><p class="sd-card-text">Confirm your choices, and tap <strong>Send funds</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW27.png"><img alt="../../_images/MW27.png" src="../../_images/MW27.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Finish</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW28.png"><img alt="../../_images/MW28.png" src="../../_images/MW28.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the Accounts page and tap <strong>SEND</strong> on the account from which you want to send CCD. Or with an individual account’s transaction overview displayed, tap <strong>SEND</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the Accounts page and tap <strong>SEND</strong> on the account from which you want to send CCD. Or with an individual account’s transaction overview displayed, tap <strong>SEND</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW13.png"><img alt="../../_images/MW13.png" src="../../_images/MW13.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="../../_images/MW22.png"><img alt="../../_images/MW22.png" src="../../_images/MW22.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Enter the amount you want to transfer.</p>
+<li><p class="sd-card-text">Enter the amount you want to transfer.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW23.png"><img alt="../../_images/MW23.png" src="../../_images/MW23.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>In <strong>Paste recipient address</strong> you can paste the recipient address.</p>
+<li><p class="sd-card-text">In <strong>Paste recipient address</strong> you can paste the recipient address.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>You can also choose a recipient that already exists in your <strong>Address Book</strong>, or tap <strong>Scan QR</strong> to add a new one.</p></li>
+<li><p class="sd-card-text">You can also choose a recipient that already exists in your <strong>Address Book</strong>, or tap <strong>Scan QR</strong> to add a new one.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p><em>Optional</em>: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.</p></li>
+<li><p class="sd-card-text"><em>Optional</em>: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
+<p class="sd-card-text">Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
 </div>
 <ol class="arabic" start="5">
-<li><p>Tap <strong>Send amount</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Send amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW26.png"><img alt="../../_images/MW26.png" src="../../_images/MW26.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Confirm your choices, and tap <strong>Send funds</strong>.</p>
+<li><p class="sd-card-text">Confirm your choices, and tap <strong>Send funds</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW27.png"><img alt="../../_images/MW27.png" src="../../_images/MW27.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Finish</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW28.png"><img alt="../../_images/MW28.png" src="../../_images/MW28.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to Accounts.</p></li>
-<li><p>Click <img alt="paper airplane" src="../../_images/send-ccd.png" />.</p></li>
-<li><p>Enter the amount of CCD to transfer. Or click <strong>Max</strong> to transfer all of your CCD minus the transaction fee.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to Accounts.</p></li>
+<li><p class="sd-card-text">Click <img alt="paper airplane" src="../../_images/send-ccd.png" />.</p></li>
+<li><p class="sd-card-text">Enter the amount of CCD to transfer. Or click <strong>Max</strong> to transfer all of your CCD minus the transaction fee.</p>
 <blockquote>
 <div><img alt="../../_images/send-dialog.png" src="../../_images/send-dialog.png" />
 </div></blockquote>
 </li>
-<li><p>Enter the recipient address. Click <strong>Continue</strong>.</p></li>
-<li><p>On the confirmation screen, click <strong>Send</strong> to submit the transaction to the blockchain. Click <strong>Back</strong> if you need to correct the transfer.</p>
+<li><p class="sd-card-text">Enter the recipient address. Click <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">On the confirmation screen, click <strong>Send</strong> to submit the transaction to the blockchain. Click <strong>Back</strong> if you need to correct the transfer.</p>
 <blockquote>
 <div><img alt="../../_images/send-confirm.png" src="../../_images/send-confirm.png" />
 </div></blockquote>
 </li>
-<li><p>Once you click Send, review the transaction and click <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Once you click Send, review the transaction and click <strong>Finish</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/send-finish.png" src="../../_images/send-finish.png" />
 </div></blockquote>
 </li>
 </ol>
-</div></div>
-<p>Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.</p>
+</div>
+</details><p>Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.</p>
 </div>
 
 

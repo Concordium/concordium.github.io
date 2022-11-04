@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1535,204 +1535,267 @@ You can see the fee in the transaction log.</p>
 <p class="admonition-title">Note</p>
 <p>On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, Concordium Wallet for Android, or Concordium Legacy Wallet to request 2000 CCDs.</p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Wallet for Android</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Concordium Legacy Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Shield CCD</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Unshield CCD</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to <strong>Accounts</strong> and select the relevant account.</p></li>
-<li><p>Select <strong>Shield</strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shield CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong> and select the relevant account.</p></li>
+<li><p class="sd-card-text">Select <strong>Shield</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-shield.png" src="../../_images/dw-shield.png" />
 </div></blockquote>
 </li>
-<li><p>Enter the amount of CCD that you want to shield. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. Select <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">Enter the amount of CCD that you want to shield. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying <strong>Insufficient funds</strong>. This means that there’s not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. Select <strong>Continue</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-shield-ccd.png" src="../../_images/dw-shield-ccd.png" />
 </div></blockquote>
 </li>
-<li><p>There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
-<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
-<li><p>Press both buttons on the Ledger to confirm the decryption.</p></li>
-<li><p>Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.</p></li>
-<li><p>Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>. When the transaction has been finalized, you can see the shielded balance on the account overview.</p></li>
+<li><p class="sd-card-text">There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">Press both buttons on the Ledger to confirm the decryption.</p></li>
+<li><p class="sd-card-text">Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.</p></li>
+<li><p class="sd-card-text">Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>. When the transaction has been finalized, you can see the shielded balance on the account overview.</p></li>
 </ol>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><p>The steps to unshield CCD are similar to the ones to shield CCD.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Unshield CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The steps to unshield CCD are similar to the ones to shield CCD.</p>
 <ol class="arabic">
-<li><p>Select <strong>Shielded Balance</strong> on the relevant account, and then select <strong>Unshield</strong>.</p>
+<li><p class="sd-card-text">Select <strong>Shielded Balance</strong> on the relevant account, and then select <strong>Unshield</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-unshield.png" src="../../_images/dw-unshield.png" />
 </div></blockquote>
 </li>
-<li><p>Enter the amount of CCD that you want to unshield, and then select <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">Enter the amount of CCD that you want to unshield, and then select <strong>Continue</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-unshield-ccd.png" src="../../_images/dw-unshield-ccd.png" />
 </div></blockquote>
 </li>
-<li><p>There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
-<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
-<li><p>Press both buttons on the Ledger to confirm the decryption.</p></li>
-<li><p>Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.</p></li>
-<li><p>Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>. When the transaction has been finalized, you can see the shielded balance on the account overview.</p></li>
+<li><p class="sd-card-text">There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger to the computer and enter your PIN on Ledger.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">Press both buttons on the Ledger to confirm the decryption.</p></li>
+<li><p class="sd-card-text">Review the transaction on the Ledger and verify that the information matches the <strong>Transaction details</strong> in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.</p></li>
+<li><p class="sd-card-text">Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select <strong>Finish</strong>. When the transaction has been finalized, you can see the shielded balance on the account overview.</p></li>
 </ol>
-<p>When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the <strong>Transfers</strong> list.</p>
-</div></div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Shield CCD</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Unshield CCD</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the <strong>Balance</strong> area of the account you want to transfer CCD from or tap <a class="reference internal" href="../../_images/more-acct.png"><img alt="Button with double-headed arrow" src="../../_images/more-acct.png" style="width: 50px;" /></a>.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If the <strong>Shield</strong> button and <strong>Shielded balanace</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
+<p class="sd-card-text">When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the <strong>Transfers</strong> list.</p>
+</div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shield CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the <strong>Balance</strong> area of the account you want to transfer CCD from or tap <a class="reference internal" href="../../_images/more-acct.png"><img alt="Button with double-headed arrow" src="../../_images/more-acct.png" style="width: 50px;" /></a>.</p>
+<ul class="simple">
+<li><p class="sd-card-text">If the <strong>Shield</strong> button and <strong>Shielded balanace</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
 </ul>
-</div></blockquote>
 </li>
-<li><p>Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and a <strong>Shield</strong> button.</p></li>
-<li><p>Tap <strong>Shield</strong>. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.</p></li>
-<li><p>Enter the amount you want to move to the shielded balance.</p>
+<li><p class="sd-card-text">Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and a <strong>Shield</strong> button.</p></li>
+<li><p class="sd-card-text">Tap <strong>Shield</strong>. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.</p></li>
+<li><p class="sd-card-text">Enter the amount you want to move to the shielded balance.</p></li>
+</ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW33.png"><img alt="../../_images/MW33.png" src="../../_images/MW33.png" style="width: 25%;" /></a>
 </div></blockquote>
-</li>
-<li><p>Confirm your choices and tap <strong>Shield amount</strong>.</p>
+<ol class="arabic">
+<li><p class="sd-card-text">Confirm your choices and tap <strong>Shield amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW35.png"><img alt="../../_images/MW35.png" src="../../_images/MW35.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW76.png"><img alt="../../_images/MW76.png" src="../../_images/MW76.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+<p class="sd-card-text">The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
+<p class="sd-card-text">You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
 </div>
-</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the account you want to unshield CCD on or tap <a class="reference internal" href="../../_images/more-acct.png"><img alt="Button with double-headed arrow" src="../../_images/more-acct.png" style="width: 50px;" /></a> on the account card.</p></li>
-<li><p>If the Shielded balance is already shown, tap the Shielded balance tab.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Unshield CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the account you want to unshield CCD on or tap <a class="reference internal" href="../../_images/more-acct.png"><img alt="Button with double-headed arrow" src="../../_images/more-acct.png" style="width: 50px;" /></a> on the account card.</p></li>
+<li><p class="sd-card-text">If the Shielded balance is already shown, tap the Shielded balance tab.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>If the <strong>Unshield</strong> button and <strong>Shielded balance</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
+<li><p class="sd-card-text">If the <strong>Unshield</strong> button and <strong>Shielded balance</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and an <strong>Unhield</strong> button.</p></li>
-<li><p>Tap <strong>UNSHIELD</strong>.</p></li>
-<li><p>Enter the amount you want to move to the regular balance.</p>
+<li><p class="sd-card-text">Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and an <strong>Unhield</strong> button.</p></li>
+<li><p class="sd-card-text">Tap <strong>UNSHIELD</strong>.</p></li>
+<li><p class="sd-card-text">Enter the amount you want to move to the regular balance.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW48.png"><img alt="../../_images/MW48.png" src="../../_images/MW48.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap <strong>Unshield amount</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Unshield amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW49.png"><img alt="../../_images/MW49.png" src="../../_images/MW49.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Confirm your choices and tap <strong>Unshield amount</strong>.</p>
+<li><p class="sd-card-text">Confirm your choices and tap <strong>Unshield amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW50.png"><img alt="../../_images/MW50.png" src="../../_images/MW50.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW51.png"><img alt="../../_images/MW51.png" src="../../_images/MW51.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+<p class="sd-card-text">The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
+<p class="sd-card-text">You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
 </div>
-</div></div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Shield CCD</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Unshield CCD</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the <strong>Balance</strong> area of the account you want to shield CCD from or tap <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p>
+</div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shield CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the <strong>Balance</strong> area of the account you want to shield CCD from or tap <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>If the <strong>Shield</strong> button and <strong>Shielded balanace</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
+<li><p class="sd-card-text">If the <strong>Shield</strong> button and <strong>Shielded balanace</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and a <strong>Shield</strong> button.</p>
+<li><p class="sd-card-text">Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and a <strong>Shield</strong> button.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW77.png"><img alt="../../_images/MW77.png" src="../../_images/MW77.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap <strong>Shield</strong>. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.</p></li>
-<li><p>Enter the amount you want to move to the shielded balance.</p>
+<li><p class="sd-card-text">Tap <strong>Shield</strong>. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.</p></li>
+<li><p class="sd-card-text">Enter the amount you want to move to the shielded balance.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW33.png"><img alt="../../_images/MW33.png" src="../../_images/MW33.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Confirm your choices and tap <strong>Shield amount</strong>.</p>
+<li><p class="sd-card-text">Confirm your choices and tap <strong>Shield amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW35.png"><img alt="../../_images/MW35.png" src="../../_images/MW35.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW76.png"><img alt="../../_images/MW76.png" src="../../_images/MW76.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+<p class="sd-card-text">The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
+<p class="sd-card-text">You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
 </div>
-</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the account you want to unshield CCD on or tap <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a> on the account card.</p></li>
-<li><p>If the Shielded balance is already shown, tap the Shielded balance tab.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Unshield CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the account you want to unshield CCD on or tap <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a> on the account card.</p></li>
+<li><p class="sd-card-text">If the Shielded balance is already shown, tap the Shielded balance tab.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>If the <strong>Unshield</strong> button and <strong>Shielded balance</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
+<li><p class="sd-card-text">If the <strong>Unshield</strong> button and <strong>Shielded balance</strong> tab are not visible, tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu in the upper right corner. Tap <strong>Show shielded balance on account name</strong>.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and an <strong>Unhield</strong> button.</p></li>
-<li><p>Tap <strong>UNSHIELD</strong>.</p>
+<li><p class="sd-card-text">Now the totals area contains tabs for both <strong>Balance</strong> and <strong>Shielded Balance</strong> and an <strong>Unhield</strong> button.</p></li>
+<li><p class="sd-card-text">Tap <strong>UNSHIELD</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW47.png"><img alt="../../_images/MW47.png" src="../../_images/MW47.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Enter the amount you want to move to the regular balance.</p>
+<li><p class="sd-card-text">Enter the amount you want to move to the regular balance.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW48.png"><img alt="../../_images/MW48.png" src="../../_images/MW48.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap <strong>Unshield amount</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Unshield amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW49.png"><img alt="../../_images/MW49.png" src="../../_images/MW49.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Confirm your choices and tap <strong>Unshield amount</strong>.</p>
+<li><p class="sd-card-text">Confirm your choices and tap <strong>Unshield amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW50.png"><img alt="../../_images/MW50.png" src="../../_images/MW50.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
+<li><p class="sd-card-text">Your shielding transaction has now been submitted to the blockchain. Tap <strong>Finish</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW51.png"><img alt="../../_images/MW51.png" src="../../_images/MW51.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+<p class="sd-card-text">The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
+<p class="sd-card-text">You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> menu and tap <strong>Hide shielded balance for account name</strong>. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
 </div>
-</div></div>
-</div></div>
 </div>
+</details></div>
+</details></div>
 
 
               </div>

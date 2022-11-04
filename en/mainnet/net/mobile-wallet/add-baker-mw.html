@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1511,11 +1511,17 @@ body {margin:0;}
                 
   <div class="section" id="add-baker-in-mw-gen2-and-mw-gen1">
 <span id="add-baker-mw"></span><h1>Add baker in Concordium Wallet for Android and Concordium Legacy Wallet<a class="headerlink" href="#add-baker-in-mw-gen2-and-mw-gen1" title="Permalink to this headline">#</a></h1>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Concordium Wallet for Android</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Legacy Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>You can either: tap <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the account you want to delegate from in the <strong>Accounts</strong> page, or tap on an account card and tap <a class="reference internal" href="../../_images/earn-w-text.png"><img alt="Hand receiving money with text earn" src="../../_images/earn-w-text.png" style="width: 50px;" /></a> on the account transaction overview screen.</p></li>
-<li><p>Select <strong>Continue to baker setup</strong>.</p></li>
-<li><p>After the screens explaining baking, specify the amount that you want to stake on the Register Baker screen. The more you stake, the greater the probability that your account will be chosen to bake the next block. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select <strong>Don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">You can either: tap <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the account you want to delegate from in the <strong>Accounts</strong> page, or tap on an account card and tap <a class="reference internal" href="../../_images/earn-w-text.png"><img alt="Hand receiving money with text earn" src="../../_images/earn-w-text.png" style="width: 50px;" /></a> on the account transaction overview screen.</p></li>
+<li><p class="sd-card-text">Select <strong>Continue to baker setup</strong>.</p></li>
+<li><p class="sd-card-text">After the screens explaining baking, specify the amount that you want to stake on the Register Baker screen. The more you stake, the greater the probability that your account will be chosen to bake the next block. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select <strong>Don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-amt-mw.png" src="../../_images/add-baker-amt-mw.png" />
 </div></blockquote>
@@ -1523,24 +1529,24 @@ body {margin:0;}
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is a minimum amount to stake (14000 CCD) to become a baker.</p>
+<p class="sd-card-text">There is a minimum amount to stake (14000 CCD) to become a baker.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
+<p class="sd-card-text">Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
 </div>
 <ol class="arabic" start="4">
-<li><p>Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
+<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-pool-mw.png" src="../../_images/add-baker-pool-mw.png" />
 </div></blockquote>
 </li>
-<li><p>If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.</p>
+<li><p class="sd-card-text">If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-pool-url-mw.png" src="../../_images/add-baker-pool-url-mw.png" />
 </div></blockquote>
 </li>
-<li><p>You have to export the baker credentials so that you can start the node with the baker keys. Tap <strong>Export baker keys</strong> and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.</p>
+<li><p class="sd-card-text">You have to export the baker credentials so that you can start the node with the baker keys. Tap <strong>Export baker keys</strong> and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-export-keys-mw.png" src="../../_images/add-baker-export-keys-mw.png" />
 </div></blockquote>
@@ -1548,37 +1554,45 @@ body {margin:0;}
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
+<p class="sd-card-text">This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
 </div>
 <ol class="arabic" start="7">
-<li><p>Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap <strong>Submit baker transaction</strong>.</p>
+<li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap <strong>Submit baker transaction</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-submit-mw.png" src="../../_images/add-baker-submit-mw.png" />
 </div></blockquote>
 </li>
-<li><p>The wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.</p>
+<li><p class="sd-card-text">The wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-finish-mw.png" src="../../_images/add-baker-finish-mw.png" />
 </div></blockquote>
 </li>
-<li><p>You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
-<li><p><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">macOS</span></a></p></li>
-<li><p><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">Docker</span></a></p></li>
-<li><p><a class="reference internal" href="../nodes/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">Ubuntu</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">macOS</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">Docker</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">Ubuntu</span></a></p></li>
 </ul>
 </div></blockquote>
 </li>
 </ol>
-<p>Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.</p>
+<p class="sd-card-text">Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.</p>
 <a class="reference internal image-reference" href="../../_images/account-list-baking.png"><img alt="../../_images/account-list-baking.png" src="../../_images/account-list-baking.png" style="width: 40%;" /></a>
 <a class="reference internal image-reference" href="../../_images/account-details-baking.png"><img alt="../../_images/account-details-baking.png" src="../../_images/account-details-baking.png" style="width: 40%;" /></a>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to <strong>Accounts</strong>. Tap on the balance area of the account you want to add as a baker account or tap <strong>More</strong> <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p></li>
-<li><p>In the hamburger menu <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> tap <strong>Baking</strong>.</p></li>
-<li><p>After the screens explaining baking, specify the amount that you want to stake on the Register Baker screen. The more you stake, the greater the probability that your account will be chosen to bake the next block. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select <strong>Don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong>. Tap on the balance area of the account you want to add as a baker account or tap <strong>More</strong> <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p></li>
+<li><p class="sd-card-text">In the hamburger menu <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> tap <strong>Baking</strong>.</p></li>
+<li><p class="sd-card-text">After the screens explaining baking, specify the amount that you want to stake on the Register Baker screen. The more you stake, the greater the probability that your account will be chosen to bake the next block. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select <strong>Don’t restake</strong> if you’d rather add the rewards to the disposable amount on the account.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-amt-mw.png" src="../../_images/add-baker-amt-mw.png" />
 </div></blockquote>
@@ -1586,24 +1600,24 @@ body {margin:0;}
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is a minimum amount to stake (14000 CCD) to become a baker.</p>
+<p class="sd-card-text">There is a minimum amount to stake (14000 CCD) to become a baker.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
+<p class="sd-card-text">Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
 </div>
 <ol class="arabic" start="4">
-<li><p>Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
+<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-pool-mw.png" src="../../_images/add-baker-pool-mw.png" />
 </div></blockquote>
 </li>
-<li><p>If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.</p>
+<li><p class="sd-card-text">If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-pool-url-mw.png" src="../../_images/add-baker-pool-url-mw.png" />
 </div></blockquote>
 </li>
-<li><p>You have to export the baker credentials so that you can start the node with the baker keys. Tap <strong>Export baker keys</strong> and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.</p>
+<li><p class="sd-card-text">You have to export the baker credentials so that you can start the node with the baker keys. Tap <strong>Export baker keys</strong> and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-export-keys-mw.png" src="../../_images/add-baker-export-keys-mw.png" />
 </div></blockquote>
@@ -1611,35 +1625,35 @@ body {margin:0;}
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
+<p class="sd-card-text">This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
 </div>
 <ol class="arabic" start="7">
-<li><p>Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap <strong>Submit baker transaction</strong>.</p>
+<li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap <strong>Submit baker transaction</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-submit-mw.png" src="../../_images/add-baker-submit-mw.png" />
 </div></blockquote>
 </li>
-<li><p>The wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.</p>
+<li><p class="sd-card-text">The wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.</p>
 <blockquote>
 <div><img alt="../../_images/add-baker-finish-mw.png" src="../../_images/add-baker-finish-mw.png" />
 </div></blockquote>
 </li>
-<li><p>You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
-<li><p><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">macOS</span></a></p></li>
-<li><p><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">Docker</span></a></p></li>
-<li><p><a class="reference internal" href="../nodes/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">Ubuntu</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">macOS</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">Docker</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">Ubuntu</span></a></p></li>
 </ul>
 </div></blockquote>
 </li>
 </ol>
-<p>Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.</p>
+<p class="sd-card-text">Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.</p>
 <a class="reference internal image-reference" href="../../_images/account-list-baking.png"><img alt="../../_images/account-list-baking.png" src="../../_images/account-list-baking.png" style="width: 40%;" /></a>
 <a class="reference internal image-reference" href="../../_images/account-details-baking.png"><img alt="../../_images/account-details-baking.png" src="../../_images/account-details-baking.png" style="width: 40%;" /></a>
-</div></div>
-<div class="admonition warning">
+</div>
+</details><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Transactions on the blockchain are permanent. That is, they are irreversible and can’t be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.</p>
 </div>

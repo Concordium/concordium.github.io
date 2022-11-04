@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1523,152 +1523,186 @@ You can see the fee in the transaction log.</p>
 <p class="admonition-title">Warning</p>
 <p>Make sure you have enough funds in your disposable balance to cover transaction fees.</p>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Wallet for Android</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Concordium Legacy Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Single signature account</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Multi signature account</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to <strong>Accounts</strong> and select the account on which you want to delegate funds.</p></li>
-<li><p>Click <strong>More options</strong> then select <strong>Register as a delegator</strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Single signature account<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong> and select the account on which you want to delegate funds.</p></li>
+<li><p class="sd-card-text">Click <strong>More options</strong> then select <strong>Register as a delegator</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-account-menu-regular.png" src="../../_images/dw-account-menu-regular.png" />
 </div></blockquote>
 </li>
-<li><p>Select your target (a baker pool or passive delegation). Click <strong>Continue</strong>.</p>
-<blockquote>
-<div><img alt="../../_images/dw-delegation-target.png" src="../../_images/dw-delegation-target.png" />
-</div></blockquote>
+<li><p class="sd-card-text">Select your target (a baker pool or passive delegation). Click <strong>Continue</strong>.</p>
+<img alt="../../_images/dw-delegation-target.png" src="../../_images/dw-delegation-target.png" />
 </li>
-<li><p>Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-delegation-stake.png" src="../../_images/dw-delegation-stake.png" />
 </div></blockquote>
 </li>
-<li><p>A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
-<li><p>Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
-<li><p>On the Ledger device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.</p></li>
-<li><p>The Ledger device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger device says <strong>Concordium is ready</strong>.</p></li>
-<li><p>In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+<li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the Ledger device to the computer and enter your PIN on the Ledger device.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">On the Ledger device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.</p></li>
+<li><p class="sd-card-text">The Ledger device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger device says <strong>Concordium is ready</strong>.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
 </ol>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Delegate to a pool</strong>.</p></li>
-<li><p>Select the account on which you want to delegate funds.</p></li>
-<li><p>Enter the new amount that you want to stake and select <strong>Continue</strong>. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p></li>
-<li><p>Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.</p></li>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Multi signature account<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Delegate to a pool</strong>.</p></li>
+<li><p class="sd-card-text">Select the account on which you want to delegate funds.</p></li>
+<li><p class="sd-card-text">Enter the new amount that you want to stake and select <strong>Continue</strong>. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.</p></li>
 </ol>
-<p><strong>Generate the transaction</strong></p>
-<p>There are two ways that you can generate the transaction:</p>
+<p class="sd-card-text"><strong>Generate the transaction</strong></p>
+<p class="sd-card-text">There are two ways that you can generate the transaction:</p>
 <ul class="simple">
-<li><p>Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
-<li><p>Generate and sign the transaction This option requires a Ledger and an internet connection.</p></li>
+<li><p class="sd-card-text">Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.</p></li>
+<li><p class="sd-card-text">Generate and sign the transaction This option requires a Ledger and an internet connection.</p></li>
 </ul>
-<p>In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
-<p><strong>Generate the transaction without signing</strong></p>
+<p class="sd-card-text">In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
+<p class="sd-card-text"><strong>Generate the transaction without signing</strong></p>
 <ol class="arabic simple">
-<li><p>Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
-<li><p>Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
+<li><p class="sd-card-text">Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
 </ol>
-<p><strong>Generate and sign the transaction on the Ledger</strong></p>
+<p class="sd-card-text"><strong>Generate and sign the transaction on the Ledger</strong></p>
 <ol class="arabic simple">
-<li><p>If you haven’t connected the Ledger, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
-<li><p>Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong> or <strong>Open the Concordium application on your Ledger Nano S Plus</strong>. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying Ledger device is ready.</p></li>
-<li><p>In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
-<li><p>On the Ledger, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.</p></li>
-<li><p>The Ledger says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger says <strong>Concordium is ready</strong>.</p></li>
+<li><p class="sd-card-text">If you haven’t connected the Ledger, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
+<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong> or <strong>Open the Concordium application on your Ledger Nano S Plus</strong>. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying Ledger device is ready.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
+<li><p class="sd-card-text">On the Ledger, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.</p></li>
+<li><p class="sd-card-text">The Ledger says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The Ledger says <strong>Concordium is ready</strong>.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet, there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
+<p class="sd-card-text">If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet, there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
 </div>
-<p>In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can <a class="reference internal" href="#submit-delegation"><span class="std std-ref">submit the transaction to the chain</span></a>, otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
-<p><strong>Export proposal</strong></p>
-<p>If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
+<p class="sd-card-text">In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can <a class="reference internal" href="#submit-delegation"><span class="std std-ref">submit the transaction to the chain</span></a>, otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
+<p class="sd-card-text"><strong>Export proposal</strong></p>
+<p class="sd-card-text">If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
 <ol class="arabic simple">
-<li><p>In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
-<li><p>Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
-<li><p>You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
+<li><p class="sd-card-text">Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
+<li><p class="sd-card-text">You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.</p></li>
 </ol>
-<p><strong>Receive signatures from co-signers</strong></p>
-<p>When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
+<p class="sd-card-text"><strong>Receive signatures from co-signers</strong></p>
+<p class="sd-card-text">When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
 <ol class="arabic simple">
-<li><p>If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
-<li><p>Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
-<li><p>Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
+<li><p class="sd-card-text">If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
+<li><p class="sd-card-text">Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
+<li><p class="sd-card-text">Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
 </ol>
-<p id="submit-delegation"><strong>Submit the transaction to the blockchain</strong></p>
-<p>When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
+<p class="sd-card-text" id="submit-delegation"><strong>Submit the transaction to the blockchain</strong></p>
+<p class="sd-card-text">When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
 <ol class="arabic">
-<li><p>Review the transaction details carefully to ensure that all information is correct.</p></li>
-<li><p>Select <strong>I understand this is the final submission and that it cannot be reverted</strong>.</p>
+<li><p class="sd-card-text">Review the transaction details carefully to ensure that all information is correct.</p></li>
+<li><p class="sd-card-text">Select <strong>I understand this is the final submission and that it cannot be reverted</strong>.</p>
 <blockquote>
-<div><p>If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
+<div><p class="sd-card-text">If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
 </div></blockquote>
 </li>
-<li><p>Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the Ledger.</p></li>
-<li><p>Select <strong>Finish</strong> to leave the page.</p></li>
+<li><p class="sd-card-text">Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the Ledger.</p></li>
+<li><p class="sd-card-text">Select <strong>Finish</strong> to leave the page.</p></li>
 </ol>
-</div></div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>You can either: tap <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the account you want to delegate from in the <strong>Accounts</strong> page, or tap on an account card and tap <a class="reference internal" href="../../_images/earn-w-text.png"><img alt="Hand receiving money with text earn" src="../../_images/earn-w-text.png" style="width: 50px;" /></a> on the account transaction overview screen.</p></li>
-<li><p>Tap <strong>Continue to delegation setup</strong>. If you are delegating for the first time, you see some information about delegation.</p></li>
-<li><p>Tap <strong>Register delegation</strong>.</p></li>
-<li><p>If you want to delegate to a specific pool tap <strong>Baker pool</strong> and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap <strong>Passive delegation</strong>. Tap <strong>Continue</strong>.</p>
+</div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">You can either: tap <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the account you want to delegate from in the <strong>Accounts</strong> page, or tap on an account card and tap <a class="reference internal" href="../../_images/earn-w-text.png"><img alt="Hand receiving money with text earn" src="../../_images/earn-w-text.png" style="width: 50px;" /></a> on the account transaction overview screen.</p></li>
+<li><p class="sd-card-text">Tap <strong>Continue to delegation setup</strong>. If you are delegating for the first time, you see some information about delegation.</p></li>
+<li><p class="sd-card-text">Tap <strong>Register delegation</strong>.</p></li>
+<li><p class="sd-card-text">If you want to delegate to a specific pool tap <strong>Baker pool</strong> and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap <strong>Passive delegation</strong>. Tap <strong>Continue</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/add-delegation-mw.jpg" src="../../_images/add-delegation-mw.jpg" />
 </div></blockquote>
 </li>
-<li><p>You can see your balance available to delegate. <strong>Enter the Amount you want to delegate</strong> in the field. And tap <strong>Yes, restake</strong> to restake any rewards or tap <strong>No, don’t restake</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">You can see your balance available to delegate. <strong>Enter the Amount you want to delegate</strong> in the field. And tap <strong>Yes, restake</strong> to restake any rewards or tap <strong>No, don’t restake</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap <strong>Continue</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/add-delegation-amt-mw.jpg" src="../../_images/add-delegation-amt-mw.jpg" />
 </div></blockquote>
 </li>
-<li><p>Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p>
+<li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/add-delegation-conf-mw.jpg" src="../../_images/add-delegation-conf-mw.jpg" />
 </div></blockquote>
 </li>
-<li><p>Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p>
+<li><p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p>
 <blockquote>
 <div><img alt="../../_images/add-delegation-submit-mw.jpg" src="../../_images/add-delegation-submit-mw.jpg" />
 </div></blockquote>
 </li>
 </ol>
-<p>Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.</p>
+<p class="sd-card-text">Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.</p>
 <a class="reference internal image-reference" href="../../_images/account-delegating.png"><img alt="../../_images/account-delegating.png" src="../../_images/account-delegating.png" style="width: 40%;" /></a>
 <a class="reference internal image-reference" href="../../_images/account-details-delegating.png"><img alt="../../_images/account-details-delegating.png" src="../../_images/account-details-delegating.png" style="width: 40%;" /></a>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> screen.</p></li>
-<li><p>Tap on the balance area of the account you want to delegate from or tap <strong>More</strong> <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p></li>
-<li><p>Tap the hamburger menu <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> and tap <strong>Delegation</strong>. If you are delegating for the first time, you see some information about delegation.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> screen.</p></li>
+<li><p class="sd-card-text">Tap on the balance area of the account you want to delegate from or tap <strong>More</strong> <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 50px;" /></a>.</p></li>
+<li><p class="sd-card-text">Tap the hamburger menu <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> and tap <strong>Delegation</strong>. If you are delegating for the first time, you see some information about delegation.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/account-hamburger-menu.png"><img alt="../../_images/account-hamburger-menu.png" src="../../_images/account-hamburger-menu.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap <strong>Register delegation</strong>.</p></li>
-<li><p>If you want to delegate to a specific pool tap <strong>Baker pool</strong> and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap <strong>Passive delegation</strong>. Tap <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">Tap <strong>Register delegation</strong>.</p></li>
+<li><p class="sd-card-text">If you want to delegate to a specific pool tap <strong>Baker pool</strong> and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap <strong>Passive delegation</strong>. Tap <strong>Continue</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-delegation-mw.jpg"><img alt="../../_images/add-delegation-mw.jpg" src="../../_images/add-delegation-mw.jpg" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>You can see your balance available to delegate. <strong>Enter the Amount you want to delegate</strong> in the field. And tap <strong>Yes, restake</strong> to restake any rewards or tap <strong>No, don’t restake</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">You can see your balance available to delegate. <strong>Enter the Amount you want to delegate</strong> in the field. And tap <strong>Yes, restake</strong> to restake any rewards or tap <strong>No, don’t restake</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap <strong>Continue</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-delegation-amt-mw.jpg"><img alt="../../_images/add-delegation-amt-mw.jpg" src="../../_images/add-delegation-amt-mw.jpg" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p>
+<li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-delegation-conf-mw.jpg"><img alt="../../_images/add-delegation-conf-mw.jpg" src="../../_images/add-delegation-conf-mw.jpg" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p>
+<li><p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-delegation-submit-mw.jpg"><img alt="../../_images/add-delegation-submit-mw.jpg" src="../../_images/add-delegation-submit-mw.jpg" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.</p>
+<p class="sd-card-text">Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.</p>
 <a class="reference internal image-reference" href="../../_images/account-delegating.png"><img alt="../../_images/account-delegating.png" src="../../_images/account-delegating.png" style="width: 40%;" /></a>
 <a class="reference internal image-reference" href="../../_images/account-details-delegating.png"><img alt="../../_images/account-details-delegating.png" src="../../_images/account-details-delegating.png" style="width: 40%;" /></a>
-</div></div>
 </div>
+</details></div>
 
 
               </div>

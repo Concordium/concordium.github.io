@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1513,95 +1513,109 @@ body {margin:0;}
 <span id="company-identities"></span><h1>Company identity creation<a class="headerlink" href="#company-identity-creation" title="Permalink to this headline">#</a></h1>
 <p>A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don’t want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.</p>
 <p>You can’t use the Desktop Wallet, Concordium Wallet for Android, or Concordium Legacy Wallet to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">This page</a> describes Notabene’s process, including recovery of company identities.</p>
-<p>The tabs below describe how to create a company identity. Note that the process differs for testnet and mainnet.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Mainnet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Testnet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Download the tools for your platform.</p>
+<p>The information below describes how to create a company identity. Note that the process differs for testnet and mainnet.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Mainnet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Download the tools for your platform.</p>
 <ul class="simple">
 <li><dl class="simple">
 <dt><a class="reference external" href="https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz">Tools for Linux</a></dt><dd><ul>
-<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2</span></code></p></li>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip">Tools for Windows</a></dt><dd><ul>
-<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096</span></code></p></li>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip">Tools for MacOS</a></dt><dd><ul>
-<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca</span></code></p></li>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
 </li>
-<li><p>Extract the files in the bundle to the same location on your computer. The bundle contains the following files:</p>
+<li><p class="sd-card-text">Extract the files in the bundle to the same location on your computer. The bundle contains the following files:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">user_cli</span></code> (tool)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cryptographic-parameters.json</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ars.json</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ip-info.json</span></code> (public keys of the identity provider Notabene)</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">user_cli</span></code> (tool)</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">cryptographic-parameters.json</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ars.json</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ip-info.json</span></code> (public keys of the identity provider Notabene)</p></li>
 </ul>
 </li>
-<li><p>Download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for your platform.  See <a class="reference internal" href="../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Downloads</span></a> to get the file and checksum.</p></li>
-<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>. Store the auxiliary output securely.</p></li>
-<li><p>To verify your identity towards Notabene, follow the <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">entity verification instructions</a>. When the identity has been verified successfully, Notabene will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>.</p></li>
-<li><p>To create additional accounts from the identity object returned by Notabene, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-1-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
-<li><p>To recover your identity object (e.g. if you lost it), follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#recovery-of-identity">recovery of identity instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> output file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>. When the recovery request has been validated successfully, Notabene will notify you by email, and they will return the identity object named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> that you lost. With the recovered identity object, you can then recreate your account keys, if needed.</p></li>
+<li><p class="sd-card-text">Download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for your platform.  See <a class="reference internal" href="../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Downloads</span></a> to get the file and checksum.</p></li>
+<li><p class="sd-card-text">To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>. Store the auxiliary output securely.</p></li>
+<li><p class="sd-card-text">To verify your identity towards Notabene, follow the <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">entity verification instructions</a>. When the identity has been verified successfully, Notabene will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>.</p></li>
+<li><p class="sd-card-text">To create additional accounts from the identity object returned by Notabene, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-1-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
+<li><p class="sd-card-text">To recover your identity object (e.g. if you lost it), follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#recovery-of-identity">recovery of identity instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> output file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>. When the recovery request has been validated successfully, Notabene will notify you by email, and they will return the identity object named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> that you lost. With the recovered identity object, you can then recreate your account keys, if needed.</p></li>
 </ol>
-<p>If you experience issues with steps 1, 2, 3, 4, 6 or 7, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>. If you experience issues with step 5, identity verification, please contact Notabene via <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>.</p>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>Download the tools for your platform.</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt><a class="reference external" href="https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz">Tools for Linux</a></dt><dd><ul>
-<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip">Tools for Windows</a></dt><dd><ul>
-<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip">Tools for MacOS</a></dt><dd><ul>
-<li><p>SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</li>
-<li><p>Download the testnet-specific <a class="reference external" href="https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip">configuration files</a>.</p></li>
-<li><p>Extract the files in the bundle to the same location on your computer. The bundle contains the following files:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cryptographic-parameters-testnet.json</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ars-testnet.json</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ip-info-testnet.json</span></code> (public keys of the identity provider)</p></li>
-</ul>
-</li>
-<li><p>Download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for your platform. See <a class="reference internal" href="../installation/downloads-testnet.html#concordium-node-and-client-download-testnet"><span class="std std-ref">Downloads</span></a> to get the file and checksum.</p></li>
-<li><p>To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Test company identity”. Store the auxiliary output securely.</p></li>
-<li><p>When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>.</p></li>
-<li><p>To create accounts from the identity object returned by Concordium, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-1-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
-<li><p>To recover your identity object (e.g. if you lost it), follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#recovery-of-identity">recovery of identity instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Recover company identity”.</p></li>
-<li><p>When the recovery request has been validated successfully, Concordium will notify you by email, and they will return the identity object named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> that you lost. With the recovered identity object, you can then recreate your account keys, if needed.</p></li>
-</ol>
-<p>Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">PUT</span> <span class="pre">https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV</span></code> where you replace 3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV with the account address that should receive the CCDs.</p>
-<p>If you experience issues, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
-</div></div>
+<p class="sd-card-text">If you experience issues with steps 1, 2, 3, 4, 6 or 7, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>. If you experience issues with step 5, identity verification, please contact Notabene via <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a>.</p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Testnet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Download the tools for your platform.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference external" href="https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz">Tools for Linux</a></dt><dd><ul>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip">Tools for Windows</a></dt><dd><ul>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip">Tools for MacOS</a></dt><dd><ul>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="sd-card-text">Download the testnet-specific <a class="reference external" href="https://github.com/Concordium/concordium.github.io/files/8196573/enterprise-identities-dry-run.zip">configuration files</a>.</p></li>
+<li><p class="sd-card-text">Extract the files in the bundle to the same location on your computer. The bundle contains the following files:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">cryptographic-parameters-testnet.json</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ars-testnet.json</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ip-info-testnet.json</span></code> (public keys of the identity provider)</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> for your platform. See <a class="reference internal" href="../installation/downloads-testnet.html#concordium-node-and-client-download-testnet"><span class="std std-ref">Downloads</span></a> to get the file and checksum.</p></li>
+<li><p class="sd-card-text">To generate a request for an identity object, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object">generate request instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Test company identity”. Store the auxiliary output securely.</p></li>
+<li><p class="sd-card-text">When the identity has been verified successfully, Concordium will notify you by email, and they will send you an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>.</p></li>
+<li><p class="sd-card-text">To create accounts from the identity object returned by Concordium, follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#create-accounts-from-a-version-1-identity-object">create accounts instructions</a>. You must deploy the credential.json output file to the chain exactly as described. If you don’t, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.</p></li>
+<li><p class="sd-card-text">To recover your identity object (e.g. if you lost it), follow the <a class="reference external" href="https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#recovery-of-identity">recovery of identity instructions</a>. Email the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> output file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Recover company identity”.</p></li>
+<li><p class="sd-card-text">When the recovery request has been validated successfully, Concordium will notify you by email, and they will return the identity object named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> that you lost. With the recovered identity object, you can then recreate your account keys, if needed.</p></li>
+</ol>
+<p class="sd-card-text">Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">PUT</span> <span class="pre">https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV</span></code> where you replace 3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV with the account address that should receive the CCDs.</p>
+<p class="sd-card-text">If you experience issues, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+</div>
+</details></div>
 
 
               </div>

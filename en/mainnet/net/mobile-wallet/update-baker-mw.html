@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1536,23 +1536,37 @@ body {margin:0;}
                 
   <div class="section" id="change-baker-options">
 <span id="update-baker-mw"></span><h1>Change baker options<a class="headerlink" href="#change-baker-options" title="Permalink to this headline">#</a></h1>
-<p>The following tabs describe how to access baker settings.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Concordium Wallet for Android</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Legacy Wallet</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
-<li><p>You can either: tap <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the account you want to delegate from in the <strong>Accounts</strong> page, or tap on an account card and tap <a class="reference internal" href="../../_images/earn-w-text.png"><img alt="Hand receiving money with text earn" src="../../_images/earn-w-text.png" style="width: 50px;" /></a> on the account transaction overview screen.</p></li>
-<li><p>In the Baker status screen tap <strong>Update baker settings</strong>.</p></li>
+<p>The following information describes how to access baker settings.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">You can either: tap <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the account you want to delegate from in the <strong>Accounts</strong> page, or tap on an account card and tap <a class="reference internal" href="../../_images/earn-w-text.png"><img alt="Hand receiving money with text earn" src="../../_images/earn-w-text.png" style="width: 50px;" /></a> on the account transaction overview screen.</p></li>
+<li><p class="sd-card-text">In the Baker status screen tap <strong>Update baker settings</strong>.</p></li>
 </ol>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to <strong>Accounts</strong>. Tap on the balance area of the baker account you want update or tap <strong>More</strong> <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 20px;" /></a>.</p></li>
-<li><p>In the hamburger menu <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> tap <strong>Baking</strong>.</p></li>
-<li><p>In the Baker status screen tap <strong>Update baker settings</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong>. Tap on the balance area of the baker account you want update or tap <strong>More</strong> <a class="reference internal" href="../../_images/more-arrow.png"><img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" style="width: 20px;" /></a>.</p></li>
+<li><p class="sd-card-text">In the hamburger menu <a class="reference internal" href="../../_images/hamburger.png"><img alt="Three horizontal lines" src="../../_images/hamburger.png" style="width: 20px;" /></a> tap <strong>Baking</strong>.</p></li>
+<li><p class="sd-card-text">In the Baker status screen tap <strong>Update baker settings</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/baker-status-mw.png"><img alt="../../_images/baker-status-mw.png" src="../../_images/baker-status-mw.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-</div></div>
-<p>Once you have access baker settings for your wallet, you have four options:</p>
+</div>
+</details><p>Once you have access baker settings for your wallet, you have four options:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Update baker stake</p></li>

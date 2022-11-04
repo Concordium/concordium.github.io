@@ -36,7 +36,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,13 +83,14 @@ body {margin:0;}
 
 .navbar-menu {
   position: fixed;
+  background-color: var(--bg-color);
 }
 
 .navbar-menu a {
   display: inline;
   text-align: left;
   padding: 16px;
-  color: black;
+  color: var(--font-color);
   font-size: 15px;
 }
 /* Large devices (laptops/desktops, 992px to 768px ) */
@@ -1515,32 +1515,36 @@ body {margin:0;}
 to the chain. When you already have an identity, you can create more <a class="reference internal" href="../resources/glossary.html#glossary-account"><span class="std std-ref">accounts</span></a> with that identity yourself.</p>
 <p>If you are using Concordium Wallet for Web or Concordium Wallet for Android, no initial account was created when you created your <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">identity</span></a>. You create all <a class="reference internal" href="../resources/glossary.html#glossary-account"><span class="std std-ref">accounts</span></a> related to your identities.</p>
 <p>To learn more about identities and accounts, see <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a> and <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Desktop Wallet</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Concordium Wallet for Android</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Concordium Legacy Wallet</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">Concordium Wallet for Web</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><blockquote>
-<div><div class="admonition note">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can’t import accounts that were created on the Concordium Legacy Wallet, Concordium Wallet for Android, or Concordium Wallet for Web.</p>
+<p class="sd-card-text">You can’t import accounts that were created on the Concordium Legacy Wallet, Concordium Wallet for Android, or Concordium Wallet for Web.</p>
 </div>
-</div></blockquote>
-<p>Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">Set up the Ledger device and install the Concordium Ledger App</span></a>.</p>
+<p class="sd-card-text">Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">Set up the Ledger device and install the Concordium Ledger App</span></a>.</p>
 <ol class="arabic">
-<li><p>Go to <strong>Accounts</strong>. You can now see all the accounts that you’re the custodian of.</p></li>
-<li><p>Select the plus sign in the upper right corner to create a new account.</p>
+<li><p class="sd-card-text">Go to <strong>Accounts</strong>. You can now see all the accounts that you’re the custodian of.</p></li>
+<li><p class="sd-card-text">Select the plus sign in the upper right corner to create a new account.</p>
 <blockquote>
 <div><img alt="../../_images/dw-add-account-plus.png" src="../../_images/dw-add-account-plus.png" />
 </div></blockquote>
 </li>
-<li><p>Enter a name for your new account, and then select <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">Enter a name for your new account, and then select <strong>Continue</strong>.</p>
 <blockquote>
 <div><img alt="../../_images/dw-new-account-name.png" src="../../_images/dw-new-account-name.png" />
 </div></blockquote>
 </li>
-<li><p>Select the identity you want to create the new account from. All available identities are listed in the right pane.</p>
+<li><p class="sd-card-text">Select the identity you want to create the new account from. All available identities are listed in the right pane.</p>
 <blockquote>
 <div><img alt="../../_images/dw-new-account-identity.png" src="../../_images/dw-new-account-identity.png" />
 </div></blockquote>
 </li>
-<li><p>Select whether you want to reveal any attributes on the account or not. The available attributes depend on the identity provider.</p>
+<li><p class="sd-card-text">Select whether you want to reveal any attributes on the account or not. The available attributes depend on the identity provider.</p>
 <blockquote>
 <div><img alt="../../_images/dw-new-account-attributes.png" src="../../_images/dw-new-account-attributes.png" />
 </div></blockquote>
@@ -1548,100 +1552,124 @@ to the chain. When you already have an identity, you can create more <a class="r
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you select <strong>Reveal attributes</strong>, the selected attributes will be public on the blockchain. Concordium recommends that you do not reveal any attributes.</p>
+<p class="sd-card-text">If you select <strong>Reveal attributes</strong>, the selected attributes will be public on the blockchain. Concordium recommends that you do not reveal any attributes.</p>
 </div>
 <ol class="arabic" start="6">
-<li><p>Select <strong>Submit without revealing attributes</strong>.</p></li>
-<li><p>Connect your Ledger hardware wallet if you haven’t done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The Ledger says <strong>Concordium is ready</strong>.</p></li>
-<li><p>Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
-<li><p>You now have to confirm the following on the Ledger:</p>
+<li><p class="sd-card-text">Select <strong>Submit without revealing attributes</strong>.</p></li>
+<li><p class="sd-card-text">Connect your Ledger hardware wallet if you haven’t done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The Ledger says <strong>Concordium is ready</strong>.</p></li>
+<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">You now have to confirm the following on the Ledger:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Create credential (each credential is assigned a number): Press the right button and then both buttons to confirm <strong>Accept</strong>.</p></li>
-<li><p>Public key: Press both buttons to accept.</p></li>
+<li><p class="sd-card-text">Create credential (each credential is assigned a number): Press the right button and then both buttons to confirm <strong>Accept</strong>.</p></li>
+<li><p class="sd-card-text">Public key: Press both buttons to accept.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.</p></li>
-<li><p>Press both buttons to confirm, and then in the Desktop Wallet, select <strong>Continue</strong>.</p></li>
-<li><p>The Ledger says <strong>Review details</strong>. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.</p></li>
-<li><p>Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.</p></li>
-<li><p>Press the right button to verify that the anonymity revoker threshold on the Ledger corresponds to the threshold in the Desktop Wallet, and then press both buttons.</p></li>
-<li><p>The Ledger says <strong>Sign details</strong>. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.</p></li>
-<li><p>Select <strong>Finished</strong>. Your new account is now listed along with the other accounts you’re the custodian of.</p></li>
+<li><p class="sd-card-text">Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.</p></li>
+<li><p class="sd-card-text">Press both buttons to confirm, and then in the Desktop Wallet, select <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">The Ledger says <strong>Review details</strong>. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.</p></li>
+<li><p class="sd-card-text">Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.</p></li>
+<li><p class="sd-card-text">Press the right button to verify that the anonymity revoker threshold on the Ledger corresponds to the threshold in the Desktop Wallet, and then press both buttons.</p></li>
+<li><p class="sd-card-text">The Ledger says <strong>Sign details</strong>. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.</p></li>
+<li><p class="sd-card-text">Select <strong>Finished</strong>. Your new account is now listed along with the other accounts you’re the custodian of.</p></li>
 </ol>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the <strong>+</strong> in the upper right corner.</p></li>
-<li><p>Tap the identity you want to use to create the account.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Android<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the <strong>+</strong> in the upper right corner.</p></li>
+<li><p class="sd-card-text">Tap the identity you want to use to create the account.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/create-acct-select-id.png"><img alt="../../_images/create-acct-select-id.png" src="../../_images/create-acct-select-id.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Finally, tap <strong>Submit account</strong>.</p>
+<li><p class="sd-card-text">Finally, tap <strong>Submit account</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/create-acct-submit.png"><img alt="../../_images/create-acct-submit.png" src="../../_images/create-acct-submit.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.</p>
-<p>You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">Change account name</span></a>.</p>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>Go to the <strong>Accounts</strong> page.</p></li>
-<li><p>Tap the <strong>+</strong> in the upper right corner.</p>
+<p class="sd-card-text">Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.</p>
+<p class="sd-card-text">You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">Change account name</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
+<li><p class="sd-card-text">Tap the <strong>+</strong> in the upper right corner.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW13.png"><img alt="../../_images/MW13.png" src="../../_images/MW13.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Enter a name for your new account. Tap <strong>Next</strong>.</p>
+<li><p class="sd-card-text">Enter a name for your new account. Tap <strong>Next</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW15.png"><img alt="../../_images/MW15.png" src="../../_images/MW15.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Tap the identity you want to use to create the account.</p>
+<li><p class="sd-card-text">Tap the identity you want to use to create the account.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW16.png"><img alt="../../_images/MW16.png" src="../../_images/MW16.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, it is recommended not to reveal any attributes.</p>
+<li><p class="sd-card-text">You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, it is recommended not to reveal any attributes.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>If you want to reveal some attributes, tap <strong>Reveal account attributes</strong>, select the attributes you want to reveal, and then tap <strong>Submit account</strong>.</p></li>
-<li><p>If you don’t want to reveal any attributes, tap <strong>Submit account</strong>.</p></li>
+<li><p class="sd-card-text">If you want to reveal some attributes, tap <strong>Reveal account attributes</strong>, select the attributes you want to reveal, and then tap <strong>Submit account</strong>.</p></li>
+<li><p class="sd-card-text">If you don’t want to reveal any attributes, tap <strong>Submit account</strong>.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/MW17.png"><img alt="../../_images/MW17.png" src="../../_images/MW17.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Finally, tap <strong>Ok, thanks</strong>.</p>
+<li><p class="sd-card-text">Finally, tap <strong>Ok, thanks</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/MW19.png"><img alt="../../_images/MW19.png" src="../../_images/MW19.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
 </ol>
-<p>Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.</p>
-<p>You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">Change account name</span></a>.</p>
+<p class="sd-card-text">Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.</p>
+<p class="sd-card-text">You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">Change account name</span></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don’t have a backup from the Mobile Wallet, you can’t access your wallet and your CCDs are permanently inaccessible.</strong>
+<p class="sd-card-text"><strong>Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don’t have a backup from the Mobile Wallet, you can’t access your wallet and your CCDs are permanently inaccessible.</strong>
 <strong>Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.</strong>
 For more information, see <a class="reference internal" href="export-import.html#export-import"><span class="std std-ref">Make a backup of identities and accounts in Mobile Wallet</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To access the <strong>Balance</strong> of the new account, tap the Balance area on the account card or tap <img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" />.</p>
+<p class="sd-card-text">To access the <strong>Balance</strong> of the new account, tap the Balance area on the account card or tap <img alt="Button with More and double-headed arrow" src="../../_images/more-arrow.png" />.</p>
 </div>
-</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><ol class="arabic">
-<li><p>To switch to the accounts page, click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select Accounts. If you do not have any accounts, you can click <strong>Create account</strong> and skip to step 3. If you do not have any identity to create an account, you can click <strong>Create new identity</strong>. For information about the identity creation process, see <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">To switch to the accounts page, click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select Accounts. If you do not have any accounts, you can click <strong>Create account</strong> and skip to step 3. If you do not have any identity to create an account, you can click <strong>Create new identity</strong>. For information about the identity creation process, see <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/acct-page-no-acct.png"><img alt="../../_images/acct-page-no-acct.png" src="../../_images/acct-page-no-acct.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="../../_images/acct-page-no-id.png"><img alt="../../_images/acct-page-no-id.png" src="../../_images/acct-page-no-id.png" style="width: 25%;" /></a>
 </div></blockquote>
 </li>
-<li><p>Click the Accounts drop-down. Then click <strong>Add new</strong>.</p></li>
-<li><p>Select the identity to use to create the account. Click <strong>Create new account</strong>.</p></li>
+<li><p class="sd-card-text">Click the Accounts drop-down. Then click <strong>Add new</strong>.</p></li>
+<li><p class="sd-card-text">Select the identity to use to create the account. Click <strong>Create new account</strong>.</p></li>
 </ol>
-</div></div>
 </div>
+</details></div>
 
 
               </div>
