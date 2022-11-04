@@ -5,34 +5,32 @@
 Change baker options
 ====================
 
-The following tabs describe how to access baker settings.
+The following information describes how to access baker settings.
 
-.. tabs::
+.. dropdown:: |mw-gen2|
 
-    .. tab:: |mw-gen2|
+    #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
 
-        #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
+    #. In the Baker status screen tap **Update baker settings**.
 
-        #. In the Baker status screen tap **Update baker settings**.
-
-        .. |earn| image:: ../images/earn.png
+    .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
              :width: 50px
 
-        .. |earn-w-text| image:: ../images/earn-w-text.png
+    .. |earn-w-text| image:: ../images/earn-w-text.png
              :alt: Hand receiving money with text earn
              :width: 50px
 
-    .. tab:: |mw-gen1|
+.. dropdown:: |mw-gen1|
 
-        #. Go to **Accounts**. Tap on the balance area of the baker account you want update or tap **More** |moredetails|.
+    #. Go to **Accounts**. Tap on the balance area of the baker account you want update or tap **More** |moredetails|.
 
-        #. In the hamburger menu |hamburger| tap **Baking**.
+    #. In the hamburger menu |hamburger| tap **Baking**.
 
-        #. In the Baker status screen tap **Update baker settings**.
+    #. In the Baker status screen tap **Update baker settings**.
 
-            .. image:: ../images/mobile-wallet/baker-status-mw.png
-                :width: 25%
+        .. image:: ../images/mobile-wallet/baker-status-mw.png
+            :width: 25%
 
 Once you have access baker settings for your wallet, you have four options:
 
