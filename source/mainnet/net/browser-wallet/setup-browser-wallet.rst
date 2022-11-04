@@ -189,12 +189,12 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 .. |brave-options| image:: ../images/browser-wallet/brave-options.png
                     :width: 20px
                     :alt: three horizontal lines
-   
+
 .. |opera-exts| image:: ../images/browser-wallet/opera-exts.png
                   :width: 20px
                   :alt: 3d cube
 
-.. |opera-actions| image:: ../images/browser-wallet/opera-actions.png
+.. |opera-options| image:: ../images/browser-wallet/opera-actions.png
                      :width: 20px
                      :alt: three vertical dots
 
