@@ -170,3 +170,95 @@ If an operations fails, it returns an error, which the instance can choose to
 handle, and the state and balance of the instance remain unchanged.
 The account which sent the initiating transaction pays for the execution of the
 entire receive function, including the cost of failed operations.
+
+.. _contract-instance-upgradeability:
+
+Upgradeability
+==============
+
+A V1 smart contract instance can choose to upgrade its module to a new V1 smart contract
+module using the **upgrade** host function.
+The host function takes a reference to a deployed smart contract module to use for
+the upgraded instance and can only be called from a receive function.
+The host function returns whether the upgrade succeeded, allowing the instance
+to decide the next step. If the upgrade is successful any new invocations of the
+upgraded instance uses the smart contract code in the new module.
+
+.. warning::
+
+   Upgrading a smart contract can be used to change the behavior completely,
+   therefore it is important to carefully restrict access to any endpoint
+   triggering a smart contract upgrade.
+
+.. graphviz::
+   :align: center
+   :caption: Example of a smart contract instance 'Car' upgrading to a new module.
+
+   digraph G {
+       rankdir="BT"
+
+       subgraph cluster_0 {
+           label = "My module v1";
+           labelloc=b;
+           node [fillcolor=white, shape=note]
+           escrow;
+       }
+
+       subgraph cluster_2 {
+           label = "My module v2";
+           labelloc=b;
+           node [fillcolor=white, shape=note]
+           escrow2;
+       }
+
+       subgraph cluster_1 {
+           label = "Instances";
+           style=dotted;
+           node [shape=box, style=rounded]
+           House;
+           Car;
+       }
+
+       escrow[label="Escrow"]
+       escrow2[label="Escrow"]
+
+       House:n -> escrow;
+       Car:n -> escrow [style=dashed, arrowhead=onormal];
+       Car:n -> escrow2 [style=bold];
+   }
+
+Failing to upgrade
+------------------
+
+A smart contract instance can fail to upgrade for one of the following reasons:
+
+- The new module does not exist.
+- The new module does not contain a smart contract with a name matching the instance being upgraded.
+- The new module is a smart contract module version 0.
+
+Immutability
+------------
+
+Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
+are immutable when they do not contain any code for triggering an upgrade.
+
+.. warning::
+
+   It is important to understand that immutable means the code of the smart contract cannot change.
+   It does not mean that the behavior of a smart contract cannot change, as the smart contract code
+   can include a switch in behavior or even invoke other mutable smart contracts.
+
+Migration
+---------
+
+Triggering a smart contract instance upgrade changes the smart contract module starting from the next
+invocation, meaning the execution will continue after the point of calling upgrade.
+Since any new invocation of this instance uses the new smart contract module, the instance
+can invoke itself and run code of the new module in the same transaction containing the upgrade.
+This is useful for triggering a migration function in the new smart contract module and reject the
+upgrade if the migration fails.
+
+.. seealso::
+
+   See :ref:`guide-upgradable-contract` for a guide about how to make a Rust smart contract
+   upgradeable.

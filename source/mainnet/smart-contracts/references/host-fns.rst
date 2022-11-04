@@ -373,6 +373,24 @@ Functions only accessible for smart contract receive functions.
 
    :rtype: i64
 
+.. function:: upgrade(module) -> i64
+
+   Upgrade to a new module. This will change the smart contract module used for
+   this smart contract instance.
+
+   :param i32 module: Pointer to 32 bytes for a module reference.
+   :return: ``0`` if successful
+
+            ``0x07_0000_0000`` if failed because of module did not exist.
+
+            ``0x08_0000_0000`` if failed because of module did not contain a smart contract with a name matching to one of this instance.
+
+            ``0x09_0000_0000`` if failed because of module being an unsupported smart contract version.
+
+            No other values are possible.
+
+   :rtype: i64
+
 .. function:: get_receive_invoker(start)
 
    Get the address of the account that initiated the top-level transaction
