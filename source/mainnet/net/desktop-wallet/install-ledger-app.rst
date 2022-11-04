@@ -50,7 +50,7 @@ To find out which firmware version the Ledger is running, do the following:
 
    - For **Nano S**, if it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
-   - For **Nano S Plus**, if it says **1.0.3**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+   - For **Nano S Plus**, if it says **1.0.4**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
 For details on how to update the Ledger firmware, see `Ledger Nano S guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_ or `Ledger Nano S Plus guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 

@@ -12,6 +12,19 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+October 25, 2022
+
+Concordium Node 4.5.0
+---------------------
+
+Concordium Node 4.5.0 contains the :ref:`updated gRPC API <grpc2-documentation>`
+which is easier to use than the previous version. It also contains bug fixes and
+performance and robustness improvements.
+
+- Node gRPC API v2 is released and enabled in all distributions.
+- The node is now able to recover after crashes which leave only treestate or only blockstate usable.
+- Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
+
 October 19, 2022
 
 |bw|

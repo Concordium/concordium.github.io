@@ -16,47 +16,96 @@
     *
     * Colors are defined in rgb string way, "red, green, blue"
     **/
-    --pst-color-link: 35, 92, 155;
-    --pst-color-link-hover: 35, 92, 155;
+    --pst-color-link: #235c9b;
+    --pst-color-link-hover: #235c9b;
+    --pst-color-sidebar-link-hover: #235c9b;
+    --pst-color-toc-link-hover: #235c9b;
+    --pst-color-toc-link-active: #235c9b;
     --pst-color-headerlink: 35, 92, 155;
     --pst-color-headerlink-hover: 255, 255, 255;
     --pst-color-inline-code: 178, 34, 34;
-  }
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #000000;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+    [data-theme="dark"] {
+        --primary-color: #9A97F3;
+        --secondary-color: #818cab;
+        --font-color: #fff;
+        --bg-color: #000000;
+        --heading-color: #818cab;
+}
 
 body{
-    font-family: Nb-akademie-std,sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    background-color: var(--bg-color);
+    color: var(--font-color);
   }
 
+p{
+    line-height: 30px;
+    color: var(--font-color);
+}
+
 h1{
-    font-family: Nb-akademie-std, sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
 }
 
 h2{
-    font-family: Nb-akademie-std, sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
 }
 
 h3{
-    font-family: Nb-akademie-std, sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
 }
 
 h4{
-    font-family: Nb-akademie-std, sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
 }
 
 h5{
-    font-family: Nb-akademie-std, sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
 }
 
 h6{
-    font-family: Nb-akademie-std, sans-serif;
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
 }
 
 a.reference.external{
-    color: #235c9b
+    color: var(--pst-color-link);
 }
 
 a.reference.internal{
-    color: #235c9b
+    color: var(--pst-color-link);
+}
+
+a.reference.internal:hover{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal:active{
+    color: var(--pst-color-link);
+}
+
+a.left-prev{
+    color: var(--pst-color-link);    
+}
+
+a.right-next{
+    color: var(--pst-color-link);    
+}
+
+a.current.reference.internal:hover{
+    color: var(--pst-color-link);      
 }
 
 .navbar{
@@ -111,10 +160,6 @@ a.reference.internal{
     background-color: #EFEFEF;
 }
 
-i.fa-twitter-square:before {
-    color: #55acee;
-}
-
 .discourse {
     background: white;
     color: black;
@@ -123,6 +168,14 @@ i.fa-twitter-square:before {
 i.fab fa-github-square:before {
     background: black;
     color: white;
+}
+
+.admonition.warning{
+    background: #FEF9E8;
+}
+
+.admonition.note{
+    background: #ebf2ff;
 }
 
 .consent {

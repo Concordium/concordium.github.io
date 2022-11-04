@@ -18,118 +18,114 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
-.. tabs::
+.. dropdown:: Desktop Wallet
 
-    .. tab:: Desktop Wallet
+        .. dropdown:: Single signature account
 
-        .. tabs::
+            #. Go to **Accounts** and select the account on which you want to delegate funds.
 
-            .. tab:: Single signature account
+            #. Click **More options** then select **Register as a delegator**.
 
-                #. Go to **Accounts** and select the account on which you want to delegate funds.
+                .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
 
-                #. Click **More options** then select **Register as a delegator**.
+            #. Select your target (a baker pool or passive delegation). Click **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
+               .. image:: ../images/desktop-wallet/dw-delegation-target.png
 
-                #. Select your target (a baker pool or passive delegation). Click **Continue**.
+            #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-delegation-target.png
+                .. image:: ../images/desktop-wallet/dw-delegation-stake.png
 
-                #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+            #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
 
-                    .. image:: ../images/desktop-wallet/dw-delegation-stake.png
+            #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
-                #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+            #. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
-                #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+            #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
 
-                #. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+            #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
-                #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+        .. dropdown:: Multi signature account
 
-                #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
+            #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Delegate to a pool**.
 
-            .. tab:: Multi signature account
+            #. Select the account on which you want to delegate funds.
 
-                #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Delegate to a pool**.
+            #. Enter the new amount that you want to stake and select **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                #. Select the account on which you want to delegate funds.
+            #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
-                #. Enter the new amount that you want to stake and select **Continue**. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+            **Generate the transaction**
 
-                #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
+            There are two ways that you can generate the transaction:
 
-                **Generate the transaction**
+            -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.
 
-                There are two ways that you can generate the transaction:
+            -  Generate and sign the transaction This option requires a Ledger and an internet connection.
 
-                -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.
+            In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
 
-                -  Generate and sign the transaction This option requires a Ledger and an internet connection.
+            **Generate the transaction without signing**
 
-                In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
+            #. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-                **Generate the transaction without signing**
+            #. Select **Generate without signing**. You can now export the proposal.
 
-                #. Verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**.
+            **Generate and sign the transaction on the Ledger**
 
-                #. Select **Generate without signing**. You can now export the proposal.
+            #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-                **Generate and sign the transaction on the Ledger**
+            #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying Ledger device is ready.
 
-                #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+            #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-                #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying Ledger device is ready.
+            #. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
-                #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
+            #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
 
-                #. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+            .. Note::
+                If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
 
-                #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
+            In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-delegation>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
-                .. Note::
-                    If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
+            **Export proposal**
 
-                In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-delegation>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
+            If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
 
-                **Export proposal**
+            #. In the Desktop Wallet, select **Export transaction proposal**.
 
-                If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.
+            #. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**.
 
-                #. In the Desktop Wallet, select **Export transaction proposal**.
+            #. You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.
 
-                #. Navigate to the location on your computer where you want to save the file. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**.
+            **Receive signatures from co-signers**
 
-                #. You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.
+            When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
 
-                **Receive signatures from co-signers**
+            #. If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to **Multi-signature Transactions**, and then select Your proposed transactions.
 
-                When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.
+            #. Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.
 
-                #. If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to **Multi-signature Transactions**, and then select Your proposed transactions.
+            #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
 
-                #. Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.
+            .. _submit-delegation:
 
-                #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
+            **Submit the transaction to the blockchain**
 
-                .. _submit-delegation:
+            When you have received and added all the required signatures, you can submit the transaction to the blockchain.
 
-                **Submit the transaction to the blockchain**
+            #. Review the transaction details carefully to ensure that all information is correct.
 
-                When you have received and added all the required signatures, you can submit the transaction to the blockchain.
+            #. Select **I understand this is the final submission and that it cannot be reverted**.
 
-                #. Review the transaction details carefully to ensure that all information is correct.
+                If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-                #. Select **I understand this is the final submission and that it cannot be reverted**.
+            #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
 
-                    If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
+            #. Select **Finish** to leave the page.
 
-                #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
-
-                #. Select **Finish** to leave the page.
-
-    .. tab:: |mw-gen2|
+.. dropdown:: |mw-gen2|
 
         #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
 
@@ -169,7 +165,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
              :alt: Hand receiving money with text earn
              :width: 50px
 
-    .. tab:: |mw-gen1|
+.. dropdown:: |mw-gen1|
 
         #. Go to the **Accounts** screen.
 

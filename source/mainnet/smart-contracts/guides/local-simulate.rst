@@ -25,6 +25,8 @@ You will also need a smart contract module in Wasm to simulate.
 
    Write the rest, when the schema stuff is in place.
 
+.. _simulating-instantiation:
+
 Simulating instantiation
 ========================
 
@@ -76,7 +78,7 @@ An example of a fully specified init context could be:
 Simulating updates
 ==================
 
-To simulate an update to a contract smart contract instance using
+To simulate an update to a smart contract instance using
 ``cargo-concordium``, run:
 
 .. code-block:: console
@@ -93,6 +95,12 @@ To simulate an update to a contract smart contract instance using
 
    If using :ref:`contract schemas<build-schema>`, it is possible to pass
    the parameter as JSON instead of binary by using the ``--parameter-json`` flag.
+
+.. note::
+
+   The simulation of the ``init`` function in the :ref:`previous
+   paragraph<simulating-instantiation>` produced an output ``state.bin`` file.
+   This ``state.bin`` file can be used as the input ``state-in.bin`` file in this paragraph.
 
 ``receive-context.json`` (used with the ``--context`` parameter) is a file that
 contains context information such as the current state of the chain, the
