@@ -318,9 +318,9 @@ which can then be accessed as:
 .. note::
 
    When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
-   CCD equivalent to the max energy cost is then deposited during execution of the contract.
+   CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
    Because of this, querying the balance of the invoker will result in the current account balance minus the
-   amount of CCD needed to cover the max energy cost.
+   amount of CCD reserved to cover the max energy cost.
 
 Query a contract balance
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -337,7 +337,7 @@ is reflected in the balance.
 
 .. note::
 
-   Although it is valid for a contract to query its own balance, it cheaper to use ``host.self_balance()``.
+   Although it is valid for a contract to query its own balance, it is cheaper to use ``host.self_balance()``.
 
 Query exchange rates
 ~~~~~~~~~~~~~~~~~~~~
