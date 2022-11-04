@@ -108,11 +108,6 @@ a.current.reference.internal:hover{
     color: var(--pst-color-link);      
 }
 
-.bd-content {
-    flex-grow: 1;
-    max-width: 100%;
-  }
-
 .navbar{
     position: fixed;
     min-height: var(--pst-header-height);
