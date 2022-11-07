@@ -49,7 +49,8 @@ how this type is represented as bytes and how to represent it.
 
 For example, the `Cis2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
 implements the ``SchemaType`` trait manually for a few types that can not derive their ``SchemaType`` from base types.
-We explore the manual ``SchemaType`` trait implementation of the ``Cis2Event<T, A>`` as an example here:
+The example below explores the manual ``SchemaType`` trait implementation of the
+``Cis2Event<T, A>``:
 
 .. _build-event-schema:
 
