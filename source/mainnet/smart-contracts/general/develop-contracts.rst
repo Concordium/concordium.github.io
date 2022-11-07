@@ -288,30 +288,79 @@ Parameters have a size limit of 65kiB. There is no return value size limit (apar
 Working with queries
 --------------------
 
-Queries can be called from smart contracts to query an account balance, contract balance, or the current exchange rates.
+Queries can be called from smart contracts to query an account balance, contract balance,
+or the current exchange rates.
+
+Query an account balance
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To query account balances, the following are available:
 
 .. code-block:: rust
 
-    let account_balance = host.account_balance(address)?;
-    let available_balance = account_balance.available(); // The amount which can be transferred.
-    let staked_balance = account_balance.staked(); // The staked amount.
-    let locked_balance = account_balance.locked(); // The amount locked in scheduled transfers.
+   // Query the balance of an account.
+   let account_balance = host.account_balance(account_address)?;
 
-To query contract balance, the following is available:
+Assuming the account exists, this returns the public/unshielded balance of an account.
+Any amount received during the transaction until the point of querying is reflected in the balance.
+
+.. note::
+
+   When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
+   CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
+   Because of this, querying the balance of the invoker will result in the current account balance minus the
+   amount of CCD reserved to cover the max energy cost as well as the amount included in the transaction.
+
+Some part of the balance might be used for staking or/and is locked in releases by scheduled transfers.
+Which makes the amount unavailable for transferring.
+All of this information can be accessed as:
+
+.. code-block:: rust
+
+   // The amount which is available for transfers.
+   let available_balance = account_balance.available();
+   // The staked amount.
+   let staked_balance = account_balance.staked();
+   // The amount locked in scheduled transfers.
+   let locked_balance = account_balance.locked();
+   // The total public balance, i.e. including staked and locked_balance.
+   let total_balance = account_balance.total();
+
+Query a contract balance
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To query the current balance of a contract, the following is available:
 
 .. code-block:: rust
 
     let contract_balance = host.contract_balance(address)?;
 
-And to query exchange rates, the following are available:
+Assuming the contract exists, this returns the current amount held by the contract.
+Any amount transferred or received during the same transaction until the point of querying
+is reflected in the balance.
+
+.. note::
+
+   Although it is valid for a contract to query its own balance, it is cheaper to use ``host.self_balance()``.
+
+Query exchange rates
+~~~~~~~~~~~~~~~~~~~~
+
+To query exchange rates, the following are available:
 
 .. code-block:: rust
 
     let exchange_rates = host.exchange_rates();
-    let amount_per_euro = exchange_rates.amount_per_euro();
+
+The result contains the exchange rates currently used by the chain.
+These are the micro CCD per Euro rate and the Euro per NRG rate.
+
+.. code-block:: rust
+
+    let micro_ccd_per_euro = exchange_rates.micro_ccd_per_euro();
     let euro_per_energy = exchange_rates.euro_per_energy();
+
+Each rate is a ratio of two 64-bit unsigned integers.
 
 Building a smart contract module with ``cargo-concordium``
 ==========================================================
