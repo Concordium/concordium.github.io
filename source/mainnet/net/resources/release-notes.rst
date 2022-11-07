@@ -14,10 +14,10 @@ Sirius Testnet
 
 November 10, 2022
 
-Concordium Node 5.0.1
+Concordium Node 5.0.5
 ---------------------
 
-Concordium Node 5.0.1 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 17, 2022. This adds the following features:
+Concordium Node 5.0.5 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 17, 2022. This adds the following features:
 
    - Support for smart contract upgradability
    - Query the current exchange rates, account balances, and contract balances from a smart contract.
@@ -33,10 +33,10 @@ Additionally, the node update contains:
 - More efficient indexing of accounts with scheduled releases.
 - Fixed an issue where the catch-up downloader would fail at a protocol update.support for smart contract upgradability.
 
-Cargo concordium 2.3.0
+Cargo concordium 2.4.0
 ----------------------
 
-Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release November 17, 2022. This includes the following new features:
+Cargo concordium 2.4.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 17, 2022. This includes the following new features:
 
 - Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
 - Support for relaxed smart contract resource restrictions in cargo concordium run.
@@ -45,7 +45,7 @@ Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <ht
 Concordium Client 5.0.0
 -----------------------
 
-Concordium Client 5.0.0 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release November 17, 2022.
+Concordium Client 5.0.0 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 17, 2022.
 It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
 
 October 19, 2022
