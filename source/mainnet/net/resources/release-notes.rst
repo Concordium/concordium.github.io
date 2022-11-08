@@ -36,7 +36,7 @@ Additionally, the node update contains:
 Cargo concordium 2.4.0
 ----------------------
 
-Cargo concordium 2.4.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 17, 2022. This includes the following new features:
+Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 17, 2022. This includes the following new features:
 
 - Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
 - Support for relaxed smart contract resource restrictions in cargo concordium run.
