@@ -105,11 +105,11 @@ Prerequisites
 
     #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
 
-        - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
+        - If the shielded balance is hidden for the account, tap |acct-settings| and select **Show shielded balance**.
 
     #. Tap the **Shielded balance** tab of the totals area.
 
-    #. Tap **SEND**.
+    #. Tap |send-shielded|.
 
     #. Enter the amount you want to transfer.
 
@@ -137,6 +137,14 @@ Prerequisites
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
         :width: 50px
+
+    .. |acct-settings| image:: ..images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px
+
+    .. |send-shielded| image:: ..images/send-shielded.png
+                    :alt: shield with paper airplane on blue background
+                    :width: 50px
 
 .. dropdown:: |mw-gen1|
 

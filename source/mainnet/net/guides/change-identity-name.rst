@@ -7,13 +7,25 @@
 Change identity name
 ====================
 
-#. Go to the |morepage| page.
+.. dropdown:: |mw-gen2|
 
-#. Tap **Your identity cards** page. Tap the identity you want to edit.
+    #. Tap |wallet-settings|. Select **Your identity cards**. 
 
-#. On the identity card tap |edit| next to the identity name.
+    #. Tap the identity you want to edit.
 
-#. Change the name and tap **Save**.
+    #. On the identity card tap |edit| next to the identity name.
+
+    #. Change the name and tap **Save**.
+
+.. dropdown:: |mw-gen1|
+
+    #. Go to the |morepage| page.
+
+    #. Tap **Your identity cards** page. Tap the identity you want to edit.
+
+    #. On the identity card tap |edit| next to the identity name.
+
+    #. Change the name and tap **Save**.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
@@ -24,3 +36,6 @@ Change identity name
 .. |morepage| image:: ../images/more-ellipsis.png
                     :alt: Three dots button
                     :width: 40px
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px

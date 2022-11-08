@@ -15,7 +15,7 @@ By inspecting the release schedule, you can see when the releases are unlocked.
 
       #. Tap the balance area of the account that received the transaction with a release schedule or tap |more-acct|.
 
-      #. Tap the |hamburger| menu in the upper right corner.
+      #. Tap |acct-settings|.
 
       #. Tap **Release Schedule**.
 
@@ -57,3 +57,6 @@ By inspecting the release schedule, you can see when the releases are unlocked.
 .. |more-acct| image:: ../images/more-acct.png
              :alt: Button with double-headed arrow
              :width: 50px
+.. |acct-settings| image:: ..images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px

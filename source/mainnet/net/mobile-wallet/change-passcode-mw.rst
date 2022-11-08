@@ -12,7 +12,7 @@ If you want to change your passcode or enable/disable your biometrics, you can d
 
 .. dropdown:: |mw-gen2|
 
-   #. Go to the |morepage| page.
+   #. Tap |wallet-settings|.
 
    #. Select **Update Passcode & Biometrics**.
 
@@ -47,3 +47,7 @@ If you want to change your passcode or enable/disable your biometrics, you can d
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
              :width: 40px
+
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px

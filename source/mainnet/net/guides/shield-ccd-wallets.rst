@@ -85,11 +85,11 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         #. Tap the **Balance** area of the account you want to transfer CCD from or tap |more-acct|.
 
-           - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+           - If the **Shield** button and **Shielded balanace** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
         #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
 
-        #. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
+        #. Tap |shield-mw|. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
 
         #. Enter the amount you want to move to the shielded balance.
 
@@ -121,11 +121,11 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         #. If the Shielded balance is already shown, tap the Shielded balance tab.
 
-            - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+            - If the **Unshield** button and **Shielded balance** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
         #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
-        #. Tap **UNSHIELD**.
+        #. Tap |unshield-mw|.
 
         #. Enter the amount you want to move to the regular balance.
 
@@ -157,6 +157,17 @@ If you have an account with CCD in the shielded balance, you can't add new crede
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
         :width: 50px
+
+    .. |acct-settings| image:: ..images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px
+
+    .. |unshield-mw| image:: ..images/unshield-mw.png
+                    :alt: dissolving shield on blue background
+                    :width: 50px
+    .. |shield-mw| image:: ..images/shield-mw.png
+                    :alt: shield on blue background
+                    :width: 50px
 
 .. dropdown:: |mw-gen1|
 

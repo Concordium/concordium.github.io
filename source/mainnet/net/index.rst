@@ -27,6 +27,8 @@ index
    guides/shielded-transfer
    guides/export-import
    guides/recover-wallet
+   guides/export-key
+   guides/address-book
    mobile-wallet-gen2/index
    mobile-wallet/index
    desktop-wallet/index
