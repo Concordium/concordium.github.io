@@ -28,12 +28,9 @@ Concordium Node 5.0.5 contains support for `protocol version 5 <https://github.c
    - A new representation of accounts that is better optimised for common operations.
    - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
 
-Additionally, the node update contains:
+Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.
 
-- More efficient indexing of accounts with scheduled releases.
-- Fixed an issue where the catch-up downloader would fail at a protocol update.support for smart contract upgradability.
-
-Cargo concordium 2.4.0
+Cargo concordium 2.3.0
 ----------------------
 
 Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 17, 2022. This includes the following new features:
