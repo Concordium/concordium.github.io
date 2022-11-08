@@ -40,7 +40,7 @@ Cargo concordium 2.3.0 contains support for the upcoming `protocol version 5 <ht
 
 - Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
 - Support for relaxed smart contract resource restrictions in ``cargo concordium run``.
-- cargo concordium build now checks contracts with respect to protocol version 5 semantics.
+- ``cargo concordium build`` now checks contracts with respect to protocol version 5 semantics.
 
 Concordium Client 5.0.0
 -----------------------
