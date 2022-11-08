@@ -93,6 +93,10 @@ The following table lists the major features of each wallet.
       - |mw-gen1|
       - |mw-gen2|
       - |bw|
+   *  - Runs on MacOS, Windows, Linux
+      - Runs on iOS 13 or later, Android 8 or later
+      - Runs on Android 8 or later
+      - Runs on Chrome, Brave, Opera, Edge
    *  - Secured by password and a Ledger device
       - Secured by password and biometrics
       - Secured by password and biometrics
