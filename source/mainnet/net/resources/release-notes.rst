@@ -22,7 +22,7 @@ Concordium Node 5.0.5 contains support for `protocol version 5 <https://github.c
    - Support for smart contract upgradability
    - Query the current exchange rates, account balances, and contract balances from a smart contract.
    - Relax restrictions on smart contracts, including:
-      - Parameter size limit: 1kiB -> 65kiB
+      - Parameter size limit: 1kiB -> 65535B
       - Return value size limit: 16kiB -> no limit (apart from energy)
       - Number of logs per invocation: 64 -> no limit (apart from energy)
    - A new representation of accounts that is better optimised for common operations.
