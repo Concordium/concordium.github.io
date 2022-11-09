@@ -28,16 +28,32 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
 
 .. dropdown:: |mw-gen2|
 
-   To connect:
+   |mw-gen2| uses Wallet Connect to connect to dApps.
 
-   #. Tap the scan QR code button in the Accounts overview |scan-qr-overview| or Transactions overview |scan-qr-acct|. If you scan the QR code button in the Accounts overview, tap the account that you want to use to pay for services.
+   To connect your |mw-gen2| to a dApp:
+
+   #. Tap the scan QR code button in the Accounts overview |scan-qr-overview| or Transactions overview |scan-qr-acct|. If you tap the scan the QR code button |scan-qr-overview| in the Accounts overview, tap the account that you want to use to pay for services.
+
+      .. image:: ../images/mobile-wallet-gen2/dapp-select-acct.png
+            :alt: white screen with text boxes for each account
+            :width: 50%
+   
    #. Scan the QR code provided by the dApp. If you are accessing the dApp on your phone, click on the link provided in the dApp.
    #. Provide your |mw-gen2| passcode or biometrics when prompted.
    #. When prompted, you can tap **Connect** to continue using your account with the dApp or **Decline** if you do not want to use the account with the dApp.
 
-   When you you make a purchase in a dApp, you must confirm the purchase in the |mw-gen2|. On the approve transaction screen review the transaction details. Tap **Submit** if you approve the transaction or **Reject** if you do not approve.
+      .. image:: ../images/mobile-wallet-gen2/dapp-connect.png
+         :width: 50%
+
+   When you you make a purchase in a dApp, you must confirm the purchase in the |mw-gen2|. On the approve transaction screen review the transaction details. Tap **Submit** if you approve the transaction or **Reject** if you do not approve. If you submit the transaction, tap **Okay** to return to the connection screen.
+
+   .. image:: ../images/mobile-wallet-gen2/dapp-transaction.png
+         :width: 50%   
 
    To disconnect when you have completed your transactions, tap **Disconnect** in the service screen to disconnect your |mw-gen2| from the dApp. When prompted to confirm, tap **Disconnect** to end the connection or **Stay** if you want to stay connected to the service.
+
+   .. image:: ../images/mobile-wallet-gen2/dapp-disconnect.png
+         :width: 50%
 
    .. Note::
 

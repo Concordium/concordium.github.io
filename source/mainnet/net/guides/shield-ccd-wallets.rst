@@ -87,13 +87,16 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
            - If the **Shield** button and **Shielded balanace** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
-        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and,  **Shield** |shield-mw| and **Unshield** |unshield-mw| buttons.
+
+            .. image:: ../images/mobile-wallet-gen2/shield.png
+                :width: 50%
 
         #. Tap |shield-mw|. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
 
         #. Enter the amount you want to move to the shielded balance.
 
-         .. image:: ../images/mobile-wallet/MW33.png
+            .. image:: ../images/mobile-wallet/MW33.png
                :width: 25%
 
         #. Confirm your choices and tap **Shield amount**.
@@ -111,7 +114,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         .. Note::
 
-            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap |acct-settings| and tap **Hide shielded balance**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account; it is just not shown in the interface.
 
     .. dropdown:: Unshield CCD
 
@@ -152,7 +155,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         .. Note::
 
-            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap |acct-settings| and tap **Hide shielded balance**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account; it is just not shown in the interface.
 
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
