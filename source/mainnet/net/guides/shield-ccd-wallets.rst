@@ -158,14 +158,14 @@ If you have an account with CCD in the shielded balance, you can't add new crede
         :alt: Button with double-headed arrow
         :width: 50px
 
-    .. |acct-settings| image:: ..images/acct-settings.png
+    .. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
                     :width: 50px
 
-    .. |unshield-mw| image:: ..images/unshield-mw.png
+    .. |unshield-mw| image:: ../images/unshield-mw.png
                     :alt: dissolving shield on blue background
                     :width: 50px
-    .. |shield-mw| image:: ..images/shield-mw.png
+    .. |shield-mw| image:: ../images/shield-mw.png
                     :alt: shield on blue background
                     :width: 50px
 

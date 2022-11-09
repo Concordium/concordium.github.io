@@ -138,11 +138,11 @@ Prerequisites
         :alt: Button with double-headed arrow
         :width: 50px
 
-    .. |acct-settings| image:: ..images/acct-settings.png
+    .. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
                     :width: 50px
 
-    .. |send-shielded| image:: ..images/send-shielded.png
+    .. |send-shielded| image:: ../images/send-shielded.png
                     :alt: shield with paper airplane on blue background
                     :width: 50px
 

@@ -5,6 +5,12 @@
 Manage address book
 ===================
 
+The address book helps you select a recipient quickly for transactions.
+
+.. Note::
+
+   The |bw| does not have an address book.
+
 .. dropdown:: |mw-gen2|
 
    #. Tap |wallet-settings|.
@@ -14,7 +20,7 @@ Manage address book
       .. image:: ../images/mobile-wallet-gen2/more-options.jpg
          :width: 25%
 
-   #. You can search in the address book or scan the QR code of another account. 
+   #. You can search in the address book or scan the QR code of another account.
 
     To add a new recipient
 
@@ -33,6 +39,9 @@ Manage address book
       .. image:: ../images/mobile-wallet/MW58.png
          :width: 25%
 
+.. dropdown:: Desktop Wallet
+
+   For information about the address book in the Desktop Wallet, see :ref:`Use the Desktop Wallet<dw-address-book>`.
 
 .. |wallet-settings| image:: ../images/settings.png
                         :alt: gear wheel

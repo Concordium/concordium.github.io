@@ -20,19 +20,24 @@ index
    :caption: Concordium Wallets
 
    guides/deciding-wallet
+   guides/wallet-faqs
+   browser-wallet/setup-browser-wallet
+   mobile-wallet-gen2/setup-mobile-wallet
+   mobile-wallet/setup-mobile-wallet
    guides/create-identity
    guides/create-account
    guides/send-ccd-wallets
+   browser-wallet/connect-app
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
-   guides/recover-wallet
    guides/export-key
+   guides/recover-wallet
+   mobile-wallet/share-address-mw
+   mobile-wallet/change-passcode-mw
+   mobile-wallet/inspect-release-schedule-mw
    guides/address-book
-   mobile-wallet-gen2/index
-   mobile-wallet/index
    desktop-wallet/index
-   browser-wallet/index
 
 .. toctree::
    :includehidden:

@@ -5,7 +5,7 @@
 Update your passcode and biometric settings
 ===========================================
 
-If you want to change your passcode or enable/disable your biometrics, you can do so from the **More** page.
+If you want to change your passcode or enable/disable your biometrics (on a mobile device), you can do so from the **More** page.
 
 .. Note::
    You can't change your passcode, password, or biometrics if you have pending identities or accounts in your wallet.
@@ -27,7 +27,15 @@ If you want to change your passcode or enable/disable your biometrics, you can d
 
    #. Choose whether or not to enable biometrics.
 
-  .. dropdown:: |mw-gen1|
+.. dropdown:: |bw|
+
+   #. Click |hamburger-bw| and select **Wallet Settings**.
+
+   #. Click **Change passcode**.
+
+   #. Enter and confirm your new passcode.
+
+.. dropdown:: |mw-gen1|
 
    #. Go to the |morepage| page.
 
@@ -51,3 +59,7 @@ If you want to change your passcode or enable/disable your biometrics, you can d
 .. |wallet-settings| image:: ../images/settings.png
                         :alt: gear wheel
                         :width: 40px
+
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines

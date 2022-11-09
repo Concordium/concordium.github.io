@@ -57,6 +57,6 @@ By inspecting the release schedule, you can see when the releases are unlocked.
 .. |more-acct| image:: ../images/more-acct.png
              :alt: Button with double-headed arrow
              :width: 50px
-.. |acct-settings| image:: ..images/acct-settings.png
+.. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
                     :width: 50px

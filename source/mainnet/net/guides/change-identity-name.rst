@@ -9,7 +9,7 @@ Change identity name
 
 .. dropdown:: |mw-gen2|
 
-    #. Tap |wallet-settings|. Select **Your identity cards**. 
+    #. Tap |wallet-settings|. Select **Your identity cards**.
 
     #. Tap the identity you want to edit.
 

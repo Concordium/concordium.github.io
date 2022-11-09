@@ -40,6 +40,6 @@ Change account name
 .. |morepage| image:: ../images/more-ellipsis.png
                     :alt: Three dots button
                     :width: 40px
-.. |acct-settings| image:: ..images/acct-settings.png
+.. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
                     :width: 50px
