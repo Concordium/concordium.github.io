@@ -45,7 +45,7 @@ For most other cases, it can also be derived automatically, using
 
 Implementing the ``SchemaType`` trait manually only requires specifying one
 function (``get_type()``), which is a getter for a ``schema::Type``, which essentially describes
-how this type is represented as bytes and how to represent it.
+how this type is represented as bytes and how to represent it as JSON.
 
 For example, the `Cis2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
 implements the ``SchemaType`` trait manually for a few types that can not derive their ``SchemaType`` from base types.
@@ -84,7 +84,9 @@ The example below explores the manual ``SchemaType`` trait implementation of the
    The first byte of the event data logged includes
    a tag to distinguish the different events on-chain. For example, the TRANSFER_EVENT_TAG is 255 (u8::MAX)
    which is the key used in the above ``BTreeMap`` to store the ``Transfer`` event schema. The value of the ``Transfer`` event
-   in the above ``BTreeMap`` is a tuple consisting of a ``String`` (named ``Transfer``) and named Fields (``token_id``, ``amount``, ``from``, and ``to``).
+   in the above ``BTreeMap`` is a tuple consisting of a ``String`` (named ``Transfer``) and named ``Fields`` (``token_id``, ``amount``, ``from``, and ``to``).
+   Off-chain tools use this tuple to represent the ``Transfer`` event in a more human-readable manner. In detail, the
+   ``String`` is used as the key in the JSON representation, and the ``Fields`` are used as the values in the JSON representation by off-chain tools.
 
 Including schemas for init
 --------------------------
@@ -99,12 +101,15 @@ optional ``parameter``, ``error``, and ``event`` attributes for the
    #[derive(Serial, Reject, SchemaType)]
    enum InitError { ... }
 
-   #[init(contract = "my_contract", parameter = "InitParameter", error = "InitError", event = "Event")]
+   #[derive(SchemaType)]
+   enum InitEvent { ... }
+
+   #[init(contract = "my_contract", parameter = "InitParameter",
+   error = "InitError", event = "InitEvent")]
    fn contract_init<...>(...) -> <..., InitError> { ... }
 
 .. note ::
 
-   The event schema cannot be derived and has to be implemented manually as shown :ref:`in this example <build-event-schema>`.
    The event schema attached to the ``init`` function is globally available. Any event logged by ``init`` or ``receive`` functions
    is represented by off-chain tools using this event schema.
 
@@ -131,7 +136,7 @@ functions, set the optional ``parameter``, ``return_value``, and ``error`` attri
    fn contract_receive_just_return<...> (...) -> ReceiveResult<Vec<u64>> { ... }
 
    #[receive(contract = "my_contract", name = "just_error", error = "ReceiveError")]
-   fn contract_receive_just_erro<...> (...) -> Result<Vec<u64>, ReceiveError> { ... }
+   fn contract_receive_just_error<...> (...) -> Result<Vec<u64>, ReceiveError> { ... }
 
    #[receive(
        contract = "my_contract",
