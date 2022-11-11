@@ -14,10 +14,10 @@ Sirius Testnet
 
 November 15, 2022
 
-Concordium Node 5.0.5
+Concordium Node 5.0.6
 ---------------------
 
-Concordium Node 5.0.5 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 17, 2022. This adds the following features:
+Concordium Node 5.0.6 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 22, 2022. This adds the following features:
 
    - Support for smart contract upgradability
    - Query the current exchange rates, account balances, and contract balances from a smart contract.
