@@ -33,9 +33,9 @@ During Wasm installation in your system you should see something similar to belo
 .. image:: images/mint-wasm-install.png
     :width: 100%
 
-Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the correct version of cargo-concordium for your operating system. The tool is the same for both testnet and mainnet.
+Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
 
-First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the cargo-concordium executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly. The step below is specifically for MacOS. (Note : In this tutorial, we are not going to use concordium-client for our operations so you don’t have to install it.)
+First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the cargo-concordium executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly. The step below is specifically for MacOS.
 
 .. code-block:: console
 
@@ -45,7 +45,7 @@ First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. T
 
     mv cargo-concordium ~/.cargo/bin
 
-If everything is correct, when you enter the command ``cargo concordium --help`` it should print something similar below.
+If everything is correct, when you enter the command ``cargo concordium --help`` it shows something similar to the below.
 
 .. image:: images/cargo-help.png
     :width: 100%
@@ -56,6 +56,20 @@ If everything is correct, when you enter the command ``cargo concordium --help``
 
     .. image:: images/mac-warning.png
         :width: 100%
+
+Install Concordium Client
+=========================
+
+This tutorial uses ``concordium-client`` as a command line tool to deploy, mint, and transfer. :ref:`Download it here<concordium-node-and-client-download-testnet>`. For information about how to use ``concordium-client``, see :ref:`Concordium Client<concordium-client>`.
+
+.. Note::
+
+    The version of ``concordium-client`` above is the testnet version. Download the Mainnet version :ref:`here<concordium-node-and-client-download>`.
+
+Run a node
+==========
+
+You will need to run a node. For this tutorial, it is recommended to run a Docker image of a node that can be :ref:`found here<run-a-node>`. This runs a Docker image of a node and this step currently takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`__, then you can continue with the development.
 
 Clone the repository
 ====================

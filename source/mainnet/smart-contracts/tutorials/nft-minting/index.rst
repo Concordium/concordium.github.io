@@ -4,7 +4,7 @@
 Mint an NFT
 ===========
 
-In this tutorial, you are going to mint an NFT on Concordium blockchain. First you learn the basics to set up your development environment. Potentially, there will be some updates in the future based on the improvements such as the expected release of the web extension wallet.
+In this tutorial, you are going to mint an NFT on Concordium blockchain. First you will learn the basics to set up your development environment.
 
 All development is completed using :ref:`Node/Web-SDK<sdks-apis>` and node-cli and includes the following examples: deploy the minting contract, mint an NFT, get details from Concordium, check token owner, transfer that NFT, check the new owner, and  attempting to send the token with the previous owner (which will fail of course).
 
