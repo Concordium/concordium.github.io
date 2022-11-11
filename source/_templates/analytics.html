@@ -1,6 +1,10 @@
 
 
 <div id="matomo-opt-out" class="consent">
+    <p>You may choose to prevent this website from aggregating and analyzing the actions you take here. Doing so will protect your privacy, but will also prevent the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt out and you clear your cookies, delete the opt-out cookie, or if you change computers or Web browsers, you will need to perform the opt-out procedure again.</p>
+    <button onclick="consentGranted()">Opt in</button>
+    <button onclick="consentDenied()">Opt out</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
     <script src="https://concordium.matomo.cloud/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out&language=auto&showIntro=1"></script>
 </div>
 
@@ -8,6 +12,8 @@
 <script>
     var _paq = window._paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['requireCookieConsent']);
+    _paq.push(['rememberCookieConsentGiven']);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
