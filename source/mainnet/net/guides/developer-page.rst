@@ -53,4 +53,5 @@ Community resources
     sdks-apis
     ../resources/dashboards
     ../references/developer-tools
+    ../references/grpc2
     ../references/grpc

@@ -312,6 +312,10 @@ The ``--name`` option selects which account to import and imports it with this
 name. If it's omitted, all accounts in the file are imported under their
 existing names.
 
+.. Note::
+
+   When importing keys that have been exported from |bw|, the ``--name`` option must be provided to name the account.
+
 Show account aliases
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

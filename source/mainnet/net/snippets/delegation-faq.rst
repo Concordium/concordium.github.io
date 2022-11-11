@@ -151,6 +151,6 @@ For bakers, delegators and passive delegators
 
     When evaluating your options looking at the rewards is not sufficient as you also need to consider the costs of running your own baker node and risk of potentially delegating to a node that, e.g., goes offline. Finally, it is worth considering that all rewards are based on a lottery that takes place to decide which baker wins the right to bake the next block. The probability of winning the lottery - disregarding how you stake your CCD - is proportional to the size of the stake. Because of the nature of the lottery mechanism, it is important to keep in mind that the variance in rewards in the short term will greatly deminish over time. For the smallest bakers it may take as much as a year for the rewards to align with the lottery power, whereas, very large bakers may see consistent rewards within less than a week. No matter what, over time, the fraction of times you win will be proportional to your fraction of stake.
 
-    Delegation to a pool will provide more frequent rewards compared to becoming your own baker, albeit, the actual rewards over time can be expected to be smaller.
+    Delegation to a pool may provide more frequent rewards compared to becoming your own baker, albeit, the actual rewards over time can be expected to be smaller.
 
 .. _CCDScan: https://ccdscan.io/

@@ -12,6 +12,8 @@ The following topics relate to terms and conditions of use as well as notices an
    terms-and-conditions-dw
    terms-and-conditions-mw-gen2
    terms-and-conditions-mw
+   terms-and-conditions-bw
    third-party-licenses
    third-party-notices
+   bw-licenses
    dw-licenses

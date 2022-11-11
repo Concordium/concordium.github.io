@@ -42,6 +42,14 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
+   Node version 4.5.0 introduced the GRPC V2 interface which is enabled by the
+   sample configurations listed below. If you have done special configuration of
+   your node and want to re-use the configuration file and have the new API
+   enabled, make sure to edit your configuration, adding ``CONCORDIUM_NODE_GRPC2_LISTEN_PORT``
+   and ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` as in the sample configurations.
+
+.. Note::
+
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`.
 
    If you are running version 4.2.3 you can :ref:`migrate to the latest version<migration-docker-distribution>`. If you are running any version older than 4.2.3 you will have to delete your database and start over using the instructions on this page.
@@ -66,6 +74,8 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888
          # Where the genesis is located
          - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat
+         # The url of the catchup file. This speeds up the catchup process.
+         - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
          # General node configuration Data and config directories (it's OK if they
          # are the same). This should match the volume mount below. If the location
          # of the mount inside the container is changed, then these should be
@@ -86,6 +96,10 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
+         # Address of the V2 GRPC server
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
+         # And its port
+         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -115,6 +129,7 @@ To run a node on testnet use the following configuration file and follow the ste
        ports:
        - "8889:8889"
        - "10001:10001"
+       - "20001:20001"
        volumes:
        # The node's database should be stored in a persistent volume so that it
        # survives container restart. In this case we map the **host** directory
@@ -192,7 +207,7 @@ If you wish to have the node running in the background, then add a ``-d`` option
        image: concordium/testnet-node:4.2.3-0
 
 Enable inbound connections
-==========================
+--------------------------
 
 If you are running your node behind a firewall, or behind your home
 router, then you will probably only be able to connect to other nodes,
@@ -209,7 +224,7 @@ platform configuration you will either need to forward an external port to
 this is done will depend on your configuration.
 
 Retrieve node logs
-------------------
+^^^^^^^^^^^^^^^^^^
 
 The sample configuration presented above logs data using Docker's default
 logging infrastructure. To retrieve the logs for the node run:
@@ -219,6 +234,66 @@ logging infrastructure. To retrieve the logs for the node run:
       $docker logs testnet-node
 
 This outputs the logs to ``stdout``.
+
+Migration from the previous Docker distribution
+-----------------------------------------------
+
+In the past Concordium provided a ``concordium-software`` package which
+contained a ``concordium-node`` binary which orchestrated downloading a Docker
+image and running the node. To migrate from that setup:
+
+1. Stop the running node (e.g., using ``concordium-node-stop``)
+2. Either modify the relevant example configuration file above by mapping the
+   existing node database directory for use by the new container, i.e., replacing
+
+   .. code-block:: yaml
+
+          - /var/lib/concordium-testnet:/mnt/data
+
+   with
+
+   .. code-block:: yaml
+
+          - ~/.local/share/concordium:/mnt/data
+
+   Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
+   e.g., ``/var/lib/concordium-testnet`` and keeping the configuration files as
+   they are.
+3. If your node is an existing baker node, update the configuration file above to include
+
+   .. code-block:: yaml
+
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+
+   into the ``environment`` section of the ``node`` service section of the file.
+4. Start the node and the collector.
+
+   .. code-block:: console
+
+      $docker-compose -f testnet-node.yaml up
+
+The configuration starts two containers, one running the node, and another
+running the node collector that reports the node state to the network dashboard.
+
+If you wish to have the node running in the background, then add a ``-d`` option to the above command.
+
+.. Note::
+
+   The sample configuration always downloads the latest node image. It is
+   good practice to choose the version deliberately. To choose a specific
+   version, find the correct version in
+   `hub.docker.com/concordium/testnet-node <https://hub.docker.com/r/concordium/testnet-node>`_ and change the
+   ``image`` value from
+
+      .. code-block:: yaml
+
+       image: concordium/testnet-node:latest
+
+   to, e.g.,
+
+      .. code-block:: yaml
+
+       image: concordium/testnet-node:4.5.0-0
 
 Run a mainnet node
 ==================
@@ -233,6 +308,7 @@ The main differences from the testnet configuration are:
   for a list of currently available versions.
 - the node listens on port 8888 instead of 8889 by default
 - the node's GRPC interface is exposed on port 10000 instead of 10001
+- the node’s GRPC V2 listens on port 20000 instead of 20001
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
 
@@ -257,6 +333,8 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888
          # Where the genesis is located
          - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat
+         # The url of the catchup file. This speeds up the catchup process.
+         - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
          # General node configuration Data and config directories (it's OK if they
          # are the same). This should match the volume mount below. If the location
          # of the mount inside the container is changed, then these should be
@@ -277,6 +355,10 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
+         # Address of the V2 GRPC server
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
+         # And its port
+         - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -306,6 +388,7 @@ To retrieve mainnet node logs run:
        ports:
        - "8888:8888"
        - "10000:10000"
+       - "20000:20000"
        volumes:
        # The node's database should be stored in a persistent volume so that it
        # survives container restart. In this case we map the **host** directory
@@ -333,10 +416,39 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:10000
        entrypoint: ["/node-collector"]
 
+Enable inbound connections
+--------------------------
+
+If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+:ref:`if so configured<become-a-baker>`, to bake and finalize.
+
+However you can also make your node an even better network participant by
+enabling inbound connections. The sample configuration above makes the node
+listen on port ``8888`` for inbound connections. Depending on your network and
+platform configuration you will either need to forward an external port to
+``8888`` on your router, open it in your firewall, or both. The details of how
+this is done will depend on your configuration.
+
+Retrieve node logs
+^^^^^^^^^^^^^^^^^^
+
+The sample configuration presented above logs data using Docker's default
+logging infrastructure. To retrieve the logs for the node run:
+
+.. code-block:: console
+
+      $docker logs mainnet-node
+
+This outputs the logs to ``stdout``.
+
 .. _migration-docker-distribution:
 
 Migration from the previous Docker distribution
-===============================================
+-----------------------------------------------
 
 In the past Concordium provided a ``concordium-software`` package which
 contained a ``concordium-node`` binary which orchestrated downloading a Docker
