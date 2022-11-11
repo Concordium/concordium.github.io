@@ -1,27 +1,10 @@
 .. _build-smart-contract:
 
-========================
-Build the Smart contract
-========================
+===============================================
+Intialize, build, and deploy the Smart contract
+===============================================
 
-Now, in order to deploy your contract you need to change directory (with “cd” command) to the cis2-nft folder. Then run the commands below to build and deploy your contract. For the sake of simplicity, in this tutorial you are going to use the sample smart contract shared by Concordium in this repository.
-
-.. code-block:: console
-
-    cd cis2-nft
-
-.. code-block:: console
-
-    mkdir -p ../dist/smart-contract
-
-.. code-block:: console
-
-    cargo concordium build --out ../dist/smart-contract/module.wasm --schema-out ../dist/smart-contract/schema.bin
-
-After these steps, you should be able to see something like the below.
-
-.. image:: images/prep-to-build-sc.png
-    :width: 100%
+Now you are ready to build your smart contract. You'll be using the cis2-nft contract template provided by Concordium.
 
 Run a node
 ==========
@@ -33,64 +16,84 @@ Remember you are working on the testnet. Check if your node collector is up and 
 .. image:: images/node-collector.png
     :width: 100%
 
+Initialize Cis2-NFT contract template
+=====================================
+
+You will use ``cargo-concordium`` that you installed in the first part to initialize the template.
+
+First, you need to install cargo-generate crate and then initialize the folder. By default, it’ll create a cis2-nft contract template.
+
+.. code-block:: console
+
+    cargo install --locked cargo-generate --version 0.16.0
+
+.. code-block:: console
+
+    cargo concordium init
+
+If you try the init command before installing cargo-generate you will get an error similar to the one below. And you may need to update your ``rustc`` version before installing ``cargo-generate``. To do this, use ``rustup update``.
+
+.. image:: images/init-error.png
+    :width: 100%
+
+If everything is correct, the ``init`` command will show something like the below. You will have cargo project with the project name and cis2-nft contract in it.
+
+.. image:: images/init-success.png
+    :width: 100%
+
+Build your smart contract
+=========================
+
+Now you are ready to build your contract. Create a dist/cis2-nft folder to keep your wasm compiled output file and schema file first and then build it with the following command.
+
+.. code-block:: console
+
+    mkdir -p /dist/cis2-nft
+
+.. code-block:: console
+
+    cargo concordium build --out dist/cis2-nft/cis2.module.wasm.v1 --schema-out dist/cis2-nft/schema.bin
+
+Now, open up your lib.rs file under /src, we need to specify the TOKEN_METADATA_BASE_URL parameter in the contract. Since, this is an NFT, we need to store the metadata on chain forever. Add your IPFS link like below.
+
+.. image:: images/add-ipfs-link.png
+    :width: 100%
+
+After these steps, you should be able to see something similar to below. 
+
+.. image:: images/build-contract.png
+    :width: 100%
+
 Deploy your smart contract
 ==========================
 
-In order to deploy the contract add the following lines to your cli.ts file to specify the compiled module file and the other arguments that will be passed from the terminal.
+To deploy your smart contract you will use the ``concordium client`` command line tool.
+
+Before deploying your smart contract, make sure that you have imported your wallet. When you export it from your wallet run the command below in the same directory where your wallet export is.
+
+For the |bw|, use the following command:
 
 .. code-block:: console
 
-    function setupCliDeployModule(cli: commander.Command) {
-        return (
-            cli
-            .command("deploy")
-            .description(`Deploy Smart Contract Wasm Module`)
-            .requiredOption("--wasm <wasm>", "Compile Module file path", "../dist/smart-contract/module.wasm")
-            // Sender Account Args
-            .requiredOption("--sign-key <signKey>", "Account Signing Key")
-            .requiredOption("--sender <sender>", "Sender Account Address. This should be the owner of the Contract")
-            // Node Client args
-            .requiredOption("--auth-token <authToken>", "Concordium Node Auth Token", "rpcadmin")
-            .requiredOption("--ip <ip>", "Concordium Node IP", "127.0.0.1")
-            .requiredOption("--port <port>", "Concordium Node Port", (v) => parseInt(v), 10001)
-            .requiredOption("--timeout <timeout>", "Concordium Node request timeout", (v) => parseInt(v), 15000)
-            .action(
-                async (args: DeployModuleArgs) =>
-                await sendAccountTransaction(
-                    args,
-                    args.sender,
-                    args.signKey,
-                    // payload
-                    { content: Buffer.from(readFileSync(args.wasm)) } as DeployModulePayload,
-                    // Transaction Type
-                    AccountTransactionType.DeployModule,
-                ),
-            )
-        );
-    }
-    setupCliDeployModule(cli);
+    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
 
-Run the command below on your terminal. Paste the signKey value and the address from the `your wallet export file<signkey>`.
+In order to deploy you need to specify the compiled module file name and the other arguments which will be passed from the terminal. Once you run the command below, it will ask for confirmation. Type **y**. You will be asked to input a password.
+
+To deploy run the command below:
 
 .. code-block:: console
 
-    ts-node ./src/cli.ts deploy \
-    --wasm ../dist/smart-contract/module.wasm \
-    --sender <ACCOUNT-ADDRESS> \
-    --sign-key <SIGN-KEY>
+    concordium-client module deploy dist/cis2-nft/cis2.module.wasm.v1 --sender <YOUR-ADDRESS> --name <YOUR-MODULE-NAME> --grpc-port 10001
 
-If you have the output below, you’ve successfully deployed your first smart contract on Concordium! You can also verify it either by looking at `CCDScan <https://ccdscan.io/>`__ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/>`__.
+If the command is successful, you will see something similar to below.
 
-.. image:: images/deployed-sc.png
+.. image:: images/deploy-success.png
     :width: 100%
 
-As you can see below the NFT minting contract is deployed and it allows you to verify the time, sender account and the block itself. It costs ~148 CCD which is less than 1.9 euros currently which is not bad for a 39.8 KB contract.
-You can check the remaining balance in your Concordium wallet too.
+You can also verify it either by looking at `CCDScan <https://testnet.ccdscan.io/>`__ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/>`_.
 
-.. image:: images/deployed-sc-ccdscan.png
+.. image:: images/deploy-success-ccdscan.png
     :width: 100%
-
-Now you need go to the `dashboard <https://dashboard.testnet.concordium.com/>`__ and get the hash value from there, using the URL in the terminal. Click **Deployed module with reference** and copy the hash value. You will need it to initialize the contract in the next section.
 
 Initializing the smart contract
 ===============================
@@ -99,58 +102,22 @@ After deploying a contract you have to initialize it. It’s like object-oriente
 
 .. code-block:: console
 
-    function setupCliInitContract(cli: commander.Command) {
-        return (
-            cli
-            .command("init")
-            .description(`Initializes a Smart Contract`)
-            .requiredOption("--module <module>", "Module Reference", "CIS2-NFT")
-            .requiredOption("--energy <energy>", "Maximum Contract Execution Energy", (v) => BigInt(v), 6000n)
-            .requiredOption("--contract <contract>", "Contract name", "CIS2-NFT")
-            // Sender Account Args
-            .requiredOption("--sender <sender>", "Sender Account Address. This should be the owner of the Contract")
-            .requiredOption("--sign-key <signKey>", "Account Signing Key")
-            // Node Client args
-            .requiredOption("--auth-token <authToken>", "Concordium Node Auth Token", "rpcadmin")
-            .requiredOption("--ip <ip>", "Concordium Node IP", "127.0.0.1")
-            .requiredOption("--port <port>", "Concordum Node Port", (v) => parseInt(v), 10001)
-            .requiredOption("--timeout <timeout>", "Concordium Node request timeout", (v) => parseInt(v), 15000)
-            .action(
-                async (args: InitContractArgs) =>
-                await sendAccountTransaction(
-                    args,
-                    args.sender,
-                    args.signKey,
-                    // Payload
-                    {
-                    amount: new GtuAmount(0n),
-                    moduleRef: new ModuleReference(args.module),
-                    contractName: args.contract,
-                    parameter: Buffer.from([]),
-                    maxContractExecutionEnergy: args.energy,
-                    } as InitContractPayload,
-                    // Transaction Type
-                    AccountTransactionType.InitializeSmartContractInstance,
-                ),
-            )
-        );
-    }
-    setupCliInitContract(cli);
+    concordium-client contract init <YOUR-MODULE-NAME> --sender <YOUR-ADDRESS> --energy 30000  --contract <CONTRACT-NAME> --grpc-ip 127.0.0.1 --grpc-port 10001
 
-Run the code below. Use the hash value in the <Module Hash> part, and the signKey and address of your account from `your wallet export file<signkey>`. That will create another transaction on chain.
+If successful, you will see something similar to the below.
+
+.. image:: images/intialize-success.png
+    :width: 100%
+
+You need the index value that is the address of this instance, which in the example shown is 1833. You can check it in CCDScan.
+
+.. image:: images/contract-index-ccdscan.png
+    :width: 100%
+
+You can even name the contract instance with following command for easy usage.
 
 .. code-block:: console
 
-    ts-node ./src/cli.ts init --module <Module Hash> --sender <ACCOUNT-ADDRESS> --sign-key <SIGN-KEY>
-
-If you have the output shown below that means you have successfully initialized your contract.
-
-.. image:: images/initialized-sc.png
-    :width: 100%
-
-Go to the URL to get your contract's index value. From the dashboard you can easily see the index, account address as sender, event details and transaction hash.
-
-.. image:: images/dashboard-success-init.png
-    :width: 100%
+    concordium-client contract name <YOUR-INDEX> --name <YOUR-INSTANCE-NAME>
 
 Continue to the :ref:`final part<mint-transfer>` of the tutorial to mint and transfer your NFT.
