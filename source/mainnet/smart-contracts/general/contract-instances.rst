@@ -165,10 +165,10 @@ Limits
 
 When initializing, updating, or invoking a smart contract, the following limits are enforced:
 
-- The maximum input parameter size is 65535 Bytes (u16::MAX).
+- The maximum input parameter size is 65535 Bytes (``u16::MAX``).
 - The energy limit in a block is 3 million NRG (energy). If only one transaction is in the block, the transaction can consume up to 3 million NRG (energy).
-- The maximim number of log items is u32::MAX per execution.
-- The maximum return value size is u32::MAX Bytes.
+- The maximum number of log items is ``u32::MAX`` per execution.
+- The maximum return value size is ``u32::MAX`` Bytes.
 
 .. note::
 
