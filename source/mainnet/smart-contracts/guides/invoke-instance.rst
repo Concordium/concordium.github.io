@@ -12,6 +12,8 @@ a receive method before running an update.
 The view functions are regular receive functions that return information about
 the contract, ideally with schemas on the return values.
 
+There is no limit to the number of logs per invocation (apart from energy).
+
 Preparation
 ===========
 
