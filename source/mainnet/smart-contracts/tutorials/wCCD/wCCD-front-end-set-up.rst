@@ -1,3 +1,4 @@
+.. include:: ../../../variables.rst
 .. _wCCD-front-end-set-up:
 
 ========================
@@ -33,61 +34,40 @@ need for the user to host their own Concordium node.
     used in combination with ``node.js``. You can download `node.js <https://nodejs.org/en/download/>`_  and
     `yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
 
-Concordium browser wallet
+|bw|
 -------------------------
 
 A browser wallet is a piece of code that can be added as an extension to supported browsers such as ``Chrome``.
 The browser wallet allows you to interact with the chain and make transactions.
-Currently, the browser wallet does this by connecting to a (JSON-RPC) server that communicates with a node.
-The browser wallet hosts the private keys corresponding to the accounts of the user and a link that points
+Currently, the |bw| does this by connecting to a (JSON-RPC) server that communicates with a node.
+The |bw| hosts the private keys corresponding to the accounts of the user and a link that points
 to a `server  <https://github.com/Concordium/concordium-json-rpc>`_.
 
 Your front-end code that is run in the browser constructs the transaction object
-and sends it to the browser wallet. The transaction object is signed by the private key hosted in the browser wallet
+and sends it to the |bw|. The transaction object is signed by the private key hosted in the |bw|
 and transmitted to the server via ``HTTPS``. This server has access to a Concordium node and converts
-the request (including the signed transaction object) that comes via ``HTTPS`` from the browser wallet
+the request (including the signed transaction object) that comes via ``HTTPS`` from the |bw|
 to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
 .. warning ::
 
-    The Concordium browser wallet is in active development. A pre-MVP
-    (minimum viable product) version is currently available to be built from the source code.
-    Expect some breaking changes until the MVP version is released in the next quarter. It is not recommended to
-    use any pre-MVP product on mainnet.
+    The |bw| is in active development.
 
 You can choose from two different workflows that will guide you through the setup steps. Workflow 1 is easier.
-The server that the browser wallet connects to is hosted by Concordium in workflow 1. This setup will take care of the
+The server that the |bw| connects to is hosted by Concordium in workflow 1. This setup will take care of the
 Concordium node on your behalf. Workflow 2 is for
-advanced readers that want to build all the components from the source code and connect the browser wallet
+advanced readers that want to build all the components from the source code and connect the |bw|
 to their own hosted Concordium node.
 
-.. dropdown:: Workflow 1 - Setup browser wallet connected to hosted node (click here)
+.. dropdown:: Workflow 1 - Setup wallet connected to hosted node (click here)
 
-    You are ready now to build the pre-MVP browser wallet from the source code.
+    You are ready now to install the |bw|. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
 
-    Clone the repository with the command:
+    The |bw| connects to a server hosted by Concordium which will take care of the Concordium node on your behalf.
 
-    .. code-block:: console
-
-        $git clone https://github.com/Concordium/concordium-browser-wallet.git
-
-    .. note::
-
-        Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
-        screenshots might differ.
-
-    The newer versions of the pre-MVP browser wallet connect to a server
-    hosted by Concordium which will take care of the Concordium node on your behalf.
-
-    You can build the browser wallet extension and load the ``dist`` folder
-    (located at ``root/packages/browser-wallet/dist``) into the
-    `Chrome browser <https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked>`_ as
-    described in the README file of the
-    `browser wallet repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
-
-    You are ready now to start the browser wallet by clicking on the Concordium icon at the top right of the
+    You are ready now to start the |bw| by clicking on the Concordium icon at the top right of the
     ``Chrome`` browser.
 
     .. image:: ./images/wCCD_tutorial_18.png
@@ -96,23 +76,23 @@ to their own hosted Concordium node.
     .. note::
 
         The puzzle icon at the top right of the ``Chrome`` browser allows you to manage your browser extensions.
-        You can enable pinning of the Concordium browser wallet.
+        You can enable pinning of the |bw|.
 
         .. image:: ./images/wCCD_tutorial_13.png
             :width: 30 %
 
-    Create a new account on testnet by going through the setup steps of the browser wallet.
-    You have to choose a password for securing your browser wallet.
-    This password is needed to log in to your browser wallet.
+    Create a new account on testnet by going through the setup steps of the |bw|.
+    You have to choose a password to secure your |bw|.
+    This password is needed to log in to your |bw|.
 
     .. image:: ./images/wCCD_tutorial_15.png
         :width: 30 %
 
-    The browser wallet creates a unique seed phrase. Write down the seed phrase
+    The |bw| creates a unique secret recovery phrase. Write down the secret recovery phrase
     and keep it in a safe place to be able to recover your accounts in case
     you lose access to your device.
 
-    You have completed the browser setup. Check that your browser wallet is connected to the testnet.
+    You have completed the setup. Check that your |bw| is connected to the testnet.
 
     .. image:: ./images/wCCD_tutorial_16.png
         :width: 30 %
@@ -120,7 +100,7 @@ to their own hosted Concordium node.
     .. image:: ./images/wCCD_tutorial_17.png
         :width: 30 %
 
-    Before you can create a new account. You need to create an identity card.
+    Before you can create a new account. You need to create an identity.
 
     .. image:: ./images/wCCD_tutorial_19.png
         :width: 30 %
@@ -142,22 +122,22 @@ to their own hosted Concordium node.
     .. image:: ./images/wCCD_tutorial_20.png
         :width: 30 %
 
-    You completed the browser wallet setup. Send some CCD to your new account or request some CCD from the testnet faucet button within the browser wallet.
+    You completed the |bw| setup. Send some CCD to your new account or request some CCD from the testnet faucet button within the |bw|.
     Check that your account balance is displayed and you have enough
     CCD to be able to execute transactions.
 
     .. note::
-        You are connected to a website with your browser wallet when you see the green ``Connected`` button.
+        You are connected to a website with your |bw| when you see the green ``Connected`` button.
         You can toggle on/off the connection by clicking on the button.
 
     .. image:: ./images/wCCD_tutorial_14.png
         :width: 40 %
 
-.. dropdown:: Workflow 2 - Setup browser wallet connected to local node (click here)
+.. dropdown:: Workflow 2 - Setup wallet connected to local node (click here)
 
     Before you start this workflow, make sure you have:
 
-    - a running Concordium testnet node that fully caught up.
+    - a running Concordium testnet node that is fully caught up.
 
     - have port forwarding enabled (This step is only required when you run your node on a remote server instead of locally. See the note below):
 
@@ -174,7 +154,7 @@ to their own hosted Concordium node.
     If you don't have a running testnet node or port forwarding enabled, the :ref:`piggy bank tutorial part 3 <piggy-bank-preparing>`
     will guide you through these setup steps.
 
-    These prerequisites ensure that you have a testnet node reachable locally on port 10001. The browser wallet requires the
+    These prerequisites ensure that you have a testnet node reachable locally on port 10001. The |bw| requires the
     `Concordium JSON-RPC server <https://github.com/Concordium/concordium-json-rpc>`_
     that points to your node. Clone the repository with the command:
 
@@ -192,7 +172,7 @@ to their own hosted Concordium node.
         $yarn start --port 9095 --nodeAddress 127.0.0.1 --nodePort 10001 --nodeTimeout 5000
 
     Your ``JSON-RPC server`` is running on port `9095` and connects to your local node on port `10001`.
-    You are ready now to build the pre-MVP browser wallet from the source code.
+    You are ready now to build the |bw| from the source code.
     Clone the repository with the command:
 
     .. code-block:: console
@@ -205,19 +185,13 @@ to their own hosted Concordium node.
     described in the README file of the
     `browser wallet repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/packages/browser-wallet>`_.
 
-    .. note::
+    .. Note::
 
-        Depending on the exact commit hash that you used to build your pre-MVP browser wallet, the
-        screenshots and setup steps might differ.
+        Depending on the exact commit hash that you used to build your |bw|, the screenshots and setup steps might differ.
 
-    The next steps are based on the pre-MVP browser wallet from a git commit before 22.8.2022.
-    These early versions of the pre-MVP browser wallet have an input field for the private key
-    to import an already existing account and an input field for the link to the ``JSON-RPC server``.
-    Alternatively, you can follow workflow 1 to use the most recent pre-MVP browser wallet
-    without hosting your own node and ``JSON-RPC server``.
-    The newer browser wallet from workflow 1 can be used to create a new account (no importing of private keys needed).
+    The next steps are based on the pre-MVP |bw| from a git commit before 22.8.2022. These early versions of the pre-MVP |bw| have an input field for the private key to import an already existing account and an input field for the link to the JSON-RPC server. Alternatively, you can follow workflow 1 to use the most recent |bw| without hosting your own node and JSON-RPC server. The |bw| from workflow 1 can be used to create a new account (no importing of private keys needed).
 
-    You are ready now to start the browser wallet by clicking on the Concordium icon at the top right of the
+    You are ready now to start the |bw| by clicking on the Concordium icon at the top right of the
     ``Chrome`` browser.
 
     .. image:: ./images/wCCD_tutorial_12.png
@@ -231,31 +205,26 @@ to their own hosted Concordium node.
         .. image:: ./images/wCCD_tutorial_13.png
             :width: 30 %
 
-    You have to enter your private key into the browser wallet.
-    You might have already an account in the ``concordium-client`` or in the ``Concordium mobile wallet``.
-    You can decrypt the private keys of these accounts and use them in the browser wallet.
-    Download the :ref:`utils tool <downloads-testnet-auxiliary-tools>` under the auxiliary tools section.
-    This tool is able to decode your encrypted key. You can find additional information on the
-    ``utils`` tool and how to decrypt your keys :ref:`here <developer-tools>`.
+    You have to enter your private key into the |bw|. You might have already an account in the ``concordium-client`` or in the ``Concordium mobile wallet``. You can decrypt the private keys of these accounts and use them in the |bw|. Download the :ref:`utils tool<downloads-testnet-auxiliary-tools>` under the auxiliary tools section. This tool is able to decode your encrypted key. You can find additional information on the utils tool and how to decrypt your keys :ref:`here<developer-tools>`.
 
     You have to enter the private key and the associated account into the browser wallet similar to the below string.
 
-    .. code-block:: toml
+    .. code-block:: console
 
         74ff83a13ca066298583dcb9151822359fd2e4c9b69c9ca427455da565f6129b,3oLNhuxM7yrf3LrJa3hH5NfocTViGS8Aj2t6YScWNvUq4o2nC
 
-    Enter the below ``JSON-RPC`` endpoint into the browser wallet to connect to
+    Enter the below ``JSON-RPC`` endpoint into the |bw| to connect to
     your local ``JSON-RPC server`` on port 9095.
 
     .. code-block:: console
 
         http://127.0.0.1:9095
 
-    You completed the browser wallet setup. Check that your account balance is displayed and you have enough
+    You completed the |bw| setup. Check that your account balance is displayed and you have enough
     CCD to be able to execute transactions.
 
     .. note::
-        You are connected to a website with your browser wallet when you see the green ``Connected`` button.
+        You are connected to a website with your |bw| when you see the green ``Connected`` button.
         You can toggle on/off the connection by clicking on the button.
 
     .. image:: ./images/wCCD_tutorial_14.png
@@ -264,13 +233,13 @@ to their own hosted Concordium node.
 Running the web front-end
 -------------------------
 
-You have successfully added the Concordium browser wallet extension to your browser in the previous section.
+You have successfully added the |bw| to your browser in the previous section.
 In the next step of the tutorial, you are going to clone a wCCD demo front-end written with the `React library <https://reactjs.org/>`_
-and run it locally. The demo front-end has the required packages installed to connect to the Concordium browser wallet
-and implements common flows to deal with the different states that the browser wallet could be in. For example,
+and run it locally. The demo front-end has the required packages installed to connect to the |bw|
+and implements common flows to deal with the different states that the |bw| could be in. For example,
 the front-end will display a ``connect wallet`` button when loading the website. Furthermore, the front-end has flows
 to react to the events when the user switches the account in the browser wallet or
-connects/disconnects an account in the browser wallet to update the front-end state accordingly.
+connects/disconnects an account in the |bw| to update the front-end state accordingly.
 
 .. note::
 
@@ -321,7 +290,7 @@ This command logs a URL in the console (typically http://127.0.0.1:8080). Open t
 
 .. note::
 
-    Check that your browser wallet is connected to the testnet (screenshots shown in workflow 1) or a testnet node (workflow 2) and not to mainnet or stagenet.
+    Check that your |bw| is connected to the testnet (screenshots shown in workflow 1) or a testnet node (workflow 2) and not to mainnet or stagenet.
 
 You completed the local front-end setup.
 

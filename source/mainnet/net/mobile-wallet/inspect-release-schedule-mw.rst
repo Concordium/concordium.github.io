@@ -9,45 +9,42 @@ Some transfers contain a release schedule. This means that the CCD in the transf
 until one or more specific points in time. While the funds are locked, they cannot be transferred, but they will be part of the total amount on the account.
 By inspecting the release schedule, you can see when the releases are unlocked.
 
-.. tabs::
+.. dropdown:: |mw-gen2|
 
-      .. tab:: |mw-gen2|
+      #. Go to the **Accounts** page.
 
-            #. Go to the **Accounts** page.
+      #. Tap the balance area of the account that received the transaction with a release schedule or tap |more-acct|.
 
-            #. Tap the balance area of the account that received the transaction with a release schedule or tap |more-acct|.
+      #. Tap the |hamburger| menu in the upper right corner.
 
-            #. Tap the |hamburger| menu in the upper right corner.
+      #. Tap **Release Schedule**.
 
-            #. Tap **Release Schedule**.
-
-            You can now see the coming releases on the account.
+      You can now see the coming releases on the account.
 
 
-      .. tab:: |mw-gen1|
+.. dropdown:: |mw-gen1|
 
-            #. Go to the **Accounts** page.
+      #. Go to the **Accounts** page.
 
-            #. Tap the balance area of the account that received the transaction with a release schedule or tap |moredetails|.
+      #. Tap the balance area of the account that received the transaction with a release schedule or tap |moredetails|.
 
-               .. image:: ../images/mobile-wallet/MW32.png
-                  :width: 25%
+         .. image:: ../images/mobile-wallet/MW32.png
+             :width: 25%
 
-            #. Tap the |hamburger| menu in the upper right corner.
+      #. Tap the |hamburger| menu in the upper right corner.
 
-            #. Tap **Release Schedule**.
+      #. Tap **Release Schedule**.
 
-               .. image:: ../images/mobile-wallet/MW56.png
-                  :width: 25%
+         .. image:: ../images/mobile-wallet/MW56.png
+             :width: 25%
 
-            You can now see the coming releases on the account.
+      You can now see the coming releases on the account.
 
-            |
+      |
 
-            .. image:: ../images/mobile-wallet/MW57.png
-                  :width: 25%
+      .. image:: ../images/mobile-wallet/MW57.png
+          :width: 25%
 
-            |
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
