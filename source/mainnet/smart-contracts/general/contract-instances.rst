@@ -255,7 +255,7 @@ Triggering a smart contract instance upgrade changes the smart contract module s
 invocation, meaning the execution will continue after the point of calling upgrade.
 Since any new invocation of this instance uses the new smart contract module, the instance
 can invoke itself and run code of the new module in the same transaction containing the upgrade.
-This is useful for triggering a migration function in the new smart contract module and reject the
+This is useful for triggering a migration function in the new smart contract module and rejecting the
 upgrade if the migration fails.
 
 .. seealso::
