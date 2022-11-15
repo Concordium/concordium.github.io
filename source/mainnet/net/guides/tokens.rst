@@ -67,6 +67,10 @@ You can add, inspect, and send tokens in the |bw|.
 
         #. Click **Finish**.
 
+.. Warning::
+
+    If you had previously had tokens in your wallet, these will not be recovered. You must add the tokens again.
+
 .. |send-bw| image:: ../images/browser-wallet/send-ccd.png
              :alt: paper airplane
              :width: 50px
