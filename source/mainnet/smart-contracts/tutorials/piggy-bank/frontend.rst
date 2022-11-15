@@ -16,7 +16,7 @@ either using the |bw| or |mw-gen2| via
 The `wCCD tutorial part 3 <wCCD-front-end-set-up>`_ explains how to set up the |bw|.
 Wallet Connect is currently supported by the |mw-gen2|. iOS support will be added in the near future.
 
-The step for setting up the Piggybank dApp are very similar to the :ref:`wCCD tutorial<wCCD-front-end-set-up>`, only with the repository linked above.
+The steps for setting up the Piggybank dApp are very similar to the :ref:`wCCD tutorial<wCCD-front-end-set-up>`, only with the repository linked above.
 
 The complete minimal steps for running the dApp in development mode are:
 
