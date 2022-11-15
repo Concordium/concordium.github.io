@@ -5,11 +5,11 @@
 Setting up front-end
 ====================
 
-As an alternative to interacting with the smart contract directly,
-the user might have a better experience using a web-based application.
+As an alternative to interacting with smart contracts directly,
+users might have a better experience using a web-based application.
 
-Such an application is available in `this repository <https://github.com/Concordium/concordium-dapp-piggybank/>`_.
-The application is able to perform actions on behalf of the user,
+For the Piggybank example, such an application is available in `this repository <https://github.com/Concordium/concordium-dapp-piggybank/>`_.
+The application is able to perform contract updates on behalf of the user,
 either using the |bw| or |mw-gen2| via
 `Wallet Connect (v2) <https://docs.walletconnect.com/2.0/>`_.
 
