@@ -92,7 +92,7 @@ Run the following command on your terminal to clone `this repository <https://gi
 Setup a wallet
 ==============
 
-Now you need a Concordium wallet. This tutorial uses the |bw|. The |bw| uses a 24 word secret recovery phrase to secure your wallet. Make sure that it’s protected. Save them in a secure place. Anyone who knows the secret recovery phrase can access your wallet.
+Now you need a Concordium wallet. This tutorial uses the |bw|. The |bw| uses a 24 word secret recovery phrase to secure your wallet. Make sure to protect your 24 word secret recovery phrase and store it in a secure place. Anyone who knows the secret recovery phrase can access your wallet.
 
 Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a chromium web browser. Follow :ref:`these instructions<setup-bw>` to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity.
 
