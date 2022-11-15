@@ -1016,6 +1016,11 @@ body {margin:0;}
        Fallback entrypoints
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -2115,7 +2120,13 @@ contract</em>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tag</strong> (<em>i32</em>) – <code class="docutils literal notranslate"><span class="pre">0</span></code> for transfer to an account or <code class="docutils literal notranslate"><span class="pre">1</span></code> for call to a contract.</p></li>
+<li><p><strong>tag</strong> (<em>i32</em>) – <p>Tag for the instruction to invoke.</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span></code> for transfer to an account</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code> for call to a contract.</p>
+<p><code class="docutils literal notranslate"><span class="pre">2</span></code> for query an account balance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">3</span></code> for query a contract balance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">4</span></code> for query the exchange rates.</p>
+</p></li>
 <li><p><strong>start</strong> (<em>i32</em>) – Pointer to the start of the invoke payload.</p></li>
 <li><p><strong>length</strong> (<em>i32</em>) – Length of the invoke payload.</p></li>
 </ul>
@@ -2137,6 +2148,29 @@ Otherwise, the call failed and only the fourth byte is set. Possible values are:
 <p><code class="docutils literal notranslate"><span class="pre">4</span></code> if the entrypoint did not exist on contract to call.</p>
 <p><code class="docutils literal notranslate"><span class="pre">5</span></code> if it called a V0 contract that failed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">6</span></code> if it called a contract that failed with a runtime error.</p>
+<p>No other values are possible.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>i64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="concordium.upgrade">
+<span class="sig-prename descclassname"><span class="pre">concordium.</span></span><span class="sig-name descname"><span class="pre">upgrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">i64</span></span></span><a class="headerlink" href="#concordium.upgrade" title="Permalink to this definition">#</a></dt>
+<dd><p>Upgrade to a new module. This will change the smart contract module used for
+this smart contract instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>i32</em>) – Pointer to 32 bytes for a module reference.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if successful</p>
+<p><code class="docutils literal notranslate"><span class="pre">0x07_0000_0000</span></code> if failed because of module did not exist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">0x08_0000_0000</span></code> if failed because of module did not contain a smart contract with a name matching to one of this instance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">0x09_0000_0000</span></code> if failed because of module being an unsupported smart contract version.</p>
 <p>No other values are possible.</p>
 </p>
 </dd>

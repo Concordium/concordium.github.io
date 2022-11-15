@@ -1016,6 +1016,11 @@ body {margin:0;}
        Fallback entrypoints
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../smart-contracts/guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1561,7 +1566,7 @@ body {margin:0;}
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-ledger-app-sirius">Concordium Ledger App - Sirius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-client-v4-2-0">Concordium Client v4.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#cargo-concordium-v2-2-0">Cargo-concordium v2.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v4-5-0">Concordium node distributions v4.5.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-node-distributions-v5-0-6">Concordium node distributions v5.0.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#ubuntu">Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#linux-docker">Linux-Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#windows">Windows</a></li>
@@ -2544,6 +2549,12 @@ body {margin:0;}
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#interacting-with-an-instance">Interacting with an instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#logging-events">Logging events</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#invoking-operations">Invoking operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#upgradeability">Upgradeability</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#failing-to-upgrade">Failing to upgrade</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#immutability">Immutability</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/general/contract-instances.html#migration">Migration</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/general/contract-schema.html">Smart contract schemas</a><ul>
@@ -2557,6 +2568,12 @@ body {margin:0;}
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#writing-a-smart-contract-using-concordium-std">Writing a smart contract using <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#serializable-state-and-parameters">Serializable state and parameters</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#working-with-parameters">Working with parameters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#working-with-queries">Working with queries</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#query-an-account-balance">Query an account balance</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#query-a-contract-balance">Query a contract balance</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#query-exchange-rates">Query exchange rates</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/general/develop-contracts.html#building-a-smart-contract-module-with-cargo-concordium">Building a smart contract module with <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a></li>
@@ -2719,6 +2736,10 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/fallback-entrypoints.html#preparation">Preparation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/fallback-entrypoints.html#what-are-fallback-entrypoints">What are fallback entrypoints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/fallback-entrypoints.html#using-fallback-entrypoints">Using fallback entrypoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/upgradeable-contract.html">Make a contract upgradeable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/upgradeable-contract.html#owner-can-upgrade">Owner can upgrade</a></li>
 </ul>
 </li>
 </ul>
@@ -3244,6 +3265,7 @@ body {margin:0;}
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes.html">Release Notes - Testnet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#sirius-testnet">Sirius Testnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-0-6">Concordium Node 5.0.6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#bw">Concordium Wallet for Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-5-0">Concordium Node 4.5.0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-2-0">Cargo concordium 2.2.0</a></li>

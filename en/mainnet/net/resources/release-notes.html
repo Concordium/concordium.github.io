@@ -1016,6 +1016,11 @@ body {margin:0;}
        Fallback entrypoints
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1503,6 +1508,11 @@ body {margin:0;}
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-node-5-0-6">
+     Concordium Node 5.0.6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bw">
      Concordium Wallet for Web
     </a>
@@ -1914,7 +1924,30 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
+<p>November 15, 2022</p>
+<div class="section" id="concordium-node-5-0-6">
+<h3>Concordium Node 5.0.6<a class="headerlink" href="#concordium-node-5-0-6" title="Permalink to this headline">#</a></h3>
+<p>Concordium Node 5.0.6 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">protocol version 5</a> which will be released November 22, 2022. This adds the following features:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Support for smart contract upgradability</p></li>
+<li><p>Query the current exchange rates, account balances, and contract balances from a smart contract.</p></li>
+<li><dl class="simple">
+<dt>Relax restrictions on smart contracts, including:</dt><dd><ul>
+<li><p>Parameter size limit: 1kiB -&gt; 65535B</p></li>
+<li><p>Return value size limit: 16kiB -&gt; no limit (apart from energy)</p></li>
+<li><p>Number of logs per invocation: 64 -&gt; no limit (apart from energy)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>A new representation of accounts that is better optimised for common operations.</p></li>
+<li><p>Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.</p></li>
+</ul>
+</div></blockquote>
+<p>Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.</p>
 <p>October 19, 2022</p>
+</div>
 <div class="section" id="bw">
 <h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Permalink to this headline">#</a></h3>
 <p>The Concordium Wallet for Web extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.</p>

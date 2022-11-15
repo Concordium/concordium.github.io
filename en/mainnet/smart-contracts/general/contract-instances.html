@@ -1016,6 +1016,11 @@ body {margin:0;}
        Fallback entrypoints
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1527,6 +1532,28 @@ body {margin:0;}
    Invoking operations
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upgradeability">
+   Upgradeability
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#failing-to-upgrade">
+     Failing to upgrade
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#immutability">
+     Immutability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#migration">
+     Migration
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
 </nav>
@@ -1675,6 +1702,7 @@ environment.</p>
 <p>Logging an event has an associated cost, similar to the cost of writing to the
 contract’s state. In most cases it would only make sense to log a few bytes to
 reduce cost.</p>
+<p>There is no limit to the number of logs per invocation (apart from energy).</p>
 </div>
 <div class="section" id="invoking-operations">
 <span id="contract-instance-operations"></span><h2>Invoking operations<a class="headerlink" href="#invoking-operations" title="Permalink to this headline">#</a></h2>
@@ -1691,6 +1719,92 @@ instance.</p></li>
 handle, and the state and balance of the instance remain unchanged.
 The account which sent the initiating transaction pays for the execution of the
 entire receive function, including the cost of failed operations.</p>
+</div>
+<div class="section" id="upgradeability">
+<span id="contract-instance-upgradeability"></span><h2>Upgradeability<a class="headerlink" href="#upgradeability" title="Permalink to this headline">#</a></h2>
+<p>A V1 smart contract instance can choose to upgrade its module to a new V1 smart contract
+module using the <strong>upgrade</strong> host function.
+The host function takes a reference to a deployed smart contract module to use for
+the upgraded instance and can only be called from a receive function.
+The host function returns whether the upgrade succeeded, allowing the instance
+to decide the next step. If the upgrade is successful any new invocations of the
+upgraded instance uses the smart contract code in the new module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Upgrading a smart contract can be used to change the behavior completely,
+therefore it is important to carefully restrict access to any endpoint
+triggering a smart contract upgrade.</p>
+</div>
+<div class="figure align-center" id="id2">
+<div class="graphviz"><object data="../../_images/graphviz-0fbc8205b7ce2690fd24c218e2b576e5b8af904e.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+    rankdir=&quot;BT&quot;
+
+    subgraph cluster_0 {
+        label = &quot;My module v1&quot;;
+        labelloc=b;
+        node [fillcolor=white, shape=note]
+        escrow;
+    }
+
+    subgraph cluster_2 {
+        label = &quot;My module v2&quot;;
+        labelloc=b;
+        node [fillcolor=white, shape=note]
+        escrow2;
+    }
+
+    subgraph cluster_1 {
+        label = &quot;Instances&quot;;
+        style=dotted;
+        node [shape=box, style=rounded]
+        House;
+        Car;
+    }
+
+    escrow[label=&quot;Escrow&quot;]
+    escrow2[label=&quot;Escrow&quot;]
+
+    House:n -&gt; escrow;
+    Car:n -&gt; escrow [style=dashed, arrowhead=onormal];
+    Car:n -&gt; escrow2 [style=bold];
+}</p></object></div>
+<p class="caption"><span class="caption-text">Example of a smart contract instance ‘Car’ upgrading to a new module.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</div>
+<div class="section" id="failing-to-upgrade">
+<h3>Failing to upgrade<a class="headerlink" href="#failing-to-upgrade" title="Permalink to this headline">#</a></h3>
+<p>A smart contract instance can fail to upgrade for one of the following reasons:</p>
+<ul class="simple">
+<li><p>The new module does not exist.</p></li>
+<li><p>The new module does not contain a smart contract with a name matching the instance being upgraded.</p></li>
+<li><p>The new module is a smart contract module version 0.</p></li>
+</ul>
+</div>
+<div class="section" id="immutability">
+<h3>Immutability<a class="headerlink" href="#immutability" title="Permalink to this headline">#</a></h3>
+<p>Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
+are immutable when they do not contain any code for triggering an upgrade.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important to understand that immutable means the code of the smart contract cannot change.
+It does not mean that the behavior of a smart contract cannot change, as the smart contract code
+can include a switch in behavior or even invoke other mutable smart contracts.</p>
+</div>
+</div>
+<div class="section" id="migration">
+<h3>Migration<a class="headerlink" href="#migration" title="Permalink to this headline">#</a></h3>
+<p>Triggering a smart contract instance upgrade changes the smart contract module starting from the next
+invocation, meaning the execution will continue after the point of calling upgrade.
+Since any new invocation of this instance uses the new smart contract module, the instance
+can invoke itself and run code of the new module in the same transaction containing the upgrade.
+This is useful for triggering a migration function in the new smart contract module and rejecting the
+upgrade if the migration fails.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guides/upgradeable-contract.html#guide-upgradable-contract"><span class="std std-ref">Make a contract upgradeable</span></a> for a guide about how to make a Rust smart contract
+upgradeable.</p>
+</div>
+</div>
 </div>
 </div>
 

@@ -1016,6 +1016,11 @@ body {margin:0;}
        Fallback entrypoints
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1517,6 +1522,28 @@ body {margin:0;}
      Working with parameters
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-queries">
+     Working with queries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#query-an-account-balance">
+       Query an account balance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#query-a-contract-balance">
+       Query a contract balance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#query-exchange-rates">
+       Query exchange rates
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1787,6 +1814,70 @@ parameter using the <a class="reference external" href="https://docs.rs/concordi
 <code class="docutils literal notranslate"><span class="pre">true</span></code>.
 While the gain in efficiency is minimal in this example, it could have an
 substantial impact for more complex examples.</p>
+<p>Parameters have a size limit of 65535B. There is no return value size limit (apart from energy).</p>
+</div>
+<div class="section" id="working-with-queries">
+<h3>Working with queries<a class="headerlink" href="#working-with-queries" title="Permalink to this headline">#</a></h3>
+<p>Queries can be called from smart contracts to query an account balance, contract balance,
+or the current exchange rates.</p>
+<div class="section" id="query-an-account-balance">
+<h4>Query an account balance<a class="headerlink" href="#query-an-account-balance" title="Permalink to this headline">#</a></h4>
+<p>To query account balances, the following are available:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Query the balance of an account.</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">account_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">account_balance</span><span class="p">(</span><span class="n">account_address</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Assuming the account exists, this returns the public/unshielded balance of an account, the currently staked balance, and balance locked in release schedules.
+Any amount received during the transaction until the point of querying is reflected in the balance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
+CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
+Because of this, querying the balance of the invoker will result in the current account balance minus the
+amount of CCD reserved to cover the max energy cost as well as the amount included in the transaction.</p>
+</div>
+<p>Some part of the balance might be used for staking or/and is locked in releases by scheduled transfers.
+Which makes the amount unavailable for transferring.
+All of this information can be accessed as:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// The amount which is available for transfers.</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">available_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account_balance</span><span class="p">.</span><span class="n">available</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// The staked amount.</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">staked_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account_balance</span><span class="p">.</span><span class="n">staked</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// The amount locked in scheduled transfers.</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">locked_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account_balance</span><span class="p">.</span><span class="n">locked</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// The total public balance, i.e. including staked and locked_balance.</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">total_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account_balance</span><span class="p">.</span><span class="n">total</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-a-contract-balance">
+<h4>Query a contract balance<a class="headerlink" href="#query-a-contract-balance" title="Permalink to this headline">#</a></h4>
+<p>To query the current balance of a contract, the following is available:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">contract_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">contract_balance</span><span class="p">(</span><span class="n">address</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Assuming the contract exists, this returns the current amount held by the contract.
+Any amount transferred or received during the same transaction until the point of querying
+is reflected in the balance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although it is valid for a contract to query its own balance, it is cheaper to use <code class="docutils literal notranslate"><span class="pre">host.self_balance()</span></code>.</p>
+</div>
+</div>
+<div class="section" id="query-exchange-rates">
+<h4>Query exchange rates<a class="headerlink" href="#query-exchange-rates" title="Permalink to this headline">#</a></h4>
+<p>To query exchange rates, the following are available:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">exchange_rates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">exchange_rates</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The result contains the exchange rates currently used by the chain.
+These are the micro CCD per Euro rate and the Euro per NRG rate.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">micro_ccd_per_euro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exchange_rates</span><span class="p">.</span><span class="n">micro_ccd_per_euro</span><span class="p">();</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">euro_per_energy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exchange_rates</span><span class="p">.</span><span class="n">euro_per_energy</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Each rate is a ratio of two 64-bit unsigned integers.</p>
+</div>
 </div>
 </div>
 <div class="section" id="building-a-smart-contract-module-with-cargo-concordium">

@@ -1016,6 +1016,11 @@ body {margin:0;}
        Fallback entrypoints
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 current active has-children">
@@ -1545,6 +1550,7 @@ Invoking can be useful to either view information about the instance or to test
 a receive method before running an update.
 The view functions are regular receive functions that return information about
 the contract, ideally with schemas on the return values.</p>
+<p>There is no limit to the number of logs per invocation (apart from energy).</p>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
 <p>Make sure that you are <a class="reference internal" href="../../net/guides/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../net/installation/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a
