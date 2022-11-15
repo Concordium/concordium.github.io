@@ -107,7 +107,7 @@ After deploying a contract you have to initialize it. It’s like object-oriente
 
 If successful, you will see something similar to the below.
 
-.. image:: images/intialize-success.png
+.. image:: images/initialize-success.png
     :width: 100%
 
 You need the index value that is the address of this instance, which in the example shown is 1833. You can check it in CCDScan.
