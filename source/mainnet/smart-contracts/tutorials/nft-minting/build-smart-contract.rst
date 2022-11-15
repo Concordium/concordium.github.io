@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _build-smart-contract:
 
 ===============================================
@@ -59,7 +60,7 @@ Now, open up your lib.rs file under /src, we need to specify the TOKEN_METADATA_
 .. image:: images/add-ipfs-link.png
     :width: 100%
 
-After these steps, you should be able to see something similar to below. 
+After these steps, you should be able to see something similar to below.
 
 .. image:: images/build-contract.png
     :width: 100%

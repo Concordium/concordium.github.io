@@ -4,7 +4,7 @@
 Mint and transfer the NFT
 =========================
 
-Now, you are ready to call the mint function. In order to invoke mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a json file and give that file as a parameter to concordium-client. To make it more user-friendly, a json file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the json file is called “nft-params.json”. You can either do it manually or with following commands. 
+Now, you are ready to call the mint function. In order to invoke mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a json file and give that file as a parameter to concordium-client. To make it more user-friendly, a json file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the json file is called “nft-params.json”. You can either do it manually or with following commands.
 
 .. code-block:: console
 
@@ -23,10 +23,10 @@ With a text editor open up that file and place your account address and token ID
 .. code-block:: console
 
     {
-    	"owner": {
-    		"Account": ["3bzmSxeKVgHR4M7pF347WeehXcu43kypgHqhSfDMs9SvcP5zto"]
-    	},
-    	"tokens": ["00000111"]
+        "owner": {
+            "Account": ["3bzmSxeKVgHR4M7pF347WeehXcu43kypgHqhSfDMs9SvcP5zto"]
+        },
+        "tokens": ["00000111"]
     }
 
 Minting is successful.
@@ -50,7 +50,7 @@ Now check the current state of the cis2-nft token contract by invoking view func
 
     concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 10001
 
-Your result will be similar to what is shown below where the user is the owner of the token with ID **00000111**. 
+Your result will be similar to what is shown below where the user is the owner of the token with ID **00000111**.
 
 .. image:: images/view-fn.png
     :width: 100%
