@@ -13,7 +13,10 @@ You can add, inspect, and send tokens in the |bw|.
 
     .. dropdown:: Add tokens
 
-        #. Click **Manage**. (screenshot)
+        #. Click **Manage**.
+
+            .. image:: ../images/browser-wallet/manage-tokens.png
+                :width: 50%
 
         #. Enter a smart contract address on which to look for tokens. Click **Choose contract**. If you get an error that says **Invalid contract address** this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
@@ -30,6 +33,8 @@ You can add, inspect, and send tokens in the |bw|.
             You can add NFTs that are not owned by your account to your wallet. This does not mean that you have ownership of the NFT.
 
         Once the tokens are added you can see them on the relevant tab.
+
+        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract number. You can then use this smart contract number to search for tokens on the contract and add them to your |bw|.
 
     .. dropdown:: Inspect tokens
 
@@ -56,7 +61,7 @@ You can add, inspect, and send tokens in the |bw|.
             .. note::
                 If the token is a CCD token, you have the option to add a memo to the transaction. Remember that memos increase the transaction fee.
 
-        #. CLick **Continue**.
+        #. Click **Continue**.
 
         #. Review the transaction. When satisfied, click **Send**.
 

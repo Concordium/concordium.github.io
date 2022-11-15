@@ -20,14 +20,22 @@ In case you get a new device or need to restore your existing device, you can re
          .. image:: ../images/browser-wallet/wallet-choice.png
                   :width: 25%
 
-        #. Enter your 24 word secret recovery phrase. Click **Continue**.
+        2. Enter your 24 word secret recovery phrase. Click **Continue**.
 
-        #. Select whether to recover your wallet in Mainnet or Testnet.
+        3. Select whether to recover your wallet in Mainnet or Testnet.
 
+        Once recovery is successful, you see a screen similar to below. If recovery is only partial you can try to recover using the **Restore IDs and accounts** option in the Wallet settings page.
+
+          .. image:: ../images/browser-wallet/recovery-success-bw.png
+                  :width: 25%
+
+          .. image:: ../images/browser-wallet/wallet-settings.png
+                  :width: 25%
+  
         .. Note::
 
             You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can :ref:`switch between mainnet and testnet<switch-network>`.
-            If you use both networks, you can recover on the other net after setup, through the settings page.
+            If you use both networks, you can recover on the other net after setup in the Settings page.
 
     .. tab:: |mw-gen2|
 
