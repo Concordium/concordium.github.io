@@ -301,7 +301,7 @@ To query account balances, the following are available:
    // Query the balance of an account.
    let account_balance = host.account_balance(account_address)?;
 
-Assuming the account exists, this returns the public/unshielded balance of an account.
+Assuming the account exists, this returns the public/unshielded balance of an account, the currently staked balance, and balance locked in release schedules.
 Any amount received during the transaction until the point of querying is reflected in the balance.
 
 .. note::
