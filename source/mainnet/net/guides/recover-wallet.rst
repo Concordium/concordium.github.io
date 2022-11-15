@@ -27,7 +27,7 @@ In case you get a new device or need to restore your existing device, you can re
     .. image:: ../images/browser-wallet/recovery-success-bw.png
         :width: 25%
 
-    .. image:: ../.images/browser-wallet/wallet-settings.png
+    .. image:: ../images/browser-wallet/wallet-settings.png
         :width: 25%
 
     .. Note::
