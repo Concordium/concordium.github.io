@@ -18,7 +18,7 @@ You can add, inspect, and send tokens in the |bw|.
             .. image:: ../images/browser-wallet/manage-tokens.png
                 :width: 50%
 
-        #. Enter a smart contract address on which to look for tokens. Click **Choose contract**. If you get an error that says **Invalid contract address** this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
+        #. Enter a smart contract index on which to look for tokens. Click **Choose contract**. If you get an error, this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
             .. image:: ../images/browser-wallet/add-token-contract.png
                 :width: 50%
