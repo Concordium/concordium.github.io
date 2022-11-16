@@ -50,7 +50,7 @@ You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, 
 
 .. Note::
 
-   It is no longer possible for users of |mw-gen1| to create new identities.
+   It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
