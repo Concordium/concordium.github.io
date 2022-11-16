@@ -37,7 +37,7 @@ In case you get a new device or need to restore your existing device, you can re
 
     .. Warning::
 
-        If you had previously had tokens in your wallet, these will not be recovered. You must add the tokens again.
+        If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must :ref:`add the tokens<tokens>` again to view them in your wallet.
 
 .. dropdown:: |mw-gen2|
 

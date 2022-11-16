@@ -18,12 +18,12 @@ You can add, inspect, and send tokens in the |bw|.
             .. image:: ../images/browser-wallet/manage-tokens.png
                 :width: 50%
 
-        #. Enter a smart contract index on which to look for tokens. Click **Choose contract**. If you get an error, this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
+        #. Enter a smart contract address on which to look for tokens. Click **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
             .. image:: ../images/browser-wallet/add-token-contract.png
                 :width: 50%
 
-        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **Back to list** to return to the list to select tokens. Click **Update tokens** once you have made your selection(s).
+        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **X** to return to the list to select tokens. Click **Update tokens** once you have made your selection(s).
 
             .. image:: ../images/browser-wallet/select-tokens.png
                 :width: 50%
@@ -34,7 +34,7 @@ You can add, inspect, and send tokens in the |bw|.
 
         Once the tokens are added you can see them on the relevant tab.
 
-        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract number. You can then use this smart contract number to search for tokens on the contract and add them to your |bw|.
+        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |bw|.
 
     .. dropdown:: Inspect tokens
 
@@ -56,10 +56,7 @@ You can add, inspect, and send tokens in the |bw|.
 
         #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token.
 
-        #. Add the receiver address. Paste the address, use the address book, or scan a QR code to add the address.
-
-            .. note::
-                If the token is a CCD token, you have the option to add a memo to the transaction. Remember that memos increase the transaction fee.
+        #. Add the receiver address.
 
         #. Click **Continue**.
 
@@ -69,7 +66,7 @@ You can add, inspect, and send tokens in the |bw|.
 
 .. Warning::
 
-    If you had previously had tokens in your wallet, these will not be recovered. You must add the tokens again.
+    If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must add the tokens again to view them in your wallet.
 
 .. |send-bw| image:: ../images/browser-wallet/send-ccd.png
              :alt: paper airplane
