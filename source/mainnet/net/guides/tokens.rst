@@ -38,7 +38,7 @@ You can add, inspect, and send tokens in the |bw|.
 
     .. dropdown:: Inspect tokens
 
-        Click the tab for the token you want to inspect. Then click on the token to see details for that token.
+        Click the tab for the type of token that you want to inspect. Then click on the token to see details for that token.
 
         You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Don't show token in wallet** if you don't want the token to appear in your wallet.
 
