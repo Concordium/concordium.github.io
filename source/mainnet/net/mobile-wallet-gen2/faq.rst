@@ -54,7 +54,23 @@
 
     Yes. Because the |mw-gen2| is a separate app, you can continue to use it simultaneously with your |mw-gen1|. You can also choose to continue using only the |mw-gen1|. Just make sure that you continue to make :ref:`backups<export-import>` if you continue using the |mw-gen1|.
 
-    Note that in the near future identity and account creation will be disabled in |mw-gen1|, so it is a good idea to download and set up |mw-gen2| to prepare for this.
+    Identity and account creation is disabled in |mw-gen1| for Android, so it is a good idea to download and set up |mw-gen2|.
+
+.. dropdown:: As a baker, what do I need to do to migrate from |mw-gen1| to |mw-gen2|?
+
+    For bakers who want to migrate you should:
+
+    #. Stop baking and wait for the cool-down period to finish.
+    #. Set up the |mw-gen2|.
+    #. Once cool-down has passed and your funds are unlocked, transfer your funds to the new account in |mw-gen2|.
+    #. Register as a baker again in |mw-gen2|.
+    #. Restart the node with the new baker keys.
+
+    If you have a baker pool with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the :ref:`URL for baker information<update-pool-settings>`.
+
+.. dropdown:: If I am awaiting scheduled transfers in an account in |mw-gen1| how should I migrate to |mw-gen2|?
+
+    If you are awaiting scheduled transfers you can create and set up your |mw-gen2| wallet, but you should leave some funds in your |mw-gen1| wallet to cover transaction fees related to the scheduled transfers. Once you have received all scheduled transfers you can finish transferring your funds to an account in |mw-gen2|.
 
 .. dropdown:: Can I access my wallet on multiple devices with the secret recovery phrase?
 

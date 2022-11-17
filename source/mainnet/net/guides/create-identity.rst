@@ -82,6 +82,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen1|
 
+   .. Note::
+
+      It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
+
    You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
 
    #. Go to the |morepage| page.
@@ -93,6 +97,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
    #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
 
    #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
+
 
       .. image:: ../images/mobile-wallet/MW10.png
          :width: 25%
