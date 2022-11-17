@@ -54,7 +54,7 @@ You can add, inspect, and send tokens in the |bw|.
             .. image:: ../images/browser-wallet/send-tokens-select2.png
                 :width: 25%
 
-        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token.
+        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token. To find the number of decimal places, you can click on the token as described in Inspect tokens.
 
         #. Add the receiver address.
 
