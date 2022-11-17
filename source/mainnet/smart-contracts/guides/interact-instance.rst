@@ -46,6 +46,8 @@ If successful, the output should be similar to the following:
 
 As you can see, the subindex defaults to ``0``.
 
+.. _interact-instance-json-parameters:
+
 Passing parameters in JSON format
 ---------------------------------
 
