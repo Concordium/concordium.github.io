@@ -13,7 +13,7 @@
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_5.0.0-0
-.. |client-version| replace:: 5.0.0-0
+.. |client-version| replace:: 5.0.1-0
 .. |client-linux-checksum| replace:: a7bbba26b485f0841eefb5277cf8c4ec9044faa599251fca1bac16c0991392b3
 
 .. Node debian package verification variables
