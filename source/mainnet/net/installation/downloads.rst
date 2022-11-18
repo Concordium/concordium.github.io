@@ -48,7 +48,7 @@ You can find |mw-gen1| on App Store and on Google Play.
 |bw|
 =================================
 
-The |bw| is available to download as an extension for the `Chrome web browser <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
+The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
 
 .. _downloads-desktop-wallet:
 
