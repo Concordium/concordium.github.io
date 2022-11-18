@@ -103,7 +103,7 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 Concordium Client v5.0.0
 ========================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.0-0>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.1-0>`_
 
    - SHA256 checksum of the download: a7bbba26b485f0841eefb5277cf8c4ec9044faa599251fca1bac16c0991392b3
 
