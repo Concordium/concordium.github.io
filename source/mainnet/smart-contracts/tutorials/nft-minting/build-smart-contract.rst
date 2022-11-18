@@ -55,7 +55,7 @@ Now you are ready to build your contract. Create a dist/cis2-nft folder to keep 
 
     cargo concordium build --out dist/cis2-nft/cis2.module.wasm.v1 --schema-out dist/cis2-nft/schema.bin
 
-Now, open up your lib.rs file under /src, we need to specify the TOKEN_METADATA_BASE_URL parameter in the contract. Since, this is an NFT, we need to store the metadata on chain forever. Add your IPFS link like below.
+Now, open up your lib.rs file under /src, you need to specify the TOKEN_METADATA_BASE_URL parameter in the contract. Since, this is an NFT, you need to store the metadata on chain forever. Add your IPFS link like below.
 
 .. image:: images/add-ipfs-link.png
     :width: 100%
@@ -99,7 +99,7 @@ You can also verify it either by looking at `CCDScan <https://testnet.ccdscan.io
 Initializing the smart contract
 ===============================
 
-After deploying a contract you have to initialize it. It’s like object-oriented programming: you create a class which is a module, and then you initialize it to create an object. It is the same here. An object of a class is a way to store both states of the class and its functionality. This time you are going to use the hash value you got in the previous step. First, make sure the ``initialize`` function is implemented in your cli.ts file.
+After deploying a contract you have to initialize it. It’s like object-oriented programming: you create a class which is a module, and then you initialize it to create an object. It is the same here. An object of a class is a way to store both states of the class and its functionality. In order to initialize an instance of the contract you need the module name and contract, then run the following command.
 
 .. code-block:: console
 
