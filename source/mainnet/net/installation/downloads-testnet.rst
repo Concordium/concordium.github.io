@@ -100,12 +100,12 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
 .. _concordium-node-and-client-download-testnet:
 
-Concordium Client v5.0.0
+Concordium Client v5.0.1
 ========================
 
 -  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.1-0>`_
 
-   - SHA256 checksum of the download: a7bbba26b485f0841eefb5277cf8c4ec9044faa599251fca1bac16c0991392b3
+   - SHA256 checksum of the download: 3ed9f3878d07c53d6f2233d4832fed45eea74363e1f8671d42be45043dd3937b
 
    Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 

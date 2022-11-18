@@ -100,7 +100,7 @@ Concordium Ledger App
 
 .. _concordium-node-and-client-download:
 
-Concordium Client v5.0.0
+Concordium Client v5.0.1
 ========================
 
 -  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.1-0>`_
