@@ -4,9 +4,9 @@
 Build and deploy a smart contract
 =================================
 
-Finally, we have everything prepared in order to mint our tokens. We have created a wallet, exported it, and stored our data on IPFS using Pinata. We have an API Key, that will allow us to upload from our system, both our data and metadata are available and pinned already so we will not worry about running a local node. We are ready to mint our semi-fungible tokens.
+Finally, you have everything prepared in order to mint your tokens. Y have created a wallet, exported it, and stored your data on IPFS using Pinata. You have an API Key that will allow you to upload from your system, both your data and metadata are available and pinned already so you don't need to run a local node. You are ready to mint your semi-fungible tokens.
 
-Make sure you are working in the cis2-multi directory, and create a dist folder for our schema and smart contract compiled into wasm. One small reminder here, remember CIS-2 allows you to mint fungible, non-fungible and semi-fungible tokens. Concordium’s token standard is applicable to all types of tokens.
+Make sure you are working in the cis2-multi directory, and create a dist folder for your schema and smart contract compiled into wasm. Remember that CIS-2 allows you to mint fungible, non-fungible, and semi-fungible tokens. Concordium’s token standard is applicable to all types of tokens.
 
 .. code-block:: console
 
@@ -158,3 +158,5 @@ Now go to the URL to get your contracts index value. From the dashboard, you can
 
 .. image:: images/contract-initialize-success-db.png
     :width: 100%
+
+:ref:`Click here to continue to part 4 of this tutorial<mint-xfer-sft>`.

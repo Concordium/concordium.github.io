@@ -151,3 +151,4 @@ You can check the current state of your token contract with view command in the 
 
 As you can see, the owner has 9995 tokens left and the second account has 5 as you specified the amount of tokens to transfer. Using these tickets, you and your 4 friends can enter the venue now!
 
+You have now completed the SFT minting tutorial.

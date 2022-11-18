@@ -71,3 +71,5 @@ Upload your metadata with the command below and your metadata will be stored on 
 
 .. image:: images/upload-pinata-result.png
     :width: 100%
+
+:ref:`Click here to continue to part 3 of this tutorial<build-sft-sc>`.

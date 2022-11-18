@@ -4,7 +4,7 @@
 Mint a semi-fungible token
 ==========================
 
-In this tutorial, you will learn how to mint semi-fungible tokens on Concordium using Node-SDK. In the :ref:`last tutorial<nft-index>`, you learned many things, including how you can mint an NFT on Concordium and set up your development environment with node configurations, wallet and key exports, build, deploy, initialize, mint and transfer.  The process in this tutorial will be the same as the first tutorial: first is the wallet setup and key exports, then the storage solutions and preparation of metadata, and finally the development part including minting, transferring and querying balances.
+In this tutorial, you will learn how to mint semi-fungible tokens on Concordium using Node-SDK. In the :ref:`last tutorial<nft-index>`, you learned many things, including how you can mint an NFT on Concordium and set up your development environment with node configurations, wallet and key exports, build, deploy, initialize, mint and transfer. The process in this tutorial will be the same as the first tutorial: first is the wallet setup and key exports, then the storage solutions and preparation of metadata, and finally the development part including minting, transferring and querying balances.
 
 What are Semi-Fungible Tokens
 =============================
