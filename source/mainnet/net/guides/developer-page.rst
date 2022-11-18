@@ -22,6 +22,8 @@ Official resources
 
     - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
 
+- :ref:`How to create proofs for dApps and services<create-proofs>`
+
 - Block explorers
     The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 

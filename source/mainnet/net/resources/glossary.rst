@@ -398,6 +398,13 @@ Passive delegation
 
 A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
 
+.. _glossary-secret-proof:
+
+Secret proof
+============
+
+A method of proving something to a service or dApp without revealing the exact personal attribute, such as proving that you are over 18 years old without revealing your exact date of birth. Secret proofs can also be range proofs, such as that you live in one of a range of countries without revealing exactly which country you live in.
+
 .. _glossary-secret-recovery-phrase:
 
 Secret recovery phrase
