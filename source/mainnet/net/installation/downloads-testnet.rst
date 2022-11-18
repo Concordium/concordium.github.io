@@ -121,7 +121,7 @@ Concordium Client v5.0.0
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.0-0.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.1-0.exe>`_
 
 Cargo-concordium v2.4.0
 =======================
