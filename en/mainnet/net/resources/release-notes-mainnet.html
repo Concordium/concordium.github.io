@@ -1508,6 +1508,16 @@ body {margin:0;}
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cargo-concordium-2-4-0">
+     Cargo concordium 2.4.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-client-5-0-1">
+     Concordium Client 5.0.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mw-gen1-for-android">
      Concordium Legacy Wallet for Android
     </a>
@@ -1858,7 +1868,23 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
+<p>November 21, 2022</p>
+<div class="section" id="cargo-concordium-2-4-0">
+<h3>Cargo concordium 2.4.0<a class="headerlink" href="#cargo-concordium-2-4-0" title="Permalink to this headline">#</a></h3>
+<p>Cargo concordium 2.4.0 contains support for the upcoming <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">protocol version 5</a> which is planned for release on Testnet November 22, 2022. This includes the following new features:</p>
+<ul class="simple">
+<li><p>Build and test contracts using new protocol 5 features, such as upgradability and chain queries.</p></li>
+<li><p>Support for relaxed smart contract resource restrictions in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">run</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> now checks contracts with respect to protocol version 5 semantics.</p></li>
+</ul>
+</div>
+<div class="section" id="concordium-client-5-0-1">
+<h3>Concordium Client 5.0.1<a class="headerlink" href="#concordium-client-5-0-1" title="Permalink to this headline">#</a></h3>
+<p>Concordium Client 5.0.1 adds support for the upcoming <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">protocol version 5</a> which is planned for release on Testnet November 22, 2022.
+It also adds a <code class="docutils literal notranslate"><span class="pre">--secure</span></code> flag to enable connecting to gRPC using TLS. All commands that query the node support this.</p>
+<p>Additionally, it supports contract schema V3. V3 schemas offer the same options as V2, but also optionally includes a schema for contract events. <cite>transaction status</cite> now displays contract events, and a schema can be provided with <cite>–schema</cite>, which will be used to parse the contract events. By default events are parsed with the schema embedded in the contract, if present. This enables <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to interact with contracts and schemas using <cite>concordium-std</cite> version 5. There is also improved formatting of <cite>transaction status</cite> output using contract schemas if they are available for displaying contract events, and output function parameters are shown as hex strings in <cite>transaction status</cite>.</p>
 <p>November 17, 2022</p>
+</div>
 <div class="section" id="mw-gen1-for-android">
 <h3>Concordium Legacy Wallet for Android<a class="headerlink" href="#mw-gen1-for-android" title="Permalink to this headline">#</a></h3>
 <p>Identity and account creation has been locked in Concordium Legacy Wallet for Android devices. This means that you cannot create new identities or accounts in Concordium Legacy Wallet on an Android device. You can continue to use Concordium Legacy Wallet, but if you need to create a new identity or account you must use Concordium Wallet for Android. You can also still recover your wallet from a backup file in Concordium Legacy Wallet on an Android device.</p>

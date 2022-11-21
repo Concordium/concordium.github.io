@@ -1528,6 +1528,11 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits">
+   Limits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#invoking-operations">
    Invoking operations
   </a>
@@ -1656,6 +1661,10 @@ transaction for attempting to create the instance is visible on-chain.</p>
 <p>See <a class="reference internal" href="../guides/initialize-contract.html#initialize-contract"><span class="std std-ref">Initialize a smart contract instance</span></a> guide for how to initialize a
 contract in practice.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>init function</em> has no return value.</p>
+</div>
 </div>
 <div class="section" id="instance-state">
 <h2>Instance state<a class="headerlink" href="#instance-state" title="Permalink to this headline">#</a></h2>
@@ -1685,6 +1694,10 @@ to the function in the form of bytes.</p>
 <li><p>Parameter to the receive function.</p></li>
 <li><p>Amount of CCD for the instance.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>receive function</em> can have a return value.</p>
+</div>
 </div>
 <div class="section" id="logging-events">
 <h2>Logging events<a class="headerlink" href="#logging-events" title="Permalink to this headline">#</a></h2>
@@ -1704,8 +1717,22 @@ contract’s state. In most cases it would only make sense to log a few bytes to
 reduce cost.</p>
 <p>There is no limit to the number of logs per invocation (apart from energy).</p>
 </div>
+<div class="section" id="limits">
+<span id="contract-instance-operations"></span><h2>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">#</a></h2>
+<p>When initializing, updating, or invoking a smart contract, the following limits are enforced:</p>
+<ul class="simple">
+<li><p>The maximum input parameter size is 65535 Bytes (<code class="docutils literal notranslate"><span class="pre">u16::MAX</span></code>).</p></li>
+<li><p>The energy limit in a block is 3 million NRG (energy). If only one transaction is in the block, the transaction can consume up to 3 million NRG (energy).</p></li>
+<li><p>The maximum number of log items is <code class="docutils literal notranslate"><span class="pre">u32::MAX</span></code> per execution.</p></li>
+<li><p>The maximum return value size is <code class="docutils literal notranslate"><span class="pre">u32::MAX</span></code> Bytes.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The log item and return value limits can not be reached in practice because the energy limit will kick in earlier.</p>
+</div>
+</div>
 <div class="section" id="invoking-operations">
-<span id="contract-instance-operations"></span><h2>Invoking operations<a class="headerlink" href="#invoking-operations" title="Permalink to this headline">#</a></h2>
+<h2>Invoking operations<a class="headerlink" href="#invoking-operations" title="Permalink to this headline">#</a></h2>
 <p>A receive function can use the host environment to invoke two types of
 operations during its execution.
 The possible operations that a contract can perform are:</p>
