@@ -14,7 +14,7 @@ Mainnet 4: Sirius
 
 November 25, 2022
 
-|mw-gen2| 
+|mw-gen2|
 -----------------------
 
 The |mw-gen2| introduces functionality to connect to dApps and services. This functionality is currently in beta mode.
