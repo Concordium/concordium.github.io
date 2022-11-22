@@ -36,7 +36,7 @@ The wallets work on two different environments: the Desktop Wallet on a computer
 
 .. Note::
 
-   If you are a new mobile wallet user, you must use the |mw-gen2|.
+   If you are a new mobile wallet user, you must use the |mw-gen2|. It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
 
 The following provides more details on the differences between the wallets.
 
