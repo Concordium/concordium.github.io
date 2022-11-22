@@ -39,7 +39,6 @@ If successful, the output should be similar to the following and the subindex de
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
    Invocation resulted in success:
    - Energy used: 595 NRG
    - Return value:
