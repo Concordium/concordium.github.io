@@ -19,6 +19,25 @@ November 24, 2022
 
 The |bw| now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
 
+November 21, 2022
+
+Cargo concordium 2.4.0
+----------------------
+
+Cargo concordium 2.4.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 22, 2022. This includes the following new features:
+
+- Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
+- Support for relaxed smart contract resource restrictions in ``cargo concordium run``.
+- ``cargo concordium build`` now checks contracts with respect to protocol version 5 semantics.
+
+Concordium Client 5.0.1
+-----------------------
+
+Concordium Client 5.0.1 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 22, 2022.
+It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
+
+Additionally, it supports contract schema V3. V3 schemas offer the same options as V2, but also optionally includes a schema for contract events. `transaction status` now displays contract events, and a schema can be provided with `--schema`, which will be used to parse the contract events. By default events are parsed with the schema embedded in the contract, if present. This enables ``concordium-client`` to interact with contracts and schemas using `concordium-std` version 5. There is also improved formatting of `transaction status` output using contract schemas if they are available for displaying contract events, and output function parameters are shown as hex strings in `transaction status`.
+
 November 17, 2022
 
 |mw-gen1| for Android
