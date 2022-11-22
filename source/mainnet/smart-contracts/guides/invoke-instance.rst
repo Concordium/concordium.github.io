@@ -28,14 +28,14 @@ smart-contract instance on-chain to inspect.
 Invocation
 ==========
 
-To invoke an instance with address index ``0`` using the parameterless
+To invoke an instance with address index ``0`` (the subindex defaults to ``0``) using the parameterless
 entrypoint ``my_receive``, run the following command:
 
 .. code-block:: console
 
    $concordium-client contract invoke 0 --entrypoint my_receive
 
-If successful, the output should be similar to the following and the subindex defaults to ``0``:
+If successful, the output should be similar to the following:
 
 .. code-block:: console
 
