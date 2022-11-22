@@ -45,7 +45,7 @@ If successful, the output should be similar to the following:
    - Return value:
        <some-return-value>
 
-As you can see, the subindex defaults to ``0``.
+As you can see, the subindex defaults to ``0``. The contract state is updated, but the changes are not persisted to the chain and are discarded.
 
 .. note::
 
