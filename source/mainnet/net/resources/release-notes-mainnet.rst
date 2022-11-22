@@ -12,6 +12,13 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+November 25, 2022
+
+|mw-gen2| 
+-----------------------
+
+The |mw-gen2| introduces functionality to connect to dApps and services. This functionality is currently in beta mode.
+
 November 21, 2022
 
 Cargo concordium 2.4.0
