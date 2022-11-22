@@ -98,6 +98,10 @@ transaction for attempting to create the instance is visible on-chain.
    See :ref:`initialize-contract` guide for how to initialize a
    contract in practice.
 
+.. note::
+
+   The *init function* has no return value.
+
 Instance state
 ==============
 
@@ -130,6 +134,10 @@ To summarize, a transaction for smart-contract interaction includes:
 - Parameter to the receive function.
 - Amount of CCD for the instance.
 
+.. note::
+
+   The *receive function* can have a return value.
+
 Logging events
 ==============
 
@@ -153,6 +161,20 @@ reduce cost.
 There is no limit to the number of logs per invocation (apart from energy).
 
 .. _contract-instance-operations:
+
+Limits
+======
+
+When initializing, updating, or invoking a smart contract, the following limits are enforced:
+
+- The maximum input parameter size is 65535 Bytes (``u16::MAX``).
+- The energy limit in a block is 3 million NRG (energy). If only one transaction is in the block, the transaction can consume up to 3 million NRG (energy).
+- The maximum number of log items is ``u32::MAX`` per execution.
+- The maximum return value size is ``u32::MAX`` Bytes.
+
+.. note::
+
+   The log item and return value limits can not be reached in practice because the energy limit will kick in earlier.
 
 Invoking operations
 ===================
