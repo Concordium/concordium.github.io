@@ -8,7 +8,7 @@ This guide explains how to invoke a smart contract instance, which
 means triggering a receive function and viewing its return value. Invoking an
 instance is *not a transaction* and it *does not change the state of a contract*.
 Invoking can be useful to either view information about the instance or to test
-a receive method before running an update.
+a receive method before running an update. Because invoking is not a transaction, there is no fee to run ``invoke``.
 The view functions are regular receive functions that return information about
 the contract, ideally with schemas on the return values.
 
@@ -35,7 +35,7 @@ entrypoint ``my_receive``, run the following command:
 
    $concordium-client contract invoke 0 --entrypoint my_receive
 
-If successful, the output should be similar to the following:
+If successful, the output should be similar to the following and the subindex defaults to ``0``:
 
 .. code-block:: console
 
@@ -45,7 +45,7 @@ If successful, the output should be similar to the following:
    - Return value:
        <some-return-value>
 
-As you can see, the subindex defaults to ``0``. The contract state is updated, but the changes are not persisted to the chain and are discarded.
+The contract state is updated, but the changes are not persisted to the chain and are discarded.
 
 .. note::
 
