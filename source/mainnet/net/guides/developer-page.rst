@@ -53,6 +53,7 @@ Community resources
     :maxdepth: 1
 
     sdks-apis
+    create-proofs
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2

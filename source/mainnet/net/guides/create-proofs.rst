@@ -2,7 +2,7 @@
 .. create-proofs:
 
 =============
-Create proofs 
+Create proofs
 =============
 
 The |bw| supports secret proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific range of countries or area. The user can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`secret proof<glossary-secret-proof>` to request the attribute(s) necessary.
