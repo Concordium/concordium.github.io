@@ -592,3 +592,10 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
+
+.. _glossary-zero-knowledge-proof:
+
+Zero-knowledge proof
+====================
+
+A method by which a user (the prover) can prove to another party (the verifier) that the user has a particular piece of information or meets a requirement for the service without revealing the actual information.
