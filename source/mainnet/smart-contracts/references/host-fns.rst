@@ -343,7 +343,17 @@ Functions only accessible for smart contract receive functions.
    Invoke a host instruction which is either a *transfer to an account* or a *call to a
    contract*.
 
-   :param i32 tag: ``0`` for transfer to an account or ``1`` for call to a contract.
+   :param i32 tag: Tag for the instruction to invoke.
+
+      ``0`` for transfer to an account
+
+      ``1`` for call to a contract.
+
+      ``2`` for query an account balance.
+
+      ``3`` for query a contract balance.
+
+      ``4`` for query the exchange rates.
    :param i32 start: Pointer to the start of the invoke payload.
    :param i32 length: Length of the invoke payload.
    :return: If the last five bytes are ``0`` then the call succeeded. In this
@@ -351,7 +361,11 @@ Functions only accessible for smart contract receive functions.
             *invoking* contract) has changed (``1``) or not (``0``) and the
             remaining 23 bits are the index of the return value that can be used
             in a call to |get_parameter_size|_ and |get_parameter_section|_.
-            Otherwise, the call failed and only the forth byte is set. With the value:
+            If the bits 25..32 are all zero the call failed because of a logic error and
+            there is a return value. Bits 1..24 of the response are the index of
+            the return value. Bits 32..64 are to be interpreted in two's
+            complement and will be a negative number indicating the error code.
+            Otherwise, the call failed and only the fourth byte is set. Possible values are:
 
             ``1`` if the call failed because of insufficient funds.
 
@@ -364,6 +378,26 @@ Functions only accessible for smart contract receive functions.
             ``5`` if it called a V0 contract that failed.
 
             ``6`` if it called a contract that failed with a runtime error.
+
+            No other values are possible.
+
+   :rtype: i64
+
+.. function:: upgrade(module) -> i64
+
+   Upgrade to a new module. This will change the smart contract module used for
+   this smart contract instance.
+
+   :param i32 module: Pointer to 32 bytes for a module reference.
+   :return: ``0`` if successful
+
+            ``0x07_0000_0000`` if failed because of module did not exist.
+
+            ``0x08_0000_0000`` if failed because of module did not contain a smart contract with a name matching to one of this instance.
+
+            ``0x09_0000_0000`` if failed because of module being an unsupported smart contract version.
+
+            No other values are possible.
 
    :rtype: i64
 

@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _testnet-release-notes:
 
 =======================
@@ -10,6 +11,135 @@ Sirius Testnet
 .. Note::
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+November 21, 2022
+
+Cargo concordium 2.4.0
+----------------------
+
+Cargo concordium 2.4.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 22, 2022. This includes the following new features:
+
+- Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
+- Support for relaxed smart contract resource restrictions in ``cargo concordium run``.
+- ``cargo concordium build`` now checks contracts with respect to protocol version 5 semantics.
+
+Concordium Client 5.0.1
+-----------------------
+
+Concordium Client 5.0.1 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 22, 2022.
+It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
+
+Additionally, it supports contract schema V3. V3 schemas offer the same options as V2, but also optionally includes a schema for contract events. `transaction status` now displays contract events, and a schema can be provided with `--schema`, which will be used to parse the contract events. By default events are parsed with the schema embedded in the contract, if present. This enables ``concordium-client`` to interact with contracts and schemas using `concordium-std` version 5. There is also improved formatting of `transaction status` output using contract schemas if they are available for displaying contract events, and output function parameters are shown as hex strings in `transaction status`.
+
+November 17, 2022
+
+|mw-gen1| for Android
+---------------------
+
+Identity and account creation has been locked in |mw-gen1| for Android devices. This means that you cannot create new identities or accounts in |mw-gen1| on an Android device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.  You can also still recover your wallet from a backup file in |mw-gen1| on an Android device.
+
+November 15, 2022
+
+Concordium Node 5.0.6
+---------------------
+
+Concordium Node 5.0.6 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 22, 2022. This adds the following features:
+
+   - Support for smart contract upgradability
+   - Query the current exchange rates, account balances, and contract balances from a smart contract.
+   - Relax restrictions on smart contracts, including:
+      - Parameter size limit: 1kiB -> 65535B
+      - Return value size limit: 16kiB -> no limit (apart from energy)
+      - Number of logs per invocation: 64 -> no limit (apart from energy)
+   - A new representation of accounts that is better optimised for common operations.
+   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
+
+Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.
+
+October 19, 2022
+
+|bw|
+---------------------
+
+The |bw| extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.
+
+October 18, 2022
+
+Concordium Node 4.5.0
+---------------------
+
+Concordium Node 4.5.0 contains the :ref:`updated gRPC API <grpc2-documentation>`
+which is easier to use than the previous version. It also contains bug fixes and
+performance and robustness improvements.
+
+- Node gRPC API v2 is released and enabled in all distributions.
+- The node is now able to recover after crashes which leave only treestate or only blockstate usable.
+- Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
+
+October 12, 2022
+
+Cargo concordium 2.2.0
+----------------------
+
+Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
+
+October 5, 2022
+
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
+
+September 29, 2022
+
+Concordium Node 4.4.4
+---------------------
+
+Concordium Node 4.4.4 contains performance improvements and bug fixes.
+
+- Smart contract state is no longer cached on startup and is not cached after
+  finalization. This reduces the node's memory use and startup time.
+
+- Smart contract modules are no longer retained in memory. Module artifacts are loaded as needed
+  during contract execution. Metadata is cached for a limited number of smart contract modules.
+  By default, the cache will retain metadata for at most 1000 smart contract modules, and this is
+  configurable via the ``--modules-cache-size`` command line argument or by using the
+  ``CONCORDIUM_NODE_CONSENSUS_MODULES_CACHE_SIZE`` environment variable.
+
+- Speed up and reduce memory overhead during protocol updates. Overhead in
+  memory use during protocol updates should now be less than 20%, and time to
+  process a protocol update should be around 1/3 of the previous release.
+
+- The node now validates blocks more eagerly and does not relay blocks it cannot
+  fit into the tree, i.e., pending blocks.
+
+- The ``--download-blocks-from`` option now takes the URL to the catchup ``_index file_``, permitting to
+  only download and import catchup files containing blocks not already present in the database.
+
+- Partial node database recovery. The node is now able to recover from the most
+  common causes of its database corruption.
+
+- Fix typo in environment variable ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_ADDRESSS`` (remove trailing `S`).
+
+- Fix a bug in Ctrl-C signal handling where a node would fail to stop if
+  interrupted early on in the startup if out-of-band catchup was enabled.
+
+
+September 26, 2022
+
+|mw-gen2|
+---------
+
+Concordium introduces a new wallet for Android mobile devices: the |mw-gen2|. The |mw-gen2| offers all of the same functionality you know from |mw-gen1|, such as sending and receiving CCDs, delegation, baking, and so on. But the |mw-gen2| uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released |bw|. You can read about |mw-gen2| and the differences between it and |mw-gen1| in the :ref:`FAQ<mw-gen2-faq>`.
+
+In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
+
+|mw-gen1| (previously Concordium Mobile Wallet) for Android
+-----------------------------------------------------------
+
+The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
 
 August 29, 2022
 

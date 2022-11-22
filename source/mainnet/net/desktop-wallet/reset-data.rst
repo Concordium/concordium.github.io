@@ -17,24 +17,22 @@ Delete the user data
 
 Delete the following folder containing all the user data of the wallet:
 
-.. tabs::
+.. dropdown:: Mainnet
 
-   .. tab:: Mainnet
+   - MacOS: Users/<user>/Library/Application Support/Concordium Wallet
 
-            - MacOS: Users/<user>/Library/Application Support/Concordium Wallet
+   - Linux: ~/.config/Concordium Wallet
 
-            - Linux: ~/.config/Concordium Wallet
-
-            - Windows: Users/<user>/AppData/Roaming/Concordium Wallet
+   - Windows: Users/<user>/AppData/Roaming/Concordium Wallet
 
 
-   .. tab:: Testnet
+.. dropdown:: Testnet
 
-            - MacOS: Users/<user>/Library/Application Support/Concordium Wallet testnet
+   - MacOS: Users/<user>/Library/Application Support/Concordium Wallet testnet
 
-            - Linux: ~/.config/Concordium Wallet testnet
+   - Linux: ~/.config/Concordium Wallet testnet
 
-            - Windows: Users/<user>/AppData/Roaming/Concordium Wallet testnet
+   - Windows: Users/<user>/AppData/Roaming/Concordium Wallet testnet
 
 
 .. Note:: To quickly navigate to the roaming folder on Windows, enter :code:`%appdata%` in the file explorer's navigation bar.

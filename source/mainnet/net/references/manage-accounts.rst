@@ -1,12 +1,12 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
-
+.. include:: ../../variables.rst
 .. _managing_accounts:
 
 ========
 Accounts
 ========
 
-Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Mobile Wallet, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
 
 You must have a verified identity and a user identity certificate issued by an authorized identity provider to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
@@ -32,8 +32,7 @@ The off-chain part of the account contains:
 -  decryption keys used for :ref:`shielded transfers<glossary-shielded-transfer>`.
 
 Concordium provides several ways of interacting with the on-chain account.
-Off-chain parts of accounts can be transferred between different devices but not between Mobile Wallet and Desktop Wallet, and
-the same account can be used from multiple devices at the same time.
+Off-chain parts of accounts can be transferred between different devices but not between |mw-gen1| and Desktop Wallet, or |mw-gen2| and Desktop Wallet. The same account can be used from multiple devices at the same time.
 
 Accounts on the chain are identified via an account address, which is a 32-byte
 sequence. The address is usually displayed in Base58Check encoding with version
@@ -46,6 +45,10 @@ The name is resolved to an address before interactions with the node.
 
 Initial account
 ---------------
+
+.. Note::
+
+   Initial accounts are not created by the identity provider when using |mw-gen2| or |bw|. You create all accounts yourself.
 
 The user gets an :ref:`glossary-initial-account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
@@ -64,7 +67,7 @@ Account creation
 Once you have an identity and a user identity certificate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an :ref:`app or wallet<tools>` that guides users through the account creation process. The creation of an account is an :ref:`glossary-on-chain` action that requires sending a transaction to a node that participates in the Concordium network.
 
 .. Note::
-   Mobile Wallet does not submit the transaction directly to a node, but via a proxy. Mobile Wallet does not need to be connected to a node.
+   |mw-gen2| and |mw-gen1| do not submit the transaction directly to a node, but via a proxy. |mw-gen2| and |mw-gen1| do not need to be connected to a node.
 
 The input to the transaction is a *credential*, which contains a number of :ref:`cryptographic proofs<glossary-cryptographic-proof>`, as well as a selection of attributes the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
 
@@ -77,7 +80,7 @@ all other activities completely anonymous.
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Any time you create a new account, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 Attributes
 ----------
@@ -129,7 +132,7 @@ At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
 
 - the account has :ref:`staked<glossary-staked-amount>` some of the public
-  balance in order to become a baker
+  balance in order to become a baker or to delegate
 - some of the public balance is locked up because it was received via a
   :ref:`transfer with schedule<glossary-transfer-with-schedule>`
 
@@ -161,7 +164,7 @@ validate transactions.
 
 You can :ref:`look up the sequence number<account-seqno>` from an up to date node using Concordium Client.
 
-The Mobile Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+The |mw-gen2| and |mw-gen1| keeps track of the sequence number and assigns the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually.
 
@@ -180,4 +183,49 @@ To show aliases, :ref:`run a transaction in Concordium Client<account-aliases>`.
 
 .. _tools:
 
-.. include:: ../snippets/tools.rst
+Tools
+=====
+
+The Desktop Wallet
+------------------
+
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+
+The |mw-gen1|
+-----------------
+
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+
+.. Note::
+
+   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+
+The |mw-gen2|
+------------------
+
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+
+The |bw|
+----------------
+
+The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+
+Command-line tool
+-----------------
+
+The Concordium distribution ships with a command-line tool named
+:ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
+Concordium blockchain. It cannot be used to create identities, but it can
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
+imported, the tool can be used to do CCD transfers from the account, as well as
+send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
+
+To learn more about the differences between the wallets, see :ref:`Deciding between the wallets<choosing-wallet>`.
+
+.. Warning::
+   It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
+
+.. Warning::
+   Because of the difference in the way private keys are handled between |mw-gen2| / |bw| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
+
+   It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.

@@ -1,5 +1,3 @@
-.. |Net| replace:: Mainnet
-
 .. Desktop wallet verification variables
 .. |cdw-appimage| replace:: concordium-desktop-wallet-1.5.0.AppImage
 .. |cdw-appimage-checksum| replace:: a04dcab599799533d8e35765a656a0ad938074d5f267f1829c5aa8258376b4e8
@@ -11,15 +9,17 @@
 .. Mobile Wallet product names
 .. |mw-gen1| replace:: Concordium Legacy Wallet
 .. |mw-gen2| replace:: Concordium Wallet for Android
-.. |bw| replace:: Concordium Wallet for Chrome
+.. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_4.1.0
-.. |client-linux-checksum| replace:: 3f5e32835ec029e0eb6298aee7eca1b2b13e457575f756568a4d2f06788840b9
+.. |client-linux| replace:: concordium-client_5.0.1-0
+.. |client-version| replace:: 5.0.1-0
+.. |client-linux-checksum| replace:: 3ed9f3878d07c53d6f2233d4832fed45eea74363e1f8671d42be45043dd3937b
 
 .. Node debian package verification variables
-.. |node-deb-package| replace:: concordium-mainnet-node_4.3.1_amd64.deb
-.. |node-deb-package-checksum| replace:: 9cd09fff386f17562902adea699f975acaf4d4b6e3dceaf2fb7e45030a309b65
+
+.. |node-deb-package| replace:: concordium-mainnet-node_4.5.0-0_amd64.deb
+.. |node-deb-package-checksum| replace:: 9ceb5755062e9f519bde15d988e69ad88f6127b2cd15438ac0ea51de62a981ef
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat

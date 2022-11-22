@@ -31,12 +31,12 @@ Interaction
 ===========
 
 To update an instance with address index ``0`` using the parameterless
-receive function ``my_receive`` while allowing up to 1000 energy to be used,
+receive function ``my_receive`` while allowing up to 10000 energy to be used,
 run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --entrypoint my_receive --energy 1000
+   $concordium-client contract update 0 --entrypoint my_receive --energy 10000 --sender MyAccount
 
 If successful, the output should be similar to the following:
 
@@ -45,6 +45,8 @@ If successful, the output should be similar to the following:
    Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
 
 As you can see, the subindex defaults to ``0``.
+
+.. _interact-instance-json-parameters:
 
 Passing parameters in JSON format
 ---------------------------------
@@ -64,8 +66,8 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --entrypoint my_parameter_receive \
-            --energy 1000 \
+   $concordium-client contract update 0 --sender MyAccount --entrypoint my_parameter_receive \
+            --energy 10000 \
             --parameter-json my_parameter.json
 
 If successful, the output should be similar to the following:
@@ -118,9 +120,9 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract update 0 --entrypoint my_parameter_receive \
-            --energy 1000 \
-            --parameter-bin my_parameter.bin
+   $concordium-client contract update 0 --sender MyAccount --entrypoint my_parameter_receive \
+            --energy 10000 \
+            --parameter-binary my_parameter.bin
 
 If successful, the output should be similar to the following:
 
