@@ -23,10 +23,14 @@ You can add, inspect, and send tokens in the |bw|.
             .. image:: ../images/browser-wallet/add-token-contract.png
                 :width: 50%
 
-        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **X** to return to the list to select tokens. Click **Update tokens** once you have made your selection(s).
+        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **X** to return to the list to select tokens. You can also search by token ID at the top of the screen. Click **Update tokens** once you have made your selection(s).
 
             .. image:: ../images/browser-wallet/select-tokens.png
                 :width: 50%
+
+        If you have purchased tokens on a marketplace, you can add the tokens to your wallet. The screen below appears. Click **Add selected** to add the selected tokens to your wallet.
+
+        (add screenshot)
 
         .. Note::
 
