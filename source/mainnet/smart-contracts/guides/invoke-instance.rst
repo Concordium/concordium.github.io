@@ -39,13 +39,12 @@ If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
    Invocation resulted in success:
    - Energy used: 595 NRG
    - Return value:
        <some-return-value>
 
-As you can see, the subindex defaults to ``0``. The contract state is updated, but the changes are not persisted to the chain and are discarded.
+As you can see, the subindex defaults to ``0``. If `my_receive` updates the contract state, these changes are not persisted to the chain and are discarded.
 
 .. note::
 
