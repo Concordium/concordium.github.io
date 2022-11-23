@@ -1,7 +1,7 @@
 .. _wCCD-introduction:
 
 =====================================
-Understanding the wCCD token protocol
+Understanding the wCCD smart contract
 =====================================
 
 The native currency on the Concordium blockchain is CCD. When other tokens are
@@ -22,8 +22,8 @@ blockchain network and does not comply with the ``CIS-2`` token standard.
     Please explore the four ``CIS-2`` token standard implementation examples in the Concordium
     smart contract repo:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    - `natively-upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    - `proxy-implementation-upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
     - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
     - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
 
@@ -49,55 +49,37 @@ before transferring the same amount of CCD to the receiver.
 The circulating supply of the wCCD token is backed 1:1
 by the CCD balance on the wCCD smart contract.
 
-Protocol contract addresses
----------------------------
+Contract addresses
+------------------
 
-The Concordium foundation maintains the canonical wCCD smart contract protocol and promotes its
-usage to create a coherent overall smart contract ecosystem on the Concordium blockchain.
-
-The protocol consists of three smart contracts (``proxy``, ``implementation``, and ``state``).
-The ``proxy`` contract is the entrypoint for all your interactions with the protocol.
-It holds the CCD funds and logs events. The ``proxy`` contract uses the fallback mechanism
-to forward any CCD and parameters to the invoked entrypoint on the ``implementation`` contract.
-If the ``implementation`` contract returns a value, this will also be returned by the ``proxy``.
-This architecture is used to enable upgrades to the logic of the wCCD contract.
-It can be used to add additional features and to improve the protocol based on the
+The Concordium foundation maintains the canonical wCCD smart contract and promotes its
+usage to create a coherent overall smart contract ecosystem on the Concordium blockchain. The wCCD
+smart contract deployed can be upgraded to add additional features and to improve the smart contract based on the
 newest science and research done at Concordium.
 
 .. note::
 
-    The testnet addresses below are an early version of the wCCD contract protocol.
-    They will be updated when the protocol is finalized and some minor changes can be expected.
+    The testnet address below is an early version of the wCCD smart contract. Some minor changes can be expected.
 
-The canonical wCCD smart contract protocol following the ``CIS-2`` standard
+The canonical wCCD smart contract following the ``CIS-2`` standard
 is deployed on ``testnet`` at the following addresses:
 
-+-----------------------------------------------------+-------------------------------------------------+
-| ``ProxyContractAddress (Testnet):``                 |  { index: 866, subindex: 0 }                    |
-+-----------------------------------------------------+-------------------------------------------------+
-| ``ImplementationContractAddress (Testnet):``        |  { index: 865, subindex: 0 }                    |
-+-----------------------------------------------------+-------------------------------------------------+
-| ``StateContractAddress (Testnet):``                 |  { index: 864, subindex: 0 }                    |
-+-----------------------------------------------------+-------------------------------------------------+
-|                                                     |                                                 |
-+-----------------------------------------------------+-------------------------------------------------+
+``wCCD (Testnet):`` coming soon
 
-The canonical wCCD smart contract protocol following the ``CIS-2`` standard is
+The canonical wCCD smart contract following the ``CIS-2`` standard is
 deployed on ``mainnet`` at the following addresses:
 
 .. note::
 
     Deployment on mainnet will follow once a partner has been chosen to manage the deployment.
 
-+----------------------------------------------------------+-------------------------------------------------+
-| ``ProxyContractAddress (Mainnet):``                      |        coming soon                              |
-+----------------------------------------------------------+-------------------------------------------------+
-| ``ImplementationContractAddress (Mainnet):``             |        coming soon                              |
-+----------------------------------------------------------+-------------------------------------------------+
-| ``StateContractAddress (Mainnet):``                      |        coming soon                              |
-+----------------------------------------------------------+-------------------------------------------------+
-|                                                          |                                                 |
-+----------------------------------------------------------+-------------------------------------------------+
 
-You have now read all information necessary to begin interacting with the protocol on testnet.
+``wCCD (Mainnet):`` coming soon
+
+.. note::
+
+    The wCCD smart contract is upgradeable, but the wCCD contract address will always stay the same. Only the module pointer
+    (a reference to the code that is executed) is updated in the smart contract during an upgrade.
+
+You have now read all information necessary to begin interacting with the wCCD smart contract on testnet.
 To continue with the tutorial click :ref:`here<wCCD-interacting>`.
