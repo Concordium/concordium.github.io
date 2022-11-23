@@ -5,11 +5,11 @@
 Proofs and revealing information
 ================================
 
-Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area. Sometimes they can request that you only prove that you meet the requirement without revealing the actual information. In cryptography this is called a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>`; in Concordium this is called **ID information to prove**(?) and it appears as shown below in the wallet.
+Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area. Sometimes they can request that you only prove that you meet the requirement without revealing the actual information. In cryptography this is called a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>`; in Concordium this is called **ID information to prove** and it appears as shown below in the wallet.
 
 You can see the icon next to the information is the hidden icon (screenshot).
 
-Other times the dApp or service may request that you reveal the information to them, such as your nationality or exact age. This is called **ID information to reveal**(?) and it appears as shown below in the wallet.
+Other times the dApp or service may request that you reveal the information to them, such as your nationality or exact age. This is called **ID information to reveal** and it appears as shown below in the wallet.
 
 You can see the icon next to the information is the show icon (screenshot).
 
