@@ -74,7 +74,7 @@ For baking you must be running a node on the Concordium blockchain. You can run 
 Step 2: Set up the Wallet
 -------------------------
 
-The |mw-gen1| is available for iOS and Android. |mw-gen2| is available for Android. For instructions about download and setup, see :ref:`setup-mobile-wallet`.
+The |mw-gen1| and |mw-gen2| are available for iOS and Android. For instructions about download and setup, see :ref:`setup-g2-mobile-wallet`.
 
 Step 3: Set up an identity and initial account
 ----------------------------------------------
