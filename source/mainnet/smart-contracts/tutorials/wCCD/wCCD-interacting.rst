@@ -10,7 +10,7 @@ Interacting with the wCCD token protocol
 
     - access to a testnet node
 
-    - the ``concordium-client`` installed
+    - the ``concordium-client`` version 5.0.1 or greater installed
 
     - an account created in the mobile wallet app that is funded with some CCD
 
@@ -22,6 +22,7 @@ Interacting with the wCCD token protocol
     If you haven't completed any of the above steps, you can continue
     with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, we recommend
     completing every part of this tutorial in the given order.
+    You need an up-to-date ``concordium-client`` version because the wCCD smart contract uses the newest ``schema_V3``.
 
 Query (non-state-mutative) functions
 ------------------------------------

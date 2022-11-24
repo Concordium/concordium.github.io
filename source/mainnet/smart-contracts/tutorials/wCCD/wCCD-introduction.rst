@@ -64,7 +64,7 @@ newest science and research done at Concordium.
 The canonical wCCD smart contract following the ``CIS-2`` standard
 is deployed on ``testnet`` at the following addresses:
 
-``wCCD (Testnet):`` coming soon
+``wCCD (Testnet):`` **{ index: 2059, subindex: 0 }**
 
 The canonical wCCD smart contract following the ``CIS-2`` standard is
 deployed on ``mainnet`` at the following addresses:

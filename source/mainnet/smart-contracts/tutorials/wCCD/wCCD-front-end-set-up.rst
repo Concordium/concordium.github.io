@@ -61,6 +61,11 @@ Concordium node on your behalf. Workflow 2 is for
 advanced readers that want to build all the components from the source code and connect the |bw|
 to their own hosted Concordium node.
 
+.. note::
+
+    If you already have an older |bw| extension installed, check its version and download a newer version if applicable.
+    The wCCD front-end requires some new features that are supported by the browser wallets version 0.8.3 or greater.
+
 .. dropdown:: Workflow 1 - Setup wallet connected to hosted node (click here)
 
     You are ready now to install the |bw|. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
