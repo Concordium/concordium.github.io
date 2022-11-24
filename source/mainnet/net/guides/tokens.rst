@@ -28,9 +28,10 @@ You can add, inspect, and send tokens in the |bw|.
             .. image:: ../images/browser-wallet/select-tokens.png
                 :width: 50%
 
-        If you have purchased tokens on a marketplace, you can add the tokens to your wallet. The screen below appears. Click **Add selected** to add the selected tokens to your wallet.
+        If you have purchased tokens on a marketplace, you can add the tokens to your wallet from the dApp or service so you do not have to go through the steps above. The screen below appears when the purchase is triggered and your wallet is connected. Click **Add selected** to add the selected tokens to your wallet.
 
-        (add screenshot)
+            .. image:: ../images/browser-wallet/add-tokens.png
+                :width: 50%
 
         .. Note::
 
