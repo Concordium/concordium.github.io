@@ -64,7 +64,7 @@ to their own hosted Concordium node.
 .. note::
 
     If you already have an older |bw| extension installed, check its version and download a newer version if applicable.
-    The wCCD front-end requires some new features that are supported by the browser wallets version 0.8.3 or greater.
+    The wCCD front-end requires some new features that are supported by the |bw| version 0.8.3 or greater.
 
 .. dropdown:: Workflow 1 - Setup wallet connected to hosted node (click here)
 
