@@ -28,7 +28,7 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
 
 .. dropdown:: |mw-gen2|
 
-   |mw-gen2| uses Wallet Connect to connect to dApps.
+   |mw-gen2| uses WalletConnect to connect to dApps.
 
    To connect your |mw-gen2| to a dApp:
 
