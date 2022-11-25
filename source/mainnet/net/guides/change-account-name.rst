@@ -17,16 +17,6 @@ Change account name
 
     #. Change the name and click |save| to save the change.
 
-.. dropdown:: |mw-gen1|
-
-    #. Tap on the account you want to rename.
-
-    #. In the Account details screen, tap the hamburger menu |hamburger|.
-
-    #. Tap **Change account name**.
-
-    #. Change the name and click |save| to save the change.
-
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px

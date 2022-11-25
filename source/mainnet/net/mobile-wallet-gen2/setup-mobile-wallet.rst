@@ -96,12 +96,12 @@ In the wallet you have some navigation options.
       :alt: main wallet screen with position numbers
       :width: 50%
 
-1. Balances: shows balances of all accounts.
+1. Balances: shows total balances of all accounts.
 2. Account: shows the identity on which the account was created, and totals.
 3. :ref:`Wallet settings<mw-gen2-wallet-settings>`: contains actions for the wallet.
 4. Scan QR code: tap to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
 5. Add: to :ref:`add a new account<create-account>`.
-6. Account actions: actions you can perform on the account, such as send, receive, bake/delegate.
+6. Account actions: range of actions you can perform on the account, such as send, receive, bake/delegate.
 
 .. _mw-gen2-wallet-settings:
 

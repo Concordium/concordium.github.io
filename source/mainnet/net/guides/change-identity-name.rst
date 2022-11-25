@@ -17,15 +17,6 @@ Change identity name
 
     #. Change the name and tap **Save**.
 
-.. dropdown:: |mw-gen1|
-
-    #. Go to the |morepage| page.
-
-    #. Tap **Your identity cards** page. Tap the identity you want to edit.
-
-    #. On the identity card tap |edit| next to the identity name.
-
-    #. Change the name and tap **Save**.
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
