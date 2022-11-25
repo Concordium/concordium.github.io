@@ -55,7 +55,7 @@ Contract addresses
 The Concordium foundation maintains the canonical wCCD smart contract and promotes its
 usage to create a coherent overall smart contract ecosystem on the Concordium blockchain. The wCCD
 smart contract deployed can be upgraded to add additional features and to improve the smart contract based on the
-newest science and research done at Concordium.
+newest science and research done at Concordium. The protocol is free of charge and no commissions are collected by Concordium.
 
 .. note::
 
