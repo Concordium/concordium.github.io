@@ -1547,7 +1547,7 @@ body {margin:0;}
 means triggering a receive function and viewing its return value. Invoking an
 instance is <em>not a transaction</em> and it <em>does not change the state of a contract</em>.
 Invoking can be useful to either view information about the instance or to test
-a receive method before running an update.
+a receive method before running an update. Because invoking is not a transaction, there is no fee to run <code class="docutils literal notranslate"><span class="pre">invoke</span></code>.
 The view functions are regular receive functions that return information about
 the contract, ideally with schemas on the return values.</p>
 <p>There is no limit to the number of logs per invocation (apart from energy).</p>
@@ -1563,20 +1563,19 @@ how to create an instance <a class="reference internal" href="initialize-contrac
 </div>
 <div class="section" id="invocation">
 <h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">#</a></h2>
-<p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the parameterless
+<p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> (the subindex defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>) using the parameterless
 entrypoint <code class="docutils literal notranslate"><span class="pre">my_receive</span></code>, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_receive
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Successfully updated contract instance {&quot;index&quot;:0,&quot;subindex&quot;:0} using the entrypoint &#39;my_receive&#39;.</span>
-<span class="go">Invocation resulted in success:</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Invocation resulted in success:</span>
 <span class="go">- Energy used: 595 NRG</span>
 <span class="go">- Return value:</span>
 <span class="go">    &lt;some-return-value&gt;</span>
 </pre></div>
 </div>
-<p>As you can see, the subindex defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>The contract state is updated, but the changes are not persisted to the chain and are discarded.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By default, the invocation is sent by a fictional account with address
