@@ -29,7 +29,7 @@ In certain situations, such as testing interaction with smart contracts, you may
 
     #. Click **Show private key**.
 
-    #. When your private key is shown, copy it with the |copy| button to get the key's value, or click the Export button to get a file compatible with other tools like Concordium Client.
+    #. When your private key is shown, copy it with the |copy| button to get the key's value, or click the Export button to get a file compatible with other tools like ``concordium-client``.
 
 .. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
