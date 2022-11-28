@@ -15,7 +15,7 @@ In certain situations, such as testing interaction with smart contracts, you may
 
     #. Tap **Export private key**.
 
-    #. Tap to show the key. Enter your passcode, when prompted. You can use the copy button to copy the key or tap **Export to file** to save it as a file on your device.
+    #. Tap to show the key. Enter your passcode, when prompted. You can use the copy button to copy the key or tap **Export to file** to save it as a file that is compatible with other tools like ``concordium-client``.
 
 .. dropdown:: |bw|
 
