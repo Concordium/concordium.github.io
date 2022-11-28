@@ -110,10 +110,6 @@ Wallet settings
 
 In the Wallet settings |wallet-settings| you have the following options.
 
-.. image:: ../images/mobile-wallet-gen2/more-options.jpg
-      :width: 50%
-
-
 - Your identity cards: view all identities in the wallet and details of the identities, :ref:`edit identity names<change-mw-id-name>`, and :ref:`create new identities<create-initial-account>`.
 - Address book: :ref:`manage your address book<address-book-mw>`.
 - Update passcode and biometrics: :ref:`change your wallet passcode or activate biometrics<change-passcode-mw>`.
