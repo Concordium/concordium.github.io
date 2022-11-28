@@ -33,7 +33,7 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
    To connect your |mw-gen2| to a dApp:
 
    #. Tap the scan QR code button in the Accounts overview |scan-qr-overview| or Transactions overview |scan-qr-acct|.
-   #. Scan the QR code provided by the dApp.  If you tap the scan the QR code button |scan-qr-overview| in the Accounts overview, tap the account that you want to connect to the dApp as shown below. If you are accessing the dApp on your phone, click on the link provided in the dApp.
+   #. Scan the QR code provided by the dApp.  If you tap the scan QR code button |scan-qr-overview| in the Accounts overview, tap the account that you want to connect to the dApp as shown below. If you are accessing the dApp on your phone, click on the link provided in the dApp.
 
       .. image:: ../images/mobile-wallet-gen2/dapp-select-acct.png
             :alt: white screen with text boxes for each account
