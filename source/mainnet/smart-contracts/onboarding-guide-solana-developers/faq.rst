@@ -83,10 +83,10 @@ Concordium smart contracts:
         test tests::func_a::correct_params_correct_result ... ok
         test tests::func_a::invalid_params_invalid_result ... ok
 
-.. dropdown::  How are `smart contract addresses` represented on Concordium?
+.. dropdown::  How are `program addresses` represented on Concordium?
 
     In terms of naming, Concordium uses `contract` and `account` to refer
-    to the Ethereum equivalent of a `smart contract` and an `externally owned address`, respectively.
+    to the Solana equivalent of a `program` and an `program address`, respectively.
     The word `address` refers to either an `account` address or a `contract` address on Concordium.
 
     Contract addresses on Concordium are represented by an index and a subindex as seen below.
@@ -94,7 +94,7 @@ Concordium smart contracts:
     deployed and assigned the next index number in sequential order.
     The subindex is currently not in use and is always 0. There are plans to give the subindex meaning in the future.
 
-    In contrast to Ethereum, you cannot send CCD to a contract address (or account address) before they have been deployed/initialized on the Concordium chain.
+    You cannot send CCD to a contract address (or account address) before they have been deployed/initialized on the Concordium chain.
 
     .. code-block:: rust
 
@@ -103,17 +103,17 @@ Concordium smart contracts:
             subindex: 0,
         };
 
-.. dropdown::  How are `externally owned addresses` represented on Concordium?
+.. dropdown::  How are `wallet addresses` represented on Concordium?
 
     In terms of naming, Concordium uses `contract` and `account` to refer
-    to the Ethereum equivalent of a `smart contract` and an `externally owned address`, respectively.
+    to the Solana equivalent of a `program` and a `wallet address`, respectively.
     The word `address` refers to either an `account` address or a `contract` address on Concordium.
 
     Accounts on the chain are identified via an account address, which is a 32-byte sequence.
     The address is usually displayed in Base58Check encoding with version byte 1.
     An example of such an address is 3ZFGxLtnUUSJGW2WqjMh1DDjxyq5rnytCwkSqxFTpsWSFdQnNn.
 
-    In contrast to Ethereum, `accounts` are also deployed on-chain and their corresponding `account` address only exists from that point on.
+    On Concordium, `accounts` are deployed on-chain and their corresponding `account` address only exists from that point on.
     You cannot send CCD to an account address (or a smart contract address) before they have been deployed/initialized on the Concordium chain.
     When a smart contract tries to interact with an address that has not been deployed/initialized yet, the interaction fails.
 
