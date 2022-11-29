@@ -12,12 +12,30 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
-November 25, 2022
+December 5, 2022
 
 |mw-gen2|
 -----------------------
 
 The |mw-gen2| introduces functionality to connect to dApps and services using WalletConnect. This functionality is currently in beta mode.
+
+November 29, 2022
+
+Concordium Node 5.0.6
+---------------------
+
+Concordium Node 5.0.6 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released on Mainnet on December 13, 2022. This adds the following features:
+
+   - Support for smart contract upgradability
+   - Query the current exchange rates, account balances, and contract balances from a smart contract.
+   - Relax restrictions on smart contracts, including:
+      - Parameter size limit: 1kiB -> 65535B
+      - Return value size limit: 16kiB -> no limit (apart from energy)
+      - Number of logs per invocation: 64 -> no limit (apart from energy)
+   - A new representation of accounts that is better optimised for common operations.
+   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
+
+Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.
 
 November 21, 2022
 
