@@ -146,6 +146,12 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   change-identity-name
+
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
                     :alt: small square with pencil

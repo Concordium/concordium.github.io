@@ -145,6 +145,12 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     #. Select the identity to use to create the account. Click **Create new account**.
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   change-account-name
+
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
