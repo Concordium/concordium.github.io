@@ -29,9 +29,9 @@ Example dApps
 
 Concordium has a selection of example dApps that you can clone to make your own dApps or for inspiration.
 
-    - Piggy bank: :ref:`tutorial<piggy-bank>` / dApp
-    - wCCD: :ref:`tutorial<wCCD>` / `dApp <https://wccd.testnet.concordium.com/>`_
-    - Voting: :ref:`tutorial<voting-dapp>` / `dApp <https://voting.testnet.concordium.com/>`_
+    - Piggy bank: :ref:`Piggy bank tutorial<piggy-bank>` / Piggy bank dApp
+    - wCCD: :ref:`wCCD tutorial<wCCD>` / `wCCD dApp <https://wccd.testnet.concordium.com/>`_
+    - Voting: :ref:`Voting tutorial<voting-dapp>` / `Voting dApp <https://voting.testnet.concordium.com/>`_
 
 .. _block-explorers:
 

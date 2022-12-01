@@ -294,8 +294,6 @@ This command logs a URL in the console (typically http://127.0.0.1:8080). Open t
 
     Check that your |bw| is connected to the testnet (screenshots shown in workflow 1) or a testnet node (workflow 2) and not to mainnet or stagenet.
 
-You completed the local front-end setup. You are running your own local dApp now. If you want, you can compare it with Concordium's 
+You completed the local front-end setup. You are running your own local dApp now. If you want, you can compare it with Concordium's
 `voting dApp <https://voting.testnet.concordium.com/>`_ hosted on testnet. You can use your |bw|
 to connect to the dApp.
-  
-Congratulations. You have completed the whole wCCD tutorial.
