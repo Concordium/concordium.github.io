@@ -12,12 +12,14 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
-November 29, 2022
+December 2, 2022
 
 |bw|
 --------------------
 
 The |bw| now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+November 29, 2022
 
 Concordium Node 5.0.6
 ---------------------
