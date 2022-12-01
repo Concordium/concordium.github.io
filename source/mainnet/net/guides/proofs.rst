@@ -5,15 +5,15 @@
 Proofs and revealing information
 ================================
 
-Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area. Sometimes they can request that you only prove that you meet the requirement without revealing the actual information. In cryptography this is called a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>`; in Concordium this is called **ID information to prove** and it appears as shown below in the wallet.
+Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area. You can choose whether you want to prove or reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` to request the information necessary for their service.
 
-You can see the icon next to the information is the hidden icon (screenshot).
+Sometimes they can request that you only prove that you meet the requirement without revealing the actual information. This is done with a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` and it appears as shown below in the wallet.
+
+When an attribute or attributes will be proven by zero knowledge proof but not revealed, the hidden icon (screenshot) appears next to the information to prove.
 
 Other times the dApp or service may request that you reveal the information to them, such as your nationality or exact age. This is called **ID information to reveal** and it appears as shown below in the wallet.
 
-You can see the icon next to the information is the show icon (screenshot).
-
-You can choose whether you want to prove or reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`secret proof<glossary-secret-proof>` to request the information necessary for their service.
+When an attribute or attributes are to be revealed, the shown icon (screenshot) appears next to the information to reveal.
 
 .. Warning::
 
