@@ -24,6 +24,11 @@ To initiate a request to connect to a dApp within the |bw|:
 
 The status of the account changes to *Connected*. If you need to disconnect, click **Disconnect** to disconnect the account from the dApp.
 
+.. toctree::
+   :hidden:
+
+   ../guides/proofs
+
 .. note::
 
    If you want to try to connect to a dApp to see how the functionality works, go to https://wccd.testnet.concordium.com/ and connect to it following the steps above. You can then use the dApp to connect to your account and see the behavior.

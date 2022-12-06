@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. create-proofs:
+.. _create-proofs:
 
 =============
 Create proofs
