@@ -28,6 +28,7 @@ index
    guides/create-account
    guides/send-ccd-wallets
    browser-wallet/connect-app
+   guides/tokens
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
