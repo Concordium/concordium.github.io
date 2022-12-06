@@ -5,7 +5,7 @@
 Export a private key
 ====================
 
-In certain situations, such as testing interaction with smart contracts, you may need to export your private key for an account in your wallet. The key format is specifically for :ref:`import<concordium-client-import-accounts-keys>` to ``concordium-client``.
+In certain situations, such as testing interaction with smart contracts, you may need to export your private key for an account in your wallet. The file format of the key export is specifically for :ref:`import<concordium-client-import-accounts-keys>` to ``concordium-client``. If you just copy the key to the clipboard, it's just the key itself and can be used for other purposes.
 
 .. dropdown:: |mw-gen2|
 
