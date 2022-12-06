@@ -69,7 +69,17 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
         #. Click **Finish**.
 
-.. driodiwb:: |mw-gen2| for Android
+    .. dropdown:: Remove tokens
+
+        If you do not want the token to appear in your wallet you can remove it. This does not change the ownership of the token.
+
+        There are two ways to remove tokens.
+
+        1. Click on the tab for the token type and then select the token you want to remove. Click **Don't show token in wallet**.
+
+        2. Click the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are loaded, the tokens that are in your account have a checkmark next to them. Remove the check and click **Update tokens**.
+
+.. dropdown:: |mw-gen2| for Android
 
     To access tokens and token transactions, click Tokens |token-bw|. Tabs appear for tokens.
 
