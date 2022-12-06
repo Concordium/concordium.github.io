@@ -147,3 +147,4 @@ Your transaction is now submitted to the chain. It might take a little while for
 
 .. |send-bw| image:: ../images/browser-wallet/send-ccd.png
              :alt: paper airplane
+             :width: 50px
