@@ -14,7 +14,7 @@ Sirius Testnet
 
 December 6, 2022
 
-|bw|
+|bw| 0.8.5
 --------------------
 
 The |bw| now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
