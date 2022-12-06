@@ -12,7 +12,7 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
-November 25, 2022
+December 6, 2022
 
 |mw-gen2|
 -----------------------
