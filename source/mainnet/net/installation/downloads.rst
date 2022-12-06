@@ -131,6 +131,9 @@ Download cargo-concordium:
 
    -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.5.0>`_
 
+      - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
+      - :ref:`Verification instructions <verification-cargo-linux>`
+
    -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.5.0>`_
 
    -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.5.0.exe>`_
