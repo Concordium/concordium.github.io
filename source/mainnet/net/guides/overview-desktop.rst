@@ -58,3 +58,4 @@ You're now ready to start using the Desktop Wallet.
     :maxdepth: 1
 
     ../desktop-wallet/install-ledger-app
+    ledger-wallet

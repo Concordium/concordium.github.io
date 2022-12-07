@@ -14,9 +14,9 @@ To be able to sign and send transactions using the Desktop Wallet, you need a Le
 Prerequisites
 =============
 
--  Ledger hardware wallet
+-  Ledger device
 
-.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger hardware wallet, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
+.. Warning:: During the process described in this guide, you’ll generate private keys on the Ledger device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
 Set up the Ledger device
 ========================
@@ -63,6 +63,8 @@ Follow the instructions below to update your app:
    * :ref:`update-app-ubuntu`
 
 It should not be necessary to update the certificate.
+
+.. _install-ledger-windows:
 
 Install Concordium Ledger app on Windows
 ========================================
@@ -161,6 +163,8 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 #. Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says **Uninstall Concordium**. Press the right button to navigate through the identifier until the Ledger says **Confirm action**. Press both buttons to confirm. The Ledger says **Loading, please wait** while it installs the app.
 
 #. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the Ledger app.
+
+.. _install-ledger-macos:
 
 Install Concordium Ledger app on macOS
 ======================================
@@ -280,6 +284,8 @@ When you update your Ledger, it should not be necessary to update the certificat
 #. Before you can install the new version of the Ledger app, you have to uninstall the old one. The Ledger says **Uninstall Concordium**. Press the right button to navigate through the identifier until the Ledger says **Confirm action**. Press both buttons to confirm. The Ledger says **Loading, please wait** while it installs the app.
 
 #. The Ledger says **Concordium**. Press both buttons. The Ledger says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the Ledger app.
+
+.. _install-ledger-ubuntu:
 
 Install Concordium Ledger app on Ubuntu
 =======================================
