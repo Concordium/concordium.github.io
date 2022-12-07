@@ -14,7 +14,7 @@ Mainnet 4: Sirius
 
 December 13, 2022
 
-`Protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ is effective from today at 09:05 UTC. One important change because of the protocol update is that in the future (from 14 December 2022) pay day for rewards shifts to 09:05 UTC instead of 09:00 UTC.
+`Protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ is effective from today at 08:05 UTC. One important change because of the protocol update is that in the future (from 14 December 2022) pay day for rewards shifts to 08:05 UTC instead of 08:00 UTC.
 
 December 6, 2022
 
