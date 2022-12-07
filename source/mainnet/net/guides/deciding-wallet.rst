@@ -76,7 +76,7 @@ What are the requirements for each wallet?
 
 - |mw-gen1| or |mw-gen2|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- |bw|: you'll need a device running a Google Chrome internet browser with the |bw| extension installed.
+- |bw|: you'll need a device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 
 - Desktop Wallet: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a Ledger Nano S or Ledger Nano S Plus. You’ll also have to connect to a node. You can use the default Virtual Hive node (concordiumwalletnode.com), get a third-party to run a node for you, or run a node yourself. If you run a node yourself, your computer must meet the hardware requirements for this.
 
