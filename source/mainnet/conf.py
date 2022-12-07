@@ -23,7 +23,7 @@ sys.path.append(os.path.abspath('../exts'))
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = '2021, Concordium Software ApS'
+copyright = '2021 - 2022, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -46,10 +46,25 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.extlinks",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
-    "multidoc",
-    "sphinx_reredirects"
+    # "multidoc",
+    "sphinx_reredirects",
+    # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
+    "sphinx_copybutton",
+    "sphinx_toolbox.collapse",
+    "sphinx_tabs.tabs",
+    "sphinx_design",
+    'notfound.extension'
 ]
+
+# sphinx-prompt must be the first of these two.
+extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
+
+extlinks = {
+    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+}
 
 # todo_include_todos = True
 # todo_emit_warnings = True
@@ -67,10 +82,21 @@ graphviz_dot_args=[
     "-Efontname="+graphviz_fontname,
     "-Efontsize=12",
 ]
+# Options for copybutton behavior
+copybutton_prompt_text = "$"
+copybutton_line_continuation_character = "\\"
 
+# Options for tabs behavior
+sphinx_tabs_disable_tab_closing = True
+
+# Disable default url prefix "/en/latest/" on every resource.
+notfound_urls_prefix = "/en/mainnet/"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates', '../shared/_templates']
+templates_path = ['_templates', '../_templates']
+
+# 404 page template.
+notfound_template = '404.html'
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -103,10 +129,10 @@ highlight_language = "rust"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "pydata_sphinx_theme"
 
-html_logo = "../shared/_static/concordium-logo-mainnet.svg"
-html_favicon = "../shared/_static/concordium-logo-no-text.svg"
+html_logo = "../_static/concordium-logo-dark.svg"
+html_favicon = "../_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -117,18 +143,66 @@ html_theme_options = {
     # 'canonical_url': '',
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
     # 'analytics_anonymize_ip': False,
-    'logo_only': True,
-    'display_version': True,
-    'prev_next_buttons_location': None,
+    # 'logo_only': True,
+    # 'display_version': True,
+    # 'prev_next_buttons_location': None,
     # 'style_external_links': False,
-    'style_nav_header_background': '#4486AB',
+    # 'style_nav_header_background': '#235c9b',
     # # Toc options
-    # 'collapse_navigation': False,
+    "collapse_navigation": False,
     # 'sticky_navigation': True,
-    'navigation_depth': 2,
-    'includehidden': False,
-    # 'titles_only': False
-}
+    "navigation_depth": 3,
+    # 'includehidden': False,
+    # 'titles_only': False,
+    "show_nav_level": 0,
+    "show_toc_level": 2,
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-menu"],
+    "navbar_end": ["navbar-icon-links"],
+    "page_sidebar_items": ["page-toc"],
+    "footer_items": ["footer"],
+    "show_prev_next": True,
+    "icon_links": [
+        {
+            # Concordium GitHub
+            "name": "GitHub",
+            # URL where the link will redirect
+            "url": "https://github.com/Concordium",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fab fa-github-square",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+        },
+        {
+            # Concordium Email Support
+            "name": "Support",
+            # URL where the link will redirect
+            "url": "mailto:support@concordium.software",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fas fa-envelope",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+
+        },
+        {    
+            "name": "Discourse",
+            "url": "https://support.concordium.software/latest",
+            "icon": "_static/discourse-brands.svg",
+            "type": "local",
+        },
+        {
+            # Concordium Email Support
+            "name": "Feedback",
+            # URL where the link will redirect
+            "url": "mailto:documentation@concordium.com",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fas fa-bullhorn",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+
+        },
+    ]        
+    }
 
 
 current_language = os.environ['current_language'] if 'current_language' in os.environ else 'en'
@@ -136,19 +210,14 @@ current_version = os.environ['current_version'] if 'current_version' in os.envir
 versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
 languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
 
-rst_epilog = """
-Support & Feedback
-==================
-
-If you have questions or feedback, join us on `Discourse <https://support.concordium.software/>`_, or contact us at support@concordium.software.
-"""
-
+html_show_sourcelink = False
 
 html_context = {
     "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
     "github_version": current_version,
+    "display_github": False,
     "conf_py_path": "/source/",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
@@ -164,7 +233,7 @@ html_context = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["../shared/_static"]
+html_static_path = ["../_static"]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -173,8 +242,10 @@ html_static_path = ["../shared/_static"]
 # defined by theme itself.  Builtin themes are using these templates by
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
-#
-# html_sidebars = {}
+html_sidebars = {
+    "**": ["search-field", "sidebar-nav-bs"]
+}
+
 # html_additional_pages = {}
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -264,7 +335,7 @@ linkcheck_request_headers = {
 }
 
 # -- InterSphinx links for linking between document versions ------------------
-intersphinx_mapping = {'testnet': ('https://developer.concordium.software/en/testnet/', None)}
+# intersphinx_mapping = {'smart-contracts-v0': ('https://developer.concordium.software/en/smart-contracts-v0/', None)}
 
 
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------
@@ -272,3 +343,6 @@ redirects = {
     "./net/desktop-wallet/send-gtu-single-desktop": "/en/mainnet/net/desktop-wallet/send-ccd-single-desktop.html",
     "./net/desktop-wallet/shield-gtu-desktop": "/en/mainnet/net/desktop-wallet/shield-ccd-desktop.html",
 }
+
+# -- Tags that enables the .. only option ----------------
+tags.add('mainnet')

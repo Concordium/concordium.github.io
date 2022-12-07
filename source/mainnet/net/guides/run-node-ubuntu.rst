@@ -1,12 +1,8 @@
 .. _run-node-ubuntu:
 
-==================================
-Run a node on a server with Ubuntu
-==================================
-
-.. contents::
-   :local:
-   :backlinks: none
+=============================================
+Run a node on a server with Ubuntu on Mainnet
+=============================================
 
 This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`baker node<baker-node-Ubuntu>`.
 
@@ -20,57 +16,14 @@ You can also watch the video to learn how to run a node with Ubuntu.
 Prerequisites
 =============
 
--  Ubuntu 20.04 must be installed on the server that is running the node.
+-  Ubuntu 20.04 or 22.04 must be installed on the server that is running the node.
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the Desktop Wallet. See :ref:`create-baker-desktop`.
-
-
-Upgrade from version 1.0.1 to 1.1.3
-===================================
-
-To upgrade from version `1.0.1` of the `concordium-node` package to version `1.1.3` of the `concordium-mainnet-node` package
-package you need to
-
-1. Remove the existing package
-
-   .. code-block:: console
-
-    apt remove --purge concordium-node
-
-  This will stop the node and remove all the installed files, but it will keep the database files and any files you might have added to the node's configuration and data directories.
-
-2. Install the new package
-
-   .. code-block:: console
-
-    apt install ./concordium-mainnet-node_1.1.3_amd64.deb
-
-  This step will perform automatic database migration, so that the new node will
-  not have to catch up from scratch. After installation is completed, the node and
-  the collector will be started as before.
-
-Changes to node management in version 1.1.3
--------------------------------------------
-
-There are two main differences from version 1.0.1.
-
-1. The services are named `concordium-mainnet-node` and
-   `concordium-mainnet-node-collector` instead of `concordium-node` and
-   `concordium-node-collector`. This means that all
-   `journalctl` and `systemctl` commands must use the new service names. Any
-   drop-in files that you may have will need to be moved and updated, e.g., the
-   node settings overrride should be renamed from the old
-   `/etc/systemd/system/concordium-node.service.d/override.conf` to
-   `/etc/systemd/system/concordium-mainnet-node.service.d/override.conf`
-
-2. The environment variables that are used to configure the node have been renamed.
-   There is no longer a `concordium-node-wrapper` script, instead the  node binary directly supports configuration via environment variables.
-   See `Building .deb packages for Ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/tree/main/scripts/distribution/ubuntu-packages#configuration-of-the-node>`__ for details and the most common environment variables to adjust.
+-  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
 
 Install the Debian package and run a node
------------------------------------------
+=========================================
 
 To run the node, you must install a Debian package.
 After installation, the ``concordium-mainnet-node`` and ``concordium-mainnet-node-collector`` services will be started.
@@ -80,90 +33,129 @@ The services are also enabled to start automatically on system start.
 
 #. Install the package:
 
-   .. code-block:: console
+    .. code-block:: console
 
-    sudo apt install /path-to-downloaded-package
+      $sudo apt install /path-to-downloaded-package
 
-  Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
+    Where ``path-to-downloaded-package`` is the location of the downloaded ``.deb`` file.
 
-  The path should be absolute, e.g., ``./concordium-mainnet-node.deb``, otherwise ``apt`` will assume that you want to install a package from the registry.
+    The path should be absolute, e.g., ``./concordium-mainnet-node.deb``, otherwise ``apt`` will assume that you want to install a package from the registry.
 
 3. Enter a ``node name`` when prompted. The node name is visible on the network dashboard. When you have installed the services, the ``concordium-mainnet-node`` will be running automatically.
 
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.mainnet.concordium.software/>`__ and look for a node with the name you provided.
-
-.. Note::
-   If the node is installed fresh, you can speed up initial catchup by downloading a batch of blocks and using `Out of band catchup <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md#out-of-band-catchup>`__.
-   Mainnet blocks can be downloaded from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__.
-
 
 The ``concordium-mainnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
 
 .. Note::
    If you want more detailed information about building and maintaining a node, or if your node is not running, see the `Building .deb packages for ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md>`__
 
+Enable inbound connections
+==========================
+
+If you are running your node behind a firewall, or behind your home
+router, then you will probably only be able to connect to other nodes,
+but other nodes will not be able to initiate connections to your node.
+This is perfectly fine, and your node will fully participate in the
+Concordium network. It will be able to send transactions and,
+:ref:`if so configured<baker-ubuntu>`, to bake and finalize.
+
+However you can also make your node an even better network participant
+by enabling inbound connections. By default, ``concordium-node`` listens
+on port ``8888`` for inbound connections on **Mainnet**. Depending on your network and
+platform configuration you will need to forward an external port
+to ``8888`` on your router, open it in your firewall, or both. The
+details of how this is done will depend on your configuration.
+
+Synchronize a node with the network
+===================================
+
+If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
+
+  1. Stop the node if it is running
+
+    .. code-block:: console
+
+      $sudo systemctl stop concordium-mainnet-node.service
+
+  2. Edit the node service configuration file
+
+    .. code-block:: console
+
+      $sudo systemctl edit concordium-mainnet-node.service
+
+  3. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+    .. code-block::
+
+      Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
+
+  4. Start the service again
+
+    .. code-block::
+
+      $sudo systemctl start concordium-mainnet-node.service
+
+After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
+For node versions 4.3.0 or earlier
+----------------------------------
+
+If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
+
+  1. Download mainnet blocks from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__. The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+
+  2. Stop the node if it is running
+
+    .. code-block:: console
+
+      $sudo systemctl stop concordium-mainnet-node.service
+
+
+  3. Edit the node service configuration file
+
+    .. code-block:: console
+
+      $sudo systemctl edit concordium-mainnet-node.service
+
+  4. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+    .. code-block::
+
+      Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
+      BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
+
+  5. Start the service again
+
+    .. code-block::
+
+      $sudo systemctl start concordium-mainnet-node.service
+
+After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
+.. _upgrade-node-Ubuntu:
+
+Upgrade version
+===============
+
+.. Note::
+
+  When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
+To upgrade to a newer version of the `concordium-mainnet-node` package you need to:
+
+#. Install the new package
+
+   .. code-block:: console
+
+    $apt install ./concordium-mainnet-node_(version)_amd64.deb
+
+  This step performs automatic database migration, so that the new node doesn't have to catch up from scratch. After installation is completed, the node and
+  the collector are started as before.
+
 .. _baker-node-Ubuntu:
 
 Run a baker node on Ubuntu
 ==========================
 
-The following steps show you how to run a node as a :ref:`baker <baker-concept>` on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a baker node also participates in the lottery and produces its own blocks. If the stake is high enough the baker node also participates in finalization.
-
-Configure the node with baker keys
-----------------------------------
-
-#. Move the JSON file with the baker keys you generated in the :ref:`Desktop Wallet <create-baker-desktop>` to the server that's running the node.
-   Store it, for example, in ``/home/user/concordium/baker-credentials.json``.
-
-#. In the terminal, enter:
-
-   .. code-block:: console
-
-      sudo systemctl edit concordium-mainnet-node.service
-
-#. Add the following snippet to the opened file (the file is empty the first time you open it):
-
-   .. code-block:: console
-
-      [Service]
-
-      Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
-      BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
-
-   Where you replace the path `/home/user/concordium/baker-credentials.json` with the actual location of the file.
-
-#. Save the edited file.
-
-#. Restart for the changes to take effect. Enter:
-
-   .. code-block:: console
-
-      sudo systemctl restart concordium-mainnet-node.service
-
-#. To verify the node is running, enter:
-
-   .. code-block:: console
-
-      sudo systemctl status concordium-mainnet-node.service
-
-Verify that a node is a baker node.
------------------------------------
-
-Two :ref:`epochs <glossary>` must have elapsed before you can see the baker ID of the node on the dashboard.
-
-You can use ``concordium-client`` to see the status of the node. For more information, see :ref:`Concordium Client <concordium_client>`.
-
-.. code-block:: console
-
-   $concordium-client raw GetNodeInfo
-
-   ...
-
-   Consensus type: "Active"
-
-   ...
-
-In the Desktop Wallet and the Mobile Wallet, a bread icon is added to
-the account associated with the baker node. The bread icon appears as
-soon as the transaction has been submitted. That is, before the two
-epochs have elapsed.
+For information about how to configure a node to run as a baker, see :ref:`baker-ubuntu`.

@@ -1,104 +1,88 @@
-.. include:: ../variables.rst
-
 =====
-|Net|
+index
 =====
 
 .. toctree::
-   :maxdepth: 1
    :caption: Installation
 
    installation/downloads
+   installation/downloads-testnet
+   installation/verification-instructions
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Guides
+   :includehidden:
+   :caption: Learn
 
-   guides/run-node-ubuntu
-   guides/run-node
-   guides/run-node-windows
-   guides/run-node-macos
-   guides/baker-windows
+   guides/learn-about-concordium
+
+.. toctree::
+   :includehidden:
+   :caption: Concordium Wallets
+
    guides/deciding-wallet
-   guides/overview-desktop
-   guides/multisig-transfer
+   guides/create-identity
+   guides/create-account
+   guides/send-ccd-wallets
+   guides/tokens
+   guides/shield-ccd-wallets
+   guides/shielded-transfer
+   guides/export-import
+   guides/recover-wallet
+   mobile-wallet-gen2/index
+   mobile-wallet/index
+   desktop-wallet/index
+   browser-wallet/index
+
+.. toctree::
+   :includehidden:
+   :caption: Earn with Concordium
+
+   guides/how-to-earn
    guides/overview-baker-process
-   guides/add-baker-desktop
-   guides/become-baker
-   guides/overview-shared-accounts
-   guides/multi-credentials
+   desktop-wallet/baking-dw
+   mobile-wallet/baker-mw
+   guides/delegation
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Concepts
+   :includehidden:
+   :caption: Develop on Concordium
 
-   concepts/id-accounts
-   concepts/concepts-baker
-   concepts/concepts-transactions
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Concordium Mobile Wallet
-
-   mobile-wallet/setup-mobile-wallet
-   mobile-wallet/create-identity
-   mobile-wallet/create-account-mw
-   mobile-wallet/make-simple-transfer-mw
-   mobile-wallet/make-shielded-transfer-mw
-   mobile-wallet/shield-unshield-mw
-   mobile-wallet/export-import-mw
-   mobile-wallet/share-address-mw
-   mobile-wallet/change-passcode-mw
-   mobile-wallet/inspect-release-schedule-mw
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Concordium Desktop Wallet
-
-   desktop-wallet/install-ledger-app
-   desktop-wallet/get-started-desktop
-   desktop-wallet/update-application
-   desktop-wallet/create-identity-desktop
-   desktop-wallet/create-account-desktop
-   desktop-wallet/accounts-desktop
-   desktop-wallet/create-credentials-file
-   desktop-wallet/shield-ccd-desktop
-   desktop-wallet/export-import-desktop
-   desktop-wallet/send-ccd-single-desktop
-   desktop-wallet/single-sign-schedule
-   desktop-wallet/multisig-simple-transfer
-   desktop-wallet/update-baker-keys
-   desktop-wallet/remove-baker
-   desktop-wallet/change-baker-stake
-   desktop-wallet/change-restake-settings
-   desktop-wallet/sign-transaction
-   desktop-wallet/transaction-log-filter
-   desktop-wallet/settings-overview
-   desktop-wallet/overview-addresses
-   desktop-wallet/proposed-transactions
-   desktop-wallet/make-account-report
-   desktop-wallet/send-shielded-amount
-   desktop-wallet/account-recovery
-
-.. toctree::
-   :maxdepth: 1
-   :caption: References
-
+   guides/developer-page
+   nodes/node-requirements
    references/concordium-client
-   references/manage-accounts
    references/transactions
    references/query-node
 
 .. toctree::
-   :maxdepth: 1
+   :includehidden:
+   :caption: Smart Contracts v1
+
+   Introduction <../smart-contracts/general/introduction>
+   Tutorials <../smart-contracts/tutorials/index>
+   Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   On-chain guides <../smart-contracts/guides/on-chain-index>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
+   References <../smart-contracts/references/index>
+
+.. toctree::
+   :includehidden:
+   :caption: Smart Contracts v0
+
+   Introduction <../smart-contracts-v0/general/introduction>
+   Tutorials <../smart-contracts-v0/tutorials/piggy-bank/index>
+   Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
+   On-chain guides <../smart-contracts-v0/guides/on-chain-index>
+   References <../smart-contracts-v0/references/index>
+
+.. toctree::
    :caption: Resources
 
-   resources/glossary
+   resources/ccd-scan
    resources/release-notes-mainnet
-   resources/terms-and-conditions-mw
-   resources/terms-and-conditions-dw
-   resources/third-party-licenses
-   resources/dw-licenses
+   resources/release-notes
+   resources/sirius-testnet-reset
+   resources/legal
+   resources/ar-idp-contact
 
 .. toctree::
    :hidden:

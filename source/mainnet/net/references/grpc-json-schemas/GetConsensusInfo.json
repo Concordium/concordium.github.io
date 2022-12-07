@@ -1,0 +1,243 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConsensusInfo",
+  "description": "Summary of the current state of consensus.",
+  "type": "object",
+  "required": [
+    "bestBlock",
+    "bestBlockHeight",
+    "blockArriveLatencyEMA",
+    "blockArriveLatencyEMSD",
+    "blockReceiveLatencyEMA",
+    "blockReceiveLatencyEMSD",
+    "blocksReceivedCount",
+    "blocksVerifiedCount",
+    "currentEraGenesisBlock",
+    "currentEraGenesisTime",
+    "epochDuration",
+    "finalizationCount",
+    "genesisBlock",
+    "genesisIndex",
+    "genesisTime",
+    "lastFinalizedBlock",
+    "lastFinalizedBlockHeight",
+    "protocolVersion",
+    "slotDuration",
+    "transactionsPerBlockEMA",
+    "transactionsPerBlockEMSD"
+  ],
+  "properties": {
+    "bestBlock": {
+      "description": "Hash of the current best block. The best block is a protocol defined block that the node must use a parent block to build the chain on. Note that this is subjective, in the sense that it is only the best block among the blocks the node knows about.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "bestBlockHeight": {
+      "description": "Height of the best block. See [ConsensusInfo::best_block].",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "blockArriveLatencyEMA": {
+      "description": "The exponential moving average of the time between a block's nominal slot time, and the time at which it is verified.",
+      "type": "number",
+      "format": "double"
+    },
+    "blockArriveLatencyEMSD": {
+      "description": "The exponential moving average standard deviation of the time between a block's nominal slot time, and the time at which it is verified.",
+      "type": "number",
+      "format": "double"
+    },
+    "blockArrivePeriodEMA": {
+      "description": "Exponential moving average of the time between receiving blocks (in seconds).",
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "blockArrivePeriodEMSD": {
+      "description": "Exponential moving average standard deviation of the time between blocks being verified.",
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "blockLastArrivedTime": {
+      "description": "The time (local time of the node) that a block last arrived, i.e., was verified and added to the node's tree.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "blockLastReceivedTime": {
+      "description": "The time (local time of the node) that a block was last received.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "blockReceiveLatencyEMA": {
+      "description": "Exponential moving average of block receive latency (in seconds), i.e. the time between a block's nominal slot time, and the time at which is received.",
+      "type": "number",
+      "format": "double"
+    },
+    "blockReceiveLatencyEMSD": {
+      "description": "Exponential moving average standard deviation of block receive latency (in seconds), i.e. the time between a block's nominal slot time, and the time at which is received.",
+      "type": "number",
+      "format": "double"
+    },
+    "blockReceivePeriodEMA": {
+      "description": "Exponential moving average of the time between receiving blocks (in seconds).",
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "blockReceivePeriodEMSD": {
+      "description": "Exponential moving average standard deviation of the time between receiving blocks (in seconds).",
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "blocksReceivedCount": {
+      "description": "The number of blocks that have been received.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "blocksVerifiedCount": {
+      "description": "Number of blocks that arrived, i.e., were added to the tree. Note that in some cases this can be more than [ConsensusInfo::blocks_received_count] since blocks that the node itself produces count towards this, but are not received.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "currentEraGenesisBlock": {
+      "description": "Block hash of the genesis block of current era, i.e., since the last protocol update. Initially this is equal to [`genesis_block`](Self::genesis_block)'.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "currentEraGenesisTime": {
+      "description": "Time when the current era started.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "epochDuration": {
+      "description": "Duration of an epoch.",
+      "type": "integer",
+      "format": "int64"
+    },
+    "finalizationCount": {
+      "description": "The number of completed finalizations.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "finalizationPeriodEMA": {
+      "description": "Exponential moving average of the time between finalizations. Will be `None` if there are no finalizations yet since the node start.",
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "finalizationPeriodEMSD": {
+      "description": "Exponential moving average standard deviation of the time between finalizations. Will be `None` if there are no finalizations yet since the node start.",
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "genesisBlock": {
+      "description": "Hash of the genesis block.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "genesisIndex": {
+      "description": "The number of chain restarts via a protocol update. An effected protocol update instruction might not change the protocol version specified in the previous field, but it always increments the genesis index.",
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "genesisTime": {
+      "description": "Slot time of the genesis block.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastFinalizedBlock": {
+      "description": "Hash of the last, i.e., most recent, finalized block.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SHA256Hash"
+        }
+      ]
+    },
+    "lastFinalizedBlockHeight": {
+      "description": "Height of the last finalized block. Genesis block has height 0.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "lastFinalizedTime": {
+      "description": "Time at which a block last became finalized. Note that this is the local time of the node at the time the block was finalized.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "protocolVersion": {
+      "description": "Currently active protocol version.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProtocolVersion"
+        }
+      ]
+    },
+    "slotDuration": {
+      "description": "Duration of a slot.",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "transactionsPerBlockEMA": {
+      "description": "Exponential moving average of the number of transactions per block.",
+      "type": "number",
+      "format": "double"
+    },
+    "transactionsPerBlockEMSD": {
+      "description": "Exponential moving average standard deviation of the number of transactions per block.",
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "definitions": {
+    "ProtocolVersion": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "SHA256Hash": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^(([0-9]?[a-f]?){2})*$"
+    }
+  }
+}

@@ -12,14 +12,8 @@ BUILDDIR      = build
 linkcheck-mainnet:
 	@$(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet"
 
-linkcheck-testnet:
-	@$(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)/testnet" "$(BUILDDIR)/testnet"
-
 dev-mainnet:
-	sphinx-autobuild "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet" --watch "$(SOURCEDIR)/shared"
-
-dev-testnet:
-	sphinx-autobuild "$(SOURCEDIR)/testnet" "$(BUILDDIR)/testnet" --watch "$(SOURCEDIR)/shared"
+	sphinx-autobuild "$(SOURCEDIR)/mainnet" "$(BUILDDIR)/mainnet"
 
 lint:
 	doc8 "$(SOURCEDIR)"

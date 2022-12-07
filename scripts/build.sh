@@ -6,7 +6,9 @@
 set -e # Fail script on error
 
 # Branches to include in the build, must be separated by comma and no spaces.
-all_versions='mainnet,testnet'
+
+all_versions='mainnet'
+
 # Languages to include in the build
 all_languages='en'
 
@@ -43,4 +45,8 @@ for current_version in ${versions[@]}; do
     printf "\nRunning build '${current_version}' for language '${current_language}'\n"
     sphinx-build "${source_dir}/${current_version}" "${build_dir}/${current_language}/${current_version}" -D language="${current_language}" -W
   done
+
+printf "Adding symlink ${build_dir}/404.html to ${languages[0]}/${versions[0]}/404.html\n"
+ln -sf "${languages[0]}/${versions[0]}/404.html" "${build_dir}/404.html"
+
 done

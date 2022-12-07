@@ -6,12 +6,15 @@ Before contributing please read and follow the principles outlined in
 - the [Divio documentation guide](https://documentation.divio.com/)
 - our [style guide](#style-guide).
 
+Other good documentation references include:
+- the [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
+- the [Google developer documentation style guide](https://developers.google.com/style)
 The documentation is written in reStructuredText ([Link to the
 basics](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)).
 
 For building the documentation we use
 [Sphinx](https://www.sphinx-doc.org/en/master/index.html) and the [theme from
-ReadTheDocs](https://sphinx-rtd-theme.readthedocs.io/en/stable/) with minor
+pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/) with minor
 design tweaks.
 
 Sphinx supplies a number of useful
@@ -29,7 +32,7 @@ directives
 ```
 
 To show TODOs as warnings when building the docs you need to uncomment the
-following line in `/source/testnet/conf.py` and/or `/source/mainnet/conf.py`:
+following line in `/source/mainnet/conf.py`:
 
 ```
 # todo_emit_warnings = True
@@ -43,13 +46,7 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Development
 
-All of the documentation lives in the `source` directory, here there are subdirectories for Mainnet and Testnet, and a subdirectory `shared` for content which can be shared between the two.
-
-The way to have shared content, is to make a file in both `mainnet` and `testnet`, which includes the shared content using the `include` directive.
-
-```
-.. include:: /../shared/path/to/file.rst
-```
+All of the documentation lives in the `source` directory; here there is a subdirectory for Mainnet. General content such as site images, stylesheets, and other templates are in the `source` directory.
 
 ## Installation
 
@@ -99,14 +96,7 @@ To watch the doc files and automate the build run:
 ```
 make dev-mainnet
 ```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
-
-**Testnet**
-```
-make dev-testnet
-```
-and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
-
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 Before committing, make sure to run the linter and fix all the errors reported:
 ```
@@ -115,20 +105,15 @@ make lint
 
 ### Windows
 
+**Note:**
+The exact command depends on which terminal type you are using. For example, in Powershell, you write .\make.bat dev-XXX where XXX is your target to build.
 
 **Mainnet**
 
 ```
 make.bat dev-mainnet
 ```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/mainnet).
-
-**Testnet**
-```
-make.bat dev-testnet
-```
-and navigate to [localhost:8000/testnet](http://localhost:8000/testnet).
-
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 Before committing, make sure to try to build and fix any warnings that are reported.
 
@@ -138,7 +123,7 @@ Before committing, make sure to try to build and fix any warnings that are repor
 
 
 > **Note**:
-> When working on changes to the design it can be benefitial to disable
+> When working on changes to the design it can be beneficial to disable
 > caching, as it can cause UI problems. To disable it, add the `-E` flag to the
 > `dev` command in the appropriate make file.
 
@@ -153,23 +138,33 @@ To check for dead links (can also be done by the CI), run:
 ```
 make linkcheck-mainnet
 ```
-or
-```
-make linkcheck-testnet
-```
 
+### Building the gRPC JSON schemas
+
+The folder `./source/mainnet/net/references/grpc-json-schemas/` contains the JSON
+schemas used in the gRPC documentation.
+
+To generate the schemas:
+
+1. Check out the [`derive-schema`
+branch of Concordium Rust
+SDK](https://github.com/Concordium/concordium-rust-sdk/tree/derive-schema).
+2. Run `cargo run generate --output_folder <path-to-grpc-json-schema-folder>`.
 
 # Contributing
 
-The `source/testnet` directory is used for documentation for future releases, and documentation for new features should be done here.
-
 The `source/mainnet` directory contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
+
+With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a tab if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
+
+For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.readthedocs.io/en/latest/#basic-tabs>`_.
 
 ## Style guide
 
 ### Language
 
-* For a user guide, prefer **second person** and **imperative** ("click on X").
+* For a user guide, use **second person** ("you")
+* Structure sentences, especially numbered procedures, using the **imperative** ("click on X").
 * Keep sentences **short**.
 * Prefer **present** continuous ("is") over future ("will be").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
@@ -254,6 +249,10 @@ Use the variables by:
 - Including a relative path to `variables.rst`, for example
   `../../variables.rst`.
 - Then using the variable net, for example `|Net|`.
+
+### Images
+
+Save any images that you add in the Images folder under mainnet and testnet. Create sub-folders as needed to store images.
 
 ## License
 
