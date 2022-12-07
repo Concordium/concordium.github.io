@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Setting up the front-end" href="wCCD-front-end-set-up.html" />
-    <link rel="prev" title="Understanding the wCCD token protocol" href="wCCD-introduction.html" />
+    <link rel="prev" title="Understanding the wCCD smart contract" href="wCCD-introduction.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -1666,7 +1666,7 @@ body {margin:0;}
 <p>Before you start with part 2 of this tutorial, make sure you have:</p>
 <ul class="simple">
 <li><p>access to a testnet node</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> installed</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> version 5.0.1 or greater installed</p></li>
 <li><p>an account created in the mobile wallet app that is funded with some CCD</p></li>
 <li><p>the keys from the Mobile Wallet imported into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration</p></li>
 </ul>
@@ -1675,30 +1675,19 @@ the piggy bank tutorial <a class="reference internal" href="../piggy-bank/prepar
 will guide you through these setup steps.
 If you haven’t completed any of the above steps, you can continue
 with <a class="reference internal" href="wCCD-front-end-set-up.html#wccd-front-end-set-up"><span class="std std-ref">part 3</span></a> of this tutorial. However, we recommend
-completing every part of this tutorial in the given order.</p>
+completing every part of this tutorial in the given order.
+You need an up-to-date <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> version because the wCCD smart contract uses the newest <code class="docutils literal notranslate"><span class="pre">schema_V3</span></code>.</p>
 </div>
 <div class="section" id="query-non-state-mutative-functions">
 <h2>Query (non-state-mutative) functions<a class="headerlink" href="#query-non-state-mutative-functions" title="Permalink to this headline">#</a></h2>
 <p>The protocol has four query functions (<code class="docutils literal notranslate"><span class="pre">balanceOf</span></code>, <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code>, <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code>, and <code class="docutils literal notranslate"><span class="pre">supports</span></code>)
-that you can invoke on the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract or the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> contract.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>While testing, it can be convenient to invoke these functions on the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> contract,
-but you should always invoke them on the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract in production.
-When the protocol is upgraded, the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> address becomes
-invalid. You would need to update your production product to the new <code class="docutils literal notranslate"><span class="pre">implementation</span></code> address in that case.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We recommend reading the <a class="reference internal" href="../../general/contract-schema.html#contract-schema"><span class="std std-ref">schema</span></a> section to have a basic
-understanding of its usage before reading the next paragraph.</p>
-</div>
-<p>The schema is embedded into the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> contract while you will need to provide a schema file
-when invoking the query functions on the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract. All schema files used in this tutorial can be <a class="reference external" href="https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas">downloaded</a>
-or you can create them as described in the
-comments of the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wCCD smart contract</a>.
-Because you will use a <code class="docutils literal notranslate"><span class="pre">schema</span></code> (embedded or provided with an extra flag),
+that you can invoke on the wCCD contract. Because the <code class="docutils literal notranslate"><span class="pre">schema</span></code> is already embedded,
 the input parameters can be provided with the <code class="docutils literal notranslate"><span class="pre">--parameter-json</span></code> flag.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The wCCD smart contract has its schemas embedded and you will not have to provide any schemas with the <code class="docutils literal notranslate"><span class="pre">--schema</span></code> flag.
+You can read more about schemas in this <a class="reference internal" href="../../general/contract-schema.html#contract-schema"><span class="std std-ref">section</span></a>.</p>
+</div>
 <div class="section" id="getting-the-ccd-balance-of-an-address">
 <span id="balanceccd"></span><h3>Getting the CCD balance of an address<a class="headerlink" href="#getting-the-ccd-balance-of-an-address" title="Permalink to this headline">#</a></h3>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1804,12 +1793,8 @@ Input parameters for the <code class="docutils literal notranslate"><span class=
 </pre></div>
 </div>
 </div>
-</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function with one of the following commands.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke PROXY --entrypoint balanceOf --schema balanceOf_fallback_schema.bin --parameter-json balanceOf.json --grpc-port <span class="m">10001</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke IMPLEMENTATION --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port <span class="m">10001</span>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_4.png"><img alt="../../../_images/wCCD_tutorial_4.png" src="../../../_images/wCCD_tutorial_4.png" style="width: 100%;" /></a>
@@ -1893,12 +1878,8 @@ the below JSON array.</p>
 </pre></div>
 </div>
 </div>
-</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function with one of the following commands.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke PROXY --entrypoint operatorOf --schema operatorOf_fallback_schema.bin --parameter-json operatorOf.json --grpc-port <span class="m">10001</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke IMPLEMENTATION --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port <span class="m">10001</span>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_7.png"><img alt="../../../_images/wCCD_tutorial_7.png" src="../../../_images/wCCD_tutorial_7.png" style="width: 100%;" /></a>
@@ -1922,12 +1903,8 @@ Input parameters for the <code class="docutils literal notranslate"><span class=
 The <cite>tokenId</cite> of the wCCD token is the smallest unit possible (an empty string).</p>
 </div>
 </div>
-</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function with one of the following commands.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke PROXY --entrypoint tokenMetadata --schema tokenMetadata_fallback_schema.bin --parameter-json tokenMetadata.json --grpc-port <span class="m">10001</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke IMPLEMENTATION --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port <span class="m">10001</span>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_8.png"><img alt="../../../_images/wCCD_tutorial_8.png" src="../../../_images/wCCD_tutorial_8.png" style="width: 100%;" /></a>
@@ -1952,12 +1929,8 @@ the two token standards (<code class="docutils literal notranslate"><span class=
 and the <a class="reference external" href="https://proposals.concordium.software/CIS/cis-2.html">CIS-2 standard</a>.</p>
 </div>
 </div>
-</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">supports</span></code> function with one of the following commands.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke PROXY --entrypoint supports --schema supports_fallback_schema.bin --parameter-json supports.json --grpc-port <span class="m">10001</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke IMPLEMENTATION --entrypoint supports --parameter-json supports.json --grpc-port <span class="m">10001</span>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">supports</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the response of querying if the wCCD
@@ -1970,14 +1943,14 @@ not support the standard <code class="docutils literal notranslate"><span class=
 <div class="section" id="state-mutative-functions">
 <h2>State-mutative functions<a class="headerlink" href="#state-mutative-functions" title="Permalink to this headline">#</a></h2>
 <p>The protocol has four state-mutative functions (<code class="docutils literal notranslate"><span class="pre">wrap</span></code>, <code class="docutils literal notranslate"><span class="pre">unwrap</span></code>,
-<code class="docutils literal notranslate"><span class="pre">transfer</span></code>, and <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code>) that you can invoke on the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract.
-These invokes will be passed through the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> to the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> contract (via the <a class="reference internal" href="../../guides/fallback-entrypoints.html#fallback-entrypoints"><span class="std std-ref">fallback entrypoint</span></a>).
-They require a different schema and JSON file with your input parameters for every invoke.
-All schema files used in this tutorial can be <a class="reference external" href="https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas">downloaded</a>
-or you can create them as described in the
-comments of the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wCCD smart contract</a>.
-Because you will use a <code class="docutils literal notranslate"><span class="pre">schema</span></code>,
+<code class="docutils literal notranslate"><span class="pre">transfer</span></code>, and <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code>) that you can invoke on the wCCD smart contract.
+Because the <code class="docutils literal notranslate"><span class="pre">schema</span></code> is already embedded,
 the input parameters can be provided with the <code class="docutils literal notranslate"><span class="pre">--parameter-json</span></code> flag.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The wCCD smart contract has its schemas embedded and you will not have to provide any schemas with the <code class="docutils literal notranslate"><span class="pre">--schema</span></code> flag.
+You can read more about schemas in this <a class="reference internal" href="../../general/contract-schema.html#contract-schema"><span class="std std-ref">section</span></a>.</p>
+</div>
 <div class="section" id="the-wrap-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function<a class="headerlink" href="#the-wrap-function" title="Permalink to this headline">#</a></h3>
 <p>Wrapping CCD refers to the process of converting the native currency CCD into
@@ -2080,8 +2053,8 @@ its function entry point name <code class="docutils literal notranslate"><span c
 </div>
 </div>
 </details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function, check
-the CCD balance of your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> (the account that initiates the transaction) and the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract as described <a class="reference internal" href="#balanceccd"><span class="std std-ref">here</span></a>.
-The <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function will send some CCD from your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> account to the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract.</p>
+the CCD balance of your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> (the account that initiates the transaction) and the wCCD smart contract as described <a class="reference internal" href="#balanceccd"><span class="std std-ref">here</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function will send some CCD from your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> account to the wCCD smart contract contract.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This tutorial is also used by other people and they might at the same
@@ -2095,13 +2068,13 @@ because the <code class="docutils literal notranslate"><span class="pre">wrap</s
 The <code class="docutils literal notranslate"><span class="pre">--energy</span></code> flag specifies the maximum amount of NRG to be spent on the transaction
 and can be used to set an upper limit of the transaction fee that you are
 willing to spend when interacting with the blockchain.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_PROXY --entrypoint wrap --schema wrap_fallback_schema.bin --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 micro wCCD.</p>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_2.png"><img alt="../../../_images/wCCD_tutorial_2.png" src="../../../_images/wCCD_tutorial_2.png" style="width: 100%;" /></a>
 <p>Confirm that the CCD balance of the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> was decreased
-by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> and that the CCD balance of the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract was increased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
+by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> and that the CCD balance of the wCCD smart contract contract was increased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Keep in mind that the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> also paid some CCD as transaction fees.
@@ -2184,8 +2157,8 @@ and send the received CCDs back to the same account.</p>
 </div>
 </div>
 </details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function, check
-the CCD balance of the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> address and the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract as described <a class="reference internal" href="#balanceccd"><span class="std std-ref">here</span></a>.
-The <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function will send some CCD from the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract to the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> address.</p>
+the CCD balance of the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> address and the wCCD smart contract as described <a class="reference internal" href="#balanceccd"><span class="std std-ref">here</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function will send some CCD from the wCCD smart contract to the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> address.</p>
 <p>Before you execute the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function, check
 the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address with the <a class="reference internal" href="#balanceof"><span class="std std-ref">balanceOf</span></a> function.
 The <code class="docutils literal notranslate"><span class="pre">owner</span></code> address will get its wCCD balance reduced
@@ -2193,14 +2166,14 @@ because the <code class="docutils literal notranslate"><span class="pre">unwrap<
 <p>The <code class="docutils literal notranslate"><span class="pre">owner</span></code> has to have at least a balance of <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> in wCCD tokens
 and the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> has to be the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address or be an <code class="docutils literal notranslate"><span class="pre">operator</span></code> of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address.
 You are ready now to unwrap your wCCD into CCD with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_PROXY --entrypoint unwrap --schema unwrap_fallback_schema.bin --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function.</p>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_11.png"><img alt="../../../_images/wCCD_tutorial_11.png" src="../../../_images/wCCD_tutorial_11.png" style="width: 100%;" /></a>
 <p>Confirm that the CCD balance of the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> was increased
 by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> (specified in the <code class="docutils literal notranslate"><span class="pre">unwrap.json</span></code> file) and that the CCD
-balance of the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract was decreased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
+balance of the wCCD smart contract was decreased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
 <p>Confirm that the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address decreased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> specified in the <code class="docutils literal notranslate"><span class="pre">unwrap.json</span></code> file.</p>
 </div>
 <div class="section" id="the-transfer-function">
@@ -2290,7 +2263,7 @@ The <code class="docutils literal notranslate"><span class="pre">transfer</span>
 <p>The <code class="docutils literal notranslate"><span class="pre">from</span></code> address has to have at least a balance of <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> in wCCD tokens
 and the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> has to be the <code class="docutils literal notranslate"><span class="pre">from</span></code> address or be an <code class="docutils literal notranslate"><span class="pre">operator</span></code> of the <code class="docutils literal notranslate"><span class="pre">from</span></code> address.
 You are ready now to transfer your wCCD to another address with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_PROXY --entrypoint transfer --schema transfer_fallback_schema.bin --parameter-json transfer.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function.</p>
@@ -2376,7 +2349,7 @@ an operator to the <code class="docutils literal notranslate"><span class="pre">
 </details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function, check
 the state of the smart contract with the <a class="reference internal" href="#operatorof"><span class="std std-ref">operatorOf</span></a> function.</p>
 <p>You are ready now to update the operator on your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> address with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_PROXY --entrypoint updateOperator --schema updateOperator_fallback_schema.bin --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function.</p>
@@ -2398,7 +2371,7 @@ with the <code class="docutils literal notranslate"><span class="pre">operatorOf
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Understanding the wCCD token protocol</p>
+            <p class="prev-next-title">Understanding the wCCD smart contract</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="wCCD-front-end-set-up.html" title="next page">

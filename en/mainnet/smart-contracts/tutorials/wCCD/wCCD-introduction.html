@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Understanding the wCCD token protocol &#8212; Concordium  documentation</title>
+    <title>Understanding the wCCD smart contract &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1536,8 +1536,8 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#protocol-contract-addresses">
-   Protocol contract addresses
+  <a class="reference internal nav-link" href="#contract-addresses">
+   Contract addresses
   </a>
  </li>
 </ul>
@@ -1557,8 +1557,8 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="understanding-the-wccd-token-protocol">
-<span id="wccd-introduction"></span><h1>Understanding the wCCD token protocol<a class="headerlink" href="#understanding-the-wccd-token-protocol" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="understanding-the-wccd-smart-contract">
+<span id="wccd-introduction"></span><h1>Understanding the wCCD smart contract<a class="headerlink" href="#understanding-the-wccd-smart-contract" title="Permalink to this headline">#</a></h1>
 <p>The native currency on the Concordium blockchain is CCD. When other tokens are
 built on the Concordium blockchain, they often use the recommended <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code>
 token standard. This has the advantage that other dApps (decentralized apps)
@@ -1576,8 +1576,8 @@ is meant to be imported by <code class="docutils literal notranslate"><span clas
 Please explore the four <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> token standard implementation examples in the Concordium
 smart contract repo:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wccd</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">natively-upgradable wccd</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">proxy-implementation-upgradable wccd</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi</a></p></li>
 </ul>
@@ -1599,72 +1599,32 @@ The <code class="docutils literal notranslate"><span class="pre">unwrap</span></
 before transferring the same amount of CCD to the receiver.</p>
 <p>The circulating supply of the wCCD token is backed 1:1
 by the CCD balance on the wCCD smart contract.</p>
-<div class="section" id="protocol-contract-addresses">
-<h2>Protocol contract addresses<a class="headerlink" href="#protocol-contract-addresses" title="Permalink to this headline">#</a></h2>
-<p>The Concordium foundation maintains the canonical wCCD smart contract protocol and promotes its
-usage to create a coherent overall smart contract ecosystem on the Concordium blockchain.</p>
-<p>The protocol consists of three smart contracts (<code class="docutils literal notranslate"><span class="pre">proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">implementation</span></code>, and <code class="docutils literal notranslate"><span class="pre">state</span></code>).
-The <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract is the entrypoint for all your interactions with the protocol.
-It holds the CCD funds and logs events. The <code class="docutils literal notranslate"><span class="pre">proxy</span></code> contract uses the fallback mechanism
-to forward any CCD and parameters to the invoked entrypoint on the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> contract.
-If the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> contract returns a value, this will also be returned by the <code class="docutils literal notranslate"><span class="pre">proxy</span></code>.
-This architecture is used to enable upgrades to the logic of the wCCD contract.
-It can be used to add additional features and to improve the protocol based on the
-newest science and research done at Concordium.</p>
+<div class="section" id="contract-addresses">
+<h2>Contract addresses<a class="headerlink" href="#contract-addresses" title="Permalink to this headline">#</a></h2>
+<p>The Concordium foundation maintains the canonical wCCD smart contract and promotes its
+usage to create a coherent overall smart contract ecosystem on the Concordium blockchain. The wCCD
+smart contract deployed can be upgraded to add additional features and to improve the smart contract based on the
+newest science and research done at Concordium. The protocol is free of charge and no commissions are collected by Concordium.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The testnet addresses below are an early version of the wCCD contract protocol.
-They will be updated when the protocol is finalized and some minor changes can be expected.</p>
+<p>The testnet address below is an early version of the wCCD smart contract. Some minor changes can be expected.</p>
 </div>
-<p>The canonical wCCD smart contract protocol following the <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> standard
+<p>The canonical wCCD smart contract following the <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> standard
 is deployed on <code class="docutils literal notranslate"><span class="pre">testnet</span></code> at the following addresses:</p>
-<table class="table">
-<colgroup>
-<col style="width: 52%" />
-<col style="width: 48%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ProxyContractAddress</span> <span class="pre">(Testnet):</span></code></p></td>
-<td><p>{ index: 866, subindex: 0 }</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ImplementationContractAddress</span> <span class="pre">(Testnet):</span></code></p></td>
-<td><p>{ index: 865, subindex: 0 }</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">StateContractAddress</span> <span class="pre">(Testnet):</span></code></p></td>
-<td><p>{ index: 864, subindex: 0 }</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>The canonical wCCD smart contract protocol following the <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> standard is
+<p><code class="docutils literal notranslate"><span class="pre">wCCD</span> <span class="pre">(Testnet):</span></code> <strong>{ index: 2059, subindex: 0 }</strong></p>
+<p>The canonical wCCD smart contract following the <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> standard is
 deployed on <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> at the following addresses:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Deployment on mainnet will follow once a partner has been chosen to manage the deployment.</p>
 </div>
-<table class="table">
-<colgroup>
-<col style="width: 54%" />
-<col style="width: 46%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ProxyContractAddress</span> <span class="pre">(Mainnet):</span></code></p></td>
-<td><p>coming soon</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ImplementationContractAddress</span> <span class="pre">(Mainnet):</span></code></p></td>
-<td><p>coming soon</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">StateContractAddress</span> <span class="pre">(Mainnet):</span></code></p></td>
-<td><p>coming soon</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>You have now read all information necessary to begin interacting with the protocol on testnet.
+<p><code class="docutils literal notranslate"><span class="pre">wCCD</span> <span class="pre">(Mainnet):</span></code> coming soon</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The wCCD smart contract is upgradeable, but the wCCD contract address will always stay the same. Only the module pointer
+(a reference to the code that is executed) is updated in the smart contract during an upgrade.</p>
+</div>
+<p>You have now read all information necessary to begin interacting with the wCCD smart contract on testnet.
 To continue with the tutorial click <a class="reference internal" href="wCCD-interacting.html#wccd-interacting"><span class="std std-ref">here</span></a>.</p>
 </div>
 </div>
