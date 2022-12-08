@@ -123,7 +123,7 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. dropdown:: |mw-gen2|
 
-   #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
+   #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn| on the account details screen.
 
    #. You see your current delegation. Tap **Stop delegation**.
 
