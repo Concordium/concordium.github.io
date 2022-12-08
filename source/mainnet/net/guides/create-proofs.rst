@@ -64,6 +64,11 @@ Structure a membership proof
 ----------------------------
 
 
+
+Membership proofs can also prove that a user is NOT a member of an attribute or attributes. For example, if you need to know whether a user is a resident of a country that is subject to sanctions and cannot use your service, you might have a proof that determines whether the user resides in one or more of the countries.
+
+
+
 Example
 =======
 

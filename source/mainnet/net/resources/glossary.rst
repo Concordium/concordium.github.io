@@ -339,6 +339,13 @@ mainnet will receive periodic upgrades, but in contrast to the :ref:`testnet<glo
 will never be reset, and accounts created on the mainnet will remain
 indefinitely.
 
+.. _glossary-membership-proof:
+
+Membership proof
+================
+
+A proof to determine if a user has one or more attributes, for example, lives in the EU. Can also be a non-membership proof.
+
 .. _glossary-node:
 
 Node
@@ -361,6 +368,12 @@ May refer to:
 -  *Leadership Election Nonce*: a randomized value that is updated each
    :ref:`epoch<glossary-epoch>` that is used to seed the :ref:`leader election<glossary-leader-election>` process.
 -  :ref:`Transaction sequence number<glossary-transaction-sequence-number>` (same as account sequence number)
+
+.. _non-membership-proof:
+
+Non-membership proof
+====================
+
 
 .. _glossary-off-chain:
 
@@ -397,6 +410,13 @@ Passive delegation
 ==================
 
 A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
+
+.. _glossary-range-proofs:
+
+Range proofs
+============
+
+A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 to the car rental company. This could be constructed as a range proof.
 
 .. _glossary-secret-recovery-phrase:
 
@@ -591,4 +611,4 @@ the :ref:`lottery power<glossary-lottery-power>`.
 Zero-knowledge proof
 ====================
 
-A method by which a user (the prover) can prove to another party (the verifier) that the user has a particular piece of information or meets a requirement for the service without revealing the actual information.
+A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing the actual information.
