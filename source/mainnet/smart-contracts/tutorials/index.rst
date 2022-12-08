@@ -19,3 +19,4 @@ You are going to write a basic web front-end example that can read from and writ
 
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
+   Voting dApp <./voting/index>

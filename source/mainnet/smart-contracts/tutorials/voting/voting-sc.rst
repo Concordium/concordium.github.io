@@ -1,5 +1,8 @@
 .. include:: ../../variables.rst
-.. _voting-dapp:
+.. _Rust: https://www.rust-lang.org/
+.. _concordium-std: https://docs.rs/concordium-std/latest/concordium_std/index.html
+.. |concordium-std| replace:: ``concordium-std``
+.. _voting-sc:
 
 =========================
 The voting smart contract

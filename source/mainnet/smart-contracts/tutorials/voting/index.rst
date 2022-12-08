@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _voting-dapp:
 
 
@@ -41,4 +41,4 @@ To start the tutorial click :ref:`here<wCCD-introduction>`.
    :maxdepth: 1
 
    Writing a voting smart contract <./voting-sc>
-   Setting up the front-end <./voting-frontend>
+   Setting up the front-end <./voting-dapp>
