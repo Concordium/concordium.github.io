@@ -26,6 +26,10 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
 
    The status of the account changes to *Connected*. If you need to disconnect, click **Disconnect** to disconnect the account from the dApp.
 
+   .. note::
+
+      If you want to try to connect to a dApp to see how the functionality works, go to https://wccd.testnet.concordium.com/ and connect to it following the steps above. You can then use the dApp to connect to your account and see the behavior.
+
 .. dropdown:: |mw-gen2|
 
    |mw-gen2| uses WalletConnect to connect to dApps.
@@ -58,10 +62,6 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
    .. Note::
 
       While you are connected to a dApp you cannot perform other transactions in the |mw-gen2|. You must disconnect the dApp before you can do other transactions.
-
-.. note::
-
-   If you want to try to connect to a dApp to see how the functionality works, go to https://wccd.testnet.concordium.com/ and connect to it following the steps above. You can then use the dApp to connect to your account and see the behavior.
 
 .. |scan-qr-acct| image:: ../images/scan-qr-acct.png
              :alt: qr code scanner symbol on blue background
