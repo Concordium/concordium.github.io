@@ -14,7 +14,7 @@ Sirius Testnet
 
 December 8, 2022
 
-|mw-gen2|
+|mw-gen2| 1.1.0
 -----------------------
 
 The |mw-gen2| introduces functionality to connect to dApps and services using WalletConnect. This functionality is currently in beta mode.
