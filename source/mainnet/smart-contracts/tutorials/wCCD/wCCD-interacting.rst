@@ -10,7 +10,7 @@ Interacting with the wCCD token protocol
 
     - access to a testnet node
 
-    - the ``concordium-client`` installed
+    - the ``concordium-client`` version 5.0.1 or greater installed
 
     - an account created in the mobile wallet app that is funded with some CCD
 
@@ -22,31 +22,19 @@ Interacting with the wCCD token protocol
     If you haven't completed any of the above steps, you can continue
     with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, we recommend
     completing every part of this tutorial in the given order.
+    You need an up-to-date ``concordium-client`` version because the wCCD smart contract uses the newest ``schema_V3``.
 
 Query (non-state-mutative) functions
 ------------------------------------
 
 The protocol has four query functions (``balanceOf``, ``operatorOf``, ``tokenMetadata``, and ``supports``)
-that you can invoke on the ``proxy`` contract or the ``implementation`` contract.
-
-.. note::
-
-    While testing, it can be convenient to invoke these functions on the ``implementation`` contract,
-    but you should always invoke them on the ``proxy`` contract in production.
-    When the protocol is upgraded, the ``implementation`` address becomes
-    invalid. You would need to update your production product to the new ``implementation`` address in that case.
-
-.. note::
-
-    We recommend reading the :ref:`schema <contract-schema>` section to have a basic
-    understanding of its usage before reading the next paragraph.
-
-The schema is embedded into the ``implementation`` contract while you will need to provide a schema file
-when invoking the query functions on the ``proxy`` contract. All schema files used in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-or you can create them as described in the
-comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
-Because you will use a ``schema`` (embedded or provided with an extra flag),
+that you can invoke on the wCCD contract. Because the ``schema`` is already embedded,
 the input parameters can be provided with the ``--parameter-json`` flag.
+
+.. note::
+
+    The wCCD smart contract has its schemas embedded and you will not have to provide any schemas with the ``--schema`` flag.
+    You can read more about schemas in this :ref:`section <contract-schema>`.
 
 .. _balanceCCD:
 
@@ -157,17 +145,11 @@ The ``balanceOf`` function
             }
         ]
 
-You are ready now to invoke the ``balanceOf`` function with one of the following commands.
+You are ready now to invoke the ``balanceOf`` function with the following command.
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint balanceOf --schema balanceOf_fallback_schema.bin --parameter-json balanceOf.json --grpc-port 10001
-
-or
-
-.. code-block:: console
-
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port 10001
 
 .. image:: ./images/wCCD_tutorial_4.png
     :width: 100 %
@@ -252,17 +234,11 @@ The ``operatorOf`` function
             }
         ]
 
-You are ready now to invoke the ``operatorOf`` function with one of the following commands.
+You are ready now to invoke the ``operatorOf`` function with the following command.
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint operatorOf --schema operatorOf_fallback_schema.bin --parameter-json operatorOf.json --grpc-port 10001
-
-or
-
-.. code-block:: console
-
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port 10001
 
 .. image:: ./images/wCCD_tutorial_7.png
     :width: 100 %
@@ -283,17 +259,11 @@ The ``tokenMetadata`` function
         This empty string is required because of the CIS-2 token standard.
         The `tokenId` of the wCCD token is the smallest unit possible (an empty string).
 
-You are ready now to invoke the ``tokenMetadata`` function with one of the following commands.
+You are ready now to invoke the ``tokenMetadata`` function with the following command.
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint tokenMetadata --schema tokenMetadata_fallback_schema.bin --parameter-json tokenMetadata.json --grpc-port 10001
-
-or
-
-.. code-block:: console
-
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port 10001
 
 .. image:: ./images/wCCD_tutorial_8.png
     :width: 100 %
@@ -315,17 +285,11 @@ The ``supports`` function
         You can find more information about the `CIS-0 standard <https://proposals.concordium.software/CIS/cis-0.html>`_
         and the `CIS-2 standard <https://proposals.concordium.software/CIS/cis-2.html>`_.
 
-You are ready now to invoke the ``supports`` function with one of the following commands.
+You are ready now to invoke the ``supports`` function with the following command.
 
 .. code-block:: console
 
-    $./concordium-client contract invoke PROXY --entrypoint supports --schema supports_fallback_schema.bin --parameter-json supports.json --grpc-port 10001
-
-or
-
-.. code-block:: console
-
-    $./concordium-client contract invoke IMPLEMENTATION --entrypoint supports --parameter-json supports.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port 10001
 
 The below screenshot shows the response of querying if the wCCD
 token contract supports the following standards
@@ -339,14 +303,14 @@ State-mutative functions
 ------------------------
 
 The protocol has four state-mutative functions (``wrap``, ``unwrap``,
-``transfer``, and ``updateOperator``) that you can invoke on the ``proxy`` contract.
-These invokes will be passed through the ``proxy`` to the ``implementation`` contract (via the :ref:`fallback entrypoint <fallback-entrypoints>`).
-They require a different schema and JSON file with your input parameters for every invoke.
-All schema files used in this tutorial can be `downloaded <https://github.com/Concordium/concordium.github.io/tree/main/source/mainnet/smart-contracts/tutorials/wCCD/schemas>`_
-or you can create them as described in the
-comments of the `upgradable wCCD smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
-Because you will use a ``schema``,
+``transfer``, and ``updateOperator``) that you can invoke on the wCCD smart contract.
+Because the ``schema`` is already embedded,
 the input parameters can be provided with the ``--parameter-json`` flag.
+
+.. note::
+
+    The wCCD smart contract has its schemas embedded and you will not have to provide any schemas with the ``--schema`` flag.
+    You can read more about schemas in this :ref:`section <contract-schema>`.
 
 The ``wrap`` function
 =====================
@@ -450,8 +414,8 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
         }
 
 Before you execute the ``wrap`` function, check
-the CCD balance of your ``SENDER_ACCOUNT`` (the account that initiates the transaction) and the ``proxy`` contract as described :ref:`here <balanceCCD>`.
-The ``wrap`` function will send some CCD from your ``SENDER_ACCOUNT`` account to the ``proxy`` contract.
+the CCD balance of your ``SENDER_ACCOUNT`` (the account that initiates the transaction) and the wCCD smart contract as described :ref:`here <balanceCCD>`.
+The ``wrap`` function will send some CCD from your ``SENDER_ACCOUNT`` account to the wCCD smart contract contract.
 
 .. note::
 
@@ -470,7 +434,7 @@ willing to spend when interacting with the blockchain.
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_PROXY --entrypoint wrap --schema wrap_fallback_schema.bin --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
 
 The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 micro wCCD.
 
@@ -478,7 +442,7 @@ The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,0
     :width: 100 %
 
 Confirm that the CCD balance of the ``SENDER_ACCOUNT`` was decreased
-by ``AMOUNT`` and that the CCD balance of the ``proxy`` contract was increased by ``AMOUNT``.
+by ``AMOUNT`` and that the CCD balance of the wCCD smart contract contract was increased by ``AMOUNT``.
 
 .. note::
 
@@ -562,8 +526,8 @@ wCCD token in the wCCD smart contract and getting CCD in return.
         }
 
 Before you execute the ``unwrap`` function, check
-the CCD balance of the ``receiver`` address and the ``proxy`` contract as described :ref:`here <balanceCCD>`.
-The ``unwrap`` function will send some CCD from the ``proxy`` contract to the ``receiver`` address.
+the CCD balance of the ``receiver`` address and the wCCD smart contract as described :ref:`here <balanceCCD>`.
+The ``unwrap`` function will send some CCD from the wCCD smart contract to the ``receiver`` address.
 
 Before you execute the ``unwrap`` function, check
 the wCCD balance of the ``owner`` address with the :ref:`balanceOf <balanceOf>` function.
@@ -576,7 +540,7 @@ You are ready now to unwrap your wCCD into CCD with the following command.
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_PROXY --entrypoint unwrap --schema unwrap_fallback_schema.bin --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
 
 The below screenshot shows the execution of the ``unwrap`` function.
 
@@ -585,7 +549,7 @@ The below screenshot shows the execution of the ``unwrap`` function.
 
 Confirm that the CCD balance of the ``receiver`` was increased
 by ``AMOUNT`` (specified in the ``unwrap.json`` file) and that the CCD
-balance of the ``proxy`` contract was decreased by ``AMOUNT``.
+balance of the wCCD smart contract was decreased by ``AMOUNT``.
 
 Confirm that the wCCD balance of the ``owner`` address decreased by ``AMOUNT`` specified in the ``unwrap.json`` file.
 
@@ -680,7 +644,7 @@ You are ready now to transfer your wCCD to another address with the following co
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_PROXY --entrypoint transfer --schema transfer_fallback_schema.bin --parameter-json transfer.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
 
 The below screenshot shows the execution of the ``transfer`` function.
 
@@ -772,7 +736,7 @@ You are ready now to update the operator on your ``SENDER_ACCOUNT`` address with
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_PROXY --entrypoint updateOperator --schema updateOperator_fallback_schema.bin --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
 
 The below screenshot shows the execution of the ``updateOperator`` function.
 

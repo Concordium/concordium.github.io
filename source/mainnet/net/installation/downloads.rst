@@ -8,6 +8,7 @@ Downloads - Mainnet
 
 This topic contains information about where you can download the Concordium Wallets and tools for Mainnet. You can also find out about the hardware requirements for running a node.
 
+
 .. _downloads-mwgen2:
 
 |mw-gen2|
@@ -48,7 +49,7 @@ You can find |mw-gen1| on App Store and on Google Play.
 |bw|
 =================================
 
-The |bw| is available to download as an extension for the `Chrome web browser <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
+The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
 
 .. _downloads-desktop-wallet:
 
@@ -137,7 +138,7 @@ Download cargo-concordium:
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions v4.5.0
+Concordium node distributions v5.0.6
 ====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
@@ -151,7 +152,7 @@ Ubuntu
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.5.0-0_amd64.deb>`_
+   - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.0.6-0_amd64.deb>`_
 
       - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
       - :ref:`Verification instructions <verification-node-debian-package>`
@@ -172,7 +173,7 @@ Windows
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-4.5.0-0.msi>`_
+   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.0.6-0.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
@@ -181,7 +182,7 @@ Mac
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-4.5.0-0.pkg>`_
+   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.0.6-0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
