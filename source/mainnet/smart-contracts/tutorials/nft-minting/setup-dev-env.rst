@@ -78,6 +78,6 @@ Setup a wallet
 
 Now you need a Concordium wallet. Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a Chrome web browser and configure it to run on testnet. Follow :ref:`these instructions<setup-bw>` to install the extension for testnet and set it up with an identity and account. Use the Testnet faucet to claim 2000 CCDs for testing purposes.
 
-After that step, you need to :ref:`export the keys<export-bw-keys>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository.
+After that step, you need to :ref:`export the keys<export-key>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository.
 
 Continue to the :ref:`next part<upload-nft>` of the tutorial to upload your NFT and assign metadata to it.
