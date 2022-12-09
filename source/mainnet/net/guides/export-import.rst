@@ -141,7 +141,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
 .. dropdown:: |mw-gen2|
 
-    Backup is not available in |mw-gen2|. It uses a secret recovery phrase to recover your accounts, identities, and private keys. For information about recovering your |mw-gen1| wallet, see :ref:`Recover your wallet<recover-wallet>`.
+    Backup is not available in |mw-gen2|. It uses a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. For information about recovering your |mw-gen1| wallet, see above.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
