@@ -344,7 +344,7 @@ indefinitely.
 Membership proof
 ================
 
-A proof to determine if a user has one or more attributes, for example, lives in the EU. Can also be a non-membership proof.
+A proof to determine if a user has one or more attributes, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
 
 .. _glossary-node:
 
@@ -374,6 +374,7 @@ May refer to:
 Non-membership proof
 ====================
 
+A proof to determine that a user does not meet one or more attributes, for example, that they are a resident of a country under trade sanctions.
 
 .. _glossary-off-chain:
 
@@ -611,4 +612,4 @@ the :ref:`lottery power<glossary-lottery-power>`.
 Zero-knowledge proof
 ====================
 
-A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing the actual information.
+A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing anything beyond the truth of the proven statement.

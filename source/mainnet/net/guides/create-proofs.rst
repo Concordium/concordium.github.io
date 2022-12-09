@@ -5,7 +5,7 @@
 Create proofs
 =============
 
-The |bw| supports secret proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific range of countries or area. The user can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` to request the attribute(s) necessary. The wallet owner chooses whether to prove or reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
+The |bw| supports secret proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific range of countries or area. The user can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` to request proof of the attribute(s) necessary without revealing anything beyond the truth of the statement. The dApp or service can also request that attributes are revealed. The wallet owner chooses whether to prove or reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
 
 General rules
 =============
@@ -35,7 +35,7 @@ The attributes that can be revealed are:
 Range proofs
 ============
 
-Range proofs allow you to present a range of values to the user's wallet to determine whether the user meets the required attribute. For example, you might want to know if a user over 18 years of age but under 30 years of age. You can present this as a range proof to be verified by the wallet.
+:ref:`Range proofs<glossary-range-proofs>` allow you to present a range of values to the user's wallet to determine whether the user meets the required attribute. For example, you might want to know if a user over 18 years of age but under 30 years of age. You can present this as a range proof to be verified by the wallet.
 
 Relevant attributes for range proofs are:
 
@@ -51,7 +51,7 @@ Structure a range proof
 Membership proofs
 =================
 
-Membership proofs allow you to present a list of values to the user's wallet to determine whether the user has one of the required attributes in the list. For example, you might want to know if a user is a resident of the EU. You can present this as a membership proof to be verified by the wallet.
+:ref:`Membership proofs<glossary-membership-proof>` allow you to present a list of values to the user's wallet to determine whether the user has one of the required attributes in the list. For example, you might want to know if a user is a resident of the EU. You can present this as a membership proof to be verified by the wallet.
 
 Relevant attributes for membership proofs are:
 
@@ -65,7 +65,7 @@ Structure a membership proof
 
 
 
-Membership proofs can also prove that a user is NOT a member of an attribute or attributes. For example, if you need to know whether a user is a resident of a country that is subject to sanctions and cannot use your service, you might have a proof that determines whether the user resides in one or more of the countries.
+Membership proofs can also prove that a user does NOT have an attribute or attributes, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know whether a user is a resident of a country that is subject to trade sanctions and cannot use your service, you might have a proof that determines whether the user resides in one or more of the countries.
 
 
 
