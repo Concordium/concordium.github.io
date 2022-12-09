@@ -22,10 +22,22 @@ In case you get a new device or need to restore your existing device, you can re
 
     #. Select whether to recover your wallet in Mainnet or Testnet.
 
+    If recovery is successful, you will see a screen similar to below. If recovery is only partial, you can try to recover using the **Restore IDs and accounts option** in Wallet settings.
+
+    .. image:: ../images/browser-wallet/recovery-success-bw.png
+        :width: 25%
+
+    .. image:: ../images/browser-wallet/wallet-settings.png
+        :width: 25%
+
     .. Note::
 
         You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can :ref:`switch between mainnet and testnet<switch-network>`.
         If you use both networks, you can recover on the other net after setup, through the settings page.
+
+    .. Warning::
+
+        If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must :ref:`add the tokens<tokens>` again to view them in your wallet.
 
 .. dropdown:: |mw-gen2|
 
@@ -52,7 +64,7 @@ In case you get a new device or need to restore your existing device, you can re
 
     This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. Tap **Try again** to attempt recovery again now or tap **Continue** to wait until later to try to recover. If you wait until later you can continue to the wallet.
 
-    To continue recovery, go to the More page |morepage| and tap **Recovery** to continue.
+    To continue recovery, tap |wallet-settings| and tap **Recovery** to continue.
 
     .. Note::
 
@@ -67,3 +79,6 @@ In case you get a new device or need to restore your existing device, you can re
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
                     :width: 20px
                     :alt: three horizontal lines
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px

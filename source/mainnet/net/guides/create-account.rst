@@ -123,8 +123,6 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
 
-    You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
-
     .. Warning::
         **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
         **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
@@ -146,6 +144,12 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     #. Click the Accounts drop-down. Then click **Add new**.
 
     #. Select the identity to use to create the account. Click **Create new account**.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   change-account-name
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow
