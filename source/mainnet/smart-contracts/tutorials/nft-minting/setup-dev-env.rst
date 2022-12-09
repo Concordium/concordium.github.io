@@ -106,7 +106,7 @@ One thing to note is that if you click |send|, you enter transaction window. Thi
 .. image:: images/tx-fee-in-bw.png
     :width: 100%
 
-After that step, you need to :ref:`export the keys<export-bw-keys>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
+After that step, you need to :ref:`export the keys<export-key>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
 
 .. image:: images/bw-export-key.png
     :width: 100%
