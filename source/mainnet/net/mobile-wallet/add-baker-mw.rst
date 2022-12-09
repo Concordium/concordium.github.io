@@ -7,7 +7,7 @@ Add baker in |mw-gen2| and |mw-gen1|
 
 .. dropdown:: |mw-gen2|
 
-    #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
+    #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
 
     #. Select **Continue to baker setup**.
 
