@@ -516,7 +516,7 @@ The process of generating random input and running the test is repeated ``num_te
        #[concordium_quickcheck(num_tests = 500)]
        fn some_property_test(address: Address, amount: Amount) -> bool {
         ...
-        // Instantiate custom struct with random parameters.
+        // Instantiate custom struct with random parameters, if necessary.
         let input = MyParameters { sender: address, payment: amount }
         ...
         }
@@ -526,7 +526,7 @@ The types ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait imp
 Read more about available ``Arbitrary`` instances for Concordium-specific types in |concordium_contracts_common|_ documentation.
 |QuickCheck|_ defines ``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``, etc.).
 These instances are available automatically when writing tests.
-Custom user data type instances can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
+Custom user data type instances, like ``MyParameters`` above, can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
 See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
 
 The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_wasm`:
@@ -575,12 +575,12 @@ Consider a counter with a threshold: if the count is less than the threshold, it
 
     #[derive(Serialize)]
     struct State {
-        threshold: u32,
-        count:     u32,
+        threshold: u16,
+        count:     u16,
     }
 
     impl State {
-        fn new(threshold: u32) -> Self {
+        fn new(threshold: u16) -> Self {
             State {
                 count: 0,
                 threshold,
@@ -612,12 +612,14 @@ Consider a counter with a threshold: if the count is less than the threshold, it
     mod test {
         use super::*;
 
-        // Property: counter stays below the threshold.
-        // Run 1000 tests with random threshold values.
-        #[concordium_quickcheck(num_tests = 1000)]
-        fn prop_counter_never_above_threshold(threshold: u32) -> bool {
+        // Property: counter stays below the threshold for any number of calls `n`.
+        // Run 500 tests with random `n` and `threshold` values.
+        #[concordium_quickcheck(num_tests = 500)]
+        fn prop_counter_always_below_threshold(threshold: u16, n: u16) -> bool {
             let mut state = State::new(threshold);
-            state.increment();
+            for _ in 0..n {
+                state.increment()
+            }
             state.count <= threshold
         }
     }
@@ -626,15 +628,17 @@ The test fails with a counterexample, i.e., an input that breaks the property:
 
 .. code-block::
 
-  TestResult {
-    status: Fail,
-    arguments: [
-        "0",
-    ],
-    err: None,
+    TestResult {
+        status: Fail,
+        arguments: [
+            "0",
+            "1",
+        ],
+        err: None,
+    }
 
 The ``arguments`` part shows the values that caused the test to fail.
-In this case, if the threshold is ``0``, then the counter becomes ``1`` after calling ``state.increment()``, breaking the property.
+In this case, if the threshold is ``0`` and the number of calls is ``1``, then the counter becomes ``1`` after calling ``state.increment()``, breaking the property.
 
 .. note::
 
