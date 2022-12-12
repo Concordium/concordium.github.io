@@ -15,7 +15,7 @@ As a baker you should manage your baker node responsibily for the benefit of all
 - Protect your baker keys so that they are not lost or compromised.
 - Check regularly to make sure that you are not close to the bounding cap for max capital for a baker. If you're getting close to the max capital, you can split and make another baker to divide the capital.
 - Open a baker pool. This allows others to delegate stake to you, thus increasing your effective stake and your odds of getting selected to bake a block. You also receive a commission on the delegator's rewards.
-- Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a baker, including node software releases and protocol updates.
+- Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a baker, including node software releases and protocol updates. To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
 Recommendations for baker pool owners
 -------------------------------------
