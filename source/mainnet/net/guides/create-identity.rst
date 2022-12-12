@@ -5,7 +5,7 @@
 Create an identity
 ==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw|, an initial account is not submitted by the identity provider.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw| and |mw-gen2|, an initial account is not submitted by the identity provider.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -60,7 +60,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen2|. You do this from the **Identities** page.
 
-   #. Go to the |morepage| page.
+   #. Tap |wallet-settings|.
 
    #. Tap **Your identity cards** page.
 
@@ -79,6 +79,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
          :width: 25%
 
    You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
+
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px
 
 .. dropdown:: |mw-gen1|
 
@@ -143,10 +147,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
    #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
 
 .. toctree::
-    :hidden:
-    :maxdepth: 2
+   :hidden:
+   :maxdepth: 1
 
-    change-identity-name
+   change-identity-name
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px
