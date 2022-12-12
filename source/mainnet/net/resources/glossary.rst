@@ -369,7 +369,7 @@ May refer to:
    :ref:`epoch<glossary-epoch>` that is used to seed the :ref:`leader election<glossary-leader-election>` process.
 -  :ref:`Transaction sequence number<glossary-transaction-sequence-number>` (same as account sequence number)
 
-.. _non-membership-proof:
+.. _glossary-non-membership-proof:
 
 Non-membership proof
 ====================

@@ -32,6 +32,24 @@ The attributes that can be revealed are:
 - National ID number
 - Tax ID number
 
+Asking a user to reveal attributes
+==================================
+
+You can construct a reveal statement in which the wallet owner must consent to reveal one or more specific attributes.
+
+In the example below, the wallet owner's country of residence is requested to be revealed.
+
+.. code-block:: console
+
+    [
+      {
+        "type": "RevealAttribute",
+        "attributeTag": "countryOfResidence"
+      }
+    ]
+
+Unless it is absolutely critical to know a specific attribute, it is good policy to use the proof types below instead to determine a user's eligibility for your app instead of requesting that they reveal information to you.
+
 Range proofs
 ============
 
@@ -46,7 +64,21 @@ Relevant attributes for range proofs are:
 Structure a range proof
 -----------------------
 
+In the example below, you see a range proof constructed to check that wallet owner is between 25 and 65 years old (as of today's date).
 
+.. code-block:: console
+
+    {
+      "challenge": "a54bc4116655d247fa625d98f768d4d81e55ffe26ac6bab259bad5895d49ae00",
+      "statement": [
+        {
+          "type": "AttributeInRange",
+          "attributeTag": "dob",
+          "lower": "19571212",
+          "upper": "19971212"
+        }
+      ]
+    }
 
 Membership proofs
 =================
@@ -63,15 +95,54 @@ Relevant attributes for membership proofs are:
 Structure a membership proof
 ----------------------------
 
+In the example below, the proof checks that the wallet owner is a citizen of one of the Nordic countries (Finland, Denmark, Sweden, Norway, or Iceland).
 
+.. code-block:: console
 
-Membership proofs can also prove that a user does NOT have an attribute or attributes, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know whether a user is a resident of a country that is subject to trade sanctions and cannot use your service, you might have a proof that determines whether the user resides in one or more of the countries.
+    {
+      "challenge": "6c7d69b121d4ce829392d9f2b16395708a458f6183caa20e9074e7283e377418",
+      "statement": [
+        {
+          "type": "AttributeInSet",
+          "attributeTag": "nationality",
+          "set": [
+            "DK",
+            "FI",
+            "IS",
+            "NO",
+            "SE"
+          ]
+        }
+      ]
+    }
 
+Membership proofs can also prove that a user does NOT have an attribute or attributes, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know whether a user is a resident of a country that is subject to trade sanctions and cannot use your service, you might have a proof that determines whether the wallet owner resides in one or more of the countries.
 
+For example, the proof shown below determines if the wallet owner is a citizen of China or North Korea.
 
-Example
-=======
+.. code-block:: console
 
-Concordium provides the following example demo app and repo:
+    {
+        "challenge": "4de5faf3d68c09e3e76fd8d82ce251c1ff0e49fdcc2661a2f875db35eba02f4d",
+        "statement": [
+          {
+            "type": "AttributeNotInSet",
+            "attributeTag": "nationality",
+            "set": [
+              "CN",
+              "KP"
+            ]
+          }
+        ]
+    }
 
-The app is a shop that requires the user to be over 18 years of age for some purchases.
+.. Note::
+
+    Country codes to use for residence and nationality proofs are the `ISO-3166-1 alpha-2 codes <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_.
+
+Example dApp
+============
+
+Concordium provides the following example demo app and repo: (Still waiting)
+
+The app is a gallery that requires the user to be over 18 years of age to view some content.
