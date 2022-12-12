@@ -114,6 +114,8 @@ To make the currently selected account the default account, click the star icon.
 
 .. image:: ../images/desktop-wallet/dw-favorite-account.png
 
+.. _dw-address-book:
+
 Address book overview
 =====================
 
