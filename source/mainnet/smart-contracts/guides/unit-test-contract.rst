@@ -525,7 +525,7 @@ The process of generating random input and running the test is repeated ``num_te
 The types ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
 Read more about available ``Arbitrary`` instances for Concordium-specific types in |concordium_contracts_common|_ documentation.
 |QuickCheck|_ defines ``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``, etc.).
-These instances are available automatically when writing tests.
+These instances are available by default when writing tests.
 Custom user data type instances, like ``MyParameters`` above, can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
 See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
 
