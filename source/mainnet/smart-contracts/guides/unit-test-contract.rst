@@ -491,8 +491,6 @@ The property-based testing technique allows for testing statements about your co
 The input to such tests is generated randomly.
 Property-based testing is supported using the |QuickCheck|_ crate.
 The tests should be placed in the same module as regular unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
-The macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
-If no ``num_tests`` is given, the default number is ``100``.
 The return value of the function should be a boolean corresponding to whether the property holds.
 
 To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` as a ``dev``-dependency in ``Cargo.toml``:
@@ -506,7 +504,8 @@ To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` 
 
     ...
 
-In the code snipped below, the parameters ``address`` and ``amount`` are randomly generated.
+The ``concordium_quickcheck`` macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
+In the code snipped below, the parameters ``address`` and ``amount`` are generated randomly.
 The process of generating random input and running the test is repeated ``num_tests = 500``.
 
 .. code-block:: rust
@@ -558,16 +557,19 @@ By default, this command compiles the contract, unit tests, and QuickCheck tests
 
 .. warning::
 
-    Avoid using ``clam!`` and ``claim_eq!`` in ``#[concordium_quickcheck]`` tests.
-    Using these makes tests fail without providing a counterexample when running tests with ``cargo concordium test``.
+    Avoid using ``fail!`` and ``claim!`` variants in ``#[concordium_quickcheck]`` tests.
+    In Wasm unit tests (see :ref:`tests_in_wasm`) these commands report an error.
+    However, using them in QuickCheck tests, makes the tests fail without providing a counterexample when running with ``cargo concordium test``.
+    Avoid also using ``assert_eq!``, ``panic!`` or any other command that panics.
     Return a boolean value instead.
 
+Example
+-------
 
-Consider the following example.
-A counter that has a threshold: if the count is less then the threshold, it gets incremented, or stays unchanged otherwise.
+Consider a counter with a threshold: if the count is less then the threshold, it gets incremented, or stays unchanged otherwise.
 
 .. code-block:: rust
-   :emphasize-lines: 19-21
+   :emphasize-lines: 19-22
 
     use concordium_std::*;
 
@@ -587,7 +589,8 @@ A counter that has a threshold: if the count is less then the threshold, it gets
 
         // Increment only if the current count is below the threshold.
         fn increment(&mut self) {
-            if self.count < self.threshold {
+            // Can you see a problem here?
+            if self.count <= self.threshold {
                 self.count += 1;
             }
         }
@@ -619,14 +622,6 @@ A counter that has a threshold: if the count is less then the threshold, it gets
         }
     }
 
-If we change the highlighted lines in the code above to
-
-.. code-block:: rust
-
-    if self.count <= self.threshold {
-        self.count += 1;
-    }
-
 The test fails with a counterexample, i.e., an input that breaks the property:
 
 .. code-block::
@@ -640,6 +635,29 @@ The test fails with a counterexample, i.e., an input that breaks the property:
 
 The ``arguments`` part shows the values that caused the test to fails.
 In this case, if the threshold is ``0``, then the counter becomes ``1`` after calling ``state.increment()`` breaking the property.
+
+.. note::
+
+    |QuickCheck|_ implements a special mechanism called "shrinking" to find a simplest counterexample.
+    For the example above, ``0`` is the simplest input on which the test failed.
+
+If we change the highlighted lines in the code above to
+
+.. code-block:: rust
+
+    if self.count < self.threshold {
+        self.count += 1;
+    }
+
+Then all ``500`` tests pass successfully.
+
+.. note::
+
+    The fact that many random tests passed successfully does not automatically mean that the property holds for **all** inputs.
+    Often the input space is quite large to be covered fully.
+    In this case, it is importnat to think carefully what an implementation the ``Arbitrary`` trait is doing to generate random input for your specific data.
+    In order to cover corner cases, one can bias the generated data to produce values that a deemed as potentially problematic.
+
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
