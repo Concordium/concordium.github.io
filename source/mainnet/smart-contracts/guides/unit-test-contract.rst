@@ -523,8 +523,9 @@ The process of generating random input and running the test is repeated ``num_te
     }
 
 The type like ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
-Read more about available ``Arbitrary`` instances for Concordium-specific type in |concordium_contracts_common|_ documentation.
-``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``) are defined in |QuickCheck|_ and available automatically.
+Read more about available ``Arbitrary`` instances for Concordium-specific types in |concordium_contracts_common|_ documentation.
+|QuickCheck|_ defines ``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``, etc.).
+These instances are available automatically when writing tests.
 Custom user data type instances can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
 See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
 
@@ -532,21 +533,21 @@ The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_
 
 .. code-block:: console
 
-    cargo concordium test
+    $cargo concordium test
 
 When a test fails, it reports the random seed used to produce the input values.
-After making the required fixes one can use the same seed to see whether the tests works on the same generated values.
+After making the required fixes to the code, one can use the same seed to see whether the previously failed tests work on the same generated values.
 The seed is a ``u64`` number, which can be provided along with the test command.
 
 .. code-block:: console
 
-    cargo concordium test --seed 1234567890
+    $cargo concordium test --seed 1234567890
 
 Concordium QuickCheck tests can also be run with
 
 .. code-block:: console
 
-    cargo test
+    $cargo test
 
 By default, this command compiles the contract, unit tests and QuickCheck tests to machine code for your local target (most likely x86_64), and runs them.
 
