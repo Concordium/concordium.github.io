@@ -5,6 +5,10 @@
 Release notes - Mainnet
 =======================
 
+.. Note::
+
+   - Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
 Mainnet 4: Sirius
 =================
 

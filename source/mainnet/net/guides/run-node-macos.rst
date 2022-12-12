@@ -16,6 +16,10 @@ Prerequisites
 - Have the administrator password to your computer.
 - Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 
+.. Note::
+
+  Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ or `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
 Install/upgrade and run a node
 ==============================
 

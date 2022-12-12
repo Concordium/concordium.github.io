@@ -22,6 +22,10 @@ Prerequisites
 
 -  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
 
+.. Note::
+
+  Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
 Install the Debian package and run a node
 =========================================
 
