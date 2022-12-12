@@ -482,6 +482,134 @@ account:
         let amount1 = Amount::from_ccd(20);
         claim_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
 
+Writing property-based tests
+============================
+
+Property-based testing technique allows for testing statements about your code that expected to be true for any input parameters.
+The input to such tests is generated randomly.
+Property-based testing is supported using the |QuickCheck|_ crate.
+The tests should placed in the same module as Wasm unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
+The macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
+If no ``num_tests`` given, the default number is ``100``.
+The return value of the function shold be a boolean value with ``true`` corresponding to the fact that the propety holds.
+In ``Cargo.toml``, ``concordium-std`` should be specified as a ``dev`` dependency with the ``concordium-quickcheck`` feature.
+
+In the code snipped below, the parameters ``address`` and ``amount`` will be randomly generated.
+
+.. code-block:: rust
+
+    #[concordium_cfg_test]
+    mod test {
+
+       #[concordium_quickcheck(num_tests = 500)]
+       fn some_test(address: Address, amount: Amount) -> bool { ... }
+    }
+
+The type like ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
+
+Use the same command as for running unit tests in Wasm to run Wasm QuickCheck tests:
+
+.. code-block:: console
+
+    cargo concordium test
+
+When a test fails, it reports the random seed used to produce the input values.
+After making the required fixes one can use the same seed to see whether the tests works on the same generated values.
+The seed is a ``u64`` number, which can be provided along with the test command.
+
+.. code-block:: console
+
+    cargo concordium test --seed 1234567890
+
+Concordium QuickCheck tests can also be run with
+
+.. code-block:: console
+
+    cargo test
+
+By default, this command compiles the contract, unit tests and QuickCheck tests to machine code for your local target (most likely x86_64), and runs them.
+
+Consider the following example.
+A counter that has a threshold: if the count is less then the threshold, it gets incremented, or stays unchanged otherwise.
+
+.. code-block:: rust
+   :emphasize-lines: 19-21
+
+    use concordium_std::*;
+
+    #[derive(Serialize)]
+    struct State {
+        threshold: u32,
+        count:     u32,
+    }
+
+    impl State {
+        fn new(threshold: u32) -> Self {
+            State {
+                count: 0,
+                threshold,
+            }
+        }
+
+        // Increment only if the current count is below the threshold.
+        fn increment(&mut self) {
+            if self.count < self.threshold {
+                self.count += 1;
+            }
+        }
+    }
+
+    #[init(contract = "my_contract")]
+    fn contract_init<S: HasStateApi>(
+        ctx: &impl HasInitContext,
+        state_builder: &mut StateBuilder<S>,
+    ) -> InitResult<State> { ... }
+
+    #[receive(contract = "my_contract", name = "my_receive", mutable)]
+    fn contract_update_counter<S: HasStateApi>(
+        _ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> ReceiveResult<()> { ... }
+
+    #[concordium_cfg_test]
+    mod test {
+        use super::*;
+
+        // Property: counter stays below the threshold.
+        // Run 1000 tests with random threshold values.
+        #[concordium_quickcheck(num_tests = 1000)]
+        fn prop_counter_never_above_threshold(threshold: u32) -> bool {
+            let mut state = State::new(threshold);
+            state.increment();
+            state.count <= threshold
+        }
+    }
+
+If we change the highlighted lines in the code above to
+
+.. code-block:: rust
+
+    if self.count <= self.threshold {
+                self.count += 1;
+            }
+
+The test fails with a counterexample (that is, an input that breaks the propery).
+
+.. code-block::
+
+  Failed with the counterexample: TestResult {
+    status: Fail,
+    arguments: [
+        "0",
+    ],
+    err: None,
+
+The ``arguments`` part shows the values that caused the test to fails.
+In this case, if the threshold is `0`, then the counter is incremented to `1` breaking the property.
+
+.. note::
+
+    Printing and supplying a seed is only possible using ``cargo concordium test``
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
@@ -503,3 +631,5 @@ account:
 .. |StateMap| replace:: ``StateMap``
 .. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
 .. |StateSet| replace:: ``StateSet``
+.. |QuickCheck| replace:: ``QuickCheck``
+.. _QuickCheck replace: https://docs.rs/quickcheck/latest/quickcheck/
