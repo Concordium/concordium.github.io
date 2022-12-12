@@ -632,4 +632,4 @@ In this case, if the threshold is `0`, then the counter is incremented to `1` br
 .. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
 .. |StateSet| replace:: ``StateSet``
 .. |QuickCheck| replace:: ``QuickCheck``
-.. _QuickCheck replace: https://docs.rs/quickcheck/latest/quickcheck/
+.. _QuickCheck: replace: https://docs.rs/quickcheck/latest/quickcheck
