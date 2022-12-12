@@ -597,7 +597,7 @@ The test fails with a counterexample (that is, an input that breaks the propery)
 
 .. code-block::
 
-  Failed with the counterexample: TestResult {
+  TestResult {
     status: Fail,
     arguments: [
         "0",
