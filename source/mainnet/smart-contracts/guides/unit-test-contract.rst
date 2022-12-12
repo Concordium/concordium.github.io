@@ -504,8 +504,8 @@ To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` 
 
     ...
 
-The ``concordium_quickcheck`` macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
-In the code snipped below, the parameters ``address`` and ``amount`` are generated randomly.
+The ``concordium_quickcheck`` macro takes the ``num_tests`` attribute for specifying the number of random tests to run.
+In the code snippet below, the parameters ``address`` and ``amount`` are generated randomly.
 The process of generating random input and running the test is repeated ``num_tests = 500``.
 
 .. code-block:: rust
@@ -536,7 +536,7 @@ The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_
     $cargo concordium test
 
 When a test fails, it reports the random seed used to produce the input values.
-After making the required fixes to the code, one can use the same seed to see whether the previously failed tests work on the same generated values.
+After making the required fixes to the code, you can use the same seed to see whether the previously failed tests work on the same generated values.
 The seed is a ``u64`` number, which can be provided along with the test command:
 
 .. code-block:: console
@@ -559,14 +559,14 @@ By default, this command compiles the contract, unit tests, and QuickCheck tests
 
     Avoid using ``fail!`` and ``claim!`` variants in ``#[concordium_quickcheck]`` tests.
     In Wasm unit tests (see :ref:`tests_in_wasm`) these commands report an error.
-    However, using them in QuickCheck tests, makes the tests fail without providing a counterexample when running with ``cargo concordium test``.
-    Avoid also using ``assert_eq!``, ``panic!`` or any other command that panics.
+    However, using them in QuickCheck tests makes the tests fail without providing a counterexample when running with ``cargo concordium test``.
+    Also avoid using ``assert_eq!``, ``panic!`` or any other command that panics.
     Return a boolean value instead.
 
 Example
 -------
 
-Consider a counter with a threshold: if the count is less then the threshold, it gets incremented, or stays unchanged otherwise.
+Consider a counter with a threshold: if the count is less than the threshold, it gets incremented; otherwise, it stays unchanged.
 
 .. code-block:: rust
    :emphasize-lines: 19-22
@@ -633,15 +633,15 @@ The test fails with a counterexample, i.e., an input that breaks the property:
     ],
     err: None,
 
-The ``arguments`` part shows the values that caused the test to fails.
-In this case, if the threshold is ``0``, then the counter becomes ``1`` after calling ``state.increment()`` breaking the property.
+The ``arguments`` part shows the values that caused the test to fail.
+In this case, if the threshold is ``0``, then the counter becomes ``1`` after calling ``state.increment()``, breaking the property.
 
 .. note::
 
     |QuickCheck|_ implements a special mechanism called "shrinking" to find a simplest counterexample.
     For the example above, ``0`` is the simplest input on which the test failed.
 
-If we change the highlighted lines in the code above to
+If you change the highlighted lines in the code above to
 
 .. code-block:: rust
 
@@ -655,8 +655,8 @@ Then all ``500`` tests pass successfully.
 
     The fact that many random tests passed successfully does not automatically mean that the property holds for **all** inputs.
     Often the input space is quite large to be covered fully.
-    In this case, it is importnat to think carefully what an implementation the ``Arbitrary`` trait is doing to generate random input for your specific data.
-    In order to cover corner cases, one can bias the generated data to produce values that a deemed as potentially problematic.
+    In this case, it is important to think carefully about what an implementation of the ``Arbitrary`` trait is doing to generate random input for your specific data.
+    In order to cover corner cases, you can bias the generated data to produce values that are deemed as potentially problematic.
 
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
