@@ -494,8 +494,8 @@ The tests should be placed in the same module as regular unit tests and annotate
 The macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
 If no ``num_tests`` is given, the default number is ``100``.
 The return value of the function should be a boolean corresponding to whether the property holds.
- (newline)
-To get started, add the `concordium-quickcheck` feature to `concordium-std` as a `dev-dependency` In ``Cargo.toml``:
+
+To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` as a ``dev``-dependency in ``Cargo.toml``:
 
 .. code-block::
 
