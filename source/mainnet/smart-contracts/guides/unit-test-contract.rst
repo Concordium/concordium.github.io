@@ -487,14 +487,15 @@ account:
 Writing property-based tests
 ============================
 
-Property-based testing technique allows for testing statements about your code that expected to be true for any input parameters.
+The property-based testing technique allows for testing statements about your code that are expected to be true for any input parameters.
 The input to such tests is generated randomly.
 Property-based testing is supported using the |QuickCheck|_ crate.
-The tests should placed in the same module as Wasm unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
+The tests should be placed in the same module as regular unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
 The macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
-If no ``num_tests`` given, the default number is ``100``.
-The return value of the function should be a boolean value with ``true`` corresponding to the fact that the property holds.
-In ``Cargo.toml``, ``concordium-std`` should be specified as a ``dev`` dependency with the ``concordium-quickcheck`` feature enabled.
+If no ``num_tests`` is given, the default number is ``100``.
+The return value of the function should be a boolean corresponding to whether the property holds.
+ (newline)
+To get started, add the `concordium-quickcheck` feature to `concordium-std` as a `dev-dependency` In ``Cargo.toml``:
 
 .. code-block::
 
@@ -522,7 +523,7 @@ The process of generating random input and running the test is repeated ``num_te
         }
     }
 
-The type like ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
+The types ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
 Read more about available ``Arbitrary`` instances for Concordium-specific types in |concordium_contracts_common|_ documentation.
 |QuickCheck|_ defines ``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``, etc.).
 These instances are available automatically when writing tests.
@@ -537,19 +538,19 @@ The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_
 
 When a test fails, it reports the random seed used to produce the input values.
 After making the required fixes to the code, one can use the same seed to see whether the previously failed tests work on the same generated values.
-The seed is a ``u64`` number, which can be provided along with the test command.
+The seed is a ``u64`` number, which can be provided along with the test command:
 
 .. code-block:: console
 
     $cargo concordium test --seed 1234567890
 
-Concordium QuickCheck tests can also be run with
+Concordium QuickCheck tests can also be run with:
 
 .. code-block:: console
 
     $cargo test
 
-By default, this command compiles the contract, unit tests and QuickCheck tests to machine code for your local target (most likely x86_64), and runs them.
+By default, this command compiles the contract, unit tests, and QuickCheck tests to machine code for your local target (most likely x86_64) and runs them.
 
 .. note::
 
@@ -623,10 +624,10 @@ If we change the highlighted lines in the code above to
 .. code-block:: rust
 
     if self.count <= self.threshold {
-                self.count += 1;
-            }
+        self.count += 1;
+    }
 
-The test fails with a counterexample (that is, an input that breaks the property).
+The test fails with a counterexample, i.e., an input that breaks the property:
 
 .. code-block::
 
