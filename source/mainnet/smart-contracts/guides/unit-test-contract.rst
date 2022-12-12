@@ -492,9 +492,19 @@ The tests should placed in the same module as Wasm unit tests and annotated with
 The macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
 If no ``num_tests`` given, the default number is ``100``.
 The return value of the function shold be a boolean value with ``true`` corresponding to the fact that the propety holds.
-In ``Cargo.toml``, ``concordium-std`` should be specified as a ``dev`` dependency with the ``concordium-quickcheck`` feature.
+In ``Cargo.toml``, ``concordium-std`` should be specified as a ``dev`` dependency with the ``concordium-quickcheck`` feature enabled.
 
-In the code snipped below, the parameters ``address`` and ``amount`` will be randomly generated.
+.. code-block::
+
+    ...
+
+    [dev-dependencies]
+    concordium-std = { version = "5", features = ["concordium-quickcheck"] }
+
+    ...
+
+In the code snipped below, the parameters ``address`` and ``amount`` are randomly generated.
+The process of generating random input and running the test is repeated ``num_tests = 500``.
 
 .. code-block:: rust
 
@@ -502,10 +512,19 @@ In the code snipped below, the parameters ``address`` and ``amount`` will be ran
     mod test {
 
        #[concordium_quickcheck(num_tests = 500)]
-       fn some_test(address: Address, amount: Amount) -> bool { ... }
+       fn some_property_test(address: Address, amount: Amount) -> bool {
+        ...
+        // Instantiate custom struct with random parameters.
+        let input = MyParameters { sender: address, payment: amount }
+        ...
+        }
     }
 
 The type like ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
+Read more about available ``Arbitrary`` instances for Concordium-specific type in |concordium_contracts_common|_ documentation.
+``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``) are defined in |QuickCheck|_ and available automatically.
+Custom user data type instances can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
+See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
 
 Use the same command as for running unit tests in Wasm to run Wasm QuickCheck tests:
 
@@ -528,6 +547,17 @@ Concordium QuickCheck tests can also be run with
     cargo test
 
 By default, this command compiles the contract, unit tests and QuickCheck tests to machine code for your local target (most likely x86_64), and runs them.
+
+.. note::
+
+    Printing and supplying a seed is only possible using ``cargo concordium test``
+
+.. warning::
+
+    Avoid using `clam!` and `claim_eq!` in ``#[concordium_quickcheck]`` tests.
+    Using these makes tests fail without providing a counterexample when running tests with ``cargo concordium test``.
+    Return a boolean value instead.
+
 
 Consider the following example.
 A counter that has a threshold: if the count is less then the threshold, it gets incremented, or stays unchanged otherwise.
@@ -605,16 +635,14 @@ The test fails with a counterexample (that is, an input that breaks the propery)
     err: None,
 
 The ``arguments`` part shows the values that caused the test to fails.
-In this case, if the threshold is `0`, then the counter is incremented to `1` breaking the property.
-
-.. note::
-
-    Printing and supplying a seed is only possible using ``cargo concordium test``
+In this case, if the threshold is ``0``, then the counter is incremented to ``1`` breaking the property.
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
 .. |concordium_std| replace:: ``concordium_std``
 .. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std
+.. |concordium_contracts_common| replace:: ``concordium_contracts_common``
+.. _concordium_contracts_common: https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common
 .. _TestHost: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html
 .. |TestHost| replace:: ``TestHost``
 .. _setup_mock_entrypoint: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.setup_mock_entrypoint
@@ -632,4 +660,4 @@ In this case, if the threshold is `0`, then the counter is incremented to `1` br
 .. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
 .. |StateSet| replace:: ``StateSet``
 .. |QuickCheck| replace:: ``QuickCheck``
-.. _QuickCheck: replace: https://docs.rs/quickcheck/latest/quickcheck
+.. _QuickCheck: https://docs.rs/quickcheck/latest/quickcheck
