@@ -482,6 +482,8 @@ account:
         let amount1 = Amount::from_ccd(20);
         claim_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
 
+.. _writing_property_based_tests:
+
 Writing property-based tests
 ============================
 
@@ -491,7 +493,7 @@ Property-based testing is supported using the |QuickCheck|_ crate.
 The tests should placed in the same module as Wasm unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
 The macro takes a named attribute ``num_tests`` for specifying the number of random tests to run.
 If no ``num_tests`` given, the default number is ``100``.
-The return value of the function shold be a boolean value with ``true`` corresponding to the fact that the propety holds.
+The return value of the function should be a boolean value with ``true`` corresponding to the fact that the property holds.
 In ``Cargo.toml``, ``concordium-std`` should be specified as a ``dev`` dependency with the ``concordium-quickcheck`` feature enabled.
 
 .. code-block::
@@ -526,7 +528,7 @@ Read more about available ``Arbitrary`` instances for Concordium-specific type i
 Custom user data type instances can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
 See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
 
-Use the same command as for running unit tests in Wasm to run Wasm QuickCheck tests:
+The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_wasm`:
 
 .. code-block:: console
 
@@ -550,11 +552,11 @@ By default, this command compiles the contract, unit tests and QuickCheck tests 
 
 .. note::
 
-    Printing and supplying a seed is only possible using ``cargo concordium test``
+    Printing and supplying a seed is only possible using ``cargo concordium test``.
 
 .. warning::
 
-    Avoid using `clam!` and `claim_eq!` in ``#[concordium_quickcheck]`` tests.
+    Avoid using ``clam!`` and ``claim_eq!`` in ``#[concordium_quickcheck]`` tests.
     Using these makes tests fail without providing a counterexample when running tests with ``cargo concordium test``.
     Return a boolean value instead.
 
@@ -623,7 +625,7 @@ If we change the highlighted lines in the code above to
                 self.count += 1;
             }
 
-The test fails with a counterexample (that is, an input that breaks the propery).
+The test fails with a counterexample (that is, an input that breaks the property).
 
 .. code-block::
 
@@ -635,7 +637,7 @@ The test fails with a counterexample (that is, an input that breaks the propery)
     err: None,
 
 The ``arguments`` part shows the values that caused the test to fails.
-In this case, if the threshold is ``0``, then the counter is incremented to ``1`` breaking the property.
+In this case, if the threshold is ``0``, then the counter becomes ``1`` after calling ``state.increment()`` breaking the property.
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
