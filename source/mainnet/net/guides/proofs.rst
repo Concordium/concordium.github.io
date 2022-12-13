@@ -5,15 +5,13 @@
 Proofs and revealing information
 ================================
 
-Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area. You can choose whether you want to prove or reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a proof to request the information necessary for their service.
-
-Sometimes they can request that you only prove that you meet the requirement without revealing the actual information. This is done with a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` and it appears as shown below in the wallet.
+Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area without revealing your exact age or country of residence. You can choose whether you want to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements.
 
 (screenshot)
 
 When an attribute or attributes will be proven by zero knowledge proof but not revealed, the hidden icon (screenshot) appears next to the attributes to prove.
 
-Other times the dApp or service may request that you reveal the information to them, such as your nationality or exact age. This is called **ID information to reveal** and it appears as shown below in the wallet.
+Other times the dApp or service may request that you **reveal** the information to them, such as your exact nationality or exact age. This is called **ID information to reveal** and it appears as shown below in the wallet.
 
 (screenshot)
 

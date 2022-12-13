@@ -5,14 +5,27 @@
 Create proofs
 =============
 
-The |bw| supports secret proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The user can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of statements to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. The dApp or service can also request that attributes are revealed. The wallet owner chooses whether to prove or reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
+The |bw| supports proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of statements to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
+
+The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. 
+
+The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
+
+(diagram)
+
+You have a Rust server or backend that contains the challenge and the statement.
+
+1. The dApp requests the challenge from the server/backend.
+2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the statement. Your dApp can request the statement from the server or it can contain the statement. If your dApp does not contain the statement, you must also request it from the server/backend.
+3. The dApp sends a request for proof for the given challenge and statement to the wallet.
+4. The wallet sends proof back to the dApp (if accepted by the user).
+5. The dApp verifies the proof to the challenge on the server.
 
 General rules
 =============
 
 For the dApp or service developer there are some general rules about proofs that you have to follow.
 
-- You can get up to four proofs at a time
 - There is no limit to the amount of attributes that can be revealed.
 - An attribute can only be used in one proof at a time.
 
@@ -57,9 +70,13 @@ Range proofs
 
 Relevant attributes for range proofs are:
 
-- Date of birth - Special helper
+- Date of birth
 - ID valid to
-- ID valid from (maybe?)
+- ID valid from
+
+.. Note::
+
+  Age proofs are a common abstraction on date of birth proofs. There are helper functions in the SDK(link?) to aid in constructing these.
 
 Structure a range proof
 -----------------------
@@ -88,9 +105,13 @@ Membership proofs
 Relevant attributes for membership proofs are:
 
 - Country of residence
-- Country of nationality - Special EU helper
+- Country of nationality
 - Identity document type
 - Identity document issuer
+
+.. Note::
+
+  Country of nationality has helper functions in the SDK(link?) to aid in constructing statements.
 
 Structure a membership proof
 ----------------------------
@@ -116,9 +137,9 @@ In the example below, the proof checks that the wallet owner is a citizen of one
       ]
     }
 
-Membership proofs can also prove that a user does NOT have an attribute or attributes, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know whether a user is a resident of a country that is subject to trade sanctions and cannot use your service, you might have a proof that determines whether the wallet owner resides in one or more of the countries.
+Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know whether a user is a resident of a country that is subject to trade sanctions and cannot use your service, you might have a proof that determines whether the wallet owner resides in one or more of the countries.
 
-For example, the proof shown below determines if the wallet owner is a citizen of China or North Korea.
+For example, the statement below asks if the wallet owner is a citizen of China or North Korea.
 
 .. code-block:: console
 
@@ -145,4 +166,4 @@ Example dApp
 
 Concordium provides the following example demo app and repo: (Still waiting)
 
-The app is a gallery that requires the user to be over 18 years of age to view some content.
+The app is a gallery that requires the user to be over a certain minimum age to view some content.

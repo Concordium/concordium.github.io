@@ -155,6 +155,12 @@ A rule that selects the best chain based on the following criteria:
 - which last block has the largest block luck in the chains
 - which last block has the largest hash in the chains.
 
+.. _glossary-challenge:
+
+challenge
+=========
+
+
 .. _glossary-concordium-client:
 
 Concordium client
@@ -344,7 +350,7 @@ indefinitely.
 Membership proof
 ================
 
-A proof to determine if a user has one or more attributes, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
+A proof to determine if an attribute of a user's identitiy is included in a given set, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
 
 .. _glossary-node:
 
@@ -374,7 +380,7 @@ May refer to:
 Non-membership proof
 ====================
 
-A proof to determine that a user does not meet one or more attributes, for example, that they are a resident of a country under trade sanctions.
+A proof to determine that an attribute of a user's identity is **not** included in a set, for example, that they are **not** a resident of a country under trade sanctions.
 
 .. _glossary-off-chain:
 
@@ -418,6 +424,13 @@ Range proofs
 ============
 
 A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 years old to the car rental company. This could be constructed as a range proof.
+
+.. _glossary-reveal-attribute:
+
+Reveal
+======
+
+To reveal an attribute. This can be used in identity verification proof. When you reveal an attribute, you give the dApp or service that requested it your exact information, such as date of birth, or nationality. You should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
 
 .. _glossary-secret-recovery-phrase:
 
@@ -612,4 +625,4 @@ the :ref:`lottery power<glossary-lottery-power>`.
 Zero-knowledge proof
 ====================
 
-A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing anything beyond the truth of the proven statement.
+A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing anything beyond that.
