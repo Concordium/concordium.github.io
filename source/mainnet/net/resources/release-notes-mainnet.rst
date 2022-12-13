@@ -18,6 +18,13 @@ Mainnet 4: Sirius
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+December 15, 2022
+
+|bw| 0.9.3
+----------------------
+
+The |bw| introduces ID2.0 functionality whereby a dApp or service can use zero knowledge proofs to request proof from a wallet for certain attributes without revealing anything beyond the truth of the statement. It is also possible for a dApp or Service to request that the wallet user reveal attributes.
+
 December 13, 2022
 
 `Protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ is effective from today at 08:05 UTC. One important change because of the protocol update is that in the future (from 14 December 2022) pay day for rewards shifts to 08:05 UTC instead of 08:00 UTC.
