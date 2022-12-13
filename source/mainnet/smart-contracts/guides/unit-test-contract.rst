@@ -642,7 +642,7 @@ In this case, if the threshold is ``0`` and the number of calls is ``1``, then t
 
 .. note::
 
-    |QuickCheck|_ implements a special mechanism called "shrinking" to find a simplest counterexample.
+    |QuickCheck|_ implements a special mechanism called "shrinking" to find the simplest counterexample.
     For the example above, ``0`` and ``1`` is the simplest input on which the test failed.
 
 If you change the highlighted lines in the code above to
