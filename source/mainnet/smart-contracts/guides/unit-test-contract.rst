@@ -533,6 +533,15 @@ These instances are available by default when writing tests.
 Custom user data type instances, like ``MyParameters`` above, can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
 See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
 
+.. warning::
+
+    The fact that many random tests passed successfully does not automatically mean that the property holds for **all** inputs.
+    Often the input space is quite large to be covered fully.
+    In this case, it is important to think carefully about what an implementation of the ``Arbitrary`` trait is doing to generate random input for your specific data.
+    In order to cover corner cases, you can bias the generated data to produce values that are deemed as potentially problematic.
+
+
+
 The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_wasm`:
 
 .. code-block:: console
@@ -659,13 +668,6 @@ If you change the highlighted lines in the code above to
     }
 
 Then all ``500`` tests pass successfully.
-
-.. note::
-
-    The fact that many random tests passed successfully does not automatically mean that the property holds for **all** inputs.
-    Often the input space is quite large to be covered fully.
-    In this case, it is important to think carefully about what an implementation of the ``Arbitrary`` trait is doing to generate random input for your specific data.
-    In order to cover corner cases, you can bias the generated data to produce values that are deemed as potentially problematic.
 
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
