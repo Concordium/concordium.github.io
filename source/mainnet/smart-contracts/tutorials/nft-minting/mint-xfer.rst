@@ -80,6 +80,8 @@ This returns the metadata URL combined with your tokenID.
 
 Now the metadata is stored on-chain and no one will be able to change it.
 
+.. _transfer-nft:
+
 Transfer function
 =================
 

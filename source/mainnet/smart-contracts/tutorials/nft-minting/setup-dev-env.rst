@@ -65,23 +65,12 @@ This tutorial uses ``concordium-client`` as a command line tool to deploy, mint,
 Run a node
 ==========
 
-You will need to run a node. For this tutorial, it is recommended to run a Docker image of a node that can be :ref:`found here<run-a-node>`. This runs a Docker image of a node and this step currently takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`__, then you can continue with the development.
+You will need to run a node. For this tutorial, it is recommended to run a Docker image of a node that can be :ref:`found here<run-a-node>` but you can run any node platform you wish. If you choose Docker, this runs a Docker image of a node and this step currently takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`__, then you can continue with the development. Docker file configurations can be found in the ``docker-compose.yml`` file as described :ref:`here<run-a-node>`. Don't forget the set a name for your node with the parameter ``CONCORDIUM_COLLECTOR_NODE_NAME``.
 
-Clone the repository
-====================
+Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node that is specified in the ``docker-compose.yml`` file in the network section of the dashboard.
 
-You can start by cloning `this repository <https://github.com/chainorders/concordium-nft-tutorials>`_ which includes some essential binaries, Docker files, and configurations that are provided by Concordium.
-
-There are multiple collections of sample images provided in this link. You can find detailed information about the nft-artifact’s folder in the repository.
-
-In order to start the tutorial, you need to install Docker Compose which you will use for running a Concordium node because you need to run a node to deploy your contracts.
-
-Run the following command on your terminal to clone `this repository <https://github.com/chainorders/concordium-nft-tutorials>`_. It will clone the repository to your local computer.
-
-.. code-block:: console
-
-    git clone --recurse-submodules
-    https://github.com/chainorders/concordium-nft-tutorials.git
+.. image:: images/node-collector.png
+    :width: 100%
 
 .. _signkey:
 
