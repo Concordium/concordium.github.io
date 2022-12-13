@@ -504,7 +504,7 @@ To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` 
     ...
 
     [dev-dependencies]
-    concordium-std = { version = "5", features = ["concordium-quickcheck"] }
+    concordium-std = { version = "5.1", features = ["concordium-quickcheck"] }
 
     ...
 
