@@ -7,7 +7,7 @@ Create proofs
 
 The |bw| supports proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of statements to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
 
-The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service. 
+The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
 
 The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 
