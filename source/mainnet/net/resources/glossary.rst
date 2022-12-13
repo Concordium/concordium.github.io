@@ -417,7 +417,7 @@ A form of delegation where a delegator's stake is effectively distributed among 
 Range proofs
 ============
 
-A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 to the car rental company. This could be constructed as a range proof.
+A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 years old to the car rental company. This could be constructed as a range proof.
 
 .. _glossary-secret-recovery-phrase:
 
