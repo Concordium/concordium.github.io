@@ -64,7 +64,7 @@ Relevant attributes for range proofs are:
 Structure a range proof
 -----------------------
 
-In the example below, you see a range proof constructed to check that wallet owner is between 25 and 65 years old (as of today's date).
+In the example below, you see a range proof constructed to check that wallet owner is between 25 and 65 years old (as of 2022-12-12).
 
 .. code-block:: console
 
