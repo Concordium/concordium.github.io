@@ -536,6 +536,7 @@ The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_
     $cargo concordium test
 
 When a test fails, it reports the random seed used to produce the input values.
+The random numbers are generated using a deterministic pseudo-random number generator from this seed.
 After making the required fixes to the code, you can use the same seed to see whether the previously failed tests work on the same generated values.
 The seed is a ``u64`` number, which can be provided along with the test command:
 
