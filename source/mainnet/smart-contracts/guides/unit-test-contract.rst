@@ -487,8 +487,12 @@ account:
 Writing property-based tests
 ============================
 
-The property-based testing technique allows for testing statements about your code that are expected to be true for any input parameters.
+The property-based testing technique allows for testing statements about your code that are expected to be true for any input parameters, possibly satisfying some precondition.
+You can think of a precondition and a property as functions returning a boolean.
+That is, for a function `fun`, a property looks as the following: "for any input ``x``, ``y``, ``z``, such that ``precondition(x, y, z) = true``, ``property(x, y, z, fun(x,y,z)) = true``".
 The input to such tests is generated randomly.
+An example of a property is "for any integers ``n`` and ``m``, such that ``even(n) = true`` and ``even(m) = true``, ``even(n + m) = true``".
+
 Property-based testing is supported using the |QuickCheck|_ crate.
 The tests should be placed in the same module as regular unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
 The return value of the function should be a boolean corresponding to whether the property holds.
