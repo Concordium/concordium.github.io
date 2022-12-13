@@ -52,7 +52,7 @@ If everything is correct, when you enter the command ``cargo concordium --help``
 
 .. Note::
 
-    If you have a warning on a Mac device that says “cargo-condordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
+    If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
 
     .. image:: images/mac-warning.png
         :width: 100%
@@ -61,10 +61,6 @@ Install Concordium Client
 =========================
 
 This tutorial uses ``concordium-client`` as a command line tool to deploy, mint, and transfer. :ref:`Download it here<concordium-node-and-client-download-testnet>`. For information about how to use ``concordium-client``, see :ref:`Concordium Client<concordium-client>`.
-
-.. Note::
-
-    The version of ``concordium-client`` above is the testnet version. Download the Mainnet version :ref:`here<concordium-node-and-client-download>`.
 
 Run a node
 ==========

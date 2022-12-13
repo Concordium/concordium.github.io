@@ -4,7 +4,7 @@
 Mint and transfer the NFT
 =========================
 
-Now, you are ready to call the mint function. In order to invoke mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a json file and give that file as a parameter to concordium-client. To make it more user-friendly, a json file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the json file is called “nft-params.json”. You can either do it manually or with following commands.
+Now, you are ready to call the mint function. In order to invoke mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a JSON file and give that file as a parameter to ``concordium-client``. To make it more user-friendly, a JSON file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the JSON file is called ``nft-params.json``. You can either do it manually or with following commands.
 
 .. code-block:: console
 
@@ -18,7 +18,7 @@ Now, you are ready to call the mint function. In order to invoke mint function, 
 
     touch nft-params.json
 
-With a text editor open up that file and place your account address and token ID in the json file as shown in the example below.
+With a text editor open up that file and place your account address and token ID in the JSON file as shown in the example below.
 
 .. code-block:: console
 
@@ -55,7 +55,7 @@ Your result will be similar to what is shown below where the user is the owner o
 .. image:: images/view-fn.png
     :width: 100%
 
-You are going to invoke the tokenMetadata function from your contract. It accepts parameters as a vector. (See the function *fn contract_token_metadata()*). To give a list of the tokenIDs create another json file and call it as token-ids.json and add your tokenID(s) as a vector.
+You are going to invoke the tokenMetadata function from your contract. It accepts parameters as a vector. (See the function *fn contract_token_metadata()*). To give a list of the tokenIDs create another JSON file and call it as token-ids.json and add your tokenID(s) as a vector.
 
 .. code-block:: console
 
@@ -73,7 +73,7 @@ You can query the metadata with the following command.
 
     concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 10001
 
-This resturns the metadata URL combined with your tokenID.
+This returns the metadata URL combined with your tokenID.
 
 .. image:: images/metadata-query.png
     :width: 100%

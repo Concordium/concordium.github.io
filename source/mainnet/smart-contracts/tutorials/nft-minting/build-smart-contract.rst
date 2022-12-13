@@ -2,17 +2,17 @@
 .. _build-smart-contract:
 
 ===============================================
-Intialize, build, and deploy the Smart contract
+Intialize, build, and deploy the smart contract
 ===============================================
 
-Now you are ready to build your smart contract. You'll be using the cis2-nft contract template provided by Concordium.
+Now you are ready to build your smart contract. You'll be using the ``cis2-nft`` contract template provided by Concordium.
 
 Run a node
 ==========
 
-You are almost ready to mint your first NFT on Concordium. To do that you need to run a local node, which in this tutorial is a :ref:`Docker image<run-a-node>`. This runs a Docker image of a node and this step currently takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`__, then you can continue with the development. Docker file configurations can be found in the docker-compose.yml file as described below. Don't forget the set a name for your node with the parameter ``CONCORDIUM_COLLECTOR_NODE_NAME``.
+You are almost ready to mint your first NFT on Concordium. To do that you need to run a local node, which in this tutorial is a :ref:`Docker image<run-a-node>`. This runs a Docker image of a node and this step currently takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks. Once the height value is the same as the height in `CCDScan <https://testnet.ccdscan.io/blocks>`__, then you can continue with the development. Docker file configurations can be found in the ``docker-compose.yml`` file as described :ref:`here<run-a-node>`. Don't forget the set a name for your node with the parameter ``CONCORDIUM_COLLECTOR_NODE_NAME``.
 
-Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node that is specified in the docker-compose.yml file in the network section of the dashboard.
+Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node that is specified in the ``docker-compose.yml`` file in the network section of the dashboard.
 
 .. image:: images/node-collector.png
     :width: 100%
@@ -46,10 +46,6 @@ Build your smart contract
 =========================
 
 Now you are ready to build your contract. Create a dist/cis2-nft folder to keep your wasm compiled output file and schema file first and then build it with the following command.
-
-.. code-block:: console
-
-    mkdir -p /dist/cis2-nft
 
 .. code-block:: console
 
