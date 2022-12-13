@@ -105,7 +105,7 @@ Concordium Client v5.0.2
 
 -  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.2-0>`_
 
-   - SHA256 checksum of the download: 3ed9f3878d07c53d6f2233d4832fed45eea74363e1f8671d42be45043dd3937b
+   - SHA256 checksum of the download: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
 
    Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
