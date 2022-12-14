@@ -30,6 +30,8 @@ When an attribute or attributes are to be revealed, the shown icon |proof-reveal
 
     By **proving** information to a third-party, it may become possible for them to deduce precise information about you. When you **reveal** information to a third-party, you effectively hand over your information to them. This means that you should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
 
+    For example, if your identity says that you are a resident of Denmark and a citizen of Denmark, and they ask you to prove that you are a resident of Norway or Denmark, and then ask you to prove that you are a citizen of Sweden or Denmark, it is quite likely that the third-party would be able to deduce that you are from Denmark.
+
 It is not possible for you to choose which attributes in the statement to prove/reveal or not prove/reveal. If there is something in the statement that you do not want to prove or reveal, you must reject the statement.
 
 It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the first name must be revealed and the user's age must be proven.
