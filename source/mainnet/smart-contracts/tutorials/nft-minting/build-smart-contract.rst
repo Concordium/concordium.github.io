@@ -35,7 +35,7 @@ If everything is correct, the ``init`` command will show something like the belo
 Build your smart contract
 =========================
 
-Now you are ready to build your contract. Create a dist/cis2-nft folder to keep your wasm compiled output file and schema file first and then build it with the following command.
+Now you are ready to build your contract. Create a ``dist/cis2-nft`` folder to keep your Wasm compiled output file and schema file first and then build it with the following command.
 
 .. code-block:: console
 
