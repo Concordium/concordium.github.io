@@ -24,6 +24,25 @@ December 16, 2022
 
 The |bw| introduces ID2.0 functionality whereby a dApp or service can use zero knowledge proofs to request proof from a wallet for certain attributes without revealing anything beyond the truth of the statement. It is also possible for a dApp or Service to request that the wallet user reveal attributes.
 
+December 14, 2022
+
+Cargo concordium 2.5.0
+----------------------
+
+- Add support for sampling random numbers for randomized testing with `cargo concordium test`.
+- Add support for providing a seed to initialize a random generator to `cargo-concordium`. The generator can be used for randomized testing.
+  Command format: `cargo concordium test --seed 1234567890`. The provided seed value is a `u64` number. If the seed is not provided, a random one will be sampled.
+
+Concordium Client 5.0.2
+-----------------------
+
+Receive function parameters are now displayed as JSON in transaction status whenever they could be succesfully parsed by a smart contract schema embedded in the module or supplied by the user using the ``--schema`` option.
+
+Smart contract libraries
+------------------------
+
+Smart contract libraries have also been updated.
+
 December 8, 2022
 
 |mw-gen2| 1.1.0
