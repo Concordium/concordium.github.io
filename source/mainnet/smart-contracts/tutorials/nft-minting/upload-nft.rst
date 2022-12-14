@@ -28,8 +28,32 @@ The CID of your asset is unique in the IPFS storage, and when you put that value
 
 The Concordium CIS-2 standard allows the creation of your NFT metadata in the following format, and you can find more details in the `Concordium CIS-2 token standard <https://proposals.concordium.software/CIS/cis-2.html#example-token-metadata-non-fungible>`_. For the sake of the minting process, you have to follow the same formatted .json file, but as you can see, you are also allowed to add additional attributes to the metadata file, or remove them.
 
-.. image:: images/nft-metadata.png
-    :width: 100%
+.. code-block:: console
+
+    {
+        "name": "your picture name",
+        "description": "my picture description",
+        "display": {
+            "url": "https://ipfs.io/ipfs....paste your url here"
+        },
+        "attributes": [
+            {
+                "name": "some attribute",
+                "type": "string",
+                "value": "999"
+            }
+            {
+                "name": "another attribute",
+                "type": "string",
+                "value": "1"
+            }
+            {
+                "name": "third attribute",
+                "type": "string",
+                "value": "7.2"
+            }
+        ]
+    }
 
 So far you have installed the required libraries, prepared a setup for our development environment, installed Docker and IPFS, and imported your first image to IPFS.
 

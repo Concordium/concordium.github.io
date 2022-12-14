@@ -57,9 +57,17 @@ Your result will be similar to what is shown below where the user is the owner o
 
 You are going to invoke the tokenMetadata function from your contract. It accepts parameters as a vector. (See the function *fn contract_token_metadata()*). To give a list of the tokenIDs create another JSON file and call it as token-ids.json and add your tokenID(s) as a vector.
 
+For Mac/Linux/Unix-like operating systems run the following.
+
 .. code-block:: console
 
     touch token-ids.json
+
+Or for Windows run the following.
+
+.. code-block:: console
+
+    type nul > token-ids.json
 
 In a text editor, add the tokenID(s) as shown below for the example in this tutorial.
 
