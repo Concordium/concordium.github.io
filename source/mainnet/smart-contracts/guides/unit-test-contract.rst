@@ -12,7 +12,7 @@ This guide will show you how to write unit tests for a smart contract written in
 Rust.
 For testing a smart contract Wasm module, see :ref:`local-simulate`.
 
-A smart contract in Rust is written as a library and we can unit test it like a
+A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a ``#[test]`` attribute.
 
 .. code-block:: rust
@@ -510,8 +510,8 @@ To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` 
 
 The ``concordium_quickcheck`` macro takes the ``num_tests`` attribute for specifying the number of random tests to run.
 In the code snippet below, the parameters ``address`` and ``amount`` are generated randomly.
-The process of generating random input and running the test is repeated 500 times because we set ``num_tests = 500``.
-If we omit the ``num_tests`` attribute, it defaults to a 100 tests.
+The process of generating random input and running the test is repeated 500 times because you set ``num_tests = 500``.
+If you omit the ``num_tests`` attribute, it defaults to a 100 tests.
 
 .. code-block:: rust
 
