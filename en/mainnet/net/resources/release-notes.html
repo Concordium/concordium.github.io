@@ -1512,6 +1512,21 @@ body {margin:0;}
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cargo-concordium-2-5-0">
+     Cargo concordium 2.5.0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-client-5-0-2">
+     Concordium Client 5.0.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smart-contract-libraries">
+     Smart contract libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mw-gen2-1-1-0">
      Concordium Wallet for Android 1.1.0
     </a>
@@ -1958,7 +1973,24 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
+<p>December 14, 2022</p>
+<div class="section" id="cargo-concordium-2-5-0">
+<h3>Cargo concordium 2.5.0<a class="headerlink" href="#cargo-concordium-2-5-0" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Add support for sampling random numbers for randomized testing with <cite>cargo concordium test</cite>.</p></li>
+<li><p>Add support for providing a seed to initialize a random generator to <cite>cargo-concordium</cite>. The generator can be used for randomized testing.
+Command format: <cite>cargo concordium test –seed 1234567890</cite>. The provided seed value is a <cite>u64</cite> number. If the seed is not provided, a random one will be sampled.</p></li>
+</ul>
+</div>
+<div class="section" id="concordium-client-5-0-2">
+<h3>Concordium Client 5.0.2<a class="headerlink" href="#concordium-client-5-0-2" title="Permalink to this headline">#</a></h3>
+<p>Receive function parameters are now displayed as JSON in transaction status whenever they could be succesfully parsed by a smart contract schema embedded in the module or supplied by the user using the <code class="docutils literal notranslate"><span class="pre">--schema</span></code> option.</p>
+</div>
+<div class="section" id="smart-contract-libraries">
+<h3>Smart contract libraries<a class="headerlink" href="#smart-contract-libraries" title="Permalink to this headline">#</a></h3>
+<p>Smart contract libraries have also been updated.</p>
 <p>December 8, 2022</p>
+</div>
 <div class="section" id="mw-gen2-1-1-0">
 <h3>Concordium Wallet for Android 1.1.0<a class="headerlink" href="#mw-gen2-1-1-0" title="Permalink to this headline">#</a></h3>
 <p>The Concordium Wallet for Android introduces functionality to connect to dApps and services using WalletConnect. This functionality is currently in beta mode.</p>

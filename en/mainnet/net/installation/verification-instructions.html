@@ -1550,6 +1550,11 @@ body {margin:0;}
      Linux
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verification-cargo-linux">
+     Linux
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1583,19 +1588,20 @@ body {margin:0;}
 <span id="id1"></span><h1>Verification instructions<a class="headerlink" href="#verification-instructions" title="Permalink to this headline">#</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id3">Concordium Desktop Wallet</a></p>
+<li><p><a class="reference internal" href="#concordium-desktop-wallet" id="id4">Concordium Desktop Wallet</a></p>
 <ul>
-<li><p><a class="reference internal" href="#linux" id="id4">Linux</a></p></li>
-<li><p><a class="reference internal" href="#automatic-updates" id="id5">Automatic updates</a></p></li>
+<li><p><a class="reference internal" href="#linux" id="id5">Linux</a></p></li>
+<li><p><a class="reference internal" href="#automatic-updates" id="id6">Automatic updates</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#concordium-client" id="id6">Concordium Client</a></p>
+<li><p><a class="reference internal" href="#concordium-client" id="id7">Concordium Client</a></p>
 <ul>
-<li><p><a class="reference internal" href="#verification-client-linux" id="id7">Linux</a></p></li>
+<li><p><a class="reference internal" href="#verification-client-linux" id="id8">Linux</a></p></li>
+<li><p><a class="reference internal" href="#verification-cargo-linux" id="id9">Linux</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#node-debian-package" id="id8">Node Debian package</a></p></li>
-<li><p><a class="reference internal" href="#mainnet-genesis-block" id="id9">Mainnet genesis block</a></p></li>
+<li><p><a class="reference internal" href="#node-debian-package" id="id10">Node Debian package</a></p></li>
+<li><p><a class="reference internal" href="#mainnet-genesis-block" id="id11">Mainnet genesis block</a></p></li>
 </ul>
 </div>
 <p>To find instructions on how to verify the integrity of the file you have downloaded, navigate to the respective section that outlines the steps needed for that specific file.</p>
@@ -1716,8 +1722,22 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum concordium-client_5.0.1-0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum concordium-client_5.0.2-0
 <span class="go">3ed9f3878d07c53d6f2233d4832fed45eea74363e1f8671d42be45043dd3937b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verification-cargo-linux">
+<span id="id3"></span><h3>Linux<a class="headerlink" href="#verification-cargo-linux" title="Permalink to this headline">#</a></h3>
+<p><strong>Verify checksum of download</strong></p>
+<p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Then paste the first line of the following block into the terminal.</p></li>
+<li><p>Verify that the output matches the second line in the block.</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum cargo-concordium_2.5.0
+<span class="go">96e7d4de085147d57aeff17f92c0cad16fd4039434eea7eb67dfdad28b898434</span>
 </pre></div>
 </div>
 </div>

@@ -17,6 +17,25 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+December 14, 2022
+
+Cargo concordium 2.5.0
+----------------------
+
+- Add support for sampling random numbers for randomized testing with `cargo concordium test`.
+- Add support for providing a seed to initialize a random generator to `cargo-concordium`. The generator can be used for randomized testing.
+  Command format: `cargo concordium test --seed 1234567890`. The provided seed value is a `u64` number. If the seed is not provided, a random one will be sampled.
+
+Concordium Client 5.0.2
+-----------------------
+
+Receive function parameters are now displayed as JSON in transaction status whenever they could be succesfully parsed by a smart contract schema embedded in the module or supplied by the user using the ``--schema`` option.
+
+Smart contract libraries
+------------------------
+
+Smart contract libraries have also been updated.
+
 December 8, 2022
 
 |mw-gen2| 1.1.0
