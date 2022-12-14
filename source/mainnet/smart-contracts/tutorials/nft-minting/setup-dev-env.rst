@@ -30,7 +30,7 @@ During Wasm installation in your system you should see something similar to belo
 
 Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
 
-First, rename the “cargo-congordium-v.x.x” file to “cargo-concordium”. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the cargo-concordium executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly for your operating system. The commands below are specifically for MacOS.
+First, rename the ``cargo-congordium-v.x.x`` file to ``cargo-concordium``. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the ``cargo-concordium`` executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly. The step below is specifically for MacOS.
 
 .. code-block:: console
 
