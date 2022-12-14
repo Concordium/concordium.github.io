@@ -1611,7 +1611,7 @@ body {margin:0;}
 <p>This guide will show you how to write unit tests for a smart contract written in
 Rust.
 For testing a smart contract Wasm module, see <a class="reference internal" href="local-simulate.html#local-simulate"><span class="std std-ref">Locally simulate contract functions</span></a>.</p>
-<p>A smart contract in Rust is written as a library and we can unit test it like a
+<p>A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a <code class="docutils literal notranslate"><span class="pre">#[test]</span></code> attribute.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// contract code</span>
 <span class="o">..</span><span class="p">.</span><span class="w"></span>
@@ -2040,7 +2040,8 @@ The return value of the function should be a boolean corresponding to whether th
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">concordium_quickcheck</span></code> macro takes the <code class="docutils literal notranslate"><span class="pre">num_tests</span></code> attribute for specifying the number of random tests to run.
 In the code snippet below, the parameters <code class="docutils literal notranslate"><span class="pre">address</span></code> and <code class="docutils literal notranslate"><span class="pre">amount</span></code> are generated randomly.
-The process of generating random input and running the test is repeated <code class="docutils literal notranslate"><span class="pre">num_tests</span> <span class="pre">=</span> <span class="pre">500</span></code>.</p>
+The process of generating random input and running the test is repeated 500 times because you set <code class="docutils literal notranslate"><span class="pre">num_tests</span> <span class="pre">=</span> <span class="pre">500</span></code>.
+If you omit the <code class="docutils literal notranslate"><span class="pre">num_tests</span></code> attribute, it defaults to a 100 tests.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[concordium_cfg_test]</span><span class="w"></span>
 <span class="k">mod</span> <span class="nn">test</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
@@ -2170,7 +2171,9 @@ In this case, if the threshold is <code class="docutils literal notranslate"><sp
 <p><a class="reference external" href="https://docs.rs/quickcheck/latest/quickcheck"><code class="docutils literal notranslate"><span class="pre">QuickCheck</span></code></a> implements a special mechanism called “shrinking” to find the simplest counterexample.
 For the example above, <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> is the simplest input on which the test failed.</p>
 </div>
-<p>If you change the highlighted lines in the code above to</p>
+<p>The issue is the comparison operator.
+It should be <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.
+If you change the highlighted lines in the code above to:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">threshold</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
