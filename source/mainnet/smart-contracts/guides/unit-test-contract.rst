@@ -482,11 +482,200 @@ account:
         let amount1 = Amount::from_ccd(20);
         claim_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
 
+.. _writing_property_based_tests:
+
+Writing property-based tests
+============================
+
+The property-based testing technique allows for testing statements about your code that are expected to be true for any input parameters, possibly satisfying some precondition.
+You can think of a precondition and a property as functions returning a boolean.
+That is, for a function ``fun``, a property looks as the following: "for any input ``x``, ``y``, ``z``, such that ``precondition(x, y, z) = true``, ``property(x, y, z, fun(x,y,z)) = true``".
+The input to such tests is generated randomly.
+An example of a property is "for any integers ``n`` and ``m``, such that ``even(n) = true`` and ``even(m) = true``, ``even(n + m) = true``".
+
+Property-based testing is supported using the |QuickCheck|_ crate.
+The tests should be placed in the same module as regular unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
+The return value of the function should be a boolean corresponding to whether the property holds.
+
+To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` as a ``dev``-dependency in ``Cargo.toml``:
+
+.. code-block::
+
+    ...
+
+    [dev-dependencies]
+    concordium-std = { version = "5.1", features = ["concordium-quickcheck"] }
+
+    ...
+
+The ``concordium_quickcheck`` macro takes the ``num_tests`` attribute for specifying the number of random tests to run.
+In the code snippet below, the parameters ``address`` and ``amount`` are generated randomly.
+The process of generating random input and running the test is repeated ``num_tests = 500``.
+
+.. code-block:: rust
+
+    #[concordium_cfg_test]
+    mod test {
+
+       #[concordium_quickcheck(num_tests = 500)]
+       fn some_property_test(address: Address, amount: Amount) -> bool {
+        ...
+        // Instantiate custom struct with random parameters, if necessary.
+        let input = MyParameters { sender: address, payment: amount }
+        ...
+        }
+    }
+
+The types ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
+Read more about available ``Arbitrary`` instances for Concordium-specific types in |concordium_contracts_common|_ documentation.
+|QuickCheck|_ defines ``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``, etc.).
+These instances are available by default when writing tests.
+Custom user data type instances, like ``MyParameters`` above, can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
+See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
+
+.. warning::
+
+    The fact that many random tests passed successfully does not automatically mean that the property holds for **all** inputs.
+    Often the input space is quite large to be covered fully.
+    In this case, it is important to think carefully about what an implementation of the ``Arbitrary`` trait is doing to generate random input for your specific data.
+    In order to cover corner cases, you can bias the generated data to produce values that are deemed as potentially problematic.
+
+
+
+The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_wasm`:
+
+.. code-block:: console
+
+    $cargo concordium test
+
+When a test fails, it reports the random seed used to produce the input values.
+The random numbers are generated using a deterministic pseudo-random number generator from this seed.
+After making the required fixes to the code, you can use the same seed to see whether the previously failed tests work on the same generated values.
+The seed is a ``u64`` number, which can be provided along with the test command:
+
+.. code-block:: console
+
+    $cargo concordium test --seed 1234567890
+
+Concordium QuickCheck tests can also be run with:
+
+.. code-block:: console
+
+    $cargo test
+
+By default, this command compiles the contract, unit tests, and QuickCheck tests to machine code for your local target (most likely x86_64) and runs them.
+
+.. note::
+
+    Printing and supplying a seed is only possible using ``cargo concordium test``.
+
+.. warning::
+
+    Avoid using ``fail!`` and ``claim!`` variants in ``#[concordium_quickcheck]`` tests.
+    In Wasm unit tests (see :ref:`tests_in_wasm`) these commands report an error.
+    However, using them in QuickCheck tests makes the tests fail without providing a counterexample when running with ``cargo concordium test``.
+    Also avoid using ``assert_eq!``, ``panic!`` or any other command that panics.
+    Return a boolean value instead.
+
+Example
+-------
+
+Consider a counter with a threshold: if the count is less than the threshold, it gets incremented; otherwise, it stays unchanged.
+
+.. code-block:: rust
+   :emphasize-lines: 19-22
+
+    use concordium_std::*;
+
+    #[derive(Serialize)]
+    struct State {
+        threshold: u16,
+        count:     u16,
+    }
+
+    impl State {
+        fn new(threshold: u16) -> Self {
+            State {
+                count: 0,
+                threshold,
+            }
+        }
+
+        // Increment only if the current count is below the threshold.
+        fn increment(&mut self) {
+            // Can you see a problem here?
+            if self.count <= self.threshold {
+                self.count += 1;
+            }
+        }
+    }
+
+    #[init(contract = "my_contract")]
+    fn contract_init<S: HasStateApi>(
+        ctx: &impl HasInitContext,
+        state_builder: &mut StateBuilder<S>,
+    ) -> InitResult<State> { ... }
+
+    #[receive(contract = "my_contract", name = "my_receive", mutable)]
+    fn contract_update_counter<S: HasStateApi>(
+        _ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> ReceiveResult<()> { ... }
+
+    #[concordium_cfg_test]
+    mod test {
+        use super::*;
+
+        // Property: counter stays below the threshold for any number of calls `n`.
+        // Run 500 tests with random `n` and `threshold` values.
+        #[concordium_quickcheck(num_tests = 500)]
+        fn prop_counter_always_below_threshold(threshold: u16, n: u16) -> bool {
+            let mut state = State::new(threshold);
+            for _ in 0..n {
+                state.increment()
+            }
+            state.count <= threshold
+        }
+    }
+
+The test fails with a counterexample, i.e., an input that breaks the property:
+
+.. code-block::
+
+    TestResult {
+        status: Fail,
+        arguments: [
+            "0",
+            "1",
+        ],
+        err: None,
+    }
+
+The ``arguments`` part shows the values that caused the test to fail.
+In this case, if the threshold is ``0`` and the number of calls is ``1``, then the counter becomes ``1`` after calling ``state.increment()``, breaking the property.
+
+.. note::
+
+    |QuickCheck|_ implements a special mechanism called "shrinking" to find the simplest counterexample.
+    For the example above, ``0`` and ``1`` is the simplest input on which the test failed.
+
+If you change the highlighted lines in the code above to
+
+.. code-block:: rust
+
+    if self.count < self.threshold {
+        self.count += 1;
+    }
+
+Then all ``500`` tests pass successfully.
+
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
 .. |concordium_std| replace:: ``concordium_std``
 .. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std
+.. |concordium_contracts_common| replace:: ``concordium_contracts_common``
+.. _concordium_contracts_common: https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common
 .. _TestHost: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html
 .. |TestHost| replace:: ``TestHost``
 .. _setup_mock_entrypoint: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.setup_mock_entrypoint
@@ -503,3 +692,5 @@ account:
 .. |StateMap| replace:: ``StateMap``
 .. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
 .. |StateSet| replace:: ``StateSet``
+.. |QuickCheck| replace:: ``QuickCheck``
+.. _QuickCheck: https://docs.rs/quickcheck/latest/quickcheck
