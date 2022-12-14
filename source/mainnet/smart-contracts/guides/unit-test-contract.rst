@@ -510,7 +510,8 @@ To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` 
 
 The ``concordium_quickcheck`` macro takes the ``num_tests`` attribute for specifying the number of random tests to run.
 In the code snippet below, the parameters ``address`` and ``amount`` are generated randomly.
-The process of generating random input and running the test is repeated ``num_tests = 500``.
+The process of generating random input and running the test is repeated 500 times because we set ``num_tests = 500``.
+If we omit the ``num_tests`` attribute, it defaults to a 100 tests.
 
 .. code-block:: rust
 
@@ -659,7 +660,9 @@ In this case, if the threshold is ``0`` and the number of calls is ``1``, then t
     |QuickCheck|_ implements a special mechanism called "shrinking" to find the simplest counterexample.
     For the example above, ``0`` and ``1`` is the simplest input on which the test failed.
 
-If you change the highlighted lines in the code above to
+The issue is the comparison operator.
+It should be ``<`` instead of ``<=``.
+If you change the highlighted lines in the code above to:
 
 .. code-block:: rust
 
