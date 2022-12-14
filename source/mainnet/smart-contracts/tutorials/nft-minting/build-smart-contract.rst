@@ -12,7 +12,7 @@ Initialize Cis2-NFT contract template
 
 You will use ``cargo-concordium`` that you installed in the first part to initialize the template.
 
-First, you need to install cargo-generate crate and then initialize the folder. By default, it’ll create a cis2-nft contract template.
+First, you need to install the ``cargo-generate`` tool and then initialize the folder. By default, it’ll create a cis2-nft contract template.
 
 .. code-block:: console
 
