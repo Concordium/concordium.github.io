@@ -4,149 +4,118 @@
 Mint and transfer the NFT
 =========================
 
-Now, you are ready to call the mint function. First, place the ``setupCliUpdateContract`` function below in your cli.ts file. In this step, you serialize the parameters taken from the terminal that are going to be input for your update function.
+Now, you are ready to call the mint function. In order to invoke mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a JSON file and give that file as a parameter to ``concordium-client``. To make it more user-friendly, a JSON file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the JSON file is called ``nft-params.json``. You can either do it manually or with following commands.
 
 .. code-block:: console
 
-    function setupCliUpdateContract(cli: commander.Command, updateContractAction: string) {
-        return (
-        cli
-        .command(updateContractAction)
-        .description(`${updateContractAction} an NFT`)
-        .requiredOption("--params <params>", "params file path", (f) => fs.realpathSync(f))
-        .requiredOption(
-            "--schema <schema>",
-            "Contract schema file path",
-            (f) => fs.realpathSync(f),
-            "../dist/smart-contract/schema.bin",
-        )
-        .requiredOption("--energy <energy>", "Maximum Contract Execution Energy", (v) => BigInt(v), 6000n)
-        .requiredOption("--contract <contract>", "Contract name", "CIS2-NFT")
-        .requiredOption("--function <function>", "Contract function name to call", updateContractAction)
-        .requiredOption("--index <index>", "Contract Address Index", (v) => BigInt(v))
-        .requiredOption("--sub-index <subIndex>", "Contract Address Sub Index", (v) => BigInt(v), 0n)
-        // Sender Account Args
-        .requiredOption("--sender <sender>", "Sender Account Address. This should be the owner of the Contract")
-        .requiredOption("--sign-key <signKey>", "Account Signing Key")
-        // Node Client args
-        .requiredOption("--auth-token <authToken>", "Concordium Node Auth Token", "rpcadmin")
-        .requiredOption("--ip <ip>", "Concordium Node IP", "127.0.0.1")
-        .requiredOption("--port <port>", "Concordum Node Port", (v) => parseInt(v), 10001)
-        .requiredOption("--timeout <timeout>", "Concordium Node request timeout", (v) => parseInt(v), 15000)
-        .action(
-            async (args: UpdateContractArgs) =>
-            await sendAccountTransaction(
-                args,
-                args.sender,
-                args.signKey,
-                // Payload
-                {
-                parameter: serializeUpdateContractParameters(
-                    args.contract,
-                    args.function,
-                    JSON.parse(readFileSync(args.params).toString()),
-                    Buffer.from(readFileSync(args.schema)),
-                    SchemaVersion.V2,
-                ),
-                amount: new GtuAmount(0n),
-                contractAddress: {
-                    index: BigInt(args.index),
-                    subindex: BigInt(args.subIndex),
-                },
-                receiveName: `${args.contract}.${args.function}`,
-                maxContractExecutionEnergy: BigInt(args.energy),
-                } as UpdateContractPayload,
-                // Transaction Type
-                AccountTransactionType.UpdateSmartContractInstance,
-            ),
-        )
-    );
+    mkdir nft-artifacts
+
+.. code-block:: console
+
+    cd nft-artifacts
+
+.. code-block:: console
+
+    touch nft-params.json
+
+With a text editor open up that file and place your account address and token ID in the JSON file as shown in the example below.
+
+.. code-block:: console
+
+    {
+        "owner": {
+            "Account": ["3bzmSxeKVgHR4M7pF347WeehXcu43kypgHqhSfDMs9SvcP5zto"]
+        },
+        "tokens": ["00000111"]
     }
-    // Mint
-    setupCliUpdateContract(cli, "mint");
 
-You need to set the mint parameters in mint-params.json file as described below. The account address is the wallet address. You are going to generate one copy of it since it’s a non-fungible token. The URL is the IPFS link of the metadata file and hash is the SHA-256 output of the link.
+Minting is successful.
 
-.. image:: images/mint-parameters.png
-   :width: 100 %
-
-Run the command below with the index value you got previously, your account address and the signKey from your decrypted wallet.json file.
-
-.. code-block:: console
-
-    ts-node ./src/cli.ts mint --params ../nft-artifacts/mint-params.json --schema ../dist/smart-contract/schema.bin --index <YOUR INDEX> --sender <ACCOUNT-ADDRESS> --sign-key <SIGN-KEY>
-
-The result should look similar to the following:
-
-.. image:: images/mint-result.png
+.. image:: images/mint-success.png
     :width: 100%
 
-Check the dashboard again to see the transaction.
+You can also check the dashboard to see the status of your operation in a more visual way. To do that, use the transaction status hash from your terminal.
 
 .. image:: images/mint-result-db.png
     :width: 100%
 
-You have just minted your first NFT on Concordium successfully! Now you will want to get the metadata on-chain and see what you have in there. In order to do that, use ``setupCliInvokeContract`` and use view functions. Since with this function you are not going to change the state of the blockchain, there will be no transaction fee. This is almost the same with the ``setupCliUpdateContract`` except there are no internal state changes in the smart contract. View functions read the current state of the contract.
+.. _nft-view-fn:
 
-It expects the IPFS URL that you added in the metadata-json file and the hash value you added in the mint function. You can also store another value on-chain in addition to the URL. In order to get the details on-chain run the following command.
+View function
+=============
+
+Now check the current state of the cis2-nft token contract by invoking view function. The schema file you created in the build step is important here, because ``concordium-client`` uses it to deserialize the output while printing it.
 
 .. code-block:: console
 
-    ts-node src/cli.ts view --index <YOUR INDEX> --sender <YOUR ADDRESS>
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 10001
 
-.. image:: images/mint-metadata.png
+Your result will be similar to what is shown below where the user is the owner of the token with ID **00000111**.
+
+.. image:: images/view-fn.png
     :width: 100%
 
-Now you can visit the URL you stored on-chain in a web browser.
+You are going to invoke the tokenMetadata function from your contract. It accepts parameters as a vector. (See the function *fn contract_token_metadata()*). To give a list of the tokenIDs create another JSON file and call it as ``token-ids.json`` and add your tokenID(s) as a vector.
 
-If you stored the metadata successfully in IPFS you should see something similar to what is shown below.
+For Mac/Linux/Unix-like operating systems run the following.
 
-.. image:: images/mint-metadata-result.png
+.. code-block:: console
+
+    touch token-ids.json
+
+Or for Windows run the following.
+
+.. code-block:: console
+
+    type nul > token-ids.json
+
+In a text editor, add the tokenID(s) as shown below for the example in this tutorial.
+
+.. code-block:: console
+
+    ["00000111"]
+
+You can query the metadata with the following command.
+
+.. code-block:: console
+
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 10001
+
+This returns the metadata URL combined with your tokenID.
+
+.. image:: images/metadata-query.png
     :width: 100%
 
-If you are implementing a project it is a good idea to run your own IPFS node and pin the data to guarantee that at least one participant has it.
+Now the metadata is stored on-chain and no one will be able to change it.
+
+.. _transfer-nft:
 
 Transfer function
 =================
 
-Before you transfer the NFT, you should change the sender account and receiver account in the  ``../nft-artifacts/transfer-params.json`` file. You don't have to do it like this, I just decided to read all these values from a JSON file because it’s easier to understand and follow otherwise it can get quickly messy. So make sure you made the adjustments of addresses accordingly like the one I shared below. I created another account on my mobile wallet (and this time I made some changes to my data like revealing my nationality and country of residence. Which is one of the strongest parts of Concordium, explore it!) and will transfer this token to that.
+Now you will transfer the token and check the balance of your account and the other wallet in the following steps.
+
+Before you transfer the NFT, you should change the sender account and receiver account in the  ``../nft-artifacts/transfer-params.json`` file. Make sure you make the adjustments of addresses accordingly as shown below. You can create another account on your wallet to transfer this token to that.
 
 .. image:: images/transfer-values.png
     :width: 100%
 
-Now you can transfer it with the following command. You will check the balance of your account and the other wallet in the following steps. One reminder, you should be the owner of it to be able to transfer it, so try not to get confused in this step. The original minter account should be in the **from** key’s value and the receiver will be located in the **to** key’s value.
+Now you can transfer it. One reminder, you should be the owner of it to be able to transfer it, so try not to get confused in this step. The original minter account should be in the **from** key’s value and the receiver will be located in the **to** key’s value. When you specify your account addresses and tokenID to be transferred, run the command below. You are going to invoke the transfer function with given parameters.
 
 .. code-block:: console
 
-    ts-node ./src/cli.ts transfer --params ../nft-artifacts/transfer-params.json --schema ../dist/smart-contract/schema.bin --index <YOUR INDEX> --sender <ACCOUNT-ADDRESS> --sign-key <SIGN-KEY>
+    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 10001
 
 The transfer is successfully completed.
 
 .. image:: images/transfer-success.png
     :width: 100%
 
-.. image:: images/transfer-success-db.png
-    :width: 100%
+Check the state of the token once more with the :ref:`view function<nft-view-fn>`.
 
-Check the state of the token once more with the view function.
-
-.. code-block:: console
-
-    ts-node src/cli.ts view --index <YOUR INDEX> --sender <YOUR ADDRESS> --schema ../cis2-nft
-
-As you can see the second account is now the owner of the asset and you can see the previous owners.
+As you can see the second account is now the owner of the asset and the first account has nothing.
 
 .. image:: images/transfer-view.png
-    :width: 100%
-
-As a final step,  try to transfer it with your first account again. This should not be possible! The transaction is shown below.
-
-.. image:: images/retransfer.png
-    :width: 100%
-
-As expected, it can not be transferred because the owner is changed. The second account is the owner and you need to use its signKey and address in order to transfer it.
-
-.. image:: images/retransfer-reject.png
     :width: 100%
 
 You have now completed part one of the NFT minting tutorial.
