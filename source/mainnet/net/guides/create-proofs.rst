@@ -5,7 +5,7 @@
 Create proofs
 =============
 
-The |bw| supports proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of statements to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
+The |bw| supports proofs that allow dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of :ref:`statements<glossary-statement>` to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
 
 The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
 
@@ -13,7 +13,7 @@ The diagram below shows the interaction between the Rust server/backend, the dAp
 
 (diagram)
 
-You have a Rust server or backend that contains the challenge and the statement.
+You have a Rust server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
 
 1. The dApp requests the challenge from the server/backend.
 2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the statement. Your dApp can request the statement from the server or it can contain the statement. If your dApp does not contain the statement, you must also request it from the server/backend.

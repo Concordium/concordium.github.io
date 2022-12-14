@@ -521,6 +521,13 @@ way. The staked amount is proportional to the :ref:`lottery power<glossary-lotte
 
 :ref:`Delegators<glossary-delegate>` can delegate stake to a baker pool or passive delegation. This affects the staked amount of the baker and thus their lottery power.
 
+.. _glossary-statement:
+
+Statement
+=========
+
+One or more attributes to be proven or revealed by a wallet owner to a dApp or service.
+
 .. _glossary-testnet:
 
 Testnet
