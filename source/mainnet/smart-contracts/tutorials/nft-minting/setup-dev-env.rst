@@ -5,7 +5,7 @@
 Setup the development environment
 =================================
 
-First, you need to install “rustup” which installs Rust and Cargo to your computer. To do that, you can use this command.
+First, you need to install ``rustup`` which installs Rust and Cargo to your computer. To do that, you can use this command.
 
 .. code-block:: console
 
