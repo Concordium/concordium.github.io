@@ -14,7 +14,7 @@ The diagram below shows the interaction between the Rust server/backend, the dAp
 .. image:: ../images/browser-wallet/proof-concept.png
     :width: 100%
 
-You have a Rust server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
+You have a server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
 
 1. The dApp requests the challenge from the server/backend.
 2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the statement. Your dApp can request the statement from the server or it can contain the statement. If your dApp does not contain the statement, you must also request it from the server/backend.
