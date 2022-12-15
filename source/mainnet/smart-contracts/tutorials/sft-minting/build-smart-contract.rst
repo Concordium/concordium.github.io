@@ -1,162 +1,278 @@
 .. _build-sft-sc:
 
-=================================
-Build and deploy a smart contract
-=================================
+============================
+Smart contract modifications
+============================
 
-Finally, you have everything prepared in order to mint your tokens. Y have created a wallet, exported it, and stored your data on IPFS using Pinata. You have an API Key that will allow you to upload from your system, both your data and metadata are available and pinned already so you don't need to run a local node. You are ready to mint your semi-fungible tokens.
+You are using the example contract from Concordium's examples and it’s ready to use. If you want to use it as is you can do it for your project. But in this tutorial you will add a couple of things and update some functions to give more flexibility.
 
-Make sure you are working in the cis2-multi directory, and create a dist folder for your schema and smart contract compiled into wasm. Remember that CIS-2 allows you to mint fungible, non-fungible, and semi-fungible tokens. Concordium’s token standard is applicable to all types of tokens.
+First, you will add a new struct called ``TokenMetadata``. It needs to implement ``Serialize`` and ``SchemaType`` traits for the sake of deserialization of the contract you need it. For those who are familiar with the Ethereum ecosystem it's like the ABI.
 
-.. code-block:: console
+We have implemented two functions of this struct to get provided metadata_url and hash values. See to_metadata_url() function returns MetadataUrl struct which is the part of the CIS-2 standard of the metadata and an optional hash of the content and we are gonna need this while minting.
 
-    cd cis2-multi
+.. code-block:: rust
 
-.. code-block:: console
+    #[derive(Debug, Serialize, Clone, SchemaType)]
+    pub struct TokenMetadata {
+        /// The URL following the specification RFC1738.
+        #[concordium(size_length = 2)]
+        pub url: String,
+        /// A optional hash of the content.
+        #[concordium(size_length = 2)]
+        pub hash: String,
+    }
 
-    mkdir -p ../dist/smart-contract-multi
+    impl TokenMetadata {
+        fn get_hash_bytes(&self) -> Option<[u8; 32]> {
+            let mut hash_bytes: [u8; 32] = Default::default();
+            let hex_res = hex::decode_to_slice(self.hash.to_owned(), &mut hash_bytes);
 
-.. code-block:: console
+            match hex_res {
+                Ok(_) => Some(hash_bytes),
+                Err(_) => Option::None,
+            }
+        }
 
-    cargo concordium build --out ../dist/smart-contract-multi/module.wasm --schema-out ../dist/smart-contract-multi/schema.bin
+        fn to_metadata_url(&self) -> MetadataUrl {
+            let mut hash_bytes: [u8; 32] = Default::default();
+            hex::decode_to_slice(self.hash.to_string(), &mut hash_bytes).unwrap();
+            MetadataUrl {
+                url: self.url.to_string(),
+                hash: self.get_hash_bytes(),
+            }
+        }
+    }
 
-.. image:: images/schema-fns.png
-    :width: 100%
+When you have the ``TokenMetadata`` add one more line to the minting params struct. When you invoke the mint (contract_mint) function with the parameters it basically parses the input params and creates the struct below. Add ``TokenMetadata`` to your tokens collection. Now it has a ``ContractTokenId``, ``TokenMetadata``, and ``ContractTokenAmount``.
 
-Install required packages
+.. code-block:: rust
+
+    /// The parameter for the contract function `mint` which mints a number of
+    /// token types and/or amounts of tokens to a given address.
+    #[derive(Serial, Deserial, SchemaType)]
+    struct MintParams {
+        /// Owner of the newly minted tokens.
+        owner: Address,
+        /// A collection of tokens to mint.
+        tokens: collections::BTreeMap<ContractTokenId, (TokenMetadata, ContractTokenAmount)>,
+    }
+
+Always remember, à blockchain itself is a state-keeping machine. If you send a transaction, you change the state. If you mint an NFT or transfer it, the state is changed again. Basically, if you make any change to the data structure, you change the state. So what is this state? Look at the code snippet below.
+
+.. code-block:: rust
+
+    /// The contract state,
+    ///
+    /// Note: The specification does not specify how to structure the contract state
+    /// and this could be structured in a more space efficient way.
+    #[derive(Serial, DeserialWithState, StateClone)]
+    #[concordium(state_parameter = "S")]
+    struct State<S> {
+        /// The state of addresses.
+        state: StateMap<Address, AddressState<S>, S>,
+        /// All of the token IDs
+        tokens: StateMap<ContractTokenId, MetadataUrl, S>,
+        /// Map with contract addresses providing implementations of additional
+        /// standards.
+        implementors: StateMap<StandardIdentifierOwned, Vec<ContractAddress>, S>,
+    }
+
+The ``State`` struct above keeps the general state of the contract, which means for this use case it should track all the tokens and subsequent states of those tokens: who owns what, what amount, holder history, etc. The struct uses ``MetadataUrl`` for tokens to keep not only IDs but also hash and URL. The ``MetadataUrl`` is a CIS-2 implemented struct that keeps these values. Now, you have to change some statements that either initiate or insert this data type.
+
+.. code-block:: rust
+
+    /// Construct a state with no tokens
+        fn empty(state_builder: &mut StateBuilder<S>) -> Self {
+            State {
+                state: state_builder.new_map(),
+                tokens: state_builder.new_map(),
+                implementors: state_builder.new_map(),
+            }
+        }
+
+The ``empty()`` function of the ``State`` initializes an empty ``State`` instance. This is important for your contracts because every time you call the ``init()`` function you should create a clear, empty ``State``.
+
+The other minor update is to the ``mint()`` function of the ``State``. Since you are going to give the metadata parameters as input to your minting function it should accept ``token_metadata: &TokenMetadata``.
+
+.. code-block:: rust
+
+    /// Mints an amount of tokens with a given address as the owner.
+    fn mint(
+        &mut self,
+        token_id: &ContractTokenId,
+        token_metadata: &TokenMetadata,
+        amount: ContractTokenAmount,
+        owner: &Address,
+        state_builder: &mut StateBuilder<S>,
+    ) {
+        self.tokens
+            .insert(*token_id, token_metadata.to_metadata_url());
+        let mut owner_state = self
+            .state
+            .entry(*owner)
+            .or_insert_with(|| AddressState::empty(state_builder));
+        let mut owner_balance = owner_state.balances.entry(*token_id).or_insert(0.into());
+        *owner_balance += amount;
+    }
+
+The next update will be on the ``mint()`` function of the contract. You need to pass the correct values, which are given by the user in a form of JSON object(MintParams) to the ``State``’s mint function and you should call the ``to_metadata_url`` while emitting the event in logger. One final addition to the contract’s ``mint()``function is ensuring that the ``token_id`` is unique.
+
+.. code-block:: rust
+
+    /// Mint new tokens with a given address as the owner of these tokens.
+    /// Can only be called by the contract owner.
+    /// Logs a `Mint` and a `TokenMetadata` event for each token.
+    /// The url for the token metadata is the token ID encoded in hex, appended on
+    /// the `TOKEN_METADATA_BASE_URL`.
+    ///
+    /// It rejects if:
+    /// - The sender is not the contract instance owner.
+    /// - Fails to parse parameter.
+    /// - Any of the tokens fails to be minted, which could be if:
+    ///     - Fails to log Mint event.
+    ///     - Fails to log TokenMetadata event.
+    ///
+    /// Note: Can at most mint 32 token types in one call due to the limit on the
+    /// number of logs a smart contract can produce on each function call.
+    #[receive(
+        contract = "CIS2-Multi",
+        name = "mint",
+        parameter = "MintParams",
+        error = "ContractError",
+        enable_logger,
+        mutable
+    )]
+    fn contract_mint<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State<S>, StateApiType = S>,
+        logger: &mut impl HasLogger,
+    ) -> ContractResult<()> {
+        // Get the contract owner
+        let owner = ctx.owner();
+        // Get the sender of the transaction
+        let sender = ctx.sender();
+
+        ensure!(sender.matches_account(&owner), ContractError::Unauthorized);
+
+        // Parse the parameter.
+        let params: MintParams = ctx.parameter_cursor().get()?;
+
+        let (state, builder) = host.state_and_builder();
+        for (token_id, token_info) in params.tokens {
+        ensure!(
+                state.contains_token(&token_id),
+                ContractError::Custom(CustomContractError::TokenAlreadyMinted)
+            );
+            // Mint the token in the state.
+            state.mint(
+                &token_id,
+                &token_info.0,
+                token_info.1,
+                &params.owner,
+                builder,
+            );
+
+            // Event for minted token.
+            logger.log(&Cis2Event::Mint(MintEvent {
+                token_id,
+                amount: token_info.1,
+                owner: params.owner,
+            }))?;
+
+            // Metadata URL for the token.
+            logger.log(&Cis2Event::TokenMetadata::<_, ContractTokenAmount>(
+                TokenMetadataEvent {
+                    token_id,
+                    metadata_url: token_info.0.to_metadata_url(),
+                },
+            ))?;
+        }
+        Ok(())
+    }
+
+Add one final change to the ``tokenMetadata()`` function. As you can see in :ref:`this previous tutorial<>`, this function combines the ``url`` value and ``token_id`` and returns it. Instead, you are going to read the ``url`` from the ``state`` with ``token_id`` and return it.
+
+.. code-block:: rust
+
+    /// Get the token metadata URLs and checksums given a list of token IDs.
+    ///
+    /// It rejects if:
+    /// - It fails to parse the parameter.
+    /// - Any of the queried `token_id` does not exist.
+    #[receive(
+        contract = "cis-2",
+        name = "tokenMetadata",
+        parameter = "ContractTokenMetadataQueryParams",
+        return_value = "TokenMetadataQueryResponse",
+        error = "ContractError"
+    )]
+
+    fn contract_token_metadata<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &impl HasHost<State<S>, StateApiType = S>,
+    ) -> ContractResult<TokenMetadataQueryResponse> {
+        // Parse the parameter.
+        let params: ContractTokenMetadataQueryParams = ctx.parameter_cursor().get()?;
+        // Build the response.
+        let mut response = Vec::with_capacity(params.queries.len());
+
+        for token_id in params.queries {
+            // Check the token exists.
+            ensure!(
+                host.state().contains_token(&token_id),
+                ContractError::InvalidTokenId
+            );
+            let token_url = &host.state().tokens.get(&token_id).unwrap().url[..];
+            // let token_hash = host.state().tokens.get(&token_id).unwrap().hash.unwrap();
+
+            let metadata_url = MetadataUrl {
+                url: token_url.to_string(),
+                hash: None,
+            };
+            response.push(metadata_url);
+        }
+        let result = TokenMetadataQueryResponse::from(response);
+        Ok(result)
+    }
+
+Build the contract module
 =========================
 
-You will invoke some functions from your deployed contract using ts-client for minting and transferring NFTs. You can install all the dependent packages with either “yarn” or “npm”. If you don't have the node in your system you should install it first.
+Make sure you are working in the correct directory, and create a ``dist`` folder for your files: schema and smart contract compiled into Wasm. One small reminder here, remember CIS-2 is a standard that allows you to mint fungible, non-fungible and semi-fungible tokens. Concordium’s token standard is applicable to all types of tokens. Once you have created the folder, run the following command.
 
 .. code-block:: console
 
-    cd node-cli
+    cargo concordium build --out dist/smart-contract-multi/module.wasm.v1 --schema-out dist/smart-contract-multi/schema.bin
+
+.. image:: images/build-contract-module.png
+    :width: 75%
+
+Deploy the smart contract
+=========================
+
+Now, deploy your contract with the following command.
 
 .. code-block:: console
 
-    yarn install
+    concordium-client module deploy dist/smart-contract-multi/module.wasm.v1 --sender <YOUR-ADDRESS> --name cis2_mult --grpc-port 10001
+
+You will need the module hash value when creating an instance so keep that. You can check your deployment status either from Concordium’s block explorer, CCDScan, or on your terminal’s output.
+
+.. image:: images/contract-deploy-success-ccdscan.png
+    :width: 75%
+
+Initialize the smart contract
+=============================
+
+Maybe you're wondering why you need to create an instance of the contract. When you create a new instance of a new contract, as mentioned earlier, you simply create a new one with a refreshed state. The account that creates the instance is the owner. There might be cases when you want to call some functions with only the owner of the contract, and some publicly open for everyone.
+
+Run the following command to initialize your smart contract.
 
 .. code-block:: console
 
-    yarn add -g ts-node
+    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 10001
 
-Deploy contract module
-======================
-
-When you cloned the repository, all necessary functions for node-cli were automatically cloned into the node-cli folder. These functions allow you to interact with the smart contract. Basically, there are 1:1 implementations of all functions in the smart contract. Make sure you have the function below in the cli.ts file.
-
-.. code-block:: console
-
-    function setupCliDeployModule(cli: commander.Command) {
-        return (
-            cli
-            .command("deploy")
-            .description(`Deploy Smart Contract Wasm Module`)
-            .requiredOption("--wasm <wasm>", "Compile Module file path", "../dist/smart-contract/module.wasm.v1")
-            // Sender Account Args
-            .requiredOption("--sign-key <signKey>", "Account Signing Key")
-            .requiredOption("--sender <sender>", "Sender Account Address. This should be the owner of the Contract")
-            // Node Client args
-            .requiredOption("--auth-token <authToken>", "Concordium Node Auth Token", "rpcadmin")
-            .requiredOption("--ip <ip>", "Concordium Node IP", "127.0.0.1")
-            .requiredOption("--port <port>", "Concordium Node Port", (v) => parseInt(v), 10001)
-            .requiredOption("--timeout <timeout>", "Concordium Node request timeout", (v) => parseInt(v), 15000)
-            .action(
-                async (args: DeployModuleArgs) =>
-                await sendAccountTransaction(
-                    args,
-                    args.sender,
-                    args.signKey,
-                    // payload
-                    { content: Buffer.from(readFileSync(args.wasm)) } as DeployModulePayload,
-                    // Transaction Type
-                    AccountTransactionType.DeployModule,
-                ),
-            )
-        );
-    }
-    setupCliDeployModule(cli);
-
-Run the command below in order to deploy the contract that was built in the previous step.
-
-.. code-block:: console
-
-    ts-node ./src/cli.ts deploy --wasm ../dist/smart-contract-multi/module.wasm.v1 --sender $ACCOUNT --sign-key $SIGN_KEY
-
-If you have the output below, you’ve successfully deployed your semi-fungible token smart contract on Concordium.
-
-.. image:: images/contract-deploy-success.png
-    :width: 100%
-
-You can also verify it either by looking at `CCDScan <https://ccdscan.io>`_ or the `testnet dashboard lookup section <https://dashboard.testnet.concordium.com/>`_. Now you need to go to the dashboard and get the hash value from there using the URL in the terminal. Simply copy the link from the terminal and visit it to look at the status of your transaction. Click **Deployed module with reference** and copy the hash value. You will use it while initializing the contract in the next section.
-
-.. image:: images/contract-deploy-success-db.png
-    :width: 100%
-
-And you can see it in the wallet.
-
-.. image:: images/contract-deploy-success-wallet.png
-    :width: 100%
-
-Initialize the contract
-=======================
-
-Now you need to initialize the deployed contract. It’s a lot easier than the previous steps. After deploying a contract you have to initialize it; it’s like object-oriented programming. You create a class which is a module, and then you initialize it to create an object. An object of a class is a way to store both states of the class and its functionality. This time you are going to use the hash value you got in the previous step. First, make sure initialize function is implemented in your cli.ts file as shown below.
-
-.. code-block:: console
-
-    function setupCliInitContract(cli: commander.Command) {
-        return (
-            cli
-            .command("init")
-            .description(`Initializes a Smart Contract`)
-            .requiredOption("--module <module>", "Module Reference", "CIS2-NFT")
-            .requiredOption("--energy <energy>", "Maximum Contract Execution Energy", (v) => BigInt(v), 6000n)
-            .requiredOption("--contract <contract>", "Contract name", "CIS2-NFT")
-            // Sender Account Args
-            .requiredOption("--sender <sender>", "Sender Account Address. This should be the owner of the Contract")
-            .requiredOption("--sign-key <signKey>", "Account Signing Key")
-            // Node Client args
-            .requiredOption("--auth-token <authToken>", "Concordium Node Auth Token", "rpcadmin")
-            .requiredOption("--ip <ip>", "Concordium Node IP", "127.0.0.1")
-            .requiredOption("--port <port>", "Concordum Node Port", (v) => parseInt(v), 10001)
-            .requiredOption("--timeout <timeout>", "Concordium Node request timeout", (v) => parseInt(v), 15000)
-            .action(
-                async (args: InitContractArgs) =>
-                await sendAccountTransaction(
-                    args,
-                    args.sender,
-                    args.signKey,
-                    // Payload
-                    {
-                    amount: new GtuAmount(0n),
-                    moduleRef: new ModuleReference(args.module),
-                    contractName: args.contract,
-                    parameter: Buffer.from([]),
-                    maxContractExecutionEnergy: args.energy,
-                    } as InitContractPayload,
-                    // Transaction Type
-                    AccountTransactionType.InitializeSmartContractInstance,
-                ),
-            )
-        );
-    }
-    setupCliInitContract(cli);
-
-Run the code below, using the ``hash`` value in the ``<MODULE-HASH>`` part, ``signKey`` from your exported key file, contract name as ``<YOUR-CONTRACT-NAME>`` (in this case CIS2-Multi), and the address of your account.
-
-.. code-block:: console
-
-    ts-node ./src/cli.ts init --module <MODULE-HASH> --sender <ACCOUNT-ADDRESS> --sign-key <SIGN-KEY> --contract <YOUR-CONTRACT-NAME>
-
-If you have this output that means you have successfully initialized your contract.
+Here you can see the successfully initialized contract instance with index 2115.
 
 .. image:: images/contract-initialize-success.png
-    :width: 100%
-
-Now go to the URL to get your contracts index value. From the dashboard, you can easily see the index, your account address as sender, event details, and transaction hash. The Index value is important here; it’s like the address of my contract instance, and you will need it when we are interacting with the contract.
-
-.. image:: images/contract-initialize-success-db.png
-    :width: 100%
-
-:ref:`Click here to continue to part 4 of this tutorial<mint-xfer-sft>`.
+    :width: 75%

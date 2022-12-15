@@ -47,7 +47,7 @@ Now check the state of your contract. Remember this is a state-keeping machine. 
 
     concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema  dist/smart-contract-multi/schema.bin
 
-.. image:: ../images/contract-state.png
+.. image:: images/contract-state.png
     :width: 100%
 
 Your account has 100 tokens with id 01. To check the token's metadata, create another JSON file called ``ids.json``. You will invoke the ``tokenMetadata`` function from your contract. It accepts parameters as a vector so you can query multiple tokens at the same time. When you have created your ``ids.json`` file and typed the ``token_ids`` you want to query with the format ``["01"]``, run the command below.
@@ -58,7 +58,7 @@ Your account has 100 tokens with id 01. To check the token's metadata, create an
 
 The metadata URL is stored permanently on Concordium.
 
-.. image:: ../images/metadata-url.png
+.. image:: images/metadata-url.png
     :width: 100%
 
 Transfer the token
@@ -86,14 +86,14 @@ Once your ``transfer.json`` file is complete, run the command below.
 
 The transfer is successful.
 
-.. image:: ../images/transfer-sft-success.png
+.. image:: images/transfer-sft-success.png
     :width: 100%
 
 Finally, check the state of the contract once more to see who has how many semi-fungible tokens with the ``view`` command which you used in the previous section.
 
 As you can see the second account has 11 tokens with id “01” which is removed from the first one.
 
-.. image:: ../images/transfer-view.png
+.. image:: images/transfer-view.png
     :width: 100%
 
 You have now completed the SFT minting tutorial.
