@@ -6,7 +6,7 @@ Mint an NFT
 
 In this tutorial, you are going to mint an NFT on Concordium blockchain. First you will learn the basics to set up your development environment. Note that in this tutorial most of the commands are for UNIX-like systems and will not work on Windows.
 
-All development is completed using :ref:`Node/Web-SDK<sdks-apis>` and includes the following examples:
+All development is completed using ``concordium-client`` and includes the following examples:
 
 - :ref:`deploy the minting contract<deploy-nft-sc>`
 - :ref:`mint an NFT<mint-transfer>`
