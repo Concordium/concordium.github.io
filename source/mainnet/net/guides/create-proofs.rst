@@ -16,8 +16,8 @@ The diagram below shows the interaction between the Rust server/backend, the dAp
 
 You have a server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
 
-1. The dApp requests the challenge from the server/backend.
-2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the statement. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
+1. The dApp requests the :ref:`challenge<glossary-challenge>` from the server/backend.
+2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the :ref:`statements<glossary-statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
 3. The dApp sends a request for proof for the given challenge and statement to the wallet.
 4. The wallet sends proof back to the dApp (if accepted by the user).
 5. The dApp sends the proof to the backend which verifies it with respect to the challenge it has issued.
@@ -45,6 +45,8 @@ The attributes that can be revealed are:
 - ID valid to
 - National ID number
 - Tax ID number
+
+You can find more information about building proof statements in the `Concordium node SDK js repository <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#identity-proofs>`_.
 
 Asking a user to reveal attributes
 ==================================
@@ -77,7 +79,7 @@ Relevant attributes for range proofs are:
 
 .. Note::
 
-  Age proofs are a common abstraction on date of birth proofs. There are helper functions in the SDK(link?) to aid in constructing these.
+  Age proofs are a common abstraction on date of birth proofs. There are `helper functions in the SDK <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#minimum-age>`_ to aid in constructing these.
 
 Structure a range proof
 -----------------------
@@ -112,7 +114,7 @@ Relevant attributes for membership proofs are:
 
 .. Note::
 
-  Country of nationality has helper functions in the SDK(link?) to aid in constructing statements.
+  Country of nationality has `helper functions in the SDK <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#eu-membership>`_ to aid in constructing statements.
 
 Structure a membership proof
 ----------------------------

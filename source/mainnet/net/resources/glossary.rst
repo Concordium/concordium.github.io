@@ -527,7 +527,7 @@ way. The staked amount is proportional to the :ref:`lottery power<glossary-lotte
 Statement
 =========
 
-One or more attributes to be proven or revealed by a wallet owner to a dApp or service.
+A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
 
 .. _glossary-testnet:
 

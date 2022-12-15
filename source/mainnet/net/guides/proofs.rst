@@ -28,7 +28,7 @@ When an attribute or attributes are to be revealed, the shown icon |proof-reveal
 
 .. Warning::
 
-    By **proving** information to a third-party, it may become possible for them to deduce precise information about you. When you **reveal** information to a third-party, you effectively hand over your information to them. This means that you should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
+    By **proving** information to a third-party, it may become possible for them to deduce precise information about you. When you **reveal** information to a third-party, you effectively hand over your information to them. This means that you should only do this if you trust them, and if you are familiar with their data usage and protection procedures.
 
     For example, if your identity says that you are a resident of Denmark and a citizen of Denmark, and they ask you to prove that you are a resident of Norway or Denmark, and then ask you to prove that you are a citizen of Sweden or Denmark, it is quite likely that the third-party would be able to deduce that you are from Denmark.
 
