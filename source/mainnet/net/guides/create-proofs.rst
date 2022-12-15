@@ -17,7 +17,7 @@ The diagram below shows the interaction between the Rust server/backend, the dAp
 You have a server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
 
 1. The dApp requests the challenge from the server/backend.
-2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the statement. Your dApp can request the statement from the server or it can contain the statement. If your dApp does not contain the statement, you must also request it from the server/backend.
+2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the statement. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
 3. The dApp sends a request for proof for the given challenge and statement to the wallet.
 4. The wallet sends proof back to the dApp (if accepted by the user).
 5. The dApp verifies the proof to the challenge on the server.
