@@ -36,7 +36,7 @@ Then run the command below to invoke the mint function with the given params.
 
     concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/mint-params.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
 
-You have just minted your semi-fungible token successfully. 
+You have just minted your semi-fungible token successfully.
 
 View contract state and metadata
 ================================
