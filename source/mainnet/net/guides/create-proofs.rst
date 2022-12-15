@@ -79,7 +79,7 @@ Relevant attributes for range proofs are:
 
 .. Note::
 
-  Age proofs are a common abstraction on date of birth proofs. There are `helper functions in the SDK <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#minimum-age>`_ to aid in constructing these.
+  Age proofs are a common abstraction on date of birth proofs. There are `age helper functions in the SDK <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#minimum-age>`_ to aid in constructing these.
 
 Structure a range proof
 -----------------------
