@@ -190,7 +190,7 @@ The next update will be on the ``mint()`` function of the contract. You need to 
         Ok(())
     }
 
-Add one final change to the ``tokenMetadata()`` function. As you can see in :ref:`this previous tutorial<>`, this function combines the ``url`` value and ``token_id`` and returns it. Instead, you are going to read the ``url`` from the ``state`` with ``token_id`` and return it.
+Add one final change to the ``tokenMetadata()`` function. As you can see in :ref:`this previous tutorial<nft-view-fn>`, this function combines the ``url`` value and ``token_id`` and returns it. Instead, you are going to read the ``url`` from the ``state`` with ``token_id`` and return it.
 
 .. code-block:: rust
 
