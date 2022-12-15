@@ -11,7 +11,8 @@ The dApp or service can also request that attributes are revealed. The wallet ow
 
 The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 
-(diagram)
+.. image:: ../images/browser-wallet/proof-concept.png
+    :width: 100%
 
 You have a Rust server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
 
