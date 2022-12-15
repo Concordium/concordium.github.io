@@ -81,22 +81,22 @@ Linux® v1.5.0
    -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.rpm>`_
       -  SHA256 checksum of the download: ``66d2a9ce4809a6e84a84accdb0768d6c1c6a7dcb046b751667a80d75a8a66464``
 
-Concordium Ledger App - Sirius
+Concordium LEDGER App - Sirius
 ==============================
 
-The version of the Ledger App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
+The version of the LEDGER App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
 
 .. Note::
 
-   Ledger firmware version 2.0.0 is no longer supported.
+   LEDGER firmware version 2.0.0 is no longer supported.
 
 .. Note::
 
-   The Ledger Nano X is not supported currently.
+   The LEDGER NANO X is not supported currently.
 
-- For Ledger Nano S, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+- For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
-- For Ledger Nano S Plus, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
+- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
 
 .. _concordium-node-and-client-download-testnet:
 
