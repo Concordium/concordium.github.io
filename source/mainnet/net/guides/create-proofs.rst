@@ -140,7 +140,7 @@ In the example below, the proof checks that the wallet owner is a citizen of one
       ]
     }
 
-Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know whether a user is a resident of a country that is subject to trade sanctions and cannot use your service, you might have a proof that determines whether the wallet owner resides in one or more of the countries.
+Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know that a user is **not** a resident of a country that is subject to trade sanctions to use your service, you might request a proof that the wallet owner does not reside in the relevant countries.
 
 For example, the statement below asks if the wallet owner is a citizen of China or North Korea.
 
@@ -167,6 +167,9 @@ For example, the statement below asks if the wallet owner is a citizen of China 
 Example dApp
 ============
 
-Concordium provides the following example demo app and repo: (Still waiting)
+Concordium provides the following example demo app and repository for inspriation:
 
-The app is a gallery that requires the user to be over a certain minimum age to view some content.
+- `Demo dApp <https://gallery.testnet.concordium.com/>`_
+- `Repository <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`_
+
+The app is a gallery that requires the user to be over a certain minimum age and an EU resident to view some content.
