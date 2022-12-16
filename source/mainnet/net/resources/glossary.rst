@@ -351,7 +351,7 @@ indefinitely.
 Membership proof
 ================
 
-A proof to determine if an attribute of a user's identitiy is included in a given set, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
+A proof to determine if an attribute of a user's identity is included in a given set, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
 
 .. _glossary-node:
 
