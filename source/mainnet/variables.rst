@@ -12,9 +12,14 @@
 .. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_5.0.1-0
-.. |client-version| replace:: 5.0.1-0
-.. |client-linux-checksum| replace:: 3ed9f3878d07c53d6f2233d4832fed45eea74363e1f8671d42be45043dd3937b
+.. |client-linux| replace:: concordium-client_5.0.2-0
+.. |client-version| replace:: 5.0.2-0
+.. |client-linux-checksum| replace:: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
+
+.. Cargo verification variables
+.. |cargo-linux| replace:: cargo-concordium_2.5.0
+.. |cargo-version| replace:: 2.5.0
+.. |cargo-linux-checksum| replace:: 96e7d4de085147d57aeff17f92c0cad16fd4039434eea7eb67dfdad28b898434
 
 .. Node debian package verification variables
 

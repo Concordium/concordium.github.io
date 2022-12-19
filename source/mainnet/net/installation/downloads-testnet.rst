@@ -20,7 +20,7 @@ The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or l
 Android
 -------
 
-- `Download the Android version of Concordium Wallet for Mobile for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-wallet-for-mobile_1.0.0(15).apk>`_
+- `Download the Android version of Concordium Wallet for Mobile for Testnet <https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet>`_
 
 
 .. _downloads-mobile-wallet-testnet:
@@ -50,7 +50,7 @@ Android
 |bw|
 =================================
 
-The |bw| is available to download as an extension for the `Chrome web browser <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
+The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
 
 .. _downloads-desktop-wallet-testnet:
 
@@ -100,12 +100,12 @@ The version of the Ledger App is the same for Mainnet and Testnet. So if you alr
 
 .. _concordium-node-and-client-download-testnet:
 
-Concordium Client v5.0.1
+Concordium Client v5.0.2
 ========================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.1-0>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.2-0>`_
 
-   - SHA256 checksum of the download: 3ed9f3878d07c53d6f2233d4832fed45eea74363e1f8671d42be45043dd3937b
+   - SHA256 checksum of the download: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
 
    Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
@@ -115,24 +115,26 @@ Concordium Client v5.0.1
 
    where you replace `*` with |client-version|.
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.0.1-0.pkg>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.0.2-0.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.1-0.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.2-0.exe>`_
 
-Cargo-concordium v2.4.0
+.. _cargo-concordium-testnet:
+
+Cargo-concordium v2.5.0
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.4.0>`_
+   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.5.0>`_
 
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.4.0>`_
+   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.5.0>`_
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.4.0.exe>`_
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.5.0.exe>`_
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
