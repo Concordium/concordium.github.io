@@ -54,6 +54,13 @@ Linux
 
 .. include:: client-verification-instructions/client-linux.rst
 
+.. _verification-cargo-linux:
+
+Linux
+-----
+
+.. include:: cargo-verification-instructions/cargo-linux.rst
+
 .. _verification-node-debian-package:
 
 Node Debian package

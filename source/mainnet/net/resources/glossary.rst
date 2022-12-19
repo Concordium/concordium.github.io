@@ -155,6 +155,13 @@ A rule that selects the best chain based on the following criteria:
 - which last block has the largest block luck in the chains
 - which last block has the largest hash in the chains.
 
+.. _glossary-challenge:
+
+Challenge
+=========
+
+To make sure that :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` cannot be reused (e.g., if they are stolen), the verifier can and should specify a challenge string. This can be an arbitrary byte array which is used by the prover (wallet) when producing the proof. The proof will only validate with respect to the challenge that was used to produce it. The verifier server can thus use the challenge to make sure the proofs it is receiving are not reused, and to handle their lifetime (e.g., it can set the challenge it supplied to expire in 5 minutes).
+
 .. _glossary-concordium-client:
 
 Concordium client
@@ -339,6 +346,13 @@ mainnet will receive periodic upgrades, but in contrast to the :ref:`testnet<glo
 will never be reset, and accounts created on the mainnet will remain
 indefinitely.
 
+.. _glossary-membership-proof:
+
+Membership proof
+================
+
+A proof to determine if an attribute of a user's identity is included in a given set, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
+
 .. _glossary-node:
 
 Node
@@ -361,6 +375,13 @@ May refer to:
 -  *Leadership Election Nonce*: a randomized value that is updated each
    :ref:`epoch<glossary-epoch>` that is used to seed the :ref:`leader election<glossary-leader-election>` process.
 -  :ref:`Transaction sequence number<glossary-transaction-sequence-number>` (same as account sequence number)
+
+.. _glossary-non-membership-proof:
+
+Non-membership proof
+====================
+
+A proof to determine that an attribute of a user's identity is **not** included in a set, for example, that they are **not** a resident of a country under trade sanctions.
 
 .. _glossary-off-chain:
 
@@ -389,7 +410,7 @@ given out to, e.g., bakers.
 Pay day
 =======
 
-A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:00 UTC on Mainnet.
+A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:05 UTC on Mainnet and 11:05 UTC on Testnet.
 
 .. _glossary-passive-delegation:
 
@@ -397,6 +418,20 @@ Passive delegation
 ==================
 
 A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
+
+.. _glossary-range-proofs:
+
+Range proofs
+============
+
+A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 years old to the car rental company. This could be constructed as a range proof.
+
+.. _glossary-reveal-attribute:
+
+Reveal
+======
+
+To reveal an attribute. This can be used in identity verification proof. When you reveal an attribute, you give the dApp or service that requested it your exact information, such as date of birth, or nationality. You should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
 
 .. _glossary-secret-recovery-phrase:
 
@@ -486,6 +521,13 @@ staked remains locked while staked and cannot be transferred or moved in any
 way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
 
 :ref:`Delegators<glossary-delegate>` can delegate stake to a baker pool or passive delegation. This affects the staked amount of the baker and thus their lottery power.
+
+.. _glossary-statement:
+
+Statement
+=========
+
+A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
 
 .. _glossary-testnet:
 
@@ -585,3 +627,10 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
+
+.. _glossary-zero-knowledge-proof:
+
+Zero-knowledge proof
+====================
+
+A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing anything beyond that. Zero knowledge proofs generated by the wallet are non-interactive. They are verifiable forever in the future without further prover interaction.
