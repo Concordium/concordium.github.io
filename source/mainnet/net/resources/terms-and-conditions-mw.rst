@@ -1,6 +1,10 @@
 .. include:: ../../variables.rst
 .. _terms-and-conditions-mw:
 
+.. todo::
+
+   Remember to request wallet proxy update when T&C updated
+
 ========================================================================
 Terms and Conditions for |mw-gen1| (previously Concordium Mobile Wallet)
 ========================================================================

@@ -101,10 +101,10 @@ Concordium Ledger App
 
 .. _concordium-node-and-client-download:
 
-Concordium Client v5.0.1
+Concordium Client v5.0.2
 ========================
 
--  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.1-0>`_
+-  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.2-0>`_
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
@@ -117,24 +117,27 @@ Concordium Client v5.0.1
 
    where you replace `*` with |client-version|.
 
--  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.0.1-0.pkg>`_
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.0.2-0.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.1-0.exe>`_
+-  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.2-0.exe>`_
 
-Cargo-concordium v2.4.0
+Cargo-concordium v2.5.0
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.4.0>`_
+   -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.5.0>`_
 
-   -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.4.0>`_
+      - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
+      - :ref:`Verification instructions <verification-cargo-linux>`
 
-   -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.4.0.exe>`_
+   -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.5.0>`_
+
+   -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.5.0.exe>`_
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
