@@ -8,7 +8,7 @@ The flow will be the same as the previous tutorials. You will build the contract
 
 Now, you have the smart contract and helpers in your project’s folder. In that folder, create another one called ``dist/marketplace-contract`` for your output files. Then run the command below to build the contract and save the schema and Wasm file.
 
-.. code-blcok:: console
+.. code-block:: console
 
     cargo concordium build --out dist/marketplace-contract/module.wasm.v1 --schema-out dist/marketplace-contract/schema.bin
 
@@ -137,7 +137,7 @@ Now you have successfully added your token to marketplace.
 
 To check if the token is in the marketplace, call the ``list()`` function with the command below.
 
-.. code-blcok:: console
+.. code-block:: console
 
     concordium-client contract invoke <YOUR-MARKETPLACE-INDEX> --entrypoint list --schema marketplace-contract/dist/marketplace-contract/schema.bin --grpc-port 10001
 
