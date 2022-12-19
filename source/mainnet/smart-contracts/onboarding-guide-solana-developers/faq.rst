@@ -59,6 +59,13 @@ Concordium smart contracts:
 
     You can follow the chapter :ref:`testing a smart contract<piggy-bank-testing>` in the piggy bank tutorial.
 
+.. dropdown:: Is there something similar to Solana's `Anchor` framework for Concordium?
+
+    The Concordium standard library crate `concodsium-std <https://crates.io/crates/concordium-std>`_ provides high-level interface for writing smart contracts in Rust.
+    It includes convenient ways of working with the contract state, provides macros for exposing functions as entry points, deriving trait implementations for serialization, etc.
+
+    You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concodsium-std <https://crates.io/crates/concordium-std>`_.
+
 .. dropdown:: Can I build tests that print a table of content structure (a layered output similar to mocha and chai tests)?
 
     Yes. You can use a similar pattern as shown below:
