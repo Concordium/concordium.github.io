@@ -225,17 +225,6 @@ html_context = {
         }, versions))
 }
 
-#reference behavior
-hoverxref_auto_ref = True
-hoverxref_api_host = 'https://developer.concordium.software'
-hoverxref_role_types = {
-    'hoverxref': 'tooltip',
-    'ref': 'tooltip',  # for hoverxref_auto_ref config
-    'confval': 'tooltip',  # for custom object
-    'mod': 'tooltip',  # for Python Sphinx Domain
-    'class': 'tooltip',  # for Python Sphinx Domain    
-}
-
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".

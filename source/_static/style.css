@@ -90,6 +90,7 @@ a.reference.internal{
 
 a.reference.internal:hover{
     color: var(--pst-color-link);
+    
 }
 
 a.reference.internal:active{
