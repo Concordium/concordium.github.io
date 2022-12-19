@@ -19,6 +19,12 @@ network. After following this guide, you will be able to
 
 You do not need an account to run a node.
 
+.. Note::
+
+   Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ or `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
+   To subscribe to updates on the Mainnet/Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
 Before you begin
 ================
 

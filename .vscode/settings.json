@@ -4,4 +4,13 @@
     "restructuredtext.linter.extraArgs": [
         "--config ${workspaceFolder}/doc8.ini"
     ],
+    "spellright.language": [
+        "English (American)"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "restructuredtext"
+    ],
 }

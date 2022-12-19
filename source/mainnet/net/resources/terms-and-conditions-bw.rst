@@ -1,6 +1,10 @@
 .. include:: ../../variables.rst
 .. _terms-and-conditions-bw:
 
+.. todo::
+
+   Remember to request wallet proxy update when T&C updated
+
 ==================================================
 Terms and Conditions for |bw|
 ==================================================

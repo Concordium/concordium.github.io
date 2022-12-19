@@ -32,13 +32,16 @@ Concordium has a selection of example dApps that you can clone to make your own 
     - Piggy bank: :ref:`Piggy bank tutorial<piggy-bank>` / Piggy bank dApp
     - wCCD: :ref:`wCCD tutorial<wCCD>` / `wCCD dApp <https://wccd.testnet.concordium.com/>`_
     - Voting: :ref:`Voting tutorial<voting-dapp>` / `Voting dApp <https://voting.testnet.concordium.com/>`_
+    - ID2.0: `Gallery dApp <https://gallery.testnet.concordium.com/>`_ / `repository <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`_
+
+- See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets
 
 .. _block-explorers:
 
 Block explorers
 ---------------
 
-    The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
+The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 
     - `Mainnet block explorer <https://dashboard.mainnet.concordium.software>`_
 
@@ -69,6 +72,7 @@ Community resources
     :maxdepth: 1
 
     sdks-apis
+    create-proofs
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2
