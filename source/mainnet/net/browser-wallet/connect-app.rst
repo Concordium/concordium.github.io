@@ -63,6 +63,12 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
 
       If you want to try to connect to a dApp to see how the functionality works, go to https://wccd.testnet.concordium.com/ and connect to it following the steps above. You can then use the dApp to connect to your account and see the behavior.
 
+.. toctree::
+   :hidden:
+
+   ../guides/proofs
+
+
 .. |scan-qr-acct| image:: ../images/scan-qr-acct.png
              :alt: qr code scanner symbol on blue background
              :width: 50px

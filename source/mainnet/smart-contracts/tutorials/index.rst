@@ -22,3 +22,4 @@ In the ``Minting`` tutorials you will mint various types of tokens.
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
    nft-minting/index
+   sft-minting/index

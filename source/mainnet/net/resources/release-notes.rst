@@ -17,6 +17,13 @@ Sirius Testnet
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
 
+December 16, 2022
+
+|bw| 0.9.4
+----------------------
+
+The |bw| introduces ID2.0 functionality whereby a dApp or service can use zero knowledge proofs to request proof from a wallet for certain attributes without revealing anything beyond the truth of the statement. It is also possible for a dApp or Service to request that the wallet user reveal attributes.
+
 December 14, 2022
 
 Cargo concordium 2.5.0
