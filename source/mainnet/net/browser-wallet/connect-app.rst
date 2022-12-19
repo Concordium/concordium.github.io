@@ -63,6 +63,11 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
 
       While you are connected to a dApp you cannot perform other transactions in the |mw-gen2|. You must disconnect the dApp before you can do other transactions.
 
+.. toctree::
+   :hidden:
+
+   ../guides/proofs
+
 .. |scan-qr-acct| image:: ../images/scan-qr-acct.png
              :alt: qr code scanner symbol on blue background
              :width: 50px
