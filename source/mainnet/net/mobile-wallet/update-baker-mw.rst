@@ -9,7 +9,7 @@ The following information describes how to access baker settings.
 
 .. dropdown:: |mw-gen2|
 
-    #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
+    #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
 
     #. In the Baker status screen tap **Update baker settings**.
 
