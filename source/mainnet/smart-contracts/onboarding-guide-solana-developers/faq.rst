@@ -67,6 +67,16 @@ Concordium smart contracts:
 
     You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concodsium-std <https://crates.io/crates/concordium-std>`_.
 
+.. dropdown:: How can I update account data?
+
+    Concordium's smart contract execution model as different from the one of Solana. Smart contracts on Concordium have associated balance and state.
+    Solana programs, on the other hand, use `other` accounts to store and update data.
+    The state can be updated by calling entrypoints, no other means of updating the state are possible. The smart contract logic determines how to update its own state.
+    A smart contract can `transfer` CCD to any account that will update the account's balance. However changing other data of account is not possible from a smart contract.
+    Unlike on Solana, contract entypoins do not take a list of accounts that they can read or write.
+    A smart contract can call an entypoint of another smart contract which could update the callee state, if the contract logic permits it.
+    It is, however, possible to query balances of any existing account or smart contract.
+
 .. dropdown:: Can I build tests that print a table of content structure (a layered output similar to mocha and chai tests)?
 
     Yes. You can use a similar pattern as shown below:
