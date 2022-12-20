@@ -24,7 +24,7 @@ December 21, 2022
 ----------------------
 
 Minor bugfixes for the |bw|, including adding a missing background color on ID proof cards, fixing an issue where the transaction list did not update automatically, and a minor adjustment to how proof of age is calculated.
- 
+
 December 16, 2022
 
 |bw| 0.9.4
