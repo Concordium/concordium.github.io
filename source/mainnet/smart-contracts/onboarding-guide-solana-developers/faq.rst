@@ -11,7 +11,7 @@ Feel free to participate and add your questions to the `Concordium software supp
 Concordium smart contracts:
 ===========================
 
-.. dropdown:: What are programs called on Concordium?
+.. dropdown:: What are `Solana programs` called on Concordium?
 
     Programs are called smart contracts on Concordium.
 
@@ -34,7 +34,7 @@ Concordium smart contracts:
     You can find examples of smart contracts in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
 
-.. dropdown::  Where can I find a smart contract reference library similar to the GitHub repo from `Solana Program`?
+.. dropdown::  Where can I find a smart contract reference library similar to the GitHub repo from `Solana Program Library`?
 
     You can find examples and standard implementations in the
     `Concordium Rust smart contract repo  <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples>`_.
@@ -76,6 +76,14 @@ Concordium smart contracts:
     Unlike on Solana, contract entypoins do not take a list of accounts that they can read or write.
     A smart contract can call an entypoint of another smart contract which could update the callee state, if the contract logic permits it.
     It is, however, possible to query balances of any existing account or smart contract.
+
+.. dropdown:: Is there something similar to native programs in Concordium?
+
+    No. Functionality like cryptographic primitives, smart contract state management, etc. is implemented as Wasm host functions.
+    The list of supported host functions is available in :ref:`host-functions`.
+
+    Separating this functionality to host functions instead of having it as special smart contracts helps to rule out some vulnerabilities related to substituting native program addresses by users.
+
 
 .. dropdown:: Can I build tests that print a table of content structure (a layered output similar to mocha and chai tests)?
 

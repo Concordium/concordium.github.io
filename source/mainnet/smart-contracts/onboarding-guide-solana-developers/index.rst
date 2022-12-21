@@ -10,4 +10,5 @@ A number of guides exist to help Solana developers to get started on the Concord
    :maxdepth: 1
    :caption: Onboarding
 
+   overview
    faq
