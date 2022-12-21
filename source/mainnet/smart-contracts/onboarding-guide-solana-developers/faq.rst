@@ -104,7 +104,9 @@ Concordium smart contracts:
 .. dropdown::  How are `program addresses` represented on Concordium?
 
     In terms of naming, Concordium uses `contract` and `account` to refer
-    to the Solana equivalent of a `program` and an `program address`, respectively.
+    to a similar Solana's `executable account` (programs) and `non-executable account`, respectively.
+    Note, however that the correspondense is not precise, as Solana's executable accounts are immutable
+    and can modify data of accounts `they own`, while on Concordium, smart contracts can directly modify only `its own state`.
     The word `address` refers to either an `account` address or a `contract` address on Concordium.
 
     Contract addresses on Concordium are represented by an index and a subindex as seen below.
@@ -124,7 +126,9 @@ Concordium smart contracts:
 .. dropdown::  How are `wallet addresses` represented on Concordium?
 
     In terms of naming, Concordium uses `contract` and `account` to refer
-    to the Solana equivalent of a `program` and a `wallet address`, respectively.
+    to a similar Solana's `executable account` (programs) and `non-executable account`, respectively.
+    Note, however that the correspondense is not precise, as Solana's executable accounts are immutable
+    and can modify data of accounts `they own`, while on Concordium, smart contracts can directly modify only `its own state`.
     The word `address` refers to either an `account` address or a `contract` address on Concordium.
 
     Accounts on the chain are identified via an account address, which is a 32-byte sequence.
@@ -172,9 +176,8 @@ Concordium smart contracts:
 
         $cargo test -- --nocapture
 
-.. dropdown::  What is the equivalent to `msg.sender` and `tx.origin` on Concordium?
+.. dropdown::  How to get the transaction sender address on Concordium?
 
-    ``ctx.sender()``, and ``ctx.invoker()`` are the equivalent variables to ``msg.sender``, and ``tx.origin`` on the Concordium chain, respectively.
     The ``ctx.invoker()`` variable refers to the original account address (no contract address)
     that started the transaction while ``ctx.sender()``
     refers to the immediate address (it could be an account
@@ -201,20 +204,6 @@ Concordium smart contracts:
 
     ``ctx.self_address()`` returns the address of the smart contract.
     Additional documentation can be found in the `self_address description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_address>`_ of the concordium standard crate.
-
-.. dropdown::  Can I force CCD to a smart contract even if it has no payable function?
-
-    There are three edge cases on the Ethereum chain that forces ETHER to a contract address even though there is no payable function on it.
-
-    - using the self-destruct opt-code.
-    - inserting a smart contract address as the miner address in a minted block.
-    - pre-calculating the contract address and sending ETHER before the contract is deployed.
-
-    In contrast, CCD can only get onto a smart contract if it has at least one payable entry point.
-
-    - no self-destruct host function.
-    - a smart contract cannot be a baker(miner) of a minted block.
-    - CCD cannot be transferred to a smart contract address before a smart contract is initialized at that index.
 
 .. dropdown::  Can I print values from the smart contract code or test cases?
 
@@ -312,7 +301,7 @@ Concordium smart contracts:
 
         $cargo test -- --test-threads=1
 
-.. dropdown:: How do I embed a schema into a smart contract? Why do I need a schema? How can I provide the input parameters as a JSON object and get the output parameters in a human-readable format when using the `concordium-client`?
+.. dropdown:: How can I provide the input parameters as a JSON object and get the output parameters in a human-readable format when using the `concordium-client`? What is a smart contract schema?
 
     A :ref:`smart contract schema<contract-schema>` is a description of how to represent
     bytes in a more structured representation. It is used by
@@ -482,16 +471,6 @@ Events:
 
     This number tag is used to distinguish between the different types of events.
 
-    In contrast, Ethereum uses a 32-byte long hash as an event tag which is called the event signature.
-
-    .. code-block:: console
-
-        eventTag (Ethereum) = hash(Transfer(address, address, uint)).
-
-    A downside of using a hash is that you have to use more than one byte for the tag
-    to avoid getting collisions. Concordium can efficiently store the event tag in
-    1 byte compared to the 32 bytes used by Ethereum.
-
     **Option 1:**
     You can compare the rest of the event data by adding the below lines of code to your test cases
     and adjusting the `MyEventParams` to the event object that you are using.
@@ -572,7 +551,7 @@ Events:
 Standards:
 ==========
 
-.. dropdown::  Is there something similar to the SPL standard?
+.. dropdown::  Is there something similar to the SPL Token Program?
 
     Yes, please read the `CIS-2 standard <https://proposals.concordium.software/CIS/cis-2.html>`_.
     The `CIS-2` standard can represent fungible and non-fungible tokens.
@@ -585,20 +564,7 @@ Standards:
     - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
     - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
 
-.. dropdown::  Is there something similar to the ERC165 standard?
-
-    Yes, please read the `CIS-0 standard <https://proposals.concordium.software/CIS/cis-0.html>`_.
-    Please explore the `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
-    that provides the basic `CIS-0` primitives.
-    The `CIS-2` library is meant to be imported by `CIS-2` tokens so they can implement the `CIS-0` standard easily.
-    Please explore the four token examples that have the `CIS-0` standard implemented:
-
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
-
-.. dropdown::  Is there something similar to a wrapped token contract?
+.. dropdown::  Is there something similar to the Solana's wrapped token wSOL?
 
     Yes, please explore the following two wCCD examples:
 
@@ -615,11 +581,6 @@ Standards:
 
     Yes, please explore the `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
-.. dropdown:: Does Concordium have something similar to `delegateCall`?
-
-    No. A contract on Concordium can only change its own state. If you are looking for an upgradable pattern, please explore
-    the  `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
-
 Deploying and Initializing of smart contracts:
 ==============================================
 
@@ -630,9 +591,6 @@ Deploying and Initializing of smart contracts:
 .. dropdown::  Is there a smart contract size limit when deploying a contract on-chain?
 
     Yes. The module (`.wasm` file) size limit is 64kB for V0 contracts and 512kB for V1 contracts.
-    Concordium chose a much higher limit compared to the Ethereum chain.
-    Smart contract developers can deploy large-scale protocols on Concordium without splitting
-    them into small smart contract pieces which is a common annoyance encountered on Ethereum.
 
 .. dropdown::  What is the `owner` of a smart contract instance on Concordium?
 
@@ -644,19 +602,14 @@ Deploying and Initializing of smart contracts:
 
     No. The ``init`` function has to be called by an account (not a smart contract) on the Concordium chain.
 
-.. dropdown::  Can I create a factory smart contract on Concordium?
-
-    No. A factory smart contract on the Ethereum chain deploys other smart contracts. In contrast,
-    the ``init`` function has to be called by an account (not a smart contract) on the Concordium chain.
-
-.. dropdown::  Can I predict/calculate the address of the smart contract before deploying it? Is there something similar to the Ethereum CREATE2?
+.. dropdown::  Can I predict/calculate the address of the smart contract before deploying it?
 
     No. Contract addresses on Concordium are represented by an index and a subindex as seen below.
     When invoking the ``init`` function, a new smart contract instance is
     deployed and assigned the next index number in sequential order.
     The subindex is currently not in use and is always 0. There are plans to give the subindex meaning in the future.
 
-    In contrast to Ethereum, you cannot send CCD to a contract address (or account address) before they have been deployed/initialized.
+    In contrast to Solana, you cannot send CCD to a contract address (or account address) before they have been deployed/initialized.
 
     .. code-block:: rust
 
@@ -802,6 +755,6 @@ Miscellaneous:
 
 .. dropdown::  What does `invoke` mean?
 
-    - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
+    - It can mean to execute or initiate a function. It is equivalent to Solana saying: "Calling a program".
 
     - In the context of the ``concordium-client`` tool, it means to simulate a transaction locally on your node via the `invoke` command of the ``concordium-client`` tool instead of sending the transaction to the blockchain network and executing it on-chain. Since the transaction was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
