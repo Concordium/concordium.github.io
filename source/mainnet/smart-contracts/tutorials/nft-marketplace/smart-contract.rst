@@ -149,7 +149,7 @@ In the image below you can see that the token is listed.
 Transfer the token
 ==================
 
-Now you are ready to sell it from the marketplace. If youlook what it does you see that it takes the ``token_info`` from input, gets the token’s ``quantity``, ``price``, and ``royalty`` values from its state. With 2 ``ensure!()`` it checks first whether the quantity that user wants to buy is sufficient or not and the amount is enough to buy them. Then through ``Cis2Client::transfer()`` it completes the token’s transfer operation, handles the payment with royalties, and removes token from the list.
+Now you are ready to sell it from the marketplace. If you look what it does you see that it takes the ``token_info`` from input, gets the token’s ``quantity``, ``price``, and ``royalty`` values from its state. With 2 ``ensure!()`` it checks first whether the quantity that user wants to buy is sufficient or not and the amount is enough to buy them. Then through ``Cis2Client::transfer()`` it completes the token’s transfer operation, handles the payment with royalties, and removes token from the list.
 
 
 .. code-block:: Rust
