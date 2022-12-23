@@ -246,7 +246,7 @@ Delegators earn rewards, minus a commission to the baker, in proportion to their
 Deploy
 ======
 
-Command that takes the built :ref:`Wasm<_glossary-web-assembly>` file for a smart contract module and deploys it on chain.
+Command that takes the built :ref:`Wasm<glossary-web-assembly>` file for a smart contract module and deploys it on chain.
 
 .. _glossary-encryption-key:
 
