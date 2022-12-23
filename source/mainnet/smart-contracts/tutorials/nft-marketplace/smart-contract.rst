@@ -156,7 +156,7 @@ Now you are ready to sell it from the marketplace. If you look what it does you 
 
     /// Allows for transferring the token specified by TransferParams.
     ///
-    /// This function is the typical buuy function of a Marketplace where one account can transfer an Asset by paying a price.
+    /// This function is the typical buy function of a Marketplace where one account can transfer an Asset by paying a price.
     /// The transfer will fail of the Amount paid is < token_quantity * token_price
     #[receive(
         contract = "Market-NFT",
