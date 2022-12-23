@@ -32,27 +32,39 @@ Some of these accounts can be used to store persistent data, that is, data that 
 Concordium uses smart contract state for that purpose.
 Each contract can write to its own state directly.
 Modifying state of other smart contracts is only possible by calling their entrypoints.
-Smart contracts cannot read/write arbitrary data from/to user accounts, but they can transfer CCD they own to any other user account and to other smart contracts, if they have `payable` entrypoints.
+Smart contracts cannot read/write arbitrary data from/to user accounts, but they can transfer CCD they own to any user account and to other smart contracts.
+The smart contract logic determines whether to accept CCD or not.
+CCD cannot be transferred to the smart contract balance without calling a specific entrypoint or a :ref:`fallback entypoint<fallback-entrypoints>`.
+
+Example
+=======
+
+This example demonstrates the difference in how the persistent state is handled.
 
 Solana
 ------
 
+The example code is taken from `example-helloworld <https://github.com/solana-labs/example-helloworld>`_ and adjusted.
+
 .. code-block:: rust
 
+        // Define the type of state stored in accounts
         #[derive(BorshSerialize, BorshDeserialize, Debug)]
         pub struct GreetingAccount {
             pub counter: u32,
         }
 
+        ...
+
         pub fn process_instruction(
             program_id: &Pubkey, // Public key of the program account
-            accounts: &[AccountInfo], // a slice of accounts to operate on
-            instruction_data: &[u8], // instructions
+            accounts: &[AccountInfo], // A slice of accounts to operate on
+            _instruction_data: &[u8], // Instructions, ignored in this example
         ) -> ProgramResult {
-            // Iterating accounts is safer than indexing
+
             let accounts_iter = &mut accounts.iter();
 
-            // Get the account to say hello to
+            // Get the account from the input to store the state
             let account = next_account_info(accounts_iter)?;
 
             // The account must be owned by the program in order to modify its data
@@ -66,7 +78,7 @@ Solana
             greeting_account.counter += 1;
             greeting_account.serialize(&mut &mut account.data.borrow_mut()[..])?;
 
-            ...
+            Ok(())
         }
 
 Concordium
@@ -74,26 +86,24 @@ Concordium
 
 .. code-block:: rust
 
-   #[derive(Serialize, SchemaType, Clone)]
+    // Define the type of state for the contract
+    #[derive(Serialize, SchemaType, Clone)]
     pub struct MyState {
-        counter: u64
+        counter: u32
     }
 
    #[receive(
         contract = "example",
         name = "some_receive",
         mutable,
-        payable
     )]
     fn some_receive<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
+        _ctx: &impl HasReceiveContext,
         host: &mut impl HasHost<MyState, StateApiType = S>,
-        _amount: Amount
     ) -> Result<(), Error> {
-        // Read input parameters
-        let input: u64 = ctx.parameter_cursor().get()?;
-        ...
-        // Update the state
-        host.state_mut().counter += input;
-        ...
+
+        // Load the contract state; increment and store the counter
+        host.state_mut().counter += 1;
+
+        Ok(())
     }
