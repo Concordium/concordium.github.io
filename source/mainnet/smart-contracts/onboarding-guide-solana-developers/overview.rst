@@ -20,6 +20,8 @@ Unlike Solana, this data can be updated directly only by the smart contract code
 The only way of interacting with contract state from outside is through the interface that the smart contract provides.
 This interface consists of entypoints.
 
+Another important difference is that transferring CCD to a non-existing account in Concordium will fail.
+
 .. _solana-programs:
 
 Smart contracts and programs
