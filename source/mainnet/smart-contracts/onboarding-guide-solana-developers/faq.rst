@@ -62,7 +62,7 @@ Concordium smart contracts:
 
 .. dropdown:: Is there something similar to Solana's `Anchor` framework for Concordium?
 
-    The Concordium standard library crate `concodsium-std <https://crates.io/crates/concordium-std>`_ provides high-level interface for writing smart contracts in Rust.
+    Yes. The Concordium standard library crate `concodsium-std <https://crates.io/crates/concordium-std>`_ provides high-level interface for writing smart contracts in Rust.
     It includes convenient ways of working with the contract state, provides macros for exposing Rust functions as entrypoints, handles serialization, provides testing infrastructure, etc.
     Together with :ref:`cargo-concordium<setup-tools>` it can be used to develop, test and build smart contracts.
 
@@ -76,7 +76,7 @@ Concordium smart contracts:
 
 .. dropdown:: Is there something similar to native programs in Concordium?
 
-    No. Functionality like cryptographic primitives, smart contract state management, etc. is implemented as Wasm host functions.
+    No. The security-critical functionality like cryptographic primitives, smart contract state management, etc. is implemented as Wasm host functions.
     The list of supported host functions is available in :ref:`host-functions`.
 
     Separating this functionality to host functions instead of having it as special smart contracts helps to rule out some vulnerabilities related to substituting native program addresses by users.
