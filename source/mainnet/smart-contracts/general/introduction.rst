@@ -88,6 +88,22 @@ module <contract-module>`. After this a smart contract can be *initialized* to
 obtain a :ref:`smart contract instance <contract-instances>`. Finally a smart
 contract instance can be repeatedly updated according to its own logic.
 
+.. image:: images/smart-contract-lifecycle.png
+    :width: 100%
+    :alt: flow diagram with different actions
+
+#. In ``cargo-concordium`` run the ``init`` command to start a new project.
+
+#. Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed.
+
+#. In ``cargo-concordium`` run the ``build`` command to build the Wasm module that can be deployed on chain.
+
+#. In ``concordium-client`` run the ``deploy`` command to deploy the Wasm module. This makes the contract available on chain.
+
+#. In ``concordium-client`` run the ``init`` command to initialize the contract on chain. This gives you a fresh state.
+
+#. In ``concordium-client`` you can then run ``invoke`` to simulate or test your contract and see what kind of energy it uses, ``contract show`` to see the schema or parameters in the contract, or ``update`` to execute transactions and update the state.
+
 .. toctree::
    :hidden:
    :maxdepth: 1
