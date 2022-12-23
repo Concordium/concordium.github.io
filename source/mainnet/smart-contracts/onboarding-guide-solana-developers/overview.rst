@@ -4,7 +4,7 @@
 Overview
 ========
 
-In this document, we outline the main differences in models behind Concordium smart contracts and Solana programs.
+In this document, we outline the main differences of account models and smart contract functionality between Solana and Concordium.
 
 Accounts
 ========
@@ -20,6 +20,7 @@ Unlike Solana, this data can be updated directly only by the smart contract code
 The only way of interacting with contract state from outside is through the interface that the smart contract provides.
 This interface consists of entypoints.
 
+.. _solana-programs:
 
 Smart contracts and programs
 ============================

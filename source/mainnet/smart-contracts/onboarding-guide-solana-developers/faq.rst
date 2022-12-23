@@ -14,6 +14,7 @@ Concordium smart contracts:
 .. dropdown:: What are `Solana programs` called on Concordium?
 
     Programs are called smart contracts on Concordium.
+    See the comparison :ref:`here<solana-programs>`.
 
 .. dropdown::  What smart contract language is used on Concordium?
 
@@ -69,13 +70,9 @@ Concordium smart contracts:
 
 .. dropdown:: How can I update account data?
 
-    Concordium's smart contract execution model as different from the one of Solana. Smart contracts on Concordium have associated balance and state.
-    Solana programs, on the other hand, use `other` accounts to store and update data.
-    The state can be updated by calling entrypoints, no other means of updating the state are possible. The smart contract logic determines how to update its own state.
-    A smart contract can `transfer` CCD to any account that will update the account's balance. However changing other data of account is not possible from a smart contract.
-    Unlike on Solana, contract entypoins do not take a list of accounts that they can read or write.
-    A smart contract can call an entypoint of another smart contract which could update the callee state, if the contract logic permits it.
-    It is, however, possible to query balances of any existing account or smart contract.
+    Smart contract code cannot write data to user accounts or other smart contract state.
+    Smart contracts manipulate their own state and call entrypoints of other contracts.
+    See :ref:`solana-overview` for the details.
 
 .. dropdown:: Is there something similar to native programs in Concordium?
 
@@ -113,10 +110,10 @@ Concordium smart contracts:
 
     In terms of naming, Concordium uses `contract` and `account` to refer
     to a similar Solana's `executable account` (programs) and `non-executable account`, respectively.
-    Note, however that the correspondense is not precise, as Solana's executable accounts are immutable
-    and can modify data of accounts `they own`, while on Concordium, smart contracts can directly modify only `its own state`.
-    The word `address` refers to either an `account` address or a `contract` address on Concordium.
+    Note, however that the correspondense is not precise.
+    See the :ref:`overview of differences <solana-overview>` for more details.
 
+    The word `address` refers to either an `account` address or a `contract` address on Concordium.
     Contract addresses on Concordium are represented by an index and a subindex as seen below.
     When invoking the `init` function, a new smart contract instance is
     deployed and assigned the next index number in sequential order.
@@ -135,10 +132,10 @@ Concordium smart contracts:
 
     In terms of naming, Concordium uses `contract` and `account` to refer
     to a similar Solana's `executable account` (programs) and `non-executable account`, respectively.
-    Note, however that the correspondense is not precise, as Solana's executable accounts are immutable
-    and can modify data of accounts `they own`, while on Concordium, smart contracts can directly modify only `its own state`.
-    The word `address` refers to either an `account` address or a `contract` address on Concordium.
+    Note, however that the correspondense is not precise.
+    See the :ref:`overview of differences <solana-overview>` for more details.
 
+    The word `address` refers to either an `account` address or a `contract` address on Concordium.
     Accounts on the chain are identified via an account address, which is a 32-byte sequence.
     The address is usually displayed in Base58Check encoding with version byte 1.
     An example of such an address is 3ZFGxLtnUUSJGW2WqjMh1DDjxyq5rnytCwkSqxFTpsWSFdQnNn.
@@ -731,7 +728,7 @@ Miscellaneous:
     **Option 5:** If you need plenty of CCD for large-scale testing,
     please contact Concordium’s technical support via support@concordium.software.
 
-.. dropdown::  Is there something similiar to transaction fees?
+.. dropdown::  Is there something similar to transaction fees?
 
     Yes, transaction fees are called NRG (pronounced energy) on the Concordium chain.
     The block limit is 3 million NRG. Transaction fees are fixed in Euro and are much
