@@ -247,7 +247,7 @@ And cross check with the token contract’s latest state with its ``view()`` fun
 
     concordium-client  contract invoke <TOKEN-CONTRACT-INDEX> --entrypoint view --schema <YOUR-SCHEMA-FILE> --grpc-port 10001
 
-As you can see, the first account has no balance anymore with the given token ID but the latter one has.
+As you can see, the first account has no balance anymore with the given token ID but the second one has.
 
 .. image:: images/token-contract-view.png
     :width: 75%
