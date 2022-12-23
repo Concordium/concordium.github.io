@@ -119,7 +119,7 @@ Now run the command below.
 
     concordium-client contract update <YOUR-TOKEN-INDEX> --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --schema ../cis2-multi/dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
 
-If successful, you see something similar to below.
+If successful, you will see something similar to below.
 
 .. image:: images/update-operator.png
     :width: 75%
