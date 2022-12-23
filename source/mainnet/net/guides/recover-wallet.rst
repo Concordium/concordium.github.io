@@ -39,6 +39,10 @@ In case you get a new device or need to restore your existing device, you can re
 
         If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must :ref:`add the tokens<tokens>` again to view them in your wallet.
 
+    .. Note::
+
+        If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your secret recovery phrase to recover the wallet.
+
 .. dropdown:: |mw-gen2|
 
     #. After reinstalling the |mw-gen2| app, open the app.
