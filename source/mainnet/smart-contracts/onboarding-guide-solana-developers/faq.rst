@@ -1,3 +1,5 @@
+.. include:: ../../variables.rst
+
 .. _solana-faq:
 
 ====
@@ -571,20 +573,20 @@ Standards:
 
 .. dropdown::  Is there something similar to the Solana's wrapped token wSOL?
 
-    Yes, please explore the following two wCCD examples:
+    Yes, please explore:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    - the :ref:`wCCD tutorial<wCCD>`
+    - wCCD example `source code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_.
 
-    Concordium will provide and maintain the canonical wCCD implementation on testnet and mainnet soon.
+    Concordium provides and maintains the canonical wCCD implementation on testnet; mainnet implementation is coming soon.
     Developers are encouraged to use the following addresses for their dApps.
 
-    - Testnet canonical wCCD address: coming soon
+    - Testnet canonical wCCD address: |wccd-address-testnet|
     - Mainnet canonical wCCD address: coming soon
 
-.. dropdown:: Does Concordium have an upgradable smart contract pattern?
+.. dropdown:: Does Concordium have upgradable smart contracts?
 
-    Yes, please explore the `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+    Yes, you can choose to make your smart contracts upgradable. See :ref:`contract-instance-upgradeability` for more details.
 
 Deploying and Initializing of smart contracts:
 ==============================================
