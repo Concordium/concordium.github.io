@@ -36,8 +36,8 @@ Concordium uses smart contract states for that purpose.
 Each contract can write to its own state directly.
 Modifying the state of other smart contracts is only possible by calling their entrypoints.
 Smart contracts cannot read/write arbitrary data from/to user accounts, but they can transfer CCD they own to any user account and other smart contracts.
+Note that CCD cannot be transferred to the smart contract balance without calling a specific entrypoint or a :ref:`fallback entrypoint<fallback-entrypoints>`.
 The smart contract logic determines whether to accept CCD or not.
-CCD cannot be transferred to the smart contract balance without calling a specific entrypoint or a :ref:`fallback entrypoint<fallback-entrypoints>`.
 
 Example
 =======
