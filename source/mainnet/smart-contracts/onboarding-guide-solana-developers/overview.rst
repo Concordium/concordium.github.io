@@ -18,7 +18,7 @@ Both accounts and smart contracts have CCD balance associated with them.
 Moreover, smart contracts can have state -- structured data associated with the contract.
 Unlike Solana, this data can be updated directly only by the smart contract code it belongs to.
 The only way of interacting with contract state from outside is through the interface that the smart contract provides.
-This interface consists of entypoints.
+This interface consists of entrypoints.
 
 Another important difference is that transferring CCD to a non-existing account on Concordium will fail.
 
@@ -37,7 +37,7 @@ Each contract can write to its own state directly.
 Modifying the state of other smart contracts is only possible by calling their entrypoints.
 Smart contracts cannot read/write arbitrary data from/to user accounts, but they can transfer CCD they own to any user account and to other smart contracts.
 The smart contract logic determines whether to accept CCD or not.
-CCD cannot be transferred to the smart contract balance without calling a specific entrypoint or a :ref:`fallback entypoint<fallback-entrypoints>`.
+CCD cannot be transferred to the smart contract balance without calling a specific entrypoint or a :ref:`fallback entrypoint<fallback-entrypoints>`.
 
 Example
 =======
