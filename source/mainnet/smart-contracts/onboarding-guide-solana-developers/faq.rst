@@ -733,7 +733,8 @@ Miscellaneous:
 .. dropdown::  Is there something similar to transaction fees?
 
     Yes, transaction fees are called NRG (pronounced energy) on the Concordium chain.
-    The block limit is 3 million NRG. Transaction fees are fixed in Euro.
+    The block limit is 3 million NRG. Transaction fees are fixed in Euro and are currently set to 1 Eurocent for basic CCD transfers.
+    Fixing transaction fees in Euro is a unique feature of Concordium that provides predictable transaction costs.
 
 .. dropdown::  What networks can be used for testing?
 
