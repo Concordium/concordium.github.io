@@ -1627,7 +1627,7 @@ body {margin:0;}
                 
   <div class="section" id="introduction-to-smart-contracts">
 <span id="introduction"></span><h1>Introduction to smart contracts<a class="headerlink" href="#introduction-to-smart-contracts" title="Permalink to this headline">#</a></h1>
-<p>A smart contract is a user-supplied piece of code submitted to the Concordium
+<p>A <a class="reference internal" href="../../net/resources/glossary.html#glossary-smart-contract"><span class="std std-ref">smart contract</span></a> is a user-supplied piece of code submitted to the Concordium
 blockchain, used to define behavior that is not directly part of the core
 protocol. Smart contracts are executed by nodes in the Concordium network
 according to predefined rules. Their execution is fully transparent, and all
@@ -1691,6 +1691,15 @@ derived notions such as encryptions and commitments, which hide the actual data.
 module</span></a>. After this a smart contract can be <em>initialized</em> to
 obtain a <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">smart contract instance</span></a>. Finally a smart
 contract instance can be repeatedly updated according to its own logic.</p>
+<a class="reference internal image-reference" href="../../_images/smart-contract-lifecycle.png"><img alt="flow diagram with different actions" src="../../_images/smart-contract-lifecycle.png" style="width: 100%;" /></a>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> <a class="reference internal" href="../guides/setup-contract.html#setup-contract"><span class="std std-ref">run the init command</span></a> to start a new project.</p></li>
+<li><p>Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If <a class="reference internal" href="../guides/build-schema.html#build-schema"><span class="std std-ref">using a schema</span></a>, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> <a class="reference internal" href="../guides/compile-module.html#compile-module"><span class="std std-ref">run the build command</span></a> to build the Wasm module that can be deployed on chain.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> <a class="reference internal" href="../guides/deploy-module.html#deploy-module"><span class="std std-ref">run the deploy command</span></a> to deploy the Wasm module. This makes the contract available on chain.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> <a class="reference internal" href="../guides/initialize-contract.html#initialize-contract"><span class="std std-ref">run the init command</span></a> to initialize the contract on chain. This gives you a new instance of the smart contract with a fresh state.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can then <a class="reference internal" href="../guides/invoke-instance.html#invoke-instance"><span class="std std-ref">run invoke</span></a> to simulate your contract and see how much energy it uses or to call a view entrypoint which returns some data derived from the contract state; use <a class="reference internal" href="../guides/inspect-instance.html#inspect-instance"><span class="std std-ref">show</span></a> to see the schema or parameters in the contract, or <a class="reference internal" href="../guides/interact-instance.html#interact-instance"><span class="std std-ref">update</span></a> to execute transactions and update the state.</p></li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </div>
