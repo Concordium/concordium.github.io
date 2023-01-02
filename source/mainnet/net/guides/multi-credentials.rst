@@ -47,11 +47,11 @@ Generate the transaction
 
 There are two ways that you can generate the transaction:
 
-Option 1: :ref:`Generate the transaction without signing<credentials-generate-without-sign>`.  This option enables you to export the transaction proposal without signing it. You don't need a Ledger, but you do need an internet connection.
+Option 1: :ref:`Generate the transaction without signing<credentials-generate-without-sign>`.  This option enables you to export the transaction proposal without signing it. You don't need a LEDGER device, but you do need an internet connection.
 
-Option 2: :ref:`Generate and sign the transaction<credentials-generate-sign>` This option requires a Ledger but no internet connection.
+Option 2: :ref:`Generate and sign the transaction<credentials-generate-sign>` This option requires a LEDGER device but no internet connection.
 
-In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than were the proposal was created.
+In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the LEDGER device in a different location than were the proposal was created.
 
 .. _credentials-generate-without-sign:
 
@@ -64,22 +64,22 @@ Option 1: Generate the transaction without signing
 
 .. _credentials-generate-sign:
 
-Option 2: Generate and sign the transaction on the Ledger
----------------------------------------------------------
+Option 2: Generate and sign the transaction on the LEDGER device
+----------------------------------------------------------------
 
 #.  Verify that the Transaction details are as you intended, and then select **I am sure that the proposed changes are correct**.
 
 #.  Select **Generate and sign**.
 
-#. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
+#. Connect the LEDGER device to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Waiting for the user to finish the process on device**.
+#. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Waiting for the user to finish the process on device**.
 
-#. The Ledger says **Review transaction**. Navigate to the right to view **Sender** and the sender address. This is the address of the account whose credentials you’re updating.
+#. The LEDGER device says **Review transaction**. Navigate to the right to view **Sender** and the sender address. This is the address of the account whose credentials you’re updating.
 
-#. Continue navigating to the right. When you see **Continue with transaction** press both buttons. The Ledger says **Public-key**, which is the public key of the first of the credentials you are adding to the account. Navigate to the right until you’ve reached the last section of the public key and press both buttons.
+#. Continue navigating to the right. When you see **Continue with transaction** press both buttons. The LEDGER device says **Public-key**, which is the public key of the first of the credentials you are adding to the account. Navigate to the right until you’ve reached the last section of the public key and press both buttons.
 
-#. The Ledger says **Signature threshold** which is the number of signatures that’s currently required to make transactions with the account. Navigate to the right and verify that the following information is correct, and then press both buttons.
+#. The LEDGER device says **Signature threshold** which is the number of signatures that’s currently required to make transactions with the account. Navigate to the right and verify that the following information is correct, and then press both buttons.
 
    -  *AR threshold*: this is the number of anonymity revokers required to revoke anonymity on the account.
 
@@ -87,12 +87,12 @@ Option 2: Generate and sign the transaction on the Ledger
 
 #. Press both buttons to sign the transaction.
 
-#. Repeat the above steps on the Ledger for each of the credentials you’ve added to the proposal.
+#. Repeat the above steps on the LEDGER device for each of the credentials you’ve added to the proposal.
 
-#. The Ledger says **Threshold** again. This is the new threshold you’ve proposed for the account. Navigate to the right. The Ledger says **Review transaction**. When the Ledger says **Sign transaction**, press both buttons to confirm the transaction. The Ledger says **Concordium is ready**.
+#. The LEDGER device says **Threshold** again. This is the new threshold you’ve proposed for the account. Navigate to the right. The LEDGER device says **Review transaction**. When the LEDGER device says **Sign transaction**, press both buttons to confirm the transaction. The LEDGER device says **Concordium is ready**.
 
 .. Note::
-    If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In The Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
+    If you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In The Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
 
 .. _credentials-export-transaction-proposal:
 
@@ -131,7 +131,7 @@ When you have received and added all the required signatures, you can submit the
 
    - If you don't want to submit the transaction to the chain, you can select **Cancel proposal**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-#. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the Ledger.
+#. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the ledger.
 
 #. Select **Finish** to leave the page.
 
