@@ -16,7 +16,7 @@ Prerequisites
 
 -  Set up an :ref:`account with multiple credentials <multi-credentials>`
 
--  Set up a :ref:`Ledger Nano hardware device identity <install-Ledger-app>`.
+-  Set up a :ref:`LEDGER NANO device identity <install-Ledger-app>`.
 
 :ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
 
@@ -45,11 +45,11 @@ Generate the transaction
 
 There are two ways that you can generate the transaction:
 
--  :ref:`Generate the transaction proposal without signing<generate-transfer-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger, but you do need an internet connection.
+-  :ref:`Generate the transaction proposal without signing<generate-transfer-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a LEDGER device, but you do need an internet connection.
 
--  :ref:`Generate and sign the transaction<generate-sign-transfer>`. This option requires a Ledger and an internet connection.
+-  :ref:`Generate and sign the transaction<generate-sign-transfer>`. This option requires a LEDGER device and an internet connection.
 
-In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than were the proposal was created.
+In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the LEDGER device in a different location than were the proposal was created.
 
 .. _generate-transfer-without-sign:
 
@@ -62,24 +62,24 @@ Generate the transaction proposal without signing
 
 .. _generate-sign-transfer:
 
-Generate and sign the transaction proposal on the Ledger
---------------------------------------------------------
+Generate and sign the transaction proposal on the LEDGER device
+---------------------------------------------------------------
 
-#. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
+#. Connect the LEDGER device to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+#. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
 #. In the Desktop Wallet, verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**. (If you're not on the proposal page, go to **Multi Signature Transactions** -> **Your proposed transactions**, and then select the proposal you want to sign.)
 
 #.  Select **Generate and sign**.
 
-#. The Ledger says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring CCD from.
+#. The LEDGER device says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring CCD from.
 
-#. Continue navigating to the right. The Ledger shows the **Amount** you're going to transfer. Navigate to the right. The Ledger says **Recipient** and shows the recipient's address.
+#. Continue navigating to the right. The LEDGER device shows the **Amount** you're going to transfer. Navigate to the right. The LEDGER device says **Recipient** and shows the recipient's address.
 
-#. When you've navigated through and verified that the information is correct, the Ledger says **Sign transaction**. Press both buttons.
+#. When you've navigated through and verified that the information is correct, the LEDGER device says **Sign transaction**. Press both buttons.
 
-#. The Ledger says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal including how many signatures that are required before you can submit the transaction to the chain.
+#. The LEDGER device says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal including how many signatures that are required before you can submit the transaction to the chain.
 
 .. _export-transfer-proposal:
 
