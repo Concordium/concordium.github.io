@@ -14,7 +14,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: Desktop Wallet
 
-   Before you start, you need a Ledger hardware device that's set up and ready for use.
+   Before you start, you need a LEDGER device that's set up and ready for use.
 
    #. Go to **Accounts**. A message is displayed if you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**. You can also create a new identity if you already have one or more by going to **Identities** and clicking on the plus in the upper right corner of the window.
 
@@ -28,24 +28,24 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
       .. image:: ../images/desktop-wallet/dw-add-identity-provider.png
 
-   #. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+   #. Connect your LEDGER device and enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-   #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**.
+   #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the LEDGER device. On the LEDGER device, press both buttons when it says **Concordium**. The LEDGER device says **Concordium is ready**.
 
    #. In the Desktop Wallet there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**. Select **Submit**.
 
-   #. Press both buttons to confirm the following on the Ledger:
+   #. Press both buttons to confirm the following on the LEDGER device:
 
       - Create credential (each credential is assigned a number): : Press the right button and then both buttons to confirm **Accept**.
       - Public key: Press both buttons to accept.
 
-   #. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
+   #. Review that the public key on the LEDGER device corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
    #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-   #. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+   #. The LEDGER device says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-   #. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
+   #. Verify that the signature threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet.
 
    #. Press the right button, and then press both buttons to sign the identity provider information.
 
