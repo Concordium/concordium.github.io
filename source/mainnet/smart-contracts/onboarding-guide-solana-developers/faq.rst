@@ -110,14 +110,14 @@ Concordium smart contracts
 
 .. dropdown::  How are `program addresses` represented on Concordium?
 
-    In terms of naming, Concordium uses `contract` and `account` to refer
-    to a similar Solana's `executable account` (programs) and `non-executable account`, respectively.
+    In terms of naming, Concordium uses *contract* and *account* to refer
+    to a similar Solana's *executable account* (programs) and *non-executable account*, respectively.
     Note, however that the correspondense is not precise.
     See the :ref:`overview of differences <solana-overview>` for more details.
 
-    The word `address` refers to either an `account` address or a `contract` address on Concordium.
+    The word *address* refers to either an *account* address or a *contract* address on Concordium.
     Contract addresses on Concordium are represented by an index and a subindex as seen below.
-    When invoking the `init` function, a new smart contract instance is
+    When invoking the ``init`` function, a new smart contract instance is
     deployed and assigned the next index number in sequential order.
     The subindex is currently not in use and is always 0. There are plans to give the subindex meaning in the future.
 
@@ -132,17 +132,17 @@ Concordium smart contracts
 
 .. dropdown::  How are `wallet addresses` represented on Concordium?
 
-    In terms of naming, Concordium uses `contract` and `account` to refer
-    to a similar Solana's `executable account` (programs) and `non-executable account`, respectively.
+    In terms of naming, Concordium uses *contract* and *account* to refer
+    to a similar Solana's *executable account* (programs) and *non-executable account*, respectively.
     Note, however that the correspondense is not precise.
     See the :ref:`overview of differences <solana-overview>` for more details.
 
-    The word `address` refers to either an `account` address or a `contract` address on Concordium.
+    The word *address* refers to either an *account* address or a *contract* address on Concordium.
     Accounts on the chain are identified via an account address, which is a 32-byte sequence.
     The address is usually displayed in Base58Check encoding with version byte 1.
     An example of such an address is 3ZFGxLtnUUSJGW2WqjMh1DDjxyq5rnytCwkSqxFTpsWSFdQnNn.
 
-    On Concordium, `accounts` are deployed on-chain and their corresponding `account` address only exists from that point on.
+    On Concordium, *accounts* are deployed on-chain and their corresponding *account address* only exists from that point on.
     You cannot send CCD to an account address (or a smart contract address) before they have been deployed/initialized on the Concordium chain.
     When a smart contract tries to interact with an address that has not been deployed/initialized yet, the interaction fails.
 

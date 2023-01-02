@@ -10,13 +10,13 @@ Accounts
 ========
 
 Solana accounts are somewhat similar to files and can hold arbitrary data.
-Some accounts are marked as `executable` and contain program code.
+Some accounts are marked as *executable* and contain program code.
 These accounts themselves are immutable, but programs stored in their data can modify data in accounts they own.
 
 Concordium, on the other hand, has a strict separation between user accounts and smart contracts.
 Both accounts and smart contracts have CCD balances associated with them.
 Moreover, smart contracts can have state -- structured data associated with the contract.
-Unlike Solana, this data can be updated directly only by the smart contract code it belongs to.
+This data can be updated directly only by the smart contract code it belongs to.
 The only way of interacting with the contract state from outside is through the interface that the smart contract provides.
 This interface consists of entrypoints.
 
@@ -27,13 +27,13 @@ Another important difference is that transferring CCD to a non-existing account 
 Smart contracts and programs
 ============================
 
-Concordium `smart contracts` serve the same purpose as `programs` on Solana.
+Concordium *smart contracts* serve the same purpose as *programs* on Solana.
 However, some details are different in how these two are structured.
 
 Solana programs take a list of accounts as input.
 Some of these accounts can be used to store persistent data, that is, data that is stored after the contract invocation is completed.
 Concordium uses smart contract states for that purpose.
-Each contract can write to its own state directly.
+Each contract on Concordium can write to its own state directly.
 Modifying the state of other smart contracts is only possible by calling their entrypoints.
 Smart contracts cannot read/write arbitrary data from/to user accounts, but they can transfer CCD they own to any user account and other smart contracts.
 Note that CCD cannot be transferred to the smart contract balance without calling a specific entrypoint or a :ref:`fallback entrypoint<fallback-entrypoints>`.
