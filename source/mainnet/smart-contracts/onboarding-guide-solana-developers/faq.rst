@@ -10,8 +10,8 @@ The following Frequently Asked Questions about Concordium focuses on helping dev
 
 Feel free to participate and add your questions to the `Concordium software support channels <https://support.concordium.software/>`_.
 
-Concordium smart contracts:
-===========================
+Concordium smart contracts
+==========================
 
 .. dropdown:: What are `Solana programs` called on Concordium?
 
@@ -20,8 +20,8 @@ Concordium smart contracts:
 
 .. dropdown::  What smart contract language is used on Concordium?
 
-    Smart contracts are deployed as wasm modules on the Concordium chain. Like Solana, Concordium uses Rust to write and compile smart conracts.
-    Rust currently has the best support to write and compile your smart contract into a wasm module that then can be deployed to the Concordium chain.
+    Smart contracts are deployed as Wasm modules on the Concordium chain. Like Solana, Concordium uses Rust to write and compile smart conracts.
+    Rust currently has the best support to write and compile your smart contract into a Wasm module that then can be deployed to the Concordium chain.
 
 .. dropdown::  How can I start with the Rust smart contract language?
 
@@ -183,7 +183,7 @@ Concordium smart contracts:
 
         $cargo test -- --nocapture
 
-.. dropdown::  How to get the transaction sender address on Concordium?
+.. dropdown::  How do I get the transaction sender address on Concordium?
 
     The ``ctx.invoker()`` variable refers to the original account address (no contract address)
     that started the transaction while ``ctx.sender()``
@@ -430,27 +430,27 @@ Concordium smart contracts:
 
         $cargo test
 
-Events:
-=======
+Events
+======
 
 .. dropdown::  Where can I find a logged event on testnet/mainnet?
 
     You can look up a transaction hash on the dashboard such as `this example <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_.
     It will provide you with the full execution chain of the smart contracts that
-    were invoked and updated during this tx.
+    were invoked and updated during this transaction.
     You can click on an updated contract instance row to see additional information.
     For example, navigate to the last page (third page) of the displayed execution chain of `this transaction <https://dashboard.testnet.concordium.com/lookup/13ded9aaf6085e970b2cf3874431de5805ffa35a553c93707d1863a8888e8aa4>`_
     and click on the top row `Updated contract instance at address: <783,0>`. You will see additional information
     about the smart contract address, name, the function entry point that was invoked,
     the CCD amount that was sent to the function, and events that were logged by this smart contract function.
 
-    The below picture shows that one event was logged by the contract `<783,0>` and no event was logged by the contract `<782,0>`.
+    The image below shows that one event was logged by the contract `<783,0>` and no event was logged by the contract `<782,0>`.
 
     .. image:: ./images/onboarding_ethereum_developers_1.png
         :width: 100 %
 
     If several events are logged by one function entry point, the different events can be distinguished by their array index.
-    The below picture shows that four events were logged by an entry point in
+    The image below shows that four events were logged by an entry point in
     `this execution chain <https://dashboard.testnet.concordium.com/lookup/7fcad417384d8e36fd2264d16d0ce1385860cdad711d17f7d6c12137c9cbab2e>`_.
 
     .. image:: ./images/onboarding_ethereum_developers_2.png
@@ -555,8 +555,8 @@ Events:
             &[(addr0, Amount::from_micro_ccd(0)), (addr1, Amount::from_micro_ccd(0))][..]
         );
 
-Standards:
-==========
+Standards
+=========
 
 .. dropdown::  Is there something similar to the SPL Token Program?
 
@@ -576,7 +576,7 @@ Standards:
     Yes, please explore:
 
     - the :ref:`wCCD tutorial<wCCD>`
-    - wCCD example `source code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_.
+    - the wCCD example `source code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_.
 
     Concordium provides and maintains the canonical wCCD implementation on testnet; mainnet implementation is coming soon.
     Developers are encouraged to use the following addresses for their dApps.
@@ -588,8 +588,8 @@ Standards:
 
     Yes, you can choose to make your smart contracts upgradable. See :ref:`contract-instance-upgradeability` for more details.
 
-Deploying and Initializing of smart contracts:
-==============================================
+Deploying and Initializing of smart contracts
+=============================================
 
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 
@@ -631,8 +631,8 @@ Deploying and Initializing of smart contracts:
     is to deploy a new smart contract instance from a module and set the state of the current smart contract.
     You have to use a regular ``receive`` function when you want to invoke another smart contract.
 
-Concordium tools:
-=================
+Concordium tools
+================
 
 .. dropdown::  Does Concordium have a block explorer?
 
@@ -647,8 +647,8 @@ Concordium tools:
     CCDScan currently does not support compiling, hosting, or verifying your smart contract code.
     You are welcome to publish your smart contract code in public source code management tools such as `GitHub <https://github.com/>`_.
 
-Miscellaneous:
-==============
+Miscellaneous
+=============
 
 .. dropdown:: What is the native currency on Concordium?
 

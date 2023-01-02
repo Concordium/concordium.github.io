@@ -4,7 +4,7 @@
 Overview
 ========
 
-In this document, we outline the main differences of account models and smart contract functionality between Solana and Concordium.
+This overview outlines the main differences of account models and smart contract functionality between Solana and Concordium.
 
 Accounts
 ========
