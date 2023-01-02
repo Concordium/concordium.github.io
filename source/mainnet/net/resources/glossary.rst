@@ -112,7 +112,7 @@ Command to take a smart contract module written in Rust and create a Wasm module
 cargo-concordium
 ================
 
-The Concordium optimized version of Rust's cargo tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+An extension of Rust's ``cargo`` tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
 
 .. _glossary-catch-up:
 
