@@ -1,0 +1,216 @@
+.. _counter-sc:
+
+======================
+Counter smart contract
+======================
+
+Now you are ready to create your smart contract project. First, create a working directory, and run the command below in that directory. It will set up the initial project for you, including necessary rust dependencies.
+
+.. code-block:: console
+
+    cargo concordium init
+
+Select the ``Default`` option from the menu.
+
+(screenshot)
+
+Then it will ask for a name and a description of your project then you will have an empty smart contract template to fill in. Initially, it has a State struct, Init function for invoking and creating an empty state when anyone creates an instance, an Error enum for custom errors, a view function, a receive function and some tests.
+
+(screenshot)
+
+Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the Error enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
+
+.. code-block:: rust
+
+    //! # A Concordium V1 smart contract
+    use concordium_std::*;
+    use core::fmt::Debug;
+
+    /// Your smart contract state.
+    #[derive(Serialize, SchemaType, Clone)]
+    pub struct State {
+        // Your state
+        counter: i8,
+    }
+
+    /// Your smart contract errors.
+    #[derive(Debug, PartialEq, Eq, Reject, Serial, SchemaType)]
+    enum Error {
+        /// Failed parsing the parameter.
+        #[from(ParseError)]
+        ParseParamsError,
+        /// Your error
+        OwnerError,
+        IncrementError,
+        DecrementError,
+    }
+
+    /// Init function that creates a new smart contract.
+    #[init(contract = "counter")]
+    fn init<S: HasStateApi>(
+        _ctx: &impl HasInitContext,
+        _state_builder: &mut StateBuilder<S>,
+    ) -> InitResult<State> {
+        // Your code
+
+        Ok(State { counter: 0 })
+    }
+
+Increment and decrement counter
+===============================
+
+Increment counter
+-----------------
+
+Then change the update function as described below, let’s remember what we want; input needs to be parsed without any errors, the value should be positive(otherwise we will get an Error::IncrementError and the transaction should be triggered by the owner of the contract instance or it will throw Error::OwnerError and the function itself has to be a mutable function because we are going to change the state of the contract.
+
+.. code-block:: rust
+
+    type IncrementVal = i8;
+    /// Receive function. The input parameter is the boolean variable `throw_error`.
+    ///  If `throw_error == true`, the receive function will throw a custom error.
+    ///  If `throw_error == false`, the receive function executes successfully.
+    #[receive(
+        contract = "counter",
+        name = "increment",
+        parameter = "i8",
+        error = "Error",
+        mutable
+    )]
+    fn increment<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> Result<(), Error> {
+        // Your code
+
+        let param: IncrementVal = ctx.parameter_cursor().get()?;
+        let state = host.state_mut();
+        ensure!(
+            ctx.sender().matches_account(&ctx.owner()),
+            Error::OwnerError
+        );
+
+        ensure!(param > 0, Error::IncrementError);
+        state.counter += param;
+        Ok(())
+    }
+
+Decrement counter
+-----------------
+
+Add a new mutable function to implement decrement with a similar approach. It will also take an input parameter but this time we need to make sure that it is negative because a violation will be caused by an Error::DecrementError, like the other one this can be triggered by only the owner of the contract-otherwise it will throw an Error::OwnerError.
+
+.. code-block:: rust
+
+    #[receive(
+        contract = "counter",
+        name = "decrement",
+        parameter = "i8",
+        error = "Error",
+        mutable
+    )]
+    fn decrement<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> Result<(), Error> {
+        // Your code
+
+        let param: IncrementVal = ctx.parameter_cursor().get()?;
+        let state = host.state_mut();
+        ensure!(
+            ctx.sender().matches_account(&ctx.owner()),
+            Error::OwnerError
+        );
+
+        ensure!(param < 0, Error::DecrementError);
+        state.counter -= param;
+        Ok(())
+    }
+
+View function
+-------------
+
+The view function will return only the counters value so you need to update its return value as u8 and return it from the host.state().
+
+.. code-block:: rust
+
+    /// View function that returns the content of the state.
+    #[receive(contract = "counter", name = "view", return_value = "i8")]
+    fn view<'a, 'b, S: HasStateApi>(
+        _ctx: &'a impl HasReceiveContext,
+        host: &'b impl HasHost<State, StateApiType = S>,
+    ) -> ReceiveResult<i8> {
+        Ok(host.state().counter)
+    }
+
+Build, deploy, and initialize the contract
+==========================================
+
+Create a dist folder to keep the schema output file and Wasm compiled contract in and run the build command.
+
+.. code-block:: console
+
+    cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin
+
+(screenshot)
+
+Deploy it with the command below.
+
+.. code-block:: console
+
+    concordium-client module deploy dist/module.wasm.v1 --sender <YOUR-ACCOUNT> --name counter --grpc-port 10001
+
+(screenshot)
+
+Initialize it to create your contract instance, so you are ready to invoke the functions in the next section.
+
+.. code-block:: console
+
+    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 10001
+
+(screenshot)
+
+Interact with the contract
+==========================
+
+View function
+-------------
+
+First, check the initial state of the contract.
+
+.. code-block:: console
+
+    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema dist/schema.bin --grpc-port 10001
+
+Since you just initialized the contract it is 0.
+
+(screenshot)
+
+Increment function
+------------------
+
+Create a JSON file that holds your operator that will be given as input to the function and run the command below. Basically, we are saying to the contract instance “with this transaction we will update your state from the increment entrypoint” which is our function name with this parameter.
+
+.. code-block:: console
+
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint increment --parameter-json <PATH-TO-JSON> --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
+
+Let’s start testing with our conditions, first let’s try another account other than the owner of it we want that only the owner can call this function, right?
+
+(screenshot)
+
+Hmm, error code: -2 what is that? Check the developer portal of Concordium about custom errors from this link. Basically, -2 means you are calling the second error code from your Error enum, which is OwnerError! Brilliant, that means we have fulfilled the first requirement! Let’s update the state with number 2 now.
+
+(screenshot)
+
+Cool, check the state once more.
+
+(screenshot)
+
+Nice, unsurprisingly it is 2! Let’s check the other requirement if we are able to increment it via a negative number. Change the value in the json file to a negative number like -2.
+
+(screenshot)
+
+You cannot do it because of error code -3 which is the third element in the enum: ``IncrementError``. That means the increment method operates as expected in your contract.
+
+You can play with decrement in the same way.
