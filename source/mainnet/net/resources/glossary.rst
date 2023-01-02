@@ -351,7 +351,9 @@ instance.
 Invoke
 ======
 
-The act of triggering a receive function in a smart contract and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke.
+Invoke means to call something into effect.
+
+Invoke is also the act of triggering a receive function in a smart contract from ``concordium-client`` and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click :ref:`here to see examples of how to use invoke to view information about the instance<nft-view-fn>`.
 
 .. _glossary-leader-election:
 
