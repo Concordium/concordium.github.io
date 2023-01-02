@@ -6,6 +6,11 @@ Counter smart contract
 
 Now you are ready to create your smart contract project. First, create a working directory, and run the command below in that directory. It will set up the initial project for you, including necessary rust dependencies.
 
+
+.. Note::
+
+    The template repository contains `short GIFs <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ that show many of these commands.
+
 .. code-block:: console
 
     cargo concordium init
