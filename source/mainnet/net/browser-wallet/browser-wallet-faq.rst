@@ -79,3 +79,7 @@
 .. dropdown:: Can I access the same accounts on different devices?
 
     If you are using |bw| and the |mw-gen2|, you can because the |mw-gen2| also uses the secret recovery phrase. You would simply enter your recovery phrase into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.
+
+.. dropdown:: What do I do if I forget my passcode on the |bw|?
+
+    If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your secret recovery phrase to recover the wallet.
