@@ -84,20 +84,20 @@ Linux® v1.5.0
       - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
       - :ref:`Verification instructions <verification-cdw-rpm>`
 
-Concordium Ledger App
+Concordium LEDGER App
 =====================
 
 .. Note::
 
-   Ledger firmware version 2.0.0 is no longer supported for the Ledger Nano S.
+   LEDGER firmware version 2.0.0 is no longer supported for the LEDGER NANO S.
 
 .. Note::
 
-   The Ledger Nano X is not supported currently.
+   The LEDGER NANO X is not supported currently.
 
-- For Ledger Nano S, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+- For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
-- For Ledger Nano S Plus, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
+- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
 
 .. _concordium-node-and-client-download:
 
