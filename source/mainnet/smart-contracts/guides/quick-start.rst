@@ -54,17 +54,17 @@ This guide is intended to be used by experienced developers who want to get up a
 
         use concordium_std::*;
 
-    For information about developing your smart contracts, see :ref:`Developing smart contracts<writing-smart-contracts>`.
+    For information about developing and editing your smart contracts, see :ref:`Developing smart contracts<writing-smart-contracts>`.
 
 .. dropdown:: Step 3 - Set up a Concordium Wallet
 
     You need to set up a Concordium wallet and export the keys to import them to `concordium client`. You can only import keys from |bw|, |mw-gen2|, or |mw-gen1| into `concordium-client`, so you must choose one of those wallets to set up.
 
-    - :ref:`|bw| setup<setup-browser-wallet>`
+    - |bw| :ref:`setup<setup-browser-wallet>`
         - :ref:`Key export<export-key>`
-    - :ref:`|mw-gen2| setup<setup-g2-mobile-wallet>`
+    - |mw-gen2| :ref:`setup<setup-g2-mobile-wallet>`
         - :ref:`Key export<export-key>`
-    - :ref:`|mw-gen1| setup<setup-mobile-wallet>`
+    - |mw-gen1| :ref:`setup<setup-mobile-wallet>`
         - :ref:`Key export<export-import>`
     - :ref:`Import keys to concordium-client<concordium-client-import-accounts-keys>`
 
