@@ -61,9 +61,9 @@ This guide is intended to be used by experienced developers who want to get up a
     You need to set up a Concordium wallet and export the keys to import them to `concordium client`. You can only import keys from |bw|, |mw-gen2|, or |mw-gen1| into `concordium-client`, so you must choose one of those wallets to set up.
 
     - :ref:`|bw| setup<setup-browser-wallet>`
-        - :ref:`Key export<use-browser-wallet>`
+        - :ref:`Key export<export-key>`
     - :ref:`|mw-gen2| setup<setup-g2-mobile-wallet>`
-        - Key export
+        - :ref:`Key export<export-key>`
     - :ref:`|mw-gen1| setup<setup-mobile-wallet>`
         - :ref:`Key export<export-import>`
     - :ref:`Import keys to concordium-client<concordium-client-import-accounts-keys>`
