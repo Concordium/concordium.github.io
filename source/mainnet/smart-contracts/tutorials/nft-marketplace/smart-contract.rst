@@ -64,7 +64,7 @@ Run the following command to initialize the contract.
 UpdateOperator and add token
 ============================
 
-Now you are going to sell your NFT. In order to do that, you need to tell your token “I’m going to approve transferring you to a particular address.” You do this with ``updateOperator()`` function in CIS-2, which is standard function. What you need to be careful about is that you need to call your token contract with its schema. Then you should be able to do an ``add()`` operation. Go to the sample artifacts and ``update-operator.json`` to change the marketplace address. You are giving your token’s temporary custody to the marketplace contract. If you want to test the logic behind it, skip this and try to call ``add()`` directly from the contract. It won't work because your token’s state is not updated yet. As you can see below, the ``UpdateOperator()`` function updates the state of the token.
+Now you are going to sell your NFT. In order to do that, you need to give the marketplace permission to transfer the token to a particular address. You do this with ``updateOperator()`` function in CIS-2, which is standard function. What you need to be careful about is that you need to call your token contract with its schema. Then you should be able to do an ``add()`` operation. Go to the sample artifacts and ``update-operator.json`` to change the marketplace address. You are allowing the marketplace contract to act on your behalf. If you want to test the logic behind it, skip this and try to call ``add()`` directly from the contract. It won't work because your token’s state is not updated yet. As you can see below, the ``UpdateOperator()`` function updates the state of the token.
 
 .. code-block:: Rust
 
