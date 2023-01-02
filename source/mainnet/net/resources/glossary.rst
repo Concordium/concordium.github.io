@@ -343,7 +343,7 @@ Instance
 ========
 
 A smart contract module together with a specific state and an amount of CCD tokens. Multiple smart contract instances can be created from the same module. Smart contract instances can be created from a deployed :ref:`smart contract
-module<contract-module>` via the ``init`` transaction which invokes the requested function in the smart contract module. This function can take a parameter.Its end result is required to be the initial smart contract state of the
+module<contract-module>` via the ``init`` transaction which invokes the requested function in the smart contract module. This function can take a parameter. Its end result is the state of the smart contract instance.
 instance.
 
 .. _glossary-invoke:
