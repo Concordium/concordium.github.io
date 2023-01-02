@@ -30,6 +30,8 @@ The :ref:`third part<piggy-bank-preparing>` is about how to setup your testnet n
 
 The :ref:`fourth part<piggy-bank-deploying>` is about how to deploy your piggy bank smart contract to the Concordium testnet and interact with it.
 
+Finally, the :ref:`fifth part<piggy-bank-frontend>` explains how to set up a web-based frontend for interacting with the piggy bank smart contract.
+
 .. warning::
 
    The reader is assumed to have basic knowledge of what a blockchain and smart
@@ -45,3 +47,4 @@ To start the tutorial click :ref:`here<piggy-bank-writing>`.
    testing
    preparing
    deploying
+   frontend

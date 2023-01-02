@@ -29,230 +29,236 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 .. Note::
     On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
-.. tabs::
+.. dropdown:: Desktop Wallet
 
-    .. tab:: Desktop Wallet
+    .. dropdown:: Shield CCD
 
-        .. tabs::
+        #. Go to **Accounts** and select the relevant account.
 
-            .. tab:: Shield CCD
+        #. Select **Shield**.
 
-                #. Go to **Accounts** and select the relevant account.
+            .. image:: ../images/desktop-wallet/dw-shield.png
 
-                #. Select **Shield**.
+        #. Enter the amount of CCD that you want to shield. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. Select **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-shield.png
+            .. image:: ../images/desktop-wallet/dw-shield-ccd.png
 
-                #. Enter the amount of CCD that you want to shield. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account and you’ll have to change the amount. Also, the amount must be greater than zero. Select **Continue**.
+        #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on LEDGER device.
 
-                    .. image:: ../images/desktop-wallet/dw-shield-ccd.png
+        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-                #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+        #. Press both buttons on the LEDGER device to confirm the decryption.
 
-                #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+        #. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
-                #. Press both buttons on the Ledger to confirm the decryption.
+        #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
 
-                #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
+    .. dropdown:: Unshield CCD
 
-                #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
+        The steps to unshield CCD are similar to the ones to shield CCD.
 
-            .. tab:: Unshield CCD
+        #. Select **Shielded Balance** on the relevant account, and then select **Unshield**.
 
-                The steps to unshield CCD are similar to the ones to shield CCD.
+            .. image:: ../images/desktop-wallet/dw-unshield.png
 
-                #. Select **Shielded Balance** on the relevant account, and then select **Unshield**.
+        #. Enter the amount of CCD that you want to unshield, and then select **Continue**.
 
-                    .. image:: ../images/desktop-wallet/dw-unshield.png
+            .. image:: ../images/desktop-wallet/dw-unshield-ccd.png
 
-                #. Enter the amount of CCD that you want to unshield, and then select **Continue**.
+        #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on LEDGER device.
 
-                    .. image:: ../images/desktop-wallet/dw-unshield-ccd.png
+        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-                #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+        #. Press both buttons on the LEDGER device to confirm the decryption.
 
-                #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+        #. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
-                #. Press both buttons on the Ledger to confirm the decryption.
+        #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
 
-                #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
+        When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the **Transfers** list.
 
-                #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
+.. dropdown:: |mw-gen2|
 
-                When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the **Transfers** list.
+    .. dropdown:: Shield CCD
 
-    .. tab:: |mw-gen2|
+        #. Go to the **Accounts** page.
 
-        .. tabs::
+        #. Tap the **Balance** area of the account you want to transfer CCD from or tap |more-acct|.
 
-            .. tab:: Shield CCD
+           - If the **Shield** button and **Shielded balanace** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
-                #. Go to the **Accounts** page.
+        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and,  **Shield** |shield-mw| and **Unshield** |unshield-mw| buttons.
 
-                #. Tap the **Balance** area of the account you want to transfer CCD from or tap |more-acct|.
+            .. image:: ../images/mobile-wallet-gen2/shield.png
+                :width: 50%
 
-                    - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+        #. Tap |shield-mw|. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
 
-                #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+        #. Enter the amount you want to move to the shielded balance.
 
-                #. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
+            .. image:: ../images/mobile-wallet/MW33.png
+               :width: 25%
 
-                #. Enter the amount you want to move to the shielded balance.
+        #. Confirm your choices and tap **Shield amount**.
 
-                    .. image:: ../images/mobile-wallet/MW33.png
-                        :width: 25%
+            .. image:: ../images/mobile-wallet/MW35.png
+               :width: 25%
 
-                #. Confirm your choices and tap **Shield amount**.
+        #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
 
-                    .. image:: ../images/mobile-wallet/MW35.png
-                        :width: 25%
+            .. image:: ../images/mobile-wallet/MW76.png
+               :width: 25%
 
-                #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
+        The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+        Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
 
-                    .. image:: ../images/mobile-wallet/MW76.png
-                        :width: 25%
+        .. Note::
 
-                The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
-                Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap |acct-settings| and tap **Hide shielded balance**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account; it is just not shown in the interface.
 
-                .. Note::
+    .. dropdown:: Unshield CCD
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+        #. Go to the **Accounts** page.
 
-            .. tab:: Unshield CCD
+        #. Tap the account you want to unshield CCD on or tap |more-acct| on the account card.
 
-                #. Go to the **Accounts** page.
+        #. If the Shielded balance is already shown, tap the Shielded balance tab.
 
-                #. Tap the account you want to unshield CCD on or tap |more-acct| on the account card.
+            - If the **Unshield** button and **Shielded balance** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
-                #. If the Shielded balance is already shown, tap the Shielded balance tab.
+        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
-                    - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+        #. Tap |unshield-mw|.
 
-                #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
+        #. Enter the amount you want to move to the regular balance.
 
-                #. Tap **UNSHIELD**.
+            .. image:: ../images/mobile-wallet/MW48.png
+               :width: 25%
 
-                #. Enter the amount you want to move to the regular balance.
+        #. Tap **Unshield amount**.
 
-                    .. image:: ../images/mobile-wallet/MW48.png
-                        :width: 25%
+            .. image:: ../images/mobile-wallet/MW49.png
+                :width: 25%
 
-                #. Tap **Unshield amount**.
+        #. Confirm your choices and tap **Unshield amount**.
 
-                    .. image:: ../images/mobile-wallet/MW49.png
-                        :width: 25%
+            .. image:: ../images/mobile-wallet/MW50.png
+                :width: 25%
 
-                #. Confirm your choices and tap **Unshield amount**.
+        #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
 
-                    .. image:: ../images/mobile-wallet/MW50.png
-                        :width: 25%
+            .. image:: ../images/mobile-wallet/MW51.png
+                :width: 25%
 
-                #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
+        The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+        Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
 
-                    .. image:: ../images/mobile-wallet/MW51.png
-                        :width: 25%
+        .. Note::
 
-                The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
-                Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap |acct-settings| and tap **Hide shielded balance**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account; it is just not shown in the interface.
 
-                .. Note::
+    .. |more-acct| image:: ../images/more-acct.png
+        :alt: Button with double-headed arrow
+        :width: 50px
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+    .. |acct-settings| image:: ../images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px
 
-            .. |more-acct| image:: ../images/more-acct.png
-                             :alt: Button with double-headed arrow
-                             :width: 50px
+    .. |unshield-mw| image:: ../images/unshield-mw.png
+                    :alt: dissolving shield on blue background
+                    :width: 50px
+    .. |shield-mw| image:: ../images/shield-mw.png
+                    :alt: shield on blue background
+                    :width: 50px
 
-    .. tab:: |mw-gen1|
+.. dropdown:: |mw-gen1|
 
-        .. tabs::
+    .. dropdown:: Shield CCD
 
-            .. tab:: Shield CCD
+        #. Go to the **Accounts** page.
 
-                #. Go to the **Accounts** page.
+        #. Tap the **Balance** area of the account you want to shield CCD from or tap |moredetails|.
 
-                #. Tap the **Balance** area of the account you want to shield CCD from or tap |moredetails|.
+            - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
-                    - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
 
-                #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+            .. image:: ../images/mobile-wallet/MW77.png
+               :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW77.png
-                        :width: 25%
+        #. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
 
-                #. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
+        #. Enter the amount you want to move to the shielded balance.
 
-                #. Enter the amount you want to move to the shielded balance.
+            .. image:: ../images/mobile-wallet/MW33.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW33.png
-                        :width: 25%
+        #. Confirm your choices and tap **Shield amount**.
 
-                #. Confirm your choices and tap **Shield amount**.
+            .. image:: ../images/mobile-wallet/MW35.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW35.png
-                        :width: 25%
+        #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
 
-                #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
+            .. image:: ../images/mobile-wallet/MW76.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW76.png
-                        :width: 25%
+        The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+        Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
 
-                The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
-                Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
+        .. Note::
 
-                .. Note::
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+    .. dropdown:: Unshield CCD
 
-            .. tab:: Unshield CCD
+        #. Go to the **Accounts** page.
 
-                #. Go to the **Accounts** page.
+        #. Tap the account you want to unshield CCD on or tap |moredetails| on the account card.
 
-                #. Tap the account you want to unshield CCD on or tap |moredetails| on the account card.
+        #. If the Shielded balance is already shown, tap the Shielded balance tab.
 
-                #. If the Shielded balance is already shown, tap the Shielded balance tab.
+            - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
 
-                    - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
-                #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
+        #. Tap **UNSHIELD**.
 
-                #. Tap **UNSHIELD**.
+            .. image:: ../images/mobile-wallet/MW47.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW47.png
-                        :width: 25%
+        #. Enter the amount you want to move to the regular balance.
 
-                #. Enter the amount you want to move to the regular balance.
+            .. image:: ../images/mobile-wallet/MW48.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW48.png
-                        :width: 25%
+        #. Tap **Unshield amount**.
 
-                #. Tap **Unshield amount**.
+            .. image:: ../images/mobile-wallet/MW49.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW49.png
-                        :width: 25%
+        #. Confirm your choices and tap **Unshield amount**.
 
-                #. Confirm your choices and tap **Unshield amount**.
+            .. image:: ../images/mobile-wallet/MW50.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW50.png
-                        :width: 25%
+        #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
 
-                #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
+            .. image:: ../images/mobile-wallet/MW51.png
+                :width: 25%
 
-                    .. image:: ../images/mobile-wallet/MW51.png
-                        :width: 25%
+        The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+        Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
 
-                The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
-                Once it has been finalized, you can browse to your shielded balance to see the newly shielded amount.
+        .. Note::
 
-                .. Note::
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
-                    You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+    .. |hamburger| image:: ../images/hamburger.png
+            :alt: Three horizontal lines
+            :width: 20px
 
-            .. |hamburger| image:: ../images/hamburger.png
-                         :alt: Three horizontal lines
-                         :width: 20px
-
-            .. |moredetails| image:: ../images/more-arrow.png
-                         :alt: Button with More and double-headed arrow
-                         :width: 50px
+    .. |moredetails| image:: ../images/more-arrow.png
+            :alt: Button with More and double-headed arrow
+            :width: 50px

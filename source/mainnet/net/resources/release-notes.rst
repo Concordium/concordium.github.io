@@ -7,10 +7,106 @@ Release Notes - Testnet
 
 Sirius Testnet
 ==============
+.. Note::
+
+   Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
+   To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
 .. Note::
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+December 21, 2022
+
+|bw| 0.9.5
+----------------------
+
+Minor bugfixes for the |bw|, including adding a missing background color on ID proof cards, fixing an issue where the transaction list did not update automatically, and a minor adjustment to how proof of age is calculated.
+
+December 16, 2022
+
+|bw| 0.9.4
+----------------------
+
+The |bw| introduces ID2.0 functionality whereby a dApp or service can use zero knowledge proofs to request proof from a wallet for certain attributes without revealing anything beyond the truth of the statement. It is also possible for a dApp or Service to request that the wallet user reveal attributes.
+
+December 14, 2022
+
+Cargo concordium 2.5.0
+----------------------
+
+- Add support for sampling random numbers for randomized testing with `cargo concordium test`.
+- Add support for providing a seed to initialize a random generator to `cargo-concordium`. The generator can be used for randomized testing.
+  Command format: `cargo concordium test --seed 1234567890`. The provided seed value is a `u64` number. If the seed is not provided, a random one will be sampled.
+
+Concordium Client 5.0.2
+-----------------------
+
+Receive function parameters are now displayed as JSON in transaction status whenever they could be succesfully parsed by a smart contract schema embedded in the module or supplied by the user using the ``--schema`` option.
+
+Smart contract libraries
+------------------------
+
+Smart contract libraries have also been updated.
+
+December 8, 2022
+
+|mw-gen2| 1.1.0
+-----------------------
+
+The |mw-gen2| introduces functionality to connect to dApps and services using WalletConnect. This functionality is currently in beta mode.
+
+December 6, 2022
+
+|bw| 0.8.5
+--------------------
+
+The |bw| now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+November 21, 2022
+
+Cargo concordium 2.4.0
+----------------------
+
+Cargo concordium 2.4.0 contains support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 22, 2022. This includes the following new features:
+
+- Build and test contracts using new protocol 5 features, such as upgradability and chain queries.
+- Support for relaxed smart contract resource restrictions in ``cargo concordium run``.
+- ``cargo concordium build`` now checks contracts with respect to protocol version 5 semantics.
+
+Concordium Client 5.0.1
+-----------------------
+
+Concordium Client 5.0.1 adds support for the upcoming `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which is planned for release on Testnet November 22, 2022.
+It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All commands that query the node support this.
+
+Additionally, it supports contract schema V3. V3 schemas offer the same options as V2, but also optionally includes a schema for contract events. `transaction status` now displays contract events, and a schema can be provided with `--schema`, which will be used to parse the contract events. By default events are parsed with the schema embedded in the contract, if present. This enables ``concordium-client`` to interact with contracts and schemas using `concordium-std` version 5. There is also improved formatting of `transaction status` output using contract schemas if they are available for displaying contract events, and output function parameters are shown as hex strings in `transaction status`.
+
+November 17, 2022
+
+|mw-gen1| for Android
+---------------------
+
+Identity and account creation has been locked in |mw-gen1| for Android devices. This means that you cannot create new identities or accounts in |mw-gen1| on an Android device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.  You can also still recover your wallet from a backup file in |mw-gen1| on an Android device.
+
+November 15, 2022
+
+Concordium Node 5.0.6
+---------------------
+
+Concordium Node 5.0.6 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 22, 2022. This adds the following features:
+
+   - Support for smart contract upgradability
+   - Query the current exchange rates, account balances, and contract balances from a smart contract.
+   - Relax restrictions on smart contracts, including:
+      - Parameter size limit: 1kiB -> 65535B
+      - Return value size limit: 16kiB -> no limit (apart from energy)
+      - Number of logs per invocation: 64 -> no limit (apart from energy)
+   - A new representation of accounts that is better optimised for common operations.
+   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
+
+Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.
 
 October 19, 2022
 

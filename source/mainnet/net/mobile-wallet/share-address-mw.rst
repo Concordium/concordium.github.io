@@ -7,46 +7,52 @@ Find and share your account address
 
 If you need to share your account address with someone, you can find the address on the account page.
 
-.. tabs::
+.. dropdown:: |mw-gen2|
 
-   .. tab:: |mw-gen2|
+   #. In the account overview tap |receive| or in the transaction overview for an account tap |receive|.
 
-      #. Go to the **Accounts** page.
+   #. You see a QR code and your address. To share your address:
 
-      #. On the account you want to find the address to, tap |receive|.
+      .. image:: ../images/mobile-wallet/MW54.png
+         :width: 25%
 
-      #. Share your address:
+      - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
 
-         .. image:: ../images/mobile-wallet/MW54.png
-            :width: 25%
+      - You can tap **SHARE** and then share the address using one of the share options.
 
-         - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
+      - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
-         - You can tap **SHARE** and then share the address using one of the share options.
+.. dropdown:: |bw|
 
-         - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+   #. Go to the **Accounts** page.
 
-      If you are viewing an account, tap |receive-text| to see the account address.
+   #. On the account you want to find the address to tap |receive|.
 
-   .. tab:: |mw-gen1|
+   #. Share your address:
 
-      #. Go to the **Accounts** page.
+       - You can let someone scan your QR code if they have the |mw-gen1| or |mw-gen2| installed.
 
-      #. On the account you want to find the address to, tap **RECEIVE**.
+       - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
-         .. image:: ../images/mobile-wallet/MW13.png
-            :width: 25%
+.. dropdown:: |mw-gen1|
 
-      #. Share your address:
+   #. Go to the **Accounts** page.
 
-         .. image:: ../images/mobile-wallet/MW54.png
-            :width: 25%
+   #. On the account you want to find the address to, tap **RECEIVE**.
 
-         - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
+      .. image:: ../images/mobile-wallet/MW13.png
+         :width: 25%
 
-         - You can tap **SHARE** and then share the address using one of the share options.
+   #. Share your address:
 
-         - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+      .. image:: ../images/mobile-wallet/MW54.png
+         :width: 25%
+
+      - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
+
+      - You can tap **SHARE** and then share the address using one of the share options.
+
+      - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
 
 .. |receive| image:: ../images/receive.png
              :alt: QR code

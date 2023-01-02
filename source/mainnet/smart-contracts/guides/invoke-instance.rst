@@ -8,9 +8,11 @@ This guide explains how to invoke a smart contract instance, which
 means triggering a receive function and viewing its return value. Invoking an
 instance is *not a transaction* and it *does not change the state of a contract*.
 Invoking can be useful to either view information about the instance or to test
-a receive method before running an update.
+a receive method before running an update. Because invoking is not a transaction, there is no fee to run ``invoke``.
 The view functions are regular receive functions that return information about
 the contract, ideally with schemas on the return values.
+
+There is no limit to the number of logs per invocation (apart from energy).
 
 Preparation
 ===========
@@ -26,7 +28,7 @@ smart-contract instance on-chain to inspect.
 Invocation
 ==========
 
-To invoke an instance with address index ``0`` using the parameterless
+To invoke an instance with address index ``0`` (the subindex defaults to ``0``) using the parameterless
 entrypoint ``my_receive``, run the following command:
 
 .. code-block:: console
@@ -37,13 +39,12 @@ If successful, the output should be similar to the following:
 
 .. code-block:: console
 
-   Successfully updated contract instance {"index":0,"subindex":0} using the entrypoint 'my_receive'.
    Invocation resulted in success:
    - Energy used: 595 NRG
    - Return value:
        <some-return-value>
 
-As you can see, the subindex defaults to ``0``.
+The contract state is updated, but the changes are not persisted to the chain and are discarded.
 
 .. note::
 

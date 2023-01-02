@@ -12,14 +12,19 @@
 .. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_4.2.0-0
-.. |client-version| replace:: 4.2.0-0
-.. |client-linux-checksum| replace:: 805bb509b1b76bd6750e744398146b064876e2251ed724bbcf26b229d6ede627
+.. |client-linux| replace:: concordium-client_5.0.2-0
+.. |client-version| replace:: 5.0.2-0
+.. |client-linux-checksum| replace:: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
+
+.. Cargo verification variables
+.. |cargo-linux| replace:: cargo-concordium_2.5.0
+.. |cargo-version| replace:: 2.5.0
+.. |cargo-linux-checksum| replace:: 96e7d4de085147d57aeff17f92c0cad16fd4039434eea7eb67dfdad28b898434
 
 .. Node debian package verification variables
 
-.. |node-deb-package| replace:: concordium-mainnet-node_4.5.0-0_amd64.deb
-.. |node-deb-package-checksum| replace:: 9ceb5755062e9f519bde15d988e69ad88f6127b2cd15438ac0ea51de62a981ef
+.. |node-deb-package| replace:: concordium-mainnet-node_5.0.6-0_amd64.deb
+.. |node-deb-package-checksum| replace:: f3a66a2ab5193682f3997c38c8b4e688bec85191f6cc5871dca63fb572fe5c18
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat

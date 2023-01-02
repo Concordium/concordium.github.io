@@ -5,47 +5,61 @@
 Update your passcode and biometric settings
 ===========================================
 
-If you want to change your passcode or enable/disable your biometrics, you can do so from the **More** page.
+If you want to change your passcode or enable/disable your biometrics (on a mobile device), you can do so from the **More** page.
 
 .. Note::
    You can't change your passcode, password, or biometrics if you have pending identities or accounts in your wallet.
 
-.. tabs::
+.. dropdown:: |mw-gen2|
 
-   .. tab:: |mw-gen2|
+   #. Tap |wallet-settings|.
 
-      #. Go to the |morepage| page.
+   #. Select **Update Passcode & Biometrics**.
 
-      #. Select **Update Passcode & Biometrics**.
+      .. image:: ../images/mobile-wallet-gen2/more-options.jpg
+         :width: 25%
 
-         .. image:: ../images/mobile-wallet-gen2/more-options.jpg
-            :width: 25%
+   #. Tap **Continue**.
 
-      #. Tap **Continue**.
+   #. Enter your old passcode or biometrics.
 
-      #. Enter your old passcode or biometrics.
+   #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
 
-      #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
+   #. Choose whether or not to enable biometrics.
 
-      #. Choose whether or not to enable biometrics.
+.. dropdown:: |bw|
 
-   .. tab:: |mw-gen1|
+   #. Click |hamburger-bw| and select **Wallet Settings**.
 
-      #. Go to the |morepage| page.
+   #. Click **Change passcode**.
 
-      #. Select **Update Passcode & Biometrics**.
+   #. Enter and confirm your new passcode.
 
-         .. image:: ../images/mobile-wallet/MW58.png
-            :width: 25%
+.. dropdown:: |mw-gen1|
 
-      #. Tap **Continue**.
+   #. Go to the |morepage| page.
 
-      #. Enter your old passcode or biometrics.
+   #. Select **Update Passcode & Biometrics**.
 
-      #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
+      .. image:: ../images/mobile-wallet/MW58.png
+         :width: 25%
 
-      #. Choose whether or not to enable biometrics.
+   #. Tap **Continue**.
+
+   #. Enter your old passcode or biometrics.
+
+   #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
+
+   #. Choose whether or not to enable biometrics.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
              :width: 40px
+
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px
+
+.. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
+                    :width: 20px
+                    :alt: three horizontal lines

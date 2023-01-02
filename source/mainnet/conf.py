@@ -23,7 +23,7 @@ sys.path.append(os.path.abspath('../exts'))
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = '2021 - 2022, Concordium Software ApS'
+copyright = '2021 - 2023, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -189,6 +189,17 @@ html_theme_options = {
             "url": "https://support.concordium.software/latest",
             "icon": "_static/discourse-brands.svg",
             "type": "local",
+        },
+        {
+            # Concordium Email Support
+            "name": "Feedback",
+            # URL where the link will redirect
+            "url": "mailto:documentation@concordium.com",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fas fa-bullhorn",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+
         },
     ]        
     }
