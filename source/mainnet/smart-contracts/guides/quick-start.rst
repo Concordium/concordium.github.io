@@ -24,7 +24,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
     **From a template**
 
-    To generate smart contracts from the templates, the ``cargo-generate`` crate is required. To install ``cargo-generate`` run the following command:
+    To generate smart contracts from the templates, the ``cargo-generate`` library is required. To install ``cargo-generate`` run the following command:
 
     .. code-block:: console
 
@@ -42,9 +42,9 @@ This guide is intended to be used by experienced developers who want to get up a
     ``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in the ``[dependencies]`` section:
 
         [dependencies]
-        concordium-std = "3.0"
+        concordium-std = "5.1"
 
-    The crate documentation is on docs.rs_.
+    The library documentation is on `docs.rs`_.
 
     For information about building contracts from scratch, see :ref:`Setting up a smart contract project<setup-contract>`.
 
@@ -165,5 +165,5 @@ This guide is intended to be used by experienced developers who want to get up a
 .. _Cargo: https://doc.rust-lang.org/cargo/
 .. _rustup: https://rustup.rs/
 .. _repository: https://gitlab.com/Concordium/concordium-std
-.. _docs.rs: https://docs.rs/crate/concordium-std/
+.. _docs.rs: https://docs.rs/concordium-std/latest/concordium_std/
 .. _`concordium-std`: https://docs.rs/crate/concordium-std/
