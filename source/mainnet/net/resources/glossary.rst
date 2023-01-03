@@ -2,7 +2,7 @@
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
 .. include:: ../../variables.rst
-.. _glossary:
+.. glossary::
 
 ============================
 Glossary of Concordium Terms

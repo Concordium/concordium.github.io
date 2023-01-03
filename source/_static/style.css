@@ -109,6 +109,24 @@ a.current.reference.internal:hover{
     color: var(--pst-color-link);      
 }
 
+span.xref.std.std-term{
+    color: var(--pst-color-link);
+    text-decoration: underline dotted
+}
+
+span.xref.std.std-term:hover{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    visibility: visible;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  }
+  
 .navbar{
     position: fixed;
     min-height: var(--pst-header-height);
