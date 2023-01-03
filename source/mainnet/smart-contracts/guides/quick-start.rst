@@ -48,7 +48,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
     For information about building contracts from scratch, see :ref:`Setting up a smart contract project<setup-contract>`.
 
-    If you're using the concordium-std library bring everything from the `concordium-std`_ library into scope by adding the line:
+    If you're using the ``concordium-std`` library bring everything from the `concordium-std`_ library into scope by adding the line:
 
     .. code-block:: rust
 
