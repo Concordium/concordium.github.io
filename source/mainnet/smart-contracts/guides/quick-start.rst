@@ -48,7 +48,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
     For information about building contracts from scratch, see :ref:`Setting up a smart contract project<setup-contract>`.
 
-    If you're using the concordium-std library bring everything from the `concordium-std`_ library into scope by adding the line:
+    If you're using the ``concordium-std`` library bring everything from the `concordium-std`_ library into scope by adding the line:
 
     .. code-block:: rust
 
@@ -107,12 +107,11 @@ This guide is intended to be used by experienced developers who want to get up a
 
    The ``--sender`` option can be omitted if the account "default" is to be used.
 
-   Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
+   Modules built with ``cargo-concordium`` get a suffix corresponding to
    the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
    ``my_module.wasm.v1`` for V1 contracts.
 
-   When deploying a smart contract module built using ``cargo-concordium``
-   version < 2, or built directly with ``cargo``, it is necessary to
+   When deploying a smart contract module built directly with ``cargo``, it is necessary to
    specify the smart contract version with the ``--contract-version [v0, v1]``
    option. These module files will not have the version suffix, e.g.
    ``.v0``, or ``.v1``, but just be called ``<module_name>.wasm``.
@@ -131,7 +130,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
        $concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
 
-    If successful, the output should be similar to the following:
+    If successful, the output will be similar to the following:
 
     .. code-block:: console
 
@@ -149,7 +148,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
        $concordium-client contract update 0 --entrypoint my_receive --energy 10000 --sender MyAccount
 
-    If successful, the output should be similar to the following:
+    If successful, the output will be similar to the following:
 
     .. code-block:: console
 
