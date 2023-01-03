@@ -131,7 +131,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
        $concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
 
-    If successful, the output should be similar to the following:
+    If successful, the output will be similar to the following:
 
     .. code-block:: console
 
