@@ -7,10 +7,10 @@ Release Notes - Testnet
 
 January 12, 2023
 
-Concordium Node 5.1.2
+Concordium Node 5.1.3
 ---------------------
 
-Concordium node version 5.1.2 introduces the following new features and improvements:
+Concordium node version 5.1.3 introduces the following new features and improvements:
 
 - Improvements were made to allow greater concurrency with transaction processing. (Checking transaction signatures is done without acquiring the global state lock.)
 
