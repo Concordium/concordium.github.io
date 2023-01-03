@@ -561,12 +561,9 @@ Standards:
     It combines the Ethereum ERC20 and ERC721 standards with some modifications.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
-    Please explore the four `CIS-2` token standard implementations that import the `CIS-2` library:
+    Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the ERC721 standard?
 
@@ -575,12 +572,9 @@ Standards:
     It combines the Ethereum ERC721 and ERC20 standards with some modifications.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
-    Please explore the four `CIS-2` token standard implementations that import the `CIS-2` library:
+    Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the ERC165 standard?
 
@@ -588,12 +582,9 @@ Standards:
     Please explore the `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
     that provides the basic `CIS-0` primitives.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens so they can implement the `CIS-0` standard easily.
-    Please explore the four token examples that have the `CIS-0` standard implemented:
+    Please explore the token examples that have the `CIS-0` standard implemented:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to a wrapped token contract?
 
