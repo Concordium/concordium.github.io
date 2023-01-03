@@ -107,12 +107,11 @@ This guide is intended to be used by experienced developers who want to get up a
 
    The ``--sender`` option can be omitted if the account "default" is to be used.
 
-   Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
+   Modules built with ``cargo-concordium`` get a suffix corresponding to
    the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
    ``my_module.wasm.v1`` for V1 contracts.
 
-   When deploying a smart contract module built using ``cargo-concordium``
-   version < 2, or built directly with ``cargo``, it is necessary to
+   When deploying a smart contract module built directly with ``cargo``, it is necessary to
    specify the smart contract version with the ``--contract-version [v0, v1]``
    option. These module files will not have the version suffix, e.g.
    ``.v0``, or ``.v1``, but just be called ``<module_name>.wasm``.
