@@ -43,9 +43,7 @@ An authority who has power to know the identity of a participant. The anonymity 
 Attributes
 ==========
 
-User data, such as date of birth or country of residence, that is associated
-with a user :ref:`identity<glossary-identity>`. Users can choose which attributes should be revealed in
-each of their accounts.
+User data, such as date of birth or country of residence, that is associated with a user :ref:`identity<glossary-identity>`. Users can choose which attributes should be revealed in each of their accounts.
 
 .. _glossary-baker:
 
