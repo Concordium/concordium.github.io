@@ -149,7 +149,7 @@ This guide is intended to be used by experienced developers who want to get up a
 
        $concordium-client contract update 0 --entrypoint my_receive --energy 10000 --sender MyAccount
 
-    If successful, the output should be similar to the following:
+    If successful, the output will be similar to the following:
 
     .. code-block:: console
 
