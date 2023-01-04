@@ -564,12 +564,9 @@ Standards
     The `CIS-2` standard can represent fungible and non-fungible tokens.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
-    Please explore the four `CIS-2` token standard implementations that import the `CIS-2` library:
+    Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the Solana's wrapped token wSOL?
 
@@ -588,8 +585,8 @@ Standards
 
     Yes, you can choose to make your smart contracts upgradable. See :ref:`contract-instance-upgradeability` for more details.
 
-Deploying and Initializing of smart contracts
-=============================================
+Deploying and initializing smart contracts
+==========================================
 
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 
