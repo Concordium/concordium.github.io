@@ -64,11 +64,11 @@ Concordium smart contracts
 
 .. dropdown:: Is there something similar to Solana's `Anchor` framework for Concordium?
 
-    Yes. The Concordium standard library crate `concodsium-std <https://crates.io/crates/concordium-std>`_ provides a high-level interface for writing smart contracts in Rust.
+    Yes. The Concordium standard library crate `concordium-std <https://crates.io/crates/concordium-std>`_ provides a high-level interface for writing smart contracts in Rust.
     It includes convenient ways of working with the contract state, provides macros for exposing Rust functions as entrypoints, handles serialization, provides testing infrastructure, etc.
     Together with :ref:`cargo-concordium<setup-tools>` it can be used to develop, test and build smart contracts.
 
-    You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concodsium-std <https://crates.io/crates/concordium-std>`_.
+    You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concordium-std <https://crates.io/crates/concordium-std>`_.
 
 .. dropdown:: How can I update account data?
 

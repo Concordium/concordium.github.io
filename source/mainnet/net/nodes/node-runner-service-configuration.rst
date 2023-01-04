@@ -133,7 +133,7 @@ rpc.address
 
 .. code-block:: TOML
 
-   rpc.address = 127.0.0.1
+   rpc.address = "127.0.0.1"
 
 The IP address of the network interface on which to accept incoming GRPC requests. This can be either an IPV4 address or and IPV6 address. If not specified, this uses the default determined by ``concordium-node.exe`` (which is "**127.0.0.1**"). Typically, "127.0.0.1" is a good choice as it will only accept connections from the local machine. It is not recommended to accept connections on a public address, since this can be used to control the node.
 
@@ -160,7 +160,7 @@ grpc2.address
 
 .. code-block:: TOML
 
-   rpc.address = 127.0.0.1
+   rpc.address = "127.0.0.1"
 
 The IP address of the network interface on which to accept incoming GRPC V2
 requests. This can be either an IPV4 address or and IPV6 address. It is not
