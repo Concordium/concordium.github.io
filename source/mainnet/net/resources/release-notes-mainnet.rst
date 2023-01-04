@@ -16,7 +16,7 @@ January 4, 2023
 Concordium Node 5.0.7 for MacOS
 -------------------------------
 
-A bug was fixed in the MacOS node that caused an issue with calculation of NRG.
+Fix a bug in the MacOS node that caused an issue with NRG calculation.
 
 Mainnet 4: Sirius
 =================
