@@ -56,6 +56,7 @@ Community resources
 
     sdks-apis
     create-proofs
+    gallery/index
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2
