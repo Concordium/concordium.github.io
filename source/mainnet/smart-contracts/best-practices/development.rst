@@ -52,16 +52,16 @@ Recommended structure
 
 - Use ``cargo init`` with an appropriate template to start a new project.
 - Build contract logic as the state struct implementation.
-  
+
   .. code-block:: rust
 
     struct State {
-	...
+    ...
     }
- 
+
     impl State {
         fn new() -> Self { ... }
- 
+
         fn do_something(&mut self, param: MyParameter) { ... }
 
         ...
