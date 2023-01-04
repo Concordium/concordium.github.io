@@ -585,8 +585,8 @@ Standards
 
     Yes, you can choose to make your smart contracts upgradable. See :ref:`contract-instance-upgradeability` for more details.
 
-Deploying and Initializing of smart contracts
-=============================================
+Deploying and initializing smart contracts
+==========================================
 
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 

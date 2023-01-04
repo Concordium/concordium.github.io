@@ -12,8 +12,8 @@ background to understand the Concordium blockchain and its smart contract ecosys
 
 Feel free to participate and add your questions to the `Concordium software support channels <https://support.concordium.software/>`_.
 
-Concordium smart contracts:
-===========================
+Concordium smart contracts
+==========================
 
 .. dropdown::  What smart contract language is used on Concordium?
 
@@ -416,8 +416,8 @@ Concordium smart contracts:
 
         $cargo test
 
-Events:
-=======
+Events
+======
 
 .. dropdown::  Where can I find a logged event on testnet/mainnet?
 
@@ -551,8 +551,8 @@ Events:
             &[(addr0, Amount::from_micro_ccd(0)), (addr1, Amount::from_micro_ccd(0))][..]
         );
 
-Standards:
-==========
+Standards
+=========
 
 .. dropdown::  Is there something similar to the ERC20 standard?
 
@@ -608,8 +608,8 @@ Standards:
     No. A contract on Concordium can only change its own state. If you are looking for an upgradable pattern, please explore
     the  `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
-Deploying and Initializing of smart contracts:
-==============================================
+Deploying and initializing smart contracts
+==========================================
 
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 
@@ -659,8 +659,8 @@ Deploying and Initializing of smart contracts:
     is to deploy a new smart contract instance from a module and set the state of the current smart contract.
     You have to use a regular ``receive`` function when you want to invoke another smart contract.
 
-Concordium tools:
-=================
+Concordium tools
+================
 
 .. dropdown::  Does Concordium have a block explorer?
 
@@ -675,8 +675,8 @@ Concordium tools:
     CCDScan currently does not support compiling, hosting, or verifying your smart contract code.
     You are welcome to publish your smart contract code in public source code management tools such as `GitHub <https://github.com/>`_.
 
-Miscellaneous:
-==============
+Miscellaneous
+=============
 
 .. dropdown:: What is the native currency on Concordium?
 
