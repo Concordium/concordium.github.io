@@ -23,3 +23,4 @@ In the ``Minting`` tutorials you will mint various types of tokens.
    wCCD <./wCCD/index>
    nft-minting/index
    sft-minting/index
+   nft-marketplace/index
