@@ -64,11 +64,11 @@ Concordium smart contracts
 
 .. dropdown:: Is there something similar to Solana's `Anchor` framework for Concordium?
 
-    Yes. The Concordium standard library crate `concodsium-std <https://crates.io/crates/concordium-std>`_ provides a high-level interface for writing smart contracts in Rust.
+    Yes. The Concordium standard library crate `concordium-std <https://crates.io/crates/concordium-std>`_ provides a high-level interface for writing smart contracts in Rust.
     It includes convenient ways of working with the contract state, provides macros for exposing Rust functions as entrypoints, handles serialization, provides testing infrastructure, etc.
     Together with :ref:`cargo-concordium<setup-tools>` it can be used to develop, test and build smart contracts.
 
-    You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concodsium-std <https://crates.io/crates/concordium-std>`_.
+    You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concordium-std <https://crates.io/crates/concordium-std>`_.
 
 .. dropdown:: How can I update account data?
 
@@ -564,12 +564,9 @@ Standards
     The `CIS-2` standard can represent fungible and non-fungible tokens.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
-    Please explore the four `CIS-2` token standard implementations that import the `CIS-2` library:
+    Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the Solana's wrapped token wSOL?
 
@@ -588,8 +585,8 @@ Standards
 
     Yes, you can choose to make your smart contracts upgradable. See :ref:`contract-instance-upgradeability` for more details.
 
-Deploying and Initializing of smart contracts
-=============================================
+Deploying and initializing smart contracts
+==========================================
 
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 

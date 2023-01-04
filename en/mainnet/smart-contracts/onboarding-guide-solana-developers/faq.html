@@ -1642,8 +1642,8 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deploying-and-initializing-of-smart-contracts">
-   Deploying and Initializing of smart contracts
+  <a class="reference internal nav-link" href="#deploying-and-initializing-smart-contracts">
+   Deploying and initializing smart contracts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1775,10 +1775,10 @@ Is there something similar to Solana’s <cite>Anchor</cite> framework for Conco
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Yes. The Concordium standard library crate <a class="reference external" href="https://crates.io/crates/concordium-std">concodsium-std</a> provides a high-level interface for writing smart contracts in Rust.
+<p class="sd-card-text">Yes. The Concordium standard library crate <a class="reference external" href="https://crates.io/crates/concordium-std">concordium-std</a> provides a high-level interface for writing smart contracts in Rust.
 It includes convenient ways of working with the contract state, provides macros for exposing Rust functions as entrypoints, handles serialization, provides testing infrastructure, etc.
 Together with <a class="reference internal" href="../guides/setup-tools.html#setup-tools"><span class="std std-ref">cargo-concordium</span></a> it can be used to develop, test and build smart contracts.</p>
-<p class="sd-card-text">You can follow the chapter <a class="reference internal" href="../tutorials/piggy-bank/writing.html#piggy-bank-writing"><span class="std std-ref">writing a smart contract</span></a> in the piggy bank tutorial to get started with using <a class="reference external" href="https://crates.io/crates/concordium-std">concodsium-std</a>.</p>
+<p class="sd-card-text">You can follow the chapter <a class="reference internal" href="../tutorials/piggy-bank/writing.html#piggy-bank-writing"><span class="std std-ref">writing a smart contract</span></a> in the piggy bank tutorial to get started with using <a class="reference external" href="https://crates.io/crates/concordium-std">concordium-std</a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2260,12 +2260,14 @@ Is there something similar to the SPL Token Program?<div class="sd-summary-down 
 The <cite>CIS-2</cite> standard can represent fungible and non-fungible tokens.
 Please explore the corresponding <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">CIS-2 library</a>.
 The <cite>CIS-2</cite> library is meant to be imported by <cite>CIS-2</cite> tokens.
-Please explore the four <cite>CIS-2</cite> token standard implementations that import the <cite>CIS-2</cite> library:</p>
+Please explore the <cite>CIS-2</cite> token standard implementations that import the <cite>CIS-2</cite> library:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-minting/index.html#nft-index"><span class="std std-ref">Mint an NFT</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/sft-minting/index.html#sft-index"><span class="std std-ref">Mint a semi-fungible token</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-marketplace/index.html#nft-marketplace-index"><span class="std std-ref">NFT marketplace tutorial</span></a></p></li>
 </ul>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2297,8 +2299,8 @@ Does Concordium have upgradable smart contracts?<div class="sd-summary-down docu
 <p class="sd-card-text">Yes, you can choose to make your smart contracts upgradable. See <a class="reference internal" href="../general/contract-instances.html#contract-instance-upgradeability"><span class="std std-ref">Upgradeability</span></a> for more details.</p>
 </div>
 </details></div>
-<div class="section" id="deploying-and-initializing-of-smart-contracts">
-<h2>Deploying and Initializing of smart contracts<a class="headerlink" href="#deploying-and-initializing-of-smart-contracts" title="Permalink to this headline">#</a></h2>
+<div class="section" id="deploying-and-initializing-smart-contracts">
+<h2>Deploying and initializing smart contracts<a class="headerlink" href="#deploying-and-initializing-smart-contracts" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 How can I deploy a smart contract to the Concordium chain?<div class="sd-summary-down docutils">

@@ -1628,32 +1628,32 @@ body {margin:0;}
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concordium-smart-contracts">
-   Concordium smart contracts:
+   Concordium smart contracts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#events">
-   Events:
+   Events
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#standards">
-   Standards:
+   Standards
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deploying-and-initializing-of-smart-contracts">
-   Deploying and Initializing of smart contracts:
+  <a class="reference internal nav-link" href="#deploying-and-initializing-smart-contracts">
+   Deploying and initializing smart contracts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concordium-tools">
-   Concordium tools:
+   Concordium tools
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous">
-   Miscellaneous:
+   Miscellaneous
   </a>
  </li>
 </ul>
@@ -1680,7 +1680,7 @@ focuses on helping developers with an Ethereum/solidity
 background to understand the Concordium blockchain and its smart contract ecosystem.</p>
 <p>Feel free to participate and add your questions to the <a class="reference external" href="https://support.concordium.software/">Concordium software support channels</a>.</p>
 <div class="section" id="concordium-smart-contracts">
-<h2>Concordium smart contracts:<a class="headerlink" href="#concordium-smart-contracts" title="Permalink to this headline">#</a></h2>
+<h2>Concordium smart contracts<a class="headerlink" href="#concordium-smart-contracts" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 What smart contract language is used on Concordium?<div class="sd-summary-down docutils">
@@ -2112,7 +2112,7 @@ If you want to use the binary format, the below command shows that a <cite>myInp
 </div>
 </details></div>
 <div class="section" id="events">
-<h2>Events:<a class="headerlink" href="#events" title="Permalink to this headline">#</a></h2>
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Where can I find a logged event on testnet/mainnet?<div class="sd-summary-down docutils">
@@ -2230,7 +2230,7 @@ transferred as shown in the below <a class="reference external" href="https://gi
 </div>
 </details></div>
 <div class="section" id="standards">
-<h2>Standards:<a class="headerlink" href="#standards" title="Permalink to this headline">#</a></h2>
+<h2>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Is there something similar to the ERC20 standard?<div class="sd-summary-down docutils">
@@ -2243,12 +2243,14 @@ The <cite>CIS-2</cite> standard can represent fungible and non-fungible tokens.
 It combines the Ethereum ERC20 and ERC721 standards with some modifications.
 Please explore the corresponding <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">CIS-2 library</a>.
 The <cite>CIS-2</cite> library is meant to be imported by <cite>CIS-2</cite> tokens.
-Please explore the four <cite>CIS-2</cite> token standard implementations that import the <cite>CIS-2</cite> library:</p>
+Please explore the <cite>CIS-2</cite> token standard implementations that import the <cite>CIS-2</cite> library:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-minting/index.html#nft-index"><span class="std std-ref">Mint an NFT</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/sft-minting/index.html#sft-index"><span class="std std-ref">Mint a semi-fungible token</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-marketplace/index.html#nft-marketplace-index"><span class="std std-ref">NFT marketplace tutorial</span></a></p></li>
 </ul>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2263,12 +2265,14 @@ The <cite>CIS-2</cite> standard can represent fungible and non-fungible tokens.
 It combines the Ethereum ERC721 and ERC20 standards with some modifications.
 Please explore the corresponding <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">CIS-2 library</a>.
 The <cite>CIS-2</cite> library is meant to be imported by <cite>CIS-2</cite> tokens.
-Please explore the four <cite>CIS-2</cite> token standard implementations that import the <cite>CIS-2</cite> library:</p>
+Please explore the <cite>CIS-2</cite> token standard implementations that import the <cite>CIS-2</cite> library:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wccd</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-minting/index.html#nft-index"><span class="std std-ref">Mint an NFT</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/sft-minting/index.html#sft-index"><span class="std std-ref">Mint a semi-fungible token</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-marketplace/index.html#nft-marketplace-index"><span class="std std-ref">NFT marketplace tutorial</span></a></p></li>
 </ul>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2282,12 +2286,14 @@ Is there something similar to the ERC165 standard?<div class="sd-summary-down do
 Please explore the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">CIS-2 library</a>
 that provides the basic <cite>CIS-0</cite> primitives.
 The <cite>CIS-2</cite> library is meant to be imported by <cite>CIS-2</cite> tokens so they can implement the <cite>CIS-0</cite> standard easily.
-Please explore the four token examples that have the <cite>CIS-0</cite> standard implemented:</p>
+Please explore the token examples that have the <cite>CIS-0</cite> standard implemented:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi contract</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-minting/index.html#nft-index"><span class="std std-ref">Mint an NFT</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/sft-minting/index.html#sft-index"><span class="std std-ref">Mint a semi-fungible token</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../tutorials/nft-marketplace/index.html#nft-marketplace-index"><span class="std std-ref">NFT marketplace tutorial</span></a></p></li>
 </ul>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2297,26 +2303,26 @@ Is there something similar to a wrapped token contract?<div class="sd-summary-do
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Yes, please explore the following two wCCD examples:</p>
+<p class="sd-card-text">Yes, please explore:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">wccd</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wccd</a></p></li>
+<li><p class="sd-card-text">the <a class="reference internal" href="../tutorials/wCCD/index.html#wccd"><span class="std std-ref">wCCD tutorial</span></a></p></li>
+<li><p class="sd-card-text">the wCCD example <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">source code</a>.</p></li>
 </ul>
-<p class="sd-card-text">Concordium will provide and maintain the canonical wCCD implementation on testnet and mainnet soon.
+<p class="sd-card-text">Concordium provides and maintains the canonical wCCD implementation on testnet; mainnet implementation is coming soon.
 Developers are encouraged to use the following addresses for their dApps.</p>
 <ul class="simple">
-<li><p class="sd-card-text">Testnet canonical wCCD address: coming soon</p></li>
+<li><p class="sd-card-text">Testnet canonical wCCD address: &lt;2059,0&gt;</p></li>
 <li><p class="sd-card-text">Mainnet canonical wCCD address: coming soon</p></li>
 </ul>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Does Concordium have an upgradable smart contract pattern?<div class="sd-summary-down docutils">
+Does Concordium have upgradable smart contracts?<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Yes, please explore the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wCCD implementation</a>.</p>
+<p class="sd-card-text">Yes, you can choose to make your smart contracts upgradable. See <a class="reference internal" href="../general/contract-instances.html#contract-instance-upgradeability"><span class="std std-ref">Upgradeability</span></a> for more details.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2329,8 +2335,8 @@ Does Concordium have something similar to <cite>delegateCall</cite>?<div class="
 the  <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">upgradable wCCD implementation</a>.</p>
 </div>
 </details></div>
-<div class="section" id="deploying-and-initializing-of-smart-contracts">
-<h2>Deploying and Initializing of smart contracts:<a class="headerlink" href="#deploying-and-initializing-of-smart-contracts" title="Permalink to this headline">#</a></h2>
+<div class="section" id="deploying-and-initializing-smart-contracts">
+<h2>Deploying and initializing smart contracts<a class="headerlink" href="#deploying-and-initializing-smart-contracts" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 How can I deploy a smart contract to the Concordium chain?<div class="sd-summary-down docutils">
@@ -2414,7 +2420,7 @@ You have to use a regular <code class="docutils literal notranslate"><span class
 </div>
 </details></div>
 <div class="section" id="concordium-tools">
-<h2>Concordium tools:<a class="headerlink" href="#concordium-tools" title="Permalink to this headline">#</a></h2>
+<h2>Concordium tools<a class="headerlink" href="#concordium-tools" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Does Concordium have a block explorer?<div class="sd-summary-down docutils">
@@ -2440,7 +2446,7 @@ You are welcome to publish your smart contract code in public source code manage
 </div>
 </details></div>
 <div class="section" id="miscellaneous">
-<h2>Miscellaneous:<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">#</a></h2>
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 What is the native currency on Concordium?<div class="sd-summary-down docutils">
