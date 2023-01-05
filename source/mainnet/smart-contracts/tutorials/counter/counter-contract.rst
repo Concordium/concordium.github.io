@@ -6,7 +6,6 @@ Counter smart contract
 
 Now you are ready to create your smart contract project. First, create a working directory, and run the command below in that directory. It will set up the initial project for you, including necessary rust dependencies.
 
-
 .. Note::
 
     The template repository contains `short GIFs <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ that show many of these commands.
@@ -17,11 +16,13 @@ Now you are ready to create your smart contract project. First, create a working
 
 Select the ``Default`` option from the menu.
 
-(screenshot)
+.. image:: images/select-default.png
+    :width: 100%
 
 Then it will ask for a name and a description of your project then you will have an empty smart contract template to fill in. Initially, it has a State struct, Init function for invoking and creating an empty state when anyone creates an instance, an Error enum for custom errors, a view function, a receive function and some tests.
 
-(screenshot)
+.. image:: images/contract.png
+    :width: 100%
 
 Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the Error enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
 
@@ -157,7 +158,8 @@ Create a dist folder to keep the schema output file and Wasm compiled contract i
 
     cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin
 
-(screenshot)
+.. image:: images/build.png
+    :width: 100%
 
 Deploy it with the command below.
 
@@ -165,7 +167,8 @@ Deploy it with the command below.
 
     concordium-client module deploy dist/module.wasm.v1 --sender <YOUR-ACCOUNT> --name counter --grpc-port 10001
 
-(screenshot)
+.. image:: images/deploy.png
+    :width: 100%
 
 Initialize it to create your contract instance, so you are ready to invoke the functions in the next section.
 
@@ -173,7 +176,8 @@ Initialize it to create your contract instance, so you are ready to invoke the f
 
     concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 10001
 
-(screenshot)
+.. image:: images/initialize.png
+    :width: 100%
 
 Interact with the contract
 ==========================
@@ -189,32 +193,37 @@ First, check the initial state of the contract.
 
 Since you just initialized the contract it is 0.
 
-(screenshot)
+.. image:: images/invoke.png
+    :width: 100%
 
 Increment function
 ------------------
 
-Create a JSON file that holds your operator that will be given as input to the function and run the command below. Basically, we are saying to the contract instance “with this transaction we will update your state from the increment entrypoint” which is our function name with this parameter.
+Create a JSON file that holds your operator that will be given as input to the function and run the command below. Basically, you are saying to the contract instance “with this transaction I will update your state from the increment entrypoint” which is your function name with this parameter.
 
 .. code-block:: console
 
     concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint increment --parameter-json <PATH-TO-JSON> --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
 
-Let’s start testing with our conditions, first let’s try another account other than the owner of it we want that only the owner can call this function, right?
+Start by testing with your conditions. First, try another account other than the owner of the contract since you want that only the owner can call this function.
 
-(screenshot)
+.. image:: images/owner-error.png
+    :width: 100%
 
-Hmm, error code: -2 what is that? Check the developer portal of Concordium about custom errors from this link. Basically, -2 means you are calling the second error code from your Error enum, which is OwnerError! Brilliant, that means we have fulfilled the first requirement! Let’s update the state with number 2 now.
+You get error code: -2. Check the developer portal of Concordium for information about :ref:`custom errors<custom-errors>`. Basically, -2 means you are calling the second error code from your Error enum, which is OwnerError. So that means you have fulfilled the requirement that only the owner can call these functions. Update the state with number 2 now.
 
-(screenshot)
+.. image:: images/owner-error-ok.png
+    :width: 100%
 
-Cool, check the state once more.
+Now check the state once more.
 
-(screenshot)
+.. image:: images/invoke2.png
+    :width: 100%
 
-Nice, unsurprisingly it is 2! Let’s check the other requirement if we are able to increment it via a negative number. Change the value in the json file to a negative number like -2.
+Unsurprisingly, the state is 2. Now check the other requirement: that you cannot increment it with a negative number. Change the value in the json file to a negative number like -2.
 
-(screenshot)
+.. image:: images/increment-neg-error.png
+    :width: 100%
 
 You cannot do it because of error code -3 which is the third element in the enum: ``IncrementError``. That means the increment method operates as expected in your contract.
 
