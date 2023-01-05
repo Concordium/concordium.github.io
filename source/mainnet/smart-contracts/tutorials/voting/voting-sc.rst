@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _Rust: https://www.rust-lang.org/
 .. _concordium-std: https://docs.rs/concordium-std/latest/concordium_std/index.html
 .. |concordium-std| replace:: ``concordium-std``
@@ -10,12 +10,11 @@ The voting smart contract
 
 This is the first :ref:`part of a tutorial<voting-dapp>` on smart contract development. In this part you will focus on how to write a smart contract in the Rust_ programming language using the |concordium-std| library.
 
-The `voting smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/voting>` allows for conducting an election with several voting options. An `end_time` is set when the election is initialized. Only accounts are eligible to vote. Each account can change its selected voting option as often as it desires until the `end_time` is reached. No voting is possible after the `end_time`.
+The `voting smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/voting>`_ allows for conducting an election with several voting options. An `end_time` is set when the election is initialized. Only accounts are eligible to vote. Each account can change its selected voting option as often as it desires until the `end_time` is reached. No voting is possible after the `end_time`.
 
 .. warning::
 
-   The reader is assumed to have basic knowledge of what a blockchain and smart    contract is, and some experience with Rust_.
-
+   This contract is not meant for production; it is an example to illustrate how to use the standard library and the tooling Concordium provides. There is no claim that the logic of the contract is reasonable or safe. Do not use these contracts as-is for anything other then experimenting.
 
 Preparation
 ===========
@@ -107,4 +106,4 @@ The tests from the ``concordium-std`` are included.
 Initializing
 ------------
 
-The smart contract will be initialized when you start the election. The election is open from the point in time that this smart contract is initialized until the `end_time`.
+The smart contract will be initialized when the election starts. The election is open from the point in time that this smart contract is initialized until the `end_time`.

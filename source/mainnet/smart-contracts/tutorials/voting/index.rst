@@ -1,4 +1,5 @@
 .. include:: ../../../variables.rst
+.. _Rust: https://www.rust-lang.org/
 .. _voting-dapp:
 
 
@@ -23,16 +24,13 @@ If you want to try this example before starting the tutorial:
 
 #. Click **Results** to see the election results.
 
-To write your own contract and create your own front-end you can follow the tutorial.
-
 In the :ref:`first part<voting-sc>`, you will learn about the voting smart contract.
 
 In the :ref:`second part<voting-frontend>`, you will download the |bw| and set up a basic web front-end locally.
 
 .. warning::
 
-   The reader is assumed to have basic knowledge of what a blockchain and smart
-   contracts are, and some experience with web front-end development.
+   This tutorial assumes the reader has basic knowledge of what a blockchain and smart contract is, and some experience with Rust_ and web front-end development.
 
 To start the tutorial click :ref:`here<wCCD-introduction>`.
 

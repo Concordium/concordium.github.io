@@ -51,7 +51,7 @@ to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
-.. warning ::
+.. warning::
 
     The |bw| is in active development.
 
@@ -253,10 +253,7 @@ Clone this `repository <https://github.com/Concordium/concordium-browser-wallet/
 
     $git clone https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/voting
 
-Build and run the front-end as described in the README file of the
-`voting dApp example <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/voting>`_.
-
-The steps in the README file are as follows:
+Build and run the front-end as described below:
 
 - Run ``yarn`` in the root folder to install all dependencies.
 
