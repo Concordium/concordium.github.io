@@ -1,3 +1,5 @@
+.. include:: ../../variables.rst
+
 .. _faq:
 
 ====
@@ -10,8 +12,8 @@ background to understand the Concordium blockchain and its smart contract ecosys
 
 Feel free to participate and add your questions to the `Concordium software support channels <https://support.concordium.software/>`_.
 
-Concordium smart contracts:
-===========================
+Concordium smart contracts
+==========================
 
 .. dropdown::  What smart contract language is used on Concordium?
 
@@ -414,8 +416,8 @@ Concordium smart contracts:
 
         $cargo test
 
-Events:
-=======
+Events
+======
 
 .. dropdown::  Where can I find a logged event on testnet/mainnet?
 
@@ -549,8 +551,8 @@ Events:
             &[(addr0, Amount::from_micro_ccd(0)), (addr1, Amount::from_micro_ccd(0))][..]
         );
 
-Standards:
-==========
+Standards
+=========
 
 .. dropdown::  Is there something similar to the ERC20 standard?
 
@@ -559,12 +561,9 @@ Standards:
     It combines the Ethereum ERC20 and ERC721 standards with some modifications.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
-    Please explore the four `CIS-2` token standard implementations that import the `CIS-2` library:
+    Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the ERC721 standard?
 
@@ -573,12 +572,9 @@ Standards:
     It combines the Ethereum ERC721 and ERC20 standards with some modifications.
     Please explore the corresponding `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
-    Please explore the four `CIS-2` token standard implementations that import the `CIS-2` library:
+    Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the ERC165 standard?
 
@@ -586,37 +582,34 @@ Standards:
     Please explore the `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
     that provides the basic `CIS-0` primitives.
     The `CIS-2` library is meant to be imported by `CIS-2` tokens so they can implement the `CIS-0` standard easily.
-    Please explore the four token examples that have the `CIS-0` standard implemented:
+    Please explore the token examples that have the `CIS-0` standard implemented:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
-    - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
-    - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to a wrapped token contract?
 
-    Yes, please explore the following two wCCD examples:
+    Yes, please explore:
 
-    - `wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
+    - the :ref:`wCCD tutorial<wCCD>`
+    - the wCCD example `source code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_.
 
-    Concordium will provide and maintain the canonical wCCD implementation on testnet and mainnet soon.
+    Concordium provides and maintains the canonical wCCD implementation on testnet; mainnet implementation is coming soon.
     Developers are encouraged to use the following addresses for their dApps.
 
-    - Testnet canonical wCCD address: coming soon
+    - Testnet canonical wCCD address: |wccd-address-testnet|
     - Mainnet canonical wCCD address: coming soon
 
-.. dropdown:: Does Concordium have an upgradable smart contract pattern?
+.. dropdown:: Does Concordium have upgradable smart contracts?
 
-    Yes, please explore the `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
+    Yes, you can choose to make your smart contracts upgradable. See :ref:`contract-instance-upgradeability` for more details.
 
 .. dropdown:: Does Concordium have something similar to `delegateCall`?
 
     No. A contract on Concordium can only change its own state. If you are looking for an upgradable pattern, please explore
     the  `upgradable wCCD implementation <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_.
 
-Deploying and Initializing of smart contracts:
-==============================================
+Deploying and initializing smart contracts
+==========================================
 
 .. dropdown::  How can I deploy a smart contract to the Concordium chain?
 
@@ -666,8 +659,8 @@ Deploying and Initializing of smart contracts:
     is to deploy a new smart contract instance from a module and set the state of the current smart contract.
     You have to use a regular ``receive`` function when you want to invoke another smart contract.
 
-Concordium tools:
-=================
+Concordium tools
+================
 
 .. dropdown::  Does Concordium have a block explorer?
 
@@ -682,8 +675,8 @@ Concordium tools:
     CCDScan currently does not support compiling, hosting, or verifying your smart contract code.
     You are welcome to publish your smart contract code in public source code management tools such as `GitHub <https://github.com/>`_.
 
-Miscellaneous:
-==============
+Miscellaneous
+=============
 
 .. dropdown:: What is the native currency on Concordium?
 

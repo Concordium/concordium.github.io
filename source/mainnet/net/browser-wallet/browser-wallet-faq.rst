@@ -66,9 +66,9 @@
 
     Reusing a secret recovery phrase in multiple wallets is not recommended, as it increases the risk of having all your wallets compromised. Concordium recommends that you generate a new recovery phrase when setting up a new wallet on Concordium. For advanced users who understand the risks involved it is possible to reuse a 24 word recovery phase from another wallet with Concordium through the wallet recovery process. The wallet will not recover anything if you reuse your secret recovery phrase from another wallet, but it will set your wallet up with the secret recovery phrase, and from there you can request a new identity and accounts.
 
-.. dropdown:: I have a Concordium Desktop Wallet set up with a Ledger and a 24 word secret recovery phrase. Can I use that recovery phrase in my |bw|?
+.. dropdown:: I have a Concordium Desktop Wallet set up with a LEDGER device and a 24 word secret recovery phrase. Can I use that recovery phrase in my |bw|?
 
-    Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the |bw|. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the |bw|, as that defeats the purpose of having the secret recovery phrase in a cold wallet, like the Ledger devices.
+    Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the |bw|. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the |bw|, as that defeats the purpose of having the secret recovery phrase in a cold wallet, like the LEDGER devices.
 
 .. dropdown:: Can I migrate from the another wallet to the |bw|?
 
@@ -79,3 +79,7 @@
 .. dropdown:: Can I access the same accounts on different devices?
 
     If you are using |bw| and the |mw-gen2|, you can because the |mw-gen2| also uses the secret recovery phrase. You would simply enter your recovery phrase into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.
+
+.. dropdown:: What do I do if I forget my passcode on the |bw|?
+
+    If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your secret recovery phrase to recover the wallet.

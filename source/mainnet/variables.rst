@@ -29,3 +29,6 @@
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
 .. |mainnet-genesis-block-checksum| replace:: 5fe6a62824d5b0dba6143243e90987ddf3e15cca079f21992de04d078d9ea6dc
+
+.. Canonical smart contract instances
+.. |wccd-address-testnet| replace:: <2059,0>

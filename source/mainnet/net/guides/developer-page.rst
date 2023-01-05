@@ -14,7 +14,9 @@ Official resources
 
 - See :ref:`SDKs and APIs<sdks-apis>` for links to SDKs and APIs for development
 
-- :ref:`Smart contracts <introduction>`
+- See :ref:`Smart contracts <introduction>` for general information about smart contracts
+
+    - `Smart contract libraries <https://crates.io/crates/concordium-std>`_
 
 - `GitHub <https://github.com/Concordium>`_
 

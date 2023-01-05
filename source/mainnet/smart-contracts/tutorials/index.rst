@@ -24,3 +24,4 @@ In the ``Minting`` tutorials you will mint various types of tokens.
    Voting dApp <./voting/index>
    nft-minting/index
    sft-minting/index
+   nft-marketplace/index
