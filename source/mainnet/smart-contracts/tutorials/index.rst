@@ -26,3 +26,4 @@ In the ``Minting`` tutorials you will mint and transfer various types of tokens.
    wCCD <./wCCD/index>
    nft-minting/index
    sft-minting/index
+   nft-marketplace/index
