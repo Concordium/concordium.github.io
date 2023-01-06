@@ -18,7 +18,7 @@ Smart contract development involves many risks that do not show up in, for examp
 Therefore, it is not sufficient to defend your code against known vulnerabilities.
 You can think about smart contracts as mission-critical software, or software for embedded devices rather than a web application.
 
-- Determine the “bare minimum” that should go on-chain: use smart contracts only for the part that requires decentralization.
+- Determine the “bare minimum” that should be on-chain: use smart contracts only for the part that requires decentralization.
 - Keep your contracts simple and minimalistic: stick to strictly necessary functionality only.
   The more complexity you have in your contract, the larger the attack surface.
 - Explicit is better than implicit: it should be clear from the smart contract code what is happening.
@@ -114,7 +114,11 @@ External Calls
 
 Every external call should be treated as a potential security risk. Calling another contact gives control to potentially malicious code that could make arbitrary calls to any other contract, including your contract, changing its state.
 
-- *Reentrancy*. Avoid changing the state after an external call. Use the Checks-Effects-Interactions pattern: validate data, update the contract state, make external calls.
+- Avoid splitting the on-chain part of your dApp into several smart contracts unless it is strictly necessary.
+  For example, instead of using the *proxy* pattern, use :ref:`natively upgradable contracts <contract-instance-upgradeability>`.
+- *Reentrancy*. Avoid changing the state after an external call.
+  Use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
+  Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy, and reset back after the call is complete.
 - The *Pull over Push* pattern: avoid sending funds back to an unknown address without request as part of your contract logic (*Push*).
   Instead, create a separate entrypoint allowing users, which could be smart contracts, to request funds back (*Pull*).
   Note that it is safe to transfer to user addresses, because on Concordium it is guaranteed not to execute any code.
