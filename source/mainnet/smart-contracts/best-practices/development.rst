@@ -114,12 +114,17 @@ External Calls
 
 Every external call should be treated as a potential security risk. Calling another contact gives control to potentially malicious code that could make arbitrary calls to any other contract, including your contract, changing its state.
 
-- Avoid splitting the on-chain part of your dApp into several smart contracts unless it is strictly necessary.
+- *Complex interactions*: avoid splitting the on-chain part of your dApp into several smart contracts unless it is strictly necessary.
   For example, instead of using the *proxy* pattern, use :ref:`natively upgradable contracts <contract-instance-upgradeability>`.
-- *Reentrancy*. Avoid changing the state after an external call.
-  Use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
-  Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy, and reset back after the call is complete.
-- The *Pull over Push* pattern: avoid sending funds back to an unknown address without request as part of your contract logic (*Push*).
+- *Reentrancy*:
+
+  - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
+  - If you need to perform some state changes after and external call -- use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only>`_.
+    If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
+    Using ``invoke_contract`` covers most of the cases where protection from reentrancy is required.
+  - Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy, and reset back after the call is complete.
+
+- The *Pull over Push* pattern: avoid sending funds back (*Push*) to an unknown address as part of some complex operation in your smart contract.
   Instead, create a separate entrypoint allowing users, which could be smart contracts, to request funds back (*Pull*).
   Note that it is safe to transfer to user addresses, because on Concordium it is guaranteed not to execute any code.
   However, sending funds to a smart contract might fail for various reasons, blocking some functionality from succeeding.
