@@ -9,7 +9,7 @@ Running the example
 
     Before you can run this example, make sure you have:
 
-    - access to the `Chrome <https://www.google.com/chrome/>`_ web browser on your computer
+    - access to :ref:`one of the supported Chromium web browsers<setup-browser-wallet>` on your computer
 
     - `git <https://git-scm.com/>`_ installed to be able to clone a repository from `GitHub <https://github.com/>`_
 
@@ -21,7 +21,7 @@ Running the example
 
     - `rustup <https://rustup.rs/>`_ installed to build the backend.
 
-The |bw| is needed for the frontend to interact with. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
+The frontend needs the |bw| for interaction. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
 
 Clone this `repository <https://github.com/Concordium/concordium-dapp-examples>`_.
 
@@ -61,7 +61,6 @@ The minimal steps to run the example are as follows:
 
     $yarn start --statement "$(<verifier/config/statement.json)" --names "$(<verifier/config/names.json)"
 
-The statement and names flags must be provided and they specify the values for these static variables. This will run them with the default values found in the `gallery/verifier/config` folder.
+The statement and names flags must be provided and they specify the values for these static variables. This runs them with the default values found in the `gallery/verifier/config` folder.
 
-The gallery should then be available on http://127.0.0.1:8100, however this can be changed by setting the `port` flag.
-
+The gallery is then available on http://127.0.0.1:8100, however this can be changed by setting the `port` flag.

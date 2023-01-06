@@ -52,11 +52,10 @@ Community resources
 
 .. toctree::
     :hidden:
-    :maxdepth: 1
+    :maxdepth: 2
 
     sdks-apis
     create-proofs
-    gallery/index
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2

@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _create-proofs:
 
-=============
-Create proofs
-=============
+=====================
+Use ID: Create proofs
+=====================
 
 The |bw| allows dApps or services to request proofs that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of :ref:`statements<glossary-statement>` to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
 
@@ -173,3 +173,11 @@ Concordium provides the following example demo app and repository for inspriatio
 - `Repository <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`_
 
 The app is a gallery that requires the user to be over a certain minimum age and an EU resident to view some content.
+
+Follow :ref:`this link<gallery>`, if you want to learn how to build your own dApp for ID authentication.
+
+.. toctree::
+    :hidden:
+
+    gallery/index
+    
