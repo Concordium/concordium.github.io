@@ -177,8 +177,7 @@ The app is a gallery that requires the user to be over a certain minimum age and
 Follow :ref:`this link<gallery>`, if you want to learn how to build your own dApp for ID authentication.
 
 .. toctree::
-    :hidden:
+  :hidden:
 
-    gallery/index
+  gallery/index
 
-  
