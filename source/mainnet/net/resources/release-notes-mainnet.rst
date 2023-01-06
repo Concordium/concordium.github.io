@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+January 4, 2023
+
+Concordium Node 5.0.7 for MacOS
+-------------------------------
+
+Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+
 Mainnet 4: Sirius
 =================
 
