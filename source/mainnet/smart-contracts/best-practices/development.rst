@@ -124,7 +124,7 @@ Every external call should be treated as a potential security risk. Calling anot
     Using ``invoke_contract`` covers most of the cases where protection from reentrancy is required.
   - Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy, and reset back after the call is complete.
 
-- The *Pull over Push* pattern: avoid sending funds back (*Push*) to an unknown address as part of some complex operation in your smart contract.
+- *Pull over Push*: avoid sending funds back (*Push*) to an unknown address as part of some complex operation in your smart contract.
   Instead, create a separate entrypoint allowing users, which could be smart contracts, to request funds back (*Pull*).
   Note that it is safe to transfer to user addresses, because on Concordium it is guaranteed not to execute any code.
   However, sending funds to a smart contract might fail for various reasons, blocking some functionality from succeeding.
