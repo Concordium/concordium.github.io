@@ -180,4 +180,5 @@ Follow :ref:`this link<gallery>`, if you want to learn how to build your own dAp
     :hidden:
 
     gallery/index
-    
+
+  
