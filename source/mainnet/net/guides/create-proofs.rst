@@ -175,9 +175,3 @@ Concordium provides the following example demo app and repository for inspriatio
 The app is a gallery that requires the user to be over a certain minimum age and an EU resident to view some content.
 
 Follow :ref:`this link<gallery>`, if you want to learn how to build your own dApp for ID authentication.
-
-.. toctree::
-  :hidden:
-
-  gallery/index
-
