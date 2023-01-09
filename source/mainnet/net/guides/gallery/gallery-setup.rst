@@ -21,7 +21,7 @@ Running the example
 
     - `rustup <https://rustup.rs/>`_ installed to build the backend.
 
-The frontend needs the |bw| for interaction. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
+The front-end needs the |bw| for interaction. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
 
 Clone this `repository <https://github.com/Concordium/concordium-dapp-examples>`_.
 
