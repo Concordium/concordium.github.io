@@ -7,6 +7,8 @@ Tutorials
 You can go through a number of different tutorials to sharpen your skills as
 a dApp (decentralized application) developer on the Concordium blockchain.
 
+In ``Setup the developer enviroment`` you learn how to set up the development enviroment for working with smart contracts.
+
 In the ``Counter`` tutorial, you are going to build a simple smart contract with a counter that can be increased or decreased and where only the owner can perform the operations.
 
 In the ``piggy bank`` tutorial, you are going to build a simple smart contract modelling a piggy bank.
@@ -21,7 +23,8 @@ In the ``Minting`` tutorials you will mint and transfer various types of tokens.
    :maxdepth: 1
    :caption: Available tutorials:
 
-   Counter <./counter/index>
+   setup-env
+   Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
    nft-minting/index

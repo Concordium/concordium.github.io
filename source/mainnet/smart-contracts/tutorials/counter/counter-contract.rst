@@ -1,10 +1,16 @@
 .. _counter-sc:
 
-======================
-Counter smart contract
-======================
+=================================
+Concordium counter smart contract
+=================================
 
-Now you are ready to create your smart contract project. First, create a working directory, and run the command below in that directory. It will set up the initial project for you, including necessary rust dependencies.
+This tutorial guides you through creating a smart contract using the Concordium a default contract template that simply keeps a counter value in its state. It is a super simple, fundamental example contract that touches on the following points: to be able to increase/decrease the counter value by the parameter given by the user if it is a positive number, view the current value, return a custom error when someone tries to increase it with a negative value (or vice versa), and all these operations have to be done by only the owner of the contract.
+
+.. Attention::
+
+   Before starting the next steps, make sure that you have :ref:`setup the developer environment<setup-env>` with the tools needed.
+
+Once you have set up the tools needed you are ready to create your smart contract project. First, create a working directory, and run the command below in that directory. It will set up the initial project for you, including necessary rust dependencies.
 
 .. Note::
 
