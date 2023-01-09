@@ -136,7 +136,7 @@ Add a new mutable function to implement decrement with a similar approach. It wi
 View function
 -------------
 
-The view function will return only the counters value so you need to update its return value as u8 and return it from the host.state().
+The view function will return only the counters value so you need to update its return value as i8 and return it from the host.state().
 
 .. code-block:: rust
 
