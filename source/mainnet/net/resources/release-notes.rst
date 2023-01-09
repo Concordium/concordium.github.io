@@ -11,6 +11,13 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+January 9, 2023
+
+|bw| 0.9.6
+---------------------------
+
+SendTransaction for smart contract transactions can receive schemas that are for the specific parameter.
+
 January 4, 2023
 
 Concordium Node 5.0.7 for MacOS
