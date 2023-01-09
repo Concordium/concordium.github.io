@@ -103,12 +103,14 @@ body {margin:0;}
 <body>
 
 <div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="downloads.html">Install</a>
   <a href="../guides/learn-about-concordium.html">Learn</a>
   <a href="../nodes/node-requirements.html">Run a node</a>
   <a href="../guides/deciding-wallet.html">Wallets</a>
-  <a href="../guides/overview-baker-process.html">Baking</a>
+  <a href="../guides/how-to-earn.html">Earn</a>
   <a href="../guides/developer-page.html">Develop</a>
   <a href="../../smart-contracts/general/introduction.html">Smart Contracts</a>
+  <a href="../guides/create-proofs.html">Use ID</a>
 </div>
 </body>
 </html>
@@ -698,10 +700,22 @@ body {margin:0;}
        SDKs and APIs
       </a>
      </li>
-     <li class="toctree-l2">
+     <li class="toctree-l2 has-children">
       <a class="reference internal" href="../guides/create-proofs.html">
-       Create proofs
+       Use ID: Create proofs
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../guides/gallery/index.html">
+         The gallery with ID authentication
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../resources/dashboards.html">
@@ -729,8 +743,8 @@ body {margin:0;}
     <a class="reference internal" href="../nodes/node-requirements.html">
      Run a node on Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-    <label for="toctree-checkbox-19">
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -739,8 +753,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/ubuntu.html">
        Ubuntu nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-      <label for="toctree-checkbox-20">
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -766,8 +780,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/macos.html">
        MacOS nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-      <label for="toctree-checkbox-21">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -788,8 +802,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/windows.html">
        Windows nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-      <label for="toctree-checkbox-22">
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -810,8 +824,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/docker.html">
        Docker nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-      <label for="toctree-checkbox-23">
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -855,11 +869,64 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
+    Use Concordium's ID Layer
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../guides/create-proofs.html">
+     Use ID: Create proofs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../guides/gallery/index.html">
+       The gallery with ID authentication
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../guides/gallery/gallery-backend.html">
+         Writing the verifying backend
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../guides/gallery/gallery-frontend.html">
+         Interacting with a wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../guides/gallery/gallery-setup.html">
+         Setting up the front-end
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
     Smart Contracts v1
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-24">
+  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-28">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -868,8 +935,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-    <label for="toctree-checkbox-25">
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -905,8 +972,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/tutorials/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -915,8 +982,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-      <label for="toctree-checkbox-27">
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -952,8 +1019,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-      <label for="toctree-checkbox-28">
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -984,8 +1051,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-      <label for="toctree-checkbox-29">
+      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+      <label for="toctree-checkbox-33">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1016,8 +1083,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-      <label for="toctree-checkbox-30">
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1043,8 +1110,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-marketplace/index.html">
        NFT marketplace tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-      <label for="toctree-checkbox-31">
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1062,8 +1129,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-    <label for="toctree-checkbox-32">
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1129,8 +1196,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-    <label for="toctree-checkbox-33">
+    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+    <label for="toctree-checkbox-37">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1166,8 +1233,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-    <label for="toctree-checkbox-34">
+    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+    <label for="toctree-checkbox-38">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1183,8 +1250,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-    <label for="toctree-checkbox-35">
+    <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+    <label for="toctree-checkbox-39">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1205,8 +1272,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-    <label for="toctree-checkbox-36">
+    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+    <label for="toctree-checkbox-40">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1261,8 +1328,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-37">
+  <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-41">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1271,8 +1338,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-    <label for="toctree-checkbox-38">
+    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+    <label for="toctree-checkbox-42">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1303,8 +1370,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-    <label for="toctree-checkbox-39">
+    <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+    <label for="toctree-checkbox-43">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1325,8 +1392,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-    <label for="toctree-checkbox-40">
+    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+    <label for="toctree-checkbox-44">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1382,8 +1449,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-    <label for="toctree-checkbox-41">
+    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+    <label for="toctree-checkbox-45">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1414,8 +1481,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-    <label for="toctree-checkbox-42">
+    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+    <label for="toctree-checkbox-46">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1465,8 +1532,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-43">
+  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-47">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1475,8 +1542,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/ccd-scan.html">
      CCDScan
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-    <label for="toctree-checkbox-44">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1522,8 +1589,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/sirius-testnet-reset.html">
      Testnet reset
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-    <label for="toctree-checkbox-45">
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1549,8 +1616,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
