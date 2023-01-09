@@ -16,7 +16,7 @@ In the :ref:`third part<gallery-setup>`, you will learn how to build and run the
 
 .. warning::
 
-   It is suggested to read about :ref:`creating proofs<create-proofs>` and the reader is assumed to have basic knowledge of Rust development and some experience with web front-end development.
+   It is suggested to read about :ref:`creating proofs<create-proofs>` and the reader is assumed to have basic knowledge of Rust development and some experience with web frontend development.
 
 To start the tutorial click :ref:`here<gallery-backend>`.
 

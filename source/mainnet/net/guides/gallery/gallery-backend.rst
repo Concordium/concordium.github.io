@@ -20,7 +20,7 @@ To do this it has an HTTP endpoint for each of theses tasks:
 - :code:`POST api/prove`
 - :code:`GET  api/image/:name?auth=:authToken`
 
-The backend is written in Rust and uses the Tokio runtime and Warp to create a http server.
+The backend is written in Rust and uses the Tokio runtime and Warp to create an http server.
 It has some state that keeps track of sent challenges and tokens.
 
 To only have a single server and allow the frontend to assume the location of the backend, the backend serves the frontend. This is easily done with Warp.
