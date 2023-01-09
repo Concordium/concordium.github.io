@@ -9,12 +9,12 @@ First, you need to install ``rustup`` which installs Rust and Cargo to your comp
 
 Select **1** to continue the installation.
 
-.. image:: ../nft-minting/images/mint-install-rustup.png
+.. image:: images/mint-install-rustup.png
     :width: 100%
 
 Finally, when Rust and Cargo are successfully installed in your system, you should see something similar to below.
 
-.. image:: ../nft-minting/images/mint-rust-install-done.png
+.. image:: images/mint-rust-install-done.png
     :width: 100%
 
 Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.
@@ -25,7 +25,7 @@ Copy and paste the commands in a terminal to install Wasm which will be used for
 
 During Wasm installation in your system you should see something similar to below.
 
-.. image:: ../nft-minting/images/mint-wasm-install.png
+.. image:: images/mint-wasm-install.png
     :width: 100%
 
 Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
@@ -42,14 +42,14 @@ First, rename the ``cargo-congordium-v.x.x`` file to ``cargo-concordium``. Then 
 
 If everything is correct, when you enter the command ``cargo concordium --help`` it shows something similar to the below.
 
-.. image:: ../nft-minting/images/cargo-help.png
+.. image:: images/cargo-help.png
     :width: 100%
 
 .. Note::
 
     If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
 
-    .. image:: ../nft-minting/images/mac-warning.png
+    .. image:: images/mac-warning.png
         :width: 100%
 
 Install Concordium Client
@@ -64,7 +64,7 @@ You will need to run a node. It is recommended to run a Docker image of a node t
 
 Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node that is specified in the ``docker-compose.yml`` file in the network section of the dashboard.
 
-.. image:: ../nft-minting/images/node-collector.png
+.. image:: images/node-collector.png
     :width: 100%
 
 .. _setup-wallet:
@@ -76,26 +76,26 @@ Now you need a Concordium wallet. Use the |bw|. The |bw| uses a 24 word secret r
 
 Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a chromium web browser. Follow :ref:`these instructions<setup-bw>` to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity.
 
-.. image:: ../nft-minting/images/bw-idp-selection.png
+.. image:: images/bw-idp-selection.png
     :width: 100%
 
 Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.
 
 One thing to note is that if you click |send|, you enter transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.
 
-.. image:: ../nft-minting/images/tx-fee-in-bw.png
+.. image:: images/tx-fee-in-bw.png
     :width: 100%
 
 After that step, you need to :ref:`export the keys<export-key>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
 
-.. image:: ../nft-minting/images/bw-export-key.png
+.. image:: images/bw-export-key.png
     :width: 100%
 
 When you export the key it creates a file named ``<YOUR PUBLIC ADDRESS>.export``. Open it with a text editor and find your ``signKey``, ``verifyKey`` in there. Copy the ``signKey`` and your address. You will use it while deploying and interacting with your contract.
 
-.. image:: ../nft-minting/images/bw-exported-key.png
+.. image:: images/bw-exported-key.png
     :width: 100%
 
-.. |send| image:: ../nft-minting/images/send-ccd.png
+.. |send| image:: images/send-ccd.png
              :alt: button with paper airplane
              :width: 50px

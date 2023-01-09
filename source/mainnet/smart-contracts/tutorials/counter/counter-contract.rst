@@ -135,7 +135,7 @@ Add a new mutable function to implement decrement with a similar approach. It wi
         );
 
         ensure!(param < 0, Error::DecrementError);
-        state.counter -= param;
+        state.counter += param;
         Ok(())
     }
 
