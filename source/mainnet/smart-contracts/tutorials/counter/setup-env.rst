@@ -5,7 +5,7 @@
 Setup the development environment
 =================================
 
-First, you need to install “rustup” which installs Rust and Cargo to your computer. Go to `Rustup <https://rustup.rs/>`_ to install ``rustup`` for your platform.
+First, you need to install ``rustup`` which installs Rust and Cargo to your computer. Go to `Rustup <https://rustup.rs/>`_ to install ``rustup`` for your platform.
 
 Select **1** to continue the installation.
 
