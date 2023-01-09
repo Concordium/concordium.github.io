@@ -122,7 +122,7 @@ Ubuntu - Testnet
 Default GRPC port is set to 10001
 Default listen port is set to 8889
 
-`5.0.6 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.0.6-0_amd64.deb>
+`5.0.6 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.0.6-0_amd64.deb>`__
    - Verification instructions
 
       In a terminal:
