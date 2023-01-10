@@ -339,18 +339,144 @@ state and balance fields:
        );
        ...
 
-.. warning::
+Reentrancy
+----------
 
-   You should watch out for *reentrancy problems*, which can occur when calls to
-   ``invoke_contract`` end up updating the state of your own contract.
+You should watch out for *reentrancy problems*, which can occur when calls to
+``invoke_contract`` end up updating the state of your own contract.
 
-   .. code-block:: rust
+.. code-block:: rust
 
-      let state_copy = *host.state();
-      host.invoke_contract(...);
+    let state_copy = *host.state();
+    host.invoke_contract(...);
 
-      // *host.state() and state_copy might not be equal any more due to reentrancy.
-      do_something_with(state_copy);
+    // *host.state() and state_copy might not be equal any more due to reentrancy.
+    do_something_with(state_copy);
+
+Another example of reentracny is when the state is *not* updated properly before making an external call.
+This can lead to reentrant calls that pass some validation that is based on the current state, while these calls should fail.
+The classic example of such a security issue is the Ethereum DAO smart contract that was drained of funds due to the reentrancy vulnerability.
+We show a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
+The users can request their funds back; if a user is a smart contract, the funds are sent to a specified entrypoint.
+
+.. code-block:: rust
+    :emphasize-lines: 40-42
+
+    #[receive(
+        contract = "reentrancy",
+        name = "reentrant_withdraw",
+        parameter = "OwnedEntrypointName",
+        error = "Error",
+        mutable
+    )]
+    fn reentrant_withdraw<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State<S>, StateApiType = S>,
+    ) -> Result<(), Error> {
+        let sender = ctx.sender();
+
+        // Get balance for the sender, or reject if the sender is not found or the
+        // balance is zero.
+        let sender_balance = match host.state().balances.get(&sender) {
+            Some(bal) if *bal > Amount::zero() => *bal,
+            _ => return Err(Error::WithdrawWithoutFunds),
+        };
+
+        match sender {
+            Address::Account(acc) => host.invoke_transfer(&acc, sender_balance)?,
+            Address::Contract(addr) => {
+                let entrypoint: OwnedEntrypointName = ctx.parameter_cursor().get()?;
+                // At this point we are handing out the control out to an unknown
+                // smart contract. This contract can call this entry point
+                // again multiple times before the rest of the code is reached.
+                host.invoke_contract(
+                    &addr,
+                    &Parameter(&[]),
+                    entrypoint.as_entrypoint_name(),
+                    sender_balance,
+                )?;
+            }
+        };
+
+        // Reset the sender's balance to zero.
+        // This code is reached only after transfering CCD back/calling an
+        // external contract.
+        if let Some(mut v) = host.state().balances.get_mut(&sender) {
+            *v = Amount::zero();
+        }
+
+        Ok(())
+    }
+
+The problem in the code above is that resetting the sender's balance to zero happens *after* the call to an external contract is completed.
+The sender's balance in the *contract state* is used to determine how much funds should be transferred to the sender.
+Since it is not updated, the external contract can make a call back to ``reentrant_withdraw`` and pass the balance validation.
+Testing this behavior with mocks require some insights.
+In particular, we are going to mimic the original ``reentrant_withdraw`` code in the mock entrypoint.
+
+.. code-block:: rust
+
+    #[concordium_test]
+    fn test_reentrant_withdraw() {
+        ...
+
+        // Assume that `CONTRACT_ADDRESS` has 1 micro CCD
+        // Set the contract balance to 2 micro CCD
+        host.set_self_balance(Amount::from_micro_ccd(2));
+
+        // Set up a mock entrypoint that calls back to our contract.
+        // We emulate the `reentrant_withdraw` logic here.
+        host.setup_mock_entrypoint(
+            CONTRACT_ADDRESS,
+            OwnedEntrypointName::new_unchecked("reentrant_withdraw".to_string()),
+            MockFn::new_v1(|_parameter, _amount, balance, state: &mut State<_>| {
+                // We cannot call `invoke_contract` inside this mock, but we have
+                // access to the `balance`, which is the balance of the contract
+                // making this invocation. So we can simulate invoking withdraw by
+                // subtracting the sender's amount stored in the contract state
+                // from the balance.
+
+                let b = state.balances.get_mut(&Address::Contract(CONTRACT_ADDRESS));
+
+                let mut sender_balance = match b {
+                    Some(bal) if *bal > Amount::zero() => bal,
+                    _ => fail!("Insufficent funds"),
+                };
+
+                // Emulate withdraw by subtracting the sender's balance.
+                *balance -= *sender_balance;
+
+                // Reset the sender's balance to zero.
+                *sender_balance = Amount::zero();
+
+                let state_modified = true;
+                Ok((state_modified, ()))
+            }),
+        );
+        // Withdraw 1 micro CCD
+        reentrant_withdraw(&ctx, &mut host).expect_report("Withdraw call failed");
+
+        let resulting_balance = host.self_balance();
+        let expected_balance = 1;
+
+        claim_eq!(
+            resulting_balance,
+            expected_balance,
+            "Balance is not updated correctly: expected {:?}, found: {:?}",
+            expected_balance,
+            resulting_balance
+        );
+    }
+
+The test fails with the following message:
+
+.. code-block:: text
+
+    Incorrect balance: expected Amount { micro_ccd: 1 }, found: Amount { micro_ccd: 0 }
+
+That means that the contract we called has stolen our funds through a reentrant call.
+A simple fix to this behavior is to place the highlighted line in ``reentrant_withdraw`` *before* making a call to an external contract.
+In this case we expect the ``reentrant_withdraw`` call to fail because the non-zero balance condition is not longer satisfied in the mock entrypoint.
 
 Testing with state rollbacks
 ============================
