@@ -22,7 +22,7 @@ Concordium node version 5.1.3 introduces the following new features and improvem
 
 - Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.
 
-- Removed the configuration option ``no_rebroadcast_consensus_validation``.
+- Removed the configuration option ``no_rebroadcast_consensus_validation``. This option (which was used for testing only and was disabled by default) made the node rebroadcast blocks before doing any validation.
 
 - Changes were made to avoid deadlocks during node shutdown in specific scenarios.
 
