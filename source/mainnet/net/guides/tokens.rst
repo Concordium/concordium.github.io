@@ -81,26 +81,26 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
 .. dropdown:: |mw-gen2| for Android
 
-    To access tokens and token transactions, click Tokens |token-bw|. Tabs appear for tokens.
+    To access tokens and token transactions, tap Tokens |token-bw|. Tabs appear for tokens.
 
     .. dropdown:: Add tokens
 
-        #. Click **Manage**.
+        #. Tap **Manage**.
 
             .. image:: ../images/browser-wallet/manage-tokens.png
                 :width: 50%
 
-        #. Enter a smart contract address on which to look for tokens. Click **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
+        #. Enter a smart contract address on which to look for tokens. Tap **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
             .. image:: ../images/browser-wallet/add-token-contract.png
                 :width: 50%
 
-        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **X** to return to the list to select tokens. You can also search by token ID at the top of the screen. Click **Add tokens** once you have made your selection(s).
+        #. Select the token(s) you want to add. You can tap on a token to see more information about it and then tap **X** to return to the list to select tokens. You can also search by token ID at the top of the screen. Tap **Add tokens** once you have made your selection(s).
 
             .. image:: ../images/browser-wallet/select-tokens.png
                 :width: 50%
 
-        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case the screen below appears when your wallet is connected and the service suggests the tokens to be added. Click **Add selected** to add the selected tokens to your wallet.
+        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case the screen below appears when your wallet is connected and the service suggests the tokens to be added. Tap **Add selected** to add the selected tokens to your wallet.
 
             .. image:: ../images/browser-wallet/add-tokens.png
                 :width: 50%
@@ -111,7 +111,7 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
         Once the tokens are added you can see them on the relevant tab.
 
-        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |bw|.
+        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |mw-gen2| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |mw-gen2|.
 
     .. dropdown:: Inspect tokens
 
