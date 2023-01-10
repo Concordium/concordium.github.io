@@ -35,7 +35,7 @@ Windows - Mainnet and Testnet
 macOS - Mainnet and Testnet
 ===========================
 
-`macOS 5.0.6 <https://distribution.concordium.software/macos/signed/concordium-node-5.0.6-0.pkg>`_
+`macOS 5.0.7 <https://distribution.concordium.software/macos/signed/concordium-node-5.0.7-0.pkg>`_
 
 `macOS 4.4.4 <https://distribution.concordium.software/macos/signed/concordium-node-4.4.4-1.pkg>`_
 
