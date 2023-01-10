@@ -62,6 +62,12 @@ index
 
 .. toctree::
    :includehidden:
+   :caption: Use Concordium's ID Layer
+
+   guides/create-proofs
+
+.. toctree::
+   :includehidden:
    :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
