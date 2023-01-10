@@ -18,7 +18,7 @@ Concordium Node 5.1.3
 
 Concordium node version 5.1.3 introduces the following new features and improvements:
 
-- Improvements were made to allow greater concurrency with transaction processing. (Checking transaction signatures is done without acquiring the global state lock.)
+- Improvements were made to allow greater concurrency with transaction processing.
 
 - Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.
 
