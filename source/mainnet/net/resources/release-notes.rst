@@ -5,6 +5,12 @@
 Release Notes - Testnet
 =======================
 
+.. Note::
+
+   Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
+   To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
 January 12, 2023
 
 Concordium Node 5.1.3
@@ -12,11 +18,11 @@ Concordium Node 5.1.3
 
 Concordium node version 5.1.3 introduces the following new features and improvements:
 
-- Improvements were made to allow greater concurrency with transaction processing. (Checking transaction signatures is done without acquiring the global state lock.)
+- Improvements were made to allow greater concurrency with transaction processing.
 
-- Blocks are relayed earlier. In particular this means that blocks are now processed in two steps: block receive and block execute. Blcok receive performs verification of block metadata while the block execute adds the block to the tree. Blocks are now enqueued in the outgoing message queue in between the two steps.
+- Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.
 
-- Removed the configuration option ``no_rebroadcast_consensus_validation``.
+- Removed the configuration option ``no_rebroadcast_consensus_validation``. This option (which was used for testing only and was disabled by default) made the node rebroadcast blocks before doing any validation.
 
 - Changes were made to avoid deadlocks during node shutdown in specific scenarios.
 
@@ -24,23 +30,24 @@ Concordium node version 5.1.3 introduces the following new features and improvem
 
 - Added timeout to downloading out of band catchup files when block indices and catch-up chunk files are specified by an URL. The timeout is controlled by the option ``--download-blocks-timeout`` (environment variable ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_TIMEOUT``) and defaults to 5 minutes. Timeout is now five minutes per chunk instead of waiting indefinitely.
 
-- Removed the "instrumentation" feature of the node and built the node with Prometheus support enabled by default.
-
 - Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
 
-Concordium Client 5.0.3?
-------------------------
+January 9, 2023
 
-Cargo concordium 2.6.0?
------------------------
+|bw| 0.9.6
+---------------------------
+
+SendTransaction for smart contract transactions can receive schemas that are for the specific parameter.
+
+January 4, 2023
+
+Concordium Node 5.0.7 for MacOS
+-------------------------------
+
+Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
 
 Sirius Testnet
 ==============
-.. Note::
-
-   Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
-
-   To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
 .. Note::
 
