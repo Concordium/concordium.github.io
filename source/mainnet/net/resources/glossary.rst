@@ -100,6 +100,20 @@ Branch
 A chain of blocks that has split from the main chain. All branches have the potential to become
 the main chain. The Chain selection rule determines which branch is the best chain.
 
+.. _glossary-build:
+
+Build
+=====
+
+Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from :ref:`cargo-concordium<glossary-cargo-concordium>`.
+
+.. _glossary-cargo-concordium:
+
+cargo-concordium
+================
+
+An extension of Rust's ``cargo`` tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+
 .. _glossary-catch-up:
 
 Catch-up
@@ -227,6 +241,13 @@ An account that contributes stake to a baker pool, or to passive delegation.
 When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated.
 Delegators earn rewards, minus a commission to the baker, in proportion to their delegated stake.
 
+.. _glossary-deploy:
+
+Deploy
+======
+
+Command that takes the built :ref:`Wasm<glossary-web-assembly>` file for a smart contract module and deploys it on chain. This command is run from :ref:`concordium-client<glossary-concordium-client>`.
+
 .. _glossary-encryption-key:
 
 Encryption key
@@ -308,6 +329,31 @@ owner of a regular account can only be ascertained by anonymity revokers working
 in concert with the identity provider.
 
 Initial accounts are only relevant for Desktop Wallet and |mw-gen1|.
+
+.. _glossary-initialize:
+
+Initialize
+==========
+
+Action that creates a new smart contract instance with the initial state. The only way to update the instance state is by invoking the instance’s entrypoints.
+
+.. _glossary-instance:
+
+Instance
+========
+
+A smart contract module together with a specific state and an amount of CCD tokens. Multiple smart contract instances can be created from the same module. Smart contract instances can be created from a deployed :ref:`smart contract
+module<contract-module>` via the ``init`` transaction which invokes the requested function in the smart contract module. This function can take a parameter. Its end result is the state of the smart contract instance.
+instance.
+
+.. _glossary-invoke:
+
+Invoke
+======
+
+Invoke means to call something into effect.
+
+Invoke is also the act of triggering a receive function in a smart contract from ``concordium-client`` and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click :ref:`here to see examples of how to use invoke to view information about the instance<nft-view-fn>`.
 
 .. _glossary-leader-election:
 
@@ -433,6 +479,21 @@ Reveal
 
 To reveal an attribute. This can be used in identity verification proof. When you reveal an attribute, you give the dApp or service that requested it your exact information, such as date of birth, or nationality. You should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
 
+.. _glossary-rust:
+
+Rust
+====
+
+The multi-paradigm, general purpose programming language used by Concordium smart contracts.
+
+.. _glossary-schema:
+
+Schema
+======
+
+Used for smart contracts. A description of how to represent bytes in a more structured representation. It can be used by external tools when displaying the return value of a receive function and for specifying parameters using a
+structured representation, such as JSON. This makes it more human readable.
+
 .. _glossary-secret-recovery-phrase:
 
 Secret recovery phrase
@@ -510,6 +571,13 @@ in that slot. Zero, one, or multiple bakers can win the lottery. The probability
 of these different events is controlled by the difficulty parameter *f*. For
 example, with difficulty 0.5 on average every second slot will have a lottery
 winner.
+
+.. _glossary-smart-contract:
+
+Smart contract
+==============
+
+A computer program or a transaction protocol that is intended to automatically execute, control or document events and actions according to the terms of a contract or an agreement. An example is a smart contract for selling NFTs on a marketplace; it may contain information about royalties, selling the NFT on to others, and so on.
 
 .. _glossary-staked-amount:
 
@@ -618,6 +686,13 @@ The |bw|
 ^^^^^^^^
 
 The |bw| is a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+
+.. _glossary-web-assembly:
+
+WebAssembly
+===========
+
+WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.
 
 .. _glossary-winning-probability:
 

@@ -81,22 +81,22 @@ Linux® v1.5.0
    -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.rpm>`_
       -  SHA256 checksum of the download: ``66d2a9ce4809a6e84a84accdb0768d6c1c6a7dcb046b751667a80d75a8a66464``
 
-Concordium Ledger App - Sirius
+Concordium LEDGER App - Sirius
 ==============================
 
-The version of the Ledger App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
+The version of the LEDGER App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
 
 .. Note::
 
-   Ledger firmware version 2.0.0 is no longer supported.
+   LEDGER firmware version 2.0.0 is no longer supported.
 
 .. Note::
 
-   The Ledger Nano X is not supported currently.
+   The LEDGER NANO X is not supported currently.
 
-- For Ledger Nano S, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+- For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
-- For Ledger Nano S Plus, `download the Concordium Ledger App 3.0.1 for Ledger firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
+- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
 
 .. _concordium-node-and-client-download-testnet:
 
@@ -138,8 +138,8 @@ Download cargo-concordium:
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions v5.0.6
-====================================
+Concordium node distributions
+=============================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
@@ -147,8 +147,8 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-Ubuntu
-------
+Ubuntu 5.0.6
+------------
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
@@ -158,8 +158,8 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Linux-Docker
-------------
+Linux-Docker 5.0.6
+------------------
 
 .. _concordium-docker-package-download-testnet:
 
@@ -167,8 +167,8 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 
 To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-Windows
--------
+Windows 5.0.6
+-------------
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
@@ -176,12 +176,12 @@ To run a node on Windows, you need a Windows Installer package. **Please be awar
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Mac
----
+Mac 5.0.7
+---------
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.0.6-0.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.0.7-0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 

@@ -230,6 +230,10 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 
    #. Click **Remove** to confirm removal.
 
+.. Note::
+
+   If you forget your passcode for your installed |bw|, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to :ref:`recover your wallet<recover-wallet>`. Use your secret recovery phrase to recover the wallet.
+
 .. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
                     :width: 20px
                     :alt: puzzle piece

@@ -20,7 +20,7 @@ Prerequisites
 There are several things you must set up in preparation before you can start baking.
 
 - Run a node on the Concordium blockchain. Make sure that you have a setup where the node can operate around the clock.
-- Set up a Ledger hardware wallet for your private key.
+- Set up a LEDGER device for your private key.
 - Download and install the Desktop Wallet.
 - Set up an initial account and an identity.
 - Set up a new account that you'll be using as baker account.
@@ -63,13 +63,13 @@ Add baker (Single-signature account)
 .. Warning::
       This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
-#. On the Ledger device, a message says **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
+#. On the LEDGER device, a message says **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
 
-#. When the Ledger device says **Sign transaction**, press both buttons to confirm the transaction. The Ledger device says **Concordium is ready**.
+#. When the LEDGER device says **Sign transaction**, press both buttons to confirm the transaction. The LEDGER device says **Concordium is ready**.
 
 #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
@@ -118,9 +118,9 @@ Generate the transaction
 
 There are two ways that you can generate the transaction:
 
--  :ref:`Generate the transaction without signing<generate-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger but you do need an internet connection.
+-  :ref:`Generate the transaction without signing<generate-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a LEDGER device but you do need an internet connection.
 
--  :ref:`Generate and sign the transaction<generate-sign>` This option requires a Ledger and an internet connection.
+-  :ref:`Generate and sign the transaction<generate-sign>` This option requires a LEDGER device and an internet connection.
 
 In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals. It also makes it possible to sign the transaction on the Ledger in a different location than where the proposal was created.
 
@@ -135,23 +135,23 @@ Generate the transaction without signing
 
 .. _generate-sign:
 
-Generate and sign the transaction on the Ledger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generate and sign the transaction on the LEDGER device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
+#. Connect the LEDGER device to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
+#. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
 
 #. In the Desktop Wallet verify that all transaction details are correct and select **I am sure that the proposed changes are correct**.
 
 #. Select **Generate and sign**. There's a message saying **Waiting for user to finish the process on the device**.
 
-#. On the Ledger, there's a message saying **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
+#. On the LEDGER device, there's a message saying **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
 
-#. When the Ledger says **Sign transaction**, press both buttons to confirm the transaction. The Ledger says **Concordium is ready**.
+#. When the LEDGER device says **Sign transaction**, press both buttons to confirm the transaction. The LEDGER device says **Concordium is ready**.
 
 .. Note::
-    If  you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
+    If  you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet there's a message saying **The action was declined on the Ledger device. Please try again.**
 
     .. _export-baker-credentials:
 
@@ -198,7 +198,7 @@ When you have received and added all the required signatures, you can submit the
 
    -  If you don't want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active; however it is still visible in the list of proposals.
 
-#. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the Ledger.
+#. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the ledger.
 
 #. Select **Finish** to leave the page.
 

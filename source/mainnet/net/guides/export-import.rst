@@ -15,11 +15,11 @@ To make sure that you have a backup of your accounts, identities, and addresses,
     You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
 
 .. Warning::
-   You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, Ledgers, or mobile devices with anyone.
+   You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.
 
 .. dropdown:: Desktop Wallet
 
-    To actually access the recovered accounts, you still need the Ledger that was used to set up the accounts, or a new Ledger that's been restored from the same recovery phrase.
+    To actually access the recovered accounts, you still need the LEDGER device that was used to set up the accounts, or a new LEDGER device that's been restored from the same recovery phrase.
 
     .. dropdown:: Export
 
@@ -43,22 +43,22 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
         .. _account-recovery:
 
-        If, for some reason, you've lost one or more of your accounts in the Desktop Wallet, and you've also lost the backup file, you can use the Ledger device to recover those accounts.
+        If, for some reason, you've lost one or more of your accounts in the Desktop Wallet, and you've also lost the backup file, you can use the LEDGER device to recover those accounts.
 
         You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.
 
-        If you've lost your Ledger device or the device has stopped working, you can restore the keys in another Ledger device by by restoring it from the recovery phrase used for the original device. To learn more about the recovery phrase of a Ledger device, see Ledger's documentation: `What is a recovery phrase <https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase/>`_ .
+        If you've lost your LEDGER device or the device has stopped working, you can restore the keys in another LEDGER device by by restoring it from the recovery phrase used for the original device. To learn more about the recovery phrase of a LEDGER device, see LEDGER's documentation: `What is a recovery phrase <https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase/>`_ .
 
 
         **How the recovery process works**
 
-        When you create a new identity in the Desktop Wallet, a number on the Ledger is associated with the identity. This is called the identity index and there can be more identity indices on a Ledger. These indices are used sequentially, so the first identity created from a Ledger uses index *0*, the next uses index *1*, and so on.
+        When you create a new identity in the Desktop Wallet, a number on the LEDGER device is associated with the identity. This is called the identity index and there can be more identity indices on a LEDGER device. These indices are used sequentially, so the first identity created from a LEDGER device uses index *0*, the next uses index *1*, and so on.
 
-        The Ledger stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see :ref:`Identities and accounts <reference-id-accounts>`.
+        The LEDGER device stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see :ref:`Identities and accounts <reference-id-accounts>`.
 
-        Lost identities can't be recovered because the identity object is not stored on the Ledger. However, you can go through each index on the Ledger where the data to create credentials are stored and use this information to regain access to the accounts related to a given identity.
+        Lost identities can't be recovered because the identity object is not stored on the LEDGER device. However, you can go through each index on the LEDGER device where the data to create credentials are stored and use this information to regain access to the accounts related to a given identity.
 
-        For each identity index, the recovery process uses the Ledger device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the blockchain whether the credentials have been deployed, and which account each credential is attached to. These accounts are then added to the Desktop Wallet along with the deployed credentials.
+        For each identity index, the recovery process uses the LEDGER device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the blockchain whether the credentials have been deployed, and which account each credential is attached to. These accounts are then added to the Desktop Wallet along with the deployed credentials.
 
         If all your identity issuances were successful, you can stop the recovery when you encounter an unused index. However, if one of your identity issuance processes failed, this might have caused an index to be skipped. Therefore, you must determine yourself when the recovery is completed.
 
@@ -76,9 +76,9 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
         #. Familiarize yourself with the recovery information, and then select **Continue**.
 
-        #. Connect the Ledger to the computer if you haven't done so already, and then select **Submit**.
+        #. Connect the LEDGER device to the computer if you haven't done so already, and then select **Submit**.
 
-        #. In the Desktop Wallet, there's a message saying *Please allow recovering credentials*. The Ledger says *Recover credentials*. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.
+        #. In the Desktop Wallet, there's a message saying *Please allow recovering credentials*. The LEDGER device says *Recover credentials*. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.
 
         #. When you consider the recovery complete, select **Stop recovery, I found all my accounts**. You then see an overview of all the recovered accounts. If you don't think the recovery is complete, you can go back and continue the recovery process.
 

@@ -5,17 +5,39 @@
 Release Notes - Testnet
 =======================
 
-Sirius Testnet
-==============
 .. Note::
 
    Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+January 9, 2023
+
+|bw| 0.9.6
+---------------------------
+
+SendTransaction for smart contract transactions can receive schemas that are for the specific parameter.
+
+January 4, 2023
+
+Concordium Node 5.0.7 for MacOS
+-------------------------------
+
+Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+
+Sirius Testnet
+==============
+
 .. Note::
 
    Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+December 21, 2022
+
+|bw| 0.9.5
+----------------------
+
+Minor bugfixes for the |bw|, including adding a missing background color on ID proof cards, fixing an issue where the transaction list did not update automatically, and a minor adjustment to how proof of age is calculated.
 
 December 16, 2022
 

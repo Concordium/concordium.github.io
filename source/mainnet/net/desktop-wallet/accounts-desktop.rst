@@ -168,7 +168,7 @@ Concordium strongly recommends that you create a backup of your Desktop Wallet d
 Recover existing accounts
 -------------------------
 
-If you lose your accounts, you can recover the accounts by using the Ledger device that you used to create the accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. For more information, see `Account recovery <https://developer.concordium.software/en/mainnet/net/guides/export-import.html?highlight=account%20recovery>`_.
+If you lose your accounts, you can recover the accounts by using the LEDGER device that you used to create the accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. For more information, see `Account recovery <https://developer.concordium.software/en/mainnet/net/guides/export-import.html?highlight=account%20recovery>`_.
 
 Terms and conditions
 --------------------
