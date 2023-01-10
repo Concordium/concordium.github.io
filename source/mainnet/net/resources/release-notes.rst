@@ -20,7 +20,7 @@ Concordium node version 5.1.3 introduces the following new features and improvem
 
 - Improvements were made to allow greater concurrency with transaction processing. (Checking transaction signatures is done without acquiring the global state lock.)
 
-- Blocks are relayed earlier. In particular this means that blocks are now processed in two steps: block receive and block execute. Blcok receive performs verification of block metadata while the block execute adds the block to the tree. Blocks are now enqueued in the outgoing message queue in between the two steps.
+- Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.
 
 - Removed the configuration option ``no_rebroadcast_consensus_validation``.
 
