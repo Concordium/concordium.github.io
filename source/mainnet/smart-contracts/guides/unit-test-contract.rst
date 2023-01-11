@@ -353,10 +353,10 @@ You should watch out for *reentrancy problems*, which can occur when calls to
     // *host.state() and state_copy might not be equal any more due to reentrancy.
     do_something_with(state_copy);
 
-Another example of reentracny is when the state is *not* updated properly before making an external call.
-This can lead to reentrant calls that pass some validation that is based on the current state, while these calls should fail.
+Another example of reentrancy is when the state is *not* updated properly before making an external call.
+This can lead to reentrant calls that pass some validation that is based on the current state, even though these calls should fail.
 The classic example of such a security issue is the Ethereum DAO smart contract that was drained of funds due to the reentrancy vulnerability.
-We show a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
+Below is a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
 The users can request their funds back; if a user is a smart contract, the funds are sent to a specified entrypoint.
 
 .. code-block:: rust
@@ -412,7 +412,7 @@ The problem in the code above is that resetting the sender's balance to zero hap
 The sender's balance in the *contract state* is used to determine how much funds should be transferred to the sender.
 Since it is not updated, the external contract can make a call back to ``reentrant_withdraw`` and pass the balance validation.
 Testing this behavior with mocks require some insights.
-In particular, we are going to mimic the original ``reentrant_withdraw`` code in the mock entrypoint.
+In particular, the example below mimics the original ``reentrant_withdraw`` code in the mock entrypoint.
 
 .. code-block:: rust
 
@@ -474,9 +474,9 @@ The test fails with the following message:
 
     Incorrect balance: expected Amount { micro_ccd: 1 }, found: Amount { micro_ccd: 0 }
 
-That means that the contract we called has stolen our funds through a reentrant call.
+That means that the contract called has stolen funds through a reentrant call.
 A simple fix to this behavior is to place the highlighted line in ``reentrant_withdraw`` *before* making a call to an external contract.
-In this case we expect the ``reentrant_withdraw`` call to fail because the non-zero balance condition is not longer satisfied in the mock entrypoint.
+In this case the ``reentrant_withdraw`` call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.
 
 Testing with state rollbacks
 ============================
