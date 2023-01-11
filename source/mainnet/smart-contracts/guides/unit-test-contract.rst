@@ -428,7 +428,7 @@ In particular, the example below mimics the original ``withdraw_reentrancy`` cod
         host.set_self_balance(Amount::from_micro_ccd(2));
 
         // Set up a mock entrypoint that calls back to our contract.
-        // The mock emulates the `withdraw_reentrancy` logic to model 
+        // The mock emulates the `withdraw_reentrancy` logic to model
         // a reentrancy attack that will withdraw the sender's balance twice.
         host.setup_mock_entrypoint(
             CONTRACT_ADDRESS,
