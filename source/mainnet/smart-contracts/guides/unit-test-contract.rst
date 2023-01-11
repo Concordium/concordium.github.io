@@ -342,8 +342,11 @@ state and balance fields:
 Reentrancy
 ----------
 
-You should watch out for *reentrancy problems*, which can occur when calls to
-``invoke_contract`` end up updating the state of your own contract.
+When invoking another smart contract, you give away control to that contract in the middle of execution.
+The external contract can, for example, call back entrypoints of your contract.
+This behavior is called *reentrancy* and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.
+
+The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can update the state of your own contract.
 
 .. code-block:: rust
 
@@ -353,7 +356,7 @@ You should watch out for *reentrancy problems*, which can occur when calls to
     // *host.state() and state_copy might not be equal any more due to reentrancy.
     do_something_with(state_copy);
 
-Another example of reentrancy is when the state is *not* updated properly before making an external call.
+Consider a concrete example of reentrancy when the state is *not* updated properly before making an external call.
 This can lead to reentrant calls that pass some validation that is based on the current state, even though these calls should fail.
 The classic example of such a security issue is the Ethereum DAO smart contract that was drained of funds due to the reentrancy vulnerability.
 Below is a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
@@ -364,12 +367,12 @@ The users can request their funds back; if a user is a smart contract, the funds
 
     #[receive(
         contract = "reentrancy",
-        name = "reentrant_withdraw",
+        name = "withdraw_reentrancy",
         parameter = "OwnedEntrypointName",
         error = "Error",
         mutable
     )]
-    fn reentrant_withdraw<S: HasStateApi>(
+    fn withdraw_reentrancy<S: HasStateApi>(
         ctx: &impl HasReceiveContext,
         host: &mut impl HasHost<State<S>, StateApiType = S>,
     ) -> Result<(), Error> {
@@ -410,14 +413,14 @@ The users can request their funds back; if a user is a smart contract, the funds
 
 The problem in the code above is that resetting the sender's balance to zero happens *after* the call to an external contract is completed.
 The sender's balance in the *contract state* is used to determine how much funds should be transferred to the sender.
-Since it is not updated, the external contract can make a call back to ``reentrant_withdraw`` and pass the balance validation.
+Since it is not updated, the external contract can make a call back to ``withdraw_reentrancy`` and pass the balance validation.
 Testing this behavior with mocks require some insights.
-In particular, the example below mimics the original ``reentrant_withdraw`` code in the mock entrypoint.
+In particular, the example below mimics the original ``withdraw_reentrancy`` code in the mock entrypoint.
 
 .. code-block:: rust
 
     #[concordium_test]
-    fn test_reentrant_withdraw() {
+    fn test_withdraw_reentrancy() {
         ...
 
         // Assume that `CONTRACT_ADDRESS` has 1 micro CCD
@@ -425,16 +428,17 @@ In particular, the example below mimics the original ``reentrant_withdraw`` code
         host.set_self_balance(Amount::from_micro_ccd(2));
 
         // Set up a mock entrypoint that calls back to our contract.
-        // We emulate the `reentrant_withdraw` logic here.
+        // The mock emulates the `withdraw_reentrancy` logic to model 
+        // a reentrancy attack that will withdraw the sender's balance twice.
         host.setup_mock_entrypoint(
             CONTRACT_ADDRESS,
-            OwnedEntrypointName::new_unchecked("reentrant_withdraw".to_string()),
+            OwnedEntrypointName::new_unchecked("withdraw_reentrancy".to_string()),
             MockFn::new_v1(|_parameter, _amount, balance, state: &mut State<_>| {
-                // We cannot call `invoke_contract` inside this mock, but we have
-                // access to the `balance`, which is the balance of the contract
-                // making this invocation. So we can simulate invoking withdraw by
-                // subtracting the sender's amount stored in the contract state
-                // from the balance.
+                // `invoke_contract` cannot be called inside this mock, but
+                // `balance` gives access to the balance of the contract making
+                // this invocation. The `withdraw_reentrancy` invocation can be
+                // simulated by subtracting the sender's amount stored in the
+                // contract state from `balance`.
 
                 let b = state.balances.get_mut(&Address::Contract(CONTRACT_ADDRESS));
 
@@ -454,7 +458,7 @@ In particular, the example below mimics the original ``reentrant_withdraw`` code
             }),
         );
         // Withdraw 1 micro CCD
-        reentrant_withdraw(&ctx, &mut host).expect_report("Withdraw call failed");
+        withdraw_reentrancy(&ctx, &mut host).expect_report("Withdraw call failed");
 
         let resulting_balance = host.self_balance();
         let expected_balance = 1;
@@ -475,8 +479,8 @@ The test fails with the following message:
     Incorrect balance: expected Amount { micro_ccd: 1 }, found: Amount { micro_ccd: 0 }
 
 That means that the contract called has stolen funds through a reentrant call.
-A simple fix to this behavior is to place the highlighted line in ``reentrant_withdraw`` *before* making a call to an external contract.
-In this case the ``reentrant_withdraw`` call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.
+A simple fix to this behavior is to place the highlighted line in ``withdraw_reentrancy`` *before* making a call to an external contract.
+In this case the ``withdraw_reentrancy`` call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.
 
 Testing with state rollbacks
 ============================
