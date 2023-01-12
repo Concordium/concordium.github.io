@@ -30,12 +30,14 @@ Select the ``Default`` option from the menu.
 .. image:: images/select-default.png
     :width: 100%
 
-Then it will ask for a name and a description of your project then you will have an empty smart contract template to fill in. Initially, it has a State struct, Init function for invoking and creating an empty state when anyone creates an instance, an Error enum for custom errors, a view function, a receive function and some tests.
+Then it will ask for a name and a description of your project. Fill them in. 
+The result is a basic skeleton of a smart contract. 
+Initially, it has a ``State`` struct, an ``init`` function for creating new instances, an ``Error`` enum for custom errors, a ``view`` function, and a ``receive`` function.
 
 .. image:: images/contract.png
     :width: 100%
 
-Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the Error enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
+Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the ``Error`` enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
 
 .. code-block:: rust
 
