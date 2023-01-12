@@ -30,8 +30,8 @@ Select the ``Default`` option from the menu.
 .. image:: images/select-default.png
     :width: 100%
 
-Then it will ask for a name and a description of your project. Fill them in. 
-The result is a basic skeleton of a smart contract. 
+Then it will ask for a name and a description of your project. Fill them in.
+The result is a basic skeleton of a smart contract.
 Initially, it has a ``State`` struct, an ``init`` function for creating new instances, an ``Error`` enum for custom errors, a ``view`` function, and a ``receive`` function.
 
 .. image:: images/contract.png
