@@ -125,16 +125,16 @@ Concordium Client v5.0.2
 
 .. _cargo-concordium-testnet:
 
-Cargo-concordium v2.5.0
+Cargo-concordium v2.6.0
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.5.0>`_
+   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.6.0>`_
 
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.5.0>`_
+   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.6.0>`_
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.5.0.exe>`_
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.6.0.exe>`_
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
