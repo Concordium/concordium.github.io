@@ -4,7 +4,12 @@
 Concordium counter smart contract
 =================================
 
-This tutorial guides you through creating a smart contract using the Concordium a default contract template that simply keeps a counter value in its state. It is a super simple, fundamental example contract that touches on the following points: to be able to increase/decrease the counter value by the parameter given by the user if it is a positive number, view the current value, return a custom error when someone tries to increase it with a negative value (or vice versa), and all these operations have to be done by only the owner of the contract.
+This tutorial guides you through creating a smart contract using the Concordium a default contract template that simply keeps a counter value in its state. It is a super simple, fundamental example contract that touches on the following points:
+
+- to be able to increase/decrease the counter value by the parameter given by the user if it is a positive number
+- view the current value
+- return a custom error when someone tries to increase it with a negative value (or vice versa)
+- all these operations have to be done by only the owner of the contract.
 
 .. Attention::
 
@@ -33,10 +38,6 @@ Then it will ask for a name and a description of your project then you will have
 Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the Error enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
 
 .. code-block:: rust
-
-    //! # A Concordium V1 smart contract
-    use concordium_std::*;
-    use core::fmt::Debug;
 
     /// Your smart contract state.
     #[derive(Serialize, SchemaType, Clone)]
@@ -74,7 +75,7 @@ Increment and decrement counter
 Increment counter
 -----------------
 
-Then change the update function as described below, let’s remember what we want; input needs to be parsed without any errors, the value should be positive(otherwise we will get an Error::IncrementError and the transaction should be triggered by the owner of the contract instance or it will throw Error::OwnerError and the function itself has to be a mutable function because we are going to change the state of the contract.
+Then change the update function as described below. Remember that input needs to be parsed without any errors. The value must be positive, otherwise you will get an ``Error::IncrementError``. The transaction must be triggered by the owner of the contract instance or it will throw ``Error::OwnerError``. And the function itself has to be a mutable function because you are going to change the state of the contract.
 
 .. code-block:: rust
 
@@ -110,7 +111,7 @@ Then change the update function as described below, let’s remember what we wan
 Decrement counter
 -----------------
 
-Add a new mutable function to implement decrement with a similar approach. It will also take an input parameter but this time we need to make sure that it is negative because a violation will be caused by an Error::DecrementError, like the other one this can be triggered by only the owner of the contract-otherwise it will throw an Error::OwnerError.
+Add a new mutable function to implement decrement with a similar approach. It will also take an input parameter, but this time make sure that it is negative because a violation will be caused by an ``Error::DecrementError``. Like the other one, this can be triggered by only the owner of the contract,otherwise it will throw an ``Error::OwnerError``.
 
 .. code-block:: rust
 
