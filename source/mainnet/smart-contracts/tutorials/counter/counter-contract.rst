@@ -32,7 +32,7 @@ Initially, it has a ``State`` struct, an ``init`` function for creating new inst
 .. image:: images/contract.png
     :width: 100%
 
-Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the Error enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
+Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the ``Error`` enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
 
 .. code-block:: rust
 
