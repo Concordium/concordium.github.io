@@ -346,7 +346,7 @@ When invoking another smart contract, you give away control to that contract in 
 The external contract can, for example, call back entrypoints of your contract.
 This behavior is called *reentrancy* and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.
 
-The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can update the state of your own contract.
+The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can invoke any entrypoint of your own contract.
 
 .. code-block:: rust
 
