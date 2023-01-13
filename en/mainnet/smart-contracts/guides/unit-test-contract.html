@@ -2041,7 +2041,7 @@ state and balance fields:</p>
 <p>When invoking another smart contract, you give away control to that contract in the middle of execution.
 The external contract can, for example, call back entrypoints of your contract.
 This behavior is called <em>reentrancy</em> and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.</p>
-<p>The state of your contract might not be the same before and after <code class="docutils literal notranslate"><span class="pre">invoke_contract</span></code>, since the contract you call can update the state of your own contract.</p>
+<p>The state of your contract might not be the same before and after <code class="docutils literal notranslate"><span class="pre">invoke_contract</span></code>, since the contract you call can invoke any entrypoint of your own contract.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state_copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">();</span><span class="w"></span>
 <span class="n">host</span><span class="p">.</span><span class="n">invoke_contract</span><span class="p">(</span><span class="o">..</span><span class="p">.);</span><span class="w"></span>
 
