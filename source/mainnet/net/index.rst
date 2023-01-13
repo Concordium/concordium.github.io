@@ -65,6 +65,7 @@ index
    :caption: Use Concordium's ID Layer
 
    guides/create-proofs
+   guides/gallery/index
 
 .. toctree::
    :includehidden:
