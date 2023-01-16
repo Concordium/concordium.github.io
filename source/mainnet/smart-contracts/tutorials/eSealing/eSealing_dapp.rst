@@ -5,7 +5,7 @@
 eSealing dApp
 =============
 
-You can explore the `hosted eSealing service <https://eSealing.testnet.concordium.com>`_ or
+You can explore the `hosted eSealing service <https://esealing.testnet.concordium.com>`_ or
 start your own front-end by following the instructions in the READ.me file of this
 `repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/eSealing>`_ to get an overview of the dApp flow.
 
