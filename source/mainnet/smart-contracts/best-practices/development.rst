@@ -5,7 +5,7 @@ Development best practices
 ==========================
 
 This document provides guidelines for developing smart contracts.
-We start with some general thoughts about smart contract development and then give more details about writing smart contracts in Rust for Concordium.
+It starts with some general thoughts about smart contract development and then gives more details about writing smart contracts in Rust for Concordium.
 
 Mindset
 ========
@@ -14,7 +14,7 @@ Smart contract development involves many risks that do not show up in, for examp
 
 - the cost of mistakes is very high;
 - possibilities for fixing bugs are limited;
-- the area is evolving constantly with new vulnerabilities being discovered;
+- the area is evolving constantly, with new vulnerabilities being discovered regularly;
 - malicious parties deliberately try to break your smart contracts and steal the money.
 
 Therefore, it is not sufficient to defend your code against known vulnerabilities.
@@ -25,14 +25,14 @@ To minimize the exposure of your smart contract to possible attacks consider the
 - Determine the “bare minimum” that should be on-chain: use smart contracts only for the part that requires decentralization.
 - Keep your contracts simple and minimalistic: stick to strictly necessary functionality only.
   The more complexity you have in your contract, the larger the attack surface.
-- Be ready that things can go wrong after deployment:
+- Be ready if things go wrong after deployment:
 
   - provide “pause” functionality;
   - implement additional approvals/wait periods for dangerous operations;
   - have a clear plan for how to fix bugs found after deployment.
 
 - Extensively review, test and apply automated analysis/verification tools. Use different methods to ensure the correctness of your code.
-  Do not trust one particular method or tool, make sure that many people have looked at the code, and interacted with the smart contract.
+  Do not trust one particular method or tool; make sure that many people have looked at the code and interacted with the smart contract.
 
 
 .. _best-practices-specification:
@@ -40,8 +40,8 @@ To minimize the exposure of your smart contract to possible attacks consider the
 Specification
 =============
 
-A smart contract specification reflect developers' intentions regarding the smart contract functionality.
-It can serve as a guide for the implementation and further for testing, verifying, and auditing the code.
+A smart contract specification reflects developers' intentions regarding the smart contract functionality.
+It can serve as a guide for the implementation as well as for testing, verifying, and auditing the code.
 Start with an outline of the functionality and gradually refine it into specifications of contract entrypoints.
 
 For the entrypoints, consider the following:
@@ -50,21 +50,21 @@ For the entrypoints, consider the following:
 - Who can access the entrypoints? For example, the transaction sender must be an operator of the ``from`` account.
 - Which properties of these entrypoints should be satisfied? For example, a successful call of ``transfer(from, to, amount)`` decreases the ``from`` balance and the ``to`` balance by ``amount``.
 
-If the logic of your application requires complex flows that include several contract calls, or features several interacting smart contracts, use diagrams with description to document these.
+If the logic of your application requires complex flows that include several contract calls, or features several interacting smart contracts, use diagrams with descriptions to document these.
 
-The specification is not static, it can be refined once you start developing your application.
+The specification is not static; it can be refined once you start developing your application.
 Work in iterations, refining the specification when new requirements are discovered or old requirements change.
 
 An informal specification can be refined, turned into a formal one, and used as input to automated testing and verification tools.
 
 The absence of specifications complicates the quality assurance of smart contracts.
-For example, it makes auditing process less efficient and more expensive, because specifications has to be recovered from the source code before starting the audit process.
+For example, it makes the auditing process less efficient and more expensive, because the specification has to be recovered from the source code before starting the audit process.
 
 
 Concordium Rust Smart Contracts
 ===============================
 
-This section provides recommendations for developing smart contract in Rust.
+This section provides recommendations for developing smart contracts in Rust.
 
 
 .. _best-practices-code-structure:
@@ -119,7 +119,7 @@ External Calls
 --------------
 
 Every external call should be treated as a potential security risk.
-Calling another contact hands control out to potentially malicious code that could make arbitrary calls to any other contract, including your own contract.
+Calling another contract gives control to potentially malicious code that could make arbitrary calls to any other contract, including your own contract.
 Calls to your contract might change its state through entrypoints that permit updating the state, see :ref:`best-practices-reentrancy`.
 Moreover, you should not make any assumptions about energy consumption, or expect that the execution succeeds.
 You contract should be able to correctly handle situations when the call to an external contract fails.
@@ -145,22 +145,22 @@ A procedure can be interrupted in the middle of its execution, run again in *ano
 In case of smart contracts, each external call interrupts the execution and hands over control to unknown code.
 Do not treat external contract invocations as regular method calls.
 Instead, think of them as sending a message and temporarily pausing execution of your contract.
-The receiving side has full control of what to do next and can choose to call your contract again, while it is still in the "paused" state waiting for the external call to be completed.
+The receiving side has full control of what to do next and can choose to call your contract again while it is still in the "paused" state waiting for the external call to be completed.
 Once the external call is completed, you might find your contract in a completely different state.
 See an :ref:`example <reentracny-unit-testing>`, based on the DAO contract vulnerability of how reentrancy can be discovered using unit testing.
 
 - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
-- If you need to perform some state changes after and external call -- use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only>`_.
+- If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only>`_.
   If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
   Using ``invoke_contract`` covers most of the cases where protection from reentrancy is required.
-- Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy, and reset back after the call is complete.
+- Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy. Reset after the call is complete.
 
 .. _best-practices-code-documentation:
 
-Code Documentation
+Code documentation
 ------------------
 
-- Write an outline of the smart contract functionality in the beginning of the file, if the contract implements some standards, mention it.
+- Write an outline of the smart contract functionality in the beginning of the file; if the contract implements some standards, mention it.
 - Document decisions/choices in the code.
 - Document entrypoints:
 
