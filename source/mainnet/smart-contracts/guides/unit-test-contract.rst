@@ -339,12 +339,15 @@ state and balance fields:
        );
        ...
 
+.. _reentracny-unit-testing:
+
 Reentrancy
 ----------
 
 When invoking another smart contract, you give away control to that contract in the middle of execution.
 The external contract can, for example, call back entrypoints of your contract.
 This behavior is called *reentrancy* and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.
+See the details about handling external calls and ways of protecting against reentrancy-related issues in the :ref:`development best practices <best-practices-external-calls>`.
 
 The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can invoke any entrypoint of your own contract.
 
