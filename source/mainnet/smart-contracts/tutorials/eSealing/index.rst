@@ -12,6 +12,7 @@ An eSealing dApp
 In this tutorial, you are going to get familiar with the deployed eSealing smart contract on testnet and explore the associated website.
 
 What is file sealing? What is timestamping?
+===========================================
 
 Seals are used to protect items that should not be tampered with.
 You can prove an item's origin and integrity after it has been timestamped

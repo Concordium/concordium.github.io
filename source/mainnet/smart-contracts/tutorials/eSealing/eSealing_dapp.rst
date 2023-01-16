@@ -1,3 +1,4 @@
+.. include:: ../../../variables.rst
 .. _eSealing_dapp:
 
 =============
@@ -10,17 +11,17 @@ start your own front-end by following the instructions in the READ.me file of th
 
 .. note::
 
-   Comprehensive instructions on how to set up the Concordium browser wallet, create an account in the browser wallet,
+   Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
    get some testnet CCD and run a local front-end can be found in :ref:`wCCD front-end-set-up section <wCCD-front-end-set-up>`
 
-The front-end supports the following two flows with the browser wallet (or wallet connect):
+The front end supports the following two flows with the |bw| (or |mw-gen2| that uses WalletConnect):
 
 - Compute the file hash of a selected file => register its file hash in the smart contract
 - Compute the file hash of a selected file => retrieve the timestamp and witness (sealer account) that registered the file hash
 
 .. note::
 
-   Select the ``registration tab`` to register the file hash and the ``display tab`` to look-up the
+   Select the ``registration tab`` to register the file hash and the ``display tab`` to look up the
    timestamp and witness (sealer account) of an already registered file.
 
 .. note::
@@ -29,11 +30,10 @@ The front-end supports the following two flows with the browser wallet (or walle
    Changing the file's content would result in a completely new file hash. The eSealing smart contract expects a file hash of length 256-bits as an
    input parameter because of the used `HashSha2256 <https://docs.rs/concordium-std/latest/concordium_std/struct.HashSha2256.html>`_ type.
 
-.. image:: ./images/displayTab.gif
-   :alt: StreamPlayer
-   :align: center
+Register a file
+===============
 
-Display Tab
+Select the ``registration tab`` to register the file hash.
 
 .. image:: ./images/registrationTab.gif
    :alt: StreamPlayer
@@ -41,7 +41,21 @@ Display Tab
 
 Registration Tab
 
-The front-end is connected to a deployed eSealing smart contract on the Concordium testnet
+View timestamp and witness
+==========================
+
+Select the ``display tab`` to look up the timestamp and witness (sealer account) of an already registered file.
+
+.. image:: ./images/displayTab.gif
+   :alt: StreamPlayer
+   :align: center
+
+Display Tab
+
+Use Concordium Client
+=====================
+
+The front end is connected to a deployed eSealing smart contract on the Concordium testnet
 with `this source code <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing>`_.
 
 You can interact directly with the smart contract using ``concordium-client`` and your local node
@@ -69,6 +83,7 @@ You can view the ``timestamp`` and ``witness (sealer account)`` of an already ti
     $concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 10001
 
 What is the cost of using your account to seal a file?
+======================================================
 
 The cost is currently approximately 4-5 cents (Euro) to register a file hash in the smart contract on mainnet.
 Displaying the timestamp and witness (sealer_account) of a file hash is free of charge.

@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _sc-tutorials:
 
 ==========
@@ -16,8 +17,8 @@ You are going to write a basic web front-end example that can read from and writ
 In the ``Minting`` tutorials you will mint various types of tokens.
 
 In the ``eSealing`` tutorial, you are going to learn how to seal a document, so you can prove that it was in your possession at the time of sealing.
-You will use a front-end and the browser wallet to register the file hash of a selected document in a smart contract and then
-display the timestamp and the sealer from an already time-stamped document at the front-end.
+You will use a front end and the |bw| to register the file hash of a selected document in a smart contract and then
+display the timestamp and the sealer from an already time-stamped document at the front end.
 
 .. toctree::
    :maxdepth: 1
@@ -28,4 +29,4 @@ display the timestamp and the sealer from an already time-stamped document at th
    nft-minting/index
    sft-minting/index
    nft-marketplace/index
-   eSaeling <./eSealing/index>
+   eSealing <./eSealing/index>
