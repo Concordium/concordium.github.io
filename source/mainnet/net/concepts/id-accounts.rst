@@ -73,3 +73,10 @@ Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<b
 .. _revoke-anomity:
 
 .. include:: ../snippets/revoking-anonymity.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   ../guides/company-identities
+

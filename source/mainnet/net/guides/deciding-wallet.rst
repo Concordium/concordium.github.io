@@ -154,3 +154,9 @@ Next steps
 - If you want to learn more about the LEDGER device, go to `LEDGER's website <https://www.ledger.com>`_.
 
 - If you want to use the |bw|, :ref:`download <downloads>` the Google Chrome extension, and then see :ref:`Set up the Concordium Wallet for Chrome<setup-browser-wallet>` for the next steps.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   ../concepts/concepts-transactions

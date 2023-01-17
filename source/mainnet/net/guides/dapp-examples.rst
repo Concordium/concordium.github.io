@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. dapp-examples:
+.. _dapp-examples:
 
 =============
 dApp examples
@@ -44,5 +44,5 @@ Select an example to see more information about it, such as a hosted dApp for yo
     :ref:`Tutorial about the eSealing dApp<eSaeling>`
 
     `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing>`__
- 
+
     `Front end code <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/eSealing>`__
