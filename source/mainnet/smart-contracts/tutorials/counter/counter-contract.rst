@@ -82,9 +82,9 @@ Then change the update function as described below. Remember that input needs to
 .. code-block:: rust
 
     type IncrementVal = i8;
-    /// Receive function. The input parameter is the boolean variable `throw_error`.
-    ///  If `throw_error == true`, the receive function will throw a custom error.
-    ///  If `throw_error == false`, the receive function executes successfully.
+    /// Receive function. The input parameter is the increment value `i8`.
+    ///  If the account owner does not match the contract owner, the receive function will throw a custom error.
+    ///  If the number to increment by is negative, the receive function will throw a custom error.
     #[receive(
         contract = "counter",
         name = "increment",
