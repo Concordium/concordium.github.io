@@ -161,7 +161,7 @@ The view function will return only the counters value so you need to update its 
 Build, deploy, and initialize the contract
 ==========================================
 
-Create a dist folder to keep the schema output file and Wasm compiled contract in and run the build command.
+Create a ``dist`` folder to keep the schema output file and Wasm compiled contract in and run the build command.
 
 .. code-block:: console
 
