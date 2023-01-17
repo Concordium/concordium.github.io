@@ -9,40 +9,37 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
 .. dropdown:: Piggy bank
 
-    Demo front end where you can try the functionality on Concordium's testnet.
+    :ref:`Tutorial about the piggy bank smart contract and dApp<piggy-bank>`
 
-    Tutorial about the piggy bank smart contract and dApp.
+    `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs>`__
 
-    Smart contract
-
-    Front end code
+    `Front end code <https://github.com/Concordium/concordium-dapp-piggybank/>`_
 
 .. dropdown:: wCCD
 
-    Demo front end where you can try the functionality on Concordium's testnet.
+    `Demo front end <https://wccd.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
-    Tutorial about the wCCD smart contract and dApp.
+    :ref:`Tutorial about the wCCD smart contract and dApp<wCCD>`.
 
     Smart contract
 
-    Front end code
+        - `natively-upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+
+    Front end code (I can't find it)
 
 .. dropdown:: View gallery upon ID proof
 
+    `Demo front end <https://gallery.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
-    Demo front end where you can try the functionality on Concordium's testnet.
+    :ref:`Information about ID proofs<create-proofs>`
 
-    Information about ID proofs
+    :ref:`Tutorial about the gallery dApp<gallery>`
 
-    Tutorial about the gallery dApp
-
-    Smart contract
-
-    Front end code
+    `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`__
 
 .. dropdown:: eSealing
 
-    Demo front end where you can try the functionality on Concordium's testnet.
+    `Demo front end <https://esealing.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
     Tutorial about the eSealing dApp
 
