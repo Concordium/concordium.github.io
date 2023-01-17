@@ -155,7 +155,7 @@ SDK](https://github.com/Concordium/concordium-rust-sdk/tree/derive-schema).
 
 The `source/mainnet` directory contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
 
-With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a tab if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
+With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a dropdown if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
 
 For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.readthedocs.io/en/latest/#basic-tabs>`_.
 
@@ -169,6 +169,8 @@ For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.rea
 * Prefer **present** continuous ("is") over future ("will be").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
 * Use the correct action depending on the device: "click" on a computer (when using a mouse), "press" a button on the keyboard, "tap" a button on a touchscreen device. "Select" can also be used. Nothing should be "hit".
+
+For a list of approved Concordium terminology, see `Terminology and definitions <https://docs.google.com/spreadsheets/d/18rDRELpEzUgD8770xk_KEF3ZXIUsev2pfkNYdJD1AqU/edit?usp=sharing>`__. This document also contains brand guidelines for third parties.
 
 ### Formatting
 
@@ -241,15 +243,15 @@ Example that follows both rules:
 
 ### Variables
 
-Use variables when it makes sense. Variables exist for most of the wallets and some other product names.
+Use variables when it makes sense. Variables exist for most of the wallets and some other product names. It is preferred to use the variable instead of, e.g., browser wallet.
 
 Add new variables in the file `source/variables.rst`.
 
 Use the variables by:
 
 - Including a relative path to `variables.rst`, for example
-  `../../variables.rst`.
-- Then using the variable net, for example `|Net|`.
+  `../../variables.rst`, at the top of the file.
+- Then using the variable net, for example `|bw|`, in the text.
 
 ### Images
 
@@ -259,7 +261,7 @@ Captions are not used. Instead the image context should be described in the text
 
 Images must have :alt: text for accessibility. Generally, image width is 100%. For mobile wallets, browser wallet image width is 25%. For buttons, image width varies depending on whether the button has text and the graphic. Width ranges between 25 and 50 px.
 
-GIFs can be inserted but should only be used when it gives clarity to more complex actions.
+GIFs can be inserted but should only be used when it gives clarity to more complex actions. When using GIFs, the :alt: text is StreamPlayer and :align: is center.
 
 ## License
 
