@@ -109,7 +109,7 @@ section. A smart contract must export one function for initializing new
 instances and can export zero or more functions for updating the instance.
 
 Since a smart contract module can export functions for multiple different smart
-contracts, we associate the functions using a naming scheme:
+contracts, associate the functions using a naming scheme:
 
 - ``init_<contract-name>``: The function for initializing a smart contract must
   start with ``init_`` followed by a name of the smart contract. The contract

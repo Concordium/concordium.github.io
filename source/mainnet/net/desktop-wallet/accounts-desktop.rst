@@ -143,7 +143,7 @@ Preferences
 
 The Desktop Wallet provides a set of multi-signature transactions called Foundation transactions that only members of the Concordium Foundation can sign.
 
-These transactions are disabled by default, and if you're not a member of the Concordium Foundation we strongly recommend that you don't enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you'll not be able to actually sign or submit any of these transactions.
+These transactions are disabled by default, and if you're not a member of the Concordium Foundation it is strongly recommended that you don't enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you'll not be able to actually sign or submit any of these transactions.
 
 Node settings
 -------------

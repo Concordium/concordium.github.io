@@ -29,7 +29,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
         #.  Create a password that contains at least 6 characters. You'll need the password to import the file into the Desktop Wallet so keep it safe.
 
-        #.  Navigate to the location on your computer where you want to save the file. If you're on Windows, make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**. Once the export is complete, we recommend that you store the file in a safe location that is different from where you store the Desktop Wallet database.
+        #.  Navigate to the location on your computer where you want to save the file. If you're on Windows, make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**. Once the export is complete, Concordium recommends that you store the file in a safe location that is different from where you store the Desktop Wallet database.
 
     .. dropdown:: Import
 

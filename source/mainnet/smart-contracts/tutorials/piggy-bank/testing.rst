@@ -232,7 +232,7 @@ Test inserting CCD into a piggy bank
 ====================================
 
 Next, you should test the different functions for interacting with a piggy bank.
-This works similarly to how you test init functions, in that we construct test
+This works similarly to how you test init functions, in that you construct test
 versions of the arguments.
 For receive functions that means constructing |TestReceiveContext|_ and
 |TestHost|_, the latter of which expects the initial contract state.
