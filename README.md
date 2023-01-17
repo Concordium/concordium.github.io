@@ -163,11 +163,12 @@ For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.rea
 
 ### Language
 
-* For a user guide, use **second person** ("you")
+* For a user guide, use **second person** ("you"). Avoid use of first person (we, I, me, our, etc).
 * Structure sentences, especially numbered procedures, using the **imperative** ("click on X").
 * Keep sentences **short**.
 * Prefer **present** continuous ("is") over future ("will be").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
+* Use the correct action depending on the device: "click" on a computer (when using a mouse), "press" a button on the keyboard, "tap" a button on a touchscreen device. "Select" can also be used. Nothing should be "hit".
 
 ### Formatting
 
@@ -240,7 +241,7 @@ Example that follows both rules:
 
 ### Variables
 
-Use variables when it makes sense.
+Use variables when it makes sense. Variables exist for most of the wallets and some other product names.
 
 Add new variables in the file `source/variables.rst`.
 
@@ -252,7 +253,13 @@ Use the variables by:
 
 ### Images
 
-Save any images that you add in the Images folder under mainnet and testnet. Create sub-folders as needed to store images.
+Save any images that you add in the Images folder. Create sub-folders as needed to store images.
+
+Captions are not used. Instead the image context should be described in the text above it with a reference, such as "...in the image below...".
+
+Images must have :alt: text for accessibility. Generally, image width is 100%. For mobile wallets, browser wallet image width is 25%. For buttons, image width varies depending on whether the button has text and the graphic. Width ranges between 25 and 50 px.
+
+GIFs can be inserted but should only be used when it gives clarity to more complex actions.
 
 ## License
 
