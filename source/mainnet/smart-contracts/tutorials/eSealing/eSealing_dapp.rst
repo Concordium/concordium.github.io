@@ -12,7 +12,7 @@ start your own front-end by following the instructions in the READ.me file of th
 .. note::
 
    Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
-   get some testnet CCD and run a local front-end can be found in :ref:`wCCD front-end-set-up section <wCCD-front-end-set-up>`
+   get some testnet CCD and run a local front end can be found in :ref:`wCCD front-end-set-up section <wCCD-front-end-set-up>`
 
 The front end supports the following two flows with the |bw| (or |mw-gen2| that uses WalletConnect):
 
@@ -74,7 +74,7 @@ Create a ``fileHash.json`` file with a file hash as content similar to:
 .. note::
 
    Comprehensive instructions on how to set up a local Concordium testnet node on port 10001 (or alternatively link to a remote node via grpc),
-   and download ``concordium-client`` can be found in :ref:`part 3<piggy-bank-preparing>` of the piggy bank tutorial.
+   and download ``concordium-client`` can be found in :ref:`Setup the development environment<setup-env>`.
 
 You can view the ``timestamp`` and ``witness (sealer account)`` of an already timestamped file as follows:
 
