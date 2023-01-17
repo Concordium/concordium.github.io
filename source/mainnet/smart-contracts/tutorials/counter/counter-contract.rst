@@ -84,7 +84,7 @@ Then change the update function as described below. Remember that input needs to
     type IncrementVal = i8;
     /// Receive function. The input parameter is the increment value `i8`.
     ///  If the account owner does not match the contract owner, the receive function will throw [`Error::OwnerError`].
-    ///  If the number to increment by is not positive, the receive function will throw [`Error::IncrementError`].
+    ///  If the number to increment by is not positive or is zero, the receive function will throw [`Error::IncrementError`].
     #[receive(
         contract = "counter",
         name = "increment",
