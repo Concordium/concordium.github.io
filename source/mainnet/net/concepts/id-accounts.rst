@@ -64,7 +64,7 @@ About accounts
 
 For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
-Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 .. Note::
 
