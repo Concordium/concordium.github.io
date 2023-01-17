@@ -229,7 +229,7 @@ Now check the state once more.
 .. image:: images/invoke2.png
     :width: 100%
 
-Unsurprisingly, the state is 2. Now check the other requirement: that you cannot increment it with a negative number. Change the value in the json file to a negative number like -2.
+Unsurprisingly, the state is 2. Now check the other requirement: that you cannot increment it with a negative number. Change the value in the JSON file to a negative number like -2.
 
 .. image:: images/increment-neg-error.png
     :width: 100%
