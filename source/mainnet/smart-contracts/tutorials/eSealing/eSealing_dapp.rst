@@ -5,7 +5,7 @@
 eSealing dApp
 =============
 
-You can explore the `hosted eSealing service <https://eSealing.testnet.concordium.com>`_ or
+You can explore the `hosted eSealing service <https://esealing.testnet.concordium.com>`_ or
 start your own front-end by following the instructions in the READ.me file of this
 `repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/eSealing>`_ to get an overview of the dApp flow.
 
@@ -83,7 +83,7 @@ You can view the ``timestamp`` and ``witness (sealer account)`` of an already ti
     $concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 10001
 
 What is the cost of using your account to seal a file?
-=======================================================
+======================================================
 
 The cost is currently approximately 4-5 cents (Euro) to register a file hash in the smart contract on mainnet.
 Displaying the timestamp and witness (sealer_account) of a file hash is free of charge.
