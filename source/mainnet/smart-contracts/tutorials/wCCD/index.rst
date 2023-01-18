@@ -26,6 +26,10 @@ In the :ref:`fourth part<wCCD-full-dApp>`, you will interact with the wCCD token
    The reader is assumed to have basic knowledge of what a blockchain and smart
    contracts are, and some experience with web front-end development.
 
+.. Attention::
+
+   Before starting the next steps, make sure that you have :ref:`setup the developer environment<setup-env>` with the tools needed.
+
 To start the tutorial click :ref:`here<wCCD-introduction>`.
 
 .. toctree::

@@ -82,8 +82,7 @@ Preparation
 ===========
 
 Before you start, make sure to have the necessary tooling to build Rust
-contracts.
-The guide :ref:`setup-tools` shows you how to do this.
+contracts. The guide :ref:`setup-env` shows you how to do this.
 Also, make sure to have a text editor setup to write Rust.
 
 Since you are going to extend the smart contract code written in the :ref:`previous
@@ -707,4 +706,4 @@ given context. For a reference of the context, see :ref:`simulate-context`.
 
 For more on how to run simulations, see :ref:`local-simulate`.
 
-To continue with the tutorial click :ref:`here<piggy-bank-preparing>`.
+To continue with the tutorial click :ref:`here<piggy-bank-deploying>`.
