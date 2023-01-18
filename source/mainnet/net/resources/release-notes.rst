@@ -11,12 +11,6 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-January 19, 2023
-
-Cargo concordium 2.6.0
----------------------------
-
-
 January 12, 2023
 
 Concordium Node 5.1.3
