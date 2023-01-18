@@ -12,6 +12,10 @@ You can download the contract from `this link <https://github.com/chainorders/co
 
 This client is a sort of intermediary layer between those two contracts. It allows the parent contract to abstract away the logic of calling the child contract for the methods. Check the client code and see the ``invoke_contract_read_only()`` to understand how contract invocation works from another contract. It needs to implement the functions that you will invoke and requires some parameters such as the address of the contract, entrypoint, and so on. Basically, the parent has to implement the child's function and provide all necessary inputs. That function connects with the child contract, gets the response, and conveys it to the master contract after deserializing it.
 
+.. Attention::
+
+   Before starting the next steps, make sure that you have :ref:`setup the developer environment<setup-env>` with the tools needed.
+
 To continue with the tutorial, click :ref:`here<nft-mp-sc>`.
 
 .. toctree::
