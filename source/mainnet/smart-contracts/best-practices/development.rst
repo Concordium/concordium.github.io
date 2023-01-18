@@ -122,7 +122,7 @@ Every external call should be treated as a potential security risk.
 Calling another contract gives control to potentially malicious code that could make arbitrary calls to any other contract, including your own contract.
 Calls to your contract might change its state through entrypoints that permit updating the state, see :ref:`best-practices-reentrancy`.
 Moreover, you should not make any assumptions about energy consumption, or expect that the execution succeeds.
-You contract should be able to correctly handle situations when the call to an external contract fails.
+Your contract should be able to correctly handle situations when the call to an external contract fails.
 
 General recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -142,7 +142,7 @@ Reentrancy
 
 The *reentrant behavior* is not specific to smart contracts: it is a well known issue in the context of concurrency.
 A procedure can be interrupted in the middle of its execution, run again in *another* execution context, and then continue execution from the interruption point.
-In case of smart contracts, each external call interrupts the execution and hands over control to unknown code.
+In case of smart contracts, each call to external smart contracts interrupts the execution and hands over control to unknown code.
 Do not treat external contract invocations as regular method calls.
 Instead, think of them as sending a message and temporarily pausing execution of your contract.
 The receiving side has full control of what to do next and can choose to call your contract again while it is still in the "paused" state waiting for the external call to be completed.
