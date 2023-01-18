@@ -216,16 +216,37 @@ Example:
    Hello, world!
 ```
 
+#### Code examples
+
+Use `code-block:: rust` to show Rust content with correct formatting.
+
+Use `code-block:: toml` to show TOML content with correct formatting.
+
+Use `code-block:: json` to show JSON content with correct formatting.
+
+Use `code-block:: jsx` to show JSX content with correct formatting.
+
+A particular line number may be emphasized with :emphasize-lines:line_number option. Multiple lines are comma separated (e.g. :emphasize-lines:10,12).
+
+#### Code inline in text
+
+Use ``code`` to insert commands or output from a terminal screen into a line of text. For example:
+
+   To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>`` 
+
+Do not confuse ``code`` with `code`. Text wrapped in single ` is so-called default role interpreted text. And do not use regular quotes, e.g. "code", for code examples.
+
+### Code formatting for this repository
+
 #### Buttons and clickable elements
 
-Use **bold** to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**").
+Use **bold** to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**"). Do not use quotes for clickable elements or keyboard buttons.
 
 #### Emphasis
 
 - Use *italics* for text emphasis (e.g., when introducing a new term: "Obtain an identity from an *identity provider*.").
 - After the term is introduced avoid emphasising it again in the same text.
-
-### Code formatting for this repository
+- Do not use quotes for emphasis.
 
 #### Indentation
 Use three spaces for indentation.
