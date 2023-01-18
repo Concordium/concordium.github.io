@@ -361,7 +361,7 @@ The state of your contract might not be the same before and after ``invoke_contr
 
 Consider a concrete example of reentrancy when the state is *not* updated properly before making an external call.
 This can lead to reentrant calls that pass some validation that is based on the current state, even though these calls should fail.
-The classic example of such a security issue is the Ethereum DAO smart contract that was drained of funds due to the reentrancy vulnerability.
+The classic example of such a security issue is `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract that was drained of funds due to the reentrancy vulnerability.
 Below is a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
 The users can request their funds back; if a user is a smart contract, the funds are sent to a specified entrypoint.
 

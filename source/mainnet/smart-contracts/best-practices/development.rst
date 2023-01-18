@@ -15,7 +15,7 @@ Smart contract development involves many risks that do not show up in, for examp
 - the cost of mistakes is very high;
 - possibilities for fixing bugs are limited;
 - the area is evolving constantly, with new vulnerabilities being discovered regularly;
-- malicious parties deliberately try to break your smart contracts and steal the money.
+- malicious parties deliberately try to break your contract, for example, to steal the funds from the contract account.
 
 Therefore, it is not sufficient to defend your code against known vulnerabilities.
 You can think about smart contracts as mission-critical software, or software for embedded devices rather than a web application.
@@ -29,6 +29,7 @@ To minimize the exposure of your smart contract to possible attacks consider the
 
   - provide “pause” functionality;
   - implement additional approvals/wait periods for dangerous operations;
+  - make your contract :ref:`upgradable <contract-instance-upgradeability>`;
   - have a clear plan for how to fix bugs found after deployment.
 
 - Extensively review, test and apply automated analysis/verification tools. Use different methods to ensure the correctness of your code.
@@ -65,6 +66,7 @@ Concordium Rust Smart Contracts
 ===============================
 
 This section provides recommendations for developing smart contracts in Rust.
+See :ref:`introduction` for basic information.
 
 
 .. _best-practices-code-structure:
@@ -73,7 +75,7 @@ Recommended structure
 ---------------------
 
 - Use ``cargo init`` with an appropriate template to start a new project.
-- Build contract logic as the state struct implementation.
+- For non-trivial contracts, build the contract logic as the state struct implementation.
 
   .. code-block:: rust
 
@@ -113,6 +115,60 @@ Recommended structure
   Returning earlier will save energy and make the call cheaper.
   Use the ``ensure!()`` macro to validate and return an error.
 
+.. _best-practices-dos:
+
+Denial-of-service
+-----------------
+
+This section presents situations when a smart contract ends up in a blocked state making it unusable permanently or for some period of time.
+
+.. _best-practices-external-call-failure:
+
+External call failure
+^^^^^^^^^^^^^^^^^^^^^
+
+Sending funds back to an unknown contract address as part of some complex operation could block this operation from succeeding.
+The contract you call might fail for various reasons.
+If the contract call fails, the whole operation also fails.
+
+Consider splitting withdrawal of funds from the rest of the contract logic.
+You could create a separate entrypoint allowing users, which could be smart contracts, to request funds back.
+This pattern is called *Pull over Push*, where *Pull* corresponds to user explicitly requesting funds and *Push* to sending the funds back as part of some other operation.
+
+Note that this pattern is not always necessary.
+In the `auction contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/auction/src/lib.rs>`_ example it is safe to refund the previous bidder, as part of the bidding functionality, because on Concordium transferring to accounts is guaranteed not to execute any code.
+However, if you want smart contract addresses to participate in the auction, it could lead to blocking, if the receiving contract fails.
+In this case, consider using the *Pull over Push* pattern.
+
+Operations with unknown bound
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Interating over data structures that store data updated by users can become expensive over time, once it has more and more entries.
+
+Consider the following map for storing all user bids in an auction contract:
+
+.. code-block:: rust
+
+  pub struct State<S> {
+    bids: StateMap<Address, Amount, S>
+  }
+
+Computing the maximum for each new bid requires iterating over the map.
+As the number of participants grows it becomes more expensive to compute the highest bid.
+Eventually, it might not fit into the block energy limit and bidding becomes blocked.
+See :ref:`contract-instance-operations` for more information.
+
+This situation is not necessarily an attack, it could occur naturally during the contract lifetime.
+In general, all computations requiring iteration with no clear bound could be an issue.
+For the auction, consider adding ``previous_bid: Amount`` to the state.
+Update ``previous_bid`` once a new bidder proposes a higher bid.
+
+.. note::
+
+  Keep only relevant data in the contract state.
+  For example, if you are interested in historical data for all the bids, but your contract logic requires only the highest bid to make a decision, consider :ref:`logging events <contract-instances-logging-events>` instead.
+  An off-chain part of your dApp can then use logs to obtain the historical data.
+
 .. _best-practices-external-calls:
 
 External Calls
@@ -120,20 +176,32 @@ External Calls
 
 Every external call should be treated as a potential security risk.
 Calling another contract gives control to potentially malicious code that could make arbitrary calls to any other contract, including your own contract.
-Calls to your contract might change its state through entrypoints that permit updating the state, see :ref:`best-practices-reentrancy`.
+Calls to your contract might change its state through entrypoints that permit updating the state, see the :ref:`best-practices-reentrancy` section of this document.
 Moreover, you should not make any assumptions about energy consumption, or expect that the execution succeeds.
 Your contract should be able to correctly handle situations when the call to an external contract fails.
 
 General recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-- *Avoid complex interactions*. Avoid splitting the on-chain part of your dApp into several smart contracts unless it is strictly necessary.
-  For example, instead of using the *proxy* pattern, use :ref:`natively upgradable contracts <contract-instance-upgradeability>`.
-- *Think about the contract state*. Do not assume that the contract state stays the same after an external call (see :ref:`best-practices-reentrancy` for details).
-- *Protect from denial-of-service (DoS) attacks*. Use the *Pull over Push* pattern: avoid sending funds back (*Push*) to an unknown address as part of some complex operation in your smart contract.
-  It opens doors to DoS attacks since the contract you call might fail for various reasons, blocking your functionality from succeeding.
-  Instead, create a separate entrypoint allowing users, which could be smart contracts, to request funds back (*Pull*).
-  Note that it is safe to transfer to user addresses, because on Concordium it is guaranteed not to execute any code.
+- *Avoid complex interactions*.
+  Avoid splitting the on-chain part of your dApp into several smart contracts unless it is strictly necessary.
+  For example, instead of using the *proxy pattern for upgradability*, use :ref:`natively upgradable contracts <contract-instance-upgradeability>`.
+  Using the proxy makes the implementation more complex by introducing contract interactions.
+  Proxies can be useful for other purposes, but for upgradability, it is recommended to use  :ref:`natively upgradable contracts <contract-instance-upgradeability>`.
+
+  .. note::
+
+    A simple *proxy pattern* splits you contract into the proxy contract that serves as a relayer and main contract that contains the actual implementation of the functionality.
+    The address of the main contract, can be updated in the state of the proxy contract, making the whole setup upgradable (See `here <https://docs.openzeppelin.com/contracts/4.x/api/proxy>`_ for more information).
+
+- *Think about the contract state*.
+  Do not assume that the contract state stays the same after an external call.
+  See the :ref:`best-practices-reentrancy` section of this document for details.
+- *Protect from denial-of-service (DoS) attacks*.
+  Calls to an *unknown*, e.g. user-provided, contract address can fail unpredictably.
+  When this call is part of some complex operation, the whole operation will fail as well.
+  In some cases, this results in blocking the functionality of your contract for all users.
+  Read more in the :ref:`best-practices-external-call-failure` section of this document.
 
 .. _best-practices-reentrancy:
 
@@ -146,14 +214,38 @@ In case of smart contracts, each call to external smart contracts interrupts the
 Do not treat external contract invocations as regular method calls.
 Instead, think of them as sending a message and temporarily pausing execution of your contract.
 The receiving side has full control of what to do next and can choose to call your contract again while it is still in the "paused" state waiting for the external call to be completed.
-Once the external call is completed, you might find your contract in a completely different state.
-See an :ref:`example <reentracny-unit-testing>`, based on the DAO contract vulnerability of how reentrancy can be discovered using unit testing.
+Once the external call is completed, the contract state and balance might be different from those before the call.
+See an :ref:`example <reentracny-unit-testing>`, based on `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract vulnerability of how reentrancy can be discovered using unit testing.
 
 - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
 - If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only>`_.
   If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
-  Using ``invoke_contract`` covers most of the cases where protection from reentrancy is required.
+  Using ``invoke_contract_read_only`` covers most of the cases where protection from reentrancy is required.
 - Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy. Reset after the call is complete.
+
+  .. code-block:: rust
+
+    pub struct State {
+      ...
+      lock : bool,
+    }
+
+    fn entrypoint_with_mutex<S: HasStateApi>(
+      ctx: &impl HasReceiveContext,
+      host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> Result<(), Error> {
+      ensure!(!host.state().lock, Error::Locked);
+      host.state_mut().lock = true;
+      ...
+      host.invoke_contract(...);
+      ...
+      host.state_mut().lock = false;
+    }
+  .. warning::
+
+    Using a mutex complicates the contract logic.
+    First, think about using simpler solutions, like the *Checks-Effects-Interactions* pattern, or ``invoke_contract_read_only``.
+    Think carefully which entrypoints you want to protect and make sure that the contract will not end up locked forever.
 
 .. _best-practices-code-documentation:
 
@@ -166,8 +258,8 @@ Code documentation
 
   - What functionality the entrypoint implements?
   - Who has access rights to call the entrypoint?
-  - When the call is rejected?
-  - What events are logged?
+  - When is the call rejected?
+  - What events are logged and when?
 
 - Document tests:
 
@@ -184,7 +276,7 @@ The Concordium standard library `concordium-std`_ offers several possibilities f
 - :ref:`Unit testing <unit-test-contract>` used for testing particular cases where you define what is the valid output.
 - :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
 
-Use the :ref:`smart contract specification <best-practices-specification>` to come up with cases and properties to test.
+Use the :ref:`smart contract specification <best-practices-specification>` guidelines from this document to come up with cases and properties to test.
 
 Checklist
 ---------
@@ -192,7 +284,7 @@ Checklist
 Make sure that:
 
 - you have a smart contract specification;
-- your code follows the :ref:`recommended structure <best-practices-code-structure>`;
+- your code follows the :ref:`recommended structure <best-practices-code-structure>` described in this document;
 - you looked carefully for all *known* source of issues, e.g. :ref:`external calls <best-practices-external-calls>`, arithmetic overflows, etc.
 - you have a *disaster recovery plan*: the pause functionality, upgradability, etc.
 - you used formatting and linting tools (see the `Contributing section <https://github.com/Concordium/concordium-rust-smart-contracts#contributing>`_);

@@ -138,6 +138,8 @@ To summarize, a transaction for smart-contract interaction includes:
 
    The *receive function* can have a return value.
 
+.. _contract-instances-logging-events:
+
 Logging events
 ==============
 
