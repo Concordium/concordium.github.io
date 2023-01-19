@@ -206,11 +206,11 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
 
 .. code-block:: console
 
-   $cargo concordium schema-json --schema schema/schema.bin --out "/some/path"
+   $cargo concordium schema-json --schema "schema/schema.bin" --out "/some/path"
 
 Alternatively, a schema in JSON can be extracted from an embedded schema in a
 module by using
 
 .. code-block:: console
 
-   $cargo concordium schema-json --module module.wasm.v1 --out "/some/path"
+   $cargo concordium schema-json --module "module.wasm.v1" --out "/some/path"
