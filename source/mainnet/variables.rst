@@ -17,14 +17,14 @@
 .. |client-linux-checksum| replace:: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
 
 .. Cargo verification variables
-.. |cargo-linux| replace:: cargo-concordium_2.5.0
-.. |cargo-version| replace:: 2.5.0
-.. |cargo-linux-checksum| replace:: 96e7d4de085147d57aeff17f92c0cad16fd4039434eea7eb67dfdad28b898434
+.. |cargo-linux| replace:: cargo-concordium_2.6.0
+.. |cargo-version| replace:: 2.6.0
+.. |cargo-linux-checksum| replace:: dabd81f2379cc5d56e1dbcb58b1126f8b7915607f016c962d8c88053dc62e05a
 
 .. Node debian package verification variables
 
-.. |node-deb-package| replace:: concordium-mainnet-node_5.0.6-0_amd64.deb
-.. |node-deb-package-checksum| replace:: f3a66a2ab5193682f3997c38c8b4e688bec85191f6cc5871dca63fb572fe5c18
+.. |node-deb-package| replace:: concordium-mainnet-node_5.1.3-0_amd64.deb
+.. |node-deb-package-checksum| replace:: be10622086fe1225480e68303aab05fcc806150c51327afa7f19c8289600fb6b
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
