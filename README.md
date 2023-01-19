@@ -225,7 +225,7 @@ Use `code-block:: json` to show JSON content with correct formatting.
 
 Use `code-block:: jsx` to show JSX content with correct formatting.
 
-A particular line number may be emphasized with :emphasize-lines:line_number option. Multiple lines are comma separated (e.g. :emphasize-lines:10,12).
+A particular line number may be emphasized with `:emphasize-lines:line_number` option. Multiple lines are comma-separated and consecutive lines can be written with a dash (e.g. :emphasize-lines:10,12,15-17).
 
 #### Code inline in text
 
