@@ -157,18 +157,17 @@ The `source/mainnet` directory contains documentation for the current Mainnet, a
 
 With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a dropdown if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
 
-For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.readthedocs.io/en/latest/#basic-tabs>`_.
-
 ## Style guide
 
 ### Language
 
 * For a user guide, use **second person** ("you"). Avoid use of first person (we, I, me, our, etc).
-* Structure sentences, especially numbered procedures, using the **imperative** ("click on X").
+* Structure sentences, especially numbered procedures, using the **imperative** ("click on X") and with as few actions as possible per step.
 * Keep sentences **short**.
 * Prefer **present** continuous ("is") over future ("will be").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
 * Use the correct action depending on the device: "click" on a computer (when using a mouse), "press" a button on the keyboard, "tap" a button on a touchscreen device. "Select" can also be used. Nothing should be "hit".
+* Remember that you are generally writing for non-native English speakers so keep it simple.
 
 For a list of approved Concordium terminology, see `Terminology and definitions <https://docs.google.com/spreadsheets/d/18rDRELpEzUgD8770xk_KEF3ZXIUsev2pfkNYdJD1AqU/edit?usp=sharing>`__. This document also contains brand guidelines for third parties.
 
@@ -235,6 +234,12 @@ Use ``code`` to insert commands or output from a terminal screen into a line of 
    To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>`` 
 
 Do not confuse ``code`` with `code`. Text wrapped in single ` is so-called default role interpreted text. And do not use regular quotes, e.g. "code", for code examples.
+
+#### Hyperlinks
+
+Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. `Concordium <https://www.concordium.com>`_.
+
+If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g. .. _Rust: https://www.rust-lang.org/, and then reference it in the text, e.g. using the Rust_ programming language.
 
 ### Code formatting for this repository
 
