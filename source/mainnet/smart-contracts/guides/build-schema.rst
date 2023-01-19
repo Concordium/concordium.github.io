@@ -183,7 +183,7 @@ where ``FILE`` is a path of the file to create:
 
 If using ``cargo concordium`` version 2.6.0 or newer then the schema can be
 output in JSON format that can be more suitable for use in dApps. When building
-the contract we can use ``--schema-json-out=DIR`` to output the schema for each
+the contract use ``--schema-json-out=DIR`` to output the schema for each
 contract in the module to a JSON file inside the directory ``DIR``. The
 directory must exist.
 
@@ -201,14 +201,14 @@ schemas in both formats will be output.
 Converting a binary schema to JSON
 ----------------------------------
 
-To convert an existing binary schema (obtained via ``--schema-out``) you can use
+To convert an existing binary schema (obtained via ``--schema-out``) use the
 ``cargo concordium schema-json`` subcommand, e.g.,
 
 .. code-block:: console
 
    $cargo concordium schema-json --schema schema/schema.bin --out="/some/path"
 
-Alternatively a schema in JSON can be extracted from an embeddeds schema by using
+Alternatively, a schema in JSON can be extracted from an embedded schema by using
 
 .. code-block:: console
 
