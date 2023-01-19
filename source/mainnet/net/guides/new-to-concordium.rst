@@ -9,51 +9,51 @@ Getting started with Concordium
 
 .. dropdown:: I want to learn more about the Concordium concepts
 
-    Read about our project on concordium.com
+    Read about our project on `concordium.com <https://www.concordium.com>`_.
 
     Read about the various concepts
 
-        - Identities
-        - Accounts
-        - Delegation
-        - Baking
+    - :ref:`Identities<reference-id-accounts>`
+    - :ref:`Accounts<managing_accounts>`
+    - :ref:`Delegation<delegation-concept>`
+    - :ref:`Baking<baker-concept>`
 
-    Use the glossary of terms to learn the language
+    Use the :ref:`glossary of terms<glossary>` to learn the language
 
 .. dropdown:: I want to learn more about Concordium wallets
 
-    - I'm not sure what kind of wallet I want
-    - I want a web wallet
-    - I want a wallet for my Android phone
-    - I want a wallet for my iOS phone
-    - I want a wallet I can run on my desktop that uses a hardware wallet
+    - :ref:`I'm not sure what kind of wallet I want<choosing-wallet>`
+    - I want a :ref:`web wallet<setup-browser-wallet>`
+    - I want a wallet for an :ref:`Android phone<setup-g2-mobile-wallet>`
+    - I want a wallet for an :ref:`iOS phone<setup-mobile-wallet>`
+    - I want a wallet I can run on a :ref:`desktop computer that uses a hardware wallet<overview-desktop>`
 
 .. dropdown:: I want to run a node
 
-    See the node requirements.
+    See the :ref:`node requirements<node-requirements>`.
 
     I want to run a node on:
 
-    - Docker
-    - Linux/ubuntu
-    - Windows
-    - Mac
+    - :ref:`Docker<docker-node>`
+    - :ref:`Linux/ubuntu<ubuntu-node>`
+    - :ref:`Windows<windows-node>`
+    - :ref:`Mac<macos-node>`
 
 .. dropdown:: I want to stake CCD to earn more CCD
 
-    The staking options on Concordium are baking or delegating. To be a baker you must run a node and have a minimum of 14000 CCDs in an account. There is no minimum amount of CCDs needed to delegate.
+    The staking options on Concordium are :ref:`baking or delegating<how-to-earn>`. To be a baker you must run a node and have a minimum of 14000 CCDs in an account. There is no minimum amount of CCDs needed to delegate.
 
-    - I want to learn more about baking and delegating before continuing.
-    - I have enough funds to be a baker.
-    - I only want to delegate to a baker pool.
+    - I want to :ref:`learn more about baking and delegating<delegation-faq>` before continuing.
+    - I have enough funds to :ref:`be a baker<overview-baker>`.
+    - I only want to :ref:`delegate to a baker pool or passive delegation<add-delegation>`.
 
 .. dropdown:: I want to build a dApp that uses Concordium's ID layer
 
-    See the tutorial for a gallery that uses ID proofs for access.
+    See the tutorial for a :ref:`gallery that uses ID proofs for access<gallery>`.
 
 .. dropdown:: I want to learn about smart contracts at Concordium
 
-    Start with an introduction to smart contracts.
+    Start with an :ref:`introduction to smart contracts<introduction>`.
 
 .. dropdown:: I want to write a smart contract
 
@@ -65,12 +65,12 @@ Getting started with Concordium
 
 .. dropdown:: I want to have a dApp that interacts with my smart contract
 
-    See the wCCD tutorial or the Piggy Bank tutorial.
+    See the :ref:`wCCD tutorial<wCCD>` or the :ref:`Piggy Bank tutorial<piggy-bank>`.
 
 .. dropdown:: I want to mint NFTs
 
-    See the NFT minting tutorial.
+    See the :ref:`NFT minting tutorial<nft-index>`.
 
 .. dropdown:: I want to make an NFT marketplace
 
-    See the NFT marketplace tutorial.
+    See the :ref:`NFT marketplace tutorial<nft-marketplace-index>`.
