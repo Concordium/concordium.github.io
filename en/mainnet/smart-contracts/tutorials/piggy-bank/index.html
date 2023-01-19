@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Writing the piggy bank smart contract" href="writing.html" />
-    <link rel="prev" title="Tutorials" href="../index.html" />
+    <link rel="prev" title="Concordium counter smart contract" href="../counter/counter-contract.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -954,6 +954,16 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
      <li class="toctree-l2 current active has-children">
       <a class="current reference internal" href="#">
        PiggyBank
@@ -972,11 +982,6 @@ body {margin:0;}
        <li class="toctree-l3">
         <a class="reference internal" href="testing.html">
          Testing the piggy bank smart contract
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="preparing.html">
-         Preparing a testnet node on a server
         </a>
        </li>
        <li class="toctree-l3">
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../nft-minting/setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nft-minting/upload-nft.html">
          Upload the NFT
@@ -1709,14 +1709,14 @@ taking all of the CCD inside.</p>
 contract using the <a class="reference external" href="https://www.rust-lang.org/">Rust</a> programming language.</p>
 <p>The <a class="reference internal" href="testing.html#piggy-bank-testing"><span class="std std-ref">second part</span></a> is about how to test your piggy bank smart contract with unit
 tests.</p>
-<p>The <a class="reference internal" href="preparing.html#piggy-bank-preparing"><span class="std std-ref">third part</span></a> is about how to setup your testnet node on a server.</p>
-<p>The <a class="reference internal" href="deploying.html#piggy-bank-deploying"><span class="std std-ref">fourth part</span></a> is about how to deploy your piggy bank smart contract to the Concordium testnet and interact with it.</p>
-<p>Finally, the <a class="reference internal" href="frontend.html#piggy-bank-frontend"><span class="std std-ref">fifth part</span></a> explains how to set up a web-based frontend for interacting with the piggy bank smart contract.</p>
+<p>The <a class="reference internal" href="deploying.html#piggy-bank-deploying"><span class="std std-ref">third part</span></a> is about how to deploy your piggy bank smart contract to the Concordium testnet and interact with it.</p>
+<p>Finally, the <a class="reference internal" href="frontend.html#piggy-bank-frontend"><span class="std std-ref">fourth part</span></a> explains how to set up a web-based frontend for interacting with the piggy bank smart contract.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The reader is assumed to have basic knowledge of what a blockchain and smart
 contracts are, and to have some experience with <a class="reference external" href="https://www.rust-lang.org/">Rust</a>.</p>
 </div>
+<p>Before starting the tutorial, make sure that you have all of the necessary tools installed and running as described in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
 <p>To start the tutorial click <a class="reference internal" href="writing.html#piggy-bank-writing"><span class="std std-ref">here</span></a>.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -1728,11 +1728,11 @@ contracts are, and to have some experience with <a class="reference external" hr
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../counter/counter-contract.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tutorials</p>
+            <p class="prev-next-title">Concordium counter smart contract</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="writing.html" title="next page">

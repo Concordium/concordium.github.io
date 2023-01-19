@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Setup the development environment" href="setup-dev-env.html" />
+    <link rel="next" title="Upload the NFT" href="upload-nft.html" />
     <link rel="prev" title="Running your first full dApp" href="../wCCD/wCCD-full-dApp.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -954,6 +954,16 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../piggy-bank/index.html">
        PiggyBank
@@ -972,11 +982,6 @@ body {margin:0;}
        <li class="toctree-l3">
         <a class="reference internal" href="../piggy-bank/testing.html">
          Testing the piggy bank smart contract
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../piggy-bank/preparing.html">
-         Preparing a testnet node on a server
         </a>
        </li>
        <li class="toctree-l3">
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="upload-nft.html">
          Upload the NFT
@@ -1709,10 +1709,13 @@ body {margin:0;}
 <li><p><a class="reference internal" href="mint-xfer.html#transfer-nft"><span class="std std-ref">transfer the NFT check the new owner</span></a></p></li>
 </ul>
 <p>This tutorial uses a photograph stored on the InterPlanetary File System (IPFS). In order to store the photograph on IPFS, you will need to install and run a node on your computer. There are other options like pinning services, but they are not in the scope of this tutorial. You will also create a metadata file that will be stored on IPFS. By doing this, you eliminate the risk of deletion of the photo on a centralized photo album and protect your asset. You will store this metadata’s URL on-chain and be able to read it.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Before starting the next steps, make sure that you have <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">setup the developer environment</span></a> with the tools needed.</p>
+</div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NFT Minting</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="setup-dev-env.html">Setup the development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upload-nft.html">Upload the NFT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="build-smart-contract.html">Intialize, build, and deploy the smart contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mint-xfer.html">Mint and transfer the NFT</a></li>
@@ -1733,10 +1736,10 @@ body {margin:0;}
             <p class="prev-next-title">Running your first full dApp</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="setup-dev-env.html" title="next page">
+    <a class='right-next' id="next-link" href="upload-nft.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setup the development environment</p>
+        <p class="prev-next-title">Upload the NFT</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

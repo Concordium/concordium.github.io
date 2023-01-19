@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Preparing a testnet node on a server" href="preparing.html" />
+    <link rel="next" title="Deploying the piggy bank smart contract" href="deploying.html" />
     <link rel="prev" title="Writing the piggy bank smart contract" href="writing.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -954,6 +954,16 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
      <li class="toctree-l2 current active has-children">
       <a class="reference internal" href="index.html">
        PiggyBank
@@ -972,11 +982,6 @@ body {margin:0;}
        <li class="toctree-l3 current active">
         <a class="current reference internal" href="#">
          Testing the piggy bank smart contract
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="preparing.html">
-         Preparing a testnet node on a server
         </a>
        </li>
        <li class="toctree-l3">
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../nft-minting/setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nft-minting/upload-nft.html">
          Upload the NFT
@@ -1760,8 +1760,7 @@ contract is, and some experience with <a class="reference external" href="https:
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
 <p>Before you start, make sure to have the necessary tooling to build Rust
-contracts.
-The guide <a class="reference internal" href="../../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> shows you how to do this.
+contracts. The guide <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a> shows you how to do this.
 Also, make sure to have a text editor setup to write Rust.</p>
 <p>Since you are going to extend the smart contract code written in the <a class="reference internal" href="writing.html#piggy-bank-writing"><span class="std std-ref">previous
 part</span></a>, either follow the previous part or copy the complete
@@ -2292,7 +2291,7 @@ can use the simulate feature of <code class="docutils literal notranslate"><span
 wasm module and uses the Wasm interpreter to run a smart contract function in a
 given context. For a reference of the context, see <a class="reference internal" href="../../references/simulate-context.html#simulate-context"><span class="std std-ref">Simulation contexts</span></a>.</p>
 <p>For more on how to run simulations, see <a class="reference internal" href="../../guides/local-simulate.html#local-simulate"><span class="std std-ref">Locally simulate contract functions</span></a>.</p>
-<p>To continue with the tutorial click <a class="reference internal" href="preparing.html#piggy-bank-preparing"><span class="std std-ref">here</span></a>.</p>
+<p>To continue with the tutorial click <a class="reference internal" href="deploying.html#piggy-bank-deploying"><span class="std std-ref">here</span></a>.</p>
 </div>
 </div>
 
@@ -2309,10 +2308,10 @@ given context. For a reference of the context, see <a class="reference internal"
             <p class="prev-next-title">Writing the piggy bank smart contract</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="preparing.html" title="next page">
+    <a class='right-next' id="next-link" href="deploying.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Preparing a testnet node on a server</p>
+        <p class="prev-next-title">Deploying the piggy bank smart contract</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Preparing a testnet node on a server &#8212; Concordium  documentation</title>
+    <title>Concordium counter smart contract &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -40,8 +40,8 @@
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Deploying the piggy bank smart contract" href="deploying.html" />
-    <link rel="prev" title="Testing the piggy bank smart contract" href="testing.html" />
+    <link rel="next" title="The piggy bank smart contract" href="../piggy-bank/index.html" />
+    <link rel="prev" title="Setup the development environment" href="../setup-env.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -954,38 +954,43 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l2 current active has-children">
-      <a class="reference internal" href="index.html">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Counter
+      </a>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../piggy-bank/index.html">
        PiggyBank
       </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
       <label for="toctree-checkbox-29">
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul class="current">
+      <ul>
        <li class="toctree-l3">
-        <a class="reference internal" href="writing.html">
+        <a class="reference internal" href="../piggy-bank/writing.html">
          Writing the piggy bank smart contract
         </a>
        </li>
        <li class="toctree-l3">
-        <a class="reference internal" href="testing.html">
+        <a class="reference internal" href="../piggy-bank/testing.html">
          Testing the piggy bank smart contract
         </a>
        </li>
-       <li class="toctree-l3 current active">
-        <a class="current reference internal" href="#">
-         Preparing a testnet node on a server
-        </a>
-       </li>
        <li class="toctree-l3">
-        <a class="reference internal" href="deploying.html">
+        <a class="reference internal" href="../piggy-bank/deploying.html">
          Deploying the piggy bank smart contract
         </a>
        </li>
        <li class="toctree-l3">
-        <a class="reference internal" href="frontend.html">
+        <a class="reference internal" href="../piggy-bank/frontend.html">
          Setting up front-end
         </a>
        </li>
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../nft-minting/setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nft-minting/upload-nft.html">
          Upload the NFT
@@ -1687,29 +1687,48 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparation">
-   Preparation
+  <a class="reference internal nav-link" href="#increment-and-decrement-counter">
+   Increment and decrement counter
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#increment-counter">
+     Increment counter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decrement-counter">
+     Decrement counter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-function">
+     View function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-deploy-and-initialize-the-contract">
+   Build, deploy, and initialize the contract
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syncing-a-testnet-node">
-   Syncing a testnet node
+  <a class="reference internal nav-link" href="#interact-with-the-contract">
+   Interact with the contract
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interacting-with-your-testnet-node">
-   Interacting with your testnet node
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-mobile-wallet-account-on-testnet">
-   Creating a mobile wallet account on testnet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-your-mobile-wallet-account-key">
-   Importing your mobile wallet account key
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     View function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#increment-function">
+     Increment function
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1728,197 +1747,192 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="preparing-a-testnet-node-on-a-server">
-<span id="piggy-bank-preparing"></span><h1>Preparing a testnet node on a server<a class="headerlink" href="#preparing-a-testnet-node-on-a-server" title="Permalink to this headline">#</a></h1>
-<p>This is the third <a class="reference internal" href="index.html#piggy-bank"><span class="std std-ref">part of a tutorial</span></a> on smart contract
-development.</p>
-<p>So far you have written and tested a piggy bank smart contract in the <a class="reference external" href="https://www.rust-lang.org/">Rust</a> programming
-language.</p>
-<p>This part focuses on how you can set up your own testnet node on a server and create a testnet account.
-In more detail, you will create an instance on a server that will host your own testnet node. Secondly, you will create your own testnet account and prepare it so you can use it in the fourth <a class="reference internal" href="deploying.html#piggy-bank-deploying"><span class="std std-ref">part of this tutorial</span></a> for deploying and interacting with your piggy bank smart contract.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The reader is assumed to have basic knowledge of what a blockchain and smart
-contract is, and some experience with <a class="reference external" href="https://www.rust-lang.org/">Rust</a>.</p>
+  <div class="section" id="concordium-counter-smart-contract">
+<span id="counter-sc"></span><h1>Concordium counter smart contract<a class="headerlink" href="#concordium-counter-smart-contract" title="Permalink to this headline">#</a></h1>
+<p>This tutorial guides you through creating a smart contract using the Concordium a default contract template that simply keeps a counter value in its state. It is a super simple, fundamental example contract that touches on the following points:</p>
+<ul class="simple">
+<li><p>to be able to increase/decrease the counter value by the parameter given by the user if it is a positive number</p></li>
+<li><p>view the current value</p></li>
+<li><p>return a custom error when someone tries to increase it with a negative value (or vice versa)</p></li>
+<li><p>all these operations have to be done by only the owner of the contract.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Before starting the next steps, make sure that you have <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">setup the developer environment</span></a> with the tools needed.</p>
 </div>
-<div class="section" id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
-<p>Before you start, make sure you create an account on your favorite cloud provider to set up your instance unless you intend to run a testnet node locally on your machine, see more details below.</p>
-<p>You are now ready to select an instance on the cloud provider that matches the following requirements to run a testnet node:</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Hardware (Testnet node)</p></th>
-<th class="head"><p>Recommended</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>CPU (Core)</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p>RAM (Memory)</p></td>
-<td><p>8 GB</p></td>
-</tr>
-<tr class="row-even"><td><p>Storage</p></td>
-<td><p>25 GB</p></td>
-</tr>
-<tr class="row-odd"><td><p>Operating system</p></td>
-<td><p>Ubuntu 20.04 or 22.04</p></td>
-</tr>
-</tbody>
-</table>
+<p>Once you have set up the tools needed you are ready to create your smart contract project. First, create a working directory, and run the command below in that directory. It will set up the initial project for you, including necessary rust dependencies.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The above requirements are simple and meant for a testnet node only. See the <a class="reference internal" href="../../../net/nodes/node-requirements.html#system-requirements-node-mainnet"><span class="std std-ref">requirements</span></a> for mainnet nodes.</p>
+<p>The template repository contains <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">short GIFs</a> that show many of these commands.</p>
 </div>
-</div>
-<div class="section" id="syncing-a-testnet-node">
-<h2>Syncing a testnet node<a class="headerlink" href="#syncing-a-testnet-node" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference internal" href="../../../net/nodes/node-requirements.html#node-requirements"><span class="std std-ref">run a node</span></a> guide will help you set up your instance correctly. It is recommended to use an Ubuntu instance on a server in the cloud for this tutorial.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is technically fine to run your testnet node locally on your machine instead of on a server in the cloud. Since blockchain nodes have to run 24/7 to be up-to-date with the blockchain, you have to run your local machine 24/7. Alternatively, if you don’t want to run your local machine 24/7, you can let your node catch up whenever you start your machine. Because this takes some time, this tutorial recommends a cloud provider setup for convenience.</p>
-</div>
-<p>Start the syncing process of the testnet node by following the guide for your platform <a class="reference internal" href="../../../net/nodes/ubuntu.html#ubuntu-node"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="../../../net/nodes/docker.html#docker-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="../../../net/nodes/windows.html#windows-node"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="../../../net/nodes/macos.html#macos-node"><span class="std std-ref">MacOS</span></a>.</p>
-<p>You should find your node name on the <a class="reference external" href="https://dashboard.testnet.concordium.com/">Concordium testnet dashboard</a>. It will take less than a day until your testnet node is fully synced. You can observe the syncing process by watching the finalization length of your node. Wait until the <code class="docutils literal notranslate"><span class="pre">Fin</span> <span class="pre">Length</span></code> (finalization length) of your node is the same as the highest value used by the majority of nodes.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To allow the network dashboard to display nodes in the network and their current status, a node must run a collector. The collector is enabled by the default start-up script but can be disabled.</p>
-</div>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_13.png"><img alt="../../../_images/pb_tutorial_13.png" src="../../../_images/pb_tutorial_13.png" style="width: 100%;" /></a>
-<p>Alternatively, you can query the syncing state of your node with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. You will learn how to set up <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in the next section. You can return to this command after reading the next section.
-Wait until the <code class="docutils literal notranslate"><span class="pre">last</span> <span class="pre">finalized</span> <span class="pre">block</span> <span class="pre">height</span></code> of your node is the same as the highest value used by the majority of nodes.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./concordium-client consensus status --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium init</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_19.png"><img alt="../../../_images/pb_tutorial_19.png" src="../../../_images/pb_tutorial_19.png" style="width: 100%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is a good practice to enable inbound connections on port 8889 (testnet) in your instance. You can allow inbound connections from any IPv4 and IPv6 address, by selecting <code class="docutils literal notranslate"><span class="pre">0.0.0.0/0</span></code> and <code class="docutils literal notranslate"><span class="pre">::/0</span></code> on the port 8889. This is not mandatory for the node to sync but it will make your node a good network participant. Feel free to skip this step if you are not feeling confident editing the inbound connection rules of your instance.</p>
-</div>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_12.png"><img alt="../../../_images/pb_tutorial_12.png" src="../../../_images/pb_tutorial_12.png" style="width: 100%;" /></a>
-</div>
-<div class="section" id="interacting-with-your-testnet-node">
-<span id="id1"></span><h2>Interacting with your testnet node<a class="headerlink" href="#interacting-with-your-testnet-node" title="Permalink to this headline">#</a></h2>
-<p>You are now ready to download the <a class="reference internal" href="../../../net/installation/downloads-testnet.html#concordium-node-and-client-download-testnet"><span class="std std-ref">concordium-client</span></a> package. Rename the package to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in case it has some version annotation so you can follow the commands in this guide easily.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are not using Ubuntu/Linux as your operating system, the following screenshots will look different.
-Remember to adjust the following commands based on your operating system.</p>
-</div>
-<p>Go to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. You can check if you are in the correct folder when you see the output <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ls <span class="p">|</span> grep <span class="s1">&#39;concordium-client&#39;</span>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">Default</span></code> option from the menu.</p>
+<a class="reference internal image-reference" href="../../../_images/select-default.png"><img alt="../../../_images/select-default.png" src="../../../_images/select-default.png" style="width: 100%;" /></a>
+<p>Then it will ask for a name and a description of your project. Fill them in.
+The result is a basic skeleton of a smart contract.
+Initially, it has a <code class="docutils literal notranslate"><span class="pre">State</span></code> struct, an <code class="docutils literal notranslate"><span class="pre">init</span></code> function for creating new instances, an <code class="docutils literal notranslate"><span class="pre">Error</span></code> enum for custom errors, a <code class="docutils literal notranslate"><span class="pre">view</span></code> function, and a <code class="docutils literal notranslate"><span class="pre">receive</span></code> function.</p>
+<a class="reference internal image-reference" href="../../../_images/contract.png"><img alt="../../../_images/contract.png" src="../../../_images/contract.png" style="width: 100%;" /></a>
+<p>Add the counter to the state and i8 for integer. Then add the values <code class="docutils literal notranslate"><span class="pre">OwnerError</span></code>, <code class="docutils literal notranslate"><span class="pre">IncrementError</span></code>, and <code class="docutils literal notranslate"><span class="pre">DecrementError</span></code> to the <code class="docutils literal notranslate"><span class="pre">Error</span></code> enum, and specify the counter initial value as zero in the <code class="docutils literal notranslate"><span class="pre">init</span></code> function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// Your smart contract state.</span>
+<span class="cp">#[derive(Serialize, SchemaType, Clone)]</span><span class="w"></span>
+<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">State</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Your state</span>
+<span class="w">    </span><span class="n">counter</span>: <span class="kt">i8</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="sd">/// Your smart contract errors.</span>
+<span class="cp">#[derive(Debug, PartialEq, Eq, Reject, Serial, SchemaType)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">Error</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="sd">/// Failed parsing the parameter.</span>
+<span class="w">    </span><span class="cp">#[from(ParseError)]</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParseParamsError</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="sd">/// Your error</span>
+<span class="w">    </span><span class="n">OwnerError</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">IncrementError</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">DecrementError</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="sd">/// Init function that creates a new smart contract.</span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">init</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">_state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Your code</span>
+
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">State</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">counter</span>: <span class="mi">0</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_10.png"><img alt="../../../_images/pb_tutorial_10.png" src="../../../_images/pb_tutorial_10.png" style="width: 70%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Alternatively, if you don’t want to navigate around in the folders, you can add the folder where the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool is located to your PATH variable with the command:
-<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;$HOME/path/to/your/concordium-client:$PATH&quot;</span></code>.
-This allows you to use the following commands (such as <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">--help</span></code>)
-without prepending them with <code class="docutils literal notranslate"><span class="pre">./</span></code>. Effectively,  prepending with <code class="docutils literal notranslate"><span class="pre">./</span></code>
-searches for the executable package in the current directory while
-omitting <code class="docutils literal notranslate"><span class="pre">./</span></code> searches for the executable package in the PATH variable.</p>
-</div>
-<p>The package is not yet executable. You change this with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod +x concordium-client
+<div class="section" id="increment-and-decrement-counter">
+<h2>Increment and decrement counter<a class="headerlink" href="#increment-and-decrement-counter" title="Permalink to this headline">#</a></h2>
+<div class="section" id="increment-counter">
+<h3>Increment counter<a class="headerlink" href="#increment-counter" title="Permalink to this headline">#</a></h3>
+<p>Then change the update function as described below. Remember that input needs to be parsed without any errors. The value must be positive, otherwise you will get an <code class="docutils literal notranslate"><span class="pre">Error::IncrementError</span></code>. The transaction must be triggered by the owner of the contract instance or it will throw <code class="docutils literal notranslate"><span class="pre">Error::OwnerError</span></code>. And the function itself has to be a mutable function because you are going to change the state of the contract.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="nc">IncrementVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">i8</span><span class="p">;</span><span class="w"></span>
+<span class="sd">/// Receive function. The input parameter is the increment value `i8`.</span>
+<span class="sd">///  If the account owner does not match the contract owner, the receive function will throw [`Error::OwnerError`].</span>
+<span class="sd">///  If the number to increment by is not positive or is zero, the receive function will throw [`Error::IncrementError`].</span>
+<span class="cp">#[receive(</span>
+<span class="cp">    contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">,</span>
+<span class="cp">    name = </span><span class="s">&quot;increment&quot;</span><span class="cp">,</span>
+<span class="cp">    parameter = </span><span class="s">&quot;i8&quot;</span><span class="cp">,</span>
+<span class="cp">    error = </span><span class="s">&quot;Error&quot;</span><span class="cp">,</span>
+<span class="cp">    mutable</span>
+<span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">increment</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Your code</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">param</span>: <span class="nc">IncrementVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">().</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">()),</span><span class="w"></span>
+<span class="w">        </span><span class="n">Error</span>::<span class="n">OwnerError</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span>::<span class="n">IncrementError</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">param</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_8.png"><img alt="../../../_images/pb_tutorial_8.png" src="../../../_images/pb_tutorial_8.png" style="width: 50%;" /></a>
-<p>Check whether you can execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client --help
+</div>
+<div class="section" id="decrement-counter">
+<h3>Decrement counter<a class="headerlink" href="#decrement-counter" title="Permalink to this headline">#</a></h3>
+<p>Add a new mutable function to implement decrement with a similar approach. It will also take an input parameter, but this time make sure that it is negative because a violation will be caused by an <code class="docutils literal notranslate"><span class="pre">Error::DecrementError</span></code>. Like the other one, this can be triggered by only the owner of the contract,otherwise it will throw an <code class="docutils literal notranslate"><span class="pre">Error::OwnerError</span></code>.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(</span>
+<span class="cp">    contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">,</span>
+<span class="cp">    name = </span><span class="s">&quot;decrement&quot;</span><span class="cp">,</span>
+<span class="cp">    parameter = </span><span class="s">&quot;i8&quot;</span><span class="cp">,</span>
+<span class="cp">    error = </span><span class="s">&quot;Error&quot;</span><span class="cp">,</span>
+<span class="cp">    mutable</span>
+<span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">decrement</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Your code</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">param</span>: <span class="nc">IncrementVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">().</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">()),</span><span class="w"></span>
+<span class="w">        </span><span class="n">Error</span>::<span class="n">OwnerError</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span>::<span class="n">DecrementError</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">param</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>You should see some output that will help you in getting familiar with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_9.png"><img alt="../../../_images/pb_tutorial_9.png" src="../../../_images/pb_tutorial_9.png" style="width: 100%;" /></a>
-<p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool will allow you to interact with your testnet node. You find important commands that the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool provides <a class="reference internal" href="../../../net/references/concordium-client.html#concordium-client"><span class="std std-ref">here</span></a>.</p>
-<p>Your next task enables the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to talk to your testnet node. There are two options to achieve this:</p>
-<p><strong>Option 1 (beginners)</strong></p>
-<p>This option explains how to transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to your instance and execute commands from within the instance.</p>
-<p><strong>Advantage</strong>: You can execute the commands within your instance.</p>
-<p><strong>Disadvantage</strong>: You have to transfer files between your local machine and your instance later in the tutorial.</p>
-<p>Transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> package from your machine via a file-sharing tool (such as <a class="reference external" href="https://filezilla-project.org/">FileZilla</a> or the <code class="docutils literal notranslate"><span class="pre">sftp</span></code> command) to your instance.</p>
-<p>Connect to your instance and make your package executable again as you have done previously already:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod +x concordium-client
+</div>
+<div class="section" id="view-function">
+<h3>View function<a class="headerlink" href="#view-function" title="Permalink to this headline">#</a></h3>
+<p>The view function will return only the counters value so you need to update its return value as i8 and return it from the host.state().</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// View function that returns the content of the state.</span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;counter&quot;</span><span class="cp">, name = </span><span class="s">&quot;view&quot;</span><span class="cp">, return_value = </span><span class="s">&quot;i8&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">view</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">b</span><span class="p">,</span><span class="w"> </span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="o">&#39;</span><span class="na">a</span> <span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="o">&#39;</span><span class="na">b</span> <span class="nc">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="kt">i8</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">().</span><span class="n">counter</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">10001</span>
+</div>
+</div>
+<div class="section" id="build-deploy-and-initialize-the-contract">
+<h2>Build, deploy, and initialize the contract<a class="headerlink" href="#build-deploy-and-initialize-the-contract" title="Permalink to this headline">#</a></h2>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">dist</span></code> folder to keep the schema output file and Wasm compiled contract in and run the build command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin</span>
 </pre></div>
 </div>
-<p>You should see some block data output.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_18.png"><img alt="../../../_images/pb_tutorial_18.png" src="../../../_images/pb_tutorial_18.png" style="width: 100%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Port 10001 is open by default on your testnet node to interact with it.</p>
-</div>
-<p><strong>Option 2 (advanced users)</strong></p>
-<p>This option explains how you can use the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool locally on your machine and connect remotely to your node running on the server.</p>
-<p><strong>Advantage</strong>: You don’t have to transfer files between your local machine and your instance later in the tutorial.</p>
-<p><strong>Disadvantage</strong>: You have to use ssh with port forwarding when you run a command locally.</p>
-<p>Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 10001 on your localhost is forwarded to the port 10001 on your instance.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh -NL localhost:10001:&lt;IP-address-of-your-instance&gt;:10001 &lt;username&gt;@&lt;host&gt;
+<a class="reference internal image-reference" href="../../../_images/build.png"><img alt="../../../_images/build.png" src="../../../_images/build.png" style="width: 100%;" /></a>
+<p>Deploy it with the command below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/module.wasm.v1 --sender &lt;YOUR-ACCOUNT&gt; --name counter --grpc-port 10001</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_26.png"><img alt="../../../_images/pb_tutorial_26.png" src="../../../_images/pb_tutorial_26.png" style="width: 100%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Port 10001 is open by default on your testnet node to interact with it. Cloud providers often use <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> as the default &lt;username&gt; and the &lt;IP-address-of-your-instance&gt; as the default &lt;host&gt;.</p>
-</div>
-<p>Go in another terminal B to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">10001</span>
+<a class="reference internal image-reference" href="../../../_images/deploy.png"><img alt="../../../_images/deploy.png" src="../../../_images/deploy.png" style="width: 100%;" /></a>
+<p>Initialize it to create your contract instance, so you are ready to invoke the functions in the next section.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;YOUR-MODULE-HASH&gt; --sender &lt;YOUR-ADDRESS&gt; --energy 30000 --contract counter --grpc-port 10001</span>
 </pre></div>
 </div>
-<p>You should see some block data output.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_17.png"><img alt="../../../_images/pb_tutorial_17.png" src="../../../_images/pb_tutorial_17.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/initialize.png"><img alt="../../../_images/initialize.png" src="../../../_images/initialize.png" style="width: 100%;" /></a>
 </div>
-<div class="section" id="creating-a-mobile-wallet-account-on-testnet">
-<span id="mobile-wallet-account"></span><h2>Creating a mobile wallet account on testnet<a class="headerlink" href="#creating-a-mobile-wallet-account-on-testnet" title="Permalink to this headline">#</a></h2>
-<p>You are ready to create a mobile wallet account now.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Only the Concordium mobile wallet currently supports exporting of keys. Do not use the Concordium desktop wallet for this tutorial.</p>
-</div>
-<p>You can download the mobile wallet package from the <a class="reference internal" href="../../../net/installation/downloads-testnet.html#downloads-mobile-wallet-testnet"><span class="std std-ref">downloads page</span></a>.
-If you follow the instruction in the mobile app you are asked to name your account and to name your initial identity card. This tutorial uses <code class="docutils literal notranslate"><span class="pre">Concordium</span></code> for the account name and <code class="docutils literal notranslate"><span class="pre">Identity1</span></code> for the identity card name but feel free to choose your own naming.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_1.png"><img alt="../../../_images/pb_tutorial_1.png" src="../../../_images/pb_tutorial_1.png" style="width: 20%;" /></a>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_2.png"><img alt="../../../_images/pb_tutorial_2.png" src="../../../_images/pb_tutorial_2.png" style="width: 20%;" /></a>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_3.png"><img alt="../../../_images/pb_tutorial_3.png" src="../../../_images/pb_tutorial_3.png" style="width: 20%;" /></a>
-<p>You don’t have to provide an ID to create an identity on testnet when selecting <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">testnet</span> <span class="pre">IP</span></code>. This gives you an example of a test identity that you can customize or use as it is. Test identities are meant for testnet/stagenet testing only.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_4.png"><img alt="../../../_images/pb_tutorial_4.png" src="../../../_images/pb_tutorial_4.png" style="width: 20%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On mainnet you will have to provide your personal ID to an identity provider to get a mainnet identity.</p>
-</div>
-<p>You also have to request some testnet CCD. The mobile app wallet has a button that you can use to request 2000 testnet CCD.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_5.png"><img alt="../../../_images/pb_tutorial_5.png" src="../../../_images/pb_tutorial_5.png" style="width: 20%;" /></a>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_6.png"><img alt="../../../_images/pb_tutorial_6.png" src="../../../_images/pb_tutorial_6.png" style="width: 20%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You need some CCD in your testnet account to send transactions from your account to the testnet blockchain.</p>
-</div>
-<p>Create a backup of your wallet by clicking the <code class="docutils literal notranslate"><span class="pre">Backup</span></code> button in the mobile app. Save the file <code class="docutils literal notranslate"><span class="pre">concordium-backup.concordiumwallet</span></code> for now because it will be used in the next section.</p>
-<a class="reference internal image-reference" href="../../../_images/pb_tutorial_7.png"><img alt="../../../_images/pb_tutorial_7.png" src="../../../_images/pb_tutorial_7.png" style="width: 20%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Remember the <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">password</span></code> that you used to create the backup file. The password is needed later when importing your account key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration.</p>
-</div>
-</div>
-<div class="section" id="importing-your-mobile-wallet-account-key">
-<h2>Importing your mobile wallet account key<a class="headerlink" href="#importing-your-mobile-wallet-account-key" title="Permalink to this headline">#</a></h2>
-<p>You are ready now to import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration. Transfer your wallet backup file (the file <code class="docutils literal notranslate"><span class="pre">concordium-backup.concordiumwallet</span></code>) to the place where you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool. Navigate to the folder as well.</p>
-<p>Import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client config account import ./concordium-backup.concordiumwallet
+<div class="section" id="interact-with-the-contract">
+<h2>Interact with the contract<a class="headerlink" href="#interact-with-the-contract" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h3>View function<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>First, check the initial state of the contract.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint view --schema dist/schema.bin --grpc-port 10001</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You will be asked to input a password. Use the <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">password</span></code> that you used to create the key backup file.</p>
+<p>Since you just initialized the contract it is 0.</p>
+<a class="reference internal image-reference" href="../../../_images/invoke.png"><img alt="../../../_images/invoke.png" src="../../../_images/invoke.png" style="width: 100%;" /></a>
 </div>
-<p>To continue with the tutorial click <a class="reference internal" href="deploying.html#piggy-bank-deploying"><span class="std std-ref">here</span></a>.</p>
+<div class="section" id="increment-function">
+<h3>Increment function<a class="headerlink" href="#increment-function" title="Permalink to this headline">#</a></h3>
+<p>Create a JSON file that holds your operator that will be given as input to the function and run the command below. Basically, you are saying to the contract instance “with this transaction I will update your state from the increment entrypoint” which is your function name with this parameter.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint increment --parameter-json &lt;PATH-TO-JSON&gt; --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 10001</span>
+</pre></div>
+</div>
+<p>Start by testing with your conditions. First, try another account other than the owner of the contract since you want that only the owner can call this function.</p>
+<a class="reference internal image-reference" href="../../../_images/owner-error.png"><img alt="../../../_images/owner-error.png" src="../../../_images/owner-error.png" style="width: 100%;" /></a>
+<p>You get error code: -2. Check the developer portal of Concordium for information about <a class="reference internal" href="../../guides/custom-errors.html#custom-errors"><span class="std std-ref">custom errors</span></a>. Basically, -2 means you are calling the second error code from your Error enum, which is OwnerError. So that means you have fulfilled the requirement that only the owner can call these functions. Update the state with number 2 now.</p>
+<a class="reference internal image-reference" href="../../../_images/owner-error-ok.png"><img alt="../../../_images/owner-error-ok.png" src="../../../_images/owner-error-ok.png" style="width: 100%;" /></a>
+<p>Now check the state once more.</p>
+<a class="reference internal image-reference" href="../../../_images/invoke2.png"><img alt="../../../_images/invoke2.png" src="../../../_images/invoke2.png" style="width: 100%;" /></a>
+<p>Unsurprisingly, the state is 2. Now check the other requirement: that you cannot increment it with a negative number. Change the value in the JSON file to a negative number like -2.</p>
+<a class="reference internal image-reference" href="../../../_images/increment-neg-error.png"><img alt="../../../_images/increment-neg-error.png" src="../../../_images/increment-neg-error.png" style="width: 100%;" /></a>
+<p>You cannot do it because of error code -3 which is the third element in the enum: <code class="docutils literal notranslate"><span class="pre">IncrementError</span></code>. That means the increment method operates as expected in your contract.</p>
+<p>You can play with decrement in the same way.</p>
+</div>
 </div>
 </div>
 
@@ -1928,17 +1942,17 @@ If you follow the instruction in the mobile app you are asked to name your accou
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="testing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../setup-env.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Testing the piggy bank smart contract</p>
+            <p class="prev-next-title">Setup the development environment</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="deploying.html" title="next page">
+    <a class='right-next' id="next-link" href="../piggy-bank/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Deploying the piggy bank smart contract</p>
+        <p class="prev-next-title">The piggy bank smart contract</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

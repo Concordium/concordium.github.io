@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Setting up front-end" href="frontend.html" />
-    <link rel="prev" title="Preparing a testnet node on a server" href="preparing.html" />
+    <link rel="prev" title="Testing the piggy bank smart contract" href="testing.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -954,6 +954,16 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
      <li class="toctree-l2 current active has-children">
       <a class="reference internal" href="index.html">
        PiggyBank
@@ -972,11 +982,6 @@ body {margin:0;}
        <li class="toctree-l3">
         <a class="reference internal" href="testing.html">
          Testing the piggy bank smart contract
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="preparing.html">
-         Preparing a testnet node on a server
         </a>
        </li>
        <li class="toctree-l3 current active">
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../nft-minting/setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nft-minting/upload-nft.html">
          Upload the NFT
@@ -1757,10 +1757,9 @@ body {margin:0;}
                 
   <div class="section" id="deploying-the-piggy-bank-smart-contract">
 <span id="piggy-bank-deploying"></span><h1>Deploying the piggy bank smart contract<a class="headerlink" href="#deploying-the-piggy-bank-smart-contract" title="Permalink to this headline">#</a></h1>
-<p>This is the fourth <a class="reference internal" href="index.html#piggy-bank"><span class="std std-ref">part of a tutorial</span></a> on smart contract
+<p>This is the third <a class="reference internal" href="index.html#piggy-bank"><span class="std std-ref">part of a tutorial</span></a> on smart contract
 development.
 So far you have written and tested a piggy bank smart contract in the <a class="reference external" href="https://www.rust-lang.org/">Rust</a> programming language.</p>
-<p>Furthermore, you set up your testnet node on a server, created an account that is funded with some CCD, and imported your account key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration.</p>
 <p>This part focuses on how you can deploy your developed piggy bank smart contract to the Concordium testnet and interact with it.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1795,7 +1794,7 @@ The <code class="docutils literal notranslate"><span class="pre">v1</span></code
 <p>You are now set up to deploy the piggy bank module to the testnet chain. Give the module the name <code class="docutils literal notranslate"><span class="pre">piggy_bank_part2_module</span></code> so it can be referenced in this tutorial.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Remember to adjust the following commands when you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool locally and want to connect to your node on the server. You can look up the different options on how to connect the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to your testnet node <a class="reference internal" href="preparing.html#interacting-with-your-testnet-node"><span class="std std-ref">here</span></a>.</p>
+<p>Remember to adjust the following commands when you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool locally and want to connect to your node on the server. You can look up the different options on how to connect the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to your testnet node <a class="reference internal" href="../setup-env.html#interact-with-your-contract"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1804,14 +1803,6 @@ They are not visible to others on the chain. This is the case for all contracts,
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client module deploy piggy_bank_part2.wasm.v1 --sender &lt;account-name&gt; --name piggy_bank_part2_module --grpc-port <span class="m">10001</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This tutorial uses <code class="docutils literal notranslate"><span class="pre">Concordium</span></code> for the &lt;account-name&gt;.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You will be asked to input a password. Use the <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">password</span></code> that you used to create the key backup file in <a class="reference internal" href="preparing.html#mobile-wallet-account"><span class="std std-ref">part 3</span></a> of the piggy bank tutorial.</p>
 </div>
 <p>If everything works correctly the output has a green line with your module reference.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Module successfully deployed with reference: &lt;module-reference&gt;.</span>
@@ -1941,11 +1932,11 @@ In contrast, errors from the <code class="docutils literal notranslate"><span cl
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="preparing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="testing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Preparing a testnet node on a server</p>
+            <p class="prev-next-title">Testing the piggy bank smart contract</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="frontend.html" title="next page">

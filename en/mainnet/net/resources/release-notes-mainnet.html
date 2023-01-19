@@ -954,6 +954,16 @@ body {margin:0;}
      </i>
     </label>
     <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/tutorials/setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../smart-contracts/tutorials/counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html">
        PiggyBank
@@ -972,11 +982,6 @@ body {margin:0;}
        <li class="toctree-l3">
         <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/testing.html">
          Testing the piggy bank smart contract
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/preparing.html">
-         Preparing a testnet node on a server
         </a>
        </li>
        <li class="toctree-l3">
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/upload-nft.html">
          Upload the NFT
@@ -1687,6 +1687,16 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordium-node-5-1-3">
+   Concordium Node 5.1.3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cargo-concordium-2-6-0">
+   Cargo concordium 2.6.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bw-0-9-6">
    Concordium Wallet for Web 0.9.6
   </a>
@@ -2101,7 +2111,25 @@ body {margin:0;}
 <p>Subscribe to the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
 <p>To subscribe to updates on the Mainnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
+<p>January 19, 2023</p>
+<div class="section" id="concordium-node-5-1-3">
+<h2>Concordium Node 5.1.3<a class="headerlink" href="#concordium-node-5-1-3" title="Permalink to this headline">#</a></h2>
+<p>Concordium node version 5.1.3 introduces the following new features and improvements:</p>
+<ul class="simple">
+<li><p>Improvements were made to allow greater concurrency with transaction processing.</p></li>
+<li><p>Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.</p></li>
+<li><p>Removed the configuration option <code class="docutils literal notranslate"><span class="pre">no_rebroadcast_consensus_validation</span></code>. This option (which was used for testing only and was disabled by default) made the node rebroadcast blocks before doing any validation.</p></li>
+<li><p>Changes were made to avoid deadlocks during node shutdown in specific scenarios.</p></li>
+<li><p>The node will now shut down to start if an error occurs in a required service (e.g., grpc server). In particular, the node will shut down if a required service could not be started.</p></li>
+<li><p>Added timeout to downloading out of band catchup files when block indices and catch-up chunk files are specified by an URL. The timeout is controlled by the option <code class="docutils literal notranslate"><span class="pre">--download-blocks-timeout</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_TIMEOUT</span></code>) and defaults to 5 minutes. Timeout is now five minutes per chunk instead of waiting indefinitely.</p></li>
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_PROMETHEUS_SERVER</span></code> environment variable. The prometheus server is now started if <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT</span></code> is set.</p></li>
+</ul>
+</div>
+<div class="section" id="cargo-concordium-2-6-0">
+<h2>Cargo concordium 2.6.0<a class="headerlink" href="#cargo-concordium-2-6-0" title="Permalink to this headline">#</a></h2>
+<p>Added the ability to output the schema in JSON format which can be more suitable for use in dApps.</p>
 <p>January 9, 2023</p>
+</div>
 <div class="section" id="bw-0-9-6">
 <h2>Concordium Wallet for Web 0.9.6<a class="headerlink" href="#bw-0-9-6" title="Permalink to this headline">#</a></h2>
 <p>SendTransaction for smart contract transactions can receive schemas that are for the specific parameter.</p>

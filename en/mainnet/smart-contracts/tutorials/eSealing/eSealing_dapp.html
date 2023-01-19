@@ -954,6 +954,16 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../piggy-bank/index.html">
        PiggyBank
@@ -972,11 +982,6 @@ body {margin:0;}
        <li class="toctree-l3">
         <a class="reference internal" href="../piggy-bank/testing.html">
          Testing the piggy bank smart contract
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../piggy-bank/preparing.html">
-         Preparing a testnet node on a server
         </a>
        </li>
        <li class="toctree-l3">
@@ -1033,11 +1038,6 @@ body {margin:0;}
        </i>
       </label>
       <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="../nft-minting/setup-dev-env.html">
-         Setup the development environment
-        </a>
-       </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nft-minting/upload-nft.html">
          Upload the NFT
@@ -1731,7 +1731,7 @@ start your own front-end by following the instructions in the READ.me file of th
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Comprehensive instructions on how to set up the Concordium Wallet for Web, create an account in the Concordium Wallet for Web,
-get some testnet CCD and run a local front-end can be found in <a class="reference internal" href="../wCCD/wCCD-front-end-set-up.html#wccd-front-end-set-up"><span class="std std-ref">wCCD front-end-set-up section</span></a></p>
+get some testnet CCD and run a local front end can be found in <a class="reference internal" href="../wCCD/wCCD-front-end-set-up.html#wccd-front-end-set-up"><span class="std std-ref">wCCD front-end-set-up section</span></a></p>
 </div>
 <p>The front end supports the following two flows with the Concordium Wallet for Web (or Concordium Wallet for Android that uses WalletConnect):</p>
 <ul class="simple">
@@ -1777,7 +1777,7 @@ that is running at port 10001 to register a file hash as follows:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Comprehensive instructions on how to set up a local Concordium testnet node on port 10001 (or alternatively link to a remote node via grpc),
-and download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> can be found in <a class="reference internal" href="../piggy-bank/preparing.html#piggy-bank-preparing"><span class="std std-ref">part 3</span></a> of the piggy bank tutorial.</p>
+and download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
 </div>
 <p>You can view the <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">witness</span> <span class="pre">(sealer</span> <span class="pre">account)</span></code> of an already timestamped file as follows:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">2481</span> --entrypoint getFile --parameter-json fileHash.json --grpc-port <span class="m">10001</span>
