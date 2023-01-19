@@ -277,7 +277,7 @@ Use the variables by:
 
 - Including a relative path to `variables.rst`, for example
   `../../variables.rst`, at the top of the file.
-- Then using the variable net, for example `|bw|`, in the text.
+- Then using the variable bw, for example `|bw|`, in the text.
 
 ### Images
 
