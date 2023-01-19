@@ -57,11 +57,11 @@ Getting started with Concordium
 
 .. dropdown:: I want to write a smart contract
 
-    Start by setting up the tools needed to write smart contracts. Concordium uses Rust as the language for smart contracts. This guide lists all the tools and environments needed to write smart contracts.
+    Start by setting up the tools needed to write smart contracts. Concordium uses Rust as the language for smart contracts. :ref:`This guide<setup-env>` lists all the tools and environments needed to write smart contracts.
 
     Once you have set up the tools, you can write your contract.
-    To see examples click here.
-    To start a new project click here.
+    To see examples :ref:`click here<dapp-examples>`.
+    To start a new project :ref:`click here<setup-contract>`.
 
 .. dropdown:: I want to have a dApp that interacts with my smart contract
 
