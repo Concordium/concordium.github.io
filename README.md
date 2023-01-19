@@ -164,7 +164,7 @@ With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentat
 * For a user guide, use **second person** ("you"). Avoid use of first person (we, I, me, our, etc).
 * Structure sentences, especially numbered procedures, using the **imperative** ("click on X") and with as few actions as possible per step.
 * Keep sentences **short**.
-* Prefer **present** continuous ("is") over future ("will be").
+* Prefer **present** continuous ("is") over future ("will be"), conditional ("should"), or past ("was").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
 * Use the correct action depending on the device: "click" on a computer (when using a mouse), "press" a button on the keyboard, "tap" a button on a touchscreen device. "Select" can also be used. Nothing should be "hit".
 * Remember that you are generally writing for non-native English speakers so keep it simple.
