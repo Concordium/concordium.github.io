@@ -1723,6 +1723,11 @@ body {margin:0;}
      Outputting a schema file
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#converting-a-binary-schema-to-json">
+     Converting a binary schema to JSON
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1899,7 +1904,33 @@ schema in bytes.</p>
 <h3>Outputting a schema file<a class="headerlink" href="#outputting-a-schema-file" title="Permalink to this headline">#</a></h3>
 <p>To output the schema into a file, we can use the <code class="docutils literal notranslate"><span class="pre">--schema-out=FILE</span></code>
 where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path of the file to create:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out<span class="o">=</span><span class="s2">&quot;/some/path/schema.bin&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span>
+</pre></div>
+</div>
+<p>If using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.6.0 or newer then the schema can be
+output in JSON format that can be more suitable for use in dApps. When building
+the contract use <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span> <span class="pre">DIR</span></code> to output the schema for each
+contract in the module to a JSON file inside the directory <code class="docutils literal notranslate"><span class="pre">DIR</span></code>. The
+directory must exist.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-json-out <span class="s2">&quot;/some/path&quot;</span>
+</pre></div>
+</div>
+<p>Both <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code> and <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code> can be used at the same time and
+schemas in both formats will be output.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span> --schema-json-out <span class="s2">&quot;/some/path&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="converting-a-binary-schema-to-json">
+<h3>Converting a binary schema to JSON<a class="headerlink" href="#converting-a-binary-schema-to-json" title="Permalink to this headline">#</a></h3>
+<p>To convert an existing binary schema (obtained via <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>) use the
+<code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">schema-json</span></code> subcommand, e.g.,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --schema <span class="s2">&quot;schema/schema.bin&quot;</span> --out <span class="s2">&quot;/some/path&quot;</span>
+</pre></div>
+</div>
+<p>Alternatively, a schema in JSON can be extracted from an embedded schema in a
+module by using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --module <span class="s2">&quot;module.wasm.v1&quot;</span> --out <span class="s2">&quot;/some/path&quot;</span>
 </pre></div>
 </div>
 </div>
