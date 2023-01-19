@@ -5,7 +5,7 @@
 Setup the development environment
 =================================
 
-If you have done the NFT minting tutorial, you will already have most of the necessary setup, including the |bw| and necessary tools for authoring smart contracts. Otherwise, see :ref:`Set up the development environment in the Mint an NFT tutorial<setup-nft-env>`. You need the following tools:
+If you have done the NFT minting tutorial, you will already have most of the necessary setup, including the |bw| and necessary tools for authoring smart contracts. Otherwise, see :ref:`Set up the development environment<setup-env>`. You need the following tools:
 
 - ``rustup``, including Wasm
 - ``cargo concordium``
