@@ -8,7 +8,7 @@ You are using the example contract from Concordium's examples and it’s ready t
 
 First, you will add a new struct called ``TokenMetadata``. It needs to implement the ``Serialize`` and ``SchemaType`` traits for the sake of deserialization of the contract you need it. For those who are familiar with the Ethereum ecosystem it's like the ABI.
 
-Two functions of this struct are implemented to get provided metadata_url and hash values. See to_metadata_url() function returns MetadataUrl struct which is the part of the CIS-2 standard of the metadata and an optional hash of the content and you need this while minting.
+Two functions of this struct are implemented to get the provided metadata_url and hash values. See to_metadata_url() function returns MetadataUrl struct which is the part of the CIS-2 standard of the metadata and an optional hash of the content and you need this while minting.
 
 .. code-block:: rust
 
