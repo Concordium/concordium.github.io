@@ -32,6 +32,11 @@ Concordium node version 5.1.3 introduces the following new features and improvem
 
 - Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
 
+Cargo concordium 2.6.0
+----------------------
+
+Added the ability to output the schema in JSON format which can be more suitable for use in dApps.
+
 January 9, 2023
 
 |bw| 0.9.6

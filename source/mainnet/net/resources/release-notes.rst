@@ -14,8 +14,9 @@ Release Notes - Testnet
 January 19, 2023
 
 Cargo concordium 2.6.0
----------------------------
+----------------------
 
+Added the ability to output the schema in JSON format which can be more suitable for use in dApps.
 
 January 12, 2023
 
