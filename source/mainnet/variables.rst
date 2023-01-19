@@ -19,7 +19,7 @@
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.6.0
 .. |cargo-version| replace:: 2.6.0
-.. |cargo-linux-checksum| replace:: 96e7d4de085147d57aeff17f92c0cad16fd4039434eea7eb67dfdad28b898434
+.. |cargo-linux-checksum| replace:: dabd81f2379cc5d56e1dbcb58b1126f8b7915607f016c962d8c88053dc62e05a
 
 .. Node debian package verification variables
 
