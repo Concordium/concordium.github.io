@@ -9,7 +9,7 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
 .. dropdown:: Piggy bank
 
-    `Demo front end <https://piggybank.testnet.concordium.com`__ where you can try the functionality on Concordium's testnet
+    `Demo front end <https://piggybank.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet
 
     :ref:`Tutorial about the piggy bank smart contract and dApp<piggy-bank>`
 
