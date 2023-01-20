@@ -35,7 +35,7 @@ Register a file
 
 Select the **Registration tab** to register the file hash as shown below:
 
-.. figure:: ./images/registrationTab.gif
+.. image:: ./images/registrationTab.gif
    :alt: StreamPlayer
    :align: center
 
@@ -44,7 +44,7 @@ View timestamp and witness
 
 Select the **Display tab** to look up the timestamp and witness (sealer account) of an already registered file as shown below:
 
-.. figure:: ./images/displayTab.gif
+.. image:: ./images/displayTab.gif
    :alt: StreamPlayer
    :align: center
 
