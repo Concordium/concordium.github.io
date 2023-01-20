@@ -15,7 +15,7 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Smart contracts <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/piggy-bank>`__
 
-    `Front end code <https://github.com/Concordium/concordium-dapp-piggybank/>`_
+    `Front end code <https://github.com/Concordium/concordium-dapp-piggybank/>`__
 
 .. dropdown:: wCCD
 
@@ -23,7 +23,7 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     :ref:`Tutorial about the wCCD smart contract and dApp<wCCD>`.
 
-    `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
+    `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`__
 
     `Front end code <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/wCCD>`__
 
