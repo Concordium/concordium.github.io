@@ -229,7 +229,7 @@ A particular line number may be emphasized with `:emphasize-lines:line_number` o
 
 #### Code inline in text
 
-Use ``code`` to insert commands or output from a terminal screen into a line of text. For example:
+Use ```code``` to insert commands or output from a terminal screen into a line of text. For example:
 
    To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>`` 
 
