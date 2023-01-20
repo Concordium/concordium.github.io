@@ -281,7 +281,7 @@ Use the variables by:
 
 ### Images
 
-Save any images that you add in the Images folder. Create sub-folders as needed to store images.
+Save any images that you add in the `Images` folder. Create sub-folders as needed to store images.
 
 Captions are not used. Instead the image context should be described in the text above it with a reference, such as "...in the image below...".
 
