@@ -237,7 +237,7 @@ Do not confuse ```code``` with ``code``. Text wrapped in single ` is so-called d
 
 #### Hyperlinks
 
-Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. `Concordium <https://www.concordium.com>`_.
+Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. ``Concordium <https://www.concordium.com>`_`.
 
 If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g. .. _Rust: https://www.rust-lang.org/, and then reference it in the text, e.g. using the Rust_ programming language.
 
