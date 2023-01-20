@@ -245,7 +245,7 @@ If you have a hyperlink that will be used often in the same topic, you can inser
 
 #### Buttons and clickable elements
 
-Use **bold** to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**"). Do not use quotes for clickable elements or keyboard buttons.
+Use `**bold**` to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**"). Do not use quotes for clickable elements or keyboard buttons.
 
 #### Emphasis
 
