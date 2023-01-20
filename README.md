@@ -198,7 +198,7 @@ Header 5
 ~~~~~~~~
 ```
 
-#### Terminal commands
+#### Terminal commands and code examples
 
 Use `code-block:: console` to show content from a terminal and prepend commands
 with `$` without a space in between.
@@ -214,9 +214,6 @@ Example:
    $echo Hello, world!
    Hello, world!
 ```
-
-#### Code examples
-
 Use `code-block:: rust` to show Rust content with correct formatting.
 
 Use `code-block:: toml` to show TOML content with correct formatting.
@@ -226,8 +223,6 @@ Use `code-block:: json` to show JSON content with correct formatting.
 Use `code-block:: jsx` to show JSX content with correct formatting.
 
 A particular line number may be emphasized with `:emphasize-lines:line_number` option. Multiple lines are comma-separated and consecutive lines can be written with a dash (e.g. :emphasize-lines:10,12,15-17).
-
-#### Code inline in text
 
 Use ```code``` to insert commands or output from a terminal screen into a line of text. For example:
 
@@ -240,8 +235,6 @@ Do not confuse ```code``` with ``code``. Text wrapped in single ` is so-called d
 Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. ``Concordium <https://www.concordium.com>`_`.
 
 If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g. `.. _Rust: https://www.rust-lang.org/`, and then reference it in the text, e.g. using the `Rust_` programming language.
-
-### Code formatting for this repository
 
 #### Buttons and clickable elements
 
@@ -267,7 +260,7 @@ Example that follows both rules:
    This line has three spaces in front of it and it has an empty line above it.
 ```
 
-### Variables
+#### Variables
 
 Use variables when it makes sense. Variables exist for most of the wallets and some other product names. It is preferred to use the variable instead of, e.g., browser wallet.
 
@@ -278,6 +271,18 @@ Use the variables by:
 - Including a relative path to `variables.rst`, for example
   `../../variables.rst`, at the top of the file.
 - Then using the variable bw, for example `|bw|`, in the text.
+
+#### Dropdowns
+
+Use dropdowns to consolidate information and give a cleaner, more user-friendly experience to the reader. Dropdowns are generally used when describing a procedure across the different wallets. You can nest dropdowns in dropdowns as in the export-import topic. Dropdowns are also used for FAQs. It is important to add an empty line between the dropdown directive and the content.
+
+Example:
+
+``` restructuredtext
+.. dropdown:: The text the reader sees on the clickable dropdown
+
+   This text appears when the reader clicks on the dropdown element.
+```
 
 ### Images
 
