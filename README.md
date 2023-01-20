@@ -222,27 +222,29 @@ Use `code-block:: json` to show JSON content with correct formatting.
 
 Use `code-block:: jsx` to show JSX content with correct formatting.
 
-A particular line number may be emphasized with `:emphasize-lines:line_number` option. Multiple lines are comma-separated and consecutive lines can be written with a dash (e.g. :emphasize-lines:10,12,15-17).
+A particular line number may be emphasized with `:emphasize-lines:line_number` option. Multiple lines are comma-separated and consecutive lines can be written with a dash (e.g. `:emphasize-lines:10,12,15-17`).
 
-Use ```code``` to insert commands or output from a terminal screen into a line of text. For example:
+Use ` ``code`` ` to insert commands or output from a terminal screen into a line of text. For example:
 
-   To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>`` 
+```
+To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>``
+``` 
 
-Do not confuse ```code``` with ``code``. Text wrapped in single ` is so-called default role interpreted text. And do not use regular quotes, e.g. "code", for code examples.
+Do not confuse ` ``code`` ` with ``` `code` ```. Text wrapped in single ``` ` ``` is so-called default role interpreted text. And do not use regular quotes, e.g. `"code"`, for code examples.
 
 #### Hyperlinks
 
-Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. ``Concordium <https://www.concordium.com>`_`.
+Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. ``` `Concordium <https://www.concordium.com>`_ ```.
 
 If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g. `.. _Rust: https://www.rust-lang.org/`, and then reference it in the text, e.g. using the `Rust_` programming language.
 
 #### Buttons and clickable elements
 
-Use `**bold**` to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**"). Do not use quotes for clickable elements or keyboard buttons.
+Use `**bold**` to highlight keyboard buttons and clickable elements (e.g., `Press **Enter**`, `Select **Next**`). Do not use quotes for clickable elements or keyboard buttons.
 
 #### Emphasis
 
-- Use *italics* for text emphasis (e.g., when introducing a new term: "Obtain an identity from an *identity provider*.").
+- Use `*italics*` for text emphasis (e.g., when introducing a new term: `Obtain an identity from an *identity provider*.`).
 - After the term is introduced avoid emphasising it again in the same text.
 - Do not use quotes for emphasis.
 
