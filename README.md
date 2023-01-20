@@ -233,7 +233,7 @@ Use ``code`` to insert commands or output from a terminal screen into a line of 
 
    To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>`` 
 
-Do not confuse ``code`` with `code`. Text wrapped in single ` is so-called default role interpreted text. And do not use regular quotes, e.g. "code", for code examples.
+Do not confuse ```code``` with ``code``. Text wrapped in single ` is so-called default role interpreted text. And do not use regular quotes, e.g. "code", for code examples.
 
 #### Hyperlinks
 
