@@ -21,7 +21,7 @@ The front end supports the following two flows with the |bw| (or |mw-gen2| that 
 
 .. note::
 
-   Select the ``registration tab`` to register the file hash and the ``display tab`` to look up the
+   Select the **registration tab** to register the file hash and the **display tab** to look up the
    timestamp and witness (sealer account) of an already registered file.
 
 .. note::
@@ -33,24 +33,20 @@ The front end supports the following two flows with the |bw| (or |mw-gen2| that 
 Register a file
 ===============
 
-Select the ``registration tab`` to register the file hash as it can be seen in the video below:
+Select the **Registration tab** to register the file hash as shown below:
 
 .. figure:: ./images/registrationTab.gif
    :alt: StreamPlayer
    :align: center
 
-   Registration Tab
-
 View timestamp and witness
 ==========================
 
-Select the ``display tab`` to look up the timestamp and witness (sealer account) of an already registered file as it can be seen in the video below:
+Select the **Display tab** to look up the timestamp and witness (sealer account) of an already registered file as shown below:
 
 .. figure:: ./images/displayTab.gif
    :alt: StreamPlayer
    :align: center
-
-   Display Tab
 
 Use Concordium Client
 =====================
@@ -71,10 +67,8 @@ Create a ``fileHash.json`` file with a file hash as content similar to:
 
    "14fe0aed941aa0a0be1118d7b7dd70bfca475310c531f1b5a179b336c075db65"
 
-.. figure:: ./images/registerFile.png
+.. image:: ./images/registerFile.png
    :align: center
-
-   Register File
 
 .. note::
 
@@ -95,10 +89,8 @@ You can view the ``timestamp`` and ``witness`` (sealer account) of an already ti
 
     $concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 10001
 
-.. figure:: ./images/displayFile.png
+.. image:: ./images/displayFile.png
    :align: center
-
-   Display File
 
 What is the cost of using your account to seal a file?
 ======================================================
