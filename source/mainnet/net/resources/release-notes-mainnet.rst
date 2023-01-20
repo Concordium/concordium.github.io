@@ -11,6 +11,32 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+January 19, 2023
+
+Concordium Node 5.1.3
+---------------------
+
+Concordium node version 5.1.3 introduces the following new features and improvements:
+
+- Improvements were made to allow greater concurrency with transaction processing.
+
+- Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.
+
+- Removed the configuration option ``no_rebroadcast_consensus_validation``. This option (which was used for testing only and was disabled by default) made the node rebroadcast blocks before doing any validation.
+
+- Changes were made to avoid deadlocks during node shutdown in specific scenarios.
+
+- The node will now shut down to start if an error occurs in a required service (e.g., grpc server). In particular, the node will shut down if a required service could not be started.
+
+- Added timeout to downloading out of band catchup files when block indices and catch-up chunk files are specified by an URL. The timeout is controlled by the option ``--download-blocks-timeout`` (environment variable ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_TIMEOUT``) and defaults to 5 minutes. Timeout is now five minutes per chunk instead of waiting indefinitely.
+
+- Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
+
+Cargo concordium 2.6.0
+----------------------
+
+Added the ability to output the schema in JSON format which can be more suitable for use in dApps.
+
 January 9, 2023
 
 |bw| 0.9.6
