@@ -153,8 +153,7 @@ of a variable length type, such as ``List``.
        Eight,
    }
 
-For a reference on how a schema type is serialized into bytes, we refer the
-reader to the `implementation in Rust`_.
+For a reference on how a schema type is serialized into bytes, refer to the `implementation in Rust`_.
 
 .. _contract-schema-which-to-choose:
 
