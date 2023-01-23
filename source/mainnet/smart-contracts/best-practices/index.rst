@@ -1,4 +1,4 @@
-. _sc-best-practices:
+.. _sc-best-practices:
 
 ==============
 Best practices
