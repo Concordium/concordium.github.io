@@ -27,7 +27,7 @@ To minimize the exposure of your smart contract to possible attacks consider the
   The more complexity you have in your contract, the larger the attack surface.
 - Be ready if things go wrong after deployment:
 
-  - provide “pause” functionality;
+  - provide “pause” functionality (see more in the :ref:`best-practices-code-structure` section of this document);
   - implement additional approvals/wait periods for dangerous operations;
   - make your contract :ref:`upgradable <contract-instance-upgradeability>`;
   - have a clear plan for how to fix bugs found after deployment.
@@ -114,6 +114,47 @@ Recommended structure
 - Fail early: validate input/perform authorization as early as possible in an entrypoint.
   Returning earlier will save energy and make the call cheaper.
   Use the ``ensure!()`` macro to validate and return an error.
+- Provide the pause functionality: add a boolean flag to the state controlling whether the contract is active.
+  The contract owner or admin can control the flag.
+  See a code snippet from the `wCCD contract example <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_ below.
+
+  .. code-block:: rust
+
+    struct State {
+      // The admin address pause and unpause the contract
+      admin:  Address,
+      // Contract is paused if `paused = true` and unpaused if `paused = false`.
+      paused: bool,
+      ...
+    }
+
+    fn contract_receive<S: HasStateApi>(
+      ctx: &impl HasReceiveContext,
+      host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> ContractResult<()> {
+      // Check that contract is not paused.
+      ensure!(!host.state().paused, ContractError::Custom(CustomContractError::ContractPaused));
+      // Continue execution
+      ...
+    }
+
+    ...
+
+    fn contract_set_paused<S: HasStateApi>(
+      ctx: &impl HasReceiveContext,
+      host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> ContractResult<()> {
+      // Check that only the admin is authorized to pause/unpause the contract.
+      ensure_eq!(ctx.sender(), host.state().admin, ContractError::Unauthorized);
+
+      // Parse the parameter.
+      let params: SetPausedParams = ctx.parameter_cursor().get()?;
+
+      // Update the paused variable.
+      host.state_mut().paused = params.paused;
+
+      Ok(())
+    }
 
 .. _best-practices-dos:
 
