@@ -1,7 +1,7 @@
 .. _delegation-faq:
 
-Delegation FAQ
-==============
+Delegation and baking FAQ
+=========================
 
 For delegators
 --------------
