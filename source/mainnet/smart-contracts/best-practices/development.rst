@@ -102,7 +102,7 @@ Recommended structure
         host: &mut impl HasHost<State<S>, StateApiType = S>,
     ) -> ReceiveResult<()> {
         // Parse parameters
-        let param : MyParameter = ctx.parameter_cursor().get()?;
+        let param: MyParameter = ctx.parameter_cursor().get()?;
         ...
         // Perform authorization, potentially using using `ctx` info
         ensure!(sender.matches_account(&owner));
