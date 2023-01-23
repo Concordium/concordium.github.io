@@ -1,10 +1,10 @@
 .. _gallery-frontend:
 
 =====================================
-Create the public front-end
+Create the public front end
 =====================================
 
-The front-end is a simple webpage in React that can display the images of the gallery and let the user authenticate.
+The front end is a simple webpage in React that can display the images of the gallery and let the user authenticate.
 
 When the page is initially opened, it displays the items of the gallery but without the actual images.
 

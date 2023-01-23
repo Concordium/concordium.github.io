@@ -69,7 +69,7 @@ State of a smart contract instance
 
 The state of a smart contract instance consists of two parts, the user-defined
 state and the amount of CCD the contract holds, i.e., its *balance*. When
-referring to state we typically mean only the user-defined state. The reason for
+referring to state it typically means only the user-defined state. The reason for
 treating the CCD amount separately is that CCD can only be spent and
 received according to rules of the network, e.g., contracts cannot create
 or destroy CCD tokens.

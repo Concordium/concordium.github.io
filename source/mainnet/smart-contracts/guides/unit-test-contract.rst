@@ -64,8 +64,8 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
 
    For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
 
-The unit test have to be annotated with ``#[concordium_test]`` instead of
-``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
+The unit test has to be annotated with ``#[concordium_test]`` instead of
+``#[test]``, and ``#[concordium_cfg_test]`` is used instead of ``#[cfg(test)]``:
 
 .. code-block:: rust
 
@@ -339,12 +339,15 @@ state and balance fields:
        );
        ...
 
+.. _reentracny-unit-testing:
+
 Reentrancy
 ----------
 
 When invoking another smart contract, you give away control to that contract in the middle of execution.
 The external contract can, for example, call back entrypoints of your contract.
 This behavior is called *reentrancy* and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.
+See the details about handling external calls and ways of protecting against reentrancy-related issues in the :ref:`development best practices <best-practices-external-calls>`.
 
 The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can invoke any entrypoint of your own contract.
 
@@ -358,7 +361,7 @@ The state of your contract might not be the same before and after ``invoke_contr
 
 Consider a concrete example of reentrancy when the state is *not* updated properly before making an external call.
 This can lead to reentrant calls that pass some validation that is based on the current state, even though these calls should fail.
-The classic example of such a security issue is the Ethereum DAO smart contract that was drained of funds due to the reentrancy vulnerability.
+The classic example of such a security issue is `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract that was drained of funds due to the reentrancy vulnerability.
 Below is a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
 The users can request their funds back; if a user is a smart contract, the funds are sent to a specified entrypoint.
 

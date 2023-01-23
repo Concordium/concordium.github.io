@@ -230,7 +230,7 @@ to transfer 25 CCD is:
 
    $concordium-client transaction send --amount 25 --sender A --receiver B
 
-The output will look similar to the following. Note that in this example, we assume that the
+The output will look similar to the following. Note that this example assumes that the
 sender account A has three transaction signing keys 0, 1, and 3.
 
 .. code-block:: console

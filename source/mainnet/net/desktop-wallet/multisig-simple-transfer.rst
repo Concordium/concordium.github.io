@@ -92,7 +92,7 @@ To propose a transaction to other co-signers, you have to share a file with them
 
 #.  Navigate to the location on your computer where you want to save the file. In **Save as type** make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
 
-#.  Send a copy of the file through a secure channel to the co-signers that must sign the transaction. We recommend that you send a copy of the identicon through a secure channel that is different from the one used to send the file.
+#.  Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Concordium recommends that you send a copy of the identicon through a secure channel that is different from the one used to send the file.
 
 #. To print a copy of the proposal, select the printer icon in the upper-right corner, select **Print to PDF**, and then navigate to the place on your computer where you want to save the PDF.
 
