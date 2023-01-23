@@ -7,10 +7,10 @@
 The Concordium node has a `gRPC <https://grpc.io/>`_ interface that enables
 queries, sending of transactions, and more.
 While the gRPC interface is powerful, it is not the most convenient tool.
-We provide a number of SDKs that build on top of the gRPC interface, which are
+Concordium provides a number of SDKs that build on top of the gRPC interface, which are
 much more ergonomic to use.
 
-These are the SDKs we currently provide:
+The SDKs currently provided are:
 
 - `Concordium Rust SDK <https://github.com/Concordium/concordium-rust-sdk>`_
 - `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_

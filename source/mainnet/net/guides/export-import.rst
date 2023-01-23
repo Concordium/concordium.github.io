@@ -9,7 +9,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
 .. Note::
 
-    Backup and import cannot be used for |mw-gen2| because it uses a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
+    Backup and import cannot be used for |mw-gen2| or |bw| because they use a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
 
 .. Warning::
     You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
@@ -139,9 +139,9 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
             #. Review your import and tap **Ok, thanks**.
 
-.. dropdown:: |mw-gen2|
+.. dropdown:: |mw-gen2| and |bw|
 
-    Backup is not available in |mw-gen2|. It uses a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. For information about recovering your |mw-gen1| wallet, see above.
+    Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

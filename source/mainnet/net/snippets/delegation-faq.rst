@@ -38,7 +38,7 @@ For delegators
 
 .. dropdown:: Why is there a cool-down when I decrease / stop my delegation?
 
-    The cool-down period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
+    The :ref:`cool-down<glossary-cool-down-period>` period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
 
 .. dropdown:: Can I change my restaking preference if I am in a cool-down period?
 

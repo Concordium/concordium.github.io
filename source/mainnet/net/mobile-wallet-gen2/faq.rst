@@ -7,17 +7,17 @@
 
 .. dropdown:: Why was the |mw-gen2| made?
 
-    The |mw-gen2| includes the introduction of a secret recovery phrase, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the soon to be released |bw|.
+    The |mw-gen2| includes the introduction of a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the |bw|.
 
 .. dropdown:: What are the features and benefits of the |mw-gen2|?
 
-    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, bake, delegate, and so on. But the |mw-gen2| uses a secret recovery phrase that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the soon to be released |bw|.
+    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, bake, delegate, and so on. But the |mw-gen2| uses a secret recovery phrase that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the |bw|.
 
     In |mw-gen2| initial accounts are no longer created by the Identity Verification company when your identity is verified, ensuring complete privacy of all your accounts. Going forward you create all accounts yourself in your Concordium Wallet.
 
 .. dropdown:: What is a secret recovery phrase?
 
-    A secret recovery phrase is a “master key” that unlocks all of your Concordium accounts. When entered into the wallet in the correct order, the 24 words in the recovery phrase will recover all of the private keys you were storing on your original wallet and give access to all CCDs in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds and backup phrases.
+    A secret recovery phrase is a “master key” that unlocks all of your Concordium accounts. When entered into the wallet in the correct order, the 24 words in the recovery phrase will recover all of the private keys you were storing on your original wallet and give access to all CCDs in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds, and backup phrases.
 
 .. dropdown:: How is a secret recovery phrase different from private keys?
 

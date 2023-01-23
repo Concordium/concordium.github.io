@@ -30,7 +30,6 @@ index
    browser-wallet/connect-app
    guides/tokens
    guides/shield-ccd-wallets
-   guides/shielded-transfer
    guides/export-import
    guides/export-key
    guides/recover-wallet
@@ -57,8 +56,6 @@ index
    guides/developer-page
    nodes/node-requirements
    references/concordium-client
-   references/transactions
-   references/query-node
 
 .. toctree::
    :includehidden:
@@ -96,6 +93,5 @@ index
    resources/ccd-scan
    resources/release-notes-mainnet
    resources/release-notes
-   resources/sirius-testnet-reset
    resources/legal
    resources/ar-idp-contact
