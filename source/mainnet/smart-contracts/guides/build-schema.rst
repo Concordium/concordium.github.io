@@ -19,13 +19,13 @@ Preparation
 First, ensure you have ``cargo-concordium`` installed and if not the guide
 :ref:`setup-tools` will help you.
 
-We also need the Rust source code of the smart contract you wish to build a
+You also need the Rust source code of the smart contract you wish to build a
 schema for.
 
 Setup the contract for a schema
 ===============================
 
-In order to build a contract schema, we first have to prepare our smart
+In order to build a contract schema, you first have to prepare our smart
 contract for building the schema.
 
 You can choose which parts of the smart contract to include in the schema.
@@ -33,7 +33,7 @@ For each init function, you can choose to include a schema for the parameter, th
 And for each receive function, you can choose to include a schema for the parameter,
 the return value, and/or the errors.
 
-Every type we want to include in the schema must implement the ``SchemaType``
+Every type you want to include in the schema must implement the ``SchemaType``
 trait. This is already done for all base types and some other types (see `list of types implementing the SchemaType`_).
 For most other cases, it can also be derived automatically, using
 ``#[derive(SchemaType)]``::
@@ -150,7 +150,7 @@ functions, set the optional ``parameter``, ``return_value``, and ``error`` attri
 Building the schema
 ===================
 
-Now, we are ready to build the actual schema using ``cargo-concordium``, and we
+Now, you are ready to build the actual schema using ``cargo-concordium``, and you
 have the options to embed the schema and/or write the schema to a file.
 
 .. seealso::
@@ -161,7 +161,7 @@ have the options to embed the schema and/or write the schema to a file.
 Embedding the schema
 --------------------
 
-In order to embed the schema into the smart contract module, we add
+In order to embed the schema into the smart contract module, add
 ``--schema-embed`` to the build command
 
 .. code-block:: console
@@ -174,7 +174,7 @@ schema in bytes.
 Outputting a schema file
 ------------------------
 
-To output the schema into a file, we can use the ``--schema-out=FILE``
+To output the schema into a file, use the ``--schema-out=FILE``
 where ``FILE`` is a path of the file to create:
 
 .. code-block:: console

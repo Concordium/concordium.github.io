@@ -8,8 +8,8 @@ The backend does the following:
 
 - Serves the statement the user must prove using their identity.
 - Serves the names of the gallery pieces.
-- Serves a unique challenge that the front-end gives the user to ensure the user cannot reuse an old proof.
-- Receives the resulting proof and verifies it, in which case it returns a token that the front-end can use for authentication.
+- Serves a unique challenge that the front end gives the user to ensure the user cannot reuse an old proof.
+- Receives the resulting proof and verifies it, in which case it returns a token that the front end can use for authentication.
 - Serves the images of the gallery pieces, if given a valid token.
 
 To do this it has an HTTP endpoint for each of theses tasks:
@@ -23,7 +23,7 @@ To do this it has an HTTP endpoint for each of theses tasks:
 The backend is written in Rust and uses the Tokio runtime and Warp to create an http server.
 It has some state that keeps track of sent challenges and tokens.
 
-To only have a single server and allow the front-end to assume the location of the backend, the backend serves the front-end. This is easily done with Warp.
+To only have a single server and allow the front end to assume the location of the backend, the backend serves the front end. This is easily done with Warp.
 Here is how a Warp server that just serves the folder specified by app.public_folder might look:
 
 .. code-block:: rust
@@ -100,4 +100,4 @@ For simplicity in this example, the response is a redirect to an image hosting t
 
 This is done by the *handle_image_access* function in the `handlers file <https://github.com/Concordium/concordium-dapp-examples/blob/main/gallery/verifier/src/handlers.rs>`_.
 
-:ref:`Continue to the next part<gallery-frontend>` to learn how to make a front-end to interact with this backend and with the wallet.
+:ref:`Continue to the next part<gallery-frontend>` to learn how to make a front end to interact with this backend and with the wallet.

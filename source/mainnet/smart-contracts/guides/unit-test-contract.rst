@@ -64,8 +64,8 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
 
    For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
 
-The unit test have to be annotated with ``#[concordium_test]`` instead of
-``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
+The unit test has to be annotated with ``#[concordium_test]`` instead of
+``#[test]``, and ``#[concordium_cfg_test]`` is used instead of ``#[cfg(test)]``:
 
 .. code-block:: rust
 

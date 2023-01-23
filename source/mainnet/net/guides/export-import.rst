@@ -5,19 +5,49 @@
 Make a backup of identities, accounts, and addresses
 ====================================================
 
-To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can't access the Wallet.
-
 .. Note::
 
-    Backup and import cannot be used for |mw-gen2| because it uses a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
+   This information is not relevant for |mw-gen2| or |bw| which use a secret recovery phrase to recover a wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
 
-.. Warning::
-    You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
+To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can't access the Wallet.
 
 .. Warning::
    You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.
 
+A backup is only necessary when creating new accounts, not every time a transaction is executed. Think of your account like a safe: it contains assets. If you lose the key, you cannot get into the safe unless you have a copy of the key. Your backup is your copy of the safe key.
+
+You can make a backup from |mw-gen1| or from Desktop Wallet but there are differences between them.
+
+How to proceed
+==============
+
+Upgrade
+-------
+
+Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your |mw-gen1| or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the appropriate release notes:
+
+- :ref:`Mainnet release notes<mainnet-release-notes>`
+- :ref:`Testnet release notes <testnet-release-notes>`
+
+Final Notes
+===========
+
+If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall the |mw-gen1| or Desktop Wallet. You can then import your wallet backup into the new wallet.
+
+If the wallet does not have the keys from some accounts and you do not have a backup of the keys on an exported file, these accounts cannot be used. Therefore, you should ensure that you never ask anyone to transfer CCD to such accounts. Instead, go through a new identification process and generate new accounts that can be used in the future. And remember to export a new backup of the account keys each time you have generated a new account in the app.
+
+Keep previous backup files until you have verified that your latest backup is working properly.
+
+.. Warning::
+    You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
+
 .. dropdown:: Desktop Wallet
+
+    Because the Desktop Wallet uses a LEDGER device to sign all transactions, you can more easily recover your wallet and accounts if anything happens to your Desktop Wallet or you cannot access it. To access your Desktop Wallet, you use the backup file that you create in combination with your LEDGER device.
+
+    If you lose the backup file with your accounts, you can use the Desktop Wallet in combination with your LEDGER device to recover those accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.
+
+    If you’ve lost your LEDGER device or the device has stopped working, you can restore the keys in another LEDGER device by restoring it from the recovery phrase used for the original device. As long as you have your recovery phrase available, you can recover your wallet and accounts.
 
     To actually access the recovered accounts, you still need the LEDGER device that was used to set up the accounts, or a new LEDGER device that's been restored from the same recovery phrase.
 
@@ -29,7 +59,7 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
         #.  Create a password that contains at least 6 characters. You'll need the password to import the file into the Desktop Wallet so keep it safe.
 
-        #.  Navigate to the location on your computer where you want to save the file. If you're on Windows, make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**. Once the export is complete, we recommend that you store the file in a safe location that is different from where you store the Desktop Wallet database.
+        #.  Navigate to the location on your computer where you want to save the file. If you're on Windows, make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save**. Once the export is complete, Concordium recommends that you store the file in a safe location that is different from where you store the Desktop Wallet database.
 
     .. dropdown:: Import
 
@@ -92,6 +122,21 @@ To make sure that you have a backup of your accounts, identities, and addresses,
         **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
         **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
 
+    Because the |mw-gen1| does not use a secret recovery phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.
+
+    If you set up a new phone and transfer the wallet, you will lose the private keys; they can only be recovered from the pre-exported backup file.
+
+    Account keys are not stored in the cloud, only on the device itself in order to protect your security.
+
+    A new backup file should be exported EVERY time a new account is made, otherwise keys for the account can´t be recovered.
+
+    The |mw-gen1| provides built-in functionality to export wallet backups, encrypted under a passcode you choose. The wallet backup contains the keys for all wallet accounts. Each account has its own keys. Every time you make a new account in your wallet, you have to make a wallet backup to include the newly created account keys.
+
+    .. Warning:
+        Concordium strongly urges you to backup your account keys using the export function in the wallet whenever a new account has been created. The wallet backup as well as the export password must be stored securely. You cannot recover your accounts without a wallet backup and its passcode.
+
+    Even if you have access to the wallet and can see the accounts after a phone restoration operation or similar action, the keys to the accounts on the wallet may be missing, in which case you don’t have access to the CCDs. The following describes how you can check if you have the necessary keys and access to your accounts.
+
     .. dropdown:: Export
 
         .. Warning::
@@ -108,6 +153,15 @@ To make sure that you have a backup of your accounts, identities, and addresses,
         #. Choose an option for sending or saving the export file, such as Mail.
 
         Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. Concordium is not able to recover backup passwords.
+
+    .. dropdown:: How to check that you have your account keys
+
+        The app does not indicate if it has the keys to the accounts. To check whether the app has the keys for all accounts, do the following:
+
+        #. Open your wallet.
+        #. Create one new account for each of your identities.
+
+        If this succeeds for all identities, the wallet has all the necessary account keys. The wallet does not have the keys to the accounts created under identities where this fails.
 
     .. dropdown:: Import
 
@@ -139,9 +193,9 @@ To make sure that you have a backup of your accounts, identities, and addresses,
 
             #. Review your import and tap **Ok, thanks**.
 
-.. dropdown:: |mw-gen2|
+.. dropdown:: |mw-gen2| and |bw|
 
-    Backup is not available in |mw-gen2|. It uses a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. For information about recovering your |mw-gen1| wallet, see above.
+    Backup is not available in |mw-gen2| or |bw|. It uses a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. For information about recovering your |mw-gen1| wallet, see above.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
