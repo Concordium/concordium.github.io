@@ -41,7 +41,7 @@ agreement between parties.
 Auction smart contract example
 ------------------------------
 
-A use case for smart contracts could be for holding an auction; here we program
+A use case for smart contracts could be for holding an auction; here you program
 the smart contract to accept different bids from anyone and have it keep track
 of the highest bidder.
 When the auction is over, the smart contract sends the winner bid CCD to the seller and all other bids back. The seller then should send the item to the winner.

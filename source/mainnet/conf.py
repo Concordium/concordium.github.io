@@ -162,6 +162,7 @@ html_theme_options = {
     "page_sidebar_items": ["page-toc"],
     "footer_items": ["footer"],
     "show_prev_next": True,
+    "navbar_align": "left",
     "icon_links": [
         {
             # Concordium GitHub

@@ -26,6 +26,8 @@ Official resources
 
 - For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
 
+- See :ref:`dApp examples<dapp-examples>` for a list of dApp examples and their resources.
+
 - Block explorers
     The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 
@@ -55,6 +57,7 @@ Community resources
     :maxdepth: 2
 
     sdks-apis
+    dapp-examples
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2
