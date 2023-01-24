@@ -5,18 +5,18 @@
 Bakers
 ======
 
-Baking is key to the Concordium blockchain. The blockchain consists of multiple baker nodes that maintain the blockchain by baking and finalizing blocks.
+Baking is key to the Concordium blockchain. The blockchain consists of multiple :ref:`baker<glossary-baker>` nodes that maintain the blockchain by baking and :ref:`finalizing<glossary-finalization>` :ref:`blocks<glossary-block>`.
 
 How baking works
 ================
 
-A node is a baker node when it participates actively in the network by creating new blocks that are added to the chain. A baker collects, orders, and validates the transactions that are included in a block to maintain the integrity of the blockchain. The bakers sign each block that they bake so that the block can be verified and executed by the rest of the participants of the network.
+A node is a baker node when it participates actively in the network by creating new blocks that are added to the chain. A :ref:`baker<glossary-baker>` collects, orders, and validates the :ref:`transactions<glossary-transaction>` that are included in a block to maintain the integrity of the blockchain. The bakers sign each block that they bake so that the block can be verified and executed by the rest of the participants of the network.
 
 The chain a baker builds upon is the :ref:`best chain <glossary-best-chain>` when making a new block. The best chain is selected using :ref:`consensus protocol <glossary-consensus>`. In particular, the best chain has the most finalized blocks and the most blocks after the last finalized block.
 
 Baker keys
 ----------
-A node uses a set of cryptographic keys called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the :ref:`lottery <glossary-lottery-power>` as described below. To become a baker node, the node must be configured with a set of baker keys.
+A node uses a set of :ref:`cryptographic keys<glossary-private-keys>` called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the :ref:`lottery <glossary-lottery-power>` as described below. To become a baker node, the node must be configured with a set of baker keys.
 
 Baker account
 -------------
@@ -32,7 +32,7 @@ Rewards are added to the staked amount by default. However, you can choose to re
 Stake and lottery
 -----------------
 
-A baker needs to stake a part of its CCD balance on the baker account. Later, the baker can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the baker.
+A baker needs to :ref:`stake<glossary-staked-amount>` a part of its CCD balance on the baker account. Later, the baker can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the baker.
 
 .. note::
 
@@ -40,7 +40,7 @@ A baker needs to stake a part of its CCD balance on the baker account. Later, th
    the amount can be staked even if it hasn't been released yet.
 
 To be chosen to bake a block, the baker must take part in a
-*lottery*. The greater the baker's stake, the greater the baker's chance of winning the lottery and being selected to bake a block.
+*lottery*. The greater the baker's stake, the greater the baker's chance of :ref:`winning the lottery<glossary-lottery-power>` and being selected to bake a block.
 
 The same stake is used when calculating whether a baker is included in the :ref:`finalization <glossary-finalization>` committee or not.
 
@@ -57,17 +57,17 @@ Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>`, 
 
 A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:05 UTC on Mainnet and 11:05 UTC on Testnet.
 
-A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased after a cool-down period. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down.)
+A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down.)
 
 Finalization
 ============
 
-Finalization ensures that baked blocks become finalized as quickly as possible and with 100% certainty.
+:ref:`Finalization<glossary-finalization>` ensures that baked blocks become finalized as quickly as possible and with 100% certainty.
 
 What is finalization?
 ---------------------
 
-Finalization is the voting process by which a block is marked to be “finalized”, i.e. part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD, known as the Finalization committee.
+Finalization is the voting process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD, known as the Finalization committee.
 When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
 Finalization committee

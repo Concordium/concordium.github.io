@@ -465,6 +465,13 @@ Passive delegation
 
 A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
 
+.. _glossary-private-keys:
+
+Private keys
+============
+
+A large, randomly-generated, secret number that is used in cryptography and cryptocurrency to prove ownership of an account and sign transactions to send, spend, delegate, and stake CCDs. A wallet consists of a set of public addresses and private keys. Anyone can deposit cryptocurrency in a public address, but funds cannot be removed from an address without the corresponding private key.
+
 .. _glossary-range-proofs:
 
 Range proofs

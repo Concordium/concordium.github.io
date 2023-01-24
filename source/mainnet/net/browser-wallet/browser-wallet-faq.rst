@@ -13,15 +13,15 @@
 
     Some of the functionality is the same as other Concordium wallets in that you can still send and receive funds. But the |bw| uses a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` that allows you to recover your wallet should you need to replace your device. That same secret recovery phrase will also allow you to recover the wallet on, for example, |mw-gen2|.
 
-    In |bw| initial accounts are no longer created by the Identity Verification company when your identity is verified, ensuring complete privacy of all your accounts. Going forward you create all accounts yourself in your Concordium Wallet.
+    In |bw| initial accounts are no longer created by the :ref:`identity provider<glossary-identity-provider>` when your identity is verified, ensuring complete privacy of all your accounts. Going forward you :ref:`create all accounts yourself<create-account>` in your Concordium Wallet.
 
 .. dropdown:: What is a secret recovery phrase?
 
-    A :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` is a “master key” that unlocks all of your Concordium accounts. When entered into the wallet in the correct order, the 24 words in the recovery phrase will recover all of the private keys you were storing on your original wallet and give access to all CCDs in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds and backup phrases.
+    A :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` is a “master key” that unlocks all of your Concordium accounts. When entered into the wallet in the correct order, the 24 words in the recovery phrase will recover all of the private keys you were storing on your original wallet and give access to all :ref:`CCDs<glossary-ccd>` in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds and backup phrases.
 
 .. dropdown:: How is a secret recovery phrase different from private keys?
 
-    Private keys allow you to send, spend, and delegate your CCDs.
+    :ref:`Private keys<glossary-private-keys>` allow you to send, spend, and delegate your CCDs.
 
     Your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` gives you access to your wallet and all of the private keys in the wallet. You can think of a wallet as being like a password manager for your accounts. As long as you have your master password (the secret recovery phrase), you have access to all CCDs in the wallet.
 
@@ -40,11 +40,11 @@
 
 .. dropdown:: Do I still need to make backups of my wallet?
 
-    No. For the |bw| you do not need to make backups. Your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` that you write down is the only way to recover your accounts and identities.
+    No. For the |bw| and |mw-gen2| you do not need to make backups. Your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` that you write down is the only way to recover your accounts and identities.
 
-.. dropdown:: Can I migrate from the |mw-gen1| to the |bw|?
+.. dropdown:: Can I migrate from the |mw-gen1| or Desktop Wallet to the |bw|?
 
-    No. Because the way that keys are protected differs between the old and new wallets you cannot simply migrate. If you use the |mw-gen1| but want to use the |bw|, you should do the following:
+    No. Because the way that keys are protected differs between the old and new wallets you cannot simply migrate. If you use the |mw-gen1| or Desktop Wallet but want to use the |bw|, you should do the following:
 
     #. Download the |bw| and set it up so you have a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`, a verified identity, and at least one account.
     #. Open the |mw-gen1| and send your funds from it to your new account(s) in the |bw|.
@@ -54,17 +54,17 @@
 
 .. dropdown:: Can I access my wallet on multiple devices with the secret recovery phrase?
 
-    Yes, you can access your wallet using |mw-gen2| and |bw|. You can :ref:`recover<recover-wallet>` your wallet in a device that uses either of these. Be aware that any names you have given to identities and accounts are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can edit the account name and edit the identity name, if desired.
+    Yes, you can access your wallet concurrently using |mw-gen2| and |bw|. You can :ref:`recover<recover-wallet>` your wallet in a device that uses either of these. Be aware that any names you have given to identities and accounts are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can edit the account name and edit the identity name, if desired.
 
     It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<recover-wallet>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
 
 .. dropdown:: Can I use my secret recovery phrase to restore my accounts in third party wallets?
 
-    At the moment Concordium identities and accounts are only supported in Concordium Wallets. However, Concordium expects to provide support for CCD and CIS-2 tokens in third party wallet in the not too distant future.
+    At the moment Concordium identities and accounts are only supported in Concordium Wallets. However, Concordium expects to provide support for CCD and CIS-2 tokens in third party wallets in the future.
 
 .. dropdown:: I have a secret recovery phrase from another wallet. Can I use that in my Concordium Wallet?
 
-    Reusing a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` in multiple wallets is not recommended, as it increases the risk of having all your wallets compromised. Concordium recommends that you generate a new recovery phrase when setting up a new wallet on Concordium. For advanced users who understand the risks involved it is possible to reuse a 24 word recovery phase from another wallet with Concordium through the wallet recovery process. The wallet will not recover anything if you reuse your secret recovery phrase from another wallet, but it will set your wallet up with the secret recovery phrase, and from there you can request a new identity and accounts.
+    Reusing a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` in multiple wallets is not recommended, as it increases the risk of having all your wallets compromised. Concordium recommends that you generate a new secret recovery phrase when setting up a new wallet on Concordium. For advanced users who understand the risks involved it is possible to reuse a 24 word recovery phase from another wallet with Concordium through the wallet recovery process. The wallet will not recover anything if you reuse your secret recovery phrase from another wallet, but it will set your wallet up with the secret recovery phrase, and from there you can request a new identity and accounts.
 
 .. dropdown:: I have a Concordium Desktop Wallet set up with a LEDGER device and a 24 word secret recovery phrase. Can I use that recovery phrase in my |bw|?
 
@@ -72,13 +72,13 @@
 
 .. dropdown:: Can I migrate from the another wallet to the |bw|?
 
-    No. Because the way that keys are protected differs between the earlier |mw-gen1|, and |bw| and |mw-gen2|, you cannot simply migrate. You can, however, send money from one of the earlier wallets to accounts in your |bw|.
+    No. Because the way that keys are protected differs between the earlier |mw-gen1| and Desktop Wallet, and |bw| and |mw-gen2|, you cannot simply migrate. You can, however, send money from one of the earlier wallets to accounts in your |bw|.
 
     You can have your wallet running concurrently on both |bw| and |mw-gen2|.
 
 .. dropdown:: Can I access the same accounts on different devices?
 
-    If you are using |bw| and the |mw-gen2|, you can because the |mw-gen2| also uses the :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`. You would simply enter your :ref:`recovery phrase<recover-wallet>` into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.
+    If you are using |bw| and the |mw-gen2|, you can because the |mw-gen2| also uses the :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`. You simply enter your :ref:`recovery phrase<recover-wallet>` into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.
 
 .. dropdown:: What do I do if I forget my passcode on the |bw|?
 
