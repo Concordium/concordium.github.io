@@ -49,7 +49,7 @@ For the entrypoints, consider the following:
 
 - What is the interface (entrypoints and their parameters)? For example, ``transfer`` takes three parameters: ``from``, ``to`` addresses, and ``amount``.
 - Who can access the entrypoints? For example, the transaction sender must be an operator of the ``from`` account.
-- Which properties of these entrypoints should be satisfied? For example, a successful call of ``transfer(from, to, amount)`` decreases the ``from`` balance and the ``to`` balance by ``amount``.
+- Which properties of these entrypoints should be satisfied? For example, a successful call of ``transfer(from, to, amount)`` decreases the ``from`` balance by ``amount`` and increases the ``to`` balance by ``amount``.
 
 If the logic of your application requires complex flows that include several contract calls, or features several interacting smart contracts, use diagrams with descriptions to document these.
 
@@ -74,7 +74,7 @@ See :ref:`introduction` for basic information.
 Recommended structure
 ---------------------
 
-- Use ``cargo init`` with an appropriate template to start a new project.
+- Use ``cargo concordium init`` with an appropriate template to start a new project.
 - For non-trivial contracts, build the contract logic as the state struct implementation.
 
   .. code-block:: rust
@@ -104,7 +104,7 @@ Recommended structure
         // Parse parameters
         let param: MyParameter = ctx.parameter_cursor().get()?;
         ...
-        // Perform authorization, potentially using using `ctx` info
+        // Perform authorization, potentially using `ctx` info
         ensure!(sender.matches_account(&owner));
         ...
         host.state_mut().do_something(param);
