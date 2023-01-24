@@ -49,7 +49,7 @@ For the entrypoints, consider the following:
 
 - What is the interface (entrypoints and their parameters)? For example, ``transfer`` takes three parameters: ``from``, ``to`` addresses, and ``amount``.
 - Who can access the entrypoints? For example, the transaction sender must be an operator of the ``from`` account.
-- Which properties of these entrypoints should be satisfied? For example, a successful call of ``transfer(from, to, amount)`` decreases the ``from`` balance and the ``to`` balance by ``amount``.
+- Which properties of these entrypoints should be satisfied? For example, a successful call of ``transfer(from, to, amount)`` decreases the ``from`` balance and increases the ``to`` balance by ``amount``.
 
 If the logic of your application requires complex flows that include several contract calls, or features several interacting smart contracts, use diagrams with descriptions to document these.
 
@@ -74,7 +74,7 @@ See :ref:`introduction` for basic information.
 Recommended structure
 ---------------------
 
-- Use ``cargo init`` with an appropriate template to start a new project.
+- Use ``cargo concordium init`` with an appropriate template to start a new project.
 - For non-trivial contracts, build the contract logic as the state struct implementation.
 
   .. code-block:: rust
@@ -104,7 +104,7 @@ Recommended structure
         // Parse parameters
         let param: MyParameter = ctx.parameter_cursor().get()?;
         ...
-        // Perform authorization, potentially using using `ctx` info
+        // Perform authorization, potentially using `ctx` info
         ensure!(sender.matches_account(&owner));
         ...
         host.state_mut().do_something(param);
@@ -261,7 +261,7 @@ See an :ref:`example <reentracny-unit-testing>` based on `the DAO <https://en.wi
 - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
 - If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only>`_.
   If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
-  Using ``invoke_contract_read_only`` covers most of the cases where protection from reentrancy is required.
+  Using ``invoke_contract_read_only`` covers most of the cases that require protecting the contract state from updating due to reentrancy.
 - Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy. Reset after the call is complete.
 
   .. code-block:: rust
