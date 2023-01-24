@@ -11,6 +11,15 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+January 26, 2023
+
+|mw-gen2| 1.1.4
+-----------------------
+
+Fixed an issue where the transaction cost was shown incorrectly.
+
+Added auto reject if a dApp sets a maxEnergy that is too large when sending a transaction to the wallet.
+
 January 19, 2023
 
 Concordium Node 5.1.3
