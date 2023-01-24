@@ -173,7 +173,7 @@ If you lose your accounts, you can recover the accounts by using the LEDGER devi
 Terms and conditions
 --------------------
 
-If you want to view the latest version of the *License notices* and *Terms and conditions for the Desktop Wallet* do the following.
+To view the latest version of the *License notices* and *Terms and conditions for the Desktop Wallet*:
 
 - On Windows, press **Alt** to display the menu bar, and then in the **Help** menu, choose the document you want to view.
 
@@ -201,7 +201,3 @@ Create a report of transactions on one or more accounts
 #. If you want to include more accounts in the report, select **Add another account** in the right pane, and then select the relevant account. Repeat this step for each account you want to add to the report.
 
 #. Select **Make account report**. A CSV file with the selected account and types of transactions is generated and stored on your computer. If you have selected multiple accounts, you will get a .zip file containing a .CSV for each account.
-
-.. todo::
-
-    Write overview topic of transaction types.
