@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _list of types implementing the SchemaType: https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls
 .. _build-schema:
 
@@ -194,7 +195,7 @@ names that exist in the module or a counter in case of special characters in the
    $cargo concordium build --schema-json-out "/some/path/"
 
 If using ``cargo concordium`` version 2.7.0 or newer then the schema can be
-output in base64 format that is currently supported in the browser wallet. When building
+output in base64 format that is currently supported in the |bw|. When building
 the contract use ``--schema-base64-out FILE``, where ``FILE`` is a path and filename. The path
 must exist and the file will be created in following command
 
@@ -202,11 +203,11 @@ must exist and the file will be created in following command
 
    $cargo concordium build --schema-base64-out "/some/path/base64_schema.b64"
 
-Instead of writing the base64 representation of the schema to the file provided with the ``--schema-base64-out`` flag, you can print it to the console by using the characters \"-\" in following command
+Instead of writing the base64 representation of the schema to the file provided with the ``--schema-base64-out`` flag, you can print it to the console by using a dash character (-) in following command
 
 .. code-block:: console
 
-   $cargo concordium build --schema-base64-out "-"
+   $cargo concordium build --schema-base64-out -
 
 The ``--schema-out``, ``--schema-json-out`` and ``--schema-base64-out`` can be used at the same time and
 schemas in all the formats will be output
@@ -221,7 +222,7 @@ schemas in all the formats will be output
 
    - The flags ``--schema-embed/--schema-out`` convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.
 
-   - The command ``schema-base64`` and the flag ``--schema-base64-out`` convert the schema into base64 format. This is the format that is currently used by the browser wallet and most of our front-end examples.
+   - The command ``schema-base64`` and the flag ``--schema-base64-out`` convert the schema into base64 format. This is the format that is currently used by the |bw| and most of our front-end examples.
 
    - The command ``schema-json`` and the flag ``--schema-json-out`` convert the schema into JSON format. This is a human-readable format and will make it easier for developers to develop on the Concordium blockchain. Concordium is in the process of updating its tooling and implementing support for this format.
 
@@ -235,7 +236,7 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
 
 .. code-block:: console
 
-   $cargo concordium schema-json --schema "schema/schema.bin" --out "/some/path/"
+   $cargo concordium schema-json --schema "/some/path/schema.bin" --out "/some/path/"
 
 Alternatively, a schema in JSON can be extracted from an embedded schema in a
 module (obtained via ``cargo concordium build --schema-embed``) by using
@@ -254,7 +255,7 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
 
 .. code-block:: console
 
-   $cargo concordium schema-base64 --schema "schema/schema.bin" --out "/some/path/base64_schema.b64"
+   $cargo concordium schema-base64 --schema "/some/path/schema.bin" --out "/some/path/base64_schema.b64"
 
 Alternatively, a schema in base64 format can be extracted from an embedded schema in a
 module (obtained via ``cargo concordium build --schema-embed``) by using
@@ -264,15 +265,15 @@ module (obtained via ``cargo concordium build --schema-embed``) by using
    $cargo concordium schema-base64 --module "module.wasm.v1" --out "/some/path/base64_schema.b64"
 
 Instead of writing the base64 representation of the schema to the file provided with the ``--out`` flag,
-you can print it to the console by using the characters \"-\" or by omitting the ``--out`` flag. The following four
+you can print it to the console by using a dash character (-) or by omitting the ``--out`` flag. The following four
 commands print the base64 representation of the schema to the console:
 
 .. code-block:: console
 
-   $cargo concordium schema-base64 --schema "schema/schema.bin"
+   $cargo concordium schema-base64 --schema "schema.bin"
 
-   $cargo concordium schema-base64 --schema "schema/schema.bin" --out "-"
+   $cargo concordium schema-base64 --schema "schema.bin" --out -
 
-   $cargo concordium schema-base64 --module "module.wasm.v1"
+   $cargo concordium schema-base64 --module "/some/path/module.wasm.v1"
 
-   $cargo concordium schema-base64 --module "module.wasm.v1" --out "-"
+   $cargo concordium schema-base64 --module "/some/path/module.wasm.v1" --out -
