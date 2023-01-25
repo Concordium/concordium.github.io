@@ -34,7 +34,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
 .. dropdown:: Edge
 
@@ -55,7 +56,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
    For more information, see the `Microsoft support site <https://support.microsoft.com/en-us/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=1%20Open%20Microsoft%20Edge%20and%20go%20to%20the,confirming%20the%20extension%20has%20been%20added.%20See%20More>`_.
 
@@ -74,7 +76,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
 .. dropdown:: Brave
 
@@ -91,7 +94,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
 Recovery phrase setup
 =====================
@@ -101,7 +105,8 @@ If you are creating a new wallet, you must set up a :ref:`secret recovery phrase
 #. Once you click on **Create** you are shown the 24 word secret recovery phrase. Write it down and click **Continue**.
 
    .. image:: ../images/browser-wallet/recovery-phrase.png
-            :width: 25%
+            :alt: screen with recovery phrase and continue option
+            :width: 50%
 
 #. Enter all 24 words of your secret recovery phrase to confirm it. Click **Continue**.
 
@@ -133,7 +138,8 @@ Basic navigation
 Click |hamburger-bw| to change between pages.
 
 .. image:: ../images/browser-wallet/page-menu.png
-                :width: 25%
+      :alt: menu at top of window with drop-down expanded to show options
+      :width: 50%
 
 Transactions overview
 ---------------------

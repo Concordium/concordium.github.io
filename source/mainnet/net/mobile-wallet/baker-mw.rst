@@ -5,9 +5,9 @@
 Baking in |mw-gen2| and |mw-gen1|
 =================================
 
-A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. Each baker has a set of cryptographic keys called baker keys that the node needs to bake blocks. You generate the baker keys in the |mw-gen2| or |mw-gen1| when you add a baker account. The baker node will start baking after the next :ref:`pay day<glossary-pay-day>` once the transaction has been approved.
+A :ref:`baker <baker-concept>` is a :ref:`node<glossary-node>` that participates in the network by :ref:`baking<glossary-baker>` (creating) new :ref:`blocks<glossary-blocks>` that are added to the chain. Each baker has a set of :ref:`cryptographic keys<glossary-private-keys>` called baker keys that the node needs to bake blocks. You generate the baker keys in the |mw-gen2| or |mw-gen1| when you add a baker account. The baker node will start baking after the next :ref:`pay day<glossary-pay-day>` once the transaction has been approved.
 
-You have the option when adding a baker to open a :ref:`baker pool<glossary-baker-pool>`. A baker pool allows others who want to earn rewards to do so without the need to run a node or become a baker themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your baker pool which then increases your stake and your chances of winning the lottery to bake a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
+You have the option when adding a baker to open a :ref:`baker pool<glossary-baker-pool>`. A baker pool allows others who want to earn rewards to do so without the need to run a node or become a baker themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your baker pool which then increases your stake and your :ref:`chances of winning the lottery<glossary-winning-probability>` to bake a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
 
 The process of becoming a baker involves the following:
 
@@ -23,12 +23,11 @@ To start baking, you must start your node with the baker keys. You can run a bak
 Prerequisites
 =============
 
-There are several things you must set up in preparation before you can start baking.
+There are several things you must set up before you can start baking.
 
 - Run a node on the Concordium blockchain. Make sure that you have a setup where the node can operate around the clock. You can run the node yourself or use a third-party provider.
 - Download and install the wallet.
-- Set up an initial account and an identity.
-- Set up a new account that you'll be using as the baker account.
+- For |mw-gen1|, set up an initial account and an identity then set up a new account that you'll be using as the baker account. For |mw-gen2|, set up an account and identity.
 - Verify that the account balance has the required amount of CCD (minimum 14000) to become a baker.
 
 .. Note::
@@ -46,7 +45,7 @@ Next steps
 
 - Read the information about :ref:`baker management<baker-pool>`.
 - If you are interested in a baker pool, read the :ref:`Delegation FAQ<delegation-faq>`.
-- You need to :ref:`add a baker <add-baker-mw>` to the account you created.
+- You need to :ref:`add a baker <add-baker-mw>` to the account you created. Import the baker keys to your node.
 - You can then :ref:`update baker settings <update-baker-mw>` as needed to manage your baker.
 
 .. toctree::

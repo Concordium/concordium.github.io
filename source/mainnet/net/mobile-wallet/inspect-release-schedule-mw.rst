@@ -29,21 +29,21 @@ By inspecting the release schedule, you can see when the releases are unlocked.
       #. Tap the balance area of the account that received the transaction with a release schedule or tap |moredetails|.
 
          .. image:: ../images/mobile-wallet/MW32.png
-             :width: 25%
+             :width: 50%
 
       #. Tap the |hamburger| menu in the upper right corner.
 
       #. Tap **Release Schedule**.
 
          .. image:: ../images/mobile-wallet/MW56.png
-             :width: 25%
+             :width: 50%
 
       You can now see the coming releases on the account.
 
       |
 
       .. image:: ../images/mobile-wallet/MW57.png
-          :width: 25%
+          :width: 50%
 
 
 .. |hamburger| image:: ../images/hamburger.png

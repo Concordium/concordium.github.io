@@ -16,7 +16,7 @@ Prerequisites
 
 -  LEDGER hardware wallet
 
-.. Warning:: 
+.. Warning::
 
    During the process described in this guide, you’ll generate private keys on the LEDGER device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
@@ -33,7 +33,7 @@ The LEDGER device will generate the unique 24-word recovery phrase that is used 
 
 #. Follow the on-screen instructions to get your 24-word recovery phrase.
 
-.. Warning:: 
+.. Warning::
 
    Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 

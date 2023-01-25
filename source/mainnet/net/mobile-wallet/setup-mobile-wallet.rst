@@ -23,12 +23,12 @@ Get started
 #. Create a six-digit passcode or use a full password.
 
    .. image:: ../images/mobile-wallet/MW4.png
-      :width: 25%
+      :width: 50%
 
 #. Decide whether or not you want to enable biometrics.
 
    .. image:: ../images/mobile-wallet/MW5.png
-      :width: 25%
+      :width: 50%
 
 
 Request your identity and initial account
@@ -48,12 +48,12 @@ and an initial account. You do this immediately after setting up the passcode an
 #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
 
    .. image:: ../images/mobile-wallet/MW10.png
-      :width: 25%
+      :width: 50%
 
 #. Select a third party identity provider from the list. An external web page opens.
 
    .. image:: ../images/mobile-wallet/MW11.png
-      :width: 25%
+      :width: 50%
 
 #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider.
    However, they will ask you to provide photos of identification documents and a selfie.
@@ -63,7 +63,7 @@ and an initial account. You do this immediately after setting up the passcode an
    the result. The result can be retrieved for up to seven days.
 
    .. image:: ../images/mobile-wallet/MW12.png
-      :width: 25%
+      :width: 50%
 
 .. Warning::
    **When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup, you can't access your wallet and your CCDs are permanently inaccessible.**
