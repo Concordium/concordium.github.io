@@ -16,9 +16,9 @@ January 26, 2023
 |mw-gen2| 1.1.4
 -----------------------
 
-Fixed an issue where the transaction cost was shown incorrectly.
+- Fix incorrect display of transactions proposed by dApps using WalletConnect.
 
-Added auto reject if a dApp sets a maxEnergy that is too large when sending a transaction to the wallet.
+- Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
 
 January 19, 2023
 

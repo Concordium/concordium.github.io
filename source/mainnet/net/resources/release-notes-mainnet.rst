@@ -17,7 +17,8 @@ January 26, 2023
 -----------------------
 
 - Fix incorrect display of transactions proposed by dApps using WalletConnect.
-- Fix incorrect NRG calculation performed by the wallet which could lead to failed transactions.
+
+- Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
 
 January 19, 2023
 
