@@ -11,15 +11,6 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-January 26, 2023
-
-|mw-gen2| 1.1.4
------------------------
-
-- Fix incorrect display of transactions proposed by dApps using WalletConnect.
-
-- Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
-
 January 19, 2023
 
 Concordium Node 5.1.3
