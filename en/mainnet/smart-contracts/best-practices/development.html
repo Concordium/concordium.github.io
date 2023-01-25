@@ -1853,7 +1853,7 @@ Start with an outline of the functionality and gradually refine it into specific
 <ul class="simple">
 <li><p>What is the interface (entrypoints and their parameters)? For example, <code class="docutils literal notranslate"><span class="pre">transfer</span></code> takes three parameters: <code class="docutils literal notranslate"><span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">to</span></code> addresses, and <code class="docutils literal notranslate"><span class="pre">amount</span></code>.</p></li>
 <li><p>Who can access the entrypoints? For example, the transaction sender must be an operator of the <code class="docutils literal notranslate"><span class="pre">from</span></code> account.</p></li>
-<li><p>Which properties of these entrypoints should be satisfied? For example, a successful call of <code class="docutils literal notranslate"><span class="pre">transfer(from,</span> <span class="pre">to,</span> <span class="pre">amount)</span></code> decreases the <code class="docutils literal notranslate"><span class="pre">from</span></code> balance and the <code class="docutils literal notranslate"><span class="pre">to</span></code> balance by <code class="docutils literal notranslate"><span class="pre">amount</span></code>.</p></li>
+<li><p>Which properties of these entrypoints should be satisfied? For example, a successful call of <code class="docutils literal notranslate"><span class="pre">transfer(from,</span> <span class="pre">to,</span> <span class="pre">amount)</span></code> decreases the <code class="docutils literal notranslate"><span class="pre">from</span></code> balance and increases the <code class="docutils literal notranslate"><span class="pre">to</span></code> balance by <code class="docutils literal notranslate"><span class="pre">amount</span></code>.</p></li>
 </ul>
 <p>If the logic of your application requires complex flows that include several contract calls, or features several interacting smart contracts, use diagrams with descriptions to document these.</p>
 <p>The specification is not static; it can be refined once you start developing your application.
@@ -1869,7 +1869,7 @@ See <a class="reference internal" href="../general/introduction.html#introductio
 <div class="section" id="recommended-structure">
 <span id="best-practices-code-structure"></span><h3>Recommended structure<a class="headerlink" href="#recommended-structure" title="Permalink to this headline">#</a></h3>
 <ul>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">init</span></code> with an appropriate template to start a new project.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">init</span></code> with an appropriate template to start a new project.</p></li>
 <li><p>For non-trivial contracts, build the contract logic as the state struct implementation.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">State</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="o">..</span><span class="p">.</span><span class="w"></span>
@@ -1896,7 +1896,7 @@ See <a class="reference internal" href="../general/introduction.html#introductio
 <span class="w">    </span><span class="c1">// Parse parameters</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">param</span>: <span class="nc">MyParameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Perform authorization, potentially using using `ctx` info</span>
+<span class="w">    </span><span class="c1">// Perform authorization, potentially using `ctx` info</span>
 <span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"></span>
 <span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 <span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">().</span><span class="n">do_something</span><span class="p">(</span><span class="n">param</span><span class="p">);</span><span class="w"></span>
@@ -2037,7 +2037,7 @@ See an <a class="reference internal" href="../guides/unit-test-contract.html#ree
 <li><p>Avoid changing the state after an external call: use the <em>Checks-Effects-Interactions</em> pattern: validate data, update the contract state, make external calls.</p></li>
 <li><p>If you need to perform some state changes after an external call use <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only">invoke_contract_read_only</a>.
 If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
-Using <code class="docutils literal notranslate"><span class="pre">invoke_contract_read_only</span></code> covers most of the cases where protection from reentrancy is required.</p></li>
+Using <code class="docutils literal notranslate"><span class="pre">invoke_contract_read_only</span></code> covers most of the cases that require protecting the contract state from updating due to reentrancy.</p></li>
 <li><p>Alternatively, consider using a <em>mutex</em>: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy. Reset after the call is complete.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">State</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
