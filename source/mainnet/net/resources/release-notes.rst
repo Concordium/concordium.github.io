@@ -19,6 +19,15 @@ Cargo concordium 2.7.0
 Added base64 commands for schemas in ``cargo concordium``. These allow the schema to be
 output in the base64 format that is currently supported in the |bw|.
 
+January 25, 2023
+
+|mw-gen2| 1.1.4
+-----------------------
+
+- Fix incorrect display of transactions proposed by dApps using WalletConnect.
+
+- Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
+
 January 19, 2023
 
 Cargo concordium 2.6.0
