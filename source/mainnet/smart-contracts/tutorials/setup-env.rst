@@ -232,7 +232,7 @@ Remember you are working on the testnet. Check if your node collector is up and 
 
 .. Note::
 
-    For testing purposes, an Ubuntu node is available on testnet to use when testing smart contracts and dApps. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). Node-related methods such as NodeInfo and Shutdown have been disabled. This node is periodically maintained by Concordium. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
+    For testing purposes, an Ubuntu node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with GRPC v1, gRPC v2, and gRPC web. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). This node is periodically maintained by Concordium. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
 
 .. _setup-wallet:
 
