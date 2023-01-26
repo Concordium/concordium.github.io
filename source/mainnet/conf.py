@@ -23,7 +23,7 @@ sys.path.append(os.path.abspath('../exts'))
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = '2021 - 2022, Concordium Software ApS'
+copyright = '2021 - 2023, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -162,6 +162,7 @@ html_theme_options = {
     "page_sidebar_items": ["page-toc"],
     "footer_items": ["footer"],
     "show_prev_next": True,
+    "navbar_align": "left",
     "icon_links": [
         {
             # Concordium GitHub

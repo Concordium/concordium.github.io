@@ -143,7 +143,7 @@ Preferences
 
 The Desktop Wallet provides a set of multi-signature transactions called Foundation transactions that only members of the Concordium Foundation can sign.
 
-These transactions are disabled by default, and if you're not a member of the Concordium Foundation we strongly recommend that you don't enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you'll not be able to actually sign or submit any of these transactions.
+These transactions are disabled by default, and if you're not a member of the Concordium Foundation it is strongly recommended that you don't enable them. If you do enable the transactions, they will be listed on the multi-signature transactions page. However, you'll not be able to actually sign or submit any of these transactions.
 
 Node settings
 -------------
@@ -168,7 +168,7 @@ Concordium strongly recommends that you create a backup of your Desktop Wallet d
 Recover existing accounts
 -------------------------
 
-If you lose your accounts, you can recover the accounts by using the Ledger device that you used to create the accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. For more information, see `Account recovery <https://developer.concordium.software/en/mainnet/net/guides/export-import.html?highlight=account%20recovery>`_.
+If you lose your accounts, you can recover the accounts by using the LEDGER device that you used to create the accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. For more information, see `Account recovery <https://developer.concordium.software/en/mainnet/net/guides/export-import.html?highlight=account%20recovery>`_.
 
 Terms and conditions
 --------------------

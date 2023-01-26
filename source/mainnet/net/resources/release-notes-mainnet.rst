@@ -5,14 +5,13 @@
 Release notes - Mainnet
 =======================
 
-Mainnet 4: Sirius
-=================
-
 .. Note::
 
-   Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+   Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
 
-January XX, 2023
+   To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
+February XX, 2023
 
 |mw-gen2| for iOS
 -----------------
@@ -20,6 +19,99 @@ January XX, 2023
 Concordium introduces a new wallet for iOS mobile devices: the |mw-gen2|. The |mw-gen2| offers all of the same functionality you know from |mw-gen1|, such as sending and receiving CCDs, delegation, baking, and so on. But the |mw-gen2| uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the |bw|. You can read about |mw-gen2| and the differences between it and |mw-gen1| in the :ref:`FAQ<mw-gen2-faq>`.
 
 In connection with this new wallet, the iOS mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
+
+January 26, 2023
+
+|mw-gen2| 1.1.4
+-----------------------
+
+- Fix incorrect display of transactions proposed by dApps using WalletConnect.
+
+- Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
+
+January 19, 2023
+
+Concordium Node 5.1.3
+---------------------
+
+Concordium node version 5.1.3 introduces the following new features and improvements:
+
+- Improvements were made to allow greater concurrency with transaction processing.
+
+- Blocks are relayed earlier. This decreases the time it takes for the network to become aware of a block.
+
+- Removed the configuration option ``no_rebroadcast_consensus_validation``. This option (which was used for testing only and was disabled by default) made the node rebroadcast blocks before doing any validation.
+
+- Changes were made to avoid deadlocks during node shutdown in specific scenarios.
+
+- The node will now shut down to start if an error occurs in a required service (e.g., grpc server). In particular, the node will shut down if a required service could not be started.
+
+- Added timeout to downloading out of band catchup files when block indices and catch-up chunk files are specified by an URL. The timeout is controlled by the option ``--download-blocks-timeout`` (environment variable ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_TIMEOUT``) and defaults to 5 minutes. Timeout is now five minutes per chunk instead of waiting indefinitely.
+
+- Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
+
+Cargo concordium 2.6.0
+----------------------
+
+Added the ability to output the schema in JSON format which can be more suitable for use in dApps.
+
+January 9, 2023
+
+|bw| 0.9.6
+---------------------------
+
+SendTransaction for smart contract transactions can receive schemas that are for the specific parameter.
+
+January 4, 2023
+
+Concordium Node 5.0.7 for MacOS
+-------------------------------
+
+Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+
+Mainnet 4: Sirius
+=================
+
+.. Note::
+
+   Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+December 21, 2022
+
+|bw| 0.9.5
+----------------------
+
+Minor bugfixes for the |bw|, including adding a missing background color on ID proof cards, fixing an issue where the transaction list did not update automatically, and a minor adjustment to how proof of age is calculated.
+
+December 16, 2022
+
+|bw| 0.9.4
+----------------------
+
+The |bw| introduces ID2.0 functionality whereby a dApp or service can use zero knowledge proofs to request proof from a wallet for certain attributes without revealing anything beyond the truth of the statement. It is also possible for a dApp or Service to request that the wallet user reveal attributes.
+
+December 14, 2022
+
+Cargo concordium 2.5.0
+----------------------
+
+- Add support for sampling random numbers for randomized testing with `cargo concordium test`.
+- Add support for providing a seed to initialize a random generator to `cargo-concordium`. The generator can be used for randomized testing.
+  Command format: `cargo concordium test --seed 1234567890`. The provided seed value is a `u64` number. If the seed is not provided, a random one will be sampled.
+
+Concordium Client 5.0.2
+-----------------------
+
+Receive function parameters are now displayed as JSON in transaction status whenever they could be succesfully parsed by a smart contract schema embedded in the module or supplied by the user using the ``--schema`` option.
+
+Smart contract libraries
+------------------------
+
+Smart contract libraries have also been updated.
+
+December 13, 2022
+
+`Protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ is effective from today at 08:05 UTC. One important change because of the protocol update is that in the future (from 14 December 2022) pay day for rewards shifts to 08:05 UTC instead of 08:00 UTC.
 
 December 8, 2022
 

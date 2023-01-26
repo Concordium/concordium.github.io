@@ -62,13 +62,23 @@ index
 
 .. toctree::
    :includehidden:
+   :caption: Use Concordium's ID Layer
+
+   guides/create-proofs
+   guides/gallery/index
+
+.. toctree::
+   :includehidden:
    :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
+   Quick start guide <../smart-contracts/guides/quick-start>
    Tutorials <../smart-contracts/tutorials/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
+   Best practices <../smart-contracts/best-practices/index>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
+   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/index>
    References <../smart-contracts/references/index>
 
 .. toctree::

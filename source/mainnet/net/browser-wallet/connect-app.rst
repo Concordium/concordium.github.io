@@ -5,7 +5,7 @@
 Connect dApps to wallets
 ===================================
 
-You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
+You can connect the |bw| and |mw-gen2| to a dApp that has a front end interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
 
 .. dropdown:: |bw|
 
@@ -25,10 +25,6 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
                :width: 25%
 
    The status of the account changes to *Connected*. If you need to disconnect, click **Disconnect** to disconnect the account from the dApp.
-
-   .. note::
-
-      If you want to try to connect to a dApp to see how the functionality works, go to https://wccd.testnet.concordium.com/ and connect to it following the steps above. You can then use the dApp to connect to your account and see the behavior.
 
 .. dropdown:: |mw-gen2|
 
@@ -62,6 +58,16 @@ You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface 
    .. Note::
 
       While you are connected to a dApp you cannot perform other transactions in the |mw-gen2|. You must disconnect the dApp before you can do other transactions.
+
+.. note::
+
+      If you want to try to connect to a dApp to see how the functionality works, go to https://wccd.testnet.concordium.com/ and connect to it following the steps above. You can then use the dApp to connect to your account and see the behavior.
+
+.. toctree::
+   :hidden:
+
+   ../guides/proofs
+
 
 .. |scan-qr-acct| image:: ../images/scan-qr-acct.png
              :alt: qr code scanner symbol on blue background

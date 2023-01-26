@@ -16,7 +16,7 @@ Create and export a file with credentials
 
 #. Select **Export a key**, and then select **Account credentials**.
 
-#. Select the identity you want to add to the account. The identity must have been created on the Ledger that's connected to the computer. Otherwise, you'll see an error message. Select **Continue**.
+#. Select the identity you want to add to the account. The identity must have been created on the LEDGER device that's connected to the computer. Otherwise, you'll see an error message. Select **Continue**.
 
 #. Paste the address of the account that you want to add credentials to, and then give the account a name. This is the name that will be shown in your list of accounts.
 
@@ -24,26 +24,26 @@ Create and export a file with credentials
 
 #.  Select **Continue**.
 
-#. In the Desktop Wallet there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer and enter your PIN on the Ledger.
+#. In the Desktop Wallet there's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to your computer and enter your PIN on the LEDGER device.
 
-#. On the Ledger press both buttons to open the Concordium application. There's a message saying **Concordium is ready**.
+#. On the LEDGER device press both buttons to open the Concordium application. There's a message saying **Concordium is ready**.
 
 #. In the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**. Select **Submit**.
 
-#. Press both buttons to confirm the following on the Ledger:
+#. Press both buttons to confirm the following on the LEDGER device:
 
    - Create credential (each credential is assigned a number): Press the right button and then both buttons to confirm **Accept**.
    - Public key: Press both buttons to accept.
 
-#. Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Press both buttons, and then use the right button to navigate through the key.
+#. Verify that the public key on the LEDGER device corresponds to the public key in the Desktop Wallet. Press both buttons, and then use the right button to navigate through the key.
 
 #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-#. The Ledger says **Review details**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+#. The LEDGER device says **Review details**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-#. Verify that the account address on the Ledger corresponds to the account address in the Desktop Wallet.
+#. Verify that the account address on the LEDGER device corresponds to the account address in the Desktop Wallet.
 
-#. The Ledger says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet, the account credential summary is displayed.
+#. The LEDGER device says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet, the account credential summary is displayed.
 
 #. Select **Export** and navigate to the place on your computer where you want to save the file with the credentials. Make sure that you save the file with the extension .json.
 

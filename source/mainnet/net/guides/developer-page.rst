@@ -14,13 +14,19 @@ Official resources
 
 - See :ref:`SDKs and APIs<sdks-apis>` for links to SDKs and APIs for development
 
-- :ref:`Smart contracts <introduction>`
+- See :ref:`Smart contracts <introduction>` for general information about smart contracts
+
+    - `Smart contract libraries <https://crates.io/crates/concordium-std>`_
 
 - `GitHub <https://github.com/Concordium>`_
 
 - `Concordium standards and updates <https://proposals.concordium.software/>`_
 
     - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
+
+- For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
+
+- See :ref:`dApp examples<dapp-examples>` for a list of dApp examples and their resources.
 
 - Block explorers
     The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
@@ -48,9 +54,10 @@ Community resources
 
 .. toctree::
     :hidden:
-    :maxdepth: 1
+    :maxdepth: 2
 
     sdks-apis
+    dapp-examples
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2
