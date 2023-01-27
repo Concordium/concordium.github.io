@@ -40,6 +40,7 @@ Quick guide
 - Import a wallet key into ``concordium-client``
 
 These setup steps are explained in detail :ref:`here<setup-env>`.
+An overview of the `developer documentation <https://developer.concordium.software/en/mainnet/index.html>`_ will help you to find the topics that you are interested in.
 
 .. note::
 
