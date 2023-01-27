@@ -41,13 +41,10 @@ index
 
 .. toctree::
    :includehidden:
+   :maxdepth: 4
    :caption: Earn with Concordium
 
    guides/how-to-earn
-   guides/overview-baker-process
-   desktop-wallet/baking-dw
-   mobile-wallet/baker-mw
-   guides/delegation
 
 .. toctree::
    :includehidden:

@@ -13,7 +13,7 @@ Baking is possible with |mw-gen2|, |mw-gen1|, and Desktop Wallet, however the pr
 
 .. Note::
 
-   To check the minimum amount required to become a baker, see :ref:`consensus show-chain-parameters`.
+   To check the minimum required amount of CCD (currently 14000) to become a baker, see :ref:`consensus show-chain-parameters`.
 
 Baking with Desktop Wallet
 ==========================
@@ -42,7 +42,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 6: Configure the node with the baker keys
 
-   The last step is to configure the running node with the baker keys so the node can start baking.
+   The last step is to configure the running node with the baker keys so the node can start baking. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your baker keys to the node runner in a secure manner.
 
    - :ref:`On Windows<baker-windows>`
 
@@ -52,7 +52,7 @@ This overview describes the recommended scenario for running a node and becoming
 
    - :ref:`On Docker/Linux<baking-docker>`.
 
-For information about how to update your baker or stop baking, see :ref:`Baking in Desktop Wallet<baking-dw>`.
+For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
 
 Baking with |mw-gen1| and |mw-gen2|
 ===================================
@@ -77,7 +77,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 5: Register baker keys
 
-   The last step is to configure the running node with the baker keys so the node can start baking.
+   The last step is to configure the running node with the baker keys so the node can start baking. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your baker keys to the node runner in a secure manner.
 
    - :ref:`On Windows<baker-windows>`
 
@@ -88,6 +88,14 @@ This overview describes the recommended scenario for running a node and becoming
    - :ref:`On Docker/Linux<baking-docker>`.
 
 For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
+
+Next steps
+==========
+
+- Read the information about :ref:`baker management<baker-pool>`.
+- If you are interested in a baker pool, read the :ref:`Delegation FAQ<delegation-faq>`.
+- You need to :ref:`add a baker <add-baker-mw>` to the account you created. Import the baker keys to your node.
+- You can then :ref:`update baker settings <update-baker-mw>` as needed to manage your baker.
 
 .. toctree::
    :hidden:

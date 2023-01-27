@@ -5,7 +5,7 @@
 Bakers
 ======
 
-Baking is key to the Concordium blockchain. The blockchain consists of multiple :ref:`baker<glossary-baker>` nodes that maintain the blockchain by baking and :ref:`finalizing<glossary-finalization>` :ref:`blocks<glossary-block>`.
+Baking is key to the Concordium blockchain. A :ref:`baker <baker-concept>` is a :ref:`node<glossary-node>` that participates in the network by :ref:`baking<glossary-baker>` (creating) new :ref:`blocks<glossary-blocks>` that are added to the chain. The blockchain consists of multiple :ref:`baker<glossary-baker>` nodes that maintain the blockchain by baking and :ref:`finalizing<glossary-finalization>` :ref:`blocks<glossary-block>`.
 
 How baking works
 ================
@@ -16,7 +16,7 @@ The chain a baker builds upon is the :ref:`best chain <glossary-best-chain>` whe
 
 Baker keys
 ----------
-A node uses a set of :ref:`cryptographic keys<glossary-private-keys>` called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the :ref:`lottery <glossary-lottery-power>` as described below. To become a baker node, the node must be configured with a set of baker keys.
+A node uses a set of :ref:`cryptographic keys<glossary-private-keys>` called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the :ref:`lottery <glossary-lottery-power>` as described below. To become a baker node, the node must be configured with a set of baker keys. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking after the next :ref:`pay day<glossary-pay-day>` once the transaction has been approved.
 
 Baker account
 -------------
@@ -26,6 +26,15 @@ Each account can use a set of baker keys to register a baker. Whenever a baker b
 The account can be viewed either in the Desktop Wallet, the |mw-gen2|, or the |mw-gen1|, depending on where the account was created.
 
 Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.
+
+.. Note::
+
+   It is not possible to have multi signature baker accounts in |mw-gen2| or |mw-gen1|. If you need this functionality, you need to run Desktop Wallet.
+
+Baker pool
+----------
+
+You have the option when adding a baker to open a :ref:`baker pool<glossary-baker-pool>`. A baker pool allows others who want to earn rewards to do so without the need to run a node or become a baker themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your baker pool which then increases your stake and your :ref:`chances of winning the lottery<glossary-winning-probability>` to bake a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
 
 .. _concepts-baker-stake:
 
@@ -76,3 +85,13 @@ Finalization committee
 The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD. This specifically implies that in order to participate in the finalization committee you will probably have to modify the staked amount to reach the threshold.
 
 Participating in the finalization committee produces rewards on each block that is finalized. The rewards are paid to the baker account some time after the block is finalized.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   ../guides/baker-pool
+   ../guides/overview-baker-process
+   ../mobile-wallet/add-baker-mw
+   ../mobile-wallet/update-baker-mw
+   ../desktop-wallet/baking-dw
