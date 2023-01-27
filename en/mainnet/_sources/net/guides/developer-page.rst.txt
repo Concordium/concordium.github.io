@@ -28,6 +28,8 @@ Official resources
 
 - See :ref:`dApp examples<dapp-examples>` for a list of dApp examples and their resources.
 
+- For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with GRPC v1, gRPC v2, and gRPC web. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
+
 - Block explorers
     The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 
@@ -37,7 +39,7 @@ Official resources
 
     - `Mainnet status page <https://status.mainnet.concordium.software>`_
 
-    - `Testnet status page <https://status.testnet.concordium.software>`_
+    - `Testnet status page <https://status.testnet.concordium.software>`__
 
     - `CCDScan <https://ccdscan.io>`_
 
