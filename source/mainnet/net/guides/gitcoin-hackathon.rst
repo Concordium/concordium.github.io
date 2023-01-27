@@ -23,6 +23,7 @@ Workshop Sessions
 
 - 8th, 15th and 22nd February @ 9:00 - 17:00 CET - Weekly Developer Relations Office Hours
 
+You can watch the three workshops `live <https://www.airmeet.com/e/48fd9170-9344-11ed-87a2-15e85d06b129>`_.
 The materials from the workshop sessions are available on `GitHub <https://github.com/Concordium/voting-workshop>`_.
 
 Recording from previous workshops can be watched here:
