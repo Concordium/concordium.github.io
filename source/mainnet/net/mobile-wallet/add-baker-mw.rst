@@ -25,6 +25,7 @@ Add baker
 
             .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
                 :width: 50%
+                :alt: screen showing all account options
 
         #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
 
@@ -41,9 +42,10 @@ Add baker
         #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
         .. Warning::
+
             This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-        4. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
+        6. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
         #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
@@ -67,24 +69,23 @@ Add baker
 
         #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to bake the next block.
 
-        Baker accounts receive a reward when they have baked a block, and the reward
-        is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+            Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
-        -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+            -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
         #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
 
-        - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**.
+            - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**.
 
-        - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
+            - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
 
         #. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the CCD are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
 
         #. Select **Generate keys**. The baker keys are generated and the public keys are displayed in the left pane. There are three public keys:
 
-        - Election verify key
-        - Signature verify key
-        - Aggregation verify
+            - Election verify key
+            - Signature verify key
+            - Aggregation verify
 
         #. Select **Continue** to generate the transaction.
 
@@ -166,7 +167,7 @@ Add baker
 
         #. Select **I understand this is the final submission, and that it cannot be reverted.**
 
-        -  If you don't want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active; however it is still visible in the list of proposals.
+            -  If you don't want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active; however it is still visible in the list of proposals.
 
         #. Select **Submit transaction to chain.** The transaction is submitted to the chain and finalized on the ledger.
 
@@ -261,6 +262,7 @@ Add baker
 
         .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
             :width: 50%
+            :alt: screen to register baker with amount to stake and restake preference
 
     .. Note::
 
@@ -274,16 +276,19 @@ Add baker
 
         .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
             :width: 50%
+            :alt: screen to choose whether to open a baker pool
 
     5. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-url-mw.png
             :width: 50%
+            :alt: screen to enter optional URL for baker pool metadata
 
     6. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
 
         .. image:: ../images/mobile-wallet/add-baker-export-keys-mw.png
             :width: 50%
+            :alt: screen to export baker keys to import them to node
 
     .. Warning::
 
@@ -293,11 +298,13 @@ Add baker
 
         .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
             :width: 50%
+            :alt: screen to review baker submit transaction
 
     8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
         .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
             :width: 50%
+            :alt: screen to show transaction submitted
 
     9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
 
@@ -310,9 +317,11 @@ Add baker
 
     .. image:: ../images/mobile-wallet/account-list-baking.png
         :width: 40%
+        :alt: account list screen showing a baker account with bread icon
 
     .. image:: ../images/mobile-wallet/account-details-baking.png
         :width: 40%
+        :alt: account detail screen showing the account as baker with baker ID and staked amount
 
 .. Warning::
 

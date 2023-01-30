@@ -14,7 +14,8 @@ If you need to share your account address with someone, you can find the address
    #. You see a QR code and your address. To share your address:
 
       .. image:: ../images/mobile-wallet/MW54.png
-         :width: 25%
+         :width: 50%
+         :alt: screen with QR code and account address shown
 
       - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
 
@@ -41,12 +42,14 @@ If you need to share your account address with someone, you can find the address
    #. On the account you want to find the address to, tap **RECEIVE**.
 
       .. image:: ../images/mobile-wallet/MW13.png
-         :width: 25%
+         :width: 50%
+         :alt: accounts list
 
    #. Share your address:
 
       .. image:: ../images/mobile-wallet/MW54.png
-         :width: 25%
+         :width: 50%
+         :alt: screen with QR code and account address shown
 
       - You can let someone scan your QR code if they have the |mw-gen2| or |mw-gen1| installed.
 

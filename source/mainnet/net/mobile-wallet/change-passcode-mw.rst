@@ -18,6 +18,7 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 
       .. image:: ../images/mobile-wallet-gen2/more-options.jpg
          :width: 50%
+         :alt: screen with settings menu
 
    #. Tap **Continue**.
 
@@ -43,6 +44,7 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 
       .. image:: ../images/mobile-wallet/MW58.png
          :width: 50%
+         :alt: screen with settings menu
 
    #. Tap **Continue**.
 
