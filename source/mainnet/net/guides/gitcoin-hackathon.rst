@@ -9,7 +9,7 @@ Gitcoin Hackathon Essentials
 
 This page helps you to get started with Concordium for the Gitcoin hackathon February 6 - 26, 2023.
 
-With a total of $15K in prizes, it is the largest Concordium hackathon.
+With a total of $15K in prizes, it is the largest Concordium hackathon ever held.
 You can sign up and read more about the bounties and timelines on the `hackathon website <https://gitcoin.co/hackathon/concordium-identity/onboard>`_.
 
 Join our free workshop sessions before the hackathon starts.
@@ -26,7 +26,7 @@ Workshop Sessions
 You can watch the three workshops `live <https://www.airmeet.com/e/48fd9170-9344-11ed-87a2-15e85d06b129>`_.
 The materials from the workshop sessions are available on `GitHub <https://github.com/Concordium/voting-workshop>`_.
 
-Recording from previous workshops can be watched here:
+Recordings from previous workshops can be watched here:
 
 - `Building Concordium Smart Contracts <https://www.youtube.com/watch?v=9po12_IavKU>`_.
 
@@ -39,13 +39,15 @@ Quick guide
 - Install ``cargo concordium``
 - Install ``concordium-client``
 - Import a wallet key into ``concordium-client``
+- Install |bw|
 
 These setup steps are explained in detail :ref:`here<setup-env>`.
 An overview of the `developer documentation <https://developer.concordium.software/en/mainnet/index.html>`_ will help you to find the topics that you are interested in.
 
 .. note::
 
-    There is a public Concordium testnet node available at node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web), if you don't want to sync your own node.
+    There is a public Concordium testnet node available at ``node.testnet.concordium.com`` on port ``10000`` (GRPCv1) and port ``20000`` (gRPCv2 and gRPC-web).
+    You can also :ref:`run your own node<node-requirements>`, but that will take some time to catch up to the newest blocks and thereby be usable.
 
 You can check that you have access to the node by executing the command:
 
