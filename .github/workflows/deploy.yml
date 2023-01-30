@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   build-and-deploy:
-    #if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     container: sphinxdoc/sphinx
     steps:
@@ -31,7 +31,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
-          CLEAN: true
+          branch: gh-pages
+          folder: build
+          clean: true
