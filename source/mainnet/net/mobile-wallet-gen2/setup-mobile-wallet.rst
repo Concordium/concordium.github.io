@@ -134,7 +134,7 @@ When you tap on an account, you see the details for the specific account, includ
 
 - Send: :ref:`send funds<send-CCD-wallets>`
 - Receive: find and share your address
-- Earn: configure and manage :ref:`baking<baker-mw>` or :ref:`delegation<delegation>`
+- Earn: configure and manage :ref:`baking<baker-concept>` or :ref:`delegation<delegation-concept>`
 - Scan QR code: scan QR code of a dApp
 - Account settings: perform some less often used actions on an account
    - Transfer filters: configure filters to show or hide rewards or finalization rewards

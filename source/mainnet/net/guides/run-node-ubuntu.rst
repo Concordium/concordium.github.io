@@ -20,7 +20,7 @@ Prerequisites
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
+-  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <add-baker-mw>` or :ref:`Concordium Client<become-a-baker>`.
 
 .. Note::
 
