@@ -51,6 +51,8 @@ Once you have access baker settings for your wallet, you have four options:
     - Update baker keys
     - Stop baking
 
+.. _update-baker-stake-mw:
+
 Update baker stake and restaking preference
 ===========================================
 
@@ -92,7 +94,7 @@ When you change the stake it can influence your :ref:`chance of being selected t
             .. image:: ../images/desktop-wallet/dw-baker-stake.png
                 :alt: screen to update baker stake and restake preference options
 
-        .. Note:: 
+        .. Note::
             If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies.
 
         5. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
@@ -363,6 +365,7 @@ Update pool settings
 
    Closing a pool does not mean that baking stops. You continue baking but only using your own stake. If you wish to stop baking, you must :ref:`stop baking<remove-baker-mw>`.
 
+.. _update-baker-keys-mw:
 
 Update baker keys
 =================
