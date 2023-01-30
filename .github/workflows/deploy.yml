@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   build-and-deploy:
-    if: github.ref == 'refs/heads/main'
+    #if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     container: sphinxdoc/sphinx
     steps:
