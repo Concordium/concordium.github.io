@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gitcoin hackathon essentials &#8212; Concordium  documentation</title>
+    <title>Gitcoin Hackathon Essentials &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -171,9 +171,29 @@ body {margin:0;}
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workshop-sessions">
+   Workshop Sessions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-guide">
+   Quick guide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dapp-examples">
+   DApp examples
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -190,8 +210,53 @@ body {margin:0;}
               <div>
                 
   <div class="section" id="gitcoin-hackathon-essentials">
-<span id="gitcoin-hackathon"></span><h1>Gitcoin hackathon essentials<a class="headerlink" href="#gitcoin-hackathon-essentials" title="Permalink to this headline">#</a></h1>
-<p>Here is information to help you get started with Concordium for the Gitcoin hackathon February 6 - 26, 2023.</p>
+<span id="gitcoin-hackathon"></span><h1>Gitcoin Hackathon Essentials<a class="headerlink" href="#gitcoin-hackathon-essentials" title="Permalink to this headline">#</a></h1>
+<p>This page helps you to get started with Concordium for the Gitcoin hackathon February 6 - 26, 2023.</p>
+<p>With a total of $15K in prizes, it is the largest Concordium hackathon ever held.
+You can sign up and read more about the bounties and timelines on the <a class="reference external" href="https://gitcoin.co/hackathon/concordium-identity/onboard">hackathon website</a>.</p>
+<p>Join our free workshop sessions before the hackathon starts.</p>
+<div class="section" id="workshop-sessions">
+<h2>Workshop Sessions<a class="headerlink" href="#workshop-sessions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>1st February &#64; 12:00 CET - Welcome, Concordium Overview &amp; Intro to Rust</p></li>
+<li><p>2nd February &#64; 12:00 CET - Building Smart Contracts</p></li>
+<li><p>3rd February &#64; 12:00 CET - Building dApps &amp; Ideation Session</p></li>
+<li><p>8th, 15th and 22nd February &#64; 9:00 - 17:00 CET - Weekly Developer Relations Office Hours</p></li>
+</ul>
+<p>You can watch the three workshops <a class="reference external" href="https://www.airmeet.com/e/48fd9170-9344-11ed-87a2-15e85d06b129">live</a>.
+The materials from the workshop sessions are available on <a class="reference external" href="https://github.com/Concordium/voting-workshop">GitHub</a>.</p>
+<p>Recordings from previous workshops can be watched here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9po12_IavKU">Building Concordium Smart Contracts</a>.</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ux00M5XLHZk">Building A Front-end Integration</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="quick-guide">
+<h2>Quick guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Install Rust</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code></p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code></p></li>
+<li><p>Import a wallet key into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code></p></li>
+<li><p>Install Concordium Wallet for Web</p></li>
+</ul>
+<p>These setup steps are explained in detail <a class="reference internal" href="../../smart-contracts/tutorials/setup-env.html#setup-env"><span class="std std-ref">here</span></a>.
+An overview of the <a class="reference external" href="https://developer.concordium.software/en/mainnet/index.html">developer documentation</a> will help you to find the topics that you are interested in.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a public Concordium testnet node available at <code class="docutils literal notranslate"><span class="pre">node.testnet.concordium.com</span></code> on port <code class="docutils literal notranslate"><span class="pre">10000</span></code> (GRPCv1) and port <code class="docutils literal notranslate"><span class="pre">20000</span></code> (gRPCv2 and gRPC-web).
+You can also <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">run your own node</span></a>, but that will take some time to catch up to the newest blocks and thereby be usable.</p>
+</div>
+<p>You can check that you have access to the node by executing the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus status --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+</pre></div>
+</div>
+<p>The command will return a list of values relevant to the consensus if you have a connection to the Concordium testnet node.</p>
+</div>
+<div class="section" id="dapp-examples">
+<h2>DApp examples<a class="headerlink" href="#dapp-examples" title="Permalink to this headline">#</a></h2>
+<p>An overview of different <a class="reference internal" href="dapp-examples.html#dapp-examples"><span class="std std-ref">dApp examples</span></a> to get started.</p>
+</div>
 </div>
 
 

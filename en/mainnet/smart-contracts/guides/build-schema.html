@@ -1766,6 +1766,11 @@ body {margin:0;}
      Converting a binary schema to JSON
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#converting-a-binary-schema-to-base64">
+     Converting a binary schema to base64
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1922,7 +1927,7 @@ functions, set the optional <code class="docutils literal notranslate"><span cla
 <div class="section" id="building-the-schema">
 <h2>Building the schema<a class="headerlink" href="#building-the-schema" title="Permalink to this headline">#</a></h2>
 <p>Now, you are ready to build the actual schema using <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, and you
-have the options to embed the schema and/or write the schema to a file.</p>
+have the options to embed the schema and/or write the schema to a file and/or print the schema to the console.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For more on which to choose see
@@ -1931,7 +1936,7 @@ have the options to embed the schema and/or write the schema to a file.</p>
 <div class="section" id="embedding-the-schema">
 <h3>Embedding the schema<a class="headerlink" href="#embedding-the-schema" title="Permalink to this headline">#</a></h3>
 <p>In order to embed the schema into the smart contract module, add
-<code class="docutils literal notranslate"><span class="pre">--schema-embed</span></code> to the build command</p>
+<code class="docutils literal notranslate"><span class="pre">--schema-embed</span></code> to the build command by using</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-embed
 </pre></div>
 </div>
@@ -1940,8 +1945,9 @@ schema in bytes.</p>
 </div>
 <div class="section" id="outputting-a-schema-file">
 <h3>Outputting a schema file<a class="headerlink" href="#outputting-a-schema-file" title="Permalink to this headline">#</a></h3>
-<p>To output the schema into a file, use the <code class="docutils literal notranslate"><span class="pre">--schema-out=FILE</span></code>
-where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path of the file to create:</p>
+<p>To output the schema into a file, use the <code class="docutils literal notranslate"><span class="pre">--schema-out</span> <span class="pre">FILE</span></code>
+where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path and filename. The path
+must exist and the file will be created in following command</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span>
 </pre></div>
 </div>
@@ -1949,26 +1955,74 @@ where <code class="docutils literal notranslate"><span class="pre">FILE</span></
 output in JSON format that can be more suitable for use in dApps. When building
 the contract use <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span> <span class="pre">DIR</span></code> to output the schema for each
 contract in the module to a JSON file inside the directory <code class="docutils literal notranslate"><span class="pre">DIR</span></code>. The
-directory must exist.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-json-out <span class="s2">&quot;/some/path&quot;</span>
+directory must exist. The files created will be named after the smart contract
+names that exist in the module or a counter in case of special characters in the smart contract names:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-json-out <span class="s2">&quot;/some/path/&quot;</span>
 </pre></div>
 </div>
-<p>Both <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code> and <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code> can be used at the same time and
-schemas in both formats will be output.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span> --schema-json-out <span class="s2">&quot;/some/path&quot;</span>
+<p>If using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.7.0 or newer then the schema can be
+output in base64 format that is currently supported in the Concordium Wallet for Web. When building
+the contract use <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span> <span class="pre">FILE</span></code>, where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path and filename. The path
+must exist and the file will be created in following command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-base64-out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
 </pre></div>
+</div>
+<p>Instead of writing the base64 representation of the schema to the file provided with the <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code> flag, you can print it to the console by using a dash character (-) in following command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-base64-out -
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>, <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code> and <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code> can be used at the same time and
+schemas in all the formats will be output</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span> --schema-json-out <span class="s2">&quot;/some/path/&quot;</span> --schema-base64-out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Why are there so many different schema formats?</p>
+<ul class="simple">
+<li><p>The flags <code class="docutils literal notranslate"><span class="pre">--schema-embed/--schema-out</span></code> convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.</p></li>
+<li><p>The command <code class="docutils literal notranslate"><span class="pre">schema-base64</span></code> and the flag <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code> convert the schema into base64 format. This is the format that is currently used by the Concordium Wallet for Web and most of our front-end examples.</p></li>
+<li><p>The command <code class="docutils literal notranslate"><span class="pre">schema-json</span></code> and the flag <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code> convert the schema into JSON format. This is a human-readable format and will make it easier for developers to develop on the Concordium blockchain. Concordium is in the process of updating its tooling and implementing support for this format.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="converting-a-binary-schema-to-json">
 <h3>Converting a binary schema to JSON<a class="headerlink" href="#converting-a-binary-schema-to-json" title="Permalink to this headline">#</a></h3>
+<p>These commands are available in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.6.0 or newer.</p>
 <p>To convert an existing binary schema (obtained via <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>) use the
 <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">schema-json</span></code> subcommand, e.g.,</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --schema <span class="s2">&quot;schema/schema.bin&quot;</span> --out <span class="s2">&quot;/some/path&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --schema <span class="s2">&quot;/some/path/schema.bin&quot;</span> --out <span class="s2">&quot;/some/path/&quot;</span>
 </pre></div>
 </div>
 <p>Alternatively, a schema in JSON can be extracted from an embedded schema in a
-module by using</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --module <span class="s2">&quot;module.wasm.v1&quot;</span> --out <span class="s2">&quot;/some/path&quot;</span>
+module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--schema-embed</span></code>) by using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --module <span class="s2">&quot;module.wasm.v1&quot;</span> --out <span class="s2">&quot;/some/path/&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="converting-a-binary-schema-to-base64">
+<h3>Converting a binary schema to base64<a class="headerlink" href="#converting-a-binary-schema-to-base64" title="Permalink to this headline">#</a></h3>
+<p>These commands are available in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.7.0 or newer.</p>
+<p>To convert an existing binary schema (obtained via <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>) use the
+<code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">schema-base64</span></code> subcommand, e.g.,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-base64 --schema <span class="s2">&quot;/some/path/schema.bin&quot;</span> --out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+</pre></div>
+</div>
+<p>Alternatively, a schema in base64 format can be extracted from an embedded schema in a
+module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--schema-embed</span></code>) by using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-base64 --module <span class="s2">&quot;module.wasm.v1&quot;</span> --out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+</pre></div>
+</div>
+<p>Instead of writing the base64 representation of the schema to the file provided with the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag,
+you can print it to the console by using a dash character (-) or by omitting the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag. The following four
+commands print the base64 representation of the schema to the console:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-base64 --schema <span class="s2">&quot;schema.bin&quot;</span>
+
+<span class="gp">$</span>cargo concordium schema-base64 --schema <span class="s2">&quot;schema.bin&quot;</span> --out -
+
+<span class="gp">$</span>cargo concordium schema-base64 --module <span class="s2">&quot;/some/path/module.wasm.v1&quot;</span>
+
+<span class="gp">$</span>cargo concordium schema-base64 --module <span class="s2">&quot;/some/path/module.wasm.v1&quot;</span> --out -
 </pre></div>
 </div>
 </div>

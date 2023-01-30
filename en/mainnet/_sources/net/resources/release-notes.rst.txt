@@ -11,6 +11,14 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+January 30, 2023
+
+Cargo concordium 2.7.0
+----------------------
+
+Added base64 commands for schemas in ``cargo concordium``. These allow the schema to be
+output in the base64 format that is currently supported in the |bw|.
+
 January 25, 2023
 
 |mw-gen2| 1.1.4
