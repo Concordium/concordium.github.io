@@ -24,6 +24,14 @@ Official resources
 
     - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
 
+- See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets
+
+- For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
+
+- See :ref:`dApp examples<dapp-examples>` for a list of dApp examples and their resources.
+
+- For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with GRPC v1, gRPC v2, and gRPC web. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
+
 .. _example-dapps:
 
 Example dApps
@@ -35,8 +43,6 @@ Concordium has a selection of example dApps that you can clone to make your own 
     - wCCD: :ref:`wCCD tutorial<wCCD>` / `wCCD dApp <https://wccd.testnet.concordium.com/>`_
     - Voting: :ref:`Voting tutorial<voting-dapp>` / `Voting dApp <https://voting.testnet.concordium.com/>`_
     - ID2.0: `Gallery dApp <https://gallery.testnet.concordium.com/>`_ / `repository <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`_
-
-- See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets
 
 .. _block-explorers:
 
@@ -51,7 +57,7 @@ The following are links to the block and status explorers. For a description of 
 
     - `Mainnet status page <https://status.mainnet.concordium.software>`_
 
-    - `Testnet status page <https://status.testnet.concordium.software>`_
+    - `Testnet status page <https://status.testnet.concordium.software>`__
 
     - `CCDScan <https://ccdscan.io>`_
 
@@ -71,10 +77,10 @@ Community resources
 
 .. toctree::
     :hidden:
-    :maxdepth: 1
+    :maxdepth: 2
 
     sdks-apis
-    create-proofs
+    dapp-examples
     ../resources/dashboards
     ../references/developer-tools
     ../references/grpc2

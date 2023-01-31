@@ -39,3 +39,4 @@ sphinx-toolbox==2.18.0
 sphinx-tabs
 pydata-sphinx-theme==0.8.1
 sphinx-notfound-page==0.8
+jsx-lexer==1.0.0

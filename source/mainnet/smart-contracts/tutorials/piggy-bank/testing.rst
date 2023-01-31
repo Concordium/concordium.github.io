@@ -82,8 +82,7 @@ Preparation
 ===========
 
 Before you start, make sure to have the necessary tooling to build Rust
-contracts.
-The guide :ref:`setup-tools` shows you how to do this.
+contracts. The guide :ref:`setup-env` shows you how to do this.
 Also, make sure to have a text editor setup to write Rust.
 
 Since you are going to extend the smart contract code written in the :ref:`previous
@@ -232,7 +231,7 @@ Test inserting CCD into a piggy bank
 ====================================
 
 Next, you should test the different functions for interacting with a piggy bank.
-This works similarly to how you test init functions, in that we construct test
+This works similarly to how you test init functions, in that you construct test
 versions of the arguments.
 For receive functions that means constructing |TestReceiveContext|_ and
 |TestHost|_, the latter of which expects the initial contract state.
@@ -707,4 +706,4 @@ given context. For a reference of the context, see :ref:`simulate-context`.
 
 For more on how to run simulations, see :ref:`local-simulate`.
 
-To continue with the tutorial click :ref:`here<piggy-bank-preparing>`.
+To continue with the tutorial click :ref:`here<piggy-bank-deploying>`.
