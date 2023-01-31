@@ -268,7 +268,7 @@ A point at which an API -- the code that allows two software programs to communi
 Entrypoint
 ==========
 
-An invocable function of the smart contract that usually takes arguments. Each entrypoint has specific arguments. Entrypoints can be invoked to update the state of the smart contract as well as to get return_values from the smart contract.
+An invocable function of the smart contract that usually takes arguments. Each entrypoint has specific arguments. Entrypoints can be invoked to update the state of the smart contract as well as to view information about different parts of contract state.
 
 .. _glossary-epoch:
 
