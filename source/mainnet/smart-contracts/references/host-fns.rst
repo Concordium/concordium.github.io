@@ -449,7 +449,7 @@ Functions only accessible for smart contract receive functions.
    the receive method's entrypoint name. But for fallback entrypoints, it might
    differ.
 
-   :param i32 start: Pointer to the location to put th entrypoint name.
+   :param i32 start: Pointer to the location to put the entrypoint name.
 
 .. _concordium-std: https://docs.rs/concordium-std/latest/concordium_std/
 .. _state_iterate_prefix: #concordium.state_iterate_prefix

@@ -452,7 +452,7 @@ Refers to activities outside of the Concordium blockchain. Some on-chain actions
 need preliminary actions off-chain, for example to create an account on the
 Concordium blockchain the user must first work with an identity provider, e.g.,
 via their website or mobile application, to obtain a specific digital
-certificate. We refer to this certificate as the **identity**.
+certificate. Concordium refers to this certificate as the **identity**.
 
 .. _glossary-on-chain:
 

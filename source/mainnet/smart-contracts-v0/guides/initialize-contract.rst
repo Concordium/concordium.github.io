@@ -177,7 +177,7 @@ on-chain.
 
 To add a name during initialization, the ``--name`` parameter is used.
 
-Here, we are initializing the contract ``my_contract`` from the deployed module
+Here, you are initializing the contract ``my_contract`` from the deployed module
 ``9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2`` and naming
 it ``my_named_contract``:
 
