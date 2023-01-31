@@ -125,21 +125,25 @@ Concordium Client v5.0.2
 
 .. _cargo-concordium-testnet:
 
-Cargo-concordium v2.5.0
+Cargo-concordium v2.7.0
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.5.0>`_
+   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.7.0>`_
 
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.5.0>`_
+      - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
+      - :ref:`Verification instructions <verification-cargo-linux>`
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.5.0.exe>`_
+   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.7.0>`_
+
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.7.0.exe>`_
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
-Concordium node distributions
-=============================
+
+Concordium node distributions v5.1.3
+====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
@@ -147,19 +151,19 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-Ubuntu 5.0.6
-------------
+Ubuntu
+------
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.0.6-0_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.1.3-0_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``fa361845715991142c721b5ac0803d4fcc615b4a4fb865a48533d03ea9ba6a17``
+      - SHA256 checksum of the download: ``7d496886db7efc7f71f25570e3042b68e9269cd4ec7a4fc612a330a12b13dc5e``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Linux-Docker 5.0.6
-------------------
+Linux-Docker
+------------
 
 .. _concordium-docker-package-download-testnet:
 
@@ -167,21 +171,21 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 
 To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-Windows 5.0.6
--------------
+Windows
+-------
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.0.6-0.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.1.3-1.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Mac 5.0.7
----------
+Mac
+---
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.0.7-0.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.1.3-1.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 

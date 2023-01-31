@@ -6,7 +6,7 @@ Mint a semi-fungible token
 
 In this tutorial, you will learn how to mint semi-fungible tokens on Concordium testnet with ``concordium-client``, the Concordium command line interface tool.  In the :ref:`NFT minting tutorial<nft-index>`, you learned many things, including how you can mint an NFT on Concordium and set up your development environment with node configurations, wallet and key exports, build, deploy, initialize, mint and transfer. The process in this tutorial will be the same as the first tutorial: first is the wallet setup and key exports, then the storage solutions and preparation of metadata, and finally the development part including minting, transferring and querying balances.
 
-Before you start this tutorial, if you have not completed your development environment setup, see the :ref:`first part of the NFT tutorial<setup-nft-env>`. This tutorial assumes you’ve already configured your environment, have a node running, and installed your web wallet and exported its key.
+Before you start this tutorial, if you have not completed your development environment setup, see :ref:`Setup the development environment<setup-env>`. This tutorial assumes you’ve already configured your environment, have a node running, and installed your web wallet and exported its key.
 
 What are Semi-Fungible Tokens
 =============================

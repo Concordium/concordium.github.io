@@ -5,7 +5,7 @@
 Connect dApps to wallets
 ===================================
 
-You can connect the |bw| and |mw-gen2| to a dApp that has a front-end interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
+You can connect the |bw| and |mw-gen2| to a dApp that has a front end interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
 
 .. dropdown:: |bw|
 
