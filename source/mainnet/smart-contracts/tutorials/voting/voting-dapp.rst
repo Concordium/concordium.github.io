@@ -2,19 +2,19 @@
 .. _voting-frontend:
 
 ========================
-Setting up the front-end
+Setting up the front end
 ========================
 
-In this part, you will create a web front-end. Users can interact with the smart contract easier
-by using your front-end compared to interacting with the node directly.
+In this part, you will create a web front end. Users can interact with the smart contract more easily
+using a front end compared to interacting with the node directly.
 Non-tech users might find it inconvenient to interact with smart contracts via the Concordium node
 and some users may choose not to host their own Concordium node locally. This tutorial part shows you
-a setup that alleviates the need for the user to host their own Concordium node.
+a setup that eliminates the need for the user to host their own Concordium node.
 
-You can lower the bar for entry by coding an appealing front-end that provides additional information
-to your potential customers. Web front-ends are a familiar sight nowadays, but to use
-the front-end, users will also need to download a web wallet as a browser extension.
-The installation and safe usage of the |bw| might be new for people using your front-end.
+You can lower the bar for entry by coding an appealing front end that provides additional information
+to your potential customers. Web front ends are a familiar sight nowadays, but to use
+the front end, users will also need to download a web wallet as a browser extension.
+The installation and safe usage of the |bw| might be new for people using your front end.
 Providing comprehensive explanations and step-by-step guides on your website on topics
 related to the |bw| is important for a good user experience. The |bw|
 connects via `HTTPS <https://en.wikipedia.org/wiki/HTTPS>`_ to a server that is connected to a Concordium node. This setup alleviates the
@@ -24,7 +24,7 @@ need for the user to host their own Concordium node.
 
     Before you start with part 3 of this tutorial, make sure you have:
 
-    - access to the `Chrome <https://www.google.com/chrome/>`_ web browser on your computer
+    - access to the a chromium web browser on your computer
 
     - `git <https://git-scm.com/>`_ installed to be able to clone a repository from `GitHub <https://github.com/>`_
 
@@ -232,14 +232,14 @@ to their own hosted Concordium node.
 
 You can find more information on how to set up the |bw| in :ref:`part 3 <wCCD-front-end-set-up>` or :ref:`Setup the Concordium Wallet for web<setup-browser-wallet>`.
 
-Running the web front-end
+Running the web front end
 -------------------------
 
 You have successfully added the |bw| to your browser in the previous section.
-In the next step of the tutorial, you are going to clone a voting demo front-end written with the `React library <https://reactjs.org/>`_
-and run it locally. The demo front-end has the required packages installed to connect to the |bw|
+In the next step of the tutorial, you are going to clone a voting demo front end written with the `React library <https://reactjs.org/>`_
+and run it locally. The demo front end has the required packages installed to connect to the |bw|
 and implements common flows to deal with the different states that the |bw| could be in. For example,
-the front-end will display a ``connect wallet`` button when loading the website. Furthermore, the front-end has flows
+the front end will display a ``connect wallet`` button when loading the website. Furthermore, the front end has flows
 to react to the events when the user switches the account in the browser wallet or
 connects/disconnects an account in the |bw| to update the front-end state accordingly.
 
@@ -253,7 +253,7 @@ Clone this `repository <https://github.com/Concordium/concordium-browser-wallet/
 
     $git clone https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/voting
 
-Build and run the front-end as described below:
+Build and run the front end as described below:
 
 - Run ``yarn`` in the root folder to install all dependencies.
 
@@ -273,13 +273,13 @@ Build and run the front-end as described below:
 
     $cd ./examples/voting/
 
-- Run ``yarn watch`` to enable hot-reload (useful for development) of the web front-end whenever you do any changes to the code.
+- Run ``yarn watch`` to enable hot-reload (useful for development) of the web front end whenever you do any changes to the code.
 
 .. code-block:: console
 
     $yarn watch
 
-- Run ``yarn start`` in another terminal to start the web front-end.
+- Run ``yarn start`` in another terminal to start the web front end.
 
 .. code-block:: console
 
@@ -291,6 +291,6 @@ This command logs a URL in the console (typically http://127.0.0.1:8080). Open t
 
     Check that your |bw| is connected to the testnet (screenshots shown in workflow 1) or a testnet node (workflow 2) and not to mainnet or stagenet.
 
-You completed the local front-end setup. You are running your own local dApp now. If you want, you can compare it with Concordium's
+You completed the local front end setup. You are running your own local dApp now. If you want, you can compare it with Concordium's
 `voting dApp <https://voting.testnet.concordium.com/>`_ hosted on testnet. You can use your |bw|
 to connect to the dApp.
