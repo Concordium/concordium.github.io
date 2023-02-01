@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+February 10, 2023
+
+|mw-gen2| 1.1.5
+---------------
+
+Improved the way in which the secret recovery phrase is stored on the Android device.
+
 January 30, 2023
 
 Cargo concordium 2.7.0
