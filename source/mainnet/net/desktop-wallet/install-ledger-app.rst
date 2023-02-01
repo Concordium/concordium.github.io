@@ -7,16 +7,12 @@ Set up the LEDGER device and install the Concordium LEDGER App
 
 To be able to sign and send transactions using the Desktop Wallet, you need a LEDGER hardware wallet, and you need to install the Concordium LEDGER Application on the LEDGER device. You can use Windows, macOS or Ubuntu to install the app.
 
-.. Note::
-
-   The LEDGER NANO X is not supported currently.
-
 Prerequisites
 =============
 
 -  Ledger device
 
-.. Warning:: 
+.. Warning::
 
   During the process described in this guide, you’ll generate private keys on the Ledger device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
@@ -34,7 +30,9 @@ The LEDGER device will generate the unique 24-word recovery phrase that is used 
 
 #. Follow the on-screen instructions to get your 24-word recovery phrase.
 
-.. Warning:: Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
+.. Warning::
+
+   Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
 Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version 2.1.0 for the LEDGER NANO S and 1.0.3 for LEDGER NANO S PLUS.
 
