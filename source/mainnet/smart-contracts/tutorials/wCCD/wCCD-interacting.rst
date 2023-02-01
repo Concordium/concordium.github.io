@@ -12,16 +12,16 @@ Interacting with the wCCD token protocol
 
     - the ``concordium-client`` version 5.0.1 or greater installed
 
-    - an account created in the mobile wallet app that is funded with some CCD
+    - an account created in the wallet that is funded with some CCD
 
-    - the keys from the Mobile Wallet imported into the ``concordium-client`` configuration
+    - the keys from the wallet imported into the ``concordium-client`` configuration
 
     If you haven't completed any of the above steps,
-    the piggy bank tutorial :ref:`part 3 <piggy-bank-preparing>`
+    :ref:`Setup the development environment <setup-env>`
     will guide you through these setup steps.
     If you haven't completed any of the above steps, you can continue
-    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, we recommend
-    completing every part of this tutorial in the given order.
+    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, it is recommended
+    to complete every part of this tutorial in the given order.
     You need an up-to-date ``concordium-client`` version because the wCCD smart contract uses the newest ``schema_V3``.
 
 Query (non-state-mutative) functions

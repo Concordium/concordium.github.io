@@ -19,6 +19,12 @@ network. After following this guide, you will be able to
 
 You do not need an account to run a node.
 
+.. Note::
+
+   Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ or `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+
+   To subscribe to updates on the Mainnet/Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
 Before you begin
 ================
 
@@ -106,7 +112,7 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
          # Number of threads to use to process network events. This should be
          # adjusted based on the resources the node has (in combination with
-         # `CONCORDIUM_NODE_BAKER_HASKELL_RTS_FLAGS`) below.
+         # `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.
          - CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2
          # The bootstrapping interval in seconds. This makes the node contact the
          # specified bootstrappers at a given interval to discover new peers.
@@ -114,7 +120,7 @@ To run a node on testnet use the following configuration file and follow the ste
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
          # which reduces CPU load for non-baking nodes.
-         - CONCORDIUM_NODE_BAKER_HASKELL_RTS_FLAGS=-N2,-I0
+         - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
@@ -365,7 +371,7 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
          # Number of threads to use to process network events. This should be
          # adjusted based on the resources the node has (in combination with
-         # `CONCORDIUM_NODE_BAKER_HASKELL_RTS_FLAGS`) below.
+         # `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.
          - CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2
          # The bootstrapping interval in seconds. This makes the node contact the
          # specified bootstrappers at a given interval to discover new peers.
@@ -373,7 +379,7 @@ To retrieve mainnet node logs run:
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
          # which reduces CPU load for non-baking nodes.
-         - CONCORDIUM_NODE_BAKER_HASKELL_RTS_FLAGS=-N2,-I0
+         - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)

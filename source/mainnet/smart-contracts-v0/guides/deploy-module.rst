@@ -35,7 +35,7 @@ with name account-name, run the following command:
 
 .. note::
 
-   The --sender option can be omitted if the account "default" is to be used. For brevity, we will do so in the following.
+   The --sender option can be omitted if the account "default" is to be used. For brevity, you will do so in the following.
 
 If successful, the output should be similar to the following:
 
@@ -69,7 +69,7 @@ visible on-chain.
    stored, see :ref:`local-settings-v0`.
 
 To add a name during deployment, the ``--name`` parameter is used.
-Here, we are naming the module ``my_deployed_module``:
+Here, you are naming the module ``my_deployed_module``:
 
 .. code-block:: console
 

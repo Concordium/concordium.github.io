@@ -52,17 +52,17 @@ Prerequisites
 
         4. Select the recipient of the CCD, and then select **Continue**.
 
-        5. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
+        5. In the Desktop Wallet there’s a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to your computer, and then enter your PIN code on the LEDGER device.
 
-        6. On the Ledger, there's a message saying Concordium. Press both buttons. The Ledger says **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+        6. On the LEDGER device, there's a message saying Concordium. Press both buttons. The LEDGER device says **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
         7. In the Desktop Wallet, select **Submit**. There’s a message saying **Waiting for the user to finish the process on the device**.
 
-        8. Press both buttons on the Ledger to confirm the decryption.
+        8. Press both buttons on the LEDGER device to confirm the decryption.
 
-        9. On the Ledger there's a message saying **Concordium is ready**, and then it says **Review transaction**. Using the right button, you now have to navigate through the following information to verify that it's correct and matches the transaction details in the Desktop Wallet:
+        9. On the LEDGER device there's a message saying **Concordium is ready**, and then it says **Review transaction**. Using the right button, you now have to navigate through the following information to verify that it's correct and matches the transaction details in the Desktop Wallet:
 
-            -  **Shielded transfer**: this is the type of transaction. Because the amount is encrypted, the Ledger can't display the actual amount that's going to be transferred.
+            -  **Shielded transfer**: this is the type of transaction. Because the amount is encrypted, the LEDGER device can't display the actual amount that's going to be transferred.
 
             -  **Sender**: this is the sender account.
 
@@ -70,7 +70,7 @@ Prerequisites
 
             -  **Memo**: the memo message, if applicable.
 
-        10. On the Ledger there's a message saying **Sign transaction**. Press both buttons to sign the transaction.
+        10. On the LEDGER device there's a message saying **Sign transaction**. Press both buttons to sign the transaction.
 
         11. In the Desktop Wallet there’s a message saying **Shielded transfer submitted**, which means that the transfer has been submitted to the chain. Click **Finish**. The transfer is listed in the **Transfers** list.
 
@@ -86,13 +86,13 @@ Prerequisites
 
             .. image:: ../images/desktop-wallet/dw-decrypt-shielded.png
 
-        #. The Desktop Wallet says **Waiting for device. Please connect your Ledger**. Connect the Ledger to your computer, and then enter your PIN code on the Ledger.
+        #. The Desktop Wallet says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to your computer, and then enter your PIN code on the LEDGER device.
 
-        #. On the Ledger, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+        #. On the LEDGER device, there's a message saying **Concordium is ready**, and in the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
         #. In the Desktop Wallet, select **Decrypt**.
 
-        #. On the Ledger, press both buttons to decrypt the amount. In the Desktop Wallet you can now see the amount that you decrypted.
+        #. On the LEDGER device, press both buttons to decrypt the amount. In the Desktop Wallet you can now see the amount that you decrypted.
 
     .. |shielded-xfer| image:: ../images/desktop-wallet/dw-shielded-xfer-received.png
         :alt: Balance with a shield that has a lock on it
@@ -105,11 +105,11 @@ Prerequisites
 
     #. Tap the Account you want to transfer CCD from or tap |more-acct| for the account.
 
-        - If the shielded balance is hidden for the account, go to the |hamburger| menu in the upper right corner and tap **Show shielded balance for your account name**.
+        - If the shielded balance is hidden for the account, tap |acct-settings| and select **Show shielded balance**.
 
     #. Tap the **Shielded balance** tab of the totals area.
 
-    #. Tap **SEND**.
+    #. Tap |send-shielded|.
 
     #. Enter the amount you want to transfer.
 
@@ -137,6 +137,14 @@ Prerequisites
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
         :width: 50px
+
+    .. |acct-settings| image:: ../images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px
+
+    .. |send-shielded| image:: ../images/send-shielded.png
+                    :alt: shield with paper airplane on blue background
+                    :width: 50px
 
 .. dropdown:: |mw-gen1|
 

@@ -43,7 +43,7 @@ From scratch
 
 A smart contract in Rust is written as an ordinary Rust library crate.
 The library is then compiled to Wasm using the Rust target
-``wasm32-unknown-unknown`` and, since it is just a Rust library, we can use
+``wasm32-unknown-unknown`` and, since it is just a Rust library, you can use
 Cargo_ for dependency management.
 
 To set up a new smart contract project, first create a project directory. Inside
@@ -58,7 +58,7 @@ directories.
 Your directory should now contain a ``Cargo.toml`` file and a ``src``
 directory and some hidden files.
 
-To be able to build Wasm we need to tell cargo the right ``crate-type``.
+To be able to build Wasm you need to tell cargo the right ``crate-type``.
 This is done by adding the following in the ``Cargo.toml`` file ::
 
    [lib]

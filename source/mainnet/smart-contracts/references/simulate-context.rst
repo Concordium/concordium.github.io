@@ -169,7 +169,7 @@ Chain meta data
 
 Both the init- and receive-context contains a ``metadata`` section containing
 information of the blockchain at the block the smart contract is executed in.
-Below we refer to this block as the *current block*.
+This block is referred to as the *current block* below.
 
 Example:
 

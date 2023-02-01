@@ -9,7 +9,7 @@ A transaction on the Concordium blockchain is an operation which applies some ch
 
 The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
-You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-gen1|, |bw|, or the Concordium Client. Note that the |mw-gen1|, |mw-gen2|, and |bw| don’t support all transaction types, and that you need a Ledger device to submit transactions from the Desktop Wallet.
+You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-gen1|, |bw|, or the Concordium Client. Note that the |mw-gen1|, |mw-gen2|, and |bw| don’t support all transaction types, and that you need a LEDGER device to submit transactions from the Desktop Wallet.
 
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 |                            | |mw-gen1|     | |mw-gen2|      | |bw|              |Desktop Wallet | Concordium Client |
@@ -36,7 +36,7 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Update account credentials |               | |check|        |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Connect to dApps           |               |                | |check|           |               |                   |
+| Connect to dApps           |               | |check|        | |check|           |               |                   |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Delegation                 | |check|       | |check|        |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+

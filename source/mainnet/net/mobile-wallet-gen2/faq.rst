@@ -86,6 +86,6 @@
 
     Reusing a secret recovery phrase in multiple wallets is not recommended, as it increases the risk of having all your wallets compromised. Concordium recommends that you generate a new recovery phrase when setting up a new wallet on Concordium. For advanced users who understand the risks involved it is possible to reuse a 24 word recovery phase from another wallet with Concordium through the wallet recovery process. The wallet will not recover anything if you reuse your secret recovery phrase from another wallet, but it will set your wallet up with the secret recovery phrase, and from there you can request a new identity and accounts.
 
-.. dropdown:: I have a Concordium Desktop Wallet set up with a Ledger and a 24 word secret recovery phrase. Can I use that recovery phrase in my Concordium Wallet for mobile?
+.. dropdown:: I have a Concordium Desktop Wallet set up with a LEDGER device and a 24 word secret recovery phrase. Can I use that recovery phrase in my Concordium Wallet for mobile?
 
-    Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the Concordium Wallets. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the new Concordium Wallets, as that defeats the purpose of having the secret recovery phrase in a cold wallet, like the Ledger devices.
+    Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the Concordium Wallets. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the new Concordium Wallets, as that defeats the purpose of having the secret recovery phrase in a cold wallet, like the LEDGER devices.
