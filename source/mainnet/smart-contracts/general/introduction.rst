@@ -104,6 +104,13 @@ contract instance can be repeatedly updated according to its own logic.
 
 #. In ``concordium-client`` you can then :ref:`run invoke<invoke-instance>` to simulate your contract and see how much energy it uses or to call a view entrypoint which returns some data derived from the contract state; use :ref:`show<inspect-instance>` to see the schema or parameters in the contract, or :ref:`update<interact-instance>` to execute transactions and update the state.
 
+Next steps
+==========
+
+Continue reading about :ref:`contract modules<contract-module>`, :ref:`contract instances<contract-instances>`, and :ref:`contract schemas<contract-schema>`.
+
+Also, read the :ref:`Smart contracts best practices<sc-best-practices>`.
+
 .. toctree::
    :hidden:
    :maxdepth: 1
