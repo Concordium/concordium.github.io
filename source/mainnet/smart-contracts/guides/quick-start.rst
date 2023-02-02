@@ -7,6 +7,8 @@ Concordium smart contracts quick start guide
 
 This guide is intended to be used by experienced developers who want to get up and running quickly with a smart contract deployed on chain with which they can interact.
 
+Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+
 .. dropdown:: Step 1 - Set up developer environment
 
     Download and install the following tools in this order:
