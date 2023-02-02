@@ -20,6 +20,14 @@ Concordium introduces a new wallet for iOS mobile devices: the |mw-gen2|. The |m
 
 In connection with this new wallet, the iOS mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
 
+January 30, 2023
+
+Cargo concordium 2.7.0
+----------------------
+
+Added base64 commands for schemas in ``cargo concordium``. These allow the schema to be
+output in the base64 format that is currently supported in the |bw|.
+
 January 26, 2023
 
 |mw-gen2| 1.1.4
