@@ -5,57 +5,52 @@
 Set up the Desktop Wallet
 =========================
 
-The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
-
-The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S and LEDGER NANO S Plus are supported.
-
 This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you'll be using the Desktop Wallet in combination with a LEDGER device to generate and store keys and sign transactions.
 
-Step 1: Set up the node
-=======================
+.. dropdown:: Step 1: Set up a node
 
-The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
+    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
 
-Step 2: Set up the LEDGER device
-================================
+.. dropdown:: Step 2: Set up the LEDGER device
 
-The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`.
+    The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to sign and send transactions using the Desktop Wallet, you need a LEDGER hardware wallet, and you need to install the Concordium LEDGER Application on the LEDGER device. The LEDGER device will generate the unique 24-word recovery phrase that is used to derive your private keys.
 
-Step 3: Set up the Concordium Desktop Wallet
-============================================
+    .. Warning::
 
-You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker.
+        During the process described in this guide, you’ll generate private keys on the Ledger device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
-.. Note::
-    Without CCD you can't submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.
+    #. Download and install **Ledger Live**. Ledger Live is available for Windows, Mac, and Linux desktop platforms, and iOS and Android for mobile devices. For information on how to do this, see `Ledger's documentation <https://www.ledger.com/ledger-live/download>`_. You’ll need Ledger Live when you set up the LEDGER device, install the Concordium app, and update the firmware.
 
-    You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet.
+    #. Follow the on-screen setup instructions to set up your PIN code on the LEDGER device and to get your 24 word recovery phrase.
 
-To set up the Desktop Wallet:
+.. dropdown:: Step 3: Set up the Concordium Desktop Wallet
 
-#. Install the Desktop Wallet. For more information, see :ref:`Installation downloads <downloads>`.
+    You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker.
 
-#. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
+    To set up the Desktop Wallet:
 
-#. In the Desktop Wallet go to **Settings** and then select **Node settings**.
+    #. Install the Desktop Wallet. For more information, see :ref:`Installation downloads <downloads>`.
 
-#. The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
+    #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
-#. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
+    #. In the Desktop Wallet go to **Settings** and then select **Node settings**.
 
-.. Warning::
-    Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
+    #. The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you're running. The address is the network address of the node.
 
-Step 4: Set up an identity and an initial account
-==================================================
+    #. Select **Set connection**. If the connection is working properly, there's a message saying **Successfully connected**.
 
-Once you've installed the Desktop Wallet, you must set up an identity and an initial account. Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
+    .. Warning::
 
-You're now ready to start using the Desktop Wallet.
+        Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
 
-.. toctree::
-    :hidden:
-    :maxdepth: 1
+    .. Note::
 
-    ../desktop-wallet/install-ledger-app
-    ledger-wallet
+        Without CCD you can't submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.
+
+        You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet.
+
+.. dropdown:: Step 4: Set up an identity and an initial account
+
+    Once you've installed the Desktop Wallet, you must set up an identity and an initial account. Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
+
+    You're now ready to start using the Desktop Wallet.
