@@ -6,6 +6,8 @@ References
 
 A number of references exist to help you when creating and testing smart contracts.
 
+It is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+
 .. toctree::
    :maxdepth: 1
    :caption: References
