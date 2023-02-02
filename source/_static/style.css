@@ -1,9 +1,15 @@
 :root {
+
+    @font-face {
+        font-family: "nb-akademie-std";
+        src: url("../fonts/Concordium Fonts/Nb Akademie Std.otf");
+    }
+
     /*****************************************************************************
     * Font family
     **/
     /* These are adapted from https://systemfontstack.com/ */
-    --pst-font-family-base-system: Nb-akademie-std, sans-serif;
+    --pst-font-family-base-system: "Nb-akademie-std", sans-serif;
     --pst-font-family-monospace-system: "SFMono-Regular", Menlo, Consolas, Monaco,
       Liberation Mono, Lucida Console, monospace;
   
@@ -40,7 +46,7 @@
 }
 
 body{
-    font-family: var(--pst-font-family-base-system);
+    font-family: "Nb-akademie-std";
     background-color: var(--bg-color);
     color: var(--font-color);
   }
