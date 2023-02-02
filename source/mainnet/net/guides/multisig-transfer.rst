@@ -15,7 +15,7 @@ Prerequisites
 
 - Set up an :ref:`identity and an initial account <create-initial-account>`.
 
-- Set up a :ref:`LEDGER device <install-Ledger-app>`
+- Set up a :ref:`LEDGER device <overview-desktop>`
 
 - Set up an :ref:`account with multiple credentials <multi-credentials>`
 
