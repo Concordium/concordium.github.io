@@ -1,10 +1,5 @@
 :root {
 
-    @font-face {
-        font-family: "nb-akademie-std";
-        src: url("../fonts/Concordium Fonts/Nb Akademie Std.otf");
-    }
-
     /*****************************************************************************
     * Font family
     **/
@@ -46,7 +41,7 @@
 }
 
 body{
-    font-family: "Nb-akademie-std";
+    font-family: var(--pst-font-family-base-system);
     background-color: var(--bg-color);
     color: var(--font-color);
   }
