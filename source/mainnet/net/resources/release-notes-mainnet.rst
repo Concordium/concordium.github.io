@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+February 6, 2023
+
+|mw-gen1| for Android 3.2.0
+---------------------------
+
+Changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
+
 January 30, 2023
 
 Cargo concordium 2.7.0
