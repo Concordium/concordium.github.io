@@ -89,6 +89,31 @@ The crate documentation is on docs.rs_.
       [dependencies]
       concordium-std = { path = "./path/to/concordium-std" }
 
+.. _setup-wee-alloc-feature:
+
+.. note::
+
+   To compile your smart contracts, a memory `allocator <https://docs.rs/concordium-std/5.2.0/concordium_std/#use-a-custom-allocator>`_ is used.
+   ``concordium-std`` version ``<5.2.0`` hard-coded the use of the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator.
+   In ``concordium-std`` version ``>=5.2.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
+   When ``std`` feature is enabled the allocator provided by the Rust standard library is used
+   by default but when the ``wee_alloc`` feature is enabled in addition, ``wee_alloc`` is used instead.
+
+   You can enable the ``wee_alloc`` feature in ``concordium-std`` version ``>=5.2.0`` by using:
+
+   .. code-block:: rust
+
+      [features]
+      default = ["std", "wee_alloc"]
+      std = ["concordium-std/std"]
+      wee_alloc = ["concordium-std/wee_alloc"]
+
+   The main reason for using ``wee_alloc`` instead of the default allocator
+   is that ``wee_alloc`` has a smaller code footprint, i.e, the resulting smart contracts modules are going to
+   be smaller. Smaller modules will be cheaper to deploy and run. Concordium nodes will load the smart contract module
+   code into memory when executing a smart contract function on-chain. Hence, the smart contract module size
+   has an impact on the execution cost.
+
 .. seealso::
 
    It is possible to build smart contracts without using Rust's ``std``.
