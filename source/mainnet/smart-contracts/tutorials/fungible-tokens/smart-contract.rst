@@ -398,7 +398,7 @@ When you get the parameters, ensure the token exists with the ``ensure!`` and ``
         // Parse the parameter.
         let params: BurnParams = ctx.parameter_cursor().get()?;
         let token_id = params.token_id;
-    
+
         let amount = params.amount;
         ensure!(
                 self.contains_token(&token_id),
@@ -430,7 +430,7 @@ Then get the balance of the owner using its address. Since you will change the b
         amount: ContractTokenAmount,
         owner: &Address,
     ) -> ContractResult<ContractTokenAmount> {
-     
+
         if amount == 0u64.into() {
             return Ok(amount);
         }
