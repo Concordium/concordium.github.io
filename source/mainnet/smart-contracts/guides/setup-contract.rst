@@ -76,7 +76,7 @@ To add the library, open ``Cargo.toml`` and add the line
 the ``[dependencies]`` section::
 
    [dependencies]
-   concordium-std = "3.0"
+   concordium-std = "6.0"
 
 The crate documentation is on docs.rs_.
 
@@ -113,6 +113,11 @@ The crate documentation is on docs.rs_.
    be smaller. Smaller modules will be cheaper to deploy and run. Concordium nodes will load the smart contract module
    code into memory when executing a smart contract function on-chain. Hence, the smart contract module size
    has an impact on the execution cost.
+
+.. note::
+
+   ``Wee_alloc`` is unmaintained currently and hence an optional feature for backward compatibility.
+   There are other allocators available, for example `dlmalloc <https://docs.rs/dlmalloc/>`_.
 
 .. seealso::
 

@@ -37,7 +37,7 @@ You can update your `Cargo.toml` file by using:
 .. code-block:: rust
 
    [dependencies]
-   concordium-std = { version: "=0.2", default-features = false }
+   concordium-std = { version = "6.0", default-features = false }
 
 .. note::
 
@@ -45,14 +45,32 @@ You can update your `Cargo.toml` file by using:
    ``concordium-std`` version ``<6.0.0`` hard-coded the use of the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator.
    In ``concordium-std`` version ``>=6.0.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
    When ``std`` feature is enabled, the allocator provided by the Rust standard library is used
-   by default but when the ``wee_alloc`` feature is enabled in addition, ``wee_alloc`` is used instead.
-   When ``no_std`` is used either ``wee_alloc`` must be enabled, or another global allocator
-   must be set in the smart contract. You can add the ``wee_alloc`` feature by using:
+   by default but when the ``wee_alloc`` feature is enabled in addition, `wee_alloc <https://docs.rs/wee_alloc/>`_ is used instead.
+
+   You can enable the ``std`` feature and the ``wee_alloc`` feature in ``concordium-std`` version
+   ``>=6.0.0`` by using:
 
    .. code-block:: rust
 
       [features]
+      default = ["std", "wee_alloc"]
+      std = ["concordium-std/std"]
       wee_alloc = ["concordium-std/wee_alloc"]
+
+   The above code blocks will use the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator and not the allocator
+   provided by the Rust standard library when compiled with the default features as follows:
+
+   .. code-block:: console
+
+      $cargo concordium build
+
+When ``no_std`` is used either ``wee_alloc`` must be enabled, or another global allocator
+must be set in the smart contract. You can add the ``wee_alloc`` feature by using:
+
+.. code-block:: rust
+
+   [features]
+   wee_alloc = ["concordium-std/wee_alloc"]
 
 To be able to toggle between with and without std, also add a ``std`` to your
 own module, which enables the ``std`` feature of ``concordium-std``:
