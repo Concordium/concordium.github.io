@@ -41,9 +41,9 @@ You can update your `Cargo.toml` file by using:
 
 .. note::
 
-   To compile your smart contracts, a memory `allocator <https://docs.rs/concordium-std/5.2.0/concordium_std/#use-a-custom-allocator>`_ is used.
-   ``concordium-std`` version ``<5.2.0`` hard-coded the use of the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator.
-   In ``concordium-std`` version ``>=5.2.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
+   To compile your smart contracts, a memory `allocator <https://docs.rs/concordium-std/6.0.0/concordium_std/#use-a-custom-allocator>`_ is used.
+   ``concordium-std`` version ``<6.0.0`` hard-coded the use of the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator.
+   In ``concordium-std`` version ``>=6.0.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
    When ``std`` feature is enabled, the allocator provided by the Rust standard library is used
    by default but when the ``wee_alloc`` feature is enabled in addition, ``wee_alloc`` is used instead.
    When ``no_std`` is used either ``wee_alloc`` must be enabled, or another global allocator
@@ -84,9 +84,9 @@ you can pass extra arguments for ``cargo``:
 
 .. note::
 
-   The above command works with ``concordium-std`` version ``>=5.2.0``, because the
+   The above command works with ``concordium-std`` version ``>=6.0.0``, because the
    ``wee_alloc`` feature needs to be explicitly enabled.
-   If you use ``concordium-std`` version ``<5.2.0`` use the following instead:
+   If you use ``concordium-std`` version ``<6.0.0`` use the following instead:
 
    .. code-block:: console
 

@@ -93,13 +93,13 @@ The crate documentation is on docs.rs_.
 
 .. note::
 
-   To compile your smart contracts, a memory `allocator <https://docs.rs/concordium-std/5.2.0/concordium_std/#use-a-custom-allocator>`_ is used.
-   ``concordium-std`` version ``<5.2.0`` hard-coded the use of the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator.
-   In ``concordium-std`` version ``>=5.2.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
+   To compile your smart contracts, a memory `allocator <https://docs.rs/concordium-std/6.0.0/concordium_std/#use-a-custom-allocator>`_ is used.
+   ``concordium-std`` version ``<6.0.0`` hard-coded the use of the `wee_alloc <https://docs.rs/wee_alloc/>`_ allocator.
+   In ``concordium-std`` version ``>=6.0.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
    When ``std`` feature is enabled the allocator provided by the Rust standard library is used
    by default but when the ``wee_alloc`` feature is enabled in addition, ``wee_alloc`` is used instead.
 
-   You can enable the ``wee_alloc`` feature in ``concordium-std`` version ``>=5.2.0`` by using:
+   You can enable the ``wee_alloc`` feature in ``concordium-std`` version ``>=6.0.0`` by using:
 
    .. code-block:: rust
 
