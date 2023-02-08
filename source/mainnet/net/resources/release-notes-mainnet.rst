@@ -18,6 +18,13 @@ February 10, 2023
 
 A potential security risk was discovered with the storage of the secret recovery phrase on Android phones. The patch changes the way that the secret recovery phrase is stored in the Android app, and it’s applied automatically once you login to the updated version (1.1.5) on your Android phone. Your secret recovery phrase does not change. We recommend all Android users to update their Concordium Wallet app to the latest version right away. The Concordium Wallet for iOS, desktop, and browser extensions are not affected by this issue.
 
+February 6, 2023
+
+|mw-gen1| for Android 3.2.0
+---------------------------
+
+Changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
+
 January 30, 2023
 
 Cargo concordium 2.7.0
