@@ -1772,6 +1772,10 @@ nightly toolchain, which can be installed using <code class="docutils literal no
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup toolchain install nightly
 </pre></div>
 </div>
+<p>Then add the wasm32 target by using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup +nightly target add wasm32-unknown-unknown
+</pre></div>
+</div>
 </div>
 <div class="section" id="setting-up-the-module-for-no-std">
 <h2>Setting up the module for <code class="docutils literal notranslate"><span class="pre">no_std</span></code><a class="headerlink" href="#setting-up-the-module-for-no-std" title="Permalink to this headline">#</a></h2>
@@ -1779,9 +1783,41 @@ nightly toolchain, which can be installed using <code class="docutils literal no
 of the rust standard library.
 This feature is enabled by default.</p>
 <p>To disable it, one must simply disable default features for the
-<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> in the dependencies of your module.</p>
+<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> in the dependencies of your module.
+You can update your <cite>Cargo.toml</cite> file by using:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
-<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span>: <span class="s">&quot;=0.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="o">-</span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;6.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="o">-</span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To compile your smart contracts, a memory <a class="reference external" href="https://docs.rs/concordium-std/6.0.0/concordium_std/#use-a-custom-allocator">allocator</a> is used.
+<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&lt;6.0.0</span></code> hard-coded the use of the <a class="reference external" href="https://docs.rs/wee_alloc/">wee_alloc</a> allocator.
+In <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&gt;=6.0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> is a feature and needs to be explicitly enabled.
+When <code class="docutils literal notranslate"><span class="pre">std</span></code> feature is enabled, the allocator provided by the Rust standard library is used
+by default but when the <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature is enabled in addition, <a class="reference external" href="https://docs.rs/wee_alloc/">wee_alloc</a> is used instead.</p>
+<p>You can enable the <code class="docutils literal notranslate"><span class="pre">std</span></code> feature and the <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature in <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&gt;=6.0.0</span></code> by using:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
+<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;6.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;wee_alloc&quot;</span><span class="p">]}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Alternatively, if you want to test with and without <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> enabled add a <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature to the smart contract crate as follows:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">features</span><span class="p">]</span><span class="w"></span>
+<span class="n">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;std&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wee_alloc&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/std&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">wee_alloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/wee_alloc&quot;</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The above code blocks will use the <a class="reference external" href="https://docs.rs/wee_alloc/">wee_alloc</a> allocator and not the allocator
+provided by the Rust standard library when compiled with the default features as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
+</pre></div>
+</div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">no_std</span></code> is used either <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> must be enabled, or another global allocator
+must be set in the smart contract. You can add the <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature by using:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">features</span><span class="p">]</span><span class="w"></span>
+<span class="n">wee_alloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/wee_alloc&quot;</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>To be able to toggle between with and without std, also add a <code class="docutils literal notranslate"><span class="pre">std</span></code> to your
@@ -1802,8 +1838,17 @@ smart contract module is enabled by default.</p>
 </div>
 <p>If you want to disable the default features of your own smart contract module,
 you can pass extra arguments for <code class="docutils literal notranslate"><span class="pre">cargo</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo +nightly concordium build -- --no-default-features --features wee_alloc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above command works with <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&gt;=6.0.0</span></code>, because the
+<code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature needs to be explicitly enabled.
+If you use <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&lt;6.0.0</span></code> use the following instead:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo +nightly concordium build -- --no-default-features
 </pre></div>
+</div>
 </div>
 </div>
 </div>

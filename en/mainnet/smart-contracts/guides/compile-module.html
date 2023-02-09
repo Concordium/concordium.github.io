@@ -1776,6 +1776,10 @@ such as <a class="reference internal" href="../general/contract-schema.html#cont
 </pre></div>
 </div>
 <p>This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result.</p>
+<p>If you want a smaller code footprint, enable the <a class="reference internal" href="setup-contract.html#setup-wee-alloc-feature"><span class="std std-ref">wee_alloc feature</span></a> by using:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --features wee_alloc
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For building the schema for a smart contract module, some <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">further

@@ -1814,7 +1814,7 @@ writing small and efficient smart contracts.</p>
 <code class="docutils literal notranslate"><span class="pre">concordium-std</span> <span class="pre">=</span> <span class="pre">&quot;*&quot;</span></code> (preferably, replace the <cite>*</cite> with the latest version of <a class="reference external" href="https://docs.rs/crate/concordium-std/">concordium-std</a>) in
 the <code class="docutils literal notranslate"><span class="pre">[dependencies]</span></code> section:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[dependencies]</span>
-<span class="n">concordium-std</span> <span class="o">=</span> <span class="s">&quot;3.0&quot;</span>
+<span class="n">concordium-std</span> <span class="o">=</span> <span class="s">&quot;6.0&quot;</span>
 </pre></div>
 </div>
 <p>The crate documentation is on <a class="reference external" href="https://docs.rs/crate/concordium-std/">docs.rs</a>.</p>
@@ -1827,6 +1827,36 @@ directory instead, by adding the following to <code class="docutils literal notr
 <span class="n">concordium-std</span> <span class="o">=</span> <span class="p">{</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;./path/to/concordium-std&quot;</span> <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="admonition note" id="setup-wee-alloc-feature">
+<p class="admonition-title">Note</p>
+<p>To compile your smart contracts, a memory <a class="reference external" href="https://docs.rs/concordium-std/6.0.0/concordium_std/#use-a-custom-allocator">allocator</a> is used.
+<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&lt;6.0.0</span></code> hard-coded the use of the <a class="reference external" href="https://docs.rs/wee_alloc/">wee_alloc</a> allocator.
+In <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&gt;=6.0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> is a feature and needs to be explicitly enabled.
+When <code class="docutils literal notranslate"><span class="pre">std</span></code> feature is enabled the allocator provided by the Rust standard library is used
+by default but when the <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature is enabled in addition, <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> is used instead.</p>
+<p>You can enable the <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature in <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> version <code class="docutils literal notranslate"><span class="pre">&gt;=6.0.0</span></code> by using:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
+<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;6.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;wee_alloc&quot;</span><span class="p">]}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Alternatively, if you want to test with and without <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> enabled add a <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> feature to the smart contract crate as follows:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">features</span><span class="p">]</span><span class="w"></span>
+<span class="n">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;std&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wee_alloc&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/std&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">wee_alloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/wee_alloc&quot;</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The main reason for using <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> instead of the default allocator
+is that <code class="docutils literal notranslate"><span class="pre">wee_alloc</span></code> has a smaller code footprint, i.e, the resulting smart contracts modules are going to
+be smaller. Smaller modules will be cheaper to deploy and run. Concordium nodes will load the smart contract module
+code into memory when executing a smart contract function on-chain. Hence, the smart contract module size
+has an impact on the execution cost.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Wee_alloc</span></code> is unmaintained currently and hence an optional feature for backward compatibility.
+There are other allocators available, for example <a class="reference external" href="https://docs.rs/dlmalloc/">dlmalloc</a>.</p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
