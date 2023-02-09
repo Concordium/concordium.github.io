@@ -47,8 +47,14 @@ You can update your `Cargo.toml` file by using:
    When ``std`` feature is enabled, the allocator provided by the Rust standard library is used
    by default but when the ``wee_alloc`` feature is enabled in addition, `wee_alloc <https://docs.rs/wee_alloc/>`_ is used instead.
 
-   You can enable the ``std`` feature and the ``wee_alloc`` feature in ``concordium-std`` version
-   ``>=6.0.0`` by using:
+   You can enable the ``std`` feature and the ``wee_alloc`` feature in ``concordium-std`` version ``>=6.0.0`` by using:
+
+   .. code-block:: rust
+
+      [dependencies]
+      concordium-std = {version = "6.0", features = ["wee_alloc"]}
+
+   Alternatively, if you want to test with and without ``wee_alloc`` enabled add a ``wee_alloc`` feature to the smart contract crate as follows:
 
    .. code-block:: rust
 

@@ -103,6 +103,13 @@ The crate documentation is on docs.rs_.
 
    .. code-block:: rust
 
+      [dependencies]
+      concordium-std = {version = "6.0", features = ["wee_alloc"]}
+
+   Alternatively, if you want to test with and without ``wee_alloc`` enabled add a ``wee_alloc`` feature to the smart contract crate as follows:
+
+   .. code-block:: rust
+
       [features]
       default = ["std", "wee_alloc"]
       std = ["concordium-std/std"]
