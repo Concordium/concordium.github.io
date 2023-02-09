@@ -92,6 +92,13 @@ index
    References <../smart-contracts-v0/references/index>
 
 .. toctree::
+   :caption: Low-code NFT marketplace
+
+   guides/low-code-nft-marketplace/introduction.rst
+   guides/low-code-nft-marketplace/marketplace.rst
+   guides/low-code-nft-marketplace/minting-tool.rst
+
+.. toctree::
    :caption: Resources
 
    resources/ccd-scan
