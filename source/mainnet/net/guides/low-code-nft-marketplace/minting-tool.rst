@@ -36,7 +36,7 @@ Once you have the above installed, do the following:
 #. Clone the repo and install its dependencies.
 
     .. code-block:: console
-    
+
         git clone https://github.com/bogacyigitbasi/Low-Code-NFT-Framework
 
     .. code-block:: console
@@ -79,7 +79,7 @@ Concordium provides a `library of sample images you can download <https://github
     When you have an IPFS link to the asset, create a JSON file on a text editor, fill it like below and save it.
 
     .. code-block:: JSON
-    
+
         {
             "name": "YOUR NFT NAME",
             "description": "YOUR NFT DESCRIPTION",
@@ -172,7 +172,7 @@ Concordium provides a `library of sample images you can download <https://github
         .. image:: ../../images/low-code-nft-framework/connect-pinata.png
             :width: 100%
             :alt: nft marketplace connection screen after clicking mint
-    
+
     #. Once connected, upload images either by selecting them from a folder or just dragging and dropping them. You are not limited to uploading 1-2 images, and thanks to the template, the metadata generator is easier than creating for one metadata file for every item.
 
         .. image:: ../../images/low-code-nft-framework/upload-images.png
