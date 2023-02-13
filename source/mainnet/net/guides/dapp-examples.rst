@@ -64,4 +64,4 @@ Select an example to see more information about it, such as a hosted dApp for yo
 The dApps are written in React.
 Piggy bank, wCCD, and eSealing use the NPM library
 `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
-to implement integrations to the Browser Wallet and WalletConnect.
+to implement integrations to the |bw| and |mw-gen2| using WalletConnect.
