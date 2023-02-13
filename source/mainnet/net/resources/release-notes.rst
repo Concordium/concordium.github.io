@@ -11,6 +11,19 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March 10, 2023
+
+Concordium Node 5.2.X
+---------------------
+
+- The Prometheus metrics exporter has been cleaned up and improved in this release. Some metrics that were never updated were removed, a number of metrics were renamed, and behavior of some metrics was changed. See docs/prometheus-exporter.md for more details.
+
+- Fixed an issue where the node configuration file (main.config.json) was sometimes corrupted.
+
+- Added an option to disable only the node specific grpc V1 endpoints that can be used to control the node. All the endpoints that are consensus related are kept allowing the node to be used as a gateway to the chain. The mentioned can be disabled by setting ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` or using the flag ``--no-rpc-server-node-endpoints``.
+
+- Fixed a bug in ``GetAccountInfo`` endpoint in GRPCv2 where ``incoming_amounts`` field of encrypted amounts was not set correctly.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0
