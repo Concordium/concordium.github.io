@@ -127,8 +127,8 @@ The following table lists the major features of each wallet.
       - Creation of identities
    *  - Creation and management of baker accounts
       - Creation and management of baker accounts. Rewards are visible in the wallet.
-      - No creation and management of baker accounts.
-      - No creation and management of baker accounts.
+      - Creation and management of baker accounts. Rewards are visible in the wallet.
+      - Creation and management of baker accounts. Rewards are visible in the wallet.
    *  - A node is required
       - A node is not needed unless baking
       - A node is not needed unless baking

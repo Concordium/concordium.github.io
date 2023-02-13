@@ -196,7 +196,6 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
 .. dropdown:: |bw|
 
-    At the moment, delegation is not available in the |bw|.
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 

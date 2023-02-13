@@ -169,7 +169,6 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. dropdown:: |bw|
 
-        At the moment, delegation is not available in the |bw|.
 
 .. Note::
 

@@ -11,6 +11,13 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March XX, 2023
+
+|bw| 1.0.0
+--------------------------
+
+Baking and delegation are available in the |bw|.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0

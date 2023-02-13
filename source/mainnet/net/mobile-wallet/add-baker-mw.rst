@@ -127,6 +127,9 @@ Add baker in |mw-gen2| and |mw-gen1|
     .. image:: ../images/mobile-wallet/account-details-baking.png
         :width: 40%
 
+.. dropdown:: |bw|
+
+
 .. Warning::
 
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.

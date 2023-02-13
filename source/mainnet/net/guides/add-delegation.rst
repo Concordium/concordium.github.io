@@ -206,6 +206,9 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         .. image:: ../images/mobile-wallet/account-details-delegating.png
             :width: 40%
 
+.. dropdown:: |bw|
+
+    
         .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px
