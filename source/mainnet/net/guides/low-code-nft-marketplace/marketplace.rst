@@ -121,7 +121,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
     .. image:: ../../images/low-code-nft-framework/mp-configure-index.png
         :width: 100%
         :alt: constants.ts file open in code editor with index highlighted
-    
+
     When you specify the index value, the template will be interacting with your instance, meaning it will have a clean marketplace like below to remove new instance creation from your marketplace and change the ``CREATE_NEW__MARKETPLACE`` flag to false.
 
     .. image:: ../../images/low-code-nft-framework/mp-configure-mp-flag.png
@@ -138,7 +138,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     Within your custom marketplace you can mint your NFTs. After creating your marketplace, you have an empty NFT Marketplace as shown below. In this section you will learn how to create an NFT using your own marketplace.
 
-    Click **MINT** in the top navigation bar. You have two options in this step. First, if you already know an NFT contract instance's address and you are the owner, you can specify it in the **Find** section or click to deploy a new button to create a new instance of an already deployed NFT contract. 
+    Click **MINT** in the top navigation bar. You have two options in this step. First, if you already know an NFT contract instance's address and you are the owner, you can specify it in the **Find** section or click to deploy a new button to create a new instance of an already deployed NFT contract.
 
     .. image:: ../../images/low-code-nft-framework/mp-mint-nft.png
         :width: 100%
@@ -205,25 +205,33 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
         #. At the Connect Pinana screen click **SKIP**.  Pinata is described in the next section.
 
-            (screenshot)
+            .. image:: ../../images/low-code-nft-framework/connect-pinata-skip.png
+                :width: 100%
+                :alt: marketplace with connect pinata screen
 
         #. In the **Set metadata Url** text box, provide the URL that redirects you to the JSON formatted metadata. If you also want to store the hash value of the file check **Include Hash?** but remember this storing extra data on-chain comes with an extra cost.
 
-            (screenshot)
+            .. image:: ../../images/low-code-nft-framework/set-metadata-url.png
+                :width: 100%
+                :alt: marketplace with metadata url screen
 
         #. Set the tokenID and the token quantity which has to be 1 to create a unique Non-Fungible Token. Click **DONE**.
 
-            (screenshot)
+            .. image:: ../../images/low-code-nft-framework/set-token-id-qty.png
+                :width: 100%
+                :alt: marketplace with screen to set token id and quantity
 
         #. You see a final screen to review before minting your token. When you click **MINT** your |bw| prompts you for your signature. Click **Sign & submit** to start the transaction. Once it's finalized you will see another pop-up that says **All Minted**.
 
-            (screenshot)
+            .. image:: ../../images/low-code-nft-framework/mint-w-metadata.png
+                :width: 100%
+                :alt: marketplace with token ready to mint
 
     .. dropdown:: Mint NFTs with Pinata
 
         Pinata is a commercial pinning solution that pins your data stored on Interplanetary File System (IPFS). You can find more information about it in this link. Concordium NFT Marketplace Template has built-in integration with Pinata and IPFS that allows artists to mint their collection with a few steps.
 
-         When you upload data on IPFS the most important thing that you need to be careful about it is making sure that data is stored/hosted on at least one device and this can be achievable by running a node all the time somewhere. But that may not be an option for everybody who wants to mint NFTs for various reasons like cost, time, and some technical skills. At that moment, Pinata comes in to solve that issue basically they run a node on behalf of you and give you an API key. You can access your IPFS node via that API key through their gateway.
+        When you upload data on IPFS the most important thing that you need to be careful about it is making sure that data is stored/hosted on at least one device and this can be achievable by running a node all the time somewhere. But that may not be an option for everybody who wants to mint NFTs for various reasons like cost, time, and some technical skills. At that moment, Pinata comes in to solve that issue basically they run a node on behalf of you and give you an API key. You can access your IPFS node via that API key through their gateway.
 
         Since IPFS and Pinata are widely used in the space, Concordium NFT Marketplace Template has built-in integration with them. To use this functionality create an API key on the platform and copy it.
 
@@ -237,19 +245,11 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
             :width: 100%
             :alt: marketplace web page with connect to pinata screen shown
 
-|
-
-        **Upload NFT collection and prepare metadata**
-
         Click **CONNECT**. When the connection is done, you will be able to upload images either by selecting them from a folder or just dragging and dropping them. You are not limited to uploading 1-2 images, and thanks to the template, the metadata generator is easier than creating one for every item.
 
         .. image:: ../../images/low-code-nft-framework/upload-images.png
             :width: 100%
             :alt: marketplace web page with upload screen shown
-
-|
-
-        **Mint NFT collection**
 
         Set your token IDs and click **Upload** for each.
 
@@ -285,7 +285,9 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     The app asks you either to create your own NFT contract instance or provide the contract index that you own. Specify your contract address, such as 2319,0.
 
-    (screenshot)
+    .. image:: ../../images/low-code-nft-framework/mint-sft-sc.png
+        :width: 100%
+        :alt: contract lookup screen in marketplace
 
     .. Note::
 
@@ -293,15 +295,21 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     Click **Find**. When prompted to ontinue with Pinata or metadata option, click **SKIP** and then click **ADD USING METADATA URL**. Paste your metadata JSON file URL in the text box and specify a token ID for your token. Specify the **QUANTITY** of your token which is the amount of this semi-fungible token you will be minting.
 
-    (Screenshot)
+    .. image:: ../../images/low-code-nft-framework/prepare-sft-metadata-qty.png
+        :width: 100%
+        :alt: enter quantity to mint screen
 
     Click **Metadata URL** in the preview tocheck the created metadata. Click **DONE**.
 
-    (screenshot)
+    .. image:: ../../images/low-code-nft-framework/add-sft-metadata-url.png
+        :width: 100%
+        :alt: add metadata url to sft screen
 
     Click **MINT**. Your |bw| prompts you for your signature. Click **Sign & submit** to start the transaction. You can control the information you've provided until this step such as tokenID, owner account, quantity, and URL before minting them.
 
-    (screenshot)
+    .. image:: ../../images/low-code-nft-framework/mint-sft-wallet-conf.png
+        :width: 100%
+        :alt: sft minting in marketplace in background with wallet confirmation popup visible
 
     When the transaction is finalized a pop-up notifies you that minting is done.
 
