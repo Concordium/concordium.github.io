@@ -1863,12 +1863,12 @@ You can continue this tutorial by using the module reference printed in the erro
 <div class="section" id="initializing-a-module">
 <h2>Initializing a module<a class="headerlink" href="#initializing-a-module" title="Permalink to this headline">#</a></h2>
 <p>You can initialize your smart contract now to create a smart contract instance. Give the instance the name <code class="docutils literal notranslate"><span class="pre">piggy_bank_part2_instance</span></code> so it can be referenced in this tutorial.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract init piggy_bank_part2_module --sender &lt;account-name&gt; --contract PiggyBank --name piggy_bank_part2_instance --energy <span class="m">1000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract init piggy_bank_part2_module --sender &lt;account-name&gt; --contract PiggyBank --name piggy_bank_part2_instance --energy <span class="m">1500</span> --grpc-port <span class="m">10001</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>1000 is enough energy to initialize the piggy bank smart contract but you
+<p>1500 is enough energy to initialize the piggy bank smart contract but you
 might need more energy for larger smart contracts. The <code class="docutils literal notranslate"><span class="pre">--energy</span></code> parameter sets the maximum allowed
 energy to be used. You only pay for the actual energy used.</p>
 </div>
