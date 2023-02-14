@@ -38,6 +38,12 @@ In order to build a smart contract, run:
 
 This uses Cargo_ for building, but runs further optimizations on the result.
 
+If you want a smaller code footprint, enable the :ref:`wee_alloc feature <setup-wee-alloc-feature>` by using:
+
+.. code-block:: console
+
+   $cargo concordium build --features wee_alloc
+
 .. seealso::
 
    For building the schema for a smart contract module, some :ref:`further
