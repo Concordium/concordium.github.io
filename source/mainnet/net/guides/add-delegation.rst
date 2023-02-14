@@ -208,7 +208,44 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
 .. dropdown:: |bw|
 
-    
+        #. You can either: click |earn| on the account you want to delegate from in the **Accounts** page, or click on an account card and click |earn| on the account transaction overview screen.
+
+        #. Click **Continue to delegation setup**. If you are delegating for the first time, you see some information about delegation.
+
+        #. Click **Register delegation**.
+
+        #. If you want to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
+
+            .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
+
+        #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+
+            .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
+
+        #. Review the information in the transaction overview. When you are satisfied, click **Submit delegation transaction**.
+
+            .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
+
+        #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+            .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
+
+        Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
+
+        .. image:: ../images/mobile-wallet/account-delegating.png
+            :width: 40%
+
+        .. image:: ../images/mobile-wallet/account-details-delegating.png
+            :width: 40%
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
+
+        .. |earn-w-text| image:: ../images/earn-w-text.png
+             :alt: Hand receiving money with text earn
+             :width: 50px
+
         .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px

@@ -169,6 +169,27 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. dropdown:: |bw|
 
+   #. Click |earn| on the account with a delegation in the **Accounts** page, or click on an account card and click |earn| on the account details screen.
+
+   #. You see your current delegation. Click **Stop delegation**.
+
+      .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+
+   #. Review the information in the transaction overview. When you are satisfied, click **Submit delegation transaction**.
+
+      .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+
+   #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+      .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+
+   .. |earn| image:: ../images/earn.png
+        :alt: Hand receiving money
+        :width: 50px
+
+   .. |earn-w-text| image:: ../images/earn-w-text.png
+         :alt: Hand receiving money with text earn
+         :width: 50px
 
 .. Note::
 
