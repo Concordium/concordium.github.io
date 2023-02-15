@@ -196,23 +196,19 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
 .. dropdown:: |bw|
 
-    #. Click |earn| on the account with a delegation in the **Accounts** page, or click on an account card and taclickp |earn| on the account details screen.
+    #. Bring the account whose delegation you want to update into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
 
-    #. You see your current delegation. Click **Update current delegation**.
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
 
-        .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+    #. You see your current delegation. Click **Update**.
 
-    #. If you want to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive delegation**. Tap **Continue**.
+    #. If you want to delegate to a specific pool click **Baker** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. CLick **Continue**.
 
-        .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
+    #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
-    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. To update your restaking preference click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. Click **Continue**.
 
-        .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
-
-    #. Review the information in the transaction overview. When you are satisfied, click **Submit delegation transaction**.
-
-        .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
+    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
     #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
 
