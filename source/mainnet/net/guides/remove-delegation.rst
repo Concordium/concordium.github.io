@@ -137,14 +137,6 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
 
-   .. |earn| image:: ../images/earn.png
-        :alt: Hand receiving money
-        :width: 50px
-
-   .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
-
 .. dropdown:: |mw-gen1|
 
    #. Go to the **Accounts** screen.
@@ -179,17 +171,13 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
    #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
 
-   .. |earn| image:: ../images/earn.png
-        :alt: Hand receiving money
-        :width: 50px
-
-   .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
-
 .. Note::
 
    Removing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and cannot be increased or decreased; you can still change targets or restaking preferences during cool-down. The delegation stop is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. |earn| image:: ../images/earn.png
+        :alt: Hand receiving money
+        :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

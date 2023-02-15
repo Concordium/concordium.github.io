@@ -157,14 +157,6 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         .. image:: ../images/mobile-wallet/account-details-delegating.png
             :width: 40%
 
-        .. |earn| image:: ../images/earn.png
-             :alt: Hand receiving money
-             :width: 50px
-
-        .. |earn-w-text| image:: ../images/earn-w-text.png
-             :alt: Hand receiving money with text earn
-             :width: 50px
-
 .. dropdown:: |mw-gen1|
 
         #. Go to the **Accounts** screen.
@@ -224,18 +216,8 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
-        .. image:: ../images/mobile-wallet/account-delegating.png
-            :width: 40%
-
-        .. image:: ../images/mobile-wallet/account-details-delegating.png
-            :width: 40%
-
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
-             :width: 50px
-
-        .. |earn-w-text| image:: ../images/earn-w-text.png
-             :alt: Hand receiving money with text earn
              :width: 50px
 
         .. |hamburger| image:: ../images/hamburger.png

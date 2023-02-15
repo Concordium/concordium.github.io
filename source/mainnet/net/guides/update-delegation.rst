@@ -153,14 +153,6 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
     #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
-    .. |earn| image:: ../images/earn.png
-         :alt: Hand receiving money
-         :width: 50px
-
-    .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
-
 .. dropdown:: |mw-gen1|
 
     #. Go to the **Accounts** screen.
@@ -212,19 +204,15 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
     #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
 
-    .. |earn| image:: ../images/earn.png
-         :alt: Hand receiving money
-         :width: 50px
-
-    .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
-
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 
 .. Note::
 
    Reducing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
