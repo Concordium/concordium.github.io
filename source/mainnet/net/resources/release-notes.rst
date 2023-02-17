@@ -11,6 +11,13 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March 2, 2023
+
+Concordium Client 5.x.x
+-----------------------
+
+Concordium Client has been migrated to use gRPC version 2.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0
