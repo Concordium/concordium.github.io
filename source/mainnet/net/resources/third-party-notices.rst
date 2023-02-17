@@ -10,10 +10,13 @@ Required notices for open source or other separately licensed software and hardw
 * Android is a trademark of Google LLC.
 * Google Play and the Google Play logo are trademarks of Google LLC.
 * Ubuntu is a registered trademark of Canonical Ltd.
-* Debian is a trademark owned by Software in the Public Interest, Inc.
+* DEBIAN is a registered trademark owned by Software in the Public Interest, Inc. Debian trademark is a registered United States trademark of Software in the Public Interest, Inc., managed by the Debian project.
 * Microsoft and Windows are trademarks of the Microsoft group of companies.
 * AMD Ryzen™ is a trademark of AMD.
 * Intel®, the Intel® logo, and Intel® Core™ are trademarks of Intel Corporation or its subsidiaries.
-* Ledger, Ledger Nano S, Ledger Nano S Plus, Ledger Vault, Bolos are registered trademarks of Ledger SAS.
+* LEDGER, LEDGER STAX, LEDGER NANO S, LEDGER NANO X, LEDGER VAULT, Bolos are registered trademarks of Ledger SAS.
 * "Python" is a registered trademark of the Python Software Foundation.
 * JSON is copyright (c) 2002 JSON.org.
+* LINUX FOUNDATION and YOCTO PROJECT are registered trademarks of the Linux Foundation. Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
+* RUST and its trademarks are owned by the Mozilla Foundation
+* node.js: © 2018 Node.js Foundation. Node.js is a trademark of Joyent, Inc.

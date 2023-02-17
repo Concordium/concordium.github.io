@@ -12,7 +12,7 @@ This guide will show you how to write unit tests for a smart contract written in
 Rust.
 For testing a smart contract Wasm module, see :ref:`local-simulate`.
 
-A smart contract in Rust is written as a library and we can unit test it like a
+A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a ``#[test]`` attribute.
 
 .. code-block:: rust
@@ -64,8 +64,8 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
 
    For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
 
-The unit test have to be annotated with ``#[concordium_test]`` instead of
-``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
+The unit test has to be annotated with ``#[concordium_test]`` instead of
+``#[test]``, and ``#[concordium_cfg_test]`` is used instead of ``#[cfg(test)]``:
 
 .. code-block:: rust
 
@@ -339,18 +339,151 @@ state and balance fields:
        );
        ...
 
-.. warning::
+.. _reentracny-unit-testing:
 
-   You should watch out for *reentrancy problems*, which can occur when calls to
-   ``invoke_contract`` end up updating the state of your own contract.
+Reentrancy
+----------
 
-   .. code-block:: rust
+When invoking another smart contract, you give away control to that contract in the middle of execution.
+The external contract can, for example, call back entrypoints of your contract.
+This behavior is called *reentrancy* and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.
+See the details about handling external calls and ways of protecting against reentrancy-related issues in the :ref:`development best practices <best-practices-external-calls>`.
 
-      let state_copy = *host.state();
-      host.invoke_contract(...);
+The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can invoke any entrypoint of your own contract.
 
-      // *host.state() and state_copy might not be equal any more due to reentrancy.
-      do_something_with(state_copy);
+.. code-block:: rust
+
+    let state_copy = *host.state();
+    host.invoke_contract(...);
+
+    // *host.state() and state_copy might not be equal any more due to reentrancy.
+    do_something_with(state_copy);
+
+Consider a concrete example of reentrancy when the state is *not* updated properly before making an external call.
+This can lead to reentrant calls that pass some validation that is based on the current state, even though these calls should fail.
+The classic example of such a security issue is `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract that was drained of funds due to the reentrancy vulnerability.
+Below is a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
+The users can request their funds back; if a user is a smart contract, the funds are sent to a specified entrypoint.
+
+.. code-block:: rust
+    :emphasize-lines: 40-42
+
+    #[receive(
+        contract = "reentrancy",
+        name = "withdraw_reentrancy",
+        parameter = "OwnedEntrypointName",
+        error = "Error",
+        mutable
+    )]
+    fn withdraw_reentrancy<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State<S>, StateApiType = S>,
+    ) -> Result<(), Error> {
+        let sender = ctx.sender();
+
+        // Get balance for the sender, or reject if the sender is not found or the
+        // balance is zero.
+        let sender_balance = match host.state().balances.get(&sender) {
+            Some(bal) if *bal > Amount::zero() => *bal,
+            _ => return Err(Error::WithdrawWithoutFunds),
+        };
+
+        match sender {
+            Address::Account(acc) => host.invoke_transfer(&acc, sender_balance)?,
+            Address::Contract(addr) => {
+                let entrypoint: OwnedEntrypointName = ctx.parameter_cursor().get()?;
+                // At this point we are handing out the control out to an unknown
+                // smart contract. This contract can call this entry point
+                // again multiple times before the rest of the code is reached.
+                host.invoke_contract(
+                    &addr,
+                    &Parameter(&[]),
+                    entrypoint.as_entrypoint_name(),
+                    sender_balance,
+                )?;
+            }
+        };
+
+        // Reset the sender's balance to zero.
+        // This code is reached only after transfering CCD back/calling an
+        // external contract.
+        if let Some(mut v) = host.state().balances.get_mut(&sender) {
+            *v = Amount::zero();
+        }
+
+        Ok(())
+    }
+
+The problem in the code above is that resetting the sender's balance to zero happens *after* the call to an external contract is completed.
+The sender's balance in the *contract state* is used to determine how much funds should be transferred to the sender.
+Since it is not updated, the external contract can make a call back to ``withdraw_reentrancy`` and pass the balance validation.
+Testing this behavior with mocks require some insights.
+In particular, the example below mimics the original ``withdraw_reentrancy`` code in the mock entrypoint.
+
+.. code-block:: rust
+
+    #[concordium_test]
+    fn test_withdraw_reentrancy() {
+        ...
+
+        // Assume that `CONTRACT_ADDRESS` has 1 micro CCD
+        // Set the contract balance to 2 micro CCD
+        host.set_self_balance(Amount::from_micro_ccd(2));
+
+        // Set up a mock entrypoint that calls back to our contract.
+        // The mock emulates the `withdraw_reentrancy` logic to model
+        // a reentrancy attack that will withdraw the sender's balance twice.
+        host.setup_mock_entrypoint(
+            CONTRACT_ADDRESS,
+            OwnedEntrypointName::new_unchecked("withdraw_reentrancy".to_string()),
+            MockFn::new_v1(|_parameter, _amount, balance, state: &mut State<_>| {
+                // `invoke_contract` cannot be called inside this mock, but
+                // `balance` gives access to the balance of the contract making
+                // this invocation. The `withdraw_reentrancy` invocation can be
+                // simulated by subtracting the sender's amount stored in the
+                // contract state from `balance`.
+
+                let b = state.balances.get_mut(&Address::Contract(CONTRACT_ADDRESS));
+
+                let mut sender_balance = match b {
+                    Some(bal) if *bal > Amount::zero() => bal,
+                    _ => fail!("Insufficent funds"),
+                };
+
+                // Emulate withdraw by subtracting the sender's balance.
+                *balance -= *sender_balance;
+
+                // Reset the sender's balance to zero.
+                *sender_balance = Amount::zero();
+
+                let state_modified = true;
+                Ok((state_modified, ()))
+            }),
+        );
+        // Withdraw 1 micro CCD
+        withdraw_reentrancy(&ctx, &mut host).expect_report("Withdraw call failed");
+
+        let resulting_balance = host.self_balance();
+        let expected_balance = 1;
+
+        claim_eq!(
+            resulting_balance,
+            expected_balance,
+            "Balance is not updated correctly: expected {:?}, found: {:?}",
+            expected_balance,
+            resulting_balance
+        );
+    }
+
+The test fails with the following message:
+
+.. code-block:: text
+
+    Incorrect balance: expected Amount { micro_ccd: 1 }, found: Amount { micro_ccd: 0 }
+
+That means that the contract called has stolen funds through a reentrant call.
+A simple fix to this behavior is to place the highlighted line in ``withdraw_reentrancy`` *before* making a call to an external contract.
+In this case the ``withdraw_reentrancy`` call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.
 
 Testing with state rollbacks
 ============================
@@ -482,11 +615,203 @@ account:
         let amount1 = Amount::from_ccd(20);
         claim_eq!(host.get_transfers_to(receiver0), [amount0, amount1]);
 
+.. _writing_property_based_tests:
+
+Writing property-based tests
+============================
+
+The property-based testing technique allows for testing statements about your code that are expected to be true for any input parameters, possibly satisfying some precondition.
+You can think of a precondition and a property as functions returning a boolean.
+That is, for a function ``fun``, a property looks as the following: "for any input ``x``, ``y``, ``z``, such that ``precondition(x, y, z) = true``, ``property(x, y, z, fun(x,y,z)) = true``".
+The input to such tests is generated randomly.
+An example of a property is "for any integers ``n`` and ``m``, such that ``even(n) = true`` and ``even(m) = true``, ``even(n + m) = true``".
+
+Property-based testing is supported using the |QuickCheck|_ crate.
+The tests should be placed in the same module as regular unit tests and annotated with the ``#[concordium_quickcheck]`` macro.
+The return value of the function should be a boolean corresponding to whether the property holds.
+
+To get started, add the ``concordium-quickcheck`` feature to ``concordium-std`` as a ``dev``-dependency in ``Cargo.toml``:
+
+.. code-block::
+
+    ...
+
+    [dev-dependencies]
+    concordium-std = { version = "5.1", features = ["concordium-quickcheck"] }
+
+    ...
+
+The ``concordium_quickcheck`` macro takes the ``num_tests`` attribute for specifying the number of random tests to run.
+In the code snippet below, the parameters ``address`` and ``amount`` are generated randomly.
+The process of generating random input and running the test is repeated 500 times because you set ``num_tests = 500``.
+If you omit the ``num_tests`` attribute, it defaults to a 100 tests.
+
+.. code-block:: rust
+
+    #[concordium_cfg_test]
+    mod test {
+
+       #[concordium_quickcheck(num_tests = 500)]
+       fn some_property_test(address: Address, amount: Amount) -> bool {
+        ...
+        // Instantiate custom struct with random parameters, if necessary.
+        let input = MyParameters { sender: address, payment: amount }
+        ...
+        }
+    }
+
+The types ``Address`` and ``Amount`` in the example have ``Arbitrary`` trait implementations, which are used to obtain random values.
+Read more about available ``Arbitrary`` instances for Concordium-specific types in |concordium_contracts_common|_ documentation.
+|QuickCheck|_ defines ``Arbitrary`` instances for standard data types, like numbers and collections (``Vec``, ``BTreeMap``, etc.).
+These instances are available by default when writing tests.
+Custom user data type instances, like ``MyParameters`` above, can be created directly in tests using the random input parameters or by defining ``Arbitrary`` instances.
+See more details on QuickCheck's ``Arbitrary`` `here <https://docs.rs/quickcheck/latest/quickcheck/trait.Arbitrary.html>`_.
+
+.. warning::
+
+    The fact that many random tests passed successfully does not automatically mean that the property holds for **all** inputs.
+    Often the input space is quite large to be covered fully.
+    In this case, it is important to think carefully about what an implementation of the ``Arbitrary`` trait is doing to generate random input for your specific data.
+    In order to cover corner cases, you can bias the generated data to produce values that are deemed as potentially problematic.
+
+
+
+The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_wasm`:
+
+.. code-block:: console
+
+    $cargo concordium test
+
+When a test fails, it reports the random seed used to produce the input values.
+The random numbers are generated using a deterministic pseudo-random number generator from this seed.
+After making the required fixes to the code, you can use the same seed to see whether the previously failed tests work on the same generated values.
+The seed is a ``u64`` number, which can be provided along with the test command:
+
+.. code-block:: console
+
+    $cargo concordium test --seed 1234567890
+
+Concordium QuickCheck tests can also be run with:
+
+.. code-block:: console
+
+    $cargo test
+
+By default, this command compiles the contract, unit tests, and QuickCheck tests to machine code for your local target (most likely x86_64) and runs them.
+
+.. note::
+
+    Printing and supplying a seed is only possible using ``cargo concordium test``.
+
+.. warning::
+
+    Avoid using ``fail!`` and ``claim!`` variants in ``#[concordium_quickcheck]`` tests.
+    In Wasm unit tests (see :ref:`tests_in_wasm`) these commands report an error.
+    However, using them in QuickCheck tests makes the tests fail without providing a counterexample when running with ``cargo concordium test``.
+    Also avoid using ``assert_eq!``, ``panic!`` or any other command that panics.
+    Return a boolean value instead.
+
+Example
+-------
+
+Consider a counter with a threshold: if the count is less than the threshold, it gets incremented; otherwise, it stays unchanged.
+
+.. code-block:: rust
+   :emphasize-lines: 19-22
+
+    use concordium_std::*;
+
+    #[derive(Serialize)]
+    struct State {
+        threshold: u16,
+        count:     u16,
+    }
+
+    impl State {
+        fn new(threshold: u16) -> Self {
+            State {
+                count: 0,
+                threshold,
+            }
+        }
+
+        // Increment only if the current count is below the threshold.
+        fn increment(&mut self) {
+            // Can you see a problem here?
+            if self.count <= self.threshold {
+                self.count += 1;
+            }
+        }
+    }
+
+    #[init(contract = "my_contract")]
+    fn contract_init<S: HasStateApi>(
+        ctx: &impl HasInitContext,
+        state_builder: &mut StateBuilder<S>,
+    ) -> InitResult<State> { ... }
+
+    #[receive(contract = "my_contract", name = "my_receive", mutable)]
+    fn contract_update_counter<S: HasStateApi>(
+        _ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State, StateApiType = S>,
+    ) -> ReceiveResult<()> { ... }
+
+    #[concordium_cfg_test]
+    mod test {
+        use super::*;
+
+        // Property: counter stays below the threshold for any number of calls `n`.
+        // Run 500 tests with random `n` and `threshold` values.
+        #[concordium_quickcheck(num_tests = 500)]
+        fn prop_counter_always_below_threshold(threshold: u16, n: u16) -> bool {
+            let mut state = State::new(threshold);
+            for _ in 0..n {
+                state.increment()
+            }
+            state.count <= threshold
+        }
+    }
+
+The test fails with a counterexample, i.e., an input that breaks the property:
+
+.. code-block::
+
+    TestResult {
+        status: Fail,
+        arguments: [
+            "0",
+            "1",
+        ],
+        err: None,
+    }
+
+The ``arguments`` part shows the values that caused the test to fail.
+In this case, if the threshold is ``0`` and the number of calls is ``1``, then the counter becomes ``1`` after calling ``state.increment()``, breaking the property.
+
+.. note::
+
+    |QuickCheck|_ implements a special mechanism called "shrinking" to find the simplest counterexample.
+    For the example above, ``0`` and ``1`` is the simplest input on which the test failed.
+
+The issue is the comparison operator.
+It should be ``<`` instead of ``<=``.
+If you change the highlighted lines in the code above to:
+
+.. code-block:: rust
+
+    if self.count < self.threshold {
+        self.count += 1;
+    }
+
+Then all ``500`` tests pass successfully.
+
 
 .. |test_infrastructure| replace:: ``test_infrastructure``
 .. _test_infrastructure: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure
 .. |concordium_std| replace:: ``concordium_std``
 .. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std
+.. |concordium_contracts_common| replace:: ``concordium_contracts_common``
+.. _concordium_contracts_common: https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common
 .. _TestHost: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html
 .. |TestHost| replace:: ``TestHost``
 .. _setup_mock_entrypoint: https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.setup_mock_entrypoint
@@ -503,3 +828,5 @@ account:
 .. |StateMap| replace:: ``StateMap``
 .. _StateSet: https://docs.rs/concordium-std/latest/concordium_std/struct.StateSet.html
 .. |StateSet| replace:: ``StateSet``
+.. |QuickCheck| replace:: ``QuickCheck``
+.. _QuickCheck: https://docs.rs/quickcheck/latest/quickcheck

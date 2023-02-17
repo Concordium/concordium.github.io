@@ -155,19 +155,21 @@ SDK](https://github.com/Concordium/concordium-rust-sdk/tree/derive-schema).
 
 The `source/mainnet` directory contains documentation for the current Mainnet, and should always be compatible with the current Mainnet.
 
-With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a tab if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
-
-For information about how to use tabs, see `Sphinx tabs <https://sphinx-tabs.readthedocs.io/en/latest/#basic-tabs>`_.
+With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a dropdown if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
 
 ## Style guide
 
 ### Language
 
-* For a user guide, use **second person** ("you")
-* Structure sentences, especially numbered procedures, using the **imperative** ("click on X").
+* For a user guide, use **second person** ("you"). Avoid use of first person (we, I, me, our, etc).
+* Structure sentences, especially numbered procedures, using the **imperative** ("click on X") and with as few actions as possible per step.
 * Keep sentences **short**.
-* Prefer **present** continuous ("is") over future ("will be").
+* Prefer **present** continuous ("is") over future ("will be"), conditional ("should"), or past ("was").
 * Prefer **active voice** ("the baker adds a block") over passive voice ("a block is added").
+* Use the correct action depending on the device: "click" on a computer (when using a mouse), "press" a button on the keyboard, "tap" a button on a touchscreen device. "Select" can also be used. Nothing should be "hit".
+* Remember that you are generally writing for non-native English speakers so keep it simple.
+
+For a list of approved Concordium terminology, see `Terminology and definitions <https://docs.google.com/spreadsheets/d/18rDRELpEzUgD8770xk_KEF3ZXIUsev2pfkNYdJD1AqU/edit?usp=sharing>`__. This document also contains brand guidelines for third parties.
 
 ### Formatting
 
@@ -196,7 +198,7 @@ Header 5
 ~~~~~~~~
 ```
 
-#### Terminal commands
+#### Terminal commands and code examples
 
 Use `code-block:: console` to show content from a terminal and prepend commands
 with `$` without a space in between.
@@ -212,17 +214,39 @@ Example:
    $echo Hello, world!
    Hello, world!
 ```
+Use `code-block:: rust` to show Rust content with correct formatting.
+
+Use `code-block:: toml` to show TOML content with correct formatting.
+
+Use `code-block:: json` to show JSON content with correct formatting.
+
+Use `code-block:: jsx` to show JSX content with correct formatting.
+
+A particular line number may be emphasized with `:emphasize-lines:line_number` option. Multiple lines are comma-separated and consecutive lines can be written with a dash (e.g. `:emphasize-lines:10,12,15-17`).
+
+Use ` ``code`` ` to insert commands or output from a terminal screen into a line of text. For example:
+
+```
+To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>``
+``` 
+
+Do not confuse ` ``code`` ` with ``` `code` ```. Text wrapped in single ``` ` ``` is so-called default role interpreted text. And do not use regular quotes, e.g. `"code"`, for code examples.
+
+#### Hyperlinks
+
+Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. ``` `Concordium <https://www.concordium.com>`_ ```.
+
+If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g. `.. _Rust: https://www.rust-lang.org/`, and then reference it in the text, e.g. using the `Rust_` programming language.
 
 #### Buttons and clickable elements
 
-Use **bold** to highlight keyboard buttons and clickable elements (e.g., "Press **Enter**", "Select **Next**").
+Use `**bold**` to highlight keyboard buttons and clickable elements (e.g., `Press **Enter**`, `Select **Next**`). Do not use quotes for clickable elements or keyboard buttons.
 
 #### Emphasis
 
-- Use *italics* for text emphasis (e.g., when introducing a new term: "Obtain an identity from an *identity provider*.").
+- Use `*italics*` for text emphasis (e.g., when introducing a new term: `Obtain an identity from an *identity provider*.`).
 - After the term is introduced avoid emphasising it again in the same text.
-
-### Code formatting for this repository
+- Do not use quotes for emphasis.
 
 #### Indentation
 Use three spaces for indentation.
@@ -238,21 +262,39 @@ Example that follows both rules:
    This line has three spaces in front of it and it has an empty line above it.
 ```
 
-### Variables
+#### Variables
 
-Use variables when it makes sense.
+Use variables when it makes sense. Variables exist for most of the wallets and some other product names. It is preferred to use the variable instead of, e.g., browser wallet.
 
 Add new variables in the file `source/variables.rst`.
 
 Use the variables by:
 
 - Including a relative path to `variables.rst`, for example
-  `../../variables.rst`.
-- Then using the variable net, for example `|Net|`.
+  `../../variables.rst`, at the top of the file.
+- Then using the variable bw, for example `|bw|`, in the text.
+
+#### Dropdowns
+
+Use dropdowns to consolidate information and give a cleaner, more user-friendly experience to the reader. Dropdowns are generally used when describing a procedure across the different wallets. You can nest dropdowns in dropdowns as in the export-import topic. Dropdowns are also used for FAQs. It is important to add an empty line between the dropdown directive and the content.
+
+Example:
+
+``` restructuredtext
+.. dropdown:: The text the reader sees on the clickable dropdown
+
+   This text appears when the reader clicks on the dropdown element.
+```
 
 ### Images
 
-Save any images that you add in the Images folder under mainnet and testnet. Create sub-folders as needed to store images.
+Save any images that you add in the `Images` folder. Create sub-folders as needed to store images.
+
+Captions are not used. Instead the image context should be described in the text above it with a reference, such as "...in the image below...".
+
+Images must have :alt: text for accessibility. Generally, image width is 100%. For mobile wallets, browser wallet image width is 25%. For buttons, image width varies depending on whether the button has text and the graphic. Width ranges between 25 and 50 px.
+
+GIFs can be inserted but should only be used when it gives clarity to more complex actions. When using GIFs, the :alt: text is StreamPlayer and :align: is center.
 
 ## License
 
