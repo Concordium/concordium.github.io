@@ -343,7 +343,17 @@ Functions only accessible for smart contract receive functions.
    Invoke a host instruction which is either a *transfer to an account* or a *call to a
    contract*.
 
-   :param i32 tag: ``0`` for transfer to an account or ``1`` for call to a contract.
+   :param i32 tag: Tag for the instruction to invoke.
+
+      ``0`` for transfer to an account
+
+      ``1`` for call to a contract.
+
+      ``2`` for query an account balance.
+
+      ``3`` for query a contract balance.
+
+      ``4`` for query the exchange rates.
    :param i32 start: Pointer to the start of the invoke payload.
    :param i32 length: Length of the invoke payload.
    :return: If the last five bytes are ``0`` then the call succeeded. In this
@@ -368,6 +378,24 @@ Functions only accessible for smart contract receive functions.
             ``5`` if it called a V0 contract that failed.
 
             ``6`` if it called a contract that failed with a runtime error.
+
+            No other values are possible.
+
+   :rtype: i64
+
+.. function:: upgrade(module) -> i64
+
+   Upgrade to a new module. This will change the smart contract module used for
+   this smart contract instance.
+
+   :param i32 module: Pointer to 32 bytes for a module reference.
+   :return: ``0`` if successful
+
+            ``0x07_0000_0000`` if failed because of module did not exist.
+
+            ``0x08_0000_0000`` if failed because of module did not contain a smart contract with a name matching to one of this instance.
+
+            ``0x09_0000_0000`` if failed because of module being an unsupported smart contract version.
 
             No other values are possible.
 
@@ -421,7 +449,7 @@ Functions only accessible for smart contract receive functions.
    the receive method's entrypoint name. But for fallback entrypoints, it might
    differ.
 
-   :param i32 start: Pointer to the location to put th entrypoint name.
+   :param i32 start: Pointer to the location to put the entrypoint name.
 
 .. _concordium-std: https://docs.rs/concordium-std/latest/concordium_std/
 .. _state_iterate_prefix: #concordium.state_iterate_prefix

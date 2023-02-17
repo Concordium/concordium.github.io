@@ -27,7 +27,7 @@ Compiling to Wasm
 =================
 
 To help building smart contract modules and to take advantage of features
-such as :ref:`contract schemas <contract-schema-v0>`, we recommend using the
+such as :ref:`contract schemas <contract-schema-v0>`, Concordium recommends using the
 ``cargo-concordium`` tool for building Rust_ smart contracts.
 
 In order to build a smart contract, run:

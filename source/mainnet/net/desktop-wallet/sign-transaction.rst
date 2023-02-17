@@ -16,17 +16,17 @@ Import and sign a proposal
 
 #. Select **Browse to file**, and then navigate to the location on your computer where you saved the .json file with transaction proposal. Select the file, and then select **OK**. Alternatively, you can drag and drop the proposal file from its location on the computer and on to the Desktop Wallet.
 
-   The proposal is displayed, and you can see the security details, which include the identicon and the digest to sign, the transaction details, and the status of the Ledger. The transaction details will vary depending on the type of transaction.
+   The proposal is displayed, and you can see the security details, which include the identicon and the digest to sign, the transaction details, and the status of the LEDGER device. The transaction details will vary depending on the type of transaction.
 
-#. If you haven't connected the Ledger yet, there's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter the PIN code on the Ledger. The Desktop Wallet says **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+#. If you haven't connected the LEDGER device yet, there's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter the PIN code on the LEDGER device. The Desktop Wallet says **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
 #. Verify that the transaction details are correct and match the information in the PDF you received. Once you're certain the information is correct, select the following in the: **The transaction details are correct**, **The identicon matches the one received exactly**, and **The hash matches the one received exactly**.
 
 #. Select **Sign proposal**. The Desktop Wallet says **Waiting for user to finish the process on the device**.
 
-#. The Ledger says **Review transaction**. Verify that the **Sender** information matches the **From account** information on the transaction, and then press both buttons to continue with the transaction.
+#. The LEDGER device says **Review transaction**. Verify that the **Sender** information matches the **From account** information on the transaction, and then press both buttons to continue with the transaction.
 
-#. The information that's displayed on the Ledger now will vary depending on the type of transaction, you're signing. Navigate through the information and verify that it matches the information in the Desktop Wallet. Use both buttons whenever you need to confirm information.
+#. The information that's displayed on the LEDGER device now will vary depending on the type of transaction, you're signing. Navigate through the information and verify that it matches the information in the Desktop Wallet. Use both buttons whenever you need to confirm information.
 
 #. Select the printer icon in the upper right corner to print a PDF of the transaction and click the identicon to copy and paste it into a separate document.
 

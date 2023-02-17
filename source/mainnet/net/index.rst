@@ -20,17 +20,25 @@ index
    :caption: Concordium Wallets
 
    guides/deciding-wallet
+   guides/wallet-faqs
+   browser-wallet/setup-browser-wallet
+   mobile-wallet-gen2/setup-mobile-wallet
+   mobile-wallet/setup-mobile-wallet
    guides/create-identity
    guides/create-account
    guides/send-ccd-wallets
+   browser-wallet/connect-app
+   guides/tokens
    guides/shield-ccd-wallets
    guides/shielded-transfer
    guides/export-import
+   guides/export-key
    guides/recover-wallet
-   mobile-wallet-gen2/index
-   mobile-wallet/index
+   mobile-wallet/share-address-mw
+   mobile-wallet/change-passcode-mw
+   mobile-wallet/inspect-release-schedule-mw
+   guides/address-book
    desktop-wallet/index
-   browser-wallet/index
 
 .. toctree::
    :includehidden:
@@ -54,14 +62,24 @@ index
 
 .. toctree::
    :includehidden:
+   :caption: Use Concordium's ID Layer
+
+   guides/create-proofs
+   guides/gallery/index
+
+.. toctree::
+   :includehidden:
    :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
+   Quick start guide <../smart-contracts/guides/quick-start>
+   Best practices <../smart-contracts/best-practices/index>
    Tutorials <../smart-contracts/tutorials/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
-   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
    References <../smart-contracts/references/index>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
+   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/index>
 
 .. toctree::
    :includehidden:

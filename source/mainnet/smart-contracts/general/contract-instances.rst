@@ -58,7 +58,7 @@ State of a smart contract instance
 
 The state of a smart contract instance consists of two parts, the user-defined
 state and the amount of CCD the contract holds, i.e., its *balance*. When
-referring to state we typically mean only the user-defined state. The reason for
+referring to state it typically means only the user-defined state. The reason for
 treating the CCD amount separately is that CCD can only be spent and
 received according to rules of the network, e.g., contracts cannot create
 or destroy CCD tokens.
@@ -98,6 +98,10 @@ transaction for attempting to create the instance is visible on-chain.
    See :ref:`initialize-contract` guide for how to initialize a
    contract in practice.
 
+.. note::
+
+   The *init function* has no return value.
+
 Instance state
 ==============
 
@@ -130,6 +134,12 @@ To summarize, a transaction for smart-contract interaction includes:
 - Parameter to the receive function.
 - Amount of CCD for the instance.
 
+.. note::
+
+   The *receive function* can have a return value.
+
+.. _contract-instances-logging-events:
+
 Logging events
 ==============
 
@@ -150,7 +160,23 @@ Logging an event has an associated cost, similar to the cost of writing to the
 contract's state. In most cases it would only make sense to log a few bytes to
 reduce cost.
 
+There is no limit to the number of logs per invocation (apart from energy).
+
 .. _contract-instance-operations:
+
+Limits
+======
+
+When initializing, updating, or invoking a smart contract, the following limits are enforced:
+
+- The maximum input parameter size is 65535 Bytes (``u16::MAX``).
+- The energy limit in a block is 3 million NRG (energy). If only one transaction is in the block, the transaction can consume up to 3 million NRG (energy).
+- The maximum number of log items is ``u32::MAX`` per execution.
+- The maximum return value size is ``u32::MAX`` Bytes.
+
+.. note::
+
+   The log item and return value limits can not be reached in practice because the energy limit will kick in earlier.
 
 Invoking operations
 ===================
@@ -168,3 +194,95 @@ If an operations fails, it returns an error, which the instance can choose to
 handle, and the state and balance of the instance remain unchanged.
 The account which sent the initiating transaction pays for the execution of the
 entire receive function, including the cost of failed operations.
+
+.. _contract-instance-upgradeability:
+
+Upgradeability
+==============
+
+A V1 smart contract instance can choose to upgrade its module to a new V1 smart contract
+module using the **upgrade** host function.
+The host function takes a reference to a deployed smart contract module to use for
+the upgraded instance and can only be called from a receive function.
+The host function returns whether the upgrade succeeded, allowing the instance
+to decide the next step. If the upgrade is successful any new invocations of the
+upgraded instance uses the smart contract code in the new module.
+
+.. warning::
+
+   Upgrading a smart contract can be used to change the behavior completely,
+   therefore it is important to carefully restrict access to any endpoint
+   triggering a smart contract upgrade.
+
+.. graphviz::
+   :align: center
+   :caption: Example of a smart contract instance 'Car' upgrading to a new module.
+
+   digraph G {
+       rankdir="BT"
+
+       subgraph cluster_0 {
+           label = "My module v1";
+           labelloc=b;
+           node [fillcolor=white, shape=note]
+           escrow;
+       }
+
+       subgraph cluster_2 {
+           label = "My module v2";
+           labelloc=b;
+           node [fillcolor=white, shape=note]
+           escrow2;
+       }
+
+       subgraph cluster_1 {
+           label = "Instances";
+           style=dotted;
+           node [shape=box, style=rounded]
+           House;
+           Car;
+       }
+
+       escrow[label="Escrow"]
+       escrow2[label="Escrow"]
+
+       House:n -> escrow;
+       Car:n -> escrow [style=dashed, arrowhead=onormal];
+       Car:n -> escrow2 [style=bold];
+   }
+
+Failing to upgrade
+------------------
+
+A smart contract instance can fail to upgrade for one of the following reasons:
+
+- The new module does not exist.
+- The new module does not contain a smart contract with a name matching the instance being upgraded.
+- The new module is a smart contract module version 0.
+
+Immutability
+------------
+
+Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
+are immutable when they do not contain any code for triggering an upgrade.
+
+.. warning::
+
+   It is important to understand that immutable means the code of the smart contract cannot change.
+   It does not mean that the behavior of a smart contract cannot change, as the smart contract code
+   can include a switch in behavior or even invoke other mutable smart contracts.
+
+Migration
+---------
+
+Triggering a smart contract instance upgrade changes the smart contract module starting from the next
+invocation, meaning the execution will continue after the point of calling upgrade.
+Since any new invocation of this instance uses the new smart contract module, the instance
+can invoke itself and run code of the new module in the same transaction containing the upgrade.
+This is useful for triggering a migration function in the new smart contract module and rejecting the
+upgrade if the migration fails.
+
+.. seealso::
+
+   See :ref:`guide-upgradable-contract` for a guide about how to make a Rust smart contract
+   upgradeable.

@@ -17,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. note::
         You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
 
-    Before you create more accounts, you need a Ledger hardware wallet with the Concordium Ledger App installed. See :ref:`Set up the Ledger device and install the Concordium Ledger App<install-ledger-app>`.
+    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger-app>`.
 
     #. Go to **Accounts**. You can now see all the accounts that you're the custodian of.
 
@@ -42,26 +42,26 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     6. Select **Submit without revealing attributes**.
 
-    7. Connect your Ledger hardware wallet if you haven't done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The Ledger says **Concordium is ready**.
+    7. Connect your LEDGER device if you haven't done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The LEDGER device says **Concordium is ready**.
 
     8. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-    9. You now have to confirm the following on the Ledger:
+    9. You now have to confirm the following on the LEDGER device:
 
         - Create credential (each credential is assigned a number): Press the right button and then both buttons to confirm **Accept**.
         - Public key: Press both buttons to accept.
 
-    10. Verify that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
+    10. Verify that the public key on the LEDGER device corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
     11. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-    12. The Ledger says **Review details**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+    12. The LEDGER device says **Review details**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-    13. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
+    13. Verify that the signature threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet.
 
-    14.  Press the right button to verify that the anonymity revoker threshold on the Ledger corresponds to the threshold in the Desktop Wallet, and then press both buttons.
+    14.  Press the right button to verify that the anonymity revoker threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet, and then press both buttons.
 
-    15. The Ledger says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.
+    15. The LEDGER device says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.
 
     16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
 
@@ -86,6 +86,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 
 .. dropdown:: |mw-gen1|
+
+    .. Note::
+
+       It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
 
     #. Go to the **Accounts** page.
 
@@ -119,8 +123,6 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
 
-    You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
-
     .. Warning::
         **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
         **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
@@ -142,6 +144,12 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     #. Click the Accounts drop-down. Then click **Add new**.
 
     #. Select the identity to use to create the account. Click **Create new account**.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   change-account-name
 
 .. |moredetails| image:: ../images/more-arrow.png
              :alt: Button with More and double-headed arrow

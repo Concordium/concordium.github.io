@@ -2,19 +2,19 @@
 .. _wCCD-front-end-set-up:
 
 ========================
-Setting up the front-end
+Setting up the front end
 ========================
 
-In this part, you will create a web front-end. Users can interact with the smart contract easier
-by using your front-end compared to interacting with the node directly.
+In this part, you will create a web front end. Users can interact with the smart contract easier
+by using your front end compared to interacting with the node directly.
 Non-tech users might find it inconvenient to interact with smart contracts via the Concordium node
 and some users may choose not to host their own Concordium node locally. This tutorial part will show you
 a setup that alleviates the need for the user to host their own Concordium node.
 
-You can lower the bar for entry by coding an appealing front-end that provides additional information
-to your potential customers. Web front-ends are a familiar sight nowadays, but to use
-the front-end, users will also need to download a browser wallet as a browser extension.
-The installation and safe usage of the browser wallet might be new for people using your front-end.
+You can lower the bar for entry by coding an appealing front end that provides additional information
+to your potential customers. Web front ends are a familiar sight nowadays, but to use
+the front end, users will also need to download a browser wallet as a browser extension.
+The installation and safe usage of the browser wallet might be new for people using your front end.
 Providing comprehensive explanations and step-by-step guides on your website on topics
 related to the browser wallet is important for a good user experience. The browser wallet
 connects via `HTTPS <https://en.wikipedia.org/wiki/HTTPS>`_ to a server that is connected to a Concordium node. This setup alleviates the
@@ -43,7 +43,7 @@ Currently, the |bw| does this by connecting to a (JSON-RPC) server that communic
 The |bw| hosts the private keys corresponding to the accounts of the user and a link that points
 to a `server  <https://github.com/Concordium/concordium-json-rpc>`_.
 
-Your front-end code that is run in the browser constructs the transaction object
+Your front end code that is run in the browser constructs the transaction object
 and sends it to the |bw|. The transaction object is signed by the private key hosted in the |bw|
 and transmitted to the server via ``HTTPS``. This server has access to a Concordium node and converts
 the request (including the signed transaction object) that comes via ``HTTPS`` from the |bw|
@@ -60,6 +60,11 @@ The server that the |bw| connects to is hosted by Concordium in workflow 1. This
 Concordium node on your behalf. Workflow 2 is for
 advanced readers that want to build all the components from the source code and connect the |bw|
 to their own hosted Concordium node.
+
+.. note::
+
+    If you already have an older |bw| extension installed, check its version and download a newer version if applicable.
+    The wCCD front end requires some new features that are supported by the |bw| version 0.8.3 or greater.
 
 .. dropdown:: Workflow 1 - Setup wallet connected to hosted node (click here)
 
@@ -151,7 +156,7 @@ to their own hosted Concordium node.
 
             $ssh -NL localhost:10001:<IP-address-of-your-instance>:10001 <username>@<host>
 
-    If you don't have a running testnet node or port forwarding enabled, the :ref:`piggy bank tutorial part 3 <piggy-bank-preparing>`
+    If you don't have a running testnet node or port forwarding enabled, :ref:`Setup the development environment<setup-env>`
     will guide you through these setup steps.
 
     These prerequisites ensure that you have a testnet node reachable locally on port 10001. The |bw| requires the
@@ -230,20 +235,20 @@ to their own hosted Concordium node.
     .. image:: ./images/wCCD_tutorial_14.png
         :width: 40 %
 
-Running the web front-end
+Running the web front end
 -------------------------
 
 You have successfully added the |bw| to your browser in the previous section.
-In the next step of the tutorial, you are going to clone a wCCD demo front-end written with the `React library <https://reactjs.org/>`_
-and run it locally. The demo front-end has the required packages installed to connect to the |bw|
+In the next step of the tutorial, you are going to clone a wCCD demo front end written with the `React library <https://reactjs.org/>`_
+and run it locally. The demo front end has the required packages installed to connect to the |bw|
 and implements common flows to deal with the different states that the |bw| could be in. For example,
-the front-end will display a ``connect wallet`` button when loading the website. Furthermore, the front-end has flows
+the front end will display a ``connect wallet`` button when loading the website. Furthermore, the front end has flows
 to react to the events when the user switches the account in the browser wallet or
-connects/disconnects an account in the |bw| to update the front-end state accordingly.
+connects/disconnects an account in the |bw| to update the front end state accordingly.
 
 .. note::
 
-    React is a popular open-source front-end JavaScript library.
+    React is a popular open-source front end JavaScript library.
 
 Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>`_.
 
@@ -251,7 +256,7 @@ Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>
 
     $git clone https://github.com/Concordium/concordium-browser-wallet.git
 
-Build and run the front-end as described in the README file of the
+Build and run the front end as described in the README file of the
 `wCCD front-end demo <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/wCCD>`_.
 
 The steps in the README file are as follows:
@@ -262,25 +267,25 @@ The steps in the README file are as follows:
 
     $yarn
 
-- Run ``yarn build:all`` to build the concordium-helpers package.
-
-.. code-block:: console
-
-    $yarn build:all
-
 - Navigate to the wCCD example folder.
 
 .. code-block:: console
 
     $cd ./examples/wCCD/
 
-- Run ``yarn watch`` to enable hot-reload (useful for development) of the web front-end whenever you do any changes to the code.
+- Run ``yarn build`` in the wCCD folder.
+
+.. code-block:: console
+
+    $yarn build
+
+- Run ``yarn watch`` to enable hot-reload (useful for development) of the web front end whenever you do any changes to the code.
 
 .. code-block:: console
 
     $yarn watch
 
-- Run ``yarn start`` in another terminal to start the web front-end.
+- Run ``yarn start`` in another terminal to start the web front end.
 
 .. code-block:: console
 
@@ -292,6 +297,6 @@ This command logs a URL in the console (typically http://127.0.0.1:8080). Open t
 
     Check that your |bw| is connected to the testnet (screenshots shown in workflow 1) or a testnet node (workflow 2) and not to mainnet or stagenet.
 
-You completed the local front-end setup.
+You completed the local front end setup.
 
 To continue with the tutorial click :ref:`here<wCCD-full-dApp>`.

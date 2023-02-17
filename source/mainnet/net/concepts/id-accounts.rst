@@ -48,6 +48,10 @@ You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, 
 
    It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.
 
+.. Note::
+
+   It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
+
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
 Upon verification of the user's identification documents and attributes, the Identity provider issues a :ref:`user identity certificate<glossary-user-identity-certificate>`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
@@ -60,8 +64,19 @@ About accounts
 
 For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
-Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+
+.. Note::
+
+   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
 
 .. _revoke-anomity:
 
 .. include:: ../snippets/revoking-anonymity.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   ../guides/company-identities
+

@@ -21,14 +21,14 @@ Developing smart contracts in Rust
 On the concordium blockchain smart contracts are deployed as Wasm modules, but
 Wasm is designed primarily as a compilation target and is not convenient to
 write by hand.
-Instead we can write our smart contracts in the Rust_ programming language, which
+Instead you can write your smart contracts in the Rust_ programming language, which
 has good support for compiling to Wasm.
 
 Smart contracts do not have to be written in Rust.
-This is simply the first SDK we provide.
+This is simply the first SDK provided.
 Manually written Wasm, or Wasm compiled from C, C++, AssemblyScript_, and
 others, is equally valid on the chain, as long as it adheres to the :ref:`Wasm
-limitations we impose <wasm-limitations-v0>`.
+limitations Concordium imposes <wasm-limitations-v0>`.
 
 .. seealso::
 
@@ -157,7 +157,7 @@ The same is necessary for parameters to init and receive functions.
 
 .. note::
 
-   Strictly speaking we only need to deserialize bytes to our parameter type,
+   Strictly speaking you only need to deserialize bytes to our parameter type,
    but it is convenient to be able to serialize types when writing unit tests.
 
 .. _working-with-parameters-v0:
@@ -212,7 +212,7 @@ As an example, see the following contract in which the parameter
 The receive function above is inefficient in that it deserializes the
 ``value`` even when it is not needed, i.e., when ``should_add`` is ``false``.
 
-To get more control, and in this case, more efficiency, we can deserialize the
+To get more control, and in this case, more efficiency, you can deserialize the
 parameter using the `Read`_ trait:
 
 .. code-block:: rust
@@ -238,6 +238,7 @@ Notice that the ``value`` is only deserialized if ``should_add`` is
 While the gain in efficiency is minimal in this example, it could have an
 substantial impact for more complex examples.
 
+Parameters have a size limit of 65535B. There is no return value size limit (apart from energy).
 
 Building a smart contract module with ``cargo-concordium``
 ==========================================================
@@ -248,8 +249,8 @@ However, even when compiling with ``--release`` the resulting build includes
 large sections of debug information in custom sections, which are not useful for
 smart contracts on-chain.
 
-To optimize the build and allow for new features such as embedding schemas, we
-recommend using ``cargo-concordium`` to build smart contracts.
+To optimize the build and allow for new features such as embedding schemas, Concordium
+recommends using ``cargo-concordium`` to build smart contracts.
 
 .. seealso::
 

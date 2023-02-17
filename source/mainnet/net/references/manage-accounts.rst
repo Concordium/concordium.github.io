@@ -52,7 +52,7 @@ Initial account
 
 The user gets an :ref:`glossary-initial-account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
-The user additionally :ref:`creates account keys<backup>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
+The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
 are valid for the user and stores them locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
@@ -80,7 +80,7 @@ all other activities completely anonymous.
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 Attributes
 ----------
@@ -195,6 +195,10 @@ The |mw-gen1|
 -----------------
 
 The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+
+.. Note::
+
+   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
 
 The |mw-gen2|
 ------------------
