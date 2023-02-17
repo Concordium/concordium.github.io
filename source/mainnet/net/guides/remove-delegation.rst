@@ -163,13 +163,29 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
    #. Bring the account whose delegation you want to stop into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
 
+      .. image:: ../images/browser-wallet/select-account.png
+         :width: 40%
+         :alt: screen with accounts drop-down activated and account selection shown
+
    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
 
-   #. You see your current delegation. Click **Stop**.
+      .. image:: ../images/browser-wallet/delegation-update-stop.png
+         :width: 40%
+         :alt: screen showing current delegation and buttons to update or stop
+
+   #. You see your current delegation. Click **Stop**. Review the information about the cool-down period.
 
    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
+      .. image:: ../images/browser-wallet/delegation-stop-xact-confirm.png
+         :width: 40%
+         :alt: screen showing the transaction details that will be submitted to the chain
+
    #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+      .. image:: ../images/browser-wallet/delegation-xact-submit.png
+         :width: 40%
+         :alt: screen showing the transaction submitted to the chain and finish button
 
 .. Note::
 

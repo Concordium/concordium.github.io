@@ -201,20 +201,41 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 .. dropdown:: |bw|
 
         #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+    
+            .. image:: ../images/browser-wallet/setup-baking-delegation.png
+                :width: 40%
 
         #. Click **Setup delegation**. If you are delegating for the first time, you see some information about delegation.
 
         #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
+    
+            .. image:: ../images/browser-wallet/delegation-target.png
+                :width: 40%
 
         #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
+            .. image:: ../images/browser-wallet/delegation-restake-preference.png
+                :width: 40%
+
         #. You can see your available balance to delegate on the account that is in focus. You can change the account from the Accounts drop-down at the top of the screen if you want to set up delegation on a different account than the one in focus. **Enter the Amount you want to delegate** in the field. Click **Continue**.
+
+            .. image:: ../images/browser-wallet/delegation-amount.png
+                :width: 40%
 
         #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
+            .. image:: ../images/browser-wallet/delegation-xact-review.png
+                :width: 40%
+
         #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
 
-        Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
+            .. image:: ../images/browser-wallet/delegation-submit-xact.png
+                :width: 40%
+
+        Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation on the account card.
+
+            .. image:: ../images/browser-wallet/delegated-amount.png
+                :width: 40%
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
