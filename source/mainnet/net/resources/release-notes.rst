@@ -20,6 +20,13 @@ Concordium introduces a new wallet for iOS mobile devices: the |mw-gen2|. The |m
 
 In connection with this new wallet, the iOS mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1|.
 
+February 6, 2023
+
+|mw-gen1| for Android 3.2.0
+---------------------------
+
+Changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
+
 January 30, 2023
 
 Cargo concordium 2.7.0

@@ -98,6 +98,8 @@ Concordium LEDGER App
 
    The LEDGER NANO X is not supported currently.
 
+When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|` .
+
 - For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
 - For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
