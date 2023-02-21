@@ -1,9 +1,10 @@
 :root {
+
     /*****************************************************************************
     * Font family
     **/
     /* These are adapted from https://systemfontstack.com/ */
-    --pst-font-family-base-system: Nb-akademie-std, sans-serif;
+    --pst-font-family-base-system: "Nb-akademie-std", sans-serif;
     --pst-font-family-monospace-system: "SFMono-Regular", Menlo, Consolas, Monaco,
       Liberation Mono, Lucida Console, monospace;
   

@@ -122,7 +122,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 5: Add a baker in the Desktop Wallet
 
-   You're now ready to add a baker in the Desktop Wallet and generate baker keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See :ref:`Add a baker account in the Desktop Wallet <add-baker-mw>`. You can also change the number of signatures required on an account before a transaction can be submitted to the blockchain. See :ref:`Change the signature threshold <guide-change-signature>`
+   You're now ready to add a baker in the Desktop Wallet and generate baker keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See :ref:`Add a baker account in the Desktop Wallet <add-baker-mw>`. 
 
 .. dropdown:: Step 6: Configure the node with the baker keys
 

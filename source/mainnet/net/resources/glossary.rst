@@ -256,6 +256,20 @@ Encryption key
 An `ElGamal`_ public key associated to an account which is used to encrypt all
 :ref:`shielded amounts<glossary-shielded-amount>` on the account.
 
+.. _glossary-endpoint:
+
+Endpoint
+========
+
+A point at which an API -- the code that allows two software programs to communicate with each other -- connects with the software program. APIs work by sending requests for information from a web application or web server and receiving a response.
+
+.. _glossary-entrypoint:
+
+Entrypoint
+==========
+
+An invocable function of the smart contract that usually takes arguments. Each entrypoint has specific arguments. Entrypoints can be invoked to update the state of the smart contract as well as to view information about different parts of contract state.
+
 .. _glossary-epoch:
 
 Epoch
@@ -471,6 +485,13 @@ Private keys
 ============
 
 A large, randomly-generated, secret number that is used in cryptography and cryptocurrency to prove ownership of an account and sign transactions to send, spend, delegate, and stake CCDs. A wallet consists of a set of public addresses and private keys. Anyone can deposit cryptocurrency in a public address, but funds cannot be removed from an address without the corresponding private key.
+
+.. _glossary-qualified-authority:
+
+Qualified authority
+===================
+
+A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :ref:`anonymity revokers<glossary-anonymity-revoker>` and :ref:`identity provider<glossary-identity-provider>`, can the real-world identity of a user be revealed and only to the extent set out in the order.
 
 .. _glossary-range-proofs:
 

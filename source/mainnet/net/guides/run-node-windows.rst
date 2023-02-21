@@ -68,7 +68,7 @@ Install/upgrade and run a node
 
 #. Accept the terms of the End-User License Agreement and select **Next**.
 
-#. Set the **Destination** folders. The default is C:\ProgramData\Concordium\Node Runner.
+#. Set the **Destination** folders. The default is C:\\ProgramData\\Concordium\\Node Runner.
 
    - In **Install Concordium Node to**, specify where to store the executable code.
 

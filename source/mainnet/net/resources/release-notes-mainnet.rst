@@ -11,6 +11,30 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+February 6, 2023
+
+|mw-gen1| for Android 3.2.0
+---------------------------
+
+Changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
+
+January 30, 2023
+
+Cargo concordium 2.7.0
+----------------------
+
+Added base64 commands for schemas in ``cargo concordium``. These allow the schema to be
+output in the base64 format that is currently supported in the |bw|.
+
+January 26, 2023
+
+|mw-gen2| 1.1.4
+-----------------------
+
+- Fix incorrect display of transactions proposed by dApps using WalletConnect.
+
+- Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
+
 January 19, 2023
 
 Concordium Node 5.1.3

@@ -230,6 +230,10 @@ Remember you are working on the testnet. Check if your node collector is up and 
 .. image:: images/node-collector.png
     :width: 100%
 
+.. Note::
+
+    For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with GRPC v1, gRPC v2, and gRPC web. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
+
 .. _setup-wallet:
 
 Setup a wallet
@@ -243,6 +247,9 @@ Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnk
     :width: 100%
 
 Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.
+
+.. image:: images/testnet-faucet-bw.png
+    :width: 50%
 
 One thing to note is that if you click |send|, you enter transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.
 
