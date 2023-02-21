@@ -21,7 +21,7 @@
 
 .. dropdown:: How is a secret recovery phrase different from private keys?
 
-     :ref:`Private keys<glossary-private-keys>` allow you to send, spend, and delegate your CCDs.
+    :ref:`Private keys<glossary-private-keys>` allow you to send, spend, and delegate your CCDs.
 
     Your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` gives you access to your wallet and all of the private keys in the wallet. You can think of a wallet as being like a password manager for your accounts. As long as you have your master password (the secret recovery phrase), you have access to all CCDs in the wallet.
 

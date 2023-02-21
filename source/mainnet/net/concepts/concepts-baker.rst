@@ -16,7 +16,7 @@ The chain a baker builds upon is the :ref:`best chain <glossary-best-chain>` whe
 
 Baker keys
 ----------
-A node uses a set of :ref:`cryptographic keys<glossary-private-keys>` called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the :ref:`lottery <glossary-lottery-power>` as described below. To become a baker node, the node must be configured with a set of baker keys. You generate the baker keys in the Desktop Wallet when you add a baker account. The baker node will start baking after the next :ref:`pay day<glossary-pay-day>` once the transaction has been approved.
+A node uses a set of :ref:`cryptographic keys<glossary-private-keys>` called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the :ref:`lottery <glossary-lottery-power>` as described below. To become a baker node, the node must be configured with a set of baker keys. You generate the baker keys in the wallet when you add a baker account. The baker node will start baking after the next :ref:`pay day<glossary-pay-day>` once the transaction has been approved.
 
 Baker account
 -------------
@@ -149,7 +149,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the Wallet
 
-   The |mw-gen1| is available for iOS and Android. |mw-gen2| is available for Android. For instructions about download and setup, see :ref:`setup-mobile-wallet`.
+   The |mw-gen1| is available for iOS and Android devices. |mw-gen2| is available for Android devices. For instructions about download and setup, see :ref:`setup-g2-mobile-wallet`.
 
 .. dropdown:: Step 3: Set up an identity and initial account
 
