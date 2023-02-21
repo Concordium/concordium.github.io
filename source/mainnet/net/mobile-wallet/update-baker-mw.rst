@@ -24,6 +24,10 @@ The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They 
 
     #. In the Baker status screen tap **Update baker settings**.
 
+        .. image:: ../images/mobile-wallet/baker-status-mw.png
+            :width: 50%
+            :alt: screen showing current baker settings and update button
+
     .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
              :width: 50px
