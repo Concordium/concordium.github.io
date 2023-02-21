@@ -70,7 +70,7 @@
 
     Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the |bw|. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the |bw|, as that defeats the purpose of having the :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` in a cold wallet, like the LEDGER devices.
 
-.. dropdown:: Can I migrate from the another wallet to the |bw|?
+.. dropdown:: Can I migrate from another wallet to the |bw|?
 
     No. Because the way that keys are protected differs between the earlier |mw-gen1| and Desktop Wallet, and |bw| and |mw-gen2|, you cannot simply migrate. You can, however, send money from one of the earlier wallets to accounts in your |bw|.
 
