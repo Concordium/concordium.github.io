@@ -94,11 +94,11 @@ You can initialize your smart contract now to create a smart contract instance. 
 
 .. code-block:: console
 
-   $./concordium-client contract init piggy_bank_part2_module --sender <account-name> --contract PiggyBank --name piggy_bank_part2_instance --energy 1000 --grpc-port 10001
+   $./concordium-client contract init piggy_bank_part2_module --sender <account-name> --contract PiggyBank --name piggy_bank_part2_instance --energy 1500 --grpc-port 10001
 
 .. note::
 
-   1000 is enough energy to initialize the piggy bank smart contract but you
+   1500 is enough energy to initialize the piggy bank smart contract but you
    might need more energy for larger smart contracts. The ``--energy`` parameter sets the maximum allowed
    energy to be used. You only pay for the actual energy used.
 
