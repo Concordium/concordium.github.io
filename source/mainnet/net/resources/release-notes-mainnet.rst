@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+February XX, 2023
+
+Concordium Ledger App v3.0.2
+----------------------------
+
+The Concordium Ledger App now supports Ledger Nano S Plus firmware version 1.1.0.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0
