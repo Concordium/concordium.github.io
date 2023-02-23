@@ -26,6 +26,8 @@ In the :ref:`eSealing <eSaeling>` tutorial, you are going to learn how to seal a
 You will use a front end and the |bw| to register the file hash of a selected document in a smart contract and then
 display the timestamp and the sealer from an already time-stamped document at the front end.
 
+Once you are familiar with smart contracts, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+
 .. toctree::
    :maxdepth: 1
    :caption: Available tutorials:
