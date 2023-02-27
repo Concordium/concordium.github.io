@@ -24,6 +24,13 @@ Concordium Node 5.2.X
 
 - Fixed a bug in ``GetAccountInfo`` endpoint in GRPCv2 where ``incoming_amounts`` field of encrypted amounts was not set correctly.
 
+February 27, 2023
+
+|mw-gen2| 1.1.5
+---------------
+
+A potential security risk was discovered with the storage of the secret recovery phrase on Android phones. The patch changes the way that the secret recovery phrase is stored in the Android app, and it’s applied automatically once you login to the updated version (1.1.5) on your Android phone. Your secret recovery phrase does not change. We recommend all Android users to update their Concordium Wallet app to the latest version right away. The Concordium Wallet for iOS, desktop, and browser extensions are not affected by this issue.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0
