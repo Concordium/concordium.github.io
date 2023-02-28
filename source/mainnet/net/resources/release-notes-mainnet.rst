@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March 9, 2023
+
+|mw-gen2| 1.1.6
+---------------------------
+
+The wallet has been updated so that it is able to sign/send a contract update transaction successfully when it receives the schema as a string, as an object with the field “type”: “module”, or as an object with the field “type”: “parameter”.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0
