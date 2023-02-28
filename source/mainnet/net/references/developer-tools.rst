@@ -32,9 +32,9 @@ To decrypt, enter:
 
     $utils decrypt --in output.json --out decrypted-keys
 
-Enter password to decrypt with, writing output to **decrypted-keys**.
-
 where ``--in ...`` is the encrypted file, and ``--out`` is the decryption.
+
+Enter password to decrypt with, writing output to **decrypted-keys**.
 
 Getting your private key from an account already imported to the `concordium-client`
 ====================================================================================

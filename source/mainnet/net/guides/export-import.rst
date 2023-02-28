@@ -7,9 +7,9 @@ Make a backup of identities, accounts, and addresses
 
 .. Note::
 
-   This information is not relevant for |mw-gen2| or |bw| which use a secret recovery phrase to recover a wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
+    Backup and import cannot be used for |mw-gen2| or |bw| because they use a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
 
-To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can't access the Wallet.
+To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that if you are using |mw-gen1| or Desktop Wallet, you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can't access the Wallet.
 
 .. Warning::
    You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.
@@ -40,6 +40,9 @@ Keep previous backup files until you have verified that your latest backup is wo
 
 .. Warning::
     You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
+
+How to back up and import
+=========================
 
 .. dropdown:: Desktop Wallet
 
@@ -195,7 +198,8 @@ Keep previous backup files until you have verified that your latest backup is wo
 
 .. dropdown:: |mw-gen2| and |bw|
 
-    Backup is not available in |mw-gen2| or |bw|. It uses a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. For information about recovering your |mw-gen1| wallet, see above.
+    Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
+
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
