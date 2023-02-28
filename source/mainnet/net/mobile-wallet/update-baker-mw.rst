@@ -28,14 +28,6 @@ The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They 
             :width: 50%
             :alt: screen showing current baker settings and update button
 
-    .. |earn| image:: ../images/earn.png
-             :alt: Hand receiving money
-             :width: 50px
-
-    .. |earn-w-text| image:: ../images/earn-w-text.png
-             :alt: Hand receiving money with text earn
-             :width: 50px
-
 .. dropdown:: |mw-gen1|
 
     #. Go to **Accounts**. Tap on the balance area of the baker account you want update or tap **More** |moredetails|.
@@ -79,6 +71,49 @@ When you change the stake it can influence your :ref:`chance of being selected t
     .. Note::
 
         Reducing your stake results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. dropdown:: |bw|
+
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+
+        .. image:: ../images/browser-wallet/setup-baking-delegation.png
+            :width: 40%
+
+    #. You see the current baker setup. Click **Update**.
+
+        .. image:: ../images/browser-wallet/update-baker-options.png
+            :width: 40%
+            :alt: screen showing current baker setup and buttons to stop or update
+
+    #. Click **Update baker stake**. Review the information about updating baker stake and click **Continue**.
+
+        .. image:: ../images/browser-wallet/update-baker-actions.png
+            :width: 40%
+            :alt: screen showing actions to update baker
+
+    #. You can change the restake preference if desired. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/update-baker-restake-pref.png
+            :width: 40%
+            :alt: screen showing buttons to set restake preference
+
+    #. You can change the amount staked if desired. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/update-baker-stake.png
+            :width: 40%
+            :alt: screen showing text box to update staked amount
+
+    #. Review the transaction details. Click **Send** to submit the transaction.
+
+        .. image:: ../images/browser-wallet/update-baker-stake-review.png
+            :width: 40%
+            :alt: screen showing transaction receipt
+    
+    #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+
+        .. image:: ../images/browser-wallet/update-baker-stake-finalize.png
+            :width: 40%
+            :alt: screen showing transaction receipt
 
 .. dropdown:: Desktop Wallet
 
@@ -233,6 +268,55 @@ Update pool settings
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
     #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+
+.. dropdown:: |bw|
+
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+
+        .. image:: ../images/browser-wallet/setup-baking-delegation.png
+            :width: 40%
+
+    #. You see the current baker setup. Click **Update**.
+
+        .. image:: ../images/browser-wallet/update-baker-options.png
+            :width: 40%
+            :alt: screen showing current baker setup and buttons to stop or update
+
+    #. Click **Update pool settings**. Review the information about updating baker pool settings and click **Continue**. 
+
+        .. image:: ../images/browser-wallet/update-baker-actions.png
+            :width: 40%
+            :alt: screen showing actions to update baker
+
+    #. You can change the baker pool status, if desired. Click **Continue**. The options are:
+
+        - Open pool: open a pool for a previously closed baker
+        - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
+        - Close pool: close a pool permanently.
+
+        .. image:: ../images/browser-wallet/update-baker-pool-status.png
+            :width: 40%
+            :alt: screen showing actions to update baker pool status
+
+    #. Review the baker commission rates. Click **Continue**.
+
+    #. Update the baker pool metadata URL, if desired. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/update-baker-pool-url.png
+            :width: 40%
+            :alt: screen showing text box to add or update baker pool URL
+
+    #. Review the transaction details. Click **Send** to submit the transaction.
+
+        .. image:: ../images/browser-wallet/update-baker-pool-review.png
+            :width: 40%
+            :alt: screen showing transaction receipt
+    
+    #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+
+        .. image:: ../images/browser-wallet/update-baker-pool-finalize.png
+            :width: 40%
+            :alt: screen showing transaction receipt
 
 .. dropdown:: Desktop Wallet
 
@@ -399,6 +483,8 @@ If you believe your baker keys have been compromised or lost, you can generate n
         - :ref:`Docker<baking-docker>`
         - :ref:`Ubuntu<baker-ubuntu>`
 
+.. dropdown:: |bw|
+
 .. dropdown:: Desktop Wallet
 
     .. dropdown:: Single signature account
@@ -535,6 +621,9 @@ If you no longer wish to bake on this account, you can stop baking.
 
     #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**.
 
+.. dropdown:: |bw|
+
+
 .. dropdown:: Desktop Wallet
 
     .. dropdown:: Single signature account
@@ -650,6 +739,10 @@ If you no longer wish to bake on this account, you can stop baking.
 .. Note::
 
    If you stop baking, remember that this does not shut down your node. You need to shut down the node in a separate action if you no longer wish to run a node on the Concordium blockchain.
+
+.. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
