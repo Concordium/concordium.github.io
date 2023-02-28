@@ -395,7 +395,7 @@ Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS conta
 
 June 13, 2022
 
-Sirius testnet has been reset on June 13, 2022. For information about the implications of this, see :ref:`Sirius Testnet reset<sirius-testnet-reset>`.
+Sirius testnet has been reset on June 13, 2022.
 
 Concordium Node 4.1.1
 ----------------------
