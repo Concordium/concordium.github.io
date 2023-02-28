@@ -48,4 +48,3 @@ You can run a node on :ref:`Ubuntu<ubuntu-node>`, :ref:`Docker<docker-node>`, :r
     macos
     windows
     docker
-    node-runner-service-configuration

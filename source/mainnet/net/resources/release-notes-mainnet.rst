@@ -16,12 +16,19 @@ February 28, 2023
 |bw| 0.9.8
 ---------------------------
 
-The following issues are fixed in |bw| 0.9.7:
+The following issues are fixed in |bw| 0.9.8:
 
  - Corrected an issue where incorrect CIS-2 token metadata URL serialization for tokens with checksums caused those to be unable to be added.
  - Init contract transaction now displays as "Contract initialization".
  - Update contract transaction now displays as "Contract update".
  - addCIS2Tokens now returns the list of added tokens without an internal wrapper.
+
+February 27, 2023
+
+|mw-gen2| 1.1.5
+---------------
+
+A potential security risk was discovered with the storage of the secret recovery phrase on Android phones. The patch changes the way that the secret recovery phrase is stored in the Android app, and it’s applied automatically once you login to the updated version (1.1.5) on your Android phone. Your secret recovery phrase does not change. We recommend all Android users to update their Concordium Wallet app to the latest version right away. The Concordium Wallet for iOS, desktop, and browser extensions are not affected by this issue.
 
 February 6, 2023
 
