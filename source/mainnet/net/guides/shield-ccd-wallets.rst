@@ -27,6 +27,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
    You can see the fee in the transaction log.
 
 .. Note::
+
     On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
 .. dropdown:: Desktop Wallet
@@ -255,6 +256,8 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
+For information about making shielded transfers, see :ref:`Make a shielded transfer on an account<shielded-transfer>`.
+
     .. |hamburger| image:: ../images/hamburger.png
             :alt: Three horizontal lines
             :width: 20px
@@ -262,3 +265,9 @@ If you have an account with CCD in the shielded balance, you can't add new crede
     .. |moredetails| image:: ../images/more-arrow.png
             :alt: Button with More and double-headed arrow
             :width: 50px
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+
+    shielded-transfer

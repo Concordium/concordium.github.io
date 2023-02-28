@@ -5,7 +5,7 @@
 Transactions overview
 =====================
 
-A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :ref:`account<glossary-account>` and is signed using the keys of this account.
+A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :ref:`account<glossary-account>` and is signed using the :ref:`keys<glossary-private-keys>` of this account.
 
 The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
@@ -93,7 +93,7 @@ Command-line tool
 The Concordium distribution ships with a command-line tool named
 :ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
-:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the other wallets. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
