@@ -113,7 +113,7 @@ Check the state one more time to see that the transfer worked as expected.
 Burn tokens
 ===========
 
-Finally, burn some tokens. Basically, the amount will be deducted from the owner's account when they call.
+Finally, burn some tokens. The amount will be deducted from the owner's account when the tokens are burned.
 
 Before burning, check the state to see who owns what amount.
 
