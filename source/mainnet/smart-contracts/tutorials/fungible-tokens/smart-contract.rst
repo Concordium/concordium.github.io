@@ -439,7 +439,7 @@ Then get the balance of the owner using its address. Since you will change the b
             Some(address_state) => match address_state.balances.get_mut(token_id) {
                 Some(mut b) => {
                     ensure!(
-                        b.cmp(&amount).is_ge(),
+                        *b >= amount,
                         Cis2Error::Custom(CustomContractError::NoBalanceToBurn)
                     );
 
