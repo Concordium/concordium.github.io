@@ -420,7 +420,7 @@ When you get the parameters, ensure the token exists with the ``ensure!`` and ``
 
 Now add the ``burn()`` implementation to the state functions as shown below. You will simply remove the amount for that particular token from the state but you need to take into account that the address that called this has a balance. As a control statement, in case someone wants to burn 0 tokens, check it and let them know burning nothing is successful by returning ``Ok(amount)`` where the amount equals zero.
 
-Then get the balance of the owner using its address. Since you will change the balance you need to have a mutable state. With the match statement, you will iterate the addresses from the ``address_state``, and when you find the matching one you will get the mutable balance. If it has enough balance to burn, you will subtract that amount from the mutable balance. Then state burn() function will return ``ContractResult()`` with the burned amount if it is successful; otherwise, it will prompt a CustomContractError::NoBalanceToBurn.
+Then get the balance of the owner using its address. Since you will change the balance you need to have a mutable state. With the match statement, you will iterate the addresses from the ``address_state``, and when you find the matching one you will get the mutable balance. If it has enough balance to burn, you will subtract that amount from the mutable balance. Then state burn() function will return ``ContractResult()`` with the burned amount if it is successful; otherwise, it will prompt a ``CustomContractError::NoBalanceToBurn``.
 
 .. code-block:: rust
 
