@@ -108,7 +108,7 @@ When you change the stake it can influence your :ref:`chance of being selected t
         .. image:: ../images/browser-wallet/update-baker-stake-review.png
             :width: 40%
             :alt: screen showing transaction receipt
-    
+
     #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
         .. image:: ../images/browser-wallet/update-baker-stake-finalize.png
@@ -282,7 +282,7 @@ Update pool settings
             :width: 40%
             :alt: screen showing current baker setup and buttons to stop or update
 
-    #. Click **Update pool settings**. Review the information about updating baker pool settings and click **Continue**. 
+    #. Click **Update pool settings**. Review the information about updating baker pool settings and click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-actions.png
             :width: 40%
@@ -311,7 +311,7 @@ Update pool settings
         .. image:: ../images/browser-wallet/update-baker-pool-review.png
             :width: 40%
             :alt: screen showing transaction receipt
-    
+
     #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
         .. image:: ../images/browser-wallet/update-baker-pool-finalize.png
@@ -496,7 +496,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
             :width: 40%
             :alt: screen showing current baker setup and buttons to stop or update
 
-    #. Click **Update baker keys**. Review the information about updating baker keys and click **Continue**. 
+    #. Click **Update baker keys**. Review the information about updating baker keys and click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-actions.png
             :width: 40%
