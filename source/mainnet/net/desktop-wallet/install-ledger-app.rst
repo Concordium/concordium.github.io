@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 
 .. _install-Ledger-app:
 
@@ -16,7 +17,9 @@ Prerequisites
 
 -  LEDGER hardware wallet
 
-.. Warning:: During the process described in this guide, you’ll generate private keys on the LEDGER device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
+.. Warning::
+
+   During the process described in this guide, you’ll generate private keys on the LEDGER device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
 Set up the LEDGER device
 ========================
@@ -31,7 +34,9 @@ The LEDGER device will generate the unique 24-word recovery phrase that is used 
 
 #. Follow the on-screen instructions to get your 24-word recovery phrase.
 
-.. Warning:: Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
+.. Warning::
+
+   Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
 Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version 2.1.0 for the LEDGER NANO S and 1.0.3 for LEDGER NANO S PLUS.
 
@@ -127,9 +132,13 @@ You now have to install a custom certificate on the LEDGER device to ensure that
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. The certificate is installed on the LEDGER device. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, and then press both buttons when the LEDGER device says Trust certificate.
+#. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
 
-#. Enter your PIN.
+   - :substitution-code:`|ledger-app-public-key|`
+
+and then press both buttons when the LEDGER device says **Trust certificate**.
+
+#. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
 .. _install-ledger-app-windows:
 
@@ -227,9 +236,13 @@ You now have to install a custom certificate to ensure that the LEDGER device tr
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. The certificate is installed on the LEDGER device. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, and then press both buttons when the LEDGER device says **Trust certificate**.
+#. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
 
-#. Enter your PIN.
+   - :substitution-code:`|ledger-app-public-key|`
+
+and then press both buttons when the LEDGER device says **Trust certificate**.
+
+#. Enter your PIN. The certificate has now been installed on the LEDGER device .
 
 .. _install-ledger-app-macos:
 
@@ -349,7 +362,13 @@ You now have to install a custom certificate to ensure that the LEDGER device tr
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. The certificate is installed on the LEDGER device. Press the right button to navigate through the key, and then press both buttons when the LEDGER device says **Trust certificate**.
+#. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
+
+   - :substitution-code:`|ledger-app-public-key|`
+
+and then press both buttons when the LEDGER device says **Trust certificate**.
+
+#. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
 .. _install-ledger-app-ubuntu:
 

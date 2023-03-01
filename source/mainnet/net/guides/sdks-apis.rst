@@ -14,3 +14,12 @@ The following SDKs and APIs exist for developing on the Concordium network.
 - `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
 - `Concordium .NET (C#) SDK <https://github.com/Concordium/concordium-net-sdk>`_
 - `Concordium Rosetta SDK <https://github.com/Concordium/concordium-rosetta>`_
+
+The following NPM libraries are useful for building web-based dApps:
+
+- `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`_
+  (for React projects).
+- `@concordium/wallet-connectors <https://www.npmjs.com/package/@concordium/wallet-connectors>`_
+  (for connecting to wallets in non-React projects).
+- `@concordium/web-sdk <https://www.npmjs.com/package/@concordium/web-sdk>`_
+  (for interacting with a chain).

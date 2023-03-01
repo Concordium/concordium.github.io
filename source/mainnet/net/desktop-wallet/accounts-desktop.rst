@@ -89,9 +89,9 @@ You'll see a variety of information in **More options** about your account and a
 
 -  **Register data**: Add a small message to the chain, such as a hash. This information is visible on the chain and cannot be removed. Note that adding this message incurs a transaction fee.
 
--  **Register as a baker**: Make the account a baker account. See :ref:`Add a baker account in the Desktop Wallet <create-baker-desktop>`. If the account is already a baker account, you'll see **Baking** which contains a list of options for managing a baker account: :ref:`Remove baker <remove-baker>`, :ref:`Update baker keys<update-baker-keys>`, :ref:`Update baker stake<change-baker-stake>`, and :ref:`Update baker restake earnings<change-restake-settings>`.
+-  **Register as a baker**: Make the account a baker account. See :ref:`Add a baker account in the Desktop Wallet <add-baker-mw>`. If the account is already a baker account, you'll see **Baking** which contains a list of options for managing a baker account: :ref:`Remove baker <remove-baker-mw>`, :ref:`Update baker keys<update-baker-keys-mw>`, :ref:`Update baker stake<update-baker-stake-mw>`, and :ref:`Update baker restake earnings<update-baker-stake-mw>`.
 
-- **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation in the Desktop Wallet<delegation>` and :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
+- **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
 
 Edit account name
 -----------------
@@ -173,7 +173,7 @@ If you lose your accounts, you can recover the accounts by using the LEDGER devi
 Terms and conditions
 --------------------
 
-If you want to view the latest version of the *License notices* and *Terms and conditions for the Desktop Wallet* do the following.
+To view the latest version of the *License notices* and *Terms and conditions for the Desktop Wallet*:
 
 - On Windows, press **Alt** to display the menu bar, and then in the **Help** menu, choose the document you want to view.
 
@@ -201,7 +201,3 @@ Create a report of transactions on one or more accounts
 #. If you want to include more accounts in the report, select **Add another account** in the right pane, and then select the relevant account. Repeat this step for each account you want to add to the report.
 
 #. Select **Make account report**. A CSV file with the selected account and types of transactions is generated and stored on your computer. If you have selected multiple accounts, you will get a .zip file containing a .CSV for each account.
-
-.. todo::
-
-    Write overview topic of transaction types.

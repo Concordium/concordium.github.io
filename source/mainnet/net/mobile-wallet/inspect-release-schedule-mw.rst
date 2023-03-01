@@ -28,22 +28,25 @@ By inspecting the release schedule, you can see when the releases are unlocked.
 
       #. Tap the balance area of the account that received the transaction with a release schedule or tap |moredetails|.
 
-         .. image:: ../images/mobile-wallet/MW32.png
-             :width: 25%
-
       #. Tap the |hamburger| menu in the upper right corner.
+
+         .. image:: ../images/mobile-wallet/MW32.png
+             :width: 50%
+             :alt: account transaction overview screen
 
       #. Tap **Release Schedule**.
 
          .. image:: ../images/mobile-wallet/MW56.png
-             :width: 25%
+             :width: 50%
+             :alt: hamburger menu expanded to show options
 
       You can now see the coming releases on the account.
 
       |
 
       .. image:: ../images/mobile-wallet/MW57.png
-          :width: 25%
+          :width: 50%
+          :alt: screen showing all upcoming scheduled releases for selected account
 
 
 .. |hamburger| image:: ../images/hamburger.png
@@ -59,4 +62,4 @@ By inspecting the release schedule, you can see when the releases are unlocked.
              :width: 50px
 .. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
-                    :width: 50px
+                    :width: 40px

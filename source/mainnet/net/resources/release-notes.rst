@@ -11,6 +11,13 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+February 27, 2023
+
+|mw-gen2| 1.1.5
+---------------
+
+A potential security risk was discovered with the storage of the secret recovery phrase on Android phones. The patch changes the way that the secret recovery phrase is stored in the Android app, and it’s applied automatically once you login to the updated version (1.1.5) on your Android phone. Your secret recovery phrase does not change. We recommend all Android users to update their Concordium Wallet app to the latest version right away. The Concordium Wallet for iOS, desktop, and browser extensions are not affected by this issue.
+
 February 6, 2023
 
 |mw-gen1| for Android 3.2.0
@@ -388,7 +395,7 @@ Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS conta
 
 June 13, 2022
 
-Sirius testnet has been reset on June 13, 2022. For information about the implications of this, see :ref:`Sirius Testnet reset<sirius-testnet-reset>`.
+Sirius testnet has been reset on June 13, 2022.
 
 Concordium Node 4.1.1
 ----------------------
