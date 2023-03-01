@@ -132,7 +132,7 @@ Unlike the NFT tutorials, this time you actually want the token to be mintable w
         let (state, builder) = host.state_and_builder();
         for (token_id, token_info) in params.tokens {
             // ensure!(
-            //     state.contains_token(&token_id),
+            //     !state.contains_token(&token_id),
             //     ContractError::Custom(CustomContractError::TokenAlreadyMinted)
             // );
 
@@ -140,15 +140,15 @@ Unlike the NFT tutorials, this time you actually want the token to be mintable w
                 state.set_max_supply(&token_id, token_info.1.max_supply)
             } else {
                 let max_supply = state.get_token_supply(&token_id)?;
-                let circulating_supply = state.get_circulating_supply(&token_id)?;
+                let circulating_suppy = state.get_circulating_supply(&token_id)?;
 
                 ensure!(
-                    circulating_supply <= max_supply,
+                    circulating_suppy <= max_supply,
                     ContractError::Custom(CustomContractError::MaxSupplyReached)
                 );
 
                 ensure!(
-                    &token_info.1.amount <= &(max_supply - circulating_supply),
+                    &token_info.1.amount <= &(max_supply - circulating_suppy),
                     ContractError::Custom(CustomContractError::MaxSupplyReached)
                 );
             }
