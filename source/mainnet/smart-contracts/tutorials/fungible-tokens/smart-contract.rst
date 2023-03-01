@@ -487,7 +487,7 @@ Run the command below to create a Wasm compiled build file of your smart contrac
 Deploy the smart contract
 -------------------------
 
-If you don't have your own testnet node running, Concordium provides a running testnet gRPC node that is available at node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only* with GRPC v1, gRPC v2, and gRPC web. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__. For some use cases you might need to run your own local node due to the limitations of this one.
+If you don't have your own testnet node running, Concordium provides a running testnet gRPC node that is available at ``node.testnet.concordium.com`` on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only* with GRPC v1, gRPC v2, and gRPC web. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__. For some use cases you might need to run your own local node due to the limitations of this one.
 
 Run the command below to deploy the smart contract. This command is structured to use the Concordium testnet node described above. If you are using your own local node, adjust the command accordingly.
 
