@@ -246,7 +246,7 @@ The last helper is the ``get_circulating_supply()`` which will be used to get th
 Contract mint function
 ----------------------
 
-You will compare the circulating supply, maximum supply and the amount to be minted. If the mint amount + circulating supply is not less than the maximum supply you will not allow minting.
+You will compare the circulating supply, maximum supply and the amount to be minted. If the mint amount + circulating supply is more than the maximum supply you will not allow minting.
 
 In the ``contact_mint`` function below see the following changes accordingly. First, the parameters are read as a form of JSON. See the ``MintParams`` struct for the details of the parameters. In the first ``if`` clause, it basically first checks if the token exists in the state. If not, meaning you are going to mint this token for the first time, you will set the maximum supply by calling the ``set_max_supply()`` function. The max_supply value is in the ``TokenParam`` struct as the second item.
 
