@@ -43,7 +43,7 @@ Now you have successfully minted your fungible tokens.
     :width: 100%
     :alt: dark console screen with result of running the command above
 
-Check the state to see the balance and other stuff. Run the command below to invoke the ``view()`` function.
+Check the state to see the balance, circulating supply, and maximum supply. Run the command below to invoke the ``view()`` function.
 
 .. code-block:: console
 

@@ -11,7 +11,7 @@ For your token contract, use the `cis2-multi contract from Concordium’s exampl
 Minting
 =======
 
-First, add the changes to your contract for the minting parameters that you require when ``mint()`` is invoked. Basically, it will ask for the minting amount and ``max_supply``. Create a struct called ``TokenParams`` and add this to the tokens tree as shown below.
+First, add the changes to your contract for the minting parameters that you require when ``mint()`` is invoked. It will ask for the minting amount and ``max_supply``. Create a struct called ``TokenParams`` and add this to the tokens tree as shown below.
 
 .. code-block:: rust
 
@@ -100,7 +100,7 @@ Since you added new maps to your state, you need to handle their initialization 
 Mint function
 =============
 
-As discussed earlier, you have new inputs in ``MintParams``, so when you get the JSON parameter as the input you expect an object that holds both metadata and another struct that holds the maximum supply and the amount to be minted. That is why there is ``token_info``. Basically, ``token_info.0`` will represent the ``TokenMetadata`` struct and ``token_info.1`` will represent ``TokenParams``.
+As discussed earlier, you have new inputs in ``MintParams``, so when you get the JSON parameter as the input you expect an object that holds both metadata and another struct that holds the maximum supply and the amount to be minted. That is why there is ``token_info``. ``token_info.0`` will represent the ``TokenMetadata`` struct and ``token_info.1`` will represent ``TokenParams``.
 
 Unlike the NFT tutorials, this time you actually want the token to be mintable with the same ID. Just keep it less than the maximum value. That is why you commented on the first ensure statement which makes sure that the tokenId is unique for a token.
 
@@ -140,15 +140,15 @@ Unlike the NFT tutorials, this time you actually want the token to be mintable w
                 state.set_max_supply(&token_id, token_info.1.max_supply)
             } else {
                 let max_supply = state.get_token_supply(&token_id)?;
-                let circulating_suppy = state.get_circulating_supply(&token_id)?;
+                let circulating_supply = state.get_circulating_supply(&token_id)?;
 
                 ensure!(
-                    circulating_suppy <= max_supply,
+                    circulating_supply <= max_supply,
                     ContractError::Custom(CustomContractError::MaxSupplyReached)
                 );
 
                 ensure!(
-                    &token_info.1.amount <= &(max_supply - circulating_suppy),
+                    &token_info.1.amount <= &(max_supply - circulating_supply),
                     ContractError::Custom(CustomContractError::MaxSupplyReached)
                 );
             }
@@ -248,7 +248,7 @@ Contract mint function
 
 You will compare the circulating supply, maximum supply and the amount to be minted. If the mint amount + circulating supply is more than the maximum supply you will not allow minting.
 
-In the ``contact_mint`` function below see the following changes accordingly. First, the parameters are read as a form of JSON. See the ``MintParams`` struct for the details of the parameters. In the first ``if`` clause, it basically first checks if the token exists in the state. If not, meaning you are going to mint this token for the first time, you will set the maximum supply by calling the ``set_max_supply()`` function. The max_supply value is in the ``TokenParam`` struct as the second item.
+In the ``contact_mint`` function below see the following changes accordingly. First, the parameters are read as a form of JSON. See the ``MintParams`` struct for the details of the parameters. In the first ``if`` clause, it first checks if the token exists in the state. If not, meaning you are going to mint this token for the first time, you will set the maximum supply by calling the ``set_max_supply()`` function. The max_supply value is in the ``TokenParam`` struct as the second item.
 
 If the ``mint()`` function is not called for the first time, then you need to check the conditions. Therefore, you need to ``get_token_supply()`` and ``get_circulating_supply()``. Here you have to make sure of two conditions: first, you need to check that the circulating supply is already less than or equal to the maximum supply; and then when you add the new token amount to be minted to the existing amount, meaning the circulating supply, this should be less than or equal to the maximum supply. The following two ensure statements check these conditions are sufficient before calling the state’s ``mint()`` function.
 
