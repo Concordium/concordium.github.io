@@ -485,6 +485,56 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
 .. dropdown:: |bw|
 
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+
+        .. image:: ../images/browser-wallet/setup-baking-delegation.png
+            :width: 40%
+
+    #. You see the current baker setup. Click **Update**.
+
+        .. image:: ../images/browser-wallet/update-baker-options.png
+            :width: 40%
+            :alt: screen showing current baker setup and buttons to stop or update
+
+    #. Click **Update baker keys**. Review the information about updating baker keys and click **Continue**. 
+
+        .. image:: ../images/browser-wallet/update-baker-actions.png
+            :width: 40%
+            :alt: screen showing actions to update baker
+
+    #. Click **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json. Click **Continue** to complete the transaction.
+
+        .. image:: ../images/browser-wallet/update-baker-keys.png
+            :alt: screen with buttons to show keys or export baker keys
+            :width: 40%
+
+        .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
+            :alt: screen with buttons to continue after export and wallet screen dimmed behind
+            :width: 40%
+
+    #. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
+
+        (screenshot)
+
+    #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+
+        (screenshot)
+
+    #. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+
+        - :ref:`Windows<baker-windows>`
+        - :ref:`macOS<baker-macos>`
+        - :ref:`Docker<baking-docker>`
+        - :ref:`Ubuntu<baker-ubuntu>`
+
+    Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
+
+    .. image:: ../images/mobile-wallet/account-list-baking.png
+        :width: 40%
+
+    .. image:: ../images/mobile-wallet/account-details-baking.png
+        :width: 40%
+
 .. dropdown:: Desktop Wallet
 
     .. dropdown:: Single signature account
@@ -623,6 +673,30 @@ If you no longer wish to bake on this account, you can stop baking.
 
 .. dropdown:: |bw|
 
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+
+        .. image:: ../images/browser-wallet/setup-baking-delegation.png
+            :width: 40%
+
+    #. You see the current baker setup. Click **Stop**.
+
+        .. image:: ../images/browser-wallet/update-baker-options.png
+            :width: 40%
+            :alt: screen showing current baker setup and buttons to stop or update
+
+    #. Read the information about what happens when you stop baking. Click **Continue**.
+
+    #. Review the transaction information. Click **Send**.
+
+        .. image:: ../images/browser-wallet/stop-baking-review.png
+            :width: 40%
+            :alt: screen showing transaction details with send and back buttons
+
+    #. Click **Finish** to finalize your transaction.
+
+        .. image:: ../images/browser-wallet/stop-baking-finish.png
+            :width: 40%
+            :alt: screen showing transaction to submit to blockchain with finish and back buttons
 
 .. dropdown:: Desktop Wallet
 

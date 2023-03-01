@@ -334,7 +334,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
     #. Specify the amount that you want to stake. The more you stake, the greater the probability that your account will be chosen to bake the next block. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-staked-amount.png
+        .. image:: ../images/browser-wallet/add-baker-staked-amt.png
             :alt: screen with balances at the top and text box to enter amount to stake
             :width: 40%
 
