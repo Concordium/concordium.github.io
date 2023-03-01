@@ -55,7 +55,7 @@ Now, you need to update the ``state`` struct which keeps the current state of yo
         implementors: StateMap<StandardIdentifierOwned, Vec<ContractAddress>, S>,
     }
 
-Then, add some custom errors in your ``error`` enum. As you can see below, the last two are new for this use case.
+Then, add some custom errors in your ``CustomContractError`` enum. As you can see below, the last two are new for this use case.
 
 .. code-block:: rust
 
