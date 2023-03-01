@@ -60,3 +60,9 @@ Select an example to see more information about it, such as a hosted dApp for yo
     `Demo front end <http://signmessage.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
     `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__
+
+The dApps are written in React.
+
+Piggy bank, wCCD, and eSealing use the NPM library
+`@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
+to implement integrations to the |bw| and |mw-gen2| using WalletConnect.

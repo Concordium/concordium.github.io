@@ -248,6 +248,9 @@ Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnk
 
 Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.
 
+.. image:: images/testnet-faucet-bw.png
+    :width: 50%
+
 One thing to note is that if you click |send|, you enter transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.
 
 .. image:: images/tx-fee-in-bw.png
