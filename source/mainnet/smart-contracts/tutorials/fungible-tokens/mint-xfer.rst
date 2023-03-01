@@ -4,7 +4,7 @@
 Mint, transfer, and burn fungible tokens
 ========================================
 
-Now you are ready to mint your new tokens. Before minting, look at the minting parameters in the JSON file below. You need to specify the owner, then the token data following with its tokenID, metadata location on IPFS with the URL that you got when you uploaded the metadata file, hash value of it, amount to be minted, and maximum supply number. In this case, it uses tokenID 01, and mint 110 initially with a maximum supply of 1000.
+Now you are ready to mint your new tokens. Before minting, look at the minting parameters in the JSON file below. You need to specify the owner, then the token data following with its tokenID, metadata location on IPFS with the URL that you got when you uploaded the metadata file, hash value of it, amount to be minted, and maximum supply number. In this case, it uses tokenID ``01``, and mint ``110`` tokens initially with a maximum supply of 1000.
 
 .. code-block:: JSON
 
