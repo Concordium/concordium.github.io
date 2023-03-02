@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Troubleshoot a node running on Windows" href="../nodes/troubleshoot-windows.html" />
+    <link rel="next" title="Concordium Windows node runner service configuration" href="../nodes/node-runner-service-configuration.html" />
     <link rel="prev" title="Windows nodes" href="../nodes/windows.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -367,15 +367,22 @@ body {margin:0;}
      Tokens in the wallet
     </a>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="shield-ccd-wallets.html">
      Shield and unshield CCD on an account
     </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="shielded-transfer.html">
-     Make a shielded transfer on an account
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="shielded-transfer.html">
+       Make a shielded transfer on an account
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="export-import.html">
@@ -416,8 +423,8 @@ body {margin:0;}
     <a class="reference internal" href="../desktop-wallet/index.html">
      Desktop Wallet
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -426,8 +433,8 @@ body {margin:0;}
       <a class="reference internal" href="overview-desktop.html">
        Set up the Desktop Wallet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-      <label for="toctree-checkbox-12">
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -468,8 +475,8 @@ body {margin:0;}
       <a class="reference internal" href="overview-shared-accounts.html">
        Shared accounts with multiple credentials in Desktop Wallet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-      <label for="toctree-checkbox-13">
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -516,8 +523,8 @@ body {margin:0;}
     Earn with Concordium
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -526,163 +533,94 @@ body {margin:0;}
     <a class="reference internal" href="how-to-earn.html">
      How to earn with Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../concepts/concepts-delegation.html">
-       Delegation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation FAQ
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="overview-baker-process.html">
-     Overview of the baker process
-    </a>
     <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
     <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="baker-pool.html">
-       Baker management
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../concepts/concepts-baker.html">
+       Bakers
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+      <label for="toctree-checkbox-17">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="baker-pool.html">
+         Baker management
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
+         Add baker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
+         Change baker options
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="baker-windows.html">
+         Run a baker node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nodes/baker-macos.html">
+         Run a baker node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nodes/baker-ubuntu.html">
+         Run a baker node on Ubuntu
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nodes/baker-docker.html">
+         Run a baker node on Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="become-baker.html">
+         Become a baker using the Concordium Client
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../concepts/concepts-delegation.html">
+       Delegation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="add-delegation.html">
+         Delegate to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="update-delegation.html">
+         Update delegation to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="remove-delegation.html">
+         Remove delegation to a baker pool or passive delegation
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="baker-windows.html">
-       Run a baker node on Windows
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../nodes/baker-macos.html">
-       Run a baker node on macOS
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../nodes/baker-ubuntu.html">
-       Run a baker node on Ubuntu
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../nodes/baker-docker.html">
-       Run a baker node on Docker
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="become-baker.html">
-       Become a baker using the Concordium Client
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../desktop-wallet/baking-dw.html">
-     Baking in the Desktop Wallet
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-    <label for="toctree-checkbox-17">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="add-baker-desktop.html">
-       Add a baker account in the Desktop Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/update-baker-keys.html">
-       Update baker keys in the Desktop Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/remove-baker.html">
-       Remove a baker account
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/change-baker-stake.html">
-       Update the staked amount
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/change-restake-settings.html">
-       Update the restake settings
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/add-baker-pool-dw.html">
-       Open a baker pool in Desktop Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/update-baker-pool-dw.html">
-       Update a baker pool
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../mobile-wallet/baker-mw.html">
-     Baking in Concordium Wallet for Android and Concordium Legacy Wallet
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-    <label for="toctree-checkbox-18">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-       Add baker in Concordium Wallet for Android and Concordium Legacy Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-       Change baker options
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="delegation.html">
-     Delegation
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-    <label for="toctree-checkbox-19">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="add-delegation.html">
-       Delegate to a baker pool or passive delegation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="update-delegation.html">
-       Update delegation to a baker pool or passive delegation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="remove-delegation.html">
-       Remove delegation to a baker pool or passive delegation
+      <a class="reference internal" href="../snippets/delegation-faq.html">
+       Delegation and baking FAQ
       </a>
      </li>
     </ul>
@@ -695,8 +633,8 @@ body {margin:0;}
     Develop on Concordium
    </span>
   </p>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-20">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-19">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -705,8 +643,8 @@ body {margin:0;}
     <a class="reference internal" href="developer-page.html">
      Developer resources
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-    <label for="toctree-checkbox-21">
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -747,8 +685,8 @@ body {margin:0;}
     <a class="reference internal" href="../nodes/node-requirements.html">
      Run a node on Concordium
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -757,8 +695,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/ubuntu.html">
        Ubuntu nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-      <label for="toctree-checkbox-23">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -784,8 +722,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/macos.html">
        MacOS nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-      <label for="toctree-checkbox-24">
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -806,8 +744,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/windows.html">
        Windows nodes
       </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-      <label for="toctree-checkbox-25">
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -815,6 +753,11 @@ body {margin:0;}
        <li class="toctree-l3 current active">
         <a class="current reference internal" href="#">
          Run and manage a node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nodes/node-runner-service-configuration.html">
+         Concordium Windows node runner service configuration
         </a>
        </li>
        <li class="toctree-l3">
@@ -828,8 +771,8 @@ body {margin:0;}
       <a class="reference internal" href="../nodes/docker.html">
        Docker nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-      <label for="toctree-checkbox-26">
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -846,27 +789,29 @@ body {margin:0;}
        </li>
       </ul>
      </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../nodes/node-runner-service-configuration.html">
-       Concordium Windows node runner service configuration
-      </a>
-     </li>
     </ul>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="../references/concordium-client.html">
      Concordium Client
     </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../references/transactions.html">
-     Concordium Client transactions
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../references/query-node.html">
-     Querying a node
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/transactions.html">
+       Concordium Client transactions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../references/query-node.html">
+       Querying a node
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1617,38 +1562,11 @@ body {margin:0;}
     </a>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../resources/sirius-testnet-reset.html">
-     Testnet reset
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../resources/sirius-testnet-reset-nodes.html">
-       Node migration after Testnet reset
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../resources/sirius-testnet-reset-wallets.html">
-       Wallet migration after Testnet reset
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../resources/sirius-testnet-reset-client.html">
-       Client migration after Testnet reset
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-    <label for="toctree-checkbox-53">
+    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+    <label for="toctree-checkbox-52">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1768,13 +1686,6 @@ body {margin:0;}
   <a class="reference internal nav-link" href="#synchronize-a-node-with-the-network">
    Synchronize a node with the network
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-node-versions-4-3-0-or-earlier">
-     For node versions 4.3.0 or earlier
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#baking-on-a-windows-node">
@@ -2013,33 +1924,6 @@ details of how this is done will depend on your configuration.</p>
 <li><p>In the <strong>Search</strong> bar, search for and select <strong>Stop Concordium Service Node</strong> to stop the node, and then search for and select <strong>Start Concordium Service Node</strong> to restart the node.</p></li>
 <li><p>Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. To see this, compare the finalized length of the chain with the length of your node. If they match, your node has caught up.</p></li>
 </ol>
-<div class="section" id="for-node-versions-4-3-0-or-earlier">
-<h3>For node versions 4.3.0 or earlier<a class="headerlink" href="#for-node-versions-4-3-0-or-earlier" title="Permalink to this headline">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A block file for mainnet does not work with a testnet node and vice versa.
-Make sure to download the appropriate file for your node.</p>
-</div>
-<ol class="arabic">
-<li><p>Download the file with the blocks from the following addresses:</p>
-<ul class="simple">
-<li><p>Mainnet: <a class="reference external" href="https://catchup.mainnet.concordium.software/blocks_to_import.mdb">https://catchup.mainnet.concordium.software/blocks_to_import.mdb</a></p></li>
-<li><p>Testnet: <a class="reference external" href="https://catchup.testnet.concordium.com/blocks_to_import.mdb">https://catchup.testnet.concordium.com/blocks_to_import.mdb</a></p></li>
-</ul>
-<p>The file is downloaded to your default download location.</p>
-</li>
-<li><p>Search for <em>configure concordium node</em> in the <strong>Search</strong> bar, and then select <strong>Configure Concordium Node Service</strong>. The configuration file opens in <strong>Notepad</strong>.</p></li>
-<li><p>Add the following line to the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> or <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section:</p>
-<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">args</span> <span class="o">=</span> <span class="k">[&#39;--import-blocks-from&#39;, &#39;C:\Downloads\blocks_to_import.mdb&#39;]</span>
-</pre></div>
-</div>
-<p>Where you replace <code class="docutils literal notranslate"><span class="pre">C:\Downloads\blocks_to_import.mdb</span></code> with the full path to the downloaded file. Save the configuration file.</p>
-</li>
-<li><p>In the <strong>Search</strong> bar, search for and select <strong>Stop Concordium Service Node</strong> to stop the node, and then search for and select <strong>Start Concordium Service Node</strong> to restart the node.</p></li>
-<li><p>Open the configuration file again, remove the line you just added, and then save the file. This ensures that these blocks will not be processed again the next time the node is restarted.</p></li>
-<li><p>Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. You do so by comparing the finalized length of the chain with the length of your node. If they match, your node has caught up.</p></li>
-</ol>
-</div>
 </div>
 <div class="section" id="baking-on-a-windows-node">
 <h2>Baking on a Windows node<a class="headerlink" href="#baking-on-a-windows-node" title="Permalink to this headline">#</a></h2>
@@ -2074,10 +1958,10 @@ Make sure to download the appropriate file for your node.</p>
             <p class="prev-next-title">Windows nodes</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../nodes/troubleshoot-windows.html" title="next page">
+    <a class='right-next' id="next-link" href="../nodes/node-runner-service-configuration.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Troubleshoot a node running on Windows</p>
+        <p class="prev-next-title">Concordium Windows node runner service configuration</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -367,15 +367,22 @@ body {margin:0;}
      Tokens in the wallet
     </a>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="guides/shield-ccd-wallets.html">
      Shield and unshield CCD on an account
     </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="guides/shielded-transfer.html">
-     Make a shielded transfer on an account
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="guides/shielded-transfer.html">
+       Make a shielded transfer on an account
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="guides/export-import.html">
@@ -416,8 +423,8 @@ body {margin:0;}
     <a class="reference internal" href="desktop-wallet/index.html">
      Desktop Wallet
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -426,8 +433,8 @@ body {margin:0;}
       <a class="reference internal" href="guides/overview-desktop.html">
        Set up the Desktop Wallet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-      <label for="toctree-checkbox-12">
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -468,8 +475,8 @@ body {margin:0;}
       <a class="reference internal" href="guides/overview-shared-accounts.html">
        Shared accounts with multiple credentials in Desktop Wallet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-      <label for="toctree-checkbox-13">
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -516,8 +523,8 @@ body {margin:0;}
     Earn with Concordium
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -526,163 +533,94 @@ body {margin:0;}
     <a class="reference internal" href="guides/how-to-earn.html">
      How to earn with Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="concepts/concepts-baker.html">
-       Bakers
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="concepts/concepts-delegation.html">
-       Delegation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="snippets/delegation-faq.html">
-       Delegation FAQ
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="guides/overview-baker-process.html">
-     Overview of the baker process
-    </a>
     <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
     <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="guides/baker-pool.html">
-       Baker management
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="concepts/concepts-baker.html">
+       Bakers
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+      <label for="toctree-checkbox-17">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/baker-pool.html">
+         Baker management
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="mobile-wallet/add-baker-mw.html">
+         Add baker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="mobile-wallet/update-baker-mw.html">
+         Change baker options
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/baker-windows.html">
+         Run a baker node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/baker-macos.html">
+         Run a baker node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/baker-ubuntu.html">
+         Run a baker node on Ubuntu
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/baker-docker.html">
+         Run a baker node on Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/become-baker.html">
+         Become a baker using the Concordium Client
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="concepts/concepts-delegation.html">
+       Delegation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/add-delegation.html">
+         Delegate to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/update-delegation.html">
+         Update delegation to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="guides/remove-delegation.html">
+         Remove delegation to a baker pool or passive delegation
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="guides/baker-windows.html">
-       Run a baker node on Windows
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="nodes/baker-macos.html">
-       Run a baker node on macOS
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="nodes/baker-ubuntu.html">
-       Run a baker node on Ubuntu
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="nodes/baker-docker.html">
-       Run a baker node on Docker
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="guides/become-baker.html">
-       Become a baker using the Concordium Client
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="desktop-wallet/baking-dw.html">
-     Baking in the Desktop Wallet
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-    <label for="toctree-checkbox-17">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="guides/add-baker-desktop.html">
-       Add a baker account in the Desktop Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/update-baker-keys.html">
-       Update baker keys in the Desktop Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/remove-baker.html">
-       Remove a baker account
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/change-baker-stake.html">
-       Update the staked amount
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/change-restake-settings.html">
-       Update the restake settings
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html">
-       Open a baker pool in Desktop Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html">
-       Update a baker pool
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="mobile-wallet/baker-mw.html">
-     Baking in Concordium Wallet for Android and Concordium Legacy Wallet
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-    <label for="toctree-checkbox-18">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="mobile-wallet/add-baker-mw.html">
-       Add baker in Concordium Wallet for Android and Concordium Legacy Wallet
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="mobile-wallet/update-baker-mw.html">
-       Change baker options
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="guides/delegation.html">
-     Delegation
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-    <label for="toctree-checkbox-19">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="guides/add-delegation.html">
-       Delegate to a baker pool or passive delegation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="guides/update-delegation.html">
-       Update delegation to a baker pool or passive delegation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="guides/remove-delegation.html">
-       Remove delegation to a baker pool or passive delegation
+      <a class="reference internal" href="snippets/delegation-faq.html">
+       Delegation and baking FAQ
       </a>
      </li>
     </ul>
@@ -695,8 +633,8 @@ body {margin:0;}
     Develop on Concordium
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-20">
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-19">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -705,8 +643,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/developer-page.html">
      Developer resources
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-    <label for="toctree-checkbox-21">
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -747,8 +685,8 @@ body {margin:0;}
     <a class="reference internal" href="nodes/node-requirements.html">
      Run a node on Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -757,8 +695,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/ubuntu.html">
        Ubuntu nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-      <label for="toctree-checkbox-23">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -784,8 +722,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/macos.html">
        MacOS nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-      <label for="toctree-checkbox-24">
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -806,8 +744,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/windows.html">
        Windows nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-      <label for="toctree-checkbox-25">
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -815,6 +753,11 @@ body {margin:0;}
        <li class="toctree-l3">
         <a class="reference internal" href="guides/run-node-windows.html">
          Run and manage a node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="nodes/node-runner-service-configuration.html">
+         Concordium Windows node runner service configuration
         </a>
        </li>
        <li class="toctree-l3">
@@ -828,8 +771,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/docker.html">
        Docker nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-      <label for="toctree-checkbox-26">
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -846,27 +789,29 @@ body {margin:0;}
        </li>
       </ul>
      </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="nodes/node-runner-service-configuration.html">
-       Concordium Windows node runner service configuration
-      </a>
-     </li>
     </ul>
    </li>
-   <li class="toctree-l1">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="references/concordium-client.html">
      Concordium Client
     </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="references/transactions.html">
-     Concordium Client transactions
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="references/query-node.html">
-     Querying a node
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="references/transactions.html">
+       Concordium Client transactions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="references/query-node.html">
+       Querying a node
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1617,38 +1562,11 @@ body {margin:0;}
     </a>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="resources/sirius-testnet-reset.html">
-     Testnet reset
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/sirius-testnet-reset-nodes.html">
-       Node migration after Testnet reset
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/sirius-testnet-reset-wallets.html">
-       Wallet migration after Testnet reset
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/sirius-testnet-reset-client.html">
-       Client migration after Testnet reset
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
     <a class="reference internal" href="resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-    <label for="toctree-checkbox-53">
+    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+    <label for="toctree-checkbox-52">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1921,6 +1839,7 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#on-chain">On-chain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#pay-day">Pay day</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#passive-delegation">Passive delegation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#private-keys">Private keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#qualified-authority">Qualified authority</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#range-proofs">Range proofs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#reveal">Reveal</a></li>
@@ -2048,9 +1967,11 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides/tokens.html">Tokens in the wallet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/shield-ccd-wallets.html">Shield and unshield CCD on an account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/shielded-transfer.html">Make a shielded transfer on an account</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/shielded-transfer.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/shield-ccd-wallets.html">Shield and unshield CCD on an account</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/shielded-transfer.html">Make a shielded transfer on an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/shielded-transfer.html#prerequisites">Prerequisites</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides/export-import.html">Make a backup of identities, accounts, and addresses</a><ul>
@@ -2059,6 +1980,7 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guides/export-import.html#final-notes">Final Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/export-import.html#how-to-back-up-and-import">How to back up and import</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides/export-key.html">Export a private key</a></li>
@@ -2229,6 +2151,7 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#how-baking-works">How baking works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baker-keys">Baker keys</a></li>
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baker-account">Baker account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baker-pool">Baker pool</a></li>
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#stake-and-lottery">Stake and lottery</a></li>
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#time-concepts">Time concepts</a></li>
 </ul>
@@ -2236,6 +2159,20 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#finalization">Finalization</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#what-is-finalization">What is finalization?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#finalization-committee">Finalization committee</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#overview-of-the-baker-process">Overview of the baker process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-desktop-wallet">Baking with Desktop Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-mw-gen1-and-mw-gen2">Baking with Concordium Legacy Wallet and Concordium Wallet for Android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#next-steps">Next steps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guides/baker-pool.html">Baker management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mobile-wallet/add-baker-mw.html">Add baker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mobile-wallet/update-baker-mw.html">Change baker options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/baker-windows.html">Run a baker node on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nodes/baker-macos.html">Run a baker node on macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nodes/baker-ubuntu.html">Run a baker node on Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nodes/baker-docker.html">Run a baker node on Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/become-baker.html">Become a baker using the Concordium Client</a></li>
 </ul>
 </li>
 </ul>
@@ -2249,221 +2186,20 @@ body {margin:0;}
 </li>
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#time-and-cool-downs">Time and cool-downs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#where-delegation-is-available">Where delegation is available</a></li>
-<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-delegation.html#summary">Summary</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guides/add-delegation.html">Delegate to a baker pool or passive delegation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/update-delegation.html">Update delegation to a baker pool or passive delegation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/remove-delegation.html">Remove delegation to a baker pool or passive delegation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="snippets/delegation-faq.html">Delegation FAQ</a><ul>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="snippets/delegation-faq.html">Delegation and baking FAQ</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-delegators">For delegators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-bakers">For bakers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="snippets/delegation-faq.html#for-bakers-delegators-and-passive-delegators">For bakers, delegators and passive delegators</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="guides/overview-baker-process.html">Overview of the baker process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-baker-process.html#baking-with-desktop-wallet">Baking with Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-1-set-up-the-node">Step 1: Set up the node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-2-set-up-the-ledger-device">Step 2: Set up the LEDGER device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-3-set-up-the-concordium-desktop-wallet">Step 3: Set up the Concordium Desktop Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-4-set-up-an-identity-and-an-initial-account">Step 4: Set up an identity and an initial account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-5-add-a-baker-in-the-desktop-wallet">Step 5: Add a baker in the Desktop Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-6-configure-the-node-with-the-baker-keys">Step 6: Configure the node with the baker keys</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-baker-process.html#baking-with-mw-gen1-and-mw-gen2">Baking with Concordium Legacy Wallet and Concordium Wallet for Android</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#id1">Step 1: Set up the node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-2-set-up-the-wallet">Step 2: Set up the Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-3-set-up-an-identity-and-initial-account">Step 3: Set up an identity and initial account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-4-add-baking-to-an-account">Step 4: Add baking to an account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-baker-process.html#step-5-register-baker-keys">Step 5: Register baker keys</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="guides/baker-pool.html">Baker management</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-pool.html#best-practices-for-baking">Best practices for baking</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="guides/baker-pool.html#recommendations-for-baker-pool-owners">Recommendations for baker pool owners</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-pool.html#research-a-baker-pool">Research a baker pool</a></li>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-pool.html#ccd-scan">CCD Scan</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="guides/baker-windows.html">Run a baker node on Windows</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-windows.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-windows.html#configure-a-baker-node-on-windows">Configure a baker node on Windows</a></li>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-windows.html#view-the-node-log">View the node log</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="guides/baker-windows.html#baker-node-troubleshooting">Baker node troubleshooting</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="guides/baker-windows.html#other-options-for-running-a-baker-node">Other options for running a baker node</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="nodes/baker-macos.html">Run a baker node on macOS</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="nodes/baker-macos.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l5"><a class="reference internal" href="nodes/baker-macos.html#configure-a-node-as-a-baker">Configure a node as a baker</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="nodes/baker-macos.html#on-mainnet">On mainnet</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/baker-macos.html#on-testnet">On testnet</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="nodes/baker-ubuntu.html">Run a baker node on Ubuntu</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="nodes/baker-ubuntu.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l5"><a class="reference internal" href="nodes/baker-ubuntu.html#id1">Run a baker node on Ubuntu</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="nodes/baker-ubuntu.html#configure-the-node-with-baker-keys-on-mainnet">Configure the node with baker keys on Mainnet</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/baker-ubuntu.html#configure-the-node-with-baker-keys-on-testnet">Configure the node with baker keys on Testnet</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/baker-ubuntu.html#verify-that-a-node-is-a-baker-node">Verify that a node is a baker node.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="nodes/baker-docker.html">Run a baker node on Docker</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="nodes/baker-docker.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l5"><a class="reference internal" href="nodes/baker-docker.html#configure-a-node-as-a-baker">Configure a node as a baker</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="guides/become-baker.html">Become a baker using the Concordium Client</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="guides/become-baker.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l5"><a class="reference internal" href="guides/become-baker.html#start-baking">Start baking</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#import-the-account">Import the account</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#create-and-register-baker-keys">Create and register baker keys</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="guides/become-baker.html#manage-the-baker">Manage the baker</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#check-the-status-of-the-baker-and-its-lottery-power">Check the status of the baker and its lottery power</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#update-the-staked-amount">Update the staked amount</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#restake-the-earnings">Restake the earnings</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#finalization">Finalization</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/become-baker.html#update-baker-keys">Update baker keys</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="guides/become-baker.html#configure-a-baker">Configure a baker</a></li>
-<li class="toctree-l5"><a class="reference internal" href="guides/become-baker.html#remove-a-baker">Remove a baker</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="desktop-wallet/baking-dw.html">Baking in the Desktop Wallet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/add-baker-desktop.html">Add a baker account in the Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/add-baker-desktop.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/add-baker-desktop.html#add-baker-single-signature-account">Add baker (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/add-baker-desktop.html#add-baker-multi-signature-account">Add baker (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#select-an-account-to-add-as-baker-account">Select an account to add as baker account</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#stake-an-amount">Stake an amount</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#generate-the-transaction">Generate the transaction</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="guides/add-baker-desktop.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l5"><a class="reference internal" href="guides/add-baker-desktop.html#generate-and-sign-the-transaction-on-the-ledger-device">Generate and sign the transaction on the LEDGER device</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#export-baker-credentials">Export baker credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/add-baker-desktop.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/update-baker-keys.html">Update baker keys in the Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#update-baker-keys-single-signature-account">Update baker keys (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#select-an-account-multi-signature-account">Select an account (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#generate-the-transaction">Generate the Transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#generate-and-sign-the-transaction-on-the-ledger-device">Generate and sign the transaction on the LEDGER device</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-keys.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/remove-baker.html">Remove a baker account</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/remove-baker.html#remove-a-baker-single-signature-account">Remove a baker (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/remove-baker.html#remove-a-baker-multi-signature-account">Remove a baker (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-baker.html#generate-the-transaction">Generate the transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-baker.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-baker.html#generate-and-sign-the-transaction-on-the-ledger-device">Generate and sign the transaction on the LEDGER device</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-baker.html#export-proposal">Export proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-baker.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/remove-baker.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/change-baker-stake.html">Update the staked amount</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#change-the-staked-amount-single-signature-account">Change the staked amount (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#change-the-staked-amount-multi-signature-account">Change the staked amount (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#generate-the-transaction">Generate the transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the LEDGER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#export-proposal">Export proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-baker-stake.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/change-restake-settings.html">Update the restake settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#change-restake-settings-single-signature-account">Change restake settings (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#change-restake-settings-multi-signature-account">Change restake settings (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#generate-the-transaction">Generate the Transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#generate-and-sign-the-transaction-on-the-ledger-device">Generate and sign the transaction on the LEDGER device</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/change-restake-settings.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html">Open a baker pool in Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#open-a-baker-pool-single-signature-account">Open a baker pool (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#open-a-baker-pool-multi-signature-account">Open a baker pool (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#generate-the-transaction">Generate the transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#generate-and-sign-the-transaction-on-the-ledger">Generate and sign the transaction on the LEDGER</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#export-proposal">Export proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/add-baker-pool-dw.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html">Update a baker pool</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#update-a-baker-pool-single-signature-account">Update a baker pool (Single-signature account)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#open-a-baker-pool-multi-signature-account">Open a baker pool (Multi-signature account)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#generate-the-transaction">Generate the transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#generate-the-transaction-without-signing">Generate the transaction without signing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#generate-and-sign-the-transaction-on-the-ledger-device">Generate and sign the transaction on the LEDGER device</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#export-proposal">Export proposal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-baker-pool-dw.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mobile-wallet/baker-mw.html">Baking in Concordium Wallet for Android and Concordium Legacy Wallet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mobile-wallet/baker-mw.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mobile-wallet/baker-mw.html#next-steps">Next steps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mobile-wallet/add-baker-mw.html">Add baker in Concordium Wallet for Android and Concordium Legacy Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mobile-wallet/update-baker-mw.html">Change baker options</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mobile-wallet/update-baker-mw.html#update-baker-stake">Update baker stake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mobile-wallet/update-baker-mw.html#update-pool-settings">Update pool settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mobile-wallet/update-baker-mw.html#update-baker-keys">Update baker keys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mobile-wallet/update-baker-mw.html#stop-baking">Stop baking</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="guides/delegation.html">Delegation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/add-delegation.html">Delegate to a baker pool or passive delegation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/update-delegation.html">Update delegation to a baker pool or passive delegation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/remove-delegation.html">Remove delegation to a baker pool or passive delegation</a></li>
 </ul>
 </li>
 </ul>
@@ -2521,10 +2257,7 @@ body {margin:0;}
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#install-the-debian-package-and-run-a-node">Install the Debian package and run a node</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#enable-inbound-connections">Enable inbound connections</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/run-node-ubuntu.html#for-node-versions-4-3-0-or-earlier">For node versions 4.3.0 or earlier</a></li>
-</ul>
-</li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#upgrade-version">Upgrade version</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-ubuntu.html#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 </ul>
@@ -2533,10 +2266,7 @@ body {margin:0;}
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#install-the-debian-package-and-run-a-node">Install the Debian package and run a node</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#enable-inbound-connections">Enable inbound connections</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="nodes/run-node-ubuntu.html#for-node-versions-4-3-0-or-earlier">For node versions 4.3.0 or earlier</a></li>
-</ul>
-</li>
+<li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#upgrade-version">Upgrade version</a></li>
 <li class="toctree-l6"><a class="reference internal" href="nodes/run-node-ubuntu.html#run-a-baker-node-on-ubuntu">Run a baker node on Ubuntu</a></li>
 </ul>
@@ -2560,10 +2290,7 @@ body {margin:0;}
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-macos.html#change-the-node-startup-settings">Change the node startup settings</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-macos.html#configure-a-node-as-a-baker">Configure a node as a baker</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-macos.html#view-node-logs">View node logs</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node-macos.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/run-node-macos.html#for-node-versions-4-3-0-or-earlier">For node versions 4.3.0 or earlier</a></li>
-</ul>
-</li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node-macos.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-macos.html#uninstall-a-macos-node">Uninstall a macOS node</a></li>
 </ul>
 </li>
@@ -2584,12 +2311,45 @@ body {margin:0;}
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#change-the-node-startup-settings">Change the node startup settings</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#configure-the-concordium-node-service">Configure the Concordium Node Service</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#view-the-node-log">View the node log</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/run-node-windows.html#for-node-versions-4-3-0-or-earlier">For node versions 4.3.0 or earlier</a></li>
-</ul>
-</li>
+<li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#baking-on-a-windows-node">Baking on a Windows node</a></li>
 <li class="toctree-l6"><a class="reference internal" href="guides/run-node-windows.html#uninstall-a-node-running-on-windows">Uninstall a node running on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-nodeid">[node.<em>nodeid</em>]</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#name">name</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#enabled">enabled</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#bootstrap-nodes">bootstrap_nodes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#config-dir">config_dir</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#data-dir">data_dir</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#baker-credentials">baker_credentials</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#listen-port">listen.port</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#listen-address">listen.address</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-enabled">rpc.enabled</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-port">rpc.port</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-address">rpc.address</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#grpc2-port">grpc2.port</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#grpc2-address">grpc2.address</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-token">rpc.token</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-exe">node.exe</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-env">node.env.*</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-args">node.args</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-enabled">collector.enabled</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-url">collector.url</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-node-name">collector.node_name</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-log-file">collector.log_file</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-exe">collector.exe</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-env">collector.env.*</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-args">collector.args</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-level">log.level</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-path">log.path</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-roll-size">log.roll.size</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-roll-count">log.roll.count</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-roll-pattern">log.roll.pattern</a></li>
+<li class="toctree-l7"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-config">log.config</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l5"><a class="reference internal" href="nodes/troubleshoot-windows.html">Troubleshoot a node running on Windows</a><ul>
@@ -2632,42 +2392,6 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-nodeid">[node.<em>nodeid</em>]</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#name">name</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#enabled">enabled</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#bootstrap-nodes">bootstrap_nodes</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#config-dir">config_dir</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#data-dir">data_dir</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#baker-credentials">baker_credentials</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#listen-port">listen.port</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#listen-address">listen.address</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-enabled">rpc.enabled</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-port">rpc.port</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-address">rpc.address</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#grpc2-port">grpc2.port</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#grpc2-address">grpc2.address</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#rpc-token">rpc.token</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-exe">node.exe</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-env">node.env.*</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#node-args">node.args</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-enabled">collector.enabled</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-url">collector.url</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-node-name">collector.node_name</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-log-file">collector.log_file</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-exe">collector.exe</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-env">collector.env.*</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#collector-args">collector.args</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-level">log.level</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-path">log.path</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-roll-size">log.roll.size</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-roll-count">log.roll.count</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-roll-pattern">log.roll.pattern</a></li>
-<li class="toctree-l6"><a class="reference internal" href="nodes/node-runner-service-configuration.html#log-config">log.config</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -2695,76 +2419,78 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/concordium-client.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references/concordium-client.html#shell-completion">Shell completion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="references/transactions.html">Concordium Client transactions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#transaction-commands">Transaction commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#commands-for-showing-account-information">Commands for showing account information</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#account-sequence-number">Account sequence number</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#account-aliases">Account aliases</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="references/transactions.html">Concordium Client transactions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="references/transactions.html#transaction-commands">Transaction commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="references/transactions.html#commands-for-showing-account-information">Commands for showing account information</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#account-sequence-number">Account sequence number</a></li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#account-aliases">Account aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#commands-for-showing-identity-information">Commands for showing identity information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#commands-for-transferring-ccd">Commands for transferring CCD</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#transfer-ccd">Transfer CCD</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="references/transactions.html#example-transferring-25-ccd-from-one-account-to-another">Example: Transferring 25 CCD from one account to another</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/transactions.html#commands-for-showing-identity-information">Commands for showing identity information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="references/transactions.html#commands-for-transferring-ccd">Commands for transferring CCD</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#transfer-ccd">Transfer CCD</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#example-transferring-25-ccd-from-one-account-to-another">Example: Transferring 25 CCD from one account to another</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#make-a-shielded-transfer">Make a shielded transfer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#shield-an-amount">Shield an amount</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#unshield-an-amount">Unshield an amount</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#transfer-ccd-with-a-schedule">Transfer CCD with a schedule</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#make-a-shielded-transfer">Make a shielded transfer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#shield-an-amount">Shield an amount</a></li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#unshield-an-amount">Unshield an amount</a></li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#transfer-ccd-with-a-schedule">Transfer CCD with a schedule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#commands-for-delegation">Commands for delegation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#add-delegation">Add delegation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#configure-or-change-delegation">Configure or change delegation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#stop-delegation">Stop delegation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/transactions.html#commands-for-delegation">Commands for delegation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#add-delegation">Add delegation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#configure-or-change-delegation">Configure or change delegation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#stop-delegation">Stop delegation</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="references/transactions.html#consensus-commands">Consensus commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/transactions.html#show-chain-parameters">Show chain parameters</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="references/query-node.html">Querying a node</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="references/query-node.html#account-state">Account state</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#list-accounts">List accounts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#inspect-specific-account">Inspect specific account</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#id1">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/transactions.html#consensus-commands">Consensus commands</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/transactions.html#show-chain-parameters">Show chain parameters</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/query-node.html#transaction-status">Transaction status</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#id2">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="references/query-node.html">Querying a node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#account-state">Account state</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#list-accounts">List accounts</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="references/query-node.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/query-node.html#block-state">Block state</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#inspect-specific-block">Inspect specific block</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#id3">Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#inspect-specific-account">Inspect specific account</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="references/query-node.html#id1">Example</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/query-node.html#consensus-state">Consensus state</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#inspect-consensus-parameters">Inspect consensus parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#id4">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#transaction-status">Transaction status</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#id2">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#inspect-consensus-status">Inspect consensus status</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#id5">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#block-state">Block state</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#inspect-specific-block">Inspect specific block</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="references/query-node.html#id3">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="references/query-node.html#id-layer">ID layer</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="references/query-node.html#exchange-rates">Exchange rates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#consensus-state">Consensus state</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#inspect-consensus-parameters">Inspect consensus parameters</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="references/query-node.html#id4">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#inspect-consensus-status">Inspect consensus status</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="references/query-node.html#id5">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="references/query-node.html#id-layer">ID layer</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="references/query-node.html#exchange-rates">Exchange rates</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3602,6 +3328,7 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes-mainnet.html">Release notes - Mainnet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-9-8">Concordium Wallet for Web 0.9.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-1-1-5">Concordium Wallet for Android 1.1.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen1-for-android-3-2-0">Concordium Legacy Wallet for Android 3.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-7-0">Cargo concordium 2.7.0</a></li>
@@ -3702,6 +3429,7 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/release-notes.html">Release Notes - Testnet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-9-8">Concordium Wallet for Web 0.9.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-1-1-5">Concordium Wallet for Android 1.1.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen1-for-android-3-2-0">Concordium Legacy Wallet for Android 3.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-7-0">Cargo concordium 2.7.0</a></li>
@@ -3817,41 +3545,6 @@ body {margin:0;}
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#features">Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-nodes">Concordium Nodes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="resources/sirius-testnet-reset.html">Testnet reset</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="resources/sirius-testnet-reset.html#background">Background</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/sirius-testnet-reset.html#effects">Effects</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset.html#most-affected-parties">Most affected parties</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/sirius-testnet-reset.html#migration">Migration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html">Node migration after Testnet reset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#windows">Windows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#macos">MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-nodes.html#ubuntu">Ubuntu</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html">Wallet migration after Testnet reset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html#mobile-wallet">Mobile Wallet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-wallets.html#desktop-wallet">Desktop Wallet</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="resources/sirius-testnet-reset-client.html">Client migration after Testnet reset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#accounts">Accounts</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#account-keys">Account keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#account-names">Account names</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#smart-contracts">Smart contracts</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#module-names">Module names</a></li>
-<li class="toctree-l5"><a class="reference internal" href="resources/sirius-testnet-reset-client.html#contract-names">Contract names</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
