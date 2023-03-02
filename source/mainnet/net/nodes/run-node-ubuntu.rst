@@ -20,7 +20,7 @@ Prerequisites
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
+-  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <add-baker-mw>` or :ref:`Concordium Client<become-a-baker>`.
 
 .. Note::
 
@@ -98,40 +98,6 @@ If the node is well behind the head of the chain, you can speed up the startup b
       Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
 
   4. Start the service again
-
-    .. code-block::
-
-      $sudo systemctl start concordium-testnet-node.service
-
-After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
-
-For node versions 4.3.0 or earlier
-----------------------------------
-
-If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
-
-  1. Download testnet blocks from `catchup.testnet.concordium.com <https://catchup.testnet.concordium.com/blocks_to_import.mdb>`__. The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
-
-  2. Stop the node if it is running
-
-    .. code-block:: console
-
-      $sudo systemctl stop concordium-testnet-node.service
-
-  3. Edit the node service configuration file
-
-    .. code-block:: console
-
-      $sudo systemctl edit concordium-testnet-node.service
-
-  4. Add the following under the ``[Service]`` section (create the section if it does not exist)
-
-    .. code-block::
-
-      Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796/blocks_to_import.mdb
-      BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796/blocks_to_import.mdb
-
-  5. Start the service again
 
     .. code-block::
 

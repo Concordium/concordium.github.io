@@ -53,4 +53,3 @@ You can use the `Prometheus monitoring system <https://prometheus.io/download/>`
     macos
     windows
     docker
-    node-runner-service-configuration

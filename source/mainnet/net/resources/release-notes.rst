@@ -24,6 +24,18 @@ Concordium Node 5.2.X
 
 - Fixed a bug in ``GetAccountInfo`` endpoint in GRPCv2 where ``incoming_amounts`` field of encrypted amounts was not set correctly.
 
+March 02, 2023
+
+|bw| 0.9.8
+---------------------------
+
+The following issues are fixed in |bw| 0.9.8:
+
+ - Corrected an issue where incorrect CIS-2 token metadata URL serialization for tokens with checksums caused those to be unable to be added.
+ - Init contract transaction now displays as "Contract initialization".
+ - Update contract transaction now displays as "Contract update".
+ - addCIS2Tokens now returns the list of added tokens without an internal wrapper.
+
 February 27, 2023
 
 |mw-gen2| 1.1.5
@@ -408,7 +420,7 @@ Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS conta
 
 June 13, 2022
 
-Sirius testnet has been reset on June 13, 2022. For information about the implications of this, see :ref:`Sirius Testnet reset<sirius-testnet-reset>`.
+Sirius testnet has been reset on June 13, 2022.
 
 Concordium Node 4.1.1
 ----------------------
