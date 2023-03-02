@@ -11,6 +11,18 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March 02, 2023
+
+|bw| 0.9.8
+---------------------------
+
+The following issues are fixed in |bw| 0.9.8:
+
+ - Corrected an issue where incorrect CIS-2 token metadata URL serialization for tokens with checksums caused those to be unable to be added.
+ - Init contract transaction now displays as "Contract initialization".
+ - Update contract transaction now displays as "Contract update".
+ - addCIS2Tokens now returns the list of added tokens without an internal wrapper.
+
 February 27, 2023
 
 |mw-gen2| 1.1.5
