@@ -27,14 +27,20 @@ When you delegate some stake to a baker pool, it can influence the chances of th
             #. Click **More options** then select **Register as a delegator**.
 
                 .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
+                    :width: 50%
+                    :alt: screen with more options expanded
 
             #. Select your target (a baker pool or passive delegation). Click **Continue**.
 
                .. image:: ../images/desktop-wallet/dw-delegation-target.png
+                    :width: 50%
+                    :alt: screen with options to select delegation type
 
             #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
                 .. image:: ../images/desktop-wallet/dw-delegation-stake.png
+                    :width: 50%
+                    :alt: screen to enter amount to delegate and restake settings
 
             #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -136,26 +142,36 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
+                :width: 50%
+                :alt: screen with options to choose delegation type
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
+                :width: 50%
+                :alt: screen to register delegation amount and restake preference
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
+                :width: 50%
+                :alt: screen showing overview of the transaction before submission
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
             .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
+                :width: 50%
+                :alt: screen showing submitted transaction details
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
         .. image:: ../images/mobile-wallet/account-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account in list with delegating text and pie icon
 
         .. image:: ../images/mobile-wallet/account-details-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account details showing delegation amount and pool
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
@@ -174,37 +190,44 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation.
 
             .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen with hamburger menu expanded
 
         #. Tap **Register delegation**.
 
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen with options to choose delegation type
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen to register delegation amount and restake preference
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen showing overview of the transaction before submission
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
             .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen showing submitted transaction details
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
         .. image:: ../images/mobile-wallet/account-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account in list with delegating text and pie icon
 
         .. image:: ../images/mobile-wallet/account-details-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account details showing delegation amount and pool
 
         .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

@@ -9,6 +9,7 @@ Concordium Client transactions
 You can perform all types of transactions with the :ref:`concordium-client<concordium-client>`. To do so, you use specialized subcommands. For an introduction to transactions, see :ref:`Transactions overview <transactions-overview>`.
 
 .. Note::
+
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
@@ -143,7 +144,7 @@ Account aliases
 ---------------
 
 In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
-matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+matching account :ref:`aliases<glossary-alias>`. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
 This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
@@ -254,8 +255,8 @@ sender account A has three transaction signing keys 0, 1, and 3.
 Make a shielded transfer
 ------------------------
 
-A shielded transfer is a transfer from a shielded balance to a shielded
-balance of another account. The command is very similar to a standard  transfer.
+A :ref:`shielded transfer<glossary-shielded-transfer>` is a transfer from a :ref:`shielded balance<glossary-shielded-balance>` to a shielded
+balance of another account. The command is very similar to a standard transfer.
 
 .. code-block:: console
 
@@ -321,8 +322,8 @@ the transaction.
 Shield an amount
 ----------------
 
-The command to shield an amount with ``concordium-client`` is ``account
-shield``. For example, an interaction to shield 10 CCD on account A looks like the following
+The command to :ref:`shield<glossary-shielded-amount>` an amount with ``concordium-client`` is ``account
+shield``. For example, an interaction to shield 10 CCD on account A looks like the following.
 
 The command is:
 

@@ -7,7 +7,13 @@ Delegation
 
 On the Concordium blockchain, :ref:`bakers<glossary-baker>` run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some :ref:`CCD<glossary-ccd>`. Because Concordium runs a proof-of-stake protocol, each baker needs to :ref:`stake an amount to bake<glossary-staked-amount>`, and the :ref:`probability of being selected to create the next block<glossary-lottery-power>` is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.
 
-Not everyone with CCD has the resources needed to run a baker. :ref:`Delegation<glossary-delegate>` enables everyone to earn interest. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party's control; they are just considered part of the baker's stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a :ref:`cool-down period<glossary-cool-down-period>`.
+Not everyone with CCD has the resources needed to run a baker. :ref:`Delegation<glossary-delegate>` enables everyone to earn rewards for delegating some stake without the need to run a node or become a baker. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party's control; they are just considered part of the baker's stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a :ref:`cool-down period<glossary-cool-down-period>`.
+
+You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
+
+.. Note::
+
+   An account cannot be both a baker account and have a delegation.
 
 Pools and Rewards
 =================
@@ -54,7 +60,7 @@ But decreasing the stake (whether for delegators or bakers) is subject to a cool
 Where delegation is available
 =============================
 
-You can :ref:`delegate CCDs<delegation>` in the Desktop Wallet, |mw-gen1|, and |mw-gen2|. You can also delegate from :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
+You can :ref:`delegate CCDs<add-delegation>` in the Desktop Wallet, |mw-gen1|, and |mw-gen2|. You can also delegate from :ref:`Concordium Client<transactions>`. It is recommended that you use the :ref:`CCD scan tool<ccd-scan>` to research the various bakers and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======
@@ -62,3 +68,11 @@ Summary
 To earn rewards, a CCD holder can either delegate to passive delegation, to a baking pool, or start their own baker. Baking oneself is the most challenging, as it requires resources to take part in the protocol, but it also provides the most rewards. Delegating to passive delegation provides the least rewards and requires the least actions from the investor. Delegating to a baking pool is somewhere between the two, both in terms of rewards and work, as it is recommended for a delegator to regularly check the performance of their pool’s baker, and change pool if it underperforms.
 
 See the :ref:`Delegation FAQ<delegation-faq>` for answers to the most frequently asked questions.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   ../guides/add-delegation
+   ../guides/update-delegation
+   ../guides/remove-delegation

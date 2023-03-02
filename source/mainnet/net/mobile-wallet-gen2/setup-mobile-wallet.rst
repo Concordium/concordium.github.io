@@ -23,32 +23,37 @@ Get started
 #. Create a six-digit passcode or use a full password.
 
    .. image:: ../images/mobile-wallet-gen2/create-passcode.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with keypad to enter passcode
 
 Secret recovery phrase
 ======================
 
-Now you must write down and confirm your secret recovery phrase. It is important to keep this recovery phrase in a safe location in case you need to recover your wallet on a new device.
+Now you must write down and confirm your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`. It is important to keep this recovery phrase in a safe location in case you need to :ref:`recover your wallet<recover-wallet>`.
 
 #. Tap **Set up a fresh wallet**.
 
    .. image:: ../images/mobile-wallet-gen2/choice-start.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with information about setup and options to create a new wallet or recover wallet
 
 #. Tap on the screen to view your secret recovery phrase. Write down all 24 words in the exact order in which they are shown.
 
    .. image:: ../images/mobile-wallet-gen2/recovery-phrase-pre.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with hidden secret recovery phrase
 
 #. Place a check in the box **I confirm I have written down my 24 word secret recovery phrase**.
 
    .. image:: ../images/mobile-wallet-gen2/recovery-phrase-shown.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with 24 word recovery phrase shown and confirmation checkbox
 
 #. On the next screens select the word to enter in each index to confirm your secret recovery phrase. Once correct, tap **Continue**.
 
    .. image:: ../images/mobile-wallet-gen2/recovery-phrase-confirm.png
-      :width: 25%
+      :width: 50%
+      :alt: screen to enter recovery phrase so you can confirm that you have it
 
 Request your identity and account
 =================================
@@ -60,10 +65,11 @@ Request identity
 
 #. Read the next page in the app, shortly explaining the Concordium concepts of initial account and identity. Tap **Continue**.
 
-#. Select a third party identity provider from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
+#. Select a third party :ref:`identity provider<glossary-identity-provider>` from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
 
    .. image:: ../images/mobile-wallet/MW11.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with option to select identity provider
 
 #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider.
    However, they will ask you to provide photos of identification documents and a selfie.
@@ -73,7 +79,8 @@ Request identity
    the result. The result can be retrieved for up to seven days.
 
    .. image:: ../images/mobile-wallet/MW12.png
-      :width: 25%
+      :width: 50%
+      :alt: screen shown after identity verification information is submitted and request is pending
 
 If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
 
@@ -85,7 +92,8 @@ Once the identity provider has verified your identity you can submit an account.
 #. Tap **Submit account**. Enter your wallet passcode when prompted.
 
    .. image:: ../images/mobile-wallet-gen2/submit-acct.png
-      :width: 25%
+      :width: 50%
+      :alt: screen shown after selecting to create account
 
 Basic navigation
 ================
@@ -122,10 +130,11 @@ When you tap on an account, you see the details for the specific account, includ
 
 .. image:: ../images/mobile-wallet-gen2/transaction-overview.png
       :width: 50%
+      :alt: account details screen with navigation bar highlighted
 
 - Send: :ref:`send funds<send-CCD-wallets>`
 - Receive: find and share your address
-- Earn: configure and manage :ref:`baking<baker-mw>` or :ref:`delegation<delegation>`
+- Earn: configure and manage :ref:`baking<baker-concept>` or :ref:`delegation<delegation-concept>`
 - Scan QR code: scan QR code of a dApp
 - Account settings: perform some less often used actions on an account
    - Transfer filters: configure filters to show or hide rewards or finalization rewards
