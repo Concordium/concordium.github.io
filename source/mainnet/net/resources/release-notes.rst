@@ -11,7 +11,7 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-February 28, 2023
+March 02, 2023
 
 |bw| 0.9.8
 ---------------------------
