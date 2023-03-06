@@ -16,7 +16,7 @@ March 10, 2023
 Concordium Node 5.2.4
 ---------------------
 
-- The Prometheus metrics exporter has been cleaned up and improved in this release. Some metrics that were never updated were removed, a number of metrics were renamed, and behavior of some metrics was changed. See docs/prometheus-exporter.md for more details.
+- The Prometheus metrics exporter have been improved and systematized. The metrics are now `documented <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`_ and the node's Prometheus metrics API stability will adhere to SEMVER guidelines.
 
 - Fixed an issue where the node configuration file (``main.config.json``) was sometimes corrupted.
 
