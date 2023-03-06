@@ -24,7 +24,7 @@ You can find |mw-gen2| on App Store and on Google Play.
 
    .. image:: ../images/mobile-wallet/app-store-badge.svg
       :width: 23%
-      :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
+      :target: https://apps.apple.com/us/app/concordium-blockchain-wallet/id6444703764
    .. image:: ../images/mobile-wallet/google-play-badge.png
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet
