@@ -18,7 +18,7 @@ Concordium Node 5.2.4
 
 - The Prometheus metrics exporter has been cleaned up and improved in this release. Some metrics that were never updated were removed, a number of metrics were renamed, and behavior of some metrics was changed. See docs/prometheus-exporter.md for more details.
 
-- Fixed an issue where the node configuration file (main.config.json) was sometimes corrupted.
+- Fixed an issue where the node configuration file (``main.config.json``) was sometimes corrupted.
 
 - Added an option to disable only the node specific grpc V1 endpoints that can be used to control the node. All the endpoints that are consensus related are kept allowing the node to be used as a gateway to the chain. The mentioned can be disabled by setting ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` or using the flag ``--no-rpc-server-node-endpoints``.
 
