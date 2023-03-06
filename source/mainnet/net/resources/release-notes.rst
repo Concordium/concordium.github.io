@@ -13,7 +13,7 @@ Release Notes - Testnet
 
 March 10, 2023
 
-Concordium Node 5.2.X
+Concordium Node 5.2.4
 ---------------------
 
 - The Prometheus metrics exporter has been cleaned up and improved in this release. Some metrics that were never updated were removed, a number of metrics were renamed, and behavior of some metrics was changed. See docs/prometheus-exporter.md for more details.
