@@ -142,7 +142,7 @@ Download cargo-concordium:
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
 
-Concordium node distributions v5.2.x
+Concordium node distributions v5.2.4
 ====================================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
