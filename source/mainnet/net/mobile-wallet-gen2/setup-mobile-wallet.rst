@@ -16,7 +16,7 @@ Read the following guide to learn how to set up the wallet.
 Get started
 ===========
 
-#. Install the |mw-gen2| on an Android phone. See :ref:`Downloads<downloads-mwgen2>`.
+#. Install the |mw-gen2| on an Android or iOS phone. See :ref:`Downloads<downloads-mwgen2>`.
 
 #. Open the |mw-gen2|; read and accept the Terms and Conditions.
 
