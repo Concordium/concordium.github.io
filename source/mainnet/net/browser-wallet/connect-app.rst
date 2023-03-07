@@ -31,6 +31,10 @@ You can connect the |bw| and |mw-gen2| to a `dApp <https://en.wikipedia.org/wiki
 
    |mw-gen2| uses WalletConnect to connect to dApps.
 
+   .. Note::
+
+      Currently, only |mw-gen2| for Android devices supports WalletConnect.
+
    To connect your |mw-gen2| to a dApp:
 
    #. Tap the scan QR code button in the Accounts overview |scan-qr-overview| or Transactions overview |scan-qr-acct|.

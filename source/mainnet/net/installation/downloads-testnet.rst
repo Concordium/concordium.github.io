@@ -11,11 +11,17 @@ This topic contains information about where you can download the Concordium Wall
 |mw-gen2|
 ========================
 
-The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or later.
+The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13 or later and Android 8 or later.
 
 .. Note::
 
    The |mw-gen2| is not supported on tablet devices.
+
+iOS
+---
+
+#.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the |mw-gen2| for Testnet on iOS.
+#.  Follow `this link <https://testflight.apple.com/join/YaKKqYMA>`__ on your iPhone to join our beta. You must have TestFlight installed.
 
 Android
 -------
@@ -37,8 +43,8 @@ The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13
 iOS
 ---
 
-#.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`_ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
-#.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`_ on your iPhone to join our beta. You must have TestFlight installed.
+#.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
+#.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
 
 Android
 -------
