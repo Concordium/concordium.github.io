@@ -281,7 +281,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2">
       <a class="reference internal" href="../mobile-wallet-gen2/faq.html">
-       Concordium Wallet for Android FAQ
+       Concordium Wallet for Mobile FAQ
       </a>
      </li>
      <li class="toctree-l2">
@@ -298,7 +298,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="../mobile-wallet-gen2/setup-mobile-wallet.html">
-     Set up the Concordium Wallet for Android
+     Set up the Concordium Wallet for Mobile
     </a>
    </li>
    <li class="toctree-l1">
@@ -1715,7 +1715,7 @@ body {margin:0;}
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-mw-gen2">
-     The Concordium Wallet for Android
+     The Concordium Wallet for Mobile
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1749,7 +1749,7 @@ body {margin:0;}
                 
   <div class="section" id="accounts">
 <span id="managing-accounts"></span><h1>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">#</a></h1>
-<p>Accounts and <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">identities</span></a> are strongly linked on the Concordium Platform. To be able to hold, send, or receive <a class="reference internal" href="../resources/glossary.html#glossary-ccd"><span class="std std-ref">CCD</span></a> or become a <a class="reference internal" href="../resources/glossary.html#glossary-baker"><span class="std std-ref">baker</span></a> on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Concordium Wallet for Android, the Concordium Legacy Wallet, Desktop Wallet, or Concordium Client for your transactions.</p>
+<p>Accounts and <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">identities</span></a> are strongly linked on the Concordium Platform. To be able to hold, send, or receive <a class="reference internal" href="../resources/glossary.html#glossary-ccd"><span class="std std-ref">CCD</span></a> or become a <a class="reference internal" href="../resources/glossary.html#glossary-baker"><span class="std std-ref">baker</span></a> on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the Concordium Wallet for Mobile, the Concordium Legacy Wallet, Desktop Wallet, or Concordium Client for your transactions.</p>
 <p>You must have a verified identity and a user identity certificate issued by an authorized <a class="reference internal" href="../resources/glossary.html#glossary-identity-provider"><span class="std std-ref">identity provider</span></a> to create accounts on the Concordium Platform. For more information about identities, see <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a>.</p>
 <div class="section" id="about-accounts">
 <h2>About accounts<a class="headerlink" href="#about-accounts" title="Permalink to this headline">#</a></h2>
@@ -1771,7 +1771,7 @@ the account on the chain)</p></li>
 <li><p>decryption keys used for <a class="reference internal" href="../resources/glossary.html#glossary-shielded-transfer"><span class="std std-ref">shielded transfers</span></a>.</p></li>
 </ul>
 <p>Concordium provides several ways of interacting with the on-chain account.
-Off-chain parts of accounts can be transferred between different devices but not between Concordium Legacy Wallet and Desktop Wallet, or Concordium Wallet for Android and Desktop Wallet. The same account can be used from multiple devices at the same time.</p>
+Off-chain parts of accounts can be transferred between different devices but not between Concordium Legacy Wallet and Desktop Wallet, or Concordium Wallet for Mobile and Desktop Wallet. The same account can be used from multiple devices at the same time.</p>
 <p>Accounts on the chain are identified via an account address, which is a 32-byte
 sequence. The address is usually displayed in Base58Check encoding with version
 byte 1. An example of such an address is
@@ -1783,7 +1783,7 @@ The name is resolved to an address before interactions with the <a class="refere
 <h3>Initial account<a class="headerlink" href="#initial-account" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Initial accounts are not created by the identity provider when using Concordium Wallet for Android or Concordium Wallet for Web. You create all accounts yourself.</p>
+<p>Initial accounts are not created by the identity provider when using Concordium Wallet for Mobile or Concordium Wallet for Web. You create all accounts yourself.</p>
 </div>
 <p>The user gets an <a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">Initial Account</span></a> at the same time as an <a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#glossary-identity-provider"><span class="std std-ref">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
 <p>The user additionally <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">creates account keys</span></a> for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
@@ -1799,7 +1799,7 @@ involved. This gives a user a way to create accounts with an additional layer of
 <p>Once you have an identity and a user identity certificate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an <a class="reference internal" href="#tools"><span class="std std-ref">app or wallet</span></a> that guides users through the account creation process. The creation of an account is an <a class="reference internal" href="../resources/glossary.html#glossary-on-chain"><span class="std std-ref">On-chain</span></a> action that requires sending a transaction to a node that participates in the Concordium network.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Concordium Wallet for Android and Concordium Legacy Wallet do not submit the transaction directly to a node, but via a proxy. Concordium Wallet for Android and Concordium Legacy Wallet do not need to be connected to a node.</p>
+<p>Concordium Wallet for Mobile and Concordium Legacy Wallet do not submit the transaction directly to a node, but via a proxy. Concordium Wallet for Mobile and Concordium Legacy Wallet do not need to be connected to a node.</p>
 </div>
 <p>The input to the transaction is a <em>credential</em>, which contains a number of <a class="reference internal" href="../resources/glossary.html#glossary-cryptographic-proof"><span class="std std-ref">cryptographic proofs</span></a>, as well as a selection of <a class="reference internal" href="../resources/glossary.html#glossary-attribute"><span class="std std-ref">attributes</span></a> the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.</p>
 <p>An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
@@ -1889,7 +1889,7 @@ to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
 validate transactions.</p>
 <p>You can <a class="reference internal" href="transactions.html#account-seqno"><span class="std std-ref">look up the sequence number</span></a> from an up to date node using Concordium Client.</p>
-<p>The Concordium Wallet for Android and Concordium Legacy Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+<p>The Concordium Wallet for Mobile and Concordium Legacy Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tracks the sequence number automatically, but it can
 also be set manually.</p>
 </div>
@@ -1918,8 +1918,8 @@ the same account. Thus, accounts can be referred to by any address whose initial
 </div>
 </div>
 <div class="section" id="the-mw-gen2">
-<h3>The Concordium Wallet for Android<a class="headerlink" href="#the-mw-gen2" title="Permalink to this headline">#</a></h3>
-<p>The Concordium Wallet for Android is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.</p>
+<h3>The Concordium Wallet for Mobile<a class="headerlink" href="#the-mw-gen2" title="Permalink to this headline">#</a></h3>
+<p>The Concordium Wallet for Mobile is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.</p>
 </div>
 <div class="section" id="the-bw">
 <h3>The Concordium Wallet for Web<a class="headerlink" href="#the-bw" title="Permalink to this headline">#</a></h3>
@@ -1940,8 +1940,8 @@ send all other <a class="reference internal" href="transactions.html#transaction
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Because of the difference in the way private keys are handled between Concordium Wallet for Android / Concordium Wallet for Web and the first generation wallets (Concordium Legacy Wallet and Desktop Wallet), you cannot exchange identities and accounts between them.</p>
-<p>It is possible to exchange accounts and identities between the Concordium Wallet for Android and the Concordium Wallet for Web.</p>
+<p>Because of the difference in the way private keys are handled between Concordium Wallet for Mobile / Concordium Wallet for Web and the first generation wallets (Concordium Legacy Wallet and Desktop Wallet), you cannot exchange identities and accounts between them.</p>
+<p>It is possible to exchange accounts and identities between the Concordium Wallet for Mobile and the Concordium Wallet for Web.</p>
 </div>
 </div>
 </div>
