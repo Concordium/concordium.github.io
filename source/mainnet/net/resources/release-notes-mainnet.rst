@@ -23,7 +23,7 @@ Concordium Client has been migrated to use version 2 of the node gRPC API.
 
 - Some `raw` commands have been removed and new `raw` commands have been added.
 
-- Improvements to error message information and their phrasing in general.
+- General improvements to error message information and phrasing.
 
 - The `--grpc-authentication-token` option has been removed.
 
