@@ -21,7 +21,7 @@ Concordium Client has been migrated to use version 2 of the node gRPC API.
 - Since the node serves the V2 gRPC API on port 20000 by default, the default value of
   the `--grpc-port` option has been updated to reflect this.
 
-- Outputs of some `raw` commands have been changed, and some have been added and removed.
+- Some `raw` commands have been removed and new `raw` commands have been added.
 
 - Improvements to error message information and their phrasing in general.
 
