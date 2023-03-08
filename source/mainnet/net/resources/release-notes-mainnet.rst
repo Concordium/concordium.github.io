@@ -13,10 +13,52 @@ Release notes - Mainnet
 
 March 2, 2023
 
-Concordium Client 5.x.x
+Concordium Client 5.1.0
 -----------------------
 
-Concordium Client has been migrated to use gRPC version 2.
+Concordium Client has been migrated to use version 2 of the node gRPC API. This introduces
+some breaking changes:
+
+- Since the node serves the V2 GRPC API at port 20000 by default, the default value of
+  the `--grpc-port` option has been updated to reflect this.
+
+- Commands `raw GetTransactionStatusInBlock`, `raw StartBaker`, `raw StopBaker`,
+  `raw JoinNetwork` and ` raw LeaveNetwork` have been removed.
+
+- Command `raw GetBlockSummary` has been removed, and replaced by the commands
+  `raw GetBlockPendingUpdates`, `raw GetBlockSpecialEvents`,
+  `raw GetBlockChainParameters` `raw GetBlockFinalizationSummary`. These provide
+  a more granular way of accessing to the same data.
+
+- `raw BanNode` and `raw UnbanNode` no longer support node IDs, but now rather
+  take just an IP address.
+
+- `raw DumpStart` takes a parameter specifying the path of the file to write
+  dumped packets to, and furthermore supports a flag to specify whether raw
+  packets should be written to the file.
+
+- Output of `raw GetBannedPeers` prints a JSON list of banned IP addresses,
+  represented as strings.
+
+- Output of `raw GetPeerUptime` now prints an integer representing the uptime
+  of the node in milliseconds.
+
+- Slight changes to `raw GetNodeInfo`. Notably the baker ID is now included in
+  the output when the node is in the baker or finalization committee. Various
+  consensus-related details about the node is also elaborated upon.
+
+- Slight changes to `raw GetPeerData` output. Notably the catch-up status and
+  consensus-related details about the peer is elaborated upon.
+
+- `raw SendTransaction` no longer allows for specifying a network ID.
+
+Furthermore, the following changes unrelated to the migration have been made:
+
+- `consensus show-parameters` now additionally prints the election difficulty.
+
+- Slight improvements to error message information and their phrasing in general.
+
+- The `--grpc-authentication-token` option has been removed.
 
 February 6, 2023
 

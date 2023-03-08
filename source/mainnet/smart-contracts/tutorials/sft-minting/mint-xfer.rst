@@ -34,7 +34,7 @@ Then run the command below to invoke the mint function with the given params.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/mint-params.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/mint-params.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
 
 You have just minted your semi-fungible token successfully.
 
@@ -54,7 +54,7 @@ Your account has 100 tokens with id 01. To check the token's metadata, create an
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/ids.json --schema dist/smart-contract-multi/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/ids.json --schema dist/smart-contract-multi/schema.bin --grpc-port 20001
 
 The metadata URL is stored permanently on Concordium.
 
@@ -82,7 +82,7 @@ Once your ``transfer.json`` file is complete, run the command below.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 10001
+    concordium-client contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20001
 
 The transfer is successful.
 
