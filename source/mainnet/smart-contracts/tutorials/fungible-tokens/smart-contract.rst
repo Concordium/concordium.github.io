@@ -249,7 +249,7 @@ You will compare the circulating supply, maximum supply and the amount to be min
 
 In the ``contact_mint`` function below see the following changes accordingly. First, the parameters are read as a form of JSON. See the ``MintParams`` struct for the details of the parameters. In the first ``if`` clause, it first checks if the token exists in the state. If not, meaning you are going to mint this token for the first time, you will set the maximum supply by calling the ``set_max_supply()`` function. The max_supply value is in the ``TokenParam`` struct as the second item.
 
-If the ``mint()`` function is not called for the first time, then you need to check the conditions. Therefore, you need to ``get_token_supply()`` and ``get_circulating_supply()``. Here you have to make sure of two conditions: first, you need to check that the circulating supply is already less than or equal to the maximum supply; and then when you add the new token amount to be minted to the existing amount, meaning the circulating supply, this should be less than or equal to the maximum supply. The following two ensure statements check these conditions are sufficient before calling the state’s ``mint()`` function.
+If the ``mint()`` function is not called for the first time, then you need to check the conditions. Therefore, you need to ``get_token_supply()`` and ``get_circulating_supply()``. Here you have to make sure of two conditions: first, you need to check that the circulating supply is already less than or equal to the maximum supply; and then when you add the new token amount to be minted to the existing amount, meaning the circulating supply, this should be less than or equal to the maximum supply. The following two ``ensure`` statements check that these conditions are sufficient before calling the state’s ``mint()`` function.
 
 .. code-block:: rust
 
@@ -372,7 +372,7 @@ But first, you need another parameter to get the information about the tokens th
         amount: ContractTokenAmount,
     }
 
-When you get the parameters, ensure the token exists with the ``ensure!`` and ``contains_token()`` function. Note that, when you call the ``burn()`` function, you need to emit the BurnEvent. For more detail check the CIS-2_ standard documentation.
+When you get the parameters, ensure the token exists with the ``ensure!`` and ``contains_token()`` functions. Note that, when you call the ``burn()`` function, you need to emit the ``BurnEvent``. For more details, see the CIS-2_ standard documentation.
 
 .. code-block:: rust
 
@@ -473,11 +473,13 @@ First, create a metadata file. You will use it to pick an image for it, and nami
 Build the smart contract
 ------------------------
 
-Run the command below to create a Wasm compiled build file of your smart contract. It is a good habit to create a folder for the output files. For example, here the user created a parent folder named “dist“ and a child folder named “fungible“ inside of it.
+Run the command below to create a Wasm compiled build file of your smart contract. It is a good habit to create a folder for the output files. For example, here the user created a parent folder named `dist` and a child folder named `fungible` inside of it.
+
+You can embed the schema file in the module, which means you don’t have to call it again and again for your future function calls. To build the contract and embed the schema file, use the command below.
 
 .. code-block:: console
 
-    cargo concordium build --out dist/fungible/module.wasm.v1 --schema-out dist/fungible/schema.bin
+    cargo concordium build --schema-embed --out dist/embedded/module.wasm.v1
 
 .. image:: images/build-sc.png
     :width: 100%

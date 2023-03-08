@@ -43,17 +43,17 @@ Now you have successfully minted your fungible tokens.
     :width: 100%
     :alt: dark console screen with result of running the command above
 
-Check the state to see the balance, circulating supply, and maximum supply. Run the command below to invoke the ``view()`` function.
+Check the state to see the balance, circulating supply, and maximum supply. Run the command below to invoke the ``view()`` function. Note that you don't have to call the schema file since it is already embedded.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema dist/fungible/schema.bin --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --grpc-port 10000 --grpc-ip node.testnet.concordium.com
 
 .. image:: images/invoke-after-mint.png
     :width: 100%
     :alt: dark console screen with result of running the command above
 
-Try to mint 900 more. You will receive an error because the maximum supply is 1000. It should be ok if you want to mint, at most, 890. Set the mint amount to 891 to test it out.
+Try to mint 501 more. You will receive an error because the maximum supply is 1000. It would be OK if you want to mint, at most, 500. But set the mint amount to 501 to test it.
 
 .. image:: images/error-maxsupplyreached.png
     :width: 100%
@@ -102,7 +102,7 @@ Run the command below to invoke the transfer. Remember that this is using the Co
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-INDEX> --entrypoint transfer --parameter-json ../token-artifacts/transfer.json --schema dist/fungible/schema.bin --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-INDEX> --entrypoint transfer --parameter-json ../token-artifacts/transfer.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
 
 Check the state one more time to see that the transfer worked as expected.
 
@@ -119,7 +119,7 @@ Before burning, check the state to see who owns what amount.
 
 .. image:: images/check-before-burn.png
     :width: 100%
-    :alt: dark console screen with result of running the command above
+    :alt: dark console screen with result of running contract invoke
 
 Create a JSON file for getting burn params like the one below. You need the token ID and the amount to be burned.
 
@@ -127,20 +127,20 @@ Create a JSON file for getting burn params like the one below. You need the toke
 
     {
         "token_id": "01",
-        "amount": "44"
+        "amount": "200"
     }
 
-Burn 44 tokens from your first account. To do that, run the command below to call the ``burn()`` function.
+Burn 200 tokens from your first account. To do that, run the command below to call the ``burn()`` function.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-INDEX> --entrypoint burn --parameter-json ../token-artifacts/burn.json --schema dist/fungible/schema.bin --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-INDEX> --entrypoint burn --parameter-json ../token-artifacts/burn.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
 
 .. image:: images/burn-tokens.png
     :width: 100%
     :alt: dark console screen with result of running the command above
 
-And finally, check the state. Excellent! You have successfully burned 44 from the first account. In this case the circulating supply was not updated intentionally when someone burned a token; if you need that in your use case you will need to update the state’s ``burn`` function.
+And finally, check the state. You have successfully burned 200 tokens from the first account. In this case the circulating supply was not updated intentionally when someone burned a token; if you need that in your use case you will need to update the state’s ``burn`` function.
 
 .. image:: images/invoke-after-burn.png
     :width: 100%
