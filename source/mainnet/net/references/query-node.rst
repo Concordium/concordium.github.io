@@ -283,7 +283,7 @@ found in the ``parameters`` section under ``euroPerEnergy`` and ``microGTUPerEur
             "numerator": 1
         },
         ...
-        "microCCDPerEuro": {
+        "microGTUPerEuro": {
             "denominator": 1,
             "numerator": 100 000 000
         }
