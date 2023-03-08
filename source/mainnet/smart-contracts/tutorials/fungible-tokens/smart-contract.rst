@@ -185,22 +185,21 @@ In the following ``if`` clause you are checking if this token has been minted be
 .. code-block:: rust
 
     if !state.contains_token(&token_id) {
-                state.set_max_supply(&token_id, token_info.1.max_supply)
-            }
-    else {
-                let max_supply = state.get_token_supply(&token_id)?;
-                let circulating_supply = state.get_circulating_supply(&token_id)?;
+        state.set_max_supply(&token_id, token_info.1.max_supply)
+    } else {
+        let max_supply = state.get_token_supply(&token_id)?;
+        let circulating_supply = state.get_circulating_supply(&token_id)?;
 
-                ensure!(
-                    circulating_supply <= max_supply,
-                    ContractError::Custom(CustomContractError::MaxSupplyReached)
-                );
+        ensure!(
+            circulating_supply <= max_supply,
+            ContractError::Custom(CustomContractError::MaxSupplyReached)
+        );
 
-                ensure!(
-                    &token_info.1.amount <= &(max_supply - circulating_supply),
-                    ContractError::Custom(CustomContractError::MaxSupplyReached)
-                );
-            }
+        ensure!(
+            &token_info.1.amount <= &(max_supply - circulating_supply),
+            ContractError::Custom(CustomContractError::MaxSupplyReached)
+        );
+    }
 
 Otherwise, it means you have minted this token before, so you need to check how many were minted already, and based on that, decide to either mint or throw an error.
 
