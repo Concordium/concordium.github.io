@@ -461,11 +461,11 @@ First, create a metadata file. You will use it to pick an image for it, and nami
 .. code-block:: console
 
     {
-        "name": "FOUR-TK",
+        "name": "YOUR-TOKEN-NAME",
         "unique": false,
-        "description": "Fungible token for the future economy.",
+        "description": "YOUR-TOKEN-DESCRIPTION",
         "display": {
-            "url": "https://gateway.pinata.cloud/ipfs/QmVLSi8pgAJe7pzvQQDGzphX1GzqcmfWBmNVDVXDq7siJV?_gl=1*s16h0v*_ga*MTA5MDU4MjY4OS4xNjc1NjY4OTMy*_ga_5RMPXG14TE*MTY3NTY2ODkzMi4xLjEuMTY3NTY2ODk0MC41Mi4wLjA."
+            "url": "YOUR-IMAGE-PREVIEW-URL"
         },
         "attributes": []
     }
