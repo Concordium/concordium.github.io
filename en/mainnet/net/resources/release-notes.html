@@ -1643,6 +1643,11 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordium-node-5-2-4">
+   Concordium Node 5.2.4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mw-gen2-for-ios">
    Concordium Wallet for Mobile for iOS
   </a>
@@ -2165,7 +2170,17 @@ body {margin:0;}
 <p>Subscribe to the <a class="reference external" href="https://status.testnet.concordium.software/">Testnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
 <p>To subscribe to updates on the Testnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
+<p>March 09, 2023</p>
+<div class="section" id="concordium-node-5-2-4">
+<h2>Concordium Node 5.2.4<a class="headerlink" href="#concordium-node-5-2-4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The Prometheus metrics exporter has been improved and systematized, making this API stable from this release onwards to monitor your node metrics. The metrics are now <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">documented</a> and the node’s Prometheus metrics API stability will adhere to SEMVER guidelines.</p></li>
+<li><p>Fixed an issue where the node configuration file (<code class="docutils literal notranslate"><span class="pre">main.config.json</span></code>) was sometimes corrupted.</p></li>
+<li><p>Added an option to disable only the node specific grpc V1 endpoints that can be used to control the node. All the endpoints that are consensus related are kept allowing the node to be used as a gateway to the chain. The mentioned endpoints can be disabled by setting <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS</span></code> or using the flag <code class="docutils literal notranslate"><span class="pre">--no-rpc-server-node-endpoints</span></code>.</p></li>
+<li><p>Fixed a bug in <code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> endpoint in GRPCv2 where <code class="docutils literal notranslate"><span class="pre">incoming_amounts</span></code> field of encrypted amounts was not set correctly.</p></li>
+</ul>
 <p>March 07, 2023</p>
+</div>
 <div class="section" id="mw-gen2-for-ios">
 <h2>Concordium Wallet for Mobile for iOS<a class="headerlink" href="#mw-gen2-for-ios" title="Permalink to this headline">#</a></h2>
 <p>Concordium introduces a new wallet for iOS mobile devices: the Concordium Wallet for Mobile. The Concordium Wallet for Mobile offers all of the same functionality you know from Concordium Legacy Wallet, such as sending and receiving CCDs, delegation, baking, and so on. But the Concordium Wallet for Mobile uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the Concordium Wallet for Web. You can read about Concordium Wallet for Mobile and the differences between it and Concordium Legacy Wallet in the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#mw-gen2-faq"><span class="std std-ref">FAQ</span></a>.</p>
