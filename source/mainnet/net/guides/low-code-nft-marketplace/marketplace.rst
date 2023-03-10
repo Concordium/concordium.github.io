@@ -245,7 +245,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
             :width: 100%
             :alt: marketplace web page with connect to pinata screen shown
 
-        Click **CONNECT**. When the connection is done, you will be able to upload images either by selecting them from a folder or just dragging and dropping them. You are not limited to uploading 1-2 images, and thanks to the template, the metadata generator is easier than creating one for every item.
+        Click **CONNECT**. When the connection is established, you will be able to upload images either by selecting them from a folder or just dragging and dropping them. You are not limited to uploading 1-2 images, and thanks to the template, the metadata generator is easier than creating one for every item.
 
         .. image:: ../../images/low-code-nft-framework/upload-images.png
             :width: 100%
