@@ -53,7 +53,7 @@ Once you have the above installed, do the following:
 
         yarn start
 
-It will start the minting screen in the example dApp in localhost:3000 automatically, starting with the dashboard page.
+It will start the minting screen in the example dApp in ``localhost:3000`` automatically, starting with the dashboard page.
 
 .. image:: ../../images/low-code-nft-framework/minting-tool.png
     :width: 100%
