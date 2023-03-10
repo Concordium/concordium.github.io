@@ -32,7 +32,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     - `node.js <https://nodejs.org/en/download/>`_ verion 14.17.0 or above. If you already have node.js run ``node -v`` to check the version. You can use `nvm <https://github.com/nvm-sh/nvm>`_ to manage multiple Node versions installed on a single machine.
 
-    - `Yarn <https://classic.yarnpkg.com/en/>`_ - a performance package manager for JavaScript; replaces the ``npm`` client.
+    - `Yarn <https://classic.yarnpkg.com/en/>`_ - a package manager for JavaScript; replaces the ``npm`` client.
 
     - A code editor of your choice, such as Visual Studio Code.
 
@@ -92,13 +92,13 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
             :width: 100%
             :alt: marketplace web page with wallet popup shown
 
-    When the transaction is finalized, you have your own, empty marketplace. The index number can be seen in the address bar of the browser or you can check it from your |bw| as described in the following.
+    When the transaction is finalized, you have your own, empty marketplace. You see the contract instance address in the address bar of the browser or you can check it from your |bw| as described in the following.
 
     .. image:: ../../images/low-code-nft-framework/mp-new-mp-contract-index.png
         :width: 100%
-        :alt: empty marketplace with contract index number highlighted in address bar
+        :alt: empty marketplace with contract address highlighted in address bar
 
-    To check the contract instance and find the index number in the |bw|:
+    To check the contract instance and find the address in the |bw|:
 
     #. Click on an account so that you see the account details and transaction log.
 
@@ -110,19 +110,19 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
             :width: 50%
             :alt: concordium wallet for web showing transaction details
 
-        As you can see there is a contract initiation transaction in the log, and when you click it the **Events** section tells you that you have initialized smart contract Market-NFT at address 2258,0. In your case this number will be different and you will need it in the next section.
+        As you can see there is a contract initialization transaction in the log, and when you click it, the **Events** section tells you that you have initialized smart contract Market-NFT at address 2258,0. In your case this number will be different and you will need it in the next section.
 
     **Configure the application**
 
     The following describes the necessary steps to run your own marketplace that is generated from the deployed marketplace contract.
 
-    Now you have to configure your code base accordingly. Go to your project's folder/market-ui and open the **Constants.ts** file in a code editor. Update the ``MARKETPLACE_CONTRACT_ADDRESS`` with your index value generated in the previous section. In this file in general you will find all constant files, such as address, schema, and module references. You can find more details about these constant variables in this section.
+    Now you have to configure your code base accordingly. Go to your project's folder/market-ui and open the **Constants.ts** file in a code editor. Update the ``MARKETPLACE_CONTRACT_ADDRESS`` with your contract instance address value generated in the previous section. In this file in general you will find all constant files, such as address, schema, and module references. You can find more details about these constant variables in this section.
 
     .. image:: ../../images/low-code-nft-framework/mp-configure-index.png
         :width: 100%
-        :alt: constants.ts file open in code editor with index highlighted
+        :alt: constants.ts file open in code editor with address highlighted
 
-    When you specify the index value, the template will be interacting with your instance, meaning it will have a clean marketplace like below to remove new instance creation from your marketplace and change the ``CREATE_NEW__MARKETPLACE`` flag to false.
+    When you specify the contract instance address value, the template will be interacting with your instance, meaning it will have a clean marketplace like below to remove new instance creation from your marketplace and change the ``CREATE_NEW__MARKETPLACE`` flag to false.
 
     .. image:: ../../images/low-code-nft-framework/mp-configure-mp-flag.png
         :width: 100%
@@ -144,7 +144,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
         :width: 100%
         :alt: marketplace home page
 
-    This opens the |bw| where you click **Sign & submit** to approve the request. After the transaction is finalized you can check your wallet to find out what your token contract index is. It is under the **Transaction Log** section and see the details by clicking it.
+    This opens the |bw| where you click **Sign & submit** to approve the request. After the transaction is finalized you can check your wallet to find out what your token contract instance address is. It is under the **Transaction Log** section and see the details by clicking it.
 
         .. image:: ../../images/low-code-nft-framework/mp-bw-account-details.png
             :width: 50%
@@ -283,7 +283,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
            Remember CIS-2 covers all tokens with one standard.
 
-    The app asks you either to create your own NFT contract instance or provide the contract index that you own. Specify your contract address, such as 2319,0.
+    The app asks you either to create your own NFT contract instance or provide the contract instance address that you own. Specify your contract address, such as 2319,0.
 
     .. image:: ../../images/low-code-nft-framework/mint-sft-sc.png
         :width: 100%
@@ -341,11 +341,11 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     #. Click **SELL** on the top navigation bar.
 
-    #. Specify the token contract index. The token smart contract will have all the tokens minted with their owners and other relevant data. After you specify the token contract index click **FIND**.
+    #. Specify the token contract instance address. The token smart contract will have all the tokens minted with their owners and other relevant data. After you specify the token contract instance address click **FIND**.
 
         .. image:: ../../images/low-code-nft-framework/mp-sell-nft.png
             :width: 100%
-            :alt: marketplace with sell page open and fields to enter contract index
+            :alt: marketplace with sell page open and fields to enter contract instance address
 
     #. When the |bw| pop-up prompts you, click **Sign & submit**. It will check if there is an asset on that particular contract, and then you will give permission to the marketplace contract to act on your behalf when someone wants to buy your asset. The tokens will still be owned by your account.
 

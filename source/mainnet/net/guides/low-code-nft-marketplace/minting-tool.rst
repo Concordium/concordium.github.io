@@ -76,7 +76,7 @@ Concordium provides a `library of sample images you can download <https://github
 
     To prepare the metadata, you should have a link to your digital asset, preferably from the Interplanetary File System (IPFS). You can check `this tutorial to learn about how you can store data on IPFS<upload-nft>` with running a node.
 
-    When you have an IPFS link to the asset, create a JSON file on a text editor, fill it like below and save it.
+    When you have an IPFS link to the asset, create a JSON file in a text editor, fill it like below and save it.
 
     .. code-block:: JSON
 
@@ -125,7 +125,7 @@ Concordium provides a `library of sample images you can download <https://github
             :width: 100%
             :alt: minting tool screen with connect to pinata shown
 
-    That will lead us to Prepare Metadata section. We will provide the metadata file that we prepared beforehand. Provide the ``metadata.json`` file's URL to the text box and click the "OK" button.
+    That will lead you to the Prepare Metadata section. Provide the ``metadata.json`` file's URL to the text box and click the "OK" button.
 
     Then you will be asked to specify the token ID and amount in the following screens. Your image will be fetched from IPFS or the server where you stored assets.
 
@@ -137,9 +137,9 @@ Concordium provides a `library of sample images you can download <https://github
 
     When the transaction is finalized, an alert window shows that your tokens are minted.
 
-.. _contract-index:
+.. _contract-address:
 
-    One thing to note in the figure above is "CONTRACT: 2668/0 (CIS2-MULTI)". This statement says that your tokens are minted on the contract with the index number <2668,0>. A contract index is the address of your contract. This could be any contract deployed to Concordium. For example, when you create a new instance of an NFT contract, the creator account will be the owner of that contract instance. By using that address value, the owner can handle some owner-specific operations, anyone can check some accounts' balances if it's a token contract, etc. As an example, when you click **DEPLOY NEW**, you create a new contract instance that you own; and when you minted that NFT it is recorded in that smart contract instance's state on the blockchain. For every operation about that token like transfer, sell, etc. you will keep storing that changes on your contract's state. This is your contract now at that address.
+    One thing to note in the figure above is "CONTRACT: 2668/0 (CIS2-MULTI)". This statement says that your tokens are minted on the contract with the address <2668,0>. A contract adderss has two parts; the index is the first number and the subindex is the second number which is always zero. This could be any contract deployed to Concordium. For example, when you create a new instance of an NFT contract, the creator account will be the owner of that contract instance. By using that address value, the owner can handle some owner-specific operations, anyone can check some accounts' balances if it's a token contract, etc. As an example, when you click **DEPLOY NEW**, you create a new contract instance that you own; and when you minted that NFT it is recorded in that smart contract instance's state on the blockchain. For every operation about that token like transfer, sell, etc. you will keep storing that changes on your contract's state. This is your contract now at that address.
 
 .. dropdown:: Mint NFTs with Pinata
 
@@ -211,19 +211,19 @@ Concordium provides a `library of sample images you can download <https://github
 
 .. dropdown:: Mint NFTs from an existing contracts
 
-    In this section you will learn how to mint an NFT with metadata file from an existing contract instance. If you completed the first section, you should already know what an :ref:`index number<contract-index>` is. This index value of your NFT contract which is created by your account addresses where or in which smart contract instance your NFTs are located, for example, index:<2722,0>. Tthere are certain operations encoded in the smart contracts that, for example, only an owner can transfer a token or only the contract owner can invoke the mint function, etc.
+    In this section you will learn how to mint an NFT with metadata file from an existing contract instance. If you completed the first section, you should already know what an :ref:`contract instance address<contract-address>` is. This contract instance address value of your NFT contract which is created by your account addresses where or in which smart contract instance your NFTs are located, for example, contract instance address:<2722,0>. There are certain operations encoded in the smart contracts that, for example, only an owner can transfer a token or only the contract owner can invoke the mint function, etc.
 
     **Exampæle**
 
-    Assume that you are an artist and have a collection of two pieces. You deployed your contract at index:<2020,0> and minted these tokens with IDs 01 and 02. What if you want to add new pieces? If you create a new instance, you will get a new contract address (always remember because it's a new one), but then how can you tell people these new pieces belong to the same collection? Or, say you are having a party and minted 100 tokens as tickets, and your party is excellent so there are more people who want to come. What do you want to do? Correct, you want to mint new tokens for the same party.
+    Assume that you are an artist and have a collection of two pieces. You deployed your contract at address:<2020,0> and minted these tokens with IDs 01 and 02. What if you want to add new pieces? If you create a new instance, you will get a new contract instance address (always remember because it's a new one), but then how can you tell people these new pieces belong to the same collection? Or, say you are having a party and minted 100 tokens as tickets, and your party is excellent so there are more people who want to come. What do you want to do? Correct, you want to mint new tokens for the same party.
 
     **Mint tokens**
 
-    Minting is the same as the previous sections: you need to specify your index number as shown below and click **FIND**.
+    Minting is the same as the previous sections: you need to specify your contract instance address as shown below and click **FIND**.
 
     .. image:: ../../images/low-code-nft-framework/mint-from-contract-index.png
         :width: 100%
-        :alt: prepare to mint tokens from an existing contract by entering contract index number
+        :alt: prepare to mint tokens from an existing contract by entering contract address
 
     It will check if the contract has some unique CIS-2 methods, like the ``supports()`` function which means the contract is compliant with CIS-2. Basically, you are checking whether the contract is a token contract or not. If you are the owner, you will be able to mint your new tokens exactly :ref:`as in the previous sections<mint-w-metadata>`. If you are not the owner of the contract, then you will end up with the error shown below.
 
