@@ -47,7 +47,7 @@ Once you have the above installed, do the following:
         :width: 100%
         :alt: black screen of code editor with terminal window open at bottom
 
-#. Now run your store web server locally with the follwing command.
+#. Now run your store web server locally with the following command.
 
     .. code-block:: console
 
