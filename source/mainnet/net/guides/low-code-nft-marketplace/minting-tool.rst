@@ -125,7 +125,7 @@ Concordium provides a `library of sample images you can download <https://github
             :width: 100%
             :alt: minting tool screen with connect to pinata shown
 
-    That will lead us to Prepare Metadata section. We will provide the metadata file that we prepared beforehand. Provide the metadata.json file's URL to the text box and click the "OK" button.
+    That will lead us to Prepare Metadata section. We will provide the metadata file that we prepared beforehand. Provide the ``metadata.json`` file's URL to the text box and click the "OK" button.
 
     Then you will be asked to specify the token ID and amount in the following screens. Your image will be fetched from IPFS or the server where you stored assets.
 
