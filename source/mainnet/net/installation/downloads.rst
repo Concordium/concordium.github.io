@@ -14,14 +14,17 @@ This topic contains information about where you can download the Concordium Wall
 |mw-gen2|
 ========================
 
-The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or later.
+The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13 or later and Android 8 or later.
 
 .. Note::
 
    The |mw-gen2| is not supported on tablet devices.
 
-You can find |mw-gen2| on Google Play.
+You can find |mw-gen2| on App Store and on Google Play.
 
+   .. image:: ../images/mobile-wallet/app-store-badge.svg
+      :width: 23%
+      :target: https://apps.apple.com/us/app/concordium-blockchain-wallet/id6444703764
    .. image:: ../images/mobile-wallet/google-play-badge.png
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet

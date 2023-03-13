@@ -1,7 +1,7 @@
 .. _delegation-faq:
 
-Delegation FAQ
-==============
+Delegation and baking FAQ
+=========================
 
 For delegators
 --------------
@@ -38,7 +38,7 @@ For delegators
 
 .. dropdown:: Why is there a cool-down when I decrease / stop my delegation?
 
-    The cool-down period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
+    The :ref:`cool-down<glossary-cool-down-period>` period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
 
 .. dropdown:: Can I change my restaking preference if I am in a cool-down period?
 
@@ -91,11 +91,11 @@ For bakers
 
 .. dropdown:: Can I open a pool on my existing baker node?
 
-    Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
+    Yes. See :ref:`Update a baker pool for Desktop Wallet<update-pool-settings>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
 
 .. dropdown:: How do I activate a baker pool?
 
-    All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
+    All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-pool-settings>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
 
 .. dropdown:: How often are rewards distributed to bakers?
 
