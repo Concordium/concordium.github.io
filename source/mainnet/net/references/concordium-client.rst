@@ -19,8 +19,8 @@ through a :ref:`local node<run-a-node>`. If the node runs on a different machine
 or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
 to set the `IP address`_ and `port number`_ that the node is accessible at. These
 flags are supported by all ``concordium-client`` commands. Note that as of version
-5.1.0, the IP-address must belong to a node running with the node GRPC API V2 enabled
-and served on the specified port. For earlier versions, the IP-address must belong to
+5.1.0, the IP address must belong to a node running with the node GRPC API V2 enabled
+and served on the specified port. For earlier versions, the IP address must belong to
 a node running with the node GRPC API V1 enabled and served on the specified port.
 
 .. note::

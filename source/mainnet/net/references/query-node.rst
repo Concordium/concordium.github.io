@@ -295,13 +295,13 @@ In this example, conversions between Euros, CCD and NRG are as follows:
 - 1 NRG = 10 :sup:`-4` CCD
 
 Conversion changes happen through transactions that update the chain parameters.
-If an update transaction has been posted it will take time to take effect. To see
-any pending updates to the chain parameters in the best block, you can issue the
+If an update transaction has been posted it takes time to take effect. To see
+any pending updates to the chain parameters in the best block, run the
 following command:
 
 .. code-block:: console
 
    $concordium-client raw GetBlockPendingUpdates
 
-This will print a JSON list containing any such pending updates. As before you can
-also pass a block hash to the command to query a specific block. 
+This prints a JSON list containing any such pending updates. As before you can
+also pass a block hash to the command to query a specific block.
