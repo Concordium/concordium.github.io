@@ -2,8 +2,8 @@
 
 <div id="cookie-consent" class="consent">
     <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
-    <button onclick="consentGranted()">Opt in</button>
-    <button onclick="consentDenied()">Opt out</button>
+    <button onclick="consentGranted()">Allow/button>
+    <button onclick="consentDenied()">Decline</button>
     <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
 </div>
 
@@ -61,4 +61,8 @@ _paq.push(['enableLinkTracking']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
 </script>
