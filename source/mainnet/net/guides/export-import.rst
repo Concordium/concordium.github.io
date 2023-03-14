@@ -44,6 +44,8 @@ Keep previous backup files until you have verified that your latest backup is wo
 How to back up and import
 =========================
 
+.. _desktop-wallet-recover:
+
 .. dropdown:: Desktop Wallet
 
     Because the Desktop Wallet uses a LEDGER device to sign all transactions, you can more easily recover your wallet and accounts if anything happens to your Desktop Wallet or you cannot access it. To access your Desktop Wallet, you use the backup file that you create in combination with your LEDGER device.
@@ -118,6 +120,8 @@ How to back up and import
         #. To view the recovered accounts, go to **Accounts**. A recovered account doesn't have the name you originally gave it. Instead the name consists of the first eight digits of the account address. Furthermore, because the identities are not recovered, the accounts show the index number that's associated with the identity and not the identity itself.
 
         #. To view placeholders for identities, go to **Identities**. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can't use the placeholders to create new accounts.
+
+.. _mobile-wallet-recover:
 
 .. dropdown:: |mw-gen1|
 
