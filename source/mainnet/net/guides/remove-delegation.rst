@@ -191,7 +191,7 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
         .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
                 :width: 40%
-   
+
    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
       .. image:: ../images/browser-wallet/delegation-stop-xact-confirm.png
