@@ -514,11 +514,13 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
     #. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
 
-        (screenshot)
+        .. image:: ../images/browser-wallet/update-baker-keys-review.png
+                :width: 40%
 
     #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        (screenshot)
+        .. image:: ../images/browser-wallet/update-baker-keys-finish.png
+                :width: 40%
 
     #. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
 

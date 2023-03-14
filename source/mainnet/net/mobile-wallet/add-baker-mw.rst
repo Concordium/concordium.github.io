@@ -380,11 +380,13 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
     7. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
 
-        (screenshot)
+        .. image:: ../images/browser-wallet/add-baker-review.png
+                :width: 40%
 
     8. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        (screenshot)
+        .. image:: ../images/browser-wallet/add-baker-finish.png
+                :width: 40%
 
     9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
 

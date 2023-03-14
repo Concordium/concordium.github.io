@@ -221,6 +221,9 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
     #. You see your current delegation. Click **Update**. Review the information about updating your delegation.
 
+        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+                :width: 40%
+
     #. If you want to delegate to a specific pool click **Baker** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. CLick **Continue**.
 
         .. image:: ../images/browser-wallet/delegation-update-target.png

@@ -228,7 +228,10 @@ When you delegate some stake to a baker pool, it can influence the chances of th
             .. image:: ../images/browser-wallet/setup-baking-delegation.png
                 :width: 40%
 
-        #. Click **Setup delegation**. If you are delegating for the first time, you see some information about delegation.
+        #. Click **Setup delegation**. If you are delegating for the first time on the account, you see some information about delegation.
+
+            .. image:: ../images/browser-wallet/add-delegation-baking.png
+                :width: 40%
 
         #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
 
