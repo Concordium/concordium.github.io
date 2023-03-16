@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mint a fungible token &#8212; Concordium  documentation</title>
+    <title>Mint and burn fungible tokens &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1067,7 +1067,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 current active has-children">
       <a class="current reference internal" href="#">
-       Mint a fungible token
+       Mint and burn fungible tokens
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1527,7 +1527,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Resources
+    Low-code NFT marketplace
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
@@ -1536,12 +1536,41 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/introduction.html">
+     Concordium low-code NFT framework
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/marketplace.html">
+     Low code MFT marketplace
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/minting-tool.html">
+     Low-code NFT minting tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../../net/resources/ccd-scan.html">
      CCDScan
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1587,8 +1616,8 @@ body {margin:0;}
     <a class="reference internal" href="../../../net/resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-    <label for="toctree-checkbox-53">
+    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+    <label for="toctree-checkbox-54">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1686,12 +1715,12 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="mint-a-fungible-token">
-<span id="ft-index"></span><h1>Mint a fungible token<a class="headerlink" href="#mint-a-fungible-token" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="mint-and-burn-fungible-tokens">
+<span id="ft-index"></span><h1>Mint and burn fungible tokens<a class="headerlink" href="#mint-and-burn-fungible-tokens" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial, you are going to mint fungible tokens on the Concordium blockchain, send them to multiple accounts, and test the balances. Before starting, you need to understand the <a class="reference external" href="https://proposals.concordium.software/CIS/cis-2.html">CIS-2</a> standard.</p>
 <div class="section" id="concordium-interoperability-standard-cis-2">
 <h2>Concordium Interoperability Standard (CIS-2)<a class="headerlink" href="#concordium-interoperability-standard-cis-2" title="Permalink to this headline">#</a></h2>
-<p>Unlike some other Layer-1 token standards, <a class="reference external" href="https://proposals.concordium.software/CIS/cis-2.html">CIS-2</a> represents more than one type of token with one standard including fungible tokens, non-fungible tokens, semi-fungible tokens, and soulbound tokens. You can read more information about the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">CIS-2 standard library at this link</a>.</p>
+<p>Unlike some other Layer-1 token standards, <a class="reference external" href="https://proposals.concordium.software/CIS/cis-2.html">CIS-2</a> represents more than one type of token with one standard including fungible tokens, non-fungible tokens, semi-fungible tokens, and soulbound tokens. You can read more information about the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">implementation of the CIS-2 standard library at this link</a>.</p>
 <p>A standard interface for both fungible and non-fungible tokens is implemented in a smart contract. The interface provides functions for transferring token ownership; allowing other addresses to transfer tokens; and querying token balances, operators and token metadata. It allows off-chain applications to track token balances and the location of token metadata using logged events.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>

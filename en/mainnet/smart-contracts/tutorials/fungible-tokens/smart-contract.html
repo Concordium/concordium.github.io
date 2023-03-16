@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Mint, transfer, and burn fungible tokens" href="mint-xfer.html" />
-    <link rel="prev" title="Mint a fungible token" href="index.html" />
+    <link rel="prev" title="Mint and burn fungible tokens" href="index.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -1067,7 +1067,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 current active has-children">
       <a class="reference internal" href="index.html">
-       Mint a fungible token
+       Mint and burn fungible tokens
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1527,7 +1527,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Resources
+    Low-code NFT marketplace
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
@@ -1536,12 +1536,41 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/introduction.html">
+     Concordium low-code NFT framework
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/marketplace.html">
+     Low code MFT marketplace
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/minting-tool.html">
+     Low-code NFT minting tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../../net/resources/ccd-scan.html">
      CCDScan
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1587,8 +1616,8 @@ body {margin:0;}
     <a class="reference internal" href="../../../net/resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-    <label for="toctree-checkbox-53">
+    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+    <label for="toctree-checkbox-54">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2147,11 +2176,11 @@ body {margin:0;}
 <p>Now that you have finished coding your smart contract you can build, deploy, and initialize it. You will use the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to build it, then deploy it to the testnet, and finally, mint/transfer/burn your token.</p>
 <p>First, create a metadata file. You will use it to pick an image for it, and naming and description. One thing that is important to note is the <strong>unique</strong> flag. Since this is not an NFT, you should set it to <strong>false</strong>. Then upload it to the IPFS and save the CID address. For information about how to do this, see <a class="reference internal" href="../nft-minting/upload-nft.html#upload-nft"><span class="std std-ref">Upload the NFT</span></a>. You will use it while minting the token.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
-<span class="go">    &quot;name&quot;: &quot;FOUR-TK&quot;,</span>
+<span class="go">    &quot;name&quot;: &quot;YOUR-TOKEN-NAME&quot;,</span>
 <span class="go">    &quot;unique&quot;: false,</span>
-<span class="go">    &quot;description&quot;: &quot;Fungible token for the future economy.&quot;,</span>
+<span class="go">    &quot;description&quot;: &quot;YOUR-TOKEN-DESCRIPTION&quot;,</span>
 <span class="go">    &quot;display&quot;: {</span>
-<span class="go">        &quot;url&quot;: &quot;https://gateway.pinata.cloud/ipfs/QmVLSi8pgAJe7pzvQQDGzphX1GzqcmfWBmNVDVXDq7siJV?_gl=1*s16h0v*_ga*MTA5MDU4MjY4OS4xNjc1NjY4OTMy*_ga_5RMPXG14TE*MTY3NTY2ODkzMi4xLjEuMTY3NTY2ODk0MC41Mi4wLjA.&quot;</span>
+<span class="go">        &quot;url&quot;: &quot;YOUR-IMAGE-PREVIEW-URL&quot;</span>
 <span class="go">    },</span>
 <span class="go">    &quot;attributes&quot;: []</span>
 <span class="go">}</span>
@@ -2200,7 +2229,7 @@ body {margin:0;}
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Mint a fungible token</p>
+            <p class="prev-next-title">Mint and burn fungible tokens</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="mint-xfer.html" title="next page">

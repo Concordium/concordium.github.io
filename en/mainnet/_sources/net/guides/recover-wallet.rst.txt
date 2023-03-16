@@ -11,6 +11,10 @@ In case you get a new device or need to restore your existing device, you can re
 
     You cannot recover testnet wallets on mainnet, or vice versa.
 
+.. Note::
+
+    The recovery process for Desktop Wallet and |mw-gen1| is different. For information about these, see :ref:`Make a backup of identities, accounts, and addresses<export-import>`.
+
 .. dropdown:: |bw|
 
     #. After :ref:`reinstalling<setup-bw>` the |bw|, open the extension, create a passcode, and when prompted, choose **Restore**.
@@ -73,6 +77,14 @@ In case you get a new device or need to restore your existing device, you can re
     .. Note::
 
         When you recover your wallet, any account names that you might have edited will be reset to the account number. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
+
+.. dropdown:: |mw-gen1|
+
+    Recovery of |mw-gen1| requires a valid backup file. For more information about this process, see :ref:`backup and restore<mobile-wallet-recover>`.
+
+.. dropdown:: Desktop Wallet
+
+    The recovery process for Desktop Wallet is different because of the LEDGER device. For detailed instructions, see :ref:`Desktop Wallet backup and recovery<desktop-wallet-recover>`.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

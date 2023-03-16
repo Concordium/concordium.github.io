@@ -1067,7 +1067,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../../smart-contracts/tutorials/fungible-tokens/index.html">
-       Mint a fungible token
+       Mint and burn fungible tokens
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1527,7 +1527,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Resources
+    Low-code NFT marketplace
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
@@ -1536,12 +1536,41 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="low-code-nft-marketplace/introduction.html">
+     Concordium low-code NFT framework
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="low-code-nft-marketplace/marketplace.html">
+     Low code MFT marketplace
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="low-code-nft-marketplace/minting-tool.html">
+     Low-code NFT minting tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../resources/ccd-scan.html">
      CCDScan
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1587,8 +1616,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-    <label for="toctree-checkbox-53">
+    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+    <label for="toctree-checkbox-54">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1683,6 +1712,10 @@ body {margin:0;}
 <p class="admonition-title">Note</p>
 <p>You cannot recover testnet wallets on mainnet, or vice versa.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The recovery process for Desktop Wallet and Concordium Legacy Wallet is different. For information about these, see <a class="reference internal" href="export-import.html#export-import"><span class="std std-ref">Make a backup of identities, accounts, and addresses</span></a>.</p>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Web<div class="sd-summary-down docutils">
@@ -1749,6 +1782,24 @@ Concordium Wallet for Mobile<div class="sd-summary-down docutils">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">When you recover your wallet, any account names that you might have edited will be reset to the account number. You can <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">edit the account name</span></a>, if desired.</p>
 </div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Recovery of Concordium Legacy Wallet requires a valid backup file. For more information about this process, see <a class="reference internal" href="export-import.html#mobile-wallet-recover"><span class="std std-ref">backup and restore</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The recovery process for Desktop Wallet is different because of the LEDGER device. For detailed instructions, see <a class="reference internal" href="export-import.html#desktop-wallet-recover"><span class="std std-ref">Desktop Wallet backup and recovery</span></a>.</p>
 </div>
 </details></div>
 
