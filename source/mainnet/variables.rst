@@ -24,8 +24,8 @@
 
 .. Node debian package verification variables
 
-.. |node-deb-package| replace:: concordium-mainnet-node_5.1.3-0_amd64.deb
-.. |node-deb-package-checksum| replace:: be10622086fe1225480e68303aab05fcc806150c51327afa7f19c8289600fb6b
+.. |node-deb-package| replace:: concordium-mainnet-node_5.2.4-0_amd64.deb
+.. |node-deb-package-checksum| replace:: 579e77a873a46d9a19d058e2c0bacb027efdf46aec8a73cb2983f6d37513be4c
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
