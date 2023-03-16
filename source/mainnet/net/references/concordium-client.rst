@@ -41,7 +41,7 @@ Run Concordium Client
 
 Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
-To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can type ``concordium-client`` from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the ``concordium-client_5.1.0-0.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_5.1.0-0.exe``. So you enter the full path at the prompt in the terminal.
+To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can type ``concordium-client`` from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the ``concordium-client_5.1.1.exe`` in the Downloads folder of a user called User, then the full path is probably ``C:\Users\User\Downloads\concordium-client_5.1.1.exe``. So you enter the full path at the prompt in the terminal.
 
 When running commands for the Concordium Client in the terminal, replace concordium-client with ``C:\Users\User\Downloads\concordium-client_<version>.exe`` as in the following example:
 
