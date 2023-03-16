@@ -174,7 +174,7 @@ Deploy it with the command below.
 
 .. code-block:: console
 
-    concordium-client module deploy dist/module.wasm.v1 --sender <YOUR-ACCOUNT> --name counter --grpc-port 10001
+    concordium-client module deploy dist/module.wasm.v1 --sender <YOUR-ACCOUNT> --name counter --grpc-port 20001
 
 .. image:: images/deploy.png
     :width: 100%
@@ -183,7 +183,7 @@ Initialize it to create your contract instance, so you are ready to invoke the f
 
 .. code-block:: console
 
-    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 10001
+    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 20001
 
 .. image:: images/initialize.png
     :width: 100%
@@ -198,7 +198,7 @@ First, check the initial state of the contract.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema dist/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema dist/schema.bin --grpc-port 20001
 
 Since you just initialized the contract it is 0.
 
@@ -212,7 +212,7 @@ Create a JSON file that holds your operator that will be given as input to the f
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint increment --parameter-json <PATH-TO-JSON> --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint increment --parameter-json <PATH-TO-JSON> --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
 
 Start by testing with your conditions. First, try another account other than the owner of the contract since you want that only the owner can call this function.
 

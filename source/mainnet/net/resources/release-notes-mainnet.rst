@@ -13,6 +13,20 @@ Release notes - Mainnet
 
 March 16, 2023
 
+Concordium Client 5.1.1
+-----------------------
+
+Concordium Client has been migrated to use version 2 of the node gRPC API.
+
+- Since the node serves the V2 gRPC API on port 20000 by default, the default value of
+  the `--grpc-port` option has been updated to reflect this.
+
+- Some `raw` commands have been removed and new `raw` commands have been added. For detailed information, see the `Concordium Client changelog <https://github.com/Concordium/concordium-client/blob/main/ChangeLog.md#510>`__.
+
+- General improvements to error message information and phrasing.
+
+- The `--grpc-authentication-token` option has been removed.
+
 Concordium Node 5.2.4
 ---------------------
 
