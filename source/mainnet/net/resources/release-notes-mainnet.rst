@@ -13,7 +13,7 @@ Release notes - Mainnet
 
 March 21, 2023
 
-|mw-gen1| for iOS 3.1.X
+|mw-gen1| for iOS 3.1.1
 -----------------------
 
 A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
