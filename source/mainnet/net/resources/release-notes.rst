@@ -17,7 +17,7 @@ March 21, 2023
 -----------------------
 
 A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
- 
+
 March 09, 2023
 
 Concordium Node 5.2.4
