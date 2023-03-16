@@ -55,7 +55,7 @@ When running commands for the Concordium Client in the terminal, replace concord
 
    .. code-block:: console
 
-      C:\Users\User\Downloads\concordium-client_5.1.0-0.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name AccountA
+      C:\Users\User\Downloads\concordium-client_5.1.1.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name AccountA
 
 Commands and help
 =================
