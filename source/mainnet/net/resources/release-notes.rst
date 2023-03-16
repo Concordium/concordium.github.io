@@ -13,7 +13,7 @@ Release Notes - Testnet
 
 March 2, 2023
 
-Concordium Client 5.1.0
+Concordium Client 5.1.1
 -----------------------
 
 Concordium Client has been migrated to use version 2 of the node gRPC API.
