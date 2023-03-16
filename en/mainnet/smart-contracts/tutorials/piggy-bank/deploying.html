@@ -1808,7 +1808,7 @@ The <code class="docutils literal notranslate"><span class="pre">v1</span></code
 <p>Names are only stored locally in the <code class="docutils literal notranslate"><span class="pre">concordium</span> <span class="pre">client</span></code> configuration.
 They are not visible to others on the chain. This is the case for all contracts, modules, and account names/aliases.</p>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client module deploy piggy_bank_part2.wasm.v1 --sender &lt;account-name&gt; --name piggy_bank_part2_module --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client module deploy piggy_bank_part2.wasm.v1 --sender &lt;account-name&gt; --name piggy_bank_part2_module --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>If everything works correctly the output has a green line with your module reference.</p>
@@ -1832,7 +1832,7 @@ You can continue this tutorial by using the module reference printed in the erro
 <div class="section" id="initializing-a-module">
 <h2>Initializing a module<a class="headerlink" href="#initializing-a-module" title="Permalink to this headline">#</a></h2>
 <p>You can initialize your smart contract now to create a smart contract instance. Give the instance the name <code class="docutils literal notranslate"><span class="pre">piggy_bank_part2_instance</span></code> so it can be referenced in this tutorial.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract init piggy_bank_part2_module --sender &lt;account-name&gt; --contract PiggyBank --name piggy_bank_part2_instance --energy <span class="m">1500</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract init piggy_bank_part2_module --sender &lt;account-name&gt; --contract PiggyBank --name piggy_bank_part2_instance --energy <span class="m">1500</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1852,7 +1852,7 @@ energy to be used. You only pay for the actual energy used.</p>
 <div class="section" id="updating-the-piggy-bank-smart-contract">
 <h2>Updating the piggy bank smart contract<a class="headerlink" href="#updating-the-piggy-bank-smart-contract" title="Permalink to this headline">#</a></h2>
 <p>Deposit 1 CCD into the piggy bank to test if you can update the smart contract instance.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update piggy_bank_part2_instance --entrypoint insert --energy <span class="m">1000</span> --sender &lt;account-name&gt; --amount <span class="m">1</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update piggy_bank_part2_instance --entrypoint insert --energy <span class="m">1000</span> --sender &lt;account-name&gt; --amount <span class="m">1</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>If everything works correctly the output has a green line as follows:</p>
@@ -1865,7 +1865,7 @@ energy to be used. You only pay for the actual energy used.</p>
 <div class="section" id="viewing-the-piggy-bank-state">
 <h2>Viewing the piggy bank state<a class="headerlink" href="#viewing-the-piggy-bank-state" title="Permalink to this headline">#</a></h2>
 <p>You can display the raw return value of your piggy bank smart contract with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke piggy_bank_part2_instance --entrypoint view --energy <span class="m">1000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke piggy_bank_part2_instance --entrypoint view --energy <span class="m">1000</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>If everything works correctly the output has a green line as follows:</p>
@@ -1882,7 +1882,7 @@ energy to be used. You only pay for the actual energy used.</p>
 <div class="section" id="smashing-the-piggy-bank-smart-contract">
 <h2>Smashing the piggy bank smart contract<a class="headerlink" href="#smashing-the-piggy-bank-smart-contract" title="Permalink to this headline">#</a></h2>
 <p>Smash the piggy bank contract to test that you can invoke this entry point. After smashing the piggy bank you cannot enter any additional CCD into the piggy bank anymore.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update piggy_bank_part2_instance --entrypoint smash --sender &lt;account-name&gt; --energy <span class="m">2000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update piggy_bank_part2_instance --entrypoint smash --sender &lt;account-name&gt; --energy <span class="m">2000</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>If everything works correctly the output has a green line as follows:</p>

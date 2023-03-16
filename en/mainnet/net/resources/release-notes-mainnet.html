@@ -1694,6 +1694,11 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordium-client-5-1-1">
+   Concordium Client 5.1.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concordium-node-5-2-4">
    Concordium Node 5.2.4
   </a>
@@ -2154,6 +2159,17 @@ body {margin:0;}
 <p>To subscribe to updates on the Mainnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
 <p>March 16, 2023</p>
+<div class="section" id="concordium-client-5-1-1">
+<h2>Concordium Client 5.1.1<a class="headerlink" href="#concordium-client-5-1-1" title="Permalink to this headline">#</a></h2>
+<p>Concordium Client has been migrated to use version 2 of the node gRPC API.</p>
+<ul class="simple">
+<li><p>Since the node serves the V2 gRPC API on port 20000 by default, the default value of
+the <cite>–grpc-port</cite> option has been updated to reflect this.</p></li>
+<li><p>Some <cite>raw</cite> commands have been removed and new <cite>raw</cite> commands have been added. For detailed information, see the <a class="reference external" href="https://github.com/Concordium/concordium-client/blob/main/ChangeLog.md#510">Concordium Client changelog</a>.</p></li>
+<li><p>General improvements to error message information and phrasing.</p></li>
+<li><p>The <cite>–grpc-authentication-token</cite> option has been removed.</p></li>
+</ul>
+</div>
 <div class="section" id="concordium-node-5-2-4">
 <h2>Concordium Node 5.2.4<a class="headerlink" href="#concordium-node-5-2-4" title="Permalink to this headline">#</a></h2>
 <ul class="simple">

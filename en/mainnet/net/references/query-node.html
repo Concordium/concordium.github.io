@@ -1975,6 +1975,7 @@ that affect them do not take effect immediately.</p></li>
 <h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
 <span class="go">Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66</span>
+<span class="go">Election difficulty: 2.5e-2</span>
 <span class="go">Bakers:</span>
 <span class="go">                             Account                       Lottery power</span>
 <span class="go">        ----------------------------------------------------------------</span>
@@ -2043,23 +2044,23 @@ defaulting to the <a class="reference internal" href="../resources/glossary.html
 <span id="id6"></span><h2>Exchange rates<a class="headerlink" href="#exchange-rates" title="Permalink to this headline">#</a></h2>
 <p>Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
 exchange rates, query the chain parameters of the <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">best block</span></a>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockSummary
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockChainParameters
 </pre></div>
 </div>
 <p>You can also add a block hash at the end of the command to query a specific block.</p>
-<p>The command returns the information about a block in JSON format. The exchange rates are
-in the <code class="docutils literal notranslate"><span class="pre">chainParameters</span></code> section under <code class="docutils literal notranslate"><span class="pre">microCCDPerEuro</span></code> and <code class="docutils literal notranslate"><span class="pre">euroPerEnergy</span></code>:</p>
+<p>The command returns the information about a the chain parameters in JSON format. The exchange rates are
+found in the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> section under <code class="docutils literal notranslate"><span class="pre">euroPerEnergy</span></code> and <code class="docutils literal notranslate"><span class="pre">microGTUPerEuro</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...</span>
-<span class="go">&quot;chainParameters&quot;: {</span>
-<span class="go">    ...</span>
-<span class="go">    &quot;microCCDPerEuro&quot;: {</span>
-<span class="go">        &quot;denominator&quot;: 1,</span>
-<span class="go">        &quot;numerator&quot;: 100 000 000</span>
-<span class="go">    },</span>
+<span class="go">&quot;parameters&quot;: {</span>
 <span class="go">    ...</span>
 <span class="go">    &quot;euroPerEnergy&quot;: {</span>
 <span class="go">        &quot;denominator&quot;: 1 000 000,</span>
 <span class="go">        &quot;numerator&quot;: 1</span>
+<span class="go">    },</span>
+<span class="go">    ...</span>
+<span class="go">    &quot;microGTUPerEuro&quot;: {</span>
+<span class="go">        &quot;denominator&quot;: 1,</span>
+<span class="go">        &quot;numerator&quot;: 100 000 000</span>
 <span class="go">    }</span>
 </pre></div>
 </div>
@@ -2070,9 +2071,14 @@ in the <code class="docutils literal notranslate"><span class="pre">chainParamet
 <li><p>1 NRG = 10 <sup>-4</sup> CCD</p></li>
 </ul>
 <p>Conversion changes happen through transactions that update the chain parameters.
-If an update transaction has been posted it will take time to take effect. You can see
-whether updates to the chain parameters are being processed by looking for attributes
-that are prefixed with <code class="docutils literal notranslate"><span class="pre">pending</span></code> in the result of the above query.</p>
+If an update transaction has been posted it takes time to take effect. To see
+any pending updates to the chain parameters in the best block, run the
+following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockPendingUpdates
+</pre></div>
+</div>
+<p>This prints a JSON list containing any such pending updates. As before you can
+also pass a block hash to the command to query a specific block.</p>
 </div>
 </div>
 

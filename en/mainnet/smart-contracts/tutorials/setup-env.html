@@ -1818,14 +1818,14 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 </pre></div>
 </div>
 <p class="sd-card-text">Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p class="sd-card-text">You should see some block data output.</p>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_18.png"><img alt="../../_images/pb_tutorial_18.png" src="../../_images/pb_tutorial_18.png" style="width: 100%;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">Port 10001 is open by default on your testnet node to interact with it.</p>
+<p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it.</p>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1838,17 +1838,17 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 <p class="sd-card-text">This option explains how you can use the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool locally on your machine and connect remotely to your node running on the server.</p>
 <p class="sd-card-text"><strong>Advantage</strong>: You don’t have to transfer files between your local machine and your instance later in the tutorial.</p>
 <p class="sd-card-text"><strong>Disadvantage</strong>: You have to use ssh with port forwarding when you run a command locally.</p>
-<p class="sd-card-text">Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 10001 on your localhost is forwarded to the port 10001 on your instance.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh -NL localhost:10001:&lt;IP-address-of-your-instance&gt;:10001 &lt;username&gt;@&lt;host&gt;
+<p class="sd-card-text">Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 20001 on your localhost is forwarded to the port 20001 on your instance.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh -NL localhost:20001:&lt;IP-address-of-your-instance&gt;:20001 &lt;username&gt;@&lt;host&gt;
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_26.png"><img alt="../../_images/pb_tutorial_26.png" src="../../_images/pb_tutorial_26.png" style="width: 100%;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">Port 10001 is open by default on your testnet node to interact with it. Cloud providers often use <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> as the default &lt;username&gt; and the &lt;IP-address-of-your-instance&gt; as the default &lt;host&gt;.</p>
+<p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it. Cloud providers often use <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> as the default &lt;username&gt; and the &lt;IP-address-of-your-instance&gt; as the default &lt;host&gt;.</p>
 </div>
 <p class="sd-card-text">Go in another terminal B to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p class="sd-card-text">You should see some block data output.</p>
@@ -1898,7 +1898,7 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 </div>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_13.png"><img alt="../../_images/pb_tutorial_13.png" src="../../_images/pb_tutorial_13.png" style="width: 100%;" /></a>
 <p>Alternatively, you can query the syncing state of your node with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Wait until the <code class="docutils literal notranslate"><span class="pre">last</span> <span class="pre">finalized</span> <span class="pre">block</span> <span class="pre">height</span></code> of your node is the same as the highest value used by the majority of nodes.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./concordium-client consensus status --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./concordium-client consensus status --grpc-port 20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_19.png"><img alt="../../_images/pb_tutorial_19.png" src="../../_images/pb_tutorial_19.png" style="width: 100%;" /></a>

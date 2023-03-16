@@ -1858,7 +1858,7 @@ Checking the CCD balance of an account (click here)<div class="sd-summary-down d
 <p class="sd-card-text">You can check the CCD balance of an account on <a class="reference external" href="https://testnet.ccdscan.io/">CCDScan</a>.</p>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_1.png"><img alt="../../../_images/wCCD_tutorial_1.png" src="../../../_images/wCCD_tutorial_1.png" style="width: 100%;" /></a>
 <p class="sd-card-text">You can check the CCD balance of an account with this command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client account show ACCOUNT --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client account show ACCOUNT --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_10.png"><img alt="../../../_images/wCCD_tutorial_10.png" src="../../../_images/wCCD_tutorial_10.png" style="width: 100%;" /></a>
@@ -1871,7 +1871,7 @@ Checking the CCD balance of a smart contract (click here)<div class="sd-summary-
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">You can check the CCD balance of a smart contract with this command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract show INDEX --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract show INDEX --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_3.png"><img alt="../../../_images/wCCD_tutorial_3.png" src="../../../_images/wCCD_tutorial_3.png" style="width: 100%;" /></a>
@@ -1952,7 +1952,7 @@ Input parameters for the <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_4.png"><img alt="../../../_images/wCCD_tutorial_4.png" src="../../../_images/wCCD_tutorial_4.png" style="width: 100%;" /></a>
@@ -2037,7 +2037,7 @@ the below JSON array.</p>
 </div>
 </div>
 </details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_7.png"><img alt="../../../_images/wCCD_tutorial_7.png" src="../../../_images/wCCD_tutorial_7.png" style="width: 100%;" /></a>
@@ -2062,7 +2062,7 @@ The <cite>tokenId</cite> of the wCCD token is the smallest unit possible (an emp
 </div>
 </div>
 </details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_8.png"><img alt="../../../_images/wCCD_tutorial_8.png" src="../../../_images/wCCD_tutorial_8.png" style="width: 100%;" /></a>
@@ -2088,7 +2088,7 @@ and the <a class="reference external" href="https://proposals.concordium.softwar
 </div>
 </div>
 </details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">supports</span></code> function with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the response of querying if the wCCD
@@ -2226,7 +2226,7 @@ because the <code class="docutils literal notranslate"><span class="pre">wrap</s
 The <code class="docutils literal notranslate"><span class="pre">--energy</span></code> flag specifies the maximum amount of NRG to be spent on the transaction
 and can be used to set an upper limit of the transaction fee that you are
 willing to spend when interacting with the blockchain.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 micro wCCD.</p>
@@ -2324,7 +2324,7 @@ because the <code class="docutils literal notranslate"><span class="pre">unwrap<
 <p>The <code class="docutils literal notranslate"><span class="pre">owner</span></code> has to have at least a balance of <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> in wCCD tokens
 and the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> has to be the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address or be an <code class="docutils literal notranslate"><span class="pre">operator</span></code> of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address.
 You are ready now to unwrap your wCCD into CCD with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function.</p>
@@ -2421,7 +2421,7 @@ The <code class="docutils literal notranslate"><span class="pre">transfer</span>
 <p>The <code class="docutils literal notranslate"><span class="pre">from</span></code> address has to have at least a balance of <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> in wCCD tokens
 and the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> has to be the <code class="docutils literal notranslate"><span class="pre">from</span></code> address or be an <code class="docutils literal notranslate"><span class="pre">operator</span></code> of the <code class="docutils literal notranslate"><span class="pre">from</span></code> address.
 You are ready now to transfer your wCCD to another address with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function.</p>
@@ -2507,7 +2507,7 @@ an operator to the <code class="docutils literal notranslate"><span class="pre">
 </details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function, check
 the state of the smart contract with the <a class="reference internal" href="#operatorof"><span class="std std-ref">operatorOf</span></a> function.</p>
 <p>You are ready now to update the operator on your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> address with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function.</p>

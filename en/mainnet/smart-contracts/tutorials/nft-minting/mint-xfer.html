@@ -1748,7 +1748,7 @@ body {margin:0;}
 <div class="section" id="view-function">
 <span id="nft-view-fn"></span><h2>View function<a class="headerlink" href="#view-function" title="Permalink to this headline">#</a></h2>
 <p>Now check the current state of the cis2-nft token contract by invoking view function. The schema file you created in the build step is important here, because <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> uses it to deserialize the output while printing it.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-INDEX&gt; --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-INDEX&gt; --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>Your result will be similar to what is shown below where the user is the owner of the token with ID <strong>00000111</strong>.</p>
@@ -1767,7 +1767,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>You can query the metadata with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-INDEX&gt; --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-INDEX&gt; --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>This returns the metadata URL combined with your tokenID.</p>
@@ -1780,7 +1780,7 @@ body {margin:0;}
 <p>Before you transfer the NFT, you should change the sender account and receiver account in the  <code class="docutils literal notranslate"><span class="pre">../nft-artifacts/transfer-params.json</span></code> file. Make sure you make the adjustments of addresses accordingly as shown below. You can create another account on your wallet to transfer this token to that.</p>
 <a class="reference internal image-reference" href="../../../_images/transfer-values.png"><img alt="../../../_images/transfer-values.png" src="../../../_images/transfer-values.png" style="width: 100%;" /></a>
 <p>Now you can transfer it. One reminder, you should be the owner of it to be able to transfer it, so try not to get confused in this step. The original minter account should be in the <strong>from</strong> key’s value and the receiver will be located in the <strong>to</strong> key’s value. When you specify your account addresses and tokenID to be transferred, run the command below. You are going to invoke the transfer function with given parameters.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client  contract update &lt;YOUR-INDEX&gt; --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client  contract update &lt;YOUR-INDEX&gt; --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>The transfer is successfully completed.</p>

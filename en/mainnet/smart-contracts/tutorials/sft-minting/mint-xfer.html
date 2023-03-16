@@ -1746,7 +1746,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>Then run the command below to invoke the mint function with the given params.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint mint --parameter-json nft-artifacts/mint-params.json --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint mint --parameter-json nft-artifacts/mint-params.json --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>You have just minted your semi-fungible token successfully.</p>
@@ -1758,7 +1758,7 @@ body {margin:0;}
 </div>
 <a class="reference internal image-reference" href="../../../_images/contract-state.png"><img alt="../../../_images/contract-state.png" src="../../../_images/contract-state.png" style="width: 100%;" /></a>
 <p>Your account has 100 tokens with id 01. To check the token’s metadata, create another JSON file called <code class="docutils literal notranslate"><span class="pre">ids.json</span></code>. You will invoke the <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function from your contract. It accepts parameters as a vector so you can query multiple tokens at the same time. When you have created your <code class="docutils literal notranslate"><span class="pre">ids.json</span></code> file and typed the <code class="docutils literal notranslate"><span class="pre">token_ids</span></code> you want to query with the format <code class="docutils literal notranslate"><span class="pre">[&quot;01&quot;]</span></code>, run the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-INDEX&gt; --entrypoint tokenMetadata --parameter-json nft-artifacts/ids.json --schema dist/smart-contract-multi/schema.bin --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-INDEX&gt; --entrypoint tokenMetadata --parameter-json nft-artifacts/ids.json --schema dist/smart-contract-multi/schema.bin --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>The metadata URL is stored permanently on Concordium.</p>
@@ -1779,7 +1779,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>Once your <code class="docutils literal notranslate"><span class="pre">transfer.json</span></code> file is complete, run the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-INDEX&gt; --entrypoint transfer --parameter-json nft-artifacts/transfer.json --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-INDEX&gt; --entrypoint transfer --parameter-json nft-artifacts/transfer.json --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>The transfer is successful.</p>

@@ -1734,7 +1734,7 @@ body {margin:0;}
 </div>
 <a class="reference internal image-reference" href="../../../_images/build-sc1.png"><img alt="../../../_images/build-sc1.png" src="../../../_images/build-sc1.png" style="width: 75%;" /></a>
 <p>Deploy the compiled Wasm file with the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/marketplace-contract/module.wasm.v1 --sender &lt;YOUR-ACCOUNT-ADDRESS&gt; --name &lt;YOUR-CONTRACT-NAME&gt; --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/marketplace-contract/module.wasm.v1 --sender &lt;YOUR-ACCOUNT-ADDRESS&gt; --name &lt;YOUR-CONTRACT-NAME&gt; --grpc-port 20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/deploy-sc1.png"><img alt="../../../_images/deploy-sc1.png" src="../../../_images/deploy-sc1.png" style="width: 75%;" /></a>
@@ -1764,7 +1764,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>Run the following command to initialize the contract.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init market --contract Market-NFT --parameter-json ../sample-artifacts/marketplace/init.json --sender &lt;YOUR-ADDRESS&gt; --energy 3000 --schema dist/marketplace-contract/schema.bin --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init market --contract Market-NFT --parameter-json ../sample-artifacts/marketplace/init.json --sender &lt;YOUR-ADDRESS&gt; --energy 3000 --schema dist/marketplace-contract/schema.bin --grpc-port 20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/init-sc.png"><img alt="../../../_images/init-sc.png" src="../../../_images/init-sc.png" style="width: 75%;" /></a>
@@ -1819,19 +1819,19 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>Now run the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-TOKEN-INDEX&gt; --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --schema ../cis2-multi/dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-TOKEN-INDEX&gt; --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --schema ../cis2-multi/dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>If successful, you will see something similar to below.</p>
 <a class="reference internal image-reference" href="../../../_images/update-operator.png"><img alt="../../../_images/update-operator.png" src="../../../_images/update-operator.png" style="width: 75%;" /></a>
 <p>Before calling the add function, update your <code class="docutils literal notranslate"><span class="pre">sample-artifacts/marketplace/add.json</span></code> file with the <em>index</em>, <em>tokenID</em>, <em>price</em>, <em>royalty</em> and <em>amount</em>. Now call the <code class="docutils literal notranslate"><span class="pre">add</span></code> function with the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-MARKETPLACE-CONTRACT-INDEX&gt; --entrypoint add --parameter-json ../sample-artifacts/marketplace/add.json --schema dist/marketplace-contract/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 10000 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-MARKETPLACE-CONTRACT-INDEX&gt; --entrypoint add --parameter-json ../sample-artifacts/marketplace/add.json --schema dist/marketplace-contract/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 10000 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>Now you have successfully added your token to marketplace.</p>
 <a class="reference internal image-reference" href="../../../_images/token-added.png"><img alt="../../../_images/token-added.png" src="../../../_images/token-added.png" style="width: 75%;" /></a>
 <p>To check if the token is in the marketplace, call the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function with the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-MARKETPLACE-INDEX&gt; --entrypoint list --schema marketplace-contract/dist/marketplace-contract/schema.bin --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-MARKETPLACE-INDEX&gt; --entrypoint list --schema marketplace-contract/dist/marketplace-contract/schema.bin --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>In the image below you can see that the token is listed.</p>
@@ -1913,7 +1913,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>Run the command below to invoke the <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> function.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-MARKETPLACE-CONTRACT&gt; --entrypoint transfer --parameter-json ../sample-artifacts/marketplace/transfer.json --schema dist/marketplace-contract/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --amount &lt;PRICE&gt; --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-MARKETPLACE-CONTRACT&gt; --entrypoint transfer --parameter-json ../sample-artifacts/marketplace/transfer.json --schema dist/marketplace-contract/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --amount &lt;PRICE&gt; --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>Below you can see a successful transfer.</p>
@@ -1921,7 +1921,7 @@ body {margin:0;}
 <p>Finally check the marketplace state once more with the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
 <a class="reference internal image-reference" href="../../../_images/mp-no-tokens.png"><img alt="../../../_images/mp-no-tokens.png" src="../../../_images/mp-no-tokens.png" style="width: 75%;" /></a>
 <p>And cross check with the token contract’s latest state with its <code class="docutils literal notranslate"><span class="pre">view()</span></code> function command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client  contract invoke &lt;TOKEN-CONTRACT-INDEX&gt; --entrypoint view --schema &lt;YOUR-SCHEMA-FILE&gt; --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client  contract invoke &lt;TOKEN-CONTRACT-INDEX&gt; --entrypoint view --schema &lt;YOUR-SCHEMA-FILE&gt; --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>As you can see, the first account has no balance anymore with the given token ID but the second one has.</p>

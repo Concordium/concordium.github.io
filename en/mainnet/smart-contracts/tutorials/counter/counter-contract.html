@@ -1902,12 +1902,12 @@ Initially, it has a <code class="docutils literal notranslate"><span class="pre"
 </div>
 <a class="reference internal image-reference" href="../../../_images/build.png"><img alt="../../../_images/build.png" src="../../../_images/build.png" style="width: 100%;" /></a>
 <p>Deploy it with the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/module.wasm.v1 --sender &lt;YOUR-ACCOUNT&gt; --name counter --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/module.wasm.v1 --sender &lt;YOUR-ACCOUNT&gt; --name counter --grpc-port 20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/deploy.png"><img alt="../../../_images/deploy.png" src="../../../_images/deploy.png" style="width: 100%;" /></a>
 <p>Initialize it to create your contract instance, so you are ready to invoke the functions in the next section.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;YOUR-MODULE-HASH&gt; --sender &lt;YOUR-ADDRESS&gt; --energy 30000 --contract counter --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;YOUR-MODULE-HASH&gt; --sender &lt;YOUR-ADDRESS&gt; --energy 30000 --contract counter --grpc-port 20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/initialize.png"><img alt="../../../_images/initialize.png" src="../../../_images/initialize.png" style="width: 100%;" /></a>
@@ -1917,7 +1917,7 @@ Initially, it has a <code class="docutils literal notranslate"><span class="pre"
 <div class="section" id="id1">
 <h3>View function<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>First, check the initial state of the contract.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint view --schema dist/schema.bin --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint view --schema dist/schema.bin --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>Since you just initialized the contract it is 0.</p>
@@ -1926,7 +1926,7 @@ Initially, it has a <code class="docutils literal notranslate"><span class="pre"
 <div class="section" id="increment-function">
 <h3>Increment function<a class="headerlink" href="#increment-function" title="Permalink to this headline">#</a></h3>
 <p>Create a JSON file that holds your operator that will be given as input to the function and run the command below. Basically, you are saying to the contract instance “with this transaction I will update your state from the increment entrypoint” which is your function name with this parameter.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint increment --parameter-json &lt;PATH-TO-JSON&gt; --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint increment --parameter-json &lt;PATH-TO-JSON&gt; --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>Start by testing with your conditions. First, try another account other than the owner of the contract since you want that only the owner can call this function.</p>

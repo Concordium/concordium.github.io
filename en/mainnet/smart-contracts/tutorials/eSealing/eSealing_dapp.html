@@ -1771,8 +1771,8 @@ input parameter because of the used <a class="reference external" href="https://
 <p>The front end is connected to a deployed eSealing smart contract on the Concordium testnet
 with <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing">this source code</a>.</p>
 <p>You can interact directly with the smart contract using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and your local node
-that is running at port 10001 to register a file hash as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">2481</span> --entrypoint registerFile --sender &lt;YourAccount&gt; --energy <span class="m">30000</span> --parameter-json fileHash.json --grpc-port <span class="m">10001</span>
+that is running at port 20001 to register a file hash as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">2481</span> --entrypoint registerFile --sender &lt;YourAccount&gt; --energy <span class="m">30000</span> --parameter-json fileHash.json --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">fileHash.json</span></code> file with a file hash as content similar to:</p>
@@ -1782,7 +1782,7 @@ that is running at port 10001 to register a file hash as follows:</p>
 <img alt="../../../_images/registerFile.png" class="align-center" src="../../../_images/registerFile.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Comprehensive instructions on how to set up a local Concordium testnet node on port 10001 (or alternatively link to a remote node via grpc),
+<p>Comprehensive instructions on how to set up a local Concordium testnet node on port 20001 (or alternatively link to a remote node via grpc),
 and download <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
 </div>
 <div class="admonition note">
@@ -1793,7 +1793,7 @@ and download <code class="docutils literal notranslate"><span class="pre">concor
 </div>
 </div>
 <p>You can view the <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">witness</span></code> (sealer account) of an already timestamped file as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">2481</span> --entrypoint getFile --parameter-json fileHash.json --grpc-port <span class="m">10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">2481</span> --entrypoint getFile --parameter-json fileHash.json --grpc-port <span class="m">20001</span>
 </pre></div>
 </div>
 <img alt="../../../_images/displayFile.png" class="align-center" src="../../../_images/displayFile.png" />

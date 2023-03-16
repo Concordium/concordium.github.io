@@ -1769,7 +1769,7 @@ body {margin:0;}
 </div>
 <p>In order to deploy you need to specify the compiled module file name and the other arguments which will be passed from the terminal. Once you run the command below, it will ask for confirmation. Type <strong>y</strong>. You will be asked to input a password.</p>
 <p>To deploy run the command below:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/cis2-nft/cis2.module.wasm.v1 --sender &lt;YOUR-ADDRESS&gt; --name &lt;YOUR-MODULE-NAME&gt; --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/cis2-nft/cis2.module.wasm.v1 --sender &lt;YOUR-ADDRESS&gt; --name &lt;YOUR-MODULE-NAME&gt; --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>If the command is successful, you will see something similar to below.</p>
@@ -1780,7 +1780,7 @@ body {margin:0;}
 <div class="section" id="initializing-the-smart-contract">
 <h2>Initializing the smart contract<a class="headerlink" href="#initializing-the-smart-contract" title="Permalink to this headline">#</a></h2>
 <p>After deploying a contract you have to initialize it. It’s like object-oriented programming: you create a class which is a module, and then you initialize it to create an object. It is the same here. An object of a class is a way to store both states of the class and its functionality. In order to initialize an instance of the contract you need the module name and contract, then run the following command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;YOUR-MODULE-NAME&gt; --sender &lt;YOUR-ADDRESS&gt; --energy 30000  --contract &lt;CONTRACT-NAME&gt; --grpc-ip 127.0.0.1 --grpc-port 10001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;YOUR-MODULE-NAME&gt; --sender &lt;YOUR-ADDRESS&gt; --energy 30000  --contract &lt;CONTRACT-NAME&gt; --grpc-ip 127.0.0.1 --grpc-port 20001</span>
 </pre></div>
 </div>
 <p>If successful, you will see something similar to the below.</p>
