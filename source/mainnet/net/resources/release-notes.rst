@@ -11,6 +11,13 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March 21, 2023
+
+|mw-gen2| 1.1.6
+---------------------------
+
+The wallet has been updated so that it is able to sign/send a contract update transaction successfully when it receives the schema as a string, as an object with the field “type”: “module”, or as an object with the field “type”: “parameter”.
+
 March 2, 2023
 
 Concordium Client 5.1.1
