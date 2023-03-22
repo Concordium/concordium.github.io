@@ -20,6 +20,13 @@ Fixed a bug where conversion of parameters from JSON to binary did not work for 
 Fixed a bug that prevented users from sending larger amounts of bridged tokens.
 The sign_message wallet API now supports signing arbitrary data.
 
+March 21, 2023
+
+|mw-gen2| 1.1.6
+---------------------------
+
+The wallet has been updated so that it is able to sign/send a contract update transaction successfully when it receives the schema as a string, as an object with the field “type”: “module”, or as an object with the field “type”: “parameter”.
+
 March 2, 2023
 
 Concordium Client 5.1.1
