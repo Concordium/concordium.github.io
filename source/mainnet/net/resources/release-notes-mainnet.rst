@@ -11,7 +11,7 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-March 23, 2023
+March 28, 2023
 
 |bw| 0.9.9
 ----------------------
