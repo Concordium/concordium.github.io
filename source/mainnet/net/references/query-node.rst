@@ -189,6 +189,7 @@ Example
 
    $concordium-client consensus show-parameters --include-bakers
    Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66
+   Election difficulty: 2.5e-2
    Bakers:
                                 Account                       Lottery power
            ----------------------------------------------------------------
@@ -265,26 +266,26 @@ exchange rates, query the chain parameters of the :ref:`best block<glossary-best
 
 .. code-block:: console
 
-   $concordium-client raw GetBlockSummary
+   $concordium-client raw GetBlockChainParameters
 
 You can also add a block hash at the end of the command to query a specific block.
 
-The command returns the information about a block in JSON format. The exchange rates are
-in the ``chainParameters`` section under ``microCCDPerEuro`` and ``euroPerEnergy``:
+The command returns the information about a the chain parameters in JSON format. The exchange rates are
+found in the ``parameters`` section under ``euroPerEnergy`` and ``microGTUPerEuro``:
 
 .. code-block:: console
 
     ...
-    "chainParameters": {
-        ...
-        "microCCDPerEuro": {
-            "denominator": 1,
-            "numerator": 100 000 000
-        },
+    "parameters": {
         ...
         "euroPerEnergy": {
             "denominator": 1 000 000,
             "numerator": 1
+        },
+        ...
+        "microGTUPerEuro": {
+            "denominator": 1,
+            "numerator": 100 000 000
         }
 
 In this example, conversions between Euros, CCD and NRG are as follows:
@@ -294,8 +295,13 @@ In this example, conversions between Euros, CCD and NRG are as follows:
 - 1 NRG = 10 :sup:`-4` CCD
 
 Conversion changes happen through transactions that update the chain parameters.
-If an update transaction has been posted it will take time to take effect. You can see
-whether updates to the chain parameters are being processed by looking for attributes
-that are prefixed with ``pending`` in the result of the above query.
+If an update transaction has been posted it takes time to take effect. To see
+any pending updates to the chain parameters in the best block, run the
+following command:
 
+.. code-block:: console
 
+   $concordium-client raw GetBlockPendingUpdates
+
+This prints a JSON list containing any such pending updates. As before you can
+also pass a block hash to the command to query a specific block.

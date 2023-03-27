@@ -18,6 +18,40 @@ March 27, 2023
 
 A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
 
+March 21, 2023
+
+|mw-gen2| 1.1.6
+---------------------------
+
+The wallet has been updated so that it is able to sign/send a contract update transaction successfully when it receives the schema as a string, as an object with the field “type”: “module”, or as an object with the field “type”: “parameter”.
+
+March 16, 2023
+
+Concordium Client 5.1.1
+-----------------------
+
+Concordium Client has been migrated to use version 2 of the node gRPC API.
+
+- Since the node serves the V2 gRPC API on port 20000 by default, the default value of
+  the `--grpc-port` option has been updated to reflect this.
+
+- Some `raw` commands have been removed and new `raw` commands have been added. For detailed information, see the `Concordium Client changelog <https://github.com/Concordium/concordium-client/blob/main/ChangeLog.md#510>`__.
+
+- General improvements to error message information and phrasing.
+
+- The `--grpc-authentication-token` option has been removed.
+
+Concordium Node 5.2.4
+---------------------
+
+- The Prometheus metrics exporter has been improved and systematized, making this API stable from this release onwards to monitor your node metrics. The metrics are now `documented <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`_ and the node's Prometheus metrics API stability will adhere to SEMVER guidelines.
+
+- Fixed an issue where the node configuration file (``main.config.json``) was sometimes corrupted.
+
+- Added an option to disable only the node specific grpc V1 endpoints that can be used to control the node. All the endpoints that are consensus related are kept allowing the node to be used as a gateway to the chain. The mentioned endpoints can be disabled by setting ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` or using the flag ``--no-rpc-server-node-endpoints``.
+
+- Fixed a bug in ``GetAccountInfo`` endpoint in GRPCv2 where ``incoming_amounts`` field of encrypted amounts was not set correctly.
+
 March 07, 2023
 
 |mw-gen2| for iOS
