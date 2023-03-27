@@ -366,7 +366,7 @@ To retrieve mainnet node logs run:
 .. code-block:: yaml
 
    # This is an example configuration for running the mainnet node
-   
+
    version: '3'
    services:
      mainnet-node:
@@ -379,14 +379,14 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.com:8888
          # Where the genesis is located
          - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat
-   
+
          # General node configuration Data and config directories (it's OK if they
          # are the same). This should match the volume mount below. If the location
          # of the mount inside the container is changed, then these should be
          # changed accordingly as well.
          - CONCORDIUM_NODE_DATA_DIR=/mnt/data
          - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
-   
+
          # port on which the node will listen for incoming connections. This is a
          # port inside the container. It is mapped to an external port by the port
          # mapping in the `ports` section below. If the internal and external ports
@@ -420,9 +420,9 @@ To retrieve mainnet node logs run:
          # for consensus operations. `-I0` disables the idle garbage collector
          # which reduces CPU load for passive nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
-   
+
        entrypoint: ["/concordium-node"]
-   
+
        # Exposed ports. The ports the node listens on inside the container (defined
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
        # should match what is defined here. When running multiple nodes the
@@ -431,13 +431,13 @@ To retrieve mainnet node logs run:
        - "8888:8888"
        - "10000:10000"
        - "20000:20000"
-   
+
        volumes:
        # The node's database should be stored in a persistent volume so that it
        # survives container restart. In this case we map the **host** directory
        # ~/tmp/mainnet to be used as the node's database directory.
        - /tmp/mainnet:/mnt/data
-   
+
      # The collector reports the state of the node to the network dashboard. A node
      # can run without reporting to the network dashboard. Remove this section if
      # that is desired.
@@ -448,10 +448,10 @@ To retrieve mainnet node logs run:
        environment:
          # Settings that should be customized by the user.
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet
-   
+
          # Environment specific settings.
          - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.com/nodes/post
-   
+
          # Collection settings.
          # How often to collect the statistics from the node.
          - CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000
@@ -460,7 +460,7 @@ To retrieve mainnet node logs run:
          # the `mainnet-node`. If the name of the node service is changed from
          # `mainnet-node` then the name here must also be changed.
          - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
-   
+
        entrypoint: ["/node-collector"]
 
 Enable inbound connections
