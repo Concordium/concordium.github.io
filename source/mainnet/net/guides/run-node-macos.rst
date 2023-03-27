@@ -224,7 +224,7 @@ If you want to change whether the node services start automatically, you have tw
 
 - If you're not familiar with using a terminal, the easiest option is to reinstall the macOS node and configure it differently.
 
-- If you're familiar with using a terminal, the following options are available
+- If you're familiar with using a terminal, the following options are available:
 
   .. note::
      The dollar sign (``$``) in a codeblock means that you should run the command that follows the ``$`` in a terminal.
