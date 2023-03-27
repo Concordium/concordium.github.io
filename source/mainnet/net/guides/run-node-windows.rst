@@ -27,6 +27,12 @@ Install/upgrade and run a node
 ==============================
 
 .. Note::
+    Since version 5.3.0 of the node the collector uses the GRPC V2
+    interface, therefore in order to run the collector it is required that
+    the node, which the collector connects to, has the GRPC V2 interface
+    enabled.
+
+.. Note::
 
    Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
    default. If you have done special configuration of your node and want to
@@ -36,14 +42,14 @@ Install/upgrade and run a node
 
    **Example for Mainnet:**
 
-   .. code-block:: console
+   .. code-block:: toml
 
       grpc2.port = 20000
       grpc2.ip = "127.0.0.1"
 
    **Example for Testnet:**
 
-   .. code-block:: console
+   .. code-block:: toml
 
       grpc2.port = 20001
       grpc2.ip = "127.0.0.1"

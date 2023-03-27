@@ -47,6 +47,41 @@ These images are designed to be used together with docker-compose, or a similar 
 The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but any location to which the user that runs the Docker command has access to will do.
 
 .. Note::
+   Since version 5.3.0 of the node the collector uses the GRPC V2
+   interface, therefore in order to run the collector it is required that
+   the node, which the collector connects to, has the GRPC V2 interface
+   enabled.
+
+   Since the GRPC V2 port is different than the GRPC V1 port, you will
+   need to make changes to your configuration. Specifically the ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`` environment variable needs to be changed. Examples can be seen below:
+
+   **Mainnet**
+
+   .. code-block:: yaml
+
+      services:
+        mainnet-node-collector:
+          environment:
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `mainnet-node` to the internal IP of
+            # the `mainnet-node`. If the name of the node service is changed from
+            # `mainnet-node` then the name here must also be changed.
+            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
+
+   **Mainnet**
+
+   .. code-block:: yaml
+
+      services:
+        testnet-node-collector:
+          environment:
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `testnet-node` to the internal IP of
+            # the `testnet-node`. If the name of the node service is changed from
+            # `testnet-node` then the name here must also be changed.
+            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
+
+.. Note::
 
    Node version 4.5.0 introduced the GRPC V2 interface which is enabled by the
    sample configurations listed below. If you have done special configuration of
@@ -68,6 +103,7 @@ To run a node on testnet use the following configuration file and follow the ste
 .. code-block:: yaml
 
    # This is an example configuration for running the testnet node
+
    version: '3'
    services:
      testnet-node:
@@ -80,15 +116,15 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888
          # Where the genesis is located
          - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat
-         # The url of the catchup file. This speeds up the catchup process.
-         - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
+
          # General node configuration Data and config directories (it's OK if they
          # are the same). This should match the volume mount below. If the location
          # of the mount inside the container is changed, then these should be
          # changed accordingly as well.
          - CONCORDIUM_NODE_DATA_DIR=/mnt/data
          - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
-         # The port on which the node will listen for incoming connections. This is a
+
+         # port on which the node will listen for incoming connections. This is a
          # port inside the container. It is mapped to an external port by the port
          # mapping in the `ports` section below. If the internal and external ports
          # are going to be different then you should also set
@@ -106,7 +142,7 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
          # And its port
          - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
-         # Maximum number of __connections__ the node can have. This can temporarily be more than
+         # maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
          - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
@@ -119,28 +155,26 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for passive nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
+
        entrypoint: ["/concordium-node"]
+
        # Exposed ports. The ports the node listens on inside the container (defined
        # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
        # should match what is defined here. When running multiple nodes the
        # external ports should be changed so as not to conflict.
-       # In the mapping below, the first port is the `host` port, and the second
-       # port is the `container` port. When the `container` port is changed the
-       # relevant environment variable listed above must be changed as well. For
-       # example, changing `10001:10001` to `10001:13000` would mean that
-       # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
-       # the node's gRPC interface will not be available from the host.
        ports:
        - "8889:8889"
        - "10001:10001"
        - "20001:20001"
+
        volumes:
        # The node's database should be stored in a persistent volume so that it
        # survives container restart. In this case we map the **host** directory
-       # /var/lib/concordium-testnet to be used as the node's database directory.
-       - /var/lib/concordium-testnet:/mnt/data
+       # ~/tmp/testnet to be used as the node's database directory.
+       - /tmp/testnet:/mnt/data
+
      # The collector reports the state of the node to the network dashboard. A node
      # can run without reporting to the network dashboard. Remove this section if
      # that is desired.
@@ -151,8 +185,10 @@ To run a node on testnet use the following configuration file and follow the ste
        environment:
          # Settings that should be customized by the user.
          - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
+
          # Environment specific settings.
          - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.testnet.concordium.com/nodes/post
+
          # Collection settings.
          # How often to collect the statistics from the node.
          - CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000
@@ -160,7 +196,8 @@ To run a node on testnet use the following configuration file and follow the ste
          # docker created network which maps `testnet-node` to the internal IP of
          # the `testnet-node`. If the name of the node service is changed from
          # `testnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:10001
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
+
        entrypoint: ["/node-collector"]
 
 1. Save the contents as ``testnet-node.yaml``.
