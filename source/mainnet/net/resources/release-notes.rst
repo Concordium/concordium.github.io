@@ -13,7 +13,7 @@ Release Notes - Testnet
 
 March 28, 2023
 
-|bw| 0.9.9
+|bw| 0.9.10
 ----------------------
 
 Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
