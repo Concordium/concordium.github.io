@@ -155,8 +155,7 @@ Default listen port is set to 8889
 
       #. Navigate to the download.
       #. Paste the following into the terminal: $sha256sum concordium-testnet-node_5.2.4-0_amd64.deb
-      #. Verify that the output matches the SHA256 checksum 51841534d17d7466f2ee1fb1b10d7d72bd009dd6c0cb53d414a632792a1a1b83
-.
+      #. Verify that the output matches the SHA256 checksum 51841534d17d7466f2ee1fb1b10d7d72bd009dd6c0cb53d414a632792a1a1b83.
 
 `5.1.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.1.3-0_amd64.deb>`__
    - Verification instructions
