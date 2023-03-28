@@ -14,6 +14,8 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
+`Windows 5.2.4 <https://distribution.concordium.software/windows/Signed/Node-5.2.4-0.msi>`_
+
 `Windows 5.1.3 <https://distribution.concordium.software/windows/Signed/Node-5.1.3-1.msi>`_
 
 `Windows 5.0.6 <https://distribution.concordium.software/windows/Signed/Node-5.0.6-0.msi>`_
@@ -36,6 +38,8 @@ Windows - Mainnet and Testnet
 
 macOS - Mainnet and Testnet
 ===========================
+
+`macOS 5.2.4 <https://distribution.concordium.software/macos/signed/concordium-node-5.2.4.pkg>`_
 
 `macOS 5.1.3 <https://distribution.concordium.software/macos/signed/concordium-node-5.1.3-1.pkg>`_
 
@@ -143,6 +147,16 @@ Ubuntu - Testnet
 
 Default GRPC port is set to 10001
 Default listen port is set to 8889
+
+`5.2.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.2.4-0_amd64.deb>`grpc_in_flight_requests
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_5.2.4-0_amd64.deb
+      #. Verify that the output matches the SHA256 checksum 51841534d17d7466f2ee1fb1b10d7d72bd009dd6c0cb53d414a632792a1a1b83
+.
 
 `5.1.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.1.3-0_amd64.deb>`__
    - Verification instructions
