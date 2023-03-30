@@ -208,12 +208,12 @@ WE DO NOT WARRANT THAT THE APP WILL MEET YOUR REQUIREMENTS; THAT THE APP WILL BE
 
 To collect information about the usage of the App, while preserving as much user privacy as possible, we use cookie-less tracking in the App. We use this information to administer the App and we analyze this information to improve and enhance the App by expanding its features and functionality and tailoring it to our users’ needs and preferences. This includes tracking of App versions.
 
-18. MISCELLANEOUS
+16. MISCELLANEOUS
 =================
 
 These Terms and any policies or operating rules posted by us on the App or in respect to the App constitute the entire agreement and understanding between you and us in relation to the App. Our failure to exercise or enforce any right or provision of these Terms shall not operate as a waiver of such right or provision. These Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms or use of the App. You agree that these Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms and the lack of signing by the parties hereto to execute these Terms.
 
-19. CONTACT US
+17. CONTACT US
 ==============
 
 To resolve a complaint regarding the App or to receive further information regarding use of the App, please contact us at: contact@concordium.software.
