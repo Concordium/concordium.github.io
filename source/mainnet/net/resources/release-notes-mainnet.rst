@@ -11,6 +11,22 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+March 29, 2023
+
+|bw| 0.9.11
+----------------------
+
+Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+Fixed a bug that prevented users from sending larger amounts of bridged tokens.
+The sign_message wallet API now supports signing arbitrary data.
+
+March 27, 2023
+
+|mw-gen1| for iOS 3.1.1
+-----------------------
+
+A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
+
 March 21, 2023
 
 |mw-gen2| 1.1.6

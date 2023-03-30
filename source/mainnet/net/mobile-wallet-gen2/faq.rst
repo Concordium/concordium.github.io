@@ -42,6 +42,8 @@
 
     No. For the |mw-gen2| and |bw| you do not need to make backups. Your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` that you write down is the only way to :ref:`recover your accounts and identities<recover-wallet>`.
 
+.. _wallet-migrate:
+
 .. dropdown:: Can I migrate from the |mw-gen1| to the new |mw-gen2|?
 
     No. Because the way that keys are protected differs between the old and new wallets you cannot simply migrate. If you use the |mw-gen1| but want to use the new one, you should do the following:
