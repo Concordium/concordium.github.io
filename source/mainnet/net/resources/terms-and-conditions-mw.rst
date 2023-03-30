@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../../variables.rst
 .. _terms-and-conditions-mw:
 
