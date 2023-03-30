@@ -27,12 +27,6 @@ Install/upgrade and run a node
 ==============================
 
 .. Note::
-    Since version 5.3.0 of the node the collector uses the GRPC V2
-    interface, therefore in order to run the collector it is required that
-    the node, which the collector connects to, has the GRPC V2 interface
-    enabled.
-
-.. Note::
 
    Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
    default. If you have done special configuration of your node and want to
@@ -256,6 +250,11 @@ You can improve the performance by downloading the blocks from an out-of-band ca
 #. In the **Search** bar, search for and select **Stop Concordium Service Node** to stop the node, and then search for and select **Start Concordium Service Node** to restart the node.
 
 #. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. To see this, compare the finalized length of the chain with the length of your node. If they match, your node has caught up.
+
+Node collector configuration
+============================
+
+Since version 5.3.0 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled. For information about how to do this, see :ref:`the note at the top of this topic<install-upgrade-node-windows>`.
 
 Baking on a Windows node
 ========================

@@ -47,9 +47,10 @@ These images are designed to be used together with docker-compose, or a similar 
 The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but any location to which the user that runs the Docker command has access to will do.
 
 .. Note::
-   Since version 5.3.0 of the node the collector uses the GRPC V2
-   interface, therefore in order to run the collector it is required that
-   the node, which the collector connects to, has the GRPC V2 interface
+
+   Since version 5.3.0 of the node, the collector uses the GRPC V2
+   interface. Therefore, in order to run the collector, it is required that
+   the node which the collector connects to has the GRPC V2 interface
    enabled.
 
    Since the GRPC V2 port is different than the GRPC V1 port, you will

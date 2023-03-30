@@ -26,32 +26,6 @@ Install/upgrade and run a node
 ==============================
 
 .. Note::
-   Since version 5.3.0 of the node the collector uses the GRPC V2
-   interface, therefore in order to run the collector it is required
-   that the node, which the collector connects to, has the GRPC V2
-   interface enabled.
-
-   Since the GRPC V2 port is different than the GRPC V1 port, you need
-   to change it in the node configuration:
-
-   **Example for Mainnet**
-
-   .. code-block:: xml
-
-    <!-- gRPC host to collect from. -->
-    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
-    <string>http://localhost:20000</string>
-
-   **Example for Testnet**
-
-   .. code-block:: xml
-
-    <!-- gRPC host to collect from. -->
-    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
-    <string>http://localhost:20001</string>
-
-
-.. Note::
 
    Node version 4.5.0 introduced the GRPC V2 interface which is enabled by
    default on new installations. However on upgrading an existing node the
@@ -285,6 +259,31 @@ If you want to change whether the node services start automatically, you have tw
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist"
 
+.. _node-collector-configuration-macos:
+
+Node collector configuration
+============================
+
+Since version 5.3.0 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
+
+Since the GRPC V2 port is different than the GRPC V1 port, you need to change it in the node configuration:
+
+**Example for Mainnet**
+
+ .. code-block:: xml
+
+    <!-- gRPC host to collect from. -->
+    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
+    <string>http://localhost:20000</string>
+
+**Example for Testnet**
+
+  .. code-block:: xml
+
+    <!-- gRPC host to collect from. -->
+    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
+    <string>http://localhost:20001</string>
+
 .. _configure-baker-macos:
 
 Configure a node as a baker
@@ -342,7 +341,7 @@ faster than requesting them from peers.
    - For mainnet:
 
      - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section
+       administrator and add the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
 
@@ -352,7 +351,7 @@ faster than requesting them from peers.
    - For testnet:
 
      - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section
+       administrator and add the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
 
