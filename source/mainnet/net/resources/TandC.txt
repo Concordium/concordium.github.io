@@ -207,7 +207,7 @@ WE DO NOT WARRANT THAT THE APP WILL MEET YOUR REQUIREMENTS; THAT THE APP WILL BE
 15.2 When you create a Concordium Digital Identity Certificate (“Identity Certificate”) with a Third Party Service, you will enter an agreement directly with such Third Party Service and such Third Party Service will store data about you. In this case, the Third Party Service's privacy policy and terms of use apply. The Third Party Service may store a copy of the Identity Certificate for subsequent re-issuance; however, the Third Party Service will not have access to your blockchain account address. The App stores the Identity Certificate in encrypted form, and it is not visible to Concordium Software or on the Concordium blockchain. You may choose to reveal and make publicly available any attributes associated with your account. However, if you reveal such attributes, these attributes will be visible on the blockchain, and can never be deleted.
 
 To collect information about the usage of the App, while preserving as much user privacy as possible, we use cookie-less tracking in the App. We use this information to administer the App and we analyze this information to improve and enhance the App by expanding its features and functionality and tailoring it to our users’ needs and preferences. This includes tracking of App versions.
-     
+
 18. MISCELLANEOUS
 =================
 
