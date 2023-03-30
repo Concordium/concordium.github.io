@@ -106,12 +106,12 @@ The version of the LEDGER App is the same for Mainnet and Testnet. So if you alr
 
 .. _concordium-node-and-client-download-testnet:
 
-Concordium Client v5.0.2
+Concordium Client v5.1.1
 ========================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.2-0>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.1.1>`_
 
-   - SHA256 checksum of the download: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
+   - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
 
    Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
@@ -121,13 +121,13 @@ Concordium Client v5.0.2
 
    where you replace `*` with |client-version|.
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.0.2-0.pkg>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.1.1.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.2-0.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.1.1.exe>`_
 
 .. _cargo-concordium-testnet:
 
@@ -148,8 +148,8 @@ Download cargo-concordium:
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
 
-Concordium node distributions v5.2.4
-====================================
+Concordium node distributions
+=============================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
@@ -157,8 +157,8 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-Ubuntu
-------
+Ubuntu v5.2.4
+-------------
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
@@ -168,8 +168,8 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Linux-Docker
-------------
+Linux-Docker v5.2.4
+-------------------
 
 .. _concordium-docker-package-download-testnet:
 
@@ -177,8 +177,8 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 
 To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-Windows
--------
+Windows v5.2.4
+--------------
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
@@ -186,8 +186,8 @@ To run a node on Windows, you need a Windows Installer package. **Please be awar
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Mac
----
+Mac v5.2.4
+----------
 
 To run a node on macOS, you need a macOS installer package.
 
