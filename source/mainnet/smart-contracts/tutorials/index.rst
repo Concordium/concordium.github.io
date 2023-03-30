@@ -22,7 +22,7 @@ In the :ref:`NFT Minting <nft-index>` tutorial you will mint and transfer non-fu
 
 In the :ref:`NFT marketplace <nft-marketplace-index>` tutorials you will setup an NFT marketplace.
 
-In the :ref:`eSealing <eSaeling>` tutorial, you are going to learn how to seal a document, so you can prove that it was in your possession at the time of sealing.
+In the :ref:`eSealing <eSealing>` tutorial, you are going to learn how to seal a document, so you can prove that it was in your possession at the time of sealing.
 You will use a front end and the |bw| to register the file hash of a selected document in a smart contract and then
 display the timestamp and the sealer from an already time-stamped document at the front end.
 
@@ -45,4 +45,4 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    fungible-tokens/index
    nft-marketplace/index
    eSealing <./eSealing/index>
-   sponsored Transactions <./sponsoredTransactions/index>
+   Sponsored Transactions <./sponsoredTransactions/index>
