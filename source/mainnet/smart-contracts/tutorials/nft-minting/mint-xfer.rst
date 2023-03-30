@@ -48,7 +48,7 @@ Now check the current state of the cis2-nft token contract by invoking view func
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 20001
 
 Your result will be similar to what is shown below where the user is the owner of the token with ID **00000111**.
 
@@ -79,7 +79,7 @@ You can query the metadata with the following command.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 20001
 
 This returns the metadata URL combined with your tokenID.
 
@@ -104,7 +104,7 @@ Now you can transfer it. One reminder, you should be the owner of it to be able 
 
 .. code-block:: console
 
-    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 10001
+    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 20001
 
 The transfer is successfully completed.
 

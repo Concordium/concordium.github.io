@@ -62,7 +62,7 @@ You are now set up to deploy the piggy bank module to the testnet chain. Give th
 
 .. code-block:: console
 
-   $./concordium-client module deploy piggy_bank_part2.wasm.v1 --sender <account-name> --name piggy_bank_part2_module --grpc-port 10001
+   $./concordium-client module deploy piggy_bank_part2.wasm.v1 --sender <account-name> --name piggy_bank_part2_module --grpc-port 20001
 
 If everything works correctly the output has a green line with your module reference.
 
@@ -94,7 +94,7 @@ You can initialize your smart contract now to create a smart contract instance. 
 
 .. code-block:: console
 
-   $./concordium-client contract init piggy_bank_part2_module --sender <account-name> --contract PiggyBank --name piggy_bank_part2_instance --energy 1500 --grpc-port 10001
+   $./concordium-client contract init piggy_bank_part2_module --sender <account-name> --contract PiggyBank --name piggy_bank_part2_instance --energy 1500 --grpc-port 20001
 
 .. note::
 
@@ -121,7 +121,7 @@ Deposit 1 CCD into the piggy bank to test if you can update the smart contract i
 
 .. code-block:: console
 
-   $./concordium-client contract update piggy_bank_part2_instance --entrypoint insert --energy 1000 --sender <account-name> --amount 1 --grpc-port 10001
+   $./concordium-client contract update piggy_bank_part2_instance --entrypoint insert --energy 1000 --sender <account-name> --amount 1 --grpc-port 20001
 
 If everything works correctly the output has a green line as follows:
 
@@ -142,7 +142,7 @@ You can display the raw return value of your piggy bank smart contract with the 
 
 .. code-block:: console
 
-   $./concordium-client contract invoke piggy_bank_part2_instance --entrypoint view --energy 1000 --grpc-port 10001
+   $./concordium-client contract invoke piggy_bank_part2_instance --entrypoint view --energy 1000 --grpc-port 20001
 
 If everything works correctly the output has a green line as follows:
 
@@ -167,7 +167,7 @@ Smash the piggy bank contract to test that you can invoke this entry point. Afte
 
 .. code-block:: console
 
-   $./concordium-client contract update piggy_bank_part2_instance --entrypoint smash --sender <account-name> --energy 2000 --grpc-port 10001
+   $./concordium-client contract update piggy_bank_part2_instance --entrypoint smash --sender <account-name> --energy 2000 --grpc-port 20001
 
 
 If everything works correctly the output has a green line as follows:
