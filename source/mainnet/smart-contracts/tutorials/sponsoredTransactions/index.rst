@@ -11,7 +11,7 @@ A Sponsored Transactions dApp
 =============================
 
 In this tutorial, you are going to get familiar with sponsored transactions,
-how to send a transaction from a back-end server to the blockchain, and how to connect your Concordium mobile wallet via walletConnect to the front-end.
+how to send a transaction from a back-end server to the blockchain, and how to connect your |mw-gen2| via walletConnect to the front-end.
 
 What are sponsored transactions?
 ================================
@@ -27,7 +27,7 @@ The third-party pays the transaction fee to execute the transaction on-chain.
 
 Concordium smart contracts currently have no way to query the corresponding
 public key(s) of an account within the smart contract code.
-For the time being we suggest using a `public_key_registry`
+For the time being, Concordium suggests using a `public_key_registry`
 that allows only the owner of the contract instance (or the account itself) to register a public key for a given account. You can explore
 such a registry in the
 `sponsored transaction example <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis3-nft-sponsored-txs/src/lib.rs>`_.

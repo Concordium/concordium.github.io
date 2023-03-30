@@ -46,7 +46,7 @@ your public key in the smart contract as shown below:
    :alt: StreamPlayer
    :align: center
 
-If the registration was successful, you should see your current public key and your current nonce displayed.
+If the registration was successful, your current public key and your next nonce are displayed.
 
 .. note::
 
@@ -56,7 +56,7 @@ If the registration was successful, you should see your current public key and y
    have exactly one ``public key`` and exactly one ``private key`` (no multi-sig accounts).
    You use your ``private key`` to sign the message in the wallet and your ``public key`` is
    used in the smart contract to verify that this signature was generated in the wallet with the associated ``private key``.
-   Never ever share your ``private key``.
+   Never share your ``private key``.
 
 You can export your keys file from the |bw| as follows:
 
@@ -70,7 +70,7 @@ You can export your keys file from the |bw| as follows:
    :width: 30 %
 
 In this exported file, you will find a ``verifyKey`` (your ``public key``), which should be
-identical to the displayed ``public key`` at the front-end. The front-end also displays your nonce associated with your account.
+identical to the displayed ``public key`` at the front-end. The front-end also displays your next nonce associated with your account.
 This nonce is initially 1 and increases every time a successful sponsored transaction
 is recorded in the smart contract that was signed by your account.
 
@@ -142,7 +142,7 @@ Submit a sponsored ``transfer`` transaction
    increase the  ``token_id`` by 1 every time the mint function is invoked. The wallet displays the ``token_id`` bytes in a hex string.
    In other words, the first token minted will have the ``token_id=01000000``,
    the second token minted will have ``02000000``, ..., ``0e000000``, ``10000000``, ... .
-   You can lock up your minted ``token_id`` in the browser wallet by getting the smart contract
+   You can lock up your minted ``token_id`` in the |bw| by getting the smart contract
    index as seen below and searching for tokens in that contract that are owned by your account.
 
 .. image:: ./images/SmartContractIndex.png
@@ -157,7 +157,7 @@ Submit a sponsored ``transfer`` transaction
    its own metadata associated with it by e.g. appending the ``TOKEN_METADATA_BASE_URL`` with the ``token_id``. But to simplify the
    metadata management for Concordium, the NFT smart contract used in the hosted demo app returns
    the same metadata hash (``TOKEN_METADATA_BASE_URL``) for all ``token_ids`` (no appending of ``token_ids``).
-   The NFT picture in the below URL changes every few seconds which is why you will see the browser wallet updating the picture as well.
+   The NFT picture in the below URL changes every few seconds which is why you will see the |bw| updating the picture as well.
 
    .. code-block:: rust
 
