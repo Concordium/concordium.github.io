@@ -161,6 +161,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 #. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
 
+.. Note::
+
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the LEDGERblue library. To update it, run ``$pip3 install ledgerblue --upgrade``.
+
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons.
 
 #. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
@@ -283,6 +287,9 @@ When you update your LEDGER device, it should not be necessary to update the cer
 
       ./install.sh
 
+.. Note::
+
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the LEDGERblue library. To update it, run ``$pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
@@ -394,6 +401,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 #. :ref:`Download <downloads>` the latest version of the LEDGER app if you haven't done so already.
 
 #. Run the ``install.sh`` file from the folder that you extracted the files to.
+
+.. Note::
+
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the LEDGERblue library. To update it, run ``$sudo pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
