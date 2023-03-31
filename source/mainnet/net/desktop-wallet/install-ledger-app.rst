@@ -167,7 +167,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 .. Note::
 
-   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the LEDGERblue library. To update it, run ``$pip3 install ledgerblue --upgrade``.
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons.
 
@@ -293,7 +293,7 @@ When you update your LEDGER device, it should not be necessary to update the cer
 
 .. Note::
 
-   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the LEDGERblue library. To update it, run ``$pip3 install ledgerblue --upgrade``.
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
@@ -408,7 +408,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
 .. Note::
 
-   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the LEDGERblue library. To update it, run ``$sudo pip3 install ledgerblue --upgrade``.
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools tools for LEDGER (ledgerblue). To update, run ``$sudo pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
