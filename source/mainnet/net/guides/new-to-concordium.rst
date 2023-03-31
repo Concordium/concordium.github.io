@@ -44,7 +44,7 @@ Getting started with Concordium
     The staking options on Concordium are :ref:`baking or delegating<how-to-earn>`. To be a baker you must run a node and have a minimum of 14000 CCDs in an account. There is no minimum amount of CCDs needed to delegate.
 
     - I want to :ref:`learn more about baking and delegating<delegation-faq>` before continuing.
-    - I have enough funds to :ref:`be a baker<overview-baker>`.
+    - I have enough funds to :ref:`be a baker<baker-concept>`.
     - I only want to :ref:`delegate to a baker pool or passive delegation<add-delegation>`.
 
 .. dropdown:: I want to build a dApp that uses Concordium's ID layer

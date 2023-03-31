@@ -27,10 +27,14 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
       #. Select **Delegation** and choose **Remove Delegation**.
 
          .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+            :width: 50%
+            :alt: delegation screen with options to update or remove
 
       #. Review the cool-down period. Click **Continue**.
 
          .. image:: ../images/desktop-wallet/dw-remove-delegation.png
+            :width: 50%
+            :alt: remove delegation confirmation screen
 
       #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -128,14 +132,20 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
    #. You see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
       .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+         :width: 50%
+         :alt: screen shown to review delegation stop details
 
    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+         :width: 50%
+         :alt: delegation stop transaction submission confirmation screen
 
    .. |earn| image:: ../images/earn.png
         :alt: Hand receiving money
@@ -156,16 +166,20 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
    #. You see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-         :width: 25%
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
       .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
-         :width: 25%
+         :width: 50%
+         :alt: screen shown to review delegation stop details
 
    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+         :width: 50%
+         :alt: delegation stop transaction submission confirmation screen
 
 .. dropdown:: |bw|
 

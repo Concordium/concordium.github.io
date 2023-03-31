@@ -11,11 +11,17 @@ This topic contains information about where you can download the Concordium Wall
 |mw-gen2|
 ========================
 
-The |mw-gen2| is available for Android™. The |mw-gen2| supports Android 8 or later.
+The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13 or later and Android 8 or later.
 
 .. Note::
 
    The |mw-gen2| is not supported on tablet devices.
+
+iOS
+---
+
+#.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the |mw-gen2| for Testnet on iOS.
+#.  Follow `this link <https://testflight.apple.com/join/YaKKqYMA>`__ on your iPhone to join our beta. You must have TestFlight installed.
 
 Android
 -------
@@ -37,8 +43,8 @@ The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13
 iOS
 ---
 
-#.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`_ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
-#.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`_ on your iPhone to join our beta. You must have TestFlight installed.
+#.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
+#.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
 
 Android
 -------
@@ -102,12 +108,12 @@ When installing the certificate, ensure that the public key of the certificate i
 
 .. _concordium-node-and-client-download-testnet:
 
-Concordium Client v5.0.2
+Concordium Client v5.1.1
 ========================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.0.2-0>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.1.1>`_
 
-   - SHA256 checksum of the download: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
+   - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
 
    Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
@@ -117,13 +123,13 @@ Concordium Client v5.0.2
 
    where you replace `*` with |client-version|.
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.0.2-0.pkg>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.1.1.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.0.2-0.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.1.1.exe>`_
 
 .. _cargo-concordium-testnet:
 
@@ -144,8 +150,8 @@ Download cargo-concordium:
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
 
-Concordium node distributions v5.1.3
-====================================
+Concordium node distributions
+=============================
 
 For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
@@ -153,19 +159,19 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-Ubuntu
-------
+Ubuntu v5.2.4
+-------------
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.1.3-0_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.2.4-0_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``7d496886db7efc7f71f25570e3042b68e9269cd4ec7a4fc612a330a12b13dc5e``
+      - SHA256 checksum of the download: ``51841534d17d7466f2ee1fb1b10d7d72bd009dd6c0cb53d414a632792a1a1b83``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Linux-Docker
-------------
+Linux-Docker v5.2.4
+-------------------
 
 .. _concordium-docker-package-download-testnet:
 
@@ -173,21 +179,21 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 
 To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-Windows
--------
+Windows v5.2.4
+--------------
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.1.3-1.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.2.4-0.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Mac
----
+Mac v5.2.4
+----------
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.1.3-1.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.2.4.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 

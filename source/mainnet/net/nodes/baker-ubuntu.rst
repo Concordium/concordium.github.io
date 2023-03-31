@@ -12,7 +12,7 @@ Prerequisites
 
 -  The node is installed and running.
 
--  If you want to run the node as a baker, you must have generated baker keys. How you generate baker keys depends on whether you are using Desktop Wallet or |mw-gen2| / |mw-gen1|. For an overview of the process for both wallets, see :ref:`overview-baker`.
+-  If you want to run the node as a baker, you must have generated baker keys. How you generate baker keys depends on whether you are using Desktop Wallet or |mw-gen2| / |mw-gen1|. For an overview of the process for both wallets, see :ref:`baker-concept`.
 
 Run a baker node on Ubuntu
 ==========================
