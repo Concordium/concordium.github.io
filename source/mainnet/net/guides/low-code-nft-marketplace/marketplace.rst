@@ -3,7 +3,7 @@
 .. _low-code-nft-mp:
 
 ========================
-Low code MFT marketplace
+Low code NFT marketplace
 ========================
 
 To make it quicker and easier to develop and run an NFT marketplace, the Low-Code NFT Minting tool and marketplace have been created. It includes built-in smart contracts, a template user interface, and various functionalities, including the following:
@@ -42,7 +42,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
         .. code-block:: console
 
-            git clone https://github.com/bogacyigitbasi/Low-Code-NFT-Framework
+            git clone https://github.com/Concordium/concordium-dapp-examples/tree/main/low-code-nft-marketplace
 
     #. Install the repository's dependencies with the following command:
 
