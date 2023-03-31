@@ -10,7 +10,7 @@ While the gRPC interface is powerful, it is not the most convenient tool.
 Concordium provides a number of SDKs that build on top of the gRPC interface, which are
 much more ergonomic to use.
 
-These are the SDKs Concordium currently provides:
+The SDKs currently provided are:
 
 - `Concordium Rust SDK <https://github.com/Concordium/concordium-rust-sdk>`_
 - `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
