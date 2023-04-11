@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+April 12, 2023
+
+Cargo concordium 2.8.0
+----------------------
+
+Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+
 March 31, 2023
 
 Concordium Ledger App v3.1.0
