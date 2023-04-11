@@ -32,6 +32,22 @@ Concordium Node 5.3.1
 
 - The node collector is migrated to a separate package and now uses the V2 GRPC API. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
+March 31, 2023
+
+Concordium Ledger App v3.1.0
+----------------------------
+
+The Concordium Ledger App now supports Ledger Nano S Plus firmware version 1.1.0.
+
+March 29, 2023
+
+|bw| 0.9.11
+----------------------
+
+Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+Fixed a bug that prevented users from sending larger amounts of bridged tokens.
+The sign_message wallet API now supports signing arbitrary data.
+
 March 27, 2023
 
 |mw-gen1| for iOS 3.1.1
