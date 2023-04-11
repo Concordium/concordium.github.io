@@ -19,7 +19,7 @@ Deploy the compiled Wasm file with the following command.
 
 .. code-block:: console
 
-    concordium-client module deploy dist/marketplace-contract/module.wasm.v1 --sender <YOUR-ACCOUNT-ADDRESS> --name <YOUR-CONTRACT-NAME> --grpc-port 10001
+    concordium-client module deploy dist/marketplace-contract/module.wasm.v1 --sender <YOUR-ACCOUNT-ADDRESS> --name <YOUR-CONTRACT-NAME> --grpc-port 20001
 
 .. image:: images/deploy-sc.png
     :width: 75%
@@ -56,7 +56,7 @@ Run the following command to initialize the contract.
 
 .. code-block:: console
 
-    concordium-client contract init market --contract Market-NFT --parameter-json ../sample-artifacts/marketplace/init.json --sender <YOUR-ADDRESS> --energy 3000 --schema dist/marketplace-contract/schema.bin --grpc-port 10001
+    concordium-client contract init market --contract Market-NFT --parameter-json ../sample-artifacts/marketplace/init.json --sender <YOUR-ADDRESS> --energy 3000 --schema dist/marketplace-contract/schema.bin --grpc-port 20001
 
 .. image:: images/init-sc.png
     :width: 75%
@@ -117,7 +117,7 @@ Now run the command below.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-TOKEN-INDEX> --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --schema ../cis2-multi/dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
+    concordium-client contract update <YOUR-TOKEN-INDEX> --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --schema ../cis2-multi/dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
 
 If successful, you will see something similar to below.
 
@@ -128,7 +128,7 @@ Before calling the add function, update your ``sample-artifacts/marketplace/add.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT-INDEX> --entrypoint add --parameter-json ../sample-artifacts/marketplace/add.json --schema dist/marketplace-contract/schema.bin --sender <YOUR-ADDRESS> --energy 10000 --grpc-port 10001
+    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT-INDEX> --entrypoint add --parameter-json ../sample-artifacts/marketplace/add.json --schema dist/marketplace-contract/schema.bin --sender <YOUR-ADDRESS> --energy 10000 --grpc-port 20001
 
 Now you have successfully added your token to marketplace.
 
@@ -139,7 +139,7 @@ To check if the token is in the marketplace, call the ``list()`` function with t
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-MARKETPLACE-INDEX> --entrypoint list --schema marketplace-contract/dist/marketplace-contract/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-MARKETPLACE-INDEX> --entrypoint list --schema marketplace-contract/dist/marketplace-contract/schema.bin --grpc-port 20001
 
 In the image below you can see that the token is listed.
 
@@ -229,7 +229,7 @@ Run the command below to invoke the ``transfer()`` function.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT> --entrypoint transfer --parameter-json ../sample-artifacts/marketplace/transfer.json --schema dist/marketplace-contract/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --amount <PRICE> --grpc-port 10001
+    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT> --entrypoint transfer --parameter-json ../sample-artifacts/marketplace/transfer.json --schema dist/marketplace-contract/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --amount <PRICE> --grpc-port 20001
 
 Below you can see a successful transfer.
 
@@ -245,7 +245,7 @@ And cross check with the token contract’s latest state with its ``view()`` fun
 
 .. code-block:: console
 
-    concordium-client  contract invoke <TOKEN-CONTRACT-INDEX> --entrypoint view --schema <YOUR-SCHEMA-FILE> --grpc-port 10001
+    concordium-client  contract invoke <TOKEN-CONTRACT-INDEX> --entrypoint view --schema <YOUR-SCHEMA-FILE> --grpc-port 20001
 
 As you can see, the first account has no balance anymore with the given token ID but the second one has.
 

@@ -126,7 +126,7 @@ Your next task enables the ``concordium-client`` tool to talk to your testnet no
 
     .. code-block:: console
 
-        $./concordium-client block show --grpc-port 10001
+        $./concordium-client block show --grpc-port 20001
 
     You should see some block data output.
 
@@ -135,7 +135,7 @@ Your next task enables the ``concordium-client`` tool to talk to your testnet no
 
     .. note::
 
-        Port 10001 is open by default on your testnet node to interact with it.
+        Port 20001 is open by default on your testnet node to interact with it.
 
 .. dropdown:: **Option 2 (advanced users)**
 
@@ -145,24 +145,24 @@ Your next task enables the ``concordium-client`` tool to talk to your testnet no
 
     **Disadvantage**: You have to use ssh with port forwarding when you run a command locally.
 
-    Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 10001 on your localhost is forwarded to the port 10001 on your instance.
+    Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 20001 on your localhost is forwarded to the port 20001 on your instance.
 
     .. code-block:: console
 
-        $ssh -NL localhost:10001:<IP-address-of-your-instance>:10001 <username>@<host>
+        $ssh -NL localhost:20001:<IP-address-of-your-instance>:20001 <username>@<host>
 
     .. image:: images/pb_tutorial_26.png
         :width: 100 %
 
     .. note::
 
-        Port 10001 is open by default on your testnet node to interact with it. Cloud providers often use ``ubuntu`` as the default <username> and the <IP-address-of-your-instance> as the default <host>.
+        Port 20001 is open by default on your testnet node to interact with it. Cloud providers often use ``ubuntu`` as the default <username> and the <IP-address-of-your-instance> as the default <host>.
 
     Go in another terminal B to the folder where you downloaded the ``concordium-client``. Check if everything is connected correctly by displaying the best/latest block.
 
     .. code-block:: console
 
-        $./concordium-client block show --grpc-port 10001
+        $./concordium-client block show --grpc-port 20001
 
     You should see some block data output.
 
@@ -213,7 +213,7 @@ Alternatively, you can query the syncing state of your node with ``concordium-cl
 
 .. code-block:: console
 
-   ./concordium-client consensus status --grpc-port 10001
+   ./concordium-client consensus status --grpc-port 20001
 
 .. image:: ./images/pb_tutorial_19.png
    :width: 100 %

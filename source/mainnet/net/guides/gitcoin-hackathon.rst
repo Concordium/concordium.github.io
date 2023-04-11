@@ -53,7 +53,7 @@ You can check that you have access to the node by executing the command:
 
 .. code-block:: console
 
-    $concordium-client consensus status --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    $concordium-client consensus status --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 The command will return a list of values relevant to the consensus if you have a connection to the Concordium testnet node.
 
