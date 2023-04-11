@@ -11,12 +11,22 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-March XX, 2023
+April XX, 2023
 
 |bw| 1.0.0
 --------------------------
 
-Baking and delegation are available in the |bw|.
+Baking and delegation are now available in the |bw|.
+
+- gRPC-web is now used instead of json-RPC.
+
+- The initial view in the manage token flow now retains the token page header, doesn't collapse account balances, and the error messages for looking up a contract have been improved.
+
+- Fixed handling of UpdateAccountKey transactions from wallet-proxy.
+
+- Fixed `chainChanged` event to correctly propagate to all (not just whitelisted) dapps listening for events through the wallet API.
+
+- When changing the selected chain internally in the wallet, dapps now receive `accountChanged` event if an account on the new network has the dapp whitelisted, or `accountDisconnected` event if no account on the new network has the dapp whitelisted.
 
 March 09, 2023
 
