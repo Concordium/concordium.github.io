@@ -30,7 +30,7 @@ Concordium Node 5.3.1
 
 - Fixed an additional bug in the ``GetAccountInfo`` endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.
 
-- The node collector is migrated to a separate package and now uses the V2 GRPC API.
+- The node collector is migrated to a separate package and now uses the V2 GRPC API. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
 March 27, 2023
 
