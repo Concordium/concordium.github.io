@@ -11,6 +11,13 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+April XX, 2023
+
+Cargo concordium library
+------------------------
+
+Important new functionality has been added to the ``cargo-concordium`` library that makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see (link to documentation).
+
 March 31, 2023
 
 Concordium Ledger App v3.1.0
