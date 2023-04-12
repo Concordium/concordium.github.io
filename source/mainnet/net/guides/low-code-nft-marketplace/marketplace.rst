@@ -3,7 +3,7 @@
 .. _low-code-nft-mp:
 
 ========================
-Low code MFT marketplace
+Low code NFT marketplace
 ========================
 
 To make it quicker and easier to develop and run an NFT marketplace, the Low-Code NFT Minting tool and marketplace have been created. It includes built-in smart contracts, a template user interface, and various functionalities, including the following:
@@ -42,7 +42,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
         .. code-block:: console
 
-            git clone https://github.com/bogacyigitbasi/Low-Code-NFT-Framework
+            git clone https://github.com/Concordium/concordium-dapp-examples/tree/main/low-code-nft-marketplace
 
     #. Install the repository's dependencies with the following command:
 
@@ -233,7 +233,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
         When you upload data on IPFS the most important thing that you need to be careful about it is making sure that data is stored/hosted on at least one device and this can be achievable by running a node all the time somewhere. But that may not be an option for everybody who wants to mint NFTs for various reasons like cost, time, and some technical skills. At that moment, Pinata comes in to solve that issue. They run a node on behalf of you and give you an API key. You can access your IPFS node via that API key through their gateway.
 
-        Since IPFS and Pinata are widely used in the space, Concordium NFT Marketplace Template has built-in integration with them. To use this functionality create an API key on the platform and copy it.
+        Since IPFS and Pinata are widely used in the space, Concordium NFT Marketplace Template has built-in integration with them. To use this functionality create an API key on the platform and copy the JWT (JSON Web Token) to use in the marketplace while minting.
 
         .. image:: ../../images/low-code-nft-framework/pinata.png
             :width: 100%
