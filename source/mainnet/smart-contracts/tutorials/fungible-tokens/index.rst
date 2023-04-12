@@ -1,10 +1,10 @@
 .. _ft-index:
 
-=============================
-Mint and burn fungible tokens
-=============================
+====================
+Mint fungible tokens
+====================
 
-In this tutorial, you are going to mint fungible tokens on the Concordium blockchain, send them to multiple accounts, and test the balances. Before starting, you need to understand the CIS-2_ standard.
+In this tutorial, you are going to mint and burn fungible tokens on the Concordium blockchain, send them to multiple accounts, and test the balances. Before starting, you need to understand the CIS-2_ standard.
 
 
 Concordium Interoperability Standard (CIS-2)
