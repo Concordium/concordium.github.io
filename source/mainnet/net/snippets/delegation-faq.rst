@@ -86,6 +86,10 @@ For delegators
 
     The best tool to estimate rewards is `CCDScan`_. Look at the average past rewards for the baker pool or passive delegation. It is important to remember that small pools earn rewards less often, but relatively more at a time. So the percentage for the (annual) interest given on CCDScan is less reliable for small pools as there is more variance. Rewards from Passive delegation are added on a daily basis.
 
+.. dropdown:: Can I delegate funds in a release schedule?
+
+    Yes, the funds locked in a release schedule can be staked.
+
 For bakers
 ----------
 
@@ -141,6 +145,10 @@ For bakers
 .. dropdown:: If I have a low amount of CCDs and become a baker, running my own node 24/7, is it true I may never win and may never receive any rewards because of my lottery power?
 
     No, that is not true. The lottery power will be calculated by the stake you have, and you will receive rewards.
+
+.. dropdown:: Can I use funds in a release schedule to meet the minimum required amount of CCDs to become a baker?
+
+    Yes, the funds locked in a release schedule can be staked.
 
 For bakers, delegators and passive delegators
 ---------------------------------------------

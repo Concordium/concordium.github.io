@@ -37,7 +37,7 @@ Once you have the above installed, do the following:
 
     .. code-block:: console
 
-        git clone https://github.com/bogacyigitbasi/Low-Code-NFT-Framework
+        git clone https://github.com/Concordium/concordium-dapp-examples/tree/main/low-code-nft-marketplace
 
     .. code-block:: console
 
