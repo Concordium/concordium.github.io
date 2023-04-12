@@ -1067,7 +1067,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../../smart-contracts/tutorials/fungible-tokens/index.html">
-       Mint and burn fungible tokens
+       Mint fungible tokens
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1089,7 +1089,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-marketplace/index.html">
-       NFT marketplace tutorial
+       NFT marketplace smart contract tutorial
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
       <label for="toctree-checkbox-38">
@@ -1543,7 +1543,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="../guides/low-code-nft-marketplace/marketplace.html">
-     Low code MFT marketplace
+     Low code NFT marketplace
     </a>
    </li>
    <li class="toctree-l1">
@@ -1672,6 +1672,7 @@ body {margin:0;}
   </ul>
  </li>
 </ul>
+
   </div>
 </nav>
               </div>
@@ -1693,6 +1694,11 @@ body {margin:0;}
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cargo-concordium-2-7-1">
+   Cargo concordium 2.7.1
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concordium-ledger-app-v3-1-0">
    Concordium Ledger App v3.1.0
@@ -2246,7 +2252,15 @@ body {margin:0;}
 <p>Subscribe to the <a class="reference external" href="https://status.testnet.concordium.software/">Testnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
 <p>To subscribe to updates on the Testnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
+<p>April 12, 2023</p>
+<div class="section" id="cargo-concordium-2-7-1">
+<h2>Cargo concordium 2.7.1<a class="headerlink" href="#cargo-concordium-2-7-1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.</p></li>
+<li><p>Support calling <cite>cargo concordium build</cite> and <cite>cargo concordium test</cite> from any project subdirectory.</p></li>
+</ul>
 <p>March 31, 2023</p>
+</div>
 <div class="section" id="concordium-ledger-app-v3-1-0">
 <h2>Concordium Ledger App v3.1.0<a class="headerlink" href="#concordium-ledger-app-v3-1-0" title="Permalink to this headline">#</a></h2>
 <p>The Concordium Ledger App now supports Ledger Nano S Plus firmware version 1.1.0.</p>

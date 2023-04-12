@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NFT marketplace tutorial &#8212; Concordium  documentation</title>
+    <title>NFT marketplace smart contract tutorial &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1067,7 +1067,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../fungible-tokens/index.html">
-       Mint and burn fungible tokens
+       Mint fungible tokens
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1089,7 +1089,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 current active has-children">
       <a class="current reference internal" href="#">
-       NFT marketplace tutorial
+       NFT marketplace smart contract tutorial
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
       <label for="toctree-checkbox-38">
@@ -1543,7 +1543,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/marketplace.html">
-     Low code MFT marketplace
+     Low code NFT marketplace
     </a>
    </li>
    <li class="toctree-l1">
@@ -1672,6 +1672,7 @@ body {margin:0;}
   </ul>
  </li>
 </ul>
+
   </div>
 </nav>
               </div>
@@ -1705,8 +1706,8 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="nft-marketplace-tutorial">
-<span id="nft-marketplace-index"></span><h1>NFT marketplace tutorial<a class="headerlink" href="#nft-marketplace-tutorial" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="nft-marketplace-smart-contract-tutorial">
+<span id="nft-marketplace-index"></span><h1>NFT marketplace smart contract tutorial<a class="headerlink" href="#nft-marketplace-smart-contract-tutorial" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial you will create an NFT Marketplace. The <a class="reference external" href="https://github.com/chainorders/concordium-nft-tutorials">contract</a> provides some functionalities, such as minting semi-fungible, and non-fungible tokens, buying and selling NFTs with fixed prices, setting commissions for your marketplace, and setting royalties for your NFTs to get some fees from secondary sales in this marketplace. Before you start, it is important to note that this is not a beginner-level tutorial; it does not cover the basics like downloads, node configurations, wallet setup and export, and so on.</p>
 <p>This tutorial will be the first part of the Marketplace. There will be no UI interaction. You will invoke the functions with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. In the end, while implementing a dApp, what you have to do is implement a client that connects your backend with the blockchain. <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is that client and does that. In the second part which will be released soon, you will implement this marketplace from scratch with an empty React template.</p>
 <p>You can download the contract from <a class="reference external" href="https://github.com/chainorders/concordium-nft-tutorials">this link</a>. Go over the functions of both the contract file <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code> and its helpers. <code class="docutils literal notranslate"><span class="pre">Errors.rs</span></code> contains the custom error files (check this link to see how you can implement them), the <code class="docutils literal notranslate"><span class="pre">state.rs</span></code> includes the state structs of the marketplace and tokens, the <code class="docutils literal notranslate"><span class="pre">params.rs</span></code> includes the parameter structs and <code class="docutils literal notranslate"><span class="pre">cli_client.rs</span></code> is the marketplace’s client in order to talk with a CIS-2 token contract. In order to call another contract’s function (because the marketplace will need to invoke the transfer() function of the NFT contract to be able to transfer tokens), your marketplace smart contract needs a client.</p>

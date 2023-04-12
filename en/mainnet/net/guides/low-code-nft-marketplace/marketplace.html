@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Low code MFT marketplace &#8212; Concordium  documentation</title>
+    <title>Low code NFT marketplace &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1067,7 +1067,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../../../smart-contracts/tutorials/fungible-tokens/index.html">
-       Mint and burn fungible tokens
+       Mint fungible tokens
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1089,7 +1089,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../../../smart-contracts/tutorials/nft-marketplace/index.html">
-       NFT marketplace tutorial
+       NFT marketplace smart contract tutorial
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
       <label for="toctree-checkbox-38">
@@ -1543,7 +1543,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 current active">
     <a class="current reference internal" href="#">
-     Low code MFT marketplace
+     Low code NFT marketplace
     </a>
    </li>
    <li class="toctree-l1">
@@ -1672,6 +1672,7 @@ body {margin:0;}
   </ul>
  </li>
 </ul>
+
   </div>
 </nav>
               </div>
@@ -1705,8 +1706,8 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="low-code-mft-marketplace">
-<span id="low-code-nft-mp"></span><h1>Low code MFT marketplace<a class="headerlink" href="#low-code-mft-marketplace" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="low-code-nft-marketplace">
+<span id="low-code-nft-mp"></span><h1>Low code NFT marketplace<a class="headerlink" href="#low-code-nft-marketplace" title="Permalink to this headline">#</a></h1>
 <p>To make it quicker and easier to develop and run an NFT marketplace, the Low-Code NFT Minting tool and marketplace have been created. It includes built-in smart contracts, a template user interface, and various functionalities, including the following:</p>
 <ul class="simple">
 <li><p>Connect with Concordium Wallet for Web</p></li>
@@ -1736,7 +1737,7 @@ Create a marketplace<div class="sd-summary-down docutils">
 <ol class="arabic">
 <li><p class="sd-card-text">Clone the repository with the following command:</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/bogacyigitbasi/Low-Code-NFT-Framework</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/Concordium/concordium-dapp-examples/tree/main/low-code-nft-marketplace</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1902,7 +1903,7 @@ Mint NFTs with Pinata<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Pinata is a commercial pinning solution that pins your data stored on Interplanetary File System (IPFS). You can find more information about it in this link. Concordium NFT Marketplace Template has built-in integration with Pinata and IPFS that allows artists to mint their collection with a few steps.</p>
 <p class="sd-card-text">When you upload data on IPFS the most important thing that you need to be careful about it is making sure that data is stored/hosted on at least one device and this can be achievable by running a node all the time somewhere. But that may not be an option for everybody who wants to mint NFTs for various reasons like cost, time, and some technical skills. At that moment, Pinata comes in to solve that issue. They run a node on behalf of you and give you an API key. You can access your IPFS node via that API key through their gateway.</p>
-<p class="sd-card-text">Since IPFS and Pinata are widely used in the space, Concordium NFT Marketplace Template has built-in integration with them. To use this functionality create an API key on the platform and copy it.</p>
+<p class="sd-card-text">Since IPFS and Pinata are widely used in the space, Concordium NFT Marketplace Template has built-in integration with them. To use this functionality create an API key on the platform and copy the JWT (JSON Web Token) to use in the marketplace while minting.</p>
 <a class="reference internal image-reference" href="../../../_images/pinata.png"><img alt="pinata key screen" src="../../../_images/pinata.png" style="width: 100%;" /></a>
 <p class="sd-card-text">Now paste the API key in the textbox as shown below.</p>
 <a class="reference internal image-reference" href="../../../_images/connect-pinata.png"><img alt="marketplace web page with connect to pinata screen shown" src="../../../_images/connect-pinata.png" style="width: 100%;" /></a>
