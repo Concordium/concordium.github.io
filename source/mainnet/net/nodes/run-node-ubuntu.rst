@@ -110,7 +110,7 @@ After the node is caught up remove the out of band catchup configuration to spee
 Node collector configuration
 ============================
 
-Since version 5.3.0 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
+Since version 5.3.x of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
 
 Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You *only* need to change the collector port if you have overridden your node configuration. You can edit your overrides with:
 
