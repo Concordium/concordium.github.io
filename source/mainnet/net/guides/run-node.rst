@@ -160,7 +160,7 @@ To run a node on testnet use the following configuration file and follow the ste
          # docker created network which maps `testnet-node` to the internal IP of
          # the `testnet-node`. If the name of the node service is changed from
          # `testnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:10001
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
        entrypoint: ["/node-collector"]
 
 1. Save the contents as ``testnet-node.yaml``.
