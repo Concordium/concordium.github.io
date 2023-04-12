@@ -48,7 +48,7 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
-   Since version 5.3.0 of the node, the collector uses the GRPC V2
+   Since version 5.3.x of the node, the collector uses the GRPC V2
    interface. Therefore, in order to run the collector, it is required that
    the node which the collector connects to has the GRPC V2 interface
    enabled.
