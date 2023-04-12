@@ -254,7 +254,7 @@ You can improve the performance by downloading the blocks from an out-of-band ca
 Node collector configuration
 ============================
 
-Since version 5.3.0 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled. For information about how to do this, see :ref:`the note at the top of this topic<install-upgrade-node-windows>`.
+Since version 5.3.x of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled. For information about how to do this, see :ref:`the note at the top of this topic<install-upgrade-node-windows>`.
 
 Baking on a Windows node
 ========================
