@@ -11,6 +11,15 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+April XX, 2023
+
+|mw-gen2| for Android 1.1.7
+---------------------------
+
+- Corrected the message that appeared when stopping baking or delegation. Previously, the message stated that the cool-down period was 14 days, but it is 21. This is now correct.
+
+- Upon update to version 1.1.7 or on installation of version 1.1.7, data that was in SharedPreferences will be moved to EncryptedSharedPreferences to enhance security.
+
 April 12, 2023
 
 Cargo concordium 2.7.1
