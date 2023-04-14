@@ -34,6 +34,15 @@ Concordium Node 5.3.2
 
 - The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
+April 12, 2023
+
+Cargo concordium 2.7.1
+----------------------
+
+- Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+
+- Support calling `cargo concordium build` and `cargo concordium test` from any project subdirectory.
+
 March 31, 2023
 
 Concordium Ledger App v3.1.0
