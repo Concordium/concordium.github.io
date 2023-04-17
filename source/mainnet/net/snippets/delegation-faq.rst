@@ -1,7 +1,7 @@
 .. _delegation-faq:
 
-Delegation FAQ
-==============
+Delegation and baking FAQ
+=========================
 
 For delegators
 --------------
@@ -38,7 +38,7 @@ For delegators
 
 .. dropdown:: Why is there a cool-down when I decrease / stop my delegation?
 
-    The cool-down period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
+    The :ref:`cool-down<glossary-cool-down-period>` period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
 
 .. dropdown:: Can I change my restaking preference if I am in a cool-down period?
 
@@ -86,16 +86,20 @@ For delegators
 
     The best tool to estimate rewards is `CCDScan`_. Look at the average past rewards for the baker pool or passive delegation. It is important to remember that small pools earn rewards less often, but relatively more at a time. So the percentage for the (annual) interest given on CCDScan is less reliable for small pools as there is more variance. Rewards from Passive delegation are added on a daily basis.
 
+.. dropdown:: Can I delegate funds in a release schedule?
+
+    Yes, the funds locked in a release schedule can be staked.
+
 For bakers
 ----------
 
 .. dropdown:: Can I open a pool on my existing baker node?
 
-    Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
+    Yes. See :ref:`Update a baker pool for Desktop Wallet<update-pool-settings>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
 
 .. dropdown:: How do I activate a baker pool?
 
-    All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
+    All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-pool-settings>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
 
 .. dropdown:: How often are rewards distributed to bakers?
 
@@ -141,6 +145,10 @@ For bakers
 .. dropdown:: If I have a low amount of CCDs and become a baker, running my own node 24/7, is it true I may never win and may never receive any rewards because of my lottery power?
 
     No, that is not true. The lottery power will be calculated by the stake you have, and you will receive rewards.
+
+.. dropdown:: Can I use funds in a release schedule to meet the minimum required amount of CCDs to become a baker?
+
+    Yes, the funds locked in a release schedule can be staked.
 
 For bakers, delegators and passive delegators
 ---------------------------------------------

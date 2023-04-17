@@ -26,6 +26,7 @@ through an SDK. However the new interface makes it substantially easier to build
 an SDK since there is a canonical schema of responses.
 
 At present the `Concordium Rust SDK
-<https://github.com/Concordium/concordium-rust-sdk>`_ has support for the new
-interface. Other SDKs will be migrated in the future, before the V1
+<https://github.com/Concordium/concordium-rust-sdk>`_, `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_, and `Rosetta <https://github.com/Concordium/concordium-rosetta>`__ have support for the new
+interface.
+Other SDKs will be migrated in the future, before the V1
 interface is deprecated.
