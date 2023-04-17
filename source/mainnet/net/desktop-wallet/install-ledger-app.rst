@@ -55,7 +55,7 @@ To find out which firmware version the LEDGER device is running, do the followin
 
    - For **NANO S**, if it says **2.1.0**, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
-   - For **NANO S PLUS**, if it says **1.0.4**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+   - For **NANO S PLUS**, if it says **1.1.0**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
 
 For details on how to update the LEDGER firmware, see `LEDGER NANO S guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_ or `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
@@ -164,6 +164,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 #. :ref:`Download <downloads>` the latest version of the LEDGER app if you haven't done so already.
 
 #. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
+
+.. Note::
+
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons.
 
@@ -287,6 +291,9 @@ When you update your LEDGER device, it should not be necessary to update the cer
 
       ./install.sh
 
+.. Note::
+
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
@@ -398,6 +405,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 #. :ref:`Download <downloads>` the latest version of the LEDGER app if you haven't done so already.
 
 #. Run the ``install.sh`` file from the folder that you extracted the files to.
+
+.. Note::
+
+   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$sudo pip3 install ledgerblue --upgrade``.
 
 #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
