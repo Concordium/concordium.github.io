@@ -34,6 +34,7 @@ Concordium Node 5.3.2
 
 - The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
+
 April 12, 2023
 
 Cargo concordium 2.7.1

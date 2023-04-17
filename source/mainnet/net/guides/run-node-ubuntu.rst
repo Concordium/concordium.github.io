@@ -114,12 +114,16 @@ Since version 5.3.0 of the node the collector uses the GRPC V2 interface. Theref
 Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You *only* need to change the collector port if you have overridden your node configuration. You can edit your overrides with:
 
 .. code-block:: console
+
   $ sudo systemctl edit concordium-testnet-node.service
+
 This will open your overrides in your default editor. Below is an example for the default mainnet port ``20000``:
 
 .. code-block:: ini
+
   [Service]
   Environment=CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://localhost:20000
+
 
 .. _upgrade-node-Ubuntu:
 
