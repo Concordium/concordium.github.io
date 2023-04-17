@@ -18,6 +18,15 @@ Cargo concordium library
 
 Important new functionality has been added to the ``cargo-concordium`` library that makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see (link to documentation).
 
+April 12, 2023
+
+Cargo concordium 2.7.1
+----------------------
+
+- Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+
+- Support calling `cargo concordium build` and `cargo concordium test` from any project subdirectory.
+
 March 31, 2023
 
 Concordium Ledger App v3.1.0
