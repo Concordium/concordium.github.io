@@ -419,7 +419,7 @@ To retrieve mainnet node logs run:
          # docker created network which maps `mainnet-node` to the internal IP of
          # the `mainnet-node`. If the name of the node service is changed from
          # `mainnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:10000
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
        entrypoint: ["/node-collector"]
 
 Enable inbound connections
