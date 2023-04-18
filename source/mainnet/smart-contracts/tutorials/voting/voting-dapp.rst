@@ -151,7 +151,7 @@ to their own hosted Concordium node.
 
             $ssh -NL localhost:10001:<IP-address-of-your-instance>:10001 <username>@<host>
 
-    If you don't have a running testnet node or port forwarding enabled, the :ref:`piggy bank tutorial part 3 <piggy-bank-preparing>`
+    If you don't have a running testnet node or port forwarding enabled, the :ref:`Setup development environment <setup-env>`
     will guide you through these setup steps.
 
     These prerequisites ensure that you have a testnet node reachable locally on port 10001. The |bw| requires the
