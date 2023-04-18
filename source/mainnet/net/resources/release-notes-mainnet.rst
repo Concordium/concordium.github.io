@@ -11,12 +11,12 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-April XX, 2023
+April 20, 2023
 
-Cargo concordium library
-------------------------
+Cargo-concordium integration testing
+-------------------------------------
 
-Important new functionality has been added to the ``cargo-concordium`` library that makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see (link to documentation).
+Important new functionality has been added to ``cargo-concordium``: the XX library makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
 
 April 12, 2023
 
