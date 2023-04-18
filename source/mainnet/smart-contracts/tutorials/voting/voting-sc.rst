@@ -106,4 +106,4 @@ The tests from the ``concordium-std`` are included.
 Initializing
 ------------
 
-The smart contract will be initialized when the election starts. The election is open from the point in time that this smart contract is initialized until the `end_time`.
+The election is open from the point in time that this smart contract is initialized until the `end_time`.
