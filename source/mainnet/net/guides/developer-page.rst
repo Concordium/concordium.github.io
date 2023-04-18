@@ -24,7 +24,7 @@ Official resources
 
     - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
 
-- See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets
+- See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets.
 
 - For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
 
