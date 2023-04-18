@@ -67,7 +67,7 @@ Installation
     You are ready now to start the |bw| by clicking on the Concordium icon at the top right of the
     ``Chrome`` browser.
 
-    .. image:: ./images/wCCD_tutorial_18.png
+    .. image:: ../wCCD/images/wCCD_tutorial_18.png
         :width: 100 %
 
     .. note::
@@ -75,14 +75,14 @@ Installation
         The puzzle icon at the top right of the ``Chrome`` browser allows you to manage your browser extensions.
         You can enable pinning of the |bw|.
 
-        .. image:: ./images/wCCD_tutorial_13.png
+        .. image:: ../wCCD/images/wCCD_tutorial_13.png
             :width: 30 %
 
     Create a new account on testnet by going through the setup steps of the |bw|.
     You have to choose a password to secure your |bw|.
     This password is needed to log in to your |bw|.
 
-    .. image:: ./images/wCCD_tutorial_15.png
+    .. image:: ../wCCD/images/wCCD_tutorial_15.png
         :width: 30 %
 
     The |bw| creates a unique secret recovery phrase. Write down the secret recovery phrase
@@ -91,35 +91,35 @@ Installation
 
     You have completed the setup. Check that your |bw| is connected to the testnet.
 
-    .. image:: ./images/wCCD_tutorial_16.png
+    .. image:: ../wCCD/images/wCCD_tutorial_16.png
         :width: 30 %
 
-    .. image:: ./images/wCCD_tutorial_17.png
+    .. image:: ../wCCD/images/wCCD_tutorial_17.png
         :width: 30 %
 
     Before you can create a new account. You need to create an identity.
 
-    .. image:: ./images/wCCD_tutorial_19.png
+    .. image:: ../wCCD/images/wCCD_tutorial_19.png
         :width: 30 %
 
-    .. image:: ./images/wCCD_tutorial_20.png
+    .. image:: ../wCCD/images/wCCD_tutorial_20.png
         :width: 30 %
 
-    .. image:: ./images/wCCD_tutorial_21.png
+    .. image:: ../wCCD/images/wCCD_tutorial_21.png
         :width: 30 %
 
-    .. image:: ./images/wCCD_tutorial_22.png
+    .. image:: ../wCCD/images/wCCD_tutorial_22.png
         :width: 30 %
 
     You are ready now to create a new account on testnet.
 
-    .. image:: ./images/wCCD_tutorial_19.png
+    .. image:: ../wCCD/images/wCCD_tutorial_19.png
         :width: 30 %
 
-    .. image:: ./images/wCCD_tutorial_20.png
+    .. image:: ../wCCD/images/wCCD_tutorial_20.png
         :width: 30 %
 
-    You completed the |bw| setup. Send some CCD to your new account or request some CCD from the testnet faucet button within the |bw|.
+    You completed the |bw| setup. Send some CCD to your new account or request some CCD from the :ref:`testnet faucet button<testnet-faucet>` within the |bw|.
     Check that your account balance is displayed and you have enough
     CCD to be able to execute transactions.
 
@@ -127,7 +127,7 @@ Installation
         You are connected to a website with your |bw| when you see the green ``Connected`` button.
         You can toggle on/off the connection by clicking on the button.
 
-    .. image:: ./images/wCCD_tutorial_14.png
+    .. image:: ../wCCD/images/wCCD_tutorial_14.png
         :width: 40 %
 
 You can find more information on how to set up the |bw| in :ref:`Setup the Concordium Wallet for web<setup-browser-wallet>`.
@@ -189,7 +189,7 @@ This command logs a URL in the console (typically http://127.0.0.1:8080). Open t
 
 .. note::
 
-    Check that your |bw| is connected to the testnet (screenshots shown in workflow 1) or a testnet node (workflow 2) and not to mainnet or stagenet.
+    Check that your |bw| is connected to the testnet and not to mainnet.
 
 You completed the local front end setup. You are running your own local dApp now. If you want, you can compare it with Concordium's
 `voting dApp <https://voting.testnet.concordium.com/>`_ hosted on testnet. You can use your |bw|

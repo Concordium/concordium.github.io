@@ -38,7 +38,7 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
-   Voting dApp <./voting/index>
+   voting/index
    nft-minting/index
    sft-minting/index
    fungible-tokens/index
