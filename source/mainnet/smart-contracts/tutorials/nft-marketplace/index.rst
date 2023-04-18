@@ -1,8 +1,8 @@
 .. _nft-marketplace-index:
 
-========================
-NFT marketplace tutorial
-========================
+=======================================
+NFT marketplace smart contract tutorial
+=======================================
 
 In this tutorial you will create an NFT Marketplace. The `contract <https://github.com/chainorders/concordium-nft-tutorials>`_ provides some functionalities, such as minting semi-fungible, and non-fungible tokens, buying and selling NFTs with fixed prices, setting commissions for your marketplace, and setting royalties for your NFTs to get some fees from secondary sales in this marketplace. Before you start, it is important to note that this is not a beginner-level tutorial; it does not cover the basics like downloads, node configurations, wallet setup and export, and so on.
 

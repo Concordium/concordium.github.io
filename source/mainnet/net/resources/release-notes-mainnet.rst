@@ -28,6 +28,15 @@ Baking and delegation are now available in the |bw|.
 
 - When changing the selected chain internally in the wallet, dapps now receive `accountChanged` event if an account on the new network has the dapp whitelisted, or `accountDisconnected` event if no account on the new network has the dapp whitelisted.
 
+April 12, 2023
+
+Cargo concordium 2.7.1
+----------------------
+
+- Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+
+- Support calling `cargo concordium build` and `cargo concordium test` from any project subdirectory.
+
 March 31, 2023
 
 Concordium Ledger App v3.1.0
