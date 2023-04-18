@@ -7,7 +7,7 @@
 The Voting dApp
 =========================
 
-In this tutorial, you are going to get familiar with the deployed voting dApp on testnet. The voting dApp example is intended to show how you can use Concordium to conduct a vote using the |bw|.
+In this tutorial, you are going to get familiar with the deployed voting dApp on testnet. The voting dApp example is intended to show how you can use Concordium to conduct an election using the |bw| to enable users to cast their vote in your election.
 You are going to write a basic web front-end example that can read from and write to the deployed smart contract on testnet.
 
 If you want to try this example before starting the tutorial:
