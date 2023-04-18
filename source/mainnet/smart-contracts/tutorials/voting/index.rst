@@ -30,7 +30,7 @@ In the :ref:`second part<voting-frontend>`, you will download the |bw| and set u
 
 .. warning::
 
-   This tutorial assumes the reader has basic knowledge of what a blockchain and smart contract is, and some experience with Rust_ and web front-end development.
+   This tutorial assumes the reader has basic knowledge of what a blockchain and a smart contract is, and some experience with Rust_ and web front-end development.
 
 To start the tutorial click :ref:`here<voting-sc>`.
 
