@@ -14,7 +14,7 @@ The `voting smart contract <https://github.com/Concordium/concordium-rust-smart-
 
 .. warning::
 
-   This contract is not meant for production; it is an example to illustrate how to use the standard library and the tooling Concordium provides. There is no claim that the logic of the contract is reasonable or safe. Do not use these contracts as-is for anything other then experimenting.
+   This contract is not meant for production. It is an example to illustrate how to use the standard library and the tooling Concordium provides. There is no claim that the logic of the contract is reasonable or safe. Do not use these contracts as-is for anything other then experimenting.
 
 Preparation
 ===========
