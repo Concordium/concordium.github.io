@@ -49,13 +49,13 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
 .. dropdown:: Sponsored Transactions
 
-    `Demo front end <https://TODO/>`__ where you can try the functionality on Concordium's testnet
+    `Demo front end <https://sponsored.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
     :ref:`Tutorial about the sponsored Transactions dApp<sponsoredTransactions>`
 
     `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis3-nft-sponsored-txs>`__
 
-    `Back end and front end code <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTXs>`__
+    `Back end and front end code <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTransactions>`__
 
 .. dropdown:: Voting
 
