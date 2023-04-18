@@ -4,11 +4,11 @@
 Integration test a contract in Rust
 ===================================
 
-This guide will show you how to write *integration tests* in Rust for your smart contracts using the `Concordium smart contract testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing>`_.
-The library allows you to test indiviual contracts in isolation, but, notably, also interactions between multiple contracts.
-When running the tests, they are executed using the same Wasm interpreter that the nodes use, and, as you shall see, it even uses the exact same wasm modules that you can deploy to the chain.
+This guide describes how to write *integration tests* in Rust for your smart contracts using the `Concordium smart contract testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing>`_.
+The library allows you to test individual contracts in isolation, but, notably, also interactions between multiple contracts.
+When running the tests, they are executed using the same Wasm interpreter that the nodes use, and, as you shall see, it even uses the exact same Wasm modules that you can deploy to the chain.
 All smart contract features are supported, including upgrades, and it is also possible to see the energy usage of your contracts.
-This allows you to refactor and optimize your contracts for speed and efficiency with a greater confidence.
+This allows you to refactor and optimize your contracts for speed and efficiency with greater confidence.
 
 .. todo::
 
@@ -36,7 +36,7 @@ The high-level process of adding integration tests to your existing smart contra
       #[test]
       fn my_test() { .. }
 
-   where you specify the path the wasm file built in step two (details will be explained later).
+   where you specify the path the Wasm file built in step two (details will be explained later).
 4. Run your tests with ``cargo test``
 
 With a high-level understanding of the workflow, you are ready to write the actual tests.
@@ -48,7 +48,7 @@ Creating a chain
 The primary construct used for testing is the |Chain|_ type, which you should only create one of per test.
 It represents the blockchain and has methods for creating accounts and deploying and working with contracts.
 
-Use the |Chain_new|_ method for creating a chain with default settings.
+Use the |Chain_new|_ method to create a chain with default settings.
 
 .. code-block:: rust
 
@@ -57,12 +57,12 @@ Use the |Chain_new|_ method for creating a chain with default settings.
        let mut chain = Chain::new();
    }
 
-There are also other constructors, which allow you to specify certain chain parameters, such as the block time (slot time) and exchange rates between energy, CCD, and Euro.
+There are also other constructors which allow you to specify certain chain parameters, such as the block time (slot time) and exchange rates between energy, CCD, and Euro.
 
 Creating accounts
 -----------------
 
-Next step is to create one or more |Account|_ s and add them to the chain.
+The next step is to create one or more |Account|_ s and add them to the chain.
 
 Accounts have multiple constructors that allow you to specify more details.
 The simplest one is |Account_new|_, which takes and |AccountAddress|_ and a total balance of the account.
@@ -80,9 +80,9 @@ This step is important, as simply constructing an ``Account`` does not make the 
    }
 
 The account address is ``[0;32]``, which is a Rust shorthand for creating an array with 32 zeroes, each of which, in this case, is a ``u8`` type, i.e., a single byte.
-Also note that, account addresses are aliases of one another if they match on the first 29 bytes.
+Also note that account addresses are aliases of one another if they match on the first 29 bytes.
 Creating accounts ``[0;32]``, ``[1;32]``, ``[3;32]``, etc. will ensure that they aren't aliases, which is what you want in most cases.
-It is important to set an appropriate balance for the account, as executing transactions, for example deploying modules, on the chain deduct CCD from the account's balance, and running out of CCD gives you an error.
+It is important to set an appropriate balance for the account, as executing transactions, for example deploying modules, on the chain deducts CCD from the account's balance, and running out of CCD gives you an error.
 You can check the account balance with |Chain_account_balance_available|_ after each of the transactions you execute in the following sections to see that the transaction fees are subtracted from the balance.
 
 Deploy modules
@@ -103,13 +103,13 @@ For example, for ``cargo concordium build --embed-schema --out my_module.wasm.v1
        let module = Chain::module_load_v1("my_module.wasm.v1").unwrap();
    }
 
-Loading a module can fail in multiple ways, for example because it is missing or corrupt, so the function returns ``Result``, which we just ``unwrap`` here.
+Loading a module can fail in multiple ways, for example because it is missing or corrupt, so the function returns ``Result``, which you ``unwrap`` here.
 You can also use ``.expect("Loading module should succeed")`` instead, but the remainder of this guide will use ``unwrap`` for brevity.
 
 With the module loaded, you are ready to deploy it.
 Since this is a transaction, it involves an account that pays for the cost.
 Additionally, you must specify a |Signer|_ with a number of keys.
-This mimics the behaviour on the real chain, where one or more keys must sign a transaction.
+This mimics the behavior on the real chain, where one or more keys must sign a transaction.
 The only observable difference between using one or more keys is the cost of the transaction, where each extra key increases the cost slightly.
 
 .. code-block:: rust
@@ -128,14 +128,14 @@ The only observable difference between using one or more keys is the cost of the
            .unwrap();
    }
 
-Note that for the deployment, you must use the ``chain`` created a few lines above, as opposed to the associated function on the |Chain|_ struct.
+Note that for the deployment, you must use the ``chain`` created a few lines above as opposed to the associated function on the |Chain|_ struct.
 Since deployment can fail, for example if the account doesn't have sufficient CCD to cover the cost, the method returns ``Result``, which is unwrapped.
 The struct returned has information about the energy used, transaction fee, and a |ModuleReference|_ that you use for initializing contracts.
 
 .. note::
 
    Some of the methods end with ``_v1`` to indicate that they only work for V1 smart contracts.
-   However, there are currently no concrete plans to add support for V0 smart contracts in this integration library.
+   There are currently no plans to add support for V0 smart contracts in this integration library.
 
 Initialize contracts
 --------------------
@@ -147,7 +147,7 @@ The method has the following parameters:
 - An |AccountAddress|_, which pays for the transaction.
 - A maximum |Energy|_ that the contract initialization can use.
 - A |ModuleReference|_, which you got from the deployment section above.
-- An |OwnedContractName|_, that specifies which contract in the module you want to initialize.
+- An |OwnedContractName|_ that specifies which contract in the module you want to initialize.
   Contract names are prefixed with ``init_`` on the chain to distinguish them from receive functions (entrypoints).
   You constuct it with either |OwnedContractName_new|_, which checks the validity and returns a ``Result``, or |OwnedContractName_new_unchecked|_, which performs no checking.
 - An |OwnedParameter|_, which is a wrapper over a byte array that you construct with
@@ -188,14 +188,14 @@ With the contract initialized, you are ready to update it with the chain method 
 
 - A |Signer|_ to sign the transaction.
 - An ``invoker`` of type |AccountAddress|_, which pays for the transaction.
-- An ``sender`` of type |Address|_, which can either be an |AccountAddress|_ or a |ContractAddress|_.
+- A ``sender`` of type |Address|_, which can either be an |AccountAddress|_ or a |ContractAddress|_.
   The main utility of the parameter is to simulate calls from a contract without having to create a dummy contract the simply forwards the call.
 - A maximum |Energy|_ that the contract update  can use.
 - A |ContractAddress|_, which you got from the initialization section above.
-- An |OwnedReceiveName|_, that specifies which receive name in the module you want to initialize.
+- An |OwnedReceiveName|_ that specifies which receive name in the module you want to initialize.
 
   - A "receive name" is the contract name concatenated with the entrypoint name and a dot in between.
-  - In this example, the contract ``my_contract`` and the entrypoint ``my_entrypoint`` combine to the receive name ``my_contract.my_entrypoint``.
+  - In this example, the contract ``my_contract`` and the entrypoint ``my_entrypoint`` combine to become the receive name ``my_contract.my_entrypoint``.
   - You construct it with either |OwnedReceiveName_new|_, which checks the format and returns a ``Result``, or |OwnedReceiveName_new_unchecked|_, which performs no checks.
 
 - An |OwnedParameter|_, which is a wrapper over a byte array that you construct with
@@ -228,7 +228,7 @@ With the contract initialized, you are ready to update it with the chain method 
    }
 
 Updates can also fail, and thus return a ``Result``, which is unwrapped here.
-The struct returned on success contains information about the energy used, the transaction fee, the return value from the entrypoint, a vector of |ContractTraceElement|_, whether the contrat state has changed and the contract's new balance.
+The struct returned on success contains information about the energy used, the transaction fee, the return value from the entrypoint, a vector of |ContractTraceElement|_, whether the contract state has changed, and the contract's new balance.
 The trace elements describe calls to other contracts, transfers to accounts, module upgrades, and whether each of these actions succeeded or not.
 
 A method related to |Chain_contract_update|_ is |Chain_contract_invoke|_, which also executes an entrypoint, but without it being a transaction.
@@ -236,7 +236,7 @@ A method related to |Chain_contract_update|_ is |Chain_contract_invoke|_, which 
 Invoke contracts entrypoints
 ----------------------------
 
-The method |Chain_contract_invoke|_ is similar to |Chain_contract_update|_ in that is allows you to execute contract entrypoints.
+The method |Chain_contract_invoke|_ is similar to |Chain_contract_update|_ in that it allows you to execute contract entrypoints.
 The difference is that an invoke is *not a transaction and is not persisted*, so contract states, account balances, etc. remain unchanged after the call.
 Its primary purpose is to get the return value of an entrypoint.
 
@@ -293,7 +293,7 @@ Balances
 ========
 
 You can query the balance of accounts and contracts with the |Chain|_.
-Since accounts can stake part of their balance and also receive transfer with a schedule, their balance has three parts.
+Since accounts can stake part of their balance and also receive transfers with a schedule, their balance has three parts.
 
 - The total balance, part of which might be staked or locked.
 - The staked amount of CCD.
@@ -301,9 +301,9 @@ Since accounts can stake part of their balance and also receive transfer with a 
 
 The method |Chain_account_balance|_ returns all three elements, and the method |Chain_account_balance_available|_ returns only the amount of CCD available for making transactions and transfers, i.e. the part which isn't staked and/or locked.
 
-Contracts only have one balance, which you can query with |Chain_contract_balance|_.
+Contracts only have one balance which you can query with |Chain_contract_balance|_.
 
-All the balance methods return an ``Option``, as the account or contract might not exist.
+All the balance methods return an ``Option`` as the account or contract might not exist.
 
 Example:
 
@@ -368,7 +368,7 @@ This example checks that the correct types of trace elements are there (``Interr
 Transfers to accounts
 =====================
 
-One of the trace elements from the previous section, ``Transferred``, describe a transfer from an contract to an account.
+One of the trace elements from the previous section, ``Transferred``, describes a transfer from an contract to an account.
 With the helper method |transfers|_, you can get an iterator over all transfers that occured in a single call of |Chain_contract_update|_ or |Chain_contract_invoke|_.
 
 Example:
