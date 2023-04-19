@@ -100,9 +100,11 @@ The version of the LEDGER App is the same for Mainnet and Testnet. So if you alr
 
    The LEDGER NANO X is not supported currently.
 
+When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
+
 - For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
-- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 1.0.4 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-nanos-plus-1.0.4.zip>`_
+- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip>`_
 
 .. _concordium-node-and-client-download-testnet:
 
@@ -131,19 +133,19 @@ Concordium Client v5.1.1
 
 .. _cargo-concordium-testnet:
 
-Cargo-concordium v2.7.0
+Cargo-concordium v2.7.1
 =======================
 
 Download cargo-concordium:
 
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.7.0>`_
+   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.7.1>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
       - :ref:`Verification instructions <verification-cargo-linux>`
 
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.7.0>`_
+   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.7.1.zip>`_ then unzip the file and move it to the correct location.
 
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.7.0.exe>`_
+   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.7.1.exe>`_
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
