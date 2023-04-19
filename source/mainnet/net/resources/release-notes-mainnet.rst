@@ -18,7 +18,9 @@ April 27, 2023
 
 The terms and conditions have been updated and now point to a link where you can read the updated terms and conditions before accepting. Additionally, when the terms and conditions have been updated, you will be prompted to accept them again.
 
-Also, a minor change was made to support integration with eID verifiers.
+A minor change to the identity user interface was made to support integration with eID verifiers.
+
+Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
 
 April 12, 2023
 

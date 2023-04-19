@@ -20,6 +20,8 @@ The terms and conditions have been updated and now point to a link where you can
 
 Also, a minor change was made to support integration with eID verifiers.
 
+Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
+
 April 12, 2023
 
 Cargo concordium 2.7.1
