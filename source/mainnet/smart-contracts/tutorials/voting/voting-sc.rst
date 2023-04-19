@@ -25,8 +25,8 @@ You also need to set up a new smart contract project. Follow the guide :ref:`set
 
 You are now ready to write a smart contract for the Concordium blockchain!
 
-Bring in the standard library
-=============================
+Basic setup
+===========
 
 The source code of your smart contract is going to be in the ``src`` directory, which already contains the file ``lib.rs``, assuming you follow the above guide
 to set up your project.
@@ -40,38 +40,14 @@ First, bring everything from the |concordium-std|_ library into scope by adding 
 
    use concordium_std::*;
 
-This library contains everything needed to write a smart contract. It provides convenient wrappers around some low-level operations making your code more readable, and although it is not strictly necessary to use this, it will save a lot of code for the vast majority of contract developers.
+This library contains everything needed to write a smart contract, such as some parameters, functions, and tests. It provides convenient wrappers around some low-level operations making your code more readable, and although it is not strictly necessary to use this, it will save a lot of code for the vast majority of contract developers.
 
-Operations
-==========
-
-The example voting contract allows for:
+The example voting contract allows for the operations:
 
 - `initializing` the election;
 - `vote` for one of the voting options;
 - `getNumberOfVotes` for a requested voting option;
 - `view` general information about the election.
-
-.. Note::
-
-    Vec<VotingOption> (among other variables) is an input parameter to the `init` function. Since there is a limit to the parameter size (65535 Bytes), the size of the Vec<VotingOption> is limited. For more information, see :ref:`Contract instance limits<contract-instance-operations>`.
-
-Basic setup
-------------
-
-The example contract uses the ``concordium-std``. It contains some parameters, functions, and tests.
-
-Parameters
-^^^^^^^^^^
-
-``InitParameter`` is called by the init function. In this example, it contains a description of the election, the voting options, and the end time of the election. Voting options is provided as a vector, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the size of ``Vec<VotingOption>`` is limited.
-
-``VotingView`` is the return value for the view function.
-
-``State<S: HasStateApi>``
-
-Functions
-^^^^^^^^^
 
 A few basic functions are necessary for voting to work.
 
@@ -80,9 +56,15 @@ A few basic functions are necessary for voting to work.
 - vote
 - get_votes
 
-The vote and get_votes functions are unique in this example.
+``InitParameter`` is called by the ``init`` function. In this example, it contains a description of the election, the voting options, and the end time of the election. Voting options is provided as a vector, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the size of ``Vec<VotingOption>`` is limited.
 
-In the vote function, the contract specifies who may vote and when (accounts and before the end time). If a contract tries to vote, an error occurs.
+.. Note::
+
+    Vec<VotingOption> (among other variables) is an input parameter to the `init` function. Since there is a limit to the parameter size (65535 Bytes), the size of the Vec<VotingOption> is limited. For more information, see :ref:`Contract instance limits<contract-instance-operations>`.
+
+``VotingView`` is the return value for the ``view`` function.
+
+In the ``vote`` function, the contract specifies who may vote and when (accounts and before the end time). If a contract tries to vote, an error occurs.
 
 .. code-block:: console
 
@@ -97,11 +79,9 @@ And if the end time has passed, an error occurs.
 
     ensure!(ctx.metadata().slot_time() <= host.state().end_time, VotingError::VotingFinished);
 
+``get_votes`` gets the number of votes for a specific voting option.
 
-Tests
-^^^^^
-
-The tests from the ``concordium-std`` are included.
+``State<S: HasStateApi>`` contains the state of the contract which can be mutated when invoking the ``vote`` entrypoint. (I'm not sure where to put this so it makes the most sense.)
 
 Initializing
 ------------

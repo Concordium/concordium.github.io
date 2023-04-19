@@ -51,12 +51,6 @@ to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
-You can choose from two different workflows that will guide you through the setup steps. Workflow 1 is easier.
-The server that the |bw| connects to is hosted by Concordium in workflow 1. This setup will take care of the
-Concordium node on your behalf. Workflow 2 is for
-advanced readers that want to build all the components from the source code and connect the |bw|
-to their own hosted Concordium node.
-
 Installation
 ^^^^^^^^^^^^
 
