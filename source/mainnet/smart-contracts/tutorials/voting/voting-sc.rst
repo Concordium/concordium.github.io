@@ -45,9 +45,9 @@ This library contains everything needed to write a smart contract, such as some 
 The example voting contract allows for the operations:
 
 - `initializing` the election;
+- `view` general information about the election.
 - `vote` for one of the voting options;
 - `getNumberOfVotes` for a requested voting option;
-- `view` general information about the election.
 
 A few basic functions are necessary for voting to work.
 
@@ -81,7 +81,7 @@ And if the end time has passed, an error occurs.
 
 ``get_votes`` gets the number of votes for a specific voting option.
 
-``State<S: HasStateApi>`` contains the state of the contract which can be mutated when invoking the ``vote`` entrypoint. (I'm not sure where to put this so it makes the most sense.)
+``State<S: HasStateApi>`` contains the state of the contract which can be mutated when invoking the ``vote`` entrypoint.
 
 Initializing
 ------------
