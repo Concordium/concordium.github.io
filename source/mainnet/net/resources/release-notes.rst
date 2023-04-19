@@ -11,7 +11,7 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-April 20, 2023
+April 21, 2023
 
 Cargo-concordium integration testing
 -------------------------------------
