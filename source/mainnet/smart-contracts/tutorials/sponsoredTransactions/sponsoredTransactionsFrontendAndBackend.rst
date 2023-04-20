@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
-.. _sponsoredTransactions_dapp:
+.. _sponsoredTransactionsFrontendAndBackend:
 
-===========================
-Sponsored Transactions dApp
-===========================
+===========================================
+Sponsored Transactions Frontend and Backend
+===========================================
 
 The goal of this part of the tutorial is to set up the frontend and the backend locally and to understand the three flows that the dApp provides.
 
@@ -39,6 +39,27 @@ The backend server has to have access to a blockchain node and an account (with 
 that is funded with some CCD to submit the sponsored transaction to the chain. The backend wallet
 will pay for the transaction fees on behalf of the user.
 
+Schemas
+=======
+
+The frontend uses several `json` schemas in the ``./front-end/src/constants.ts`` file such as:
+
+.. code-block:: javascript
+
+   export const SERIALIZATION_HELPER_SCHEMA = 'FAAFAAAAEAAAAGNvbnRyYWN0X2FkZHJlc3MMCwAAAGVudHJ5X3BvaW50FgEFAAAAbm9uY2UFCQAAAHRpbWVzdGFtcA0HAAAAcGF5bG9hZBACAg';
+
+   export const PUBLIC_KEY_OF_PARAMETER_SCHEMA = 'FAABAAAABwAAAHF1ZXJpZXMQARQAAQAAAAcAAABhY2NvdW50Cw';
+
+   export const PUBLIC_KEY_OF_RETURN_VALUE_SCHEMA = 'FAEBAAAAEAEVAgAAAAQAAABOb25lAgQAAABTb21lAQEAAAAPHiAAAAAF';
+
+These schemas can be generated `in the smart contract folder <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_ with the below command.
+
+.. code-block:: rust
+
+   cargo concordium build --schema-json-out ./
+
+This command prints the json schema of your smart contract into your current directory.
+
 Register your public key
 ========================
 
@@ -51,28 +72,6 @@ your public key in the smart contract as shown below:
    :align: center
 
 If the registration was successful, your current public key and your next nonce are displayed.
-
-.. note::
-
-   Concordium accounts can be multi-sig and each account has at least one ``public key`` and at least
-   one ``private key`` associated with it.
-   For this sponsored transactions example, the accounts in the |bw| (or |mw-gen2|)
-   have exactly one ``public key`` and exactly one ``private key`` (no multi-sig accounts).
-   You use your ``private key`` to sign the message in the wallet and your ``public key`` is
-   used in the smart contract to verify that this signature was generated in the wallet with the associated ``private key``.
-   Never share your ``private key``.
-
-.. note::
-
-   Concordium smart contracts currently have no way to query the corresponding
-   public key(s) of an account within the smart contract code. The Concordium team is working on exposing the public keys in the smart contract code in the next protocol update so that
-   this registration step will not be necessary anymore in the future.
-   For the time being, Concordium suggests using a `public_key_registry`
-   that allows a special trusted role/account to register the public keys in the smart contract. You can explore
-   such a registry in the
-   `sponsored transaction example <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis3-nft-sponsored-txs/src/lib.rs>`_.
-   In the above smart contract, once an account has a public key registered, the mapping between the public key and the account can not be
-   updated anymore.
 
 You can export your keys file from the |bw| as follows:
 

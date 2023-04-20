@@ -49,5 +49,6 @@ The third-party pays the transaction fee to execute the transaction on-chain.
    :hidden:
    :maxdepth: 1
 
-   Exploring the sponsored Transactions dApp <./sponsoredTransactions_dapp.rst>
+   Exploring the sponsored Transactions Smart Contract <./sponsoredTransactionsSmartContract.rst>
+   Exploring the sponsored Transactions dApp <./sponsoredTransactionsFrontendAndBackend.rst>
    Wallet Connect <./walletConnect.rst>

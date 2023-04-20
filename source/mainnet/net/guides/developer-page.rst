@@ -22,7 +22,13 @@ Official resources
 
 - `Concordium standards and updates <https://proposals.concordium.software/>`_
 
-    - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
+    - `CIS-0 standard detections <https://proposals.concordium.software/CIS/cis-0.html>`_
+
+    -  Applicable for Smart contracts v1:
+
+        - `CIS-2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_
+
+        - `CIS-3 sponsored transaction standard <https://proposals.concordium.software/CIS/cis-3.html>`_
 
 - For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
 
