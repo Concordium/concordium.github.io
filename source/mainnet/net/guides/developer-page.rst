@@ -49,7 +49,7 @@ Concordium has a selection of example dApps that you can clone to make your own 
     - wCCD: :ref:`wCCD tutorial<wCCD>` / `wCCD dApp <https://wccd.testnet.concordium.com/>`_
     - Voting: :ref:`Voting tutorial<voting-dapp>` / `Voting dApp <https://voting.testnet.concordium.com/>`_
     - ID2.0: :ref:`Create proofs tutorial<gallery>` / `Gallery dApp <https://gallery.testnet.concordium.com/>`_
-    - eSealing: :ref:`eSealing tutorial<eSaeling>` / `eSealing dApp <https://esealing.testnet.concordium.com>`_
+    - eSealing: :ref:`eSealing tutorial<eSealing>` / `eSealing dApp <https://esealing.testnet.concordium.com>`_
     - signMessage: `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__ / `signMessage dApp <http://signmessage.testnet.concordium.com/>`__
 
 .. _block-explorers:
