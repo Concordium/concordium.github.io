@@ -11,6 +11,15 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+April 12, 2023
+
+Cargo concordium 2.7.1
+----------------------
+
+- Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
+
+- Support calling `cargo concordium build` and `cargo concordium test` from any project subdirectory.
+
 March 31, 2023
 
 Concordium Ledger App v3.1.0
