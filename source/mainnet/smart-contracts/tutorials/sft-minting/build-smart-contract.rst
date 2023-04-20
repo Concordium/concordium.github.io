@@ -254,7 +254,7 @@ Now, deploy your contract with the following command.
 
 .. code-block:: console
 
-    concordium-client module deploy dist/smart-contract-multi/module.wasm.v1 --sender <YOUR-ADDRESS> --name cis2_mult --grpc-port 10001
+    concordium-client module deploy dist/smart-contract-multi/module.wasm.v1 --sender <YOUR-ADDRESS> --name cis2_mult --grpc-port 20001
 
 You will need the module hash value when creating an instance so keep that. You can check your deployment status either from Concordium’s block explorer, CCDScan, or on your terminal’s output.
 
@@ -270,7 +270,7 @@ Run the following command to initialize your smart contract.
 
 .. code-block:: console
 
-    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 10001
+    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 20001
 
 Here you can see the successfully initialized contract instance with index 2115.
 

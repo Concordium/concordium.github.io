@@ -55,11 +55,11 @@ The front end is connected to a deployed eSealing smart contract on the Concordi
 with `this source code <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing>`_.
 
 You can interact directly with the smart contract using ``concordium-client`` and your local node
-that is running at port 10001 to register a file hash as follows:
+that is running at port 20001 to register a file hash as follows:
 
 .. code-block:: console
 
-   $concordium-client contract update 2481 --entrypoint registerFile --sender <YourAccount> --energy 30000 --parameter-json fileHash.json --grpc-port 10001
+   $concordium-client contract update 2481 --entrypoint registerFile --sender <YourAccount> --energy 30000 --parameter-json fileHash.json --grpc-port 20001
 
 Create a ``fileHash.json`` file with a file hash as content similar to:
 
@@ -72,7 +72,7 @@ Create a ``fileHash.json`` file with a file hash as content similar to:
 
 .. note::
 
-   Comprehensive instructions on how to set up a local Concordium testnet node on port 10001 (or alternatively link to a remote node via grpc),
+   Comprehensive instructions on how to set up a local Concordium testnet node on port 20001 (or alternatively link to a remote node via grpc),
    and download ``concordium-client`` can be found in :ref:`Setup the development environment<setup-env>`.
 
 .. note::
@@ -87,7 +87,7 @@ You can view the ``timestamp`` and ``witness`` (sealer account) of an already ti
 
 .. code-block:: console
 
-    $concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 10001
+    $concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 20001
 
 .. image:: ./images/displayFile.png
    :align: center

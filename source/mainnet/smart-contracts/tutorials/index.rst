@@ -18,7 +18,9 @@ It should allow any account to insert CCD and only the owner to smash it, taking
 In the :ref:`wCCD <wCCD>` tutorial, you are going to get familiar with the deployed wCCD token on testnet.
 You are going to write a basic web front-end example that can read from and write to the deployed wCCD smart contract on testnet.
 
-In the :ref:`Minting <nft-index>` tutorials you will mint and transfer various types of tokens.
+In the :ref:`Voting<voting-dapp>` tutorial, you learn how to create a smart contract and dApp to conduct a vote.
+
+In the :ref:`NFT Minting <nft-index>` tutorial you will mint and transfer non-fungible tokens. The :ref:`Semi-fungible tokens<sft-index>` tutorial describes how to mint and transfer semi-fungible tokens. And the :ref:`Fungible tokens<ft-index>` tutorial explains how to mint, transfer, and burn fungible tokens.
 
 In the :ref:`NFT marketplace <nft-marketplace-index>` tutorials you will setup an NFT marketplace.
 
@@ -36,7 +38,9 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
+   voting/index
    nft-minting/index
    sft-minting/index
+   fungible-tokens/index
    nft-marketplace/index
    eSealing <./eSealing/index>
