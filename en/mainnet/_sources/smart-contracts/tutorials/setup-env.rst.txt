@@ -246,6 +246,8 @@ Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnk
 .. image:: images/bw-idp-selection.png
     :width: 100%
 
+.. _testnet-faucet:
+
 Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.
 
 .. image:: images/testnet-faucet-bw.png

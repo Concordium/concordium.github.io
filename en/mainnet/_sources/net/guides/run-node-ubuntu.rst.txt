@@ -92,13 +92,13 @@ If the node is well behind the head of the chain, you can speed up the startup b
 
   3. Add the following under the ``[Service]`` section (create the section if it does not exist)
 
-    .. code-block::
+    .. code-block:: ini
 
       Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
 
   4. Start the service again
 
-    .. code-block::
+    .. code-block:: console
 
       $sudo systemctl start concordium-mainnet-node.service
 
@@ -110,7 +110,6 @@ Upgrade version
 ===============
 
 .. Note::
-
   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 To upgrade to a newer version of the `concordium-mainnet-node` package you need to:
