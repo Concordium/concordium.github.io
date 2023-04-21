@@ -184,13 +184,13 @@ The method has the following parameters:
 - An |OwnedContractName|_ that specifies which contract in the module you want to initialize.
   Contract names are prefixed with ``init_`` on the chain to distinguish them from receive functions (entrypoints).
   You constuct it with either |OwnedContractName_new|_, which checks the validity and returns a ``Result``, or |OwnedContractName_new_unchecked|_, which performs no checking.
-- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with
+- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with one of the following methods:
 
   - |OwnedParameter_from_serial|_, which serializes the input and checks that the parameter size is valid,
   - ``TryFrom::<Vec<u8>>::try_from(..)``, which also checks the parameter size,
   - or |OwnedParameter_empty|_, which always succeeds.
 
-- An |Amount|_ to send the contract.
+- An |Amount|_ to send to the contract.
 
 .. code-block:: rust
 
@@ -222,8 +222,14 @@ With the contract initialized, you are ready to update it with the chain method 
 
 - A |Signer|_ to sign the transaction.
 - An ``invoker`` of type |AccountAddress|_, which pays for the transaction.
-- A ``sender`` of type |Address|_, which can either be an |AccountAddress|_ or a |ContractAddress|_.
-  The main utility of the parameter is to simulate calls from a contract without having to create a dummy contract the simply forwards the call.
+- An ``sender`` of type |Address|_, which can either be an |AccountAddress|_ or a |ContractAddress|_.
+
+  - The main utility of the parameter is that it allows you to test internal calls in your contracts directly.
+  - For example, if you have a more complex scenario where an account calls contract ``A`` which internally calls contract ``B``.
+
+    - In this case you can test the complete integration by calling ``A``.
+    - But you can also test ``B`` as its own unit by calling it directly and specifying ``A`` as the ``sender``.
+
 - A maximum |Energy|_ that the contract update can use.
 - A |ContractAddress|_, which you got from the initialization section above.
 - An |OwnedReceiveName|_ that specifies which receive name in the module you want to initialize.
@@ -232,13 +238,13 @@ With the contract initialized, you are ready to update it with the chain method 
   - In this example, the contract ``my_contract`` and the entrypoint ``my_entrypoint`` combine to become the receive name ``my_contract.my_entrypoint``.
   - You construct it with either |OwnedReceiveName_new|_, which checks the format and returns a ``Result``, or |OwnedReceiveName_new_unchecked|_, which performs no checks.
 
-- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with
+- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with one of the following methods:
 
   - |OwnedParameter_from_serial|_, which serializes the input and checks that the parameter size is valid,
   - ``TryFrom::<Vec<u8>>::try_from(..)``, which also checks the parameter size,
   - or |OwnedParameter_empty|_, which always succeeds.
 
-- An |Amount|_ to send the contract.
+- An |Amount|_ to send to the contract.
 
 .. code-block:: rust
 
@@ -272,7 +278,7 @@ Invoke contract entrypoints
 
 The method |Chain_contract_invoke|_ is similar to |Chain_contract_update|_ in that it allows you to execute contract entrypoints.
 The difference is that an invoke is *not a transaction and is not persisted*, so contract states, account balances, etc. remain unchanged after the call.
-For seasoned Rust programmers that is easily seen by its function signature, which takes an immutable reference to the chain (``&self``), as opposed to the mutable reference (``&mut self``) used in the update method.
+For seasoned Rust programmers, that is easily seen by its function signature, which takes an immutable reference to the chain (``&self``), as opposed to the mutable reference (``&mut self``) used in the update method.
 The primary purpose of |Chain_contract_invoke|_ is to get the return value of an entrypoint.
 
 It has all the same parameters as a contract update, except for the ``signer``, which is only needed for transactions.

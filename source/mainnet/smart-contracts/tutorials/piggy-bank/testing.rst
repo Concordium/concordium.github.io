@@ -134,7 +134,7 @@ Add a test module
 =================
 
 Since a smart contract module is a regular Rust library, you can test it as
-one would test any library and add integration-tests in the ``tests`` folder.
+one would test any library and add integration tests in the ``tests`` folder.
 
 Create the folder ``tests`` in the root of your project and add the file ``tests.rs`` inside it.
 
@@ -199,7 +199,7 @@ Use the |Chain_new|_ method for creating a chain with default settings and save 
        let mut chain = Chain::new();
    }
 
-Next step is to create two |Account|_ entities and add them to the ``chain``.
+The next step is to create two |Account|_ entities and add them to the ``chain``.
 The simplest way to create an account is with |Account_new|_, which takes an |AccountAddress|_ and a total balance of the account.
 Once constructed, use the |Chain_create_account|_ method to add it to the chain.
 This step is important, as simply constructing an |Account|_ does not make the chain aware of it.
@@ -219,12 +219,12 @@ Use the addresses and initial balance defined as constants:
        chain.create_account(account_other);
    }
 
-The balance of the accounts matter when using the testing library, as the cost of transactions, for example deploying a smart contract, will be deducted from the balance of the account sending the transaction.
+The balances of the accounts matter when using the testing library, as the cost of transactions, for example deploying a smart contract, will be deducted from the balance of the account sending the transaction.
 
 
 With the accounts created, you are ready to load and deploy the smart contract module.
-|concordium-smart-contract-testing|_ uses the compiled smart contract modules that you also deploy on the block chain.
-Use ``cargo concordium``, which you installed in preparation for this tutorial, to compile the piggy bank to web assembly (wasm).
+|concordium-smart-contract-testing|_ uses the compiled smart contract modules that you also deploy on the blockchain.
+Use ``cargo concordium``, which you installed in preparation for this tutorial, to compile the piggy bank to `WebAssembly (Wasm) <https://webassembly.org/>`_.
 
 Open a terminal and use ``cd``, short for *change directory*, to go into the root of your piggy bank project.
 Then compile your contract with:
@@ -233,8 +233,7 @@ Then compile your contract with:
 
    $cargo concordium build --out piggy_bank_part2.wasm.v1
 
-This produces the wasm module ``piggy_bank_part2.wasm.v1`` in the root of your project.
-That is, unless you have any typos or bugs in your code.
+This produces the Wasm module ``piggy_bank_part2.wasm.v1`` in the root of your project, unless you have any typos or bugs in your code.
 If that is the case, try to fix them using the helpful error messages from the compiler or go back to the end of part 1 and copy the full contract code again.
 
 Going back to your test case, use the function |module_load_v1|_ to load the module.
@@ -249,15 +248,16 @@ Going back to your test case, use the function |module_load_v1|_ to load the mod
        let module = load_module_v1("piggy_bank_part2.wasm.v1").expect("Module is valid and exists");
    }
 
-|module_load_v1|_ loads a module on disk, which might be missing or invalid, and it thus returns a ``Result`` type.
-You can use ``unwrap``, or ``expect`` (which you provide a helpful error message), to extract the actual module from the ``Result``.
+|module_load_v1|_ attempts to load a module from disk, which might be missing or invalid, and it thus returns a ``Result`` type.
+You can use ``unwrap``, or ``expect``, to extract the actual module from the ``Result``.
 Both methods will panic if the ``Result`` actually contains the ``Err`` variant, which in turn will make the test case fail.
+The remainder of this tutorial uses ``expect`` as it allows you to provide a contextual message that is shown on panics.
 
-Next step is to deploy the module to the ``chain`` with the method |Chain_module_deploy|_.
+The next step is to deploy the module to the ``chain`` with the method |Chain_module_deploy|_.
 
 Since this is a transaction, you must provide an account address of the ``sender``, which will pay for the cost of the transaction.
 You must also provide a |Signer|_ with a number of keys.
-This mimics the behaviour on the real chain, where one or more keys must sign a transaction.
+This mimics the behavior on the real chain, where one or more keys must sign a transaction.
 The only observable difference between using one or more keys is the cost of the transaction, where each extra key increases the cost slightly.
 In this tutorial, you will always use a |Signer|_ with one key as that is the most common scenario.
 
@@ -279,7 +279,7 @@ In this tutorial, you will always use a |Signer|_ with one key as that is the mo
    }
 
 Since deployment can fail, for example if the account doesn't have sufficient CCD to cover the cost, the method returns a ``Result``, which is unwrapped with ``expect``.
-The struct returned has information about the energy used, transaction fee, and a |ModuleReference|_ that you use for initializing contracts.
+The returned struct has information about the energy used, transaction fee, and a |ModuleReference|_ that you use for initializing contracts.
 
 With the module deployed, you are ready to initialize a contract with the chain method |Chain_contract_init|_.
 The method has the following parameters:
@@ -291,13 +291,13 @@ The method has the following parameters:
 - An |OwnedContractName|_, that specifies which contract in the module you want to initialize.
   Contract names are prefixed with ``init_`` on the chain to distinguish them from receive functions (entrypoints).
   You constuct it with either |OwnedContractName_new|_, which checks the validity and returns a ``Result``, or |OwnedContractName_new_unchecked|_, which performs no checking.
-- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with
+- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with one of the following methods:
 
   - |OwnedParameter_from_serial|_, which serializes the input and checks that the parameter size is valid,
   - ``TryFrom::<Vec<u8>>::try_from(..)``, which also checks the parameter size,
   - or |OwnedParameter_empty|_, which always succeeds.
 
-- An |Amount|_ to send the contract.
+- An |Amount|_ to send to the contract.
 
 .. code-block:: rust
 
@@ -322,7 +322,7 @@ The method has the following parameters:
    }
 
 Initialization can fail for several different reasons, and thus returns a ``Result``, which is unwrapped with ``expect``.
-The struct returned contains information about the energy used, transaction fee, contract events (logs) produced, and a |ContractAddress|_ that you use for updating and interacting with the contract.
+The returned struct contains information about the energy used, transaction fee, contract events (logs) produced, and a |ContractAddress|_ that you use for updating and interacting with the contract.
 
 While the deployment and initialization in themselves act as a test, you can also check that the balance starts out as zero.
 Use the method |Chain_contract_balance|_ with the |ContractAddress|_ from the ``initialization`` struct to do so:
@@ -407,7 +407,7 @@ Test inserting CCD into a piggy bank
 Next, you should test the different functions for interacting with a piggy bank.
 You will start by testing the ``insert`` entrypoint on an intact piggy bank contract.
 
-Create a new test case, named ``test_insert_intact``, and use the helper method ``create_chain_and_contract`` from the previous section to get a chain with two accounts and an initialized piggy bank contract.
+Create a new test case named ``test_insert_intact``, and use the helper method ``create_chain_and_contract`` from the previous section to get a chain with two accounts and an initialized piggy bank contract.
 
 .. code-block:: rust
 
@@ -425,7 +425,13 @@ Now, you are ready to update the contract with the |Chain_contract_update|_ meth
 - A |Signer|_ to sign the transaction.
 - An ``invoker`` of type |AccountAddress|_, which pays for the transaction.
 - An ``sender`` of type |Address|_, which can either be an |AccountAddress|_ or a |ContractAddress|_.
-  The main utility of the parameter is to simulate calls from a contract without having to create a dummy contract the simply forwards the call.
+
+  - The main utility of the parameter is that it allows you to test internal calls in your contracts directly.
+  - For example, if you have a more complex scenario where an account calls contract ``A`` which internally calls contract ``B``.
+
+    - In this case you can test the complete integration by calling ``A``.
+    - But you can also test ``B`` as its own unit by calling it directly and specifying ``A`` as the ``sender``.
+
 - A maximum |Energy|_ that the contract update can use.
 - A |ContractAddress|_, which you get from the initialization variable.
 - An |OwnedReceiveName|_, that specifies which receive name in the module you want to initialize.
@@ -434,15 +440,15 @@ Now, you are ready to update the contract with the |Chain_contract_update|_ meth
   - In this example, the contract ``my_contract`` and the entrypoint ``my_entrypoint`` combine to the receive name ``my_contract.my_entrypoint``.
   - You construct it with either |OwnedReceiveName_new|_, which checks the format and returns a ``Result``, or |OwnedReceiveName_new_unchecked|_, which performs no checks.
 
-- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with
+- An |OwnedParameter|_, which is a wrapper over a byte array that you construct with one of the following methods:
 
   - |OwnedParameter_from_serial|_, which serializes the input and checks that the parameter size is valid,
   - ``TryFrom::<Vec<u8>>::try_from(..)``, which also checks the parameter size,
   - or |OwnedParameter_empty|_, which always succeeds.
 
-- An |Amount|_ to send the contract.
+- An |Amount|_ to send to the contract.
 
-Define the variable ``insert_amount`` with the amount of CCD you want to send the contract.
+Define the variable ``insert_amount`` with the amount of CCD you want to send to the contract.
 Then update the contract with the ``insert`` receive function and pass in ``insert_amount``:
 
 .. code-block:: rust
@@ -531,8 +537,7 @@ The second test becomes:
        );
    }
 
-Again, you should verify everything compiles and the tests succeeds using ``cargo
-test``.
+Again, verify that everything compiles and the tests succeed using ``cargo test``.
 
 Test smashing a piggy bank
 ==========================
@@ -567,12 +572,12 @@ Start by creating a new test case, ``test_smash_intact``, setup the chain and co
 Note that you must use the ``ACC_ADDR_OWNER`` for the ``sender`` argument, since it is only the owner who can smash the piggy bank.
 
 To check the ``PiggyBankState``, you must invoke the ``view`` with the |Chain_contract_invoke|_ method.
-You could also use |Chain_contract_update|_ for this purpose, as we are just interested in the return value, but the benefit of |Chain_contract_invoke|_ is that it *isn't* a transaction.
+You could also use |Chain_contract_update|_ for this purpose, as you are just interested in the return value, but the benefit of |Chain_contract_invoke|_ is that it *isn't* a transaction.
 So it does not charge the account for calling it, and it does not save changes to contracts.
-For seasoned Rust programmers that is easily seen by its function signature, which takes an immutable reference to the chain (``&self``), as opposed to the mutable reference (``&mut self``) used in the update method.
+For seasoned Rust programmers, that is easily seen by its function signature, which takes an immutable reference to the chain (``&self``), as opposed to the mutable reference (``&mut self``) used in the update method.
 Also note that the |Signer|_ parameter is not needed for the invoke method, as the signer is only needed for transactions.
 
-Invoke the ``view`` function underneath the update:
+Invoke the ``view`` function below the update:
 
 .. code-block:: rust
 
@@ -597,7 +602,7 @@ Invoke the ``view`` function underneath the update:
            .expect("Invoking `view` should always succeed");
    }
 
-Next step is to use the return value from (``invoke.return_value``), which is a byte array representing a tuple of ``PiggyBankState`` and ``Amount``.
+The next step is to use the return value from (``invoke.return_value``), which is a byte array representing a tuple of ``PiggyBankState`` and ``Amount``.
 While it is possible to make assertions about the bytes directly, it is preferable to deserialize the bytes into structured Rust types.
 There is a helper method |from_bytes|_ for this exact purpose:
 
@@ -624,10 +629,10 @@ To make the ``PiggyBankState`` public, edit the ``lib.rs`` file and add the ``pu
       Smashed,
    }
 
-.. note::
+.. important::
 
    The change you just made does not affect the functionality of the contract, but when you make changes that do, you need to recompile the contract with ``cargo concordium build`` before running the tests again.
-   Otherwise, you will continue using the old wasm module.
+   Otherwise, you will continue using the old Wasm module.
 
 With the ``state`` and ``balance`` available, you can make assertions.
 The contract should be smashed and have a balance of zero:
@@ -826,7 +831,7 @@ always have a valid owner and the amount it sends is the ``self_balance``. But
 you should still be able to represent this error and distinguish it from the two
 other error types.
 
-When updates and invokes fail, they return an |ContractInvokeError|_ struct, which has information about the transaction fee, energy usage, and also the *reason* why a contract call failed.
+When updates and invokes fail, they return a |ContractInvokeError|_ struct, which has information about the transaction fee, energy usage, and also the *reason* why a contract call failed.
 Some of the reasons include running out of energy, calling a contract that doesn't exist, etc., but only one variant, which is when the contract *rejects* on its own, contains the bytes returned by the contract.
 The helper method |return_value|_ tries to extract the bytes from the contract rejection and returns an ``Option<Vec<u8>>``.
 With the bytes available, you can use the |from_bytes|_ method and assert why the update failed:
