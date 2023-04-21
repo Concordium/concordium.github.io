@@ -124,9 +124,8 @@ The library requires the Rust edition ``2021`` or greater, which you must also s
 .. code-block:: toml
 
    [package]
-   # .. lines omitted
+   # ...
    edition = "2021"
-   # .. lines omitted
 
    [dev-dependencies]
    concordium-smart-contract-testing = "1.0"

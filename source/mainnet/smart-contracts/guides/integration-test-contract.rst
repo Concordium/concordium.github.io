@@ -15,14 +15,19 @@ This allows you to refactor and optimize your contracts for speed and efficiency
 
 The high-level process of adding integration tests to your existing smart contract project is as follows:
 
-1. Add the testing library to your ``Cargo.toml`` file:
+1. Add the testing library to your ``Cargo.toml`` file and use Rust edition ``2021``:
 
    .. code-block:: yaml
+
+      [package]
+      # ...
+      edition = "2021"
 
       [dev-dependencies]
       concordium-smart-contract-testing = "1.0"
 
    By putting it under ``dev-dependencies``, it is only included for tests.
+   You must use edition ``2021`` or greater as that is a requirement for the testing library.
 
 2. Compile your contract with ``$cargo-concordium build ...``.
 3. Write tests in files residing in ``my-project/tests/``.
@@ -37,6 +42,7 @@ The high-level process of adding integration tests to your existing smart contra
 
    where you specify the path the Wasm file built in step two (details will be explained later).
 4. Run your tests with ``cargo test``
+5. If your tests fail due to a bug in your smart contract, fix the bug and recompile your contract with ``cargo-concordium`` as in the second step before running the tests again. Otherwise, the changes are not reflected in the tests.
 
 With a high-level understanding of the workflow, you are ready to write the actual tests.
 Each section below covers part of a typical integration test.
@@ -305,18 +311,29 @@ This section covers how to get the data most commonly used for assertions in sma
 Return values
 =============
 
-Both |Chain_contract_update|_ and |Chain_contract_invoke|_ have a return value when they succeed.
-The return value is a byte array, ``Vec<u8>``.
-To deserialize it into structured data, you can use the helper function |from_bytes|_, which returns a ``Result<T, ParseError>``, where ``T`` is the type you want to parse.
+Both |Chain_contract_update|_ and |Chain_contract_invoke|_ have return values when they succeed, or if they fail in a specific way.
+On success, you can access the return value directly, for example ``update.return_value``, which is a byte array, ``Vec<u8>``.
+But the methods can fail in multiple ways, for example if the contract runs out of energy or it panics, and the return value is only available when the contract rejects on its own.
+The helper method |return_value|_ on the |ContractInvokeError|_ struct tries to extract the return value and returns an ``Option<Vec<u8>>``.
+To deserialize the return value into structured data, you can use the helper function |from_bytes|_, which returns a ``Result<T, ParseError>``, where ``T`` is the type you want to parse.
 For example:
 
 .. code-block:: rust
 
    let chain = Chain::new();
    // .. Creation of accounts and contracts omitted for brevity.
+
+   // On success:
    let update = chain.contract_update(..).unwrap();
-   let return_value: String = from_bytes(&update.return_value).unwrap();
-   assert_eq!(return_value, "My expected string");
+   let update_return_value = update.return_value;
+   let returned_string: String = from_bytes(&update_return_value).unwrap();
+   assert_eq!(returned_string, "My expected string");
+
+   // On error:
+   let update_error = chain.contract_update(..).unwrap_err();
+   let update_error_return_value = update_error.return_value().unwrap(); // Unwrap the `Option`.
+   let returned_contract_error: MyContractError = from_bytes(&update_error_return_value).unwrap();
+   assert_eq!(returned_contract_error, MyContractError::NotOwner);
 
 Balances
 ========
@@ -489,3 +506,7 @@ Example:
 .. |trace_elements_per_contract| replace:: ``trace_elements_per_contract``
 .. _account_transfers: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeSuccess.html#method.account_transfers
 .. |account_transfers| replace:: ``account_transfers``
+.. _return_value: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeError.html#method.return_value
+.. |return_value| replace:: ``return_value``
+.. _ContractInvokeError: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeError.html
+.. |ContractInvokeError| replace:: ``ContractInvokeError``
