@@ -775,7 +775,7 @@ reasons for rejection:
 
 .. code-block:: rust
 
-   #[derive(Debug, PartialEq, Eq, Serial, Reject)]
+   #[derive(Debug, PartialEq, Eq, Serialize, Reject)]
    pub enum SmashError {
        NotOwner,
        AlreadySmashed,
