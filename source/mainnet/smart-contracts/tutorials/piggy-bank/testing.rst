@@ -927,4 +927,4 @@ But if you are eager to test all scenarios for the piggy bank, you can try to wr
 
 .. seealso::
 
-   For more information on unit testing, see :ref:`integration-test-contract`.
+   For more information on testing, see :ref:`integration-test-contract`.

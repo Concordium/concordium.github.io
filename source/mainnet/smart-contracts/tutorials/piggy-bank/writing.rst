@@ -196,7 +196,7 @@ The init function takes two arguments:
 - ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating
   sets, maps, and boxes that effectively utilize the way contract state is
   stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
-  the state, which you can use for `unit testing your contract <unit-test-contract>`_.
+  the state, which you can use for :ref:`unit testing your contract <unit-test-contract>`.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
 alias for ``Result<PiggyBankState, Reject>``. The returned state is serialized
