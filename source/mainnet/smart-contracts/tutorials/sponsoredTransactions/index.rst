@@ -24,7 +24,7 @@ The dApp consists of three components that you will explore as part of this tuto
 What are sponsored transactions?
 ================================
 
-It is a mechanism for a sponsor address (third-party) to submit a transaction
+Sponsored transactions are a mechanism for a sponsor address (third-party) to submit a transaction
 to a smart contract on behalf of a sponsoree account (user/client). The user/client
 should sign its intended action in the |bw| (or |mw-gen2| that uses WalletConnect) to authorize the third-party to execute a specific action on its behalf.
 After the user/client signed its action, the signature is communicated to the third-party. The third-party account (invoker to the smart contract)

@@ -52,7 +52,7 @@ The frontend uses several `json` schemas in the ``./front-end/src/constants.ts``
 
    export const PUBLIC_KEY_OF_RETURN_VALUE_SCHEMA = 'FAEBAAAAEAEVAgAAAAQAAABOb25lAgQAAABTb21lAQEAAAAPHiAAAAAF';
 
-These schemas can be generated `in the smart contract folder <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_ with the below command.
+These schemas can be generated `in the smart contract folder <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_ with the command below.
 
 .. code-block:: rust
 
