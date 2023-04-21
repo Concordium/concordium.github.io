@@ -11,12 +11,12 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-April 21, 2023
+April 24, 2023
 
-Cargo-concordium integration testing
+Smart contract integration testing
 -------------------------------------
 
-Important new functionality has been added to ``cargo-concordium``: the XX library makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
+Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
 
 April 20, 2023
 
