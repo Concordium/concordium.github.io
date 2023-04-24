@@ -3,10 +3,10 @@ index
 =====
 
 .. toctree::
-   :caption: Installation
+   :caption: Releases and Installation
 
    installation/downloads
-   installation/downloads-testnet
+   release-notes/release-notes-lp
    installation/verification-instructions
 
 .. toctree::
@@ -24,20 +24,22 @@ index
    browser-wallet/setup-browser-wallet
    mobile-wallet-gen2/setup-mobile-wallet
    mobile-wallet/setup-mobile-wallet
+   guides/overview-desktop
    guides/create-identity
    guides/create-account
    guides/send-ccd-wallets
    browser-wallet/connect-app
    guides/tokens
    guides/shield-ccd-wallets
-   guides/export-import
    guides/export-key
-   guides/recover-wallet
+   guides/recovery
    mobile-wallet/share-address-mw
    mobile-wallet/change-passcode-mw
-   mobile-wallet/inspect-release-schedule-mw
+   guides/scheduled-release
    guides/address-book
-   desktop-wallet/index
+   guides/transaction-report
+   desktop-wallet/transaction-log-filter
+   guides/overview-shared-accounts
 
 .. toctree::
    :includehidden:
@@ -53,6 +55,12 @@ index
    guides/developer-page
    nodes/node-requirements
    references/concordium-client
+
+.. toctree::
+   :includehidden:
+   :caption: CCDScan
+
+   resources/ccd-scan
 
 .. toctree::
    :includehidden:
@@ -79,11 +87,7 @@ index
    :includehidden:
    :caption: Smart Contracts v0
 
-   Introduction <../smart-contracts-v0/general/introduction>
-   Tutorials <../smart-contracts-v0/tutorials/piggy-bank/index>
-   Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
-   On-chain guides <../smart-contracts-v0/guides/on-chain-index>
-   References <../smart-contracts-v0/references/index>
+   V0 smart contract documentation <../smart-contracts-v0/sc-v0-rollup>
 
 .. toctree::
    :caption: Low-code NFT marketplace
@@ -95,8 +99,5 @@ index
 .. toctree::
    :caption: Resources
 
-   resources/ccd-scan
-   resources/release-notes-mainnet
-   resources/release-notes
    resources/legal
    resources/ar-idp-contact

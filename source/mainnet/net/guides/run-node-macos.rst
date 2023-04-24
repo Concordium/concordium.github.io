@@ -69,7 +69,7 @@ Install/upgrade and run a node
   .. Note::
     See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
-  #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer package (.pkg file).
+  #. Go to :ref:`Downloads<mainnet-node-downloads>`, and download the latest macOS installer package (.pkg file).
 
   #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 
@@ -109,7 +109,7 @@ Install/upgrade and run a node
   .. Note::
     See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
 
-  #. Go to :ref:`Downloads<downloads-testnet>`, and download the latest macOS installer package (.pkg file).
+  #. Go to :ref:`Downloads<testnet-node-downloads>`, and download the latest macOS installer package (.pkg file).
 
   #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 

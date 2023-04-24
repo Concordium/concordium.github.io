@@ -14,9 +14,9 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     Download and install the following tools in this order:
 
     #. `rustup`_
-    #. :ref:`cargo-concordium<cargo-concordium-testnet>`
-    #. :ref:`concordium-client<concordium-node-and-client-download-testnet>`
-    #. :ref:`a node<concordium-node-and-client-download-testnet>` for deploying and interacting
+    #. :ref:`cargo-concordium<concordium-node-and-client-download>`
+    #. :ref:`concordium-client<concordium-node-and-client-download>`
+    #. :ref:`a node<concordium-node-and-client-download>` for deploying and interacting
 
     For more detailed information, see :ref:`Install tools for development<setup-tools>`.
 

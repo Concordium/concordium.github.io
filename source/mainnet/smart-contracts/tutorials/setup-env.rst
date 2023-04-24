@@ -28,7 +28,7 @@ During Wasm installation in your system you should see something similar to belo
 .. image:: images/mint-wasm-install.png
     :width: 100%
 
-Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
+Now you need to install the Concordium software package. :ref:`Click here<concordium-node-and-client-download>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
 
 First, rename the ``cargo-congordium-v.x.x`` file to ``cargo-concordium``. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the ``cargo-concordium`` executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly. The commands below are specifically for MacOS. Remember to adjust the commands based on your operating system.
 
@@ -57,7 +57,7 @@ If everything is correct, when you enter the command ``cargo concordium --help``
 Install Concordium Client
 =========================
 
-The tutorials use ``concordium-client`` as a command line tool to deploy, mint, and transfer. :ref:`Download it here<concordium-node-and-client-download-testnet>`. Rename the package to ``concordium-client`` in case it has some version annotation.
+The tutorials use ``concordium-client`` as a command line tool to deploy, mint, and transfer. :ref:`Download it here<concordium-node-and-client-download>`. Rename the package to ``concordium-client`` in case it has some version annotation.
 
 .. note::
 

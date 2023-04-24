@@ -70,7 +70,7 @@ The information below describes how to create a company identity. Note that the 
 
       - ``ip-info-testnet.json`` (public keys of the identity provider)
 
-   #. Download ``concordium-client`` for your platform. See :ref:`Downloads<concordium-node-and-client-download-testnet>` to get the file and checksum.
+   #. Download ``concordium-client`` for your platform. See :ref:`Downloads<concordium-node-and-client-download>` to get the file and checksum.
 
    #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object>`__. Email the ``request.json`` output file to support@concordium.software with the subject line "Test company identity". Store the auxiliary output securely.
 

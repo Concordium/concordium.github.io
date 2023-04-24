@@ -7,12 +7,14 @@ CCDScan Staking overview
 The Staking overview shows information about bakers during the selected time range in the filter:
 
 .. image:: ../images/ccd-scan/ccd-scan-bakers.png
+    :alt: dark screen with graphs at top, table at bottom showing baking information
 
 |
 
 The graphs show when the next payday happens, the amount of staked CCD, the number of bakers, and the total of rewards during the selected time range in the filter. The **Previous payday block** contains information about all rewards paid out for a payday period. If you click **Previous payday block**, a special block details screen for the previous pay day block appears.
 
 .. image:: ../images/ccd-scan/ccd-scan-staking-payday-block-details.png
+    :alt: dark screen with block details
 
 |
 
@@ -51,6 +53,7 @@ Top delegators view
 If you select **Top delegaators** you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:
 
 .. image:: ../images/ccd-scan/ccd-scan-staking-delegators.png
+    :alt: dark screen showing table of information about top delegators
 
 |
 
@@ -65,6 +68,7 @@ Passive delegation view
 If you select **Passive delegation**  it is possible to see the size of the passive delegation in total and information about the yield from delegating to passive delegation. Furthermore it is possible to see the commission rates for passive delegation.
 
 .. image:: ../images/ccd-scan/ccd-scan-passive-delegation.png
+    :alt: dark screen with details about passive delegation
 
 - **Delegated stake**: amount of CCD delegated to passive delegation.
 - **APY (7 days)**: the calculated yield of passive delegation based on past 7 days.
@@ -86,6 +90,7 @@ Baker details
 When you click a baker ID, the following appears:
 
 .. image:: ../images/ccd-scan/ccd-scan-baker-details.png
+    :alt: dark screen showing details of a single baker
 
 |
 

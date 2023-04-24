@@ -27,6 +27,11 @@
 .. |node-deb-package| replace:: concordium-mainnet-node_5.1.3-0_amd64.deb
 .. |node-deb-package-checksum| replace:: be10622086fe1225480e68303aab05fcc806150c51327afa7f19c8289600fb6b
 
+.. Node version variables
+
+.. |mainnet-node-version| replace:: 5.2.4
+.. |testnet-node-version| replace:: 5.2.4
+
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
 .. |mainnet-genesis-block-checksum| replace:: 5fe6a62824d5b0dba6143243e90987ddf3e15cca079f21992de04d078d9ea6dc

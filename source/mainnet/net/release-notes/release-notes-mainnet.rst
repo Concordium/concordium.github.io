@@ -1,28 +1,17 @@
+:orphan:
+
 .. include:: ../../variables.rst
-.. _testnet-release-notes:
+.. _mainnet-release-notes:
 
 =======================
-Release Notes - Testnet
+Release notes - Mainnet
 =======================
 
 .. Note::
 
-   Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
+   Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
 
-   To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
-
-March 09, 2023
-
-Concordium Node 5.2.4
----------------------
-
-- The Prometheus metrics exporter has been improved and systematized, making this API stable from this release onwards to monitor your node metrics. The metrics are now `documented <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`_ and the node's Prometheus metrics API stability will adhere to SEMVER guidelines.
-
-- Fixed an issue where the node configuration file (``main.config.json``) was sometimes corrupted.
-
-- Added an option to disable only the node specific grpc V1 endpoints that can be used to control the node. All the endpoints that are consensus related are kept allowing the node to be used as a gateway to the chain. The mentioned endpoints can be disabled by setting ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` or using the flag ``--no-rpc-server-node-endpoints``.
-
-- Fixed a bug in ``GetAccountInfo`` endpoint in GRPCv2 where ``incoming_amounts`` field of encrypted amounts was not set correctly.
+   To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
 March 07, 2023
 
@@ -67,7 +56,7 @@ Cargo concordium 2.7.0
 Added base64 commands for schemas in ``cargo concordium``. These allow the schema to be
 output in the base64 format that is currently supported in the |bw|.
 
-January 25, 2023
+January 26, 2023
 
 |mw-gen2| 1.1.4
 -----------------------
@@ -77,13 +66,6 @@ January 25, 2023
 - Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.
 
 January 19, 2023
-
-Cargo concordium 2.6.0
-----------------------
-
-Added the ability to output the schema in JSON format which can be more suitable for use in dApps.
-
-January 12, 2023
 
 Concordium Node 5.1.3
 ---------------------
@@ -104,6 +86,11 @@ Concordium node version 5.1.3 introduces the following new features and improvem
 
 - Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
 
+Cargo concordium 2.6.0
+----------------------
+
+Added the ability to output the schema in JSON format which can be more suitable for use in dApps.
+
 January 9, 2023
 
 |bw| 0.9.6
@@ -118,8 +105,8 @@ Concordium Node 5.0.7 for MacOS
 
 Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
 
-Sirius Testnet
-==============
+Mainnet 4: Sirius
+=================
 
 .. Note::
 
@@ -158,6 +145,10 @@ Smart contract libraries
 
 Smart contract libraries have also been updated.
 
+December 13, 2022
+
+`Protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ is effective from today at 08:05 UTC. One important change because of the protocol update is that in the future (from 14 December 2022) pay day for rewards shifts to 08:05 UTC instead of 08:00 UTC.
+
 December 8, 2022
 
 |mw-gen2| 1.1.0
@@ -171,6 +162,24 @@ December 6, 2022
 --------------------
 
 The |bw| now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+November 29, 2022
+
+Concordium Node 5.0.6
+---------------------
+
+Concordium Node 5.0.6 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released on Mainnet on December 13, 2022. This adds the following features:
+
+   - Support for smart contract upgradability
+   - Query the current exchange rates, account balances, and contract balances from a smart contract.
+   - Relax restrictions on smart contracts, including:
+      - Parameter size limit: 1kiB -> 65535B
+      - Return value size limit: 16kiB -> no limit (apart from energy)
+      - Number of logs per invocation: 64 -> no limit (apart from energy)
+   - A new representation of accounts that is better optimised for common operations.
+   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
+
+Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.
 
 November 21, 2022
 
@@ -196,34 +205,9 @@ November 17, 2022
 |mw-gen1| for Android
 ---------------------
 
-Identity and account creation has been locked in |mw-gen1| for Android devices. This means that you cannot create new identities or accounts in |mw-gen1| on an Android device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|.  You can also still recover your wallet from a backup file in |mw-gen1| on an Android device.
+Identity and account creation has been locked in |mw-gen1| for Android devices. This means that you cannot create new identities or accounts in |mw-gen1| on an Android device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an Android device.
 
-November 15, 2022
-
-Concordium Node 5.0.6
----------------------
-
-Concordium Node 5.0.6 contains support for `protocol version 5 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt>`_ which will be released November 22, 2022. This adds the following features:
-
-   - Support for smart contract upgradability
-   - Query the current exchange rates, account balances, and contract balances from a smart contract.
-   - Relax restrictions on smart contracts, including:
-      - Parameter size limit: 1kiB -> 65535B
-      - Return value size limit: 16kiB -> no limit (apart from energy)
-      - Number of logs per invocation: 64 -> no limit (apart from energy)
-   - A new representation of accounts that is better optimised for common operations.
-   - Revised the hashing scheme for transaction outcomes in protocol version 5. In particular, the exact reject reasons are no longer part of the computed hash. Furthermore, the transaction outcomes are being stored in a merkle tree for P5, resulting in faster speed for some queries.
-
-Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.
-
-October 19, 2022
-
-|bw|
----------------------
-
-The |bw| extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.
-
-October 18, 2022
+October 25, 2022
 
 Concordium Node 4.5.0
 ---------------------
@@ -236,6 +220,13 @@ performance and robustness improvements.
 - The node is now able to recover after crashes which leave only treestate or only blockstate usable.
 - Fix a memory leak that could occur in certain usage scenarios involving smart contracts.
 
+October 19, 2022
+
+|bw|
+---------------------
+
+The |bw| extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.
+
 October 12, 2022
 
 Cargo concordium 2.2.0
@@ -244,15 +235,6 @@ Cargo concordium 2.2.0
 Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
 
 October 5, 2022
-
-Concordium Client 4.2.0
------------------------
-
-- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
-- Add support for import of keys from |bw|.
-- Fix some inconsistencies in the display format of CCD amounts.
-
-September 29, 2022
 
 Concordium Node 4.4.4
 ---------------------
@@ -286,6 +268,12 @@ Concordium Node 4.4.4 contains performance improvements and bug fixes.
 - Fix a bug in Ctrl-C signal handling where a node would fail to stop if
   interrupted early on in the startup if out-of-band catchup was enabled.
 
+Concordium Client 4.2.0
+-----------------------
+
+- Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
+- Add support for import of keys from |bw|.
+- Fix some inconsistencies in the display format of CCD amounts.
 
 September 26, 2022
 
@@ -301,7 +289,7 @@ In connection with this new wallet, the Android mobile wallet previously known a
 
 The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
 
-August 29, 2022
+September 5, 2022
 
 Concordium Node 4.3.1
 ---------------------
@@ -314,20 +302,6 @@ Concordium Node 4.3.1 introduces a number of performance improvements. The effec
 - The gRPC API now reports correctly when the sender of a transaction did not have enough funds to cover the transaction costs.
 - Remove obsolete and unused option ``--max-expiry-duration``.
 - Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
-
-August 24, 20222
-
-Concordium Client 4.1.0
------------------------
-
-Fix bug in contract schema parsing caused by endiannes confusion.
-
-Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables concordium-client to interact with contracts built using concordium-std version 4.
-
-Cargo concordium 2.1.0
-----------------------
-
-Use schemas for error values when simulating contracts. In particular support building and testing contracts with concordium-std version 4.
 
 August 24, 20222
 
@@ -380,6 +354,17 @@ possible.
 The security advisory detailing the issue and the patch will be released on
 August 15th.
 
+July 4, 2022
+
+Concordium Node 4.2.1
+----------------------
+
+Concordium Node 4.2.1 is a maintenance release, bringing performance improvements and bugfixes. The highlights are:
+
+- A significant decrease in node startup time. The exact improvements are platform dependent, but startup should be at least 6 times faster on mainnet.
+- A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less than 50% of memory compared to 4.1.1.
+- Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
+
 June 30, 2022
 
 Concordium Mobile Wallet for iOS v3.0.0(53)
@@ -396,27 +381,13 @@ June 27, 2022
 Concordium Mobile Wallet for Android v3.0.0(100)
 ------------------------------------------------
 
-Concordium Mobile Wallet for Androind 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+Concordium Mobile Wallet 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
 
 You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
 
 If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
 
 This functionality will be available for iOS shortly.
-
-Concordium Node 4.2.1
-----------------------
-
-Concordium Node 4.2.1 is a maintenance release, bringing performance improvements and bugfixes. The highlights are:
-
-- A significant decrease in node startup time. The exact improvements are platform
-  dependent, but startup should be at least 6 times faster on mainnet.
-- A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less
-  than 50% of memory compared to 4.1.1.
-- Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
-
-Sirius Testnet reset
-====================
 
 June 21, 2022
 
@@ -427,42 +398,16 @@ Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS conta
 -   Fixed an issue on macOS where an error popup would show after closing the main application window and opening it again.
 -   Fixed an issue on macOS where identity creation was not possible after closing the main application window and opening it again.
 
-June 13, 2022
-
-Sirius testnet has been reset on June 13, 2022.
+June 15, 2022
 
 Concordium Node 4.1.1
-----------------------
+---------------------
 
-A new version of Concordium Node has been released to fix several critical errors related to delegation.
+Concordium Node 4.1.1 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
 
-Concordium Desktop Wallet v1.4.1
---------------------------------
+Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to three weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.
 
-- When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
-- Fixed an issue that made it impossible to create a transaction to do passive delegation.
-- Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
-
-Sirius Testnet
-==============
-
-May 23, 2022
-
-Concordium Desktop Wallet v1.4.0
---------------------------------
-
-Concordium Desktop Wallet 1.4.0 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface.
-
-The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
-
-May 16, 2022
-
-Concordium Node 4.0.11
-----------------------
-
-Concordium Node 4.0.11 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
-
-V1 smart contracts includes the following key features:
+V1 smart contracts include the following key features:
    - Unlimited contract state size
    - Synchronous contract calls
    - Fallback entrypoints
@@ -501,8 +446,46 @@ Concordium Client 4.0.3 also supports delegation to baker pools or passive deleg
    - Support has been added for the raw queries ``GetPoolStatus`` and ``GetBakerList``.
    - The subcommand ``consensus show-chain-parameters`` has been added to show the chain parameters. This subcommand shows useful information, such as the amount needed to become a baker, bounding caps for baker pools, commission percentages for delegation, exchange rate parameters, and more.
 
-Open Testnet v7 Update 1
-========================
+Concordium Desktop Wallet v1.4.1
+--------------------------------
+
+Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface. Note that the delegation functionality will not work until the protocol update occurs on June 23, 2022.
+
+The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
+
+In addition, the following changes were made:
+
+- When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
+- Fixed an issue that made it impossible to create a transaction to do passive delegation.
+- Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
+
+Mainnet 3: Alpha Centauri 3.0
+==============================
+
+May 4, 2022
+
+CCDScan release 1
+-----------------
+
+CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+
+CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
+CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+
+CCDScan release 1 features include:
+   - Block list view of the latest block data
+   - Block details for each block
+   - Transaction list view of the latest transaction data
+   - Transaction details for each transaction
+   - Account list view of the most recent account data
+   - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
+   - Easy search for specific details on blocks, transactions and accounts and bakers
+   - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
+   - A dashboard landing page with real-time updates from the Concordium blockchain
+   - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
+   - Ability to switch between Mainnet and Testnet data
+   - Ability to explore chain parameters and updates to these
+   - List of bakers and their stake, including the ability to drill through to the underlying account address
 
 April 21, 2022
 
@@ -552,6 +535,7 @@ The simplified UI involves:
 
 - The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.
 
+
 February 10, 2022
 
 Concordium Mobile Wallet for iOS v1.3(34)
@@ -570,19 +554,19 @@ Concordium Mobile Wallet for iOS v1.2(33)
 January 25, 2022
 
 Concordium Mobile Wallet for Android v1.2.6
--------------------------------------------
+--------------------------------------------
 
 - Changed name of export file to ``concordium-backup.concordiumwallet``.
 - Added prompts and dialogs to remind users to back up.
 
-January 10, 2022
+January 13, 2022
 
 Concordium Desktop Wallet v1.3.1
 --------------------------------
-- Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.
-- Fixed identity issuance with DTS.
+-   Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.
+-   Fixed identity issuance with DTS.
 
-January 3, 2022
+January 7, 2022
 
 Concordium Node v3.0.1
 ----------------------
@@ -592,7 +576,7 @@ December 17, 2021
 
 Concordium Desktop Wallet v1.3.0
 --------------------------------
-- Added a GTU drop option for testnet.
+- Updated the default node configuration to point to concordiumwalletnode.com.
 - In the case of a failed identity, the error details received from the identity provider are now displayed to the user.
 - Added UI flows for baker transactions for single signer accounts.
 - Auxiliary data in an Update Protocol transaction is now optional.
@@ -601,6 +585,16 @@ Concordium Desktop Wallet v1.3.0
 - Datetimes are now selected with a date picker from a calendar.
 - Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
 - Failed database migrations errors are now shown correctly to the user.
+
+Concordium Node v3.0.0
+----------------------
+
+- Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
+- ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
+- Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
+- Faster state queries by avoiding locking the block state file when reading.
+- Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
+- The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
 
 Concordium Mobile Wallet for Android v1.0.22
 --------------------------------------------
@@ -616,44 +610,9 @@ Concordium Ledger App v2.0.3
 - Removed references to GTU in the UI.
 - An acceptance step has been added to the export of private key seeds.
 
-December 7, 2021
+December 10, 2021
 
-Concordium Mobile Wallet for iOS v1.1(27)
--------------------------------------------
-
-- Changed GTU/Ǥ naming to CCD/Ͼ.
-- Support for the new memo functionality in simple, shielded, and scheduled transfers:
-
-   - It is now possible to add memos to simple and shielded transfers.
-   - Memos can also be displayed for transfers with a release schedule.
-
-- Various improvements of the identity issuance flow, account creation and related support options.
-
-   - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
-   - Added a small dialogue to remind the user to check for a response on new identity requests.
-   - Users will now be notified on successful creation of new accounts inside the app.
-   - Various back-end improvements by the identity provider to make their service more robust.
-   - Various improvements to make the identity issuance and account creation flow more robust.
-
-- Various bug fixes.
-- Various smaller textual updates.
-
-Open Testnet v7
-===============
-
-November 29th 2021
-
-Concordrium Node v3.0.0
------------------------
-
-- Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
-- ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
-- Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
-- Faster state queries by avoiding locking the block state file when reading.
-- Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
-- The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
-
-Concordium-client v3.0.4
+Concordium Client v3.0.4
 ------------------------
 
 - Credentials revealing the newly introduced attribute LEI can be deployed.
@@ -678,8 +637,34 @@ Concordium-client v3.0.4
 - Now allows sending transactions where the sender is an account alias.
 
 
-Open Testnet v6 Update 4
-========================
+Mainnet 2: Alpha Centauri 2.2
+=============================
+
+December 9, 2021
+
+Concordium Mobile Wallet for iOS v1.1(27)
+-------------------------------------------
+
+- Changed GTU/Ǥ naming to CCD/Ͼ.
+- Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+   - It is now possible to add memos to simple and shielded transfers.
+   - Memos can also be displayed for transfers with a release schedule.
+
+- Various improvements of the identity issuance flow, account creation and related support options.
+
+   - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
+   - Added a small dialogue to remind the user to check for a response on new identity requests.
+   - Users will now be notified on successful creation of new accounts inside the app.
+   - Various back-end improvements by the identity provider to make their service more robust.
+   - Various improvements to make the identity issuance and account creation flow more robust.
+
+- Various bug fixes.
+- Various smaller textual updates.
+
+
+Mainnet 2: Alpha Centauri 2.1
+=============================
 
 November 16th, 2021
 
@@ -691,7 +676,7 @@ Concordium Mobile Wallet for Android (v. 1.0.16)
       -  It is now possible to add memos to simple and shielded transactions.
       -  Memos can also be displayed for transfers with release schedule.
 
--  Various improvements of the identity issuance flow, account creation and related support options:
+-  Various improvements of the identity issuance flow, account creation, and related support options:
 
       -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail,
          containing an issuance reference for better personal support as well as system information of the user for better debugging.
@@ -708,10 +693,31 @@ Concordium Mobile Wallet for Android (v. 1.0.16)
 The new version of Concordium Mobile Wallet for iOS is coming soon
 ------------------------------------------------------------------
 
-.. _open-testnet-v6-update-3:
 
-Open Testnet v6 Update 3
-========================
+Mainnet 2: Alpha Centauri 2.0
+==============================
+
+October 6, 2021
+
+Concordium Node v1.1.3
+----------------------
+
+The :ref:`Concordium node release v1.1.3 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
+stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
+
+- Added memo functionality for transactions to Protocol
+- Windows support for running a node
+- Mac support for running a node
+- Mac ARM M1 support for running a node
+- Various bug fixes
+
+Concordium Client v1.1.1
+------------------------
+
+:ref:`Concordium Client v1.1.1 <downloads>`
+
+- Added memo functionality for transactions
 
 Concordium Desktop Wallet v1.2.0
 --------------------------------
@@ -751,58 +757,8 @@ Concordium Ledger App v2.0.1
 - Fixed an issue in the add baker UI, where a response could be sent before signing or declining.
 
 
-.. _open-testnet-v6-update-2:
-
-Open Testnet v6 Update 2
-========================
-
-October 6, 2021
-
-The :ref:`Concordium node release v1.1.3 <downloads>` is a bugfix release.
-
-- `Changelog <https://github.com/Concordium/concordium-node/blob/main/CHANGELOG.md#concordium-node-113>`__
-
-.. _open-testnet-v6-update-1:
-
-Open Testnet v6 Update 1
-========================
-
-September 17, 2021
-
-The :ref:`Concordium node release v1.1.2 <downloads>` is a bugfix release.
-
-- `Changelog <https://github.com/Concordium/concordium-node/blob/main/CHANGELOG.md#concordium-node-112>`__
-
-
-.. _open-testnet-v6:
-
-Open Testnet v6
-===============
-
-September 15, 2021
-
-Concordium Node v1.1.1
-----------------------
-
-The :ref:`Concordium node release v1.1.1 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers. This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on September 22, 2021. Old nodes will stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
-
-- Added memo functionality for transactions to Protocol
-- Windows support for running a node
-- Mac support for running a node
-- Mac ARM M1 support for running a node
-
-Concordium Client v1.1.1
-------------------------
-
-:ref:`Concordium Client v1.1.1 <downloads>`
-
-- Added memo functionality for transactions
-
-
-.. _open-testnet-v5-update-4:
-
-Open Testnet v5 Update 4
-========================
+Mainnet 1: Alpha Centauri 1.2
+=============================
 
 July 28, 2021
 
@@ -811,15 +767,13 @@ Concordium Desktop Wallet v1.1.6
 
 - Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
 
-.. _open-testnet-v5-update-3:
-
-Open Testnet v5 Update 3
-========================
+Mainnet 1: Alpha Centauri 1.1
+==============================
 
 July 27, 2021
 
-Concordium Desktop Wallet v1.1.5 for Testnet
---------------------------------------------
+Concordium Desktop Wallet v1.1.5
+--------------------------------
 
 -  General improvements to the user interface, in particular for multi signature transaction flows.
 -  Change of wallet password now enforces the same length restriction as when initially set.
@@ -836,294 +790,90 @@ Concordium Desktop Wallet v1.1.5 for Testnet
 -  Scheduled transfer release times are now shown as human readable UTC date time strings.
 -  Fixed a UI bug in remove baker transaction.
 
-.. _open-testnet-v5-update-2:
+Mainnet 1: Alpha Centauri 1.0
+=============================
 
-Open Testnet v5 Update 2
-========================
+June 9, 2021
 
-**Concordium Desktop Wallet v1.1.3 for Testnet.**
+We are proud to announce that version 1 of the Concordium blockchain infrastructure, the “Alpha Centauri” release, is available for download.
 
-The Desktop Wallet is available on Testnet for Windows, macOS, and Linux including:
+Our Mainnet release has the following main features:
 
-* All features released in v1.0.2 for Mainnet.
-* Transaction status in account reports.
-* Various bug fixes.
-* Foundation feature: Added support for bulk import of proposals.
-
-
-
-.. _open-testnet-v5-update-1:
-
-Open Testnet v5 Update 1
-========================
-
-June 24th, 2021
-
-Concordium Mobile Wallet for iOS v1.0.5
-
-* Added feature enabling change of passcode and biometrics.
-* Updates to Account page UI for easier shielding/unshielding transactions.
-* Added option to filter rewards in transaction log.
-* Added About page.
-* Improved security.
-* Various bug fixes and robustness improvements.
-* Code is now open source.
-
-Concordium Mobile Wallet for Android v1.0.7(46)
-
-* Added feature enabling change of passcode and biometrics.
-* Updates to Account page UI for easier shielding/unshielding transactions.
-* Added option to filter rewards in transaction log.
-* Added About page.
-* Improved security.
-* Various bug fixes and robustness improvements.
-* Code is now open source.
-
-.. _open-testnet-v5:
-
-Open Testnet v5
-===============
-
-May 12th, 2021
-
-Updated Open Testnet to match Mainnet features including:
-
-
-**Proof of Stake**
+Proof of Stake
+--------------
 
 The Concordium Blockchain uses a proof of stake mechanism to ensure resource-efficient operation of the network.
 
+Two Layer Consensus Protocol
+----------------------------
 
-**Two Layer Consensus Protocol**
+-  Nakamoto-Style Consensus
+   Bakers participate in a form of lottery to win the right to append blocks to the chain.
 
-Nakamoto-Style Consensus Bakers participate in a form of lottery to win the right to append blocks to the chain.
+-  Finality Layer
+   Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byzantine agreement to identify and mark common blocks in the chains of honest users as final.
 
-Finality Layer Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byzantine agreement to identify and mark common blocks in the chains of honest users as final.
-
-
-**Built in IDLayer**
+Built in IDLayer
+----------------
 
 Account creation is based on a validated identity, but at the same time it provides transactional privacy for users with a mechanism that allows accountability to local regulatory authorities.
 
 Transactional privacy is further enhanced by support for shielded transfers.
 
-
-**Smart Contracts**
+Smart Contracts
+---------------
 
 Concordium blockchain has native support for smart contracts on-chain with our core on-chain language WebAssembly (Wasm), a portable well-defined assembly-like language.
 
 Rust is the first off-chain high level smart contract language.
 
-
-**Tokenomics and On-chain Incentivization**
+Tokenomics and On-chain Incentivization
+---------------------------------------
 
 The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.
 
 The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
 
-
-**Concordium Node**
-
+Concordium Node
+---------------
 The Concordium node software is available for Linux and available in two different packages:
 
-* A distribution package, which provides wrappers for setting up the node in a Docker image.
+-  A distribution package, which provides wrappers for setting up the node in a Docker image.
 
-* A Debian package built for Ubuntu 20.04. This package allows for greater customization of the node set up.
+-  A Debian package built for Ubuntu 20.04. This package allows for greater customization of the node set up.
 
+Mobile Wallet
+-------------
 
+The Mobile Wallet is available for iOS and Android with support for:
 
-.. _open-testnet-v4-update-1:
+-  identity issuance and management.
+-  account creation and management.
+-  simple and shielded transactions.
+-  platform security protection
+-  export and import to other mobile wallets.
+-  access to the blockchain through a “wallet proxy” operated by Concordium with no need to run a node.
 
-Open Testnet v4 Update 1
-========================
+Desktop Wallet
+--------------
 
-January 14th, 2020
+The Desktop Wallet is available for Windows, macOS, and Linux with support for:
 
-* Fixed an issue in the node, where a parameter update transaction could cause the node to crash on restart.
+-  identity issuance and management.
+-  account creation and management.
+-  protection by Ledger Nano S device.
+-  multi signature account set up and management.
+-  multiple transaction types:
+   -  Simple
+   -  Scheduled
+   -  Shielded
+   -  Multi-signature
+-  filtering and printing historic transactions
+-  baker management
+-  access to blockchain via a service node, which is usually owned by the user of the Desktop Wallet.
 
+Source Code
+-----------
 
-.. _open-testnet-v4:
+The source code for the Concordium Blockchain is free open source software. You can access our repositories on the `Concordium GitHub organization page <https://github.com/Concordium>`_.
 
-Open Testnet v4
-===============
-
-January 13th, 2020
-
-Smart contracts:
-
-* Smart contracts support on chain
-* Rust supported as off-chain Smart Contract language
-* `Concordium-std <https://crates.io/crates/concordium-std>`_ library added for developing smart contracts in Rust.
-* ``Cargo-concordium`` tool for building and testing smart contracts off-chain
-* Documentation for smart contracts added to developer documentation
-* Smart Contract transactions added to ``concordium-client``
-
-
-Tokenomics (to match tokenomics model):
-
-* Rewards for baking and finalization changed
-* Minting changed
-* Extended the list of adjustable chain parameters
-* Updated `network dashboard block explorer <https://dashboard.testnet.concordium.com/chain>`_ to include new info
-* Amount lock-up transaction with schedule added
-* Staking changed so staked amount is locked
-* Mobile app updated to show staking and amount lockup schedules
-* Delegation removed
-
-ID layer:
-
-* Initial account creation added to ID provider process
-* Mobile app updated to support initial account creation
-
-
-
-
-Open Testnet v3 update 2
-========================
-
-October 16th, 2020
-
-A new Mac version is released after fixing an issue with adding a baker on the
-dashboard. The :ref:`downloads page <downloads>` has been updated accordingly. Please download
-the latest Mac release, then stop your node, reset your data, and restart your
-node.
-
-Open Testnet v3 update 1
-========================
-
-October 8th, 2020
-
-New mobile wallets are released after some bug fixes on both iOS and Android.
-The released versions are ConcordiumID version 0.1.52 for iOS and version 0.5.24
-for Android. The :ref:`downloads page <downloads>` has been updated accordingly. The node
-software is unaffected by this update.
-
-Open Testnet v3
-===============
-
-October 6th, 2020.
-
--  Chain visualization: The connection of blocks has been made more
-   stable to ensure that it progresses smoothly.
--  iOS Concordium ID app available.
--  Added import to app. It is now possible to import a file that has
-   previously been exported. This enables moving identities and accounts
-   to other mobile devices and restoring from backup.
--  µCCD. The smallest unit has been changed from 10-4 to 10-6.
--  Bulletproofs. The core blockchain has been updated to support use of
-   bulletproofs.
--  Encrypted(shielded) amounts and transfers: Support for shielded
-   transactions has been added to the core blockchain. Support for
-   sending and receiving shielded amounts are added to the mobile apps
-   and the Concordium client.
--  Anonymity revocation tool available for anonymity revokers.
--  Block storage improvements for storing the chain on nodes.
-
-Open Testnet v2 update 1
-========================
-
-July 2, 2020
-
-An issue was identified in the Concordium ID app for Android. When using an
-identification document with no expiry date (such as a Swiss driving license)
-the app will crash upon completion of the ID issuance process. An app update has
-been issued and is available here (No longer available - See the :ref:`downloads page <downloads>` for the newest app). The node software is unaffected by this
-update.
-
-Open Testnet v2
-===============
-
-June 29, 2020
-
-Follow our instructions on how to upgrade to Open Testnet v2
-from v1.
-
-The Testnet v2 is the second public release of the Concordium Blockchain. Open
-Testnet aims at demonstrating the technology behind the Concordium Blockchain.
-This version is not feature-complete compared to the expected features for the
-first Mainnet version of the Concordium Blockchain.
-
-This version of the Testnet is running Concordium Node version 0.2.13.
-
-Updates
-=======
-
--  Concordium ID, an Android mobile app for accessing identities and
-   accounts
--  Identity provider integration in Android mobile app
-
-   -  Notabene developer identity issuance flow
-   -  Notabene identity issuance flow
-
--  Catch-up time improvements
-
-   -  The time needed for new nodes to catch-up has been significantly
-      reduced
-   -  Restarting nodes can now choose to start from their local database
-      removing the need to do a complete catch-up.
-
--  Storage requirements improvements
-
-   -  Storage of the chain on nodes has been optimized
-
--  Concordium Node and Client Software improvements. Extended in the
-   following areas:
-
-   -  Managing bakers
-   -  Account delegation
-   -  Module query
-   -  Account management
-
--  Block explorer added to dashboard
--  Node dashboard with support for becoming a baker
--  Improvements to the `Network Dashboard <https://dashboard.testnet.concordium.com>`_
-
-Open Testnet v1
-===============
-
-April 2, 2020
-
-The Testnet v1 is the first public release of the Concordium Blockchain. Open
-Testnet aims at demonstrating the technology behind the Concordium Blockchain.
-This version is not feature-complete compared to the expected features for the
-first Mainnet version of the Concordium Blockchain.
-
-This is the initial version of the Testnet. It will be running
-Concordium Node version 0.2.4.
-
-Features
---------
-
-This release contains the following main features:
-
--  Node software in a dockerized container featuring:
-
-   -  *Passive node:* A node that participates in the Concordium
-      network. It relays messages, provides an API for submitting
-      transactions and inspecting the chain, and processes blocks, but
-      does not produce any blocks on its own.
-   -  *Baker node:* Does everything a passive node does, but in addition
-      participates in consensus, producing blocks.
-   -  *Finalizer node:* Does everything a baker node does, but in
-      addition participates in the finalization part of our consensus.
-   -  *Concordium Client:* A command-line interface to the Concordium
-      Blockchain. Can send transactions and inspect the state of the
-      node and the chain.
-   -  Tools for interacting with the container
-
--  A demo Web wallet
-
-   -  Creating identities
-   -  Creating accounts
-   -  Making transfers
-   -  Depositing CCD tokens
-   -  Exporting identities and accounts
-
--  A demo Identity service
--  A Network `Dashboard <https://dashboard.testnet.concordium.com>`_
-
-Concordium Nodes
-================
-
-Concordium will be running 19 nodes in Europe for this iteration of the Testnet
-and an additional node in Hong Kong (all running both baker and finalizer).
