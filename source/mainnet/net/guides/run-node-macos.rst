@@ -38,7 +38,7 @@ Install/upgrade and run a node
 
    **Example for Mainnet**
 
-   .. code-block:: console
+   .. code-block:: xml
 
     <!-- Address of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
@@ -50,7 +50,7 @@ Install/upgrade and run a node
 
    **Example for Testnet**
 
-   .. code-block:: console
+   .. code-block:: xml
 
     <!-- Address of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
@@ -200,7 +200,8 @@ If you want to change whether the node services start automatically, you have tw
 
 - If you're familiar with using a terminal, the following options are available:
 
-  - Run text prefixed with a ``$`` in a terminal.
+  .. note::
+     The dollar sign (``$``) in a codeblock means that you should run the command that follows the ``$`` in a terminal.
 
   - Enable automatic startup of the *node* by running:
 
@@ -257,6 +258,31 @@ If you want to change whether the node services start automatically, you have tw
       .. code-block:: console
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist"
+
+.. _node-collector-configuration-macos:
+
+Node collector configuration
+============================
+
+Since version 5.3.x of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
+
+Since the GRPC V2 port is different than the GRPC V1 port, you need to change it in the node configuration:
+
+**Example for Mainnet**
+
+ .. code-block:: xml
+
+    <!-- gRPC host to collect from. -->
+    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
+    <string>http://localhost:20000</string>
+
+**Example for Testnet**
+
+  .. code-block:: xml
+
+    <!-- gRPC host to collect from. -->
+    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
+    <string>http://localhost:20001</string>
 
 .. _configure-baker-macos:
 
@@ -315,18 +341,22 @@ faster than requesting them from peers.
    - For mainnet:
 
      - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section::
+       administrator and add the following in the *EnviromentVariables* section:
 
-       <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
-       <string>https://catchup.mainnet.concordium.software/blocks.idx</string>
+       .. code-block:: xml
+
+         <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
+         <string>https://catchup.mainnet.concordium.software/blocks.idx</string>
 
    - For testnet:
 
      - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section::
+       administrator and add the following in the *EnviromentVariables* section:
 
-       <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
-       <string>https://catchup.testnet.concordium.com/blocks.idx</string>
+       .. code-block:: xml
+
+         <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
+         <string>https://catchup.testnet.concordium.com/blocks.idx</string>
 
 
 #. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
