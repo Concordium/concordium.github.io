@@ -11,12 +11,14 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-April XX, 2023
+May 2, 2023
 
 |bw| 1.0.0
 --------------------------
 
 Baking and delegation are now available in the |bw|.
+
+Additionally, the following improvements have been added:
 
 - gRPC-web is now used instead of json-RPC.
 
@@ -26,7 +28,29 @@ Baking and delegation are now available in the |bw|.
 
 - Fixed `chainChanged` event to correctly propagate to all (not just whitelisted) dapps listening for events through the wallet API.
 
-- When changing the selected chain internally in the wallet, dapps now receive `accountChanged` event if an account on the new network has the dapp whitelisted, or `accountDisconnected` event if no account on the new network has the dapp whitelisted.
+- When changing the selected chain internally in the wallet, dapps now receive `accountChanged` event if an account on the new network has the dApp whitelisted, or `accountDisconnected` event if no account on the new network has the dApp whitelisted.
+
+- SendTransaction now validates that an account has sufficient funds before sending a transaction (requested though the API).
+
+- Added support for eID identity document types.
+
+- Improved readability of events in transaction details.
+
+- In the manage page for adding CIS-2 tokens, the contract index is now always initially empty.
+
+- Incorrect navigation flow on the "earn" page when switching between accounts.
+
+- Issues with the expansion of the account balance details view when navigating through different flows.
+
+- Recovery no longer assigns duplicate names to identities when new identities are visited earlier than existing ones during the recovery process.
+
+- AddCIS2Tokens through API now adds tokens to the given account, instead of the currently selected one.
+
+- Missing translations for some identity attributes.
+
+- Removed double unit on CCD in token overview.
+
+- A bug that caused an identity to not be recovered if there was a rejected one present in the same index.
 
 April 12, 2023
 
