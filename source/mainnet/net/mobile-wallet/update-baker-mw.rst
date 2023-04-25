@@ -502,7 +502,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
             :width: 40%
             :alt: screen showing actions to update baker
 
-    #. Click **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json. Click **Continue** to complete the transaction.
+    #. Click **Export baker keys** and the keys are automatically downloaded as `baker-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
         .. image:: ../images/browser-wallet/update-baker-keys.png
             :alt: screen with buttons to show keys or export baker keys
