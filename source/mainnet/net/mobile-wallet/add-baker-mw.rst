@@ -397,10 +397,10 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
     Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
 
-    .. image:: ../images/mobile-wallet/account-list-baking.png
+    .. image:: ../images/browser-wallet/add-baker-acct-list.png
         :width: 40%
 
-    .. image:: ../images/mobile-wallet/account-details-baking.png
+    .. image:: ../images/browser-wallet/add-baker-acct-details.png
         :width: 40%
 
 .. Warning::
