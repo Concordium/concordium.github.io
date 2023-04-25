@@ -358,7 +358,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
             :alt: screen showing commission amounts for bakers in read-only
             :width: 40%
 
-    6. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker pool. Click **Continue**.
+    6. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. Click **Continue**.
 
         .. image:: ../images/browser-wallet/add-baker-url.png
             :alt: screen with text box to enter url for baker pool information
