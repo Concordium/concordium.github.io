@@ -364,7 +364,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
             :alt: screen with text box to enter url for baker pool information
             :width: 40%
 
-    7. You have to export the baker keys so that you can start the node with the baker keys. Click **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json. Click **Continue** to complete the transaction.
+    7. You have to export the baker keys so that you can start the node with the baker keys. Click **Export baker keys** and the keys are automatically downloaded as `baker-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
         .. image:: ../images/browser-wallet/add-baker-export-keys.png
             :alt: screen with buttons to show keys or export baker keys
