@@ -22,6 +22,13 @@ A minor change to the identity user interface was made to support integration wi
 
 Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
 
+The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
+
+|mw-gen1| for iOS 3.2.0
+--------------------------------
+
+Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
 April 12, 2023
 
 Cargo concordium 2.7.1

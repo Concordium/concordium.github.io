@@ -14,7 +14,7 @@ This topic contains information about where you can download the Concordium Wall
 |mw-gen2|
 ========================
 
-The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13 or later and Android 8 or later.
+The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 15 or later and Android 8 or later.
 
 .. Note::
 
