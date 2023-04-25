@@ -529,13 +529,6 @@ If you believe your baker keys have been compromised or lost, you can generate n
         - :ref:`Docker<baking-docker>`
         - :ref:`Ubuntu<baker-ubuntu>`
 
-    Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
-
-    .. image:: ../images/mobile-wallet/account-list-baking.png
-        :width: 40%
-
-    .. image:: ../images/mobile-wallet/account-details-baking.png
-        :width: 40%
 
 .. dropdown:: Desktop Wallet
 
