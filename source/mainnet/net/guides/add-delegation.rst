@@ -267,7 +267,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
             .. image:: ../images/browser-wallet/delegation-acct-list.png
                 :width: 40%
-         
+
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
              :width: 50px
