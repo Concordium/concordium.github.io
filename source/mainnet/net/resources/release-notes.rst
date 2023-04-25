@@ -11,6 +11,15 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+May XX, 2023
+
+|mw-gen2| for Android 1.1.8
+-----------------------------------------
+
+The terms and conditions have been updated and now point to a link where you can read the updated terms and conditions before accepting. Additionally, when the terms and conditions have been updated, you will be prompted to accept them again.
+
+A minor change to the identity user interface was made to support integration with eID verifiers.
+
 April 20, 2023
 
 Concordium Node 5.3.2
