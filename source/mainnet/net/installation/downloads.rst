@@ -199,7 +199,7 @@ Download cargo-concordium:
 
       - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
       - :ref:`Verification instructions <verification-cargo-linux>`
-_
+
    -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.7.1.zip>`_ then unzip the file and move it to the correct location.
 
    -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.7.1.exe>`_
@@ -220,7 +220,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 .. dropdown:: Mainnet
 
    .. dropdown:: Ubuntu |mainnet-node-version|
-    
+
       To run a node on a server with Ubuntu, you need a Debian package.
 
       - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.2.4-0_amd64.deb>`_
