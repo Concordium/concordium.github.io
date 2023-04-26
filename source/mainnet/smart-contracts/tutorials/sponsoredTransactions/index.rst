@@ -15,11 +15,11 @@ how to send a transaction from a backend server to the blockchain, and how to co
 
 The dApp consists of three components that you will explore as part of this tutorial:
 
-- A `smart contrat` that verifies signatures.
+- A `smart contract` that verifies signatures.
 
-- A `frontend` that requests the user to sign messages.
+- A `frontend` that requests the user (sponsoree) to sign messages.
 
-- A `backend` that sends transactions to the blockchain.
+- A `backend` that has access to a wallet (sponsor) and sends transactions to the blockchain.
 
 What are sponsored transactions?
 ================================

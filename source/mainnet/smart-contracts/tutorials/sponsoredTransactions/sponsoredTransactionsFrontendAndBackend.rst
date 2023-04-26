@@ -9,9 +9,9 @@ The goal of this part of the tutorial is to set up the frontend and the backend 
 
 You can explore the `hosted sponsored transaction service <https://sponsored.testnet.concordium.com>`_.
 The sponsored transaction service consists of a frontend and a backend. You can start your own service by
-following the instructions in the `frontend README.md file <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTransactions/front-end/README.md>`_
-and then the instructions in the `back-end README.md file <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTransactions/back-end/README.md>`_.
-Alternatively, follow the steps in the `README.md file <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTransactions/README.md>`_ to deploy the docker container.
+following the instructions in the `frontend README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/README.md>`_
+and then the instructions in the `backend README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/backend/README.md>`_.
+Alternatively, follow the steps in the `README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/README.md>`_ to deploy the docker container.
 The docker container will set up the frontend as well as the backend.
 
 .. note::
@@ -31,7 +31,7 @@ The backend is a server that exposes two endpoints:
 - ``POST /submitTransfer``
 
 After submitting the signature to the ``/submitUpdateOperator`` or the ``/submitTransfer`` endpoint,
-the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SPONSORED_TX_CONTRACT_INDEX <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTransactions/front-end/src/constants.ts>`_, subindex: 0}.
+the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SPONSORED_TX_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/src/constants.ts>`_, subindex: 0}.
 The deployed smart contract code can be found `here <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_.
 After the transaction is sent to the blockchain node, the backend returns the transaction hash to the frontend.
 
@@ -42,7 +42,7 @@ will pay for the transaction fees on behalf of the user.
 Schemas
 =======
 
-The frontend uses several `json` schemas in the ``./front-end/src/constants.ts`` file such as:
+The frontend uses several `json` schemas in the ``./frontend/src/constants.ts`` file such as:
 
 .. code-block:: javascript
 
@@ -58,7 +58,7 @@ These schemas can be generated `in the smart contract folder <https://github.com
 
    cargo concordium build --schema-json-out ./
 
-This command prints the json schema of your smart contract into your current directory.
+This command creates a file with the json schema of your smart contract in your current directory.
 
 Register your public key
 ========================
@@ -101,7 +101,7 @@ Submit a sponsored ``updateOperator`` transaction
    :alt: Update operator gif
    :align: center
 
-The gif shows an example of input parameters that can be used to successfully execute a sponsored ``updateOperator`` transaction.
+The GIF shows an example of input parameters that can be used to successfully execute a sponsored ``updateOperator`` transaction.
 The transaction should be successfully submitted by the backend to the blockchain which can be checked on the
 blockchain explorer by clicking the transaction hash displayed at the frontend.
 
@@ -149,7 +149,7 @@ guideline on how to create the ``message`` and input parameters for the function
 
 .. code-block:: console
 
-   $concordium-client contract show 4329 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+   $concordium-client contract show 4376 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
 
 Submit a sponsored ``transfer`` transaction
 ===========================================
@@ -158,7 +158,7 @@ Submit a sponsored ``transfer`` transaction
    :alt: Transfer gif
    :align: center
 
-The gif shows an example of input parameters that can be used to successfully execute a sponsored ``transfer`` transaction.
+The GIF shows an example of input parameters that can be used to successfully execute a sponsored ``transfer`` transaction.
 The transaction should be successfully submitted by the backend to the blockchain which can be checked on the
 blockchain explorer by clicking the transaction hash displayed at the frontend. You can also check that your ``to`` account is now the owner of the ``token_id``.
 
@@ -203,7 +203,7 @@ guideline on how to create the ``message`` and input parameters for the function
 
 .. code-block:: console
 
-   $concordium-client contract show 4329 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+   $concordium-client contract show 4376 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
 
 .. note::
 
@@ -212,15 +212,24 @@ guideline on how to create the ``message`` and input parameters for the function
    ``Token_ids`` are stored in the smart contract in little-endian order and a counter is used to
    increase the  ``token_id`` by 1 every time the mint function is invoked. The wallet displays the ``token_id`` bytes in a hex string.
    In other words, the first token minted will have the ``token_id=01000000``,
-   the second token minted will have ``02000000``, ..., ``0f000000``, ``10000000``, ... .
+   the second token minted will have ``02000000``, ..., ``0f000000``, ``10000000``, ..., ``ff000000``, ``00010000``, ... .
    You can look up your minted ``token_id`` in the |bw| by getting the smart contract
    index as seen below and searching for tokens in that contract that are owned by your account.
 
-.. image:: ./images/SmartContractIndex.png
-   :width: 40 %
-
-.. image:: ./images/ManageTokenTab.png
-   :width: 40 %
+.. image:: ./images/TokenId_1.png
+   :width: 25 %
+.. image:: ./images/TokenId_2.png
+   :width: 25 %
+.. image:: ./images/TokenId_3.png
+   :width: 25 %
+.. image:: ./images/TokenId_4.png
+   :width: 24 %
+.. image:: ./images/TokenId_5.png
+   :width: 24 %
+.. image:: ./images/TokenId_6.png
+   :width: 24 %
+.. image:: ./images/TokenId_7.png
+   :width: 24 %
 
 .. note::
 

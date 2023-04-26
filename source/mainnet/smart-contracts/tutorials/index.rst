@@ -16,7 +16,7 @@ In the :ref:`piggy bank <piggy-bank>` tutorial, you are going to build a simple 
 It should allow any account to insert CCD and only the owner to smash it, taking all of the CCD inside.
 
 In the :ref:`wCCD <wCCD>` tutorial, you are going to get familiar with the deployed wCCD token on testnet.
-You are going to write a basic web front-end example that can read from and write to the deployed wCCD smart contract on testnet.
+You are going to write a basic web frontend example that can read from and write to the deployed wCCD smart contract on testnet.
 
 In the :ref:`Voting<voting-dapp>` tutorial, you learn how to create a smart contract and dApp to conduct a vote.
 
@@ -29,8 +29,8 @@ You will use a front end and the |bw| to register the file hash of a selected do
 display the timestamp and the sealer from an already time-stamped document at the front end.
 
 In the :ref:`sponsored Transactions <sponsoredTransactions>` tutorial, you will explore how to sign a
-message in the |bw| (or |mw-gen2| that uses WalletConnect) and how to send the signature to a back-end.
-You will then instruct the back-end to submit the transaction on behalf of the user on-chain.
+message in the |bw| (or |mw-gen2| that uses WalletConnect) and how to send the signature to a backend.
+You will then instruct the backend to submit the transaction on behalf of the user on-chain.
 
 Once you are familiar with smart contracts, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
 

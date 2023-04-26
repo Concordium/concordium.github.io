@@ -71,7 +71,7 @@ You can explore the function by invoking it with the ``concordium-client`` as fo
 
 .. code-block:: console
 
-    $concordium-client contract invoke 4329 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    $concordium-client contract invoke 4376 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 10000 --grpc-ip node.testnet.concordium.com
 
 For example, this ``supportsPermit.json`` file results in the below screenshot.
 
@@ -143,29 +143,18 @@ You should see no errors and all the test cases are green indicating that they p
    Comprehensive instructions on how to download and set up  ``cargo concordium`` can be found in :ref:`Setup the development environment<setup-env>`.
 
 The next few commands explain how you can display the ``message_hash`` that you would need to sign.
-Since hashes are commonly displayed as hex numbers, add the ``hex`` package to your project to convert and display such values easily.
-
-.. code-block:: rust
-
-    cargo add hex
-
-You can check if the ``hex`` package was added in the ``Cargo.toml`` file under ``[dependencies]``.
-
-.. image:: ./images/CargoToml.png
-   :alt: Cargo.toml file with hex crate
-   :align: center
 
 Add the following to the smart contract ``permit`` function after the variable ``message_hash`` is defined.
 
 .. code-block:: rust
 
-    println!("{:?}", hex::encode(message_hash.to_vec()));
+    println!("Message hash: {}", HashSha2256(message_hash));
 
 This prints the ``message_hash`` when running the test cases as follows:
 
 .. code-block:: console
 
-    $cargon test -- --nocapture
+    $cargo test -- --nocapture
 
 .. image:: ./images/messageHash.png
    :alt: Printing the message hash
@@ -196,16 +185,14 @@ The ``signature`` and ``public key`` in the above screenshot can be copied into 
 
 .. code-block:: rust
 
-    let signature = "FC87CE9497CBD9DDDFB6CED31914D4FB93DD158EEFE7AF927AB31BB47178E61A33BEA52568475C161EC5B7A5E86B9F5F0274274192665D83197C4CE9A24C7C06";
-    let mut converted = [0; 64];
-    hex::decode_to_slice(signature, &mut converted);
-    println!("signature: {:?}", converted);
+    let signature:SignatureEd25519 = "FC87CE9497CBD9DDDFB6CED31914D4FB93DD158EEFE7AF927AB31BB47178E61A33BEA52568475C161EC5B7A5E86B9F5F0274274192665D83197C4CE9A24C7C06".parse().unwrap();
+    println!("Signature: {:?}", signature.0);
 
 Add the above code snippet to the top of a test case and run the test cases again to output the signature in bytes.
 
 .. code-block:: console
 
-    $cargon test -- --nocapture
+    $cargo test -- --nocapture
 
 The output should look similar to:
 
@@ -223,16 +210,14 @@ The ``public key`` from the above screenshot can be converted in a similar fashi
 
 .. code-block:: rust
 
-    let public_key = "8728D5F139ABEF87188BBF18B9A75B4E27DF81BD6BC9CC1B7582A09D74BC3C88";
-    let mut converted = [0; 32];
-    hex::decode_to_slice(public_key, &mut converted);
-    println!("public_key: {:?}", converted);
+    let public_key:PublicKeyEd25519 = "8728D5F139ABEF87188BBF18B9A75B4E27DF81BD6BC9CC1B7582A09D74BC3C88".parse().unwrap();
+    println!("Public key: {:?}", public_key.0);
 
 Add the above code snippet to the top of a test case and run the test cases again to output the public key in bytes.
 
 .. code-block:: console
 
-    $cargon test -- --nocapture
+    $cargo test -- --nocapture
 
 The output should look similar to:
 
