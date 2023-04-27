@@ -1764,6 +1764,11 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#node-collector-configuration">
+   Node collector configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#upgrade-version">
    Upgrade version
   </a>
@@ -1887,6 +1892,19 @@ details of how this is done will depend on your configuration.</p>
 </div></blockquote>
 </div></blockquote>
 <p>After the node is caught up remove the out of band catchup configuration to speed up further node restarts.</p>
+</div>
+<div class="section" id="node-collector-configuration">
+<span id="node-collector-ubuntu-mainnet"></span><h2>Node collector configuration<a class="headerlink" href="#node-collector-configuration" title="Permalink to this headline">#</a></h2>
+<p>Since version 5.3.2 of the node the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.</p>
+<p>Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You <em>only</em> need to change the collector port if you have overridden your node configuration. You can edit your overrides with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo systemctl edit concordium-testnet-node.service
+</pre></div>
+</div>
+<p>This will open your overrides in your default editor. Below is an example for the default mainnet port <code class="docutils literal notranslate"><span class="pre">20000</span></code>:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[Service]</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://localhost:20000</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="upgrade-version">
 <span id="upgrade-node-ubuntu"></span><h2>Upgrade version<a class="headerlink" href="#upgrade-version" title="Permalink to this headline">#</a></h2>

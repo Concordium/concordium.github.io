@@ -1895,7 +1895,7 @@ details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="node-collector-configuration">
 <span id="node-collector-ubuntu-testnet"></span><h2>Node collector configuration<a class="headerlink" href="#node-collector-configuration" title="Permalink to this headline">#</a></h2>
-<p>Since version 5.3.x of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.</p>
+<p>Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.</p>
 <p>Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You <em>only</em> need to change the collector port if you have overridden your node configuration. You can edit your overrides with:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo systemctl edit concordium-testnet-node.service
 </pre></div>

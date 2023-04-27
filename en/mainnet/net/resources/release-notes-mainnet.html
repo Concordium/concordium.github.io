@@ -1744,6 +1744,11 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordium-node-5-3-2">
+   Concordium Node 5.3.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cargo-concordium-2-7-1">
    Cargo concordium 2.7.1
   </a>
@@ -2233,7 +2238,27 @@ body {margin:0;}
 <p>Subscribe to the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
 <p>To subscribe to updates on the Mainnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
+<p>April 27, 2023</p>
+<div class="section" id="concordium-node-5-3-2">
+<h2>Concordium Node 5.3.2<a class="headerlink" href="#concordium-node-5-3-2" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Extended the Prometheus exporter with the following metrics: grpc_request_duration_seconds, grpc_in_flight_requests, consensus_baking_committee, consensus_finalization_committee, consensus_baking_lottery_power, consensus_baked_blocks_total, consensus_finalized_baked_blocks_total, network_soft_banned_peers_total, consensus_non_finalized_transactions and consensus_unsupported_pending_protocol_version. See <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">docs/prometheus-exporter.md</a> for more details.</p></li>
+<li><p>Also, in the changelog for the node grpc_request_duration_seconds has been renamed to grpc_request_response_time_seconds to match the what is in the code.</p></li>
+<li><p>Added the following new options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">--grpc2-health-min-peers</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_HEALTH_MIN_PEERS</span></code>) triggers the grpc V2 health endpoint to check minimum number of peers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--grpc2-invoke-max-energy</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_INVOKE_MAX_ENERGY</span></code>) allows the node runner to control the maximum amount of energy allowed by an InvokeInstance (and the V1 GRPC InvokeContract) call. The behavior of the endpoint is slightly changed as well. The energy is no longer required in the request, and the effective energy used by the call will be min(request.energy, grpc-invoke-max-energy). This differs from the previous behavior where a request would fail if the request either omitted the energy, or supplied an excessive value.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Improved the node health check, so that if the node is configured with baker credentials, then it is required to be in the baking committee for it to be considered healthy.</p></li>
+<li><p>Fixed a bug that could cause the node to hang indefinitely during the out-of-band-catchup when the node is a finalizer.</p></li>
+<li><p>Fixed an additional bug in the <code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.</p></li>
+<li><p>The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Linux</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p></li>
+</ul>
 <p>April 12, 2023</p>
+</div>
 <div class="section" id="cargo-concordium-2-7-1">
 <h2>Cargo concordium 2.7.1<a class="headerlink" href="#cargo-concordium-2-7-1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
