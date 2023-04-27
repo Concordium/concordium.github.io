@@ -22,7 +22,13 @@ Official resources
 
 - `Concordium standards and updates <https://proposals.concordium.software/>`_
 
-    - `CIS2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_ is applicable for Smart Contracts v1.
+    - `CIS-0 standard detections <https://proposals.concordium.software/CIS/cis-0.html>`_
+
+    -  Applicable for Smart contracts v1:
+
+        - `CIS-2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_
+
+        - `CIS-3 sponsored transaction standard <https://proposals.concordium.software/CIS/cis-3.html>`_
 
 - See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets.
 
@@ -45,7 +51,7 @@ Concordium has a selection of example dApps that you can clone to make your own 
     - wCCD: :ref:`wCCD tutorial<wCCD>` / `wCCD dApp <https://wccd.testnet.concordium.com/>`_
     - Voting: :ref:`Voting tutorial<voting-dapp>` / `Voting dApp <https://voting.testnet.concordium.com/>`_
     - ID2.0: :ref:`Create proofs tutorial<gallery>` / `Gallery dApp <https://gallery.testnet.concordium.com/>`_
-    - eSealing: :ref:`eSealing tutorial<eSaeling>` / `eSealing dApp <https://esealing.testnet.concordium.com>`_
+    - eSealing: :ref:`eSealing tutorial<eSealing>` / `eSealing dApp <https://esealing.testnet.concordium.com>`_
     - signMessage: `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__ / `signMessage dApp <http://signmessage.testnet.concordium.com/>`__
 
 .. _block-explorers:
