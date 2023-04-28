@@ -48,6 +48,44 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
+   Since version 5.3.2 of the node, the collector uses the GRPC V2
+   interface. Therefore, in order to run the collector, it is required that
+   the node which the collector connects to has the GRPC V2 interface
+   enabled.
+
+   Since the GRPC V2 port is different than the GRPC V1 port, you will
+   need to make changes to your configuration. Specifically the
+   ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`` environment variable needs
+   to be changed. Examples can be seen below:
+
+   **Mainnet**
+
+   .. code-block:: yaml
+
+      services:
+        mainnet-node-collector:
+          environment:
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `mainnet-node` to the internal IP of
+            # the `mainnet-node`. If the name of the node service is changed from
+            # `mainnet-node` then the name here must also be changed.
+            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
+
+   **Testnet**
+
+   .. code-block:: yaml
+
+      services:
+        testnet-node-collector:
+          environment:
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `testnet-node` to the internal IP of
+            # the `testnet-node`. If the name of the node service is changed from
+            # `testnet-node` then the name here must also be changed.
+            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
+
+.. Note::
+
    Node version 4.5.0 introduced the GRPC V2 interface which is enabled by the
    sample configurations listed below. If you have done special configuration of
    your node and want to re-use the configuration file and have the new API
@@ -102,10 +140,11 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
-         # Address of the V2 GRPC server
-         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
-         # And its port
+         # Address of the V2 GRPC server.
          - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+         # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
+         # that is defined for the collector.
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -160,7 +199,9 @@ To run a node on testnet use the following configuration file and follow the ste
          # docker created network which maps `testnet-node` to the internal IP of
          # the `testnet-node`. If the name of the node service is changed from
          # `testnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:10001
+         # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
+         # that is defined for the node.
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
        entrypoint: ["/node-collector"]
 
 1. Save the contents as ``testnet-node.yaml``.
@@ -361,10 +402,11 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
-         # Address of the V2 GRPC server
-         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
-         # And its port
+         # Address of the V2 GRPC server.
          - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+         # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
+         # that is defined for the collector.
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -419,7 +461,9 @@ To retrieve mainnet node logs run:
          # docker created network which maps `mainnet-node` to the internal IP of
          # the `mainnet-node`. If the name of the node service is changed from
          # `mainnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:10000
+         # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
+         # that is defined for the node.
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
        entrypoint: ["/node-collector"]
 
 Enable inbound connections
