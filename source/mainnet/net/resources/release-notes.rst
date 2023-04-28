@@ -11,7 +11,7 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-April XX, 2023
+April 28, 2023
 
 |mw-gen2| for Android 1.1.7
 ---------------------------
