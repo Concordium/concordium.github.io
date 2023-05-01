@@ -146,7 +146,7 @@ Download cargo-concordium:
 
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
-VSCode extension 1.0.0
+VSCode extension 1.0.1
 ----------------------
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.

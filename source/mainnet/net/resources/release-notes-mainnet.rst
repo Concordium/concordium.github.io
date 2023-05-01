@@ -13,7 +13,7 @@ Release notes - Mainnet
 
 May 1, 2023
 
-VSCode extension 1.0.0
+VSCode extension 1.0.1
 ----------------------
 
 The VSCode extension has been developed to help developers get started with smart contract development. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
