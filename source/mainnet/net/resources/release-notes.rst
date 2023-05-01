@@ -25,6 +25,13 @@ Non-existing directories in paths provided to the following arguments for when r
 
 Fixed a bug where ``cargo-concordium`` was unable to determine the smart contract package if the package was part of a Cargo workspace.
 
+|mw-gen2| for Android 1.1.7
+---------------------------
+
+- Corrected the message that appeared when stopping baking or delegation. Previously, the message shown when stopping baking stated that the cool-down period was 14 days, but it is 21. This is now correct. The message shown when stopping delegation stated that the cool-down period was 0 days, but it is 14. This is also now correct.
+
+- Upon update to version 1.1.7 or on installation of version 1.1.7, data that was in SharedPreferences will be moved to EncryptedSharedPreferences to enhance security.
+
 April 20, 2023
 
 Concordium Node 5.3.2
