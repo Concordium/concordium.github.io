@@ -1753,6 +1753,11 @@ body {margin:0;}
    What are the use cases of sponsored transactions?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-difference-between-a-normal-transaction-vs-a-sponsored-transaction">
+   What is the difference between a normal transaction vs. a sponsored transaction?
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -1774,7 +1779,7 @@ body {margin:0;}
 <div class="section" id="a-sponsored-transactions-dapp">
 <h1>A Sponsored Transactions dApp<a class="headerlink" href="#a-sponsored-transactions-dapp" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial, you are going to get familiar with how to implement a sponsored transaction mechanism in a smart contract, how to sign messages in a wallet and verify the signature in the smart contract,
-how to send a transaction from a backend server to the blockchain, and how to connect your Concordium Wallet for Mobile via walletConnect to the frontend.</p>
+how to send a transaction from a back-end server to the blockchain, and how to connect your Concordium Wallet for Mobile via walletConnect to the frontend.</p>
 <p>The dApp consists of three components that you will explore as part of this tutorial:</p>
 <ul class="simple">
 <li><p>A <cite>smart contract</cite> that verifies signatures.</p></li>
@@ -1798,6 +1803,16 @@ The third-party can have a traditional fiat channel open (off-chain) with the co
 offering to submit transactions on behalf of the user on-chain.The third-party
 service provider has its own wallet funded with some CCD at the backend to submit the user’s transaction on-chain.
 The third-party pays the transaction fee to execute the transaction on-chain.</p>
+</div>
+<div class="section" id="what-is-the-difference-between-a-normal-transaction-vs-a-sponsored-transaction">
+<h2>What is the difference between a normal transaction vs. a sponsored transaction?<a class="headerlink" href="#what-is-the-difference-between-a-normal-transaction-vs-a-sponsored-transaction" title="Permalink to this headline">#</a></h2>
+<p>A normal transaction sent to a smart contract is signed by the user’s wallet and authorizes the blockchain to subtract the transaction fee from the user’s wallet as well as to execute a specific action. For example, the action could be to transfer some tokens from the user’s address to another address.</p>
+<p>The user creates a normal transaction by signing its <code class="docutils literal notranslate"><span class="pre">account</span></code> address, its <code class="docutils literal notranslate"><span class="pre">nonce</span></code>, and the <code class="docutils literal notranslate"><span class="pre">action</span></code>. The <code class="docutils literal notranslate"><span class="pre">nonce</span></code> increases sequentially every time the user sends a transaction to the blockchain to prevent replay attacks. The nonce is of type u64 (8 bytes) and by design &gt;= 1.</p>
+<img alt="Normal Smart Contract Transaction Flow" class="align-center" src="../../../_images/NormalSmartContractTransactionFlow.png" />
+<p>A sponsored transaction decouples the transaction fee authorization (third-party wallet) from the action authorization (user’s wallet).
+The user signs a message (in that case the prepend is <code class="docutils literal notranslate"><span class="pre">account</span></code> address and 8 zero bytes) to authorize the <code class="docutils literal notranslate"><span class="pre">action</span></code>. Hence, the 8 zero bytes ensure that the user does not accidentally sign a valid transaction. This means the red signature is not a transaction, while the black signature is a valid transaction in the image below. The user’s signature is sent to the back-end server.
+The third-party creates a valid transaction at the back-end server, which is sent to the blockchain.</p>
+<img alt="Sponsored Transaction Flow" class="align-center" src="../../../_images/SponsoredTransactionFlow.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <a class="reference external" href="https://proposals.concordium.software/CIS/cis-3.html">CIS-3 standard</a> formally defines sponsored transactions.</p>
