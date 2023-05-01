@@ -55,7 +55,7 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis3-nft-sponsored-txs>`__
 
-    `Back end and front end code <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/sponsoredTransactions>`__
+    `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/sponsoredTransactions>`__
 
 .. dropdown:: Voting
 
