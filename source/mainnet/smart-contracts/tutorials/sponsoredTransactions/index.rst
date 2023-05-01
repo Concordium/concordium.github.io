@@ -53,7 +53,7 @@ The user creates a normal transaction by signing its ``account`` address, its ``
    :align: center
 
 A sponsored transaction decouples the transaction fee authorization (third-party wallet) from the action authorization (user's wallet).
-The user signs a message (in that case the prepend is ``account`` address and 8 zero bytes) to authorize the ``action``. Hence, the 8 zero bytes ensure that the user does not accidentally sign a valid transaction. This means the red signature is not a transaction, while the black signature is a valid transaction in the below screenshot. The user's signature is sent to the backend server.
+The user signs a message (in that case the prepend is ``account`` address and 8 zero bytes) to authorize the ``action``. Hence, the 8 zero bytes ensure that the user does not accidentally sign a valid transaction. This means the red signature is not a transaction, while the black signature is a valid transaction in the image below. The user's signature is sent to the backend server.
 The third-party creates a valid transaction at the backend server which is sent to the blockchain.
 
 .. image:: ./images/SponsoredTransactionFlow.png
