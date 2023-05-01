@@ -11,7 +11,7 @@ A Sponsored Transactions dApp
 =============================
 
 In this tutorial, you are going to get familiar with how to implement a sponsored transaction mechanism in a smart contract, how to sign messages in a wallet and verify the signature in the smart contract,
-how to send a transaction from a backend server to the blockchain, and how to connect your |mw-gen2| via walletConnect to the frontend.
+how to send a transaction from a back-end server to the blockchain, and how to connect your |mw-gen2| via walletConnect to the frontend.
 
 The dApp consists of three components that you will explore as part of this tutorial:
 
@@ -53,8 +53,8 @@ The user creates a normal transaction by signing its ``account`` address, its ``
    :align: center
 
 A sponsored transaction decouples the transaction fee authorization (third-party wallet) from the action authorization (user's wallet).
-The user signs a message (in that case the prepend is ``account`` address and 8 zero bytes) to authorize the ``action``. Hence, the 8 zero bytes ensure that the user does not accidentally sign a valid transaction. This means the red signature is not a transaction, while the black signature is a valid transaction in the image below. The user's signature is sent to the backend server.
-The third-party creates a valid transaction at the backend server which is sent to the blockchain.
+The user signs a message (in that case the prepend is ``account`` address and 8 zero bytes) to authorize the ``action``. Hence, the 8 zero bytes ensure that the user does not accidentally sign a valid transaction. This means the red signature is not a transaction, while the black signature is a valid transaction in the image below. The user's signature is sent to the back-end server.
+The third-party creates a valid transaction at the back-end server, which is sent to the blockchain.
 
 .. image:: ./images/SponsoredTransactionFlow.png
    :alt: Sponsored Transaction Flow
