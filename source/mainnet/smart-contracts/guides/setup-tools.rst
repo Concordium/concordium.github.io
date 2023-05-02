@@ -44,6 +44,11 @@ For a description of how to use the Cargo Concordium run:
 
    $cargo concordium --help
 
+VSCode extension
+----------------
+
+The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
+
 Concordium software
 ===================
 
