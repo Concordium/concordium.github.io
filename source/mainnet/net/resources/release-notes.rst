@@ -18,6 +18,27 @@ Smart contract integration testing
 
 Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
 
+May 1, 2023
+
+VSCode extension 1.0.1
+----------------------
+
+The VSCode extension has been developed to help developers get started with smart contract development. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
+
+Cargo-concordium 2.8.0
+----------------------
+
+Non-existing directories in paths provided to the following arguments for when running ``cargo concordium build`` will now be created instead of causing an error: ``--out``, ``--schema-out``, ``--schema-json-out``, and ``--schema-base64-out``. The same is true for the ``--out-bin`` and ``--out-json`` arguments provided to ``cargo concordium run init`` and ``cargo concordium run update``.
+
+Fixed a bug where ``cargo-concordium`` was unable to determine the smart contract package if the package was part of a Cargo workspace.
+
+|mw-gen2| for Android 1.1.7
+---------------------------
+
+- Corrected the message that appeared when stopping baking or delegation. Previously, the message shown when stopping baking stated that the cool-down period was 14 days, but it is 21. This is now correct. The message shown when stopping delegation stated that the cool-down period was 0 days, but it is 14. This is also now correct.
+
+- Upon update to version 1.1.7 or on installation of version 1.1.7, data that was in SharedPreferences will be moved to EncryptedSharedPreferences to enhance security.
+
 April 20, 2023
 
 Concordium Node 5.3.2
@@ -43,7 +64,7 @@ Concordium Node 5.3.2
 
 April 12, 2023
 
-Cargo concordium 2.7.1
+Cargo-concordium 2.7.1
 ----------------------
 
 - Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
