@@ -11,9 +11,9 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-May 2, 2023
+May 8, 2023
 
-|bw| 1.0.0
+|bw| 1.0.4
 --------------------------
 
 Baking and delegation are now available in the |bw|.
