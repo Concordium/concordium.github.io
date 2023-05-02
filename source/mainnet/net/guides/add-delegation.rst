@@ -245,7 +245,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. You can see your available balance to delegate on the account that is in focus. You can change the account from the Accounts drop-down at the top of the screen if you want to set up delegation on a different account than the one in focus. **Enter the Amount you want to delegate** in the field. Click **Continue**.
 
-            .. image:: ../images/browser-wallet/delegation-amount.png
+            .. image:: ../images/browser-wallet/create-delegation-amount.png
                 :width: 40%
 
         #. Review the information in the transaction overview. When you are satisfied, click **Send**.
