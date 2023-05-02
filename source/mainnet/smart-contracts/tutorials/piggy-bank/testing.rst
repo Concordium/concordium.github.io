@@ -93,6 +93,7 @@ So far you have written a piggy bank smart contract in the Rust_ programming
 language.
 This part will focus on how you can write integration-tests for your piggy bank smart
 contract using the |concordium-smart-contract-testing|_ library.
+The library simulates part of a blockchain *locally* to allow you to create one or more contracts and interact with them in the tests.
 
 .. warning::
 
@@ -223,7 +224,7 @@ The balances of the accounts matter when using the testing library, as the cost 
 
 
 With the accounts created, you are ready to load and deploy the smart contract module.
-|concordium-smart-contract-testing|_ uses the compiled smart contract modules that you also deploy on the blockchain.
+In |concordium-smart-contract-testing|_ you test the compiled smart contract module, which is the exact same module that can be deployed on the blockchain.
 Use ``cargo concordium``, which you installed in preparation for this tutorial, to compile the piggy bank to `WebAssembly (Wasm) <https://webassembly.org/>`_.
 
 Open a terminal and use ``cd``, short for *change directory*, to go into the root of your piggy bank project.
@@ -253,7 +254,7 @@ You can use ``unwrap``, or ``expect``, to extract the actual module from the ``R
 Both methods will panic if the ``Result`` actually contains the ``Err`` variant, which in turn will make the test case fail.
 The remainder of this tutorial uses ``expect`` as it allows you to provide a contextual message that is shown on panics.
 
-The next step is to deploy the module to the ``chain`` with the method |Chain_module_deploy|_.
+The next step is to deploy the module to our test chain (``chain``) with the method |Chain_module_deploy|_.
 
 Since this is a transaction, you must provide an account address of the ``sender``, which will pay for the cost of the transaction.
 You must also provide a |Signer|_ with a number of keys.
