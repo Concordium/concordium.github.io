@@ -87,49 +87,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen1|
 
-    .. Note::
-
-       It is no longer possible for users of |mw-gen1| to create new accounts.
-
-    #. Go to the **Accounts** page.
-
-    #. Tap the **+** in the upper right corner.
-
-        .. image:: ../images/mobile-wallet/MW13.png
-            :width: 25%
-
-    #. Enter a name for your new account. Tap **Next**.
-
-        .. image:: ../images/mobile-wallet/MW15.png
-            :width: 25%
-
-    #. Tap the identity you want to use to create the account.
-
-        .. image:: ../images/mobile-wallet/MW16.png
-            :width: 25%
-
-    #. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, it is recommended not to reveal any attributes.
-
-        - If you want to reveal some attributes, tap **Reveal account attributes**, select the attributes you want to reveal, and then tap **Submit account**.
-        - If you don’t want to reveal any attributes, tap **Submit account**.
-
-        .. image:: ../images/mobile-wallet/MW17.png
-            :width: 25%
-
-    #. Finally, tap **Ok, thanks**.
-
-        .. image:: ../images/mobile-wallet/MW19.png
-            :width: 25%
-
-    Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
-
-    .. Warning::
-        **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
-        **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
-        For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import>`.
-
-    .. Note::
-        To access the **Balance** of the new account, tap the Balance area on the account card or tap |moredetails|.
+    It is no longer possible for users of |mw-gen1| to create new accounts.
 
 .. dropdown:: |bw|
 
