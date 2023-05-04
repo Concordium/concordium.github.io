@@ -16,7 +16,7 @@ April 27, 2023
 |mw-gen2| for iOS 1.0.1
 -------------------------------
 
-The terms and conditions have been updated and now point to a link where you can read the updated terms and conditions before accepting. Additionally, when the terms and conditions have been updated, you will be prompted to accept them again.
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
 
 A minor change to the identity user interface was made to support integration with eID verifiers.
 
