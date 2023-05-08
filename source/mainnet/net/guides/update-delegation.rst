@@ -167,14 +167,6 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
     #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
-    .. |earn| image:: ../images/earn.png
-         :alt: Hand receiving money
-         :width: 50px
-
-    .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
-
 .. dropdown:: |mw-gen1|
 
     #. Go to the **Accounts** screen.
@@ -215,13 +207,62 @@ Before delegating stake to a baker pool, it is important to research the pool us
 
 .. dropdown:: |bw|
 
-    At the moment, delegation is not available in the |bw|.
+    #. Bring the account whose delegation you want to update into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
+
+        .. image:: ../images/browser-wallet/select-account.png
+            :width: 40%
+            :alt: screen with accounts drop-down activated and account selection shown
+
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+
+        .. image:: ../images/browser-wallet/delegation-update-stop.png
+            :width: 40%
+            :alt: screen showing current delegation and buttons to update or stop
+
+    #. You see your current delegation. Click **Update**. Review the information about updating your delegation.
+
+        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+                :width: 40%
+
+    #. If you want to delegate to a specific pool click **Baker** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. CLick **Continue**.
+
+        .. image:: ../images/browser-wallet/delegation-update-target.png
+            :width: 40%
+            :alt: screen showing current delegation and buttons to select target
+
+    #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/delegation-update-restaking-pref.png
+            :width: 40%
+            :alt: screen with buttons to select restaking rewards preference
+
+    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/delegation-update-amount.png
+            :width: 40%
+            :alt: screen to enter delegation amount
+
+    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+
+        .. image:: ../images/browser-wallet/delegation-update-xact-confirm.png
+            :width: 40%
+            :alt: screen showing delegation transaction details for review
+
+    #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+        .. image:: ../images/browser-wallet/delegation-update-submit.png
+            :width: 40%
+            :alt: screen showing transaction details submitted to chain
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 
 .. Note::
 
    Reducing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
