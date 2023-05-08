@@ -10,7 +10,7 @@ environment.
 Rust and Cargo
 ==============
 
-First, `install rustup`_, which will install both Rust_ and Cargo_ on your
+First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
@@ -27,16 +27,11 @@ It can be used for :ref:`compiling<compile-module>` and
 :ref:`testing<unit-test-contract>` smart contracts, and enables features such as
 :ref:`building contract schemas<build-schema>`.
 
-Cargo Concordium is distributed as part of the :ref:`Concordium software<downloads>` package. Rename the downloaded file to ``cargo-concordium`` for MacOS/Linux, and ``cargo-concordium.exe`` for Windows.
+To install Cargo Concordium run:
 
-The tool should be placed in your PATH. This can be achieved by either:
+.. code-block:: console
 
-* Moving the executable to a folder that is already on your PATH, for example ``%HOMEPATH%\.cargo\bin\`` for Windows, and ``$HOME/.cargo/bin`` for MacOS/Linux.
-* Or, by adding its current location to your PATH environment.
-
-If you are running MacOS, you need to make the tool executable by running ``chmod +x path/to/cargo-concordium`` in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  `Security & Privacy settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_ .
-
-Once cargo-concordium is on your path, you can invoke it with ``cargo concordium`` in the terminal.
+   $cargo install cargo-concordium
 
 For a description of how to use the Cargo Concordium run:
 
