@@ -5,80 +5,80 @@
 .. |ensure| replace:: ``ensure!``
 .. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-the-state
 .. |mutable| replace:: ``mutable``
-.. _concordium-smart-contract-testing: https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing
+.. _concordium-smart-contract-testing: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/
 .. |concordium-smart-contract-testing| replace:: ``concordium-smart-contract-testing``
-.. _Account: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Account.html
+.. _Account: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Account.html
 .. |Account| replace:: ``Account``
-.. _Account_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Account.html#method.new
+.. _Account_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Account.html#method.new
 .. |Account_new| replace:: ``Account::new``
-.. _Signer: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Signer.html
+.. _Signer: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Signer.html
 .. |Signer| replace:: ``Signer``
-.. _Address: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Address.html
+.. _Address: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/enum.Address.html
 .. |Address| replace:: ``Address``
-.. _AccountAddress: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.AccountAddress.html
+.. _AccountAddress: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.AccountAddress.html
 .. |AccountAddress| replace:: ``AccountAddress``
-.. _ContractAddress: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractAddress.html
+.. _ContractAddress: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractAddress.html
 .. |ContractAddress| replace:: ``ContractAddress``
-.. _ModuleReference: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ModuleReference.html
+.. _ModuleReference: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/type.ModuleReference.html
 .. |ModuleReference| replace:: ``ModuleReference``
-.. _Energy: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Energy.html
+.. _Energy: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Energy.html
 .. |Energy| replace:: ``Energy``
-.. _Amount: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Amount.html
+.. _Amount: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Amount.html
 .. |Amount| replace:: ``Amount``
-.. _ContractTraceElement: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/enum.ContractTraceElement.html
+.. _ContractTraceElement: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/enum.ContractTraceElement.html
 .. |ContractTraceElement| replace:: ``ContractTraceElement``
 
-.. _OwnedParameter: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedParameter.html
+.. _OwnedParameter: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedParameter.html
 .. |OwnedParameter| replace:: ``OwnedParameter``
-.. _OwnedParameter_from_serial: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedParameter.html#method.from_serial
+.. _OwnedParameter_from_serial: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedParameter.html#method.from_serial
 .. |OwnedParameter_from_serial| replace:: ``OwnedParameter::from_serial``
-.. _OwnedParameter_empty: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedParameter.html#method.empty
+.. _OwnedParameter_empty: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedParameter.html#method.empty
 .. |OwnedParameter_empty| replace:: ``OwnedParameter::empty``
-.. _OwnedReceiveName: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedReceiveName.html
+.. _OwnedReceiveName: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedReceiveName.html
 .. |OwnedReceiveName| replace:: ``OwnedReceiveName``
-.. _OwnedReceiveName_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedReceiveName.html#method.new
+.. _OwnedReceiveName_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedReceiveName.html#method.new
 .. |OwnedReceiveName_new| replace:: ``OwnedReceiveName::new``
-.. _OwnedReceiveName_new_unchecked: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedReceiveName.html#method.new_unchecked
+.. _OwnedReceiveName_new_unchecked: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedReceiveName.html#method.new_unchecked
 .. |OwnedReceiveName_new_unchecked| replace:: ``OwnedReceiveName::new_unchecked``
-.. _OwnedContractName: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedContractName.html
+.. _OwnedContractName: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedContractName.html
 .. |OwnedContractName| replace:: ``OwnedContractName``
-.. _OwnedContractName_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedContractName.html#method.new
+.. _OwnedContractName_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedContractName.html#method.new
 .. |OwnedContractName_new| replace:: ``OwnedContractName::new``
-.. _OwnedContractName_new_unchecked: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.OwnedContractName.html#method.new_unchecked
+.. _OwnedContractName_new_unchecked: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.OwnedContractName.html#method.new_unchecked
 .. |OwnedContractName_new_unchecked| replace:: ``OwnedContractName::new_unchecked``
 
-.. _from_bytes: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/fn.from_bytes.html
+.. _from_bytes: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.from_bytes.html
 .. |from_bytes| replace:: ``from_bytes``
 
-.. _Chain: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html
+.. _Chain: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html
 .. |Chain| replace:: ``Chain``
-.. _Chain_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.new
+.. _Chain_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.new
 .. |Chain_new| replace:: ``Chain::new``
-.. _Chain_contract_init: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.contract_init
+.. _Chain_contract_init: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.contract_init
 .. |Chain_contract_init| replace:: ``contract_init``
-.. _Chain_contract_update: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.contract_update
+.. _Chain_contract_update: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.contract_update
 .. |Chain_contract_update| replace:: ``contract_update``
-.. _Chain_contract_invoke: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.contract_invoke
+.. _Chain_contract_invoke: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.contract_invoke
 .. |Chain_contract_invoke| replace:: ``contract_invoke``
-.. _Chain_create_account: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.create_account
+.. _Chain_create_account: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.create_account
 .. |Chain_create_account| replace:: ``create_account``
-.. _Chain_module_deploy: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.module_deploy
-.. |Chain_module_deploy| replace:: ``module_deploy``
-.. _Chain_account_balance: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.account_balance
+.. _Chain_module_deploy_v1: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.module_deploy_v1
+.. |Chain_module_deploy_v1| replace:: ``module_deploy_v1``
+.. _Chain_account_balance: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.account_balance
 .. |Chain_account_balance| replace:: ``account_balance``
-.. _Chain_account_balance_available: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.account_balance_available
+.. _Chain_account_balance_available: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.account_balance_available
 .. |Chain_account_balance_available| replace:: ``account_balance_available``
-.. _Chain_contract_balance: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.Chain.html#method.contract_balance
+.. _Chain_contract_balance: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.contract_balance
 .. |Chain_contract_balance| replace:: ``contract_balance``
-.. _trace_elements_per_contract: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeSuccess.html#method.trace_elements_per_contract
+.. _trace_elements_per_contract: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.trace_elements_per_contract
 .. |trace_elements_per_contract| replace:: ``trace_elements_per_contract``
-.. _account_transfers: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeSuccess.html#method.account_transfers
+.. _account_transfers: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.account_transfers
 .. |account_transfers| replace:: ``account_transfers``
-.. _ContractInvokeError: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeError.html
+.. _ContractInvokeError: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html
 .. |ContractInvokeError| replace:: ``ContractInvokeError``
-.. _return_value: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/struct.ContractInvokeError.html#method.return_value
+.. _return_value: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html#method.return_value
 .. |return_value| replace:: ``return_value``
-.. _module_load_v1: https://docs.rs/concordium-smart-contract-testing/latest/concordium-smart-contract-testing/fn.module_load_v1.html
+.. _module_load_v1: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.module_load_v1.html
 .. |module_load_v1| replace:: ``module_load_v1``
 
 .. _piggy-bank-testing:
@@ -254,7 +254,7 @@ You can use ``unwrap``, or ``expect``, to extract the actual module from the ``R
 Both methods will panic if the ``Result`` actually contains the ``Err`` variant, which in turn will make the test case fail.
 The remainder of this tutorial uses ``expect`` as it allows you to provide a contextual message that is shown on panics.
 
-The next step is to deploy the module to our test chain (``chain``) with the method |Chain_module_deploy|_.
+The next step is to deploy the module to our test chain (``chain``) with the method |Chain_module_deploy_v1|_.
 
 Since this is a transaction, you must provide an account address of the ``sender``, which will pay for the cost of the transaction.
 You must also provide a |Signer|_ with a number of keys.
