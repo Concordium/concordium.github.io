@@ -689,10 +689,6 @@ If you no longer wish to bake on this account, you can stop baking.
 
     #. Click **Finish** to finalize your transaction.
 
-        .. image:: ../images/browser-wallet/stop-baking-finish.png
-            :width: 40%
-            :alt: screen showing transaction to submit to blockchain with finish and back buttons
-
 .. dropdown:: Desktop Wallet
 
     .. dropdown:: Single signature account

@@ -250,13 +250,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
-            .. image:: ../images/browser-wallet/delegation-xact-review.png
-                :width: 40%
-
         #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
-
-            .. image:: ../images/browser-wallet/delegation-submit-xact.png
-                :width: 40%
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation type and amount on the account card.
 
