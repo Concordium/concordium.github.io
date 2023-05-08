@@ -16,7 +16,7 @@ May 8, 2023
 Smart contract integration testing
 -------------------------------------
 
-Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
+Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
 
 |bw| 1.0.4
 --------------------------
