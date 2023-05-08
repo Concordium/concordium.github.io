@@ -40,8 +40,8 @@
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Return custom errors" href="custom-errors.html" />
-    <link rel="prev" title="Compile a Rust smart contract module" href="compile-module.html" />
+    <link rel="next" title="Integration test a contract in Rust" href="integration-test-contract.html" />
+    <link rel="prev" title="Contract testing guides" href="contract-testing-guides.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -1172,16 +1172,16 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 current active has-children">
+   <li class="toctree-l1 has-children">
     <a class="reference internal" href="contract-dev-guides.html">
      Contract development guides
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
     <label for="toctree-checkbox-42">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l2">
       <a class="reference internal" href="setup-tools.html">
        Install tools for development
@@ -1195,11 +1195,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="compile-module.html">
        Compile a Rust smart contract module
-      </a>
-     </li>
-     <li class="toctree-l2 current active">
-      <a class="current reference internal" href="#">
-       Unit test a contract in Rust
       </a>
      </li>
      <li class="toctree-l2">
@@ -1239,12 +1234,34 @@ body {margin:0;}
      </li>
     </ul>
    </li>
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="contract-testing-guides.html">
+     Contract testing guides
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+    <label for="toctree-checkbox-43">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="integration-test-contract.html">
+       Integration test a contract in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-    <label for="toctree-checkbox-43">
+    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+    <label for="toctree-checkbox-44">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1280,8 +1297,8 @@ body {margin:0;}
     <a class="reference internal" href="../references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-    <label for="toctree-checkbox-44">
+    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+    <label for="toctree-checkbox-45">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1332,8 +1349,8 @@ body {margin:0;}
     <a class="reference internal" href="../onboarding-guide-ethereum-developers/index.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-    <label for="toctree-checkbox-45">
+    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+    <label for="toctree-checkbox-46">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1349,8 +1366,8 @@ body {margin:0;}
     <a class="reference internal" href="../onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1375,8 +1392,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-47">
+  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-48">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1385,8 +1402,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-    <label for="toctree-checkbox-48">
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1417,8 +1434,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-    <label for="toctree-checkbox-49">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1439,8 +1456,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1496,8 +1513,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
+    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+    <label for="toctree-checkbox-52">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1528,8 +1545,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1579,8 +1596,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-54">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1608,8 +1625,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-54">
+  <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-55">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1618,8 +1635,8 @@ body {margin:0;}
     <a class="reference internal" href="../../net/resources/ccd-scan.html">
      CCDScan
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-    <label for="toctree-checkbox-55">
+    <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+    <label for="toctree-checkbox-56">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1665,8 +1682,8 @@ body {margin:0;}
     <a class="reference internal" href="../../net/resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-    <label for="toctree-checkbox-56">
+    <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+    <label for="toctree-checkbox-57">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1684,11 +1701,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="../../net/resources/terms-and-conditions-mw.html">
        Terms and Conditions for Concordium Legacy Wallet (previously Concordium Mobile Wallet)
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../net/resources/terms-and-conditions-bw.html">
-       Terms and Conditions for Concordium Wallet for Web
       </a>
      </li>
      <li class="toctree-l2">
@@ -1806,27 +1818,9 @@ body {margin:0;}
                 
   <div class="section" id="unit-test-a-contract-in-rust">
 <span id="unit-test-contract"></span><h1>Unit test a contract in Rust<a class="headerlink" href="#unit-test-a-contract-in-rust" title="Permalink to this headline">#</a></h1>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#running-tests-in-wasm" id="id2">Running tests in Wasm</a></p></li>
-<li><p><a class="reference internal" href="#writing-unit-tests" id="id3">Writing unit tests</a></p></li>
-<li><p><a class="reference internal" href="#testing-contract-invocations-with-mocks" id="id4">Testing contract invocations with mocks</a></p>
-<ul>
-<li><p><a class="reference internal" href="#reentrancy" id="id5">Reentrancy</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#testing-with-state-rollbacks" id="id6">Testing with state rollbacks</a></p></li>
-<li><p><a class="reference internal" href="#testing-transfers" id="id7">Testing transfers</a></p></li>
-<li><p><a class="reference internal" href="#writing-property-based-tests" id="id8">Writing property-based tests</a></p>
-<ul>
-<li><p><a class="reference internal" href="#example" id="id9">Example</a></p></li>
-</ul>
-</li>
-</ul>
-</div>
-<p>This guide will show you how to write unit tests for a smart contract written in
+<p>This guide describes how to write unit tests for a smart contract written in
 Rust.
-For testing a smart contract Wasm module, see <a class="reference internal" href="local-simulate.html#local-simulate"><span class="std std-ref">Locally simulate contract functions</span></a>.</p>
+For information about how to test a smart contract Wasm module, see <a class="reference internal" href="local-simulate.html#local-simulate"><span class="std std-ref">Locally simulate contract functions</span></a>.</p>
 <p>A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a <code class="docutils literal notranslate"><span class="pre">#[test]</span></code> attribute.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// contract code</span>
@@ -1843,7 +1837,7 @@ library by annotating functions with a <code class="docutils literal notranslate
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Running the test can be done using <code class="docutils literal notranslate"><span class="pre">cargo</span></code>:</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">cargo</span></code> to run the test:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo <span class="nb">test</span>
 </pre></div>
 </div>
@@ -1867,7 +1861,7 @@ for most platforms.</p>
 uses the same Wasm-interpreter as the one shipped in the Concordium nodes.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>For a guide of how to install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, see <a class="reference internal" href="setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
+<p>For instructions about how to install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, see <a class="reference internal" href="setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
 </div>
 <p>The unit test has to be annotated with <code class="docutils literal notranslate"><span class="pre">#[concordium_test]</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">#[test]</span></code>, and <code class="docutils literal notranslate"><span class="pre">#[concordium_cfg_test]</span></code> is used instead of <code class="docutils literal notranslate"><span class="pre">#[cfg(test)]</span></code>:</p>
@@ -1885,14 +1879,14 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">#[concordium_test]</span></code> macro sets up our tests to be run in Wasm, when
-<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> is compiled with the <code class="docutils literal notranslate"><span class="pre">wasm-test</span></code> feature, and otherwise
+<p>The <code class="docutils literal notranslate"><span class="pre">#[concordium_test]</span></code> macro sets up your tests to be run in Wasm when
+<code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> is compiled with the <code class="docutils literal notranslate"><span class="pre">wasm-test</span></code> feature. Otherwise, it
 falls back to behave just like <code class="docutils literal notranslate"><span class="pre">#[test]</span></code>, meaning it is still possible to run
 unit tests targeting native code using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
-<p>Similarly the macro <code class="docutils literal notranslate"><span class="pre">#[concordium_cfg_test]</span></code> includes our module when build
+<p>Similarly, the macro <code class="docutils literal notranslate"><span class="pre">#[concordium_cfg_test]</span></code> includes your module when build
 <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> with <code class="docutils literal notranslate"><span class="pre">wasm-test</span></code> otherwise behaves like <code class="docutils literal notranslate"><span class="pre">#[test]</span></code>,
-allowing us to control when to include tests in the build.</p>
-<p>Tests can now be build and run using:</p>
+allowing you to control when to include tests in the build.</p>
+<p>Tests can now be built and run using:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium <span class="nb">test</span>
 </pre></div>
 </div>
@@ -1902,7 +1896,7 @@ for <code class="docutils literal notranslate"><span class="pre">concordium-std<
 <p class="admonition-title">Warning</p>
 <p>Error messages from <code class="docutils literal notranslate"><span class="pre">panic!</span></code>, and therefore also the different variations
 of <code class="docutils literal notranslate"><span class="pre">assert!</span></code>, are <em>not</em> shown when compiling to Wasm.</p>
-<p>Instead use <code class="docutils literal notranslate"><span class="pre">fail!</span></code> and the <code class="docutils literal notranslate"><span class="pre">claim!</span></code> variants to do assertions when
+<p>Instead, use <code class="docutils literal notranslate"><span class="pre">fail!</span></code> and the <code class="docutils literal notranslate"><span class="pre">claim!</span></code> variants to do assertions when
 testing, as these reports back the error messages to the test runner <em>before</em>
 failing the test.
 Both are part of <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>.</p>
@@ -2011,7 +2005,7 @@ a mock function that returns the same <code class="docutils literal notranslate"
 </div>
 <p>For returning the same error every time, use the <code class="docutils literal notranslate"><span class="pre">returning_err</span></code>.
 Use this to test missing contracts or entrypoints, as invoking
-entrypoints for which no mock has been set up, results in a runtime error:</p>
+entrypoints for which no mock has been set up results in a runtime error:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 <span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">setup_mock_entrypoint</span><span class="p">(</span><span class="w"></span>
 <span class="w">        </span><span class="n">ContractAddress</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2079,7 +2073,7 @@ and amount. For simplicity, it just traps if the input is not as expected:</p>
 <span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 </pre></div>
 </div>
-<p>To test contracts that invoke itself, either directly or indirectly (e.g., <code class="docutils literal notranslate"><span class="pre">A</span></code> calls
+<p>To test a contract that invokes itself, either directly or indirectly (e.g., <code class="docutils literal notranslate"><span class="pre">A</span></code> calls
 <code class="docutils literal notranslate"><span class="pre">B</span></code> which then calls <code class="docutils literal notranslate"><span class="pre">A</span></code>, or with even more indirections), use the
 state and balance fields:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
@@ -2241,7 +2235,7 @@ In particular, the example below mimics the original <code class="docutils liter
 </div>
 <p>That means that the contract called has stolen funds through a reentrant call.
 A simple fix to this behavior is to place the highlighted line in <code class="docutils literal notranslate"><span class="pre">withdraw_reentrancy</span></code> <em>before</em> making a call to an external contract.
-In this case the <code class="docutils literal notranslate"><span class="pre">withdraw_reentrancy</span></code> call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.</p>
+In this case, the <code class="docutils literal notranslate"><span class="pre">withdraw_reentrancy</span></code> call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.</p>
 </div>
 </div>
 <div class="section" id="testing-with-state-rollbacks">
@@ -2318,7 +2312,7 @@ of <a class="reference external" href="https://docs.rs/concordium-std/latest/con
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The state also needs to be rolled back on errors occuring in mock
-entrypoints, as described in
+entrypoints as described in
 <a class="reference internal" href="#testing-contract-invocations"><span class="std std-ref">Testing contract invocations with mocks</span></a>, but that is handled by the test
 framework itself. This means that mock entrypoints are handled
 transactionally, even without the use of <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.with_rollback"><code class="docutils literal notranslate"><span class="pre">with_rollback</span></code></a>.</p>
@@ -2326,8 +2320,7 @@ transactionally, even without the use of <a class="reference external" href="htt
 </div>
 <div class="section" id="testing-transfers">
 <h2>Testing transfers<a class="headerlink" href="#testing-transfers" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html"><code class="docutils literal notranslate"><span class="pre">TestHost</span></code></a> has three helper methods that are useful when testing that the correct
-<code class="docutils literal notranslate"><span class="pre">invoke_transfer</span></code>’s has occurred.</p>
+<p><a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html"><code class="docutils literal notranslate"><span class="pre">TestHost</span></code></a> has three helper methods that are useful when testing that the correct <code class="docutils literal notranslate"><span class="pre">invoke_transfer</span></code> s have occurred.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">transfer_occurred</span></code> to check for specific transfers:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Contract code + general test setup</span>
 
@@ -2430,7 +2423,7 @@ The seed is a <code class="docutils literal notranslate"><span class="pre">u64</
 <p>Avoid using <code class="docutils literal notranslate"><span class="pre">fail!</span></code> and <code class="docutils literal notranslate"><span class="pre">claim!</span></code> variants in <code class="docutils literal notranslate"><span class="pre">#[concordium_quickcheck]</span></code> tests.
 In Wasm unit tests (see <a class="reference internal" href="#tests-in-wasm"><span class="std std-ref">Running tests in Wasm</span></a>) these commands report an error.
 However, using them in QuickCheck tests makes the tests fail without providing a counterexample when running with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span></code>.
-Also avoid using <code class="docutils literal notranslate"><span class="pre">assert_eq!</span></code>, <code class="docutils literal notranslate"><span class="pre">panic!</span></code> or any other command that panics.
+Also avoid using <code class="docutils literal notranslate"><span class="pre">assert_eq!</span></code>, <code class="docutils literal notranslate"><span class="pre">panic!</span></code>, or any other command that panics.
 Return a boolean value instead.</p>
 </div>
 <div class="section" id="example">
@@ -2516,7 +2509,7 @@ If you change the highlighted lines in the code above to:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Then all <code class="docutils literal notranslate"><span class="pre">500</span></code> tests pass successfully.</p>
+<p>then all <code class="docutils literal notranslate"><span class="pre">500</span></code> tests pass successfully.</p>
 </div>
 </div>
 </div>
@@ -2527,17 +2520,17 @@ If you change the highlighted lines in the code above to:</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="compile-module.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="contract-testing-guides.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Compile a Rust smart contract module</p>
+            <p class="prev-next-title">Contract testing guides</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="custom-errors.html" title="next page">
+    <a class='right-next' id="next-link" href="integration-test-contract.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Return custom errors</p>
+        <p class="prev-next-title">Integration test a contract in Rust</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

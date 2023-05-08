@@ -5,6 +5,8 @@
 Add baker
 ====================================
 
+Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn about best practices for bakers.
+
 .. Note::
 
    All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
@@ -244,14 +246,6 @@ Add baker
         :alt: account card showing staked amount with baker number
         :width: 40%
 
-.. |earn| image:: ../images/earn.png
-    :alt: Hand receiving money
-    :width: 50px
-
-.. |earn-w-text| image:: ../images/earn-w-text.png
-    :alt: Hand receiving money with text earn
-    :width: 50px
-
 .. dropdown:: |mw-gen1|
 
     #. Go to **Accounts**. Tap on the balance area of the account you want to add as a baker account or tap **More** |moredetails|.
@@ -323,9 +317,99 @@ Add baker
         :width: 40%
         :alt: account detail screen showing the account as baker with baker ID and staked amount
 
+.. dropdown:: |bw|
+
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+
+        .. image:: ../images/browser-wallet/setup-baking-delegation.png
+            :width: 40%
+
+    #. Click **Setup baking**. If you are baking for the first time on this account, you see some information about baking.
+
+    #. Select your restake preference. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/add-baker-restake.png
+            :alt: screen with Yes restake or No don't restake text boxes to choose
+            :width: 40%
+
+    #. Specify the amount that you want to stake. The more you stake, the greater the probability that your account will be chosen to bake the next block. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/add-baker-staked-amt.png
+            :alt: screen with balances at the top and text box to enter amount to stake
+            :width: 40%
+
+    .. Note::
+
+        There is a minimum amount to stake (14000 CCD) to become a baker.
+
+    .. Warning::
+
+       Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
+
+    4. Choose whether you want to open a :ref:`baker pool<glossary-baker-pool>` or keep it closed. Choose **Open for delegation** to open a baker pool. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/add-baker-pool.png
+            :alt: screen with buttons to open a pool for delegation or close a pool for delegation
+            :width: 40%
+
+    5. Review the commissions paid to bakers. When you open your baker as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/add-baker-comms.png
+            :alt: screen showing commission amounts for bakers in read-only
+            :width: 40%
+
+    6. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/add-baker-url.png
+            :alt: screen with text box to enter url for baker pool information
+            :width: 40%
+
+    7. You have to export the baker keys so that you can start the node with the baker keys. Click **Export baker keys** and the keys are automatically downloaded as `baker-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
+
+        .. image:: ../images/browser-wallet/add-baker-export-keys.png
+            :alt: screen with buttons to show keys or export baker keys
+            :width: 40%
+
+        .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
+            :alt: screen with buttons to continue after export and wallet screen dimmed behind
+            :width: 40%
+
+    .. Warning::
+
+        This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+
+    7. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
+
+        .. image:: ../images/browser-wallet/add-baker-review.png
+                :width: 40%
+
+    8. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+
+        .. image:: ../images/browser-wallet/add-baker-finish.png
+                :width: 40%
+
+    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+
+        - :ref:`Windows<baker-windows>`
+        - :ref:`macOS<baker-macos>`
+        - :ref:`Docker<baking-docker>`
+        - :ref:`Ubuntu<baker-ubuntu>`
+
+    Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
+
+    .. image:: ../images/browser-wallet/add-baker-acct-list.png
+        :width: 40%
+
+    .. image:: ../images/browser-wallet/add-baker-acct-details.png
+        :width: 40%
+
 .. Warning::
 
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
+
+.. |earn| image:: ../images/earn.png
+    :alt: Hand receiving money
+    :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
