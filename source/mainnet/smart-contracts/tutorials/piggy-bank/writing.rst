@@ -196,7 +196,7 @@ The init function takes two arguments:
 - ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating
   sets, maps, and boxes that effectively utilize the way contract state is
   stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
-  the state, as you will see in part two of this tutorial.
+  the state, which you can use for :ref:`unit testing your contract <unit-test-contract>`.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
 alias for ``Result<PiggyBankState, Reject>``. The returned state is serialized
@@ -288,7 +288,7 @@ You start by defining a receive function as:
 
 Make sure that the contract name matches the one you use for the |init|_ macro,
 and name the receive function ``insert``.
-The function will not need to use the ``_ctx`` context, so by convention, you
+The function will not need to use the ``ctx`` context, so by convention, you
 prefix the argument with ``_``.
 
 In the function body you have to make sure that the piggy bank is still intact: the
