@@ -136,17 +136,6 @@ Concordium Client v5.1.1
 Cargo-concordium v2.8.0
 =======================
 
-Download cargo-concordium:
-
-   -  `Download Testnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.8.0>`_
-
-      - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
-      - :ref:`Verification instructions <verification-cargo-linux>`
-
-   -  `Download Testnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.8.0.zip>`_ then unzip the file and move it to the correct location.
-
-   -  `Download Testnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.8.0.exe>`_
-
 For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
 
 VSCode extension 1.0.1
