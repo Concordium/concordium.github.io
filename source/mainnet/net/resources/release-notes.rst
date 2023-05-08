@@ -11,7 +11,7 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-April 27, 2023
+May 10, 2023
 
 |mw-gen2| for iOS 1.0.1
 -------------------------------
@@ -28,6 +28,52 @@ The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
 --------------------------------
 
 Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+May 8, 2023
+
+Smart contract integration testing
+-------------------------------------
+
+Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
+
+|bw| 1.0.4
+--------------------------
+
+Baking and delegation are now available in the |bw|.
+
+Additionally, the following improvements have been added:
+
+- gRPC-web is now used instead of json-RPC.
+
+- The initial view in the manage token flow now retains the token page header, doesn't collapse account balances, and the error messages for looking up a contract have been improved.
+
+- Fixed handling of UpdateAccountKey transactions from wallet-proxy.
+
+- Fixed `chainChanged` event to correctly propagate to all (not just whitelisted) dapps listening for events through the wallet API.
+
+- When changing the selected chain internally in the wallet, dapps now receive `accountChanged` event if an account on the new network has the dApp whitelisted, or `accountDisconnected` event if no account on the new network has the dApp whitelisted.
+
+- SendTransaction now validates that an account has sufficient funds before sending a transaction (requested though the API).
+
+- Added support for eID identity document types.
+
+- Improved readability of events in transaction details.
+
+- In the manage page for adding CIS-2 tokens, the contract index is now always initially empty.
+
+- Incorrect navigation flow on the "earn" page when switching between accounts.
+
+- Issues with the expansion of the account balance details view when navigating through different flows.
+
+- Recovery no longer assigns duplicate names to identities when new identities are visited earlier than existing ones during the recovery process.
+
+- AddCIS2Tokens through API now adds tokens to the given account, instead of the currently selected one.
+
+- Missing translations for some identity attributes.
+
+- Removed double unit on CCD in token overview.
+
+- A bug that caused an identity to not be recovered if there was a rejected one present in the same index.
 
 May 1, 2023
 
