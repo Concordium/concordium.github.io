@@ -11,6 +11,15 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+May 11, 2023
+
+Cargo-concordium 2.8.0
+----------------------
+
+The distribution method for `cargo-concordium` has been simplified. Now, once you have installed rustup, you can quickly and easily install `cargo-concordium` without downloading a separate package or going through many steps. For more information, see :ref:`Install tools for development<setup-tools>`.
+
+If you are a Windows or MacOOS user and already have `cargo-concordium` installed, you may need to change/remove? the environment variable path in order to be able to update versions in the future. (How detailed do we want to be here?)
+
 May 1, 2023
 
 VSCode extension 1.0.1
