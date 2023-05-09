@@ -15,8 +15,8 @@ The ``migration`` function
 ==========================
 
 When deploying ``contract-version1``, you might not know the exact logic of the ``contract-version2`` yet.
-``Contract-versoin2`` might be a smart contract that fixes a security bug in your smart contract code which will be discovered at some point in the future.
-For that reason, it is good to have the option to call a ``migration`` function in ``contract-versoin2`` when executing the upgrade mechanism in ``contract-version1``.
+``Contract-version2`` might be a smart contract that fixes a security bug in your smart contract code which will be discovered at some point in the future.
+For that reason, it is good to have the option to call a ``migration`` function in ``contract-version2`` when executing the upgrade mechanism in ``contract-version1``.
 This allows you to add additional execution logic when upgrading the smart contract.
 
 A ``migration`` function could have a variety of different purposes such as:
@@ -27,12 +27,12 @@ A ``migration`` function could have a variety of different purposes such as:
 
 .. note::
 
-   There is no universal ``migration`` function or you might decide to use no ``migration`` at all.
+   There is no universal ``migration`` function and it is not necessary for all upgrades to call a ``migration`` function.
    In the example smart contract, a ``migration`` function is provided that should be suitable for most use cases.
    In more detail, the example ``migration`` function
    focuses on how to change the shape of your smart contract state since this bullet point from above is non-trivial.
 
-``Contract-version1`` enables optionally to call a ``migration`` function as part of the upgrade.
+``Contract-version1`` allows you to call a ``migration`` function as part of the upgrade.
 The ``migration`` function in ``contract-version2`` changes the shape of the state from ``contract-version1`` to ``contract-version2``.
 
 The ``upgrade`` function
@@ -56,12 +56,12 @@ A native smart contract upgrade can be triggered on the ``host`` as seen in the 
       ...
    }
 
-The ``upgrade`` functions in the example smart contracts are marked as ``low_level``. This is *necessary* since ``high_level`` mutable functions store the state of the contract at the end of
+The ``upgrade`` functions in the example smart contracts are marked as ``low_level``. This is *necessary* since the default (*high_level*) mutable functions store the state of the contract at the end of
 execution. This conflicts with migration since the shape of the state *might* be changed by the ``migration`` function. If the state is then written
-by a ``high_level upgrade`` function, it would overwrite the state stored by the ``migration`` function.
+by the default (*high_level*) ``upgrade`` function, it would overwrite the state stored by the ``migration`` function.
 
 Greater control is given to the smart contract developer when using ``low_level`` functions (e.g., additional state manipulation
-capabilities are exposed which are unavailable when using ``high_level`` functions). These additional state manipulation features are necessary to change the
+capabilities are exposed which are unavailable when using *high_level* functions). These additional state manipulation features are necessary to change the
 shape of the state during the ``migration`` but they bear the risk that the state becomes corrupted if the ``migration`` function has some coding bugs.
 Make sure you test your upgrade thoroughly (with integration tests as well as manual tests on testnet)
 and ensure your state is migrated as intended before doing
@@ -69,14 +69,14 @@ the same smart contract upgrade on mainnet.
 
 .. note::
 
-   Using ``high_level`` functions in your smart contract code (except for ``upgrade``/``migration`` functions)
-   should be your preferred option to write smart contract code safely because
-   it prevents you from accidentally corrupting the state of your smart contract. Smart contract functions are by default
-   ``high_level`` (no need to add this attribute explicitly).
+   To write smart contract code safely and to avoid accidentally corrupting your state,
+   you shouldn't use ``low-level`` functions unless strictly necessary (e.g., for ``upgrade``/``migration`` functions).
+   Smart contract functions are by default
+   *high_level* (no need to add this attribute explicitly).
 
 .. note::
 
-   You can also write a very simple upgrade mechanism using a ``high_level`` function with no ``migration`` function at all. This upgrade
+   You can also write a very simple upgrade mechanism using a *high_level* function with no ``migration`` function at all. This upgrade
    mechanism requires that the shape of the smart contract state is the same in ``contract-version1`` and ``contract-version2``.
    This means, the ``State`` struct in ``contract-version1`` and ``contract-version2`` has to be identical.
 

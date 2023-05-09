@@ -10,7 +10,7 @@
 Upgrading smart contracts on Concordium
 =======================================
 
-In this tutorial, you are going to get familiar with how to upgrade a smart contract natively. You explore how to
+In this tutorial, you are going to get familiar with how to upgrade a smart contract natively. You will explore how to
 migrate the smart contract state from your old contract to the upgraded contract.
 
 An important desired feature of blockchains is that smart contracts, once deployed, are immutable by default.

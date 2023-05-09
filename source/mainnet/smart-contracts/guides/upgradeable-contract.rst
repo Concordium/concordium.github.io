@@ -72,9 +72,9 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
     }
 
 .. note::
-    The ``upgrade`` function is marked as ``low_level``. This is *necessary* since ``high_level`` mutable functions store the state of the contract at the end of
+    The ``upgrade`` function is marked as ``low_level``. This is *necessary* since the default (*high_level*) mutable functions store the state of the contract at the end of
     execution. This conflicts with migration since the shape of the state *might* be changed by the ``migration`` function. If the state is then written
-    by a ``high_level upgrade`` function, it would overwrite the state stored by the ``migration`` function. The :ref:`upgrade tutorial<intro-smart-contract-upgrade>`
+    by the default (*high_level*) ``upgrade`` function, it would overwrite the state stored by the ``migration`` function. The :ref:`upgrade tutorial<intro-smart-contract-upgrade>`
     provides an example where ``low_level`` is *necessary* since the shape of the state is changed in the ``migration`` function.
 
 .. note::
