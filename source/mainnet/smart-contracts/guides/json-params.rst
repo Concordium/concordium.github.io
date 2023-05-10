@@ -140,7 +140,7 @@ In order to add a contract with index ``3`` and subindex ``0`` as an operator th
 balanceOf() and ContractBalanceOfQueryParams
 ============================================
 
-Use the ``balanceOf()`` function to get a balance of a token in a given address. The ``balanceOf()`` function is essentially a view function that returns ``ContractBalanceOfQueryResponse`` which is a vector of the token amounts of given addresses.
+Use the ``balanceOf()`` function to get a balance of a token in a given address. The ``balanceOf()`` function is essentially a view function that returns ``ContractBalanceOfQueryResponse`` which is an array of the token amounts of given addresses.
 
 .. code-block:: rust
 
