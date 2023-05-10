@@ -1,8 +1,8 @@
 .. _json-params:
 
-=========================
+=============================
 Work with the JSON parameters
-=========================
+=============================
 
 This guide explains how to interact with the CIS-2 smart contract functions by providing input JSON parameters. This guide uses the `cis2-multi smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`__ as a starting point, and then continues with a couple of custom input types.
 
@@ -86,14 +86,12 @@ In order to call the ``transfer()`` function, ``TransferParameter`` must provide
 updateOperator() and UpdateOperatorParams
 =========================================
 
-Use the ``updateOperator()`` function to assign/remove another address to act as an operator for an address. 
+Use the ``updateOperator()`` function to assign/remove another address to act as an operator for an address.
 ``UpdateOperatorParams`` in ``updateOperator()`` function is an array of ``UpdateOperator`` values.
 
 .. code-block:: rust
 
     /// A single update of an operator.
-    // Note: For the serialization to be derived according to the CIS2
-    // specification, the order of the fields cannot be changed.
     #[derive(Debug, Serialize)]
     pub struct UpdateOperator {
         /// The update for this operator.
@@ -152,7 +150,7 @@ Use the ``balanceOf()`` function to get a balance of a token in a given address.
         pub address: Address,
     }
 
-``ContractBalanceOfQueryParams`` is essentially ``BalanceQueryParams`` which is a vector of a ``BalanceQuery`` struct. As you can see in the details above, it accepts a generic type of ``token_id`` and a type of address like an ``Account`` or ``Contract``.
+``ContractBalanceOfQueryParams`` is essentially ``BalanceQueryParams`` which is an array of ``BalanceQuery`` structs. As you can see in the details above, it accepts a generic type of ``token_id`` and a type of address like an ``Account`` or ``Contract``.
 
 .. code-block:: rust
 
@@ -175,28 +173,26 @@ In order to query the balance of account ``3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3t
                     "3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G"
                 ]
             },
-            "token_id": "<TOKEN-ID>"
+            "token_id": "ff"
         },
         {
             "address": {
                 "Account": [
-                    "<ACCOUNT-ADDRESS>"
+                    "3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G"
                 ]
             },
-            "token_id": "<TOKEN-ID>"
+            "token_id": "aa"
         }
     ]
 
 operatorOf() and OperatorOfQueryParams
 ======================================
 
-Use the ``operatorOf()`` function to check whether an address is an operator of a given contract address added by the ``updateOperator()``. It is a view function that returns ``OperatorOfQueryResponse`` which is a vector of booleans for the given addresses (if the address ``is_operator()`` of the given contract index ``true``, else ``false``).
+Use the ``operatorOf()`` function to check whether an address is an operator of a given contract address added by the ``updateOperator()``. It is a view function that returns ``OperatorOfQueryResponse`` which is an array of booleans for the given addresses (if the address ``is_operator()`` of the given contract index ``true``, else ``false``).
 
 .. code-block:: rust
 
     /// A query for the operator of a given address for a given token.
-    // Note: For the serialization to be derived according to the CIS2
-    // specification, the order of the fields cannot be changed.
     #[derive(Debug, Serialize)]
     pub struct OperatorOfQuery {
         /// The ID of the token for which to query the balance of.
@@ -225,13 +221,13 @@ In order to call the ``operatorOf()`` function, ``OperatorOfQueryParams`` must p
         {
             "owner": {
                 "Account": [
-                    "<YOUR-ACCOUNT-ADDRESS>"
+                    "3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G"
                 ]
             },
             "address": {
                 "Contract": [
                     {
-                        "index": <CONTRACT-INDEX>,
+                        "index": 3,
                         "subindex":  0
                     }
                 ]
@@ -247,8 +243,6 @@ Use the ``tokenMetadata()`` function to retrieve the metadata URL of a token. It
 .. code-block:: rust
 
     /// The parameter type for the contract function `tokenMetadata`.
-    // Note: For the serialization to be derived according to the CIS2
-    // specification, the order of the fields cannot be changed.
     #[derive(Debug, Serialize)]
     pub struct TokenMetadataQueryParams<T: IsTokenId> {
         /// List of balance queries.
@@ -268,7 +262,7 @@ Use the ``tokenMetadata()`` function to retrieve the metadata URL of a token. It
         error = "ContractError"
     )]
 
-In order to call the ``tokenMetadata()`` function, ``ContractTokenMetadataQueryParams`` must provide the console object that includes ``token_id``’s to query.
+In order to call the ``tokenMetadata()`` function, provide a JSON array of token IDs to query as shown below.
 
 .. code-block:: rust
 
