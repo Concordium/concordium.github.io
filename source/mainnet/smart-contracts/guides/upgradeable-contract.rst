@@ -35,36 +35,47 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
    /// The parameter type for the contract function `upgrade`.
    /// Takes the new module and optionally a migration function to call in the new
    /// module after the upgrade.
-   #[derive(Debug, Serialize, SchemaType)]
-   struct UpgradeParams {
-       /// The new module reference.
-       module:  ModuleReference,
-       /// Migration function in the new module.
-       migrate: Option<(OwnedEntrypointName, OwnedParameter)>,
-   }
+    #[derive(Serialize, SchemaType)]
+    struct UpgradeParams {
+        /// The new module reference.
+        module:  ModuleReference,
+        /// Optional entrypoint to call in the new module after upgrade.
+        migrate: Option<(OwnedEntrypointName, OwnedParameter)>,
+    }
 
-   #[receive(contract = "my_contract", name = "upgrade", mutable, parameter = "UpgradeParams")]
-   fn contract_upgrade<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State<S>, StateApiType = S>,
-   ) -> ReceiveResult<()> {
-       // Authorize the sender.
-       ensure!(ctx.sender().matches_account(&ctx.owner()));
-       // Parse the parameter.
-       let params: UpgradeParams = ctx.parameter_cursor().get()?;
-       // Trigger the upgrade.
-       host.upgrade(params.module)?;
-       // Call a migration function if provided.
-       if let Some((func, parameter)) = params.migrate {
-           host.invoke_contract_raw(
-               &ctx.self_address(),
-               parameter.as_parameter(),
-               func.as_entrypoint_name(),
-               Amount::zero(),
-           )?;
-       }
-       Ok(())
-   }
+    #[receive(
+        contract = "my_contract",
+        name = "upgrade",
+        parameter = "UpgradeParams",
+        low_level
+    )]
+    fn contract_upgrade<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<S>,
+    ) -> ReceiveResult<()> {
+        // Check that only the owner is authorized to upgrade the smart contract.
+        ensure!(ctx.sender().matches_account(&ctx.owner()));
+        // Parse the parameter.
+        let params: UpgradeParams = ctx.parameter_cursor().get()?;
+        // Trigger the upgrade.
+        host.upgrade(params.module)?;
+        // Call the migration function if provided.
+        if let Some((func, parameters)) = params.migrate {
+            host.invoke_contract_raw(
+                &ctx.self_address(),
+                parameters.as_parameter(),
+                func.as_entrypoint_name(),
+                Amount::zero(),
+            )?;
+        }
+        Ok(())
+    }
+
+.. note::
+    The ``upgrade`` function is marked as ``low_level``. This is *necessary* since the default (*high_level*) mutable functions store the state of the contract at the end of
+    execution. This conflicts with migration since the shape of the state *might* be changed by the ``migration`` function. If the state is then written
+    by the default (*high_level*) ``upgrade`` function, it would overwrite the state stored by the ``migration`` function. The :ref:`upgrade tutorial<intro-smart-contract-upgrade>`
+    provides an example where ``low_level`` is *necessary* since the shape of the state is changed in the ``migration`` function.
 
 .. note::
 
@@ -81,4 +92,8 @@ The JSON parameter for triggering an upgrade is of the form:
 
 .. seealso::
 
-   For a guide how to send interact with a smart contract using JSON see :ref:`interact-instance-json-parameters`.
+   For a tutorial on how to execute a smart contract upgrade see :ref:`upgrade tutorial<intro-smart-contract-upgrade>`.
+
+.. seealso::
+
+   For a guide on how to send interact with a smart contract using JSON see :ref:`interact-instance-json-parameters`.
