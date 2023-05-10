@@ -232,7 +232,7 @@ In order to call the ``operatorOf()`` function, ``OperatorOfQueryParams`` must p
                 "Contract": [
                     {
                         "index": <CONTRACT-INDEX>,
-                        "subindex": <CONTRACT-SUBINDEX>
+                        "subindex":  0
                     }
                 ]
             }
