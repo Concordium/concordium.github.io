@@ -86,7 +86,8 @@ In order to call the ``transfer()`` function, ``TransferParameter`` must provide
 updateOperator() and UpdateOperatorParams
 =========================================
 
-Use the ``updateOperator()`` function to assign/remove another address to act as an operator for a contract, for example to allow the sale of a token by another contract like a marketplace. Every time you make a transfer, for example, you check whether the sender is the owner of the asset or is the operator of it. ``UpdateOperatorParams`` in ``updateOperator()`` function is a Vector of the struct ``UpdateOperator`` (below) which is defined in CIS-2.
+Use the ``updateOperator()`` function to assign/remove another address to act as an operator for an address. 
+``UpdateOperatorParams`` in ``updateOperator()`` function is an array of ``UpdateOperator`` values.
 
 .. code-block:: rust
 
