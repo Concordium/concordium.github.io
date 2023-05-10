@@ -273,7 +273,7 @@ In order to call the ``tokenMetadata()`` function, ``ContractTokenMetadataQueryP
 .. code-block:: rust
 
     [
-        "<TOKEN-ID-#1>",
-        "<TOKEN-ID-#2>",
+        "0000",
+        "ffac",
         ...
     ]
