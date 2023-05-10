@@ -164,7 +164,7 @@ Use the ``balanceOf()`` function to get a balance of a token in a given address.
         error = "ContractError"
     )]
 
-In order to call the ``balanceOf()`` function, ``ContractBalanceOfQueryParams`` must provide the console object that includes the necessary elements of the ``BalanceQuery`` struct.
+In order to query the balance of account ``3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G`` of token ``"ff`` and balance of account ``3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G`` of token ``"aa"`` the following JSON parameter should be used.
 
 .. code-block:: rust
 
