@@ -104,7 +104,7 @@ Use the ``updateOperator()`` function to assign/remove another address to act as
         pub operator: Address,
     }
 
-The parameter ``update`` is the type of enum ``UpdateOperator::Add`` or ``UpdateOperator::Remove`` and the operator is the type of ``Address``.
+The ``OperatorUpdate`` (the action to execute) is either ``UpdateOperator::Add`` or ``UpdateOperator::Remove`` and the operator to either add or remove is any ``Address``.
 
 .. code-block:: rust
 
