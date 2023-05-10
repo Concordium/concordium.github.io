@@ -256,7 +256,7 @@ Use the ``tokenMetadata()`` function to retrieve the metadata URL of a token. It
         pub queries: Vec<T>,
     }
 
-``ContractTokenMetadataQueryParams`` is a vector of the ``TokenMetadataQueryParams`` struct shown above. It takes the ``tokenId`` as input, and since it is a generic type ``<T>`` the tokenId could be anything.
+``ContractTokenMetadataQueryParams`` is an array of the ``TokenMetadataQueryParams`` struct shown above. It takes the ``tokenId`` as input, and since it is a generic type ``<T>`` the tokenId could be anything.
 
 .. code-block:: rust
 
