@@ -213,7 +213,7 @@ Use the ``operatorOf()`` function to check whether an address is an operator of 
         error = "ContractError"
     )]
 
-In order to call the ``operatorOf()`` function, ``OperatorOfQueryParams`` must provide the console object that includes the necessary elements of the ``OperatorOfQuery`` struct.
+In order to check whether the contract at index ``3`` and subindex ``0`` is an operator of account ``3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G``  the following JSON should be used.
 
 .. code-block:: rust
 
