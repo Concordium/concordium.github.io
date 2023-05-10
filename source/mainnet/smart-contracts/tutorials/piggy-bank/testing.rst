@@ -143,7 +143,7 @@ Import the testing library and your contract at the top of the file.
 
 .. code-block:: rust
 
-   use concordium-smart-contract-testing::*;
+   use concordium_smart_contract_testing::*;
    use piggy_bank_part2::*;
 
 Now you can start adding tests to this module.
