@@ -11,7 +11,7 @@ A smart contract implementing CIS-2 must export the following functions: ``trans
 transfer() and TransferParams
 =============================
 
-Use the ``transfer()`` function to transfer some amount of token A from one account to another. The parameter to the transfer function is an array of ``Transfer``s which is defined in CIS-2.
+Use the ``transfer()`` function to transfer some amount of token A from one account to another. The parameter to the transfer function is an array of ``Transfer`` s which is defined in CIS-2.
 
 .. code-block:: rust
 
