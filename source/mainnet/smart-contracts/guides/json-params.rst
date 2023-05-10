@@ -129,8 +129,8 @@ In order to add a contract with index ``3`` and subindex ``0`` as an operator th
             "operator": {
                 "Contract": [
                     {
-                        "index": <YOUR-CONTRACT-INDEX>,
-                        "subindex": <YOUR-CONTRACT-SUBINDEX>
+                        "index": 3,
+                        "subindex": 0
                     }
                 ]
             }
