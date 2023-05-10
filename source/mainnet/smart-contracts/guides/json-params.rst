@@ -1,7 +1,7 @@
 .. _json-params:
 
 =========================
-Work with the JSON params
+Work with the JSON parameters
 =========================
 
 This guide explains how to interact with the CIS-2 smart contract functions by providing input JSON parameters. This guide uses the `cis2-multi smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`__ as a starting point, and then continues with a couple of custom input types.
