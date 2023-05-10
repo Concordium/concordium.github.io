@@ -117,7 +117,7 @@ The ``OperatorUpdate`` (the action to execute) is either ``UpdateOperator::Add``
         mutable
     )]
 
-In order to call the ``updateOperator()`` function, ``UpdateOperatorsParam`` must provide the console object that includes the necessary elements of the ``UpdateOperator`` struct.
+In order to add a contract with index ``3`` and subindex ``0`` as an operator the following JSON parameter should be used.
 
 .. code-block:: rust
 
