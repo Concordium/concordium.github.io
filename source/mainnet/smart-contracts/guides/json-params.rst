@@ -172,7 +172,7 @@ In order to query the balance of account ``3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3t
         {
             "address": {
                 "Account": [
-                    "<ACCOUNT-ADDRESS>"
+                    "3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G"
                 ]
             },
             "token_id": "<TOKEN-ID>"
