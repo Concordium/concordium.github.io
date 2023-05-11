@@ -1784,7 +1784,11 @@ body {margin:0;}
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cargo-concordium">
-   Cargo Concordium
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cargo-concordium
+    </span>
+   </code>
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1822,7 +1826,7 @@ body {margin:0;}
 environment.</p>
 <div class="section" id="rust-and-cargo">
 <h2>Rust and Cargo<a class="headerlink" href="#rust-and-cargo" title="Permalink to this headline">#</a></h2>
-<p>First, <a class="reference external" href="https://rustup.rs/">install rustup</a>, which will install both <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> on your
+<p>First, <a class="reference external" href="https://rustup.rs/">install rustup</a>, which installs both <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> on your
 machine.
 Then use <code class="docutils literal notranslate"><span class="pre">rustup</span></code> to install the Wasm target, which is used for compilation:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup target add wasm32-unknown-unknown
@@ -1830,21 +1834,17 @@ Then use <code class="docutils literal notranslate"><span class="pre">rustup</sp
 </div>
 </div>
 <div class="section" id="cargo-concordium">
-<h2>Cargo Concordium<a class="headerlink" href="#cargo-concordium" title="Permalink to this headline">#</a></h2>
-<p>Cargo Concordium is the tool for developing smart contracts for the Concordium
+<h2><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code><a class="headerlink" href="#cargo-concordium" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> is the tool for developing smart contracts for the Concordium
 blockchain.
 It can be used for <a class="reference internal" href="compile-module.html#compile-module"><span class="std std-ref">compiling</span></a> and
 <a class="reference internal" href="unit-test-contract.html#unit-test-contract"><span class="std std-ref">testing</span></a> smart contracts, and enables features such as
 <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">building contract schemas</span></a>.</p>
-<p>Cargo Concordium is distributed as part of the <a class="reference internal" href="../../net/installation/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> package. Rename the downloaded file to <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for MacOS/Linux, and <code class="docutils literal notranslate"><span class="pre">cargo-concordium.exe</span></code> for Windows.</p>
-<p>The tool should be placed in your PATH. This can be achieved by either:</p>
-<ul class="simple">
-<li><p>Moving the executable to a folder that is already on your PATH, for example <code class="docutils literal notranslate"><span class="pre">%HOMEPATH%\.cargo\bin\</span></code> for Windows, and <code class="docutils literal notranslate"><span class="pre">$HOME/.cargo/bin</span></code> for MacOS/Linux.</p></li>
-<li><p>Or, by adding its current location to your PATH environment.</p></li>
-</ul>
-<p>If you are running MacOS, you need to make the tool executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">path/to/cargo-concordium</span></code> in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  <a class="reference external" href="https://support.apple.com/en-gb/guide/mac-help/mh40616/mac">Security &amp; Privacy settings</a> .</p>
-<p>Once cargo-concordium is on your path, you can invoke it with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> in the terminal.</p>
-<p>For a description of how to use the Cargo Concordium run:</p>
+<p>To install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install --locked cargo-concordium
+</pre></div>
+</div>
+<p>For a description of how to use the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium --help
 </pre></div>
 </div>

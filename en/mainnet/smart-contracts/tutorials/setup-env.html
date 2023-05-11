@@ -1836,21 +1836,13 @@ body {margin:0;}
 </div>
 <p>During Wasm installation in your system you should see something similar to below.</p>
 <a class="reference internal image-reference" href="../../_images/mint-wasm-install.png"><img alt="../../_images/mint-wasm-install.png" src="../../_images/mint-wasm-install.png" style="width: 100%;" /></a>
-<p>Now you need to install the Concordium software package. <a class="reference internal" href="../../net/installation/downloads-testnet.html#cargo-concordium-testnet"><span class="std std-ref">Click here</span></a> and download the version 2.2.0 or greater of <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your operating system. The tool is the same for both testnet and mainnet.</p>
-<p>First, rename the <code class="docutils literal notranslate"><span class="pre">cargo-congordium-v.x.x</span></code> file to <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> executable to the cargo folder. <a class="reference internal" href="../guides/setup-tools.html#setup-tools"><span class="std std-ref">Follow the information here</span></a> to ensure that your cargo-concordium is configured correctly. The commands below are specifically for MacOS. Remember to adjust the commands based on your operating system.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo chmod +x cargo-concordium</span>
-</pre></div>
-</div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mv cargo-concordium ~/.cargo/bin</span>
+<p>Now you need to install the Concordium software package. The tool is the same for both testnet and mainnet.</p>
+<p>Run the following command to install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your platform:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install --locked cargo-concordium
 </pre></div>
 </div>
 <p>If everything is correct, when you enter the command <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">--help</span></code> it shows something similar to the below.</p>
 <a class="reference internal image-reference" href="../../_images/cargo-help.png"><img alt="../../_images/cargo-help.png" src="../../_images/cargo-help.png" style="width: 100%;" /></a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to <strong>System Preferences → Security</strong> and unlock it with your password and click <strong>Allow Anyway</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/mac-warning.png"><img alt="../../_images/mac-warning.png" src="../../_images/mac-warning.png" style="width: 100%;" /></a>
-</div>
 <div class="section" id="install-concordium-client">
 <span id="interact-with-your-contract"></span><h2>Install Concordium Client<a class="headerlink" href="#install-concordium-client" title="Permalink to this headline">#</a></h2>
 <p>The tutorials use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as a command line tool to deploy, mint, and transfer. <a class="reference internal" href="../../net/installation/downloads-testnet.html#concordium-node-and-client-download-testnet"><span class="std std-ref">Download it here</span></a>. Rename the package to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in case it has some version annotation.</p>

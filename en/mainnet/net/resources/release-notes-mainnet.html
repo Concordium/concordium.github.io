@@ -1778,6 +1778,16 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cargo-concordium-2-8-0">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cargo-concordium
+    </span>
+   </code>
+   2.8.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#smart-contract-integration-testing">
    Smart contract integration testing
   </a>
@@ -1793,7 +1803,7 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-8-0">
+  <a class="reference internal nav-link" href="#id1">
    Cargo-concordium 2.8.0
   </a>
  </li>
@@ -2297,7 +2307,13 @@ body {margin:0;}
 <p>Subscribe to the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
 <p>To subscribe to updates on the Mainnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
+<p>May 11, 2023</p>
+<div class="section" id="cargo-concordium-2-8-0">
+<h2><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0<a class="headerlink" href="#cargo-concordium-2-8-0" title="Permalink to this headline">#</a></h2>
+<p>The distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../../smart-contracts/guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
+<p>If you already have <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> installed, you may need to remove the existing <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> from your PATH to be able to update versions in the future.</p>
 <p>May 8, 2023</p>
+</div>
 <div class="section" id="smart-contract-integration-testing">
 <h2>Smart contract integration testing<a class="headerlink" href="#smart-contract-integration-testing" title="Permalink to this headline">#</a></h2>
 <p>Important new functionality has been added to test your smart contracts: the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing">concordium-smart-contract-testing library</a> makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see <a class="reference internal" href="../../smart-contracts/guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration test a contract in Rust</span></a>.</p>
@@ -2330,8 +2346,8 @@ body {margin:0;}
 <h2>VSCode extension 1.0.1<a class="headerlink" href="#vscode-extension-1-0-1" title="Permalink to this headline">#</a></h2>
 <p>The VSCode extension has been developed to help developers get started with smart contract development. The extension sets up the editor for development, installs the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.</p>
 </div>
-<div class="section" id="cargo-concordium-2-8-0">
-<h2>Cargo-concordium 2.8.0<a class="headerlink" href="#cargo-concordium-2-8-0" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h2>Cargo-concordium 2.8.0<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Non-existing directories in paths provided to the following arguments for when running <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> will now be created instead of causing an error: <code class="docutils literal notranslate"><span class="pre">--out</span></code>, <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>, <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code>, and <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code>. The same is true for the <code class="docutils literal notranslate"><span class="pre">--out-bin</span></code> and <code class="docutils literal notranslate"><span class="pre">--out-json</span></code> arguments provided to <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">run</span> <span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">run</span> <span class="pre">update</span></code>.</p>
 <p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> was unable to determine the smart contract package if the package was part of a Cargo workspace.</p>
 </div>
