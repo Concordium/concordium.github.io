@@ -35,7 +35,7 @@ The high-level process of adding integration tests to your existing smart contra
 
    .. code-block:: rust
 
-      use concordium-smart-contract-testing::*;
+      use concordium_smart_contract_testing::*;
 
       #[test]
       fn my_test() { .. }
