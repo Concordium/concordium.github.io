@@ -130,10 +130,10 @@ Concordium Client v5.1.1
 
 -  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.1.1.exe>`_
 
-Cargo-concordium v2.8.0
-=======================
+``cargo-concordium`` v2.8.0
+===========================
 
-For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
+For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
 
 VSCode extension 1.0.1
 ----------------------

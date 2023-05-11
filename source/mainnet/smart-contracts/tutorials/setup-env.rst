@@ -30,7 +30,7 @@ During Wasm installation in your system you should see something similar to belo
 
 Now you need to install the Concordium software package. The tool is the same for both testnet and mainnet.
 
-Run the following command to install Cargo Concordium for your platform:
+Run the following command to install ``cargo-concordium`` for your platform:
 
 .. code-block:: console
 

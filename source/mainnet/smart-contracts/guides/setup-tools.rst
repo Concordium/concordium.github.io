@@ -18,22 +18,22 @@ Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
    $rustup target add wasm32-unknown-unknown
 
-Cargo Concordium
-================
+``cargo-concordium``
+====================
 
-Cargo Concordium is the tool for developing smart contracts for the Concordium
+``cargo-concordium`` is the tool for developing smart contracts for the Concordium
 blockchain.
 It can be used for :ref:`compiling<compile-module>` and
 :ref:`testing<unit-test-contract>` smart contracts, and enables features such as
 :ref:`building contract schemas<build-schema>`.
 
-To install Cargo Concordium run:
+To install ``cargo-concordium`` run:
 
 .. code-block:: console
 
    $cargo install --locked cargo-concordium
 
-For a description of how to use the Cargo Concordium run:
+For a description of how to use the ``cargo-concordium`` run:
 
 .. code-block:: console
 
