@@ -34,7 +34,7 @@ Run the following command to install Cargo Concordium for your platform:
 
 .. code-block:: console
 
-    $cargo install cargo-concordium
+    $cargo install --locked cargo-concordium
 
 If everything is correct, when you enter the command ``cargo concordium --help`` it shows something similar to the below.
 
