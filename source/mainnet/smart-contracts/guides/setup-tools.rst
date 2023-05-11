@@ -31,7 +31,7 @@ To install Cargo Concordium run:
 
 .. code-block:: console
 
-   $cargo install cargo-concordium
+   $cargo install --locked cargo-concordium
 
 For a description of how to use the Cargo Concordium run:
 
