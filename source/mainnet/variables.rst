@@ -29,8 +29,8 @@
 
 .. Node version variables
 
-.. |mainnet-node-version| replace:: 5.2.4
-.. |testnet-node-version| replace:: 5.2.4
+.. |mainnet-node-version| replace:: 5.3.2
+.. |testnet-node-version| replace:: 5.3.2
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
