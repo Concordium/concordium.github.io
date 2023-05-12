@@ -264,7 +264,7 @@ If you want to change whether the node services start automatically, you have tw
 Node collector configuration
 ============================
 
-Since version 5.3.x of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
+Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
 
 Since the GRPC V2 port is different than the GRPC V1 port, you need to change it in the node configuration:
 

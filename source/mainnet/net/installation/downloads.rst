@@ -190,21 +190,15 @@ Concordium Client v5.1.1
 
 .. _cargo-concordium-download:
 
-Cargo-concordium v2.7.1
-=======================
+``cargo-concordium`` v2.8.0
+===========================
 
-Download cargo-concordium:
+For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
 
-   -  `Download Mainnet cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_2.7.1>`_
+VSCode extension 1.0.1
+----------------------
 
-      - SHA256 checksum of the download: :substitution-code:`|cargo-linux-checksum|`
-      - :ref:`Verification instructions <verification-cargo-linux>`
-
-   -  `Download Mainnet cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/signed/cargo-concordium_2.7.1.zip>`_ then unzip the file and move it to the correct location.
-
-   -  `Download Mainnet cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/signed/cargo-concordium_2.7.1.exe>`_
-
-For information about installing `cargo-concordium`, see :ref:`Install tools for development <setup-tools>`.
+You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
 Concordium node distributions
 =============================
