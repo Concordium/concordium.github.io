@@ -7,6 +7,10 @@ Backup and recovery
 
 It can be necessary to recover your wallet, for example if you get a new computer or mobile device. It is important to know how you can recover your wallet on a device if necessary. There are differences between what the wallets require for recovery.
 
+.. list-table::
+   :widths: 10 10 10 10
+   :header-rows: 1
+
    *  - Desktop Wallet
       - |mw-gen1|
       - |mw-gen2|

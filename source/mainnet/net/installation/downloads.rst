@@ -42,6 +42,10 @@ The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13
 
    - `Download the Android version of Concordium Wallet for Mobile for Testnet <https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet>`_
 
+      .. image:: ../images/mobile-wallet/google-play-badge.png
+      :width: 29.5%
+      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
+
 .. _downloads-mwgen1:
 
 |mw-gen1|
@@ -80,7 +84,7 @@ The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13
 |bw|
 =================================
 
-The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
+The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_. The extension supports both Mainnet and Testnet.
 
 .. _downloads-desktop-wallet:
 

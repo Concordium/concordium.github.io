@@ -4,7 +4,7 @@
 Create a transaction report
 ===========================
 
-A transaction report can be useful for tax purposes when you need to know transaction details for reporting.
+A transaction report can be useful when you need to know transaction details, such as for tax reporting purposes.
 
 .. dropdown:: Desktop wallet
 
