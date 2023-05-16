@@ -11,6 +11,15 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+June 1, 2023
+
+Concordium Node 5.4.X
+---------------------
+
+Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+Fixed a security issue.
+
 May 11, 2023
 
 ``cargo-concordium`` 2.8.0
