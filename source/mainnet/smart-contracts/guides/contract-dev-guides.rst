@@ -25,3 +25,4 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    no-std
    fallback-entrypoints
    upgradeable-contract
+   json-params

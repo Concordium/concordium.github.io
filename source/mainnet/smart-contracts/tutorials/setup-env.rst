@@ -28,29 +28,18 @@ During Wasm installation in your system you should see something similar to belo
 .. image:: images/mint-wasm-install.png
     :width: 100%
 
-Now you need to install the Concordium software package. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
+Now you need to install the Concordium software package. The tool is the same for both testnet and mainnet.
 
-First, rename the ``cargo-congordium-v.x.x`` file to ``cargo-concordium``. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the ``cargo-concordium`` executable to the cargo folder. :ref:`Follow the information here<setup-tools>` to ensure that your cargo-concordium is configured correctly. The commands below are specifically for MacOS. Remember to adjust the commands based on your operating system.
-
-.. code-block:: console
-
-    sudo chmod +x cargo-concordium
+Run the following command to install ``cargo-concordium`` for your platform:
 
 .. code-block:: console
 
-    mv cargo-concordium ~/.cargo/bin
+    $cargo install --locked cargo-concordium
 
 If everything is correct, when you enter the command ``cargo concordium --help`` it shows something similar to the below.
 
 .. image:: images/cargo-help.png
     :width: 100%
-
-.. Note::
-
-    If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
-
-    .. image:: images/mac-warning.png
-        :width: 100%
 
 .. _interact-with-your-contract:
 
