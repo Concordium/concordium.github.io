@@ -26,6 +26,12 @@ May 25, 2023
 
 - Added a missing translation for the Request CCD button.
 
+- ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+- Added text that a transaction has been submitted.
+
+- Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+
 May 11, 2023
 
 ``cargo-concordium`` 2.8.0
