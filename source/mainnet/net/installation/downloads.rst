@@ -43,8 +43,9 @@ The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13
    - `Download the Android version of Concordium Wallet for Mobile for Testnet <https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet>`_
 
       .. image:: ../images/mobile-wallet/google-play-badge.png
-      :width: 29.5%
-      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
+         :width: 29.5%
+         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
+
 
 .. _downloads-mwgen1:
 
@@ -160,11 +161,11 @@ Concordium LEDGER App
 
    The LEDGER NANO X is not supported currently.
 
-When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
-
 - For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
 - For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip>`_
+
+When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
 
 .. _concordium-node-and-client-download:
 

@@ -17,7 +17,7 @@ It can be necessary to recover your wallet, for example if you get a new compute
       - |bw|
    *  - Backup recommended; can recover without backup
       - Backup required
-      - Secret recovery phrase requierd
+      - Secret recovery phrase required
       - Secret recovery phrase required
    *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.
       - Backup file includes accounts, identities, address book, and private keys.
