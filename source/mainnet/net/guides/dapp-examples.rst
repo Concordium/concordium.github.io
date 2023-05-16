@@ -41,15 +41,27 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Demo front end <https://esealing.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
-    :ref:`Tutorial about the eSealing dApp<eSaeling>`
+    :ref:`Tutorial about the eSealing dApp<eSealing>`
 
     `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing>`__
 
     `Front end code <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/eSealing>`__
 
+.. dropdown:: Sponsored Transactions
+
+    `Demo front end <https://sponsored.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    :ref:`Tutorial about the sponsored Transactions dApp<sponsoredTransactions>`
+
+    `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis3-nft-sponsored-txs>`__
+
+    `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/sponsoredTransactions>`__
+
 .. dropdown:: Voting
 
     `Demo front end <https://voting.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet
+
+    :ref:`Tutorial about the Voting dApp<voting-dapp>`
 
     `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/voting>`__
 
@@ -63,6 +75,6 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
 The dApps are written in React.
 
-Piggy bank, wCCD, and eSealing use the NPM library
+Piggy bank, wCCD, eSealing, and sponsored Transactions use the NPM library
 `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
 to implement integrations to the |bw| and |mw-gen2| using WalletConnect.

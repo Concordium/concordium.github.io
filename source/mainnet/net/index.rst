@@ -70,6 +70,7 @@ index
    Best practices <../smart-contracts/best-practices/index>
    Tutorials <../smart-contracts/tutorials/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   Contract testing guides <../smart-contracts/guides/contract-testing-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
    References <../smart-contracts/references/index>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
@@ -84,6 +85,13 @@ index
    Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
    On-chain guides <../smart-contracts-v0/guides/on-chain-index>
    References <../smart-contracts-v0/references/index>
+
+.. toctree::
+   :caption: Low-code NFT marketplace
+
+   guides/low-code-nft-marketplace/introduction.rst
+   guides/low-code-nft-marketplace/marketplace.rst
+   guides/low-code-nft-marketplace/minting-tool.rst
 
 .. toctree::
    :caption: Resources

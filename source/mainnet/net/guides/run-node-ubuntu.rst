@@ -92,17 +92,38 @@ If the node is well behind the head of the chain, you can speed up the startup b
 
   3. Add the following under the ``[Service]`` section (create the section if it does not exist)
 
-    .. code-block::
+    .. code-block:: ini
 
       Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
 
   4. Start the service again
 
-    .. code-block::
+    .. code-block:: console
 
       $sudo systemctl start concordium-mainnet-node.service
 
 After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
+.. _node-collector-ubuntu-mainnet:
+
+Node collector configuration
+============================
+
+Since version 5.3.2 of the node the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
+
+Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You *only* need to change the collector port if you have overridden your node configuration. You can edit your overrides with:
+
+.. code-block:: console
+
+  $ sudo systemctl edit concordium-testnet-node.service
+
+This will open your overrides in your default editor. Below is an example for the default mainnet port ``20000``:
+
+.. code-block:: ini
+
+  [Service]
+  Environment=CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://localhost:20000
+
 
 .. _upgrade-node-Ubuntu:
 
@@ -110,7 +131,6 @@ Upgrade version
 ===============
 
 .. Note::
-
   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 To upgrade to a newer version of the `concordium-mainnet-node` package you need to:
