@@ -46,7 +46,6 @@ The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13
          :width: 29.5%
          :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
 
-
 .. _downloads-mwgen1:
 
 |mw-gen1|

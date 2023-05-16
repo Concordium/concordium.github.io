@@ -8,8 +8,11 @@ Release notes
 Wallets
 =======
 
+.. _rn-mwgen2-ios:
+
 .. dropdown:: |mw-gen2| for iOS
 
+.. _rn-mwgen2-android:
 
 .. dropdown:: |mw-gen2| for Android
 
@@ -25,19 +28,30 @@ Wallets
     - :ref:`v1.1.7 / 25 April 2023<testnet-release-notes>`
     - :ref:`v1.1.6 / 18 April 2023<testnet-release-notes>`
 
+.. _rn-bw:
+
 .. dropdown:: |bw|
+
+.. _rn-dw:
 
 .. dropdown:: Desktop Wallet
 
+.. _rn-mwgen1-ios:
+
 .. dropdown:: |mw-gen1| for iOS
+
+.. _rn-mwgen1-android:
 
 .. dropdown:: |mw-gen1| for Android
 
 Nodes
 =====
 
+.. _rn-node-mainnet:
+
 .. dropdown:: Mainnet
 
+.. _rn-node-testnet:
 
 .. dropdown:: Testnet
 
@@ -45,14 +59,22 @@ Nodes
 Tools
 =====
 
+.. _rn-client:
+
 .. dropdown:: Concordium client
 
-.. dropdown:: Cargo-concordium
+.. _rn-cargo:
+
+.. dropdown:: ``cargo-concordium``
+
+.. _rn-ccdscan:
 
 .. dropdown:: CCDScan
 
 Libraries
 =========
+
+.. _rn-sclibraries:
 
 .. dropdown:: Smart contract Libraries
 
