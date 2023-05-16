@@ -11,6 +11,21 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+May 25, 2023
+
+|bw| 1.0.5
+-------------------------
+
+|bw| 1.0.5 contains fixes for the following issues:
+
+- The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+- Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+- Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+- Added a missing translation for the Request CCD button.
+
 May 11, 2023
 
 ``cargo-concordium`` 2.8.0
