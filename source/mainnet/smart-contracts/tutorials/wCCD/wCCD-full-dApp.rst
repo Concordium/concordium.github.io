@@ -18,6 +18,6 @@ to connect to the dApp.
 .. note::
 
     If you already have an older |bw| extension installed, check its version and download a newer version if applicable.
-    The wCCD front-end requires some new features that are supported by the |bw| version 0.8.3 or greater.
+    The wCCD front end requires some new features that are supported by the |bw| version 0.8.3 or greater.
 
 Congratulations. You have completed the whole wCCD tutorial.

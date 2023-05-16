@@ -95,7 +95,7 @@ The following table lists the major features of each wallet.
       - |bw|
    *  - Runs on MacOS, Windows, Linux
       - Runs on iOS 13 or later, Android 8 or later
-      - Runs on Android 8 or later
+      - Runs on iOS 13 or later, Android 8 or later
       - Runs on Chrome, Brave, Opera, Edge
    *  - Secured by password and a LEDGER device
       - Secured by password and biometrics
@@ -127,8 +127,8 @@ The following table lists the major features of each wallet.
       - Creation of identities
    *  - Creation and management of baker accounts
       - Creation and management of baker accounts. Rewards are visible in the wallet.
-      - No creation and management of baker accounts.
-      - No creation and management of baker accounts.
+      - Creation and management of baker accounts. Rewards are visible in the wallet.
+      - Creation and management of baker accounts. Rewards are visible in the wallet.
    *  - A node is required
       - A node is not needed unless baking
       - A node is not needed unless baking
@@ -154,3 +154,9 @@ Next steps
 - If you want to learn more about the LEDGER device, go to `LEDGER's website <https://www.ledger.com>`_.
 
 - If you want to use the |bw|, :ref:`download <downloads>` the Google Chrome extension, and then see :ref:`Set up the Concordium Wallet for Chrome<setup-browser-wallet>` for the next steps.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   ../concepts/concepts-transactions

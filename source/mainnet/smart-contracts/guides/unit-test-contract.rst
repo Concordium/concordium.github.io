@@ -4,13 +4,9 @@
 Unit test a contract in Rust
 ============================
 
-.. contents::
-   :local:
-   :backlinks: none
-
-This guide will show you how to write unit tests for a smart contract written in
+This guide describes how to write unit tests for a smart contract written in
 Rust.
-For testing a smart contract Wasm module, see :ref:`local-simulate`.
+For information about how to test a smart contract Wasm module, see :ref:`local-simulate`.
 
 A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a ``#[test]`` attribute.
@@ -30,7 +26,7 @@ library by annotating functions with a ``#[test]`` attribute.
         fn another_test() { ... }
     }
 
-Running the test can be done using ``cargo``:
+Use ``cargo`` to run the test:
 
 .. code-block:: console
 
@@ -62,10 +58,10 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
 
 .. seealso::
 
-   For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
+   For instructions about how to install ``cargo-concordium``, see :ref:`setup-tools`.
 
-The unit test have to be annotated with ``#[concordium_test]`` instead of
-``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
+The unit test has to be annotated with ``#[concordium_test]`` instead of
+``#[test]``, and ``#[concordium_cfg_test]`` is used instead of ``#[cfg(test)]``:
 
 .. code-block:: rust
 
@@ -82,16 +78,16 @@ The unit test have to be annotated with ``#[concordium_test]`` instead of
        fn another_test() { ... }
    }
 
-The ``#[concordium_test]`` macro sets up our tests to be run in Wasm, when
-``concordium-std`` is compiled with the ``wasm-test`` feature, and otherwise
+The ``#[concordium_test]`` macro sets up your tests to be run in Wasm when
+``concordium-std`` is compiled with the ``wasm-test`` feature. Otherwise, it
 falls back to behave just like ``#[test]``, meaning it is still possible to run
 unit tests targeting native code using ``cargo test``.
 
-Similarly the macro ``#[concordium_cfg_test]`` includes our module when build
+Similarly, the macro ``#[concordium_cfg_test]`` includes your module when build
 ``concordium-std`` with ``wasm-test`` otherwise behaves like ``#[test]``,
-allowing us to control when to include tests in the build.
+allowing you to control when to include tests in the build.
 
-Tests can now be build and run using:
+Tests can now be built and run using:
 
 .. code-block:: console
 
@@ -105,7 +101,7 @@ for ``concordium-std`` and uses the test runner from ``cargo-concordium``.
    Error messages from ``panic!``, and therefore also the different variations
    of ``assert!``, are *not* shown when compiling to Wasm.
 
-   Instead use ``fail!`` and the ``claim!`` variants to do assertions when
+   Instead, use ``fail!`` and the ``claim!`` variants to do assertions when
    testing, as these reports back the error messages to the test runner *before*
    failing the test.
    Both are part of ``concordium-std``.
@@ -228,7 +224,7 @@ a mock function that returns the same ``Ok(..)`` value every time:
 
 For returning the same error every time, use the ``returning_err``.
 Use this to test missing contracts or entrypoints, as invoking
-entrypoints for which no mock has been set up, results in a runtime error:
+entrypoints for which no mock has been set up results in a runtime error:
 
 .. code-block:: rust
    :emphasize-lines: 8
@@ -305,7 +301,7 @@ and amount. For simplicity, it just traps if the input is not as expected:
        );
        ...
 
-To test contracts that invoke itself, either directly or indirectly (e.g., ``A`` calls
+To test a contract that invokes itself, either directly or indirectly (e.g., ``A`` calls
 ``B`` which then calls ``A``, or with even more indirections), use the
 state and balance fields:
 
@@ -339,18 +335,151 @@ state and balance fields:
        );
        ...
 
-.. warning::
+.. _reentracny-unit-testing:
 
-   You should watch out for *reentrancy problems*, which can occur when calls to
-   ``invoke_contract`` end up updating the state of your own contract.
+Reentrancy
+----------
 
-   .. code-block:: rust
+When invoking another smart contract, you give away control to that contract in the middle of execution.
+The external contract can, for example, call back entrypoints of your contract.
+This behavior is called *reentrancy* and is well-known from concurrency: a procedure can be interrupted in the middle of its execution, called again, and then resume execution.
+See the details about handling external calls and ways of protecting against reentrancy-related issues in the :ref:`development best practices <best-practices-external-calls>`.
 
-      let state_copy = *host.state();
-      host.invoke_contract(...);
+The state of your contract might not be the same before and after ``invoke_contract``, since the contract you call can invoke any entrypoint of your own contract.
 
-      // *host.state() and state_copy might not be equal any more due to reentrancy.
-      do_something_with(state_copy);
+.. code-block:: rust
+
+    let state_copy = *host.state();
+    host.invoke_contract(...);
+
+    // *host.state() and state_copy might not be equal any more due to reentrancy.
+    do_something_with(state_copy);
+
+Consider a concrete example of reentrancy when the state is *not* updated properly before making an external call.
+This can lead to reentrant calls that pass some validation that is based on the current state, even though these calls should fail.
+The classic example of such a security issue is `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract that was drained of funds due to the reentrancy vulnerability.
+Below is a code snippet that implements a small part similar to the DAO contract that stores balances for arbitrary addresses in a map ``StateMap<Address, Amount, S>``.
+The users can request their funds back; if a user is a smart contract, the funds are sent to a specified entrypoint.
+
+.. code-block:: rust
+    :emphasize-lines: 40-42
+
+    #[receive(
+        contract = "reentrancy",
+        name = "withdraw_reentrancy",
+        parameter = "OwnedEntrypointName",
+        error = "Error",
+        mutable
+    )]
+    fn withdraw_reentrancy<S: HasStateApi>(
+        ctx: &impl HasReceiveContext,
+        host: &mut impl HasHost<State<S>, StateApiType = S>,
+    ) -> Result<(), Error> {
+        let sender = ctx.sender();
+
+        // Get balance for the sender, or reject if the sender is not found or the
+        // balance is zero.
+        let sender_balance = match host.state().balances.get(&sender) {
+            Some(bal) if *bal > Amount::zero() => *bal,
+            _ => return Err(Error::WithdrawWithoutFunds),
+        };
+
+        match sender {
+            Address::Account(acc) => host.invoke_transfer(&acc, sender_balance)?,
+            Address::Contract(addr) => {
+                let entrypoint: OwnedEntrypointName = ctx.parameter_cursor().get()?;
+                // At this point we are handing out the control out to an unknown
+                // smart contract. This contract can call this entry point
+                // again multiple times before the rest of the code is reached.
+                host.invoke_contract(
+                    &addr,
+                    &Parameter(&[]),
+                    entrypoint.as_entrypoint_name(),
+                    sender_balance,
+                )?;
+            }
+        };
+
+        // Reset the sender's balance to zero.
+        // This code is reached only after transfering CCD back/calling an
+        // external contract.
+        if let Some(mut v) = host.state().balances.get_mut(&sender) {
+            *v = Amount::zero();
+        }
+
+        Ok(())
+    }
+
+The problem in the code above is that resetting the sender's balance to zero happens *after* the call to an external contract is completed.
+The sender's balance in the *contract state* is used to determine how much funds should be transferred to the sender.
+Since it is not updated, the external contract can make a call back to ``withdraw_reentrancy`` and pass the balance validation.
+Testing this behavior with mocks require some insights.
+In particular, the example below mimics the original ``withdraw_reentrancy`` code in the mock entrypoint.
+
+.. code-block:: rust
+
+    #[concordium_test]
+    fn test_withdraw_reentrancy() {
+        ...
+
+        // Assume that `CONTRACT_ADDRESS` has 1 micro CCD
+        // Set the contract balance to 2 micro CCD
+        host.set_self_balance(Amount::from_micro_ccd(2));
+
+        // Set up a mock entrypoint that calls back to our contract.
+        // The mock emulates the `withdraw_reentrancy` logic to model
+        // a reentrancy attack that will withdraw the sender's balance twice.
+        host.setup_mock_entrypoint(
+            CONTRACT_ADDRESS,
+            OwnedEntrypointName::new_unchecked("withdraw_reentrancy".to_string()),
+            MockFn::new_v1(|_parameter, _amount, balance, state: &mut State<_>| {
+                // `invoke_contract` cannot be called inside this mock, but
+                // `balance` gives access to the balance of the contract making
+                // this invocation. The `withdraw_reentrancy` invocation can be
+                // simulated by subtracting the sender's amount stored in the
+                // contract state from `balance`.
+
+                let b = state.balances.get_mut(&Address::Contract(CONTRACT_ADDRESS));
+
+                let mut sender_balance = match b {
+                    Some(bal) if *bal > Amount::zero() => bal,
+                    _ => fail!("Insufficent funds"),
+                };
+
+                // Emulate withdraw by subtracting the sender's balance.
+                *balance -= *sender_balance;
+
+                // Reset the sender's balance to zero.
+                *sender_balance = Amount::zero();
+
+                let state_modified = true;
+                Ok((state_modified, ()))
+            }),
+        );
+        // Withdraw 1 micro CCD
+        withdraw_reentrancy(&ctx, &mut host).expect_report("Withdraw call failed");
+
+        let resulting_balance = host.self_balance();
+        let expected_balance = 1;
+
+        claim_eq!(
+            resulting_balance,
+            expected_balance,
+            "Balance is not updated correctly: expected {:?}, found: {:?}",
+            expected_balance,
+            resulting_balance
+        );
+    }
+
+The test fails with the following message:
+
+.. code-block:: text
+
+    Incorrect balance: expected Amount { micro_ccd: 1 }, found: Amount { micro_ccd: 0 }
+
+That means that the contract called has stolen funds through a reentrant call.
+A simple fix to this behavior is to place the highlighted line in ``withdraw_reentrancy`` *before* making a call to an external contract.
+In this case, the ``withdraw_reentrancy`` call will fail because the non-zero balance condition is no longer satisfied in the mock entrypoint.
 
 Testing with state rollbacks
 ============================
@@ -435,7 +564,7 @@ You can read more about deriving |StateClone|_ on `docs.rs <https://docs.rs/conc
 .. note::
 
    The state also needs to be rolled back on errors occuring in mock
-   entrypoints, as described in
+   entrypoints as described in
    :ref:`testing_contract_invocations`, but that is handled by the test
    framework itself. This means that mock entrypoints are handled
    transactionally, even without the use of |with_rollback|_.
@@ -443,8 +572,7 @@ You can read more about deriving |StateClone|_ on `docs.rs <https://docs.rs/conc
 Testing transfers
 =================
 
-|TestHost|_ has three helper methods that are useful when testing that the correct
-``invoke_transfer``'s has occurred.
+|TestHost|_ has three helper methods that are useful when testing that the correct ``invoke_transfer`` s have occurred.
 
 Use ``transfer_occurred`` to check for specific transfers:
 
@@ -575,7 +703,7 @@ By default, this command compiles the contract, unit tests, and QuickCheck tests
     Avoid using ``fail!`` and ``claim!`` variants in ``#[concordium_quickcheck]`` tests.
     In Wasm unit tests (see :ref:`tests_in_wasm`) these commands report an error.
     However, using them in QuickCheck tests makes the tests fail without providing a counterexample when running with ``cargo concordium test``.
-    Also avoid using ``assert_eq!``, ``panic!`` or any other command that panics.
+    Also avoid using ``assert_eq!``, ``panic!``, or any other command that panics.
     Return a boolean value instead.
 
 Example
@@ -670,7 +798,7 @@ If you change the highlighted lines in the code above to:
         self.count += 1;
     }
 
-Then all ``500`` tests pass successfully.
+then all ``500`` tests pass successfully.
 
 
 .. |test_infrastructure| replace:: ``test_infrastructure``

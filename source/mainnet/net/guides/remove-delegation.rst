@@ -27,10 +27,14 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
       #. Select **Delegation** and choose **Remove Delegation**.
 
          .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+            :width: 50%
+            :alt: delegation screen with options to update or remove
 
       #. Review the cool-down period. Click **Continue**.
 
          .. image:: ../images/desktop-wallet/dw-remove-delegation.png
+            :width: 50%
+            :alt: remove delegation confirmation screen
 
       #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -128,22 +132,20 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
    #. You see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
       .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+         :width: 50%
+         :alt: screen shown to review delegation stop details
 
    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
-
-   .. |earn| image:: ../images/earn.png
-        :alt: Hand receiving money
-        :width: 50px
-
-   .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
+         :width: 50%
+         :alt: delegation stop transaction submission confirmation screen
 
 .. dropdown:: |mw-gen1|
 
@@ -156,24 +158,59 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
    #. You see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-         :width: 25%
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
       .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
-         :width: 25%
+         :width: 50%
+         :alt: screen shown to review delegation stop details
 
    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+         :width: 50%
+         :alt: delegation stop transaction submission confirmation screen
 
 .. dropdown:: |bw|
 
-        At the moment, delegation is not available in the |bw|.
+   #. Bring the account whose delegation you want to stop into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
+
+      .. image:: ../images/browser-wallet/select-account.png
+         :width: 40%
+         :alt: screen with accounts drop-down activated and account selection shown
+
+   #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+
+      .. image:: ../images/browser-wallet/delegation-update-stop.png
+         :width: 40%
+         :alt: screen showing current delegation and buttons to update or stop
+
+   #. You see your current delegation. Click **Stop**. Review the information about the cool-down period.
+
+        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+                :width: 40%
+
+   #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+
+      .. image:: ../images/browser-wallet/delegation-stop-xact-confirm.png
+         :width: 40%
+         :alt: screen showing the transaction details that will be submitted to the chain
+
+   #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+      .. image:: ../images/browser-wallet/delegation-xact-submit.png
+         :width: 40%
+         :alt: screen showing the transaction submitted to the chain and finish button
 
 .. Note::
 
    Removing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and cannot be increased or decreased; you can still change targets or restaking preferences during cool-down. The delegation stop is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. |earn| image:: ../images/earn.png
+        :alt: Hand receiving money
+        :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

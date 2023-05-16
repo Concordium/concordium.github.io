@@ -35,7 +35,7 @@ with name account-name, run the following command:
 
 .. note::
 
-   The ``--sender`` option can be omitted if the account "default" is to be used. For brevity, we will do so in the following.
+   The ``--sender`` option can be omitted if the account "default" is to be used. For brevity, you will do so in the following.
 
    Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
    the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
@@ -79,7 +79,7 @@ visible on-chain.
    stored, see :ref:`local-settings`.
 
 To add a name during deployment, the ``--name`` parameter is used.
-Here, we are naming the module ``my_deployed_module``:
+Here, you are naming the module ``my_deployed_module``:
 
 .. code-block:: console
 

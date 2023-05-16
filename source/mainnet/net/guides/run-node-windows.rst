@@ -36,14 +36,14 @@ Install/upgrade and run a node
 
    **Example for Mainnet:**
 
-   .. code-block:: console
+   .. code-block:: toml
 
       grpc2.port = 20000
       grpc2.ip = "127.0.0.1"
 
    **Example for Testnet:**
 
-   .. code-block:: console
+   .. code-block:: toml
 
       grpc2.port = 20001
       grpc2.ip = "127.0.0.1"
@@ -68,7 +68,7 @@ Install/upgrade and run a node
 
 #. Accept the terms of the End-User License Agreement and select **Next**.
 
-#. Set the **Destination** folders. The default is C:\ProgramData\Concordium\Node Runner.
+#. Set the **Destination** folders. The default is C:\\ProgramData\\Concordium\\Node Runner.
 
    - In **Install Concordium Node to**, specify where to store the executable code.
 
@@ -251,37 +251,10 @@ You can improve the performance by downloading the blocks from an out-of-band ca
 
 #. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. To see this, compare the finalized length of the chain with the length of your node. If they match, your node has caught up.
 
-For node versions 4.3.0 or earlier
-----------------------------------
+Node collector configuration
+============================
 
-.. note::
-
-   A block file for mainnet does not work with a testnet node and vice versa.
-   Make sure to download the appropriate file for your node.
-
-#. Download the file with the blocks from the following addresses:
-
-   - Mainnet: https://catchup.mainnet.concordium.software/blocks_to_import.mdb
-   - Testnet: https://catchup.testnet.concordium.com/blocks_to_import.mdb
-
-   The file is downloaded to your default download location.
-
-#. Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. The configuration file opens in **Notepad**.
-
-#. Add the following line to the ``[node.mainnet]`` or ``[node.testnet]`` section:
-
-   .. code-block:: TOML
-
-      node.args = ['--import-blocks-from', 'C:\Downloads\blocks_to_import.mdb']
-
-   Where you replace ``C:\Downloads\blocks_to_import.mdb`` with the full path to the downloaded file. Save the configuration file.
-
-#. In the **Search** bar, search for and select **Stop Concordium Service Node** to stop the node, and then search for and select **Start Concordium Service Node** to restart the node.
-
-#. Open the configuration file again, remove the line you just added, and then save the file. This ensures that these blocks will not be processed again the next time the node is restarted.
-
-#. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. You do so by comparing the finalized length of the chain with the length of your node. If they match, your node has caught up.
-
+Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled. For information about how to do this, see :ref:`the note at the top of this topic<install-upgrade-node-windows>`.
 
 Baking on a Windows node
 ========================

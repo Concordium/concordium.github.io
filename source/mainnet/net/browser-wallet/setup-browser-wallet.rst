@@ -34,7 +34,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
 .. dropdown:: Edge
 
@@ -55,7 +56,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
    For more information, see the `Microsoft support site <https://support.microsoft.com/en-us/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=1%20Open%20Microsoft%20Edge%20and%20go%20to%20the,confirming%20the%20extension%20has%20been%20added.%20See%20More>`_.
 
@@ -74,7 +76,8 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
 .. dropdown:: Brave
 
@@ -91,17 +94,19 @@ Get started
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
       .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+            :alt: screen with option to create or restore
+            :width: 50%
 
 Recovery phrase setup
 =====================
 
-If you are creating a new wallet, you must set up a recovery phrase. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.
+If you are creating a new wallet, you must set up a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.
 
 #. Once you click on **Create** you are shown the 24 word secret recovery phrase. Write it down and click **Continue**.
 
    .. image:: ../images/browser-wallet/recovery-phrase.png
-            :width: 25%
+            :alt: screen with recovery phrase and continue option
+            :width: 50%
 
 #. Enter all 24 words of your secret recovery phrase to confirm it. Click **Continue**.
 
@@ -114,7 +119,7 @@ Having set up your passcode, you must then submit a request for an identity.
 
 #. Select a third-party identity provider from the list. An external web page opens within the app.
 
-#. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+#. Enter the information requested by the third-party :ref:`identity provider<glossary-identity-provider>`. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
 #. When you have submitted the information to the identity provider, you will have a pending identity in your app.  The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
 
@@ -133,7 +138,8 @@ Basic navigation
 Click |hamburger-bw| to change between pages.
 
 .. image:: ../images/browser-wallet/page-menu.png
-                :width: 25%
+      :alt: menu at top of window with drop-down expanded to show options
+      :width: 50%
 
 Transactions overview
 ---------------------

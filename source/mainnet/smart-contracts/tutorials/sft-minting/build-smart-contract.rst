@@ -6,9 +6,9 @@ Smart contract modifications
 
 You are using the example contract from Concordium's examples and it’s ready to use. If you want to use it as is you can do it for your project. But in this tutorial you will add a couple of things and update some functions to give more flexibility.
 
-First, you will add a new struct called ``TokenMetadata``. It needs to implement ``Serialize`` and ``SchemaType`` traits for the sake of deserialization of the contract you need it. For those who are familiar with the Ethereum ecosystem it's like the ABI.
+First, you will add a new struct called ``TokenMetadata``. It needs to implement the ``Serialize`` and ``SchemaType`` traits for the sake of deserialization of the contract you need it. For those who are familiar with the Ethereum ecosystem it's like the ABI.
 
-We have implemented two functions of this struct to get provided metadata_url and hash values. See to_metadata_url() function returns MetadataUrl struct which is the part of the CIS-2 standard of the metadata and an optional hash of the content and we are gonna need this while minting.
+Two functions of this struct are implemented to get the provided metadata_url and hash values. See to_metadata_url() function returns MetadataUrl struct which is the part of the CIS-2 standard of the metadata and an optional hash of the content and you need this while minting.
 
 .. code-block:: rust
 
@@ -254,7 +254,7 @@ Now, deploy your contract with the following command.
 
 .. code-block:: console
 
-    concordium-client module deploy dist/smart-contract-multi/module.wasm.v1 --sender <YOUR-ADDRESS> --name cis2_mult --grpc-port 10001
+    concordium-client module deploy dist/smart-contract-multi/module.wasm.v1 --sender <YOUR-ADDRESS> --name cis2_mult --grpc-port 20001
 
 You will need the module hash value when creating an instance so keep that. You can check your deployment status either from Concordium’s block explorer, CCDScan, or on your terminal’s output.
 
@@ -270,7 +270,7 @@ Run the following command to initialize your smart contract.
 
 .. code-block:: console
 
-    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 10001
+    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 20001
 
 Here you can see the successfully initialized contract instance with index 2115.
 

@@ -41,7 +41,7 @@ agreement between parties.
 Auction smart contract example
 ------------------------------
 
-A use case for smart contracts could be for holding an auction; here we program
+A use case for smart contracts could be for holding an auction; here you program
 the smart contract to accept different bids from anyone and have it keep track
 of the highest bidder.
 When the auction is over, the smart contract sends the winner bid CCD to the seller and all other bids back. The seller then should send the item to the winner.
@@ -103,6 +103,13 @@ contract instance can be repeatedly updated according to its own logic.
 #. In ``concordium-client`` :ref:`run the init command<initialize-contract>` to initialize the contract on chain. This gives you a new instance of the smart contract with a fresh state.
 
 #. In ``concordium-client`` you can then :ref:`run invoke<invoke-instance>` to simulate your contract and see how much energy it uses or to call a view entrypoint which returns some data derived from the contract state; use :ref:`show<inspect-instance>` to see the schema or parameters in the contract, or :ref:`update<interact-instance>` to execute transactions and update the state.
+
+Next steps
+==========
+
+Continue reading about :ref:`contract modules<contract-module>`, :ref:`contract instances<contract-instances>`, and :ref:`contract schemas<contract-schema>`.
+
+Also, read the :ref:`Smart contracts best practices<sc-best-practices>`.
 
 .. toctree::
    :hidden:

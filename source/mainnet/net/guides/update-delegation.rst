@@ -7,7 +7,7 @@ Update delegation to a baker pool or passive delegation
 
 You can change the delegation amount, target, and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
-If you increase the delegation, the new amount will be applied at the start of the next :ref:`pay day<glossary-pay-day>`. There is one pay day every 24 hours. However, if you decrease the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance.
+If you increase the delegation, the new amount will be applied at the start of the next :ref:`pay day<glossary-pay-day>`. There is one pay day every 24 hours. However, if you decrease the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance at the next pay day after the end of the cool-down period.
 
 Before delegating stake to a baker pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
 
@@ -33,14 +33,20 @@ Before delegating stake to a baker pool, it is important to research the pool us
         #. Click **More options** then select **Delegation** and choose **Update Delegation**.
 
             .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+                :width: 50%
+                :alt: screen with options expanded
 
         #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
 
             .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
+                :width: 50%
+                :alt: screen to choose delegation type and target
 
         #. You can enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
             .. image:: ../images/desktop-wallet/dw-update-delegation-stake.png
+                :width: 50%
+                :alt: screen to set amount and redelegation options
 
         #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -138,28 +144,28 @@ Before delegating stake to a baker pool, it is important to research the pool us
     #. You see your current delegation. Tap **Update current delegation**.
 
         .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+            :width: 50%
+            :alt: screen showing current delegation with options to stop or update
 
     #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
+            :width: 50%
+            :alt: screen with options to choose delegation type
 
     #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
+            :width: 50%
+            :alt: screen to register delegation amount and restake preference
 
     #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
         .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
+            :width: 50%
+            :alt: screen showing overview of the transaction before submission
 
     #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-    .. |earn| image:: ../images/earn.png
-         :alt: Hand receiving money
-         :width: 50px
-
-    .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
 
 .. dropdown:: |mw-gen1|
 
@@ -170,39 +176,93 @@ Before delegating stake to a baker pool, it is important to research the pool us
     #. In the hamburger menu |hamburger| tap **Delegation**.
 
         .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-            :width: 25%
+            :width: 50%
+            :alt: screen with hamburger menu expanded
 
     #. You see your current delegation. Tap **Update current delegation**.
 
         .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-            :width: 25%
+            :width: 50%
+            :alt: screen showing current delegation with options to stop or update
 
     #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
-            :width: 25%
+            :width: 50%
+            :alt: screen with options to choose delegation type
 
     #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
-            :width: 25%
+            :width: 50%
+            :alt: screen to register delegation amount and restake preference
 
     #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
         .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
-            :width: 25%
+            :width: 50%
+            :alt: screen showing overview of the transaction before submission
 
     #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
 .. dropdown:: |bw|
 
-    At the moment, delegation is not available in the |bw|.
+    #. Bring the account whose delegation you want to update into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
+
+        .. image:: ../images/browser-wallet/select-account.png
+            :width: 40%
+            :alt: screen with accounts drop-down activated and account selection shown
+
+    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+
+        .. image:: ../images/browser-wallet/delegation-update-stop.png
+            :width: 40%
+            :alt: screen showing current delegation and buttons to update or stop
+
+    #. You see your current delegation. Click **Update**. Review the information about updating your delegation.
+
+        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+                :width: 40%
+
+    #. If you want to delegate to a specific pool click **Baker** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. CLick **Continue**.
+
+        .. image:: ../images/browser-wallet/delegation-update-target.png
+            :width: 40%
+            :alt: screen showing current delegation and buttons to select target
+
+    #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/delegation-update-restaking-pref.png
+            :width: 40%
+            :alt: screen with buttons to select restaking rewards preference
+
+    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. Click **Continue**.
+
+        .. image:: ../images/browser-wallet/delegation-update-amount.png
+            :width: 40%
+            :alt: screen to enter delegation amount
+
+    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+
+        .. image:: ../images/browser-wallet/delegation-update-xact-confirm.png
+            :width: 40%
+            :alt: screen showing delegation transaction details for review
+
+    #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+        .. image:: ../images/browser-wallet/delegation-update-submit.png
+            :width: 40%
+            :alt: screen showing transaction details submitted to chain
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 
 .. Note::
 
    Reducing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

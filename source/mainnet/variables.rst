@@ -5,26 +5,27 @@
 .. |cdw-deb-checksum| replace:: ef0237f30e1c435323ef2eff2df82a23ffbb54b7c0b329666a07c78fb61119f1
 .. |cdw-rpm| replace:: concordium-desktop-wallet-1.5.0.rpm
 .. |cdw-rpm-checksum| replace:: 845f375c728b14ce13400869001b58c894510454dd7af8fa95d9538b5d8ef2d4
+.. |ledger-app-public-key| replace:: 04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b
 
 .. Mobile Wallet product names
 .. |mw-gen1| replace:: Concordium Legacy Wallet
-.. |mw-gen2| replace:: Concordium Wallet for Android
+.. |mw-gen2| replace:: Concordium Wallet for Mobile
 .. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_5.0.2-0
-.. |client-version| replace:: 5.0.2-0
-.. |client-linux-checksum| replace:: bd39487463b45c7bbbbcdeeb1cbbd0f4fe8e62041869aa3db9cdcf331ed8a049
+.. |client-linux| replace:: concordium-client_5.1.1
+.. |client-version| replace:: 5.1.1
+.. |client-linux-checksum| replace:: 73d037fdbc0924ae0be302ad960ee4e2ec9bbb1d1c4a4bbefbcf2c3f97afd163
 
 .. Cargo verification variables
-.. |cargo-linux| replace:: cargo-concordium_2.5.0
-.. |cargo-version| replace:: 2.5.0
-.. |cargo-linux-checksum| replace:: 96e7d4de085147d57aeff17f92c0cad16fd4039434eea7eb67dfdad28b898434
+.. |cargo-linux| replace:: cargo-concordium_2.8.0
+.. |cargo-version| replace:: 2.8.0
+.. |cargo-linux-checksum| replace:: ea3f603e2a921181cdf323604066444378a955c55e82b206a7d169bf636fa75d
 
 .. Node debian package verification variables
 
-.. |node-deb-package| replace:: concordium-mainnet-node_5.0.6-0_amd64.deb
-.. |node-deb-package-checksum| replace:: f3a66a2ab5193682f3997c38c8b4e688bec85191f6cc5871dca63fb572fe5c18
+.. |node-deb-package| replace:: concordium-mainnet-node_5.3.2-0_amd64.deb
+.. |node-deb-package-checksum| replace:: 9b62ce7cd862bf667e40cc6f1f79e47ea16a61fd5a8037291c44d7a0f3e66d9e
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat

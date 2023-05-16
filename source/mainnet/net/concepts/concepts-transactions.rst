@@ -5,7 +5,7 @@
 Transactions overview
 =====================
 
-A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :ref:`account<glossary-account>` and is signed using the keys of this account.
+A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :ref:`account<glossary-account>` and is signed using the :ref:`keys<glossary-private-keys>` of this account.
 
 The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
@@ -24,24 +24,24 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Make shielded transfer     | |check|       | |check|        |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Add baker                  | |check|       | |check|        |                   | |check|       | |check|           |
+| Add baker                  | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Remove baker               | |check|       | |check|        |                   | |check|       | |check|           |
+| Remove baker               | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update baker stake         | |check|       | |check|        |                   | |check|       | |check|           |
+| Update baker stake         | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update restake earnings    | |check|       | |check|        |                   | |check|       | |check|           |
+| Update restake earnings    | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update baker keys          | |check|       | |check|        |                   | |check|       | |check|           |
+| Update baker keys          | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Update account credentials |               | |check|        |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Connect to dApps           |               | |check|        | |check|           |               |                   |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Delegation                 | |check|       | |check|        |                   | |check|       | |check|           |
+| Delegation                 | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 
-- |bw|: supports send CCD, receive CCD, connect to dApps.
+- |bw|: supports send CCD, receive CCD, connect to dApps, baker management, delegation.
 - |mw-gen1| and |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, baker management, delegation.
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
 - Concordium Client: supports all transaction types.
@@ -85,7 +85,7 @@ The |mw-gen2| is a second generation digital smartphone wallet that enables you 
 The |bw|
 ----------------
 
-The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, bake and delegate, and to connect to dApps.
 
 Command-line tool
 -----------------
@@ -93,7 +93,7 @@ Command-line tool
 The Concordium distribution ships with a command-line tool named
 :ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
-:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the other wallets. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 

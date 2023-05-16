@@ -20,7 +20,7 @@ Prerequisites
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
+-  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <add-baker-mw>` or :ref:`Concordium Client<become-a-baker>`.
 
 .. Note::
 
@@ -92,52 +92,38 @@ If the node is well behind the head of the chain, you can speed up the startup b
 
   3. Add the following under the ``[Service]`` section (create the section if it does not exist)
 
-    .. code-block::
+    .. code-block:: ini
 
       Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
 
   4. Start the service again
 
-    .. code-block::
+    .. code-block:: console
 
       $sudo systemctl start concordium-mainnet-node.service
 
 After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
-For node versions 4.3.0 or earlier
-----------------------------------
+.. _node-collector-ubuntu-mainnet:
 
-If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
+Node collector configuration
+============================
 
-  1. Download mainnet blocks from `catchup.mainnet.concordium.software <https://catchup.mainnet.concordium.software/blocks_to_import.mdb>`__. The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+Since version 5.3.2 of the node the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
 
-  2. Stop the node if it is running
+Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You *only* need to change the collector port if you have overridden your node configuration. You can edit your overrides with:
 
-    .. code-block:: console
+.. code-block:: console
 
-      $sudo systemctl stop concordium-mainnet-node.service
+  $ sudo systemctl edit concordium-testnet-node.service
 
+This will open your overrides in your default editor. Below is an example for the default mainnet port ``20000``:
 
-  3. Edit the node service configuration file
+.. code-block:: ini
 
-    .. code-block:: console
+  [Service]
+  Environment=CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://localhost:20000
 
-      $sudo systemctl edit concordium-mainnet-node.service
-
-  4. Add the following under the ``[Service]`` section (create the section if it does not exist)
-
-    .. code-block::
-
-      Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
-      BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/blocks_to_import.mdb
-
-  5. Start the service again
-
-    .. code-block::
-
-      $sudo systemctl start concordium-mainnet-node.service
-
-After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
 .. _upgrade-node-Ubuntu:
 
@@ -145,7 +131,6 @@ Upgrade version
 ===============
 
 .. Note::
-
   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 To upgrade to a newer version of the `concordium-mainnet-node` package you need to:
