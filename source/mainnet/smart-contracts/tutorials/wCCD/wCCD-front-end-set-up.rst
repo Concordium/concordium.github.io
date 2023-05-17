@@ -269,6 +269,18 @@ The steps in the README file are as follows:
 
     $yarn
 
+- Navigate to the browser-wallet-api-helpers folder.
+
+.. code-block:: console
+
+    $cd ./packages/browser-wallet-api-helpers/
+
+- Run ``yard build`` in the wallet-api-helpers folder.
+
+.. code-block:: console
+
+    $yarn build
+
 - Navigate to the wCCD example folder.
 
 .. code-block:: console
