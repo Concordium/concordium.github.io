@@ -13,12 +13,20 @@ Release Notes - Testnet
 
 June 1, 2023
 
-Concordium Node 5.4.X
+Concordium Node 5.4.0
 ---------------------
 
-Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+Concordium node version 5.4.0 contains the following features and bug fixes:
 
-Fixed a security issue.
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not use peer buckets when running as a normal node (not as a bootstrapper).
 
 May 11, 2023
 
