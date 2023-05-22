@@ -269,17 +269,11 @@ The steps in the README file are as follows:
 
     $yarn
 
-- Navigate to the browser-wallet-api-helpers folder.
+- Build the Concordium helpers by running ``yarn build:api-helpers``. You can run this from anywhere in your cloned repository.
 
 .. code-block:: console
 
-    $cd ./packages/browser-wallet-api-helpers/
-
-- Run ``yard build`` in the wallet-api-helpers folder.
-
-.. code-block:: console
-
-    $yarn build
+    $yarn build:api-helpers
 
 - Navigate to the wCCD example folder.
 
