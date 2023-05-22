@@ -14,7 +14,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. Note::
 
-   If using Digitial Trust Solutions (DTS) as your identity provider and you have a mitID (Denmark), you can use mitID to complete the identity verification process.
+   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider and you have a mitID (Denmark), you can use mitID to complete the identity verification process.
 
 .. dropdown:: Desktop Wallet
 
