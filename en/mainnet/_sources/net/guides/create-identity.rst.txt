@@ -12,6 +12,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 .. warning::
    You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
 
+.. Note::
+
+   If using Digitial Trust Solutions (DTS) as your identity provider and you have a mitID (Denmark), you can use mitID to complete the identity verification process.
+
 .. dropdown:: Desktop Wallet
 
    Before you start, you need a LEDGER device that's set up and ready for use.
