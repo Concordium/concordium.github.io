@@ -11,7 +11,7 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-May 10, 2023
+May 25, 2023
 
 |mw-gen2| for Android 1.1.8
 -----------------------------------------
@@ -19,6 +19,15 @@ May 10, 2023
 The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
 
 A minor change to the identity user interface was made to support integration with eID verifiers.
+
+May 11, 2023
+
+``cargo-concordium`` 2.8.0
+--------------------------
+
+The distribution method for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. For more information, see :ref:`Install tools for development<setup-tools>`.
+
+If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
 
 May 8, 2023
 
