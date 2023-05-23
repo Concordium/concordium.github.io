@@ -153,7 +153,7 @@ Interacting with your local chain
 
 You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20001, as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>`. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
 
-.. Code:: command
+.. code-block:: console
 
     $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20001  account list
     Accounts:
@@ -164,7 +164,7 @@ You can now interact with your local chain through the node via the :ref:`Concor
 
 The two accounts addresses in the output correspond to those of the generated baker and foundation account specified in the ``genesis-creator`` configuration file. You can verify the balance and stake of the baker by supplying the first of the two account addresses to the ``account show`` command:
 
-.. Code:: command
+.. code-block:: console
 
     $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20000 account show 44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY
     Local names:
