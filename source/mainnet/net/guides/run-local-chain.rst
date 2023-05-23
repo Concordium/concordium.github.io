@@ -129,7 +129,7 @@ Now run the chain by starting a single baker node. The node expects the ``genesi
     mkdir localchain-node-0
     cp ./genesis.dat localchain-node-0/
 
-Now run the baker node as follows: 
+Now run the baker node as follows:
 
 .. code-block:: command
 
