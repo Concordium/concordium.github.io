@@ -95,7 +95,7 @@ It furthermore specifies where to save the output which is used to invoke the no
 
 .. Note::
 
-    Note that the staked amount needed to participate in finalization committee is some fraction of the total amount of existing CCD, defined by the value of the ``capitalBound`` key in the configurations file. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file.
+    Note that the staked amount needed to participate in finalization committee is some fraction of the total amount of existing CCD, defined by the value of the ``capitalBound`` key in the configurations file. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example the stake is sufficient for baking.
 
 Next, generate the genesis data:
 
