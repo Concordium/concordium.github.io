@@ -20,7 +20,7 @@ Installing the node distribution
 --------------------------------
 Concordium Node releases currently exist for Ubuntu, MacOS, Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run and manage a node. You need the ``concordium-node`` binary supplied with the distributions in your path to run a baker. Upon successful installation of the distribution verify that the the binary is  in your path:
 
-.. code-block:: command
+.. code-block:: console
 
     $ concordium-node --version
     concordium_node 5.3.2
@@ -39,7 +39,7 @@ Building the tool
 
 To build the tool you need the `Protocol Buffer compiler <https://github.com/protocolbuffers/protobuf#protocol-compiler-installation>`_ binary of version 3.15 or above in your path and a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ installation of version 1.64 or above. After installing both tools, verify that their binaries exist at appropriate versions in your path:
 
-.. code-block:: command
+.. code-block:: console
 
     $ protoc --version
     libprotoc 3.21.12
@@ -52,7 +52,7 @@ To build the tool you need the `Protocol Buffer compiler <https://github.com/pro
 
 To build the ``genesis-creator`` tool, first clone the ``concordium-misc-tools`` repository which contains the source and check out the ``git`` sub-modules in the ``genesis-creator`` directory:
 
-.. code-block:: command
+.. code-block:: console
 
     git clone git@github.com:Concordium/concordium-misc-tools.git
     cd genesis-creator
@@ -60,7 +60,7 @@ To build the ``genesis-creator`` tool, first clone the ``concordium-misc-tools``
 
 The project is then built using ``cargo``:
 
-.. code-block:: command
+.. code-block:: console
 
     cargo build --release
 
@@ -99,7 +99,7 @@ It furthermore specifies where to save the output which is used to invoke the no
 
 Next, generate the genesis data:
 
-.. code-block:: command
+.. code-block:: console
 
     $ ./target/release/genesis-creator generate --config ./examples/genesis5.toml
     Deleting any existing directories.
@@ -124,14 +124,14 @@ Running the chain
 
 Now run the chain by starting a single baker node. The node expects the ``genesis.dat`` to reside in a configuration directory, so first create a working directory for the node data and configuration and copy ``genesis.dat`` to it:
 
-.. code-block:: command
+.. code-block:: console
 
     mkdir localchain-node-0
     cp ./genesis.dat localchain-node-0/
 
 Now run the baker node as follows:
 
-.. code-block:: command
+.. code-block:: console
 
     concordium-node \
       --no-bootstrap= \
