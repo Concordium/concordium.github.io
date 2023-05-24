@@ -141,7 +141,7 @@ Now run the baker node as follows:
       --config-dir localchain-node-0 \
       --baker-credentials-file bakers/baker-0-credentials.json
 
-The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers since no peers are in this network so this is not relevant. The ``--grpc2-listen-port`` specifies the port to listen on for Node GRPC V2 API handshakes. We will use this interface to communicate with the node. The ``--data-dir`` and ``--config-dir`` specifies the working directories of the node instance, where its state and configuration is stored. The ``--baker-credentials-file`` instructs the node to run as the baker specified in the supplied credentials file, in this case your generated baker credentials output from the ``genesis-creator`` tool.
+The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers since no peers are in this network so this is not relevant. The ``--grpc2-listen-port`` specifies the port to listen on for Node GRPC V2 API handshakes. You will use this interface to communicate with the node. The ``--data-dir`` and ``--config-dir`` specify the working directories of the node instance, where its state and configuration are stored. The ``--baker-credentials-file`` instructs the node to run as the baker specified in the supplied credentials file, in this case, your generated baker credentials output from the ``genesis-creator`` tool.
 
 .. Note::
 
