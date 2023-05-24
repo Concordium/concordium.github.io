@@ -48,7 +48,7 @@ To build the tool you need the `Protocol Buffer compiler <https://github.com/pro
 
 .. Note::
 
-    The recommended method to install Rust is using ``rustup``. After installing ``rustup`` Rust toolchain is then easily be installed by issuing ``rustup toolchain install 1.68``.
+    The recommended method to install Rust is using ``rustup``. After installing ``rustup``, the Rust toolchain is then easily installed by issuing ``rustup toolchain install 1.68``.
 
 To build the ``genesis-creator`` tool, first clone the ``concordium-misc-tools`` repository which contains the source and check out the ``git`` sub-modules in the ``genesis-creator`` directory:
 
