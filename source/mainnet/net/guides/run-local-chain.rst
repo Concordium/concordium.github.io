@@ -151,7 +151,7 @@ The ``--no-bootstrap`` option lets the node know not to connect to a bootstrappe
 Interacting with your local chain
 =================================
 
-You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20001, as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>`. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
+You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20001 as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>`. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
 
 .. code-block:: console
 
