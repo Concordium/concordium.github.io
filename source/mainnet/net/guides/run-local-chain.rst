@@ -116,7 +116,7 @@ Next, generate the genesis data:
     Average block time is set to 5000ms.
     DONE
 
-In particular, the files of interest to you are ``./genesis.dat`` containing the genesis block data and ``./bakers/baker-0-credentials.json`` containing the credentials of the single baker account that was created.
+In particular, the files of interest to you are ``./genesis.dat``, containing the genesis block data, and ``./bakers/baker-0-credentials.json``, containing the credentials of the single baker account that was created.
 
 
 Running the chain
