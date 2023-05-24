@@ -18,7 +18,7 @@ You need a working installation of the Concordium Node distribution version 5 or
 
 Installing the node distribution
 --------------------------------
-Concordium Node releases currently exist for Ubuntu, MacOS, Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run and manage a node. You need the ``concordium-node`` binary supplied with the distributions in your path to run a baker. Upon successful installation of the distribution verify that the the binary is  in your path:
+Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you need the ``concordium-node`` binary supplied with the distributions in your path. Upon successful installation of the distribution verify that the binary is in your path:
 
 .. code-block:: console
 
