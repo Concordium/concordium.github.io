@@ -32,7 +32,7 @@ Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :
 
 Generating genesis data and account credentials
 -----------------------------------------------
-You will use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator>`_ tool for generating genesis block data and credentials for the foundation and (initial) baker accounts.
+Use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator>`_ tool to generate genesis block data and credentials for the foundation and (initial) baker accounts.
 
 Building the tool
 -----------------
