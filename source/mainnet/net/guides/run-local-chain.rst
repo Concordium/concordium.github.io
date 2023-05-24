@@ -162,7 +162,7 @@ You can now interact with your local chain through the node via the :ref:`Concor
     44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY
     4mUMfBFDqFkr3SCQx3k6x8RuWWFyLQHhE2AnJrdk9XtVto8mnK
 
-The two accounts addresses in the output correspond to those of the generated baker and foundation account specified in the ``genesis-creator`` configuration file. You can verify the balance and stake of the baker by supplying the first of the two account addresses to the ``account show`` command:
+The two accounts' addresses in the output correspond to those of the generated baker and foundation account specified in the ``genesis-creator`` configuration file. You can verify the balance and stake of the baker by supplying the first of the two account addresses to the ``account show`` command:
 
 .. code-block:: console
 
