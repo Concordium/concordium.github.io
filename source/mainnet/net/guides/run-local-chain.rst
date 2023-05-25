@@ -134,27 +134,28 @@ Now run the baker node as follows:
 
     concordium-node \
       --no-bootstrap= \
+      --listen-port 8169 \
       --grpc2-listen-addr 127.0.0.1 \
-      --grpc2-listen-port 20001 \
+      --grpc2-listen-port 20100 \
       --data-dir localchain-node-0 \
       --config-dir localchain-node-0 \
       --baker-credentials-file bakers/baker-0-credentials.json
 
-The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers since no peers are in this network so this is not relevant. The ``--grpc2-listen-port`` specifies the port to listen on for Node GRPC V2 API handshakes. You will use this interface to communicate with the node. The ``--data-dir`` and ``--config-dir`` specify the working directories of the node instance, where its state and configuration are stored. The ``--baker-credentials-file`` instructs the node to run as the baker specified in the supplied credentials file, in this case, your generated baker credentials output from the ``genesis-creator`` tool.
+The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers are in the network. The ``--listen-port`` option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The ``--grpc2-listen-port`` specifies the port to listen on for :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` connections. This interface is used to communicate with the node. The ``--data-dir`` and ``--config-dir`` options specify the working directories of the node instance, where its state and configuration are stored. The ``--baker-credentials-file`` instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the ``genesis-creator`` tool.
 
 .. Note::
 
-    If more baker credentials are generated, more bakers can be spun up by replacing the arguments specified by the ``--baker-credentials-file``, ``--config-dir`` and ``--data-dir`` options accordingly. If there is no bootstrapper node, it will have to be instructed to manually connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that nodes running on the same network interfaces must specify a disjoint set of ports.
+    If more baker credentials are generated, several bakers for each such can be spun up by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, it will have to be instructed to manually connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that node instances using the same network interfaces should each specify different listen ports, and node instances running on the same file-system should each specify different data and config directories.
 
 
 Interacting with your local chain
 =================================
 
-You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20001 as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>`. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
+You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20100 as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>` nodes. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
 
 .. code-block:: console
 
-    $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20001  account list
+    $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20100  account list
     Accounts:
                      Account Address                     Account Names
     --------------------------------------------------------------------
@@ -165,7 +166,7 @@ The two accounts' addresses in the output correspond to those of the generated b
 
 .. code-block:: console
 
-    $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20000 account show 44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY
+    $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20100 account show 44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY
     Local names:
     Address:                44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY
     Balance:                1028423448.099901 CCD
