@@ -38,7 +38,7 @@ Use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tr
 Building the tool
 -----------------
 
-To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ installation of version 1.65 or higher. After successful installation verify that `rustc` exists in your path at the requested version:
+To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ of version 1.65 or higher. After installing it, verify that `rustc` exists in your path at the requested version:
 
 .. code-block:: console
 
