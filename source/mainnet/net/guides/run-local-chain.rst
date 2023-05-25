@@ -56,7 +56,7 @@ This produces the binary ``~/.cargo/bin/genesis-creator`` which is run to genera
 Running the tool
 ^^^^^^^^^^^^^^^^
 
-The ``genesis-creator`` tool uses a TOML configuration file format for specifying parameters from which the genesis data is generated. The TOML file specifies
+The ``genesis-creator`` tool uses a TOML configuration file format for specifying parameters from which the genesis data is generated. The TOML file specifies:
 
 * the initial protocol version
 * cryptographic parameters
@@ -66,13 +66,13 @@ The ``genesis-creator`` tool uses a TOML configuration file format for specifyin
 * keys for updating the chain
 * various parameters for the genesis
 
-Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file ``single-baker-example-p5.toml`` found `here<https://raw.githubusercontent.com/Concordium/concordium-misc-tools/9d347761aadd432cbb6211a7d7ba38cdc07f1d11/genesis-creator/examples/single-baker-example-p5.toml>`. Inspecting the configuration reveals that it specifies an initial protocol version of 5, to output credentials for 1 baker account, 1 foundation account and 100 regular accounts. It specifies the system time at generation for the genesis time and finally specifies 5 seconds as the average time per block.
+Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file ``single-baker-example-p5.toml`` found `here <https://raw.githubusercontent.com/Concordium/concordium-misc-tools/9d347761aadd432cbb6211a7d7ba38cdc07f1d11/genesis-creator/examples/single-baker-example-p5.toml>`_. Inspecting the configuration reveals that it specifies an initial protocol version of 5, to output credentials for 1 baker account, 1 foundation account and 100 regular accounts. It specifies the system time at generation for the genesis time and finally specifies 5 seconds as the average time per block.
 
-Inspection of the tables at the ``accounts`` keys in the configuration you see that the baker account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD and that the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial balances and stake if desired. The number of credentials produced for each type of account can adjusted by setting the values of the ``repeat`` keys to your choosing.
+Further inspection of the tables at the ``accounts`` keys reveals that the baker account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD and that the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial stake and balances if desired. The number of credentials produced for each type of account can also be adjusted by setting the values of the ``repeat`` keys to your choosing.
 
 .. Note::
 
-    Note that the staked amount needed to participate in the finalization committee is some fraction of the total amount of existing CCD defined by the value of the ``capitalBound`` key in the configurations file. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.
+    Note that the staked amount needed to participate in the finalization committee is some fraction of the total amount of existing CCD. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.
 
 Save the file as ``single-baker-example-p5.toml`` and generate the genesis data:
 
@@ -119,7 +119,7 @@ Now run the baker node:
       --config-dir localchain-node-0 \
       --baker-credentials-file bakers/baker-0-credentials.json
 
-The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers partake in the network. The ``--listen-port`` option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The ``--grpc2-listen-port`` specifies the port to listen on for :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` connections. This interface is used to manage and query the node. The ``--data-dir`` and ``--config-dir`` options specify the working directories of the node instance, where its state and configuration are stored. Note that you may specify the same directory for both as in this example. The ``--baker-credentials-file`` option instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the ``genesis-creator`` tool.
+The ``--no-bootstrap`` flag instructs the node to not connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers partake in the network. The ``--listen-port`` option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The ``--grpc2-listen-port`` specifies the port to listen on for :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` connections. This interface is used to manage and query the node. The ``--data-dir`` and ``--config-dir`` options specify the working directories of the node instance, where its state and configuration are stored. Note that you may specify the same directory for both as in this example. The ``--baker-credentials-file`` option instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the ``genesis-creator`` tool.
 
 .. Note::
 
