@@ -1,3 +1,4 @@
+
 .. _run-local-chain:
 
 =================
@@ -37,18 +38,16 @@ Use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tr
 Building the tool
 -----------------
 
-To build the tool you need the `Protocol Buffer compiler <https://github.com/protocolbuffers/protobuf#protocol-compiler-installation>`_ binary of version 3.15 or above in your path and a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ installation of version 1.64 or above. After installing both tools, verify that their binaries exist at appropriate versions in your path:
+To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ installation of version 1.65 or higher. After successful installation verify that `rustc` exists in your path at the requested version:
 
 .. code-block:: console
 
-    $ protoc --version
-    libprotoc 3.21.12
     $ rustc --version
     rustc 1.68.2 (9eb3afe9e 2023-03-27)
 
 .. Note::
 
-    The recommended method to install Rust is using ``rustup``. After installing ``rustup``, the Rust toolchain is then easily installed by issuing ``rustup toolchain install 1.68``.
+    The recommended method to install Rust is through `rustup <https://rustup.rs/>`_. After installing ``rustup``, the Rust toolchain can be installed by issuing ``rustup toolchain install 1.68``.
 
 To build the ``genesis-creator`` tool, first clone the ``concordium-misc-tools`` repository which contains the source and check out the ``git`` sub-modules in the ``genesis-creator`` directory:
 
