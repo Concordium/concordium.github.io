@@ -9,17 +9,13 @@ This guide details how to run your own instance of the Concordium blockchain. Th
 
 The chain is run by a network of baker nodes that bake and finalize blocks. In the following minimal example you will set up a network comprised of a single baker node that runs *locally* on your system. Note, however, that the concepts demonstrated here equally apply to any number of baker nodes configured in a LAN or WAN setting.
 
-.. Note::
-
-   The commands shown in the following are interpreted in a ``bash``-like environment.
-
 Prerequisites
 =============
 You need a working installation of the Concordium Node distribution version 5 or above, instances of which will be used to run the baker node(s), :ref:`genesis block<glossary-genesis-block>` data which specifies your local chain and sets of credentials for baker accounts of the chain. The number of sets of credentials needed will thus depend on the desired number of bakers in the network, which in this example is 1.
 
 Installing the node distribution
 --------------------------------
-Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you need the ``concordium-node`` binary supplied with the distributions in your path. Upon successful installation of the distribution verify that the binary is in your path:
+Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you need to a Concordium node binary supplied with one of these distributions to be available in your path. The name of the binary will have ``concordium-`` as its prefix but depend on the distribution, so you may have to confer with the installation instructions to figure out the name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
 
 .. code-block:: console
 
@@ -38,7 +34,7 @@ Use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tr
 Building the tool
 -----------------
 
-To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ of version 1.65 or higher. After installing it, verify that `rustc` exists in your path at the requested version:
+To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ of version 1.65 or higher. After installing it, verify that `rustc` exists in your path at the required version:
 
 .. code-block:: console
 
@@ -49,21 +45,13 @@ To build the tool you need a working `Rust compiler <https://www.rust-lang.org/t
 
     The recommended method to install Rust is through `rustup <https://rustup.rs/>`_. After installing ``rustup``, the Rust toolchain can be installed by issuing ``rustup toolchain install 1.68``.
 
-To build the ``genesis-creator`` tool, first clone the ``concordium-misc-tools`` repository which contains the source and check out the ``git`` sub-modules in the ``genesis-creator`` directory:
+To build the ``genesis-creator`` tool, do:
 
 .. code-block:: console
 
-    git clone git@github.com:Concordium/concordium-misc-tools.git
-    cd genesis-creator
-    git submodule update --init --recursive
+    cargo install --git https://github.com/Concordium/concordium-misc-tools.git genesis-creator --locked
 
-The project is then built using ``cargo``:
-
-.. code-block:: console
-
-    cargo build --release
-
-This produces the binary ``./target/release/genesis-creator`` which you run to generate the genesis data.
+This produces the binary ``~/.cargo/bin/genesis-creator`` which is run to generate the genesis data.
 
 Running the tool
 ----------------
@@ -78,19 +66,9 @@ The ``genesis-creator`` tool uses a TOML configuration file format for specifyin
 * keys for updating the chain
 * various parameters for the genesis
 
-Furthermore, it specifies where to save the output that is used to invoke the node binary. Many of these options are not relevant when testing smart contracts and the easiest way to get started is to piggyback on one of the examples in the ``./examples`` folder. In the following, you will use the file ``./examples/genesis5.toml`` and modify it slightly. Inspecting the file reveals that it specifies an initial protocol version of 5, to output credentials for 5 baker accounts, 2 foundation accounts, and the genesis time set to the system time at generation. It also specifies 5 seconds as the average time per block. Further inspection of the table at the ``accounts`` key of the file reveals that the bakers each have an initial balance of 10^15 microCCD and a stake of 5 * 10^14 microCCD. Change this section such that only one baker credential is produced by setting the value of the ``repeat`` key to 1 as follows:
+Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback on one of the examples in the ``./examples`` folder. In the following, you will use the configuration file ``./examples/single-baker-example-p5.toml``. Inspecting the configuration reveals that it specifies an initial protocol version of 5, to output credentials for 1 baker account, 1 foundation account and 100 regular accounts. It specifies the system time at generation for the genesis time and finally specifies 5 seconds as the average time per block.
 
-.. code-block:: toml
-
-    [[accounts]]
-    kind = "fresh"
-    balance = "1000000000000000"
-    stake = "500000000000000"
-    template = "baker"
-    identityProvider = 0
-    numKeys = 1
-    threshold = 1
-    repeat = 1 # Changed from 5
+Inspection of the tables at the ``accounts`` keys in the configuration you see that the baker account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD and that the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial balances and stake if desired. The number of credentials produced for each type of account can adjusted by setting the values of the ``repeat`` keys to your choosing.
 
 .. Note::
 
@@ -100,7 +78,7 @@ Next, generate the genesis data:
 
 .. code-block:: console
 
-    $ ./target/release/genesis-creator generate --config ./examples/genesis5.toml
+    $ ~/.cargo/bin/genesis-creator generate --config ./examples/single-baker-example-p5.toml
     Deleting any existing directories.
     Account keys will be generated in ./accounts
     Chain update keys will be generated in ./update-keys
@@ -115,20 +93,20 @@ Next, generate the genesis data:
     Average block time is set to 5000ms.
     DONE
 
-In particular, the files of interest to you are ``./genesis.dat``, containing the genesis block data, and ``./bakers/baker-0-credentials.json``, containing the credentials of the single baker account that was created.
+File ``./genesis.dat`` contains the genesis block data and ``./bakers/baker-0-credentials.json`` the credentials of the single baker account that was created. You supply these to the node binary to run the baker node. Keys for all generated accounts are output in the ``./accounts`` directory, and can be used when submitting transactions on behalf of the accounts, for instance using the `Concordium Client <concordium-client>`_ command-line tool.
 
 
 Running the chain
 =================
 
-Now run the chain by starting a single baker node. The node expects the ``genesis.dat`` to reside in a configuration directory, so first create a working directory for the node data and configuration and copy ``genesis.dat`` to it:
+Now run the chain by starting the baker node. The node expects the ``genesis.dat`` to be placed in its configuration directory, so first create a working directory for the node data and configuration and copy ``genesis.dat`` to it:
 
 .. code-block:: console
 
     mkdir localchain-node-0
     cp ./genesis.dat localchain-node-0/
 
-Now run the baker node as follows:
+Now run the baker node:
 
 .. code-block:: console
 
@@ -141,11 +119,11 @@ Now run the baker node as follows:
       --config-dir localchain-node-0 \
       --baker-credentials-file bakers/baker-0-credentials.json
 
-The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers are in the network. The ``--listen-port`` option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The ``--grpc2-listen-port`` specifies the port to listen on for :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` connections. This interface is used to communicate with the node. The ``--data-dir`` and ``--config-dir`` options specify the working directories of the node instance, where its state and configuration are stored. The ``--baker-credentials-file`` instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the ``genesis-creator`` tool.
+The ``--no-bootstrap`` option lets the node know not to connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers partake in the network. The ``--listen-port`` option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The ``--grpc2-listen-port`` specifies the port to listen on for :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` connections. This interface is used to manage and query the node. The ``--data-dir`` and ``--config-dir`` options specify the working directories of the node instance, where its state and configuration are stored. Note that you may specify the same directory for both as in this example. The ``--baker-credentials-file`` option instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the ``genesis-creator`` tool.
 
 .. Note::
 
-    If more baker credentials are generated, several bakers for each such can be spun up by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, it will have to be instructed to manually connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that node instances using the same network interfaces should each specify different listen ports, and node instances running on the same file-system should each specify different data and config directories.
+    If more baker credentials are generated, several bakers for each such can be spun up by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file-system should specify different data and config directories.
 
 
 Interacting with your local chain
