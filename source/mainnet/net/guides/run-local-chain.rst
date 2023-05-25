@@ -15,7 +15,7 @@ You need a working installation of the Concordium Node distribution version 5 or
 
 Installing the node distribution
 --------------------------------
-Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you need to a Concordium node binary supplied with one of these distributions to be available in your path. The name of the binary will have ``concordium-`` as its prefix but depend on the distribution, so you may have to confer with the installation instructions to figure out the name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
+Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you need a Concordium node binary supplied with one of these distributions in your path. The name of the binary will have ``concordium-`` as its prefix but depend on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
 
 .. code-block:: console
 
@@ -29,10 +29,10 @@ Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :
 
 Generating genesis data and account credentials
 -----------------------------------------------
-Use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator>`_ tool to generate genesis block data and credentials for the foundation and (initial) baker accounts.
+You use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator>`_ tool to generate genesis block data and credentials for the foundation and (initial) baker accounts.
 
 Building the tool
------------------
+^^^^^^^^^^^^^^^^^
 
 To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ of version 1.65 or higher. After installing it, verify that `rustc` exists in your path at the required version:
 
@@ -54,7 +54,7 @@ To build the ``genesis-creator`` tool, do:
 This produces the binary ``~/.cargo/bin/genesis-creator`` which is run to generate the genesis data.
 
 Running the tool
-----------------
+^^^^^^^^^^^^^^^^
 
 The ``genesis-creator`` tool uses a TOML configuration file format for specifying parameters from which the genesis data is generated. The TOML file specifies
 
@@ -66,7 +66,7 @@ The ``genesis-creator`` tool uses a TOML configuration file format for specifyin
 * keys for updating the chain
 * various parameters for the genesis
 
-Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback on one of the examples in the ``./examples`` folder. In the following, you will use the configuration file ``./examples/single-baker-example-p5.toml``. Inspecting the configuration reveals that it specifies an initial protocol version of 5, to output credentials for 1 baker account, 1 foundation account and 100 regular accounts. It specifies the system time at generation for the genesis time and finally specifies 5 seconds as the average time per block.
+Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file ``single-baker-example-p5.toml`` found `here<https://raw.githubusercontent.com/Concordium/concordium-misc-tools/9d347761aadd432cbb6211a7d7ba38cdc07f1d11/genesis-creator/examples/single-baker-example-p5.toml>`. Inspecting the configuration reveals that it specifies an initial protocol version of 5, to output credentials for 1 baker account, 1 foundation account and 100 regular accounts. It specifies the system time at generation for the genesis time and finally specifies 5 seconds as the average time per block.
 
 Inspection of the tables at the ``accounts`` keys in the configuration you see that the baker account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD and that the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial balances and stake if desired. The number of credentials produced for each type of account can adjusted by setting the values of the ``repeat`` keys to your choosing.
 
@@ -74,11 +74,11 @@ Inspection of the tables at the ``accounts`` keys in the configuration you see t
 
     Note that the staked amount needed to participate in the finalization committee is some fraction of the total amount of existing CCD defined by the value of the ``capitalBound`` key in the configurations file. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.
 
-Next, generate the genesis data:
+Save the file as ``single-baker-example-p5.toml`` and generate the genesis data:
 
 .. code-block:: console
 
-    $ ~/.cargo/bin/genesis-creator generate --config ./examples/single-baker-example-p5.toml
+    $ ~/.cargo/bin/genesis-creator generate --config ./single-baker-example-p5.toml
     Deleting any existing directories.
     Account keys will be generated in ./accounts
     Chain update keys will be generated in ./update-keys
@@ -93,11 +93,11 @@ Next, generate the genesis data:
     Average block time is set to 5000ms.
     DONE
 
-File ``./genesis.dat`` contains the genesis block data and ``./bakers/baker-0-credentials.json`` the credentials of the single baker account that was created. You supply these to the node binary to run the baker node. Keys for all generated accounts are output in the ``./accounts`` directory, and can be used when submitting transactions on behalf of the accounts, for instance using the `Concordium Client <concordium-client>`_ command-line tool.
+The file ``./genesis.dat`` contains the generated genesis block data and ``./bakers/baker-0-credentials.json`` the generated credentials of the single baker account that was created. You supply these to the node binary to run the baker node. Keys for each generated account is output in the ``./accounts`` directory, and are used when submitting transactions on behalf of the accounts, for instance using the `Concordium Client <concordium-client>`_ command-line tool.
 
 
-Running the chain
-=================
+Running the local chain
+=======================
 
 Now run the chain by starting the baker node. The node expects the ``genesis.dat`` to be placed in its configuration directory, so first create a working directory for the node data and configuration and copy ``genesis.dat`` to it:
 
@@ -126,8 +126,8 @@ The ``--no-bootstrap`` option lets the node know not to connect to a bootstrappe
     If more baker credentials are generated, several bakers for each such can be spun up by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file-system should specify different data and config directories.
 
 
-Interacting with your local chain
-=================================
+Interacting with the local chain
+================================
 
 You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20100 as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>` nodes. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
 
