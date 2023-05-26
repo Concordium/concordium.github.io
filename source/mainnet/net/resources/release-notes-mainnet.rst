@@ -11,6 +11,17 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+June 1, 2023
+
+Concordium Client 5.2.0
+-----------------------
+
+Version 5.2.0 contains the following features and bug fixes:
+
+- Fixed a bug that caused another code-leftover to be displayed in the finalization proof line of the gas rewards section of the ``consensus show-chain-parameters`` output. This is only relevant when the queried chain runs protocol version 6.
+
+- Added ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+
 May 11, 2023
 
 ``cargo-concordium`` 2.8.0
