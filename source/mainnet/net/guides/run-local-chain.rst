@@ -194,7 +194,7 @@ If you ran the baker node by invoking the node binary directly on your host, ski
             - ./genesis.dat:/mnt/data/genesis.dat:Z
             - ./bakers/baker-0-credentials.json:/mnt/baker-0-credentials.json:Z
 
-Pay attention to the host directory mappings specified by the ``volumes`` key. Depending on where your ````, you may need to change these accordingly. Now run the baker node as a Docker instance:
+Pay attention to the host directory mappings specified by the ``volumes`` key, since you may need to change these accordingly. Now run the baker node as a Docker instance:
 
 .. code-block:: console
 
