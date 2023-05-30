@@ -12,7 +12,7 @@ The chain is run by a network of baker nodes that bake and finalize blocks. In t
 .. Note::
 
     Running your own local chain is an advanced process and not applicable for all use cases. Users with little or no blockchain experience should not attempt to run a local chain. If you run into issues while installing, configuring, and running your local chain, contact `Concordium support <http://support.concordium.software>`_.
-    
+
 Prerequisites
 =============
 You need a working installation of the Concordium Node distribution version 5 or above, instances of which will be used to run the baker node(s), :ref:`genesis block<glossary-genesis-block>` data which specifies your local chain and sets of credentials for baker accounts of the chain. The number of sets of credentials needed will thus depend on the desired number of bakers in the network, which in this example is 1.
