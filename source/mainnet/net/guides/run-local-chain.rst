@@ -23,7 +23,7 @@ You will either need a working installation of the Concordium Node distribution 
 
 Installing the node distribution
 --------------------------------
-Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. In the following we assume the former, but if you want to run a Docker instance, you can skip directly to the :ref:`Generating genesis data and account credentials<generating-genesis-data-and-account-credentials>` section.
+Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. In the following we assume the former, but if you want to run a Docker instance, you can skip to the next section.
 
 The name of the binary has ``concordium-`` as its prefix but depends on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
 
