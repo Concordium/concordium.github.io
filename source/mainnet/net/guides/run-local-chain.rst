@@ -6,7 +6,7 @@ Run a local chain
 =================
 
 .. Note::
-    This guide covers an advanced topic and the reader is assumed to have some knowledge about compiler toolchains, Docker, operating system concepts such as networks and file systems, and the Concordium Blockchain.
+    This guide covers an advanced topic and the reader is assumed to have some knowledge about compiler toolchains, basic operating system concepts such as networks and file systems, the Concordium Blockchain and Docker.
 
 
 This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects such as the genesis parameters, anonymity revokers, identity providers and foundation accounts.
@@ -117,7 +117,7 @@ Your local chain will be run as a single baker node. The node uses a data and co
 .. code-block:: console
 
     mkdir local-0
-    cp ./genesis.dat local-0/
+    cp genesis.dat local-0/
 
 Running the chain from a distribution binary
 --------------------------------------------
@@ -126,8 +126,8 @@ If you wish to run the baker node as a Docker instance, skip to the next section
 
 .. code-block:: console
 
-    concordium-node \ # name depends on distribution
-      --no-bootstrap \
+    concordium-node \
+      --no-bootstrap=true \
       --listen-port 8169 \
       --grpc2-listen-addr 127.0.0.1 \
       --grpc2-listen-port 20100 \
