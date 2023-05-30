@@ -13,6 +13,11 @@ Release notes - Mainnet
 
 May 30, 2023
 
+|mw-gen1| for iOS 3.2.0
+--------------------------------
+
+Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
 |bw| 1.0.6
 -------------------------
 
