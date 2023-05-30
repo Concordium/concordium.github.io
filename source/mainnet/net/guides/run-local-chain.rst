@@ -5,6 +5,10 @@
 Run a local chain
 =================
 
+.. Note::
+    This guide covers an advanced topic and the reader is assumed to have some knowledge about compiler toolchains, Docker, operating system concepts such as networks and file systems, and the Concordium Blockchain.
+
+
 This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects such as the genesis parameters, anonymity revokers, identity providers and foundation accounts.
 
 The chain is run by a network of baker nodes that bake and finalize blocks. In the following minimal example you will set up a network comprised of a single baker node that runs *locally* on your system. Note, however, that the concepts demonstrated here equally apply to any number of baker nodes configured in a LAN or WAN setting.
@@ -15,15 +19,17 @@ The chain is run by a network of baker nodes that bake and finalize blocks. In t
 
 Prerequisites
 =============
-You need a working installation of the Concordium Node distribution version 5 or above, instances of which will be used to run the baker node(s), :ref:`genesis block<glossary-genesis-block>` data which specifies your local chain and sets of credentials for baker accounts of the chain. The number of sets of credentials needed will thus depend on the desired number of bakers in the network, which in this example is 1.
+You will either need a working installation of the Concordium Node distribution version 5 or Docker, instances of which will be used to run the baker node(s). You will need :ref:`genesis block<glossary-genesis-block>` data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.
 
 Installing the node distribution
 --------------------------------
-Concordium Node releases exist for Ubuntu, MacOS, Windows, and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you need a Concordium node binary supplied with one of these distributions in your path. The name of the binary will have ``concordium-`` as its prefix but depend on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
+Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. In the following we assume the former, but if you want to run a Docker instance, you can skip directly to the :ref:`Generating genesis data and account credentials<generating-genesis-data-and-account-credentials>` section.
+
+The name of the binary has ``concordium-`` as its prefix but depends on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
 
 .. code-block:: console
 
-    $ concordium-node --version
+    $ concordium-node --version # name depends on distribution
     concordium_node 5.3.2
 
 .. Note::
@@ -38,7 +44,7 @@ You use the `genesis-creator <https://github.com/Concordium/concordium-misc-tool
 Building the tool
 ^^^^^^^^^^^^^^^^^
 
-To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ of version 1.65 or higher. After installing it, verify that `rustc` exists in your path at the required version:
+To build the tool you need a working `Rust compiler <https://www.rust-lang.org/tools/install>`_ of version 1.65 or higher. After installing it, verify that ``rustc`` exists in your path at the required version:
 
 .. code-block:: console
 
@@ -53,7 +59,10 @@ To build the ``genesis-creator`` tool, do:
 
 .. code-block:: console
 
-    cargo install --git https://github.com/Concordium/concordium-misc-tools.git genesis-creator --locked
+    CARGO_NET_GIT_FETCH_WITH_CLI=true \
+    cargo install \
+      --git https://github.com/Concordium/concordium-misc-tools.git genesis-creator \
+      --locked
 
 This produces the binary ``~/.cargo/bin/genesis-creator`` which is run to generate the genesis data.
 
@@ -76,7 +85,7 @@ Further inspection of the tables at the ``accounts`` keys reveals that the baker
 
 .. Note::
 
-    Note that the staked amount needed to participate in the finalization committee is some fraction of the total amount of existing CCD. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.
+    Note that the staked amount needed for a baker to participate in the finalization committee is some fraction of the total amount of existing CCD set in the configuration. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.
 
 Save the file as ``single-baker-example-p5.toml`` and generate the genesis data:
 
@@ -103,24 +112,27 @@ The file ``./genesis.dat`` contains the generated genesis block data and ``./bak
 Running the local chain
 =======================
 
-Now run the chain by starting the baker node. The node expects the ``genesis.dat`` to be placed in its configuration directory, so first create a working directory for the node data and configuration and copy ``genesis.dat`` to it:
+Your local chain will be run as a single baker node. The node uses a data and configuration directory to store its local state and configuration. In the following you will use the same directory for both. Create it and copy ``genesis.dat`` to it:
 
 .. code-block:: console
 
-    mkdir localchain-node-0
-    cp ./genesis.dat localchain-node-0/
+    mkdir local-0
+    cp ./genesis.dat local-0/
 
-Now run the baker node:
+Running the chain from a distribution binary
+--------------------------------------------
+
+If you wish to run the baker node as a Docker instance, skip to the next section. Otherwise the baker can be run from the appropriate node distribution binary directly on your host system:
 
 .. code-block:: console
 
-    concordium-node \
-      --no-bootstrap= \
+    concordium-node \ # name depends on distribution
+      --no-bootstrap \
       --listen-port 8169 \
       --grpc2-listen-addr 127.0.0.1 \
       --grpc2-listen-port 20100 \
-      --data-dir localchain-node-0 \
-      --config-dir localchain-node-0 \
+      --data-dir local-0 \
+      --config-dir local-0 \
       --baker-credentials-file bakers/baker-0-credentials.json
 
 The ``--no-bootstrap`` flag instructs the node to not connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers partake in the network. The ``--listen-port`` option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The ``--grpc2-listen-port`` specifies the port to listen on for :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` connections. This interface is used to manage and query the node. The ``--data-dir`` and ``--config-dir`` options specify the working directories of the node instance, where its state and configuration are stored. Note that you may specify the same directory for both as in this example. The ``--baker-credentials-file`` option instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the ``genesis-creator`` tool.
@@ -129,6 +141,68 @@ The ``--no-bootstrap`` flag instructs the node to not connect to a bootstrapper 
 
     If more baker credentials are generated, several bakers for each such can be spun up by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file-system should specify different data and config directories.
 
+Running the chain as a Docker instance
+--------------------------------------
+
+If you ran the baker node by invoking the node binary directly on your host, skip this section. To run the baker node as a Docker instance, first save the following ``docker-compose.yml`` file to the working directory:
+
+.. code-block:: yaml
+
+    # This is an example configuration for running a local node
+    version: '3'
+    services:
+        local-node:
+            container_name: local-node
+            image: concordium/mainnet-node:latest
+            pull_policy: always
+            environment:
+            # Baker credentials file
+            - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/baker-0-credentials.json
+            # General node configuration Data and config directories (it's OK if they
+            # are the same). This should match the volume mount below. If the location
+            # of the mount inside the container is changed, then these should be
+            # changed accordingly as well.
+            - CONCORDIUM_NODE_DATA_DIR=/mnt/data
+            - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
+            # port on which the node will listen for incoming connections. This is a
+            # port inside the container. It is mapped to an external port by the port
+            # mapping in the `ports` section below. If the internal and external ports
+            # are going to be different then you should also set
+            # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
+            - CONCORDIUM_NODE_LISTEN_PORT=8169
+            # Desired number of nodes to be connected to.
+            - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=0
+            # Address of the V2 GRPC server
+            - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20100
+            # And its port
+            - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+            # Do not bootstrap via DNS
+            - CONCORDIUM_NODE_CONNECTION_NO_BOOTSTRAP_DNS=true
+            entrypoint: ["/concordium-node"]
+            # Exposed ports. The ports the node listens on inside the container (defined
+            # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
+            # should match what is defined here. When running multiple nodes the
+            # external ports should be changed so as not to conflict.
+            ports:
+            - "8169:8169"
+            - "20100:20100"
+            volumes:
+            # The node's database should be stored in a persistent volume so that it
+            # survives container restart. In this case we map the **host** directory
+            # ./local-0 to be used as the node's database directory.
+            - ./local-0/:/mnt/data:Z
+            - ./genesis.dat:/mnt/data/genesis.dat:Z
+            - ./bakers/baker-0-credentials.json:/mnt/baker-0-credentials.json:Z
+
+Pay attention to the host directory mappings specified by the ``volumes`` key. Depending on where your ````, you may need to change these accordingly. Now run the baker node as a Docker instance:
+
+.. code-block:: console
+
+    docker compose up
+
+.. Note::
+
+    Note that you may have to specify ``platform: linux/amd64`` in ``docker-compose.yml`` depending on your host architecture. This is particularly relevant when your host architecture is ARM-based.
 
 Interacting with the local chain
 ================================
