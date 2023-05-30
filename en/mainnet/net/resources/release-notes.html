@@ -1778,6 +1778,11 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bw-1-0-6">
+   Concordium Wallet for Web 1.0.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cargo-concordium-2-8-0">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -2375,7 +2380,31 @@ body {margin:0;}
 <p>Subscribe to the <a class="reference external" href="https://status.testnet.concordium.software/">Testnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
 <p>To subscribe to updates on the Testnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
+<p>May 30, 2023</p>
+<div class="section" id="bw-1-0-6">
+<h2>Concordium Wallet for Web 1.0.6<a class="headerlink" href="#bw-1-0-6" title="Permalink to this headline">#</a></h2>
+<p>Concordium Wallet for Web 1.0.6 contains fixes for the following issues:</p>
+<ul>
+<li><p>The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.</p></li>
+<li><p>Fixed an empty recovery displaying an error instead of informing the user that nothing was found.</p></li>
+<li><p>Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.</p></li>
+<li><p>Fixed an issue so the first call of the gRPC client no longer always fails.</p></li>
+<li><p>Fixed an issue so the first call of the gRPC client after changing network uses the correct network.</p></li>
+<li><p>Added a missing translation for the Request CCD button.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deployModule</span></code> transactions are now supported in the <code class="docutils literal notranslate"><span class="pre">sendTransaction</span></code> endpoint of the wallet-api.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>In the display of a <cite>deployModule</cite> transaction, the previously titled module hash is now titled module reference.</p></li>
+<li><p>Display of a <cite>deployModule</cite> transaction includes a copy button for the module reference.</p></li>
+<li><p>Updated web-sdk to fix incorrect estimated cost for <cite>deployModule</cite> transaction.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Added text that a transaction has been submitted.</p></li>
+<li><p>Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.</p></li>
+</ul>
 <p>May 11, 2023</p>
+</div>
 <div class="section" id="cargo-concordium-2-8-0">
 <h2><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0<a class="headerlink" href="#cargo-concordium-2-8-0" title="Permalink to this headline">#</a></h2>
 <p>The distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../../smart-contracts/guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
