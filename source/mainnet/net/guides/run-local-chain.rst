@@ -170,8 +170,6 @@ If you ran the baker node by invoking the node binary directly on your host, ski
             # are going to be different then you should also set
             # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
             - CONCORDIUM_NODE_LISTEN_PORT=8169
-            # Desired number of nodes to be connected to.
-            - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=0
             # Address of the V2 GRPC server
             - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20100
             # And its port
@@ -194,7 +192,7 @@ If you ran the baker node by invoking the node binary directly on your host, ski
             - ./genesis.dat:/mnt/data/genesis.dat:Z
             - ./bakers/baker-0-credentials.json:/mnt/baker-0-credentials.json:Z
 
-Pay attention to the host directory mappings specified by the ``volumes`` key, since you may need to change these accordingly. Now run the baker node as a Docker instance:
+Pay attention to the host directory mappings specified by the ``volumes`` key. The values work in this particular example, but in general depend on the location of the ``genesis-creator`` output. Now run the baker node as a Docker instance:
 
 .. code-block:: console
 
