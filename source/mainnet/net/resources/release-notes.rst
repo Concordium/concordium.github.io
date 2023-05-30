@@ -13,10 +13,10 @@ Release Notes - Testnet
 
 June 1, 2023
 
-Concordium Node 5.4.0
+Concordium Node 5.4.1
 ---------------------
 
-Concordium node version 5.4.0 contains the following features and bug fixes:
+Concordium node version 5.4.1 contains the following features and bug fixes:
 
 - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
 

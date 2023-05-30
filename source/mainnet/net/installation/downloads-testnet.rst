@@ -152,8 +152,8 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-Ubuntu v5.4.0
--------------
+Ubuntu |testnet-node-version|
+-----------------------------
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
@@ -163,8 +163,8 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Linux-Docker v5.4.0
--------------------
+Linux-Docker |testnet-node-version|
+-----------------------------------
 
 .. _concordium-docker-package-download-testnet:
 
@@ -172,8 +172,8 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 
 To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-Windows v5.4.0
---------------
+Windows |testnet-node-version|
+------------------------------
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
@@ -181,8 +181,8 @@ To run a node on Windows, you need a Windows Installer package. **Please be awar
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Mac v5.4.0
-----------
+Mac |testnet-node-version|
+--------------------------
 
 To run a node on macOS, you need a macOS installer package.
 
