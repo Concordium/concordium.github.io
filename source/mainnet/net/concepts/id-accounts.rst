@@ -59,6 +59,10 @@ Upon verification of the user's identification documents and attributes, the Ide
 .. image:: ../images/concepts/identity-creation.png
    :alt: graphic drawing showing how the user interacts with the identity provider
 
+.. Note::
+
+   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark), you can use mitID to complete the identity verification process.
+
 About accounts
 ==============
 

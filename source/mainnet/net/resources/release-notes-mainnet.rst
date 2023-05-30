@@ -11,7 +11,7 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-May 30, 2023
+June 1, 2023
 
 |mw-gen2| for iOS 1.0.1
 -------------------------------
@@ -24,10 +24,41 @@ Fixed a crash caused by a change implemented by identity provider Notabene where
 
 The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
 
+May 30, 2023
+
 |mw-gen1| for iOS 3.2.0
 --------------------------------
 
 Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+|bw| 1.0.6
+-------------------------
+
+|bw| 1.0.6 contains fixes for the following issues:
+
+- The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+- Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+- Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+- Fixed an issue so the first call of the gRPC client no longer always fails.
+
+- Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+- Added a missing translation for the Request CCD button.
+
+- ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+   - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+   - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+   - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+- Added text that a transaction has been submitted.
+
+- Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
 
 May 11, 2023
 
