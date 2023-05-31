@@ -12,6 +12,10 @@ To learn more about identities and accounts, see :ref:`identities<reference-id-a
 
 Read the following guide to learn how to set up the wallet.
 
+.. Note::
+
+   The |bw| extension is not supported in any of the web browsers below when used on a mobile phone or tablet.
+
 .. _setup-bw:
 
 Get started
