@@ -1711,13 +1711,13 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../resources/terms-and-conditions-dw.html">
-       Terms and Conditions for Concordium Desktop Wallet
+      <a class="reference internal" href="../resources/terms-and-conditions.html">
+       Terms and conditions
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="../resources/terms-and-conditions-mw-gen2.html">
-       Terms and Conditions for Concordium Wallet for Mobile
+      <a class="reference internal" href="../resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
@@ -1854,7 +1854,7 @@ body {margin:0;}
 <li><p>Desktop Wallet: Choose this wallet if you want extra security in the form of a <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">LEDGER</span></a> device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.</p></li>
 <li><p>Concordium Wallet for Mobile: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Concordium Wallet for Mobile does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.</p></li>
 <li><p>Concordium Legacy Wallet: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Concordium Legacy Wallet does not require a node (unless you are a baker), and you don’t need a LEDGER device. Requires you to make backups regularly.</p></li>
-<li><p>Concordium Wallet for Web: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.</p></li>
+<li><p>Concordium Wallet for Web: Choose this wallet if you want to be able to access your accounts on the go from any computer and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1912,62 +1912,67 @@ body {margin:0;}
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Runs on MacOS, Windows, Linux</p></td>
+<tr class="row-even"><td><p>Must run on a computer</p></td>
+<td><p>Runs only on mobile phone</p></td>
+<td><p>Runs only on mobile phone</p></td>
+<td><p>Must run on a computer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Runs on MacOS, Windows, Linux</p></td>
 <td><p>Runs on iOS 13 or later, Android 8 or later</p></td>
-<td><p>Runs on iOS 13 or later, Android 8 or later</p></td>
+<td><p>Runs on iOS 15 or later, Android 8 or later</p></td>
 <td><p>Runs on Chrome, Brave, Opera, Edge</p></td>
 </tr>
-<tr class="row-odd"><td><p>Secured by password and a LEDGER device</p></td>
+<tr class="row-even"><td><p>Secured by password and a LEDGER device</p></td>
 <td><p>Secured by password and biometrics</p></td>
 <td><p>Secured by password and biometrics</p></td>
 <td><p>Secured by password and secret recovery phrase</p></td>
 </tr>
-<tr class="row-even"><td><p>Encrypted</p></td>
+<tr class="row-odd"><td><p>Encrypted</p></td>
 <td><p>Encrypted</p></td>
 <td><p>Encrypted</p></td>
 <td><p>Encrypted</p></td>
 </tr>
-<tr class="row-odd"><td><p>Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.</p></td>
+<tr class="row-even"><td><p>Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.</p></td>
 <td><p>Backup file includes accounts, identities, address book, and private keys.</p></td>
 <td><p>Backup is not necessary but secret recovery phrase is needed.</p></td>
 <td><p>Backup is not necessary but secret recovery phrase is needed.</p></td>
 </tr>
-<tr class="row-even"><td><p>Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.</p></td>
+<tr class="row-odd"><td><p>Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.</p></td>
 <td><p>Private keys are stored in the wallet.</p></td>
 <td><p>Private keys are stored in the wallet and backed up by a secret recovery phrase.</p></td>
 <td><p>Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the secret recovery phrase.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Creation and management of single signature accounts</p></td>
+<tr class="row-even"><td><p>Creation and management of single signature accounts</p></td>
 <td><p>Creation and management of single signature accounts</p></td>
 <td><p>Creation and management of single signature accounts</p></td>
 <td><p>Creation and management of single signature accounts</p></td>
 </tr>
-<tr class="row-even"><td><p>Creation and management of multi signature accounts</p></td>
+<tr class="row-odd"><td><p>Creation and management of multi signature accounts</p></td>
 <td><p>N/A</p></td>
 <td><p>N/A</p></td>
 <td><p>N/A</p></td>
 </tr>
-<tr class="row-odd"><td><p>Creation of identities</p></td>
+<tr class="row-even"><td><p>Creation of identities</p></td>
 <td><p>Creation of identities</p></td>
 <td><p>Creation of identities</p></td>
 <td><p>Creation of identities</p></td>
 </tr>
-<tr class="row-even"><td><p>Creation and management of baker accounts</p></td>
+<tr class="row-odd"><td><p>Creation and management of baker accounts</p></td>
 <td><p>Creation and management of baker accounts. Rewards are visible in the wallet.</p></td>
 <td><p>Creation and management of baker accounts. Rewards are visible in the wallet.</p></td>
 <td><p>Creation and management of baker accounts. Rewards are visible in the wallet.</p></td>
 </tr>
-<tr class="row-odd"><td><p>A node is required</p></td>
+<tr class="row-even"><td><p>A node is required</p></td>
 <td><p>A node is not needed unless baking</p></td>
 <td><p>A node is not needed unless baking</p></td>
 <td><p>A node is not needed unless baking</p></td>
 </tr>
-<tr class="row-even"><td><p>Cannot connect to dApps</p></td>
+<tr class="row-odd"><td><p>Cannot connect to dApps</p></td>
 <td><p>Cannot connect to dApps</p></td>
 <td><p>Can connect to dApps</p></td>
 <td><p>Can connect to dApps</p></td>
 </tr>
-<tr class="row-odd"><td><p>Cannot recover in other wallet types</p></td>
+<tr class="row-even"><td><p>Cannot recover in other wallet types</p></td>
 <td><p>Cannot recover in other wallet types</p></td>
 <td><p>Can recover in Concordium Wallet for Mobile and Concordium Wallet for Web</p></td>
 <td><p>Can reover in Concordium Wallet for Web and Concordium Wallet for Mobile</p></td>
