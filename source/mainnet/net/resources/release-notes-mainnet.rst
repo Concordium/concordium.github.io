@@ -11,7 +11,7 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
-June 1, 2023
+May 31, 2023
 
 |mw-gen2| for iOS 1.0.1
 -------------------------------
