@@ -32,11 +32,11 @@ The wallets work on two different environments: the Desktop Wallet on a computer
 
 - |mw-gen1|: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen1| does not require a node (unless you are a baker), and you don’t need a LEDGER device. Requires you to make backups regularly.
 
-- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
+- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
 
 .. Note::
 
-   If you are a new mobile wallet user, you must use the |mw-gen2|. It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+   If you are a new mobile wallet user, you must use the |mw-gen2|. It is no longer possible for users of |mw-gen1| to create new accounts.
 
 The following provides more details on the differences between the wallets.
 
@@ -93,6 +93,10 @@ The following table lists the major features of each wallet.
       - |mw-gen1|
       - |mw-gen2|
       - |bw|
+   *  - Must run on a computer
+      - Runs only on mobile phone
+      - Runs only on mobile phone
+      - Must run on a computer
    *  - Runs on MacOS, Windows, Linux
       - Runs on iOS 13 or later, Android 8 or later
       - Runs on iOS 13 or later, Android 8 or later

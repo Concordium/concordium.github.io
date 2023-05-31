@@ -269,6 +269,12 @@ The steps in the README file are as follows:
 
     $yarn
 
+- Build the Concordium helpers by running ``yarn build:api-helpers``. You can run this from anywhere in your cloned repository.
+
+.. code-block:: console
+
+    $yarn build:api-helpers
+
 - Navigate to the wCCD example folder.
 
 .. code-block:: console
