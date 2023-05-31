@@ -13,6 +13,13 @@ Release Notes - Testnet
 
 May 31, 2023
 
+|mw-gen2| for Android 1.1.8
+-----------------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+A minor change to the identity user interface was made to support integration with eID verifiers.
+
 |mw-gen2| for iOS 1.0.1
 -------------------------------
 
