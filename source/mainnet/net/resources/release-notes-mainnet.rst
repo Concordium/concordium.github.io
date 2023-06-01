@@ -20,7 +20,7 @@ Version 5.2.0 contains the following features and bug fixes:
 
 - Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
 
-- Added ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+- Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
 
 May 30, 2023
 
