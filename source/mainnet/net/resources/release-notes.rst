@@ -26,7 +26,7 @@ Concordium node version 5.4.1 contains the following features and bug fixes:
 
 - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
 
-- Do not use peer buckets when running as a normal node (not as a bootstrapper).
+- Do not keep a historical list of peers when running as a normal node.
 
 Concordium Client 5.2.0
 -----------------------
