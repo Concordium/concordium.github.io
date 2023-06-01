@@ -87,9 +87,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen1|
 
-    .. Note::
-
-       It is no longer possible for users of |mw-gen1| to create new accounts.
+    It is no longer possible for users of |mw-gen1| to create new accounts.
 
 .. dropdown:: |bw|
 
