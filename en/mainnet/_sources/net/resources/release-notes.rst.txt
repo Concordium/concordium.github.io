@@ -11,6 +11,32 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+June 1, 2023
+
+Concordium Node 5.4.1
+---------------------
+
+Concordium node version 5.4.1 contains the following features and bug fixes:
+
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not keep a historical list of peers when running as a normal node.
+
+Concordium Client 5.2.0
+-----------------------
+
+Version 5.2.0 contains the following features and bug fixes:
+
+- Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+
+- Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+
 May 31, 2023
 
 |mw-gen2| for Android 1.1.8
