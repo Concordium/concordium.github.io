@@ -11,6 +11,52 @@ Release Notes - Testnet
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+June 1, 2023
+
+Concordium Node 5.4.1
+---------------------
+
+Concordium node version 5.4.1 contains the following features and bug fixes:
+
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not keep a historical list of peers when running as a normal node.
+
+Concordium Client 5.2.0
+-----------------------
+
+Version 5.2.0 contains the following features and bug fixes:
+
+- Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+
+- Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+
+May 31, 2023
+
+|mw-gen2| for Android 1.1.8
+-----------------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+A minor change to the identity user interface was made to support integration with eID verifiers.
+
+|mw-gen2| for iOS 1.0.1
+-------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+Also, a minor change was made to support integration with eID verifiers.
+
+Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
+
+The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
+
 May 30, 2023
 
 |mw-gen1| for iOS 3.2.0
