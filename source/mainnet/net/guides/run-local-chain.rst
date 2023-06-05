@@ -6,20 +6,17 @@ Run a local chain
 =================
 
 .. Note::
-    This guide covers an advanced topic and the reader is assumed to have some knowledge about compiler toolchains, basic operating system concepts such as networks and file systems, the Concordium Blockchain and Docker.
-
-
-This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects such as the genesis parameters, anonymity revokers, identity providers and foundation accounts.
-
-The chain is run by a network of baker nodes that bake and finalize blocks. In the following minimal example you will set up a network comprised of a single baker node that runs *locally* on your system. Note, however, that the concepts demonstrated here equally apply to any number of baker nodes configured in a LAN or WAN setting.
-
-.. Note::
 
     Running your own local chain is an advanced process and not applicable for all use cases. Users with little or no blockchain experience should not attempt to run a local chain. If you run into issues while installing, configuring, and running your local chain, contact `Concordium support <http://support.concordium.software>`_.
 
+This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects such as the genesis parameters, anonymity revokers, identity providers and foundation accounts.
+
+The chain is run by a network of baker nodes that bake and finalize blocks. In the following minimal example you will set up a network comprised of a single baker node that runs *locally* on your system and *does not connect to mainnet or testnet*. Note, however, that the concepts demonstrated here equally apply to any number of baker nodes configured in a LAN or WAN setting.
+
+
 Prerequisites
 =============
-You will either need a working installation of the Concordium Node distribution version 5 or Docker, instances of which will be used to run the baker node(s). You will need :ref:`genesis block<glossary-genesis-block>` data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.
+You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the baker node(s). You will need :ref:`genesis block<glossary-genesis-block>` data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.
 
 Installing the node distribution
 --------------------------------
@@ -139,7 +136,7 @@ The ``--no-bootstrap`` flag instructs the node to not connect to a bootstrapper 
 
 .. Note::
 
-    If more baker credentials are generated, several bakers for each such can be spun up by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to`` option. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file-system should specify different data and config directories.
+    If more baker credentials are generated, a baker can be started for each credential by replacing the arguments specified by the ``--baker-credentials-file``. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using the ``--connect-to $IP:$PORT``. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file-system should specify different data and config directories.
 
 Running the chain as a Docker instance
 --------------------------------------
@@ -178,7 +175,7 @@ If you ran the baker node by invoking the node binary directly on your host, ski
             - CONCORDIUM_NODE_CONNECTION_NO_BOOTSTRAP_DNS=true
             entrypoint: ["/concordium-node"]
             # Exposed ports. The ports the node listens on inside the container (defined
-            # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
+            # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`)
             # should match what is defined here. When running multiple nodes the
             # external ports should be changed so as not to conflict.
             ports:
