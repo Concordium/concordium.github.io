@@ -99,7 +99,7 @@ The following table lists the major features of each wallet.
       - Must run on a computer
    *  - Runs on MacOS, Windows, Linux
       - Runs on iOS 13 or later, Android 8 or later
-      - Runs on iOS 13 or later, Android 8 or later
+      - Runs on iOS 15 or later, Android 8 or later
       - Runs on Chrome, Brave, Opera, Edge
    *  - Secured by password and a LEDGER device
       - Secured by password and biometrics
