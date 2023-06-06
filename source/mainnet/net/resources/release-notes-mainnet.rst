@@ -11,12 +11,57 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+May 30, 2023
+
+|mw-gen1| for iOS 3.2.0
+--------------------------------
+
+Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+|bw| 1.0.6
+-------------------------
+
+|bw| 1.0.6 contains fixes for the following issues:
+
+- The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+- Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+- Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+- Fixed an issue so the first call of the gRPC client no longer always fails.
+
+- Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+- Added a missing translation for the Request CCD button.
+
+- ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+   - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+   - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+   - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+- Added text that a transaction has been submitted.
+
+- Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+
+May 11, 2023
+
+``cargo-concordium`` 2.8.0
+--------------------------
+
+The distribution method for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. For more information, see :ref:`Install tools for development<setup-tools>`.
+
+If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
+
 May 8, 2023
 
 Smart contract integration testing
 -------------------------------------
 
-Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
+Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
 
 |bw| 1.0.4
 --------------------------

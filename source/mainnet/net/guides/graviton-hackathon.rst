@@ -1,11 +1,11 @@
 :orphan:
 
 .. include:: ../../variables.rst
-.. _gitcoin-hackathon:
+.. _graviton-hackathon:
 
-============================
+=============================
 Graviton Hackathon Essentials
-============================
+=============================
 
 This page helps you to get started with Concordium for the Graviton hackathon June 14 - 28, 2023.
 
@@ -68,7 +68,7 @@ The command will return a list of values relevant to the consensus if you have a
 DApp examples
 =============
 
-An overview of different :ref:`dApp examples <dapp-examples>` to get started.
+An overview of different :ref:`dApp examples <dapp-examples>` is available to get started.
 
 Concordium Academy
 ==================

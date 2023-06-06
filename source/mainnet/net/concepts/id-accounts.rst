@@ -50,7 +50,7 @@ You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, 
 
 .. Note::
 
-   It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
+   It is no longer possible for users of |mw-gen1| to create new identities.
 
 Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
 
@@ -58,6 +58,10 @@ Upon verification of the user's identification documents and attributes, the Ide
 
 .. image:: ../images/concepts/identity-creation.png
    :alt: graphic drawing showing how the user interacts with the identity provider
+
+.. Note::
+
+   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark), you can use mitID to complete the identity verification process.
 
 About accounts
 ==============
@@ -68,7 +72,7 @@ Any time you create a new account in |mw-gen1|, you should make a :ref:`backup<e
 
 .. Note::
 
-   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+   It is no longer possible for users of |mw-gen1| to create new accounts.
 
 .. _revoke-anomity:
 
