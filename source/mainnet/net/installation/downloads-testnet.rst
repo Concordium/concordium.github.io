@@ -11,7 +11,7 @@ This topic contains information about where you can download the Concordium Wall
 |mw-gen2|
 ========================
 
-The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 13 or later and Android 8 or later.
+The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 15 or later and Android 8 or later.
 
 .. Note::
 
@@ -108,10 +108,10 @@ When installing the certificate, ensure that the public key of the certificate i
 
 .. _concordium-node-and-client-download-testnet:
 
-Concordium Client v5.1.1
-========================
+Concordium Client |client-version|
+==================================
 
--  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.1.1>`_
+-  `Download the Testnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_5.2.0>`_
 
    - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
 
@@ -123,13 +123,13 @@ Concordium Client v5.1.1
 
    where you replace `*` with |client-version|.
 
--  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.1.1.pkg>`_
+-  `Download the Testnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-5.2.0.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.1.1.exe>`_
+-  `Download the Testnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_5.2.0.exe>`_
 
 .. _cargo-concordium-testnet:
 
@@ -152,19 +152,19 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-Ubuntu v5.3.2
--------------
+Ubuntu |testnet-node-version|
+-----------------------------
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.3.2-0_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.4.1-0_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``cf035d33784473b13afdf6d9a047c35f970ad9864f1134867eed00ed7baa2007``
+      - SHA256 checksum of the download: ``8c1f8df5c83999c10a4cda8f9d35f632f38c23aa797a50fcb4db3c591788b291``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
-Linux-Docker v5.3.2
--------------------
+Linux-Docker |testnet-node-version|
+-----------------------------------
 
 .. _concordium-docker-package-download-testnet:
 
@@ -172,21 +172,21 @@ To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-
 
 To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-Windows v5.3.2
---------------
+Windows |testnet-node-version|
+------------------------------
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.3.2-0.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.1-0.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Mac v5.3.2
-----------
+Mac |testnet-node-version|
+--------------------------
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.3.2.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.1-0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
