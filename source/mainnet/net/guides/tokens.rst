@@ -5,7 +5,7 @@
 Tokens in the wallet
 ========================
 
-You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devices.
+You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
 
 .. dropdown:: |bw|
 
@@ -79,7 +79,7 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
         2. Click the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are loaded, the tokens that are in your account have a checkmark next to them. Remove the check and click **Update tokens**.
 
-.. dropdown:: |mw-gen2| for Android
+.. dropdown:: |mw-gen2|
 
     To access tokens and token transactions, tap Tokens |token-bw|. Tabs appear for tokens.
 
