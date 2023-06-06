@@ -53,6 +53,7 @@ index
    guides/developer-page
    nodes/node-requirements
    references/concordium-client
+   guides/run-local-chain
 
 .. toctree::
    :includehidden:
