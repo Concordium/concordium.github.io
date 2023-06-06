@@ -7,10 +7,18 @@
 Graviton Hackathon Essentials
 ============================
 
-This page helps you to get started with Concordium for the Graviton hackathon XXMonthXX ## - ##, 2023.
+This page helps you to get started with Concordium for the Graviton hackathon June 14 - 28, 2023.
 
-With a total of $15K in prizes, it is the largest Concordium hackathon ever held.
-You can sign up and read more about the bounties and timelines on the `hackathon website <https://gitcoin.co/hackathon/concordium-identity/onboard>`_.
+With a total of $100K in bounties and grants, it is the largest Concordium hackathon ever held.
+You can sign up and read more about the bounties and timelines on the `hackathon website <https://concordia.devfolio.co/>`_.
+
+Focus areas for this hackathon are:
+
+    - Decentralized Finance (DeFi)
+
+    - Decentralized Identities
+
+    - Web3 Experiences (DAO Tools, Gaming, Mobile dApps, etc)
 
 Workshop Sessions
 =================
