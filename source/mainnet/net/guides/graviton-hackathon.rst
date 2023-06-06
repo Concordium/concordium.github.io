@@ -25,11 +25,8 @@ Workshop Sessions
 
 Join our free workshop sessions before the hackathon starts.
 
-- 1st February @ 12:00 CET - Welcome, Concordium Overview & Intro to Rust
-- 2nd February @ 12:00 CET - Building Smart Contracts
-- 3rd February @ 12:00 CET - Building dApps & Ideation Session
-
-- 8th, 15th and 22nd February @ 9:00 - 17:00 CET - Weekly Developer Relations Office Hours
+- 12th June @ 09:30 CET - Introduction to Concordium and Rust Programming, and Setting up your first smart contract on Concordium
+- 13th June @ 09:30 CET - Setting up the Browser Wallet and your first Concordium dApp
 
 You can watch the three workshops `live <https://www.airmeet.com/e/48fd9170-9344-11ed-87a2-15e85d06b129>`_.
 The materials from the workshop sessions are available on `GitHub <https://github.com/Concordium/voting-workshop>`_.
