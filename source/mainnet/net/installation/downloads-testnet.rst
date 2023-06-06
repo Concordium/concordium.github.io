@@ -159,7 +159,7 @@ To run a node on a server with Ubuntu, you need a Debian package.
 
    - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.4.2-0_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``8c1f8df5c83999c10a4cda8f9d35f632f38c23aa797a50fcb4db3c591788b291``
+      - SHA256 checksum of the download: ``ef4a097f6166dd128808b46db5c7010838e49c0425c086ffe47ec378fa01f3e5``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
