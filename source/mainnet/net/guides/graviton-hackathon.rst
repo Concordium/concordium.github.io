@@ -28,7 +28,7 @@ Join our free workshop sessions before the hackathon starts.
 - 12th June @ 09:30 CET - Introduction to Concordium and Rust Programming, and Setting up your first smart contract on Concordium
 - 13th June @ 09:30 CET - Setting up the Browser Wallet and your first Concordium dApp
 
-You can watch the workshops `live <https://www.airmeet.com/e/48fd9170-9344-11ed-87a2-15e85d06b129>`_.
+For information about how to watch the workshops live, see the `hackathon website <https://concordia.devfolio.co/>`_.
 The materials from the workshop sessions are available on `GitHub <https://github.com/Concordium/voting-workshop>`_.
 
 Recordings from previous workshops can be watched here:
