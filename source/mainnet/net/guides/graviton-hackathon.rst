@@ -41,7 +41,7 @@ Quick guide
 ===========
 
 - Install Rust
-- Install ``cargo concordium``
+- Install ``cargo concordium`` or the `Concordium smart contract VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`_
 - Install ``concordium-client``
 - Import a wallet key into ``concordium-client``
 - Install |bw|
