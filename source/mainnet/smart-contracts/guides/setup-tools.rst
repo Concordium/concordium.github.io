@@ -12,6 +12,15 @@ Rust and Cargo
 
 First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
+
+.. _rust-compiler-issue:
+
+Due to a known error in Rust, you must install the compiler version 1.69 or earlier. To do that, run:
+
+.. code-block:: console
+
+   $rustup default 1.69
+
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
 .. code-block:: console
