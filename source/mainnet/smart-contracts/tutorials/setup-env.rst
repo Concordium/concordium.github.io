@@ -7,7 +7,7 @@ Setup the development environment
 
 First, you need to install ``rustup`` which installs Rust and Cargo to your computer. Go to `Rustup <https://rustup.rs/>`_ to install ``rustup`` for your platform.
 
-Due to a known error in Rust, you must install the compiler version 1.69 or earlier. To do that, run:
+Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:
 
 .. code-block:: console
 
