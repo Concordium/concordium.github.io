@@ -15,7 +15,7 @@ machine.
 
 .. _rust-compiler-issue:
 
-Due to a known error in Rust, you must install the compiler version 1.69 or earlier. To do that, run:
+Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:
 
 .. code-block:: console
 
