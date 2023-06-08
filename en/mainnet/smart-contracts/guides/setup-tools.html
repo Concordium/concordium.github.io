@@ -1832,8 +1832,12 @@ environment.</p>
 <div class="section" id="rust-and-cargo">
 <h2>Rust and Cargo<a class="headerlink" href="#rust-and-cargo" title="Permalink to this headline">#</a></h2>
 <p>First, <a class="reference external" href="https://rustup.rs/">install rustup</a>, which installs both <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> on your
-machine.
-Then use <code class="docutils literal notranslate"><span class="pre">rustup</span></code> to install the Wasm target, which is used for compilation:</p>
+machine.</p>
+<p id="rust-compiler-issue">Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup default <span class="m">1</span>.69
+</pre></div>
+</div>
+<p>Then use <code class="docutils literal notranslate"><span class="pre">rustup</span></code> to install the Wasm target, which is used for compilation:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup target add wasm32-unknown-unknown
 </pre></div>
 </div>

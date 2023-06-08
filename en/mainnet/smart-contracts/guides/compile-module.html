@@ -1834,6 +1834,18 @@ such as <a class="reference internal" href="../general/contract-schema.html#cont
 </pre></div>
 </div>
 <p>This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you receive an error similiar to the one below, you need to <a class="reference internal" href="setup-tools.html#rust-compiler-issue"><span class="std std-ref">install an earlier version of the rustup compiler</span></a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Error: Could not build smart contract.</span>
+
+<span class="go">Caused by:</span>
+<span class="go">   0: Could not build module schema.</span>
+<span class="go">   1: Could not generate module schema from Wasm module.</span>
+<span class="go">   2: Unsupported instruction 0xc0</span>
+</pre></div>
+</div>
+</div>
 <p>If you want a smaller code footprint, enable the <a class="reference internal" href="setup-contract.html#setup-wee-alloc-feature"><span class="std std-ref">wee_alloc feature</span></a> by using:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --features wee_alloc
 </pre></div>
