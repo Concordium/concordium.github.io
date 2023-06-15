@@ -184,7 +184,7 @@ Next, create the init test:
       todo!()
    }
 
-Tests in Rust are regular functions, and the ``#[test]`` attribute tells the test runner to include the function when running ``cargo test``.
+Tests in Rust are regular functions, and the ``#[test]`` attribute tells the test runner to include the function when running ``cargo test`` or ``cargo concordium test``.
 
 The primary construct used for testing is the |Chain|_ type, which you should only create one of per test.
 It represents the blockchain and has methods for creating accounts and deploying and working with contracts.
@@ -236,6 +236,16 @@ Then compile your contract with:
 
 This produces the Wasm module ``piggy_bank_part2.wasm.v1`` in the root of your project, unless you have any typos or bugs in your code.
 If that is the case, try to fix them using the helpful error messages from the compiler or go back to the end of part 1 and copy the full contract code again.
+
+.. note::
+
+   Since the tests run against the compiled Wasm module, there is a risk of accidentally using an outdated Wasm module.
+   To circumvent this, cargo concordium's test command can both *build* and test you contract, which ensures that you always test the newest version of your code.
+   To do so, use the ``--out`` parameter testing:
+
+   .. code-block:: console
+
+      $cargo concordium test --out piggy_bank_part2.wasm.v1
 
 Going back to your test case, use the function |module_load_v1|_ to load the module.
 
@@ -400,7 +410,9 @@ Run the test to check that it compiles and succeeds.
 
 .. code-block:: console
 
-   $cargo test
+   $cargo concordium test --out piggy_bank_part2.wasm.v1
+
+Note that we are using the ``--out`` flag for ``cargo concordium`` to ensure that the module is freshly compiled and thus matches the newest version of your smart contract code.
 
 Test inserting CCD into a piggy bank
 ====================================
@@ -538,7 +550,7 @@ The second test becomes:
        );
    }
 
-Again, verify that everything compiles and the tests succeed using ``cargo test``.
+Again, verify that everything compiles and the tests succeed using ``cargo concordium test --out piggy_bank_part2.wasm.v1``.
 
 Test smashing a piggy bank
 ==========================
@@ -618,7 +630,7 @@ There is a helper method |from_bytes|_ for this exact purpose:
            from_bytes(&invoke.return_value).expect("View should always return a valid result");
 
 Since deserialization might fail, |from_bytes|_ returns a ``Result`` that is unwrapped here.
-If you run ``cargo test`` at this point, the compiler will complain about ``PiggyBankState`` being undeclared.
+If you run the tests at this point, the compiler will complain about ``PiggyBankState`` being undeclared.
 This is because types and functions in Rust are private by default.
 To make the ``PiggyBankState`` public, edit the ``lib.rs`` file and add the ``pub`` keyword.
 
@@ -632,8 +644,10 @@ To make the ``PiggyBankState`` public, edit the ``lib.rs`` file and add the ``pu
 
 .. important::
 
-   The change you just made does not affect the functionality of the contract, but when you make changes that do, you need to recompile the contract with ``cargo concordium build`` before running the tests again.
+
+   The change you just made does not affect the functionality of the contract, but when you make changes that do, it is essential to build the Wasm module again.
    Otherwise, you will continue using the old Wasm module.
+   Recompiling the module occurs automatically when using ``cargo concordium test --out piggy_bank_part2.wasm.v1`` due to the ``--out`` flag.
 
 With the ``state`` and ``balance`` available, you can make assertions.
 The contract should be smashed and have a balance of zero:
@@ -724,7 +738,7 @@ The complete third test thus becomes:
        );
    }
 
-Ensure everything compiles and the test succeeds using ``cargo test``.
+Ensure everything compiles and the test succeeds using ``cargo concordium test --out piggy_bank_part2.wasm.v1``.
 
 Testing cause of rejection
 ==========================
