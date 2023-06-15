@@ -59,17 +59,35 @@ Concordium has a selection of example dApps that you can clone to make your own 
 Block explorers
 ---------------
 
-The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
+The following are links to the block, node, and status explorers.
+
+Concordium block explorers
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 
     - `Mainnet block explorer <https://dashboard.mainnet.concordium.software>`_
 
     - `Testnet block explorer <https://dashboard.testnet.concordium.com>`_
 
+Concordium status pages
+^^^^^^^^^^^^^^^^^^^^^^^
+
     - `Mainnet status page <https://status.mainnet.concordium.software>`_
 
     - `Testnet status page <https://status.testnet.concordium.software>`__
 
+CCDScan
+^^^^^^^
+
+For information about CCDScan, see :ref:`<ccd-scan>`.
+
     - `CCDScan <https://ccdscan.io>`_
+
+Grafana® node dashboard
+^^^^^^^^^^^^^^^^^^^^^^^
+
+For node runners using Grafana, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can download it from the Grafana marketplace.
 
 Social media and support
 ------------------------
