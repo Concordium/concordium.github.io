@@ -80,7 +80,7 @@ Concordium status pages
 CCDScan
 ^^^^^^^
 
-For information about CCDScan, see :ref:`<ccd-scan>`.
+For information about CCDScan, see :ref:`CCDScan<ccd-scan>`.
 
     - `CCDScan <https://ccdscan.io>`_
 
