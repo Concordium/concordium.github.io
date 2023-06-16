@@ -87,7 +87,7 @@ For information about CCDScan, see :ref:`CCDScan<ccd-scan>`.
 Grafana® node dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-For node runners using Grafana, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can download it from the Grafana marketplace.
+For node runners using Grafana, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
 Social media and support
 ------------------------
