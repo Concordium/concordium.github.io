@@ -69,12 +69,7 @@ is deployed on ``testnet`` at the following addresses:
 The canonical wCCD smart contract following the ``CIS-2`` standard is
 deployed on ``mainnet`` at the following addresses:
 
-.. note::
-
-    Deployment on mainnet will follow once a partner has been chosen to manage the deployment.
-
-
-``wCCD (Mainnet):`` coming soon
+``wCCD (Mainnet):`` **{ index: 9354, subindex: 0 }**
 
 .. note::
 
