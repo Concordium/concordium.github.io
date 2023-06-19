@@ -2105,6 +2105,15 @@ some GRPC V2 endpoints can be used to control the node.</p>
 </div>
 <p>Environment variables to be set when starting the node. This can be used to set configuration options that do not have a dedicated setting in the configuration file. For instance, the above example sets the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_TRANSACTIONS_PURGING_DELAY</span></code> environment variable, which determines how frequently pending transactions are purged.</p>
 <p>Note that a number of environment variables are already set by configuration options, so this should only be used where there is no explicit configuration option provided.</p>
+<p>Another common node.env.* variable to add is for out-of-band catchup so that nodes can synchronize faster with the rest of the network. This improves performance and gets your node up and running more quickly.</p>
+<p>For Mainnet:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;</span>
+</pre></div>
+</div>
+<p>For Testnet:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.testnet.concordium.com/blocks.idx&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="node-args">
 <h3>node.args<a class="headerlink" href="#node-args" title="Permalink to this headline">#</a></h3>
