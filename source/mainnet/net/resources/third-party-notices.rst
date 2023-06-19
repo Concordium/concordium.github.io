@@ -20,3 +20,4 @@ Required notices for open source or other separately licensed software and hardw
 * LINUX FOUNDATION and YOCTO PROJECT are registered trademarks of the Linux Foundation. Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
 * RUST and its trademarks are owned by the Mozilla Foundation
 * node.js: © 2018 Node.js Foundation. Node.js is a trademark of Joyent, Inc.
+* The Grafana Labs Marks are trademarks of Grafana Labs, and are used with Grafana Labs’ permission. We are not affiliated with, endorsed or sponsored by Grafana Labs or its affiliates.

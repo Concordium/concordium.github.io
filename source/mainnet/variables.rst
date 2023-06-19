@@ -13,19 +13,22 @@
 .. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_5.1.1
-.. |client-version| replace:: 5.1.1
-.. |client-linux-checksum| replace:: 73d037fdbc0924ae0be302ad960ee4e2ec9bbb1d1c4a4bbefbcf2c3f97afd163
+.. |client-linux| replace:: concordium-client_5.2.0
+.. |client-version| replace:: 5.2.0
+.. |client-linux-checksum| replace:: d844949990de4dc60990d90f60caed5888932d40af884e64df612f87d816c14e
 
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.8.0
 .. |cargo-version| replace:: 2.8.0
 .. |cargo-linux-checksum| replace:: ea3f603e2a921181cdf323604066444378a955c55e82b206a7d169bf636fa75d
 
-.. Node debian package verification variables
+.. Node version variables
+.. |mainnet-node-version| replace:: 5.4.2
+.. |testnet-node-version| replace:: 5.4.2
 
-.. |node-deb-package| replace:: concordium-mainnet-node_5.3.2-0_amd64.deb
-.. |node-deb-package-checksum| replace:: 9b62ce7cd862bf667e40cc6f1f79e47ea16a61fd5a8037291c44d7a0f3e66d9e
+.. Node debian package verification variables
+.. |node-deb-package| replace:: concordium-mainnet-node_5.4.2-0_amd64.deb
+.. |node-deb-package-checksum| replace:: cab62172983d509e2e6b34e1bbc6464d989b1f749861278ee800d9efc31fd848
 
 .. Node version variables
 
