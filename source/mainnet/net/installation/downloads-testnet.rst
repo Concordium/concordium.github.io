@@ -133,13 +133,17 @@ Concordium Client |client-version|
 
 .. _cargo-concordium-testnet:
 
-``cargo-concordium`` v2.8.0
-===========================
+``cargo-concordium``
+====================
 
 For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
 
-VSCode extension 1.0.1
-----------------------
+.. Note::
+
+   From version 2.8.0 the distribution for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
+
+VSCode extension
+----------------
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
