@@ -6,6 +6,7 @@ index
    :caption: Releases and Installation
 
    installation/downloads
+   installation/downloads-testnet
    release-notes/release-notes-lp
    installation/verification-instructions
 

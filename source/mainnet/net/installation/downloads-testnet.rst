@@ -143,6 +143,8 @@ VSCode extension 1.0.1
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
+.. _testnet-node-downloads:
+
 Concordium node distributions
 =============================
 

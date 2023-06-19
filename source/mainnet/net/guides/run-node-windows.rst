@@ -60,7 +60,7 @@ Install/upgrade and run a node
 
 #. Download the latest Windows Installer package (.msi file).
 
-   - For Mainnet go to :ref:`Downloads<mainnet-node-downloads>`.
+   - For Mainnet go to :ref:`Downloads<node-downloads>`.
 
    - For Testnet go to :ref:`Downloads<testnet-node-downloads>`.
 
