@@ -43,7 +43,7 @@ The high-level process of adding integration tests to your existing smart contra
         ...
       }
 
-   where you specify the path to the Wasm file built in next step.
+   where you specify the path to the Wasm file built in the next step.
 3. Run your tests with ``cargo concordium test --out concordium-out/module.wasm.v1``
    This command also builds the Wasm module and outputs the Wasm module to the specified path.
 
@@ -111,7 +111,7 @@ Deploying smart contract modules is a two-step process.
 First, you load the module with the function |module_load_v1|_, then you deploy it to the chain with the method |Chain_module_deploy_v1|_.
 Loading as a separate step allows you to reuse the loaded module across multiple tests for efficiency.
 
-The module to load should be a ``wasm`` module compiled with ``cargo concordium build`` or ``cargo concordium test --out path/to/wasm/module``.
+The module to load must be a ``wasm`` module compiled with ``cargo concordium build`` or, if using cargo concordium version 2.9.0+, ``cargo concordium test --out path/to/wasm/module``.
 Using the test command is ideal, as that will both compile the module *and* run the tests.
 By compiling the module every time, you ensure that the tests run on the newest version of your code.
 For example, for ``cargo concordium test --embed-schema --out my_module.wasm.v1``, you write:

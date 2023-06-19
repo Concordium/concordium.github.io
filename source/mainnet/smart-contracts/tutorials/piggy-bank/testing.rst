@@ -240,12 +240,16 @@ If that is the case, try to fix them using the helpful error messages from the c
 .. note::
 
    Since the tests run against the compiled Wasm module, there is a risk of accidentally using an outdated Wasm module.
-   To circumvent this, cargo concordium's test command can both *build* and test you contract, which ensures that you always test the newest version of your code.
-   To do so, use the ``--out`` parameter testing:
+   To circumvent this, cargo concordium's test command both builds and tests you contract, which ensures that you always test the newest version of your code.
+   By default it places the compiled Wasm module in the ``target/`` folder, but you can specify where you want it placed, so the location is easy to specify in your tests.
+   To do so, use the ``--out`` parameter when testing:
 
    .. code-block:: console
 
       $cargo concordium test --out piggy_bank_part2.wasm.v1
+
+   Please note that the test command only builds your module in cargo concordium version 2.9.0+.
+   Also note that for the highest assurance of correctness, you should *deploy the exact module* that you also tested.
 
 Going back to your test case, use the function |module_load_v1|_ to load the module.
 
@@ -412,7 +416,7 @@ Run the test to check that it compiles and succeeds.
 
    $cargo concordium test --out piggy_bank_part2.wasm.v1
 
-Note that we are using the ``--out`` flag for ``cargo concordium`` to ensure that the module is freshly compiled and thus matches the newest version of your smart contract code.
+Note that the command recompiles the Wasm module and replaces the old module in the same location due to the ``--out`` parameter.
 
 Test inserting CCD into a piggy bank
 ====================================
@@ -647,7 +651,7 @@ To make the ``PiggyBankState`` public, edit the ``lib.rs`` file and add the ``pu
 
    The change you just made does not affect the functionality of the contract, but when you make changes that do, it is essential to build the Wasm module again.
    Otherwise, you will continue using the old Wasm module.
-   Recompiling the module occurs automatically when using ``cargo concordium test --out piggy_bank_part2.wasm.v1`` due to the ``--out`` flag.
+   Recompiling the module occurs automatically when using ``cargo concordium test --out piggy_bank_part2.wasm.v1`` and the command overwrites the old module in the same location due to the ``--out`` parameter.
 
 With the ``state`` and ``balance`` available, you can make assertions.
 The contract should be smashed and have a balance of zero:
