@@ -1,3 +1,5 @@
+.. include:: ../../../variables.rst
+
 .. _wCCD-introduction:
 
 =====================================
@@ -64,12 +66,12 @@ newest science and research done at Concordium. The protocol is free of charge a
 The canonical wCCD smart contract following the ``CIS-2`` standard
 is deployed on ``testnet`` at the following addresses:
 
-``wCCD (Testnet):`` **{ index: 2059, subindex: 0 }**
+``wCCD (Testnet):`` |wccd-address-testnet|
 
 The canonical wCCD smart contract following the ``CIS-2`` standard is
 deployed on ``mainnet`` at the following addresses:
 
-``wCCD (Mainnet):`` **{ index: 9354, subindex: 0 }**
+``wCCD (Mainnet):`` |wccd-address-mainnet|
 
 .. note::
 

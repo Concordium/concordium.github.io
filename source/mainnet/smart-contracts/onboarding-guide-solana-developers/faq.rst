@@ -575,11 +575,11 @@ Standards
     - the :ref:`wCCD tutorial<wCCD>`
     - the wCCD example `source code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_.
 
-    Concordium provides and maintains the canonical wCCD implementation on testnet; mainnet implementation is coming soon.
+    Concordium provides and maintains the canonical wCCD implementation.
     Developers are encouraged to use the following addresses for their dApps.
 
     - Testnet canonical wCCD address: |wccd-address-testnet|
-    - Mainnet canonical wCCD address: coming soon
+    - Mainnet canonical wCCD address: |wccd-address-mainnet|
 
 .. dropdown:: Does Concordium have upgradable smart contracts?
 

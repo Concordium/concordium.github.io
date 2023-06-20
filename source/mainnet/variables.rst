@@ -36,3 +36,4 @@
 
 .. Canonical smart contract instances
 .. |wccd-address-testnet| replace:: <2059,0>
+.. |wccd-address-mainnet| replace:: <9354,0>
