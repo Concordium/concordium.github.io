@@ -451,7 +451,7 @@ It also adds a ``--secure`` flag to enable connecting to gRPC using TLS. All com
 
 Additionally, it supports contract schema V3. V3 schemas offer the same options as V2, but also optionally includes a schema for contract events. `transaction status` now displays contract events, and a schema can be provided with `--schema`, which will be used to parse the contract events. By default events are parsed with the schema embedded in the contract, if present. This enables ``concordium-client`` to interact with contracts and schemas using `concordium-std` version 5. There is also improved formatting of `transaction status` output using contract schemas if they are available for displaying contract events, and output function parameters are shown as hex strings in `transaction status`.
 
-*** November 17, 2022
+November 17, 2022
 
 |mw-gen1| for Android
 ---------------------
@@ -554,7 +554,7 @@ Concordium Node 4.3.1 introduces a number of performance improvements. The effec
 - Remove obsolete and unused option ``--max-expiry-duration``.
 - Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
 
-August 24, 20222
+*** August 24, 2022
 
 Concordium Client 4.1.0
 -----------------------
