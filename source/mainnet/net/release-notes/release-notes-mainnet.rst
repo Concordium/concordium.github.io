@@ -554,7 +554,7 @@ Concordium Node 4.3.1 introduces a number of performance improvements. The effec
 - Remove obsolete and unused option ``--max-expiry-duration``.
 - Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
 
-*** August 24, 2022
+August 24, 2022
 
 Concordium Client 4.1.0
 -----------------------
@@ -616,7 +616,7 @@ Concordium Node 4.2.1 is a maintenance release, bringing performance improvement
 - A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less than 50% of memory compared to 4.1.1.
 - Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
 
-June 30, 2022
+*** June 30, 2022
 
 Concordium Mobile Wallet for iOS v3.0.0(53)
 ------------------------------------------------
@@ -953,7 +953,7 @@ October 6, 2021
 Concordium Node v1.1.3
 ----------------------
 
-The :ref:`Concordium node release v1.1.3 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+The Concordium node release v1.1.3 implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
 This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
 stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
 

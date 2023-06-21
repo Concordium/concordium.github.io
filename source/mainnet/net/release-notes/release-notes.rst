@@ -256,7 +256,7 @@ Concordium Client has been migrated to use version 2 of the node gRPC API.
 
 - The `--grpc-authentication-token` option has been removed.
 
-March 09, 2023
+*** March 09, 2023
 
 Concordium Node 5.2.4
 ---------------------

@@ -187,6 +187,85 @@ Wallets
 Desktop Wallet
 --------------
 
+    August 4, 2022
+
+    The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+    Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+
+    .. dropdown:: 1.4.2 - June 21, 2022
+
+        Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS containing the following fixes:
+
+        -   Fixed an issue on macOS where an error popup would show after closing the main application window and opening it again.
+        -   Fixed an issue on macOS where identity creation was not possible after closing the main application window and opening it again.
+
+    .. dropdown:: 1.4.1 - June 15, 2022
+
+        Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface. Note that the delegation functionality will not work until the protocol update occurs on June 23, 2022.
+
+        The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
+
+        In addition, the following changes were made:
+
+        - When choosing a delegation target a link is now available that forwards the user to the delegation documentation website.
+        - Fixed an issue that made it impossible to create a transaction to do passive delegation.
+        - Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.
+
+    .. dropdown:: 1.3.1 - January 13, 2022
+
+        -   Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.
+        -   Fixed identity issuance with DTS.
+
+    .. dropdown:: 1.3.0 - December 17, 2022
+
+        - Updated the default node configuration to point to concordiumwalletnode.com.
+        - In the case of a failed identity, the error details received from the identity provider are now displayed to the user.
+        - Added UI flows for baker transactions for single signer accounts.
+        - Auxiliary data in an Update Protocol transaction is now optional.
+        - Updated terms and conditions.
+        - Updated UI to reflect the rename of GTU to CCD, meaning anywhere tokens were referred to as GTU, it now says CCD. The GTU icon has also been replaced with the icon representing CCD.
+        - Datetimes are now selected with a date picker from a calendar.
+        - Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.
+        - Failed database migrations errors are now shown correctly to the user.
+
+    .. dropdown:: 1.2.0 - October 6, 2021
+
+        - Added memo functionality to simple, shielded and scheduled transfers.
+        - Automatic updates now supported.
+        - Added option to recover lost accounts from Ledger devices.
+        - The desktop wallet now shows connected node status in side bar.
+        - Added an option to change between two account views.
+        - Transaction log can now handle more than 100 transactions and filter functionality has been expanded.
+        - Failed identities now show more information, including how to contact support.
+        - Apple M1 Macs are now supported through Rosetta.
+        - It is now possible to view an account address QR-code in "fullscreen" mode.
+        - It is now possible to rename accounts and identities.
+        - Added an option to add an address book entry while creating a transfer transaction.
+        - Added an introductory screen to set up a node connection for first time users.
+        - It is now possible to remove a failed identity.
+        - The accounts page has been updated to make it clearer that multi credential accounts are not able to use shielded transactions.
+        - Transactions in the 'Transfers' list in the account view are now grouped by dates.
+        - Various smaller UI updates.
+        - Various smaller bug fixes.
+        - The desktop wallet is now open source.
+
+    .. dropdown:: 1.1.6 - July 28, 2021
+
+        Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
+
+    .. dropdown:: 1.1.5 - July 27, 2021
+    
+        -  General improvements to the user interface, in particular for multi signature transaction flows.
+        -  Change of wallet password now enforces the same length restriction as when initially set.
+        -  Wallet exports now contain the genesis hash to prevent the import of a wallet from testnet to a mainnet wallet.
+        -  Improved messages when waiting for a Ledger device to be connected.
+        -  Transaction status is now included in an account report.
+        -  Fixed an issue where e.g. a loss of connection could result in a failed identity when it should not.
+        -  Security improvements. Node integration was available to the Electron renderer threads which is considered unsafe. This has now been disabled.
+        -  Added foundation feature for importing and creating multi signature transactions in bulk.
+        -  A number of bug fixes.
+
 .. _rn-mwgen1-ios:
 
 |mw-gen1| for iOS
@@ -203,6 +282,60 @@ Desktop Wallet
     .. dropdown:: |mw-gen1| 3.1.0 - March 7, 2023
 
         In connection with the release of |mw-gen2| for iOS, the iOS mobile wallet previously known as Concordium Mobile Wallet has been renamed |mw-gen1| 3.1.0.
+
+    .. dropdown:: 3.0.0(53) - June 30, 2022
+
+        Concordium Mobile Wallet for iOS 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+
+        You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
+
+        If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
+
+    .. dropdown:: 2.0.0(38) - March 21, 2022
+
+        Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.
+
+        The simplified UI involves:
+
+        - Redesigned account cards with Send, Receive and More options.
+
+        - Updated simple and shielded transaction flows:
+
+            - It is now possible to paste recipient addresses directly, without having to add them to the address book first.
+
+            - A “Send all” button has been added.
+
+        - The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.
+
+        - The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.
+
+    .. dropdown:: 1.3(34) - February 10, 2022
+
+        Fixed a bug related to import of backup files.
+
+    .. dropdown:: 1.2(33) - February 1, 2022
+
+        - Changed name of export file to ``concordium-backup.concordiumwallet``.
+        - Added prompts and dialogs to remind users to back up.
+
+    .. dropdown:: 1.1(27) - December 9, 2021
+
+        - Changed GTU/Ǥ naming to CCD/Ͼ.
+        - Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+            - It is now possible to add memos to simple and shielded transfers.
+            - Memos can also be displayed for transfers with a release schedule.
+
+        - Various improvements of the identity issuance flow, account creation and related support options.
+
+        - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
+        - Added a small dialogue to remind the user to check for a response on new identity requests.
+        - Users will now be notified on successful creation of new accounts inside the app.
+        - Various back-end improvements by the identity provider to make their service more robust.
+        - Various improvements to make the identity issuance and account creation flow more robust.
+
+        - Various bug fixes.
+        - Various smaller textual updates.
 
 .. _rn-mwgen1-android:
 
@@ -221,6 +354,64 @@ Desktop Wallet
 
         The Concordium Mobile Wallet has been renamed to |mw-gen1| with the release of the |mw-gen2|. If you are creating your first identity, Concordium recommends downloading and using |mw-gen2|.
 
+    .. dropdown:: v3.0.0(100) - June 27, 2022
+
+        Concordium Mobile Wallet 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.
+
+        You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.
+
+        If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.
+
+        This functionality will be available for iOS shortly.
+
+    .. dropdown:: 2.0.0(75) - March 22, 2022
+
+        Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.
+
+        The simplified UI involves:
+
+        - Redesigned account cards with Send, Receive and More options.
+
+        - Updated simple and shielded transaction flows:
+
+            - It is now possible to paste recipient addresses directly, without having to add them to the address book first.
+
+            - A “Send all” button has been added.
+
+        - The shielded balance is now found behind a setting on each account. Enabling the setting will show a brief introduction of the shielded balance concept.
+
+        - The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.
+
+    .. dropdown:: 1.2.6 - January 25, 2022
+
+        - Changed name of export file to ``concordium-backup.concordiumwallet``.
+        - Added prompts and dialogs to remind users to back up.
+
+    .. dropdown:: 1.0.22 - December 17, 2021
+
+        - Changed naming from GTU to CCD.
+        - Various bug fixes.
+
+    .. dropdown:: 1.0.16 - November 16, 2021
+
+        -  Support for the new memo functionality in simple, shielded, and scheduled transfers:
+
+            -  It is now possible to add memos to simple and shielded transactions.
+            -  Memos can also be displayed for transfers with release schedule.
+
+        -  Various improvements of the identity issuance flow, account creation, and related support options:
+
+            -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail, containing an issuance reference for better personal support as well as system information of the user for better debugging.
+            -  Added a small dialogue to remind user to check for response on new identity requests.
+            -  User will now be notified on successful creation of new accounts inside the app.
+            -  Various back-end improvements by the identity provider to make their service more robust.
+
+        -  Various bug fixes.
+
+        -  Various smaller textual updates.
+
+        -  Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.
+
 .. _rn-ledger-app:
 
 Concordium Ledger app
@@ -230,6 +421,32 @@ Concordium Ledger app
 
     Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
 
+    .. dropdown:: 3.0.1 - June 15, 2022
+
+        The Concordium Ledger app 3.0.1 is released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.
+
+    .. dropdown:: 2.0.3 - December 13, 2021
+
+        - Supports Ledger Nano S firmware version 2.1.0.
+        - Removed references to GTU in the UI.
+        - An acceptance step has been added to the export of private key seeds.
+
+    .. dropdown:: 2.0.1 - October 6, 2021
+
+        - Improved state validation to deny instruction changes in multi command transactions.
+        - Support building for the Ledger Nano X.
+        - Simplified the UI by updating terminology and stopped displaying details that cannot feasibly be verified by a user.
+        - Export of private key seeds has been changed so that either the PRF key can be exported alone, or the PRF key and the IdCredSec are exported in a single command.
+        - Added support for transactions with memos.
+        - Support for the "Add identity provider" update.
+        - Support for the "Add anonymity revoker" update.
+        - Improved pagination of account addresses and hexadecimal strings, so that pages are split evenly and consistently.
+        - Fixed an issue in the add baker UI, where a response could be sent before signing or declining.
+
+    .. dropdown:: 1.0.2 - July 27, 2021
+
+        -  Scheduled transfer release times are now shown as human readable UTC date time strings.
+        -  Fixed a UI bug in remove baker transaction.
 Nodes
 =====
 
@@ -375,10 +592,204 @@ Mainnet
         - Remove obsolete and unused option ``--max-expiry-duration``.
         - Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
 
+    .. dropdown:: 4.2.3 for Docker - August 4, 2022
+
+        Some improvements have been made to the Docker node version. The new Docker images (one for Mainnet and one for Testnet) are designed for use with docker-compose or a similar driver. The node also requires a database which must be stored on the host system so that it persists when the Docker container is stopped.
+
+        It is not mandatory but **strongly recommended** for Linux node runners to migrate to the new Docker distribution. The old Docker images will be deprecated and future node versions from 4.3 and upwards will only be provided in the new distribution.
+
+    .. dropdown:: 4.2.3 - August 2, 2022
+
+        Concordium Node 4.2.3 fixes a critical security vulnerability present in all previous 4.* node versions. All node runners **must** upgrade as soon as possible.
+
+        The security advisory detailing the issue and the patch will be released on August 15th.
+
+    .. dropdown:: 4.2.1 - July 4, 2022
+
+        Concordium Node 4.2.1 is a maintenance release, bringing performance improvements and bugfixes. The highlights are:
+
+        - A significant decrease in node startup time. The exact improvements are platform dependent, but startup should be at least 6 times faster on mainnet.
+        - A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less than 50% of memory compared to 4.1.1.
+        - Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
+
+    .. dropdown:: 4.1.1 - June 15, 2022
+
+        Concordium Node 4.1.1 (Sirius) introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.
+
+        Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to three weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.
+
+        V1 smart contracts include the following key features:
+        - Unlimited contract state size
+        - Synchronous contract calls
+        - Fallback entrypoints
+        - An increased smart contract module size limit of 512kB
+        - A number of cryptographic primitives
+
+        Other improvements in this version include:
+        - The SendTransaction function exposed via the gRPC interface now provides the caller with detailed error messages.
+        - Support for wire-protocol version 0 is dropped, meaning that the node cannot connect to peers that do not support wire-protocol version 1, which is supported since version 1.1.0.
+        - The macOS installer has been improved so it no longer overwrites the service files when reinstalling.
+        - When using the Mac installer users now can leave one (but not both) of the net configurations empty when they don't want to configure a node for it. On the initial installation, leaving a net configuration empty means that the start/stop app shortcuts and the application support folder for that net won't be installed.
+        - Consensus queries have been made more robust by validating input more extensively. This affects all queries whose input was a block or transaction hash. These queries now return an InvalidArgument error.
+        - The maximum number of retries for Node Collector has been removed so it will keep querying indefinitely.
+        - Nodes can now be stopped during out of band catchup by using the signals ``SIGINT`` and ``SIGTERM``.
+        - The ``GetAccountInfo`` endpoint supports querying the account via the account index.
+        - Baker pools and stake delegation are implemented for the P4 protocol version.
+        - The new gRPC endpoint ``GetBakerList`` retrieves a JSON list of the baker IDs of the bakers registered in a known block. It returns null for an unknown block.
+        - The new gRPC endpoint ``GetPoolStatus`` retrieves a status record for a baker pool, or for the set of passive delegators.
+        - The bakerStakeThreshold level-2 keys are renamed to poolParameters keys; two additional access structures are defined: cooldownParameters and timeParameters.
+        - Smart contract modules are cached on startup from the existing state to improve smart contract execution.
+
+        .. Note::
+
+            Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.
+
+    .. dropdown:: 3.0.2 - April 21, 2022
+
+        Fixed a security vulnerability in the network layer that could be used to crash the node, causing a denial of service.
+
+    .. dropdown:: 3.0.1 - January 7, 2022
+    
+        Fixed a starvation bug in some cases of parallel node queries.
+
+    .. dropdown:: 3.0.0 - December 17, 2021
+
+        - Introduced support for account aliases via protocol P3. Accounts can be queried in ``GetAccountInfo``, ``GetAccountNonFinalizedTransactions``, ``GetNextAccountNonce`` by any alias.
+        - ``GetAccountInfo`` object now has an additional field ``accountAddress`` that contains the canonical address of the account.
+        - Fixed a bug due to incorrect use of LMDB database environments, where a node would crash if queried at specific times.
+        - Faster state queries by avoiding locking the block state file when reading.
+        - Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.
+        - The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.
+
+    .. dropdown:: 1.1.3 - October 6, 2021
+
+        The Concordium node release v1.1.3 implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+        This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
+
+        - Added memo functionality for transactions to Protocol
+        - Windows support for running a node
+        - Mac support for running a node
+        - Mac ARM M1 support for running a node
+        - Various bug fixes
+
+    .. dropdown:: 1.0.0 - June 9, 2021
+
+        We are proud to announce that version 1 of the Concordium blockchain infrastructure, the “Alpha Centauri” release, is available for download.
+
+        Our Mainnet release has the following main features:
+
+        **Proof of Stake**
+
+        The Concordium Blockchain uses a proof of stake mechanism to ensure resource-efficient operation of the network.
+
+        **Two Layer Consensus Protocol**
+
+        -  Nakamoto-Style Consensus
+        Bakers participate in a form of lottery to win the right to append blocks to the chain.
+
+        -  Finality Layer
+        Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byzantine agreement to identify and mark common blocks in the chains of honest users as final.
+
+        **Built in IDLayer**
+
+        Account creation is based on a validated identity, but at the same time it provides transactional privacy for users with a mechanism that allows accountability to local regulatory authorities.
+
+        Transactional privacy is further enhanced by support for shielded transfers.
+
+        **Smart Contracts**
+
+        Concordium blockchain has native support for smart contracts on-chain with our core on-chain language WebAssembly (Wasm), a portable well-defined assembly-like language.
+
+        Rust is the first off-chain high level smart contract language.
+
+        **Tokenomics and On-chain Incentivization**
+
+        The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.
+
+        The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.
+
+        **Concordium Node**
+
+        The Concordium node software is available for Linux and available in two different packages:
+
+        -  A distribution package, which provides wrappers for setting up the node in a Docker image.
+
+        -  A Debian package built for Ubuntu 20.04. This package allows for greater customization of the node set up.
+
+        **Mobile Wallet**
+
+        The Mobile Wallet is available for iOS and Android with support for:
+
+        -  identity issuance and management.
+        -  account creation and management.
+        -  simple and shielded transactions.
+        -  platform security protection
+        -  export and import to other mobile wallets.
+        -  access to the blockchain through a “wallet proxy” operated by Concordium with no need to run a node.
+
+        **Desktop Wallet**
+
+        The Desktop Wallet is available for Windows, macOS, and Linux with support for:
+
+        -  identity issuance and management.
+        -  account creation and management.
+        -  protection by Ledger Nano S device.
+        -  multi signature account set up and management.
+        -  multiple transaction types:
+        -  Simple
+        -  Scheduled
+        -  Shielded
+        -  Multi-signature
+        -  filtering and printing historic transactions
+        -  baker management
+        -  access to blockchain via a service node, which is usually owned by the user of the Desktop Wallet.
+
+        **Source Code**
+
+        The source code for the Concordium Blockchain is free open source software. You can access our repositories on the `Concordium GitHub organization page <https://github.com/Concordium>`_.
+
 .. _rn-node-testnet:
 
 Testnet
 -------
+
+    June 7, 2023
+
+    Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+
+    .. dropdown:: 5.4.1 - June 1, 2023
+
+        Concordium node version 5.4.1 contains the following features and bug fixes:
+
+        - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+        - Fixed a security issue.
+
+        - Support using block height as block identifiers in gRPC v2 API.
+
+        - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+        - Do not keep a historical list of peers when running as a normal node.
+
+    .. dropdown:: 5.3.2 - April 20, 2023
+
+        - Extended the Prometheus exporter with the following metrics: grpc_request_duration_seconds, grpc_in_flight_requests, consensus_baking_committee, consensus_finalization_committee, consensus_baking_lottery_power, consensus_baked_blocks_total, consensus_finalized_baked_blocks_total, network_soft_banned_peers_total, consensus_non_finalized_transactions and consensus_unsupported_pending_protocol_version. See `docs/prometheus-exporter.md <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`_ for more details.
+
+        - Also, in the changelog for the node grpc_request_duration_seconds has been renamed to grpc_request_response_time_seconds to match the what is in the code.
+
+        - Added the following new options:
+
+        - The ``--grpc2-health-min-peers`` (environment variable ``CONCORDIUM_NODE_GRPC2_HEALTH_MIN_PEERS``) triggers the grpc V2 health endpoint to check minimum number of peers.
+
+        - ``--grpc2-invoke-max-energy`` (environment variable ``CONCORDIUM_NODE_GRPC2_INVOKE_MAX_ENERGY``) allows the node runner to control the maximum amount of energy allowed by an InvokeInstance (and the V1 GRPC InvokeContract) call. The behavior of the endpoint is slightly changed as well. The energy is no longer required in the request, and the effective energy used by the call will be min(request.energy, grpc-invoke-max-energy). This differs from the previous behavior where a request would fail if the request either omitted the energy, or supplied an excessive value.
+
+        - Improved the node health check, so that if the node is configured with baker credentials, then it is required to be in the baking committee for it to be considered healthy.
+
+        - Fixed a bug that could cause the node to hang indefinitely during the out-of-band-catchup when the node is a finalizer.
+
+        - Fixed an additional bug in the ``GetAccountInfo`` endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.
+
+        - The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
 Tools
 =====
@@ -396,7 +807,7 @@ Concordium Client
 
     - Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
 
-    .. dropdown:: 5.1.1 - March 16, 2023
+    .. dropdown:: 5.1.1 - March 2, 2023
 
         Concordium Client has been migrated to use version 2 of the node gRPC API.
 
@@ -424,6 +835,58 @@ Concordium Client
         - Fix handling of ``--no-confirm`` in ``contract init``, ``contract update``, ``module deploy``, and ``register data`` transactions. This flag is now respected.
         - Add support for import of keys from |bw|.
         - Fix some inconsistencies in the display format of CCD amounts.
+
+    .. dropdown:: 4.1.0 - August 24, 2022
+
+        - Fix bug in contract schema parsing caused by endiannes confusion.
+        - Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables `concordium-client` to interact with contracts built using `concordium-std` version 4.
+
+    .. dropdown:: 4.0.4 - August 4, 2022
+
+        The `concordium-client` has been updated to better support the new smart contract v1 schema.
+
+    .. dropdown:: 4.0.3 - June 15, 2022
+
+        Concordium Client 4.0.3 supports version 1 Smart Contracts with the following changes.
+
+        - A ``contract invoke`` command has been added for simulating contracts locally on the node.
+        - Module deploy now expects modules with a version prefix. This prefix is added automatically when building with cargo-concordium version >= 2. The flag ``--contract-version`` has been added to support modules without the version prefix.
+        - The ``contract update`` command now uses ``--entrypoint`` to specify the function to invoke. This is renamed from the previous ``--func``.
+        - When calling ``contract update`` or ``contract invoke`` with a non-existent entrypoint the fallback entrypoint is called if one is specified in the contract.
+
+        Concordium Client 4.0.3 also supports delegation to baker pools or passive delegation, and commands have been added to open baker pools.
+
+        - The commands ``delegator add``, ``delegator configure`` and ``delegator remove`` have been added. Commands to support the baker opening a baker pool have also been added, including ``baker configure``, ``baker update-url`` and ``baker update-delegation-status``.
+        - The existing commands ``baker add``, ``baker remove``, ``baker set-key``, ``baker update-restake`` and ``baker update-stake`` have been updated so that in Protocol version < 4, they generate the former P3 transaction, and in Protocol version 4, they generate the relevant ``configure baker`` transaction.
+        - Support has been added for the raw queries ``GetPoolStatus`` and ``GetBakerList``.
+        - The subcommand ``consensus show-chain-parameters`` has been added to show the chain parameters. This subcommand shows useful information, such as the amount needed to become a baker, bounding caps for baker pools, commission percentages for delegation, exchange rate parameters, and more.
+
+    .. dropdown:: 3.0.4 - December 10, 2021
+
+        - Credentials revealing the newly introduced attribute LEI can be deployed.
+        - Renamed GTU token to CCD.
+        - Renamed ``send-gtu``, ``send-gtu-scheduled`` and ``send-gtu-encrypted`` to ``send``, ``send-scheduled`` and ``send-shielded``.
+        - Renamed ``account encrypt``/``decrypt`` to ``account shield``/``unshield``.
+        - Added command for generating aliases of an address.
+        - Now shows line breaks, tabs etc. in memo transfers (when it's CBOR encoded string), instead of escaping them as ``\n``, ``\t`` etc.
+        - Now displays memo as JSON in a more readable way.
+        - Added time units to slot duration and epoch duration in consensus status.
+        - Updated the ``register-data`` command to register data as CBOR encoded strings or JSON using the new flags ``--string`` and ``--json``. Raw data can still be registered using the new flag ``--raw``.
+        - Added ``raw DisconnectPeer``, a counterpart to the existing ``raw ConnectPeer``.
+        - Now warning  the user when trying to add a baker with a stake below the minimum threshold.
+        - Improved how contract schemas are shown as JSON:
+
+        - Now displays complex types in arrays correctly.
+        - Use angle brackets to indicate placeholders, e.g. ``"<UInt16>"`` instead of ``"UInt16"``.
+        - Improved ``module inspect``:
+
+        - Now shows all contracts from a module regardless of whether a schema is included or not.
+        - Now shows the receive methods for contracts as well.
+        - Now allows sending transactions where the sender is an account alias.
+
+    .. dropdown:: 1.1.1 - October 6, 2021
+
+        Added memo functionality for transactions
 
 .. _rn-cargo:
 
@@ -468,6 +931,14 @@ Concordium Client
 
         Cargo concordium 2.2.0 introduces the ``init`` subcommand that can initialize a new project and use contract templates to set up an initial project.
 
+    .. dropdown:: 2.1.0 - August 24, 2022
+
+        Use schemas for error values when simulating contracts. In particular support building and testing contracts with `concordium-std` version 4.
+
+    .. dropdown:: 2.0.2 - August 4, 2022
+
+        Cargo concordium has also been updated to better support the new smart contract v1 schema.
+
 .. _rn-vscode-ext:
 
 VSCode extension
@@ -481,6 +952,28 @@ VSCode extension
 
 CCDScan
 -------
+
+    May 4, 2022
+
+    CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+
+    CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
+    CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+
+    CCDScan release 1 features include:
+    - Block list view of the latest block data
+    - Block details for each block
+    - Transaction list view of the latest transaction data
+    - Transaction details for each transaction
+    - Account list view of the most recent account data
+    - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
+    - Easy search for specific details on blocks, transactions and accounts and bakers
+    - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
+    - A dashboard landing page with real-time updates from the Concordium blockchain
+    - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
+    - Ability to switch between Mainnet and Testnet data
+    - Ability to explore chain parameters and updates to these
+    - List of bakers and their stake, including the ability to drill through to the underlying account address
 
 Libraries
 =========
