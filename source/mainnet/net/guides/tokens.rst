@@ -5,7 +5,7 @@
 Tokens in the wallet
 ========================
 
-You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
+You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devices.
 
 .. dropdown:: |bw|
 
