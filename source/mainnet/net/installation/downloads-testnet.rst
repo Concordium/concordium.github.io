@@ -133,13 +133,17 @@ Concordium Client |client-version|
 
 .. _cargo-concordium-testnet:
 
-``cargo-concordium`` v2.8.0
-===========================
+``cargo-concordium``
+====================
 
 For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
 
-VSCode extension 1.0.1
-----------------------
+.. Note::
+
+   From version 2.8.0 the distribution for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
+
+VSCode extension
+----------------
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
@@ -189,6 +193,13 @@ To run a node on macOS, you need a macOS installer package.
    - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
+
+Node performance monitoring
+---------------------------
+
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>` to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+
+For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
 Genesis block
 =============
