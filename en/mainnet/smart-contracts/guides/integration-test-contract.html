@@ -1880,7 +1880,7 @@ body {margin:0;}
 The library allows you to test individual contracts in isolation, but, notably, also interactions between multiple contracts.
 When running the tests, they are executed locally on the exact contract code that is deployed on the chain, and using the same execution engine that the nodes use.
 V0 smart contracts are not supported, but all V1 smart contract features are, including upgrades, and it is also possible to see the energy usage of your contracts.
-This allows you to refactor and optimize your contracts for speed and efficiency with greater confidence.</p>
+This allows you to refactor and optimize your contracts for speed and efficiency with greater ease and confidence.</p>
 <p>The high-level process of adding integration tests to your existing smart contract project is as follows:</p>
 <ol class="arabic">
 <li><p>Add the testing library to your <code class="docutils literal notranslate"><span class="pre">Cargo.toml</span></code> file and use Rust edition <code class="docutils literal notranslate"><span class="pre">2021</span></code>:</p>
@@ -1895,19 +1895,22 @@ This allows you to refactor and optimize your contracts for speed and efficiency
 <p>By putting it under <code class="docutils literal notranslate"><span class="pre">dev-dependencies</span></code>, it is only included for tests.
 You must use edition <code class="docutils literal notranslate"><span class="pre">2021</span></code> or greater as that is a requirement for the testing library.</p>
 </li>
-<li><p>Compile your contract with <code class="docutils literal notranslate"><span class="pre">$cargo-concordium</span> <span class="pre">build</span> <span class="pre">...</span></code>.</p></li>
 <li><p>Write tests in files residing in <code class="docutils literal notranslate"><span class="pre">my-project/tests/</span></code>.
 Example content:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_smart_contract_testing</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
 
 <span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">my_test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">my_test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">module_load_v1</span><span class="p">(</span><span class="s">&quot;concordium-out/module.wasm.v1&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>where you specify the path the Wasm file built in step two (details will be explained later).</p>
+<p>where you specify the path to the Wasm file built in the next step.</p>
 </li>
-<li><p>Run your tests with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code></p></li>
-<li><p>If your tests fail due to a bug in your smart contract, fix the bug and recompile your contract with <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> as in the second step before running the tests again. Otherwise, the changes are not reflected in the tests.</p></li>
+<li><p>Run your tests with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span> <span class="pre">--out</span> <span class="pre">concordium-out/module.wasm.v1</span></code>
+This command also builds the Wasm module and outputs the Wasm module to the specified path.</p></li>
 </ol>
 <p>With a high-level understanding of the workflow, you are ready to write the actual tests.
 Each section below covers part of a typical integration test.</p>
@@ -1947,7 +1950,7 @@ It is important to set an appropriate balance for the account, as executing tran
 You can check the account balance with <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.account_balance_available"><code class="docutils literal notranslate"><span class="pre">account_balance_available</span></code></a> after each of the transactions you execute in the following sections to see that the transaction fees are subtracted from the balance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is also possible to use real account addresses from the chain, which shown in base58 encoding, but still represent 32 bytes.
+<p>It is also possible to use real account addresses from the chain, which are shown in base58 encoding, but still represent 32 bytes.
 For example:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">my_chain_account</span>: <span class="nc">AccountAddress</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;3kBx2h5Y2veb4hZgAJWPrr8RyQESKm5TjzF3ti1QQ4VSYLwK1G&quot;</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
@@ -1960,8 +1963,10 @@ For example:</p>
 <p>Deploying smart contract modules is a two-step process.
 First, you load the module with the function <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.module_load_v1.html"><code class="docutils literal notranslate"><span class="pre">module_load_v1</span></code></a>, then you deploy it to the chain with the method <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.module_deploy_v1"><code class="docutils literal notranslate"><span class="pre">module_deploy_v1</span></code></a>.
 Loading as a separate step allows you to reuse the loaded module across multiple tests for efficiency.</p>
-<p>The module to load should be a <code class="docutils literal notranslate"><span class="pre">wasm</span></code> module compiled with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code>.
-For example, for <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--embed-schema</span> <span class="pre">--out</span> <span class="pre">my_module.wasm.v1</span></code>, you write:</p>
+<p>The module to load must be a <code class="docutils literal notranslate"><span class="pre">wasm</span></code> module compiled with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> or, if using cargo concordium version 2.9.0+, <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span> <span class="pre">--out</span> <span class="pre">path/to/wasm/module</span></code>.
+Using the test command is ideal, as that will both compile the module <em>and</em> run the tests.
+By compiling the module every time, you ensure that the tests run on the newest version of your code.
+For example, for <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span> <span class="pre">--embed-schema</span> <span class="pre">--out</span> <span class="pre">my_module.wasm.v1</span></code>, you write:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
 <span class="k">fn</span> <span class="nf">my_test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// .. Lines omitted for brevity</span>

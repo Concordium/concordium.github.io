@@ -1913,7 +1913,7 @@ testing it is usually more convenient to specify addresses directly in bytes.</p
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Tests in Rust are regular functions, and the <code class="docutils literal notranslate"><span class="pre">#[test]</span></code> attribute tells the test runner to include the function when running <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
+<p>Tests in Rust are regular functions, and the <code class="docutils literal notranslate"><span class="pre">#[test]</span></code> attribute tells the test runner to include the function when running <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code> or <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span></code>.</p>
 <p>The primary construct used for testing is the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html"><code class="docutils literal notranslate"><span class="pre">Chain</span></code></a> type, which you should only create one of per test.
 It represents the blockchain and has methods for creating accounts and deploying and working with contracts.</p>
 <p>Use the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.new"><code class="docutils literal notranslate"><span class="pre">Chain::new</span></code></a> method for creating a chain with default settings and save it to the <em>mutable</em> variable <code class="docutils literal notranslate"><span class="pre">chain</span></code>:</p>
@@ -1953,6 +1953,18 @@ Then compile your contract with:</p>
 </div>
 <p>This produces the Wasm module <code class="docutils literal notranslate"><span class="pre">piggy_bank_part2.wasm.v1</span></code> in the root of your project, unless you have any typos or bugs in your code.
 If that is the case, try to fix them using the helpful error messages from the compiler or go back to the end of part 1 and copy the full contract code again.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the tests run against the compiled Wasm module, there is a risk of accidentally using an outdated Wasm module.
+To circumvent this, cargo concordium’s test command both builds and tests you contract, which ensures that you always test the newest version of your code.
+By default it places the compiled Wasm module in the <code class="docutils literal notranslate"><span class="pre">target/</span></code> folder, but you can specify where you want it placed, so the location is easy to specify in your tests.
+To do so, use the <code class="docutils literal notranslate"><span class="pre">--out</span></code> parameter when testing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium <span class="nb">test</span> --out piggy_bank_part2.wasm.v1
+</pre></div>
+</div>
+<p>Please note that the test command only builds your module in cargo concordium version 2.9.0+.
+Also note that for the highest assurance of correctness, you should <em>deploy the exact module</em> that you also tested.</p>
+</div>
 <p>Going back to your test case, use the function <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.module_load_v1.html"><code class="docutils literal notranslate"><span class="pre">module_load_v1</span></code></a> to load the module.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// .. Imports and constants omitted for brevity</span>
 
@@ -2099,9 +2111,10 @@ To avoid duplicating code across the test cases, you will <em>refactor</em> near
 </pre></div>
 </div>
 <p>Run the test to check that it compiles and succeeds.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo <span class="nb">test</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium <span class="nb">test</span> --out piggy_bank_part2.wasm.v1
 </pre></div>
 </div>
+<p>Note that the command recompiles the Wasm module and replaces the old module in the same location due to the <code class="docutils literal notranslate"><span class="pre">--out</span></code> parameter.</p>
 </div>
 <div class="section" id="test-inserting-ccd-into-a-piggy-bank">
 <h2>Test inserting CCD into a piggy bank<a class="headerlink" href="#test-inserting-ccd-into-a-piggy-bank" title="Permalink to this headline">#</a></h2>
@@ -2232,7 +2245,7 @@ receive methods <a class="reference external" href="https://docs.rs/concordium-s
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Again, verify that everything compiles and the tests succeed using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
+<p>Again, verify that everything compiles and the tests succeed using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span> <span class="pre">--out</span> <span class="pre">piggy_bank_part2.wasm.v1</span></code>.</p>
 </div>
 <div class="section" id="test-smashing-a-piggy-bank">
 <h2>Test smashing a piggy bank<a class="headerlink" href="#test-smashing-a-piggy-bank" title="Permalink to this headline">#</a></h2>
@@ -2302,7 +2315,7 @@ There is a helper method <a class="reference external" href="https://docs.rs/con
 </pre></div>
 </div>
 <p>Since deserialization might fail, <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.from_bytes.html"><code class="docutils literal notranslate"><span class="pre">from_bytes</span></code></a> returns a <code class="docutils literal notranslate"><span class="pre">Result</span></code> that is unwrapped here.
-If you run <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code> at this point, the compiler will complain about <code class="docutils literal notranslate"><span class="pre">PiggyBankState</span></code> being undeclared.
+If you run the tests at this point, the compiler will complain about <code class="docutils literal notranslate"><span class="pre">PiggyBankState</span></code> being undeclared.
 This is because types and functions in Rust are private by default.
 To make the <code class="docutils literal notranslate"><span class="pre">PiggyBankState</span></code> public, edit the <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code> file and add the <code class="docutils literal notranslate"><span class="pre">pub</span></code> keyword.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">PiggyBankState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2313,8 +2326,9 @@ To make the <code class="docutils literal notranslate"><span class="pre">PiggyBa
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The change you just made does not affect the functionality of the contract, but when you make changes that do, you need to recompile the contract with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> before running the tests again.
-Otherwise, you will continue using the old Wasm module.</p>
+<p>The change you just made does not affect the functionality of the contract, but when you make changes that do, it is essential to build the Wasm module again.
+Otherwise, you will continue using the old Wasm module.
+Recompiling the module occurs automatically when using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span> <span class="pre">--out</span> <span class="pre">piggy_bank_part2.wasm.v1</span></code> and the command overwrites the old module in the same location due to the <code class="docutils literal notranslate"><span class="pre">--out</span></code> parameter.</p>
 </div>
 <p>With the <code class="docutils literal notranslate"><span class="pre">state</span></code> and <code class="docutils literal notranslate"><span class="pre">balance</span></code> available, you can make assertions.
 The contract should be smashed and have a balance of zero:</p>
@@ -2399,7 +2413,7 @@ Since you did not insert any CCD in this test case, the piggy bank should have m
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Ensure everything compiles and the test succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
+<p>Ensure everything compiles and the test succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">test</span> <span class="pre">--out</span> <span class="pre">piggy_bank_part2.wasm.v1</span></code>.</p>
 </div>
 <div class="section" id="testing-cause-of-rejection">
 <h2>Testing cause of rejection<a class="headerlink" href="#testing-cause-of-rejection" title="Permalink to this headline">#</a></h2>
