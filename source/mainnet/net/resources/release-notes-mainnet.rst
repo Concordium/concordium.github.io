@@ -42,6 +42,25 @@ Additionally, the following improvements were made:
 - Transferring CCD on Public balance now always uses the new sendToken activity.
 - Removed the ability to search for tokens when selecting tokens to transfer.
 
+June 14, 2023
+
+Concordium Node 5.4.2
+---------------------
+
+Concordium node version 5.4.2 contains the following features and bug fixes:
+
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not keep a historical list of peers when running as a normal node.
+
+- Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+
 June 1, 2023
 
 Concordium Client 5.2.0
