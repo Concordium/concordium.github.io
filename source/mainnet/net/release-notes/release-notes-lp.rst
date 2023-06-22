@@ -263,7 +263,7 @@ Desktop Wallet
             Fixed an issue where identity creation would fail consistently making it impossible to create new identities.
 
         .. dropdown:: 1.1.5 - July 27, 2021
-        
+
             -  General improvements to the user interface, in particular for multi signature transaction flows.
             -  Change of wallet password now enforces the same length restriction as when initially set.
             -  Wallet exports now contain the genesis hash to prevent the import of a wallet from testnet to a mainnet wallet.
@@ -667,7 +667,7 @@ Mainnet
             Fixed a security vulnerability in the network layer that could be used to crash the node, causing a denial of service.
 
         .. dropdown:: 3.0.1 - January 7, 2022
-        
+
             Fixed a starvation bug in some cases of parallel node queries.
 
         .. dropdown:: 3.0.0 - December 17, 2021

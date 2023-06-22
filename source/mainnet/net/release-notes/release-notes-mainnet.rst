@@ -618,7 +618,7 @@ Concordium Node 4.2.1 is a maintenance release, bringing performance improvement
 - A significant decrease in node memory use. On mainnet, a 4.2.1 node should use less than 50% of memory compared to 4.1.1.
 - Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.
 
-*** June 30, 2022
+June 30, 2022
 
 Concordium Mobile Wallet for iOS v3.0.0(53)
 ------------------------------------------------
