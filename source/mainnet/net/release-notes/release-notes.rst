@@ -7,6 +7,8 @@
 Release Notes - Testnet
 =======================
 
+This document is deprecated and replaced by the :ref:`product-separated release notes<release-notes>`.
+
 .. Note::
 
    Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
@@ -256,7 +258,7 @@ Concordium Client has been migrated to use version 2 of the node gRPC API.
 
 - The `--grpc-authentication-token` option has been removed.
 
-*** March 09, 2023
+March 09, 2023
 
 Concordium Node 5.2.4
 ---------------------
