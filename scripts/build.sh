@@ -5,9 +5,8 @@
 
 set -e # Fail script on error
 
-# Branches to include in the build, must be separated by comma and no spaces.
-
-all_versions='mainnet'
+# Documentation projects to include in the build, must be separated by comma and no spaces.
+all_projects='mainnet,academy'
 
 # Languages to include in the build
 all_languages='en'
@@ -16,14 +15,14 @@ source_dir='source'
 build_dir='build'
 
 # Expose settings for the build to create links between them
-export all_versions
+export all_projects
 export all_languages
 
 # Convert the strings to arrays
-IFS="," read -a versions <<< $all_versions
+IFS="," read -a projects <<< $all_projects
 IFS="," read -a languages <<< $all_languages
 
-printf "Building documentation versions: ${all_versions} for languages ${all_languages}\n"
+printf "Building documentation versions: ${all_projects} for languages ${all_languages}\n"
 
 mkdir -p "${build_dir}"
 
@@ -36,17 +35,17 @@ cp -r CLAs "${build_dir}/CLAs"
 printf "Copying 'extra' directory to ${build_dir}\n"
 cp -r extra "${build_dir}/extra"
 
-for current_version in ${versions[@]}; do
-  printf "\nVersion '${current_version}':\n-----------------------------\n"
+for current_project in ${projects[@]}; do
+  printf "\nProject '${current_project}':\n-----------------------------\n"
   export current_version
 
   for current_language in ${languages[@]}; do
     export current_language
-    printf "\nRunning build '${current_version}' for language '${current_language}'\n"
-    sphinx-build "${source_dir}/${current_version}" "${build_dir}/${current_language}/${current_version}" -D language="${current_language}" -W
+    printf "\nRunning build '${current_project}' for language '${current_language}'\n"
+    sphinx-build "${source_dir}/${current_project}" "${build_dir}/${current_language}/${current_project}" -D language="${current_language}" -W
   done
 
-printf "Adding symlink ${build_dir}/404.html to ${languages[0]}/${versions[0]}/404.html\n"
-ln -sf "${languages[0]}/${versions[0]}/404.html" "${build_dir}/404.html"
+printf "Adding symlink ${build_dir}/404.html to ${languages[0]}/${projects[0]}/404.html\n"
+ln -sf "${languages[0]}/${projects[0]}/404.html" "${build_dir}/404.html"
 
 done

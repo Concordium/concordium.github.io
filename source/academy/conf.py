@@ -185,7 +185,7 @@ html_theme_options = {
             "type": "fontawesome",  # Default is fontawesome
 
         },
-        {    
+        {
             "name": "Discourse",
             "url": "https://support.concordium.software/latest",
             "icon": "_static/discourse-brands.svg",
@@ -202,7 +202,7 @@ html_theme_options = {
             "type": "fontawesome",  # Default is fontawesome
 
         },
-    ]        
+    ]
     }
 
 
@@ -336,12 +336,12 @@ linkcheck_request_headers = {
 }
 
 # -- InterSphinx links for linking between document versions ------------------
-# intersphinx_mapping = {'devdoc': ('https://developer.concordium.software/en/mainnet/index.html', None)}
-
-# -- Sphinx-reredirects for redirecting old paths to new ones ----------------
-redirects = {
-    "./net/desktop-wallet/send-gtu-single-desktop": "/en/mainnet/net/desktop-wallet/send-ccd-single-desktop.html",
-    "./net/desktop-wallet/shield-gtu-desktop": "/en/mainnet/net/desktop-wallet/shield-ccd-desktop.html",
+intersphinx_mapping = {
+    'devdoc': (
+        'https://developer.concordium.software/en/mainnet', # Public site with an inventory file.
+        ('../../build/en/mainnet/objects.inv', # Inventory for local testing.
+         'objects.inv') # Name of the public inventory.
+    )
 }
 
 # -- Tags that enables the .. only option ----------------

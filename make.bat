@@ -8,7 +8,7 @@ if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set SOURCEDIR=source
-set BUILDDIR=build
+set BUILDDIR=build/en
 
 if "%1" == "" goto help
 if "%1" == "dev-mainnet" goto dev-mainnet

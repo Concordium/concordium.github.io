@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
-BUILDDIR      = build
+BUILDDIR      = build/en
 
 
 

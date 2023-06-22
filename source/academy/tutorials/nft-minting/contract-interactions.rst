@@ -440,7 +440,7 @@ Finally, for the transaction output, you have one final ``match`` statement with
 Mint function
 =============
 
-Now you can call the ``mint()`` function from your new instance. For the complete minting tutorial you can follow :devdoc:ref:`the NFT minting tutorial from Concordium's developer portal<nft-index>`. Create a file called **nft-params.json** (similar to the tutorial) in the **nft-params** folder to mint your token and add your address and token ID to the file. And copy the schema file from the **concordium-out** folder to the **nft-params** folder.
+Now you can call the ``mint()`` function from your new instance. For the complete minting tutorial you can follow :ref:`the NFT minting tutorial from Concordium's developer portal<nft-index>`. Create a file called **nft-params.json** (similar to the tutorial) in the **nft-params** folder to mint your token and add your address and token ID to the file. And copy the schema file from the **concordium-out** folder to the **nft-params** folder.
 
 .. code-block:: json
 
