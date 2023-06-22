@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+  background-color: var(--bg-color);
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: var(--font-color);
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="{{ pathto('intro') }}">About Concordium</a>
+  <a href="{{ pathto('setup-env') }}">Setup</a>
+  <a href="{{ pathto('beg-tutorials') }}">Beginner</a>
+  <a href="{{ pathto('mid-tutorials') }}">Mid-level</a>
+  <a href="{{ pathto('adv-tutorials') }}">Advanced</a>
+  <a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a>
+</div>
+</body>
+</html>

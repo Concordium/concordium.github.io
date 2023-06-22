@@ -12,6 +12,7 @@ set BUILDDIR=build
 
 if "%1" == "" goto help
 if "%1" == "dev-mainnet" goto dev-mainnet
+if "%1" == "dev-academy" goto dev-academy
 if "%1" == "lint" goto lint
 
 %SPHINXBUILD% >NUL 2>NUL
@@ -32,6 +33,10 @@ goto end
 
 :dev-mainnet
 sphinx-autobuild %SOURCEDIR%\mainnet %BUILDDIR%\mainnet
+goto end
+
+:dev-academy
+sphinx-autobuild %SOURCEDIR%\academy %BUILDDIR%\academy
 goto end
 
 :lint
