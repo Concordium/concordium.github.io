@@ -43,13 +43,13 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
     .. dropdown:: Inspect tokens
 
-        Click the tab for the type of token that you want to inspect. Then click on the token to see details for that token.
+        Click the tab for the type of token that you want to inspect (Fungible or Collectibles). Then click on the token to see details for that token.
 
         You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Don't show token in wallet** if you don't want the token to appear in your wallet.
 
     .. dropdown:: Send tokens
 
-        #. Click Send |send-bw| in the Accounts overview.
+        #. Click Send |send-bw|.
 
         #. Click the field for what to send.
 
@@ -81,29 +81,26 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
 .. dropdown:: |mw-gen2|
 
-    To access tokens and token transactions, tap Tokens |token-bw|. Tabs appear for tokens.
+    To access tokens and token transactions, tap on an account then tap Tokens |token-mw|. Tabs appear for tokens.
 
     .. dropdown:: Add tokens
 
         #. Tap **Manage**.
 
-            .. image:: ../images/browser-wallet/manage-tokens.png
+            .. image:: ../images/mobile-wallet-gen2/manage-tokens.png
                 :width: 50%
 
         #. Enter a smart contract address on which to look for tokens. Tap **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
-            .. image:: ../images/browser-wallet/add-token-contract.png
+            .. image:: ../images/mobile-wallet-gen2/add-token-contract.png
                 :width: 50%
 
         #. Select the token(s) you want to add. You can tap on a token to see more information about it and then tap **X** to return to the list to select tokens. You can also search by token ID at the top of the screen. Tap **Add tokens** once you have made your selection(s).
 
-            .. image:: ../images/browser-wallet/select-tokens.png
+            .. image:: ../images/mobile-wallet-gen2/select-tokens.png
                 :width: 50%
 
-        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case the screen below appears when your wallet is connected and the service suggests the tokens to be added. Tap **Add selected** to add the selected tokens to your wallet.
-
-            .. image:: ../images/browser-wallet/add-tokens.png
-                :width: 50%
+        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case, the screen below appears when your wallet is connected and the service suggests the tokens to be added. Tap **Add tokens** to add the selected tokens to your wallet.
 
         .. Note::
 
@@ -115,21 +112,24 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
     .. dropdown:: Inspect tokens
 
-        Tap on the tab for the type of token that you want to inspect. Then tap on the token to see details for that token.
+        Tap on the tab for the type of token that you want to inspect (Fungible or Collectibles). Then tap on the token to see details for that token.
 
         You can tap **Show raw metadata** to see the raw metadata for the token. You can also tap **Don't show token in wallet** if you don't want the token to appear in your wallet.
 
     .. dropdown:: Send tokens
 
-        #. Tap Send |send-bw| in the Accounts overview.
+        To access send, either:
+
+        - Tap Send |send| on an account in the Accounts overview.
+
+            or
+
+        - Tap on the token in the appropriate tab and tap |send|.
 
         #. Tap the field for what to send.
 
-            .. image:: ../images/browser-wallet/send-tokens-select.png
-                :width: 25%
-
-            .. image:: ../images/browser-wallet/send-tokens-select2.png
-                :width: 25%
+            .. image:: ../images/mobile-wallet-gen2/send-tokens-select.png
+                :width: 50%
 
         #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token. To find the number of decimal places, you can inspect the token as described in Inspect tokens.
 
@@ -162,3 +162,11 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 .. |token-bw| image:: ../images/browser-wallet/tokens.png
              :alt: coins
              :width: 50px
+
+.. |token-mw| image:: ../images/mobile-wallet-gen2/tokens.png
+             :alt: coins
+             :width: 150px
+
+.. |send| image:: ../images/send.png
+         :alt: Paper airplane
+         :width: 50px
