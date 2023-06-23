@@ -42,6 +42,13 @@ Additionally, the following improvements were made:
 - Transferring CCD on Public balance now always uses the new sendToken activity.
 - Removed the ability to search for tokens when selecting tokens to transfer.
 
+June 7, 2023
+
+Concordium Node 5.4.2
+---------------------
+
+Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+
 June 1, 2023
 
 Concordium Node 5.4.1

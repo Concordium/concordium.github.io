@@ -133,13 +133,17 @@ Concordium Client |client-version|
 
 .. _cargo-concordium-testnet:
 
-``cargo-concordium`` v2.8.0
-===========================
+``cargo-concordium``
+====================
 
 For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
 
-VSCode extension 1.0.1
-----------------------
+.. Note::
+
+   From version 2.8.0 the distribution for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
+
+VSCode extension
+----------------
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
@@ -157,9 +161,9 @@ Ubuntu |testnet-node-version|
 
 To run a node on a server with Ubuntu, you need a Debian package.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.4.1-0_amd64.deb>`_
+   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.4.2-0_amd64.deb>`_
 
-      - SHA256 checksum of the download: ``8c1f8df5c83999c10a4cda8f9d35f632f38c23aa797a50fcb4db3c591788b291``
+      - SHA256 checksum of the download: ``ef4a097f6166dd128808b46db5c7010838e49c0425c086ffe47ec378fa01f3e5``
 
    To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -177,7 +181,7 @@ Windows |testnet-node-version|
 
 To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.1-0.msi>`_
+   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
@@ -186,9 +190,16 @@ Mac |testnet-node-version|
 
 To run a node on macOS, you need a macOS installer package.
 
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.1-0.pkg>`_
+   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
+
+Node performance monitoring
+---------------------------
+
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>` to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+
+For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
 Genesis block
 =============
