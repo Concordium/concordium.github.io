@@ -199,6 +199,13 @@ Cool-down period
 
 A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a baker and updating stake. The length of a cool-down period varies between transactions.
 
+.. _glossary-concordium-bft-protocol:
+
+Concordium Byzantine Fault Tolerance (BFT) protocol
+===================================================
+
+The consensus protocol for the blockchain. The protocol offers higher transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed without waiting for a slot with an election winner. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. (At this point, the protocol ensures that it cannot be rolled back.)
+
 .. _glossary-credential:
 
 Credential
@@ -470,7 +477,7 @@ given out to, e.g., bakers.
 Pay day
 =======
 
-A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:05 UTC on Mainnet and 11:05 UTC on Testnet.
+A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at 08:05 UTC on Mainnet and 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
 
 .. _glossary-passive-delegation:
 
@@ -493,6 +500,13 @@ Qualified authority
 
 A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :ref:`anonymity revokers<glossary-anonymity-revoker>` and :ref:`identity provider<glossary-identity-provider>`, can the real-world identity of a user be revealed and only to the extent set out in the order.
 
+.. _glossary-quorum-certificate:
+
+Quorum certificate
+==================
+
+When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round.
+
 .. _glossary-range-proofs:
 
 Range proofs
@@ -506,6 +520,13 @@ Reveal
 ======
 
 To reveal an attribute. This can be used in identity verification proof. When you reveal an attribute, you give the dApp or service that requested it your exact information, such as date of birth, or nationality. You should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
+
+.. _glossary-round:
+
+Round
+=====
+
+Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. The leaders are determined from a leader election nonce that is updated each epoch. To update the leader election nonce the first block (the trigger block) after the nominal epoch time must be finalized. When this happens the chain starts a new epoch with the new leader election nonce set. When finalizers see the proof for the trigger block they stop signing additional blocks in the current epoch. When a baker sees the finalization proof it will bake in the new epoch. The leader election nonce is based on the block hashes up to the trigger block of the current epoch.
 
 .. _glossary-rust:
 
@@ -592,6 +613,8 @@ The action of transferring a part of the public balance to the :ref:`shielded ba
 Slot
 ====
 
+See :ref:`round<glossary-round>`.
+
 In the blockchain, time is divided into equally sized units called *slots*. On
 the testnet the duration of slot is one second. In every slot, each baker checks
 locally whether they won the lottery, which entitles the winner to bake a block
@@ -633,6 +656,13 @@ Testnet
 A test network run by Concordium to test its protocols and software. There can
 be several test networks in existence at the same time. All the features are
 tested on the testnet before they are released on the :ref:`mainnet<glossary-mainnet>`.
+
+.. _glossary-timeout-certificate:
+
+Timeout certificate
+===================
+
+When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round.
 
 .. _glossary-transaction:
 

@@ -16,7 +16,7 @@ For delegators
 
 .. dropdown:: Can I move from one baker pool to another without having to wait for the next pay day?
 
-    Changes to the pools take effect every 24 hours. So increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the :ref:`pay day<glossary-pay-day>`.
+    Changes to the pools take effect every 24 hours. So increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the next :ref:`pay day<glossary-pay-day>`.
 
 .. dropdown:: How much does it cost to begin delegating?
 
@@ -34,7 +34,7 @@ For delegators
 
 .. dropdown:: Is there a “cool-down” period when delegating and how does it work?
 
-    Yes, for certain changes there is a cool-down period built into the pool system. The cool-down period is two weeks. During the cool-down it is not possible to change the delegated amount or move the delegated amount to a different baker pool. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely.
+    Yes, for certain changes there is a cool-down period built into the pool system. The cool-down period is two weeks. During the cool-down period it is not possible to change the delegated amount or move the delegated amount to a different baker pool. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely.
 
 .. dropdown:: Why is there a cool-down when I decrease / stop my delegation?
 
@@ -113,7 +113,7 @@ For bakers
 
     Concordium blockchain imposes two caps on the amount of stake in a single pool:
 
-    - A pool cannot have more than 10% of all staked CCD
+    - A pool cannot have more than 10% of all stake in pools (i.e., excluding passive delegation)
     - The total stake of a pool cannot be more than 3x the size of the pool owners own stake
 
     The first limit ensures that the blockchain remains distributed and prevents the crash of one baker from affecting the whole system. A party with lots of capital is welcome to run multiple bakers to avoid this cap as in turn this would increase decentralization.

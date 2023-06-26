@@ -12,7 +12,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the |mw-gen1| and acquire CCD.
+#. Create an account in the wallet and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
