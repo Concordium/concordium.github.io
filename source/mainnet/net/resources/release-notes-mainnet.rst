@@ -11,9 +11,194 @@ Release notes - Mainnet
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
 
+June 14, 2023
+
+Concordium Node 5.4.2
+---------------------
+
+Concordium node version 5.4.2 contains the following features and bug fixes:
+
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not keep a historical list of peers when running as a normal node.
+
+- Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+
+June 1, 2023
+
+Concordium Client 5.2.0
+-----------------------
+
+Version 5.2.0 contains the following features and bug fixes:
+
+- Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+
+- Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+
+May 31, 2023
+
+|mw-gen2| for Android 1.1.8
+-----------------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+A minor change to the identity user interface was made to support integration with eID verifiers.
+
+|mw-gen2| for iOS 1.0.1
+-------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+Also, a minor change was made to support integration with eID verifiers.
+
+Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
+
+The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
+
+May 30, 2023
+
+|mw-gen1| for iOS 3.2.0
+--------------------------------
+
+Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+|bw| 1.0.6
+-------------------------
+
+|bw| 1.0.6 contains fixes for the following issues:
+
+- The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+- Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+- Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+- Fixed an issue so the first call of the gRPC client no longer always fails.
+
+- Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+- Added a missing translation for the Request CCD button.
+
+- ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+   - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+   - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+   - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+- Added text that a transaction has been submitted.
+
+- Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+
+May 11, 2023
+
+``cargo-concordium`` 2.8.0
+--------------------------
+
+The distribution method for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. For more information, see :ref:`Install tools for development<setup-tools>`.
+
+If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
+
+May 8, 2023
+
+Smart contract integration testing
+-------------------------------------
+
+Important new functionality has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
+
+|bw| 1.0.4
+--------------------------
+
+Baking and delegation are now available in the |bw|.
+
+Additionally, the following improvements have been added:
+
+- gRPC-web is now used instead of json-RPC.
+
+- The initial view in the manage token flow now retains the token page header, doesn't collapse account balances, and the error messages for looking up a contract have been improved.
+
+- Fixed handling of UpdateAccountKey transactions from wallet-proxy.
+
+- Fixed `chainChanged` event to correctly propagate to all (not just whitelisted) dapps listening for events through the wallet API.
+
+- When changing the selected chain internally in the wallet, dapps now receive `accountChanged` event if an account on the new network has the dApp whitelisted, or `accountDisconnected` event if no account on the new network has the dApp whitelisted.
+
+- SendTransaction now validates that an account has sufficient funds before sending a transaction (requested though the API).
+
+- Added support for eID identity document types.
+
+- Improved readability of events in transaction details.
+
+- In the manage page for adding CIS-2 tokens, the contract index is now always initially empty.
+
+- Incorrect navigation flow on the "earn" page when switching between accounts.
+
+- Issues with the expansion of the account balance details view when navigating through different flows.
+
+- Recovery no longer assigns duplicate names to identities when new identities are visited earlier than existing ones during the recovery process.
+
+- AddCIS2Tokens through API now adds tokens to the given account, instead of the currently selected one.
+
+- Missing translations for some identity attributes.
+
+- Removed double unit on CCD in token overview.
+
+- A bug that caused an identity to not be recovered if there was a rejected one present in the same index.
+
+May 1, 2023
+
+VSCode extension 1.0.1
+----------------------
+
+The VSCode extension has been developed to help developers get started with smart contract development. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
+
+Cargo-concordium 2.8.0
+----------------------
+
+Non-existing directories in paths provided to the following arguments for when running ``cargo concordium build`` will now be created instead of causing an error: ``--out``, ``--schema-out``, ``--schema-json-out``, and ``--schema-base64-out``. The same is true for the ``--out-bin`` and ``--out-json`` arguments provided to ``cargo concordium run init`` and ``cargo concordium run update``.
+
+Fixed a bug where ``cargo-concordium`` was unable to determine the smart contract package if the package was part of a Cargo workspace.
+
+|mw-gen2| for Android 1.1.7
+---------------------------
+
+- Corrected the message that appeared when stopping baking or delegation. Previously, the message shown when stopping baking stated that the cool-down period was 14 days, but it is 21. This is now correct. The message shown when stopping delegation stated that the cool-down period was 0 days, but it is 14. This is also now correct.
+
+- Upon update to version 1.1.7 or on installation of version 1.1.7, data that was in SharedPreferences will be moved to EncryptedSharedPreferences to enhance security.
+
+April 27, 2023
+
+Concordium Node 5.3.2
+---------------------
+
+- Extended the Prometheus exporter with the following metrics: grpc_request_duration_seconds, grpc_in_flight_requests, consensus_baking_committee, consensus_finalization_committee, consensus_baking_lottery_power, consensus_baked_blocks_total, consensus_finalized_baked_blocks_total, network_soft_banned_peers_total, consensus_non_finalized_transactions and consensus_unsupported_pending_protocol_version. See `docs/prometheus-exporter.md <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`_ for more details.
+
+- Also, in the changelog for the node grpc_request_duration_seconds has been renamed to grpc_request_response_time_seconds to match the what is in the code.
+
+- Added the following new options:
+
+   - The ``--grpc2-health-min-peers`` (environment variable ``CONCORDIUM_NODE_GRPC2_HEALTH_MIN_PEERS``) triggers the grpc V2 health endpoint to check minimum number of peers.
+
+   - ``--grpc2-invoke-max-energy`` (environment variable ``CONCORDIUM_NODE_GRPC2_INVOKE_MAX_ENERGY``) allows the node runner to control the maximum amount of energy allowed by an InvokeInstance (and the V1 GRPC InvokeContract) call. The behavior of the endpoint is slightly changed as well. The energy is no longer required in the request, and the effective energy used by the call will be min(request.energy, grpc-invoke-max-energy). This differs from the previous behavior where a request would fail if the request either omitted the energy, or supplied an excessive value.
+
+- Improved the node health check, so that if the node is configured with baker credentials, then it is required to be in the baking committee for it to be considered healthy.
+
+- Fixed a bug that could cause the node to hang indefinitely during the out-of-band-catchup when the node is a finalizer.
+
+- Fixed an additional bug in the ``GetAccountInfo`` endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.
+
+- The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
+
 April 12, 2023
 
-Cargo concordium 2.7.1
+Cargo-concordium 2.7.1
 ----------------------
 
 - Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.

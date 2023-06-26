@@ -19,10 +19,10 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    setup-tools
    setup-contract
    compile-module
-   unit-test-contract
    custom-errors
    local-simulate
    build-schema
    no-std
    fallback-entrypoints
    upgradeable-contract
+   json-params

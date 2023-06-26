@@ -53,6 +53,7 @@ index
    guides/developer-page
    nodes/node-requirements
    references/concordium-client
+   guides/run-local-chain
 
 .. toctree::
    :includehidden:
@@ -70,6 +71,7 @@ index
    Best practices <../smart-contracts/best-practices/index>
    Tutorials <../smart-contracts/tutorials/index>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   Contract testing guides <../smart-contracts/guides/contract-testing-guides>
    On-chain guides <../smart-contracts/guides/on-chain-index>
    References <../smart-contracts/references/index>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
