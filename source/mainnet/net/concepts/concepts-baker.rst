@@ -208,6 +208,11 @@ This overview describes the recommended scenario for running a node and becoming
 
 For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
 
+Baking with ``Concordium-client``
+---------------------------------
+
+For information about configuring and managing baking in ``Concordium-client``, see :ref:`Become a baker using the Concordium Client<become-a-baker>`.
+
 Next steps
 ==========
 
