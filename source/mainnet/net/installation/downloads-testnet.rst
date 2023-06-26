@@ -26,8 +26,11 @@ iOS
 Android
 -------
 
-- `Download the Android version of Concordium Wallet for Mobile for Testnet <https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet>`_
+Click below to download the Android version of Concordium Wallet for Mobile for Testnet.
 
+   .. image:: ../images/mobile-wallet/google-play-badge.png
+      :width: 29.5%
+      :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
 
 .. _downloads-mobile-wallet-testnet:
 
@@ -63,20 +66,15 @@ The |bw| is available to download as an extension for the `chromium web browsers
 Concordium Desktop Wallet
 =========================
 
-Windows v1.5.0
---------------
+.. card:: Windows v1.5.0
+    :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.5.0.exe
 
-- `Download the Testnet version of Concordium Desktop Wallet for Windows <https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.5.0.exe>`_
+.. card:: MacOS v1.5.0
+    :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.5.0.dmg
 
+.. dropdown:: Linux® v1.5.0
 
-MacOS v1.5.0
-------------
-- `Download the Testnet version of Concordium Desktop Wallet for MacOS <https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.5.0.dmg>`_
-
-
-Linux® v1.5.0
--------------
--  Download the Testnet version of Concordium Desktop Wallet for Linux®:
+   Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
    -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.AppImage>`_
       -  SHA256 checksum of the download: ``044d8b2aa039428b7e6626d3af1dade21e52bee04dbcfc9f78d303bd0f1c855e``
@@ -161,13 +159,11 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 Ubuntu |testnet-node-version|
 -----------------------------
 
-To run a node on a server with Ubuntu, you need a Debian package.
+To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.4.2-0_amd64.deb>`_.
 
-   - `Download the Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.4.2-0_amd64.deb>`_
+   - SHA256 checksum of the download: ``ef4a097f6166dd128808b46db5c7010838e49c0425c086ffe47ec378fa01f3e5``
 
-      - SHA256 checksum of the download: ``ef4a097f6166dd128808b46db5c7010838e49c0425c086ffe47ec378fa01f3e5``
-
-   To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
+To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
 Linux-Docker |testnet-node-version|
 -----------------------------------
@@ -181,25 +177,21 @@ To upgrade your Docker node either restart the service if you are using the `:la
 Windows |testnet-node-version|
 ------------------------------
 
-To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
-
-   - `Download the Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_
+To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
 Mac |testnet-node-version|
 --------------------------
 
-To run a node on macOS, you need a macOS installer package.
-
-   - `Download the Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_
+To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_.
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
 Node performance monitoring
 ---------------------------
 
-You can use the `Prometheus monitoring system <https://prometheus.io/download/>` to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>`__ to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
 
 For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
@@ -209,9 +201,9 @@ Genesis block
 The genesis block is included in node distributions.
 Download the block separately to inspect it or to run a node in a custom configuration.
 
-   - `Download the testnet genesis block <https://distribution.testnet.concordium.com/data/genesis.dat>`_
+`Download the testnet genesis block <https://distribution.testnet.concordium.com/data/genesis.dat>`_
 
-      - SHA256 checksum of the download: ``69db4360f0a16414db86a920513600cfe29241c0c713a07d8e79dad19103e91d``
+   - SHA256 checksum of the download: ``69db4360f0a16414db86a920513600cfe29241c0c713a07d8e79dad19103e91d``
 
 .. _downloads-testnet-auxiliary-tools:
 

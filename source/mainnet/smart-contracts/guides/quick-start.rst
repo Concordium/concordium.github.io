@@ -16,7 +16,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     #. `rustup`_
     #. :ref:`cargo-concordium<concordium-node-and-client-download>`
     #. :ref:`concordium-client<concordium-node-and-client-download>`
-    #. :ref:`a node<concordium-node-and-client-download>` for deploying and interacting
+    #. :ref:`a Mainnet node<concordium-node-and-client-download>` or :ref:`Testnet node<testnet-node-downloads>` for deploying and interacting
 
     For more detailed information, see :ref:`Install tools for development<setup-tools>`.
 

@@ -60,29 +60,27 @@ The |bw| is available to download as an extension for the `chromium web browsers
 Concordium Desktop Wallet
 =================================
 
-.. dropdown:: Windows v1.5.0
+.. card:: Windows v1.5.0
+    :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.5.0.exe
 
-   `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.5.0.exe>`_
-
-.. dropdown:: MacOS v1.5.0
-
-   `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.5.0.dmg>`_
+.. card:: MacOS v1.5.0
+    :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.5.0.dmg
 
 .. dropdown:: Linux® v1.5.0
 
    Download the Desktop Wallet for Linux®:
 
-     -  `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.AppImage>`_
+   - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.AppImage>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
       - :ref:`Verification instructions <verification-cdw-appimage>`
 
-   -  `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.deb>`_
+   - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.deb>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
       - :ref:`Verification instructions <verification-cdw-deb>`
 
-   -  `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.rpm>`_
+   - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.rpm>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
       - :ref:`Verification instructions <verification-cdw-rpm>`
@@ -160,9 +158,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 Ubuntu |mainnet-node-version|
 -----------------------------
 
-To run a node on a server with Ubuntu, you need a Debian package.
-
-- `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.4.2-0_amd64.deb>`_
+To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.4.2-0_amd64.deb>`_.
 
    - SHA256 checksum of the download: |node-deb-package-checksum|
 
@@ -176,25 +172,21 @@ To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ub
 Windows |mainnet-node-version|
 ------------------------------
 
-To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
-
-- `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_
+To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
 Mac |mainnet-node-version|
 --------------------------
 
-To run a node on macOS, you need a macOS installer package.
-
-- `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_
+To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_.
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
 Node performance monitoring
 ---------------------------
 
-You can use the `Prometheus monitoring system <https://prometheus.io/download/>` to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>`__ to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
 
 For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
@@ -206,12 +198,10 @@ Download the block separately to inspect it or to run a node in a custom configu
 
 .. _mainnet-genesis-block:
 
-.. dropdown:: Mainnet
+`Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
-   - `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
-
-      - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
-      - :ref:`Verification instructions <verification-mainnet-genesis-block>`
+   - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
+   - :ref:`Verification instructions <verification-mainnet-genesis-block>`
 
 .. _downloads-auxiliary-tools:
 
