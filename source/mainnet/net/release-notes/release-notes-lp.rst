@@ -52,25 +52,6 @@ Wallets
 
     - Identity view: Display raw document type when no localized string is matched
     - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
-    - Fixed validation of token metadata when looking for new tokens.
-    - Fixed an issue where another tokens image was sometimes shown for tokens without an image.
-    - Fixed issue that when searching for a token, the no tokens found display did not appear.
-    - Fixed the following user interface issues:
-
-    1. Remove **Name and icon** header text for token name (to keep it aligned with |bw|).
-    2. Balance (for fungible token) section (header and values) was missing. **Balance** for fungible tokens is now shown.
-    3. Aligned the order of different sections with |bw| (to keep behavior uniform across wallets).
-    4. Metadata was missing for both fungible and non-fungible tokens. Now there’s a link **Show raw metadata** to open token metadata in an overlay screen.
-    5. NFT token details screen does not have Decimal section.
-    6. Token image size was improved.
-
-    - Fixed issue where owned tokens were not reflected in search result list and details screens
-    - When adding a new token the token details would, in some cases, show information from another token.
-    - Fixed UI bug that showed decimal places for NFT tokens
-    - Fixed NFTs name missing on Collectibles and Send token screens
-    - Fixed issue where the token details screen would not show the correct token image.
-    - Transferring CCD on Public balance now always uses the new sendToken activity.
-    - Removed the ability to search for tokens when selecting tokens to transfer.
 
     .. dropdown:: Previous releases
 
