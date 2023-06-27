@@ -65,6 +65,13 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
 
+    .. Note::
+
+        To set the currently selected account the default account, click the star icon. Setting this means that this will be the account initially visible when opening the account page.
+
+        .. image:: ../images/desktop-wallet/dw-favorite-account.png
+           :alt: dark account balance area with favorite button highlighted
+
 .. dropdown:: |mw-gen2|
 
     #. Go to the **Accounts** page.

@@ -144,7 +144,7 @@ The following table lists the major features of each wallet.
    *  - Cannot recover in other wallet types
       - Cannot recover in other wallet types
       - Can recover in |mw-gen2| and |bw|
-      - Can reover in |bw| and |mw-gen2|
+      - Can recover in |bw| and |mw-gen2|
 
 Next steps
 ==========

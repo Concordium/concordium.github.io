@@ -15,6 +15,7 @@ Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order
 - **Fin. length**: height of the node's most recent finalized block.
 
 .. image:: ../images/ccd-scan/ccd-scan-nodes.png
+    :alt: dark screen with table of nodes
 
 |
 
@@ -28,6 +29,7 @@ When you click a node name on the Nodes page, the following appears:
 The following information is shown in the node details:
 
 .. image:: ../images/ccd-scan/ccd-scan-node-details.png
+    :alt: dark screen showing details of a single node
 
 |
 
