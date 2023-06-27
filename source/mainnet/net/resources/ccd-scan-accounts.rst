@@ -7,6 +7,7 @@ CCDScan Accounts overview
 The Accounts overview shows information about accounts during the selected time range in the filter.
 
 .. image:: ../images/ccd-scan/ccd-scan-accounts.png
+    :alt: dark screen with graphs at top, table at bottom of account information
 
 |
 
@@ -23,6 +24,7 @@ Below the graphs, the table contains the following:
 You can sort the information in the table using the following sort options:
 
 .. image:: ../images/ccd-scan/ccd-scan-account-sort.png
+    :alt: dark screen with options to sort the accounts overview
 
 .. _home-screen-sender:
 
@@ -32,6 +34,7 @@ Sender/Account details
 When you select a sender or account, the following appears.
 
 .. image:: ../images/ccd-scan/ccd-scan-home-sender.png
+    :alt: dark screen showing details of single account
 
 |
 
