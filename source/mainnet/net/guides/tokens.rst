@@ -135,9 +135,9 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
 
         #. Add the receiver address.
 
-        #. Tap **Continue**.
+        #. Tap **Send funds**.
 
-        #. Review the transaction. When satisfied, tap **Send**.
+        #. Review the transaction. When satisfied, tap **Send funds**.
 
         #. Tap **Finish**.
 
