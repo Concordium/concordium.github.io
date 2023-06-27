@@ -27,7 +27,7 @@ Additionally, the following improvements were made:
 - Fixed issue that when searching for a token, the no tokens found display did not appear.
 - Fixed the following user interface issues:
 
-  1. Remove **Name and ico** header text for token name (to keep it aligned with |bw|).
+  1. Remove **Name and icon** header text for token name (to keep it aligned with |bw|).
   2. Balance (for fungible token) section (header and values) was missing. **Balance** for fungible tokens is now shown.
   3. Aligned the order of different sections with |bw| (to keep behavior uniform across wallets).
   4. Metadata was missing for both fungible and non-fungible tokens. Now there’s a link **Show raw metadata** to open token metadata in an overlay screen.
