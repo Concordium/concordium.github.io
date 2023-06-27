@@ -44,15 +44,43 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    May 31, 2023
+    June 27, 2023
 
-    |mw-gen2| for Android 1.1.8 contains the following:
+    The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
 
-    - The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+    Additionally, the following improvements were made:
 
-    - A minor change to the identity user interface was made to support integration with eID verifiers.
+    - Identity view: Display raw document type when no localized string is matched
+    - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+    - Fixed validation of token metadata when looking for new tokens.
+    - Fixed an issue where another tokens image was sometimes shown for tokens without an image.
+    - Fixed issue that when searching for a token, the no tokens found display did not appear.
+    - Fixed the following user interface issues:
+
+    1. Remove **Name and icon** header text for token name (to keep it aligned with |bw|).
+    2. Balance (for fungible token) section (header and values) was missing. **Balance** for fungible tokens is now shown.
+    3. Aligned the order of different sections with |bw| (to keep behavior uniform across wallets).
+    4. Metadata was missing for both fungible and non-fungible tokens. Now there’s a link **Show raw metadata** to open token metadata in an overlay screen.
+    5. NFT token details screen does not have Decimal section.
+    6. Token image size was improved.
+
+    - Fixed issue where owned tokens were not reflected in search result list and details screens
+    - When adding a new token the token details would, in some cases, show information from another token.
+    - Fixed UI bug that showed decimal places for NFT tokens
+    - Fixed NFTs name missing on Collectibles and Send token screens
+    - Fixed issue where the token details screen would not show the correct token image.
+    - Transferring CCD on Public balance now always uses the new sendToken activity.
+    - Removed the ability to search for tokens when selecting tokens to transfer.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.1.8 - May 31, 2023
+
+            |mw-gen2| for Android 1.1.8 contains the following:
+
+            - The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+            - A minor change to the identity user interface was made to support integration with eID verifiers.
 
         .. dropdown:: |mw-gen2| 1.1.7 - May 1, 2023
 
