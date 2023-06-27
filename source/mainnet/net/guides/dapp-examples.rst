@@ -19,7 +19,9 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
 .. dropdown:: wCCD
 
-    `Demo front end <https://wccd.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+    `Demo front end testnet <https://wccd.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    `Demo front end mainnet <https://wccd.mainnet.concordium.software/>`__ where you can try the functionality on Concordium's mainnet
 
     :ref:`Tutorial about the wCCD smart contract and dApp<wCCD>`.
 
