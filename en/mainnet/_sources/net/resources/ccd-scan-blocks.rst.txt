@@ -7,6 +7,7 @@ CCDScan Blocks overview
 The Blocks overview shows information about the blocks created during the selected time range in the filter.
 
 .. image:: ../images/ccd-scan/ccd-scan-blocks.png
+    :alt: dark screen with graphs at top, table at bottom with overview of blocks
 
 |
 
@@ -29,6 +30,7 @@ Block details
 When you click a block hash, the following appears:
 
 .. image:: ../images/ccd-scan/ccd-scan-home-block-hash.png
+    :alt: dark screen with details of a single block
 
 |
 

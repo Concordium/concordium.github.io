@@ -33,6 +33,7 @@ Home
 On the Home page that appears when you navigate to CCDScan, you see the following information:
 
 .. image:: ../images/ccd-scan/ccd-scan-overview.png
+    :alt: dark screen with graphs and top and table at bottom
 
 |
 
@@ -51,6 +52,7 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 In Latest blocks and Latest transactions click on information in the highlighted columns for details about the :ref:`block<home-screen-block>`, :ref:`baker<home-screen-baker>`, :ref:`transaction<home-screen-transaction>`, or :ref:`sender<home-screen-sender>`.
 
 .. image:: ../images/ccd-scan/ccd-scan-home-clickable.png
+    :alt: dark screen with graphs and top and table at bottom; clickable columns highlighted
 
 |
 

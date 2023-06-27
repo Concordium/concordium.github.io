@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Downloads - Mainnet" href="installation/downloads.html" />
+    <link rel="next" title="Downloads" href="installation/downloads.html" />
     <link rel="prev" title="Mainnet" href="../index.html" />
 <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -161,7 +161,7 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
-    Installation
+    Releases and Installation
    </span>
   </p>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -172,12 +172,17 @@ body {margin:0;}
   <ul class="nav bd-sidenav">
    <li class="toctree-l1">
     <a class="reference internal" href="installation/downloads.html">
-     Downloads - Mainnet
+     Downloads
     </a>
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="installation/downloads-testnet.html">
      Downloads - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="release-notes/release-notes-lp.html">
+     Release notes
     </a>
    </li>
    <li class="toctree-l1">
@@ -307,11 +312,43 @@ body {margin:0;}
     </a>
    </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="guides/create-identity.html">
-     Create an identity
+    <a class="reference internal" href="guides/overview-desktop.html">
+     Set up the Desktop Wallet
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/install-ledger-app.html">
+       Set up the LEDGER device and install the Concordium LEDGER App
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/accounts-desktop.html">
+       Desktop Wallet navigation and settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/update-application.html">
+       Update the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/reset-data.html">
+       Reset desktop wallet data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="guides/create-identity.html">
+     Create an identity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -327,8 +364,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/create-account.html">
      Create an account
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -349,8 +386,8 @@ body {margin:0;}
     <a class="reference internal" href="browser-wallet/connect-app.html">
      Connect dApps to wallets
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -371,8 +408,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/shield-ccd-wallets.html">
      Shield and unshield CCD on an account
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -385,19 +422,31 @@ body {margin:0;}
     </ul>
    </li>
    <li class="toctree-l1">
-    <a class="reference internal" href="guides/export-import.html">
-     Make a backup of identities, accounts, and addresses
-    </a>
-   </li>
-   <li class="toctree-l1">
     <a class="reference internal" href="guides/export-key.html">
      Export a private key
     </a>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="guides/recover-wallet.html">
-     Recover your Wallet
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="guides/recovery.html">
+     Backup and recovery
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="guides/export-import.html">
+       Make a backup of identities, accounts, and addresses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="guides/recover-wallet.html">
+       Recover your Wallet
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="mobile-wallet/share-address-mw.html">
@@ -409,109 +458,82 @@ body {margin:0;}
      Update your passcode and biometric settings
     </a>
    </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="mobile-wallet/inspect-release-schedule-mw.html">
-     Inspect a release schedule
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="guides/address-book.html">
-     Manage address book
-    </a>
-   </li>
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="desktop-wallet/index.html">
-     Desktop Wallet
+    <a class="reference internal" href="guides/scheduled-release.html">
+     Scheduled releases
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-    <label for="toctree-checkbox-12">
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l2 has-children">
-      <a class="reference internal" href="guides/overview-desktop.html">
-       Set up the Desktop Wallet
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-      <label for="toctree-checkbox-13">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="desktop-wallet/install-ledger-app.html">
-         Set up the LEDGER device and install the Concordium LEDGER App
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/accounts-desktop.html">
-       Use the Desktop Wallet
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="desktop-wallet/single-sign-schedule.html">
        Transfer CCD with a schedule in Desktop Wallet
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/transaction-log-filter.html">
-       Apply a transaction log filter in the Desktop Wallet
+      <a class="reference internal" href="mobile-wallet/inspect-release-schedule-mw.html">
+       Inspect a release schedule
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="guides/address-book.html">
+     Manage address book
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="guides/transaction-report.html">
+     Create a transaction report
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/create-credentials-file.html">
+       Create a credentials file
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/update-application.html">
-       Update the Desktop Wallet
+      <a class="reference internal" href="guides/multi-credentials.html">
+       Add credentials to an account
       </a>
      </li>
      <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/reset-data.html">
-       Reset desktop wallet data
+      <a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
       </a>
      </li>
-     <li class="toctree-l2 has-children">
-      <a class="reference internal" href="guides/overview-shared-accounts.html">
-       Shared accounts with multiple credentials in Desktop Wallet
+     <li class="toctree-l2">
+      <a class="reference internal" href="guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-      <label for="toctree-checkbox-14">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l3">
-        <a class="reference internal" href="desktop-wallet/create-credentials-file.html">
-         Create a credentials file
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="guides/multi-credentials.html">
-         Add credentials to an account
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html">
-         Create a multi-signature CCD transfer in the Desktop Wallet
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="guides/multisig-transfer.html">
-         Create a scheduled transfer in the Desktop Wallet
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="desktop-wallet/sign-transaction.html">
-         Sign a transaction proposal
-        </a>
-       </li>
-       <li class="toctree-l3">
-        <a class="reference internal" href="desktop-wallet/proposed-transactions.html">
-         View transaction proposals
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
      </li>
     </ul>
    </li>
@@ -523,8 +545,8 @@ body {margin:0;}
     Earn with Concordium
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -533,8 +555,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/how-to-earn.html">
      How to earn with Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -543,8 +565,8 @@ body {margin:0;}
       <a class="reference internal" href="concepts/concepts-baker.html">
        Bakers
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-      <label for="toctree-checkbox-17">
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -595,8 +617,8 @@ body {margin:0;}
       <a class="reference internal" href="concepts/concepts-delegation.html">
        Delegation
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-      <label for="toctree-checkbox-18">
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -633,8 +655,8 @@ body {margin:0;}
     Develop on Concordium
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-19">
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-20">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -643,8 +665,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/developer-page.html">
      Developer resources
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-    <label for="toctree-checkbox-20">
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -685,8 +707,8 @@ body {margin:0;}
     <a class="reference internal" href="nodes/node-requirements.html">
      Run a node on Concordium
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-    <label for="toctree-checkbox-21">
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -695,8 +717,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/ubuntu.html">
        Ubuntu nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-      <label for="toctree-checkbox-22">
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -722,8 +744,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/macos.html">
        MacOS nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-      <label for="toctree-checkbox-23">
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -744,8 +766,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/windows.html">
        Windows nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-      <label for="toctree-checkbox-24">
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -771,8 +793,8 @@ body {margin:0;}
       <a class="reference internal" href="nodes/docker.html">
        Docker nodes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-      <label for="toctree-checkbox-25">
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -795,8 +817,8 @@ body {margin:0;}
     <a class="reference internal" href="references/concordium-client.html">
      Concordium Client
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -823,11 +845,62 @@ body {margin:0;}
  <li class="toctree-l0 has-children">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
+    CCDScan
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-28">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="resources/ccd-scan.html">
+     CCDScan
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/ccd-scan-blocks.html">
+       CCDScan Blocks overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/ccd-scan-transactions.html">
+       CCDScan Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/ccd-scan-accounts.html">
+       CCDScan Accounts overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/ccd-scan-staking.html">
+       CCDScan Staking overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="resources/ccd-scan-nodes.html">
+       CCDScan Nodes overview
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
     Use Concordium's ID Layer
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-27">
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-30">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -841,8 +914,8 @@ body {margin:0;}
     <a class="reference internal" href="guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-    <label for="toctree-checkbox-28">
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -872,8 +945,8 @@ body {margin:0;}
     Smart Contracts v1
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-29">
+  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-32">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -882,8 +955,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-    <label for="toctree-checkbox-30">
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -919,8 +992,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/best-practices/index.html">
      Best practices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,8 +1009,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/tutorials/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-    <label for="toctree-checkbox-32">
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -956,8 +1029,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-      <label for="toctree-checkbox-33">
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -988,8 +1061,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-      <label for="toctree-checkbox-34">
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1020,8 +1093,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/voting/index.html">
        The Voting dApp
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-      <label for="toctree-checkbox-35">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1042,8 +1115,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-      <label for="toctree-checkbox-36">
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1069,8 +1142,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1096,8 +1169,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/fungible-tokens/index.html">
        Mint fungible tokens
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-      <label for="toctree-checkbox-38">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1118,8 +1191,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/nft-marketplace/index.html">
        NFT marketplace smart contract tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1135,8 +1208,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/eSealing/index.html">
        eSealing
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1152,8 +1225,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/sponsoredTransactions/index.html">
        Sponsored Transactions
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1179,8 +1252,8 @@ body {margin:0;}
       <a class="reference internal" href="../smart-contracts/tutorials/smartContractUpgrade/index.html">
        Smart Contract Upgrade
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1198,8 +1271,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-    <label for="toctree-checkbox-43">
+    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+    <label for="toctree-checkbox-46">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1265,8 +1338,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/guides/contract-testing-guides.html">
      Contract testing guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-    <label for="toctree-checkbox-44">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1287,8 +1360,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-    <label for="toctree-checkbox-45">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1324,8 +1397,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1376,8 +1449,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/onboarding-guide-ethereum-developers/index.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-    <label for="toctree-checkbox-47">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1393,8 +1466,8 @@ body {margin:0;}
     <a class="reference internal" href="../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-    <label for="toctree-checkbox-48">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1419,126 +1492,15 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-49">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../smart-contracts-v0/general/introduction.html">
-     Introduction
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/general/contract-module.html">
-       Smart contract modules
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html">
-       Smart contract instances
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html">
-       Smart contract schemas
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html">
-       Developing smart contracts in Rust
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/index.html">
-     Tutorials
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html">
-       Writing the piggy bank smart contract
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html">
-       Testing the piggy bank smart contract
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../smart-contracts-v0/guides/contract-dev-guides.html">
-     Contract development guides
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html">
-       Install tools for development
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/setup-contract.html">
-       Setting up a smart contract project
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html">
-       Compile a Rust smart contract module
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html">
-       Return custom errors
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html">
-       Locally simulate contract functions
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html">
-       Build a contract schema
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/no-std.html">
-       Build using
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         no_std
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../smart-contracts-v0/guides/on-chain-index.html">
-     On-chain guides
+    <a class="reference internal" href="../smart-contracts-v0/sc-v0-rollup.html">
+     V0 smart contract documentation
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
     <label for="toctree-checkbox-53">
@@ -1546,72 +1508,195 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html">
-       Deploy a smart contract module
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts-v0/general/introduction.html">
+       Introduction and general guides
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/general/contract-module.html">
+         Smart contract modules
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html">
+         Smart contract instances
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html">
+         Smart contract schemas
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html">
+         Developing smart contracts in Rust
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html">
-       Initialize a smart contract instance
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/index.html">
+       Tutorials
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html">
+         Writing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html">
+         Testing the piggy bank smart contract
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html">
-       Interact with a smart contract instance
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts-v0/guides/contract-dev-guides.html">
+       Contract development guides
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html">
+         Install tools for development
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/setup-contract.html">
+         Setting up a smart contract project
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html">
+         Compile a Rust smart contract module
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html">
+         Unit test a contract in Rust
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html">
+         Return custom errors
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html">
+         Locally simulate contract functions
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html">
+         Build a contract schema
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/no-std.html">
+         Build using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           no_std
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
      </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html">
-       Inspect a smart contract instance
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts-v0/guides/on-chain-index.html">
+       On-chain guides
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html">
+         Deploy a smart contract module
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html">
+         Initialize a smart contract instance
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html">
+         Interact with a smart contract instance
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html">
+         Inspect a smart contract instance
+        </a>
+       </li>
+      </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../smart-contracts-v0/references/index.html">
-     References
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/references/schema-json.html">
-       Schema JSON representation
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smart-contracts-v0/references/index.html">
+       References
       </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html">
-       Simulation contexts
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/references/host-fns.html">
-       Contract host functions
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html">
-       References on-chain
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts-v0/references/local-settings.html">
-       Local settings
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
-       Rust contract examples (repo)
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
-       concordium-std
-      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/references/schema-json.html">
+         Schema JSON representation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html">
+         Simulation contexts
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/references/host-fns.html">
+         Contract host functions
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html">
+         References on-chain
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smart-contracts-v0/references/local-settings.html">
+         Local settings
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+         Rust contract examples (repo)
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
+         concordium-std
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -1623,8 +1708,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-55">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1652,65 +1737,18 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-56">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="nav bd-sidenav">
    <li class="toctree-l1 has-children">
-    <a class="reference internal" href="resources/ccd-scan.html">
-     CCDScan
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-    <label for="toctree-checkbox-57">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/ccd-scan-blocks.html">
-       CCDScan Blocks overview
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/ccd-scan-transactions.html">
-       CCDScan Transactions overview
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/ccd-scan-accounts.html">
-       CCDScan Accounts overview
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/ccd-scan-staking.html">
-       CCDScan Staking overview
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="resources/ccd-scan-nodes.html">
-       CCDScan Nodes overview
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="resources/release-notes-mainnet.html">
-     Release notes - Mainnet
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="resources/release-notes.html">
-     Release Notes - Testnet
-    </a>
-   </li>
-   <li class="toctree-l1 has-children">
     <a class="reference internal" href="resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-    <label for="toctree-checkbox-58">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1797,18 +1835,13 @@ body {margin:0;}
   <div class="section" id="index">
 <h1>index<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h1>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Releases and Installation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation/downloads.html">Downloads - Mainnet</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="installation/downloads.html">Downloads</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#mw-gen2">Concordium Wallet for Mobile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#mw-gen1">Concordium Legacy Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#bw">Concordium Wallet for Web</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-desktop-wallet">Concordium Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#windows-v1-5-0">Windows v1.5.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#macos-v1-5-0">MacOS v1.5.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#linux-v1-5-0">Linux® v1.5.0</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-desktop-wallet">Concordium Desktop Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-ledger-app">Concordium LEDGER App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-client-client-version">Concordium Client 5.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#cargo-concordium"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a><ul>
@@ -1842,12 +1875,7 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#bw">Concordium Wallet for Web</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-desktop-wallet">Concordium Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#windows-v1-5-0">Windows v1.5.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#macos-v1-5-0">MacOS v1.5.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#linux-v1-5-0">Linux® v1.5.0</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-desktop-wallet">Concordium Desktop Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-ledger-app-sirius">Concordium LEDGER App - Sirius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#concordium-client-client-version">Concordium Client 5.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#cargo-concordium"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a><ul>
@@ -1865,6 +1893,35 @@ body {margin:0;}
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#genesis-block">Genesis block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads-testnet.html#auxiliary-tools">Auxiliary tools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads-testnet.html#encrypt-decrypt-tool-v1-0-0">Encrypt/decrypt tool v1.0.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-lp.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-lp.html#wallets">Wallets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mw-gen2-for-ios">Concordium Wallet for Mobile for iOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mw-gen2-for-android">Concordium Wallet for Mobile for Android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#bw">Concordium Wallet for Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#desktop-wallet">Desktop Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mw-gen1-for-ios">Concordium Legacy Wallet for iOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mw-gen1-for-android">Concordium Legacy Wallet for Android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#concordium-ledger-app">Concordium Ledger app</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-lp.html#nodes">Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mainnet">Mainnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#testnet">Testnet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-lp.html#tools">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#concordium-client">Concordium Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#cargo-concordium"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#vscode-extension">VSCode extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#ccdscan">CCDScan</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-lp.html#libraries">Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#smart-contract-libraries">Smart contract Libraries</a></li>
 </ul>
 </li>
 </ul>
@@ -2098,6 +2155,63 @@ body {margin:0;}
 <li class="toctree-l2"><a class="reference internal" href="mobile-wallet/setup-mobile-wallet.html#request-your-identity-and-initial-account">Request your identity and initial account</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="guides/overview-desktop.html">Set up the Desktop Wallet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-1-set-up-the-node">Step 1: Set up the node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-2-set-up-the-ledger-device">Step 2: Set up the LEDGER device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-3-set-up-the-concordium-desktop-wallet">Step 3: Set up the Concordium Desktop Wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-4-set-up-an-identity-and-an-initial-account">Step 4: Set up an identity and an initial account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/install-ledger-app.html">Set up the LEDGER device and install the Concordium LEDGER App</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#set-up-the-ledger-device">Set up the LEDGER device</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-ledger-device-firmware">Update the LEDGER device firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-windows">Install Concordium LEDGER app on Windows</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-python3-and-pip">Install Python3 and pip</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-windows">Install the custom certificate on Windows</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-windows">Install the Concordium LEDGER app on Windows</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-concordium-ledger-app-on-windows">Update the Concordium LEDGER app on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-macos">Install Concordium LEDGER app on macOS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-homebrew-python3-and-pip">Install Homebrew, Python3, and pip</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-using-macos">Install the custom certificate using macOS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-macos">Install the Concordium LEDGER app on MacOS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-reinstall-the-concordium-ledger-app-on-macos">Update/reinstall the Concordium LEDGER app on macOS</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-ubuntu">Install Concordium LEDGER app on Ubuntu</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-python3-and-pip-on-ubuntu">Install Python3 and pip on Ubuntu</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-ubuntu">Install the custom certificate on Ubuntu</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-ubuntu">Install the Concordium LEDGER app on Ubuntu</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-concordium-ledger-app-on-ubuntu">Update the Concordium LEDGER app on Ubuntu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/accounts-desktop.html">Desktop Wallet navigation and settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#more-options">More options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#desktop-wallet-settings">Desktop Wallet settings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#preferences">Preferences</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#node-settings">Node settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#terms-and-conditions">Terms and conditions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-application.html">Update the Desktop Wallet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-application.html#automatic-updates">Automatic updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/update-application.html#manually-updating">Manually updating</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/reset-data.html">Reset desktop wallet data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/reset-data.html#delete-the-user-data">Delete the user data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="guides/create-identity.html">Create an identity</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guides/change-identity-name.html">Change identity name</a></li>
 </ul>
@@ -2123,165 +2237,101 @@ body {margin:0;}
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="guides/export-import.html">Make a backup of identities, accounts, and addresses</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/export-import.html#how-to-proceed">How to proceed</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/export-import.html#upgrade">Upgrade</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="guides/export-import.html#final-notes">Final Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/export-import.html#how-to-back-up-and-import">How to back up and import</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="guides/export-key.html">Export a private key</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/recover-wallet.html">Recover your Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/recovery.html">Backup and recovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/export-import.html">Make a backup of identities, accounts, and addresses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/export-import.html#how-to-proceed">How to proceed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guides/export-import.html#upgrade">Upgrade</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="guides/export-import.html#final-notes">Final Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/export-import.html#how-to-back-up-and-import">How to back up and import</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/recover-wallet.html">Recover your Wallet</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="mobile-wallet/share-address-mw.html">Find and share your account address</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/address-book.html">Manage address book</a></li>
-<li class="toctree-l1"><a class="reference internal" href="desktop-wallet/index.html">Desktop Wallet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html">Set up the Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-desktop.html#step-1-set-up-the-node">Step 1: Set up the node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-desktop.html#step-2-set-up-the-ledger-device">Step 2: Set up the LEDGER device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-desktop.html#step-3-set-up-the-concordium-desktop-wallet">Step 3: Set up the Concordium Desktop Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-desktop.html#step-4-set-up-an-identity-and-an-initial-account">Step 4: Set up an identity and an initial account</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html">Set up the LEDGER device and install the Concordium LEDGER App</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#set-up-the-ledger-device">Set up the LEDGER device</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-ledger-device-firmware">Update the LEDGER device firmware</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-windows">Install Concordium LEDGER app on Windows</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-python3-and-pip">Install Python3 and pip</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-windows">Install the custom certificate on Windows</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-windows">Install the Concordium LEDGER app on Windows</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-concordium-ledger-app-on-windows">Update the Concordium LEDGER app on Windows</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-macos">Install Concordium LEDGER app on macOS</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-homebrew-python3-and-pip">Install Homebrew, Python3, and pip</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-using-macos">Install the custom certificate using macOS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-macos">Install the Concordium LEDGER app on MacOS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-reinstall-the-concordium-ledger-app-on-macos">Update/reinstall the Concordium LEDGER app on macOS</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-ubuntu">Install Concordium LEDGER app on Ubuntu</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-python3-and-pip-on-ubuntu">Install Python3 and pip on Ubuntu</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-ubuntu">Install the custom certificate on Ubuntu</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-ubuntu">Install the Concordium LEDGER app on Ubuntu</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-concordium-ledger-app-on-ubuntu">Update the Concordium LEDGER app on Ubuntu</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/accounts-desktop.html">Use the Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#more-options">More options</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#edit-account-name">Edit account name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#set-default-account">Set default account</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#address-book-overview">Address book overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#desktop-wallet-settings">Desktop Wallet settings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#preferences">Preferences</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#node-settings">Node settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#change-wallet-password">Change wallet password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#recover-existing-accounts">Recover existing accounts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#terms-and-conditions">Terms and conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#make-an-account-report">Make an account report</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#create-a-report-of-transactions-on-one-or-more-accounts">Create a report of transactions on one or more accounts</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/scheduled-release.html">Scheduled releases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="desktop-wallet/single-sign-schedule.html">Transfer CCD with a schedule in Desktop Wallet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/single-sign-schedule.html#option-1-create-a-regular-interval-schedule">Option 1: Create a regular interval schedule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/single-sign-schedule.html#option-2-create-an-explicit-schedule">Option 2: Create an explicit schedule</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/transaction-log-filter.html">Apply a transaction log filter in the Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/update-application.html">Update the Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-application.html#automatic-updates">Automatic updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/update-application.html#manually-updating">Manually updating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="desktop-wallet/reset-data.html">Reset desktop wallet data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/reset-data.html#delete-the-user-data">Delete the user data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/address-book.html">Manage address book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/transaction-report.html">Create a transaction report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desktop-wallet/transaction-log-filter.html">Apply a transaction log filter in the Desktop Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/overview-shared-accounts.html">Shared accounts with multiple credentials in Desktop Wallet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-shared-accounts.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-shared-accounts.html#signature-threshold">Signature threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-shared-accounts.html#share-accounts">Share accounts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#step-1">Step 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#step-2">Step 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#step-3">Step 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#step-4">Step 4</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/create-credentials-file.html">Create a credentials file</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/create-credentials-file.html#create-and-export-a-file-with-credentials">Create and export a file with credentials</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-shared-accounts.html">Shared accounts with multiple credentials in Desktop Wallet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#credentials">Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#signature-threshold">Signature threshold</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/overview-shared-accounts.html#share-accounts">Share accounts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="guides/overview-shared-accounts.html#step-1">Step 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/overview-shared-accounts.html#step-2">Step 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/overview-shared-accounts.html#step-3">Step 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/overview-shared-accounts.html#step-4">Step 4</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/create-credentials-file.html">Create a credentials file</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/create-credentials-file.html#create-and-export-a-file-with-credentials">Create and export a file with credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/multi-credentials.html">Add credentials to an account</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#add-more-credentials-on-an-account">Add more credentials on an account</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#select-an-identity-and-an-account">Select an identity and an account</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#change-the-signature-threshold">Change the signature threshold</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#generate-the-transaction">Generate the transaction</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#option-1-generate-the-transaction-without-signing">Option 1: Generate the transaction without signing</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#option-2-generate-and-sign-the-transaction-on-the-ledger-device">Option 2: Generate and sign the transaction on the LEDGER device</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html">Add credentials to an account</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#add-more-credentials-on-an-account">Add more credentials on an account</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#select-an-identity-and-an-account">Select an identity and an account</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#change-the-signature-threshold">Change the signature threshold</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#generate-the-transaction">Generate the transaction</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/multi-credentials.html#option-1-generate-the-transaction-without-signing">Option 1: Generate the transaction without signing</a></li>
-<li class="toctree-l7"><a class="reference internal" href="guides/multi-credentials.html#option-2-generate-and-sign-the-transaction-on-the-ledger-device">Option 2: Generate and sign the transaction on the LEDGER device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#export-the-transaction-proposal">Export the transaction proposal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multi-credentials.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#export-the-transaction-proposal">Export the transaction proposal</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multi-credentials.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html">Create a multi-signature CCD transfer in the Desktop Wallet</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#make-a-transfer-proposal">Make a transfer proposal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#generate-the-transaction">Generate the transaction</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#generate-the-transaction-proposal-without-signing">Generate the transaction proposal without signing</a></li>
+<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#generate-and-sign-the-transaction-proposal-on-the-ledger-device">Generate and sign the transaction proposal on the LEDGER device</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html">Create a multi-signature CCD transfer in the Desktop Wallet</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#make-a-transfer-proposal">Make a transfer proposal</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#generate-the-transaction">Generate the transaction</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#generate-the-transaction-proposal-without-signing">Generate the transaction proposal without signing</a></li>
-<li class="toctree-l7"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#generate-and-sign-the-transaction-proposal-on-the-ledger-device">Generate and sign the transaction proposal on the LEDGER device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/multisig-simple-transfer.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#send-ccd-with-a-schedule">Send CCD with a schedule</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#how-a-scheduled-transfer-works">How a scheduled transfer works</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#release-schedule-types">Release schedule types</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#make-a-transfer-proposal">Make a transfer proposal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#add-a-release-schedule">Add a release schedule</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#option-1-create-a-regular-interval-schedule">Option 1: Create a regular interval schedule</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#option-2-create-an-explicit-schedule">Option 2: Create an explicit schedule</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html">Create a scheduled transfer in the Desktop Wallet</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#send-ccd-with-a-schedule">Send CCD with a schedule</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#how-a-scheduled-transfer-works">How a scheduled transfer works</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#release-schedule-types">Release schedule types</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#make-a-transfer-proposal">Make a transfer proposal</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#add-a-release-schedule">Add a release schedule</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/multisig-transfer.html#option-1-create-a-regular-interval-schedule">Option 1: Create a regular interval schedule</a></li>
-<li class="toctree-l7"><a class="reference internal" href="guides/multisig-transfer.html#option-2-create-an-explicit-schedule">Option 2: Create an explicit schedule</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#generate-the-transaction">Generate the transaction</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#generate-the-transaction-proposal-without-signing">Generate the transaction proposal without signing</a></li>
+<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#generate-and-sign-the-transaction-proposal-on-the-ledger-device">Generate and sign the transaction proposal on the LEDGER device</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#generate-the-transaction">Generate the transaction</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="guides/multisig-transfer.html#generate-the-transaction-proposal-without-signing">Generate the transaction proposal without signing</a></li>
-<li class="toctree-l7"><a class="reference internal" href="guides/multisig-transfer.html#generate-and-sign-the-transaction-proposal-on-the-ledger-device">Generate and sign the transaction proposal on the LEDGER device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/multisig-transfer.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#export-a-transaction-proposal">Export a transaction proposal</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#receive-signatures-from-co-signers">Receive signatures from co-signers</a></li>
-<li class="toctree-l6"><a class="reference internal" href="guides/multisig-transfer.html#submit-the-transaction-to-the-blockchain">Submit the transaction to the blockchain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/sign-transaction.html">Sign a transaction proposal</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/sign-transaction.html#import-and-sign-a-proposal">Import and sign a proposal</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/sign-transaction.html">Sign a transaction proposal</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/sign-transaction.html#import-and-sign-a-proposal">Import and sign a proposal</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/proposed-transactions.html">View transaction proposals</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="desktop-wallet/proposed-transactions.html#view-a-list-of-multi-signature-proposals">View a list of multi-signature proposals</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/proposed-transactions.html">View transaction proposals</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/proposed-transactions.html#view-a-list-of-multi-signature-proposals">View a list of multi-signature proposals</a></li>
 </ul>
 </li>
 </ul>
@@ -2310,9 +2360,13 @@ body {margin:0;}
 <li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#finalization-committee">Finalization committee</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#overview-of-the-baker-process">Overview of the baker process</a></li>
-<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-desktop-wallet">Baking with Desktop Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-mw-gen1-and-mw-gen2">Baking with Concordium Legacy Wallet and Concordium Wallet for Mobile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#overview-of-the-baker-process">Overview of the baker process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-bw">Baking with Concordium Wallet for Web</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-desktop-wallet">Baking with Desktop Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-mw-gen1-and-mw-gen2">Baking with Concordium Legacy Wallet and Concordium Wallet for Mobile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/concepts-baker.html#baking-with-concordium-client">Baking with <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="concepts/concepts-baker.html#next-steps">Next steps</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="guides/baker-pool.html">Baker management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mobile-wallet/add-baker-mw.html">Add baker</a></li>
@@ -2675,6 +2729,44 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guides/run-local-chain.html#interact-with-the-local-chain">Interact with the local chain</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CCDScan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resources/ccd-scan.html">CCDScan</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources/ccd-scan.html#delegation-and-baker-pools">Delegation and baker pools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources/ccd-scan.html#use-ccdscan">Use CCDScan</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/ccd-scan.html#home">Home</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/ccd-scan-blocks.html">CCDScan Blocks overview</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-blocks.html#block-details">Block details</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="resources/ccd-scan-transactions.html">CCDScan Transactions overview</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-transactions.html#transaction-details">Transaction details</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="resources/ccd-scan-accounts.html">CCDScan Accounts overview</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-accounts.html#sender-account-details">Sender/Account details</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="resources/ccd-scan-staking.html">CCDScan Staking overview</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-staking.html#baker-pools-view">Baker pools view</a></li>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-staking.html#top-delegators-view">Top delegators view</a></li>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-staking.html#passive-delegation-view">Passive delegation view</a></li>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-staking.html#baker-details">Baker details</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="resources/ccd-scan-nodes.html">CCDScan Nodes overview</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="resources/ccd-scan-nodes.html#node-details">Node details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3336,273 +3428,276 @@ body {margin:0;}
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contracts v0</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#what-are-smart-contracts-for">What are smart contracts for?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#auction-smart-contract-example">Auction smart contract example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts-v0/sc-v0-rollup.html">V0 smart contract documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html">Introduction and general guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#what-are-smart-contracts-for">What are smart contracts for?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#auction-smart-contract-example">Auction smart contract example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#what-are-smart-contracts-not-for">What are smart contracts <em>not</em> for?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#life-cycle-of-a-smart-contract">Life cycle of a smart contract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html">Smart contract modules</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#on-chain-language">On-chain language</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#limitations">Limitations</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#floating-point-numbers">Floating point numbers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#deployment">Deployment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#smart-contract-on-the-chain">Smart contract on the chain</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html">Smart contract instances</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#state-of-a-smart-contract-instance">State of a smart contract instance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#instantiating-a-smart-contract-on-chain">Instantiating a smart contract on-chain</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#instance-state">Instance state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#interacting-with-an-instance">Interacting with an instance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#logging-events">Logging events</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#action-descriptions">Action descriptions</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#processing-multiple-action-descriptions">Processing multiple action descriptions</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#handling-errors">Handling errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#what-are-smart-contracts-not-for">What are smart contracts <em>not</em> for?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/introduction.html#life-cycle-of-a-smart-contract">Life cycle of a smart contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html">Smart contract modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#on-chain-language">On-chain language</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#limitations">Limitations</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#floating-point-numbers">Floating point numbers</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html">Smart contract schemas</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#why-use-a-contract-schema">Why use a contract schema</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#should-you-embed-or-write-to-a-file">Should you embed or write to a file?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#the-schema-format">The schema format</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#embedding-schemas-on-chain">Embedding schemas on-chain</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#deployment">Deployment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-module.html#smart-contract-on-the-chain">Smart contract on the chain</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html">Developing smart contracts in Rust</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#writing-a-smart-contract-using-concordium-std">Writing a smart contract using <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#serializable-state-and-parameters">Serializable state and parameters</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#working-with-parameters">Working with parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#building-a-smart-contract-module-with-cargo-concordium">Building a smart contract module with <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#best-practices">Best practices</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#avoid-creating-black-holes">Avoid creating black holes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html">Smart contract instances</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#state-of-a-smart-contract-instance">State of a smart contract instance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#instantiating-a-smart-contract-on-chain">Instantiating a smart contract on-chain</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#instance-state">Instance state</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#interacting-with-an-instance">Interacting with an instance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#logging-events">Logging events</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#action-descriptions">Action descriptions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#processing-multiple-action-descriptions">Processing multiple action descriptions</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/contract-instances.html#handling-errors">Handling errors</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html">Smart contract schemas</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#why-use-a-contract-schema">Why use a contract schema</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#should-you-embed-or-write-to-a-file">Should you embed or write to a file?</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#the-schema-format">The schema format</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/contract-schema.html#embedding-schemas-on-chain">Embedding schemas on-chain</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html">Developing smart contracts in Rust</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#writing-a-smart-contract-using-concordium-std">Writing a smart contract using <code class="docutils literal notranslate"><span class="pre">concordium_std</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#serializable-state-and-parameters">Serializable state and parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#working-with-parameters">Working with parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#building-a-smart-contract-module-with-cargo-concordium">Building a smart contract module with <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#best-practices">Best practices</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../smart-contracts-v0/general/develop-contracts.html#avoid-creating-black-holes">Avoid creating black holes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/index.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html">Writing the piggy bank smart contract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#bring-in-the-standard-library">Bring in the standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#piggy-bank-contract">Piggy bank contract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#specifying-the-state">Specifying the state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#set-up-a-piggy-bank">Set up a piggy bank</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#the-init-macro">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#define-interaction-with-piggy-banks">Define interaction with piggy banks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#the-receive-macro">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#inserting-ccd">Inserting CCD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#smashing-a-piggy-bank">Smashing a piggy bank</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html">Testing the piggy bank smart contract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#add-a-test-module">Add a test module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#testing-instantiation-of-a-piggy-bank">Testing instantiation of a piggy bank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#test-inserting-ccd-into-a-piggy-bank">Test inserting CCD into a piggy bank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#test-smashing-a-piggy-bank">Test smashing a piggy bank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#testing-cause-of-rejection">Testing cause of rejection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#compiling-and-running-tests-in-wasm">Compiling and running tests in Wasm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#simulating-the-piggy-bank">Simulating the piggy bank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html">Writing the piggy bank smart contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#bring-in-the-standard-library">Bring in the standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#piggy-bank-contract">Piggy bank contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#specifying-the-state">Specifying the state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#set-up-a-piggy-bank">Set up a piggy bank</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#the-init-macro">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#define-interaction-with-piggy-banks">Define interaction with piggy banks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#the-receive-macro">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#inserting-ccd">Inserting CCD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/writing.html#smashing-a-piggy-bank">Smashing a piggy bank</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts-v0/guides/contract-dev-guides.html">Contract development guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html">Install tools for development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html#rust-and-cargo">Rust and Cargo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html#cargo-concordium">Cargo Concordium</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html#concordium-software">Concordium software</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/setup-contract.html">Setting up a smart contract project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/setup-contract.html#adding-the-smart-contract-standard-library">Adding the smart contract standard library</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html">Compile a Rust smart contract module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#compiling-to-wasm">Compiling to Wasm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#removing-host-information-from-build">Removing host information from build</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#caveats">Caveats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html">Testing the piggy bank smart contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#add-a-test-module">Add a test module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#testing-instantiation-of-a-piggy-bank">Testing instantiation of a piggy bank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#test-inserting-ccd-into-a-piggy-bank">Test inserting CCD into a piggy bank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#test-smashing-a-piggy-bank">Test smashing a piggy bank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#testing-cause-of-rejection">Testing cause of rejection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#compiling-and-running-tests-in-wasm">Compiling and running tests in Wasm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/tutorials/piggy-bank/testing.html#simulating-the-piggy-bank">Simulating the piggy bank</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html">Unit test a contract in Rust</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html#writing-unit-tests">Writing unit tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html#running-tests-in-wasm">Running tests in Wasm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/contract-dev-guides.html">Contract development guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html">Install tools for development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html#rust-and-cargo">Rust and Cargo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html#cargo-concordium">Cargo Concordium</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/setup-tools.html#concordium-software">Concordium software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html">Return custom errors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html#defining-and-deriving">Defining and deriving</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html#using-custom-errors">Using custom errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/setup-contract.html">Setting up a smart contract project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/setup-contract.html#adding-the-smart-contract-standard-library">Adding the smart contract standard library</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html">Locally simulate contract functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html#simulating-instantiation">Simulating instantiation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html#simulating-updates">Simulating updates</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html">Build a contract schema</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#setup-the-contract-for-a-schema">Setup the contract for a schema</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#including-contract-state">Including contract state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#including-function-parameters">Including function parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#building-the-schema">Building the schema</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#embedding-the-schema">Embedding the schema</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#outputting-a-schema-file">Outputting a schema file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html">Compile a Rust smart contract module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#compiling-to-wasm">Compiling to Wasm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#removing-host-information-from-build">Removing host information from build</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/compile-module.html#caveats">Caveats</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html#setting-up-the-module-for-no-std">Setting up the module for <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html#building-the-module">Building the module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html">Unit test a contract in Rust</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html#writing-unit-tests">Writing unit tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/unit-test-contract.html#running-tests-in-wasm">Running tests in Wasm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html">Return custom errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html#defining-and-deriving">Defining and deriving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/custom-errors.html#using-custom-errors">Using custom errors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html">Locally simulate contract functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html#simulating-instantiation">Simulating instantiation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/local-simulate.html#simulating-updates">Simulating updates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html">Build a contract schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#setup-the-contract-for-a-schema">Setup the contract for a schema</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#including-contract-state">Including contract state</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#including-function-parameters">Including function parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#building-the-schema">Building the schema</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#embedding-the-schema">Embedding the schema</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/build-schema.html#outputting-a-schema-file">Outputting a schema file</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts-v0/guides/on-chain-index.html">On-chain guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html">Deploy a smart contract module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html#deployment">Deployment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html#naming-a-module">Naming a module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html">Initialize a smart contract instance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#initialization">Initialization</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#passing-parameters-in-json-format">Passing parameters in JSON format</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#passing-parameters-in-binary-format">Passing parameters in binary format</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#naming-a-contract-instance">Naming a contract instance</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html">Interact with a smart contract instance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#interaction">Interaction</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#passing-parameters-in-json-format">Passing parameters in JSON format</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#passing-parameters-in-binary-format">Passing parameters in binary format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html#setting-up-the-module-for-no-std">Setting up the module for <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/no-std.html#building-the-module">Building the module</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html">Inspect a smart contract instance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html#inspection">Inspection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/guides/on-chain-index.html">On-chain guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html">Deploy a smart contract module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html#deployment">Deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/deploy-module.html#naming-a-module">Naming a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html">Initialize a smart contract instance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#initialization">Initialization</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#passing-parameters-in-json-format">Passing parameters in JSON format</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#passing-parameters-in-binary-format">Passing parameters in binary format</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/initialize-contract.html#naming-a-contract-instance">Naming a contract instance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html">Interact with a smart contract instance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#interaction">Interaction</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#passing-parameters-in-json-format">Passing parameters in JSON format</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/guides/interact-instance.html#passing-parameters-in-binary-format">Passing parameters in binary format</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts-v0/references/index.html">References</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html">Schema JSON representation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#json-for-schema-type">JSON for schema type</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#unit"><code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#u8-u16-u32-u64-i8-i16-i32-i64"><code class="docutils literal notranslate"><span class="pre">U8</span></code>, <code class="docutils literal notranslate"><span class="pre">U16</span></code>, <code class="docutils literal notranslate"><span class="pre">U32</span></code>, <code class="docutils literal notranslate"><span class="pre">U64</span></code>, <code class="docutils literal notranslate"><span class="pre">I8</span></code>, <code class="docutils literal notranslate"><span class="pre">I16</span></code>, <code class="docutils literal notranslate"><span class="pre">I32</span></code>, <code class="docutils literal notranslate"><span class="pre">I64</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#u128-i128"><code class="docutils literal notranslate"><span class="pre">U128</span></code>, <code class="docutils literal notranslate"><span class="pre">I128</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#amount"><code class="docutils literal notranslate"><span class="pre">Amount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#accountaddress"><code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#contractaddress"><code class="docutils literal notranslate"><span class="pre">ContractAddress</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#timestamp"><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#duration"><code class="docutils literal notranslate"><span class="pre">Duration</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#pair"><code class="docutils literal notranslate"><span class="pre">Pair</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#list"><code class="docutils literal notranslate"><span class="pre">List</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#set"><code class="docutils literal notranslate"><span class="pre">Set</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#map"><code class="docutils literal notranslate"><span class="pre">Map</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#array"><code class="docutils literal notranslate"><span class="pre">Array</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#struct"><code class="docutils literal notranslate"><span class="pre">Struct</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#enum"><code class="docutils literal notranslate"><span class="pre">Enum</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#string"><code class="docutils literal notranslate"><span class="pre">String</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#contractname"><code class="docutils literal notranslate"><span class="pre">ContractName</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#receivename"><code class="docutils literal notranslate"><span class="pre">ReceiveName</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#json-for-schema-type-fields">JSON for schema type fields</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#named"><code class="docutils literal notranslate"><span class="pre">Named</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#unnamed"><code class="docutils literal notranslate"><span class="pre">Unnamed</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#empty"><code class="docutils literal notranslate"><span class="pre">Empty</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html">Inspect a smart contract instance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/guides/inspect-instance.html#inspection">Inspection</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html">Simulation contexts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#init-context">Init context</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#metadata"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#initorigin"><code class="docutils literal notranslate"><span class="pre">initOrigin</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#senderpolicies"><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/references/index.html">References</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html">Schema JSON representation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#json-for-schema-type">JSON for schema type</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#unit"><code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#u8-u16-u32-u64-i8-i16-i32-i64"><code class="docutils literal notranslate"><span class="pre">U8</span></code>, <code class="docutils literal notranslate"><span class="pre">U16</span></code>, <code class="docutils literal notranslate"><span class="pre">U32</span></code>, <code class="docutils literal notranslate"><span class="pre">U64</span></code>, <code class="docutils literal notranslate"><span class="pre">I8</span></code>, <code class="docutils literal notranslate"><span class="pre">I16</span></code>, <code class="docutils literal notranslate"><span class="pre">I32</span></code>, <code class="docutils literal notranslate"><span class="pre">I64</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#u128-i128"><code class="docutils literal notranslate"><span class="pre">U128</span></code>, <code class="docutils literal notranslate"><span class="pre">I128</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#amount"><code class="docutils literal notranslate"><span class="pre">Amount</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#accountaddress"><code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#contractaddress"><code class="docutils literal notranslate"><span class="pre">ContractAddress</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#timestamp"><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#duration"><code class="docutils literal notranslate"><span class="pre">Duration</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#pair"><code class="docutils literal notranslate"><span class="pre">Pair</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#list"><code class="docutils literal notranslate"><span class="pre">List</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#set"><code class="docutils literal notranslate"><span class="pre">Set</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#map"><code class="docutils literal notranslate"><span class="pre">Map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#array"><code class="docutils literal notranslate"><span class="pre">Array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#struct"><code class="docutils literal notranslate"><span class="pre">Struct</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#enum"><code class="docutils literal notranslate"><span class="pre">Enum</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#string"><code class="docutils literal notranslate"><span class="pre">String</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#contractname"><code class="docutils literal notranslate"><span class="pre">ContractName</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#receivename"><code class="docutils literal notranslate"><span class="pre">ReceiveName</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#receive-context">Receive context</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#id1"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#invoker"><code class="docutils literal notranslate"><span class="pre">invoker</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#sender"><code class="docutils literal notranslate"><span class="pre">sender</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#id2"><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#owner"><code class="docutils literal notranslate"><span class="pre">owner</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#selfaddress"><code class="docutils literal notranslate"><span class="pre">selfAddress</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#selfbalance"><code class="docutils literal notranslate"><span class="pre">selfBalance</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#chain-meta-data">Chain meta data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#slottime"><code class="docutils literal notranslate"><span class="pre">slotTime</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#policy">Policy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#identityprovider"><code class="docutils literal notranslate"><span class="pre">identityProvider</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#createdat"><code class="docutils literal notranslate"><span class="pre">createdAt</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#validto"><code class="docutils literal notranslate"><span class="pre">validTo</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html">Contract host functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#logging-events">Logging events</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#function-parameter">Function parameter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#smart-contract-instance-state">Smart contract instance state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#chain-data">Chain data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#identity-data">Identity data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#only-in-init-function">Only in init function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#only-in-receive-function">Only in receive function</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#action-description">Action description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#json-for-schema-type-fields">JSON for schema type fields</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#named"><code class="docutils literal notranslate"><span class="pre">Named</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#unnamed"><code class="docutils literal notranslate"><span class="pre">Unnamed</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/schema-json.html#empty"><code class="docutils literal notranslate"><span class="pre">Empty</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html">References on-chain</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html#modules">Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html#contract-instances">Contract instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html">Simulation contexts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#init-context">Init context</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#metadata"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#initorigin"><code class="docutils literal notranslate"><span class="pre">initOrigin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#senderpolicies"><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html">Local settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#local-names">Local Names</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#account-names">Account Names</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#module-names">Module Names</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#contract-instance-names">Contract Instance Names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#receive-context">Receive context</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#id1"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#invoker"><code class="docutils literal notranslate"><span class="pre">invoker</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#sender"><code class="docutils literal notranslate"><span class="pre">sender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#id2"><code class="docutils literal notranslate"><span class="pre">senderPolicies</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#owner"><code class="docutils literal notranslate"><span class="pre">owner</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#selfaddress"><code class="docutils literal notranslate"><span class="pre">selfAddress</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#selfbalance"><code class="docutils literal notranslate"><span class="pre">selfBalance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#chain-meta-data">Chain meta data</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#slottime"><code class="docutils literal notranslate"><span class="pre">slotTime</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#policy">Policy</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#identityprovider"><code class="docutils literal notranslate"><span class="pre">identityProvider</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#createdat"><code class="docutils literal notranslate"><span class="pre">createdAt</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/simulate-context.html#validto"><code class="docutils literal notranslate"><span class="pre">validTo</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
-<li class="toctree-l2"><a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">concordium-std</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html">Contract host functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#logging-events">Logging events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#function-parameter">Function parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#smart-contract-instance-state">Smart contract instance state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#chain-data">Chain data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#identity-data">Identity data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#only-in-init-function">Only in init function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#only-in-receive-function">Only in receive function</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/host-fns.html#action-description">Action description</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html">References on-chain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html#modules">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/references-on-chain.html#contract-instances">Contract instances</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html">Local settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#local-names">Local Names</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#account-names">Account Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#module-names">Module Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../smart-contracts-v0/references/local-settings.html#contract-instance-names">Contract Instance Names</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">Rust contract examples (repo)</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">concordium-std</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3622,281 +3717,6 @@ body {margin:0;}
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="resources/ccd-scan.html">CCDScan</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="resources/ccd-scan.html#delegation-and-baker-pools">Delegation and baker pools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/ccd-scan.html#use-ccdscan">Use CCDScan</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/ccd-scan.html#home">Home</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="resources/release-notes-mainnet.html">Release notes - Mainnet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-1-2-0-for-android">Concordium Wallet for Mobile 1.2.0 for Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-5-4-2">Concordium Node 5.4.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-5-2-0">Concordium Client 5.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-for-android-1-1-8">Concordium Wallet for Mobile for Android 1.1.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-for-ios-1-0-1">Concordium Wallet for Mobile for iOS 1.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen1-for-ios-3-2-0">Concordium Legacy Wallet for iOS 3.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-1-0-6">Concordium Wallet for Web 1.0.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-8-0"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#smart-contract-integration-testing">Smart contract integration testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-1-0-4">Concordium Wallet for Web 1.0.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#vscode-extension-1-0-1">VSCode extension 1.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#id1">Cargo-concordium 2.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-for-android-1-1-7">Concordium Wallet for Mobile for Android 1.1.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-5-3-2">Concordium Node 5.3.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-7-1">Cargo-concordium 2.7.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-ledger-app-v3-1-0">Concordium Ledger App v3.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-9-11">Concordium Wallet for Web 0.9.11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen1-for-ios-3-1-1">Concordium Legacy Wallet for iOS 3.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-1-1-6">Concordium Wallet for Mobile 1.1.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-5-1-1">Concordium Client 5.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-5-2-4">Concordium Node 5.2.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-for-ios">Concordium Wallet for Mobile for iOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-9-8">Concordium Wallet for Web 0.9.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-1-1-5">Concordium Wallet for Mobile 1.1.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen1-for-android-3-2-0">Concordium Legacy Wallet for Android 3.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-7-0">Cargo concordium 2.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-1-1-4">Concordium Wallet for Mobile 1.1.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-5-1-3">Concordium Node 5.1.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-6-0">Cargo concordium 2.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-9-6">Concordium Wallet for Web 0.9.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-5-0-7-for-macos">Concordium Node 5.0.7 for MacOS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-4-sirius">Mainnet 4: Sirius</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-9-5">Concordium Wallet for Web 0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-9-4">Concordium Wallet for Web 0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-5-0">Cargo concordium 2.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-5-0-2">Concordium Client 5.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#smart-contract-libraries">Smart contract libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2-1-1-0">Concordium Wallet for Mobile 1.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw-0-8-5">Concordium Wallet for Web 0.8.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-5-0-6">Concordium Node 5.0.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-4-0">Cargo concordium 2.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-5-0-1">Concordium Client 5.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen1-for-android">Concordium Legacy Wallet for Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-5-0">Concordium Node 4.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#bw">Concordium Wallet for Web</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-2-0">Cargo concordium 2.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-4-4">Concordium Node 4.4.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-4-2-0">Concordium Client 4.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen2">Concordium Wallet for Mobile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mw-gen1-previously-concordium-mobile-wallet-for-android">Concordium Legacy Wallet (previously Concordium Mobile Wallet) for Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-3-1">Concordium Node 4.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-4-1-0">Concordium Client 4.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-1-0">Cargo concordium 2.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-4-0-4">Concordium Client 4.0.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#cargo-concordium-2-0-2">Cargo concordium 2.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-3-for-docker">Concordium Node 4.2.3 for Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-1-5-0">Concordium Desktop Wallet 1.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-2-1">Concordium Node 4.2.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-ios-v3-0-0-53">Concordium Mobile Wallet for iOS v3.0.0(53)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-android-v3-0-0-100">Concordium Mobile Wallet for Android v3.0.0(100)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-4-2">Concordium Desktop Wallet v1.4.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-4-1-1">Concordium Node 4.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-4-0-3">Concordium Client 4.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-4-1">Concordium Desktop Wallet v1.4.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-3-alpha-centauri-3-0">Mainnet 3: Alpha Centauri 3.0</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#ccdscan-release-1">CCDScan release 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-v3-0-2">Concordium Node v3.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-android-v2-0-0-75">Concordium Mobile Wallet for Android v2.0.0(75)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-ios-v2-0-0-38">Concordium Mobile Wallet for iOS v2.0.0(38)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-ios-v1-3-34">Concordium Mobile Wallet for iOS v1.3(34)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-ios-v1-2-33">Concordium Mobile Wallet for iOS v1.2(33)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-android-v1-2-6">Concordium Mobile Wallet for Android v1.2.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-3-1">Concordium Desktop Wallet v1.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-v3-0-1">Concordium Node v3.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-3-0">Concordium Desktop Wallet v1.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-v3-0-0">Concordium Node v3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-android-v1-0-22">Concordium Mobile Wallet for Android v1.0.22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-ledger-app-v2-0-3">Concordium Ledger App v2.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-v3-0-4">Concordium Client v3.0.4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-2-alpha-centauri-2-2">Mainnet 2: Alpha Centauri 2.2</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-ios-v1-1-27">Concordium Mobile Wallet for iOS v1.1(27)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-2-alpha-centauri-2-1">Mainnet 2: Alpha Centauri 2.1</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-mobile-wallet-for-android-v-1-0-16">Concordium Mobile Wallet for Android (v. 1.0.16)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">The new version of Concordium Mobile Wallet for iOS is coming soon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-2-alpha-centauri-2-0">Mainnet 2: Alpha Centauri 2.0</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node-v1-1-3">Concordium Node v1.1.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-client-v1-1-1">Concordium Client v1.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-2-0">Concordium Desktop Wallet v1.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-ledger-app-v2-0-1">Concordium Ledger App v2.0.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-1-alpha-centauri-1-2">Mainnet 1: Alpha Centauri 1.2</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-1-6">Concordium Desktop Wallet v1.1.6</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-1-alpha-centauri-1-1">Mainnet 1: Alpha Centauri 1.1</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-desktop-wallet-v1-1-5">Concordium Desktop Wallet v1.1.5</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes-mainnet.html#mainnet-1-alpha-centauri-1-0">Mainnet 1: Alpha Centauri 1.0</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#proof-of-stake">Proof of Stake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#two-layer-consensus-protocol">Two Layer Consensus Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#built-in-idlayer">Built in IDLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#smart-contracts">Smart Contracts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#tokenomics-and-on-chain-incentivization">Tokenomics and On-chain Incentivization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#concordium-node">Concordium Node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#mobile-wallet">Mobile Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#desktop-wallet">Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes-mainnet.html#source-code">Source Code</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="resources/release-notes.html">Release Notes - Testnet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-1-2-0-for-android">Concordium Wallet for Mobile 1.2.0 for Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-4-2">Concordium Node 5.4.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-4-1">Concordium Node 5.4.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-5-2-0">Concordium Client 5.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-for-android-1-1-8">Concordium Wallet for Mobile for Android 1.1.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-for-ios-1-0-1">Concordium Wallet for Mobile for iOS 1.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen1-for-ios-3-2-0">Concordium Legacy Wallet for iOS 3.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-1-0-6">Concordium Wallet for Web 1.0.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-8-0"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#smart-contract-integration-testing">Smart contract integration testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-1-0-4">Concordium Wallet for Web 1.0.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#vscode-extension-1-0-1">VSCode extension 1.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#id1">Cargo-concordium 2.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-for-android-1-1-7">Concordium Wallet for Mobile for Android 1.1.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-3-2">Concordium Node 5.3.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-7-1">Cargo-concordium 2.7.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-ledger-app-v3-1-0">Concordium Ledger App v3.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-9-11">Concordium Wallet for Web 0.9.11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen1-for-ios-3-1-1">Concordium Legacy Wallet for iOS 3.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-1-1-6">Concordium Wallet for Mobile 1.1.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-5-1-1">Concordium Client 5.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-2-4">Concordium Node 5.2.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-for-ios">Concordium Wallet for Mobile for iOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-9-8">Concordium Wallet for Web 0.9.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-1-1-5">Concordium Wallet for Mobile 1.1.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen1-for-android-3-2-0">Concordium Legacy Wallet for Android 3.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-7-0">Cargo concordium 2.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-1-1-4">Concordium Wallet for Mobile 1.1.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-6-0">Cargo concordium 2.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-1-3">Concordium Node 5.1.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-9-6">Concordium Wallet for Web 0.9.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-0-7-for-macos">Concordium Node 5.0.7 for MacOS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#sirius-testnet">Sirius Testnet</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-9-5">Concordium Wallet for Web 0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-9-4">Concordium Wallet for Web 0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-5-0">Cargo concordium 2.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-5-0-2">Concordium Client 5.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#smart-contract-libraries">Smart contract libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2-1-1-0">Concordium Wallet for Mobile 1.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw-0-8-5">Concordium Wallet for Web 0.8.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-4-0">Cargo concordium 2.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-5-0-1">Concordium Client 5.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen1-for-android">Concordium Legacy Wallet for Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-5-0-6">Concordium Node 5.0.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#bw">Concordium Wallet for Web</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-5-0">Concordium Node 4.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-2-0">Cargo concordium 2.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-4-2-0">Concordium Client 4.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-4-4">Concordium Node 4.4.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen2">Concordium Wallet for Mobile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#mw-gen1-previously-concordium-mobile-wallet-for-android">Concordium Legacy Wallet (previously Concordium Mobile Wallet) for Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-3-1">Concordium Node 4.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-4-1-0">Concordium Client 4.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-1-0">Cargo concordium 2.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#id4">Concordium Client 4.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#id5">Cargo concordium 2.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-4-0-4">Concordium Client 4.0.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#cargo-concordium-2-0-2">Cargo concordium 2.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-3-for-docker">Concordium Node 4.2.3 for Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-1-5-0">Concordium Desktop Wallet 1.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v3-0-0-53">Concordium Mobile Wallet for iOS v3.0.0(53)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-android-v3-0-0-100">Concordium Mobile Wallet for Android v3.0.0(100)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-2-1">Concordium Node 4.2.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#sirius-testnet-reset">Sirius Testnet reset</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-4-2">Concordium Desktop Wallet v1.4.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-1-1">Concordium Node 4.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-4-1">Concordium Desktop Wallet v1.4.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#id6">Sirius Testnet</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-4-0">Concordium Desktop Wallet v1.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-4-0-11">Concordium Node 4.0.11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-4-0-3">Concordium Client 4.0.3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v7-update-1">Open Testnet v7 Update 1</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-v3-0-2">Concordium Node v3.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-android-v2-0-0-75">Concordium Mobile Wallet for Android v2.0.0(75)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v2-0-0-38">Concordium Mobile Wallet for iOS v2.0.0(38)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v1-3-34">Concordium Mobile Wallet for iOS v1.3(34)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v1-2-33">Concordium Mobile Wallet for iOS v1.2(33)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-android-v1-2-6">Concordium Mobile Wallet for Android v1.2.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-3-1">Concordium Desktop Wallet v1.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-v3-0-1">Concordium Node v3.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-3-0">Concordium Desktop Wallet v1.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-android-v1-0-22">Concordium Mobile Wallet for Android v1.0.22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-ledger-app-v2-0-3">Concordium Ledger App v2.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-ios-v1-1-27">Concordium Mobile Wallet for iOS v1.1(27)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v7">Open Testnet v7</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordrium-node-v3-0-0">Concordrium Node v3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-v3-0-4">Concordium-client v3.0.4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v6-update-4">Open Testnet v6 Update 4</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-mobile-wallet-for-android-v-1-0-16">Concordium Mobile Wallet for Android (v. 1.0.16)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">The new version of Concordium Mobile Wallet for iOS is coming soon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v6-update-3">Open Testnet v6 Update 3</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-2-0">Concordium Desktop Wallet v1.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-ledger-app-v2-0-1">Concordium Ledger App v2.0.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v6-update-2">Open Testnet v6 Update 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v6-update-1">Open Testnet v6 Update 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v6">Open Testnet v6</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-node-v1-1-1">Concordium Node v1.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-client-v1-1-1">Concordium Client v1.1.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v5-update-4">Open Testnet v5 Update 4</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-1-6">Concordium Desktop Wallet v1.1.6</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v5-update-3">Open Testnet v5 Update 3</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#concordium-desktop-wallet-v1-1-5-for-testnet">Concordium Desktop Wallet v1.1.5 for Testnet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v5-update-2">Open Testnet v5 Update 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v5-update-1">Open Testnet v5 Update 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v5">Open Testnet v5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v4-update-1">Open Testnet v4 Update 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v4">Open Testnet v4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v3-update-2">Open Testnet v3 update 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v3-update-1">Open Testnet v3 update 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v3">Open Testnet v3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v2-update-1">Open Testnet v2 update 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v2">Open Testnet v2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#updates">Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#open-testnet-v1">Open Testnet v1</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resources/release-notes.html#features">Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="resources/release-notes.html#concordium-nodes">Concordium Nodes</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="resources/legal.html">Legal</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="resources/terms-and-conditions.html">Terms and conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources/terms-and-conditions.html#concordium-wallet-terms-of-use">CONCORDIUM WALLET - TERMS OF USE</a><ul>
@@ -7063,7 +6883,7 @@ body {margin:0;}
     <a class='right-next' id="next-link" href="installation/downloads.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Downloads - Mainnet</p>
+        <p class="prev-next-title">Downloads</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
