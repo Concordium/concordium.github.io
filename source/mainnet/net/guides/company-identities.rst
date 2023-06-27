@@ -7,7 +7,7 @@ Company identity creation
 
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
-You can't use the Desktop Wallet, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
+You can't use the Desktop Wallet, |bw|, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use a set of command-line tools, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
 
 The information below describes how to create a company identity. Note that the process differs for testnet and mainnet.
 
@@ -34,7 +34,7 @@ The information below describes how to create a company identity. Note that the 
 
       - ``ip-info.json`` (public keys of the identity provider Notabene)
 
-   #. Download ``concordium-client`` for your platform.  See :ref:`Downloads<concordium-node-and-client-download>` to get the file and checksum.
+   #. Download ``concordium-client`` for your platform.  See :ref:`Downloads<concordium-node-and-client-download-testnet>` to get the file and checksum.
 
    #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object>`__. Email the ``request.json`` output file to ania@notabene.id. Store the auxiliary output securely.
 
@@ -70,7 +70,7 @@ The information below describes how to create a company identity. Note that the 
 
       - ``ip-info-testnet.json`` (public keys of the identity provider)
 
-   #. Download ``concordium-client`` for your platform. See :ref:`Downloads<concordium-node-and-client-download>` to get the file and checksum.
+   #. Download ``concordium-client`` for your platform. See :ref:`Downloads<concordium-node-and-client-download-testnet>` to get the file and checksum.
 
    #. To generate a request for an identity object, follow the `generate request instructions <https://github.com/Concordium/concordium-base/blob/main/rust-bins/docs/user-cli.md#generate-a-version-1-request-for-the-version-1-identity-object>`__. Email the ``request.json`` output file to support@concordium.software with the subject line "Test company identity". Store the auxiliary output securely.
 

@@ -52,7 +52,7 @@ If everything is correct, when you enter the command ``cargo concordium --help``
 Install Concordium Client
 =========================
 
-The tutorials use ``concordium-client`` as a command line tool to deploy, mint, and transfer. :ref:`Download it here<concordium-node-and-client-download>`. Rename the package to ``concordium-client`` in case it has some version annotation.
+The tutorials use ``concordium-client`` as a command line tool to deploy, mint, and transfer. :ref:`Download it here<concordium-node-and-client-download-testnet>`. Rename the package to ``concordium-client`` in case it has some version annotation.
 
 .. note::
 
