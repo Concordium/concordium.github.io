@@ -46,13 +46,19 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the |mw-gen2| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
+   You can only import accounts created in the |mw-gen2| or |bw| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
 
 To import an account run:
 
 .. code-block:: console
 
    $concordium-client config account import <path/to/exported/file> --name bakerAccount
+
+For the |bw|, use the following command:
+
+.. code-block:: console
+
+    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
 
 ``concordium-client`` asks for a password to decrypt the exported file and
 import all accounts. The same password will be used for encrypting the

@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../../variables.rst
 .. _mainnet-release-notes:
 
@@ -5,11 +7,111 @@
 Release notes - Mainnet
 =======================
 
+This document is deprecated and replaced by the :ref:`product-separated release notes<release-notes>`.
+
 .. Note::
 
    Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
+June 27, 2023
+
+|mw-gen2| 1.2.0 for Android
+---------------------------
+
+The |mw-gen2| for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+Additionally, the following improvements were made:
+
+- Identity view: Display raw document type when no localized string is matched
+- Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+
+June 14, 2023
+
+Concordium Node 5.4.2
+---------------------
+
+Concordium node version 5.4.2 contains the following features and bug fixes:
+
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not keep a historical list of peers when running as a normal node.
+
+- Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+
+June 1, 2023
+
+Concordium Client 5.2.0
+-----------------------
+
+Version 5.2.0 contains the following features and bug fixes:
+
+- Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+
+- Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+
+May 31, 2023
+
+|mw-gen2| for Android 1.1.8
+-----------------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+A minor change to the identity user interface was made to support integration with eID verifiers.
+
+|mw-gen2| for iOS 1.0.1
+-------------------------------
+
+The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+Also, a minor change was made to support integration with eID verifiers.
+
+Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
+
+The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
+
+May 30, 2023
+
+|mw-gen1| for iOS 3.2.0
+--------------------------------
+
+Identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+|bw| 1.0.6
+-------------------------
+
+|bw| 1.0.6 contains fixes for the following issues:
+
+- The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+- Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+- Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+- Fixed an issue so the first call of the gRPC client no longer always fails.
+
+- Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+- Added a missing translation for the Request CCD button.
+
+- ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+   - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+   - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+   - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+- Added text that a transaction has been submitted.
+
+- Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
 
 May 11, 2023
 
@@ -466,7 +568,7 @@ Concordium Node 4.3.1 introduces a number of performance improvements. The effec
 - Remove obsolete and unused option ``--max-expiry-duration``.
 - Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
 
-August 24, 20222
+August 24, 2022
 
 Concordium Client 4.1.0
 -----------------------
@@ -865,7 +967,7 @@ October 6, 2021
 Concordium Node v1.1.3
 ----------------------
 
-The :ref:`Concordium node release v1.1.3 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+The Concordium node release v1.1.3 implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
 This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
 stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
 
