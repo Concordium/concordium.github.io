@@ -1954,7 +1954,11 @@ Step 5 - Deploy your smart contract<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <blockquote>
-<div><p class="sd-card-text">To deploy a smart contract module <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code> using the account with name account-name, run the following command:</p>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">To ease deployment and initialization, you can use the <a class="reference external" href="https://sctools.mainnet.concordium.software/">Smart contract deploy and initialize tool</a> instead of the process below. It works with the Concordium Wallet for Web to deploy and initialize smart contracts to Mainnet and Testnet.</p>
+</div>
+<p class="sd-card-text">To deploy a smart contract module <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code> using the account with name account-name, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm.v1 --sender account_name
 </pre></div>
 </div>
