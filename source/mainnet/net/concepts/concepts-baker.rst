@@ -103,17 +103,17 @@ Overview of the baker process
 
 #. If the block is valid, the finalizers will sign it.
 
-#. If the combined stake of the finalizers who sign the block > ⅔ total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block.
+#. If the combined stake of the finalizers who sign the block is greater than two-thirds of the total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block.
 
-.. image:: ../concepts/baker-process1.png
+.. image:: ../images/concepts/baker-process1.png
    :alt: diagram of baker process
 
-#. The next baker (Alice) now needs the QC to produce the next block. Note that here, by design, the new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
+6. The next baker (Alice) now needs the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
 
-If there are no issues, the protocol loops over this process from step 3.
-
-.. image:: ../concepts/baker-process1.png
+.. image:: ../images/concepts/baker-process2.png
    :alt: diagram of baker process
+
+If there are no issues, the protocol repeats this process from step 3.
 
 In the case of a faulty baker who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a :ref:`Timeout Certificate (TC)<glossary-timeout-certificate>` is issued to move the process forward. Alice can now use the TC instead of the QC to extend the previous block.
 

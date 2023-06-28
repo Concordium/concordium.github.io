@@ -36,7 +36,7 @@ These two caps are soft caps in the sense that a pool can have more stake than a
 Pool reliability
 ----------------
 
-The rewards earned by a pool depend greatly on the reliability of the baker. If they miss baking a block they were chosen to bake, if they go offline, or if they do not follow the protocol and get jailed, then less rewards will be distributed to the entire pool. If a baker misses a block, the blockchain knows who missed it. To help a delegator choose the best pool possible, statistics are available on `CCDScan <https://ccdscan.io>`_ about the performance of the different pools, the reliability of the baker, and the size of the pool. 
+The rewards earned by a pool depend greatly on the reliability of the baker. If they miss baking a block they were chosen to bake, if they go offline, or if they do not follow the protocol and get jailed, then less rewards will be distributed to the entire pool. If a baker misses a block, the blockchain knows who missed it. To help a delegator choose the best pool possible, statistics are available on `CCDScan <https://ccdscan.io>`_ about the performance of the different pools, the reliability of the baker, and the size of the pool.
 
 Bakers cannot choose the commission values themselves. There is a fixed commission value that is the same for all pools. This is to favor healthy competition between pools based on the quality of their baking, and not have some dishonest parties try to increase their control over the system by setting commissions to 0 to attract more delegators.
 
