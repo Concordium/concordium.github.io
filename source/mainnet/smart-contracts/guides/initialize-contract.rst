@@ -27,6 +27,8 @@ the transaction.
    The cost of this transaction depends on the size of the parameters sent to
    the init function and the complexity of the function itself.
 
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
 Initialization
 ==============
 

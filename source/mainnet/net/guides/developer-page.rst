@@ -18,6 +18,8 @@ Official resources
 
     - `Smart contract libraries <https://crates.io/crates/concordium-std>`_
 
+    - To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
 - `GitHub <https://github.com/Concordium>`_
 
 - `Concordium standards and updates <https://proposals.concordium.software/>`_
