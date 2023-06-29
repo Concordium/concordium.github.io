@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _deploy-module:
 
 ==============================
@@ -22,6 +23,8 @@ enough CCD to pay for the transaction.
    The cost of the transaction is dependent on the size of the smart contract
    module. ``concordium-client`` shows the cost and asks for confirmation
    before it executes any transaction.
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 Deployment
 ==========
