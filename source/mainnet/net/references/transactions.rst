@@ -673,7 +673,6 @@ The output is:
      - finalizer relative stake threshold
      - The fraction of stake required to be part of the finalization committee
    * - Other parameters
-   * -
      - foundation account index
      - An index of the designated foundation reward account. The foundation account receives the foundation tax.
    * -
