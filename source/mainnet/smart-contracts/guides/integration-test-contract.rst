@@ -65,7 +65,57 @@ Use the |Chain_new|_ method to create a chain with default settings.
        let mut chain = Chain::new();
    }
 
-There are also other constructors which allow you to specify certain chain parameters, such as the block time (slot time) and exchange rates between energy, CCD, and Euro.
+You can also create a |Chain|_ with custom values for exchange rates and the block time using a builder pattern, where you configure a number of options and finish off by calling the |ChainBuilder_build|_ method.
+
+.. code-block:: rust
+
+   #[test]
+   fn my_test() {
+       let mut chain = Chain::builder()
+           // Specify a block time.
+           .block_time(Timestamp::from_timestamp_millis(10000))
+           // Specify the Euro to energy exchange rate.
+           .euro_per_energy(ExchangeRate::new_unchecked(1, 50000))
+           // Specify the microCCD to Euro exchange rate.
+           .micro_ccd_per_euro(ExchangeRate::new_unchecked(50000, 1))
+           // Try to build the Chain using the configured parameters.
+           .build()
+           // The parameters might be invalid, so it returns a `Result` which is unwrapped.
+           .unwrap();
+   }
+
+It is even possible to connect to an external Concordium node and get the exchange rates or block time from it.
+
+.. code-block:: rust
+
+   #[test]
+   fn my_test() {
+       let mut chain = Chain::builder()
+           // Connect to the public testnet node on its gRPCv2 port 20000.
+           .external_node_connection(Endpoint::from_static(
+               "http://node.testnet.concordium.com:20000",
+           ))
+           // Specify which block to use for queries. If omitted, the last final block will be used.
+           .external_query_block(
+               "b22466d87a273be64df283f8db0435aab945b2dd54f4df07b82fd02418be0c96"
+                   .parse()
+                   .unwrap(),
+           )
+           // Specify that the exchange rates and block time should
+           // be set to match the queried values from the node.
+           .euro_per_energy_from_external()
+           .micro_ccd_per_euro_from_external()
+           .block_time_from_external()
+           // Try to build the Chain using the configured parameters.
+           .build()
+           // The parameters might be invalid, so it returns a `Result` which is unwrapped.
+           .unwrap();
+   }
+
+When getting values from an external node, it will use the same block for all the queries.
+The block will either be the one you specify with |ChainBuilder_external_query_block|_ or the last final block at the time.
+Also note that you can mix and match configuration options, for example by specifying your own block time while using the microCCD to Euro exchange rate from an external node.
+You can find all the configuration options including examples on the documentation for |ChainBuilder|_.
 
 Creating accounts
 -----------------
@@ -379,8 +429,22 @@ Contract trace elements
 
 The contract trace elements describe the contract calls, transfers to accounts, module upgrades, and the success of these during a |Chain_contract_update|_ or |Chain_contract_invoke|_.
 
-The struct returned on success from these calls has a ``trace_elements`` field which is a list of *all* the elements in the order that they occurred.
-If you want the trace elements grouped per contract address, use the method |trace_elements|_.
+The struct returned on success from these calls has an |effective_trace_elements|_ method which returns a list of all the *effective* elements in the order that they occurred.
+To understand what *effective* refers to, it is useful with an example:
+
+* Contract ``A`` calls contract ``B``
+
+  * ``B`` then calls contract ``C``
+  * Then ``B`` fails
+
+* ``A`` returns successfully
+
+In this case, the internal call from ``B`` to ``C`` is not *effective* as it has no effect, the only thing that matters for the outcome is that ``B`` failed and everything ``B`` did is rolled back as if it never occurred.
+However, in a testing and debugging scenario, it can be useful to see *all* the calls, effective or not.
+To do this, the returned struct has a field called ``trace_elements``, which is a list of |DebugTraceElement|_.
+Debug trace elements include information about the failed traces, e.g. the call from ``B`` to ``C`` in the example above, along with additional information such as the energy used when each element was produced.
+
+Multiple helper methods exist for extracting information from the debug trace elements. To view the effective trace elements grouped per contract address, use the method |trace_elements|_.
 
 Example:
 
@@ -515,9 +579,19 @@ Example:
 .. |Chain_contract_balance| replace:: ``contract_balance``
 .. _trace_elements: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.trace_elements
 .. |trace_elements| replace:: ``trace_elements``
+.. _effective_trace_elements: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.effective_trace_elements
+.. |effective_trace_elements| replace:: ``effective_trace_elements``
 .. _account_transfers: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.account_transfers
 .. |account_transfers| replace:: ``account_transfers``
 .. _return_value: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html#method.return_value
 .. |return_value| replace:: ``return_value``
 .. _ContractInvokeError: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html
 .. |ContractInvokeError| replace:: ``ContractInvokeError``
+.. _ChainBuilder_external_query_block: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ChainBuilder.html#method.external_query_block
+.. |ChainBuilder_external_query_block| replace:: ``external_query_block``
+.. _ChainBuilder_build: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ChainBuilder.html#method.build
+.. |ChainBuilder_build| replace:: ``build``
+.. _ChainBuilder: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ChainBuilder.html
+.. |ChainBuilder| replace:: ``ChainBuilder``
+.. _DebugTraceElement: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/enum.DebugTraceElement.html
+.. |DebugTraceElement| replace:: ``DebugTraceElement``
