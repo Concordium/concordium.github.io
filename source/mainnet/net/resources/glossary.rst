@@ -1,4 +1,4 @@
-.. _whitepaper: https://assets-global.website-files.com/6172c154c6a83e2a4713d1af/61cc25e0b3273f28f6a75dba_Concordium-White-Paper-June2021.pdf
+.. _whitepaper: https://concordium.com/wp-content/uploads/2023/01/Concordium-White-Paper-v1.6.pdf
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
 .. include:: ../../variables.rst
@@ -204,7 +204,7 @@ A period of time during which a transaction is frozen. Examples of when cool-dow
 Concordium Byzantine Fault Tolerance (BFT) protocol
 ===================================================
 
-The consensus protocol for the blockchain. The protocol offers higher transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed without waiting for a slot with an election winner. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. (At this point, the protocol ensures that it cannot be rolled back.)
+The consensus protocol for the blockchain. The protocol offers higher transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed without waiting for a slot with an election winner. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back.
 
 .. _glossary-credential:
 
@@ -279,7 +279,7 @@ An invocable function of the smart contract that usually takes arguments. Each e
 
 .. _glossary-epoch:
 
-Epoch
+Epoch (to be updated)
 =====
 
 A time period consisting of multiple :ref:`slots<glossary-slot>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
@@ -378,7 +378,7 @@ Invoke is also the act of triggering a receive function in a smart contract from
 
 .. _glossary-leader-election:
 
-Leader Election
+Leader Election (to be updated)
 ===============
 
 To check whether a given :ref:`baker<glossary-baker>` has won in a given :ref:`slot<glossary-slot>`, the baker uses the
@@ -392,7 +392,7 @@ difficulty parameters decrease the winning probability for all parties.
 
 .. _glossary-lottery-power:
 
-Lottery Power
+Lottery Power (to be updated)
 =============
 
 A baker's lottery power is its relative stake and is therefore proportional to
@@ -432,7 +432,7 @@ these keys is referred to as a *passive node*.
 
 .. _glossary-nonce:
 
-Nonce
+Nonce (to be updated)
 =====
 
 May refer to:
@@ -474,7 +474,7 @@ given out to, e.g., bakers.
 
 .. _glossary-pay-day:
 
-Pay day
+Pay day (to be updated)
 =======
 
 A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at 08:05 UTC on Mainnet and 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
@@ -754,7 +754,7 @@ WebAssembly (Wasm) defines a portable binary-code format and a corresponding tex
 
 .. _glossary-winning-probability:
 
-Winning probability
+Winning probability (to be updated)
 ===================
 
 The winning probability is the probability that a baker wins in a given slot.

@@ -552,8 +552,20 @@ The output is:
    # Time parameters:
      + reward period length: 24 epochs
 
+  # Consensus parameters:
+    + Timeout parameters:
+      * base timeout: 10000 ms.
+      * timeout increase: 5 / 4 (approx 1.25)
+      * timeout decrease: 4 / 5 (approx 0.8)
+    + minimum time between blocks: 5000 ms.
+    + block energy limit: 3000000
+
+  # Finalization committee parameters:
+    + minimum finalizers: 40
+    + maximum finalizers: 500
+    + finalizer relative stake threshold: 1.0e-3
+
    # Other parameters:
-     + election difficulty: 2.5e-2
      + foundation account index: 10
      + maximum credential deployments per block: 10
 
@@ -636,9 +648,31 @@ The output is:
    * - Time parameters
      - reward period length
      - The length of the reward period. All rewards are handed out at the end of each reward period.
+   * - Consensus parameters
+     - Timeout parameters: base timeout
+     - Time in milliseconds before timeout.
+   * -
+     - Timeout parameters: timeout increase
+     - Factor by which base timeout increases in next round if no quorum certificate is produced after a round with a timeout certificate.
+   * -
+     - Timeout parameters: timout decrease
+     - Factor by which base timeout decreases in next round if a quorum certificate is produced after a round with timeout certificate.
+   * -
+     - minimum time between blocks
+     - minimum time in milliseconds between block creation
+   * -
+     - block energy limit
+     - Maximum amount of energy consumed by block
+   * - Finalization committee parameters
+     - minimum finalizers
+     - Minimum number of finalizers that make up the committee
+   * -
+     - maximum finalizers
+     - Maximum number of finalizers that make up the committee
+   * -
+     - finalizer relative stake threshold
+     - The fraction of stake required to be part of the finalization committee
    * - Other parameters
-     - election difficulty
-     - The election difficulty determines the probability that there is a block in a slot. Thus together with slot duration it determines average block time.
    * -
      - foundation account index
      - An index of the designated foundation reward account. The foundation account receives the foundation tax.
