@@ -55,17 +55,18 @@ To be chosen to bake a block, the baker must take part in a
 
 The same stake is used when calculating whether a baker is included in the :ref:`finalization <glossary-finalization>` committee or not.
 
-If a baker misses baking a block, it is known which baker missed it. This is useful information for delegators and node runners. The information can be used to optimize leader election in the future.
+If a baker misses baking a block, it is known which baker missed it. This is useful information for delegators when choosing a baker pool to delegate to, and node runners.
 
 Time concepts
 -------------
 The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`rounds <glossary-round>`.
 
-When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
+When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
 
-Epochs are subdivided into rounds. On any given :ref:`branch <glossary-branch>`, each round can have a maximum of one block, but multiple blocks on different branches can be produced in the same round. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
+Epochs are subdivided into rounds. Rounds have a minimum time interval, but the rounds can grow "in time" if a round times out. For example, if round 1 times out, then round 2's duration increases and so on. Then whenever there is a block in a round that manages to get a quorum certificate attached, then the "round duration" will shrink, and it will continue to do so if , for example, there have been multiple rounds that have timed out.
+But it cannot shrink below the minimum time interval given by the chain parameters. There can only ever be one block for a certain round across all branches, thus there is a unique leader (potential baker) for a round in an epoch.
 
-A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking, and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at 08:05 UTC on Mainnet and 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
+A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking, and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 08:05 UTC on Mainnet and approximately 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
 
 A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)
 
@@ -77,7 +78,7 @@ Finalization
 What is finalization?
 ---------------------
 
-Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically by the bakers with a staked amount of at least 0.1% of the total amount (stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
+Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the total amount (stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
 
 Finalizers sign a block, and their collective signatures are aggregated to form a :ref:`quorum certificate<glossary-quorum-certificate>`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the previous block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
 
@@ -95,20 +96,20 @@ Participating in the finalization committee produces rewards on each block that 
 Overview of the baker process
 =============================
 
-#. A Proof of stake based lottery system (verifiable random function) produces a list of bakers. The higher the baker’s stake, the higher the probability of being included on the list more often.
+#. A Proof of stake based lottery system produces a list of bakers. The higher the baker’s stake, the higher the probability of being included on the list more often.
 
 #. The first baker on the list (Bob) makes a new block that appends to the genesis block.
 
-#. Bob then broadcasts the block to the finalizers.
+#. Bob then broadcasts the block to all peers.
 
 #. If the block is valid, the finalizers will sign it.
 
-#. If the combined stake of the finalizers who sign the block is greater than two-thirds of the total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block.
+#. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* OR  *effective stake is at least* two-thirds of the total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block. Without the QC the new round cannot progress.
 
 .. image:: ../images/concepts/baker-process1.png
    :alt: diagram of baker process
 
-6. The next baker (Alice) now needs the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
+6. The next baker (Alice) now uses the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
 
 .. image:: ../images/concepts/baker-process2.png
    :alt: diagram of baker process

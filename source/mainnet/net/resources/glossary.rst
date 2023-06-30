@@ -204,7 +204,7 @@ A period of time during which a transaction is frozen. Examples of when cool-dow
 Concordium Byzantine Fault Tolerance (BFT) protocol
 ===================================================
 
-The consensus protocol for the blockchain. The protocol offers higher transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed without waiting for a slot with an election winner. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back.
+The consensus protocol for the blockchain. The protocol offers higher transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed without waiting for a slot with an election winner. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
 
 .. _glossary-credential:
 
@@ -279,11 +279,12 @@ An invocable function of the smart contract that usually takes arguments. Each e
 
 .. _glossary-epoch:
 
-Epoch (to be updated)
+Epoch
 =====
 
-A time period consisting of multiple :ref:`slots<glossary-slot>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
+A time period consisting of multiple :ref:`rounds<glossary-round>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
+Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
 
 .. _glossary-finalization:
 
@@ -291,7 +292,7 @@ Finalization
 ============
 
 The process by which a block is marked to be "finalized", i.e. part of the
-authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted periodically by the bakers with a staked amount of at least 0.1% of the total amount (stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
+authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the total amount (stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation. Finalization has to happen for each round otherwise the blockchain cannot proceed to the next round.
 
 .. _glossary-genesis-block:
 
@@ -378,7 +379,7 @@ Invoke is also the act of triggering a receive function in a smart contract from
 
 .. _glossary-leader-election:
 
-Leader Election (to be updated)
+Leader Election (to be updated?)
 ===============
 
 To check whether a given :ref:`baker<glossary-baker>` has won in a given :ref:`slot<glossary-slot>`, the baker uses the
@@ -392,7 +393,7 @@ difficulty parameters decrease the winning probability for all parties.
 
 .. _glossary-lottery-power:
 
-Lottery Power (to be updated)
+Lottery Power
 =============
 
 A baker's lottery power is its relative stake and is therefore proportional to
@@ -474,10 +475,10 @@ given out to, e.g., bakers.
 
 .. _glossary-pay-day:
 
-Pay day (to be updated)
+Pay day
 =======
 
-A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at 08:05 UTC on Mainnet and 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
+A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 08:05 UTC on Mainnet and approximately 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
 
 .. _glossary-passive-delegation:
 
@@ -505,7 +506,7 @@ A governmental body that has the authority to act in a relevant jurisdiction. Fo
 Quorum certificate
 ==================
 
-When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round.
+When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the :ref:`round<glossary-round>`, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a :ref:`timeout certificate<glossary-timeout-certificate>`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate (or a timeout certificate) ensures that the protocol progresses. When a node sees a valid quorum certificate it progresses to the next round (and likewise for the timeout certificate).
 
 .. _glossary-range-proofs:
 
@@ -662,7 +663,7 @@ tested on the testnet before they are released on the :ref:`mainnet<glossary-mai
 Timeout certificate
 ===================
 
-When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round.
+When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate (or a timeout certificate) ensures that the protocol progresses. When a node sees a valid quorum certificate it progresses to the next round (and likewise for the timeout certificate).
 
 .. _glossary-transaction:
 
@@ -754,10 +755,10 @@ WebAssembly (Wasm) defines a portable binary-code format and a corresponding tex
 
 .. _glossary-winning-probability:
 
-Winning probability (to be updated)
+Winning probability
 ===================
 
-The winning probability is the probability that a baker wins in a given slot.
+The winning probability is the probability that a baker wins in a given round.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
 

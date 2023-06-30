@@ -80,7 +80,7 @@ For delegators
 
 .. dropdown:: My account is suddenly delegating to passive delegation. Why is that?
 
-    It is likely because the baker pool to which you were delegating has been closed. You can continue to delegate to :ref:`passive delegation<glossary-passive-delegation>` or select a new baker pool for your delegation.
+    It is because the baker pool to which you were delegating has been closed. You can continue to delegate to :ref:`passive delegation<glossary-passive-delegation>` or select a new baker pool for your delegation.
 
 .. dropdown:: If the baker pool I delegate to wins the lottery, what is the estimated amount of rewards I would receive in CCDs?
 
