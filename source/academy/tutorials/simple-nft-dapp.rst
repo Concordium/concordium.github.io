@@ -202,7 +202,7 @@ Call your new component from **App.tsx**. This time you are going to add some UI
          onConnected={() => setConnected(true)}
          onDisconnected={() => setConnected(false)}
       />
-         
+
          <Container sx={{ mt: 15 }}>
       {isConnected && <Initialize/>}
       </Container>

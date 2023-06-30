@@ -527,8 +527,8 @@ As a final addition to the ``mint()`` function, you need to update the state whe
         ensure!(
                 state.contains_token(&token_id),
                 ContractError::Custom(CustomContractError::TokenAlreadyMinted)
-            );    
-        
+            );
+
             ensure!(
                 state.has_collateral(&token_info.contract, &token_info.token_id, &sender),
                 concordium_cis2::Cis2Error::Custom(CustomContractError::InvalidCollateral)

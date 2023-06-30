@@ -235,7 +235,7 @@ Now you will create a new instance of the deployed contract. The first ``match``
 
 .. code-block:: console
 
-    ./cis2-rust-sdk-minting --account ../../nft-params/wallet.export init --module-ref <YOUR-MODULE-REFERENCE> 
+    ./cis2-rust-sdk-minting --account ../../nft-params/wallet.export init --module-ref <YOUR-MODULE-REFERENCE>
 
 .. image:: ../../images/mid-nft-scactions3.png
 
