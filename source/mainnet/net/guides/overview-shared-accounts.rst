@@ -10,7 +10,7 @@ In the Desktop Wallet, you have the option of creating shared accounts, also kno
 Credentials
 ===========
 
-It’s the credentials on an account that determine who’s allowed to sign transactions. An account credential holds signature verification keys, information related to anonymity revocation, and the public attributes of the account owner. The credential proves that the account owner has been verified by an identity provider, but it doesn’t identify the account owner to the identity provider. However, in the case of a valid request from a government authority via established legal channels, it allows the anonymity revoker and the identity provider, when they work together, to link the account to the users. For more information, see :ref:`Identities and accounts <reference-id-accounts>`.
+It’s the :ref:`credentials<glossary-credential>` on an account that determine who’s allowed to sign transactions. An account credential holds signature verification keys, information related to :ref:`anonymity revocation<glossary-anonymity-revoker>`, and the public :ref:`attributes<glossary-attribute>` of the account owner. The credential proves that the account owner has been verified by an :ref:`identity provider<glossary-identity-provider>`, but it doesn’t identify the account owner to the identity provider. However, in the case of a valid request from a government authority via established legal channels, it allows the anonymity revoker and the identity provider, when they work together, to link the account to the users. For more information, see :ref:`Identities and accounts <reference-id-accounts>`.
 
 Signature threshold
 ===================

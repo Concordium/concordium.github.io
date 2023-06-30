@@ -212,9 +212,7 @@ part of the Concordium blockchain.
             .. image:: ./images/wCCD_tutorial_13.png
                 :width: 30 %
 
-        You have to enter your private key into the |bw|. You might have already an account in the ``concordium-client`` or in the ``Concordium mobile wallet``. You can decrypt the private keys of these accounts and use them in the |bw|. Download the :ref:`utils tool<downloads-testnet-auxiliary-tools>` under the auxiliary tools section. This tool is able to decode your encrypted key. You can find additional information on the utils tool and how to decrypt your keys :ref:`here<developer-tools>`.
-
-        You have to enter the private key and the associated account into the browser wallet similar to the below string.
+        You have to enter your private key into the |bw| similar to the below string. You might have already an account in the ``concordium-client`` or in the ``Concordium mobile wallet``. You can decrypt the private keys of these accounts and use them in the |bw|. Download the :ref:`utils tool<downloads-auxiliary-tools>` under the auxiliary tools section. This tool is able to decode your encrypted key. You can find additional information on the utils tool and how to decrypt your keys :ref:`here<developer-tools>`.
 
         .. code-block:: console
 

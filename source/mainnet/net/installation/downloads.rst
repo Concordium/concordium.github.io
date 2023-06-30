@@ -2,12 +2,11 @@
 .. include:: ../../variables.rst
 .. _downloads:
 
-===================
-Downloads - Mainnet
-===================
+=========
+Downloads
+=========
 
-This topic contains information about where you can download the Concordium Wallets and tools for Mainnet. You can also find out about the hardware requirements for running a node.
-
+This topic contains information about where you can download the Concordium Wallets and tools for Mainnet.
 
 .. _downloads-mwgen2:
 
@@ -28,6 +27,8 @@ You can find |mw-gen2| on App Store and on Google Play.
    .. image:: ../images/mobile-wallet/google-play-badge.png
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet
+
+.. _downloads-mwgen1:
 
 |mw-gen1|
 ========================
@@ -52,40 +53,39 @@ You can find |mw-gen1| on App Store and on Google Play.
 |bw|
 =================================
 
-The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_.
+The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_. The extension supports both Mainnet and Testnet.
 
 .. _downloads-desktop-wallet:
 
 Concordium Desktop Wallet
 =================================
 
-Windows v1.5.0
---------------
+.. card:: Windows v1.5.0
+    :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.5.0.exe
 
--  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.5.0.exe>`_
+.. card:: MacOS v1.5.0
+    :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.5.0.dmg
 
-MacOS v1.5.0
-------------
--  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.5.0.dmg>`_
+.. dropdown:: Linux® v1.5.0
 
-Linux® v1.5.0
--------------
--  Download the Desktop Wallet for Linux®:
+   Download the Desktop Wallet for Linux®:
 
-   -  `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.AppImage>`_
+   - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.AppImage>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
       - :ref:`Verification instructions <verification-cdw-appimage>`
 
-   -  `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.deb>`_
+   - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.deb>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
       - :ref:`Verification instructions <verification-cdw-deb>`
 
-   -  `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.rpm>`_
+   - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.rpm>`_
 
       - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
       - :ref:`Verification instructions <verification-cdw-rpm>`
+
+.. _ledger-app-download:
 
 Concordium LEDGER App
 =====================
@@ -98,11 +98,11 @@ Concordium LEDGER App
 
    The LEDGER NANO X is not supported currently.
 
-When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
-
 - For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
 
 - For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip>`_
+
+When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
 
 .. _concordium-node-and-client-download:
 
@@ -144,6 +144,13 @@ VSCode extension
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
+Smart contract deploy and initialize tool
+=========================================
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
+.. _node-downloads:
+
 Concordium node distributions
 =============================
 
@@ -156,46 +163,35 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 Ubuntu |mainnet-node-version|
 -----------------------------
 
-To run a node on a server with Ubuntu, you need a Debian package.
+To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.4.2-0_amd64.deb>`_.
 
-   - `Download the Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.4.2-0_amd64.deb>`_
+   - SHA256 checksum of the download: |node-deb-package-checksum|
 
-      - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
-      - :ref:`Verification instructions <verification-node-debian-package>`
-
-   To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
+   - :ref:`Verification instrcutions<verification-cdw-deb>`
 
 Linux-Docker |mainnet-node-version|
 -----------------------------------
 
-.. _concordium-docker-package-download:
-
-To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
-
-To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`. To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
 Windows |mainnet-node-version|
 ------------------------------
 
-To run a node on Windows, you need a Windows Installer package. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
-
-   - `Download the Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_
+To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
 To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
 Mac |mainnet-node-version|
 --------------------------
 
-To run a node on macOS, you need a macOS installer package.
-
-   - `Download the Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_
+To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_.
 
 To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
 Node performance monitoring
 ---------------------------
 
-You can use the `Prometheus monitoring system <https://prometheus.io/download/>` to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>`__ to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
 
 For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
@@ -205,11 +201,14 @@ Genesis block
 The genesis block is included in node distributions.
 Download the block separately to inspect it or to run a node in a custom configuration.
 
-- `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
+.. _mainnet-genesis-block:
+
+`Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
    - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
    - :ref:`Verification instructions <verification-mainnet-genesis-block>`
 
+.. _downloads-auxiliary-tools:
 
 Auxiliary tools
 ===============
@@ -225,4 +224,4 @@ Encrypt/decrypt tool v1.0.0
 
 - `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
-For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools  <developer-tools>`.
+For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.

@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _developer-page:
 
 ===================
@@ -17,6 +17,8 @@ Official resources
 - See :ref:`Smart contracts <introduction>` for general information about smart contracts
 
     - `Smart contract libraries <https://crates.io/crates/concordium-std>`_
+
+    - To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 - `GitHub <https://github.com/Concordium>`_
 
@@ -39,6 +41,8 @@ Official resources
 - For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with GRPC v1, gRPC v2, and gRPC web. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
 
 - The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
+
+- An external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service
 
 .. _example-dapps:
 

@@ -89,7 +89,7 @@ Participating in the finalization committee produces rewards on each block that 
 Overview of the baker process
 =============================
 
-Baking is possible with |mw-gen2|, |mw-gen1|, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.
+Baking is possible with |bw|, |mw-gen2|, |mw-gen1|, ``Concordium-client``, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.
 
 .. Attention::
 
@@ -99,8 +99,43 @@ Baking is possible with |mw-gen2|, |mw-gen1|, and Desktop Wallet, however the pr
 
    To check the minimum required amount of CCD (currently 14000) to become a baker, see :ref:`consensus show-chain-parameters`.
 
+Baking with |bw|
+------------------------
+
+This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using |bw| and running a node.
+
+.. dropdown:: Step 1: Set up the node
+
+   For baking you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
+
+.. dropdown:: Step 2: Set up the Wallet
+
+   The |bw| is available for chromium browsers. For instructions about download and setup, see :ref:`setup-browser-wallet`.
+
+.. dropdown:: Step 3: Set up an identity and account
+
+   Once you've installed the Wallet, you must set up an identity and an account.
+
+.. dropdown:: Step 4: Add baking to an account
+
+   Configure baking for an account. For instructions, see :ref:`add-baker-mw`.
+
+.. dropdown:: Step 5: Register baker keys
+
+   The last step is to configure the running node with the baker keys so the node can start baking. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your baker keys to the node runner in a secure manner.
+
+   - :ref:`On Windows<baker-windows>`
+
+   - :ref:`On macOS<baker-macos>`
+
+   - :ref:`On Ubuntu<baker-Ubuntu>`
+
+   - :ref:`On Docker/Linux<baking-docker>`.
+
+For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
+
 Baking with Desktop Wallet
-==========================
+--------------------------
 
 This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain, using Desktop Wallet in combination with a LEDGER device to generate baker keys.
 
@@ -139,7 +174,7 @@ This overview describes the recommended scenario for running a node and becoming
 For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
 
 Baking with |mw-gen1| and |mw-gen2|
-===================================
+-----------------------------------
 
 This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using |mw-gen1| or |mw-gen2| and running a node.
 
@@ -149,9 +184,9 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the Wallet
 
-   The |mw-gen1| is available for iOS and Android devices. |mw-gen2| is available for Android devices. For instructions about download and setup, see :ref:`setup-g2-mobile-wallet`.
+   The |mw-gen1| and |mw-gen2| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`.
 
-.. dropdown:: Step 3: Set up an identity and initial account
+.. dropdown:: Step 3: Set up an identity and account
 
    Once you've installed the Wallet, you must set up an identity and an account. If using |mw-gen1| it is recommended to create a separate account to use as a baker account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
@@ -172,6 +207,11 @@ This overview describes the recommended scenario for running a node and becoming
    - :ref:`On Docker/Linux<baking-docker>`.
 
 For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
+
+Baking with ``Concordium-client``
+---------------------------------
+
+For information about configuring and managing baking in ``Concordium-client``, see :ref:`Become a baker using the Concordium Client<become-a-baker>`.
 
 Next steps
 ==========
