@@ -65,7 +65,7 @@ Use the |Chain_new|_ method to create a chain with default settings.
        let mut chain = Chain::new();
    }
 
-You can also create a |Chain|_ with custom values for exchange rates and the block time using a builder pattern, where you configure a number of options and finish off by calling the |ChainBuilder_build|_ method.
+You can also create a |Chain|_ with custom values for exchange rates and the block time using a builder pattern where you configure a number of options and finish off by calling the |ChainBuilder_build|_ method.
 
 .. code-block:: rust
 
@@ -115,7 +115,7 @@ It is even possible to connect to an external Concordium node and get the exchan
 When getting values from an external node, it will use the same block for all the queries.
 The block will either be the one you specify with |ChainBuilder_external_query_block|_ or the last final block at the time.
 Also note that you can mix and match configuration options, for example by specifying your own block time while using the microCCD to Euro exchange rate from an external node.
-You can find all the configuration options including examples on the documentation for |ChainBuilder|_.
+You can find all the configuration options including examples in the documentation for |ChainBuilder|_.
 
 Creating accounts
 -----------------
@@ -430,7 +430,7 @@ Contract trace elements
 The contract trace elements describe the contract calls, transfers to accounts, module upgrades, and the success of these during a |Chain_contract_update|_ or |Chain_contract_invoke|_.
 
 The struct returned on success from these calls has an |effective_trace_elements|_ method which returns a list of all the *effective* elements in the order that they occurred.
-To understand what *effective* refers to, it is useful with an example:
+To understand what *effective* refers to, an example is useful:
 
 * Contract ``A`` calls contract ``B``
 
@@ -439,7 +439,7 @@ To understand what *effective* refers to, it is useful with an example:
 
 * ``A`` returns successfully
 
-In this case, the internal call from ``B`` to ``C`` is not *effective* as it has no effect, the only thing that matters for the outcome is that ``B`` failed and everything ``B`` did is rolled back as if it never occurred.
+In this case, the internal call from ``B`` to ``C`` is not *effective* as it has no effect; the only thing that matters for the outcome is that ``B`` failed and everything ``B`` did is rolled back as if it never occurred.
 However, in a testing and debugging scenario, it can be useful to see *all* the calls, effective or not.
 To do this, the returned struct has a field called ``trace_elements``, which is a list of |DebugTraceElement|_.
 Debug trace elements include information about the failed traces, e.g. the call from ``B`` to ``C`` in the example above, along with additional information such as the energy used when each element was produced.
