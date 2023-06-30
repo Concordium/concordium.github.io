@@ -101,6 +101,10 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
 .. dropdown:: Step 5 - Deploy your smart contract
 
+    .. note::
+
+        To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
     To deploy a smart contract module ``my_module.wasm.v1`` using the account with name account-name, run the following command:
 
     .. code-block:: console

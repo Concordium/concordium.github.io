@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _setup-tools:
 
 =============================
@@ -59,6 +60,8 @@ Concordium software
 The tool to deploy and interact with smart contracts is
 :ref:`concordium-client<concordium-client>`. It is distributed as part of the
 :ref:`Concordium software<downloads>` package.
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 .. note::
 

@@ -1311,6 +1311,15 @@ VSCode extension
 
     The VSCode extension has been developed to help developers get started with smart contract development. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
 
+.. _rn-sc-deploy-tool:
+
+Smart contract deploy and initialize tool
+-----------------------------------------
+
+    June 28, 2023
+
+    To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
 .. _rn-ccdscan:
 
 CCDScan
