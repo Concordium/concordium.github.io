@@ -54,7 +54,7 @@ The commission rates for passive delegation are:
 Time and cool-downs
 ===================
 
-Changes to the pools take effect every 24 hours at pay day. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the :ref:`pay day<glossary-pay-day>`. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :ref:`epoch<glossary-epoch>` before pay day, then the change has to wait until the second pay day.
+Changes to the pools take effect every 24 hours at :ref:`pay day<glossary-pay-day>`. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the :ref:`pay day<glossary-pay-day>`. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :ref:`epoch<glossary-epoch>` before pay day, then the change has to wait until the second pay day.
 
 But decreasing the stake (whether for delegators or bakers) is subject to a cool-down period. In other words, once the transaction has been included in a block the cool-down period starts. Unstaking takes effect at the pay day event after the cool-down has elapsed, and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
 
