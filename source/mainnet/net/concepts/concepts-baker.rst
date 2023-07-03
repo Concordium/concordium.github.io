@@ -104,7 +104,7 @@ Overview of the baker process
 
 #. If the block is valid, the finalizers will sign it.
 
-#. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* OR  *effective stake is at least* two-thirds of the total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block. Without the QC the new round cannot progress.
+#. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block. Without the QC the new round cannot progress.
 
 .. image:: ../images/concepts/baker-process1.png
    :alt: diagram of baker process
