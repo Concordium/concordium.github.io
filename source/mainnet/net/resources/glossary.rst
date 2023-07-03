@@ -204,7 +204,7 @@ A period of time during which a transaction is frozen. Examples of when cool-dow
 Concordium Byzantine Fault Tolerance (BFT) protocol
 ===================================================
 
-The consensus protocol for the blockchain. The protocol offers higher transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed without waiting for a slot with an election winner. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
+The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
 
 .. _glossary-credential:
 
@@ -282,7 +282,7 @@ An invocable function of the smart contract that usually takes arguments. Each e
 Epoch
 =====
 
-A time period consisting of multiple :ref:`rounds<glossary-round>`. An epoch is one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
+A time period that is approximately one hour on testnet and mainnet. At the start of each epoch, a :ref:`leadership election nonce<glossary-leader-election>` is computed based on the block nonces of the previous epoch.
 The leadership election nonce is valid for the duration of the epoch.
 Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
 
@@ -382,14 +382,11 @@ Invoke is also the act of triggering a receive function in a smart contract from
 Leader Election (to be updated?)
 ===============
 
-To check whether a given :ref:`baker<glossary-baker>` has won in a given :ref:`slot<glossary-slot>`, the baker uses the
-slot number and the *leadership election nonce* to compute a value *r*. The
-leadership election nonce is a random value that is periodically updated to
-prevent parties from predicting too far into the future when they will win. A
-baker wins if the value *r* is below a certain threshold, which depends on the
-baker’s :ref:`lottery power<glossary-lottery-power>` and a common difficulty parameter *f*. The :ref:`winning
-probability<glossary-winning-probability>` is roughly proportional to the baker's stake, and higher
-difficulty parameters decrease the winning probability for all parties.
+In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. The leaders are determined from a leader election nonce that is updated each epoch. To update the leader election nonce the first block (the trigger block) after the nominal epoch time must be finalized. When this happens the chain starts a new epoch with the new leader election nonce set. When finalizers see the proof for the trigger block they stop signing additional blocks in the current epoch. When a baker sees the finalization proof it will bake in the new epoch. The leader election nonce is based on the block hashes up to the trigger block of the current epoch.
+
+The :ref:`winning probability<glossary-winning-probability>` is roughly proportional to the baker's stake, and higher difficulty parameters decrease the winning probability for all parties.
+
+See :ref:`<glossary-lottery-power>`.
 
 .. _glossary-lottery-power:
 
@@ -506,7 +503,7 @@ A governmental body that has the authority to act in a relevant jurisdiction. Fo
 Quorum certificate
 ==================
 
-When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the :ref:`round<glossary-round>`, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a :ref:`timeout certificate<glossary-timeout-certificate>`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate (or a timeout certificate) ensures that the protocol progresses. When a node sees a valid quorum certificate it progresses to the next round (and likewise for the timeout certificate).
+When the members of the finalization committee finalize the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the :ref:`round<glossary-round>`, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a :ref:`timeout certificate<glossary-timeout-certificate>`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
 
 .. _glossary-range-proofs:
 
@@ -527,7 +524,7 @@ To reveal an attribute. This can be used in identity verification proof. When yo
 Round
 =====
 
-Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. The leaders are determined from a leader election nonce that is updated each epoch. To update the leader election nonce the first block (the trigger block) after the nominal epoch time must be finalized. When this happens the chain starts a new epoch with the new leader election nonce set. When finalizers see the proof for the trigger block they stop signing additional blocks in the current epoch. When a baker sees the finalization proof it will bake in the new epoch. The leader election nonce is based on the block hashes up to the trigger block of the current epoch.
+Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout.
 
 .. _glossary-rust:
 
@@ -663,7 +660,7 @@ tested on the testnet before they are released on the :ref:`mainnet<glossary-mai
 Timeout certificate
 ===================
 
-When the members of the finalization committee sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate (or a timeout certificate) ensures that the protocol progresses. When a node sees a valid quorum certificate it progresses to the next round (and likewise for the timeout certificate).
+If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
 
 .. _glossary-transaction:
 
