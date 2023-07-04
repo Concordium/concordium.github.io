@@ -75,6 +75,12 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__
 
+.. dropdown:: Smart contract deploy and initialize tool
+
+    `Demo front end <https://sctools.mainnet.concordium.software/>`__ where you can deploy and initlize a smart contract on testnet or mainnet
+
+    `Front end code <https://github.com/Concordium/concordium-smart-contract-tools/tree/main/front-end-tools>`__
+
 The dApps are written in React.
 
 Piggy bank, wCCD, eSealing, and sponsored Transactions use the NPM library

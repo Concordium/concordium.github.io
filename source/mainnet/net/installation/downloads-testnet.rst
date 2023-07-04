@@ -145,6 +145,11 @@ VSCode extension
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
+Smart contract deploy and initialize tool
+=========================================
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
 .. _testnet-node-downloads:
 
 Concordium node distributions
