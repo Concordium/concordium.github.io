@@ -797,14 +797,14 @@ Testnet
             - Added support for sign extension instructions in Wasm in P6.
 
             - Do not count custom sections towards module size when executing contracts.
-        
+
             - Support new ``invoke`` operations for retrieving account keys and checking signatures.
-        
+
         - Shut down consensus upon a protocol update updating from protocol version 6.
 
         - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
 
-        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5. 
+        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
 
             - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
 

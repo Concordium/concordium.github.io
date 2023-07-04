@@ -379,14 +379,14 @@ Invoke is also the act of triggering a receive function in a smart contract from
 
 .. _glossary-leader-election:
 
-Leader Election (to be updated?)
+Leader Election
 ===============
 
 In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. The leaders are determined from a leader election nonce that is updated each epoch. To update the leader election nonce the first block (the trigger block) after the nominal epoch time must be finalized. When this happens the chain starts a new epoch with the new leader election nonce set. When finalizers see the proof for the trigger block they stop signing additional blocks in the current epoch. When a baker sees the finalization proof it will bake in the new epoch. The leader election nonce is based on the block hashes up to the trigger block of the current epoch.
 
 The :ref:`winning probability<glossary-winning-probability>` is roughly proportional to the baker's stake, and higher difficulty parameters decrease the winning probability for all parties.
 
-See :ref:`<glossary-lottery-power>`.
+See :ref:`lottery power<glossary-lottery-power>`.
 
 .. _glossary-lottery-power:
 
@@ -430,7 +430,7 @@ these keys is referred to as a *passive node*.
 
 .. _glossary-nonce:
 
-Nonce (to be updated)
+Nonce
 =====
 
 May refer to:
