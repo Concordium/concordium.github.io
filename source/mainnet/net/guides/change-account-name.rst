@@ -7,13 +7,22 @@
 Change account name
 ===================
 
-#. Tap on the account you want to rename.
+.. dropdown:: |mw-gen2|
 
-#. In the Account details screen, tap the hamburger menu |hamburger|.
+    #. Tap on the account you want to rename.
 
-#. Tap **Change account name**.
+    #. In the Account details screen, tap |acct-settings|.
 
-#. Change the name and click |save| to save the change.
+    #. Tap **Change account name**.
+
+    #. Change the name and click |save| to save the change.
+
+.. dropdown:: Desktop Wallet
+
+    You can edit the name of the account. Click |edit| to edit the account name. Click |save| to save the change.
+
+    .. image:: ../images/desktop-wallet/dw-edit-account-name.png
+        :alt: dark account balance area with edit button highlighted
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
@@ -28,3 +37,6 @@ Change account name
 .. |morepage| image:: ../images/more-ellipsis.png
                     :alt: Three dots button
                     :width: 40px
+.. |acct-settings| image:: ../images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px

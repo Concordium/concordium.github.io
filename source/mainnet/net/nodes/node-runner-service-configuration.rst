@@ -133,7 +133,7 @@ rpc.address
 
 .. code-block:: TOML
 
-   rpc.address = 127.0.0.1
+   rpc.address = "127.0.0.1"
 
 The IP address of the network interface on which to accept incoming GRPC requests. This can be either an IPV4 address or and IPV6 address. If not specified, this uses the default determined by ``concordium-node.exe`` (which is "**127.0.0.1**"). Typically, "127.0.0.1" is a good choice as it will only accept connections from the local machine. It is not recommended to accept connections on a public address, since this can be used to control the node.
 
@@ -160,7 +160,7 @@ grpc2.address
 
 .. code-block:: TOML
 
-   rpc.address = 127.0.0.1
+   rpc.address = "127.0.0.1"
 
 The IP address of the network interface on which to accept incoming GRPC V2
 requests. This can be either an IPV4 address or and IPV6 address. It is not
@@ -205,6 +205,20 @@ node.env.*
 Environment variables to be set when starting the node. This can be used to set configuration options that do not have a dedicated setting in the configuration file. For instance, the above example sets the ``CONCORDIUM_NODE_CONSENSUS_TRANSACTIONS_PURGING_DELAY`` environment variable, which determines how frequently pending transactions are purged.
 
 Note that a number of environment variables are already set by configuration options, so this should only be used where there is no explicit configuration option provided.
+
+Another common node.env.* variable to add is for out-of-band catchup so that nodes can synchronize faster with the rest of the network. This improves performance and gets your node up and running more quickly.
+
+For Mainnet:
+
+.. code-block:: toml
+
+   node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
+
+For Testnet:
+
+.. code-block:: toml
+
+   node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
 
 node.args
 ---------

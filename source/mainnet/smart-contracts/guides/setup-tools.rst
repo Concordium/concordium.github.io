@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _setup-tools:
 
 =============================
@@ -10,39 +11,48 @@ environment.
 Rust and Cargo
 ==============
 
-First, `install rustup`_, which will install both Rust_ and Cargo_ on your
+First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
+
+.. _rust-compiler-issue:
+
+Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:
+
+.. code-block:: console
+
+   $rustup default 1.69
+
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
 .. code-block:: console
 
    $rustup target add wasm32-unknown-unknown
 
-Cargo Concordium
-================
+``cargo-concordium``
+====================
 
-Cargo Concordium is the tool for developing smart contracts for the Concordium
+``cargo-concordium`` is the tool for developing smart contracts for the Concordium
 blockchain.
 It can be used for :ref:`compiling<compile-module>` and
 :ref:`testing<unit-test-contract>` smart contracts, and enables features such as
 :ref:`building contract schemas<build-schema>`.
 
-Cargo Concordium is distributed as part of the :ref:`Concordium software<downloads>` package. Rename the downloaded file to ``cargo-concordium`` for MacOS/Linux, and ``cargo-concordium.exe`` for Windows.
+To install ``cargo-concordium`` run:
 
-The tool should be placed in your PATH. This can be achieved by either:
+.. code-block:: console
 
-* Moving the executable to a folder that is already on your PATH, for example ``%HOMEPATH%\.cargo\bin\`` for Windows, and ``$HOME/.cargo/bin`` for MacOS/Linux.
-* Or, by adding its current location to your PATH environment.
+   $cargo install --locked cargo-concordium
 
-If you are running MacOS, you need to make the tool executable by running ``chmod +x path/to/cargo-concordium`` in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  `Security & Privacy settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_ .
-
-Once cargo-concordium is on your path, you can invoke it with ``cargo concordium`` in the terminal.
-
-For a description of how to use the Cargo Concordium run:
+For a description of how to use the ``cargo-concordium`` run:
 
 .. code-block:: console
 
    $cargo concordium --help
+
+VSCode extension
+----------------
+
+The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
 
 Concordium software
 ===================
@@ -50,6 +60,8 @@ Concordium software
 The tool to deploy and interact with smart contracts is
 :ref:`concordium-client<concordium-client>`. It is distributed as part of the
 :ref:`Concordium software<downloads>` package.
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 .. note::
 

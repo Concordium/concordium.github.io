@@ -27,6 +27,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
    You can see the fee in the transaction log.
 
 .. Note::
+
     On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
 .. dropdown:: Desktop Wallet
@@ -43,13 +44,13 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             .. image:: ../images/desktop-wallet/dw-shield-ccd.png
 
-        #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+        #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on LEDGER device.
 
-        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-        #. Press both buttons on the Ledger to confirm the decryption.
+        #. Press both buttons on the LEDGER device to confirm the decryption.
 
-        #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
+        #. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
         #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
 
@@ -65,13 +66,13 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             .. image:: ../images/desktop-wallet/dw-unshield-ccd.png
 
-        #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+        #. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on LEDGER device.
 
-        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-        #. Press both buttons on the Ledger to confirm the decryption.
+        #. Press both buttons on the LEDGER device to confirm the decryption.
 
-        #. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
+        #. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the amount and the recipient address are correct.
 
         #. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**. When the transaction has been finalized, you can see the shielded balance on the account overview.
 
@@ -85,15 +86,18 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         #. Tap the **Balance** area of the account you want to transfer CCD from or tap |more-acct|.
 
-           - If the **Shield** button and **Shielded balanace** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+           - If the **Shield** button and **Shielded balanace** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
-        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and a **Shield** button.
+        #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and,  **Shield** |shield-mw| and **Unshield** |unshield-mw| buttons.
 
-        #. Tap **Shield**. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
+            .. image:: ../images/mobile-wallet-gen2/shield.png
+                :width: 50%
+
+        #. Tap |shield-mw|. Remember to leave enough funds in your disposable balance to cover transaction fees to unshield or for other transactions.
 
         #. Enter the amount you want to move to the shielded balance.
 
-         .. image:: ../images/mobile-wallet/MW33.png
+            .. image:: ../images/mobile-wallet/MW33.png
                :width: 25%
 
         #. Confirm your choices and tap **Shield amount**.
@@ -111,7 +115,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         .. Note::
 
-            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap |acct-settings| and tap **Hide shielded balance**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account; it is just not shown in the interface.
 
     .. dropdown:: Unshield CCD
 
@@ -121,11 +125,11 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         #. If the Shielded balance is already shown, tap the Shielded balance tab.
 
-            - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
+            - If the **Unshield** button and **Shielded balance** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
 
         #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
 
-        #. Tap **UNSHIELD**.
+        #. Tap |unshield-mw|.
 
         #. Enter the amount you want to move to the regular balance.
 
@@ -152,11 +156,22 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
         .. Note::
 
-            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
+            You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap |acct-settings| and tap **Hide shielded balance**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account; it is just not shown in the interface.
 
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
         :width: 50px
+
+    .. |acct-settings| image:: ../images/acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 50px
+
+    .. |unshield-mw| image:: ../images/unshield-mw.png
+                    :alt: dissolving shield on blue background
+                    :width: 50px
+    .. |shield-mw| image:: ../images/shield-mw.png
+                    :alt: shield on blue background
+                    :width: 50px
 
 .. dropdown:: |mw-gen1|
 
@@ -241,6 +256,8 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
+For information about making shielded transfers, see :ref:`Make a shielded transfer on an account<shielded-transfer>`.
+
     .. |hamburger| image:: ../images/hamburger.png
             :alt: Three horizontal lines
             :width: 20px
@@ -248,3 +265,9 @@ If you have an account with CCD in the shielded balance, you can't add new crede
     .. |moredetails| image:: ../images/more-arrow.png
             :alt: Button with More and double-headed arrow
             :width: 50px
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+
+    shielded-transfer

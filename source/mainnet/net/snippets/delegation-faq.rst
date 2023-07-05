@@ -1,7 +1,7 @@
 .. _delegation-faq:
 
-Delegation FAQ
-==============
+Delegation and baking FAQ
+=========================
 
 For delegators
 --------------
@@ -38,7 +38,7 @@ For delegators
 
 .. dropdown:: Why is there a cool-down when I decrease / stop my delegation?
 
-    The cool-down period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
+    The :ref:`cool-down<glossary-cool-down-period>` period is there to provide stability to the blockchain and to make sure that a baker does not become unstable too quickly if delegators withdraw their stake.
 
 .. dropdown:: Can I change my restaking preference if I am in a cool-down period?
 
@@ -86,16 +86,20 @@ For delegators
 
     The best tool to estimate rewards is `CCDScan`_. Look at the average past rewards for the baker pool or passive delegation. It is important to remember that small pools earn rewards less often, but relatively more at a time. So the percentage for the (annual) interest given on CCDScan is less reliable for small pools as there is more variance. Rewards from Passive delegation are added on a daily basis.
 
+.. dropdown:: Can I delegate funds in a release schedule?
+
+    Yes, the funds locked in a release schedule can be staked.
+
 For bakers
 ----------
 
 .. dropdown:: Can I open a pool on my existing baker node?
 
-    Yes. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
+    Yes. See :ref:`Update a baker pool for Desktop Wallet<update-pool-settings>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool on an existing baker.
 
 .. dropdown:: How do I activate a baker pool?
 
-    All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-baker-pool-dw>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
+    All bakers come with pool support built in. You can actively choose to disable this feature upon creating your baker keys. See :ref:`Update a baker pool for Desktop Wallet<update-pool-settings>` or :ref:`Update a baker pool for mobile wallets<update-pool-settings>` for instructions about how to set up a baker pool.
 
 .. dropdown:: How often are rewards distributed to bakers?
 
@@ -142,12 +146,16 @@ For bakers
 
     No, that is not true. The lottery power will be calculated by the stake you have, and you will receive rewards.
 
+.. dropdown:: Can I use funds in a release schedule to meet the minimum required amount of CCDs to become a baker?
+
+    Yes, the funds locked in a release schedule can be staked.
+
 For bakers, delegators and passive delegators
 ---------------------------------------------
 
 .. dropdown:: What is better and where can I earn more rewards: by becoming a baker, delegating to a baker pool, or delegating to passive delegation? What is the difference in rewards comparing a baker and a delegator, based on X amount of CCDs?
 
-    If we assume your baker is running 24/7 then all things being equal the rewards for running a baker will be higher than if you delegate to a baker pool, and the delgation to a pool will have higher rewards than Passive delegation. If you are a baker and at the same time other CCD holders delegate their stake to your baker pool, your rewards will be even higher.
+    If you assume your baker is running 24/7 then all things being equal the rewards for running a baker will be higher than if you delegate to a baker pool, and the delgation to a pool will have higher rewards than Passive delegation. If you are a baker and at the same time other CCD holders delegate their stake to your baker pool, your rewards will be even higher.
 
     When evaluating your options looking at the rewards is not sufficient as you also need to consider the costs of running your own baker node and risk of potentially delegating to a node that, e.g., goes offline. Finally, it is worth considering that all rewards are based on a lottery that takes place to decide which baker wins the right to bake the next block. The probability of winning the lottery - disregarding how you stake your CCD - is proportional to the size of the stake. Because of the nature of the lottery mechanism, it is important to keep in mind that the variance in rewards in the short term will greatly deminish over time. For the smallest bakers it may take as much as a year for the rewards to align with the lottery power, whereas, very large bakers may see consistent rewards within less than a week. No matter what, over time, the fraction of times you win will be proportional to your fraction of stake.
 

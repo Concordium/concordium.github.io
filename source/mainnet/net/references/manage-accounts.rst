@@ -6,9 +6,9 @@
 Accounts
 ========
 
-Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a baker on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and :ref:`identities<glossary-identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :ref:`CCD<glossary-ccd>` or become a :ref:`baker<glossary-baker>` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
 
-You must have a verified identity and a user identity certificate issued by an authorized identity provider to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
+You must have a verified identity and a user identity certificate issued by an authorized :ref:`identity provider<glossary-identity-provider>` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
 About accounts
 ==============
@@ -17,9 +17,9 @@ An account on the Concordium blockchain is owned by one or more :ref:`credential
 
 The on-chain part of the account consists of:
 
-- the credentials of the credential holders associated with the account
+- the :ref:`credentials<glossary-credential>` of the credential holders associated with the account
 - public balance
-- shielded balance
+- :ref:`shielded balance<glossary-shielded-balance>`
 - account sequence number
 - public keys of each credential to verify transaction signatures.
 
@@ -41,7 +41,7 @@ byte 1. An example of such an address is
 
 In the :ref:`tools<tools>` described below the user will typically select an **account name**
 which makes the account easier to identify. This is only a local alias, and is not used by the Concordium blockchain.
-The name is resolved to an address before interactions with the node.
+The name is resolved to an address before interactions with the :ref:`node<glossary-node>`.
 
 Initial account
 ---------------
@@ -52,7 +52,7 @@ Initial account
 
 The user gets an :ref:`glossary-initial-account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :ref:`identity provider<glossary-identity-provider>`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
-The user additionally :ref:`creates account keys<backup>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
+The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
 are valid for the user and stores them locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
@@ -69,7 +69,7 @@ Once you have an identity and a user identity certificate from an identity provi
 .. Note::
    |mw-gen2| and |mw-gen1| do not submit the transaction directly to a node, but via a proxy. |mw-gen2| and |mw-gen1| do not need to be connected to a node.
 
-The input to the transaction is a *credential*, which contains a number of :ref:`cryptographic proofs<glossary-cryptographic-proof>`, as well as a selection of attributes the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
+The input to the transaction is a *credential*, which contains a number of :ref:`cryptographic proofs<glossary-cryptographic-proof>`, as well as a selection of :ref:`attributes<glossary-attribute>` the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
 
 An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
 all other activities completely anonymous.
@@ -80,7 +80,7 @@ all other activities completely anonymous.
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<backup>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 Attributes
 ----------
@@ -172,7 +172,7 @@ Account aliases
 ---------------
 
 In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
-matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+matching :ref:`account aliases<glossary-alias>`. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
 This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
@@ -198,7 +198,7 @@ The |mw-gen1| is a digital smartphone wallet that enables you to create and mana
 
 .. Note::
 
-   It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+   It is no longer possible for users of |mw-gen1| to create new accounts.
 
 The |mw-gen2|
 ------------------

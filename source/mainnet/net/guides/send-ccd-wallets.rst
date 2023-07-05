@@ -35,17 +35,17 @@ This topic describes how you can send CCD from an account when only one particip
 
     4. Select the recipient and click **Continue**.
 
-    5. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer and enter your PIN on Ledger.
+    5. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on LEDGER device.
 
-    6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+    6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-    7. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.
+    7. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.
 
     8. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**.
 
 .. dropdown:: |mw-gen2|
 
-    #. Go to the Accounts page and tap |send| on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap |send-w-text|.
+    #. Go to the Accounts page and tap |send| on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap |send|.
 
     #. Enter the amount you want to transfer.
 
@@ -147,3 +147,4 @@ Your transaction is now submitted to the chain. It might take a little while for
 
 .. |send-bw| image:: ../images/browser-wallet/send-ccd.png
              :alt: paper airplane
+             :width: 50px

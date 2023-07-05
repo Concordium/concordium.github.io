@@ -1,5 +1,9 @@
 .. _terms-and-conditions-dw:
 
+.. todo::
+
+   Remember to request wallet proxy update when T&C updated
+
 ==================================================
 Terms and Conditions for Concordium Desktop Wallet
 ==================================================

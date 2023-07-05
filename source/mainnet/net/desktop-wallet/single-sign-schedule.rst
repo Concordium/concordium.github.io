@@ -34,11 +34,13 @@ schedule and an explicit schedule.
 5. Select the recipient and select **Continue**.
 
    .. image:: ../images/desktop-wallet/dw-send-ccd-schedule.png
+      :alt: transaction screen with amount for scheduled transfer
 
 Option 1: Create a regular interval schedule
 --------------------------------------------
 
 .. image:: ../images/desktop-wallet/dw-send-ccd-regular-interval.png
+   :alt: transaction screen with amount for scheduled transfer and transfer options
 
 #.  Select **Regular interval** in **Schedule type**.
 
@@ -50,17 +52,17 @@ Option 1: Create a regular interval schedule
 
 #.  When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details**.
 
-#. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer, and enter your PIN on Ledger.
+#. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer, and enter your PIN on LEDGER device.
 
-#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+#. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
 
-#. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct. When you see **Continue with transaction** press both buttons.
+#. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct. When you see **Continue with transaction** press both buttons.
 
-#. The Ledger says **Release time (UTC)**. Navigate to the right. The Ledger says **Amount**, which is the amount of the release. Navigate to the right. The Ledger says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
+#. The LEDGER device says **Release time (UTC)**. Navigate to the right. The LEDGER device says **Amount**, which is the amount of the release. Navigate to the right. The LEDGER device says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
 
-#. When you've navigated through and verified the information for each release, the Ledger says **Sign transaction**. Press both buttons.
+#. When you've navigated through and verified the information for each release, the LEDGER device says **Sign transaction**. Press both buttons.
 
-#. The Ledger says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal and that it's been submitted to the chain. Select **Finish**.
+#. The LEDGER device says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal and that it's been submitted to the chain. Select **Finish**.
 
 
 Option 2: Create an explicit schedule
@@ -68,9 +70,11 @@ Option 2: Create an explicit schedule
 
 .. image:: ../images/desktop-wallet/dw-send-ccd-explicit-schedule1.png
         :width: 35%
+        :alt: screen with amount for explicit transfer
 
 .. image:: ../images/desktop-wallet/dw-send-ccd-explicit-schedule2.png
          :width: 35%
+         :alt: screen with amount for explicit transfer and schedule
 
 #. Select **Explicit schedule**. For each release you want in the schedule, you have to specify the amount and the release time.
 
@@ -86,12 +90,12 @@ Option 2: Create an explicit schedule
 
 #. When the schedule is complete, select **Continue**. You can see the release schedule under **Transaction Details**, and you can generate the transaction.
 
-#. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the Ledger to the computer, enter your PIN on Ledger, and select **Submit** in the Desktop Wallet.
+#. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer, enter your PIN on LEDGER device, and select **Submit** in the Desktop Wallet.
 
-#. Review the transaction on the Ledger and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct. When you see **Continue with transaction** press both buttons.
+#. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct. When you see **Continue with transaction** press both buttons.
 
-#. The Ledger says **Release time (UTC)**. Navigate to the right. The Ledger says **Amount** and displays the amount of the release. Navigate to the right. The Ledger says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
+#. The LEDGER device says **Release time (UTC)**. Navigate to the right. The LEDGER device says **Amount** and displays the amount of the release. Navigate to the right. The LEDGER device says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
 
-#. When you've navigated through and verified the information for each release, the Ledger says **Sign transaction**. Press both buttons.
+#. When you've navigated through and verified the information for each release, the LEDGER device says **Sign transaction**. Press both buttons.
 
-#. The Ledger says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal and that it's been submitted to the chain. Select **Finish**.
+#. The LEDGER device says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal and that it's been submitted to the chain. Select **Finish**.

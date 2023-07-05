@@ -15,7 +15,7 @@ Prerequisites
 
 - Set up an :ref:`identity and an initial account <create-initial-account>`.
 
-- Set up a :ref:`Ledger device <install-Ledger-app>`
+- Set up a :ref:`LEDGER device <install-Ledger-app>`
 
 - Set up an :ref:`account with multiple credentials <multi-credentials>`
 
@@ -123,9 +123,9 @@ Generate the transaction
 
 There are two ways that you can generate the transaction:
 
--  :ref:`Generate the transaction proposal without signing<generate-scheduled-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a Ledger but you do need an internet connection.
+-  :ref:`Generate the transaction proposal without signing<generate-scheduled-without-sign>`. This option enables you to export the transaction proposal without signing it. You don't need a LEDGER device but you do need an internet connection.
 
--  :ref:`Generate and sign the transaction<generate-sign-scheduled>` This option requires a Ledger but no internet connection.
+-  :ref:`Generate and sign the transaction<generate-sign-scheduled>` This option requires a LEDGER device but no internet connection.
 
 In combination, these two options enable organizations to distribute the responsibility of creating and signing transfers among more people. It makes it possible to have one employee create the proposals and another one sign the proposals.
 
@@ -140,26 +140,26 @@ Generate the transaction proposal without signing
 
 .. _generate-sign-scheduled:
 
-Generate and sign the transaction proposal on the Ledger
---------------------------------------------------------
+Generate and sign the transaction proposal on the LEDGER device
+---------------------------------------------------------------
 
-#. Connect the Ledger to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
+#. Connect the LEDGER device to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-#. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
+#. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**.
 
 #. In the Desktop Wallet, verify that the **Transaction details** are as you intended, and then select **I am sure that the proposed changes are correct**. If you're not on the proposal page, go to **Multi Signature Transactions** -> **Your proposed transactions**, and then select the proposal you want to sign.
 
 #. Select **Generate and sign**.
 
-#. The Ledger says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring CCD from.
+#. The LEDGER device says **Review Transaction**. Navigate to the right, till you see **Sender** and then an address. This is the address of the account you're transferring CCD from.
 
 #. Continue navigating to the right. When you see **Continue with transaction** press both buttons.
 
-#. The Ledger says **Release time**. Navigate to the right. The Ledger says **Amount**. Navigate to the right. The Ledger says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
+#. The LEDGER device says **Release time**. Navigate to the right. The LEDGER device says **Amount**. Navigate to the right. The LEDGER device says **Continue with transaction**. Press both buttons to confirm. Continue with these steps for each release in the schedule.
 
-#. When you've navigated through and verified the information for each release, the Ledger says **Sign transaction**. Press both buttons.
+#. When you've navigated through and verified the information for each release, the LEDGER device says **Sign transaction**. Press both buttons.
 
-#. The Ledger says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal including how many signatures that are required before you can submit the transaction to the chain.
+#. The LEDGER device says **Concordium is ready**. In the Desktop Wallet, you can now see the details of the transaction proposal including how many signatures that are required before you can submit the transaction to the chain.
 
 .. _export-scheduled-proposal:
 
@@ -172,7 +172,7 @@ To propose a transaction to other co-signers, you have to share a file with them
 
 #.  Navigate to the location on your computer where you want to save the file. In **Save as type** make sure that **All Files** is selected. Give the file a name and the extension .json, and then click **Save**.
 
-#.  Send a copy of the file through a secure channel to the co-signers that must sign the transaction. We recommend that you send a copy of the identicon through a secure channel that is different from the one used to send the file.
+#.  Send a copy of the file through a secure channel to the co-signers that must sign the transaction. Concordium recommends that you send a copy of the identicon through a secure channel that is different from the one used to send the file.
 
 Receive signatures from co-signers
 ==================================

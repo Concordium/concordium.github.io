@@ -7,19 +7,19 @@ Set up the Desktop Wallet
 
 The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
 
-The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the Ledger Nano S and Ledger Nano S Plus are supported.
+The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S and LEDGER NANO S Plus are supported.
 
-This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you'll be using the Desktop Wallet in combination with a Ledger device to generate and store keys and sign transactions.
+This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you'll be using the Desktop Wallet in combination with a LEDGER device to generate and store keys and sign transactions.
 
 Step 1: Set up the node
 =======================
 
 The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
 
-Step 2: Set up the Ledger device
+Step 2: Set up the LEDGER device
 ================================
 
-The Desktop Wallet requires that you store your keys on a Ledger device. This is to ensure that your private account keys are kept secure. To be able to use the Ledger device with the Desktop Wallet, you must install the Concordium Ledger App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`.
+The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`.
 
 Step 3: Set up the Concordium Desktop Wallet
 ============================================
@@ -58,3 +58,6 @@ You're now ready to start using the Desktop Wallet.
     :maxdepth: 1
 
     ../desktop-wallet/install-ledger-app
+    ../desktop-wallet/accounts-desktop
+    ../desktop-wallet/update-application
+    ../desktop-wallet/reset-data

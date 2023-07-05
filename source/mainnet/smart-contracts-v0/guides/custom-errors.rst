@@ -16,7 +16,7 @@ both during initialization and during updates.
 On-chain, smart contracts return a numeric error code when rejecting. This is
 also the case when using a custom error type. Therefore, a mapping from the
 custom error type to ``Reject``, in the form of an implementation of
-``From<MyError> for Reject``, is needed. We can also derive it
+``From<MyError> for Reject``, is needed. You can also derive it
 automatically using ``#[derive(Reject)]``::
 
    #[derive(Reject)]

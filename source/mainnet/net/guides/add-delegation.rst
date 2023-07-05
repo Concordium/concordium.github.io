@@ -27,22 +27,28 @@ When you delegate some stake to a baker pool, it can influence the chances of th
             #. Click **More options** then select **Register as a delegator**.
 
                 .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
+                    :width: 50%
+                    :alt: screen with more options expanded
 
             #. Select your target (a baker pool or passive delegation). Click **Continue**.
 
                .. image:: ../images/desktop-wallet/dw-delegation-target.png
+                    :width: 50%
+                    :alt: screen with options to select delegation type
 
             #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
                 .. image:: ../images/desktop-wallet/dw-delegation-stake.png
+                    :width: 50%
+                    :alt: screen to enter amount to delegate and restake settings
 
-            #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+            #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
-            #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+            #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
-            #. On the Ledger device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+            #. On the LEDGER device, a message says **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the LEDGER device shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
-            #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+            #. The LEDGER device says **Sign transaction**. Press both buttons to sign the transaction. The LEDGER device says **Concordium is ready**.
 
             #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
@@ -60,11 +66,11 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
             There are two ways that you can generate the transaction:
 
-            -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.
+            -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a LEDGER device but you do need an internet connection.
 
-            -  Generate and sign the transaction This option requires a Ledger and an internet connection.
+            -  Generate and sign the transaction This option requires a LEDGER device and an internet connection.
 
-            In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
+            In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the LEDGER device in a different location than where the proposal was created.
 
             **Generate the transaction without signing**
 
@@ -72,20 +78,20 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
             #. Select **Generate without signing**. You can now export the proposal.
 
-            **Generate and sign the transaction on the Ledger**
+            **Generate and sign the transaction on the LEDGER device**
 
-            #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+            #. If you haven't connected the LEDGER device, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-            #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying Ledger device is ready.
+            #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying LEDGER device is ready.
 
             #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-            #. On the Ledger, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the Ledger shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
+            #. On the LEDGER device, there's a message saying **Review transaction**. Verify that the sender account is correct and navigate to the right. Verify that the LEDGER device shows the correct amount to delegate and navigate to the right. Verify that the restake preference is correct and navigate to the right. Verify that the delegation target is correct and navigate to the right.
 
-            #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
+            #. The LEDGER device says **Sign transaction**. Press both buttons to sign the transaction. The LEDGER device says **Concordium is ready**.
 
             .. Note::
-                If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
+                If you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
 
             In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-delegation>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
@@ -121,13 +127,13 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
                 If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-            #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
+            #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the ledger.
 
             #. Select **Finish** to leave the page.
 
 .. dropdown:: |mw-gen2|
 
-        #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account transaction overview screen.
+        #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
 
         #. Tap **Continue to delegation setup**. If you are delegating for the first time, you see some information about delegation.
 
@@ -136,34 +142,36 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
+                :width: 50%
+                :alt: screen with options to choose delegation type
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
+                :width: 50%
+                :alt: screen to register delegation amount and restake preference
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
+                :width: 50%
+                :alt: screen showing overview of the transaction before submission
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
             .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
+                :width: 50%
+                :alt: screen showing submitted transaction details
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
         .. image:: ../images/mobile-wallet/account-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account in list with delegating text and pie icon
 
         .. image:: ../images/mobile-wallet/account-details-delegating.png
-            :width: 40%
-
-        .. |earn| image:: ../images/earn.png
-             :alt: Hand receiving money
-             :width: 50px
-
-        .. |earn-w-text| image:: ../images/earn-w-text.png
-             :alt: Hand receiving money with text earn
-             :width: 50px
+            :width: 50%
+            :alt: account details showing delegation amount and pool
 
 .. dropdown:: |mw-gen1|
 
@@ -174,37 +182,89 @@ When you delegate some stake to a baker pool, it can influence the chances of th
         #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation.
 
             .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen with hamburger menu expanded
 
         #. Tap **Register delegation**.
 
         #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen with options to choose delegation type
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-amt-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen to register delegation amount and restake preference
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
             .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen showing overview of the transaction before submission
 
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
             .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
-                    :width: 25%
+                    :width: 50%
+                    :alt: screen showing submitted transaction details
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
         .. image:: ../images/mobile-wallet/account-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account in list with delegating text and pie icon
 
         .. image:: ../images/mobile-wallet/account-details-delegating.png
-            :width: 40%
+            :width: 50%
+            :alt: account details showing delegation amount and pool
+
+.. dropdown:: |bw|
+
+        #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+
+            .. image:: ../images/browser-wallet/setup-baking-delegation.png
+                :width: 40%
+
+        #. Click **Setup delegation**. If you are delegating for the first time on the account, you see some information about delegation.
+
+            .. image:: ../images/browser-wallet/add-delegation-baking.png
+                :width: 40%
+
+        #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
+
+            .. image:: ../images/browser-wallet/delegation-target.png
+                :width: 40%
+
+        #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+
+            .. image:: ../images/browser-wallet/delegation-restake-preference.png
+                :width: 40%
+
+        #. You can see your available balance to delegate on the account that is in focus. You can change the account from the Accounts drop-down at the top of the screen if you want to set up delegation on a different account than the one in focus. **Enter the Amount you want to delegate** in the field. Click **Continue**.
+
+            .. image:: ../images/browser-wallet/create-delegation-amount.png
+                :width: 40%
+
+        #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+
+        #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+        Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation type and amount on the account card.
+
+            .. image:: ../images/browser-wallet/delegated-amount.png
+                :width: 40%
+
+        Accounts with delegation also have an icon in the account list.
+
+            .. image:: ../images/browser-wallet/delegation-acct-list.png
+                :width: 40%
+
+        .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
 
         .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

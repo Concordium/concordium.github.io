@@ -100,6 +100,20 @@ Branch
 A chain of blocks that has split from the main chain. All branches have the potential to become
 the main chain. The Chain selection rule determines which branch is the best chain.
 
+.. _glossary-build:
+
+Build
+=====
+
+Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from :ref:`cargo-concordium<glossary-cargo-concordium>`.
+
+.. _glossary-cargo-concordium:
+
+cargo-concordium
+================
+
+An extension of Rust's ``cargo`` tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+
 .. _glossary-catch-up:
 
 Catch-up
@@ -154,6 +168,13 @@ A rule that selects the best chain based on the following criteria:
 - which last block has the earliest slot in the chains
 - which last block has the largest block luck in the chains
 - which last block has the largest hash in the chains.
+
+.. _glossary-challenge:
+
+Challenge
+=========
+
+To make sure that :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` cannot be reused (e.g., if they are stolen), the verifier can and should specify a challenge string. This can be an arbitrary byte array which is used by the prover (wallet) when producing the proof. The proof will only validate with respect to the challenge that was used to produce it. The verifier server can thus use the challenge to make sure the proofs it is receiving are not reused, and to handle their lifetime (e.g., it can set the challenge it supplied to expire in 5 minutes).
 
 .. _glossary-concordium-client:
 
@@ -220,6 +241,13 @@ An account that contributes stake to a baker pool, or to passive delegation.
 When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated.
 Delegators earn rewards, minus a commission to the baker, in proportion to their delegated stake.
 
+.. _glossary-deploy:
+
+Deploy
+======
+
+Command that takes the built :ref:`Wasm<glossary-web-assembly>` file for a smart contract module and deploys it on chain. This command is run from :ref:`concordium-client<glossary-concordium-client>`.
+
 .. _glossary-encryption-key:
 
 Encryption key
@@ -227,6 +255,20 @@ Encryption key
 
 An `ElGamal`_ public key associated to an account which is used to encrypt all
 :ref:`shielded amounts<glossary-shielded-amount>` on the account.
+
+.. _glossary-endpoint:
+
+Endpoint
+========
+
+A point at which an API -- the code that allows two software programs to communicate with each other -- connects with the software program. APIs work by sending requests for information from a web application or web server and receiving a response.
+
+.. _glossary-entrypoint:
+
+Entrypoint
+==========
+
+An invocable function of the smart contract that usually takes arguments. Each entrypoint has specific arguments. Entrypoints can be invoked to update the state of the smart contract as well as to view information about different parts of contract state.
 
 .. _glossary-epoch:
 
@@ -302,6 +344,31 @@ in concert with the identity provider.
 
 Initial accounts are only relevant for Desktop Wallet and |mw-gen1|.
 
+.. _glossary-initialize:
+
+Initialize
+==========
+
+Action that creates a new smart contract instance with the initial state. The only way to update the instance state is by invoking the instance’s entrypoints.
+
+.. _glossary-instance:
+
+Instance
+========
+
+A smart contract module together with a specific state and an amount of CCD tokens. Multiple smart contract instances can be created from the same module. Smart contract instances can be created from a deployed :ref:`smart contract
+module<contract-module>` via the ``init`` transaction which invokes the requested function in the smart contract module. This function can take a parameter. Its end result is the state of the smart contract instance.
+instance.
+
+.. _glossary-invoke:
+
+Invoke
+======
+
+Invoke means to call something into effect.
+
+Invoke is also the act of triggering a receive function in a smart contract from ``concordium-client`` and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click :ref:`here to see examples of how to use invoke to view information about the instance<nft-view-fn>`.
+
 .. _glossary-leader-election:
 
 Leader Election
@@ -339,6 +406,13 @@ mainnet will receive periodic upgrades, but in contrast to the :ref:`testnet<glo
 will never be reset, and accounts created on the mainnet will remain
 indefinitely.
 
+.. _glossary-membership-proof:
+
+Membership proof
+================
+
+A proof to determine if an attribute of a user's identity is included in a given set, for example, lives in the EU. Can also be a :ref:`non-membership proof<glossary-non-membership-proof>`.
+
 .. _glossary-node:
 
 Node
@@ -362,6 +436,13 @@ May refer to:
    :ref:`epoch<glossary-epoch>` that is used to seed the :ref:`leader election<glossary-leader-election>` process.
 -  :ref:`Transaction sequence number<glossary-transaction-sequence-number>` (same as account sequence number)
 
+.. _glossary-non-membership-proof:
+
+Non-membership proof
+====================
+
+A proof to determine that an attribute of a user's identity is **not** included in a set, for example, that they are **not** a resident of a country under trade sanctions.
+
 .. _glossary-off-chain:
 
 Off-chain
@@ -371,7 +452,7 @@ Refers to activities outside of the Concordium blockchain. Some on-chain actions
 need preliminary actions off-chain, for example to create an account on the
 Concordium blockchain the user must first work with an identity provider, e.g.,
 via their website or mobile application, to obtain a specific digital
-certificate. We refer to this certificate as the **identity**.
+certificate. Concordium refers to this certificate as the **identity**.
 
 .. _glossary-on-chain:
 
@@ -389,7 +470,7 @@ given out to, e.g., bakers.
 Pay day
 =======
 
-A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:00 UTC on Mainnet.
+A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:05 UTC on Mainnet and 11:05 UTC on Testnet.
 
 .. _glossary-passive-delegation:
 
@@ -397,6 +478,49 @@ Passive delegation
 ==================
 
 A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
+
+.. _glossary-private-keys:
+
+Private keys
+============
+
+A random, secret string that is used in cryptography and cryptocurrency to prove ownership of an account and sign transactions to send, spend, delegate, and stake CCDs. A wallet consists of a set of public addresses and private keys. Anyone can deposit cryptocurrency in a public address, but funds cannot be removed from an address without the corresponding private key.
+
+.. _glossary-qualified-authority:
+
+Qualified authority
+===================
+
+A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :ref:`anonymity revokers<glossary-anonymity-revoker>` and :ref:`identity provider<glossary-identity-provider>`, can the real-world identity of a user be revealed and only to the extent set out in the order.
+
+.. _glossary-range-proofs:
+
+Range proofs
+============
+
+A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 years old to the car rental company. This could be constructed as a range proof.
+
+.. _glossary-reveal-attribute:
+
+Reveal
+======
+
+To reveal an attribute. This can be used in identity verification proof. When you reveal an attribute, you give the dApp or service that requested it your exact information, such as date of birth, or nationality. You should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
+
+.. _glossary-rust:
+
+Rust
+====
+
+The multi-paradigm, general purpose programming language used by Concordium smart contracts.
+
+.. _glossary-schema:
+
+Schema
+======
+
+Used for smart contracts. A description of how to represent bytes in a more structured representation. It can be used by external tools when displaying the return value of a receive function and for specifying parameters using a
+structured representation, such as JSON. This makes it more human readable.
 
 .. _glossary-secret-recovery-phrase:
 
@@ -476,6 +600,13 @@ of these different events is controlled by the difficulty parameter *f*. For
 example, with difficulty 0.5 on average every second slot will have a lottery
 winner.
 
+.. _glossary-smart-contract:
+
+Smart contract
+==============
+
+A computer program or a transaction protocol that is intended to automatically execute, control or document events and actions according to the terms of a contract or an agreement. An example is a smart contract for selling NFTs on a marketplace; it may contain information about royalties, selling the NFT on to others, and so on.
+
 .. _glossary-staked-amount:
 
 Staked Amount
@@ -486,6 +617,13 @@ staked remains locked while staked and cannot be transferred or moved in any
 way. The staked amount is proportional to the :ref:`lottery power<glossary-lottery-power>` of a baker.
 
 :ref:`Delegators<glossary-delegate>` can delegate stake to a baker pool or passive delegation. This affects the staked amount of the baker and thus their lottery power.
+
+.. _glossary-statement:
+
+Statement
+=========
+
+A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
 
 .. _glossary-testnet:
 
@@ -577,6 +715,13 @@ The |bw|
 
 The |bw| is a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
 
+.. _glossary-web-assembly:
+
+WebAssembly
+===========
+
+WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.
+
 .. _glossary-winning-probability:
 
 Winning probability
@@ -585,3 +730,10 @@ Winning probability
 The winning probability is the probability that a baker wins in a given slot.
 The probability is :math:`1-(1-f)^α`, where :math:`f` is the difficulty parameter and :math:`α` is
 the :ref:`lottery power<glossary-lottery-power>`.
+
+.. _glossary-zero-knowledge-proof:
+
+Zero-knowledge proof
+====================
+
+A method by which a user (the prover) can prove to another party (the verifier) that the user meets a requirement without revealing anything beyond that. Zero knowledge proofs generated by the wallet are non-interactive. They are verifiable forever in the future without further prover interaction.

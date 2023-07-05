@@ -5,16 +5,20 @@
 Create an identity
 ==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw|, an initial account is not submitted by the identity provider.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw| and |mw-gen2|, an initial account is not submitted by the identity provider.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
    You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
 
+.. Note::
+
+   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark), you can use mitID to complete the identity verification process.
+
 .. dropdown:: Desktop Wallet
 
-   Before you start, you need a Ledger hardware device that's set up and ready for use.
+   Before you start, you need a LEDGER device that's set up and ready for use.
 
    #. Go to **Accounts**. A message is displayed if you don't have an identity or an initial account yet. Select **Request new**. If you've been using another computer, and you already have an existing account, you can select **Import existing**. You can also create a new identity if you already have one or more by going to **Identities** and clicking on the plus in the upper right corner of the window.
 
@@ -28,24 +32,24 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
       .. image:: ../images/desktop-wallet/dw-add-identity-provider.png
 
-   #. Connect your Ledger hardware device and enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+   #. Connect your LEDGER device and enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-   #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the Ledger. On the Ledger, press both buttons when it says **Concordium**. The Ledger says **Concordium is ready**.
+   #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the LEDGER device. On the LEDGER device, press both buttons when it says **Concordium**. The LEDGER device says **Concordium is ready**.
 
    #. In the Desktop Wallet there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**. Select **Submit**.
 
-   #. Press both buttons to confirm the following on the Ledger:
+   #. Press both buttons to confirm the following on the LEDGER device:
 
       - Create credential (each credential is assigned a number): : Press the right button and then both buttons to confirm **Accept**.
       - Public key: Press both buttons to accept.
 
-   #. Review that the public key on the Ledger corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
+   #. Review that the public key on the LEDGER device corresponds to the public key in the Desktop Wallet. Use the right button to navigate through the key.
 
    #. Press both buttons to confirm, and then in the Desktop Wallet, select **Continue**.
 
-   #. The Ledger says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
+   #. The LEDGER device says **Review identity provider info**. Press both buttons, and then press the right button to navigate through the public key and verify that it corresponds to the information in the Desktop Wallet. Press both buttons to confirm.
 
-   #. Verify that the signature threshold on the Ledger corresponds to the threshold in the Desktop Wallet.
+   #. Verify that the signature threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet.
 
    #. Press the right button, and then press both buttons to sign the identity provider information.
 
@@ -60,7 +64,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen2|. You do this from the **Identities** page.
 
-   #. Go to the |morepage| page.
+   #. Tap |wallet-settings|.
 
    #. Tap **Your identity cards** page.
 
@@ -80,47 +84,13 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
 
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px
+
 .. dropdown:: |mw-gen1|
 
-   .. Note::
-
-      It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
-
-   You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
-
-   #. Go to the |morepage| page.
-
-   #. Tap **Your identity cards** page.
-
-   #. Tap the **+** in the upper right corner.
-
-   #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
-
-   #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
-
-
-      .. image:: ../images/mobile-wallet/MW10.png
-         :width: 25%
-
-   #. Select a third-party identity provider from the list. An external web page opens within the app.
-
-      .. image:: ../images/mobile-wallet/MW11.png
-         :width: 25%
-
-   #. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
-
-   #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
-
-      .. image:: ../images/mobile-wallet/MW12.png
-         :width: 25%
-
-   .. Warning::
-      **When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
-      **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
-      For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import>`.
-
-   .. Note::
-      To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
+   It is no longer possible for users of |mw-gen1| to create new identities.
 
 .. dropdown:: |bw|
 
@@ -141,6 +111,12 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
    #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
    #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   change-identity-name
 
 .. |edit|    image:: ../images/edit.png
                     :width: 20px

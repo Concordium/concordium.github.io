@@ -27,18 +27,22 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
       #. Select **Delegation** and choose **Remove Delegation**.
 
          .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+            :width: 50%
+            :alt: delegation screen with options to update or remove
 
       #. Review the cool-down period. Click **Continue**.
 
          .. image:: ../images/desktop-wallet/dw-remove-delegation.png
+            :width: 50%
+            :alt: remove delegation confirmation screen
 
-      #. A message says **Waiting for device. Please connect your Ledger**. Connect the Ledger device to the computer and enter your PIN on the Ledger device.
+      #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
-      #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+      #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
 
-      #. On the Ledger device, a message says **Review transaction**. The Ledger device shows **Stop delegation**. Navigate to the right.
+      #. On the LEDGER device, a message says **Review transaction**. The LEDGER device shows **Stop delegation**. Navigate to the right.
 
-      #. The Ledger device says **Sign transaction**. Press both buttons to sign the transaction. The Ledger device says **Concordium is ready**.
+      #. The LEDGER device says **Sign transaction**. Press both buttons to sign the transaction. The LEDGER device says **Concordium is ready**.
 
       #. In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select **Finish**.
 
@@ -56,9 +60,9 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
       There are two ways that you can generate the transaction:
 
-         -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a Ledger but you do need an internet connection.
+         -  Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a LEDGER device but you do need an internet connection.
 
-         -  Generate and sign the transaction This option requires a Ledger and an internet connection.
+         -  Generate and sign the transaction This option requires a LEDGER device and an internet connection.
 
       In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.
 
@@ -68,20 +72,20 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
       #. Select **Generate without signing**. You can now export the proposal.
 
-      **Generate and sign the transaction on the Ledger**
+      **Generate and sign the transaction on the LEDGER device**
 
-      #. If you haven't connected the Ledger, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the Ledger. Enter your PIN code on the Ledger. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
+      #. If you haven't connected the LEDGER device, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-      #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the Ledger, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The Ledger says **Concordium is ready**. Wait for the message in the Desktop Wallet saying Ledger is ready.
+      #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying LEDGER device is ready.
 
       #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
-      #. On the Ledger, there's a message saying **Review transaction**. The Ledger device shows **Stop delegation**. Navigate to the right.
+      #. On the LEDGER device, there's a message saying **Review transaction**. The LEDGER device shows **Stop delegation**. Navigate to the right.
 
-      #. The Ledger says **Sign transaction**. Press both buttons to sign the transaction. The Ledger says **Concordium is ready**.
+      #. The LEDGER device says **Sign transaction**. Press both buttons to sign the transaction. The LEDGER device says **Concordium is ready**.
 
       .. Note::
-         If you want to decline the transaction, press the right button on the Ledger. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
+         If you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says **Decline to sign transaction**. Press both buttons to decline. In the Desktop Wallet, there's a message saying **The action was declined on the Ledger device. Please try again.**
 
       In the Desktop Wallet, you can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can :ref:`submit the transaction to the chain <submit-removal>`, otherwise, you'll have to export the proposal and receive signatures from the co-signers.
 
@@ -117,33 +121,31 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
          If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-      #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the Ledger.
+      #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the ledger.
 
       #. Select **Finish** to leave the page.
 
 .. dropdown:: |mw-gen2|
 
-   #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn-w-text| on the account details screen.
+   #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn| on the account details screen.
 
    #. You see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
       .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
+         :width: 50%
+         :alt: screen shown to review delegation stop details
 
    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
-
-   .. |earn| image:: ../images/earn.png
-        :alt: Hand receiving money
-        :width: 50px
-
-   .. |earn-w-text| image:: ../images/earn-w-text.png
-         :alt: Hand receiving money with text earn
-         :width: 50px
+         :width: 50%
+         :alt: delegation stop transaction submission confirmation screen
 
 .. dropdown:: |mw-gen1|
 
@@ -156,24 +158,59 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
    #. You see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-         :width: 25%
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
       .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
-         :width: 25%
+         :width: 50%
+         :alt: screen shown to review delegation stop details
 
    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
       .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
+         :width: 50%
+         :alt: delegation stop transaction submission confirmation screen
 
 .. dropdown:: |bw|
 
-        At the moment, delegation is not available in the |bw|.
+   #. Bring the account whose delegation you want to stop into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
+
+      .. image:: ../images/browser-wallet/select-account.png
+         :width: 40%
+         :alt: screen with accounts drop-down activated and account selection shown
+
+   #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+
+      .. image:: ../images/browser-wallet/delegation-update-stop.png
+         :width: 40%
+         :alt: screen showing current delegation and buttons to update or stop
+
+   #. You see your current delegation. Click **Stop**. Review the information about the cool-down period.
+
+        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+                :width: 40%
+
+   #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+
+      .. image:: ../images/browser-wallet/delegation-stop-xact-confirm.png
+         :width: 40%
+         :alt: screen showing the transaction details that will be submitted to the chain
+
+   #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+
+      .. image:: ../images/browser-wallet/delegation-xact-submit.png
+         :width: 40%
+         :alt: screen showing the transaction submitted to the chain and finish button
 
 .. Note::
 
    Removing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and cannot be increased or decreased; you can still change targets or restaking preferences during cool-down. The delegation stop is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+
+.. |earn| image:: ../images/earn.png
+        :alt: Hand receiving money
+        :width: 50px
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

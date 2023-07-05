@@ -8,7 +8,7 @@ This guide will show you how to write unit tests for a smart contract written in
 Rust.
 For testing a smart contract Wasm module, see :ref:`local-simulate-v0`.
 
-A smart contract in Rust is written as a library and we can unit test it like a
+A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a ``#[test]`` attribute.
 
 .. code-block:: rust
@@ -51,7 +51,7 @@ state, run some unit of code, and make assertions about the state and output of
 the code.
 
 If the contract functions are written using ``#[init(..)]`` or
-``#[receive(..)]``, we can test these functions directly in the unit test.
+``#[receive(..)]``, you can test these functions directly in the unit test.
 
 .. code-block:: rust
 
@@ -101,7 +101,7 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
    For a guide of how to install ``cargo-concordium``, see :ref:`setup-tools`.
 
 The unit test have to be annotated with ``#[concordium_test]`` instead of
-``#[test]``, and we use ``#[concordium_cfg_test]`` instead of ``#[cfg(test)]``:
+``#[test]``, and ``#[concordium_cfg_test]`` is used instead of ``#[cfg(test)]``:
 
 .. code-block:: rust
 
