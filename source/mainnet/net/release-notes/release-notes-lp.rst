@@ -21,7 +21,7 @@ Wallets
 
     July 10, 2023
 
-    WalletConnect has been implemented in iOS 1.2.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
+    WalletConnect has been implemented in iOS 1.1.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
 
     .. dropdown:: Previous releases
 
