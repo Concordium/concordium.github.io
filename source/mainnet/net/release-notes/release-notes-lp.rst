@@ -19,7 +19,7 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    July 10, 2023
+    July 17, 2023
 
     WalletConnect has been implemented in iOS 1.1.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
 
