@@ -81,8 +81,19 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Front end code <https://github.com/Concordium/concordium-smart-contract-tools/tree/main/front-end-tools>`__
 
+.. dropdown:: Wallet test bench
+
+    This tool is for testing wallets and shows a great overview of the available interactions between wallets and front end.
+    Deploy and initialize scenarios are available on the browser wallet (will be implemented in the mobile wallets in the future).
+
+    `Demo front end <https://wallet-test-bench.testnet.concordium.com/>`__ where you can test wallet interactions
+
+    `Front end code <https://github.com/Concordium/concordium-misc-tools/tree/main/wallet-connect-test-bench/front-end>`__
+
+    `Smart contract <https://github.com/Concordium/concordium-misc-tools/tree/main/wallet-connect-test-bench/smart-contract>`__
+
 The dApps are written in React.
 
-Piggy bank, wCCD, eSealing, and sponsored Transactions use the NPM library
+Piggy bank, wCCD, eSealing, sponsored Transactions, smart contract deploy and initialize tool, and wallet test bench use the NPM library
 `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
 to implement integrations to the |bw| and |mw-gen2| using WalletConnect.
