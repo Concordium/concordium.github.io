@@ -19,19 +19,23 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    May 31, 2023
+    July 17, 2023
 
-    |mw-gen2| for iOS 1.0.1 contains the following:
-
-    - The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
-
-    - Also, a minor change was made to support integration with eID verifiers.
-
-    - Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
-
-    - The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
+    WalletConnect has been implemented in iOS 1.1.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.0.1 - May 31, 2023
+
+            |mw-gen2| for iOS 1.0.1 contains the following:
+
+            - The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+            - Also, a minor change was made to support integration with eID verifiers.
+
+            - Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
+
+            - The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
 
         .. dropdown:: |mw-gen2| 1.0.0 - March 7, 2023
 
