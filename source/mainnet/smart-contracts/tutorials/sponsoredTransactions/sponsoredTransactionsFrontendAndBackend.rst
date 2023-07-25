@@ -5,7 +5,7 @@
 Sponsored Transactions Frontend and Backend
 ===========================================
 
-The goal of this part of the tutorial is to set up the frontend and the backend locally and to understand the three flows that the dApp provides.
+The goal of this part of the tutorial is to set up the frontend and the backend locally and to understand the two flows that the dApp provides.
 
 You can explore the `hosted sponsored transaction service <https://sponsored.testnet.concordium.com>`_.
 The sponsored transaction service consists of a frontend and a backend. You can start your own service by
@@ -19,9 +19,8 @@ The docker container will set up the frontend as well as the backend.
    Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
    get some testnet CCD and run a local frontend can be found in :ref:`wCCD frontend-set-up section <wCCD-front-end-set-up>`.
 
-The frontend supports the following three flows with the |bw| (or |mw-gen2| that uses WalletConnect):
+The frontend supports the following two flows with the |bw| (or |mw-gen2| that uses WalletConnect):
 
--   Register a public key (associated with the account from your wallet) in the smart contract. This action is paid by the user.
 -   Create the message of a sponsored ``updateOperator`` transaction => Sign it with the wallet => Submit the signature to the ``/submitUpdateOperator`` backend endpoint.
 -   Mint an NFT to your wallet account => Create the message of a sponsored ``transfer`` transaction => Sign it with the wallet => Submit the signature to the ``/submitTransfer`` backend endpoint.
 
@@ -31,7 +30,7 @@ The backend is a server that exposes two endpoints:
 - ``POST /submitTransfer``
 
 After submitting the signature to the ``/submitUpdateOperator`` or the ``/submitTransfer`` endpoint,
-the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SPONSORED_TX_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/src/constants.ts>`_, subindex: 0}.
+the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SPONSORED_TX_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/package.json#L41>`_, subindex: 0}.
 The deployed smart contract code can be found `here <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_.
 After the transaction is sent to the blockchain node, the backend returns the transaction hash to the frontend.
 
@@ -46,11 +45,17 @@ The frontend uses several `json` schemas in the ``./frontend/src/constants.ts`` 
 
 .. code-block:: javascript
 
-   export const SERIALIZATION_HELPER_SCHEMA = 'FAAFAAAAEAAAAGNvbnRyYWN0X2FkZHJlc3MMCwAAAGVudHJ5X3BvaW50FgEFAAAAbm9uY2UFCQAAAHRpbWVzdGFtcA0HAAAAcGF5bG9hZBACAg';
+   export const UPDATE_OPERATOR_SCHEMA = 'EAEUAAIAAAAGAAAAdXBkYXRlFQIAAAAGAAAAUmVtb3ZlAgMAAABBZGQCCAAAAG9wZXJhdG9yFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADA';
 
-   export const PUBLIC_KEY_OF_PARAMETER_SCHEMA = 'FAABAAAABwAAAHF1ZXJpZXMQARQAAQAAAAcAAABhY2NvdW50Cw';
+   export const TRANSFER_SCHEMA = 'EAEUAAUAAAAIAAAAdG9rZW5faWQdAAYAAABhbW91bnQbJQAAAAQAAABmcm9tFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADAIAAAB0bxUCAAAABwAAAEFjY291bnQBAQAAAAsIAAAAQ29udHJhY3QBAgAAAAwWAQQAAABkYXRhEAEC';
 
-   export const PUBLIC_KEY_OF_RETURN_VALUE_SCHEMA = 'FAEBAAAAEAEVAgAAAAQAAABOb25lAgQAAABTb21lAQEAAAAPHiAAAAAF';
+   export const SERIALIZATION_HELPER_SCHEMA = 'FAAFAAAAEAAAAGNvbnRyYWN0X2FkZHJlc3MMBQAAAG5vbmNlBQkAAAB0aW1lc3RhbXANCwAAAGVudHJ5X3BvaW50FgEHAAAAcGF5bG9hZBABAg==';
+
+   export const NONCE_OF_PARAMETER_SCHEMA = 'FAABAAAABwAAAHF1ZXJpZXMQARQAAQAAAAcAAABhY2NvdW50Cw==';
+
+   export const NONCE_OF_RETURN_VALUE_SCHEMA = 'FAEBAAAAEAEF';
+
+   export const MINT_PARAMETER_SCHEMA = 'FAABAAAABQAAAG93bmVyFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADA==';
 
 These schemas can be generated `in the smart contract folder <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_ with the command below.
 
@@ -60,18 +65,8 @@ These schemas can be generated `in the smart contract folder <https://github.com
 
 This command creates a file with the json schema of your smart contract in your current directory.
 
-Register your public key
-========================
-
-Ensure that you are connected with the correct account to the frontend.
-Select the **Registration Public Key tab** to register
-your public key in the smart contract as shown below:
-
-.. image:: ./images/registerPublicKey.gif
-   :alt: Register public key gif
-   :align: center
-
-If the registration was successful, your current public key and your next nonce are displayed.
+Explore your public key
+=======================
 
 You can export your keys file from the |bw| as follows:
 
@@ -118,38 +113,37 @@ and the ``message`` that is signed in the wallet are rather complex. For example
          Remove: [],
       };
 
-   const updateOperator =
-      [
-         {
-            operator: {
-               Account: [operator],
-            },
-            update: operatorAction,
-         }
-      ]
+   const updateOperator = [
+      {
+         operator: {
+            Account: [operator],
+         },
+         update: operatorAction,
+      },
+   ];
 
-   const payload = serializeTypeValue(
-      updateOperator,
-      toBuffer(UPDATE_OPERATOR_SCHEMA, 'base64')
-   );
+   const payload = serializeTypeValue(updateOperator, toBuffer(UPDATE_OPERATOR_SCHEMA, 'base64'));
 
    const message = {
       contract_address: {
-         index: Number(SPONSORED_TX_CONTRACT_INDEX),
+         index: Number(process.env.SMART_CONTRACT_INDEX),
          subindex: 0,
       },
       nonce: Number(nonce),
-      timestamp: EXPIRY_TIME_SIGNATURE,
+      timestamp: expiryTimeSignature,
       entry_point: 'updateOperator',
       payload: Array.from(payload),
    };
 
-Because the schema is included in the smart contract, you can use the format returned by the below command to have a
-guideline on how to create the ``message`` and input parameters for the functions in the smart contract:
+Because the schema is included in the smart contract, you can use the format returned by the below command to get a
+template on how to create the ``message`` and input parameters for the functions in the smart contract:
 
-.. code-block:: console
+.. code-block:: rust
 
-   $concordium-client contract show 4376 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+   cargo concordium build --schema-template-out -
+
+The above command will print the schema template to the console. The command has to be executed
+`in the smart contract folder <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_.
 
 Submit a sponsored ``transfer`` transaction
 ===========================================
@@ -167,43 +161,42 @@ and the ``message`` that is signed in the wallet are rather complex. For example
 
 .. code-block:: javascript
 
-   const transfer =
-      [
-         {
-            amount: '1',
-            data: '',
-            from: {
-               Account: [from],
-            },
-            to: {
-               Account: [to],
-            },
-            token_id: tokenID,
+   const transfer = [
+      {
+         amount: '1',
+         data: [],
+         from: {
+            Account: [from],
          },
-      ]
+         to: {
+            Account: [to],
+         },
+         token_id: tokenID,
+      },
+   ];
 
-   const payload = serializeTypeValue(
-        transfer,
-        toBuffer(TRANSFER_SCHEMA, 'base64')
-   );
+   const payload = serializeTypeValue(transfer, toBuffer(TRANSFER_SCHEMA, 'base64'));
 
    const message = {
       contract_address: {
-         index: Number(SPONSORED_TX_CONTRACT_INDEX),
+         index: Number(process.env.SMART_CONTRACT_INDEX),
          subindex: 0,
       },
       nonce: Number(nonce),
-      timestamp: EXPIRY_TIME_SIGNATURE,
+      timestamp: expiryTimeSignature,
       entry_point: 'transfer',
       payload: Array.from(payload),
    };
 
-Because the schema is included in the smart contract, you can use the format returned by the below command to have a
-guideline on how to create the ``message`` and input parameters for the functions in the smart contract:
+Because the schema is included in the smart contract, you can use the format returned by the below command to get a
+template on how to create the ``message`` and input parameters for the functions in the smart contract:
 
-.. code-block:: console
+.. code-block:: rust
 
-   $concordium-client contract show 4376 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+   cargo concordium build --schema-template-out -
+
+The above command will print the schema template to the console. The command has to be executed
+`in the smart contract folder <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_.
 
 .. note::
 
