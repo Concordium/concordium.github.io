@@ -48,16 +48,39 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    June 27, 2023
+    August XX, 2023
 
-    The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+        Version 1.2.1 contains the following:
 
-    Additionally, the following improvements were made:
+        - Fixed end destination when exiting add/remove watched tokens.
 
-    - Identity view: Display raw document type when no localized string is matched
-    - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+        - Fixed item overlap issues with transaction details screen
+
+        - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+        - Removed token thumbnail and added name in token details activity
+
+        - Transfer token flow now ends in the proper place
+
+        - Fixed issue where ID pub duplicated id error showed
+
+        - Ensured compatibility with the upcoming P6 protocol update.
+
+        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
+
+            The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+            Additionally, the following improvements were made:
+
+            - Identity view: Display raw document type when no localized string is matched
+
+            - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
 
         .. dropdown:: |mw-gen2| 1.1.8 - May 31, 2023
 
