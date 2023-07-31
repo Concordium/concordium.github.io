@@ -19,11 +19,21 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    July 17, 2023
+    August 1, 2023
 
-    WalletConnect has been implemented in iOS 1.1.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
+        Version 1.1.1 includes bug fixes and an improvement for the upcoming protocol update.
+
+        - Removed election difficulty from expected chain parameters so that the wallet works correctly after the protocol update.
+
+        - Fix string handling which broke unicode support.
+
+        - WalletConnect: Display balances in proper CCD format in the account selection view.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.1.0 - July 17, 2023
+
+            WalletConnect has been implemented in iOS 1.1.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
 
         .. dropdown:: |mw-gen2| 1.0.1 - May 31, 2023
 
