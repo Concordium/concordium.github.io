@@ -19,7 +19,7 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    August 1, 2023
+    July 31, 2023
 
         Version 1.1.1 includes bug fixes and an improvement for the upcoming protocol update.
 
