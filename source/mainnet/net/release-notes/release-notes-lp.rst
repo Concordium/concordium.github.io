@@ -23,9 +23,9 @@ Wallets
 
         Version 1.1.1 includes bug fixes and an improvement for the upcoming protocol update.
 
-        - Removed election difficulty from expected chain parameters so that the wallet works correctly after the protocol update.
+        - Ensured compatibility with the upcoming protocol update (P6)
 
-        - Fix string handling which broke unicode support.
+        - Fixed issue with DTS identities that contain non-ASCII characters.
 
         - WalletConnect: Display balances in proper CCD format in the account selection view.
 
