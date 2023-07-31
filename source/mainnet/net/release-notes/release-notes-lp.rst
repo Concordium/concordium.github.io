@@ -782,7 +782,7 @@ Testnet
 
     August 9, 2023
 
-        Concordium Node 6.0.0 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023. **Node runners should upgrade to version 6.0.0. before the protocol update to ensure that their nodes do not shut down.**
+        Concordium Node 6.0.1 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023. **Node runners should upgrade to version 6.0.1. before the protocol update to ensure that their nodes do not shut down.**
 
         Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
 

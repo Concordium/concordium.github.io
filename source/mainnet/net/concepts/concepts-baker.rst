@@ -55,7 +55,9 @@ To be chosen to bake a block, the baker must take part in a
 
 The same stake is used when calculating whether a baker is included in the :ref:`finalization <glossary-finalization>` committee or not.
 
-If a baker misses baking a block, it is known which baker missed it. This is useful information for delegators when choosing a baker pool to delegate to, and node runners.
+.. todo::
+
+   If a baker misses baking a block, it is known which baker missed it. This is useful information for delegators when choosing a baker pool to delegate to, and node runners.
 
 Time concepts
 -------------
@@ -63,7 +65,7 @@ The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>`.
 
 When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
 
-Epochs are subdivided into :ref:`rounds <glossary-round>`. Rounds have either a block or a timeout. Rounds have a minimum time interval, but the rounds can grow "in time" if a round times out. For example, if round 1 times out, then round 2's duration increases and so on. Then whenever there is a block in a round that manages to get a quorum certificate attached, then the "round duration" will shrink, and it will continue to do so if , for example, there have been multiple rounds that have timed out.
+Epochs are subdivided into :ref:`rounds <glossary-round>`. Rounds have either a block or a timeout. Rounds have a minimum time interval, but the rounds can grow "in time" if a round times out. For example, if round 1 times out, then round 2's duration increases and so on. Then whenever there is a block in a round that manages to get a :ref:`quorum certificate<glossary-quorum-certificate>` attached, then the "round duration" will shrink, and it will continue to do so if , for example, there have been multiple rounds that have timed out.
 But it cannot shrink below the minimum time interval given by the chain parameters. There can only ever be one block for a certain round across all branches, thus there is a unique leader (potential baker) for a round in an epoch.
 
 A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking, and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 08:05 UTC on Mainnet and approximately 11:05 UTC on Testnet. Bakers are finalized at the end of an epoch then one epoch passes before that next epoch where they are eligible to bake.
