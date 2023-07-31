@@ -2026,9 +2026,9 @@ body {margin:0;}
         <span class="c1"># `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_LISTEN_PORT=8169</span>
         <span class="c1"># Address of the V2 GRPC server</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20100</span>
-        <span class="c1"># And its port</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
+        <span class="c1"># And its port</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20100</span>
         <span class="c1"># Do not bootstrap via DNS</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_NO_BOOTSTRAP_DNS=true</span>
         <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
@@ -2044,7 +2044,6 @@ body {margin:0;}
         <span class="c1"># survives container restart. In this case we map the **host** directory</span>
         <span class="c1"># ./local-0 to be used as the node&#39;s database directory.</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./local-0/:/mnt/data:Z</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./genesis.dat:/mnt/data/genesis.dat:Z</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./bakers/baker-0-credentials.json:/mnt/baker-0-credentials.json:Z</span>
 </pre></div>
 </div>
