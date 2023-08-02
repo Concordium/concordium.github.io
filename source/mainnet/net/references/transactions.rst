@@ -557,12 +557,12 @@ The output is:
       * base timeout: 10000 ms.
       * timeout increase: 5 / 4 (approx 1.25)
       * timeout decrease: 4 / 5 (approx 0.8)
-    + minimum time between blocks: 5000 ms.
+    + minimum time between blocks: 2000 ms.
     + block energy limit: 3000000
 
   # Finalization committee parameters:
     + minimum finalizers: 40
-    + maximum finalizers: 500
+    + maximum finalizers: 1000
     + finalizer relative stake threshold: 1.0e-3
 
    # Other parameters:
