@@ -63,6 +63,15 @@ index
 
 .. toctree::
    :includehidden:
+   :caption: Web3 ID
+
+   web3-id/index
+   web3-id/wallet
+   web3-id/issuer
+   web3-id/verifier
+
+.. toctree::
+   :includehidden:
    :caption: Smart Contracts v1
 
    Introduction <../smart-contracts/general/introduction>
