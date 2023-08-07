@@ -140,7 +140,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
          concordium-client transaction deploy-credential credential.json
 
-      where ``credential.json`` is the file obtained in the previous step.
+      where ``credential.json`` is the file obtained in the previous step. If the node runs on a different machine or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used to set the `IP address`_ and `port number`_ where the node is accessible.
 
    If you experience issues, please contact Concordium’s technical support via support@concordium.software.
 
@@ -168,13 +168,13 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
       You must deploy the ``credential.json`` output file to the chain exactly as described below. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
 
-   2. To create the account on the chain make sure you have access to a node, then run the following command with concordium-client:
+   2. To create the account on the chain make sure you have access to a node, then run the following command with ``concordium-client``:
 
       .. code-block:: console
 
          concordium-client transaction deploy-credential credential.json
 
-      where ``credential.json`` is the file obtained in the previous step.
+      where ``credential.json`` is the file obtained in the previous step. If the node runs on a different machine or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used to set the `IP address`_ and `port number`_ where the node is accessible.
 
    Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:
 
@@ -217,12 +217,12 @@ If the identity object used to create credentials is lost, it can be recovered f
 
    If you experience issues, please contact Concordium’s technical support via support@concordium.software.
 
-Import created accounts into concordium-client
-==============================================
+Import created accounts into ``concordium-client``
+==================================================
 
 The account keys are primarily meant for clients to integrate into their key management solution and their software, e.g., an exchange integrating their trading platform with the Concordium chain.
 
-However if the ``account-keys.json`` file is not encrypted it can be imported into concordium-client with the command:
+However if the ``account-keys.json`` file is not encrypted it can be imported into ``concordium-client`` with the command:
 
 .. code-block:: console
 
@@ -232,7 +232,7 @@ where the ``--name`` option is optional, and if given, will name the account acc
 
 If the account-keys.json file is encrypted then it must first be decrypted. This can be done with the :ref:`utils tool<downloads-auxiliary-tools>`.
 
-The initial account keys cannot be directly imported into concordium-client.
+The initial account keys cannot be directly imported into ``concordium-client``.
 
 Format of the key files
 -----------------------
