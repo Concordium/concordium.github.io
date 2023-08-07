@@ -1,4 +1,6 @@
 .. include:: ../../variables.rst
+.. _IP address: https://en.wikipedia.org/wiki/IP_address
+.. _port number: https://en.wikipedia.org/wiki/Port_(computer_networking)
 .. _company-identities:
 
 ============================
@@ -56,7 +58,7 @@ Create an identity request
 
    #. To verify your identity towards Notabene, follow the `entity verification instructions <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_. When the identity has been verified successfully, Notabene will notify you by email, and they will send you an identity object file named ``id-object.json``. If you experience any issues with this step, identity verification, please contact Notabene via ania@notabene.id.
 
-   If you experience issues with steps 1, 2, 3, or 4 please contact Concordium’s technical support via support@concordium.software. 
+   If you experience issues with steps 1, 2, 3, or 4 please contact Concordium’s technical support via support@concordium.software.
 
 
 .. dropdown:: Testnet
@@ -129,7 +131,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
       - ``account-keys.json`` which contains account keys of the account that will be created by the credential.
       - ``credential.json`` which contains the payload of the account creation transaction. This must be sent to the chain, otherwise the account will not be created. By default this must be sent to the chain within 15 minutes. A larger or shorter message expiry may be set with --message-expiry flag to the command. Note that the credential number must be unique for each respective ``id-object.json``. Duplicate credential numbers for the same ``id-object.json`` will be rejected when submitting to chain.
-   
+
    .. Note::
 
       You must deploy the ``credential.json`` output file to the chain exactly as described below. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
@@ -163,7 +165,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
       - ``account-keys.json`` which contains account keys of the account that will be created by the credential.
       - ``credential.json`` which contains the payload of the account creation transaction. This must be sent to the chain, otherwise the account will not be created. By default this must be sent to the chain within 15 minutes. A larger or shorter message expiry may be set with --message-expiry flag to the command. Note that the credential number must be unique for each respective ``id-object.json``. Duplicate credential numbers for the same ``id-object.json`` will be rejected when submitting to chain.
-   
+
    .. Note::
 
       You must deploy the ``credential.json`` output file to the chain exactly as described below. If you don't, the account will not be created. You need access to a node to complete this step. Store the auxiliary output securely.
@@ -196,7 +198,7 @@ If the identity object used to create credentials is lost, it can be recovered f
         user_cli recover-identity --cryptographic-parameters cryptographic-parameters.json \
                           --ip-info ip-info.json \
                           --request-out recovery-request.json # recovery request to send to the identity provider
- 
+
    #. Email the ``recovery-request.json`` output file to ania@notabene.id. The request should be sent to the identity provider through a trusted channel, together with any other required identity data. When the recovery request has been validated successfully, Notabene will notify you by email, and they will return the identity object named ``id-object.json`` that you lost. With the recovered identity object, you can then recreate your account keys(account-keys.json) by running ``user_cli create-credential-v1``.
 
    If you experience issues, please contact Concordium’s technical support via support@concordium.software.
@@ -237,7 +239,7 @@ The initial account keys cannot be directly imported into ``concordium-client``.
 Format of the key files
 -----------------------
 
-Both initial account keys and subsequent account keys are stored in JSON files. The unencrypted data is a JSON record with a number of fields. For sending transactions the fields that are relevant are 
+Both initial account keys and subsequent account keys are stored in JSON files. The unencrypted data is a JSON record with a number of fields. For sending transactions the fields that are relevant are:
 
 - ``accountKeys`` contains the account keys. It has the following format:
 
