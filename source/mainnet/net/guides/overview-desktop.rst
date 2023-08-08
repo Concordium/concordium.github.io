@@ -16,7 +16,7 @@ Before you start
 
 Before you start, make sure you’ve completed the following steps:
 
-- You’ve set up the `LEDGER Nano S <https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true>`_ LEDGER Nano S Plus, or the `LEDGER Nano X <https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true>`_ and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.
+- You’ve set up the `LEDGER Nano S <https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true>`_, `LEDGER Nano S Plus <https://support.ledger.com/hc/en-us/articles/4416927988625-Set-up-your-Ledger-Nano-S-Plus-?docs=true>`_, or the `LEDGER Nano X <https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true>`_ and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.
 
 - You’ve downloaded `Ledger Live <https://www.ledger.com/ledger-live/download>`_.
 
