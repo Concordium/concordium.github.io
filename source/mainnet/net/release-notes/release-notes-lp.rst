@@ -461,14 +461,18 @@ Desktop Wallet
 
 .. _rn-ledger-app:
 
-Concordium Ledger app
+Concordium LEDGER app
 ---------------------
 
-    March 31, 2023
+    August 10, 2023
 
-    Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
+        Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see :ref:`Install the Concordium LEDGER app<install-ledger>`. In addition, Concordium's LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.1.0 - March 31, 2023
+
+            Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
 
         .. dropdown:: 3.0.1 - June 15, 2022
 
