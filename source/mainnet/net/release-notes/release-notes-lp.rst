@@ -302,7 +302,7 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    August 17, 2023
+    August 8, 2023
 
         |mw-gen1| 3.2.1 ensures support for the upcoming P6 protocol update.
 
