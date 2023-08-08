@@ -304,7 +304,7 @@ Desktop Wallet
 
     August 8, 2023
 
-        |mw-gen1| 3.2.1 ensures support for the upcoming P6 protocol update.
+        |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
 
     .. dropdown:: Previous releases
 
