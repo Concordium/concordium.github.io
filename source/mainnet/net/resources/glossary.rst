@@ -292,7 +292,7 @@ Finalization
 ============
 
 The process by which a block is marked to be "finalized", i.e. part of the
-authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the :ref:`total effective stake<lossary-total-effective-stake>` in baker pools, known as the Finalization committee. Total effective stake in baker pools does not include passive delegation and any amount that exceeds the :ref:`baker pool bounding caps<delegation-caps>`. Finalization has to happen for each round otherwise the blockchain cannot proceed to the next round.
+authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the :ref:`total effective stake<glossary-total-effective-stake>` in baker pools, known as the Finalization committee. Total effective stake in baker pools does not include passive delegation and any amount that exceeds the :ref:`baker pool bounding caps<delegation-caps>`. Finalization has to happen for each round otherwise the blockchain cannot proceed to the next round.
 
 .. _glossary-genesis-block:
 
