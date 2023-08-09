@@ -91,7 +91,7 @@ When a sufficiently large number of members of the committee have received the b
 Finalization committee
 ----------------------
 
-The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total stake of CCD in pools. If you are not in the finalization committee,  you will probably have to increase your staked amount to reach the threshold. There is a minimum and maximum size for the finalization committee; it is 0.1% of the stake in pools, but always at least 40 bakers and always at most 1000 bakers.
+The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total stake of CCD in pools. If you are not in the finalization committee,  you will probably have to increase your staked amount to reach the threshold. There is a minimum and maximum size for the finalization committee; it is 0.1% of the effective stake in pools, but always at least 40 bakers and always at most 1000 bakers.
 
 Participating in the finalization committee produces rewards on each block that is finalized. The rewards are paid to the baker account some time after the block is finalized.
 
