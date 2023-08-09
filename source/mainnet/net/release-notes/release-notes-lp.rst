@@ -302,13 +302,17 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    May 30, 2023
+    August 8, 2023
 
-    In |mw-gen1| for iOS 3.2.0 identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+        |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: |mw-gen1| for iOS 3.1.1 - March 27, 2023
+        .. dropdown:: |mw-gen1| 3.2.0 - May 30, 2023
+
+            In |mw-gen1| for iOS 3.2.0 identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+        .. dropdown:: |mw-gen1| 3.1.1 - March 27, 2023
 
             A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
 
