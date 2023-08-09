@@ -2378,49 +2378,61 @@ release schedule.</p>
 </div>
 <p>To see the chain parameters for a specific block use the <code class="docutils literal notranslate"><span class="pre">--block</span></code> flag to specify the block hash.</p>
 <p>The output is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Parameters related to baker pools:
-<span class="go">  + minimum equity capital: 14000.000000 CCD</span>
-<span class="go">  + maximum fraction of total stake a pool is allowed to hold: 0.1</span>
-<span class="go">  + maximum factor a pool may stake relative to the baker&#39;s stake: 3 % 1</span>
-<span class="go">  + pool owner cooldown duration: 21d</span>
-<span class="go">  + allowed range for finalization commission: [1.0, 1.0]</span>
-<span class="go">  + allowed range for baking commission: [0.1, 0.1]</span>
-<span class="go">  + allowed range for transaction commission: [0.1, 0.1]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters related to baker pools:
+<span class="go">   + minimum equity capital: 14000.000000 CCD</span>
+<span class="go">   + maximum fraction of total stake a pool is allowed to hold: 0.1</span>
+<span class="go">   + maximum factor a pool may stake relative to the baker&#39;s stake: 3 % 1</span>
+<span class="go">   + pool owner cooldown duration: 21d</span>
+<span class="go">   + allowed range for finalization commission: [1.0, 1.0]</span>
+<span class="go">   + allowed range for baking commission: [0.1, 0.1]</span>
+<span class="go">   + allowed range for transaction commission: [0.1, 0.1]</span>
 
-<span class="gp"># </span>Passive delegation parameters:
-<span class="go">  + finalization commission: 1.0</span>
-<span class="go">  + baking commission: 0.12</span>
-<span class="go">  + transaction commission: 0.12</span>
+<span class="gp"> # </span>Passive delegation parameters:
+<span class="go">   + finalization commission: 1.0</span>
+<span class="go">   + baking commission: 0.12</span>
+<span class="go">   + transaction commission: 0.12</span>
 
-<span class="gp"># </span>Parameters related to delegators:
-<span class="go">  + delegator cooldown duration: 14d</span>
+<span class="gp"> # </span>Parameters related to delegators:
+<span class="go">   + delegator cooldown duration: 14d</span>
 
-<span class="gp"># </span>Exchange rate parameters:
-<span class="go">  - EUR per CCD rate (approx): 0.0200</span>
-<span class="go">  - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)</span>
-<span class="go">  - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)</span>
+<span class="gp"> # </span>Exchange rate parameters:
+<span class="go">   - EUR per CCD rate (approx): 0.0200</span>
+<span class="go">   - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)</span>
+<span class="go">   - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)</span>
 
-<span class="gp"># </span>Parameters that affect rewards distribution:
-<span class="go">  + mint amount per reward period: 261157877e-12</span>
-<span class="go">  + mint distribution:</span>
-<span class="go">      * baking reward: 0.6</span>
-<span class="go">      * finalization reward: 0.3</span>
-<span class="go">  + transaction fee distribution:</span>
-<span class="go">      * baker: 0.45</span>
-<span class="go">      * GAS account: 0.45</span>
-<span class="go">  + GAS rewards:</span>
-<span class="go">      * baking a block: 0.25</span>
-<span class="go">      * adding a finalization proof: 5.0e-3</span>
-<span class="go">      * adding a credential deployment: 2.0e-2</span>
-<span class="go">      * adding a chain update: 5.0e-3</span>
+<span class="gp"> # </span>Parameters that affect rewards distribution:
+<span class="go">   + mint amount per reward period: 261157877e-12</span>
+<span class="go">   + mint distribution:</span>
+<span class="go">       * baking reward: 0.6</span>
+<span class="go">       * finalization reward: 0.3</span>
+<span class="go">   + transaction fee distribution:</span>
+<span class="go">       * baker: 0.45</span>
+<span class="go">       * GAS account: 0.45</span>
+<span class="go">   + GAS rewards:</span>
+<span class="go">       * baking a block: 0.25</span>
+<span class="go">       * adding a finalization proof: 5.0e-3</span>
+<span class="go">       * adding a credential deployment: 2.0e-2</span>
+<span class="go">       * adding a chain update: 5.0e-3</span>
 
-<span class="gp"># </span>Time parameters:
-<span class="go">  + reward period length: 24 epochs</span>
+<span class="gp"> # </span>Time parameters:
+<span class="go">   + reward period length: 24 epochs</span>
 
-<span class="gp"># </span>Other parameters:
-<span class="go">  + election difficulty: 2.5e-2</span>
-<span class="go">  + foundation account index: 10</span>
-<span class="go">  + maximum credential deployments per block: 10</span>
+<span class="gp"># </span>Consensus parameters:
+<span class="go">  + Timeout parameters:</span>
+<span class="go">    * base timeout: 10000 ms.</span>
+<span class="go">    * timeout increase: 5 / 4 (approx 1.25)</span>
+<span class="go">    * timeout decrease: 4 / 5 (approx 0.8)</span>
+<span class="go">  + minimum time between blocks: 2000 ms.</span>
+<span class="go">  + block energy limit: 3000000</span>
+
+<span class="gp"># </span>Finalization committee parameters:
+<span class="go">  + minimum finalizers: 40</span>
+<span class="go">  + maximum finalizers: 1000</span>
+<span class="go">  + finalizer relative stake threshold: 1.0e-3</span>
+
+<span class="gp"> # </span>Other parameters:
+<span class="go">   + foundation account index: 10</span>
+<span class="go">   + maximum credential deployments per block: 10</span>
 </pre></div>
 </div>
 <table class="colwidths-given table">
@@ -2532,15 +2544,43 @@ release schedule.</p>
 <td><p>reward period length</p></td>
 <td><p>The length of the reward period. All rewards are handed out at the end of each reward period.</p></td>
 </tr>
-<tr class="row-even"><td><p>Other parameters</p></td>
-<td><p>election difficulty</p></td>
-<td><p>The election difficulty determines the probability that there is a block in a slot. Thus together with slot duration it determines average block time.</p></td>
+<tr class="row-even"><td><p>Consensus parameters</p></td>
+<td><p>Timeout parameters: base timeout</p></td>
+<td><p>Time in milliseconds before timeout.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
+<td><p>Timeout parameters: timeout increase</p></td>
+<td><p>Factor by which base timeout increases in next round if no quorum certificate is produced after a round with a timeout certificate.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Timeout parameters: timout decrease</p></td>
+<td><p>Factor by which base timeout decreases in next round if a quorum certificate is produced after a round with timeout certificate.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>minimum time between blocks</p></td>
+<td><p>minimum time in milliseconds between block creation</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>block energy limit</p></td>
+<td><p>Maximum amount of energy consumed by block</p></td>
+</tr>
+<tr class="row-odd"><td><p>Finalization committee parameters</p></td>
+<td><p>minimum finalizers</p></td>
+<td><p>Minimum number of finalizers that make up the committee</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>maximum finalizers</p></td>
+<td><p>Maximum number of finalizers that make up the committee</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>finalizer relative stake threshold</p></td>
+<td><p>The fraction of stake required to be part of the finalization committee</p></td>
+</tr>
+<tr class="row-even"><td><p>Other parameters</p></td>
 <td><p>foundation account index</p></td>
 <td><p>An index of the designated foundation reward account. The foundation account receives the foundation tax.</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td><p>maximum credential deployments per block</p></td>
 <td><p>The maximum amount of accounts that can be created in a block.</p></td>
 </tr>

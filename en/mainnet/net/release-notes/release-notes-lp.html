@@ -3055,8 +3055,44 @@ This means that node runners <strong>must upgrade</strong> their nodes before th
 <div class="section" id="testnet">
 <span id="rn-node-testnet"></span><h3>Testnet<a class="headerlink" href="#testnet" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>June 7, 2023</p>
-<p>Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running <code class="docutils literal notranslate"><span class="pre">getModuleSource</span></code> in the V1 GRPC API.</p>
+<div><p>August 9, 2023</p>
+<blockquote>
+<div><p>Concordium Node 6.0.4 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023. <strong>Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.</strong></p>
+<p>Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option <code class="docutils literal notranslate"><span class="pre">no-rpc-server</span></code> and environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER</span></code>, as well as default values of <code class="docutils literal notranslate"><span class="pre">rpc-server-port</span></code> (<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_PORT</span></code>) and <code class="docutils literal notranslate"><span class="pre">rpc-server-addr</span></code> (<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_ADDR</span></code>), have been removed. The V1 gRPC server is only started if both of these options are supplied.</p>
+<p>Additional features of this release include:</p>
+<ul>
+<li><p>Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.</p></li>
+<li><p>Changes in Wasm validation and execution in P6 include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Disallowed globals in initialization sections for V1 contracts in P6.</p></li>
+<li><p>Added support for sign extension instructions in Wasm in P6.</p></li>
+<li><p>Do not count custom sections towards module size when executing contracts.</p></li>
+<li><p>Support new <code class="docutils literal notranslate"><span class="pre">invoke</span></code> operations for retrieving account keys and checking signatures.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Shut down consensus upon a protocol update updating from protocol version 6.</p></li>
+<li><p>Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.</p></li>
+<li><p>Changed the <code class="docutils literal notranslate"><span class="pre">GetConsensusStatus</span></code> endpoint so that slot duration is only returned in protocol versions 0-5.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Changed the <code class="docutils literal notranslate"><span class="pre">GetBlockInfo</span></code> endpoint:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Block slot is only returned in protocol versions 0-5.</p></li>
+<li><p>In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.</p></li>
+<li><p>Endpoint extended to return block round and epoch in protocol version 6.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.</p></li>
+</ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -3065,6 +3101,15 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+5.4.2 - June 7, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running <code class="docutils literal notranslate"><span class="pre">getModuleSource</span></code> in the V1 GRPC API.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 5.4.1 - June 1, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -3544,12 +3589,17 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <div class="section" id="concordium-client">
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>June 1, 2023</p>
-<p>Concordium Client 5.2.0 contains the following features and bug fixes:</p>
+<div><p>August 9, 2023</p>
+<blockquote>
+<div><p>Concordium Client 6.0.1 adds support for the upcoming <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> which is planned for release on Testnet August 21, 2023. <strong>Note that this version of Concordium-Client requires at least node version 5.4.</strong></p>
 <ul class="simple">
-<li><p>Fix a bug in display of <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">show-chain-parameters</span></code> output for protocol version 6.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">GetBlockTransactionEvents</span></code> that prints the list of transaction outcomes in a given block.</p></li>
+<li><p>Removed a stray CTrue in output of <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">show-chain-parameters</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">GetNextUpdateSequenceNumbers</span></code> subcommand.</p></li>
+<li><p>Added node version to the output of <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">GetNodeInfo</span></code>.</p></li>
+<li><p>Print <em>Block time</em> instead of <em>Slot time</em> in the output of <code class="docutils literal notranslate"><span class="pre">block</span> <span class="pre">show</span></code>.</p></li>
+<li><p>In the output of <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">show-parameters</span></code>, election difficulty is only printed when present.</p></li>
 </ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -3558,6 +3608,19 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+5.2.0 - June 1, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 5.2.0 contains the following features and bug fixes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Fix a bug in display of <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">show-chain-parameters</span></code> output for protocol version 6.</p></li>
+<li><p class="sd-card-text">Add <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">GetBlockTransactionEvents</span></code> that prints the list of transaction outcomes in a given block.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 5.1.1 - March 2, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>

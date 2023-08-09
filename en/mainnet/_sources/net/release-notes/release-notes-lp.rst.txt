@@ -798,11 +798,49 @@ Mainnet
 Testnet
 -------
 
-    June 7, 2023
+    August 9, 2023
 
-    Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+        Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
+
+        Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
+
+        Additional features of this release include:
+
+        - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
+
+        - Changes in Wasm validation and execution in P6 include:
+
+            - Disallowed globals in initialization sections for V1 contracts in P6.
+
+            - Added support for sign extension instructions in Wasm in P6.
+
+            - Do not count custom sections towards module size when executing contracts.
+
+            - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+
+        - Shut down consensus upon a protocol update updating from protocol version 6.
+
+        - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+
+        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+
+            - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+
+        - Changed the ``GetBlockInfo`` endpoint:
+
+            - Block slot is only returned in protocol versions 0-5.
+
+            - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+
+            - Endpoint extended to return block round and epoch in protocol version 6.
+
+        - Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.4.2 - June 7, 2023
+
+            Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
         .. dropdown:: 5.4.1 - June 1, 2023
 
@@ -1176,15 +1214,29 @@ Tools
 Concordium Client
 -----------------
 
-    June 1, 2023
+    August 9, 2023
 
-    Concordium Client 5.2.0 contains the following features and bug fixes:
+        Concordium Client 6.0.1 adds support for the upcoming `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ which is planned for release on Testnet August 21, 2023. **Note that this version of Concordium-Client requires at least node version 5.4.**
 
-    - Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+        - Removed a stray CTrue in output of ``consensus show-chain-parameters``.
 
-    - Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+        - Added ``raw GetNextUpdateSequenceNumbers`` subcommand.
+
+        - Added node version to the output of ``raw GetNodeInfo``.
+
+        - Print *Block time* instead of *Slot time* in the output of ``block show``.
+
+        - In the output of ``consensus show-parameters``, election difficulty is only printed when present.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.2.0 - June 1, 2023
+
+            Concordium Client 5.2.0 contains the following features and bug fixes:
+
+            - Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+
+            - Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
 
         .. dropdown:: 5.1.1 - March 2, 2023
 
