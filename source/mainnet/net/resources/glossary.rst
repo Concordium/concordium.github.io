@@ -292,7 +292,7 @@ Finalization
 ============
 
 The process by which a block is marked to be "finalized", i.e. part of the
-authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the total amount (stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation. Finalization has to happen for each round otherwise the blockchain cannot proceed to the next round.
+authoritative :ref:`chain<glossary-chain>`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the :ref:`total effective stake<lossary-total-effective-stake>` in baker pools, known as the Finalization committee. Total effective stake in baker pools does not include passive delegation and any amount that exceeds the :ref:`baker pool bounding caps<delegation-caps>`. Finalization has to happen for each round otherwise the blockchain cannot proceed to the next round.
 
 .. _glossary-genesis-block:
 
@@ -661,6 +661,13 @@ Timeout certificate
 ===================
 
 If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
+
+.. _glossary-total-effective-stake:
+
+Total effective stake
+=====================
+
+The total amount of stake in baker pools excluding passive delegation and any amount that exceeds the :ref:`baker pool bounding caps<delegation-caps>`.
 
 .. _glossary-transaction:
 
