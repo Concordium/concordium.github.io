@@ -118,12 +118,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
       .. code-block:: console
 
-         user_cli create-credential-v1 --cryptographic-parameters cryptographic-parameters.json \
-                           --ars ars.json \
-                           --ip-info ip-info.json \
-                           --id-object id-object.json \
-                           --keys-out account-keys.json \
-                           --credential-out credential.json
+         user_cli create-credential-v1 --cryptographic-parameters cryptographic-parameters.json --ars ars.json --ip-info ip-info.json --id-object id-object.json --keys-out account-keys.json --credential-out credential.json
 
       You will have to select whether to reveal the LEI, which was optional when creating the identity object. Use the space key to select and deselect list entries. You will also be asked whether to create credential for Mainnet or Testnet. Afterwards you will be asked to type in the 24 BIP-39 words from earlier.
 
