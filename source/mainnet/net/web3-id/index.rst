@@ -13,11 +13,55 @@ Web3 ID is an extension of the core protocol identity with other types of creden
 
 Web3 ID credentials, like the existing ones, will contain commitments to a variety of attributes. :ref:`Zero-knowledge proofs<glossary-zero-knowledge-proof>` can be constructed to verify the committed values. The |bw| supports construction of these proofs. The proofs can contain a mix of verifiable credentials and account credentials.
 
-Tools for issuers and verifiers
-===============================
+========
+Entities
+========
 
-Concordium understands that issuers and verifiers may not have the resources to create a smart contract and the other tooling needed to issue and verify web3 credentials. So tooling is provided that enables you to become an issuer and verify credentials as painlessly as possible.
+The core entities of the Web3ID ecosystem are :ref:`issuers<web3id-issuer>` which issue and manage the lifetime of verifiable credentials, :ref:`holders<web3id-holders>` which have verifiable credentials in their wallets, and use them to prove properties about themselves to :ref:`verifiers<web3id-verifier>`.
+Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials.
+Verifiable credentials themselves never leave the user's wallet.
 
-To verify credentials, you can choose whether you want to run the hosted Concordium verifier for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to :ref:`create your own verifier tool<web3id-verifier>`.
+.. image:: ../images/web3id/web3id-entities.png
 
-For issuers, you can choose whether you want to run the hosted Concordium issuer for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to :ref:`create your own issuer tool<web3id-issuer>`.
+Support for issuers and verifiers
+=================================
+
+Concordium understands that issuers and verifiers may not have the resources to create a smart contract from scratch and the other tooling needed to issue and verify web3 credentials.
+So tooling is provided that enables you to become an issuer and verify credentials as painlessly as possible.
+
+Issuer
+------
+
+An issuer will typically consist of the following components.
+
+1. Some existing way of identifying users.
+2. A dApp that integrates with the wallet and allows the holder to request credential. An example dApp can be found (link).
+3. A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract,
+   and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.
+
+In order to simplify issuance as much as possible Concordium provides a `template smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry>`_
+that is expected to suffice for most of the issuers, but can be modified if custom logic is required.
+
+Concordium additionally provides an `issuer service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer>`_ that is designed to handle all of the chain-specific interactions, and provide a simple REST API, so that only the custom business logic of the issuer must be implemented.
+Note that the service must be run by the issuer themselves, since only they have the secret keys necessary to run it.
+
+In addition to the infrastructure listed above, the issuer must also provide JSON schemas for their credentials, and metadata.
+These schemas and metadata are used by the holder's wallet to display the credentials in the wallet.
+
+Verifier
+--------
+
+A verifier is expected to be a business or another use-case that will only provide a service provided specific proofs can be provided by the holder, for example proof of ownership of specific credential, such as a concert ticket.
+This will typically consist of two components.
+
+1. A dApp that will interact with the wallet to request from the user to attest to specific properties of their credentials. The result of such a request is a **presentation**.
+2. A backend component that will verify the provided **presentation** and allow the desired action or not.
+
+Verification of presentations has two components, the cryptographic verification of the zero-knowledge proofs contained within, which establish that the holder indeed owns the relevant credentials and they are issued by the stated issuer, and the business logic checking that the required property was attested.
+In particular, a key part of the business logic is whether the verifier trust a particular issuer, which is identified qua a smart contract address and the public key registered therein.
+
+Concordium simplifies the checking of the cryptographic part by providing a `verifier service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_.
+This service can be run by the verifier themselves, and Concordium runs an instance of the verifier for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__,
+Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier.
+
+An example verifier dApp can be found (link), and an example backend can be found (link).
