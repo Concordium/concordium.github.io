@@ -1,5 +1,5 @@
 name: Deploy PR Preview
-# Only run when a PR have the 'preview' label
+# Only run when a PR has the 'preview' label
 on:
   pull_request:
     types:
