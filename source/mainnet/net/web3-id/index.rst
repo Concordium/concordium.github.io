@@ -16,22 +16,8 @@ Web3 ID credentials, like the existing ones, will contain commitments to a varie
 Tools for issuers and verifiers
 ===============================
 
-Since issuers for these credentials are meant to be smaller entities, it is important that we provide as much as possible tooling to enable them to become issuers as painlessly as possible. Similarly we must provide as convenient as possible tooling to verify proofs. This tooling is likely to involve support in SDKs for using credentials, but ideally also small services that can be used independently to handle the protocol specific computation (such as looking up credentials, verifying proofs), and expose as simple as possible an interface to integrate into a larger system.
+Concordium understands that issuers and verifiers may not have the resources to create a smart contract and the other tooling needed to issue and verify web3 credentials. So tooling is provided that enables you to become an issuer and verify credentials as painlessly as possible.
 
-For bw
+To verify credentials, you can choose whether you want to run the hosted Concordium verifier for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to :ref:`create your own verifier tool<web3id-verifier>`.
 
-Add credentials
-Remove credentials
-Recover credentials
-
-For issuer
-
-How to become an issuer
-Issue credentials
-Revoke credentials
-
-For verifier
-
-Verify credentials
-
-Link to example project that users can clone to create their own solutions.
+For issuers, you can choose whether you want to run the hosted Concordium issuer for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to :ref:`create your own issuer tool<web3id-issuer>`.
