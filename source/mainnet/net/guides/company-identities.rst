@@ -43,14 +43,11 @@ Create an identity request
 
    #. Download ``concordium-client`` for your platform.  See :ref:`Downloads<concordium-node-and-client-download-testnet>` to get the file and checksum.
 
-   #. To generate a request for an identity object, use the following command, modifying the paths as appropriate.
+   #. To generate a request for an identity object, use the following command:
 
       .. code-block:: console
 
-         user_cli generate-request-v1 --cryptographic-parameters cryptographic-parameters.json \
-                          --ars ars.json \
-                          --ip-info ip-info.json \
-                          --request-out request.json # request to send to the identity provider
+         user_cli generate-request-v1 --cryptographic-parameters cryptographic-parameters.json --ars ars.json --ip-info ip-info.json --request-out request.json
 
       The above command will ask for some additional input. You have to choose anonymity revokers and revocation threshold. Use arrow keys to navigate through the lists and the space key to select and deselect list entries. Select whether the identity shall be used for Mainnet or Testnet. Afterwards, 24 BIP-39 will be generated and shown; write down the words and type them in again. This is your secret recovery phrase.
 
@@ -65,14 +62,14 @@ Create an identity request
 
    #. Download the tools for your platform.
 
-      - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities-v2.tar.gz>`__
-         - SHA256 checksum of the download: ``fd3620f3f3e2e9540b262ae68b8273c59816fbaa12d495629b07555c65bab4a2``
+      - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities-v2-testnet.tar.gz>`__
+         - SHA256 checksum of the download: ``ad27147798583bc9c393af1ba554e005e3f0cb75137650ce3033452a20d32687``
 
-      - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2.zip>`__
-         - SHA256 checksum of the download: ``38433e51efa95121ee4e25a15552dd02905193e3de5d3976e4b067bd9cb46096``
+      - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2-testnet.zip>`__
+         - SHA256 checksum of the download: ``45ee2d3a15fa44135ce43da2e8edd40b57b96a26c04d33e76498ac239a3afd1e``
 
-      - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2.zip>`__
-         - SHA256 checksum of the download: ``6f457a05dc2f3345b48fd7d9d387e80b46d37ceaa6ebeadd759b6de4e634a4ca``
+      - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2-testnet.zip>`__
+         - SHA256 checksum of the download: ``917ea1889f1d758ecffa65c5abe138692bb4bf3f3d6f040031156b598d67cf3f``
 
    #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 
@@ -88,14 +85,11 @@ Create an identity request
 
    #. Download ``concordium-client`` for your platform. See :ref:`Downloads<concordium-node-and-client-download-testnet>` to get the file and checksum.
 
-   #. To generate a request for an identity object, use the following command, modifying the paths as appropriate.
+   #. To generate a request for an identity object, use the following command:
 
       .. code-block:: console
 
-         user_cli generate-request-v1 --cryptographic-parameters cryptographic-parameters-testnet.json \
-                          --ars ars-testnet.json \
-                          --ip-info ip-info-testnet.json \
-                          --request-out request.json # request to send to the identity provider
+         user_cli generate-request-v1 --cryptographic-parameters cryptographic-parameters-testnet.json --ars ars-testnet.json --ip-info ip-info-testnet.json --request-out request.json
 
       The above command will ask for some additional input. You have to choose anonymity revokers and revocation threshold. Use arrow keys to navigate through the lists and the space key to select and deselect list entries. Select whether the identity shall be used for Mainnet or Testnet. Afterwards, 24 BIP-39 will be generated and shown; write down the words and type them in again. You need these when creating credentials.
 
@@ -147,12 +141,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
       .. code-block:: console
 
-         user_cli create-credential-v1 --cryptographic-parameters cryptographic-parameters-testnet.json \
-                           --ars ars-testnet.json \
-                           --ip-info ip-info-testnet.json \
-                           --id-object id-object.json \
-                           --keys-out account-keys.json \
-                           --credential-out credential.json
+         user_cli create-credential-v1 --cryptographic-parameters cryptographic-parameters-testnet.json --ars ars-testnet.json --ip-info ip-info-testnet.json --id-object id-object.json --keys-out account-keys.json                        --credential-out credential.json
 
       You will have to select whether to reveal the LEI, which was optional when creating the identity object. Use the space key to select and deselect list entries. You will also be asked whether to create credential for Mainnet or Testnet. Afterwards you will be asked to type in the 24 BIP-39 words from earlier.
 
@@ -186,13 +175,11 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 .. dropdown:: Mainnet
 
-   #. To recover your identity object (e.g. if you lost it), run the following command, modifying the paths as appropriate:
+   #. To recover your identity object (e.g. if you lost it), run the following command:
 
       .. code-block:: console
 
-        user_cli recover-identity --cryptographic-parameters cryptographic-parameters.json \
-                          --ip-info ip-info.json \
-                          --request-out recovery-request.json # recovery request to send to the identity provider
+        user_cli recover-identity --cryptographic-parameters cryptographic-parameters.json --ip-info ip-info.json --request-out recovery-request.json
 
    #. Email the ``recovery-request.json`` output file to ania@notabene.id. The request should be sent to the identity provider through a trusted channel, together with any other required identity data. When the recovery request has been validated successfully, Notabene will notify you by email, and they will return the identity object named ``id-object.json`` that you lost. With the recovered identity object, you can then recreate your account keys(account-keys.json) by running ``user_cli create-credential-v1``.
 
@@ -200,13 +187,11 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 .. dropdown:: Testnet
 
-   #. To recover your identity object (e.g. if you lost it), run the following command, modifying the paths as appropriate:
+   #. To recover your identity object (e.g. if you lost it), run the following command:
 
       .. code-block:: console
 
-        user_cli recover-identity --cryptographic-parameters cryptographic-parameters-testnet.json \
-                          --ip-info ip-info-testnet.json \
-                          --request-out recovery-request.json # recovery request to send to the identity provider
+        user_cli recover-identity --cryptographic-parameters cryptographic-parameters-testnet.json --ip-info ip-info-testnet.json --request-out recovery-request.json
 
       Email the ``recovery-request.json`` output file to support@concordium.software with the subject line "Recover company identity".
 
