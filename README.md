@@ -298,7 +298,7 @@ GIFs can be inserted but should only be used when it gives clarity to more compl
 
 ## Preview
 
-If you do not want to build the documentation to preview, you can install Esbonio https://marketplace.visualstudio.com/items?itemName=swyddfa.esbonio into VSCode. Then you can use the search bar to run >Esbonio:OpenPreview. This builds a preview file. This solution still requires that you have VSCode installed and the repository locally on your computer.
+If you do not want to build the documentation to preview from the terminal, you can install Esbonio https://marketplace.visualstudio.com/items?itemName=swyddfa.esbonio into VSCode. Then you can use the command palette to run >Esbonio:OpenPreview. This builds a preview file. This solution still requires that you have VSCode installed and the repository locally on your computer.
 
 ## License
 
