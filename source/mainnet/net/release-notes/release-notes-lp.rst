@@ -464,9 +464,15 @@ Desktop Wallet
 Concordium LEDGER app
 ---------------------
 
-    August 10, 2023
+    August 10, 2023 - version 4.1.2
 
         Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see :ref:`Install the Concordium LEDGER app<install-ledger>`. In addition, Concordium's LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.
+
+        The following improvements are also included:
+
+        - Improved a number of user interface flows to require fewer clicks.
+
+        - Amounts are now prefixed with CCD to indicate the unit of the amount.
 
     .. dropdown:: Previous releases
 

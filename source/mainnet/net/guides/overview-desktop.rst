@@ -26,7 +26,7 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 2: Install the Desktop Wallet
 
-    #. :ref:`Download <downloads>` the latest version of the Desktop Wallet.
+    #. Download the latest version of the Desktop Wallet for :ref:`Mainnet<downloads-desktop-wallet>` or :ref:`Testnet<downloads-desktop-wallet-testnet>`.
 
     #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
