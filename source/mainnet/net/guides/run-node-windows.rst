@@ -60,9 +60,9 @@ Install/upgrade and run a node
 
 #. Download the latest Windows Installer package (.msi file).
 
-   - For Mainnet go to :ref:`Downloads<downloads>`.
+   - For Mainnet go to :ref:`Downloads<node-downloads>`.
 
-   - For Testnet go to :ref:`Downloads<downloads-testnet>`.
+   - For Testnet go to :ref:`Downloads<testnet-node-downloads>`.
 
 #. In the folder where you downloaded the .msi file, double-click the .msi file. The **Concordium Node Setup Wizard** opens. Select **Next**. If you see a message saying *Windows protected your PC*, select **More info**, and then select **Run anyway**.
 

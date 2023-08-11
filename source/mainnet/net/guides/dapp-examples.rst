@@ -19,7 +19,9 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
 .. dropdown:: wCCD
 
-    `Demo front end <https://wccd.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+    `Demo front end testnet <https://wccd.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    `Demo front end mainnet <https://wccd.mainnet.concordium.software/>`__ where you can try the functionality on Concordium's mainnet
 
     :ref:`Tutorial about the wCCD smart contract and dApp<wCCD>`.
 
@@ -73,8 +75,25 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__
 
+.. dropdown:: Smart contract deploy and initialize tool
+
+    `Demo front end <https://sctools.mainnet.concordium.software/>`__ where you can deploy and initlize a smart contract on testnet or mainnet
+
+    `Front end code <https://github.com/Concordium/concordium-smart-contract-tools/tree/main/front-end-tools>`__
+
+.. dropdown:: Wallet test bench
+
+    This tool is for testing wallets and shows a great overview of the available interactions between wallets and front end.
+    Deploy and initialize scenarios are available on the browser wallet (will be implemented in the mobile wallets in the future).
+
+    `Demo front end <https://wallet-test-bench.testnet.concordium.com/>`__ where you can test wallet interactions
+
+    `Front end code <https://github.com/Concordium/concordium-misc-tools/tree/main/wallet-connect-test-bench/front-end>`__
+
+    `Smart contract <https://github.com/Concordium/concordium-misc-tools/tree/main/wallet-connect-test-bench/smart-contract>`__
+
 The dApps are written in React.
 
-Piggy bank, wCCD, eSealing, and sponsored Transactions use the NPM library
+Piggy bank, wCCD, eSealing, sponsored Transactions, smart contract deploy and initialize tool, and wallet test bench use the NPM library
 `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
-to implement integrations to the |bw| and |mw-gen2| on Android devices using WalletConnect.
+to implement integrations to the |bw| and |mw-gen2| using WalletConnect.

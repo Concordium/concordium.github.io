@@ -38,6 +38,10 @@
     - Put it in a safe location. Keep your secret recovery phrase in a safe location that is fireproof and waterproof, and that you will remember and can access relatively easily. There are companies that make devices, such as https://shop.ledger.com/products/the-billfodl that can safely store your secret recovery phrase.
     - Keep multiple physical copies of your secret recovery phrase in safe locations.
 
+.. dropdown:: Can I use the |bw| extension in a web browser on a mobile phone or tablet device?
+
+    No, the |bw| extension is only supported in a web browser running on a computer.
+
 .. dropdown:: Do I still need to make backups of my wallet?
 
     No. For the |bw| and |mw-gen2| you do not need to make backups. Your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>` that you write down is the only way to recover your accounts and identities.
@@ -58,7 +62,7 @@
 
     It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<recover-wallet>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
 
-.. dropdown:: Can I use my secret recovery phrase to restore my accounts in third party wallets?
+.. dropdown:: Can I use my secret recovery phrase to restore my accounts in third-party wallets?
 
     At the moment Concordium identities and accounts are only supported in Concordium Wallets. However, Concordium expects to provide support for CCD and CIS-2 tokens in third party wallets in the future.
 

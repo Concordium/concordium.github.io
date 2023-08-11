@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _setup-tools:
 
 =============================
@@ -12,6 +13,15 @@ Rust and Cargo
 
 First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
+
+.. _rust-compiler-issue:
+
+Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:
+
+.. code-block:: console
+
+   $rustup default 1.69
+
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
 .. code-block:: console
@@ -50,6 +60,8 @@ Concordium software
 The tool to deploy and interact with smart contracts is
 :ref:`concordium-client<concordium-client>`. It is distributed as part of the
 :ref:`Concordium software<downloads>` package.
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 .. note::
 

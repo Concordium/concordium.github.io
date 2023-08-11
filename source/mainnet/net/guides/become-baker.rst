@@ -12,7 +12,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the |mw-gen1| and acquire CCD.
+#. Create an account in the wallet and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -46,13 +46,19 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the |mw-gen2| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
+   You can only import accounts created in the |mw-gen2| or |bw| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
 
 To import an account run:
 
 .. code-block:: console
 
    $concordium-client config account import <path/to/exported/file> --name bakerAccount
+
+For the |bw|, use the following command:
+
+.. code-block:: console
+
+    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
 
 ``concordium-client`` asks for a password to decrypt the exported file and
 import all accounts. The same password will be used for encrypting the
@@ -162,13 +168,19 @@ offer different degrees of precision in the information displayed.
 
      $concordium-client consensus show-parameters --include-bakers
      Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0
-     Election difficulty: 4.0e-2
      Bakers:
-                                  Account                       Lottery power
-             ----------------------------------------------------------------
-         ...
-         34: 4p2n8QQn5akq3XqAAJt2a5CsnGhDvUon6HExd2szrfkZCTD4FX   <0.0001
-         ...
+                             Account                       Lottery power  Account Name
+        ------------------------------------------------------------------------------
+     0: 4fvxZZ225xcEiCkgXTZt3cSReYgbxiMsSoj1UhAbGCsqvVg9N7   17.0326 %
+     1: 3p8FSc3KN5pKxRvEdsvJS8VS21KbkRS3x4MnGq1t6omuJXydJQ   17.0498 %
+     2: 39zGK3yRxHjgVVnHae2cgZBo6uWtC5Qg8GkmtMjPsJYgDc5pfF   17.0514 %
+     3: 353yq84vTgYZcVLpj4Vd5fdgGbMxAUpkktNnDFs1ogzSvDxMiH   17.0254 %
+     4: 33PbbH58cQj6CAHfLGy5z3FDKhHtjohQmK3ff63tzXJLWsAm8V   17.0600 %
+    48: 4QdCxcP9cApLxA8UGFXiY1HjSPnSkUaeVUERU8BmBdStgnS5Vh    2.8368 %
+    54: 4Z28EXyghd7tLbrMntGZxjBypwGxbQdcnexmeWxPaVeyvFC4bk    0.0144 %
+    99: 3aj3DHzofkuAG7JweHJdhwcuVZePXNrN7JvZLuoTnJgiK1dfYM    0.1418 %
+   108: 4PXYJcvLLz7cgdn9UnYhhB35zrMP6azPSoh4oL6Vr9gvSMZDDi    2.8368 %
+   223: 3zZPUWS8BMdeCAsGzPiD512mVJS4gDjUWFFsFsbPSWnvHPL2kZ   <0.0001 %
 
 - Using the ``concordium-client`` you can check that the account has
   registered a baker and the current amount that is staked by that baker.
@@ -303,20 +315,13 @@ the ``baker add`` command as shown in the following:
 Finalization
 ------------
 
-Finalization is the voting process performed by nodes in the *finalization
-committee* that *finalizes* a block when a sufficiently big number of members of the committee have received the block and agree on its outcome. Newer blocks
-must have the finalized block as an ancestor to ensure the integrity of the
-chain. For more information about this process, see :ref:`finalization<glossary-finalization>`.
+Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
 
-The finalization committee is formed by the bakers that have a certain staked
-amount. This specifically implies that in order to participate in the
-finalization committee you will probably have to modify the staked amount
-to reach said threshold. In the Mainnet, the staked amount needed to participate
-in the finalization committee is **0.1% of the total amount of existing CCD**.
+Finalizers sign a block, and their collective signatures are aggregated to form a :ref:`quorum certificate<glossary-quorum-certificate>`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
 
-Participating in the finalization committee produces rewards on each block that
-is finalized. The rewards are paid to the baker account some time after the
-block is finalized.
+Finalization happens at a minimum one second after block creation. A new block has to be created descended from that block for finalization to happen.
+
+When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
 Update baker keys
 -----------------
