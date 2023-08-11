@@ -14,7 +14,7 @@ A verifier will typically consist of two components
 
 Presentations contain :ref:`zero-knowledge proofs<glossary-zero-knowledge-proof>`.
 The verifiable credentials themselves never leave the holder's wallet, only the information requested by the verifier does.
-Note that the presentation can combine :ref:`account credentials<glossary-account-credentials>` and :ref:`verifiable credentials<glossary-verifiable-credential>`.
+Note that the presentation can combine :ref:`account credentials<glossary-account-credential>` and :ref:`verifiable credentials<glossary-verifiable-credential>`.
 
 The verification of presentations consists of two parts.
 
