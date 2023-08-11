@@ -5,7 +5,7 @@
 Update your passcode and biometric settings
 ===========================================
 
-If you want to change your passcode or enable/disable your biometrics (on a mobile device), you can do so from the **More** page.
+If you want to change your passcode or enable/disable your biometrics (on a mobile device), following the directions below for your wallet.
 
 .. Note::
    You can't change your passcode, password, or biometrics if you have pending identities or accounts in your wallet.
@@ -54,9 +54,25 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 
    #. Choose whether or not to enable biometrics.
 
+.. dropdown::  Desktop Wallet
+
+   #. Click |dw-wallet-settings| to go to the Settings page.
+
+   #. Click **Change wallet password**.
+
+   #. Enter your current password. **You cannot change the password unless you know the current password.** Then enter your new password and confirm your new password. Click Change password.
+
+      .. image:: ../images/desktop-wallet/dw-change-pw.png
+         :width: 50%
+         :alt: password change dialog
+
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
              :width: 40px
+
+.. |dw-wallet-settings| image:: ../images/desktop-wallet/dw-settings-button.png
+                           :alt: gear wheel
+                           :width: 50px
 
 .. |wallet-settings| image:: ../images/settings.png
                         :alt: gear wheel

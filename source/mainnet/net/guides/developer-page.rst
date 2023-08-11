@@ -1,4 +1,4 @@
-
+.. include:: ../../variables.rst
 .. _developer-page:
 
 ===================
@@ -17,6 +17,8 @@ Official resources
 - See :ref:`Smart contracts <introduction>` for general information about smart contracts
 
     - `Smart contract libraries <https://crates.io/crates/concordium-std>`_
+
+    - To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 - `GitHub <https://github.com/Concordium>`_
 
@@ -40,6 +42,8 @@ Official resources
 
 - The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
 
+- An external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service
+
 .. _example-dapps:
 
 Example dApps
@@ -59,17 +63,35 @@ Concordium has a selection of example dApps that you can clone to make your own 
 Block explorers
 ---------------
 
-The following are links to the block and status explorers. For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
+The following are links to the block, node, and status explorers.
+
+Concordium block explorers
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
 
     - `Mainnet block explorer <https://dashboard.mainnet.concordium.software>`_
 
     - `Testnet block explorer <https://dashboard.testnet.concordium.com>`_
 
+Concordium status pages
+^^^^^^^^^^^^^^^^^^^^^^^
+
     - `Mainnet status page <https://status.mainnet.concordium.software>`_
 
     - `Testnet status page <https://status.testnet.concordium.software>`__
 
+CCDScan
+^^^^^^^
+
+For information about CCDScan, see :ref:`CCDScan<ccd-scan>`.
+
     - `CCDScan <https://ccdscan.io>`_
+
+Grafana® node dashboard
+^^^^^^^^^^^^^^^^^^^^^^^
+
+For node runners using Grafana, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
 Social media and support
 ------------------------
