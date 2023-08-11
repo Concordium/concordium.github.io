@@ -229,7 +229,7 @@ The user holding a credential. An account is owned by one or more credential hol
 Credential registry contract
 ============================
 
-A smart contract used by :ref:`issuers<glossary-issuer>` of :ref:`verifiable credentials<_glossary-verifiable-credential>` to register credentials when they are issued. This contract will also be used to track the state of a credential, e.g., valid, revoked, expired.
+A smart contract used by :ref:`issuers<glossary-issuer>` of :ref:`verifiable credentials<glossary-verifiable-credential>` to register credentials when they are issued. This contract will also be used to track the state of a credential, e.g., valid, revoked, expired.
 
 .. _glossary-cryptographic-proof:
 
@@ -726,7 +726,7 @@ Issued to the individual by an :ref:`issuer<glossary-issuer>` who has authority 
 Verifier
 ========
 
-Party that checks users' :ref:`verifiable credentials<_glossary-verifiable-credential>`.
+Party that checks users' :ref:`verifiable credentials<glossary-verifiable-credential>`.
 
 .. _glossary-wallet:
 
